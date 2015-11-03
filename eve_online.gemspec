@@ -4,14 +4,14 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'eveonline/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "eveonline"
+  spec.name          = "eve_online"
   spec.version       = Eveonline::VERSION
   spec.authors       = ["Igor Zubkov"]
   spec.email         = ["igor.zubkov@gmail.com"]
 
   spec.summary       = %q{EveOnline API. XML and CREST.}
   spec.description   = %q{EveOnline API. XML and CREST.}
-  spec.homepage      = "https://github.com/biow0lf/eveonline"
+  spec.homepage      = "https://github.com/biow0lf/eve_online"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
