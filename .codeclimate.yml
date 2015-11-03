@@ -1,0 +1,11 @@
+---
+engines:
+  rubocop:
+    enabled: true
+  fixme:
+    enabled: true
+ratings:
+  paths:
+  - "**.rb"
+exclude_paths:
+- spec/**/*
