@@ -2,17 +2,15 @@ require 'spec_helper'
 require 'nori'
 require 'eve_online/server_status'
 
-#require 'nori'
-#require_relative '../../../app/models/eve_online/base'
-#require_relative '../../../app/models/eve_online/server_status'
-
 describe EveOnline::ServerStatus do
   before { stub_request(:any, subject.url) }
+
+  specify { expect(described_class::API_ENDPOINT).to eq('https://api.eveonline.com/Server/ServerStatus.xml.aspx') }
 
   describe '#current_time' do
     before do
       #
-      # eveapi.fetch('currentTime')
+      # subject.eveapi.fetch('currentTime')
       #
       expect(subject).to receive(:eveapi) do
         double.tap do |a|
@@ -27,7 +25,7 @@ describe EveOnline::ServerStatus do
   describe '#server_open?' do
     before do
       #
-      # result.fetch('serverOpen') == 'True'
+      # subject.result.fetch('serverOpen') == 'True'
       #
       expect(subject).to receive(:result) do
         double.tap do |a|
@@ -46,7 +44,7 @@ describe EveOnline::ServerStatus do
   describe '#online_players' do
     before do
       #
-      # result.fetch('onlinePlayers').to_i
+      # subject.result.fetch('onlinePlayers').to_i
       #
       expect(subject).to receive(:result) do
         double.tap do |a|
@@ -65,7 +63,7 @@ describe EveOnline::ServerStatus do
   describe '#cached_until' do
     before do
       #
-      # eveapi.fetch('cachedUntil')
+      # subject.eveapi.fetch('cachedUntil')
       #
       expect(subject).to receive(:eveapi) do
         double.tap do |a|
@@ -80,7 +78,7 @@ describe EveOnline::ServerStatus do
   describe '#version' do
     before do
       #
-      # eveapi.fetch('@version').to_i
+      # subject.eveapi.fetch('@version').to_i
       #
       expect(subject).to receive(:eveapi) do
         double.tap do |a|
@@ -99,7 +97,7 @@ describe EveOnline::ServerStatus do
   describe '#result' do
     before do
       #
-      # eveapi.fetch('result')
+      # subject.eveapi.fetch('result')
       #
       expect(subject).to receive(:eveapi) do
         double.tap do |a|
@@ -114,7 +112,7 @@ describe EveOnline::ServerStatus do
   describe '#eveapi' do
     before do
       #
-      # response.fetch('eveapi')
+      # subject.response.fetch('eveapi')
       #
       expect(subject).to receive(:response) do
         double.tap do |a|
