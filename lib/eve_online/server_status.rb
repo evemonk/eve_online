@@ -6,6 +6,7 @@ module EveOnline
     API_ENDPOINT = 'https://api.eveonline.com/Server/ServerStatus.xml.aspx'
 
     def current_time
+      # TODO: time in "(GMT) Monrovia, Reykjavik".
       eveapi.fetch('currentTime')
     end
 
@@ -18,6 +19,7 @@ module EveOnline
     end
 
     def cached_until
+      # TODO: time in "(GMT) Monrovia, Reykjavik".
       eveapi.fetch('cachedUntil')
     end
 
