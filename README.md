@@ -33,7 +33,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Issue reports and pull requests are welcome on GitHub at https://github.com/biow0lf/eveonline.
+Issue reports and pull requests are welcome on GitHub at https://github.com/biow0lf/eve_online.
 
 ## Changelog
 
