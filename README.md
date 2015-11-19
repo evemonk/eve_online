@@ -37,7 +37,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 
 ## Changelog
 
-master: AccountBalance XML API, APIKeyInfo XML API.
+master: AccountBalance XML API, APIKeyInfo XML API, AccountStatus XML API.
 
 v0.1.0: ServerStatus XML API.
 
