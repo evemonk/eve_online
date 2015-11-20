@@ -22,6 +22,12 @@ Or install it yourself as:
 
     $ gem install eve_online
 
+## Supported ruby versions:
+
+ * MRI 2.0
+ * MRI 2.1
+ * MRI 2.2
+
 ## Usage
 
 TODO: Write usage instructions here
