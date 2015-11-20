@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'nori'
 
 describe EveOnline::Characters do
   let(:key_id) { '123' }

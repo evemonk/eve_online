@@ -1,3 +1,5 @@
+require 'nori'
+
 module EveOnline
   class Base
     attr_reader :key_id, :v_code, :parser
