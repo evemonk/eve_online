@@ -7,8 +7,6 @@ describe EveOnline::Characters do
 
   subject { described_class.new(key_id, v_code) }
 
-  before { stub_request(:any, subject.url) }
-
   specify { expect(described_class::API_ENDPOINT).to eq('https://api.eveonline.com/account/Characters.xml.aspx') }
 
   describe '#current_time' do
