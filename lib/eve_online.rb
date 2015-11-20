@@ -1,3 +1,4 @@
+require 'eve_online/version'
 require 'eve_online/base'
 require 'eve_online/account_balance'
 require 'eve_online/account_status'

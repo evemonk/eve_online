@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'eveonline/version'
+require 'eve_online/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'eve_online'
-  spec.version       = Eveonline::VERSION
+  spec.version       = EveOnline::VERSION
   spec.authors       = ['Igor Zubkov']
   spec.email         = ['igor.zubkov@gmail.com']
 
