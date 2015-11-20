@@ -1,3 +1,4 @@
+require 'open-uri'
 require 'nori'
 
 module EveOnline

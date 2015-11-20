@@ -1,5 +1,3 @@
-require 'open-uri'
-
 module EveOnline
   # http://wiki.eve-id.net/APIv2_Account_Characters_XML
   class Characters < Base

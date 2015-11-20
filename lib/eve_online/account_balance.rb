@@ -1,5 +1,3 @@
-require 'open-uri'
-
 module EveOnline
   # http://wiki.eve-id.net/APIv2_Char_AccountBalance_XML
   class AccountBalance < Base
