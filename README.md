@@ -58,9 +58,9 @@ v0.1.0: [ServerStatus XML API](http://wiki.eve-id.net/APIv2_Server_ServerStatus_
 - [x] [APIv2 Account AccountStatus XML](http://wiki.eve-id.net/APIv2_Account_AccountStatus_XML)
 - [x] [APIv2 Account APIKeyInfo XML](http://wiki.eve-id.net/APIv2_Account_APIKeyInfo_XML)
 - [x] [APIv2 Account Characters XML](http://wiki.eve-id.net/APIv2_Account_Characters_XML)
-
+----
 - [ ] [APIv2 API CallList XML](http://wiki.eve-id.net/APIv2_API_CallList_XML)
-
+----
 - [x] [APIv2 Char AccountBalance XML](http://wiki.eve-id.net/APIv2_Char_AccountBalance_XML)
 - [ ] [APIv2 Char AssetList XML](http://wiki.eve-id.net/APIv2_Char_AssetList_XML)
 - [ ] [APIv2 Char CalendarEventAttendees XML](http://wiki.eve-id.net/APIv2_Char_CalendarEventAttendees_XML)
@@ -88,7 +88,7 @@ v0.1.0: [ServerStatus XML API](http://wiki.eve-id.net/APIv2_Server_ServerStatus_
 - [ ] [](http://wiki.eve-id.net/APIv2Char_UpcomingCalendarEvents_XML)
 - [ ] [](http://wiki.eve-id.net/APIv2_Char_JournalEntries_XML)
 - [ ] [](http://wiki.eve-id.net/APIv2_Char_MarketTransactions_XML)
-
+----
 - [ ] [](http://wiki.eve-id.net/APIv2_Corp_AccountBalance_XML)
 - [ ] [](http://wiki.eve-id.net/APIv2_Corp_AssetList_XML)
 - [ ] [](http://wiki.eve-id.net/APIv2_Corp_ContactList_XML)
@@ -116,31 +116,32 @@ v0.1.0: [ServerStatus XML API](http://wiki.eve-id.net/APIv2_Server_ServerStatus_
 - [ ] [](http://wiki.eve-id.net/APIv2_Corp_CorporationTitles_XML)
 - [ ] [](http://wiki.eve-id.net/APIv2_Corp_JournalEntries_XML)
 - [ ] [](http://wiki.eve-id.net/APIv2_Corp_MarketTransactions_XML)
-
-- [ ] [](http://wiki.eve-id.net/APIv2_Eve_AllianceList_XML)
-- [ ] [](http://wiki.eve-id.net/APIv2_Certificate_Tree_XML)
-- [ ] [](http://wiki.eve-id.net/APIv2_Page_Index?title=APIv2_Eve_CharacterAffiliation_XML&action=edit&redlink=1)
-- [ ] [](http://wiki.eve-id.net/APIv2_Eve_CharacterID_XML)
-- [ ] [](http://wiki.eve-id.net/APIv2_Eve_CharacterInfo_XML)
-- [ ] [](http://wiki.eve-id.net/APIv2_Eve_CharacterName_XML)
-- [ ] [](http://wiki.eve-id.net/APIv2_Eve_ConquerableStationList_XML)
-- [ ] [](http://wiki.eve-id.net/APIv2_Eve_ErrorList_XML)
-- [ ] [](http://wiki.eve-id.net/APIv2_Factional_Warfare_Stats_XML)
-- [ ] [](http://wiki.eve-id.net/APIv2_Factional_Warfare_Top100_Stats_XML)
-- [ ] [](http://wiki.eve-id.net/APIv2_Eve_RefTypes_XML)
-- [ ] [](http://wiki.eve-id.net/APIv2_Eve_SkillTree_XML)
-- [ ] [](http://wiki.eve-id.net/APIv2_Eve_TypeName_XML)
-
+----
+- [ ] [APIv2 Eve AllianceList XML](http://wiki.eve-id.net/APIv2_Eve_AllianceList_XML)
+- [ ] [APIv2 Certificate Tree XML](http://wiki.eve-id.net/APIv2_Certificate_Tree_XML)
+- [ ] [APIv2 Eve CharacterAffiliation XML](http://wiki.eve-id.net/APIv2_Page_Index?title=APIv2_Eve_CharacterAffiliation_XML&action=edit&redlink=1)
+- [ ] [APIv2 Eve CharacterID XML](http://wiki.eve-id.net/APIv2_Eve_CharacterID_XML)
+- [ ] [APIv2 Eve CharacterInfo XML](http://wiki.eve-id.net/APIv2_Eve_CharacterInfo_XML)
+- [ ] [APIv2 Eve CharacterName XML](http://wiki.eve-id.net/APIv2_Eve_CharacterName_XML)
+- [ ] [APIv2 Eve ConquerableStationList XML](http://wiki.eve-id.net/APIv2_Eve_ConquerableStationList_XML)
+- [ ] [APIv2 Eve ErrorList XML](http://wiki.eve-id.net/APIv2_Eve_ErrorList_XML)
+- [ ] [APIv2 Factional Warfare Stats XML](http://wiki.eve-id.net/APIv2_Factional_Warfare_Stats_XML)
+- [ ] [APIv2 Factional Warfare Top100 Stats XML](http://wiki.eve-id.net/APIv2_Factional_Warfare_Top100_Stats_XML)
+- [ ] [APIv2 Eve RefTypes XML](http://wiki.eve-id.net/APIv2_Eve_RefTypes_XML)
+- [ ] [APIv2 Eve SkillTree XML](http://wiki.eve-id.net/APIv2_Eve_SkillTree_XML)
+- [ ] [APIv2 Eve TypeName XML](http://wiki.eve-id.net/APIv2_Eve_TypeName_XML)
+----
 - [ ] [APIv2 Factional Warfare Occupancy XML](http://wiki.eve-id.net/APIv2_Factional_Warfare_Occupancy_XML)
 - [ ] [APIv2 Map Jumps XML](http://wiki.eve-id.net/APIv2_Map_Jumps_XML)
 - [ ] [APIv2 Map Kills XML](http://wiki.eve-id.net/APIv2_Map_Kills_XML)
 - [ ] [APIv2 Map Sovereignty XML](http://wiki.eve-id.net/APIv2_Map_Sovereignty_XML)
 - [ ] [APIv2 Map Sovereignty Status XML](http://wiki.eve-id.net/APIv2_Map_Sovereignty_Status_XML)
-
+----
 - [ ] [APIv2 Eve Image Service](http://wiki.eve-id.net/APIv2_Eve_Image_Service)
 - [ ] [APIv2 Old Portraits](http://wiki.eve-id.net/APIv2_Old_Portraits)
-
+----
 - [x] [APIv2 Server ServerStatus XML](http://wiki.eve-id.net/APIv2_Server_ServerStatus_XML)
+----
 
 
 ## License
