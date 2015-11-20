@@ -9,3 +9,9 @@ require 'webmock/rspec'
 
 # rspec-its
 require 'rspec/its'
+
+RSpec.configure do |config|
+  config.after(:suite) do
+    WebMock.allow_net_connect!
+  end
+end
