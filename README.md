@@ -1,7 +1,7 @@
 # EveOnline API (XML and CREST)
 
-[![Code Climate](https://codeclimate.com/github/biow0lf/eveonline/badges/gpa.svg)](https://codeclimate.com/github/biow0lf/eveonline)
-[![Test Coverage](https://codeclimate.com/github/biow0lf/eveonline/badges/coverage.svg)](https://codeclimate.com/github/biow0lf/eveonline/coverage)
+[![Code Climate](https://codeclimate.com/github/biow0lf/eve_online/badges/gpa.svg)](https://codeclimate.com/github/biow0lf/eve_online)
+[![Test Coverage](https://codeclimate.com/github/biow0lf/eve_online/badges/coverage.svg)](https://codeclimate.com/github/biow0lf/eve_online/coverage)
 
 This gem implement Ruby API for EveOnline MMORPG. Both, XML and CREST API.
 
