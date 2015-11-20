@@ -1,6 +1,5 @@
 require 'spec_helper'
 require 'nori'
-require 'eve_online/account_balance'
 
 describe EveOnline::AccountBalance do
   let(:key_id) { '123' }

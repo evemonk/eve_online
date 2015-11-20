@@ -1,6 +1,5 @@
 require 'spec_helper'
 require 'nori'
-require 'eve_online/account_status'
 
 describe EveOnline::AccountStatus do
   let(:key_id) { '123' }

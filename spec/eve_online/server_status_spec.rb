@@ -1,6 +1,5 @@
 require 'spec_helper'
 require 'nori'
-require 'eve_online/server_status'
 
 describe EveOnline::ServerStatus do
   before { stub_request(:any, subject.url) }

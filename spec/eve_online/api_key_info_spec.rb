@@ -1,6 +1,5 @@
 require 'spec_helper'
 require 'nori'
-require 'eve_online/api_key_info'
 
 describe EveOnline::ApiKeyInfo do
   let(:key_id) { '123' }

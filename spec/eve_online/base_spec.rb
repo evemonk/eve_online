@@ -1,6 +1,5 @@
 require 'spec_helper'
 require 'nori'
-require 'eve_online/base'
 
 describe EveOnline::Base do
   describe '#initialize' do
