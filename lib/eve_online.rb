@@ -4,7 +4,7 @@ require 'eve_online/account_balance'
 require 'eve_online/account_status'
 require 'eve_online/api_key_info'
 require 'eve_online/characters'
-require 'eve_online/server_status'
+require 'eve_online/server/status'
 
 module EveOnline
 end
