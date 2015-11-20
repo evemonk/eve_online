@@ -3,6 +3,15 @@ module EveOnline
   class ServerStatus < Base
     API_ENDPOINT = 'https://api.eveonline.com/Server/ServerStatus.xml.aspx'
 
+    def as_json
+      {
+        current_time: current_time,
+        cached_until: cached_until,
+        server_open: server_open?,
+        online_players: online_players
+      }
+    end
+
     def current_time
       # TODO: time in "(GMT) Monrovia, Reykjavik".
       eveapi.fetch('currentTime')

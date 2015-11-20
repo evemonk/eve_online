@@ -1,9 +1,41 @@
 require 'spec_helper'
 
 describe EveOnline::ServerStatus do
-  before { stub_request(:any, subject.url) }
-
   specify { expect(described_class::API_ENDPOINT).to eq('https://api.eveonline.com/Server/ServerStatus.xml.aspx') }
+
+  describe '#as_json' do
+    let(:server_status) { described_class.new }
+
+    before do
+      expect(server_status).to receive(:current_time)
+        .and_return('2015-11-20 15:53:59')
+    end
+
+    before do
+      expect(server_status).to receive(:cached_until)
+        .and_return('2015-11-20 15:56:24')
+    end
+
+    before do
+      expect(server_status).to receive(:server_open?)
+        .and_return(true)
+    end
+
+    before do
+      expect(server_status).to receive(:online_players)
+        .and_return(19_808)
+    end
+
+    subject { server_status.as_json }
+
+    its([:current_time]) { should eq('2015-11-20 15:53:59') }
+
+    its([:cached_until]) { should eq('2015-11-20 15:56:24') }
+
+    its([:server_open]) { should eq(true) }
+
+    its([:online_players]) { should eq(19_808) }
+  end
 
   describe '#current_time' do
     before do
