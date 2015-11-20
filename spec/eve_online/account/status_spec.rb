@@ -9,6 +9,54 @@ describe EveOnline::Account::Status do
 
   specify { expect(described_class::API_ENDPOINT).to eq('https://api.eveonline.com/account/AccountStatus.xml.aspx') }
 
+  describe '#as_json' do
+    let(:account_status) { described_class.new(key_id, v_code) }
+
+    before do
+      expect(account_status).to receive(:current_time)
+        .and_return('2015-11-20 23:02:48')
+    end
+
+    before do
+      expect(account_status).to receive(:paid_until)
+        .and_return('2015-11-28 18:12:56')
+    end
+
+    before do
+      expect(account_status).to receive(:create_date)
+        .and_return('2010-01-15 15:11:00')
+    end
+
+    before do
+      expect(account_status).to receive(:logon_count)
+        .and_return(388)
+    end
+
+    before do
+      expect(account_status).to receive(:logon_minutes)
+        .and_return(15_598)
+    end
+
+    before do
+      expect(account_status).to receive(:cached_until)
+        .and_return('2015-11-20 23:59:48')
+    end
+
+    subject { account_status.as_json }
+
+    its([:current_time]) { should eq('2015-11-20 23:02:48') }
+
+    its([:paid_until]) { should eq('2015-11-28 18:12:56') }
+
+    its([:create_date]) { should eq('2010-01-15 15:11:00') }
+
+    its([:logon_count]) { should eq(388) }
+
+    its([:logon_minutes]) { should eq(15_598) }
+
+    its([:cached_until]) { should eq('2015-11-20 23:59:48') }
+  end
+
   describe '#current_time' do
     before do
       #

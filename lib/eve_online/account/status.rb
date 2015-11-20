@@ -4,6 +4,17 @@ module EveOnline
     class Status < Base
       API_ENDPOINT = 'https://api.eveonline.com/account/AccountStatus.xml.aspx'
 
+      def as_json
+        {
+          current_time: current_time,
+          paid_until: paid_until,
+          create_date: create_date,
+          logon_count: logon_count,
+          logon_minutes: logon_minutes,
+          cached_until: cached_until
+        }
+      end
+
       def current_time
         eveapi.fetch('currentTime')
       end
