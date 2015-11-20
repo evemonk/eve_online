@@ -56,11 +56,11 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 
 ## Changelog
 
-master: [Characters XML API](http://wiki.eve-id.net/APIv2_Account_Characters_XML).
+master: [APIv2 Account Characters XML](http://wiki.eve-id.net/APIv2_Account_Characters_XML).
 
-v0.2.0: [AccountBalance XML API](http://wiki.eve-id.net/APIv2_Char_AccountBalance_XML), [APIKeyInfo XML API](http://wiki.eve-id.net/APIv2_Account_APIKeyInfo_XML), [AccountStatus XML API](http://wiki.eve-id.net/APIv2_Account_AccountStatus_XML).
+v0.2.0: [APIv2 Char AccountBalance XML](http://wiki.eve-id.net/APIv2_Char_AccountBalance_XML), [APIv2 Account APIKeyInfo XML](http://wiki.eve-id.net/APIv2_Account_APIKeyInfo_XML), [APIv2 Account AccountStatus XML](http://wiki.eve-id.net/APIv2_Account_AccountStatus_XML).
 
-v0.1.0: [ServerStatus XML API](http://wiki.eve-id.net/APIv2_Server_ServerStatus_XML).
+v0.1.0: [APIv2 Server ServerStatus XML](http://wiki.eve-id.net/APIv2_Server_ServerStatus_XML).
 
 ## TODO
 
