@@ -33,7 +33,16 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Server status:
+```ruby
+status = EveOnline::Server::Status.new
+status.as_json # => {:current_time=>"2015-11-20 22:18:59", :cached_until=>"2015-11-20 22:20:50", :server_open=>true, :online_players=>25192}
+
+status.current_time # => "2015-11-20 22:18:59"
+status.cached_until # => "2015-11-20 22:20:50"
+status.server_open? # => true
+status.online_players # => 25192
+```
 
 ## Development
 
