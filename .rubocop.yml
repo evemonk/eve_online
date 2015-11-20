@@ -6,3 +6,6 @@ Metrics/LineLength:
 
 Style/SpaceInsideStringInterpolation:
   Enabled: false
+
+Style/SignalException:
+  Enabled: false
