@@ -26,6 +26,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'webmock'
 
   spec.add_runtime_dependency 'nori', '~> 2.6'
-  # https://github.com/rubysec/ruby-advisory-db/blob/master/gems/nokogiri/OSVDB-118481.yml
-  spec.add_runtime_dependency 'nokogiri', '>= 1.6.3'
+  # https://github.com/sparklemotion/nokogiri/blob/v1.6.6.4/CHANGELOG.rdoc
+  spec.add_runtime_dependency 'nokogiri', '>= 1.6.4.4'
 end
