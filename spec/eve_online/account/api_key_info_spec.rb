@@ -212,7 +212,11 @@ describe EveOnline::Account::ApiKeyInfo do
       #
       expect(subject).to receive(:key) do
         double.tap do |a|
-          expect(a).to receive(:fetch).with('@accessMask')
+          expect(a).to receive(:fetch).with('@accessMask') do
+            double.tap do |b|
+              expect(b).to receive(:to_i)
+            end
+          end
         end
       end
     end

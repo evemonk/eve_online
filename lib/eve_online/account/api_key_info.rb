@@ -53,7 +53,7 @@ module EveOnline
       end
 
       def access_mask
-        key.fetch('@accessMask')
+        key.fetch('@accessMask').to_i
       end
 
       def key
