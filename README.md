@@ -160,36 +160,44 @@ v0.1.0: [APIv2 Server ServerStatus XML](http://wiki.eve-id.net/APIv2_Server_Serv
 
 ----
 
-- [ ] [APIv2 Eve AllianceList XML](http://wiki.eve-id.net/APIv2_Eve_AllianceList_XML)
-- [ ] [APIv2 Certificate Tree XML](http://wiki.eve-id.net/APIv2_Certificate_Tree_XML)
-- [ ] [APIv2 Eve CharacterAffiliation XML](http://wiki.eve-id.net/APIv2_Page_Index?title=APIv2_Eve_CharacterAffiliation_XML&action=edit&redlink=1)
-- [ ] [APIv2 Eve CharacterID XML](http://wiki.eve-id.net/APIv2_Eve_CharacterID_XML)
-- [ ] [APIv2 Eve CharacterInfo XML](http://wiki.eve-id.net/APIv2_Eve_CharacterInfo_XML)
-- [ ] [APIv2 Eve CharacterName XML](http://wiki.eve-id.net/APIv2_Eve_CharacterName_XML)
-- [ ] [APIv2 Eve ConquerableStationList XML](http://wiki.eve-id.net/APIv2_Eve_ConquerableStationList_XML)
-- [ ] [APIv2 Eve ErrorList XML](http://wiki.eve-id.net/APIv2_Eve_ErrorList_XML)
-- [ ] [APIv2 Factional Warfare Stats XML](http://wiki.eve-id.net/APIv2_Factional_Warfare_Stats_XML)
-- [ ] [APIv2 Factional Warfare Top100 Stats XML](http://wiki.eve-id.net/APIv2_Factional_Warfare_Top100_Stats_XML)
-- [ ] [APIv2 Eve RefTypes XML](http://wiki.eve-id.net/APIv2_Eve_RefTypes_XML)
-- [ ] [APIv2 Eve SkillTree XML](http://wiki.eve-id.net/APIv2_Eve_SkillTree_XML)
-- [ ] [APIv2 Eve TypeName XML](http://wiki.eve-id.net/APIv2_Eve_TypeName_XML)
+### Eve
+
+- [ ] [Alliance List XML](http://wiki.eve-id.net/APIv2_Eve_AllianceList_XML)
+- [ ] [Certificate Tree XML](http://wiki.eve-id.net/APIv2_Certificate_Tree_XML)
+- [ ] [Character Affiliation XML](http://wiki.eve-id.net/APIv2_Page_Index?title=APIv2_Eve_CharacterAffiliation_XML&action=edit&redlink=1)
+- [ ] [Character ID (Name to ID Conversion) XML](http://wiki.eve-id.net/APIv2_Eve_CharacterID_XML)
+- [ ] [Character Info XML](http://wiki.eve-id.net/APIv2_Eve_CharacterInfo_XML)
+- [ ] [Character Name (ID to Name Conversion) XML](http://wiki.eve-id.net/APIv2_Eve_CharacterName_XML)
+- [ ] [Conquerable Station List (Includes Outposts) XML](http://wiki.eve-id.net/APIv2_Eve_ConquerableStationList_XML)
+- [ ] [Error List XML](http://wiki.eve-id.net/APIv2_Eve_ErrorList_XML)
+- [ ] [Factional Warfare Stats XML](http://wiki.eve-id.net/APIv2_Factional_Warfare_Stats_XML)
+- [ ] [Factional Warfare Top100 Stats XML](http://wiki.eve-id.net/APIv2_Factional_Warfare_Top100_Stats_XML)
+- [ ] [RefTypes List XML](http://wiki.eve-id.net/APIv2_Eve_RefTypes_XML)
+- [ ] [Skill Tree XML](http://wiki.eve-id.net/APIv2_Eve_SkillTree_XML)
+- [ ] [Type Name XML](http://wiki.eve-id.net/APIv2_Eve_TypeName_XML)
 
 ----
 
-- [ ] [APIv2 Factional Warfare Occupancy XML](http://wiki.eve-id.net/APIv2_Factional_Warfare_Occupancy_XML)
-- [ ] [APIv2 Map Jumps XML](http://wiki.eve-id.net/APIv2_Map_Jumps_XML)
-- [ ] [APIv2 Map Kills XML](http://wiki.eve-id.net/APIv2_Map_Kills_XML)
-- [ ] [APIv2 Map Sovereignty XML](http://wiki.eve-id.net/APIv2_Map_Sovereignty_XML)
-- [ ] [APIv2 Map Sovereignty Status XML](http://wiki.eve-id.net/APIv2_Map_Sovereignty_Status_XML)
+### Map
+
+- [ ] [Factional Warfare Systems (Occupancy Map) XML](http://wiki.eve-id.net/APIv2_Factional_Warfare_Occupancy_XML)
+- [ ] [Jumps XML](http://wiki.eve-id.net/APIv2_Map_Jumps_XML)
+- [ ] [Kills XML](http://wiki.eve-id.net/APIv2_Map_Kills_XML)
+- [ ] [Sovereignty XML](http://wiki.eve-id.net/APIv2_Map_Sovereignty_XML)
+- [ ] [Sovereignty Status (API disabled) XML](http://wiki.eve-id.net/APIv2_Map_Sovereignty_Status_XML)
 
 ----
 
-- [ ] [APIv2 Eve Image Service](http://wiki.eve-id.net/APIv2_Eve_Image_Service)
-- [ ] [APIv2 Old Portraits](http://wiki.eve-id.net/APIv2_Old_Portraits)
+### Misc
+
+- [ ] [Image (ID to Character Portrait and Corporation/Alliance Logo)](http://wiki.eve-id.net/APIv2_Eve_Image_Service)
+- [ ] [Old Portraits](http://wiki.eve-id.net/APIv2_Old_Portraits)
 
 ----
 
-- [x] [APIv2 Server ServerStatus XML](http://wiki.eve-id.net/APIv2_Server_ServerStatus_XML)
+### Server
+
+- [x] [Server Status XML](http://wiki.eve-id.net/APIv2_Server_ServerStatus_XML)
 
 ----
 
