@@ -194,21 +194,6 @@ describe EveOnline::Account::Characters do
     specify { expect { subject.rowset }.not_to raise_error }
   end
 
-  describe '#result' do
-    before do
-      #
-      # subject.eveapi.fetch('result')
-      #
-      expect(subject).to receive(:eveapi) do
-        double.tap do |a|
-          expect(a).to receive(:fetch).with('result')
-        end
-      end
-    end
-
-    specify { expect { subject.result }.not_to raise_error }
-  end
-
   describe '#url' do
     specify do
       expect(subject.url).to eq("#{ described_class::API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }")

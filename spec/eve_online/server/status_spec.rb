@@ -94,21 +94,6 @@ describe EveOnline::Server::Status do
     specify { expect { subject.version }.not_to raise_error }
   end
 
-  describe '#result' do
-    before do
-      #
-      # subject.eveapi.fetch('result')
-      #
-      expect(subject).to receive(:eveapi) do
-        double.tap do |a|
-          expect(a).to receive(:fetch).with('result')
-        end
-      end
-    end
-
-    specify { expect { subject.result }.not_to raise_error }
-  end
-
   describe '#url' do
     specify { expect(subject.url).to eq(described_class::API_ENDPOINT) }
   end

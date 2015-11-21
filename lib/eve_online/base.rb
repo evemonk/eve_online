@@ -11,9 +11,9 @@ module EveOnline
       @parser = parser
     end
 
-    # def result
-    #
-    # end
+    def result
+      eveapi.fetch('result')
+    end
 
     def cached_until
       # TODO: time in "(GMT) Monrovia, Reykjavik".

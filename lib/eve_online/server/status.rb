@@ -25,10 +25,6 @@ module EveOnline
         eveapi.fetch('@version').to_i
       end
 
-      def result
-        eveapi.fetch('result')
-      end
-
       def url
         API_ENDPOINT
       end

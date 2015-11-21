@@ -17,6 +17,21 @@ describe EveOnline::Base do
     its(:parser) { should eq(parser) }
   end
 
+  describe '#result' do
+    before do
+      #
+      # subject.eveapi.fetch('result')
+      #
+      expect(subject).to receive(:eveapi) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('result')
+        end
+      end
+    end
+
+    specify { expect { subject.result }.not_to raise_error }
+  end
+
   describe '#cached_until' do
     before do
       #
