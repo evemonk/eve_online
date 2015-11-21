@@ -82,43 +82,49 @@ v0.1.0: [APIv2 Server ServerStatus XML](http://wiki.eve-id.net/APIv2_Server_Serv
 
 ## TODO
 
-- [x] [APIv2 Account AccountStatus XML](http://wiki.eve-id.net/APIv2_Account_AccountStatus_XML)
-- [x] [APIv2 Account APIKeyInfo XML](http://wiki.eve-id.net/APIv2_Account_APIKeyInfo_XML)
-- [x] [APIv2 Account Characters XML](http://wiki.eve-id.net/APIv2_Account_Characters_XML)
+# Account
+
+- [x] [Account Status XML](http://wiki.eve-id.net/APIv2_Account_AccountStatus_XML)
+- [x] [API Key Info XML](http://wiki.eve-id.net/APIv2_Account_APIKeyInfo_XML)
+- [x] [Characters (List of) XML](http://wiki.eve-id.net/APIv2_Account_Characters_XML)
 
 ----
 
-- [ ] [APIv2 API CallList XML](http://wiki.eve-id.net/APIv2_API_CallList_XML)
+# Api
+
+- [ ] [Call List (Access Mask reference) XML](http://wiki.eve-id.net/APIv2_API_CallList_XML)
 
 ----
 
-- [x] [APIv2 Char AccountBalance XML](http://wiki.eve-id.net/APIv2_Char_AccountBalance_XML)
-- [ ] [APIv2 Char AssetList XML](http://wiki.eve-id.net/APIv2_Char_AssetList_XML)
-- [ ] [APIv2 Char CalendarEventAttendees XML](http://wiki.eve-id.net/APIv2_Char_CalendarEventAttendees_XML)
-- [ ] [APIv2 Char CharacterSheet XML](http://wiki.eve-id.net/APIv2_Char_CharacterSheet_XML)
-- [ ] [APIv2 Char ContactList XML](http://wiki.eve-id.net/APIv2_Char_ContactList_XML)
-- [ ] [APIv2 Char ContactNotifications XML](http://wiki.eve-id.net/APIv2_Char_ContactNotifications_XML)
-- [ ] [APIv2 Char Contracts XML](http://wiki.eve-id.net/APIv2_Char_Contracts_XML)
-- [ ] [APIv2 Char ContractItems XML](http://wiki.eve-id.net/APIv2_Char_ContractItems_XML)
-- [ ] [APIv2 Char ContractBids XML](http://wiki.eve-id.net/APIv2_Char_ContractBids_XML)
-- [ ] [APIv2 Char Factional Warfare Stats XML](http://wiki.eve-id.net/APIv2_Char_Factional_Warfare_Stats_XML)
-- [ ] [APIv2 Char IndustryJobs XML](http://wiki.eve-id.net/APIv2_Char_IndustryJobs_XML)
-- [ ] [APIv2 Char KillLog XML](http://wiki.eve-id.net/APIv2_Char_KillLog_XML)
-- [ ] [APIv2 Char Locations XML](http://wiki.eve-id.net/APIv2_Char_Locations_XML)
-- [ ] [APIv2 Char MailBodies XML](http://wiki.eve-id.net/APIv2_Char_MailBodies_XML)
-- [ ] [APIv2 Char mailinglists XML](http://wiki.eve-id.net/APIv2_Char_mailinglists_XML)
-- [ ] [APIv2 Char MailMessages XML](http://wiki.eve-id.net/APIv2_Char_MailMessages_XML)
-- [ ] [APIv2 Char MarketOrders XML](http://wiki.eve-id.net/APIv2_Char_MarketOrders_XML)
-- [ ] [APIv2 Char Medals XML](http://wiki.eve-id.net/APIv2_Char_Medals_XML)
-- [ ] [APIv2 Char Notifications XML](http://wiki.eve-id.net/APIv2_Char_Notifications_XML)
-- [ ] [APIv2 Char NotificationTexts XML](http://wiki.eve-id.net/APIv2_Char_NotificationTexts_XML)
-- [ ] [APIv2 Char Research XML](http://wiki.eve-id.net/APIv2_Char_Research_XML)
-- [ ] [APIv2 Char SkillInTraining XML](http://wiki.eve-id.net/APIv2_Char_SkillInTraining_XML)
-- [ ] [APIv2 Char SkillQueue XML](http://wiki.eve-id.net/APIv2_Char_SkillQueue_XML)
-- [ ] [APIv2 Char Standings XML](http://wiki.eve-id.net/APIv2_Char_Standings_XML)
-- [ ] [APIv2 Char UpcomingCalendarEvents XML](http://wiki.eve-id.net/APIv2Char_UpcomingCalendarEvents_XML)
-- [ ] [APIv2 Char JournalEntries XML](http://wiki.eve-id.net/APIv2_Char_JournalEntries_XML)
-- [ ] [APIv2 Char MarketTransactions XML](http://wiki.eve-id.net/APIv2_Char_MarketTransactions_XML)
+Character
+
+- [x] [Account Balance XML](http://wiki.eve-id.net/APIv2_Char_AccountBalance_XML)
+- [ ] [Asset List XML](http://wiki.eve-id.net/APIv2_Char_AssetList_XML)
+- [ ] [Calendar Event Attendees XML](http://wiki.eve-id.net/APIv2_Char_CalendarEventAttendees_XML)
+- [ ] [Character Sheet XML](http://wiki.eve-id.net/APIv2_Char_CharacterSheet_XML)
+- [ ] [Contact List XML](http://wiki.eve-id.net/APIv2_Char_ContactList_XML)
+- [ ] [Contact Notifications XML](http://wiki.eve-id.net/APIv2_Char_ContactNotifications_XML)
+- [ ] [Contracts XML](http://wiki.eve-id.net/APIv2_Char_Contracts_XML)
+- [ ] [ContractItems XML](http://wiki.eve-id.net/APIv2_Char_ContractItems_XML)
+- [ ] [ContractBids XML](http://wiki.eve-id.net/APIv2_Char_ContractBids_XML)
+- [ ] [Factional Warfare Stats XML](http://wiki.eve-id.net/APIv2_Char_Factional_Warfare_Stats_XML)
+- [ ] [Industry Jobs XML](http://wiki.eve-id.net/APIv2_Char_IndustryJobs_XML)
+- [ ] [Kill Log (Kill Mails) XML](http://wiki.eve-id.net/APIv2_Char_KillLog_XML)
+- [ ] [Locations XML](http://wiki.eve-id.net/APIv2_Char_Locations_XML)
+- [ ] [Mail Bodies XML](http://wiki.eve-id.net/APIv2_Char_MailBodies_XML)
+- [ ] [Mailing Lists XML](http://wiki.eve-id.net/APIv2_Char_mailinglists_XML)
+- [ ] [Mail Messages (Headers) XML](http://wiki.eve-id.net/APIv2_Char_MailMessages_XML)
+- [ ] [Market Orders XML](http://wiki.eve-id.net/APIv2_Char_MarketOrders_XML)
+- [ ] [Medals XML](http://wiki.eve-id.net/APIv2_Char_Medals_XML)
+- [ ] [Notifications XML](http://wiki.eve-id.net/APIv2_Char_Notifications_XML)
+- [ ] [NotificationTexts XML](http://wiki.eve-id.net/APIv2_Char_NotificationTexts_XML)
+- [ ] [Research XML](http://wiki.eve-id.net/APIv2_Char_Research_XML)
+- [ ] [Skill in Training XML](http://wiki.eve-id.net/APIv2_Char_SkillInTraining_XML)
+- [ ] [Skill Queue XML](http://wiki.eve-id.net/APIv2_Char_SkillQueue_XML)
+- [ ] [Standings (NPC) XML](http://wiki.eve-id.net/APIv2_Char_Standings_XML)
+- [ ] [Upcoming Calendar Events XML](http://wiki.eve-id.net/APIv2Char_UpcomingCalendarEvents_XML)
+- [ ] [Wallet Journal XML](http://wiki.eve-id.net/APIv2_Char_JournalEntries_XML)
+- [ ] [Wallet Transactions XML](http://wiki.eve-id.net/APIv2_Char_MarketTransactions_XML)
 
 ----
 
