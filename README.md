@@ -80,7 +80,7 @@ v0.2.0: [Character Account Balance XML](http://wiki.eve-id.net/APIv2_Char_Accoun
 
 v0.1.0: [Server Status XML](http://wiki.eve-id.net/APIv2_Server_ServerStatus_XML).
 
-## TODO
+## Implementation check list:
 
 ### Account
 
