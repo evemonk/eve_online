@@ -39,10 +39,6 @@ module EveOnline
         eveapi.fetch('result')
       end
 
-      def eveapi
-        response.fetch('eveapi')
-      end
-
       def url
         API_ENDPOINT
       end

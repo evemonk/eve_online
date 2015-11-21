@@ -11,6 +11,26 @@ module EveOnline
       @parser = parser
     end
 
+    # def current_time
+    #
+    # end
+    #
+    # def result
+    #
+    # end
+    #
+    # def cached_until
+    #
+    # end
+    #
+    # def version
+    #
+    # end
+
+    def eveapi
+      response.fetch('eveapi')
+    end
+
     def url
       raise NotImplementedError
     end

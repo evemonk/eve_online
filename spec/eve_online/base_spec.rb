@@ -17,6 +17,21 @@ describe EveOnline::Base do
     its(:parser) { should eq(parser) }
   end
 
+  describe '#eveapi' do
+    before do
+      #
+      # subject.response.fetch('eveapi')
+      #
+      expect(subject).to receive(:response) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('eveapi')
+        end
+      end
+    end
+
+    specify { expect { subject.eveapi }.not_to raise_error }
+  end
+
   describe '#url' do
     specify { expect { subject.url }.to raise_error(NotImplementedError) }
   end

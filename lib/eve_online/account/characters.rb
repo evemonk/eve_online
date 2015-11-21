@@ -62,10 +62,6 @@ module EveOnline
         eveapi.fetch('result')
       end
 
-      def eveapi
-        response.fetch('eveapi')
-      end
-
       def url
         "#{ API_ENDPOINT}?keyID=#{ key_id }&vCode=#{ v_code }"
       end
