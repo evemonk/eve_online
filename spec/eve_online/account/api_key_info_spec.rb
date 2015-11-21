@@ -208,7 +208,7 @@ describe EveOnline::Account::ApiKeyInfo do
   describe '#access_mask' do
     before do
       #
-      # subject.key.fetch('@accessMask')
+      # subject.key.fetch('@accessMask').to_i
       #
       expect(subject).to receive(:key) do
         double.tap do |a|
