@@ -22,10 +22,11 @@ module EveOnline
     # def cached_until
     #
     # end
-    #
-    # def version
-    #
-    # end
+
+    def version
+      # TODO: check all API for version
+      raise NotImplementedError
+    end
 
     def eveapi
       response.fetch('eveapi')

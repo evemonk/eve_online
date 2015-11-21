@@ -17,6 +17,10 @@ describe EveOnline::Base do
     its(:parser) { should eq(parser) }
   end
 
+  describe '#version' do
+    specify { expect { subject.version }.to raise_error(NotImplementedError) }
+  end
+
   describe '#eveapi' do
     before do
       #
