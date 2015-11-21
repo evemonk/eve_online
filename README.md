@@ -82,7 +82,7 @@ v0.1.0: [APIv2 Server ServerStatus XML](http://wiki.eve-id.net/APIv2_Server_Serv
 
 ## TODO
 
-# Account
+### Account
 
 - [x] [Account Status XML](http://wiki.eve-id.net/APIv2_Account_AccountStatus_XML)
 - [x] [API Key Info XML](http://wiki.eve-id.net/APIv2_Account_APIKeyInfo_XML)
@@ -90,13 +90,13 @@ v0.1.0: [APIv2 Server ServerStatus XML](http://wiki.eve-id.net/APIv2_Server_Serv
 
 ----
 
-# Api
+### Api
 
 - [ ] [Call List (Access Mask reference) XML](http://wiki.eve-id.net/APIv2_API_CallList_XML)
 
 ----
 
-Character
+### Character
 
 - [x] [Account Balance XML](http://wiki.eve-id.net/APIv2_Char_AccountBalance_XML)
 - [ ] [Asset List XML](http://wiki.eve-id.net/APIv2_Char_AssetList_XML)
@@ -128,7 +128,7 @@ Character
 
 ----
 
-# Corporation
+### Corporation
 
 - [ ] [Account Balance XML](http://wiki.eve-id.net/APIv2_Corp_AccountBalance_XML)
 - [ ] [Asset List XML](http://wiki.eve-id.net/APIv2_Corp_AssetList_XML)
