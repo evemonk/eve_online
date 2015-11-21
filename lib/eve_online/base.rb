@@ -11,10 +11,6 @@ module EveOnline
       @parser = parser
     end
 
-    # def current_time
-    #
-    # end
-    #
     # def result
     #
     # end
@@ -22,6 +18,11 @@ module EveOnline
     # def cached_until
     #
     # end
+
+    def current_time
+      # TODO: time in "(GMT) Monrovia, Reykjavik".
+      eveapi.fetch('currentTime')
+    end
 
     def version
       # TODO: check all API for version

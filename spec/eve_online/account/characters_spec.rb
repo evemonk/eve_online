@@ -9,21 +9,6 @@ describe EveOnline::Account::Characters do
 
   specify { expect(described_class::API_ENDPOINT).to eq('https://api.eveonline.com/account/Characters.xml.aspx') }
 
-  describe '#current_time' do
-    before do
-      #
-      # subject.eveapi.fetch('currentTime')
-      #
-      expect(subject).to receive(:eveapi) do
-        double.tap do |a|
-          expect(a).to receive(:fetch).with('currentTime')
-        end
-      end
-    end
-
-    specify { expect { subject.current_time }.not_to raise_error }
-  end
-
   describe '#cached_until' do
     before do
       #

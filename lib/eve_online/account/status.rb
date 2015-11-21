@@ -15,11 +15,6 @@ module EveOnline
         }
       end
 
-      def current_time
-        # TODO: time in "(GMT) Monrovia, Reykjavik".
-        eveapi.fetch('currentTime')
-      end
-
       def paid_until
         # TODO: time in "(GMT) Monrovia, Reykjavik".
         result.fetch('paidUntil')

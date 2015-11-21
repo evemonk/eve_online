@@ -57,21 +57,6 @@ describe EveOnline::Account::Status do
     its([:cached_until]) { should eq('2015-11-20 23:59:48') }
   end
 
-  describe '#current_time' do
-    before do
-      #
-      # subject.eveapi.fetch('currentTime')
-      #
-      expect(subject).to receive(:eveapi) do
-        double.tap do |a|
-          expect(a).to receive(:fetch).with('currentTime')
-        end
-      end
-    end
-
-    specify { expect { subject.current_time }.not_to raise_error }
-  end
-
   describe '#paid_until' do
     before do
       #

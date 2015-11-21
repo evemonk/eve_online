@@ -4,11 +4,6 @@ module EveOnline
     class AccountBalance < Base
       API_ENDPOINT = 'https://api.eveonline.com/char/AccountBalance.xml.aspx'
 
-      def current_time
-        # TODO: time in "(GMT) Monrovia, Reykjavik".
-        eveapi.fetch('currentTime')
-      end
-
       def account_id
         row.fetch('@accountID').to_i
       end

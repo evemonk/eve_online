@@ -60,11 +60,6 @@ module EveOnline
         result.fetch('key')
       end
 
-      def current_time
-        # TODO: time in "(GMT) Monrovia, Reykjavik".
-        eveapi.fetch('currentTime')
-      end
-
       def cached_until
         # TODO: time in "(GMT) Monrovia, Reykjavik".
         eveapi.fetch('cachedUntil')

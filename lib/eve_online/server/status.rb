@@ -13,11 +13,6 @@ module EveOnline
         }
       end
 
-      def current_time
-        # TODO: time in "(GMT) Monrovia, Reykjavik".
-        eveapi.fetch('currentTime')
-      end
-
       def server_open?
         result.fetch('serverOpen') == 'True'
       end

@@ -235,21 +235,6 @@ describe EveOnline::Account::ApiKeyInfo do
     specify { expect { subject.key }.not_to raise_error }
   end
 
-  describe '#current_time' do
-    before do
-      #
-      # subject.eveapi.fetch('currentTime')
-      #
-      expect(subject).to receive(:eveapi) do
-        double.tap do |a|
-          expect(a).to receive(:fetch).with('currentTime')
-        end
-      end
-    end
-
-    specify { expect { subject.current_time }.not_to raise_error }
-  end
-
   describe '#cached_until' do
     before do
       #

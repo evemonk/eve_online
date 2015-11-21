@@ -17,6 +17,21 @@ describe EveOnline::Base do
     its(:parser) { should eq(parser) }
   end
 
+  describe '#current_time' do
+    before do
+      #
+      # subject.eveapi.fetch('currentTime')
+      #
+      expect(subject).to receive(:eveapi) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('currentTime')
+        end
+      end
+    end
+
+    specify { expect { subject.current_time }.not_to raise_error }
+  end
+
   describe '#version' do
     specify { expect { subject.version }.to raise_error(NotImplementedError) }
   end

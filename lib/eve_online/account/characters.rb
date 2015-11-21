@@ -4,11 +4,6 @@ module EveOnline
     class Characters < Base
       API_ENDPOINT = 'https://api.eveonline.com/account/Characters.xml.aspx'
 
-      def current_time
-        # TODO: time in "(GMT) Monrovia, Reykjavik".
-        eveapi.fetch('currentTime')
-      end
-
       def cached_until
         # TODO: time in "(GMT) Monrovia, Reykjavik".
         eveapi.fetch('cachedUntil')
