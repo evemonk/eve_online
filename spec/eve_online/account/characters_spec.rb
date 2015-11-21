@@ -9,21 +9,6 @@ describe EveOnline::Account::Characters do
 
   specify { expect(described_class::API_ENDPOINT).to eq('https://api.eveonline.com/account/Characters.xml.aspx') }
 
-  describe '#cached_until' do
-    before do
-      #
-      # subject.eveapi.fetch('cachedUntil')
-      #
-      expect(subject).to receive(:eveapi) do
-        double.tap do |a|
-          expect(a).to receive(:fetch).with('cachedUntil')
-        end
-      end
-    end
-
-    specify { expect { subject.cached_until }.not_to raise_error }
-  end
-
   describe '#version' do
     before do
       #

@@ -17,6 +17,21 @@ describe EveOnline::Base do
     its(:parser) { should eq(parser) }
   end
 
+  describe '#cached_until' do
+    before do
+      #
+      # subject.eveapi.fetch('cachedUntil')
+      #
+      expect(subject).to receive(:eveapi) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('cachedUntil')
+        end
+      end
+    end
+
+    specify { expect { subject.cached_until }.not_to raise_error }
+  end
+
   describe '#current_time' do
     before do
       #

@@ -14,10 +14,11 @@ module EveOnline
     # def result
     #
     # end
-    #
-    # def cached_until
-    #
-    # end
+
+    def cached_until
+      # TODO: time in "(GMT) Monrovia, Reykjavik".
+      eveapi.fetch('cachedUntil')
+    end
 
     def current_time
       # TODO: time in "(GMT) Monrovia, Reykjavik".
