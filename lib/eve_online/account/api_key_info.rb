@@ -66,6 +66,7 @@ module EveOnline
       end
 
       def cached_until
+        # TODO: time in "(GMT) Monrovia, Reykjavik".
         eveapi.fetch('cachedUntil')
       end
 

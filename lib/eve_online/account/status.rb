@@ -16,14 +16,17 @@ module EveOnline
       end
 
       def current_time
+        # TODO: time in "(GMT) Monrovia, Reykjavik".
         eveapi.fetch('currentTime')
       end
 
       def paid_until
+        # TODO: time in "(GMT) Monrovia, Reykjavik".
         result.fetch('paidUntil')
       end
 
       def create_date
+        # TODO: time in "(GMT) Monrovia, Reykjavik".
         result.fetch('createDate')
       end
 
@@ -36,6 +39,7 @@ module EveOnline
       end
 
       def cached_until
+        # TODO: time in "(GMT) Monrovia, Reykjavik".
         eveapi.fetch('cachedUntil')
       end
 
