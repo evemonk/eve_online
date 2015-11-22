@@ -17,7 +17,7 @@ describe EveOnline::Server::Status do
     end
 
     before do
-      expect(server_status).to receive(:server_open?)
+      expect(server_status).to receive(:server_open)
         .and_return(true)
     end
 
@@ -37,7 +37,7 @@ describe EveOnline::Server::Status do
     its([:online_players]) { should eq(19_808) }
   end
 
-  describe '#server_open?' do
+  describe '#server_open' do
     before do
       #
       # subject.result.fetch('serverOpen') == 'True'
@@ -53,8 +53,10 @@ describe EveOnline::Server::Status do
       end
     end
 
-    specify { expect { subject.server_open? }.not_to raise_error }
+    specify { expect { subject.server_open }.not_to raise_error }
   end
+
+  it { should respond_to?(:server_open?) }
 
   describe '#online_players' do
     before do

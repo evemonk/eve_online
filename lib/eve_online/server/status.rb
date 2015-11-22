@@ -8,14 +8,16 @@ module EveOnline
         {
           current_time: current_time,
           cached_until: cached_until,
-          server_open: server_open?,
+          server_open: server_open,
           online_players: online_players
         }
       end
 
-      def server_open?
+      def server_open
         result.fetch('serverOpen') == 'True'
       end
+
+      alias server_open? server_open
 
       def online_players
         result.fetch('onlinePlayers').to_i
