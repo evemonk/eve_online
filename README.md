@@ -74,6 +74,8 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 
 ## Changelog
 
+master: Time fixes.
+
 v0.3.0: [Account Characters XML](http://wiki.eve-id.net/APIv2_Account_Characters_XML). Refactoring and bugfixes.
 
 v0.2.0: [Character Account Balance XML](http://wiki.eve-id.net/APIv2_Char_AccountBalance_XML), [Account APIKeyInfo XML](http://wiki.eve-id.net/APIv2_Account_APIKeyInfo_XML), [Account Status XML](http://wiki.eve-id.net/APIv2_Account_AccountStatus_XML).
