@@ -8,12 +8,12 @@ describe EveOnline::Server::Status do
 
     before do
       expect(server_status).to receive(:current_time)
-        .and_return('2015-11-20 15:53:59')
+        .and_return(Time.zone.parse('2015-11-20 15:53:59'))
     end
 
     before do
       expect(server_status).to receive(:cached_until)
-        .and_return('2015-11-20 15:56:24')
+        .and_return(Time.zone.parse('2015-11-20 15:53:59'))
     end
 
     before do
@@ -28,9 +28,9 @@ describe EveOnline::Server::Status do
 
     subject { server_status.as_json }
 
-    its([:current_time]) { should eq('2015-11-20 15:53:59') }
+    its([:current_time]) { should eq(Time.zone.parse('2015-11-20 15:53:59')) }
 
-    its([:cached_until]) { should eq('2015-11-20 15:56:24') }
+    its([:cached_until]) { should eq(Time.zone.parse('2015-11-20 15:53:59')) }
 
     its([:server_open]) { should eq(true) }
 

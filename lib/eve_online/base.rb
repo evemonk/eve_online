@@ -1,5 +1,6 @@
 require 'open-uri'
 require 'nori'
+require 'active_support/time'
 
 module EveOnline
   class Base
@@ -16,13 +17,13 @@ module EveOnline
     end
 
     def cached_until
-      # TODO: time in "(GMT) Monrovia, Reykjavik".
-      eveapi.fetch('cachedUntil')
+      Time.zone = 'UTC'
+      Time.zone.parse(eveapi.fetch('cachedUntil'))
     end
 
     def current_time
-      # TODO: time in "(GMT) Monrovia, Reykjavik".
-      eveapi.fetch('currentTime')
+      Time.zone = 'UTC'
+      Time.zone.parse(eveapi.fetch('currentTime'))
     end
 
     def version

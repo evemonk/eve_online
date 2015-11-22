@@ -33,13 +33,23 @@ describe EveOnline::Base do
   end
 
   describe '#cached_until' do
+    before { expect(Time).to receive(:zone=).with('UTC') }
+
     before do
       #
-      # subject.eveapi.fetch('cachedUntil')
+      # subject.eveapi.fetch('cachedUntil') => '2015-11-22 16:47:40'
       #
       expect(subject).to receive(:eveapi) do
         double.tap do |a|
-          expect(a).to receive(:fetch).with('cachedUntil')
+          expect(a).to receive(:fetch).with('cachedUntil').and_return('2015-11-22 16:47:40')
+        end
+      end
+    end
+
+    before do
+      expect(Time).to receive(:zone) do
+        double.tap do |a|
+          expect(a).to receive(:parse).with('2015-11-22 16:47:40')
         end
       end
     end
@@ -48,13 +58,23 @@ describe EveOnline::Base do
   end
 
   describe '#current_time' do
+    before { expect(Time).to receive(:zone=).with('UTC') }
+
     before do
       #
-      # subject.eveapi.fetch('currentTime')
+      # subject.eveapi.fetch('currentTime') => '2015-11-22 16:47:40'
       #
       expect(subject).to receive(:eveapi) do
         double.tap do |a|
-          expect(a).to receive(:fetch).with('currentTime')
+          expect(a).to receive(:fetch).with('currentTime').and_return('2015-11-22 16:47:40')
+        end
+      end
+    end
+
+    before do
+      expect(Time).to receive(:zone) do
+        double.tap do |a|
+          expect(a).to receive(:parse).with('2015-11-22 16:47:40')
         end
       end
     end

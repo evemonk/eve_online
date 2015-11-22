@@ -10,6 +10,8 @@ require 'webmock/rspec'
 # rspec-its
 require 'rspec/its'
 
+Time.zone = 'UTC'
+
 RSpec.configure do |config|
   config.after(:suite) do
     WebMock.allow_net_connect!
