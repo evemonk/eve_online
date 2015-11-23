@@ -16,25 +16,29 @@ module EveOnline
       end
 
       def paid_until
-        Time.zone = 'UTC'
-        Time.zone.parse(result.fetch('paidUntil'))
+        @paid_until ||= begin
+          Time.zone = 'UTC'
+          Time.zone.parse(result.fetch('paidUntil'))
+        end
       end
 
       def create_date
-        Time.zone = 'UTC'
-        Time.zone.parse(result.fetch('createDate'))
+        @create_date ||= begin
+          Time.zone = 'UTC'
+          Time.zone.parse(result.fetch('createDate'))
+        end
       end
 
       def logon_count
-        result.fetch('logonCount').to_i
+        @logon_count ||= result.fetch('logonCount').to_i
       end
 
       def logon_minutes
-        result.fetch('logonMinutes').to_i
+        @logon_minutes ||= result.fetch('logonMinutes').to_i
       end
 
       def version
-        eveapi.fetch('@version').to_i
+        @version ||= eveapi.fetch('@version').to_i
       end
 
       def url

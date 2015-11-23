@@ -14,17 +14,17 @@ module EveOnline
       end
 
       def server_open
-        result.fetch('serverOpen') == 'True'
+        @server_open ||= result.fetch('serverOpen') == 'True'
       end
 
       alias server_open? server_open
 
       def online_players
-        result.fetch('onlinePlayers').to_i
+        @online_players ||= result.fetch('onlinePlayers').to_i
       end
 
       def version
-        eveapi.fetch('@version').to_i
+        @version ||= eveapi.fetch('@version').to_i
       end
 
       def url

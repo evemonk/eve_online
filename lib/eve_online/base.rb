@@ -13,17 +13,21 @@ module EveOnline
     end
 
     def result
-      eveapi.fetch('result')
+      @result ||= eveapi.fetch('result')
     end
 
     def cached_until
-      Time.zone = 'UTC'
-      Time.zone.parse(eveapi.fetch('cachedUntil'))
+      @cached_until ||= begin
+        Time.zone = 'UTC'
+        Time.zone.parse(eveapi.fetch('cachedUntil'))
+      end
     end
 
     def current_time
-      Time.zone = 'UTC'
-      Time.zone.parse(eveapi.fetch('currentTime'))
+      @current_time ||= begin
+        Time.zone = 'UTC'
+        Time.zone.parse(eveapi.fetch('currentTime'))
+      end
     end
 
     def version
@@ -32,7 +36,7 @@ module EveOnline
     end
 
     def eveapi
-      response.fetch('eveapi')
+      @eveapi ||= response.fetch('eveapi')
     end
 
     def url
@@ -40,7 +44,7 @@ module EveOnline
     end
 
     def content
-      open(url, open_timeout: 60, read_timeout: 60).read
+      @content ||= open(url, open_timeout: 60, read_timeout: 60).read
     end
 
     def response
