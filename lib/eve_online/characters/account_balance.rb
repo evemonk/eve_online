@@ -1,5 +1,5 @@
 module EveOnline
-  module Character
+  module Characters
     # http://wiki.eve-id.net/APIv2_Char_AccountBalance_XML
     class AccountBalance < Base
       API_ENDPOINT = 'https://api.eveonline.com/char/AccountBalance.xml.aspx'
