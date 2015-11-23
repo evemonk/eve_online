@@ -14,17 +14,17 @@ describe EveOnline::Account::Status do
 
     before do
       expect(account_status).to receive(:current_time)
-        .and_return('2015-11-20 23:02:48')
+        .and_return(Time.zone.parse('2015-11-23 18:53:46'))
     end
 
     before do
       expect(account_status).to receive(:paid_until)
-        .and_return('2015-11-28 18:12:56')
+        .and_return(Time.zone.parse('2015-12-28 18:12:56'))
     end
 
     before do
       expect(account_status).to receive(:create_date)
-        .and_return('2010-01-15 15:11:00')
+        .and_return(Time.zone.parse('2010-01-15 15:11:00'))
     end
 
     before do
@@ -39,32 +39,42 @@ describe EveOnline::Account::Status do
 
     before do
       expect(account_status).to receive(:cached_until)
-        .and_return('2015-11-20 23:59:48')
+        .and_return(Time.zone.parse('2015-11-23 19:28:38'))
     end
 
     subject { account_status.as_json }
 
-    its([:current_time]) { should eq('2015-11-20 23:02:48') }
+    its([:current_time]) { should eq(Time.zone.parse('2015-11-23 18:53:46')) }
 
-    its([:paid_until]) { should eq('2015-11-28 18:12:56') }
+    its([:paid_until]) { should eq(Time.zone.parse('2015-12-28 18:12:56')) }
 
-    its([:create_date]) { should eq('2010-01-15 15:11:00') }
+    its([:create_date]) { should eq(Time.zone.parse('2010-01-15 15:11:00')) }
 
     its([:logon_count]) { should eq(388) }
 
     its([:logon_minutes]) { should eq(15_598) }
 
-    its([:cached_until]) { should eq('2015-11-20 23:59:48') }
+    its([:cached_until]) { should eq(Time.zone.parse('2015-11-23 19:28:38')) }
   end
 
   describe '#paid_until' do
+    before { expect(Time).to receive(:zone=).with('UTC') }
+
     before do
       #
-      # subject.result.fetch('paidUntil')
+      # subject.result.fetch('paidUntil') => '2015-11-22 16:47:40'
       #
       expect(subject).to receive(:result) do
         double.tap do |a|
-          expect(a).to receive(:fetch).with('paidUntil')
+          expect(a).to receive(:fetch).with('paidUntil').and_return('2015-11-22 16:47:40')
+        end
+      end
+    end
+
+    before do
+      expect(Time).to receive(:zone) do
+        double.tap do |a|
+          expect(a).to receive(:parse).with('2015-11-22 16:47:40')
         end
       end
     end
@@ -73,13 +83,23 @@ describe EveOnline::Account::Status do
   end
 
   describe '#create_date' do
+    before { expect(Time).to receive(:zone=).with('UTC') }
+
     before do
       #
-      # subject.result.fetch('createDate')
+      # subject.result.fetch('createDate') => '2015-11-22 16:47:40'
       #
       expect(subject).to receive(:result) do
         double.tap do |a|
-          expect(a).to receive(:fetch).with('createDate')
+          expect(a).to receive(:fetch).with('createDate').and_return('2015-11-22 16:47:40')
+        end
+      end
+    end
+
+    before do
+      expect(Time).to receive(:zone) do
+        double.tap do |a|
+          expect(a).to receive(:parse).with('2015-11-22 16:47:40')
         end
       end
     end

@@ -16,13 +16,13 @@ module EveOnline
       end
 
       def paid_until
-        # TODO: time in "(GMT) Monrovia, Reykjavik".
-        result.fetch('paidUntil')
+        Time.zone = 'UTC'
+        Time.zone.parse(result.fetch('paidUntil'))
       end
 
       def create_date
-        # TODO: time in "(GMT) Monrovia, Reykjavik".
-        result.fetch('createDate')
+        Time.zone = 'UTC'
+        Time.zone.parse(result.fetch('createDate'))
       end
 
       def logon_count
