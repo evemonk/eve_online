@@ -75,7 +75,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 
 ## Changelog
 
-master: Time fixes.
+master: Time fixes. Add EveOnline::Character class for handling each Character.
 
 v0.3.0: [Account Characters XML](http://wiki.eve-id.net/APIv2_Account_Characters_XML). Refactoring and bugfixes.
 
