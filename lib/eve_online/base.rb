@@ -6,7 +6,7 @@ module EveOnline
   class Base
     attr_reader :key_id, :v_code, :parser
 
-    def initialize(key_id = nil, v_code = nil, parser = Nori.new)
+    def initialize(key_id = nil, v_code = nil, parser = Nori.new(advanced_typecasting: false))
       @key_id = key_id
       @v_code = v_code
       @parser = parser
