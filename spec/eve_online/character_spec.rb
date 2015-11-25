@@ -1,27 +1,34 @@
 require 'spec_helper'
 
 describe EveOnline::Character do
-  let(:options) do
-    {
-      '@name' => 'Green Black',
-      '@characterID' => '90729314',
-      '@corporationName' => 'Federal Navy Academy',
-      '@corporationID' => '1000168',
-      '@allianceID' => '0',
-      '@allianceName' => '',
-      '@factionID' => '0',
-      '@factionName' => ''
-    }
-  end
-
   describe '#initialize' do
+    let(:options) { {} }
+
     subject { described_class.new(options) }
 
     specify { expect(subject.options).to eq(options) }
   end
 
   describe '#as_json' do
-    subject { described_class.new(options).as_json }
+    let(:character) { described_class.new }
+
+    before { expect(character).to receive(:name).and_return('Green Black') }
+
+    before { expect(character).to receive(:character_id).and_return(90_729_314) }
+
+    before { expect(character).to receive(:corporation_name).and_return('Federal Navy Academy') }
+
+    before { expect(character).to receive(:corporation_id).and_return(1_000_168) }
+
+    before { expect(character).to receive(:alliance_name).and_return('') }
+
+    before { expect(character).to receive(:alliance_id).and_return(0) }
+
+    before { expect(character).to receive(:faction_name).and_return('') }
+
+    before { expect(character).to receive(:faction_id).and_return(0) }
+
+    subject { character.as_json }
 
     its([:name]) { should eq('Green Black') }
 
