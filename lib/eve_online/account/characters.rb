@@ -8,36 +8,19 @@ module EveOnline
         eveapi.fetch('@version').to_i
       end
 
-      def name
-        row.fetch('@name')
-      end
-
-      def character_id
-        row.fetch('@characterID').to_i
-      end
-
-      def corporation_name
-        row.fetch('@corporationName')
-      end
-
-      def corporation_id
-        row.fetch('@corporationID').to_i
-      end
-
-      def alliance_id
-        row.fetch('@allianceID').to_i
-      end
-
-      def alliance_name
-        row.fetch('@allianceName')
-      end
-
-      def faction_id
-        row.fetch('@factionID').to_i
-      end
-
-      def faction_name
-        row.fetch('@factionName')
+      def characters
+        case row
+        when Hash
+          [EveOnline::Character.new(row)]
+        when Array
+          output = []
+          row.each do |character|
+            output << EveOnline::Character.new(character)
+          end
+          output
+        else
+          raise ArgumentError
+        end
       end
 
       def row
