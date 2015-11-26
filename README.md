@@ -48,7 +48,7 @@ status.online_players # => 25611
 Account status:
 
 ```ruby
-key_id = '1234567'
+key_id = 1234567
 v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
 
 account_status = EveOnline::Account::Status.new(key_id, v_code)
@@ -61,6 +61,26 @@ account_status.create_date # => Fri, 15 Jan 2010 15:11:00 UTC +00:00
 account_status.logon_count # => 388
 account_status.logon_minutes # => 15598
 account_status.cached_until # => Mon, 23 Nov 2015 19:28:38 UTC +00:00
+```
+
+Characters:
+```ruby
+key_id = 1234567
+v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
+
+characters = EveOnline::Account::Characters.new(key_id, v_code)
+characters.characters.size # => 2
+characters.characters.first.as_json
+# => {:name=>"Green Black", :character_id=>90729314, :corporation_name=>"Federal Navy Academy", :corporation_id=>1000168, :alliance_id=>0, :alliance_name=>"", :faction_name=>"", :faction_id=>0}
+
+characters.characters.first.name # => "Green Black"
+characters.characters.first.character_id # => 90729314
+characters.characters.first.corporation_name # => "Federal Navy Academy"
+characters.characters.first.corporation_id # => 1000168
+characters.characters.first.alliance_name # => ""
+characters.characters.first.alliance_id # => 0
+characters.characters.first.faction_name # => ""
+characters.characters.first.faction_id # => 0
 ```
 
 ## Development
