@@ -209,3 +209,7 @@ v0.1.0: [Server Status XML](http://wiki.eve-id.net/APIv2_Server_ServerStatus_XML
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
 
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/biow0lf/eve_online/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
