@@ -70,17 +70,20 @@ v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
 
 characters = EveOnline::Account::Characters.new(key_id, v_code)
 characters.characters.size # => 2
-characters.characters.first.as_json
+
+character = characters.characters.first
+
+character.as_json
 # => {:name=>"Green Black", :character_id=>90729314, :corporation_name=>"Federal Navy Academy", :corporation_id=>1000168, :alliance_id=>0, :alliance_name=>"", :faction_name=>"", :faction_id=>0}
 
-characters.characters.first.name # => "Green Black"
-characters.characters.first.character_id # => 90729314
-characters.characters.first.corporation_name # => "Federal Navy Academy"
-characters.characters.first.corporation_id # => 1000168
-characters.characters.first.alliance_name # => ""
-characters.characters.first.alliance_id # => 0
-characters.characters.first.faction_name # => ""
-characters.characters.first.faction_id # => 0
+character.name # => "Green Black"
+character.character_id # => 90729314
+character.corporation_name # => "Federal Navy Academy"
+character.corporation_id # => 1000168
+character.alliance_name # => ""
+character.alliance_id # => 0
+character.faction_name # => ""
+character.faction_id # => 0
 ```
 
 ## Development
