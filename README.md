@@ -74,9 +74,9 @@ characters.characters.size # => 2
 character = characters.characters.first
 
 character.as_json
-# => {:name=>"Green Black", :character_id=>90729314, :corporation_name=>"Federal Navy Academy", :corporation_id=>1000168, :alliance_id=>0, :alliance_name=>"", :faction_name=>"", :faction_id=>0}
+# => {:character_name=>"Green Black", :character_id=>90729314, :corporation_name=>"Federal Navy Academy", :corporation_id=>1000168, :alliance_id=>0, :alliance_name=>"", :faction_name=>"", :faction_id=>0}
 
-character.name # => "Green Black"
+character.character_name # => "Green Black"
 character.character_id # => 90729314
 character.corporation_name # => "Federal Navy Academy"
 character.corporation_id # => 1000168
