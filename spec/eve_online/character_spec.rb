@@ -14,37 +14,37 @@ describe EveOnline::Character do
 
     before { expect(character).to receive(:character_id).and_return(90_729_314) }
 
-    before { expect(character).to receive(:name).and_return('Green Black') }
-
-    before { expect(character).to receive(:corporation_name).and_return('Federal Navy Academy') }
+    before { expect(character).to receive(:character_name).and_return('Green Black') }
 
     before { expect(character).to receive(:corporation_id).and_return(1_000_168) }
 
-    before { expect(character).to receive(:alliance_name).and_return('') }
+    before { expect(character).to receive(:corporation_name).and_return('Federal Navy Academy') }
 
     before { expect(character).to receive(:alliance_id).and_return(0) }
 
-    before { expect(character).to receive(:faction_name).and_return('') }
+    before { expect(character).to receive(:alliance_name).and_return('') }
 
     before { expect(character).to receive(:faction_id).and_return(0) }
+
+    before { expect(character).to receive(:faction_name).and_return('') }
 
     subject { character.as_json }
 
     its([:character_id]) { should eq(90_729_314) }
 
-    its([:name]) { should eq('Green Black') }
-
-    its([:corporation_name]) { should eq('Federal Navy Academy') }
+    its([:character_name]) { should eq('Green Black') }
 
     its([:corporation_id]) { should eq(1_000_168) }
 
-    its([:alliance_name]) { should eq('') }
+    its([:corporation_name]) { should eq('Federal Navy Academy') }
 
     its([:alliance_id]) { should eq(0) }
 
-    its([:faction_name]) { should eq('') }
+    its([:alliance_name]) { should eq('') }
 
     its([:faction_id]) { should eq(0) }
+
+    its([:faction_name]) { should eq('') }
   end
 
   describe '#character_id' do
@@ -66,7 +66,7 @@ describe EveOnline::Character do
     specify { expect { subject.character_id }.not_to raise_error }
   end
 
-  describe '#name' do
+  describe '#character_name' do
     before do
       #
       # subject.options.fetch('@name')
@@ -78,22 +78,7 @@ describe EveOnline::Character do
       end
     end
 
-    specify { expect { subject.name }.not_to raise_error }
-  end
-
-  describe '#corporation_name' do
-    before do
-      #
-      # subject.options.fetch('@corporationName')
-      #
-      expect(subject).to receive(:options) do
-        double.tap do |a|
-          expect(a).to receive(:fetch).with('@corporationName')
-        end
-      end
-    end
-
-    specify { expect { subject.corporation_name }.not_to raise_error }
+    specify { expect { subject.character_name }.not_to raise_error }
   end
 
   describe '#corporation_id' do
@@ -113,6 +98,21 @@ describe EveOnline::Character do
     end
 
     specify { expect { subject.corporation_id }.not_to raise_error }
+  end
+
+  describe '#corporation_name' do
+    before do
+      #
+      # subject.options.fetch('@corporationName')
+      #
+      expect(subject).to receive(:options) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('@corporationName')
+        end
+      end
+    end
+
+    specify { expect { subject.corporation_name }.not_to raise_error }
   end
 
   describe '#alliance_id' do

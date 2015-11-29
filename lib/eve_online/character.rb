@@ -9,13 +9,13 @@ module EveOnline
     def as_json(*args)
       {
         character_id: character_id,
-        name: name,
-        corporation_name: corporation_name,
+        character_name: character_name,
         corporation_id: corporation_id,
+        corporation_name: corporation_name,
         alliance_id: alliance_id,
         alliance_name: alliance_name,
-        faction_name: faction_name,
-        faction_id: faction_id
+        faction_id: faction_id,
+        faction_name: faction_name
       }
     end
 
@@ -23,16 +23,16 @@ module EveOnline
       @character_id ||= options.fetch('@characterID').to_i
     end
 
-    def name
+    def character_name
       @name ||= options.fetch('@name')
-    end
-
-    def corporation_name
-      @corporation_name ||= options.fetch('@corporationName')
     end
 
     def corporation_id
       @corporation_id ||= options.fetch('@corporationID').to_i
+    end
+
+    def corporation_name
+      @corporation_name ||= options.fetch('@corporationName')
     end
 
     def alliance_id
