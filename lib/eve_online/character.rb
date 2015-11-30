@@ -24,7 +24,7 @@ module EveOnline
     end
 
     def character_name
-      @name ||= options.fetch('@name')
+      @name = @name || options.fetch('@name', nil) || options.fetch('@characterName')
     end
 
     def corporation_id

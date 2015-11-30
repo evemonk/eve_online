@@ -67,18 +67,46 @@ describe EveOnline::Character do
   end
 
   describe '#character_name' do
-    before do
-      #
-      # subject.options.fetch('@name')
-      #
-      expect(subject).to receive(:options) do
-        double.tap do |a|
-          expect(a).to receive(:fetch).with('@name')
+    context '@name' do
+      before do
+        #
+        # subject.options.fetch('@name', nil) => 'Green Black'
+        #
+        expect(subject).to receive(:options) do
+          double.tap do |a|
+            expect(a).to receive(:fetch).with('@name', nil).and_return('Green Black')
+          end
         end
       end
+
+      specify { expect { subject.character_name }.not_to raise_error }
     end
 
-    specify { expect { subject.character_name }.not_to raise_error }
+    context '@characterName' do
+      before do
+        #
+        # subject.options.fetch('@name', nil) => nil
+        #
+        expect(subject).to receive(:options) do
+          double.tap do |a|
+            expect(a).to receive(:fetch).with('@name', nil).and_return(nil)
+          end
+        end
+      end
+
+      before do
+        #
+        # subject.options.fetch('@characterName') => 'Green Black'
+        #
+        expect(subject).to receive(:options) do
+          double.tap do |a|
+            expect(a).to receive(:fetch).with('@characterName').and_return('Green Black')
+          end
+        end
+      end
+
+      specify { expect { subject.character_name }.not_to raise_error }
+    end
   end
 
   describe '#corporation_id' do
