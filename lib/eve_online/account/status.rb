@@ -17,15 +17,13 @@ module EveOnline
 
       def paid_until
         @paid_until ||= begin
-          Time.zone = 'UTC'
-          Time.zone.parse(result.fetch('paidUntil'))
+          ActiveSupport::TimeZone['UTC'].parse(result.fetch('paidUntil'))
         end
       end
 
       def create_date
         @create_date ||= begin
-          Time.zone = 'UTC'
-          Time.zone.parse(result.fetch('createDate'))
+          ActiveSupport::TimeZone['UTC'].parse(result.fetch('createDate'))
         end
       end
 
