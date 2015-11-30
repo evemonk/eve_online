@@ -9,140 +9,79 @@ describe EveOnline::Account::ApiKeyInfo do
 
   specify { expect(described_class::API_ENDPOINT).to eq('https://api.eveonline.com/account/APIKeyInfo.xml.aspx') }
 
-  describe '#character_id' do
-    before do
-      #
-      # subject.row.fetch('@characterID').to_i
-      #
-      expect(subject).to receive(:row) do
-        double.tap do |a|
-          expect(a).to receive(:fetch).with('@characterID') do
-            double.tap do |b|
-              expect(b).to receive(:to_i)
-            end
-          end
-        end
+  describe '#characters' do
+    context 'row is Hash' do
+      let(:row) do
+        {
+          '@characterID' => '90729314',
+          '@characterName' => 'Green Black',
+          '@corporationID' => '1000168',
+          '@corporationName' => 'Federal Navy Academy',
+          '@allianceID' => '0',
+          '@allianceName' => '',
+          '@factionID' => '0',
+          '@factionName' => ''
+        }
       end
+
+      before do
+        #
+        # subject.row # => {"@characterID"=>"90729314", "@characterName"=>"Green Black", "@corporationID"=>"1000168", "@corporationName"=>"Federal Navy Academy", "@allianceID"=>"0", "@allianceName"=>"", "@factionID"=>"0", "@factionName"=>""}
+        #
+        expect(subject).to receive(:row).and_return(row).twice
+      end
+
+      before do
+        #
+        # EveOnline::Character.new(row)
+        #
+        expect(EveOnline::Character).to receive(:new).with(row)
+      end
+
+      specify { expect { subject.characters }.not_to raise_error }
     end
 
-    specify { expect { subject.character_id }.not_to raise_error }
-  end
-
-  describe '#character_name' do
-    before do
-      #
-      # subject.row.fetch('@characterName')
-      #
-      expect(subject).to receive(:row) do
-        double.tap do |a|
-          expect(a).to receive(:fetch).with('@characterName')
-        end
+    context 'row is Array' do
+      let(:row) do
+        [{
+           '@characterID' => '90729314',
+           '@characterName' => 'Green Black',
+           '@corporationID' => '1000168',
+           '@corporationName' => 'Federal Navy Academy',
+           '@allianceID' => '0',
+           '@allianceName' => '',
+           '@factionID' => '0',
+           '@factionName' => ''
+         }]
       end
+
+      before do
+        #
+        # subject.row # => [{"@characterID"=>"90729314", "@characterName"=>"Green Black", "@corporationID"=>"1000168", "@corporationName"=>"Federal Navy Academy", "@allianceID"=>"0", "@allianceName"=>"", "@factionID"=>"0", "@factionName"=>""}]
+        #
+        expect(subject).to receive(:row).and_return(row).twice
+      end
+
+      before do
+        #
+        # EveOnline::Character.new(row.first)
+        #
+        expect(EveOnline::Character).to receive(:new).with(row.first)
+      end
+
+      specify { expect { subject.characters }.not_to raise_error }
     end
 
-    specify { expect { subject.character_name }.not_to raise_error }
-  end
-
-  describe '#corporation_id' do
-    before do
-      #
-      # subject.row.fetch('@corporationID').to_i
-      #
-      expect(subject).to receive(:row) do
-        double.tap do |a|
-          expect(a).to receive(:fetch).with('@corporationID') do
-            double.tap do |b|
-              expect(b).to receive(:to_i)
-            end
-          end
-        end
+    context 'row is invalid' do
+      before do
+        #
+        # subject.row # => 'invalid'
+        #
+        expect(subject).to receive(:row).and_return('invalid')
       end
+
+      specify { expect { subject.characters }.to raise_error(ArgumentError) }
     end
-
-    specify { expect { subject.corporation_id }.not_to raise_error }
-  end
-
-  describe '#corporation_name' do
-    before do
-      #
-      # subject.row.fetch('@corporationName')
-      #
-      expect(subject).to receive(:row) do
-        double.tap do |a|
-          expect(a).to receive(:fetch).with('@corporationName')
-        end
-      end
-    end
-
-    specify { expect { subject.corporation_name }.not_to raise_error }
-  end
-
-  describe '#alliance_id' do
-    before do
-      #
-      # subject.row.fetch('@allianceID').to_i
-      #
-      expect(subject).to receive(:row) do
-        double.tap do |a|
-          expect(a).to receive(:fetch).with('@allianceID') do
-            double.tap do |b|
-              expect(b).to receive(:to_i)
-            end
-          end
-        end
-      end
-    end
-
-    specify { expect { subject.alliance_id }.not_to raise_error }
-  end
-
-  describe '#alliance_name' do
-    before do
-      #
-      # subject.row.fetch('@allianceName')
-      #
-      expect(subject).to receive(:row) do
-        double.tap do |a|
-          expect(a).to receive(:fetch).with('@allianceName')
-        end
-      end
-    end
-
-    specify { expect { subject.alliance_name }.not_to raise_error }
-  end
-
-  describe '#faction_id' do
-    before do
-      #
-      # subject.row.fetch('@factionID').to_i
-      #
-      expect(subject).to receive(:row) do
-        double.tap do |a|
-          expect(a).to receive(:fetch).with('@factionID') do
-            double.tap do |b|
-              expect(b).to receive(:to_i)
-            end
-          end
-        end
-      end
-    end
-
-    specify { expect { subject.faction_id }.not_to raise_error }
-  end
-
-  describe '#faction_name' do
-    before do
-      #
-      # subject.row.fetch('@factionName')
-      #
-      expect(subject).to receive(:row) do
-        double.tap do |a|
-          expect(a).to receive(:fetch).with('@factionName')
-        end
-      end
-    end
-
-    specify { expect { subject.faction_name }.not_to raise_error }
   end
 
   describe '#row' do
