@@ -28,6 +28,7 @@ module EveOnline
       end
 
       def expires
+        # TODO: convert to Time
         key.fetch('@expires')
       end
 
