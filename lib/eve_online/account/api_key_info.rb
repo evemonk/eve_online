@@ -4,36 +4,8 @@ module EveOnline
     class ApiKeyInfo < Base
       API_ENDPOINT = 'https://api.eveonline.com/account/APIKeyInfo.xml.aspx'
 
-      # def character_id
-      #   row.fetch('@characterID').to_i
-      # end
-      #
       # def character_name
       #   row.fetch('@characterName')
-      # end
-      #
-      # def corporation_id
-      #   row.fetch('@corporationID').to_i
-      # end
-      #
-      # def corporation_name
-      #   row.fetch('@corporationName')
-      # end
-      #
-      # def alliance_id
-      #   row.fetch('@allianceID').to_i
-      # end
-      #
-      # def alliance_name
-      #   row.fetch('@allianceName')
-      # end
-      #
-      # def faction_id
-      #   row.fetch('@factionID').to_i
-      # end
-
-      # def faction_name
-      #   row.fetch('@factionName')
       # end
 
       def characters
