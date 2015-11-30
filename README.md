@@ -74,16 +74,16 @@ characters.characters.size # => 2
 character = characters.characters.first
 
 character.as_json
-# => {:character_name=>"Green Black", :character_id=>90729314, :corporation_name=>"Federal Navy Academy", :corporation_id=>1000168, :alliance_id=>0, :alliance_name=>"", :faction_name=>"", :faction_id=>0}
+# => {:character_id=>90729314, :character_name=>"Green Black", :corporation_id=>1000168, :corporation_name=>"Federal Navy Academy", :alliance_id=>0, :alliance_name=>"", :faction_id=>0, :faction_name=>""}
 
-character.character_name # => "Green Black"
 character.character_id # => 90729314
-character.corporation_name # => "Federal Navy Academy"
+character.character_name # => "Green Black"
 character.corporation_id # => 1000168
-character.alliance_name # => ""
+character.corporation_name # => "Federal Navy Academy"
 character.alliance_id # => 0
-character.faction_name # => ""
+character.alliance_name # => ""
 character.faction_id # => 0
+character.faction_name # => ""
 ```
 
 ## Development
