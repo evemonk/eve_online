@@ -70,6 +70,9 @@ describe EveOnline::Account::Status do
     end
 
     before do
+      #
+      # ActiveSupport::TimeZone['UTC'].parse(result.fetch('paidUntil'))
+      #
       expect(ActiveSupport::TimeZone).to receive(:[]).with('UTC') do
         double.tap do |a|
           expect(a).to receive(:parse).with('2015-11-22 16:47:40')
@@ -93,6 +96,9 @@ describe EveOnline::Account::Status do
     end
 
     before do
+      #
+      # ActiveSupport::TimeZone['UTC'].parse(result.fetch('createDate'))
+      #
       expect(ActiveSupport::TimeZone).to receive(:[]).with('UTC') do
         double.tap do |a|
           expect(a).to receive(:parse).with('2015-11-22 16:47:40')

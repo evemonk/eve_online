@@ -33,8 +33,6 @@ describe EveOnline::Base do
   end
 
   describe '#cached_until' do
-    before { expect(Time).to receive(:zone=).with('UTC') }
-
     before do
       #
       # subject.eveapi.fetch('cachedUntil') => '2015-11-22 16:47:40'
@@ -47,7 +45,10 @@ describe EveOnline::Base do
     end
 
     before do
-      expect(Time).to receive(:zone) do
+      #
+      # ActiveSupport::TimeZone['UTC'].parse(eveapi.fetch('cachedUntil'))
+      #
+      expect(ActiveSupport::TimeZone).to receive(:[]).with('UTC') do
         double.tap do |a|
           expect(a).to receive(:parse).with('2015-11-22 16:47:40')
         end
@@ -58,8 +59,6 @@ describe EveOnline::Base do
   end
 
   describe '#current_time' do
-    before { expect(Time).to receive(:zone=).with('UTC') }
-
     before do
       #
       # subject.eveapi.fetch('currentTime') => '2015-11-22 16:47:40'
@@ -72,7 +71,10 @@ describe EveOnline::Base do
     end
 
     before do
-      expect(Time).to receive(:zone) do
+      #
+      # ActiveSupport::TimeZone['UTC'].parse(eveapi.fetch('currentTime'))
+      #
+      expect(ActiveSupport::TimeZone).to receive(:[]).with('UTC') do
         double.tap do |a|
           expect(a).to receive(:parse).with('2015-11-22 16:47:40')
         end
