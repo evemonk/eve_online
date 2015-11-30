@@ -4,10 +4,6 @@ module EveOnline
     class ApiKeyInfo < Base
       API_ENDPOINT = 'https://api.eveonline.com/account/APIKeyInfo.xml.aspx'
 
-      # def character_name
-      #   row.fetch('@characterName')
-      # end
-
       def characters
         case row
         when Hash
