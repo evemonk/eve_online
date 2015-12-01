@@ -30,6 +30,7 @@ Or install it yourself as:
  * MRI 2.0
  * MRI 2.1
  * MRI 2.2
+ * Rubinius (latest via RVM)
 
 ## Usage
 
