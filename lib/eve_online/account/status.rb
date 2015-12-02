@@ -12,7 +12,7 @@ module EveOnline
         @v_code = v_code
       end
 
-      def as_json
+      def as_json(*args)
         {
           current_time: current_time,
           paid_until: paid_until,

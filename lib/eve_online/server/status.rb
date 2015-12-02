@@ -4,7 +4,7 @@ module EveOnline
     class Status < Base
       API_ENDPOINT = 'https://api.eveonline.com/Server/ServerStatus.xml.aspx'
 
-      def as_json
+      def as_json(*args)
         {
           current_time: current_time,
           cached_until: cached_until,
