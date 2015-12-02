@@ -4,6 +4,14 @@ module EveOnline
     class Characters < Base
       API_ENDPOINT = 'https://api.eveonline.com/account/Characters.xml.aspx'
 
+      attr_reader :key_id, :v_code
+
+      def initialize(key_id, v_code)
+        super()
+        @key_id = key_id
+        @v_code = v_code
+      end
+
       def version
         eveapi.fetch('@version').to_i
       end

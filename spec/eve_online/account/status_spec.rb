@@ -9,6 +9,12 @@ describe EveOnline::Account::Status do
 
   specify { expect(described_class::API_ENDPOINT).to eq('https://api.eveonline.com/account/AccountStatus.xml.aspx') }
 
+  describe '#initialize' do
+    its(:key_id) { should eq(key_id) }
+
+    its(:v_code) { should eq(v_code) }
+  end
+
   describe '#as_json' do
     let(:account_status) { described_class.new(key_id, v_code) }
 

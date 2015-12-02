@@ -9,6 +9,12 @@ describe EveOnline::Account::ApiKeyInfo do
 
   specify { expect(described_class::API_ENDPOINT).to eq('https://api.eveonline.com/account/APIKeyInfo.xml.aspx') }
 
+  describe '#initialize' do
+    its(:key_id) { should eq(key_id) }
+
+    its(:v_code) { should eq(v_code) }
+  end
+
   describe '#characters' do
     context 'row is Hash' do
       let(:row) do

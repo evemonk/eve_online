@@ -9,6 +9,12 @@ describe EveOnline::Account::Characters do
 
   specify { expect(described_class::API_ENDPOINT).to eq('https://api.eveonline.com/account/Characters.xml.aspx') }
 
+  describe '#initialize' do
+    its(:key_id) { should eq(key_id) }
+
+    its(:v_code) { should eq(v_code) }
+  end
+
   describe '#version' do
     before do
       #

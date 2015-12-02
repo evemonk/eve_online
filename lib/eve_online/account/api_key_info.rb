@@ -4,6 +4,14 @@ module EveOnline
     class ApiKeyInfo < Base
       API_ENDPOINT = 'https://api.eveonline.com/account/APIKeyInfo.xml.aspx'
 
+      attr_reader :key_id, :v_code
+
+      def initialize(key_id, v_code)
+        super()
+        @key_id = key_id
+        @v_code = v_code
+      end
+
       def characters
         case row
         when Hash

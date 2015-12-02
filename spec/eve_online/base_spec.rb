@@ -2,17 +2,14 @@ require 'spec_helper'
 
 describe EveOnline::Base do
   describe '#initialize' do
-    let(:key_id) { '123key' }
+    let(:parser) { double }
 
-    let(:v_code) { '123v_code' }
-
-    let(:parser) { Nori.new }
-
-    subject { described_class.new(key_id, v_code, parser) }
-
-    its(:key_id) { should eq(key_id) }
-
-    its(:v_code) { should eq(v_code) }
+    before do
+      #
+      # Nori.new(advanced_typecasting: false) => double
+      #
+      expect(Nori).to receive(:new).with(advanced_typecasting: false).and_return(parser)
+    end
 
     its(:parser) { should eq(parser) }
   end

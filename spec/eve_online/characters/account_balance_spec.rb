@@ -9,6 +9,12 @@ describe EveOnline::Characters::AccountBalance do
 
   specify { expect(described_class::API_ENDPOINT).to eq('https://api.eveonline.com/char/AccountBalance.xml.aspx') }
 
+  describe '#initialize' do
+    its(:key_id) { should eq(key_id) }
+
+    its(:v_code) { should eq(v_code) }
+  end
+
   describe '#account_id' do
     before do
       #

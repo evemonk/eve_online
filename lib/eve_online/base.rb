@@ -4,12 +4,10 @@ require 'active_support/time'
 
 module EveOnline
   class Base
-    attr_reader :key_id, :v_code, :parser
+    attr_reader :parser
 
-    def initialize(key_id = nil, v_code = nil, parser = Nori.new(advanced_typecasting: false))
-      @key_id = key_id
-      @v_code = v_code
-      @parser = parser
+    def initialize
+      @parser = Nori.new(advanced_typecasting: false)
     end
 
     def result

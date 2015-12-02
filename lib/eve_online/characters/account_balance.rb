@@ -4,6 +4,15 @@ module EveOnline
     class AccountBalance < Base
       API_ENDPOINT = 'https://api.eveonline.com/char/AccountBalance.xml.aspx'
 
+      attr_reader :key_id, :v_code
+
+      # TODO: fix this
+      def initialize(key_id, v_code)
+        super()
+        @key_id = key_id
+        @v_code = v_code
+      end
+
       def account_id
         row.fetch('@accountID').to_i
       end
