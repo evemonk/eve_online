@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe EveOnline::Account::Status do
-  let(:key_id) { '123' }
+  let(:key_id) { 123 }
 
   let(:v_code) { 'abc' }
 
