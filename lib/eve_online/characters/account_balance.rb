@@ -13,12 +13,22 @@ module EveOnline
         @character_id = character_id
       end
 
+      # def as_json(*args)
+      #   {
+      #     account_id: account_id,
+      #     account_key: account_key,
+      #     balance: balance,
+      #     current_time: current_time,
+      #     cached_until: cached_until
+      #   }
+      # end
+
       def account_id
         row.fetch('@accountID').to_i
       end
 
       def account_key
-        row.fetch('@accountKey')
+        row.fetch('@accountKey').to_i
       end
 
       def balance

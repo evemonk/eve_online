@@ -41,11 +41,15 @@ describe EveOnline::Characters::AccountBalance do
   describe '#account_key' do
     before do
       #
-      # subject.row.fetch('@accountKey')
+      # subject.row.fetch('@accountKey').to_i
       #
       expect(subject).to receive(:row) do
         double.tap do |a|
-          expect(a).to receive(:fetch).with('@accountKey')
+          expect(a).to receive(:fetch).with('@accountKey') do
+            double.tap do |b|
+              expect(b).to receive(:to_i)
+            end
+          end
         end
       end
     end
