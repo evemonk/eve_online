@@ -142,7 +142,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 
 ## Changelog
 
-master: Time zone fixes. Add EveOnline::Character class for handling each Character. EveOnline::Account::Characters and EveOnline::Account::ApiKeyInfo now supports multiple characters.
+master: Time zone fixes. Add EveOnline::Character class for handling each Character. EveOnline::Account::Characters and EveOnline::Account::ApiKeyInfo now supports multiple characters. Fix EveOnline::Characters::AccountBalance.
 
 v0.3.0: [Account Characters XML](http://wiki.eve-id.net/APIv2_Account_Characters_XML). Refactoring and bug fixes.
 
