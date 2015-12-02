@@ -19,6 +19,38 @@ describe EveOnline::Characters::AccountBalance do
     its(:character_id) { should eq(character_id) }
   end
 
+  describe '#as_json' do
+    let(:account_balance) { described_class.new(key_id, v_code, character_id) }
+
+    before { expect(account_balance).to receive(:account_id).and_return(42_763_123) }
+
+    before { expect(account_balance).to receive(:account_key).and_return(1_000) }
+
+    before { expect(account_balance).to receive(:balance).and_return('5000.00') }
+
+    before do
+      expect(account_balance).to receive(:current_time)
+        .and_return(Time.zone.parse('2015-11-20 15:53:59'))
+    end
+
+    before do
+      expect(account_balance).to receive(:cached_until)
+        .and_return(Time.zone.parse('2015-11-20 15:53:59'))
+    end
+
+    subject { account_balance.as_json }
+
+    its([:account_id]) { should eq(42_763_123) }
+
+    its([:account_key]) { should eq(1_000) }
+
+    its([:balance]) { should eq('5000.00') }
+
+    its([:current_time]) { should eq(Time.zone.parse('2015-11-20 15:53:59')) }
+
+    its([:cached_until]) { should eq(Time.zone.parse('2015-11-20 15:53:59')) }
+  end
+
   describe '#account_id' do
     before do
       #
