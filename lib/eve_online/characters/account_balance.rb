@@ -4,14 +4,13 @@ module EveOnline
     class AccountBalance < Base
       API_ENDPOINT = 'https://api.eveonline.com/char/AccountBalance.xml.aspx'
 
-      attr_reader :key_id, :v_code
+      attr_reader :key_id, :v_code, :character_id
 
-      # TODO: fix this
-      # characterID
-      def initialize(key_id, v_code)
+      def initialize(key_id, v_code, character_id)
         super()
         @key_id = key_id
         @v_code = v_code
+        @character_id = character_id
       end
 
       def account_id
@@ -39,7 +38,7 @@ module EveOnline
       end
 
       def url
-        "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }"
+        "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }"
       end
     end
   end
