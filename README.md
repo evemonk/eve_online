@@ -109,6 +109,8 @@ api_key_info.version # => 2
 api_key_info.current_time # => Mon, 30 Nov 2015 23:00:38 UTC +00:00
 api_key_info.cached_until # => Mon, 30 Nov 2015 23:05:38 UTC +00:00
 
+api_key_info.characters.size # => 2
+
 character = api_key_info.characters.first
 character.as_json
 # => {:character_id=>90729314, :character_name=>"Green Black", :corporation_id=>1000168, :corporation_name=>"Federal Navy Academy", :alliance_id=>0, :alliance_name=>"", :faction_id=>0, :faction_name=>""}

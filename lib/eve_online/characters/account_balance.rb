@@ -7,6 +7,7 @@ module EveOnline
       attr_reader :key_id, :v_code
 
       # TODO: fix this
+      # characterID
       def initialize(key_id, v_code)
         super()
         @key_id = key_id
