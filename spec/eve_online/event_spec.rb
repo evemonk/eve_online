@@ -66,11 +66,22 @@ describe EveOnline::Event do
   describe '#event_date' do
     before do
       #
-      # subject.options.fetch('@eventDate')
+      # subject.options.fetch('@eventDate') => '2015-11-22 16:47:40'
       #
       expect(subject).to receive(:options) do
         double.tap do |a|
-          expect(a).to receive(:fetch).with('@eventDate')
+          expect(a).to receive(:fetch).with('@eventDate').and_return('2015-11-22 16:47:40')
+        end
+      end
+    end
+
+    before do
+      #
+      # ActiveSupport::TimeZone['UTC'].parse(options.fetch('@eventDate'))
+      #
+      expect(ActiveSupport::TimeZone).to receive(:[]).with('UTC') do
+        double.tap do |a|
+          expect(a).to receive(:parse).with('2015-11-22 16:47:40')
         end
       end
     end

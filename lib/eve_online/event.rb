@@ -19,9 +19,9 @@ module EveOnline
     end
 
     def event_date
-      # TODO: "@eventDate"=>"2015-12-03 17:00:00",
-      # convert to time
-      @event_date ||= options.fetch('@eventDate')
+      @event_date ||= begin
+        ActiveSupport::TimeZone['UTC'].parse(options.fetch('@eventDate'))
+      end
     end
 
     def event_title
