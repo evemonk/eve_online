@@ -159,6 +159,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 
 * Add `EveOnline::Event` class for handling EveOnline Events.
 * `EveOnline::Account::ApiKeyInfo#expires` now returns time with timezone.
+* [Upcoming Calendar Events XML](http://wiki.eve-id.net/APIv2Char_UpcomingCalendarEvents_XML).
 
 **v0.4.0**:
 
@@ -226,7 +227,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 - [ ] [Skill in Training XML](http://wiki.eve-id.net/APIv2_Char_SkillInTraining_XML)
 - [ ] [Skill Queue XML](http://wiki.eve-id.net/APIv2_Char_SkillQueue_XML)
 - [ ] [Standings (NPC) XML](http://wiki.eve-id.net/APIv2_Char_Standings_XML)
-- [ ] [Upcoming Calendar Events XML](http://wiki.eve-id.net/APIv2Char_UpcomingCalendarEvents_XML)
+- [x] [Upcoming Calendar Events XML](http://wiki.eve-id.net/APIv2Char_UpcomingCalendarEvents_XML)
 - [ ] [Wallet Journal XML](http://wiki.eve-id.net/APIv2_Char_JournalEntries_XML)
 - [ ] [Wallet Transactions XML](http://wiki.eve-id.net/APIv2_Char_MarketTransactions_XML)
 
