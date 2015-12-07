@@ -155,15 +155,33 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 
 ## Changelog
 
-master: nothing yet.
+master:
 
-v0.4.0: Time zone fixes. Add EveOnline::Character class for handling each Character. EveOnline::Account::Characters and EveOnline::Account::ApiKeyInfo now supports multiple characters. Fix EveOnline::Characters::AccountBalance class. Fix EveOnline::Characters::AccountBalance#account_key. And #as_json methods.
+* nothing yet.
 
-v0.3.0: [Account Characters XML](http://wiki.eve-id.net/APIv2_Account_Characters_XML). Refactoring and bug fixes.
+v0.4.0:
 
-v0.2.0: [Character Account Balance XML](http://wiki.eve-id.net/APIv2_Char_AccountBalance_XML), [Account APIKeyInfo XML](http://wiki.eve-id.net/APIv2_Account_APIKeyInfo_XML), [Account Status XML](http://wiki.eve-id.net/APIv2_Account_AccountStatus_XML).
+* Time zone fixes.
+* Add EveOnline::Character class for handling each Character.
+* EveOnline::Account::Characters and EveOnline::Account::ApiKeyInfo now supports multiple characters.
+* Fix EveOnline::Characters::AccountBalance class.
+* Fix EveOnline::Characters::AccountBalance#account_key.
+* Add #as_json methods.
 
-v0.1.0: [Server Status XML](http://wiki.eve-id.net/APIv2_Server_ServerStatus_XML).
+v0.3.0:
+
+* [Account Characters XML](http://wiki.eve-id.net/APIv2_Account_Characters_XML).
+* Refactoring and bug fixes.
+
+v0.2.0:
+
+* [Character Account Balance XML](http://wiki.eve-id.net/APIv2_Char_AccountBalance_XML).
+* [Account APIKeyInfo XML](http://wiki.eve-id.net/APIv2_Account_APIKeyInfo_XML).
+* [Account Status XML](http://wiki.eve-id.net/APIv2_Account_AccountStatus_XML).
+
+v0.1.0:
+
+* [Server Status XML](http://wiki.eve-id.net/APIv2_Server_ServerStatus_XML).
 
 ## Implementation check list:
 
