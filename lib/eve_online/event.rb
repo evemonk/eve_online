@@ -6,20 +6,20 @@ module EveOnline
       @options = options
     end
 
-    # def as_json(*args)
-    #   {
-    #     event_id: event_id,
-    #     owner_id: owner_id,
-    #     owner_name: owner_name,
-    #     event_date: event_date,
-    #     event_title: event_title,
-    #     duration: duration,
-    #     importance: importance,
-    #     response: response,
-    #     event_text: event_text,
-    #     owner_type_id: owner_type_id
-    #   }
-    # end
+    def as_json(*args)
+      {
+        event_id: event_id,
+        owner_id: owner_id,
+        owner_name: owner_name,
+        event_date: event_date,
+        event_title: event_title,
+        duration: duration,
+        importance: importance,
+        response: response,
+        event_text: event_text,
+        owner_type_id: owner_type_id
+      }
+    end
 
     def event_id
       @event_id ||= options.fetch('@eventID').to_i

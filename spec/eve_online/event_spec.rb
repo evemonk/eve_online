@@ -9,6 +9,52 @@ describe EveOnline::Event do
     its(:options) { should eq(options) }
   end
 
+  describe '#as_json' do
+    let(:event) { described_class.new({}) }
+
+    before { expect(event).to receive(:event_id).and_return(1_234_567) }
+
+    before { expect(event).to receive(:owner_id).and_return(87_654_321) }
+
+    before { expect(event).to receive(:owner_name).and_return('MyCorp') }
+
+    before { expect(event).to receive(:event_date).and_return(Time.zone.parse('2015-12-26 04:37:22')) }
+
+    before { expect(event).to receive(:event_title).and_return('Control tower Name in 9-9999 goes off') }
+
+    before { expect(event).to receive(:duration).and_return(60) }
+
+    before { expect(event).to receive(:importance).and_return(false) }
+
+    before { expect(event).to receive(:response).and_return('Undecided') }
+
+    before { expect(event).to receive(:event_text).and_return('<b>Minmatar Control Tower Small</b> will run out of fuel and go offline.') }
+
+    before { expect(event).to receive(:owner_type_id).and_return(2) }
+
+    subject { event.as_json }
+
+    its([:event_id]) { should eq(1_234_567) }
+
+    its([:owner_id]) { should eq(87_654_321) }
+
+    its([:owner_name]) { should eq('MyCorp') }
+
+    its([:event_date]) { should eq(Time.zone.parse('2015-12-26 04:37:22')) }
+
+    its([:event_title]) { should eq('Control tower Name in 9-9999 goes off') }
+
+    its([:duration]) { should eq(60) }
+
+    its([:importance]) { should eq(false) }
+
+    its([:response]) { should eq('Undecided') }
+
+    its([:event_text]) { should eq('<b>Minmatar Control Tower Small</b> will run out of fuel and go offline.') }
+
+    its([:owner_type_id]) { should eq(2) }
+  end
+
   describe '#event_id' do
     before do
       #
