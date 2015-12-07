@@ -126,11 +126,15 @@ describe EveOnline::Event do
   describe '#importance' do
     before do
       #
-      # subject.options.fetch('@importance')
+      # subject.options.fetch('@importance').eql?('1')
       #
       expect(subject).to receive(:options) do
         double.tap do |a|
-          expect(a).to receive(:fetch).with('@importance')
+          expect(a).to receive(:fetch).with('@importance') do
+            double.tap do |b|
+              expect(b).to receive(:eql?).with('1')
+            end
+          end
         end
       end
     end
