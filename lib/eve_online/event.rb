@@ -47,9 +47,7 @@ module EveOnline
     end
 
     def owner_type_id
-      # TODO: WTF???
-      # "@ownerTypeID"=>"0"}
-      @owner_type_id ||= options.fetch('@ownerTypeID')
+      @owner_type_id ||= options.fetch('@ownerTypeID').to_i
     end
   end
 end

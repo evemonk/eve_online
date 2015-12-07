@@ -161,11 +161,15 @@ describe EveOnline::Event do
   describe '#owner_type_id' do
     before do
       #
-      # subject.options.fetch('@ownerTypeID')
+      # subject.options.fetch('@ownerTypeID').to_i
       #
       expect(subject).to receive(:options) do
         double.tap do |a|
-          expect(a).to receive(:fetch).with('@ownerTypeID')
+          expect(a).to receive(:fetch).with('@ownerTypeID') do
+            double.tap do |b|
+              expect(b).to receive(:to_i)
+            end
+          end
         end
       end
     end
