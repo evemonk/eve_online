@@ -12,10 +12,6 @@ module EveOnline
         @v_code = v_code
       end
 
-      def version
-        eveapi.fetch('@version').to_i
-      end
-
       def characters
         case row
         when Hash

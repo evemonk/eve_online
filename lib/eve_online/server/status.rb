@@ -23,10 +23,6 @@ module EveOnline
         @online_players ||= result.fetch('onlinePlayers').to_i
       end
 
-      def version
-        @version ||= eveapi.fetch('@version').to_i
-      end
-
       def url
         API_ENDPOINT
       end

@@ -27,8 +27,7 @@ module EveOnline
     end
 
     def version
-      # TODO: check all API for version
-      raise NotImplementedError
+      eveapi.fetch('@version').to_i
     end
 
     def eveapi

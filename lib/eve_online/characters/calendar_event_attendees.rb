@@ -15,10 +15,6 @@ module EveOnline
         @event_id = event_id
       end
 
-      def version
-        eveapi.fetch('@version').to_i
-      end
-
       def url
         "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }&eventIDs=#{ event_id }"
       end

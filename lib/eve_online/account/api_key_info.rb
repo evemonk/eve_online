@@ -53,10 +53,6 @@ module EveOnline
         result.fetch('key')
       end
 
-      def version
-        eveapi.fetch('@version').to_i
-      end
-
       def url
         "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }"
       end

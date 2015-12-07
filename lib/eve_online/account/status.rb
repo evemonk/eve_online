@@ -43,10 +43,6 @@ module EveOnline
         @logon_minutes ||= result.fetch('logonMinutes').to_i
       end
 
-      def version
-        @version ||= eveapi.fetch('@version').to_i
-      end
-
       def url
         "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }"
       end

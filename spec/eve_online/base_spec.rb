@@ -82,7 +82,22 @@ describe EveOnline::Base do
   end
 
   describe '#version' do
-    specify { expect { subject.version }.to raise_error(NotImplementedError) }
+    before do
+      #
+      # subject.eveapi.fetch('@version').to_i
+      #
+      expect(subject).to receive(:eveapi) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('@version') do
+            double.tap do |b|
+              expect(b).to receive(:to_i)
+            end
+          end
+        end
+      end
+    end
+
+    specify { expect { subject.version }.not_to raise_error }
   end
 
   describe '#eveapi' do
