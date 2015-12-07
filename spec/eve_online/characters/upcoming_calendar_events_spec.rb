@@ -19,6 +19,115 @@ describe EveOnline::Characters::UpcomingCalendarEvents do
     its(:character_id) { should eq(character_id) }
   end
 
+  describe '#events' do
+    context 'row is Hash' do
+      let(:row) do
+        {
+          '@eventID' => '1234567',
+          '@ownerID' => '87654321',
+          '@ownerName' => 'MyCorp',
+          '@eventDate' => '2015-12-26 04:37:22',
+          '@eventTitle' => 'Control tower Name in 9-9999 goes off',
+          '@duration' => '60',
+          '@importance' => '0',
+          '@response' => 'Undecided',
+          '@eventText' => '<b>Minmatar Control Tower Small</b> will run out of fuel and go offline.',
+          '@ownerTypeID' => '2'
+        }
+      end
+
+      before do
+        #
+        # subject.row # => {"@eventID"=>"1234567", "@ownerID"=>"87654321", "@ownerName"=>"MyCorp", "@eventDate"=>"2015-12-26 04:37:22", "@eventTitle"=>"Control tower Name in 9-9999 goes off", "@duration"=>"60", "@importance"=>"0", "@response"=>"Undecided", "@eventText"=>"<b>Minmatar Control Tower Small</b> will run out of fuel and go offline.", "@ownerTypeID"=>"2"}
+        #
+        expect(subject).to receive(:row).and_return(row).twice
+      end
+
+      before do
+        #
+        # EveOnline::Event.new(row)
+        #
+        expect(EveOnline::Event).to receive(:new).with(row)
+      end
+
+      specify { expect { subject.events }.not_to raise_error }
+    end
+
+    context 'row is Array' do
+      let(:row) do
+        [{
+           '@eventID' => '1234567',
+           '@ownerID' => '87654321',
+           '@ownerName' => 'MyCorp',
+           '@eventDate' => '2015-12-26 04:37:22',
+           '@eventTitle' => 'Control tower Name in 9-9999 goes off',
+           '@duration' => '60',
+           '@importance' => '0',
+           '@response' => 'Undecided',
+           '@eventText' => '<b>Minmatar Control Tower Small</b> will run out of fuel and go offline.',
+           '@ownerTypeID' => '2'
+         }]
+      end
+
+      before do
+        #
+        # subject.row # => [{"@eventID"=>"1234567", "@ownerID"=>"87654321", "@ownerName"=>"MyCorp", "@eventDate"=>"2015-12-26 04:37:22", "@eventTitle"=>"Control tower Name in 9-9999 goes off", "@duration"=>"60", "@importance"=>"0", "@response"=>"Undecided", "@eventText"=>"<b>Minmatar Control Tower Small</b> will run out of fuel and go offline.", "@ownerTypeID"=>"2"}]
+        #
+        expect(subject).to receive(:row).and_return(row).twice
+      end
+
+      before do
+        #
+        # EveOnline::Event.new(row.first)
+        #
+        expect(EveOnline::Event).to receive(:new).with(row.first)
+      end
+
+      specify { expect { subject.events }.not_to raise_error }
+    end
+
+    context 'row is invalid' do
+      before do
+        #
+        # subject.row # => 'invalid'
+        #
+        expect(subject).to receive(:row).and_return('invalid')
+      end
+
+      specify { expect { subject.events }.to raise_error(ArgumentError) }
+    end
+  end
+
+  describe '#row' do
+    before do
+      #
+      # subject.rowset.fetch('row')
+      #
+      expect(subject).to receive(:rowset) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('row')
+        end
+      end
+    end
+
+    specify { expect { subject.row }.not_to raise_error }
+  end
+
+  describe '#rowset' do
+    before do
+      #
+      # subject.result.fetch('rowset')
+      #
+      expect(subject).to receive(:result) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('rowset')
+        end
+      end
+    end
+
+    specify { expect { subject.rowset }.not_to raise_error }
+  end
+
   describe '#version' do
     before do
       #

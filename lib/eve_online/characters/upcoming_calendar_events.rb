@@ -13,6 +13,29 @@ module EveOnline
         @character_id = character_id
       end
 
+      def events
+        case row
+        when Hash
+          [EveOnline::Event.new(row)]
+        when Array
+          output = []
+          row.each do |event|
+            output << EveOnline::Event.new(event)
+          end
+          output
+        else
+          raise ArgumentError
+        end
+      end
+
+      def row
+        rowset.fetch('row')
+      end
+
+      def rowset
+        result.fetch('rowset')
+      end
+
       def version
         eveapi.fetch('@version').to_i
       end
