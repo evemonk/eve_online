@@ -34,9 +34,8 @@ module EveOnline
     end
 
     def event_date
-      @event_date ||= begin
+      @event_date ||= \
         ActiveSupport::TimeZone['UTC'].parse(options.fetch('@eventDate'))
-      end
     end
 
     def event_title
