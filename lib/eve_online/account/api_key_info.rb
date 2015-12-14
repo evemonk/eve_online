@@ -28,11 +28,11 @@ module EveOnline
       end
 
       def row
-        rowset.fetch('row')
+        @row ||= rowset.fetch('row')
       end
 
       def rowset
-        key.fetch('rowset')
+        @rowset ||= key.fetch('rowset')
       end
 
       def expires
@@ -41,15 +41,15 @@ module EveOnline
       end
 
       def type
-        key.fetch('@type')
+        @type ||= key.fetch('@type')
       end
 
       def access_mask
-        key.fetch('@accessMask').to_i
+        @access_mask ||= key.fetch('@accessMask').to_i
       end
 
       def key
-        result.fetch('key')
+        @key ||= result.fetch('key')
       end
 
       def url

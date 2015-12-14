@@ -29,11 +29,11 @@ module EveOnline
       end
 
       def row
-        rowset.fetch('row')
+        @row ||= rowset.fetch('row')
       end
 
       def rowset
-        result.fetch('rowset')
+        @rowset ||= result.fetch('rowset')
       end
 
       def url

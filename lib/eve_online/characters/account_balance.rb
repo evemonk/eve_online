@@ -24,23 +24,23 @@ module EveOnline
       end
 
       def account_id
-        row.fetch('@accountID').to_i
+        @account_id ||= row.fetch('@accountID').to_i
       end
 
       def account_key
-        row.fetch('@accountKey').to_i
+        @account_key ||= row.fetch('@accountKey').to_i
       end
 
       def balance
-        row.fetch('@balance')
+        @balance ||= row.fetch('@balance')
       end
 
       def row
-        rowset.fetch('row')
+        @row ||= rowset.fetch('row')
       end
 
       def rowset
-        result.fetch('rowset')
+        @rowset ||= result.fetch('rowset')
       end
 
       def url
