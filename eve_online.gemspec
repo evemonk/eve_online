@@ -27,6 +27,6 @@ Gem::Specification.new do |spec|
 
   spec.add_runtime_dependency 'activesupport', '~> 4'
   spec.add_runtime_dependency 'nori', '~> 2.6'
-  # https://github.com/sparklemotion/nokogiri/blob/v1.6.6.4/CHANGELOG.rdoc
-  spec.add_runtime_dependency 'nokogiri', '>= 1.6.4.4'
+  # https://github.com/sparklemotion/nokogiri/blob/v1.6.7.1/CHANGELOG.rdoc
+  spec.add_runtime_dependency 'nokogiri', '>= 1.6.7.1'
 end
