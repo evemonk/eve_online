@@ -51,6 +51,7 @@ module EveOnline
     end
 
     def response
+      # TODO: convert to symbol. e.g. "Undecided" => :undecided
       @response ||= options.fetch('@response')
     end
 
