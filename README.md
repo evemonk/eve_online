@@ -31,6 +31,7 @@ Or install it yourself as:
  * MRI 2.0
  * MRI 2.1
  * MRI 2.2
+ * MRI 2.3 (preview2)
  * Rubinius (latest via RVM)
  * JRuby (latest via RVM)
 
