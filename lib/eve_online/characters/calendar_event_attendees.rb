@@ -1,4 +1,3 @@
-# TODO: finish this
 module EveOnline
   module Characters
     # http://wiki.eve-id.net/APIv2_Char_CalendarEventAttendees_XML

@@ -143,6 +143,26 @@ account_balance.cached_until # => Wed, 02 Dec 2015 20:40:42 UTC +00:00
 account_balance.version # => 2
 ```
 
+Asset List:
+```ruby
+```
+
+Calendar Event Attendees:
+```ruby
+key_id = 1234567
+v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
+character_id = 90729314
+event_id = 1234567
+
+cea = EveOnline::Characters::CalendarEventAttendees.new(key_id, v_code, character_id, event_id)
+
+cea.current_time # => Mon, 21 Dec 2015 18:36:33 UTC +00:00
+cea.cached_until # => Mon, 21 Dec 2015 18:36:33 UTC +00:00
+cea.version # => 2
+
+# TODO: finish this
+
+````
 
 Upcoming Calender Events:
 ```ruby
@@ -191,6 +211,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Add `EveOnline::Event` class for handling EveOnline Events.
 * `EveOnline::Account::ApiKeyInfo#expires` now returns time with timezone.
 * [Upcoming Calendar Events XML](http://wiki.eve-id.net/APIv2Char_UpcomingCalendarEvents_XML).
+* Basic [Calendar Event Attendees XML](http://wiki.eve-id.net/APIv2_Char_CalendarEventAttendees_XML).
 
 **v0.4.0**:
 
