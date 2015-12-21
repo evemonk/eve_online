@@ -9,6 +9,7 @@ require 'eve_online/characters/account_balance'
 require 'eve_online/characters/asset_list'
 require 'eve_online/characters/calendar_event_attendees'
 require 'eve_online/characters/upcoming_calendar_events'
+require 'eve_online/eve/skill_tree'
 require 'eve_online/server/status'
 
 module EveOnline
