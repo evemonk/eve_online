@@ -196,6 +196,18 @@ event.event_text # => "<b>Minmatar Control Tower</b> will run out of fuel and go
 event.owner_type_id # => 2
 ```
 
+Skill Tree:
+```ruby
+skill_tree = EveOnline::Eve::SkillTree.new
+
+skill_tree.current_time # => Mon, 21 Dec 2015 22:24:48 UTC +00:00
+skill_tree.cached_until # => Tue, 22 Dec 2015 22:24:48 UTC +00:00
+skill_tree.version # => 2
+
+# TODO: finish this
+
+```
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
