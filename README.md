@@ -294,12 +294,10 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 - [ ] [Medals](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/endpoints/char_medals.md).
 - [ ] [Notifications](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/endpoints/char_notifications.md).
 - [ ] [Notification Texts](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/endpoints/char_notificationtexts.md).
-
-- [ ] [Planetary Colonies]()
-- [ ] [Planetary Links]()
-- [ ] [Planetary Pins]()
-- [ ] [Planetary Routes]()
-
+- [ ] [Planetary Colonies](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_planetarycolonies/).
+- [ ] [Planetary Links](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_planetarylinks/).
+- [ ] [Planetary Pins](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_planetarypins/).
+- [ ] [Planetary Routes](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_planetaryroutes/).
 - [ ] [Research](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_research/).
 - [ ] [Skill in Training](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_skillintraining/).
 - [ ] [Skill Queue](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_skillqueue/).
