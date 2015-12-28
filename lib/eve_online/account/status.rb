@@ -1,6 +1,6 @@
 module EveOnline
   module Account
-    # http://wiki.eve-id.net/APIv2_Account_AccountStatus_XML
+    # https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/account_accountstatus/
     class Status < Base
       API_ENDPOINT = 'https://api.eveonline.com/account/AccountStatus.xml.aspx'
 

@@ -1,6 +1,6 @@
 module EveOnline
   module Characters
-    # http://wiki.eve-id.net/APIv2_Char_AssetList_XML
+    # https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_assetlist/
     class AssetList < Base
       API_ENDPOINT = 'https://api.eveonline.com/char/AssetList.xml.aspx'
 

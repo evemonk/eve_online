@@ -1,6 +1,6 @@
 module EveOnline
   module Account
-    # http://wiki.eve-id.net/APIv2_Account_APIKeyInfo_XML
+    # https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/account_apikeyinfo/
     class ApiKeyInfo < Base
       API_ENDPOINT = 'https://api.eveonline.com/account/APIKeyInfo.xml.aspx'
 

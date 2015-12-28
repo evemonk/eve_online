@@ -1,6 +1,6 @@
 module EveOnline
   module Characters
-    # http://wiki.eve-id.net/APIv2_Char_ContactList_XML
+    # https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_contactlist/
     class ContactList < Base
       API_ENDPOINT = 'https://api.eveonline.com/char/ContactList.xml.aspx'
 

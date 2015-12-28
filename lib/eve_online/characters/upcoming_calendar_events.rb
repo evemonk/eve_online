@@ -1,6 +1,6 @@
 module EveOnline
   module Characters
-    # http://wiki.eve-id.net/APIv2Char_UpcomingCalendarEvents_XML
+    # https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_upcomingcalendarevents/
     class UpcomingCalendarEvents < Base
       API_ENDPOINT = 'https://api.eveonline.com/char/UpcomingCalendarEvents.xml.aspx'
 

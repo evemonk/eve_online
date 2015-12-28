@@ -1,6 +1,6 @@
 module EveOnline
   module Account
-    # http://wiki.eve-id.net/APIv2_Account_Characters_XML
+    # https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/account_characters/
     class Characters < Base
       API_ENDPOINT = 'https://api.eveonline.com/account/Characters.xml.aspx'
 

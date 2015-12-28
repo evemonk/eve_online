@@ -225,7 +225,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Add `EveOnline::Event` class for handling EveOnline Events.
 * `EveOnline::Account::ApiKeyInfo#expires` now returns time with timezone.
 * [Upcoming Calendar Events XML](http://wiki.eve-id.net/APIv2Char_UpcomingCalendarEvents_XML).
-* Basic [Calendar Event Attendees XML](http://wiki.eve-id.net/APIv2_Char_CalendarEventAttendees_XML).
+* Basic [Calendar Event Attendees](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_calendareventattendees/).
 
 **v0.4.0**:
 
@@ -238,14 +238,14 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 
 **v0.3.0**:
 
-* [Account Characters XML](http://wiki.eve-id.net/APIv2_Account_Characters_XML).
+* [Characters](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/account_characters/).
 * Refactoring and bug fixes.
 
 **v0.2.0**:
 
-* [Character Account Balance XML](http://wiki.eve-id.net/APIv2_Char_AccountBalance_XML).
-* [Account APIKeyInfo XML](http://wiki.eve-id.net/APIv2_Account_APIKeyInfo_XML).
-* [Account Status XML](http://wiki.eve-id.net/APIv2_Account_AccountStatus_XML).
+* [Account Balance](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_accountbalance/).
+* [API Key Info](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/account_apikeyinfo/).
+* [Account Status](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/account_accountstatus/).
 
 **v0.1.0**:
 
@@ -255,9 +255,9 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 
 ### Account
 
-- [x] [Account Status XML](http://wiki.eve-id.net/APIv2_Account_AccountStatus_XML)
-- [x] [API Key Info XML](http://wiki.eve-id.net/APIv2_Account_APIKeyInfo_XML)
-- [x] [Characters (List of) XML](http://wiki.eve-id.net/APIv2_Account_Characters_XML)
+- [x] [Account Status](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/account_accountstatus/).
+- [x] [API Key Info](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/account_apikeyinfo/).
+- [x] [Characters](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/account_characters/).
 
 ----
 
@@ -269,33 +269,44 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 
 ### Character
 
-- [x] [Account Balance XML](http://wiki.eve-id.net/APIv2_Char_AccountBalance_XML)
-- [ ] [Asset List XML](http://wiki.eve-id.net/APIv2_Char_AssetList_XML)
-- [ ] [Calendar Event Attendees XML](http://wiki.eve-id.net/APIv2_Char_CalendarEventAttendees_XML)
-- [ ] [Character Sheet XML](http://wiki.eve-id.net/APIv2_Char_CharacterSheet_XML)
-- [ ] [Contact List XML](http://wiki.eve-id.net/APIv2_Char_ContactList_XML)
-- [ ] [Contact Notifications XML](http://wiki.eve-id.net/APIv2_Char_ContactNotifications_XML)
-- [ ] [Contracts XML](http://wiki.eve-id.net/APIv2_Char_Contracts_XML)
-- [ ] [ContractItems XML](http://wiki.eve-id.net/APIv2_Char_ContractItems_XML)
-- [ ] [ContractBids XML](http://wiki.eve-id.net/APIv2_Char_ContractBids_XML)
-- [ ] [Factional Warfare Stats XML](http://wiki.eve-id.net/APIv2_Char_Factional_Warfare_Stats_XML)
-- [ ] [Industry Jobs XML](http://wiki.eve-id.net/APIv2_Char_IndustryJobs_XML)
-- [ ] [Kill Log (Kill Mails) XML](http://wiki.eve-id.net/APIv2_Char_KillLog_XML)
-- [ ] [Locations XML](http://wiki.eve-id.net/APIv2_Char_Locations_XML)
-- [ ] [Mail Bodies XML](http://wiki.eve-id.net/APIv2_Char_MailBodies_XML)
-- [ ] [Mailing Lists XML](http://wiki.eve-id.net/APIv2_Char_mailinglists_XML)
-- [ ] [Mail Messages (Headers) XML](http://wiki.eve-id.net/APIv2_Char_MailMessages_XML)
-- [ ] [Market Orders XML](http://wiki.eve-id.net/APIv2_Char_MarketOrders_XML)
-- [ ] [Medals XML](http://wiki.eve-id.net/APIv2_Char_Medals_XML)
-- [ ] [Notifications XML](http://wiki.eve-id.net/APIv2_Char_Notifications_XML)
-- [ ] [NotificationTexts XML](http://wiki.eve-id.net/APIv2_Char_NotificationTexts_XML)
-- [ ] [Research XML](http://wiki.eve-id.net/APIv2_Char_Research_XML)
-- [ ] [Skill in Training XML](http://wiki.eve-id.net/APIv2_Char_SkillInTraining_XML)
-- [ ] [Skill Queue XML](http://wiki.eve-id.net/APIv2_Char_SkillQueue_XML)
-- [ ] [Standings (NPC) XML](http://wiki.eve-id.net/APIv2_Char_Standings_XML)
-- [x] [Upcoming Calendar Events XML](http://wiki.eve-id.net/APIv2Char_UpcomingCalendarEvents_XML)
-- [ ] [Wallet Journal XML](http://wiki.eve-id.net/APIv2_Char_JournalEntries_XML)
-- [ ] [Wallet Transactions XML](http://wiki.eve-id.net/APIv2_Char_MarketTransactions_XML)
+- [x] [Account Balance](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_accountbalance/).
+- [ ] [Asset List](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_assetlist/).
+- [ ] [Blueprints](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_blueprints/).
+- [ ] [Bookmarks](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_bookmarks/).
+- [ ] [Calendar Event Attendees](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_calendareventattendees/).
+- [ ] [Character Sheet](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_charactersheet/).
+- [ ] [Chat Channels](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_chatchannels/).
+- [ ] [Contact List](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_contactlist/).
+- [ ] [Contact Notifications](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_contactnotifications/).
+- [ ] [Contract Bids](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_contractbids/).
+- [ ] [Contract Items](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_contractitems/).
+- [ ] [Contracts](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_contracts/).
+- [ ] [Factional Warfare Stats](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_facwarstats/).
+- [ ] [Industry Jobs](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/endpoints/char_industryjobs.md).
+- [ ] [Industry Jobs History](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/endpoints/char_industryjobshistory.md).
+- [ ] [Kill Log](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/endpoints/char_killlog.md).
+- [ ] [Kill Mails](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/endpoints/char_killmails.md).
+- [ ] [Locations](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/endpoints/char_locations.md).
+- [ ] [Mail Bodies](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/endpoints/char_mailbodies.md).
+- [ ] [Mailing Lists](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_mailinglists/).
+- [ ] [Mail Messages](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_mailmessages/).
+- [ ] [Market Orders](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_marketorders/).
+- [ ] [Medals](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/endpoints/char_medals.md).
+- [ ] [Notifications](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/endpoints/char_notifications.md).
+- [ ] [Notification Texts](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/endpoints/char_notificationtexts.md).
+
+- [ ] [Planetary Colonies]()
+- [ ] [Planetary Links]()
+- [ ] [Planetary Pins]()
+- [ ] [Planetary Routes]()
+
+- [ ] [Research](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_research/).
+- [ ] [Skill in Training](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_skillintraining/).
+- [ ] [Skill Queue](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_skillqueue/).
+- [ ] [Standings (NPC)](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_standings/).
+- [x] [Upcoming Calendar Events](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_upcomingcalendarevents/).
+- [ ] [Wallet Journal](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_walletjournal/).
+- [ ] [Wallet Transactions](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_wallettransactions/).
 
 ----
 
@@ -372,6 +383,12 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 
 ----
 
+## TODO
+
+- [ ] Account Status. Support multiCharacterTraining.
+- [ ] Access Mask.
+- [ ] Caching.
+- [ ] Test EVE server.
 
 ## License
 
