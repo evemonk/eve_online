@@ -366,24 +366,24 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 
 ### Map
 
-- [ ] [Factional Warfare Systems (Occupancy Map) XML](http://wiki.eve-id.net/APIv2_Factional_Warfare_Occupancy_XML)
-- [ ] [Jumps XML](http://wiki.eve-id.net/APIv2_Map_Jumps_XML)
-- [ ] [Kills XML](http://wiki.eve-id.net/APIv2_Map_Kills_XML)
-- [ ] [Sovereignty XML](http://wiki.eve-id.net/APIv2_Map_Sovereignty_XML)
-- [ ] [Sovereignty Status (API disabled) XML](http://wiki.eve-id.net/APIv2_Map_Sovereignty_Status_XML)
+- [ ] [Factional Warfare Systems (Occupancy Map)](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/map_facwarsystems/)
+- [ ] [Jumps](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/map_jumps/)
+- [ ] [Kills](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/map_kills/)
+- [ ] [Sovereignty](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/map_sovereignty/)
+- [ ] [Sovereignty Status (API disabled) XML (TODO: recheck this)](http://wiki.eve-id.net/APIv2_Map_Sovereignty_Status_XML)
 
 ----
 
 ### Misc
 
-- [ ] [Image (ID to Character Portrait and Corporation/Alliance Logo)](http://wiki.eve-id.net/APIv2_Eve_Image_Service)
-- [ ] [Old Portraits](http://wiki.eve-id.net/APIv2_Old_Portraits)
+- [ ] [Image (ID to Character Portrait and Corporation/Alliance Logo) (TODO: recheck this)](http://wiki.eve-id.net/APIv2_Eve_Image_Service)
+- [ ] [Old Portraits (TODO: recheck this)](http://wiki.eve-id.net/APIv2_Old_Portraits)
 
 ----
 
 ### Server
 
-- [x] [Server Status XML](http://wiki.eve-id.net/APIv2_Server_ServerStatus_XML)
+- [x] [Server Status](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/serv_serversstatus/)
 
 ----
 
