@@ -41,7 +41,8 @@ Server status:
 
 ```ruby
 status = EveOnline::Server::Status.new
-status.as_json # => {:current_time=>Mon, 23 Nov 2015 18:18:29 UTC +00:00, :cached_until=>Mon, 23 Nov 2015 18:19:44 UTC +00:00, :server_open=>true, :online_players=>25611}
+status.as_json
+# => {:current_time=>Mon, 23 Nov 2015 18:18:29 UTC +00:00, :cached_until=>Mon, 23 Nov 2015 18:19:44 UTC +00:00, :server_open=>true, :online_players=>25611}
 
 status.current_time # => Mon, 23 Nov 2015 18:18:29 UTC +00:00
 status.cached_until # => Mon, 23 Nov 2015 18:19:44 UTC +00:00
@@ -184,7 +185,7 @@ event = upcoming_events.events.first
 event.as_json
 # => {:event_id=>1234567, :owner_id=>98765432, :owner_name=>"MyCorp", :event_date=>Sat, 26 Dec 2015 19:47:29 UTC +00:00, :event_title=>"Control tower in 99-999", :duration=>60, :importance=>false, :response=>"Undecided", :event_text=>"<b>Minmatar Control Tower</b> will run out of fuel and go offline...", :owner_type_id=>2}
 
-event.event_id# => 1234567
+event.event_id # => 1234567
 event.owner_id # => 98765432
 event.owner_name # => "MyCorp"
 event.event_date # => Sat, 26 Dec 2015 19:47:29 UTC +00:00
