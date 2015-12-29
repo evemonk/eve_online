@@ -348,19 +348,19 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 
 ### Eve
 
-- [ ] [Alliance List XML](http://wiki.eve-id.net/APIv2_Eve_AllianceList_XML)
-- [ ] [Certificate Tree XML](http://wiki.eve-id.net/APIv2_Certificate_Tree_XML)
-- [ ] [Character Affiliation XML](http://wiki.eve-id.net/APIv2_Page_Index?title=APIv2_Eve_CharacterAffiliation_XML&action=edit&redlink=1)
-- [ ] [Character ID (Name to ID Conversion) XML](http://wiki.eve-id.net/APIv2_Eve_CharacterID_XML)
-- [ ] [Character Info XML](http://wiki.eve-id.net/APIv2_Eve_CharacterInfo_XML)
-- [ ] [Character Name (ID to Name Conversion) XML](http://wiki.eve-id.net/APIv2_Eve_CharacterName_XML)
-- [ ] [Conquerable Station List (Includes Outposts) XML](http://wiki.eve-id.net/APIv2_Eve_ConquerableStationList_XML)
-- [ ] [Error List XML](http://wiki.eve-id.net/APIv2_Eve_ErrorList_XML)
-- [ ] [Factional Warfare Stats XML](http://wiki.eve-id.net/APIv2_Factional_Warfare_Stats_XML)
-- [ ] [Factional Warfare Top100 Stats XML](http://wiki.eve-id.net/APIv2_Factional_Warfare_Top100_Stats_XML)
-- [ ] [RefTypes List XML](http://wiki.eve-id.net/APIv2_Eve_RefTypes_XML)
-- [ ] [Skill Tree XML](http://wiki.eve-id.net/APIv2_Eve_SkillTree_XML)
-- [ ] [Type Name XML](http://wiki.eve-id.net/APIv2_Eve_TypeName_XML)
+- [ ] [Alliance List](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/eve_alliancelist/)
+- [ ] [Certificate Tree XML (TODO: recheck this)](http://wiki.eve-id.net/APIv2_Certificate_Tree_XML)
+- [ ] [Character Affiliation](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/eve_characteraffiliation/)
+- [ ] [Character ID (Name to ID Conversion)](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/eve_characterid/)
+- [ ] [Character Info](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/eve_characterinfo/)
+- [ ] [Character Name (ID to Name Conversion)](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/eve_charactername/)
+- [ ] [Conquerable Station List (Includes Outposts)](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/eve_conquerablestationlist/)
+- [ ] [Error List](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/eve_errorlist/)
+- [ ] [Factional Warfare Stats XML (TODO: recheck this)](http://wiki.eve-id.net/APIv2_Factional_Warfare_Stats_XML)
+- [ ] [Factional Warfare Top100 Stats XML (TODO: recheck this)](http://wiki.eve-id.net/APIv2_Factional_Warfare_Top100_Stats_XML)
+- [ ] [Ref Types](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/eve_reftypes/)
+- [ ] [Skill Tree XML (TODO: recheck this)](http://wiki.eve-id.net/APIv2_Eve_SkillTree_XML)
+- [ ] [Type Name](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/eve_typename/)
 
 ----
 
