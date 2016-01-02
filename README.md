@@ -250,7 +250,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 
 **v0.1.0**:
 
-* [Server Status XML](http://wiki.eve-id.net/APIv2_Server_ServerStatus_XML)
+* [Server Status](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/serv_serversstatus/)
 
 ## Implementation check list:
 
