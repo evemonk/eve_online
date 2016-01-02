@@ -268,7 +268,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 
 ### Api
 
-- [ ] [Call List (Access Mask reference) XML](http://wiki.eve-id.net/APIv2_API_CallList_XML)
+- [ ] [Call List (Access Mask reference)](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/api_calllist/)
 
 ----
 
