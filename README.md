@@ -221,11 +221,11 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 
 ## Changelog
 
-**master**:
+**v0.5.0**
 
 * Add `EveOnline::Event` class for handling EveOnline Events
 * `EveOnline::Account::ApiKeyInfo#expires` now returns time with timezone
-* [Upcoming Calendar Events XML](http://wiki.eve-id.net/APIv2Char_UpcomingCalendarEvents_XML)
+* [Upcoming Calendar Events](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_upcomingcalendarevents/)
 * Basic [Calendar Event Attendees](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_calendareventattendees/)
 
 **v0.4.0**:
