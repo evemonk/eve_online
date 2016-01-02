@@ -221,6 +221,10 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 
 ## Changelog
 
+**master**
+
+* Nothing yet
+
 **v0.5.0**
 
 * Add `EveOnline::Event` class for handling EveOnline Events
