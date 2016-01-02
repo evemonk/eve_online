@@ -1,6 +1,6 @@
 module EveOnline
   module Server
-    # http://wiki.eve-id.net/APIv2_Server_ServerStatus_XML
+    # https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/serv_serversstatus/
     class Status < Base
       API_ENDPOINT = 'https://api.eveonline.com/Server/ServerStatus.xml.aspx'
 
