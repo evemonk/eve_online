@@ -192,7 +192,7 @@ event.event_date # => Sat, 26 Dec 2015 19:47:29 UTC +00:00
 event.event_title # => "Control tower in 99-999"
 event.duration # => 60
 event.importance # => false
-event.response # => "Undecided"
+event.response # => :undecided
 event.event_text # => "<b>Minmatar Control Tower</b> will run out of fuel and go offline..."
 event.owner_type_id # => 2
 ```
@@ -224,6 +224,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 **master**
 
 * Add `EveOnline::EventResponseObject` class for handling EveOnline Event response values
+* `EveOnline::Event#response` now returns symbols. e.g. `:undecided`
 
 **v0.5.0**
 
