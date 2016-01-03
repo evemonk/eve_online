@@ -199,6 +199,32 @@ cea.version # => 2
 
 ````
 
+Skill In Training:
+```ruby
+key_id = 1234567
+v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
+character_id = 90729314
+
+
+skill_in_training = EveOnline::Characters::SkillInTraining.new(key_id, v_code, character_id)
+
+skill_in_training.current_time # => Sun, 03 Jan 2016 16:09:15 UTC +00:00 
+skill_in_training.cached_until # => Sun, 03 Jan 2016 16:51:29 UTC +00:00 
+skill_in_training.version # => 2 
+
+skill_in_training.as_json
+# => {:current_tq_time=>Sun, 03 Jan 2016 16:09:15 UTC +00:00, :training_end_time=>Wed, 13 Jan 2016 16:38:31 UTC +00:00, :training_start_time=>Wed, 23 Dec 2015 11:35:45 UTC +00:00, :training_type_id=>30651, :training_start_sp=>226275, :training_destination_sp=>1280000, :training_to_level=>5, :skill_in_training=>1} 
+
+skill_in_training.current_tq_time # => Sun, 03 Jan 2016 16:09:15 UTC +00:00 
+skill_in_training.training_end_time # => Wed, 13 Jan 2016 16:38:31 UTC +00:00 
+skill_in_training.training_start_time # => Wed, 23 Dec 2015 11:35:45 UTC +00:00 
+skill_in_training.training_type_id # => 30651 
+skill_in_training.training_start_sp # => 226275 
+skill_in_training.training_destination_sp # => 1280000 
+skill_in_training.training_to_level # => 5 
+skill_in_training.skill_in_training # => 1 
+```
+
 Upcoming Calender Events:
 ```ruby
 key_id = 1234567
@@ -259,6 +285,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * `EveOnline::Event#response` now returns symbols. e.g. `:undecided`
 * Add basic [Character Blueprints](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_blueprints/)
 * Add basic [Character Bookmarks](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_bookmarks/)
+* [Characters SkillInTraining](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_skillintraining/)
 
 **v0.5.0**
 
@@ -339,7 +366,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 - [ ] [Planetary Pins](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_planetarypins/)
 - [ ] [Planetary Routes](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_planetaryroutes/)
 - [ ] [Research](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_research/)
-- [ ] [Skill in Training](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_skillintraining/)
+- [x] [Skill in Training](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_skillintraining/)
 - [ ] [Skill Queue](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_skillqueue/)
 - [ ] [Standings (NPC)](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_standings/)
 - [x] [Upcoming Calendar Events](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_upcomingcalendarevents/)
