@@ -51,8 +51,7 @@ module EveOnline
     end
 
     def response
-      # TODO: convert to symbol. e.g. "Undecided" => :undecided
-      @response ||= options.fetch('@response')
+      @response ||= EveOnline::EventResponseObject.new(options.fetch('@response')).value
     end
 
     def event_text

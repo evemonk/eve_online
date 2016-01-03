@@ -189,13 +189,23 @@ describe EveOnline::Event do
   end
 
   describe '#response' do
+    let(:response) { double }
+    
     before do
       #
-      # subject.options.fetch('@response')
+      # subject.options.fetch('@response') => double
       #
       expect(subject).to receive(:options) do
         double.tap do |a|
-          expect(a).to receive(:fetch).with('@response')
+          expect(a).to receive(:fetch).with('@response').and_return(response)
+        end
+      end
+    end
+    
+    before do
+      expect(EveOnline::EventResponseObject).to receive(:new).with(response) do
+        double.tap do |a|
+          expect(a).to receive(:value)
         end
       end
     end
