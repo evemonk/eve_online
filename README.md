@@ -166,6 +166,22 @@ blueprints.version # => 2
 
 ```
 
+Bookmarks:
+```ruby
+key_id = 1234567
+v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
+character_id = 90729314
+
+bookmarks = EveOnline::Characters::Bookmarks.new(key_id, v_code, character_id)
+
+bookmarks.current_time # => Sun, 03 Jan 2016 14:53:44 UTC +00:00 
+bookmarks.cached_until # => Sun, 03 Jan 2016 15:50:44 UTC +00:00 
+bookmarks.version # => 2 
+
+# TODO: finish this
+
+```
+
 Calendar Event Attendees:
 ```ruby
 key_id = 1234567
@@ -241,7 +257,8 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 
 * Add `EveOnline::EventResponseObject` class for handling EveOnline Event response values
 * `EveOnline::Event#response` now returns symbols. e.g. `:undecided`
-* Add basic [EveOnline::Characters::Blueprints](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_blueprints/)
+* Add basic [Character Blueprints](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_blueprints/)
+* Add basic [Character Bookmarks](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_bookmarks/)
 
 **v0.5.0**
 
