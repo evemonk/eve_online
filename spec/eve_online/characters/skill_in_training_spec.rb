@@ -20,25 +20,25 @@ describe EveOnline::Characters::SkillInTraining do
   end
 
   describe '#as_json' do
-    let(:sit) { described_class.new(key_id, v_code, character_id) }
+    let(:skill_in_training) { described_class.new(key_id, v_code, character_id) }
     
-    before { expect(sit).to receive(:current_tq_time).and_return(Time.zone.parse('2016-01-03 15:54:29')) }
+    before { expect(skill_in_training).to receive(:current_tq_time).and_return(Time.zone.parse('2016-01-03 15:54:29')) }
     
-    before { expect(sit).to receive(:training_end_time).and_return(Time.zone.parse('2016-01-13 16:38:31')) }
+    before { expect(skill_in_training).to receive(:training_end_time).and_return(Time.zone.parse('2016-01-13 16:38:31')) }
     
-    before { expect(sit).to receive(:training_start_time).and_return(Time.zone.parse('2015-12-23 11:35:45')) }
+    before { expect(skill_in_training).to receive(:training_start_time).and_return(Time.zone.parse('2015-12-23 11:35:45')) }
     
-    before { expect(sit).to receive(:training_type_id).and_return(30651) }
+    before { expect(skill_in_training).to receive(:training_type_id).and_return(30651) }
     
-    before { expect(sit).to receive(:training_start_sp).and_return(226275) }
+    before { expect(skill_in_training).to receive(:training_start_sp).and_return(226275) }
     
-    before { expect(sit).to receive(:training_destination_sp).and_return(1280000) }
+    before { expect(skill_in_training).to receive(:training_destination_sp).and_return(1280000) }
     
-    before { expect(sit).to receive(:training_to_level).and_return(5) }
+    before { expect(skill_in_training).to receive(:training_to_level).and_return(5) }
     
-    before { expect(sit).to receive(:skill_in_training).and_return(1) }
+    before { expect(skill_in_training).to receive(:skill_in_training).and_return(1) }
     
-    subject { sit.as_json }
+    subject { skill_in_training.as_json }
     
     its([:current_tq_time]) { should eq(Time.zone.parse('2016-01-03 15:54:29')) }
     
