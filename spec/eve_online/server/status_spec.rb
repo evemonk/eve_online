@@ -6,31 +6,23 @@ describe EveOnline::Server::Status do
   describe '#as_json' do
     let(:server_status) { described_class.new }
 
-    before do
-      expect(server_status).to receive(:current_time)
-        .and_return(Time.zone.parse('2015-11-20 15:53:59'))
-    end
+    let(:current_time) { double }
+    
+    let(:cached_until) { double }
 
-    before do
-      expect(server_status).to receive(:cached_until)
-        .and_return(Time.zone.parse('2015-11-20 15:53:59'))
-    end
+    before { expect(server_status).to receive(:current_time).and_return(current_time) }
 
-    before do
-      expect(server_status).to receive(:server_open)
-        .and_return(true)
-    end
+    before { expect(server_status).to receive(:cached_until).and_return(cached_until) }
 
-    before do
-      expect(server_status).to receive(:online_players)
-        .and_return(19_808)
-    end
+    before { expect(server_status).to receive(:server_open).and_return(true) }
+
+    before { expect(server_status).to receive(:online_players).and_return(19_808) }
 
     subject { server_status.as_json }
 
-    its([:current_time]) { should eq(Time.zone.parse('2015-11-20 15:53:59')) }
+    its([:current_time]) { should eq(current_time) }
 
-    its([:cached_until]) { should eq(Time.zone.parse('2015-11-20 15:53:59')) }
+    its([:cached_until]) { should eq(cached_until) }
 
     its([:server_open]) { should eq(true) }
 

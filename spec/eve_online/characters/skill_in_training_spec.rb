@@ -22,11 +22,17 @@ describe EveOnline::Characters::SkillInTraining do
   describe '#as_json' do
     let(:skill_in_training) { described_class.new(key_id, v_code, character_id) }
     
-    before { expect(skill_in_training).to receive(:current_tq_time).and_return(Time.zone.parse('2016-01-03 15:54:29')) }
+    let(:current_tq_time) { double }
     
-    before { expect(skill_in_training).to receive(:training_end_time).and_return(Time.zone.parse('2016-01-13 16:38:31')) }
+    let(:training_end_time) { double }
     
-    before { expect(skill_in_training).to receive(:training_start_time).and_return(Time.zone.parse('2015-12-23 11:35:45')) }
+    let(:training_start_time) { double }
+    
+    before { expect(skill_in_training).to receive(:current_tq_time).and_return(current_tq_time) }
+    
+    before { expect(skill_in_training).to receive(:training_end_time).and_return(training_end_time) }
+    
+    before { expect(skill_in_training).to receive(:training_start_time).and_return(training_start_time) }
     
     before { expect(skill_in_training).to receive(:training_type_id).and_return(30651) }
     
@@ -40,11 +46,11 @@ describe EveOnline::Characters::SkillInTraining do
     
     subject { skill_in_training.as_json }
     
-    its([:current_tq_time]) { should eq(Time.zone.parse('2016-01-03 15:54:29')) }
+    its([:current_tq_time]) { should eq(current_tq_time) }
     
-    its([:training_end_time]) { should eq(Time.zone.parse('2016-01-13 16:38:31')) }
+    its([:training_end_time]) { should eq(training_end_time) }
     
-    its([:training_start_time]) { should eq(Time.zone.parse('2015-12-23 11:35:45')) }
+    its([:training_start_time]) { should eq(training_start_time) }
 
     its([:training_type_id]) { should eq(30651) }
     

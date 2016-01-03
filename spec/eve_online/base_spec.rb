@@ -30,24 +30,26 @@ describe EveOnline::Base do
   end
 
   describe '#cached_until' do
+    let(:cached_until) { double }
+    
     before do
       #
-      # subject.eveapi.fetch('cachedUntil') => '2015-11-22 16:47:40'
+      # subject.eveapi.fetch('cachedUntil') => cached_until
       #
       expect(subject).to receive(:eveapi) do
         double.tap do |a|
-          expect(a).to receive(:fetch).with('cachedUntil').and_return('2015-11-22 16:47:40')
+          expect(a).to receive(:fetch).with('cachedUntil').and_return(cached_until)
         end
       end
     end
 
     before do
       #
-      # ActiveSupport::TimeZone['UTC'].parse(eveapi.fetch('cachedUntil'))
+      # ActiveSupport::TimeZone['UTC'].parse(cached_until)
       #
       expect(ActiveSupport::TimeZone).to receive(:[]).with('UTC') do
         double.tap do |a|
-          expect(a).to receive(:parse).with('2015-11-22 16:47:40')
+          expect(a).to receive(:parse).with(cached_until)
         end
       end
     end
@@ -56,24 +58,26 @@ describe EveOnline::Base do
   end
 
   describe '#current_time' do
+    let(:current_time) { double }
+    
     before do
       #
-      # subject.eveapi.fetch('currentTime') => '2015-11-22 16:47:40'
+      # subject.eveapi.fetch('currentTime') => current_time
       #
       expect(subject).to receive(:eveapi) do
         double.tap do |a|
-          expect(a).to receive(:fetch).with('currentTime').and_return('2015-11-22 16:47:40')
+          expect(a).to receive(:fetch).with('currentTime').and_return(current_time)
         end
       end
     end
 
     before do
       #
-      # ActiveSupport::TimeZone['UTC'].parse(eveapi.fetch('currentTime'))
+      # ActiveSupport::TimeZone['UTC'].parse(current_time)
       #
       expect(ActiveSupport::TimeZone).to receive(:[]).with('UTC') do
         double.tap do |a|
-          expect(a).to receive(:parse).with('2015-11-22 16:47:40')
+          expect(a).to receive(:parse).with(current_time)
         end
       end
     end
@@ -126,7 +130,7 @@ describe EveOnline::Base do
 
     before do
       #
-      # subject.open(url).read
+      # subject.open(url, open_timeout: 60, read_timeout: 60).read
       #
       expect(subject).to receive(:open).with(url, open_timeout: 60, read_timeout: 60) do
         double.tap do |a|

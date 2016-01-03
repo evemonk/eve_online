@@ -121,13 +121,15 @@ describe EveOnline::Account::ApiKeyInfo do
   end
 
   describe '#expires' do
+    let(:expires) { double }
+    
     before do
       #
-      # subject.key.fetch('@expires') => '2016-11-22 16:47:40'
+      # subject.key.fetch('@expires') => expires
       #
       expect(subject).to receive(:key) do
         double.tap do |a|
-          expect(a).to receive(:fetch).with('@expires').and_return('2016-11-22 16:47:40')
+          expect(a).to receive(:fetch).with('@expires').and_return(expires)
         end
       end
     end
@@ -138,7 +140,7 @@ describe EveOnline::Account::ApiKeyInfo do
       #
       expect(ActiveSupport::TimeZone).to receive(:[]).with('UTC') do
         double.tap do |a|
-          expect(a).to receive(:parse).with('2016-11-22 16:47:40')
+          expect(a).to receive(:parse).with(expires)
         end
       end
     end

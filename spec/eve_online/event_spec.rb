@@ -10,7 +10,9 @@ describe EveOnline::Event do
   end
 
   describe '#as_json' do
-    let(:event) { described_class.new({}) }
+    let(:event) { described_class.new({ }) }
+    
+    let(:event_date) { double }
 
     before { expect(event).to receive(:event_id).and_return(1_234_567) }
 
@@ -18,7 +20,7 @@ describe EveOnline::Event do
 
     before { expect(event).to receive(:owner_name).and_return('MyCorp') }
 
-    before { expect(event).to receive(:event_date).and_return(Time.zone.parse('2015-12-26 04:37:22')) }
+    before { expect(event).to receive(:event_date).and_return(event_date) }
 
     before { expect(event).to receive(:event_title).and_return('Control tower Name in 9-9999 goes off') }
 
@@ -40,7 +42,7 @@ describe EveOnline::Event do
 
     its([:owner_name]) { should eq('MyCorp') }
 
-    its([:event_date]) { should eq(Time.zone.parse('2015-12-26 04:37:22')) }
+    its([:event_date]) { should eq(event_date) }
 
     its([:event_title]) { should eq('Control tower Name in 9-9999 goes off') }
 
@@ -110,24 +112,26 @@ describe EveOnline::Event do
   end
 
   describe '#event_date' do
+    let(:event_date) { double }
+    
     before do
       #
-      # subject.options.fetch('@eventDate') => '2015-11-22 16:47:40'
+      # subject.options.fetch('@eventDate') => event_date
       #
       expect(subject).to receive(:options) do
         double.tap do |a|
-          expect(a).to receive(:fetch).with('@eventDate').and_return('2015-11-22 16:47:40')
+          expect(a).to receive(:fetch).with('@eventDate').and_return(event_date)
         end
       end
     end
 
     before do
       #
-      # ActiveSupport::TimeZone['UTC'].parse(options.fetch('@eventDate'))
+      # ActiveSupport::TimeZone['UTC'].parse(event_date)
       #
       expect(ActiveSupport::TimeZone).to receive(:[]).with('UTC') do
         double.tap do |a|
-          expect(a).to receive(:parse).with('2015-11-22 16:47:40')
+          expect(a).to receive(:parse).with(event_date)
         end
       end
     end

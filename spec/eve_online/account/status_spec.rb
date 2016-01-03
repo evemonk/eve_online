@@ -18,70 +18,62 @@ describe EveOnline::Account::Status do
   describe '#as_json' do
     let(:account_status) { described_class.new(key_id, v_code) }
 
-    before do
-      expect(account_status).to receive(:current_time)
-        .and_return(Time.zone.parse('2015-11-23 18:53:46'))
-    end
+    let(:current_time) { double }
+    
+    let(:paid_until) { double }
+    
+    let(:create_date) { double }
+    
+    let(:cached_until) { double }
 
-    before do
-      expect(account_status).to receive(:paid_until)
-        .and_return(Time.zone.parse('2015-12-28 18:12:56'))
-    end
+    before { expect(account_status).to receive(:current_time).and_return(current_time) }
 
-    before do
-      expect(account_status).to receive(:create_date)
-        .and_return(Time.zone.parse('2010-01-15 15:11:00'))
-    end
+    before { expect(account_status).to receive(:paid_until).and_return(paid_until) }
 
-    before do
-      expect(account_status).to receive(:logon_count)
-        .and_return(388)
-    end
+    before { expect(account_status).to receive(:create_date).and_return(create_date) }
 
-    before do
-      expect(account_status).to receive(:logon_minutes)
-        .and_return(15_598)
-    end
+    before { expect(account_status).to receive(:logon_count).and_return(388) }
 
-    before do
-      expect(account_status).to receive(:cached_until)
-        .and_return(Time.zone.parse('2015-11-23 19:28:38'))
-    end
+    before { expect(account_status).to receive(:logon_minutes).and_return(15_598) }
+
+    before { expect(account_status).to receive(:cached_until).and_return(cached_until) }
 
     subject { account_status.as_json }
 
-    its([:current_time]) { should eq(Time.zone.parse('2015-11-23 18:53:46')) }
+    its([:current_time]) { should eq(current_time) }
 
-    its([:paid_until]) { should eq(Time.zone.parse('2015-12-28 18:12:56')) }
+    its([:paid_until]) { should eq(paid_until) }
 
-    its([:create_date]) { should eq(Time.zone.parse('2010-01-15 15:11:00')) }
+    its([:create_date]) { should eq(create_date) }
 
     its([:logon_count]) { should eq(388) }
 
     its([:logon_minutes]) { should eq(15_598) }
 
-    its([:cached_until]) { should eq(Time.zone.parse('2015-11-23 19:28:38')) }
+    its([:cached_until]) { should eq(cached_until) }
   end
 
   describe '#paid_until' do
+    let(:paid_until) { double }
+    
     before do
       #
-      # subject.result.fetch('paidUntil') => '2015-11-22 16:47:40'
+      # subject.result.fetch('paidUntil') => paid_until
       #
       expect(subject).to receive(:result) do
         double.tap do |a|
-          expect(a).to receive(:fetch).with('paidUntil').and_return('2015-11-22 16:47:40')
+          expect(a).to receive(:fetch).with('paidUntil').and_return(paid_until)
         end
       end
     end
 
     before do
       #
-      # ActiveSupport::TimeZone['UTC'].parse(result.fetch('paidUntil'))
+      # ActiveSupport::TimeZone['UTC'].parse(paid_until)
       #
       expect(ActiveSupport::TimeZone).to receive(:[]).with('UTC') do
         double.tap do |a|
-          expect(a).to receive(:parse).with('2015-11-22 16:47:40')
+          expect(a).to receive(:parse).with(paid_until)
         end
       end
     end
@@ -90,24 +82,26 @@ describe EveOnline::Account::Status do
   end
 
   describe '#create_date' do
+    let(:create_date) { double }
+    
     before do
       #
-      # subject.result.fetch('createDate') => '2015-11-22 16:47:40'
+      # subject.result.fetch('createDate') => create_date
       #
       expect(subject).to receive(:result) do
         double.tap do |a|
-          expect(a).to receive(:fetch).with('createDate').and_return('2015-11-22 16:47:40')
+          expect(a).to receive(:fetch).with('createDate').and_return(create_date)
         end
       end
     end
 
     before do
       #
-      # ActiveSupport::TimeZone['UTC'].parse(result.fetch('createDate'))
+      # ActiveSupport::TimeZone['UTC'].parse(create_date)
       #
       expect(ActiveSupport::TimeZone).to receive(:[]).with('UTC') do
         double.tap do |a|
-          expect(a).to receive(:parse).with('2015-11-22 16:47:40')
+          expect(a).to receive(:parse).with(create_date)
         end
       end
     end
