@@ -26,7 +26,7 @@ describe EveOnline::Event do
 
     before { expect(event).to receive(:importance).and_return(false) }
 
-    before { expect(event).to receive(:response).and_return('Undecided') }
+    before { expect(event).to receive(:response).and_return(:undecided) }
 
     before { expect(event).to receive(:event_text).and_return('<b>Minmatar Control Tower Small</b> will run out of fuel and go offline.') }
 
@@ -48,7 +48,7 @@ describe EveOnline::Event do
 
     its([:importance]) { should eq(false) }
 
-    its([:response]) { should eq('Undecided') }
+    its([:response]) { should eq(:undecided) }
 
     its([:event_text]) { should eq('<b>Minmatar Control Tower Small</b> will run out of fuel and go offline.') }
 
