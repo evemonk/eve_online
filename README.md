@@ -459,6 +459,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 - [ ] Access Mask
 - [ ] Caching
 - [ ] Test EVE server
+- [ ] Relax deps to ruby gems (we don't care if they are security problems)
 
 ## License
 
