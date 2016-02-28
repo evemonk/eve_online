@@ -19,6 +19,83 @@ describe EveOnline::Characters::Blueprints do
     its(:character_id) { should eq(character_id) }
   end
 
+  describe '#blueprints' do
+    context 'row is Hash' do
+      let(:row) do
+        {
+          '@itemID' => '716338097',
+          '@locationID' => '61000032',
+          '@typeID' => '1010',
+          '@typeName' => 'Small Shield Extender I Blueprint',
+          '@flagID' => '4',
+          '@quantity' => '-2',
+          '@timeEfficiency' => '0',
+          '@materialEfficiency' => '10',
+          '@runs'=>'300'
+        }
+      end
+
+      before do
+        #
+        # subject.row # => {"@itemID"=>"716338097", "@locationID"=>"61000032", "@typeID"=>"1010", "@typeName"=>"Small Shield Extender I Blueprint", "@flagID"=>"4", "@quantity"=>"-2", "@timeEfficiency"=>"0", "@materialEfficiency"=>"10", "@runs"=>"300"}
+        #
+        expect(subject).to receive(:row).and_return(row).twice
+      end
+
+      before do
+        #
+        # EveOnline::Blueprint.new(row)
+        #
+        expect(EveOnline::Blueprint).to receive(:new).with(row)
+      end
+
+      specify { expect { subject.blueprints }.not_to raise_error }
+    end
+
+    context 'row is Array' do
+      let(:row) do
+        [{
+           '@itemID' => '716338097',
+           '@locationID' => '61000032',
+           '@typeID' => '1010',
+           '@typeName' => 'Small Shield Extender I Blueprint',
+           '@flagID' => '4',
+           '@quantity' => '-2',
+           '@timeEfficiency' => '0',
+           '@materialEfficiency' => '10',
+           '@runs'=>'300'
+         }]
+      end
+
+      before do
+        #
+        # subject.row # => [{"@itemID"=>"716338097", "@locationID"=>"61000032", "@typeID"=>"1010", "@typeName"=>"Small Shield Extender I Blueprint", "@flagID"=>"4", "@quantity"=>"-2", "@timeEfficiency"=>"0", "@materialEfficiency"=>"10", "@runs"=>"300"}]
+        #
+        expect(subject).to receive(:row).and_return(row).twice
+      end
+
+      before do
+        #
+        # EveOnline::Blueprint.new(row.first)
+        #
+        expect(EveOnline::Blueprint).to receive(:new).with(row.first)
+      end
+
+      specify { expect { subject.blueprints }.not_to raise_error }
+    end
+
+    context 'row is invalid' do
+      before do
+        #
+        # subject.row # => 'invalid'
+        #
+        expect(subject).to receive(:row).and_return('invalid')
+      end
+
+      specify { expect { subject.blueprints }.to raise_error(ArgumentError) }
+    end
+  end
+
   describe '#url' do
     specify do
       expect(subject.url).to eq("#{ described_class::API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }")

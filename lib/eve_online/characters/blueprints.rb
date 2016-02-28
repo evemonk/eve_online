@@ -12,7 +12,22 @@ module EveOnline
         @v_code = v_code
         @character_id = character_id
       end
-      
+
+      def blueprints
+        case row
+        when Hash
+          [EveOnline::Blueprint.new(row)]
+        when Array
+          output = []
+          row.each do |blueprint|
+            output << EveOnline::Blueprint.new(blueprint)
+          end
+          output
+        else
+          raise ArgumentError
+        end
+      end
+
       def url
         "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }"
       end
