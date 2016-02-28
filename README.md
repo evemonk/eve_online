@@ -162,8 +162,21 @@ blueprints.current_time # => Sun, 03 Jan 2016 14:36:37 UTC +00:00
 blueprints.cached_until # => Mon, 04 Jan 2016 02:06:37 UTC +00:00 
 blueprints.version # => 2 
 
-# TODO: finish this
+blueprints.blueprints.size # => 4
 
+bp = blueprints.blueprints.first
+bp.as_json
+# => {:item_id=>716338097, :location_id=>61000032, :type_id=>1010, :type_name=>"Small Shield Extender I Blueprint", :flag_id=>4, :quantity=>-2, :time_efficiency=>0, :material_efficiency=>10, :runs=>300}
+
+bp.item_id # => 716338097
+bp.location_id # => 61000032
+bp.type_id # => 1010
+bp.type_name # => "Small Shield Extender I Blueprint"
+bp.flag_id # => 4
+bp.quantity # => -2
+bp.time_efficiency # => 0
+bp.material_efficiency # => 10
+bp.runs # => 300
 ```
 
 Bookmarks:
