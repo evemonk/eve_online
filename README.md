@@ -283,7 +283,8 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 
 * Add `EveOnline::EventResponseObject` class for handling EveOnline Event response values
 * `EveOnline::Event#response` now returns symbols. e.g. `:undecided`
-* Add basic [Character Blueprints](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_blueprints/)
+* [Character Blueprints](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_blueprints/)
+* Add `EveOnline::Blueprint` class for handling EveOnline Blueprints
 * Add basic [Character Bookmarks](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_bookmarks/)
 * [Characters SkillInTraining](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_skillintraining/)
 
