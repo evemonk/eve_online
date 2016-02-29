@@ -40,7 +40,7 @@ module EveOnline
       @flag_id ||= options.fetch('@flagID').to_i
     end
 
-    # TODO: return EvevOnline::Blueprint::Quantity
+    # TODO: return EveOnline::Blueprint::Quantity
     def quantity
       @quantity ||= options.fetch('@quantity').to_i
     end
