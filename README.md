@@ -358,7 +358,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 
 - [x] [Account Balance](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_accountbalance/)
 - [ ] [Asset List](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_assetlist/)
-- [ ] [Blueprints](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_blueprints/)
+- [x] [Blueprints](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_blueprints/)
 - [ ] [Bookmarks](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_bookmarks/)
 - [ ] [Calendar Event Attendees](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_calendareventattendees/)
 - [ ] [Character Sheet](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_charactersheet/)
