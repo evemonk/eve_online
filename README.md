@@ -298,6 +298,10 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 
 ## Changelog
 
+**master**
+
+* nothing yet
+
 **v0.6.0**
 
 * Add `EveOnline::EventResponseObject` class for handling EveOnline Event response values
