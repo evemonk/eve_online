@@ -9,6 +9,8 @@
 
 This gem implement Ruby API for EveOnline MMORPG. Both, XML and CREST API.
 
+You will need to add xml parser to your Gemfile to use this gem. E.g. nokogiri. Or any other xml parser which are supported by nori.
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -300,7 +302,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 
 **master**
 
-* nothing yet
+* Drop nokogiri from gem dependency
 
 **v0.6.0**
 
