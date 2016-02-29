@@ -65,11 +65,11 @@ describe EveOnline::Item do
   describe '#location_id' do
     before do
       #
-      # subject.options.fetch('@location_id').to_i
+      # subject.options.fetch('@locationID').to_i
       #
       expect(subject).to receive(:options) do
         double.tap do |a|
-          expect(a).to receive(:fetch).with('@location_id') do
+          expect(a).to receive(:fetch).with('@locationID') do
             double.tap do |b|
               expect(b).to receive(:to_i)
             end

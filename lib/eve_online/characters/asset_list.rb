@@ -14,6 +14,29 @@ module EveOnline
         @flat = flat
       end
 
+      def assets
+        case row
+        when Hash
+          [EveOnline::Item.new(row)]
+        when Array
+          output = []
+          row.each do |item|
+            output << EveOnline::Item.new(item)
+          end
+          output
+        else
+          raise ArgumentError
+        end
+      end
+
+      def row
+        @row ||= rowset.fetch('row')
+      end
+
+      def rowset
+        @rowset ||= result.fetch('rowset')
+      end
+
       def url
         "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }&flat=#{ flat }"
       end

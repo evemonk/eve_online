@@ -148,7 +148,20 @@ asset_list.current_time # => Mon, 29 Feb 2016 21:51:38 UTC +00:00
 asset_list.cached_until # => Tue, 01 Mar 2016 03:48:38 UTC +00:00
 asset_list.version # => 2
 
-# TODO: finish this
+asset_list.assets.size # => 642
+
+asset = asset_list.assets.first
+
+asset.as_json
+# => {:item_id=>408887580, :location_id=>60000634, :type_id=>588, :quantity=>1, :flag=>4, :singleton=>1, :raw_quantity=>-1}
+
+asset.item_id # => 408887580
+asset.location_id # => 60000634
+asset.type_id # => 588
+asset.quantity # => 1
+asset.flag # => 4
+asset.singleton # => 1
+asset.raw_quantity # => -1
 ```
 
 Blueprints:
@@ -314,6 +327,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 
 * Drop nokogiri from gem dependency
 * Add `EveOnline::Item` for handle items in AssetList
+* [Asset List](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_assetlist/)
 
 **v0.6.0**
 
@@ -374,7 +388,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 ### Character
 
 - [x] [Account Balance](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_accountbalance/)
-- [ ] [Asset List](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_assetlist/)
+- [x] [Asset List](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_assetlist/)
 - [x] [Blueprints](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_blueprints/)
 - [ ] [Bookmarks](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_bookmarks/)
 - [ ] [Calendar Event Attendees](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_calendareventattendees/)

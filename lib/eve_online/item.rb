@@ -23,7 +23,7 @@ module EveOnline
     end
 
     def location_id
-      @location_id ||= options.fetch('@location_id').to_i
+      @location_id ||= options.fetch('@locationID').to_i
     end
 
     def type_id
