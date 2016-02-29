@@ -4,17 +4,18 @@ module EveOnline
     class AssetList < Base
       API_ENDPOINT = 'https://api.eveonline.com/char/AssetList.xml.aspx'
 
-      attr_reader :key_id, :v_code, :character_id
+      attr_reader :key_id, :v_code, :character_id, :flat
 
-      def initialize(key_id, v_code, character_id)
+      def initialize(key_id, v_code, character_id, flat = 1)
         super()
         @key_id = key_id
         @v_code = v_code
         @character_id = character_id
+        @flat = flat
       end
 
       def url
-        "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }"
+        "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }&flat=#{ flat }"
       end
     end
   end

@@ -7,7 +7,9 @@ describe EveOnline::Characters::AssetList do
 
   let(:character_id) { 12345678 }
 
-  subject { described_class.new(key_id, v_code, character_id) }
+  let(:flat) { 0 }
+
+  subject { described_class.new(key_id, v_code, character_id, flat) }
 
   specify { expect(described_class::API_ENDPOINT).to eq('https://api.eveonline.com/char/AssetList.xml.aspx') }
 
@@ -17,11 +19,13 @@ describe EveOnline::Characters::AssetList do
     its(:v_code) { should eq(v_code) }
 
     its(:character_id) { should eq(character_id) }
+
+    its(:flat) { should eq(flat) }
   end
 
   describe '#url' do
     specify do
-      expect(subject.url).to eq("#{ described_class::API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }")
+      expect(subject.url).to eq("#{ described_class::API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }&flat=#{ flat }")
     end
   end
 end
