@@ -9,7 +9,47 @@ describe EveOnline::Blueprint do
     specify { expect(subject.options).to eq(options) }
   end
 
-  describe '#as_json'
+  describe '#as_json' do
+    let(:blueprint) { described_class.new }
+
+    before { expect(blueprint).to receive(:item_id).and_return(716338097) }
+
+    before { expect(blueprint).to receive(:location_id).and_return(61000032) }
+
+    before { expect(blueprint).to receive(:type_id).and_return(1010) }
+
+    before { expect(blueprint).to receive(:type_name).and_return('Small Shield Extender I Blueprint') }
+
+    before { expect(blueprint).to receive(:flag_id).and_return(4) }
+
+    before { expect(blueprint).to receive(:quantity).and_return(-2) }
+
+    before { expect(blueprint).to receive(:time_efficiency).and_return(0) }
+
+    before { expect(blueprint).to receive(:material_efficiency).and_return(10) }
+
+    before { expect(blueprint).to receive(:runs).and_return(300) }
+
+    subject { blueprint.as_json }
+
+    its([:item_id]) { should eq(716338097) }
+
+    its([:location_id]) { should eq(61000032) }
+
+    its([:type_id]) { should eq(1010) }
+
+    its([:type_name]) { should eq('Small Shield Extender I Blueprint') }
+
+    its([:flag_id]) { should eq(4) }
+
+    its([:quantity]) { should eq(-2) }
+
+    its([:time_efficiency]) { should eq(0) }
+
+    its([:material_efficiency]) { should eq(10) }
+
+    its([:runs]) { should eq(300) }
+  end
 
   describe '#item_id' do
     before do
