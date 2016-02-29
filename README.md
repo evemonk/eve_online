@@ -39,21 +39,6 @@ Or install it yourself as:
 
 ## Usage
 
-Server status:
-
-```ruby
-status = EveOnline::Server::Status.new
-
-status.as_json
-# => {:current_time=>Mon, 23 Nov 2015 18:18:29 UTC +00:00, :cached_until=>Mon, 23 Nov 2015 18:19:44 UTC +00:00, :server_open=>true, :online_players=>25611}
-
-status.current_time # => Mon, 23 Nov 2015 18:18:29 UTC +00:00
-status.cached_until # => Mon, 23 Nov 2015 18:19:44 UTC +00:00
-status.server_open? # => true
-status.online_players # => 25611
-status.version # => 2
-```
-
 Account status:
 
 ```ruby
@@ -153,6 +138,16 @@ account_balance.version # => 2
 
 Asset List:
 ```ruby
+key_id = 1234567
+v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
+character_id = 90729314
+
+asset_list = EveOnline::Characters::AssetList.new(key_id, v_code, character_id)
+
+asset_list.current_time # => Mon, 29 Feb 2016 21:51:38 UTC +00:00
+asset_list.cached_until # => Tue, 01 Mar 2016 03:48:38 UTC +00:00
+asset_list.version # => 2
+
 # TODO: finish this
 ```
 
@@ -288,6 +283,21 @@ skill_tree.version # => 2
 
 ```
 
+Server status:
+
+```ruby
+status = EveOnline::Server::Status.new
+
+status.as_json
+# => {:current_time=>Mon, 23 Nov 2015 18:18:29 UTC +00:00, :cached_until=>Mon, 23 Nov 2015 18:19:44 UTC +00:00, :server_open=>true, :online_players=>25611}
+
+status.current_time # => Mon, 23 Nov 2015 18:18:29 UTC +00:00
+status.cached_until # => Mon, 23 Nov 2015 18:19:44 UTC +00:00
+status.server_open? # => true
+status.online_players # => 25611
+status.version # => 2
+```
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
@@ -303,6 +313,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 **master**
 
 * Drop nokogiri from gem dependency
+* Add `EveOnline::Item` for handle items in AssetList
 
 **v0.6.0**
 
