@@ -6,7 +6,7 @@ describe EveOnline::Blueprint do
 
     subject { described_class.new(options) }
 
-    specify { expect(subject.options).to eq(options) }
+    its(:options) { should eq(options) }
   end
 
   describe '#as_json' do
