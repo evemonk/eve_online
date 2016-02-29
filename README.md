@@ -394,7 +394,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 - [ ] [Research](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_research/)
 - [x] [Skill in Training](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_skillintraining/)
 - [ ] [Skill Queue](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_skillqueue/)
-- [ ] [Standings (NPC)](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_standings/)
+- [ ] [Standings](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_standings/)
 - [x] [Upcoming Calendar Events](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_upcomingcalendarevents/)
 - [ ] [Wallet Journal](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_walletjournal/)
 - [ ] [Wallet Transactions](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_wallettransactions/)
@@ -409,7 +409,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 - [ ] [Bookmarks](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/corp_bookmarks/)
 - [ ] [Contact List](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/endpoints/corp_contactlist.md)
 - [ ] [Container Log](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/endpoints/corp_containerlog.md)
-- [ ] [ContractBids](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/endpoints/corp_contractbids.md)
+- [ ] [Contract Bids](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/endpoints/corp_contractbids.md)
 - [ ] [Contract Items](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/endpoints/corp_contractitems.md)
 - [ ] [Contracts](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/endpoints/corp_contracts.md)
 - [ ] [Corporation Sheet](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/endpoints/corp_corporationsheet.md)
@@ -429,9 +429,9 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 - [ ] [Outpost List](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/endpoints/corp_outpostlist.md)
 - [ ] [Outpost Service Detail](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/endpoints/corp_outpostservicedetail.md)
 - [ ] [Shareholders](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/endpoints/corp_shareholders.md)
-- [ ] [Standings (NPC)](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/endpoints/corp_standings.md)
-- [ ] [Starbase Detail (POS)](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/endpoints/corp_starbasedetail.md)
-- [ ] [Starbase List (POS)](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/endpoints/corp_starbaselist.md)
+- [ ] [Standings](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/endpoints/corp_standings.md)
+- [ ] [Starbase Detail](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/endpoints/corp_starbasedetail.md)
+- [ ] [Starbase List](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/endpoints/corp_starbaselist.md)
 - [ ] [Titles](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/endpoints/corp_titles.md)
 - [ ] [Wallet Journal](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/corp_walletjournal/)
 - [ ] [Wallet Transactions](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/corp_wallettransactions/)
@@ -441,28 +441,23 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 ### Eve
 
 - [ ] [Alliance List](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/eve_alliancelist/)
-- [ ] [Certificate Tree XML (TODO: recheck this)](http://wiki.eve-id.net/APIv2_Certificate_Tree_XML)
 - [ ] [Character Affiliation](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/eve_characteraffiliation/)
-- [ ] [Character ID (Name to ID Conversion)](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/eve_characterid/)
+- [ ] [Character ID](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/eve_characterid/)
 - [ ] [Character Info](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/eve_characterinfo/)
-- [ ] [Character Name (ID to Name Conversion)](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/eve_charactername/)
-- [ ] [Conquerable Station List (Includes Outposts)](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/eve_conquerablestationlist/)
+- [ ] [Character Name](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/eve_charactername/)
+- [ ] [Conquerable Station List](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/eve_conquerablestationlist/)
 - [ ] [Error List](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/eve_errorlist/)
-- [ ] [Factional Warfare Stats XML (TODO: recheck this)](http://wiki.eve-id.net/APIv2_Factional_Warfare_Stats_XML)
-- [ ] [Factional Warfare Top100 Stats XML (TODO: recheck this)](http://wiki.eve-id.net/APIv2_Factional_Warfare_Top100_Stats_XML)
 - [ ] [Ref Types](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/eve_reftypes/)
-- [ ] [Skill Tree XML (TODO: recheck this)](http://wiki.eve-id.net/APIv2_Eve_SkillTree_XML)
 - [ ] [Type Name](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/eve_typename/)
 
 ----
 
 ### Map
 
-- [ ] [Factional Warfare Systems (Occupancy Map)](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/map_facwarsystems/)
+- [ ] [Factional Warfare Systems](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/map_facwarsystems/)
 - [ ] [Jumps](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/map_jumps/)
 - [ ] [Kills](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/map_kills/)
 - [ ] [Sovereignty](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/map_sovereignty/)
-- [ ] [Sovereignty Status (API disabled) XML (TODO: recheck this)](http://wiki.eve-id.net/APIv2_Map_Sovereignty_Status_XML)
 
 ----
 
