@@ -41,6 +41,7 @@ Server status:
 
 ```ruby
 status = EveOnline::Server::Status.new
+
 status.as_json
 # => {:current_time=>Mon, 23 Nov 2015 18:18:29 UTC +00:00, :cached_until=>Mon, 23 Nov 2015 18:19:44 UTC +00:00, :server_open=>true, :online_players=>25611}
 
@@ -58,6 +59,7 @@ key_id = 1234567
 v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
 
 account_status = EveOnline::Account::Status.new(key_id, v_code)
+
 account_status.as_json
 # => {:current_time=>Mon, 23 Nov 2015 18:53:46 UTC +00:00, :paid_until=>Mon, 28 Dec 2015 18:12:56 UTC +00:00, :create_date=>Fri, 15 Jan 2010 15:11:00 UTC +00:00, :logon_count=>388, :logon_minutes=>15598, :cached_until=>Mon, 23 Nov 2015 19:28:38 UTC +00:00}
 
@@ -114,6 +116,7 @@ api_key_info.cached_until # => Mon, 30 Nov 2015 23:05:38 UTC +00:00
 api_key_info.characters.size # => 2
 
 character = api_key_info.characters.first
+
 character.as_json
 # => {:character_id=>90729314, :character_name=>"Green Black", :corporation_id=>1000168, :corporation_name=>"Federal Navy Academy", :alliance_id=>0, :alliance_name=>"", :faction_id=>0, :faction_name=>""}
 
@@ -134,6 +137,7 @@ v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
 character_id = 90729314
 
 account_balance = EveOnline::Characters::AccountBalance.new(key_id, v_code, character_id)
+
 account_balance.as_json
 # => {:account_id=>42763123, :account_key=>1000, :balance=>"5000.00", :current_time=>Wed, 02 Dec 2015 20:29:32 UTC +00:00, :cached_until=>Wed, 02 Dec 2015 20:40:42 UTC +00:00}
 
@@ -165,6 +169,7 @@ blueprints.version # => 2
 blueprints.blueprints.size # => 4
 
 bp = blueprints.blueprints.first
+
 bp.as_json
 # => {:item_id=>716338097, :location_id=>61000032, :type_id=>1010, :type_name=>"Small Shield Extender I Blueprint", :flag_id=>4, :quantity=>-2, :time_efficiency=>0, :material_efficiency=>10, :runs=>300}
 
@@ -253,6 +258,7 @@ upcoming_events.version # => 2
 upcoming_events.events.size # => 2
 
 event = upcoming_events.events.first
+
 event.as_json
 # => {:event_id=>1234567, :owner_id=>98765432, :owner_name=>"MyCorp", :event_date=>Sat, 26 Dec 2015 19:47:29 UTC +00:00, :event_title=>"Control tower in 99-999", :duration=>60, :importance=>false, :response=>:undecided, :event_text=>"<b>Minmatar Control Tower</b> will run out of fuel and go offline...", :owner_type_id=>2}
 
