@@ -12,9 +12,9 @@ describe EveOnline::Item do
   describe '#as_json' do
     let(:item) { described_class.new }
 
-    before { expect(item).to receive(:item_id).and_return(408887580) }
+    before { expect(item).to receive(:item_id).and_return(408_887_580) }
 
-    before { expect(item).to receive(:location_id).and_return(60000634) }
+    before { expect(item).to receive(:location_id).and_return(60_000_634) }
 
     before { expect(item).to receive(:type_id).and_return(588) }
 
@@ -28,9 +28,9 @@ describe EveOnline::Item do
 
     subject { item.as_json }
 
-    its([:item_id]) { should eq(408887580) }
+    its([:item_id]) { should eq(408_887_580) }
 
-    its([:location_id]) { should eq(60000634) }
+    its([:location_id]) { should eq(60_000_634) }
 
     its([:type_id]) { should eq(588) }
 

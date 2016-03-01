@@ -45,14 +45,5 @@ module EveOnline
     def raw_quantity
       @raw_quantity ||= options.fetch('@rawQuantity').to_i
     end
-
-    # => {"@itemID"=>"408887580",
-    #     "@locationID"=>"60000634",
-    #     "@typeID"=>"588",
-    #     "@quantity"=>"1",
-    #     "@flag"=>"4",
-    #     "@singleton"=>"1",
-    #     "@rawQuantity"=>"-1"}
-
   end
 end

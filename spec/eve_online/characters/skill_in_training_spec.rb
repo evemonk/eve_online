@@ -5,7 +5,7 @@ describe EveOnline::Characters::SkillInTraining do
 
   let(:v_code) { 'abc' }
 
-  let(:character_id) { 12345678 }
+  let(:character_id) { 12_345_678 }
 
   subject { described_class.new(key_id, v_code, character_id) }
 
@@ -21,51 +21,51 @@ describe EveOnline::Characters::SkillInTraining do
 
   describe '#as_json' do
     let(:skill_in_training) { described_class.new(key_id, v_code, character_id) }
-    
+
     let(:current_tq_time) { double }
-    
+
     let(:training_end_time) { double }
-    
+
     let(:training_start_time) { double }
-    
+
     before { expect(skill_in_training).to receive(:current_tq_time).and_return(current_tq_time) }
-    
+
     before { expect(skill_in_training).to receive(:training_end_time).and_return(training_end_time) }
-    
+
     before { expect(skill_in_training).to receive(:training_start_time).and_return(training_start_time) }
-    
-    before { expect(skill_in_training).to receive(:training_type_id).and_return(30651) }
-    
-    before { expect(skill_in_training).to receive(:training_start_sp).and_return(226275) }
-    
-    before { expect(skill_in_training).to receive(:training_destination_sp).and_return(1280000) }
-    
+
+    before { expect(skill_in_training).to receive(:training_type_id).and_return(30_651) }
+
+    before { expect(skill_in_training).to receive(:training_start_sp).and_return(226_275) }
+
+    before { expect(skill_in_training).to receive(:training_destination_sp).and_return(1_280_000) }
+
     before { expect(skill_in_training).to receive(:training_to_level).and_return(5) }
-    
+
     before { expect(skill_in_training).to receive(:skill_in_training).and_return(1) }
-    
+
     subject { skill_in_training.as_json }
-    
+
     its([:current_tq_time]) { should eq(current_tq_time) }
-    
+
     its([:training_end_time]) { should eq(training_end_time) }
-    
+
     its([:training_start_time]) { should eq(training_start_time) }
 
-    its([:training_type_id]) { should eq(30651) }
-    
-    its([:training_start_sp]) { should eq(226275) }
-    
-    its([:training_destination_sp]) { should eq(1280000) }
-    
+    its([:training_type_id]) { should eq(30_651) }
+
+    its([:training_start_sp]) { should eq(226_275) }
+
+    its([:training_destination_sp]) { should eq(1_280_000) }
+
     its([:training_to_level]) { should eq(5) }
-    
+
     its([:skill_in_training]) { should eq(1) }
   end
 
   describe '#current_tq_time' do
     let(:currentTQTime) { double }
-    
+
     before do
       #
       # subject.result.fetch('currentTQTime') => currentTQTime
@@ -76,7 +76,7 @@ describe EveOnline::Characters::SkillInTraining do
         end
       end
     end
-    
+
     before do
       #
       # ActiveSupport::TimeZone['UTC'].parse(currentTQTime)
@@ -87,13 +87,13 @@ describe EveOnline::Characters::SkillInTraining do
         end
       end
     end
-    
+
     specify { expect { subject.current_tq_time }.not_to raise_error }
   end
 
   describe '#training_end_time' do
     let(:trainingEndTime) { double }
-    
+
     before do
       #
       # subject.result.fetch('trainingEndTime') => trainingEndTime
@@ -104,7 +104,7 @@ describe EveOnline::Characters::SkillInTraining do
         end
       end
     end
-    
+
     before do
       #
       # ActiveSupport::TimeZone['UTC'].parse(trainingEndTime)
@@ -114,14 +114,14 @@ describe EveOnline::Characters::SkillInTraining do
           expect(a).to receive(:parse).with(trainingEndTime)
         end
       end
-    end    
-    
+    end
+
     specify { expect { subject.training_end_time }.not_to raise_error }
   end
-  
+
   describe '#training_start_time' do
     let(:trainingStartTime) { double }
-    
+
     before do
       #
       # subject.result.fetch('trainingStartTime') => trainingStartTime
@@ -142,11 +142,11 @@ describe EveOnline::Characters::SkillInTraining do
           expect(a).to receive(:parse).with(trainingStartTime)
         end
       end
-    end    
-    
+    end
+
     specify { expect { subject.training_start_time }.not_to raise_error }
   end
-  
+
   describe '#training_type_id' do
     before do
       #
@@ -162,8 +162,8 @@ describe EveOnline::Characters::SkillInTraining do
         end
       end
     end
-    
-    specify { expect { subject.training_type_id }.not_to raise_error } 
+
+    specify { expect { subject.training_type_id }.not_to raise_error }
   end
 
   describe '#training_start_sp' do
@@ -181,8 +181,8 @@ describe EveOnline::Characters::SkillInTraining do
         end
       end
     end
-    
-    specify { expect { subject.training_start_sp }.not_to raise_error } 
+
+    specify { expect { subject.training_start_sp }.not_to raise_error }
   end
 
   describe '#training_destination_sp' do
@@ -200,10 +200,9 @@ describe EveOnline::Characters::SkillInTraining do
         end
       end
     end
-    
-    specify { expect { subject.training_destination_sp }.not_to raise_error } 
-  end
 
+    specify { expect { subject.training_destination_sp }.not_to raise_error }
+  end
 
   describe '#training_to_level' do
     before do
@@ -220,8 +219,8 @@ describe EveOnline::Characters::SkillInTraining do
         end
       end
     end
-    
-    specify { expect { subject.training_to_level }.not_to raise_error } 
+
+    specify { expect { subject.training_to_level }.not_to raise_error }
   end
 
   describe '#skill_in_training' do
@@ -239,8 +238,8 @@ describe EveOnline::Characters::SkillInTraining do
         end
       end
     end
-    
-    specify { expect { subject.skill_in_training }.not_to raise_error } 
+
+    specify { expect { subject.skill_in_training }.not_to raise_error }
   end
 
   describe '#url' do
