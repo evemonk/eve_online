@@ -5,9 +5,9 @@ describe EveOnline::Characters::CalendarEventAttendees do
 
   let(:v_code) { 'abc' }
 
-  let(:character_id) { 12345678 }
+  let(:character_id) { 12_345_678 }
 
-  let(:event_id) { 1259522 }
+  let(:event_id) { 1_259_522 }
 
   subject { described_class.new(key_id, v_code, character_id, event_id) }
 

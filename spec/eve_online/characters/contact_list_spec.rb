@@ -5,7 +5,7 @@ describe EveOnline::Characters::ContactList do
 
   let(:v_code) { 'abc' }
 
-  let(:character_id) { 12345678 }
+  let(:character_id) { 12_345_678 }
 
   subject { described_class.new(key_id, v_code, character_id) }
 

@@ -31,7 +31,7 @@ describe EveOnline::Base do
 
   describe '#cached_until' do
     let(:cached_until) { double }
-    
+
     before do
       #
       # subject.eveapi.fetch('cachedUntil') => cached_until
@@ -59,7 +59,7 @@ describe EveOnline::Base do
 
   describe '#current_time' do
     let(:current_time) { double }
-    
+
     before do
       #
       # subject.eveapi.fetch('currentTime') => current_time

@@ -5,7 +5,7 @@ describe EveOnline::Characters::AssetList do
 
   let(:v_code) { 'abc' }
 
-  let(:character_id) { 12345678 }
+  let(:character_id) { 12_345_678 }
 
   let(:flat) { 0 }
 

@@ -7,7 +7,7 @@ describe EveOnline::Server::Status do
     let(:server_status) { described_class.new }
 
     let(:current_time) { double }
-    
+
     let(:cached_until) { double }
 
     before { expect(server_status).to receive(:current_time).and_return(current_time) }

@@ -19,11 +19,11 @@ describe EveOnline::Account::Status do
     let(:account_status) { described_class.new(key_id, v_code) }
 
     let(:current_time) { double }
-    
+
     let(:paid_until) { double }
-    
+
     let(:create_date) { double }
-    
+
     let(:cached_until) { double }
 
     before { expect(account_status).to receive(:current_time).and_return(current_time) }
@@ -55,7 +55,7 @@ describe EveOnline::Account::Status do
 
   describe '#paid_until' do
     let(:paid_until) { double }
-    
+
     before do
       #
       # subject.result.fetch('paidUntil') => paid_until
@@ -83,7 +83,7 @@ describe EveOnline::Account::Status do
 
   describe '#create_date' do
     let(:create_date) { double }
-    
+
     before do
       #
       # subject.result.fetch('createDate') => create_date

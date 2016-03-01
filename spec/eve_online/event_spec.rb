@@ -10,8 +10,8 @@ describe EveOnline::Event do
   end
 
   describe '#as_json' do
-    let(:event) { described_class.new({ }) }
-    
+    let(:event) { described_class.new({}) }
+
     let(:event_date) { double }
 
     before { expect(event).to receive(:event_id).and_return(1_234_567) }
@@ -76,7 +76,6 @@ describe EveOnline::Event do
     specify { expect { subject.event_id }.not_to raise_error }
   end
 
-
   describe '#owner_id' do
     before do
       #
@@ -113,7 +112,7 @@ describe EveOnline::Event do
 
   describe '#event_date' do
     let(:event_date) { double }
-    
+
     before do
       #
       # subject.options.fetch('@eventDate') => event_date
@@ -194,7 +193,7 @@ describe EveOnline::Event do
 
   describe '#response' do
     let(:response) { double }
-    
+
     before do
       #
       # subject.options.fetch('@response') => double
@@ -205,7 +204,7 @@ describe EveOnline::Event do
         end
       end
     end
-    
+
     before do
       expect(EveOnline::EventResponseObject).to receive(:new).with(response) do
         double.tap do |a|
@@ -231,7 +230,6 @@ describe EveOnline::Event do
 
     specify { expect { subject.event_text }.not_to raise_error }
   end
-
 
   describe '#owner_type_id' do
     before do

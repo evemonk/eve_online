@@ -12,9 +12,9 @@ describe EveOnline::Blueprint do
   describe '#as_json' do
     let(:blueprint) { described_class.new }
 
-    before { expect(blueprint).to receive(:item_id).and_return(716338097) }
+    before { expect(blueprint).to receive(:item_id).and_return(716_338_097) }
 
-    before { expect(blueprint).to receive(:location_id).and_return(61000032) }
+    before { expect(blueprint).to receive(:location_id).and_return(61_000_032) }
 
     before { expect(blueprint).to receive(:type_id).and_return(1010) }
 
@@ -32,11 +32,11 @@ describe EveOnline::Blueprint do
 
     subject { blueprint.as_json }
 
-    its([:item_id]) { should eq(716338097) }
+    its([:item_id]) { should eq(716_338_097) }
 
-    its([:location_id]) { should eq(61000032) }
+    its([:location_id]) { should eq(61_000_032) }
 
-    its([:type_id]) { should eq(1010) }
+    its([:type_id]) { should eq(1_010) }
 
     its([:type_name]) { should eq('Small Shield Extender I Blueprint') }
 
@@ -180,7 +180,6 @@ describe EveOnline::Blueprint do
     specify { expect { subject.time_efficiency }.not_to raise_error }
   end
 
-
   describe '#material_efficiencyv' do
     before do
       #
@@ -199,7 +198,6 @@ describe EveOnline::Blueprint do
 
     specify { expect { subject.material_efficiency }.not_to raise_error }
   end
-
 
   describe '#runs' do
     before do

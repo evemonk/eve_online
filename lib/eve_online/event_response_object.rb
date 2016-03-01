@@ -1,7 +1,7 @@
 module EveOnline
   class EventResponseObject
     STATUSES = { 'Undecided' => :undecided, 'Accepted' => :accepted,
-                 'Declined' => :declined, 'Tentative' => :tentative }
+                 'Declined' => :declined, 'Tentative' => :tentative }.freeze
 
     attr_reader :input
 
@@ -10,7 +10,7 @@ module EveOnline
     end
 
     def value
-      raise ArgumentError unless STATUSES.has_key?(input)
+      raise ArgumentError unless STATUSES.key?(input)
 
       @value ||= STATUSES.fetch(input)
     end

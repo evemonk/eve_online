@@ -122,7 +122,7 @@ describe EveOnline::Account::ApiKeyInfo do
 
   describe '#expires' do
     let(:expires) { double }
-    
+
     before do
       #
       # subject.key.fetch('@expires') => expires

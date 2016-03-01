@@ -5,7 +5,7 @@ describe EveOnline::Characters::AccountBalance do
 
   let(:v_code) { 'abc' }
 
-  let(:character_id) { 12345678 }
+  let(:character_id) { 12_345_678 }
 
   subject { described_class.new(key_id, v_code, character_id) }
 
@@ -21,9 +21,9 @@ describe EveOnline::Characters::AccountBalance do
 
   describe '#as_json' do
     let(:account_balance) { described_class.new(key_id, v_code, character_id) }
-    
+
     let(:current_time) { double }
-    
+
     let(:cached_until) { double }
 
     before { expect(account_balance).to receive(:account_id).and_return(42_763_123) }
