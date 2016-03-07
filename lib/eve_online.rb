@@ -1,6 +1,7 @@
 require 'eve_online/version'
 require 'eve_online/base'
 require 'eve_online/blueprint'
+require 'eve_online/bookmark_folder'
 require 'eve_online/character'
 require 'eve_online/event'
 require 'eve_online/event_response_object'
