@@ -329,6 +329,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Add `EveOnline::Item` for handle items in AssetList
 * [Asset List](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_assetlist/)
 * Remove unused `EveOneline::Skill` and `EveOnline::SkillGroup` classes
+* Add `EveOnline::BookmarkFolder` class for handling bookmarks folders
 
 **v0.6.0**
 
