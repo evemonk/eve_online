@@ -9,21 +9,59 @@ describe EveOnline::Bookmark do
     its(:options) { should eq(options) }
   end
 
-  # def as_json(*args)
-  #   {
-  #       bookmark_id: bookmark_id,
-  #       creator_id: creator_id,
-  #       created: created,
-  #       item_id: item_id,
-  #       type_id: type_id,
-  #       location_id: location_id,
-  #       x: x,
-  #       y: y,
-  #       z: z,
-  #       memo: memo,
-  #       note: note
-  #   }
-  # end
+  describe '#as_json' do
+    let(:bookmark) { described_class.new }
+
+    before { expect(bookmark).to receive(:bookmark_id).and_return(968_437_335) }
+
+    before { expect(bookmark).to receive(:creator_id).and_return(1_337_512_245) }
+
+    #     "@created" => "2015-10-25 15:20:34",
+
+    before { expect(bookmark).to receive(:created).and_return(double) }
+
+    before { expect(bookmark).to receive(:item_id).and_return(0) }
+
+    before { expect(bookmark).to receive(:type_id).and_return(5) }
+
+    before { expect(bookmark).to receive(:location_id).and_return(30_004_923) }
+
+    before { expect(bookmark).to receive(:x).and_return(-1695475016159.96) }
+
+    before { expect(bookmark).to receive(:y).and_return(-136189493280) }
+
+    before { expect(bookmark).to receive(:z).and_return(2582546967840.08) }
+
+    before { expect(bookmark).to receive(:memo).and_return('Home') }
+
+    before { expect(bookmark).to receive(:note).and_return('Our Home') }
+
+    subject { bookmark.as_json }
+
+    its([:bookmark_id]) { should eq(968_437_335) }
+
+    its([:creator_id]) { should eq(1_337_512_245) }
+
+    #     "@created" => "2015-10-25 15:20:34",
+
+    # its([:created]) { should eq() }
+
+    its([:item_id]) { should eq(0) }
+
+    its([:type_id]) { should eq(5) }
+
+    its([:location_id]) { should eq(30_004_923) }
+
+    its([:x]) { should eq(-1695475016159.96) }
+
+    its([:y]) { should eq(-136189493280) }
+
+    its([:z]) { should eq(2582546967840.08) }
+
+    its([:memo]) { should eq('Home') }
+
+    its([:note]) { should eq('Our Home') }
+  end
 
   describe '#bookmark_id' do
     before do
