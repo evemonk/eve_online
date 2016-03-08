@@ -330,6 +330,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * [Asset List](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_assetlist/)
 * Remove unused `EveOneline::Skill` and `EveOnline::SkillGroup` classes
 * Add `EveOnline::BookmarkFolder` class for handling bookmarks folders
+* Add `EveOnline::Bookmark` class for handling EveOnline Bookmarks
 
 **v0.6.0**
 
