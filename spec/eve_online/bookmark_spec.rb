@@ -12,13 +12,13 @@ describe EveOnline::Bookmark do
   describe '#as_json' do
     let(:bookmark) { described_class.new }
 
+    let(:created) { double }
+
     before { expect(bookmark).to receive(:bookmark_id).and_return(968_437_335) }
 
     before { expect(bookmark).to receive(:creator_id).and_return(1_337_512_245) }
 
-    #     "@created" => "2015-10-25 15:20:34",
-
-    before { expect(bookmark).to receive(:created).and_return(double) }
+    before { expect(bookmark).to receive(:created).and_return(created) }
 
     before { expect(bookmark).to receive(:item_id).and_return(0) }
 
@@ -26,11 +26,11 @@ describe EveOnline::Bookmark do
 
     before { expect(bookmark).to receive(:location_id).and_return(30_004_923) }
 
-    before { expect(bookmark).to receive(:x).and_return(-1695475016159.96) }
+    before { expect(bookmark).to receive(:x).and_return(-1_695_475_016_159.96) }
 
-    before { expect(bookmark).to receive(:y).and_return(-136189493280) }
+    before { expect(bookmark).to receive(:y).and_return(-136_189_493_280) }
 
-    before { expect(bookmark).to receive(:z).and_return(2582546967840.08) }
+    before { expect(bookmark).to receive(:z).and_return(2_582_546_967_840.08) }
 
     before { expect(bookmark).to receive(:memo).and_return('Home') }
 
@@ -42,9 +42,7 @@ describe EveOnline::Bookmark do
 
     its([:creator_id]) { should eq(1_337_512_245) }
 
-    #     "@created" => "2015-10-25 15:20:34",
-
-    # its([:created]) { should eq() }
+    its([:created]) { should eq(created) }
 
     its([:item_id]) { should eq(0) }
 
@@ -52,11 +50,11 @@ describe EveOnline::Bookmark do
 
     its([:location_id]) { should eq(30_004_923) }
 
-    its([:x]) { should eq(-1695475016159.96) }
+    its([:x]) { should eq(-1_695_475_016_159.96) }
 
-    its([:y]) { should eq(-136189493280) }
+    its([:y]) { should eq(-136_189_493_280) }
 
-    its([:z]) { should eq(2582546967840.08) }
+    its([:z]) { should eq(2_582_546_967_840.08) }
 
     its([:memo]) { should eq('Home') }
 
