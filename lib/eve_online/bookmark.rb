@@ -31,8 +31,7 @@ module EveOnline
     end
 
     def created
-      # "@created" => "2015-10-25 15:20:34",
-      @created ||= options.fetch('@created')
+      @created ||= ActiveSupport::TimeZone['UTC'].parse(options.fetch('@created'))
     end
 
     def item_id

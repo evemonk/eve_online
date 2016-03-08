@@ -63,11 +63,33 @@ describe EveOnline::Bookmark do
     specify { expect { subject.creator_id }.not_to raise_error }
   end
 
+  describe '#created' do
+    let(:created) { double }
 
-  # def created
-  #   # "@created" => "2015-10-25 15:20:34",
-  #   @created ||= options.fetch('@created')
-  # end
+    before do
+      #
+      # subject.options.fetch('@created') => created
+      #
+      expect(subject).to receive(:options) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('@created').and_return(created)
+        end
+      end
+    end
+
+    before do
+      #
+      # ActiveSupport::TimeZone['UTC'].parse(created)
+      #
+      expect(ActiveSupport::TimeZone).to receive(:[]).with('UTC') do
+        double.tap do |a|
+          expect(a).to receive(:parse).with(created)
+        end
+      end
+    end
+
+    specify { expect { subject.created }.not_to raise_error }
+  end
 
   describe '#item_id' do
     before do
