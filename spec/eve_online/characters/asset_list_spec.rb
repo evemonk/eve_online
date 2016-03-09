@@ -56,15 +56,17 @@ describe EveOnline::Characters::AssetList do
 
     context 'row is Array' do
       let(:row) do
-        [{
-           '@itemID' => '408887580',
-           '@locationID' => '60000634',
-           '@typeID' => '588',
-           '@quantity' => '1',
-           '@flag' => '4',
-           '@singleton' => '1',
-           '@rawQuantity' => '-1'
-         }]
+        [
+          {
+            '@itemID' => '408887580',
+            '@locationID' => '60000634',
+            '@typeID' => '588',
+            '@quantity' => '1',
+            '@flag' => '4',
+            '@singleton' => '1',
+            '@rawQuantity' => '-1'
+          }
+        ]
       end
 
       before do

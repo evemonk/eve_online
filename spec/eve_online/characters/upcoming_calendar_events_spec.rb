@@ -55,7 +55,8 @@ describe EveOnline::Characters::UpcomingCalendarEvents do
 
     context 'row is Array' do
       let(:row) do
-        [{
+        [
+         {
            '@eventID' => '1234567',
            '@ownerID' => '87654321',
            '@ownerName' => 'MyCorp',
@@ -66,7 +67,8 @@ describe EveOnline::Characters::UpcomingCalendarEvents do
            '@response' => 'Undecided',
            '@eventText' => '<b>Minmatar Control Tower Small</b> will run out of fuel and go offline.',
            '@ownerTypeID' => '2'
-         }]
+         }
+       ]
       end
 
       before do

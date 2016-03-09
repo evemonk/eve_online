@@ -49,16 +49,18 @@ describe EveOnline::Account::Characters do
 
     context 'row is Array' do
       let(:row) do
-        [{
-           '@name' => 'Green Black',
-           '@characterID' => '90729314',
-           '@corporationName' => 'Federal Navy Academy',
-           '@corporationID' => '1000168',
-           '@allianceID' => '0',
-           '@allianceName' => '',
-           '@factionID' => '0',
-           '@factionName' => ''
-        }]
+        [
+          {
+            '@name' => 'Green Black',
+            '@characterID' => '90729314',
+            '@corporationName' => 'Federal Navy Academy',
+            '@corporationID' => '1000168',
+            '@allianceID' => '0',
+            '@allianceName' => '',
+            '@factionID' => '0',
+            '@factionName' => ''
+          }
+       ]
       end
 
       before do

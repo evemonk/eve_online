@@ -54,17 +54,19 @@ describe EveOnline::Characters::Blueprints do
 
     context 'row is Array' do
       let(:row) do
-        [{
-           '@itemID' => '716338097',
-           '@locationID' => '61000032',
-           '@typeID' => '1010',
-           '@typeName' => 'Small Shield Extender I Blueprint',
-           '@flagID' => '4',
-           '@quantity' => '-2',
-           '@timeEfficiency' => '0',
-           '@materialEfficiency' => '10',
-           '@runs' => '300'
-         }]
+        [
+          {
+            '@itemID' => '716338097',
+            '@locationID' => '61000032',
+            '@typeID' => '1010',
+            '@typeName' => 'Small Shield Extender I Blueprint',
+            '@flagID' => '4',
+            '@quantity' => '-2',
+            '@timeEfficiency' => '0',
+            '@materialEfficiency' => '10',
+            '@runs' => '300'
+          }
+        ]
       end
 
       before do

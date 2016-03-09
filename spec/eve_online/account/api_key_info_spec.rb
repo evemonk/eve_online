@@ -49,16 +49,18 @@ describe EveOnline::Account::ApiKeyInfo do
 
     context 'row is Array' do
       let(:row) do
-        [{
-           '@characterID' => '90729314',
-           '@characterName' => 'Green Black',
-           '@corporationID' => '1000168',
-           '@corporationName' => 'Federal Navy Academy',
-           '@allianceID' => '0',
-           '@allianceName' => '',
-           '@factionID' => '0',
-           '@factionName' => ''
-         }]
+        [
+          {
+            '@characterID' => '90729314',
+            '@characterName' => 'Green Black',
+            '@corporationID' => '1000168',
+            '@corporationName' => 'Federal Navy Academy',
+            '@allianceID' => '0',
+            '@allianceName' => '',
+            '@factionID' => '0',
+            '@factionName' => ''
+          }
+       ]
       end
 
       before do
