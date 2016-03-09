@@ -60,7 +60,7 @@ describe EveOnline::Account::ApiKeyInfo do
             '@factionID' => '0',
             '@factionName' => ''
           }
-       ]
+        ]
       end
 
       before do

@@ -60,7 +60,7 @@ describe EveOnline::Account::Characters do
             '@factionID' => '0',
             '@factionName' => ''
           }
-       ]
+        ]
       end
 
       before do

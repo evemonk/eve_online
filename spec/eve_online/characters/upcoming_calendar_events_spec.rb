@@ -56,19 +56,19 @@ describe EveOnline::Characters::UpcomingCalendarEvents do
     context 'row is Array' do
       let(:row) do
         [
-         {
-           '@eventID' => '1234567',
-           '@ownerID' => '87654321',
-           '@ownerName' => 'MyCorp',
-           '@eventDate' => '2015-12-26 04:37:22',
-           '@eventTitle' => 'Control tower Name in 9-9999 goes off',
-           '@duration' => '60',
-           '@importance' => '0',
-           '@response' => 'Undecided',
-           '@eventText' => '<b>Minmatar Control Tower Small</b> will run out of fuel and go offline.',
-           '@ownerTypeID' => '2'
-         }
-       ]
+          {
+            '@eventID' => '1234567',
+            '@ownerID' => '87654321',
+            '@ownerName' => 'MyCorp',
+            '@eventDate' => '2015-12-26 04:37:22',
+            '@eventTitle' => 'Control tower Name in 9-9999 goes off',
+            '@duration' => '60',
+            '@importance' => '0',
+            '@response' => 'Undecided',
+            '@eventText' => '<b>Minmatar Control Tower Small</b> will run out of fuel and go offline.',
+            '@ownerTypeID' => '2'
+          }
+        ]
       end
 
       before do
