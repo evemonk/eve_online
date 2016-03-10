@@ -20,7 +20,7 @@ require 'eve_online/characters/contact_notifications'
 require 'eve_online/characters/character_sheet'
 require 'eve_online/characters/upcoming_calendar_events'
 require 'eve_online/characters/skill_in_training'
-require 'eve_online/eve/skill_tree'
+require 'eve_online/eve/character_id'
 require 'eve_online/server/status'
 
 module EveOnline
