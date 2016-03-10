@@ -331,6 +331,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Remove unused `EveOneline::Skill` and `EveOnline::SkillGroup` classes
 * Add `EveOnline::BookmarkFolder` class for handling bookmarks folders
 * Add `EveOnline::Bookmark` class for handling EveOnline Bookmarks
+* Remove unused `EveOnline::Eve::SkillTree` class
 
 **v0.6.0**
 
