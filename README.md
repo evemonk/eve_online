@@ -321,6 +321,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Add `EveOnline::Bookmark` class for handling EveOnline Bookmarks
 * Remove unused `EveOnline::Eve::SkillTree` class
 * Relax activesupport version requirement (now requires 3.0.0 or later)
+* Respect EveOnline API guidelines. Set correct user agent.
 
 **v0.6.0**
 

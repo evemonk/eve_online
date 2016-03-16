@@ -123,16 +123,24 @@ describe EveOnline::Base do
     specify { expect { subject.url }.to raise_error(NotImplementedError) }
   end
 
+  describe '#user_agent' do
+    specify { expect(subject.user_agent).to eq("EveOnline API (https://github.com/biow0lf/eve_online) v#{ EveOnline::VERSION }") }
+  end
+
   describe '#content' do
-    let(:url) { 'https://google.com/' }
+    let(:url) { double }
 
     before { expect(subject).to receive(:url).and_return(url) }
 
+    let(:user_agent) { double }
+
+    before { expect(subject).to receive(:user_agent).and_return(user_agent) }
+
     before do
       #
-      # subject.open(url, open_timeout: 60, read_timeout: 60).read
+      # subject.open(url, open_timeout: 60, read_timeout: 60, 'User-Agent': user_agent).read
       #
-      expect(subject).to receive(:open).with(url, open_timeout: 60, read_timeout: 60) do
+      expect(subject).to receive(:open).with(url, open_timeout: 60, read_timeout: 60, 'User-Agent': user_agent) do
         double.tap do |a|
           expect(a).to receive(:read)
         end
