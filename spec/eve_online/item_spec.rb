@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe EveOnline::Item do
   describe '#initialize' do
-    let(:options) { {} }
+    let(:options) { double }
 
     subject { described_class.new(options) }
 

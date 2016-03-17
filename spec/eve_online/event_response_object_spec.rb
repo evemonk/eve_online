@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe EveOnline::EventResponseObject do
   describe '#initialize' do
-    let(:input) { 'test' }
+    let(:input) { double }
 
     subject { described_class.new(input) }
 
