@@ -7,6 +7,8 @@ describe EveOnline::Account::ApiKeyInfo do
 
   subject { described_class.new(key_id, v_code) }
 
+  specify { should be_a EveOnline::Base }
+
   specify { expect(described_class::API_ENDPOINT).to eq('https://api.eveonline.com/account/APIKeyInfo.xml.aspx') }
 
   describe '#initialize' do

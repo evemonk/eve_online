@@ -9,6 +9,8 @@ describe EveOnline::Characters::UpcomingCalendarEvents do
 
   subject { described_class.new(key_id, v_code, character_id) }
 
+  specify { should be_a EveOnline::Base }
+
   specify { expect(described_class::API_ENDPOINT).to eq('https://api.eveonline.com/char/UpcomingCalendarEvents.xml.aspx') }
 
   describe '#initialize' do
