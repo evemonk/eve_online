@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe EveOnline::Server::Status do
-  specify { should be_a EveOnline::Base }
+  specify { expect(subject).to be_a EveOnline::Base }
 
   specify { expect(described_class::API_ENDPOINT).to eq('https://api.eveonline.com/Server/ServerStatus.xml.aspx') }
 
