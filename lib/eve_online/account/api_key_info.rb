@@ -36,8 +36,7 @@ module EveOnline
       end
 
       def expires
-        @expires ||= \
-          ActiveSupport::TimeZone['UTC'].parse(key.fetch('@expires'))
+        @expires ||= ActiveSupport::TimeZone['UTC'].parse(key.fetch('@expires'))
       end
 
       def type

@@ -15,13 +15,11 @@ module EveOnline
     end
 
     def cached_until
-      @cached_until ||= \
-        ActiveSupport::TimeZone['UTC'].parse(eveapi.fetch('cachedUntil'))
+      @cached_until ||= ActiveSupport::TimeZone['UTC'].parse(eveapi.fetch('cachedUntil'))
     end
 
     def current_time
-      @current_time ||= \
-        ActiveSupport::TimeZone['UTC'].parse(eveapi.fetch('currentTime'))
+      @current_time ||= ActiveSupport::TimeZone['UTC'].parse(eveapi.fetch('currentTime'))
     end
 
     def version
