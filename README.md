@@ -314,6 +314,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 **master**
 
 * Drop nokogiri from gem dependency
+* Add `json` gem for CREST API
 * Add `EveOnline::Item` for handle items in AssetList
 * [Asset List](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_assetlist/)
 * Remove unused `EveOneline::Skill` and `EveOnline::SkillGroup` classes
@@ -322,6 +323,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Remove unused `EveOnline::Eve::SkillTree` class
 * Relax activesupport version requirement (now requires 3.0.0 or later)
 * Respect EveOnline API guidelines. Set correct user agent.
+* Add `EveOnline::CREST::Base` as base class for future CREST API
 
 **v0.6.0**
 
