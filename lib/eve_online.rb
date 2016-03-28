@@ -1,4 +1,5 @@
 require 'eve_online/version'
+
 require 'eve_online/base'
 require 'eve_online/blueprint'
 require 'eve_online/bookmark'
@@ -22,6 +23,8 @@ require 'eve_online/characters/upcoming_calendar_events'
 require 'eve_online/characters/skill_in_training'
 require 'eve_online/eve/character_id'
 require 'eve_online/server/status'
+
+require 'eve_online/crest/base'
 
 module EveOnline
 end
