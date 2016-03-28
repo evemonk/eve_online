@@ -299,6 +299,24 @@ status.online_players # => 25611
 status.version # => 2
 ```
 
+## CREST Examples
+
+Sovereignty campaigns:
+
+```
+campaigns = EveOnline::CREST::Sovereignty::Campaigns.new
+
+campaigns.total_count # => 187
+campaigns.page_count # => 1
+
+campaigns.items.class # => Array
+
+campaigns.items.size # => 187
+
+campaigns.items.first
+# => {"eventType_str"=>"2", "campaignID"=>16124, "eventType"=>2, "sourceSolarsystem"=>{"id_str"=>"30003641", "href"=>"https://public-crest.eveonline.com/solarsystems/30003641/", "id"=>30003641, "name"=>"IKTD-P"}, "attackers"=>{"score"=>0.4}, "campaignID_str"=>"16124", "sourceItemID"=>1006633390023, "startTime"=>"2016-03-28T20:01:27", "sourceItemID_str"=>"1006633390023", "defender"=>{"defender"=>{"id_str"=>"1900696668", "href"=>"https://public-crest.eveonline.com/alliances/1900696668/", "id"=>1900696668, "name"=>"The Initiative."}, "score"=>0.6}, "constellation"=>{"id_str"=>"20000530", "href"=>"https://public-crest.eveonline.com/constellations/20000530/", "id"=>20000530, "name"=>"X-FHU3"}}
+```
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
