@@ -303,7 +303,7 @@ status.version # => 2
 
 Sovereignty campaigns:
 
-```
+```ruby
 campaigns = EveOnline::CREST::Sovereignty::Campaigns.new
 
 campaigns.total_count # => 187
