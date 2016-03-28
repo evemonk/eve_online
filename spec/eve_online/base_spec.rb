@@ -138,9 +138,9 @@ describe EveOnline::Base do
 
     before do
       #
-      # subject.open(url, open_timeout: 60, read_timeout: 60, :'User-Agent' => user_agent).read
+      # subject.open(url, open_timeout: 60, read_timeout: 60, 'User-Agent' => user_agent).read
       #
-      expect(subject).to receive(:open).with(url, open_timeout: 60, read_timeout: 60, :'User-Agent' => user_agent) do
+      expect(subject).to receive(:open).with(url, open_timeout: 60, read_timeout: 60, 'User-Agent' => user_agent) do
         double.tap do |a|
           expect(a).to receive(:read)
         end

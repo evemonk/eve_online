@@ -40,7 +40,7 @@ module EveOnline
 
     def content
       @content ||= open(url, open_timeout: 60, read_timeout: 60,
-                             :'User-Agent' => user_agent).read
+                             'User-Agent' => user_agent).read
     end
 
     def response
