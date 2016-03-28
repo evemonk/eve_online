@@ -7,7 +7,7 @@ describe EveOnline::Account::Characters do
 
   subject { described_class.new(key_id, v_code) }
 
-  specify { expect(subject).to be_a EveOnline::Base }
+  specify { expect(subject).to be_a(EveOnline::Base) }
 
   specify { expect(described_class::API_ENDPOINT).to eq('https://api.eveonline.com/account/Characters.xml.aspx') }
 
