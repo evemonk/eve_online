@@ -1,6 +1,6 @@
 module EveOnline
   module Characters
-    # https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_skillintraining/
+    # https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/character/char_skillintraining.html
     class SkillInTraining < Base
       API_ENDPOINT = 'https://api.eveonline.com/char/SkillInTraining.xml.aspx'.freeze
 

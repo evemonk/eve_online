@@ -1,6 +1,6 @@
 module EveOnline
   module Eve
-    # https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/eve_characterid/
+    # https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/eve/eve_characterid.html
     class CharacterID < Base
       API_ENDPOINT = 'https://api.eveonline.com/eve/CharacterID.xml.aspx'.freeze
 

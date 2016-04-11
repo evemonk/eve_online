@@ -1,6 +1,6 @@
 module EveOnline
   module Characters
-    # https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_charactersheet/
+    # https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/character/char_charactersheet.html
     class CharacterSheet < Base
       API_ENDPOINT = 'https://api.eveonline.com/char/CharacterSheet.xml.aspx'.freeze
 

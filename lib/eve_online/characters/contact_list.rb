@@ -1,6 +1,6 @@
 module EveOnline
   module Characters
-    # https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_contactlist/
+    # https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/character/char_contactlist.html
     class ContactList < Base
       API_ENDPOINT = 'https://api.eveonline.com/char/ContactList.xml.aspx'.freeze
 
