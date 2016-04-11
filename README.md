@@ -284,6 +284,19 @@ event.event_text # => "<b>Minmatar Control Tower</b> will run out of fuel and go
 event.owner_type_id # => 2
 ```
 
+Character Names ot IDs:
+```ruby
+names = ['Johnn Dillinger']# => ["Johnn Dillinger"]
+
+characters_ids = EveOnline::Eve::CharacterID.new(names)
+
+characters_ids.current_time # => Mon, 11 Apr 2016 18:51:01 UTC +00:00
+characters_ids.cached_until # => Wed, 11 May 2016 18:51:01 UTC +00:00
+characters_ids.version # => 2
+
+characters_ids.response # => {"eveapi"=>{"currentTime"=>"2016-04-11 18:51:01", "result"=>{"rowset"=>{"row"=>{"@name"=>"Johnn Dillinger", "@characterID"=>"1337512245"}, "@name"=>"characters", "@key"=>"characterID", "@columns"=>"name,characterID"}}, "cachedUntil"=>"2016-05-11 18:51:01", "@version"=>"2"}}
+```
+
 Server status:
 
 ```ruby
@@ -343,6 +356,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Respect EveOnline API guidelines. Set correct user agent.
 * Add `EveOnline::CREST::Base` as base class for future CREST API
 * Add base `EveOnline::CREST::Sovereignty::Campaigns` class
+* Add basic `EveOnline::Eve::CharacterID` to handle character name to character id requests
 
 **v0.6.0**
 
