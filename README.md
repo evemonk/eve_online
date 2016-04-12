@@ -286,9 +286,9 @@ event.owner_type_id # => 2
 
 Character Names ot IDs:
 ```ruby
-names = ['Johnn Dillinger']# => ["Johnn Dillinger"]
+input = ['Johnn Dillinger'] # => ["Johnn Dillinger"]
 
-characters_ids = EveOnline::Eve::CharacterID.new(names)
+characters_ids = EveOnline::Eve::CharacterID.new(input)
 
 characters_ids.current_time # => Mon, 11 Apr 2016 18:51:01 UTC +00:00
 characters_ids.cached_until # => Wed, 11 May 2016 18:51:01 UTC +00:00
