@@ -6,30 +6,36 @@ module EveOnline
     class CharacterID < Base
       API_ENDPOINT = 'https://api.eveonline.com/eve/CharacterID.xml.aspx'.freeze
 
-      attr_reader :names
+      attr_reader :input
 
-      def initialize(names)
+      def initialize(input)
         super()
-        @names = names
+        @input = input
       end
 
       def characters
+        # TODO: implement
         raise NotImplementedError
       end
 
-      def names_list
-        raise RuntimeError unless names.kind_of?(Array)
-
-        @names_list ||= names.join(',')
-      end
-
-      def escaped_names_list
-        @escaped_names_list ||= URI.escape(names_list)
-      end
-
-      def url
-        "#{ API_ENDPOINT }?names=#{ escaped_names_list }"
-      end
+      # def names
+      #   @names ||= case input
+      #              when String
+      #                names
+      #              when Array
+      #                names.join(',')
+      #              else
+      #                raise ArgumentError
+      #              end
+      # end
+      #
+      # def escaped_input
+      #   @escaped_input ||= URI.escape(names)
+      # end
+      #
+      # def url
+      #   "#{ API_ENDPOINT }?names=#{ escaped_input }"
+      # end
     end
   end
 end
