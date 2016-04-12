@@ -29,13 +29,13 @@ module EveOnline
                    end
       end
 
-      # def escaped_input
-      #   @escaped_input ||= URI.escape(names)
-      # end
-      #
-      # def url
-      #   "#{ API_ENDPOINT }?names=#{ escaped_input }"
-      # end
+      def escaped_input
+        @escaped_input ||= URI.escape(names)
+      end
+
+      def url
+        "#{ API_ENDPOINT }?names=#{ escaped_input }"
+      end
     end
   end
 end

@@ -37,26 +37,26 @@ describe EveOnline::Eve::CharacterID do
     end
   end
 
-  # describe '#escaped_names_list' do
-  #   let(:names_list) { double }
-  #
-  #   before { expect(subject).to receive(:names_list).and_return(names_list) }
-  #
-  #   before do
-  #     #
-  #     # URI.escape(names_list)
-  #     #
-  #     expect(URI).to receive(:escape).with(names_list)
-  #   end
-  #
-  #   specify { expect { subject.escaped_names_list }.not_to raise_error }
-  # end
-  #
-  # describe '#url' do
-  #   let(:escaped_names_list) { 'string' }
-  #
-  #   before { expect(subject).to receive(:escaped_names_list).and_return(escaped_names_list) }
-  #
-  #   specify { expect(subject.url).to eq('https://api.eveonline.com/eve/CharacterID.xml.aspx?names=string') }
-  # end
+  describe '#escaped_input' do
+    let(:names) { double }
+
+    before { expect(subject).to receive(:names).and_return(names) }
+
+    before do
+      #
+      # URI.escape(names)
+      #
+      expect(URI).to receive(:escape).with(names)
+    end
+
+    specify { expect { subject.escaped_input }.not_to raise_error }
+  end
+
+  describe '#url' do
+    let(:escaped_input) { 'string' }
+
+    before { expect(subject).to receive(:escaped_input).and_return(escaped_input) }
+
+    specify { expect(subject.url).to eq('https://api.eveonline.com/eve/CharacterID.xml.aspx?names=string') }
+  end
 end
