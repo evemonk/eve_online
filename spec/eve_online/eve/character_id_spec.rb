@@ -17,22 +17,26 @@ describe EveOnline::Eve::CharacterID do
     specify { expect { subject.characters }.to raise_error(NotImplementedError) }
   end
 
-  # describe '#names_list' do
-  #   context 'names is string' do
-  #     let(:names) { 'Ito Saika' }
-  #
-  #     specify { expect(subject.names_list).to eq('Ito Saika') }
-  #   end
-  #
-  #   context 'names is array' do
-  #     let(:names) { ['Ito Saika', 'Shion Saika'] }
-  #
-  #     specify { expect(subject.names_list).to eq('Ito Saika,Shion Saika') }
-  #   end
-  #
-  #   context 'names '
-  # end
-  #
+  describe '#names' do
+    context 'input is String' do
+      let(:input) { 'Ito Saika' }
+
+      specify { expect(subject.names).to eq('Ito Saika') }
+    end
+
+    context 'input is Array' do
+      let(:input) { ['Ito Saika', 'Shion Saika'] }
+
+      specify { expect(subject.names).to eq('Ito Saika,Shion Saika') }
+    end
+
+    context 'input is invalid' do
+      let(:input) { Hash.new }
+
+      specify { expect { subject.names }.to raise_error(ArgumentError) }
+    end
+  end
+
   # describe '#escaped_names_list' do
   #   let(:names_list) { double }
   #

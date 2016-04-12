@@ -18,17 +18,17 @@ module EveOnline
         raise NotImplementedError
       end
 
-      # def names
-      #   @names ||= case input
-      #              when String
-      #                names
-      #              when Array
-      #                names.join(',')
-      #              else
-      #                raise ArgumentError
-      #              end
-      # end
-      #
+      def names
+        @names ||= case input
+                   when String
+                     input
+                   when Array
+                     input.join(',')
+                   else
+                     raise ArgumentError
+                   end
+      end
+
       # def escaped_input
       #   @escaped_input ||= URI.escape(names)
       # end
