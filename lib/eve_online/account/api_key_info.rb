@@ -1,6 +1,6 @@
 module EveOnline
   module Account
-    # https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/account_apikeyinfo/
+    # https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/account/account_apikeyinfo.html
     class ApiKeyInfo < Base
       API_ENDPOINT = 'https://api.eveonline.com/account/APIKeyInfo.xml.aspx'.freeze
 

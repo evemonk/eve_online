@@ -1,6 +1,6 @@
 module EveOnline
   module Characters
-    # https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_bookmarks/
+    # https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/character/char_bookmarks.html
     class Bookmarks < Base
       API_ENDPOINT = 'https://api.eveonline.com/char/Bookmarks.xml.aspx'.freeze
 

@@ -1,6 +1,6 @@
 module EveOnline
   module Account
-    # https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/account_accountstatus/
+    # https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/account/account_accountstatus.html
     class Status < Base
       API_ENDPOINT = 'https://api.eveonline.com/account/AccountStatus.xml.aspx'.freeze
 

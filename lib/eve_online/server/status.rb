@@ -1,6 +1,6 @@
 module EveOnline
   module Server
-    # https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/serv_serversstatus/
+    # https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/server/serv_serverstatus.html
     class Status < Base
       API_ENDPOINT = 'https://api.eveonline.com/Server/ServerStatus.xml.aspx'.freeze
 

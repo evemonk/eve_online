@@ -1,6 +1,6 @@
 module EveOnline
   module Characters
-    # https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_contactnotifications/
+    # https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/character/char_contactnotifications.html
     class ContactNotifications < Base
       API_ENDPOINT = 'https://api.eveonline.com/char/ContactNotifications.xml.aspx'.freeze
 
