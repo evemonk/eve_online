@@ -21,6 +21,101 @@ describe EveOnline::Characters::Bookmarks do
     its(:character_id) { should eq(character_id) }
   end
 
+  describe '#bookmark_folders' do
+    context 'row is Hash' do
+      let(:row) do
+        {
+          'rowset' => {
+            'row' => [
+              {
+                '@bookmarkID' => '726640415',
+                '@creatorID' => '1337512245',
+                '@created' => '2012-07-09 22:38:31',
+                '@itemID' => '30003496',
+                '@typeID' => '5',
+                '@locationID' => '20000510',
+                '@x' => '0',
+                '@y' => '0',
+                '@z' => '0',
+                '@memo' => 'Nakri* (Solar System*)',
+                '@note' => ''
+              }
+            ],
+            '@name' => 'bookmarks',
+            '@key' => 'bookmarkID',
+            '@columns' => 'bookmarkID,creatorID,created,itemID,typeID,locationID,x,y,z,memo,note'
+          },
+          '@folderID' => '0',
+          '@folderName' => ''
+        }
+      end
+
+      before { expect(subject).to receive(:row).and_return(row).twice }
+
+      before do
+        #
+        # EveOnline::BookmarkFolder.new(row)
+        #
+        expect(EveOnline::BookmarkFolder).to receive(:new).with(row)
+      end
+
+      specify { expect { subject.bookmark_folders }.not_to raise_error }
+    end
+
+    context 'row is Array' do
+      let(:row) do
+        [
+          {
+            'rowset' => {
+              'row' => [
+                {
+                  '@bookmarkID' => '726640415',
+                  '@creatorID' => '1337512245',
+                  '@created' => '2012-07-09 22:38:31',
+                  '@itemID' => '30003496',
+                  '@typeID' => '5',
+                  '@locationID' => '20000510',
+                  '@x' => '0',
+                  '@y' => '0',
+                  '@z' => '0',
+                  '@memo' => 'Nakri* (Solar System*)',
+                  '@note' => ''
+                }
+              ],
+              '@name' => 'bookmarks',
+              '@key' => 'bookmarkID',
+              '@columns' => 'bookmarkID,creatorID,created,itemID,typeID,locationID,x,y,z,memo,note'
+            },
+            '@folderID' => '0',
+            '@folderName' => ''
+          }
+        ]
+      end
+
+      before { expect(subject).to receive(:row).and_return(row).twice }
+
+      before do
+        #
+        # EveOnline::BookmarkFolder.new(row.first)
+        #
+        expect(EveOnline::BookmarkFolder).to receive(:new).with(row.first)
+      end
+
+      specify { expect { subject.bookmark_folders }.not_to raise_error }
+    end
+
+    context 'row is invalid' do
+      before do
+        #
+        # subject.row # => 'invalid'
+        #
+        expect(subject).to receive(:row).and_return('invalid')
+      end
+
+      specify { expect { subject.bookmark_folders }.to raise_error(ArgumentError) }
+    end
+  end
+
   describe '#row' do
     before do
       #

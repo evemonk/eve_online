@@ -13,6 +13,23 @@ module EveOnline
         @character_id = character_id
       end
 
+      def bookmark_folders
+        @bookmark_folders ||= begin
+          case row
+          when Hash
+            [EveOnline::BookmarkFolder.new(row)]
+          when Array
+            bookmark_folders = []
+            row.each do |bookmark_folder|
+              bookmark_folders << EveOnline::BookmarkFolder.new(bookmark_folder)
+            end
+            bookmark_folders
+          else
+            raise ArgumentError
+          end
+        end
+      end
+
       def row
         @row ||= rowset.fetch('row')
       end
