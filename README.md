@@ -382,7 +382,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * `EveOnline::Account::Characters` and `EveOnline::Account::ApiKeyInfo` now supports multiple characters
 * Fix `EveOnline::Characters::AccountBalance` class
 * Fix `EveOnline::Characters::AccountBalance#account_key`
-* Add #as_json methods
+* Add `#as_json` methods
 
 **v0.3.0**:
 
