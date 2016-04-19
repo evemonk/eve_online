@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe EveOnline::CREST::Sovereignty::Campaigns do
+describe EveOnline::Sovereignty::Campaigns do
   specify { expect(subject).to be_a(EveOnline::CREST::Base) }
 
   specify { expect(described_class::API_ENDPOINT).to eq('https://public-crest.eveonline.com/sovereignty/campaigns/') }

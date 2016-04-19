@@ -28,7 +28,7 @@ require 'eve_online/characters/skill_in_training'
 require 'eve_online/eve/character_id'
 require 'eve_online/server/status'
 
-require 'eve_online/crest/sovereignty/campaigns'
+require 'eve_online/sovereignty/campaigns'
 
 module EveOnline
 end
