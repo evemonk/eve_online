@@ -1,6 +1,9 @@
 require 'eve_online/version'
 
 require 'eve_online/base'
+require 'eve_online/base_xml'
+require 'eve_online/base_crest'
+
 require 'eve_online/blueprint'
 require 'eve_online/bookmark'
 require 'eve_online/bookmark_folder'
@@ -8,6 +11,7 @@ require 'eve_online/character'
 require 'eve_online/event'
 require 'eve_online/event_response_object'
 require 'eve_online/item'
+
 require 'eve_online/account/api_key_info'
 require 'eve_online/account/characters'
 require 'eve_online/account/status'
