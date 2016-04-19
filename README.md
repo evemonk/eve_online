@@ -357,6 +357,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Add `EveOnline::CREST::Base` as base class for future CREST API
 * Add basic `EveOnline::CREST::Sovereignty::Campaigns` class
 * Add basic `EveOnline::Eve::CharacterID` to handle character name to character id requests
+* Add `EveOnline::BaseXML` as base for XML API
 
 **v0.6.0**
 
