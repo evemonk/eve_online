@@ -347,7 +347,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Drop `nokogiri` gem from gem dependency
 * Add `json` gem for CREST API
 * Add `EveOnline::Item` for handle items in AssetList
-* [Asset List](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_assetlist/)
+* [Asset List](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/character/char_assetlist.html)
 * Remove unused `EveOneline::Skill` and `EveOnline::SkillGroup` classes
 * Add `EveOnline::BookmarkFolder` class for handling bookmarks folders
 * Add `EveOnline::Bookmark` class for handling EveOnline Bookmarks
@@ -363,17 +363,17 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 
 * Add `EveOnline::EventResponseObject` class for handling EveOnline Event response values
 * `EveOnline::Event#response` now returns symbols. e.g. `:undecided`
-* [Character Blueprints](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_blueprints/)
+* [Character Blueprints](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/character/char_blueprints.html)
 * Add `EveOnline::Blueprint` class for handling EveOnline Blueprints
-* Add basic [Character Bookmarks](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_bookmarks/)
-* [Characters SkillInTraining](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_skillintraining/)
+* Add basic [Character Bookmarks](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/character/char_bookmarks.html)
+* [Characters SkillInTraining](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/character/char_skillintraining.html)
 
 **v0.5.0**
 
 * Add `EveOnline::Event` class for handling EveOnline Events
 * `EveOnline::Account::ApiKeyInfo#expires` now returns time with timezone
-* [Upcoming Calendar Events](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_upcomingcalendarevents/)
-* Basic [Calendar Event Attendees](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_calendareventattendees/)
+* [Upcoming Calendar Events](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/character/char_upcomingcalendarevents.html)
+* Basic [Calendar Event Attendees](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/character/char_calendareventattendees.html)
 
 **v0.4.0**:
 
@@ -386,18 +386,18 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 
 **v0.3.0**:
 
-* [Characters](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/account_characters/)
+* [Characters](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/account/account_characters.html)
 * Refactoring and bug fixes
 
 **v0.2.0**:
 
-* [Account Balance](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_accountbalance/)
-* [API Key Info](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/account_apikeyinfo/)
-* [Account Status](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/account_accountstatus/)
+* [Account Balance](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/character/char_accountbalance.html)
+* [API Key Info](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/account/account_apikeyinfo.html)
+* [Account Status](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/account/account_accountstatus.html)
 
 **v0.1.0**:
 
-* [Server Status](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/serv_serversstatus/)
+* [Server Status](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/server/serv_serverstatus.html)
 
 ## Implementation check list:
 
