@@ -5,9 +5,9 @@ describe EveOnline::Eve::CharacterID do
 
   subject { described_class.new(input) }
 
-  specify { expect(subject).to be_a EveOnline::Base }
-
   specify { expect(described_class::API_ENDPOINT).to eq('https://api.eveonline.com/eve/CharacterID.xml.aspx') }
+
+  specify { expect(subject).to be_a(EveOnline::BaseXML) }
 
   describe '#initialize' do
     its(:input) { should eq(input) }

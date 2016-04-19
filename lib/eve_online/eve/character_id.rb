@@ -3,7 +3,7 @@ require 'uri'
 module EveOnline
   module Eve
     # https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/eve/eve_characterid.html
-    class CharacterID < Base
+    class CharacterID < BaseXML
       API_ENDPOINT = 'https://api.eveonline.com/eve/CharacterID.xml.aspx'.freeze
 
       attr_reader :input

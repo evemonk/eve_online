@@ -1,7 +1,7 @@
 module EveOnline
   module Characters
     # https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/character/char_upcomingcalendarevents.html
-    class UpcomingCalendarEvents < Base
+    class UpcomingCalendarEvents < BaseXML
       API_ENDPOINT = 'https://api.eveonline.com/char/UpcomingCalendarEvents.xml.aspx'.freeze
 
       attr_reader :key_id, :v_code, :character_id
