@@ -1,7 +1,7 @@
 module EveOnline
   module Characters
     # https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/character/char_bookmarks.html
-    class Bookmarks < Base
+    class Bookmarks < BaseXML
       API_ENDPOINT = 'https://api.eveonline.com/char/Bookmarks.xml.aspx'.freeze
 
       attr_reader :key_id, :v_code, :character_id
