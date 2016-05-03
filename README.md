@@ -520,13 +520,6 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 
 ----
 
-### Misc
-
-- [ ] [Image (ID to Character Portrait and Corporation/Alliance Logo) (TODO: recheck this)](http://wiki.eve-id.net/APIv2_Eve_Image_Service)
-- [ ] [Old Portraits (TODO: recheck this)](http://wiki.eve-id.net/APIv2_Old_Portraits)
-
-----
-
 ### Server
 
 - [x] [Server Status](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/server/serv_serverstatus.html)
