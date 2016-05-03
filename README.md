@@ -403,23 +403,23 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 
 ### Account
 
-- [x] [Account Status](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/account_accountstatus/)
-- [x] [API Key Info](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/account_apikeyinfo/)
-- [x] [Characters](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/account_characters/)
+- [x] [Account Status](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/account/account_accountstatus.html)
+- [x] [API Key Info](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/account/account_apikeyinfo.html)
+- [x] [Characters](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/account/account_characters.html)
 
 ----
 
 ### Api
 
-- [ ] [Call List (Access Mask reference)](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/api_calllist/)
+- [ ] [Call List (Access Mask reference)](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/api/api_calllist.html)
 
 ----
 
 ### Character
 
-- [x] [Account Balance](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_accountbalance/)
-- [x] [Asset List](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_assetlist/)
-- [x] [Blueprints](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_blueprints/)
+- [x] [Account Balance](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/character/char_accountbalance.html)
+- [x] [Asset List](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/character/char_assetlist.html)
+- [x] [Blueprints](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/character/char_blueprints.html)
 - [ ] [Bookmarks](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_bookmarks/)
 - [ ] [Calendar Event Attendees](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_calendareventattendees/)
 - [ ] [Character Sheet](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/char_charactersheet/)
