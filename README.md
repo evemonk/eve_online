@@ -462,61 +462,61 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 
 ### Corporation
 
-- [ ] [Account Balance](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/corp_accountbalance/)
-- [ ] [Asset List](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/endpoints/corp_assetlist.md)
-- [ ] [Blueprints](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/endpoints/corp_blueprints.md)
-- [ ] [Bookmarks](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/corp_bookmarks/)
-- [ ] [Contact List](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/endpoints/corp_contactlist.md)
-- [ ] [Container Log](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/endpoints/corp_containerlog.md)
-- [ ] [Contract Bids](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/endpoints/corp_contractbids.md)
-- [ ] [Contract Items](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/endpoints/corp_contractitems.md)
-- [ ] [Contracts](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/endpoints/corp_contracts.md)
-- [ ] [Corporation Sheet](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/endpoints/corp_corporationsheet.md)
-- [ ] [Customs Offices](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/endpoints/corp_customsoffices.md)
-- [ ] [Facilities](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/endpoints/corp_facilities.md)
-- [ ] [Factional Warfare Stats](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/endpoints/corp_facwarstats.md)
-- [ ] [Industry Jobs](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/endpoints/corp_industryjobs.md)
-- [ ] [Industry Jobs History](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/endpoints/corp_industryjobshistory.md)
-- [ ] [Kill Mails](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/endpoints/corp_killmails.md)
-- [ ] [Locations](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/endpoints/corp_locations.md)
-- [ ] [Market Orders](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/endpoints/corp_marketorders.md)
-- [ ] [Medals](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/endpoints/corp_medals.md)
-- [ ] [Member Medals](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/endpoints/corp_membermedals.md)
-- [ ] [Member Security](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/endpoints/corp_membersecurity.md)
-- [ ] [Member Security Log](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/endpoints/corp_membersecuritylog.md)
-- [ ] [Member Tracking](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/endpoints/corp_membertracking.md)
-- [ ] [Outpost List](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/endpoints/corp_outpostlist.md)
-- [ ] [Outpost Service Detail](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/endpoints/corp_outpostservicedetail.md)
-- [ ] [Shareholders](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/endpoints/corp_shareholders.md)
-- [ ] [Standings](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/endpoints/corp_standings.md)
-- [ ] [Starbase Detail](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/endpoints/corp_starbasedetail.md)
-- [ ] [Starbase List](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/endpoints/corp_starbaselist.md)
-- [ ] [Titles](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/endpoints/corp_titles.md)
-- [ ] [Wallet Journal](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/corp_walletjournal/)
-- [ ] [Wallet Transactions](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/corp_wallettransactions/)
+- [ ] [Account Balance](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_accountbalance.html)
+- [ ] [Asset List](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_assetlist.html)
+- [ ] [Blueprints](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_blueprints.html)
+- [ ] [Bookmarks](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_bookmarks.html)
+- [ ] [Contact List](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_contactlist.html)
+- [ ] [Container Log](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_containerlog.html)
+- [ ] [Contract Bids](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_contractbids.html)
+- [ ] [Contract Items](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_contractitems.html)
+- [ ] [Contracts](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_contracts.html)
+- [ ] [Corporation Sheet](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_corporationsheet.html)
+- [ ] [Customs Offices](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_customsoffices.html)
+- [ ] [Facilities](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_facilities.html)
+- [ ] [Factional Warfare Stats](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_facwarstats.html)
+- [ ] [Industry Jobs](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_industryjobs.html)
+- [ ] [Industry Jobs History](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_industryjobshistory.html)
+- [ ] [Kill Mails](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_killmails.html)
+- [ ] [Locations](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_locations.html)
+- [ ] [Market Orders](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_marketorders.html)
+- [ ] [Medals](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_medals.html)
+- [ ] [Member Medals](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_membermedals.html)
+- [ ] [Member Security](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_membersecurity.html)
+- [ ] [Member Security Log](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_membersecuritylog.html)
+- [ ] [Member Tracking](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_membertracking.html)
+- [ ] [Outpost List](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_outpostlist.html)
+- [ ] [Outpost Service Detail](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_outpostservicedetail.html)
+- [ ] [Shareholders](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_shareholders.html)
+- [ ] [Standings](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_standings.html)
+- [ ] [Starbase Detail](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_starbasedetail.html)
+- [ ] [Starbase List](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_starbaselist.html)
+- [ ] [Titles](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_titles.html)
+- [ ] [Wallet Journal](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_walletjournal.html)
+- [ ] [Wallet Transactions](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_wallettransactions.html)
 
 ----
 
 ### Eve
 
-- [ ] [Alliance List](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/eve_alliancelist/)
-- [ ] [Character Affiliation](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/eve_characteraffiliation/)
-- [ ] [Character ID](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/eve_characterid/)
-- [ ] [Character Info](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/eve_characterinfo/)
-- [ ] [Character Name](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/eve_charactername/)
-- [ ] [Conquerable Station List](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/eve_conquerablestationlist/)
-- [ ] [Error List](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/eve_errorlist/)
-- [ ] [Ref Types](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/eve_reftypes/)
-- [ ] [Type Name](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/eve_typename/)
+- [ ] [Alliance List](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/eve/eve_alliancelist.html)
+- [ ] [Character Affiliation](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/eve/eve_characteraffiliation.html)
+- [ ] [Character ID](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/eve/eve_characterid.html)
+- [ ] [Character Info](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/eve/eve_characterinfo.html)
+- [ ] [Character Name](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/eve/eve_charactername.html)
+- [ ] [Conquerable Station List](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/eve/eve_conquerablestationlist.html)
+- [ ] [Error List](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/eve/eve_errorlist.html)
+- [ ] [Ref Types](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/eve/eve_reftypes.html)
+- [ ] [Type Name](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/eve/eve_typename.html)
 
 ----
 
 ### Map
 
-- [ ] [Factional Warfare Systems](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/map_facwarsystems/)
-- [ ] [Jumps](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/map_jumps/)
-- [ ] [Kills](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/map_kills/)
-- [ ] [Sovereignty](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/map_sovereignty/)
+- [ ] [Factional Warfare Systems](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/map/map_facwarsystems.html)
+- [ ] [Jumps](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/map/map_jumps.html)
+- [ ] [Kills](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/map/map_kills.html)
+- [ ] [Sovereignty](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/map/map_sovereignty.html)
 
 ----
 
@@ -529,7 +529,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 
 ### Server
 
-- [x] [Server Status](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/serv_serversstatus/)
+- [x] [Server Status](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/server/serv_serverstatus.html)
 
 ----
 
