@@ -350,7 +350,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 
 ## Changelog
 
-**master**
+**v0.7.0**
 
 * Drop `nokogiri` gem from gem dependency
 * Add `json` gem for CREST API
