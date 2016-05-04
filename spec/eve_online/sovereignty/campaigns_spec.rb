@@ -3,7 +3,7 @@ require 'spec_helper'
 describe EveOnline::Sovereignty::Campaigns do
   specify { expect(subject).to be_a(EveOnline::BaseCREST) }
 
-  specify { expect(described_class::API_ENDPOINT).to eq('https://public-crest.eveonline.com/sovereignty/campaigns/') }
+  specify { expect(described_class::API_ENDPOINT).to eq('https://crest-tq.eveonline.com/sovereignty/campaigns/') }
 
   describe '#items' do
     before do

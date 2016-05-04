@@ -3,7 +3,7 @@ module EveOnline
     # TODO: WTF? where docs???
     # https://developers.eveonline.com/blog/article/aegis-sovereignty-api-changes
     class Campaigns < BaseCREST
-      API_ENDPOINT = 'https://public-crest.eveonline.com/sovereignty/campaigns/'.freeze
+      API_ENDPOINT = 'https://crest-tq.eveonline.com/sovereignty/campaigns/'.freeze
 
       # TODO: return array of objects
       def items
