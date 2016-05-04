@@ -95,6 +95,9 @@ api_key_info = EveOnline::Account::ApiKeyInfo.new(key_id, v_code)
 
 api_key_info.expires # => Fri, 02 Dec 2016 18:13:59 UTC +00:00
 api_key_info.type # => "Account"
+# TODO: check this
+# irb(main):029:0> api_key_info.type
+# => "Character"
 api_key_info.access_mask # => 1073741823
 api_key_info.version # => 2
 api_key_info.current_time # => Mon, 30 Nov 2015 23:00:38 UTC +00:00
@@ -319,15 +322,15 @@ Sovereignty campaigns:
 ```ruby
 campaigns = EveOnline::Sovereignty::Campaigns.new
 
-campaigns.total_count # => 187
+campaigns.total_count # => 205
 campaigns.page_count # => 1
 
 campaigns.items.class # => Array
 
-campaigns.items.size # => 187
+campaigns.items.size # => 205
 
 campaigns.items.first
-# => {"eventType_str"=>"2", "campaignID"=>16124, "eventType"=>2, "sourceSolarsystem"=>{"id_str"=>"30003641", "href"=>"https://public-crest.eveonline.com/solarsystems/30003641/", "id"=>30003641, "name"=>"IKTD-P"}, "attackers"=>{"score"=>0.4}, "campaignID_str"=>"16124", "sourceItemID"=>1006633390023, "startTime"=>"2016-03-28T20:01:27", "sourceItemID_str"=>"1006633390023", "defender"=>{"defender"=>{"id_str"=>"1900696668", "href"=>"https://public-crest.eveonline.com/alliances/1900696668/", "id"=>1900696668, "name"=>"The Initiative."}, "score"=>0.6}, "constellation"=>{"id_str"=>"20000530", "href"=>"https://public-crest.eveonline.com/constellations/20000530/", "id"=>20000530, "name"=>"X-FHU3"}}
+# => {"eventType_str"=>"1", "campaignID"=>21773, "eventType"=>1, "sourceSolarsystem"=>{"id_str"=>"30003629", "href"=>"https://crest-tq.eveonline.com/solarsystems/30003629/", "id"=>30003629, "name"=>"S-KSWL"}, "attackers"=>{"score"=>0.8}, "campaignID_str"=>"21773", "sourceItemID"=>1020806305659, "startTime"=>"2016-05-04T15:43:16", "sourceItemID_str"=>"1020806305659", "defender"=>{"defender"=>{"id_str"=>"99006297", "href"=>"https://crest-tq.eveonline.com/alliances/99006297/", "id"=>99006297, "name"=>"DRONE WALKERS"}, "score"=>0.2}, "constellation"=>{"id_str"=>"20000529", "href"=>"https://crest-tq.eveonline.com/constellations/20000529/", "id"=>20000529, "name"=>"TJ10-O"}}
 ```
 
 ## Useful links
