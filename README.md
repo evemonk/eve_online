@@ -365,6 +365,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Add basic `EveOnline::Eve::CharacterID` to handle character name to character id requests
 * Add `EveOnline::BaseXML` as base for XML API
 * Add `EveOnline::BaseCREST` as base for CREST API
+* Citadel 1.0 updates
 
 **v0.6.0**
 
