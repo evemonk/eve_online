@@ -354,7 +354,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Drop `nokogiri` gem from gem dependency
 * Add `json` gem for CREST API
 * Add `EveOnline::Item` for handle items in AssetList
-* [Asset List](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/character/char_assetlist.html)
+* [Asset List](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_assetlist.html)
 * Remove unused `EveOneline::Skill` and `EveOnline::SkillGroup` classes
 * Add `EveOnline::BookmarkFolder` class for handling bookmarks folders
 * Add `EveOnline::Bookmark` class for handling EveOnline Bookmarks
@@ -370,17 +370,17 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 
 * Add `EveOnline::EventResponseObject` class for handling EveOnline Event response values
 * `EveOnline::Event#response` now returns symbols. e.g. `:undecided`
-* [Character Blueprints](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/character/char_blueprints.html)
+* [Character Blueprints](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_blueprints.html)
 * Add `EveOnline::Blueprint` class for handling EveOnline Blueprints
-* Add basic [Character Bookmarks](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/character/char_bookmarks.html)
-* [Characters SkillInTraining](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/character/char_skillintraining.html)
+* Add basic [Character Bookmarks](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_bookmarks.html)
+* [Characters SkillInTraining](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_skillintraining.html)
 
 **v0.5.0**
 
 * Add `EveOnline::Event` class for handling EveOnline Events
 * `EveOnline::Account::ApiKeyInfo#expires` now returns time with timezone
-* [Upcoming Calendar Events](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/character/char_upcomingcalendarevents.html)
-* Basic [Calendar Event Attendees](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/character/char_calendareventattendees.html)
+* [Upcoming Calendar Events](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_upcomingcalendarevents.html)
+* Basic [Calendar Event Attendees](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_calendareventattendees.html)
 
 **v0.4.0**:
 
@@ -398,35 +398,35 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 
 **v0.2.0**:
 
-* [Account Balance](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/character/char_accountbalance.html)
-* [API Key Info](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/account/account_apikeyinfo.html)
-* [Account Status](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/account/account_accountstatus.html)
+* [Account Balance](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_accountbalance.html)
+* [API Key Info](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/account/account_apikeyinfo.html)
+* [Account Status](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/account/account_accountstatus.html)
 
 **v0.1.0**:
 
-* [Server Status](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/server/serv_serverstatus.html)
+* [Server Status](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/server/serv_serverstatus.html)
 
 ## Implementation check list:
 
 ### Account
 
-- [x] [Account Status](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/account/account_accountstatus.html)
-- [x] [API Key Info](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/account/account_apikeyinfo.html)
-- [x] [Characters](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/account/account_characters.html)
+- [x] [Account Status](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/account/account_accountstatus.html)
+- [x] [API Key Info](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/account/account_apikeyinfo.html)
+- [x] [Characters](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/account/account_characters.html)
 
 ----
 
 ### Api
 
-- [ ] [Call List (Access Mask reference)](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/api/api_calllist.html)
+- [ ] [Call List (Access Mask reference)](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/api/api_calllist.html)
 
 ----
 
 ### Character
 
-- [x] [Account Balance](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/character/char_accountbalance.html)
-- [x] [Asset List](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/character/char_assetlist.html)
-- [x] [Blueprints](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/character/char_blueprints.html)
+- [x] [Account Balance](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_accountbalance.html)
+- [x] [Asset List](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_assetlist.html)
+- [x] [Blueprints](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_blueprints.html)
 - [ ] [Bookmarks](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_bookmarks.html)
 - [ ] [Calendar Event Attendees](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_calendareventattendees.html)
 - [ ] [Character Sheet](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_charactersheet.html)
