@@ -352,6 +352,10 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 
 ## Changelog
 
+**master**
+
+* nothing yet
+
 **v0.7.0**
 
 * Drop `nokogiri` gem from gem dependency
