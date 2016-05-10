@@ -9,7 +9,9 @@
 
 This gem implement Ruby API for EveOnline MMORPG. Both, XML and CREST API.
 
-You will need to add xml parser to your Gemfile to use this gem. E.g. nokogiri. Or any other xml parser which are supported by nori.
+This gem was extracted from [EveMonk](http://evemonk.com). Source code of evemonk backend published [here](https://github.com/biow0lf/evemonk).
+
+You will need to add xml parser to your Gemfile to use this gem. E.g. `nokogiri`. Or any other xml parser which are supported by nori.
 
 ## Installation
 
@@ -181,20 +183,20 @@ blueprints.version # => 2
 
 blueprints.blueprints.size # => 4
 
-bp = blueprints.blueprints.first
+blueprint = blueprints.blueprints.first
 
-bp.as_json
+blueprint.as_json
 # => {:item_id=>716338097, :location_id=>61000032, :type_id=>1010, :type_name=>"Small Shield Extender I Blueprint", :flag_id=>4, :quantity=>-2, :time_efficiency=>0, :material_efficiency=>10, :runs=>300}
 
-bp.item_id # => 716338097
-bp.location_id # => 61000032
-bp.type_id # => 1010
-bp.type_name # => "Small Shield Extender I Blueprint"
-bp.flag_id # => 4
-bp.quantity # => -2
-bp.time_efficiency # => 0
-bp.material_efficiency # => 10
-bp.runs # => 300
+blueprint.item_id # => 716338097
+blueprint.location_id # => 61000032
+blueprint.type_id # => 1010
+blueprint.type_name # => "Small Shield Extender I Blueprint"
+blueprint.flag_id # => 4
+blueprint.quantity # => -2
+blueprint.time_efficiency # => 0
+blueprint.material_efficiency # => 10
+blueprint.runs # => 300
 ```
 
 Bookmarks:
@@ -349,6 +351,10 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 Issue reports and pull requests are welcome on GitHub at https://github.com/biow0lf/eve_online.
 
 ## Changelog
+
+**master**
+
+* nothing yet
 
 **v0.7.0**
 
