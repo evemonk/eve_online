@@ -11,7 +11,7 @@ This gem implement Ruby API for EveOnline MMORPG. Both, XML and CREST API.
 
 This gem was extracted from [EveMonk](http://evemonk.com). Source code of evemonk backend published [here](https://github.com/biow0lf/evemonk).
 
-You will need to add xml parser to your Gemfile to use this gem. E.g. nokogiri. Or any other xml parser which are supported by nori.
+You will need to add xml parser to your Gemfile to use this gem. E.g. `nokogiri`. Or any other xml parser which are supported by nori.
 
 ## Installation
 
