@@ -7,11 +7,13 @@ rvm:
   - 2.1
   - 2.2
   - 2.3.1
+  - 2.4.0-preview1
   - rbx
   - jruby
 
 matrix:
   allow_failures:
     - rvm: rbx
+    - rvm: 2.4.0-preview1
 
 before_install: gem install bundler -v 1.12.1
