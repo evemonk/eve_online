@@ -6,7 +6,7 @@ module EveOnline
       @options = options
     end
 
-    def as_json(*args)
+    def as_json
       {
         event_id: event_id,
         owner_id: owner_id,

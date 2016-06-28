@@ -6,7 +6,7 @@ module EveOnline
       @options = options
     end
 
-    def as_json(*args)
+    def as_json
       {
         character_id: character_id,
         character_name: character_name,

@@ -13,7 +13,7 @@ module EveOnline
         @character_id = character_id
       end
 
-      def as_json(*args)
+      def as_json
         {
           account_id: account_id,
           account_key: account_key,

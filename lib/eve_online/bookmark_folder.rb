@@ -6,7 +6,7 @@ module EveOnline
       @options = options
     end
 
-    def as_json(*args)
+    def as_json
       {
         folder_id: folder_id,
         folder_name: folder_name

@@ -4,7 +4,7 @@ module EveOnline
     class Status < BaseXML
       API_ENDPOINT = 'https://api.eveonline.com/Server/ServerStatus.xml.aspx'.freeze
 
-      def as_json(*args)
+      def as_json
         {
           current_time: current_time,
           cached_until: cached_until,

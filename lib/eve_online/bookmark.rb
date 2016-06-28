@@ -6,7 +6,7 @@ module EveOnline
       @options = options
     end
 
-    def as_json(*args)
+    def as_json
       {
         bookmark_id: bookmark_id,
         creator_id: creator_id,
