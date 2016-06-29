@@ -10,7 +10,9 @@ describe EveOnline::Character do
   end
 
   describe '#as_json' do
-    let(:character) { described_class.new }
+    let(:options) { double }
+
+    let(:character) { described_class.new(options) }
 
     before { expect(character).to receive(:character_id).and_return(90_729_314) }
 
@@ -48,6 +50,10 @@ describe EveOnline::Character do
   end
 
   describe '#character_id' do
+    let(:options) { double }
+
+    subject { described_class.new(options) }
+
     before do
       #
       # subject.options.fetch('@characterID').to_i
@@ -67,6 +73,10 @@ describe EveOnline::Character do
   end
 
   describe '#character_name' do
+    let(:options) { double }
+
+    subject { described_class.new(options) }
+
     context '@name' do
       before do
         #
@@ -110,6 +120,10 @@ describe EveOnline::Character do
   end
 
   describe '#corporation_id' do
+    let(:options) { double }
+
+    subject { described_class.new(options) }
+
     before do
       #
       # subject.options.fetch('@corporationID').to_i
@@ -129,6 +143,10 @@ describe EveOnline::Character do
   end
 
   describe '#corporation_name' do
+    let(:options) { double }
+
+    subject { described_class.new(options) }
+
     before do
       #
       # subject.options.fetch('@corporationName')
@@ -144,6 +162,10 @@ describe EveOnline::Character do
   end
 
   describe '#alliance_id' do
+    let(:options) { double }
+
+    subject { described_class.new(options) }
+
     before do
       #
       # subject.options.fetch('@allianceID').to_i
@@ -163,6 +185,10 @@ describe EveOnline::Character do
   end
 
   describe '#alliance_name' do
+    let(:options) { double }
+
+    subject { described_class.new(options) }
+
     before do
       #
       # subject.options.fetch('@allianceName')
@@ -178,6 +204,10 @@ describe EveOnline::Character do
   end
 
   describe '#faction_id' do
+    let(:options) { double }
+
+    subject { described_class.new(options) }
+
     before do
       #
       # subject.options.fetch('@factionID').to_i
@@ -197,6 +227,10 @@ describe EveOnline::Character do
   end
 
   describe '#faction_name' do
+    let(:options) { double }
+
+    subject { described_class.new(options) }
+
     before do
       #
       # subject.options.fetch('@factionName')

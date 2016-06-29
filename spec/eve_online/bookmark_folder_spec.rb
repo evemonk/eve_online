@@ -10,7 +10,9 @@ describe EveOnline::BookmarkFolder do
   end
 
   describe '#as_json' do
-    let(:bookmark) { described_class.new }
+    let(:options) { double }
+
+    let(:bookmark) { described_class.new(options) }
 
     before { expect(bookmark).to receive(:folder_id).and_return(0) }
 
@@ -24,6 +26,10 @@ describe EveOnline::BookmarkFolder do
   end
 
   describe '#folder_id' do
+    let(:options) { double }
+
+    subject { described_class.new(options) }
+
     before do
       #
       # subject.options.fetch('@folderID').to_i
@@ -43,6 +49,10 @@ describe EveOnline::BookmarkFolder do
   end
 
   describe '#folder_name' do
+    let(:options) { double }
+
+    subject { described_class.new(options) }
+
     before do
       #
       # subject.options.fetch('@folderName')

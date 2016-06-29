@@ -10,7 +10,9 @@ describe EveOnline::Event do
   end
 
   describe '#as_json' do
-    let(:event) { described_class.new({}) }
+    let(:options) { double }
+
+    let(:event) { described_class.new(options) }
 
     let(:event_date) { double }
 
@@ -58,6 +60,10 @@ describe EveOnline::Event do
   end
 
   describe '#event_id' do
+    let(:options) { double }
+
+    subject { described_class.new(options) }
+
     before do
       #
       # subject.options.fetch('@eventID').to_i
@@ -77,6 +83,10 @@ describe EveOnline::Event do
   end
 
   describe '#owner_id' do
+    let(:options) { double }
+
+    subject { described_class.new(options) }
+
     before do
       #
       # subject.options.fetch('@ownerID').to_i
@@ -96,6 +106,10 @@ describe EveOnline::Event do
   end
 
   describe '#owner_name' do
+    let(:options) { double }
+
+    subject { described_class.new(options) }
+
     before do
       #
       # subject.options.fetch('@ownerName')
@@ -111,6 +125,10 @@ describe EveOnline::Event do
   end
 
   describe '#event_date' do
+    let(:options) { double }
+
+    subject { described_class.new(options) }
+
     let(:event_date) { double }
 
     before do
@@ -139,6 +157,10 @@ describe EveOnline::Event do
   end
 
   describe '#event_title' do
+    let(:options) { double }
+
+    subject { described_class.new(options) }
+
     before do
       #
       # subject.options.fetch('@eventTitle')
@@ -154,6 +176,10 @@ describe EveOnline::Event do
   end
 
   describe '#duration' do
+    let(:options) { double }
+
+    subject { described_class.new(options) }
+
     before do
       #
       # subject.options.fetch('@duration').to_i
@@ -173,6 +199,10 @@ describe EveOnline::Event do
   end
 
   describe '#importance' do
+    let(:options) { double }
+
+    subject { described_class.new(options) }
+
     before do
       #
       # subject.options.fetch('@importance').eql?('1')
@@ -192,6 +222,10 @@ describe EveOnline::Event do
   end
 
   describe '#response' do
+    let(:options) { double }
+
+    subject { described_class.new(options) }
+
     let(:response) { double }
 
     before do
@@ -217,6 +251,10 @@ describe EveOnline::Event do
   end
 
   describe '#event_text' do
+    let(:options) { double }
+
+    subject { described_class.new(options) }
+
     before do
       #
       # subject.options.fetch('@eventText')
@@ -232,6 +270,10 @@ describe EveOnline::Event do
   end
 
   describe '#owner_type_id' do
+    let(:options) { double }
+
+    subject { described_class.new(options) }
+
     before do
       #
       # subject.options.fetch('@ownerTypeID').to_i
