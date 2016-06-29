@@ -16,13 +16,32 @@ describe EveOnline::Characters::AssetList do
   specify { expect(described_class::API_ENDPOINT).to eq('https://api.eveonline.com/char/AssetList.xml.aspx') }
 
   describe '#initialize' do
-    its(:key_id) { should eq(key_id) }
+    context 'without params' do
+      let(:parser) { double }
 
-    its(:v_code) { should eq(v_code) }
+      before do
+        #
+        # Nori.new(advanced_typecasting: false) => double
+        #
+        expect(Nori).to receive(:new).with(advanced_typecasting: false).and_return(parser)
+      end
 
-    its(:character_id) { should eq(character_id) }
+      its(:parser) { should eq(parser) }
 
-    its(:flat) { should eq(flat) }
+      its(:key_id) { should eq(key_id) }
+
+      its(:v_code) { should eq(v_code) }
+
+      its(:character_id) { should eq(character_id) }
+
+      its(:flat) { should eq(flat) }
+    end
+
+    context 'with params' do
+      subject { described_class.new(key_id, v_code, character_id) }
+
+      its(:flat) { should eq(1) }
+    end
   end
 
   describe '#assets' do
