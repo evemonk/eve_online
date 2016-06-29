@@ -13,6 +13,14 @@ module EveOnline
       }
     end
 
+    # def as_json
+    #   {
+    #     folder_id: folder_id,
+    #     folder_name: folder_name,
+    #     bookmarks: bookmarks
+    #   }
+    # end
+
     def folder_id
       @folder_d ||= options.fetch('@folderID').to_i
     end
@@ -20,5 +28,13 @@ module EveOnline
     def folder_name
       @folder_name ||= options.fetch('@folderName')
     end
+
+    # def bookmarks
+    #   { }
+    # end
+    #
+    # def rowset
+    #
+    # end
   end
 end
