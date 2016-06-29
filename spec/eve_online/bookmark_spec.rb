@@ -10,7 +10,9 @@ describe EveOnline::Bookmark do
   end
 
   describe '#as_json' do
-    let(:bookmark) { described_class.new }
+    let(:options) { double }
+
+    let(:bookmark) { described_class.new(options) }
 
     let(:created) { double }
 
@@ -62,6 +64,10 @@ describe EveOnline::Bookmark do
   end
 
   describe '#bookmark_id' do
+    let(:options) { double }
+
+    subject { described_class.new(options) }
+
     before do
       #
       # subject.options.fetch('@bookmarkID').to_i
@@ -81,6 +87,10 @@ describe EveOnline::Bookmark do
   end
 
   describe '#creator_id' do
+    let(:options) { double }
+
+    subject { described_class.new(options) }
+
     before do
       #
       # subject.options.fetch('@creatorID').to_i
@@ -100,6 +110,10 @@ describe EveOnline::Bookmark do
   end
 
   describe '#created' do
+    let(:options) { double }
+
+    subject { described_class.new(options) }
+
     let(:created) { double }
 
     before do
@@ -128,6 +142,10 @@ describe EveOnline::Bookmark do
   end
 
   describe '#item_id' do
+    let(:options) { double }
+
+    subject { described_class.new(options) }
+
     before do
       #
       # subject.options.fetch('@itemID').to_i
@@ -147,6 +165,10 @@ describe EveOnline::Bookmark do
   end
 
   describe '#type_id' do
+    let(:options) { double }
+
+    subject { described_class.new(options) }
+
     before do
       #
       # subject.options.fetch('@typeID').to_i
@@ -166,6 +188,10 @@ describe EveOnline::Bookmark do
   end
 
   describe '#location_id' do
+    let(:options) { double }
+
+    subject { described_class.new(options) }
+
     before do
       #
       # subject.options.fetch('@locationID').to_i
@@ -185,6 +211,10 @@ describe EveOnline::Bookmark do
   end
 
   describe '#x' do
+    let(:options) { double }
+
+    subject { described_class.new(options) }
+
     before do
       #
       # subject.options.fetch('@x').to_f
@@ -204,6 +234,10 @@ describe EveOnline::Bookmark do
   end
 
   describe '#y' do
+    let(:options) { double }
+
+    subject { described_class.new(options) }
+
     before do
       #
       # subject.options.fetch('@y').to_f
@@ -223,6 +257,10 @@ describe EveOnline::Bookmark do
   end
 
   describe '#z' do
+    let(:options) { double }
+
+    subject { described_class.new(options) }
+
     before do
       #
       # subject.options.fetch('@z').to_f
@@ -242,6 +280,10 @@ describe EveOnline::Bookmark do
   end
 
   describe '#memo' do
+    let(:options) { double }
+
+    subject { described_class.new(options) }
+
     before do
       #
       # subject.options.fetch('@memo')
@@ -257,6 +299,10 @@ describe EveOnline::Bookmark do
   end
 
   describe '#note' do
+    let(:options) { double }
+
+    subject { described_class.new(options) }
+
     before do
       #
       # subject.options.fetch('@note')

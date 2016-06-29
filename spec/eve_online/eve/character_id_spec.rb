@@ -10,6 +10,17 @@ describe EveOnline::Eve::CharacterID do
   specify { expect(subject).to be_a(EveOnline::BaseXML) }
 
   describe '#initialize' do
+    let(:parser) { double }
+
+    before do
+      #
+      # Nori.new(advanced_typecasting: false) => double
+      #
+      expect(Nori).to receive(:new).with(advanced_typecasting: false).and_return(parser)
+    end
+
+    its(:parser) { should eq(parser) }
+
     its(:input) { should eq(input) }
   end
 
