@@ -7,7 +7,7 @@ module EveOnline
     end
 
     def user_agent
-      @user_agent ||= "EveOnline API (https://github.com/biow0lf/eve_online) v#{ EveOnline::VERSION }"
+      @user_agent ||= "EveOnline API (https://github.com/biow0lf/eve_online) v#{ VERSION }"
     end
 
     def content
