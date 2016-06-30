@@ -34,6 +34,8 @@ describe EveOnline::Characters::UpcomingCalendarEvents do
 
   describe '#events' do
     context 'row is Hash' do
+      let(:event) { double }
+
       let(:row) do
         {
           '@eventID' => '1234567',
@@ -58,15 +60,17 @@ describe EveOnline::Characters::UpcomingCalendarEvents do
 
       before do
         #
-        # EveOnline::Event.new(row)
+        # EveOnline::Event.new(row) # => event
         #
-        expect(EveOnline::Event).to receive(:new).with(row)
+        expect(EveOnline::Event).to receive(:new).with(row).and_return(event)
       end
 
-      specify { expect { subject.events }.not_to raise_error }
+      specify { expect(subject.events).to eq([event]) }
     end
 
     context 'row is Array' do
+      let(:event) { double }
+
       let(:row) do
         [
           {
@@ -93,12 +97,12 @@ describe EveOnline::Characters::UpcomingCalendarEvents do
 
       before do
         #
-        # EveOnline::Event.new(row.first)
+        # EveOnline::Event.new(row.first) # => event
         #
-        expect(EveOnline::Event).to receive(:new).with(row.first)
+        expect(EveOnline::Event).to receive(:new).with(row.first).and_return(event)
       end
 
-      specify { expect { subject.events }.not_to raise_error }
+      specify { expect(subject.events).to eq([event]) }
     end
 
     context 'row is invalid' do
