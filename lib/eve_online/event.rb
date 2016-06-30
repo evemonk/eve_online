@@ -50,7 +50,7 @@ module EveOnline
     end
 
     def response
-      @response ||= EveOnline::EventResponseObject.new(options.fetch('@response')).value
+      @response ||= EventResponseObject.new(options.fetch('@response')).value
     end
 
     def event_text

@@ -15,11 +15,11 @@ module EveOnline
       def characters
         case row
         when Hash
-          [EveOnline::Character.new(row)]
+          [Character.new(row)]
         when Array
           output = []
           row.each do |character|
-            output << EveOnline::Character.new(character)
+            output << Character.new(character)
           end
           output
         else
