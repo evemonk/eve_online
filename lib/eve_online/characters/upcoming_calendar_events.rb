@@ -16,11 +16,11 @@ module EveOnline
       def events
         case row
         when Hash
-          [EveOnline::Event.new(row)]
+          [Event.new(row)]
         when Array
           output = []
           row.each do |event|
-            output << EveOnline::Event.new(event)
+            output << Event.new(event)
           end
           output
         else
