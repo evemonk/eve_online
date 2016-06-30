@@ -17,11 +17,11 @@ module EveOnline
       def assets
         case row
         when Hash
-          [EveOnline::Item.new(row)]
+          [Item.new(row)]
         when Array
           output = []
           row.each do |item|
-            output << EveOnline::Item.new(item)
+            output << Item.new(item)
           end
           output
         else

@@ -17,11 +17,11 @@ module EveOnline
         @bookmark_folders ||= begin
           case row
           when Hash
-            [EveOnline::BookmarkFolder.new(row)]
+            [BookmarkFolder.new(row)]
           when Array
             bookmark_folders = []
             row.each do |bookmark_folder|
-              bookmark_folders << EveOnline::BookmarkFolder.new(bookmark_folder)
+              bookmark_folders << BookmarkFolder.new(bookmark_folder)
             end
             bookmark_folders
           else
