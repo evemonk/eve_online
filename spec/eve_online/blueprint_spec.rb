@@ -10,7 +10,9 @@ describe EveOnline::Blueprint do
   end
 
   describe '#as_json' do
-    let(:blueprint) { described_class.new }
+    let(:options) { double }
+
+    let(:blueprint) { described_class.new(options) }
 
     before { expect(blueprint).to receive(:item_id).and_return(716_338_097) }
 
@@ -52,6 +54,10 @@ describe EveOnline::Blueprint do
   end
 
   describe '#item_id' do
+    let(:options) { double }
+
+    subject { described_class.new(options) }
+
     before do
       #
       # subject.options.fetch('@itemID').to_i
@@ -71,6 +77,10 @@ describe EveOnline::Blueprint do
   end
 
   describe '#location_id' do
+    let(:options) { double }
+
+    subject { described_class.new(options) }
+
     before do
       #
       # subject.options.fetch('@locationID').to_i
@@ -90,6 +100,10 @@ describe EveOnline::Blueprint do
   end
 
   describe '#type_id' do
+    let(:options) { double }
+
+    subject { described_class.new(options) }
+
     before do
       #
       # subject.options.fetch('@typeID').to_i
@@ -109,6 +123,10 @@ describe EveOnline::Blueprint do
   end
 
   describe '#type_name' do
+    let(:options) { double }
+
+    subject { described_class.new(options) }
+
     before do
       #
       # subject.options.fetch('@typeID')
@@ -124,6 +142,10 @@ describe EveOnline::Blueprint do
   end
 
   describe '#flag_id' do
+    let(:options) { double }
+
+    subject { described_class.new(options) }
+
     before do
       #
       # subject.options.fetch('@flagID').to_i
@@ -143,6 +165,10 @@ describe EveOnline::Blueprint do
   end
 
   describe '#quantity' do
+    let(:options) { double }
+
+    subject { described_class.new(options) }
+
     before do
       #
       # subject.options.fetch('@quantity').to_i
@@ -162,6 +188,10 @@ describe EveOnline::Blueprint do
   end
 
   describe '#time_efficiency' do
+    let(:options) { double }
+
+    subject { described_class.new(options) }
+
     before do
       #
       # subject.options.fetch('@timeEfficiency').to_i
@@ -181,6 +211,10 @@ describe EveOnline::Blueprint do
   end
 
   describe '#material_efficiencyv' do
+    let(:options) { double }
+
+    subject { described_class.new(options) }
+
     before do
       #
       # subject.options.fetch('@materialEfficiency').to_i
@@ -200,6 +234,10 @@ describe EveOnline::Blueprint do
   end
 
   describe '#runs' do
+    let(:options) { double }
+
+    subject { described_class.new(options) }
+
     before do
       #
       # subject.options.fetch('@runs').to_i

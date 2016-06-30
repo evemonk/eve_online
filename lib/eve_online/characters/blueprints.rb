@@ -16,11 +16,11 @@ module EveOnline
       def blueprints
         case row
         when Hash
-          [EveOnline::Blueprint.new(row)]
+          [Blueprint.new(row)]
         when Array
           output = []
           row.each do |blueprint|
-            output << EveOnline::Blueprint.new(blueprint)
+            output << Blueprint.new(blueprint)
           end
           output
         else

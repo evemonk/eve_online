@@ -12,6 +12,17 @@ describe EveOnline::Account::ApiKeyInfo do
   specify { expect(described_class::API_ENDPOINT).to eq('https://api.eveonline.com/account/APIKeyInfo.xml.aspx') }
 
   describe '#initialize' do
+    let(:parser) { double }
+
+    before do
+      #
+      # Nori.new(advanced_typecasting: false) => double
+      #
+      expect(Nori).to receive(:new).with(advanced_typecasting: false).and_return(parser)
+    end
+
+    its(:parser) { should eq(parser) }
+
     its(:key_id) { should eq(key_id) }
 
     its(:v_code) { should eq(v_code) }
@@ -19,6 +30,8 @@ describe EveOnline::Account::ApiKeyInfo do
 
   describe '#characters' do
     context 'row is Hash' do
+      let(:character) { double }
+
       let(:row) do
         {
           '@characterID' => '90729314',
@@ -41,15 +54,17 @@ describe EveOnline::Account::ApiKeyInfo do
 
       before do
         #
-        # EveOnline::Character.new(row)
+        # EveOnline::Character.new(row) # => character
         #
-        expect(EveOnline::Character).to receive(:new).with(row)
+        expect(EveOnline::Character).to receive(:new).with(row).and_return(character)
       end
 
-      specify { expect { subject.characters }.not_to raise_error }
+      specify { expect(subject.characters).to eq([character]) }
     end
 
     context 'row is Array' do
+      let(:character) { double }
+
       let(:row) do
         [
           {
@@ -74,12 +89,12 @@ describe EveOnline::Account::ApiKeyInfo do
 
       before do
         #
-        # EveOnline::Character.new(row.first)
+        # EveOnline::Character.new(row.first) # => character
         #
-        expect(EveOnline::Character).to receive(:new).with(row.first)
+        expect(EveOnline::Character).to receive(:new).with(row.first).and_return(character)
       end
 
-      specify { expect { subject.characters }.not_to raise_error }
+      specify { expect(subject.characters).to eq([character]) }
     end
 
     context 'row is invalid' do

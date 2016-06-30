@@ -10,7 +10,9 @@ describe EveOnline::Item do
   end
 
   describe '#as_json' do
-    let(:item) { described_class.new }
+    let(:options) { double }
+
+    let(:item) { described_class.new(options) }
 
     before { expect(item).to receive(:item_id).and_return(408_887_580) }
 
@@ -44,6 +46,10 @@ describe EveOnline::Item do
   end
 
   describe '#item_id' do
+    let(:options) { double }
+
+    subject { described_class.new(options) }
+
     before do
       #
       # subject.options.fetch('@itemID').to_i
@@ -63,6 +69,10 @@ describe EveOnline::Item do
   end
 
   describe '#location_id' do
+    let(:options) { double }
+
+    subject { described_class.new(options) }
+
     before do
       #
       # subject.options.fetch('@locationID').to_i
@@ -82,6 +92,10 @@ describe EveOnline::Item do
   end
 
   describe '#type_id' do
+    let(:options) { double }
+
+    subject { described_class.new(options) }
+
     before do
       #
       # subject.options.fetch('@typeID').to_i
@@ -101,6 +115,10 @@ describe EveOnline::Item do
   end
 
   describe '#quantity' do
+    let(:options) { double }
+
+    subject { described_class.new(options) }
+
     before do
       #
       # subject.options.fetch('@quantity').to_i
@@ -120,6 +138,10 @@ describe EveOnline::Item do
   end
 
   describe '#flag' do
+    let(:options) { double }
+
+    subject { described_class.new(options) }
+
     before do
       #
       # subject.options.fetch('@flag').to_i
@@ -139,6 +161,10 @@ describe EveOnline::Item do
   end
 
   describe '#singleton' do
+    let(:options) { double }
+
+    subject { described_class.new(options) }
+
     before do
       #
       # subject.options.fetch('@singleton').to_i
@@ -158,6 +184,10 @@ describe EveOnline::Item do
   end
 
   describe '#raw_quantity' do
+    let(:options) { double }
+
+    subject { described_class.new(options) }
+
     before do
       #
       # subject.options.fetch('@rawQuantity').to_i

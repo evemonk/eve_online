@@ -2,11 +2,11 @@ module EveOnline
   class Event
     attr_reader :options
 
-    def initialize(options = {})
+    def initialize(options)
       @options = options
     end
 
-    def as_json(*args)
+    def as_json
       {
         event_id: event_id,
         owner_id: owner_id,
@@ -50,7 +50,7 @@ module EveOnline
     end
 
     def response
-      @response ||= EveOnline::EventResponseObject.new(options.fetch('@response')).value
+      @response ||= EventResponseObject.new(options.fetch('@response')).value
     end
 
     def event_text

@@ -13,7 +13,7 @@ module EveOnline
         @character_id = character_id
       end
 
-      def as_json(*args)
+      def as_json
         {
           current_tq_time: current_tq_time,
           training_end_time: training_end_time,

@@ -2,11 +2,11 @@ module EveOnline
   class Character
     attr_reader :options
 
-    def initialize(options = {})
+    def initialize(options)
       @options = options
     end
 
-    def as_json(*args)
+    def as_json
       {
         character_id: character_id,
         character_name: character_name,
