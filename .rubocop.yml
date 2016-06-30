@@ -9,3 +9,7 @@ Style/SpaceInsideStringInterpolation:
 
 Style/SignalException:
   Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
