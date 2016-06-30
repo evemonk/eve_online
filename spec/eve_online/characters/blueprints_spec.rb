@@ -34,6 +34,8 @@ describe EveOnline::Characters::Blueprints do
 
   describe '#blueprints' do
     context 'row is Hash' do
+      let(:blueprint) { double }
+
       let(:row) do
         {
           '@itemID' => '716338097',
@@ -57,15 +59,17 @@ describe EveOnline::Characters::Blueprints do
 
       before do
         #
-        # EveOnline::Blueprint.new(row)
+        # EveOnline::Blueprint.new(row) # => blueprint
         #
-        expect(EveOnline::Blueprint).to receive(:new).with(row)
+        expect(EveOnline::Blueprint).to receive(:new).with(row).and_return(blueprint)
       end
 
-      specify { expect { subject.blueprints }.not_to raise_error }
+      specify { expect(subject.blueprints).to eq([blueprint]) }
     end
 
     context 'row is Array' do
+      let(:blueprint) { double }
+
       let(:row) do
         [
           {
@@ -91,12 +95,12 @@ describe EveOnline::Characters::Blueprints do
 
       before do
         #
-        # EveOnline::Blueprint.new(row.first)
+        # EveOnline::Blueprint.new(row.first) # => blueprint
         #
-        expect(EveOnline::Blueprint).to receive(:new).with(row.first)
+        expect(EveOnline::Blueprint).to receive(:new).with(row.first).and_return(blueprint)
       end
 
-      specify { expect { subject.blueprints }.not_to raise_error }
+      specify { expect(subject.blueprints).to eq([blueprint]) }
     end
 
     context 'row is invalid' do

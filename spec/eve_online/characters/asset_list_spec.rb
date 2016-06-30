@@ -46,6 +46,8 @@ describe EveOnline::Characters::AssetList do
 
   describe '#assets' do
     context 'row is Hash' do
+      let(:item) { double }
+
       let(:row) do
         {
           '@itemID' => '408887580',
@@ -67,15 +69,17 @@ describe EveOnline::Characters::AssetList do
 
       before do
         #
-        # EveOnline::Item.new(row)
+        # EveOnline::Item.new(row) # => item
         #
-        expect(EveOnline::Item).to receive(:new).with(row)
+        expect(EveOnline::Item).to receive(:new).with(row).and_return(item)
       end
 
-      specify { expect { subject.assets }.not_to raise_error }
+      specify { expect(subject.assets).to eq([item]) }
     end
 
     context 'row is Array' do
+      let(:item) { double }
+
       let(:row) do
         [
           {
@@ -99,12 +103,12 @@ describe EveOnline::Characters::AssetList do
 
       before do
         #
-        # EveOnline::Item.new(row.first)
+        # EveOnline::Item.new(row.first) # => item
         #
-        expect(EveOnline::Item).to receive(:new).with(row.first)
+        expect(EveOnline::Item).to receive(:new).with(row.first).and_return(item)
       end
 
-      specify { expect { subject.assets }.not_to raise_error }
+      specify { expect(subject.assets).to eq([item]) }
     end
 
     context 'row is invalid' do
