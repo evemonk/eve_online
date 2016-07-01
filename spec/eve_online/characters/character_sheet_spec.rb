@@ -77,13 +77,52 @@ describe EveOnline::Characters::CharacterSheet do
     specify { expect { subject.name }.not_to raise_error }
   end
 
-  # def home_station_id
-  #   @home_station_id ||= result.fetch('homeStationID').to_i
-  # end
-  #
-  # def dob
-  #   @dob ||= ActiveSupport::TimeZone['UTC'].parse(result.fetch('DoB'))
-  # end
+  describe '#home_station_id' do
+    before do
+      #
+      # subject.result.fetch('homeStationID').to_i
+      #
+      expect(subject).to receive(:result) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('homeStationID') do
+            double.tap do |b|
+              expect(b).to receive(:to_i)
+            end
+          end
+        end
+      end
+    end
+
+    specify { expect { subject.home_station_id }.not_to raise_error }
+  end
+
+  describe '#dob' do
+    let(:dob) { double }
+
+    before do
+      #
+      # subject.result.fetch('DoB') => dob
+      #
+      expect(subject).to receive(:result) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('DoB').and_return(dob)
+        end
+      end
+    end
+
+    before do
+      #
+      # ActiveSupport::TimeZone['UTC'].parse(dob)
+      #
+      expect(ActiveSupport::TimeZone).to receive(:[]).with('UTC') do
+        double.tap do |a|
+          expect(a).to receive(:parse).with(dob)
+        end
+      end
+    end
+
+    specify { expect { subject.dob }.not_to raise_error }
+  end
 
   describe '#race' do
     before do
@@ -100,9 +139,24 @@ describe EveOnline::Characters::CharacterSheet do
     specify { expect { subject.race }.not_to raise_error }
   end
 
-  # def blood_line_id
-  #   @blood_line_id ||= result.fetch('bloodLineID').to_i
-  # end
+  describe '#blood_line_id' do
+    before do
+      #
+      # subject.result.fetch('bloodLineID').to_i
+      #
+      expect(subject).to receive(:result) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('bloodLineID') do
+            double.tap do |b|
+              expect(b).to receive(:to_i)
+            end
+          end
+        end
+      end
+    end
+
+    specify { expect { subject.blood_line_id }.not_to raise_error }
+  end
 
   describe '#blood_line' do
     before do
@@ -119,9 +173,24 @@ describe EveOnline::Characters::CharacterSheet do
     specify { expect { subject.blood_line }.not_to raise_error }
   end
 
-  # def ancestry_id
-  #   @ancestry_id ||= result.fetch('ancestryID').to_i
-  # end
+  describe '#ancestry_id' do
+    before do
+      #
+      # subject.result.fetch('ancestryID').to_i
+      #
+      expect(subject).to receive(:result) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('ancestryID') do
+            double.tap do |b|
+              expect(b).to receive(:to_i)
+            end
+          end
+        end
+      end
+    end
+
+    specify { expect { subject.ancestry_id }.not_to raise_error }
+  end
 
   describe '#ancestry' do
     before do
@@ -168,9 +237,24 @@ describe EveOnline::Characters::CharacterSheet do
     specify { expect { subject.corporation_name }.not_to raise_error }
   end
 
-  # def corporation_id
-  #   @corporation_id ||= result.fetch('corporationID').to_i
-  # end
+  describe '#corporation_id' do
+    before do
+      #
+      # subject.result.fetch('corporationID').to_i
+      #
+      expect(subject).to receive(:result) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('corporationID') do
+            double.tap do |b|
+              expect(b).to receive(:to_i)
+            end
+          end
+        end
+      end
+    end
+
+    specify { expect { subject.corporation_id }.not_to raise_error }
+  end
 
   describe '#alliance_name' do
     before do
@@ -187,9 +271,24 @@ describe EveOnline::Characters::CharacterSheet do
     specify { expect { subject.alliance_name }.not_to raise_error }
   end
 
-  # def alliance_id
-  #   @alliance_id ||= result.fetch('allianceID').to_i
-  # end
+  describe '#alliance_id' do
+    before do
+      #
+      # subject.result.fetch('allianceID').to_i
+      #
+      expect(subject).to receive(:result) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('allianceID') do
+            double.tap do |b|
+              expect(b).to receive(:to_i)
+            end
+          end
+        end
+      end
+    end
+
+    specify { expect { subject.alliance_id }.not_to raise_error }
+  end
 
   describe '#faction_name' do
     before do
@@ -206,14 +305,43 @@ describe EveOnline::Characters::CharacterSheet do
     specify { expect { subject.faction_name }.not_to raise_error }
   end
 
+  describe '#faction_id' do
+    before do
+      #
+      # subject.result.fetch('factionID').to_i
+      #
+      expect(subject).to receive(:result) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('factionID') do
+            double.tap do |b|
+              expect(b).to receive(:to_i)
+            end
+          end
+        end
+      end
+    end
 
-  # def faction_id
-  #   @faction_id ||= result.fetch('factionID').to_i
-  # end
-  #
-  # def clone_type_id
-  #   @clone_type_id ||= result.fetch('cloneTypeID').to_i
-  # end
+    specify { expect { subject.faction_id }.not_to raise_error }
+  end
+
+  describe '#clone_type_id' do
+    before do
+      #
+      # subject.result.fetch('cloneTypeID').to_i
+      #
+      expect(subject).to receive(:result) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('cloneTypeID') do
+            double.tap do |b|
+              expect(b).to receive(:to_i)
+            end
+          end
+        end
+      end
+    end
+
+    specify { expect { subject.clone_type_id }.not_to raise_error }
+  end
 
   describe '#clone_name' do
     before do
