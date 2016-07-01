@@ -233,6 +233,22 @@ cea.version # => 2
 
 ````
 
+Medals:
+```ruby
+key_id = 1234567
+v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
+character_id = 90729314
+
+medals = EveOnline::Characters::Medals.new(key_id, v_code, character_id)
+
+medals.current_time # => Fri, 01 Jul 2016 14:22:43 UTC +00:00
+medals.cached_until # => Fri, 01 Jul 2016 20:13:49 UTC +00:00
+medals.version # => 2
+
+# TODO: finish this
+
+```
+
 Skill In Training:
 ```ruby
 key_id = 1234567
@@ -355,7 +371,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 
 **master**
 
-* nothing yet
+* Add basic `EveOnline::Characters::Medals` class
 
 **v0.7.0**
 
