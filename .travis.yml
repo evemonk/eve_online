@@ -5,13 +5,29 @@ rvm:
   - 1.9.3
   - 2.0
   - 2.1
-  - 2.2
+  - 2.2.5
   - 2.3.1
+  - ruby-head
   - rbx
   - jruby
 
+gemfile:
+  - gemfiles/activesupport_42.gemfile
+  - gemfiles/activesupport_50.gemfile
+
 matrix:
+  exclude:
+    - rvm: 1.9.3
+      gemfile: gemfiles/activesupport_50.gemfile
+    - rvm: 2.0
+      gemfile: gemfiles/activesupport_50.gemfile
+    - rvm: 2.1
+      gemfile: gemfiles/activesupport_50.gemfile
+    - rvm: jruby
+      gemfile: gemfiles/activesupport_50.gemfile
+
   allow_failures:
     - rvm: rbx
+    - rvm: ruby-head
 
 before_install: gem install bundler -v 1.12.5
