@@ -23,11 +23,11 @@ matrix:
       gemfile: gemfiles/activesupport_50.gemfile
     - rvm: 2.1
       gemfile: gemfiles/activesupport_50.gemfile
-    - jruby
+    - rvm: jruby
       gemfile: gemfiles/activesupport_50.gemfile
 
   allow_failures:
     - rvm: rbx
-    - ruby-head
+    - rvm: ruby-head
 
 before_install: gem install bundler -v 1.12.5
