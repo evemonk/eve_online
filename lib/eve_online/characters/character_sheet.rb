@@ -88,18 +88,22 @@ module EveOnline
       end
 
       def alliance_name
+        # TODO: Corporation "Federal Navy Academy" doesn't have allianceName in response
         @alliance_name ||= result.fetch('allianceName')
       end
 
       def alliance_id
+        # TODO: Corporation "Federal Navy Academy" doesn't have allianceID in response
         @alliance_id ||= result.fetch('allianceID').to_i
       end
 
       def faction_name
+        # TODO: Corporation "Federal Navy Academy" doesn't have factionName in response
         @faction_name ||= result.fetch('factionName')
       end
 
       def faction_id
+        # TODO: Corporation "Federal Navy Academy" doesn't have factionID in response
         @faction_id ||= result.fetch('factionID').to_i
       end
 
