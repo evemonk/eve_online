@@ -32,35 +32,119 @@ describe EveOnline::Characters::CharacterSheet do
     its(:character_id) { should eq(character_id) }
   end
 
-  # def as_json
-  #   {
-  #       character_id: character_id,
-  #       name: name,
-  #       home_station_id: home_station_id,
-  #       dob: dob,
-  #       race: race,
-  #       blood_line_id: blood_line_id,
-  #       blood_line: blood_line,
-  #       ancestry_id: ancestry_id,
-  #       ancestry: ancestry,
-  #       gender: gender,
-  #       corporation_name: corporation_name,
-  #       corporation_id: corporation_id,
-  #       alliance_name: alliance_name,
-  #       alliance_id: alliance_id,
-  #       faction_name: faction_name,
-  #       faction_id: faction_id,
-  #       clone_type_id: clone_type_id,
-  #       clone_name: clone_name,
-  #       clone_skill_points: clone_skill_points,
-  #       free_skill_points: free_skill_points,
-  #       free_respecs: free_respecs,
-  #       clone_jump_date: clone_jump_date,
-  #       last_respec_date: last_respec_date,
-  #       last_timed_respec: last_timed_respec,
-  #       remote_station_date: remote_station_date
-  #   }
-  # end
+  describe '#as_json' do
+    let(:character_sheet) { described_class.new(key_id, v_code, character_id) }
+
+    let(:dob) { double }
+
+    let(:clone_jump_date) { double }
+
+    let(:last_respec_date) { double }
+
+    let(:last_timed_respec) { double }
+
+    let(:remote_station_date) { double }
+
+    before { expect(character_sheet).to receive(:name).and_return('Green Black') }
+
+    before { expect(character_sheet).to receive(:home_station_id).and_return(60_014_689) }
+
+    before { expect(character_sheet).to receive(:dob).and_return(dob) }
+
+    before { expect(character_sheet).to receive(:race).and_return('Gallente') }
+
+    before { expect(character_sheet).to receive(:blood_line_id).and_return(7) }
+
+    before { expect(character_sheet).to receive(:blood_line).and_return('Gallente') }
+
+    before { expect(character_sheet).to receive(:ancestry_id).and_return(13) }
+
+    before { expect(character_sheet).to receive(:ancestry).and_return('Activists') }
+
+    before { expect(character_sheet).to receive(:gender).and_return('Male') }
+
+    before { expect(character_sheet).to receive(:corporation_name).and_return('Federal Navy Academy') }
+
+    before { expect(character_sheet).to receive(:corporation_id).and_return(1_000_168) }
+
+    before { expect(character_sheet).to receive(:alliance_name).and_return(nil) }
+
+    before { expect(character_sheet).to receive(:alliance_id).and_return(nil) }
+
+    before { expect(character_sheet).to receive(:faction_name).and_return(nil) }
+
+    before { expect(character_sheet).to receive(:faction_id).and_return(nil) }
+
+    before { expect(character_sheet).to receive(:clone_type_id).and_return(164) }
+
+    before { expect(character_sheet).to receive(:clone_name).and_return('Clone Grade Alpha') }
+
+    before { expect(character_sheet).to receive(:clone_skill_points).and_return(0) }
+
+    before { expect(character_sheet).to receive(:free_skill_points).and_return(0) }
+
+    before { expect(character_sheet).to receive(:free_respecs).and_return(2) }
+
+    before { expect(character_sheet).to receive(:clone_jump_date).and_return(clone_jump_date) }
+
+    before { expect(character_sheet).to receive(:last_respec_date).and_return(last_respec_date) }
+
+    before { expect(character_sheet).to receive(:last_timed_respec).and_return(last_timed_respec) }
+
+    before { expect(character_sheet).to receive(:remote_station_date).and_return(remote_station_date) }
+
+    subject { character_sheet.as_json }
+
+    its([:character_id]) { should eq(character_id) }
+
+    its([:name]) { should eq('Green Black') }
+
+    its([:home_station_id]) { should eq(60_014_689) }
+
+    its([:dob]) { should eq(dob) }
+
+    its([:race]) { should eq('Gallente') }
+
+    its([:blood_line_id]) { should eq(7) }
+
+    its([:blood_line]) { should eq('Gallente') }
+
+    its([:ancestry_id]) { should eq(13) }
+
+    its([:ancestry]) { should eq('Activists') }
+
+    its([:gender]) { should eq('Male') }
+
+    its([:corporation_name]) { should eq('Federal Navy Academy') }
+
+    its([:corporation_id]) { should eq(1_000_168) }
+
+    its([:alliance_name]) { should eq(nil) }
+
+    its([:alliance_id]) { should eq(nil) }
+
+    its([:faction_name]) { should eq(nil) }
+
+    its([:faction_id]) { should eq(nil) }
+
+    its([:clone_type_id]) { should eq(164) }
+
+    its([:clone_name]) { should eq('Clone Grade Alpha') }
+
+    its([:clone_skill_points]) { should eq(0) }
+
+    its([:free_skill_points]) { should eq(0) }
+
+    its([:free_respecs]) { should eq(2) }
+
+    its([:clone_jump_date]) { should eq(clone_jump_date) }
+
+    its([:last_respec_date]) { should eq(last_respec_date) }
+
+    its([:last_timed_respec]) { should eq(last_timed_respec) }
+
+    its([:remote_station_date]) { should eq(remote_station_date) }
+  end
 
   describe '#name' do
     before do
