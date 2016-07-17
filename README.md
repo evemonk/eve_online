@@ -233,6 +233,51 @@ cea.version # => 2
 
 ````
 
+Character Sheet:
+```ruby
+key_id = 1234567
+v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
+character_id = 90729314
+
+character_sheet = EveOnline::Characters::CharacterSheet.new(key_id, v_code, character_id)
+
+character_sheet.current_time # => Sun, 17 Jul 2016 12:27:11 UTC +00:00
+character_sheet.cached_until # => Sun, 17 Jul 2016 13:24:11 UTC +00:00
+character_sheet.version # => 2
+
+character_sheet.as_json
+# => {:character_id=>90729314, :name=>"Green Black", :home_station_id=>61000032, :dob=>Fri, 15 Jan 2010 15:26:00 UTC +00:00, :race=>"Minmatar", :blood_line_id=>4, :blood_line=>"Brutor", :ancestry_id=>24, :ancestry=>"Slave Child", :gender=>"Male", :corporation_name=>"MyLittleDragon", :corporation_id=>98134807, :alliance_name=>"Kids With Guns Alliance", :alliance_id=>99005443, :faction_name=>nil, :faction_id=>0, :clone_type_id=>164, :clone_name=>"Clone Grade Alpha", :clone_skill_points=>0, :free_skill_points=>400000, :free_respecs=>2, :clone_jump_date=>Fri, 27 Jul 2012 14:50:11 UTC +00:00, :last_respec_date=>Sat, 07 May 2011 12:58:06 UTC +00:00, :last_timed_respec=>Sat, 07 May 2011 12:58:06 UTC +00:00, :remote_station_date=>Tue, 30 Jun 2015 21:51:13 UTC +00:00}
+
+character_sheet.character_id # => 90729314
+character_sheet.name # => "Green Black"
+character_sheet.home_station_id # => 61000032
+character_sheet.dob # => Fri, 15 Jan 2010 15:26:00 UTC +00:00
+character_sheet.race # => "Minmatar"
+character_sheet.blood_line_id # => 4
+character_sheet.blood_line # => "Brutor"
+character_sheet.ancestry_id # => 24
+character_sheet.ancestry # => "Slave Child"
+character_sheet.gender # => "Male"
+character_sheet.corporation_name # => "MyLittleDragon"
+character_sheet.corporation_id # => 98134807
+character_sheet.alliance_name # => "Kids With Guns Alliance"
+character_sheet.alliance_id # => 99005443
+character_sheet.faction_name # => nil
+character_sheet.faction_id # => 0
+character_sheet.clone_type_id # => 164
+character_sheet.clone_name # => "Clone Grade Alpha"
+character_sheet.clone_skill_points # => 0
+character_sheet.free_skill_points # => 400000
+character_sheet.free_respecs # => 2
+character_sheet.clone_jump_date # => Fri, 27 Jul 2012 14:50:11 UTC +00:00
+character_sheet.last_respec_date # => Sat, 07 May 2011 12:58:06 UTC +00:00
+character_sheet.last_timed_respec # => Sat, 07 May 2011 12:58:06 UTC +00:00
+character_sheet.remote_station_date # => Tue, 30 Jun 2015 21:51:13 UTC +00:00
+
+# TODO: finish this
+
+```
+
 Medals:
 ```ruby
 key_id = 1234567
@@ -356,6 +401,7 @@ campaigns.items.first
 
 * [TECHNICAL NOTE: INTEGER SIZES AND THE XML API](https://developers.eveonline.com/blog/article/technical-note-integer-sizes-and-the-xml-api)
 * [THE END OF PUBLIC CREST AS WE KNOW IT](https://developers.eveonline.com/blog/article/the-end-of-public-crest-as-we-know-it)
+* [CCP, zKillboard (Eve-Kill), and your API](https://docs.google.com/document/d/16YfJwjhuH5A3cS4NTMDFDkprnOVKsvgtuRIKk8xjTM8/edit)
 
 ## Development
 
@@ -372,6 +418,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 **master**
 
 * Add basic `EveOnline::Characters::Medals` class
+* Add basic `EveOnline::Characters::CharacterSheet` class
 
 **v0.7.0**
 
