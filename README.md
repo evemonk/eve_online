@@ -273,6 +273,10 @@ character_sheet.clone_jump_date # => Fri, 27 Jul 2012 14:50:11 UTC +00:00
 character_sheet.last_respec_date # => Sat, 07 May 2011 12:58:06 UTC +00:00
 character_sheet.last_timed_respec # => Sat, 07 May 2011 12:58:06 UTC +00:00
 character_sheet.remote_station_date # => Tue, 30 Jun 2015 21:51:13 UTC +00:00
+character_sheet.jump_activation # => Mon, 01 Jan 0001 00:00:00 UTC +00:00
+character_sheet.jump_fatigue # => Mon, 01 Jan 0001 00:00:00 UTC +00:00
+character_sheet.jump_last_update # => Mon, 01 Jan 0001 00:00:00 UTC +00:00
+character_sheet.balance # => "5000.00"
 
 character_sheet.base_intelligence # => 21
 character_sheet.base_memory # => 21

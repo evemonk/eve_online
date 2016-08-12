@@ -619,6 +619,105 @@ describe EveOnline::Characters::CharacterSheet do
     specify { expect { subject.remote_station_date }.not_to raise_error }
   end
 
+  describe '#jump_activation' do
+    let(:jump_activation_date) { double }
+
+    before do
+      #
+      # subject.result.fetch('jumpActivation') => jump_activation_date
+      #
+      expect(subject).to receive(:result) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('jumpActivation').and_return(jump_activation_date)
+        end
+      end
+    end
+
+    before do
+      #
+      # ActiveSupport::TimeZone['UTC'].parse(jump_activation_date)
+      #
+      expect(ActiveSupport::TimeZone).to receive(:[]).with('UTC') do
+        double.tap do |a|
+          expect(a).to receive(:parse).with(jump_activation_date)
+        end
+      end
+    end
+
+    specify { expect { subject.jump_activation }.not_to raise_error }
+  end
+
+  describe '#jump_fatigue' do
+    let(:jump_fatigue_date) { double }
+
+    before do
+      #
+      # subject.result.fetch('jumpFatigue') => jump_fatigue_date
+      #
+      expect(subject).to receive(:result) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('jumpFatigue').and_return(jump_fatigue_date)
+        end
+      end
+    end
+
+    before do
+      #
+      # ActiveSupport::TimeZone['UTC'].parse(jump_fatigue_date)
+      #
+      expect(ActiveSupport::TimeZone).to receive(:[]).with('UTC') do
+        double.tap do |a|
+          expect(a).to receive(:parse).with(jump_fatigue_date)
+        end
+      end
+    end
+
+    specify { expect { subject.jump_fatigue }.not_to raise_error }
+  end
+
+  describe '#jump_last_update' do
+    let(:jump_last_update_date) { double }
+
+    before do
+      #
+      # subject.result.fetch('jumpLastUpdate') => jump_last_update_date
+      #
+      expect(subject).to receive(:result) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('jumpLastUpdate').and_return(jump_last_update_date)
+        end
+      end
+    end
+
+    before do
+      #
+      # ActiveSupport::TimeZone['UTC'].parse(jump_last_update_date)
+      #
+      expect(ActiveSupport::TimeZone).to receive(:[]).with('UTC') do
+        double.tap do |a|
+          expect(a).to receive(:parse).with(jump_last_update_date)
+        end
+      end
+    end
+
+    specify { expect { subject.jump_last_update }.not_to raise_error }
+  end
+
+  describe '#balance' do
+    before do
+      #
+      # subject.result.fetch('balance')
+      #
+      expect(subject).to receive(:result) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('balance')
+        end
+      end
+    end
+
+    specify { expect { subject.balance }.not_to raise_error }
+  end
+
   describe '#base_intelligence' do
     before do
       #

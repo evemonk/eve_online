@@ -143,6 +143,22 @@ module EveOnline
         @remote_station_date ||= ActiveSupport::TimeZone['UTC'].parse(result.fetch('remoteStationDate'))
       end
 
+      def jump_activation
+        @jump_activation ||= ActiveSupport::TimeZone['UTC'].parse(result.fetch('jumpActivation'))
+      end
+
+      def jump_fatigue
+        @jump_fatigue ||= ActiveSupport::TimeZone['UTC'].parse(result.fetch('jumpFatigue'))
+      end
+
+      def jump_last_update
+        @jump_last_update ||= ActiveSupport::TimeZone['UTC'].parse(result.fetch('jumpLastUpdate'))
+      end
+
+      def balance
+        @balance ||= result.fetch('balance')
+      end
+
       def base_intelligence
         @intelligence ||= attributes.fetch('intelligence').to_i
       end
