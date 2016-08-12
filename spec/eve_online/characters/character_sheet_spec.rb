@@ -61,7 +61,7 @@ describe EveOnline::Characters::CharacterSheet do
 
     before { expect(character_sheet).to receive(:ancestry).and_return('Activists') }
 
-    before { expect(character_sheet).to receive(:gender).and_return('Male') }
+    before { expect(character_sheet).to receive(:gender).and_return(:male) }
 
     before { expect(character_sheet).to receive(:corporation_name).and_return('Federal Navy Academy') }
 
@@ -113,7 +113,7 @@ describe EveOnline::Characters::CharacterSheet do
 
     its([:ancestry]) { should eq('Activists') }
 
-    its([:gender]) { should eq('Male') }
+    its([:gender]) { should eq(:male) }
 
     its([:corporation_name]) { should eq('Federal Navy Academy') }
 
@@ -294,11 +294,19 @@ describe EveOnline::Characters::CharacterSheet do
   describe '#gender' do
     before do
       #
-      # subject.result.fetch('gender')
+      # subject.result.fetch('gender').downcase.to_sym
       #
       expect(subject).to receive(:result) do
         double.tap do |a|
-          expect(a).to receive(:fetch).with('gender')
+          expect(a).to receive(:fetch).with('gender') do
+            double.tap do |b|
+              expect(b).to receive(:downcase) do
+                double.tap do |c|
+                  expect(c).to receive(:to_sym)
+                end
+              end
+            end
+          end
         end
       end
     end

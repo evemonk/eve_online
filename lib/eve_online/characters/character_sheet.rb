@@ -76,7 +76,7 @@ module EveOnline
       end
 
       def gender
-        @gender ||= result.fetch('gender')
+        @gender ||= result.fetch('gender').downcase.to_sym
       end
 
       def corporation_name
