@@ -274,6 +274,12 @@ character_sheet.last_respec_date # => Sat, 07 May 2011 12:58:06 UTC +00:00
 character_sheet.last_timed_respec # => Sat, 07 May 2011 12:58:06 UTC +00:00
 character_sheet.remote_station_date # => Tue, 30 Jun 2015 21:51:13 UTC +00:00
 
+character_sheet.base_intelligence # => 21
+character_sheet.base_memory # => 21
+character_sheet.base_charisma # => 17
+character_sheet.base_perception # => 20
+character_sheet.base_willpower # => 20
+
 # TODO: finish this
 
 ```

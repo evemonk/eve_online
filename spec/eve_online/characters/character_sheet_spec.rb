@@ -619,9 +619,121 @@ describe EveOnline::Characters::CharacterSheet do
     specify { expect { subject.remote_station_date }.not_to raise_error }
   end
 
+  describe '#base_intelligence' do
+    before do
+      #
+      # subject.attributes.fetch('intelligence').to_i
+      #
+      expect(subject).to receive(:attributes) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('intelligence') do
+            double.tap do |b|
+              expect(b).to receive(:to_i)
+            end
+          end
+        end
+      end
+    end
+
+    specify { expect { subject.base_intelligence }.not_to raise_error }
+  end
+
+  describe '#base_memory' do
+    before do
+      #
+      # subject.attributes.fetch('memory').to_i
+      #
+      expect(subject).to receive(:attributes) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('memory') do
+            double.tap do |b|
+              expect(b).to receive(:to_i)
+            end
+          end
+        end
+      end
+    end
+
+    specify { expect { subject.base_memory }.not_to raise_error }
+  end
+
+  describe '#base_charisma' do
+    before do
+      #
+      # subject.attributes.fetch('charisma').to_i
+      #
+      expect(subject).to receive(:attributes) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('charisma') do
+            double.tap do |b|
+              expect(b).to receive(:to_i)
+            end
+          end
+        end
+      end
+    end
+
+    specify { expect { subject.base_charisma }.not_to raise_error }
+  end
+
+  describe '#base_perception' do
+    before do
+      #
+      # subject.attributes.fetch('perception').to_i
+      #
+      expect(subject).to receive(:attributes) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('perception') do
+            double.tap do |b|
+              expect(b).to receive(:to_i)
+            end
+          end
+        end
+      end
+    end
+
+    specify { expect { subject.base_perception }.not_to raise_error }
+  end
+
+  describe '#base_willpower' do
+    before do
+      #
+      # subject.attributes.fetch('willpower').to_i
+      #
+      expect(subject).to receive(:attributes) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('willpower') do
+            double.tap do |b|
+              expect(b).to receive(:to_i)
+            end
+          end
+        end
+      end
+    end
+
+    specify { expect { subject.base_willpower }.not_to raise_error }
+  end
+
   describe '#url' do
     specify do
       expect(subject.url).to eq("#{ described_class::API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }")
     end
+  end
+
+  # private methods
+
+  describe '#attributes' do
+    before do
+      #
+      # subject.result.fetch('attributes')
+      #
+      expect(subject).to receive(:result) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('attributes')
+        end
+      end
+    end
+
+    specify { expect { subject.send(:attributes) }.not_to raise_error }
   end
 end
