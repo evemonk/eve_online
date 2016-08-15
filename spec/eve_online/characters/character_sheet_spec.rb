@@ -871,4 +871,11 @@ describe EveOnline::Characters::CharacterSheet do
     #   @skills_rows ||= result.fetch('rowset').reject{|a| a.fetch('@name') != 'skills' }.first.fetch('row')
     # end
   end
+
+  describe '#jump_clones_rows' do
+    # TODO: spec this
+    # def jump_clones_rows
+    #   @jump_clones_rows ||= result.fetch('rowset').reject{|a| a.fetch('@name') != 'jumpClones' }.first.fetch('row')
+    # end
+  end
 end

@@ -212,6 +212,10 @@ module EveOnline
       def skills_rows
         @skills_rows ||= result.fetch('rowset').reject{|a| a.fetch('@name') != 'skills' }.first.fetch('row')
       end
+
+      def jump_clones_rows
+        @jump_clones_rows ||= result.fetch('rowset').reject{|a| a.fetch('@name') != 'jumpClones' }.first.fetch('row')
+      end
     end
   end
 end
