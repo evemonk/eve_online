@@ -284,6 +284,26 @@ character_sheet.base_charisma # => 17
 character_sheet.base_perception # => 20
 character_sheet.base_willpower # => 20
 
+character_sheet.implants.size # => 5
+
+implant = character_sheet.implants.first # => #<EveOnline::Implant:0x007fdd34c88110 @options={"@typeID"=>"9899", "@typeName"=>"Ocular Filter - Basic"}>
+
+implant.as_json # => {:type_id=>9899, :type_name=>"Ocular Filter - Basic"}
+
+implant.type_id # => 9899
+implant.type_name # => "Ocular Filter - Basic"
+
+character_sheet.skills.size # => 180
+
+skill = character_sheet.skills.first # => #<EveOnline::Skill:0x007fc1951e1b18 @options={"@typeID"=>"2495", "@skillpoints"=>"1000", "@level"=>"1", "@published"=>"1"}>
+
+skill.as_json # => {:type_id=>2495, :skillpoints=>1000, :level=>1, :published=>true}
+
+skill.type_id # => 2495
+skill.skillpoints # => 1000
+skill.level # => 1
+skill.published # => true
+
 # TODO: finish this
 
 ```
@@ -429,6 +449,9 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 
 * Add basic `EveOnline::Characters::Medals` class
 * Add basic `EveOnline::Characters::CharacterSheet` class
+* Add `EveOnline::Implant` class for handling character implants
+* Add `EveOnline::Skill` class for handling character skills
+* Add `EveOnline::JumpClone` class for handling character jump clones
 
 **v0.7.0**
 

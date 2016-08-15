@@ -179,6 +179,22 @@ module EveOnline
         @willpower ||= attributes.fetch('willpower').to_i
       end
 
+      def implants
+        output = []
+        implants_rows.each do |implant|
+          output << Implant.new(implant)
+        end
+        output
+      end
+
+      def skills
+        output = []
+        skills_rows.each do |skill|
+          output << Skill.new(skill)
+        end
+        output
+      end
+
       def url
         "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }"
       end
@@ -187,6 +203,18 @@ module EveOnline
 
       def attributes
         @attributes ||= result.fetch('attributes')
+      end
+
+      def implants_rows
+        @implants_rows ||= result.fetch('rowset').reject{|a| a.fetch('@name') != 'implants' }.first.fetch('row')
+      end
+
+      def skills_rows
+        @skills_rows ||= result.fetch('rowset').reject{|a| a.fetch('@name') != 'skills' }.first.fetch('row')
+      end
+
+      def jump_clones_rows
+        @jump_clones_rows ||= result.fetch('rowset').reject{|a| a.fetch('@name') != 'jumpClones' }.first.fetch('row')
       end
     end
   end

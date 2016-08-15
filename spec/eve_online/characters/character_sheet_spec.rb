@@ -813,6 +813,28 @@ describe EveOnline::Characters::CharacterSheet do
     specify { expect { subject.base_willpower }.not_to raise_error }
   end
 
+  describe '#implants' do
+    # TODO: spec this
+    # def implants
+    #   output = []
+    #   implants_rows.each do |implant|
+    #     output << Implant.new(implant)
+    #   end
+    #   output
+    # end
+  end
+
+  describe '#skills' do
+    # TODO: spec this
+    # def skills
+    #   output = []
+    #   skills_rows.each do |skill|
+    #     output << Skill.new(skill)
+    #   end
+    #   output
+    # end
+  end
+
   describe '#url' do
     specify do
       expect(subject.url).to eq("#{ described_class::API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }")
@@ -834,5 +856,26 @@ describe EveOnline::Characters::CharacterSheet do
     end
 
     specify { expect { subject.send(:attributes) }.not_to raise_error }
+  end
+
+  describe '#implants_rows' do
+    # TODO: spec this
+    # def implants_rows
+    #   @implants_rows ||= result.fetch('rowset').reject{|a| a.fetch('@name') != 'implants' }.first.fetch('row')
+    # end
+  end
+
+  describe '#skills_rows' do
+    # TODO: spec this
+    # def skills_rows
+    #   @skills_rows ||= result.fetch('rowset').reject{|a| a.fetch('@name') != 'skills' }.first.fetch('row')
+    # end
+  end
+
+  describe '#jump_clones_rows' do
+    # TODO: spec this
+    # def jump_clones_rows
+    #   @jump_clones_rows ||= result.fetch('rowset').reject{|a| a.fetch('@name') != 'jumpClones' }.first.fetch('row')
+    # end
   end
 end
