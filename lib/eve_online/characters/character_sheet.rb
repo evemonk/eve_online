@@ -187,6 +187,14 @@ module EveOnline
         output
       end
 
+      def skills
+        output = []
+        skills_rows.each do |skill|
+          output << Skill.new(skill)
+        end
+        output
+      end
+
       def url
         "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }"
       end

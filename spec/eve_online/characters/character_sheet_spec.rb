@@ -824,6 +824,17 @@ describe EveOnline::Characters::CharacterSheet do
     # end
   end
 
+  describe '#skills' do
+    # TODO: spec this
+    # def skills
+    #   output = []
+    #   skills_rows.each do |skill|
+    #     output << Skill.new(skill)
+    #   end
+    #   output
+    # end
+  end
+
   describe '#url' do
     specify do
       expect(subject.url).to eq("#{ described_class::API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }")

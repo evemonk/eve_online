@@ -293,6 +293,17 @@ implant.as_json # => {:type_id=>9899, :type_name=>"Ocular Filter - Basic"}
 implant.type_id # => 9899
 implant.type_name # => "Ocular Filter - Basic"
 
+character_sheet.skills.size # => 180
+
+skill = character_sheet.skills.first # => #<EveOnline::Skill:0x007fc1951e1b18 @options={"@typeID"=>"2495", "@skillpoints"=>"1000", "@level"=>"1", "@published"=>"1"}>
+
+skill.as_json # => {:type_id=>2495, :skillpoints=>1000, :level=>1, :published=>true}
+
+skill.type_id # => 2495
+skill.skillpoints # => 1000
+skill.level # => 1
+skill.published # => true
+
 # TODO: finish this
 
 ```
