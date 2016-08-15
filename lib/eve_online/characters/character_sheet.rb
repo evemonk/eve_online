@@ -200,6 +200,10 @@ module EveOnline
       def implants_rows
         @implants_rows ||= result.fetch('rowset').reject{|a| a.fetch('@name') != 'implants' }.first.fetch('row')
       end
+
+      def skills_rows
+        @skills_rows ||= result.fetch('rowset').reject{|a| a.fetch('@name') != 'skills' }.first.fetch('row')
+      end
     end
   end
 end

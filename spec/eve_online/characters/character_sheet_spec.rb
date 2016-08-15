@@ -853,4 +853,11 @@ describe EveOnline::Characters::CharacterSheet do
     #   @implants_rows ||= result.fetch('rowset').reject{|a| a.fetch('@name') != 'implants' }.first.fetch('row')
     # end
   end
+
+  describe '#skills_rows' do
+    # TODO: spec this
+    # def skills_rows
+    #   @skills_rows ||= result.fetch('rowset').reject{|a| a.fetch('@name') != 'skills' }.first.fetch('row')
+    # end
+  end
 end
