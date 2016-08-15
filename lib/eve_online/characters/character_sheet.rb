@@ -76,7 +76,7 @@ module EveOnline
       end
 
       def gender
-        @gender ||= result.fetch('gender')
+        @gender ||= result.fetch('gender').downcase.to_sym
       end
 
       def corporation_name
@@ -143,8 +143,50 @@ module EveOnline
         @remote_station_date ||= ActiveSupport::TimeZone['UTC'].parse(result.fetch('remoteStationDate'))
       end
 
+      def jump_activation
+        @jump_activation ||= ActiveSupport::TimeZone['UTC'].parse(result.fetch('jumpActivation'))
+      end
+
+      def jump_fatigue
+        @jump_fatigue ||= ActiveSupport::TimeZone['UTC'].parse(result.fetch('jumpFatigue'))
+      end
+
+      def jump_last_update
+        @jump_last_update ||= ActiveSupport::TimeZone['UTC'].parse(result.fetch('jumpLastUpdate'))
+      end
+
+      def balance
+        @balance ||= result.fetch('balance')
+      end
+
+      def base_intelligence
+        @intelligence ||= attributes.fetch('intelligence').to_i
+      end
+
+      def base_memory
+        @memory ||= attributes.fetch('memory').to_i
+      end
+
+      def base_charisma
+        @charisma ||= attributes.fetch('charisma').to_i
+      end
+
+      def base_perception
+        @perception ||= attributes.fetch('perception').to_i
+      end
+
+      def base_willpower
+        @willpower ||= attributes.fetch('willpower').to_i
+      end
+
       def url
         "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }"
+      end
+
+      private
+
+      def attributes
+        @attributes ||= result.fetch('attributes')
       end
     end
   end

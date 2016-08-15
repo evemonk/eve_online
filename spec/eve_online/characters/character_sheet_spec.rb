@@ -61,7 +61,7 @@ describe EveOnline::Characters::CharacterSheet do
 
     before { expect(character_sheet).to receive(:ancestry).and_return('Activists') }
 
-    before { expect(character_sheet).to receive(:gender).and_return('Male') }
+    before { expect(character_sheet).to receive(:gender).and_return(:male) }
 
     before { expect(character_sheet).to receive(:corporation_name).and_return('Federal Navy Academy') }
 
@@ -113,7 +113,7 @@ describe EveOnline::Characters::CharacterSheet do
 
     its([:ancestry]) { should eq('Activists') }
 
-    its([:gender]) { should eq('Male') }
+    its([:gender]) { should eq(:male) }
 
     its([:corporation_name]) { should eq('Federal Navy Academy') }
 
@@ -294,11 +294,19 @@ describe EveOnline::Characters::CharacterSheet do
   describe '#gender' do
     before do
       #
-      # subject.result.fetch('gender')
+      # subject.result.fetch('gender').downcase.to_sym
       #
       expect(subject).to receive(:result) do
         double.tap do |a|
-          expect(a).to receive(:fetch).with('gender')
+          expect(a).to receive(:fetch).with('gender') do
+            double.tap do |b|
+              expect(b).to receive(:downcase) do
+                double.tap do |c|
+                  expect(c).to receive(:to_sym)
+                end
+              end
+            end
+          end
         end
       end
     end
@@ -611,9 +619,220 @@ describe EveOnline::Characters::CharacterSheet do
     specify { expect { subject.remote_station_date }.not_to raise_error }
   end
 
+  describe '#jump_activation' do
+    let(:jump_activation_date) { double }
+
+    before do
+      #
+      # subject.result.fetch('jumpActivation') => jump_activation_date
+      #
+      expect(subject).to receive(:result) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('jumpActivation').and_return(jump_activation_date)
+        end
+      end
+    end
+
+    before do
+      #
+      # ActiveSupport::TimeZone['UTC'].parse(jump_activation_date)
+      #
+      expect(ActiveSupport::TimeZone).to receive(:[]).with('UTC') do
+        double.tap do |a|
+          expect(a).to receive(:parse).with(jump_activation_date)
+        end
+      end
+    end
+
+    specify { expect { subject.jump_activation }.not_to raise_error }
+  end
+
+  describe '#jump_fatigue' do
+    let(:jump_fatigue_date) { double }
+
+    before do
+      #
+      # subject.result.fetch('jumpFatigue') => jump_fatigue_date
+      #
+      expect(subject).to receive(:result) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('jumpFatigue').and_return(jump_fatigue_date)
+        end
+      end
+    end
+
+    before do
+      #
+      # ActiveSupport::TimeZone['UTC'].parse(jump_fatigue_date)
+      #
+      expect(ActiveSupport::TimeZone).to receive(:[]).with('UTC') do
+        double.tap do |a|
+          expect(a).to receive(:parse).with(jump_fatigue_date)
+        end
+      end
+    end
+
+    specify { expect { subject.jump_fatigue }.not_to raise_error }
+  end
+
+  describe '#jump_last_update' do
+    let(:jump_last_update_date) { double }
+
+    before do
+      #
+      # subject.result.fetch('jumpLastUpdate') => jump_last_update_date
+      #
+      expect(subject).to receive(:result) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('jumpLastUpdate').and_return(jump_last_update_date)
+        end
+      end
+    end
+
+    before do
+      #
+      # ActiveSupport::TimeZone['UTC'].parse(jump_last_update_date)
+      #
+      expect(ActiveSupport::TimeZone).to receive(:[]).with('UTC') do
+        double.tap do |a|
+          expect(a).to receive(:parse).with(jump_last_update_date)
+        end
+      end
+    end
+
+    specify { expect { subject.jump_last_update }.not_to raise_error }
+  end
+
+  describe '#balance' do
+    before do
+      #
+      # subject.result.fetch('balance')
+      #
+      expect(subject).to receive(:result) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('balance')
+        end
+      end
+    end
+
+    specify { expect { subject.balance }.not_to raise_error }
+  end
+
+  describe '#base_intelligence' do
+    before do
+      #
+      # subject.attributes.fetch('intelligence').to_i
+      #
+      expect(subject).to receive(:attributes) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('intelligence') do
+            double.tap do |b|
+              expect(b).to receive(:to_i)
+            end
+          end
+        end
+      end
+    end
+
+    specify { expect { subject.base_intelligence }.not_to raise_error }
+  end
+
+  describe '#base_memory' do
+    before do
+      #
+      # subject.attributes.fetch('memory').to_i
+      #
+      expect(subject).to receive(:attributes) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('memory') do
+            double.tap do |b|
+              expect(b).to receive(:to_i)
+            end
+          end
+        end
+      end
+    end
+
+    specify { expect { subject.base_memory }.not_to raise_error }
+  end
+
+  describe '#base_charisma' do
+    before do
+      #
+      # subject.attributes.fetch('charisma').to_i
+      #
+      expect(subject).to receive(:attributes) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('charisma') do
+            double.tap do |b|
+              expect(b).to receive(:to_i)
+            end
+          end
+        end
+      end
+    end
+
+    specify { expect { subject.base_charisma }.not_to raise_error }
+  end
+
+  describe '#base_perception' do
+    before do
+      #
+      # subject.attributes.fetch('perception').to_i
+      #
+      expect(subject).to receive(:attributes) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('perception') do
+            double.tap do |b|
+              expect(b).to receive(:to_i)
+            end
+          end
+        end
+      end
+    end
+
+    specify { expect { subject.base_perception }.not_to raise_error }
+  end
+
+  describe '#base_willpower' do
+    before do
+      #
+      # subject.attributes.fetch('willpower').to_i
+      #
+      expect(subject).to receive(:attributes) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('willpower') do
+            double.tap do |b|
+              expect(b).to receive(:to_i)
+            end
+          end
+        end
+      end
+    end
+
+    specify { expect { subject.base_willpower }.not_to raise_error }
+  end
+
   describe '#url' do
     specify do
       expect(subject.url).to eq("#{ described_class::API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }")
     end
+  end
+
+  # private methods
+
+  describe '#attributes' do
+    before do
+      #
+      # subject.result.fetch('attributes')
+      #
+      expect(subject).to receive(:result) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('attributes')
+        end
+      end
+    end
+
+    specify { expect { subject.send(:attributes) }.not_to raise_error }
   end
 end
