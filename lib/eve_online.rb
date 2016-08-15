@@ -13,6 +13,7 @@ require 'eve_online/event_response_object'
 require 'eve_online/item'
 require 'eve_online/implant'
 require 'eve_online/skill'
+require 'eve_online/jump_clone'
 
 require 'eve_online/account/api_key_info'
 require 'eve_online/account/characters'

@@ -451,6 +451,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Add basic `EveOnline::Characters::CharacterSheet` class
 * Add `EveOnline::Implant` class for handling character implants
 * Add `EveOnline::Skill` class for handling character skills
+* Add `EveOnline::JumpClone` class for handling character jump clones
 
 **v0.7.0**
 
