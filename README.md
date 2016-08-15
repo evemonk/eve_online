@@ -284,6 +284,15 @@ character_sheet.base_charisma # => 17
 character_sheet.base_perception # => 20
 character_sheet.base_willpower # => 20
 
+character_sheet.implants.size # => 5
+
+implant = character_sheet.implants.first # => #<EveOnline::Implant:0x007fdd34c88110 @options={"@typeID"=>"9899", "@typeName"=>"Ocular Filter - Basic"}>
+
+implant.as_json # => {:type_id=>9899, :type_name=>"Ocular Filter - Basic"}
+
+implant.type_id # => 9899
+implant.type_name # => "Ocular Filter - Basic"
+
 # TODO: finish this
 
 ```
