@@ -67,13 +67,13 @@ describe EveOnline::Characters::CharacterSheet do
 
     before { expect(character_sheet).to receive(:corporation_id).and_return(1_000_168) }
 
-    before { expect(character_sheet).to receive(:alliance_name).and_return(nil) }
+    before { expect(character_sheet).to receive(:alliance_name).and_return('Alliance. Now. Please.') }
 
-    before { expect(character_sheet).to receive(:alliance_id).and_return(nil) }
+    before { expect(character_sheet).to receive(:alliance_id).and_return(1_538_759_362) }
 
-    before { expect(character_sheet).to receive(:faction_name).and_return(nil) }
+    before { expect(character_sheet).to receive(:faction_name).and_return('Faction. Now. Please.') }
 
-    before { expect(character_sheet).to receive(:faction_id).and_return(nil) }
+    before { expect(character_sheet).to receive(:faction_id).and_return(1_538_759_123) }
 
     before { expect(character_sheet).to receive(:clone_type_id).and_return(164) }
 
@@ -119,13 +119,13 @@ describe EveOnline::Characters::CharacterSheet do
 
     its([:corporation_id]) { should eq(1_000_168) }
 
-    its([:alliance_name]) { should eq(nil) }
+    its([:alliance_name]) { should eq('Alliance. Now. Please.') }
 
-    its([:alliance_id]) { should eq(nil) }
+    its([:alliance_id]) { should eq(1_538_759_362) }
 
-    its([:faction_name]) { should eq(nil) }
+    its([:faction_name]) { should eq('Faction. Now. Please.') }
 
-    its([:faction_id]) { should eq(nil) }
+    its([:faction_id]) { should eq(1_538_759_123) }
 
     its([:clone_type_id]) { should eq(164) }
 
@@ -897,23 +897,131 @@ describe EveOnline::Characters::CharacterSheet do
   end
 
   describe '#implants_rows' do
-    # TODO: spec this
-    # def implants_rows
-    #   @implants_rows ||= result.fetch('rowset').reject{|a| a.fetch('@name') != 'implants' }.first.fetch('row')
-    # end
+    let(:rowset) { double }
+
+    before do
+      #
+      # subject.result.fetch('rowset').reject => rowset
+      #
+      expect(subject).to receive(:result) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('rowset') do
+            double.tap do |b|
+              expect(b).to receive(:reject).and_yield(rowset)
+            end
+          end
+        end
+      end
+    end
+
+    before do
+      #
+      # rowset.fetch('@name') != 'implants' => rowset
+      #
+      expect(rowset).to receive(:fetch).with('@name') do
+        double.tap do |a|
+          expect(a).to receive(:!=).with('implants').and_return(rowset)
+        end
+      end
+    end
+
+    before do
+      #
+      # rowset.first.fetch('row')
+      #
+      expect(rowset).to receive(:first) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('row')
+        end
+      end
+    end
+
+    specify { expect { subject.send(:implants_rows) }.not_to raise_error }
   end
 
   describe '#skills_rows' do
-    # TODO: spec this
-    # def skills_rows
-    #   @skills_rows ||= result.fetch('rowset').reject{|a| a.fetch('@name') != 'skills' }.first.fetch('row')
-    # end
+    let(:rowset) { double }
+
+    before do
+      #
+      # subject.result.fetch('rowset').reject => rowset
+      #
+      expect(subject).to receive(:result) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('rowset') do
+            double.tap do |b|
+              expect(b).to receive(:reject).and_yield(rowset)
+            end
+          end
+        end
+      end
+    end
+
+    before do
+      #
+      # rowset.fetch('@name') != 'skills' => rowset
+      #
+      expect(rowset).to receive(:fetch).with('@name') do
+        double.tap do |a|
+          expect(a).to receive(:!=).with('skills').and_return(rowset)
+        end
+      end
+    end
+
+    before do
+      #
+      # rowset.first.fetch('row')
+      #
+      expect(rowset).to receive(:first) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('row')
+        end
+      end
+    end
+
+    specify { expect { subject.send(:skills_rows) }.not_to raise_error }
   end
 
   describe '#jump_clones_rows' do
-    # TODO: spec this
-    # def jump_clones_rows
-    #   @jump_clones_rows ||= result.fetch('rowset').reject{|a| a.fetch('@name') != 'jumpClones' }.first.fetch('row')
-    # end
+    let(:rowset) { double }
+
+    before do
+      #
+      # subject.result.fetch('rowset').reject => rowset
+      #
+      expect(subject).to receive(:result) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('rowset') do
+            double.tap do |b|
+              expect(b).to receive(:reject).and_yield(rowset)
+            end
+          end
+        end
+      end
+    end
+
+    before do
+      #
+      # rowset.fetch('@name') != 'jumpClones' => rowset
+      #
+      expect(rowset).to receive(:fetch).with('@name') do
+        double.tap do |a|
+          expect(a).to receive(:!=).with('jumpClones').and_return(rowset)
+        end
+      end
+    end
+
+    before do
+      #
+      # rowset.first.fetch('row')
+      #
+      expect(rowset).to receive(:first) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('row')
+        end
+      end
+    end
+
+    specify { expect { subject.send(:jump_clones_rows) }.not_to raise_error }
   end
 end
