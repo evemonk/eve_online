@@ -179,6 +179,7 @@ module EveOnline
         @willpower ||= attributes.fetch('willpower').to_i
       end
 
+      # TODO: spec this
       def implants
         output = []
         implants_rows.each do |implant|
@@ -187,6 +188,7 @@ module EveOnline
         output
       end
 
+      # TODO: spec this
       def skills
         output = []
         skills_rows.each do |skill|
@@ -205,14 +207,17 @@ module EveOnline
         @attributes ||= result.fetch('attributes')
       end
 
+      # TODO: spec this
       def implants_rows
         @implants_rows ||= result.fetch('rowset').reject { |a| a.fetch('@name') != 'implants' }.first.fetch('row')
       end
 
+      # TODO: spec this
       def skills_rows
         @skills_rows ||= result.fetch('rowset').reject { |a| a.fetch('@name') != 'skills' }.first.fetch('row')
       end
 
+      # TODO: spec this
       def jump_clones_rows
         @jump_clones_rows ||= result.fetch('rowset').reject { |a| a.fetch('@name') != 'jumpClones' }.first.fetch('row')
       end
