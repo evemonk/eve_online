@@ -67,13 +67,13 @@ describe EveOnline::Characters::CharacterSheet do
 
     before { expect(character_sheet).to receive(:corporation_id).and_return(1_000_168) }
 
-    before { expect(character_sheet).to receive(:alliance_name).and_return(nil) }
+    before { expect(character_sheet).to receive(:alliance_name).and_return('Alliance. Now. Please.') }
 
-    before { expect(character_sheet).to receive(:alliance_id).and_return(nil) }
+    before { expect(character_sheet).to receive(:alliance_id).and_return(1_538_759_362) }
 
-    before { expect(character_sheet).to receive(:faction_name).and_return(nil) }
+    before { expect(character_sheet).to receive(:faction_name).and_return('Faction. Now. Please.') }
 
-    before { expect(character_sheet).to receive(:faction_id).and_return(nil) }
+    before { expect(character_sheet).to receive(:faction_id).and_return(1_538_759_123) }
 
     before { expect(character_sheet).to receive(:clone_type_id).and_return(164) }
 
@@ -119,13 +119,13 @@ describe EveOnline::Characters::CharacterSheet do
 
     its([:corporation_id]) { should eq(1_000_168) }
 
-    its([:alliance_name]) { should eq(nil) }
+    its([:alliance_name]) { should eq('Alliance. Now. Please.') }
 
-    its([:alliance_id]) { should eq(nil) }
+    its([:alliance_id]) { should eq(1_538_759_362) }
 
-    its([:faction_name]) { should eq(nil) }
+    its([:faction_name]) { should eq('Faction. Now. Please.') }
 
-    its([:faction_id]) { should eq(nil) }
+    its([:faction_id]) { should eq(1_538_759_123) }
 
     its([:clone_type_id]) { should eq(164) }
 
