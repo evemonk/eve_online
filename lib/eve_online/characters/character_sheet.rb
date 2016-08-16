@@ -179,7 +179,6 @@ module EveOnline
         @willpower ||= attributes.fetch('willpower').to_i
       end
 
-      # TODO: spec this
       def implants
         output = []
         implants_rows.each do |implant|
@@ -188,7 +187,6 @@ module EveOnline
         output
       end
 
-      # TODO: spec this
       def skills
         output = []
         skills_rows.each do |skill|
