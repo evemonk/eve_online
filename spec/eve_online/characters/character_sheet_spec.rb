@@ -814,14 +814,32 @@ describe EveOnline::Characters::CharacterSheet do
   end
 
   describe '#implants' do
-    # TODO: spec this
-    # def implants
-    #   output = []
-    #   implants_rows.each do |implant|
-    #     output << Implant.new(implant)
-    #   end
-    #   output
-    # end
+    let(:implant) { double }
+
+    let(:row) do
+      [
+        {
+          '@typeID' => '9899',
+          '@typeName' => 'Ocular Filter - Basic'
+        }
+      ]
+    end
+
+    before do
+      #
+      # subject.implants_rows # => [{"@typeID"=>"9899", "@typeName"=>"Ocular Filter - Basic"}]
+      #
+      expect(subject).to receive(:implants_rows).and_return(row)
+    end
+
+    before do
+      #
+      # EveOnline::Implant.new(row) # => implant
+      #
+      expect(EveOnline::Implant).to receive(:new).with(row.first).and_return(implant)
+    end
+
+    specify { expect(subject.implants).to eq([implant]) }
   end
 
   describe '#skills' do
