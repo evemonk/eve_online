@@ -1,4 +1,4 @@
 #! /bin/sh
 
-mutant --include lib --require eve_online --use rspec EveOnline*
+bundle exec mutant --include lib --require eve_online --use rspec EveOnline*
 

@@ -814,25 +814,63 @@ describe EveOnline::Characters::CharacterSheet do
   end
 
   describe '#implants' do
-    # TODO: spec this
-    # def implants
-    #   output = []
-    #   implants_rows.each do |implant|
-    #     output << Implant.new(implant)
-    #   end
-    #   output
-    # end
+    let(:implant) { double }
+
+    let(:row) do
+      [
+        {
+          '@typeID' => '9899',
+          '@typeName' => 'Ocular Filter - Basic'
+        }
+      ]
+    end
+
+    before do
+      #
+      # subject.implants_rows # => [{"@typeID"=>"9899", "@typeName"=>"Ocular Filter - Basic"}]
+      #
+      expect(subject).to receive(:implants_rows).and_return(row)
+    end
+
+    before do
+      #
+      # EveOnline::Implant.new(row) # => implant
+      #
+      expect(EveOnline::Implant).to receive(:new).with(row.first).and_return(implant)
+    end
+
+    specify { expect(subject.implants).to eq([implant]) }
   end
 
   describe '#skills' do
-    # TODO: spec this
-    # def skills
-    #   output = []
-    #   skills_rows.each do |skill|
-    #     output << Skill.new(skill)
-    #   end
-    #   output
-    # end
+    let(:skill) { double }
+
+    let(:row) do
+      [
+        {
+          '@typeID' => '2495',
+          '@skillpoints' => '1000',
+          '@level' => '1',
+          '@published' => '1'
+        }
+      ]
+    end
+
+    before do
+      #
+      # subject.skills_rows # => [{"@typeID"=>"2495", "@skillpoints"=>"1000", "@level"=>"1", "@published"=>"1"}]
+      #
+      expect(subject).to receive(:skills_rows).and_return(row)
+    end
+
+    before do
+      #
+      # EveOnline::Skill.new(row) # => skill
+      #
+      expect(EveOnline::Skill).to receive(:new).with(row.first).and_return(skill)
+    end
+
+    specify { expect(subject.skills).to eq([skill]) }
   end
 
   describe '#url' do

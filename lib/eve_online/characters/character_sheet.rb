@@ -205,16 +205,19 @@ module EveOnline
         @attributes ||= result.fetch('attributes')
       end
 
+      # TODO: spec this
       def implants_rows
-        @implants_rows ||= result.fetch('rowset').reject{|a| a.fetch('@name') != 'implants' }.first.fetch('row')
+        @implants_rows ||= result.fetch('rowset').reject { |a| a.fetch('@name') != 'implants' }.first.fetch('row')
       end
 
+      # TODO: spec this
       def skills_rows
-        @skills_rows ||= result.fetch('rowset').reject{|a| a.fetch('@name') != 'skills' }.first.fetch('row')
+        @skills_rows ||= result.fetch('rowset').reject { |a| a.fetch('@name') != 'skills' }.first.fetch('row')
       end
 
+      # TODO: spec this
       def jump_clones_rows
-        @jump_clones_rows ||= result.fetch('rowset').reject{|a| a.fetch('@name') != 'jumpClones' }.first.fetch('row')
+        @jump_clones_rows ||= result.fetch('rowset').reject { |a| a.fetch('@name') != 'jumpClones' }.first.fetch('row')
       end
     end
   end
