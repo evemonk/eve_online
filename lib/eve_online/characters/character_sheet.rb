@@ -201,10 +201,6 @@ module EveOnline
         @attributes ||= result.fetch('attributes')
       end
 
-      def implants_rows
-        @implants_rows ||= result.fetch('rowset').reject { |a| a.fetch('@name') != 'implants' }.first.fetch('row')
-      end
-
       def jump_clones_rows
         @jump_clones_rows ||= result.fetch('rowset').reject { |a| a.fetch('@name') != 'jumpClones' }.first.fetch('row')
       end
