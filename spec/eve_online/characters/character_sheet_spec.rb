@@ -196,13 +196,9 @@ describe EveOnline::Characters::CharacterSheet do
 
     before do
       #
-      # ActiveSupport::TimeZone['UTC'].parse(dob)
+      # subject.parse_datetime_with_timezone(dob)
       #
-      expect(ActiveSupport::TimeZone).to receive(:[]).with('UTC') do
-        double.tap do |a|
-          expect(a).to receive(:parse).with(dob)
-        end
-      end
+      expect(subject).to receive(:parse_datetime_with_timezone).with(dob)
     end
 
     specify { expect { subject.dob }.not_to raise_error }
@@ -523,13 +519,9 @@ describe EveOnline::Characters::CharacterSheet do
 
     before do
       #
-      # ActiveSupport::TimeZone['UTC'].parse(clone_jump_date)
+      # subject.parse_datetime_with_timezone(clone_jump_date)
       #
-      expect(ActiveSupport::TimeZone).to receive(:[]).with('UTC') do
-        double.tap do |a|
-          expect(a).to receive(:parse).with(clone_jump_date)
-        end
-      end
+      expect(subject).to receive(:parse_datetime_with_timezone).with(clone_jump_date)
     end
 
     specify { expect { subject.clone_jump_date }.not_to raise_error }
@@ -551,13 +543,9 @@ describe EveOnline::Characters::CharacterSheet do
 
     before do
       #
-      # ActiveSupport::TimeZone['UTC'].parse(last_respec_date)
+      # subject.parse_datetime_with_timezone(last_respec_date)
       #
-      expect(ActiveSupport::TimeZone).to receive(:[]).with('UTC') do
-        double.tap do |a|
-          expect(a).to receive(:parse).with(last_respec_date)
-        end
-      end
+      expect(subject).to receive(:parse_datetime_with_timezone).with(last_respec_date)
     end
 
     specify { expect { subject.last_respec_date }.not_to raise_error }
@@ -579,13 +567,9 @@ describe EveOnline::Characters::CharacterSheet do
 
     before do
       #
-      # ActiveSupport::TimeZone['UTC'].parse(last_timed_respec)
+      # subject.parse_datetime_with_timezone(last_timed_respec)
       #
-      expect(ActiveSupport::TimeZone).to receive(:[]).with('UTC') do
-        double.tap do |a|
-          expect(a).to receive(:parse).with(last_timed_respec)
-        end
-      end
+      expect(subject).to receive(:parse_datetime_with_timezone).with(last_timed_respec)
     end
 
     specify { expect { subject.last_timed_respec }.not_to raise_error }
@@ -607,13 +591,9 @@ describe EveOnline::Characters::CharacterSheet do
 
     before do
       #
-      # ActiveSupport::TimeZone['UTC'].parse(remote_station_date)
+      # subject.parse_datetime_with_timezone(remote_station_date)
       #
-      expect(ActiveSupport::TimeZone).to receive(:[]).with('UTC') do
-        double.tap do |a|
-          expect(a).to receive(:parse).with(remote_station_date)
-        end
-      end
+      expect(subject).to receive(:parse_datetime_with_timezone).with(remote_station_date)
     end
 
     specify { expect { subject.remote_station_date }.not_to raise_error }
@@ -635,13 +615,9 @@ describe EveOnline::Characters::CharacterSheet do
 
     before do
       #
-      # ActiveSupport::TimeZone['UTC'].parse(jump_activation_date)
+      # subject.parse_datetime_with_timezone(jump_activation_date)
       #
-      expect(ActiveSupport::TimeZone).to receive(:[]).with('UTC') do
-        double.tap do |a|
-          expect(a).to receive(:parse).with(jump_activation_date)
-        end
-      end
+      expect(subject).to receive(:parse_datetime_with_timezone).with(jump_activation_date)
     end
 
     specify { expect { subject.jump_activation }.not_to raise_error }
@@ -663,13 +639,9 @@ describe EveOnline::Characters::CharacterSheet do
 
     before do
       #
-      # ActiveSupport::TimeZone['UTC'].parse(jump_fatigue_date)
+      # subject.parse_datetime_with_timezone(jump_fatigue_date)
       #
-      expect(ActiveSupport::TimeZone).to receive(:[]).with('UTC') do
-        double.tap do |a|
-          expect(a).to receive(:parse).with(jump_fatigue_date)
-        end
-      end
+      expect(subject).to receive(:parse_datetime_with_timezone).with(jump_fatigue_date)
     end
 
     specify { expect { subject.jump_fatigue }.not_to raise_error }
@@ -691,13 +663,9 @@ describe EveOnline::Characters::CharacterSheet do
 
     before do
       #
-      # ActiveSupport::TimeZone['UTC'].parse(jump_last_update_date)
+      # subject.parse_datetime_with_timezone(jump_last_update_date)
       #
-      expect(ActiveSupport::TimeZone).to receive(:[]).with('UTC') do
-        double.tap do |a|
-          expect(a).to receive(:parse).with(jump_last_update_date)
-        end
-      end
+      expect(subject).to receive(:parse_datetime_with_timezone).with(jump_last_update_date)
     end
 
     specify { expect { subject.jump_last_update }.not_to raise_error }

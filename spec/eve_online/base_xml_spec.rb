@@ -47,13 +47,9 @@ describe EveOnline::BaseXML do
 
     before do
       #
-      # ActiveSupport::TimeZone['UTC'].parse(cached_until)
+      # subject.parse_datetime_with_timezone(cached_until)
       #
-      expect(ActiveSupport::TimeZone).to receive(:[]).with('UTC') do
-        double.tap do |a|
-          expect(a).to receive(:parse).with(cached_until)
-        end
-      end
+      expect(subject).to receive(:parse_datetime_with_timezone).with(cached_until)
     end
 
     specify { expect { subject.cached_until }.not_to raise_error }
@@ -75,13 +71,9 @@ describe EveOnline::BaseXML do
 
     before do
       #
-      # ActiveSupport::TimeZone['UTC'].parse(current_time)
+      # subject.parse_datetime_with_timezone(current_time)
       #
-      expect(ActiveSupport::TimeZone).to receive(:[]).with('UTC') do
-        double.tap do |a|
-          expect(a).to receive(:parse).with(current_time)
-        end
-      end
+      expect(subject).to receive(:parse_datetime_with_timezone).with(current_time)
     end
 
     specify { expect { subject.current_time }.not_to raise_error }
@@ -119,5 +111,24 @@ describe EveOnline::BaseXML do
     end
 
     specify { expect { subject.eveapi }.not_to raise_error }
+  end
+
+  # private methods
+
+  describe '#parse_datetime_with_timezone' do
+    let(:value) { double }
+
+    before do
+      #
+      # ActiveSupport::TimeZone['UTC'].parse(value)
+      #
+      expect(ActiveSupport::TimeZone).to receive(:[]).with('UTC') do
+        double.tap do |a|
+          expect(a).to receive(:parse).with(value)
+        end
+      end
+    end
+
+    specify { expect { subject.send(:parse_datetime_with_timezone, value) }.not_to raise_error }
   end
 end

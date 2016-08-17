@@ -27,15 +27,15 @@ module EveOnline
       end
 
       def current_tq_time
-        @current_tq_time ||= ActiveSupport::TimeZone['UTC'].parse(result.fetch('currentTQTime'))
+        @current_tq_time ||= parse_datetime_with_timezone(result.fetch('currentTQTime'))
       end
 
       def training_end_time
-        @training_end_time ||= ActiveSupport::TimeZone['UTC'].parse(result.fetch('trainingEndTime'))
+        @training_end_time ||= parse_datetime_with_timezone(result.fetch('trainingEndTime'))
       end
 
       def training_start_time
-        @training_start_time ||= ActiveSupport::TimeZone['UTC'].parse(result.fetch('trainingStartTime'))
+        @training_start_time ||= parse_datetime_with_timezone(result.fetch('trainingStartTime'))
       end
 
       def training_type_id

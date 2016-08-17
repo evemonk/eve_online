@@ -52,7 +52,7 @@ module EveOnline
       end
 
       def dob
-        @dob ||= ActiveSupport::TimeZone['UTC'].parse(result.fetch('DoB'))
+        @dob ||= parse_datetime_with_timezone(result.fetch('DoB'))
       end
 
       def race
@@ -128,31 +128,31 @@ module EveOnline
       end
 
       def clone_jump_date
-        @clone_jump_date ||= ActiveSupport::TimeZone['UTC'].parse(result.fetch('cloneJumpDate'))
+        @clone_jump_date ||= parse_datetime_with_timezone(result.fetch('cloneJumpDate'))
       end
 
       def last_respec_date
-        @last_respec_date ||= ActiveSupport::TimeZone['UTC'].parse(result.fetch('lastRespecDate'))
+        @last_respec_date ||= parse_datetime_with_timezone(result.fetch('lastRespecDate'))
       end
 
       def last_timed_respec
-        @last_timed_respec ||= ActiveSupport::TimeZone['UTC'].parse(result.fetch('lastTimedRespec'))
+        @last_timed_respec ||= parse_datetime_with_timezone(result.fetch('lastTimedRespec'))
       end
 
       def remote_station_date
-        @remote_station_date ||= ActiveSupport::TimeZone['UTC'].parse(result.fetch('remoteStationDate'))
+        @remote_station_date ||= parse_datetime_with_timezone(result.fetch('remoteStationDate'))
       end
 
       def jump_activation
-        @jump_activation ||= ActiveSupport::TimeZone['UTC'].parse(result.fetch('jumpActivation'))
+        @jump_activation ||= parse_datetime_with_timezone(result.fetch('jumpActivation'))
       end
 
       def jump_fatigue
-        @jump_fatigue ||= ActiveSupport::TimeZone['UTC'].parse(result.fetch('jumpFatigue'))
+        @jump_fatigue ||= parse_datetime_with_timezone(result.fetch('jumpFatigue'))
       end
 
       def jump_last_update
-        @jump_last_update ||= ActiveSupport::TimeZone['UTC'].parse(result.fetch('jumpLastUpdate'))
+        @jump_last_update ||= parse_datetime_with_timezone(result.fetch('jumpLastUpdate'))
       end
 
       def balance

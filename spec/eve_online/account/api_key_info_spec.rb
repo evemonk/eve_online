@@ -155,13 +155,9 @@ describe EveOnline::Account::ApiKeyInfo do
 
     before do
       #
-      # ActiveSupport::TimeZone['UTC'].parse(key.fetch('@expires'))
+      # subject.parse_datetime_with_timezone(expires)
       #
-      expect(ActiveSupport::TimeZone).to receive(:[]).with('UTC') do
-        double.tap do |a|
-          expect(a).to receive(:parse).with(expires)
-        end
-      end
+      expect(subject).to receive(:parse_datetime_with_timezone).with(expires)
     end
 
     specify { expect { subject.expires }.not_to raise_error }
