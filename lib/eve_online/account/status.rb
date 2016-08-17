@@ -24,11 +24,11 @@ module EveOnline
       end
 
       def paid_until
-        @paid_until ||= ActiveSupport::TimeZone['UTC'].parse(result.fetch('paidUntil'))
+        @paid_until ||= parse_datetime_with_timezone(result.fetch('paidUntil'))
       end
 
       def create_date
-        @create_date ||= ActiveSupport::TimeZone['UTC'].parse(result.fetch('createDate'))
+        @create_date ||= parse_datetime_with_timezone(result.fetch('createDate'))
       end
 
       def logon_count
