@@ -9,6 +9,39 @@ describe EveOnline::CharacterImplants do
     its(:result) { should eq(result) }
   end
 
+  describe '#implants' do
+    let(:result) { double }
+
+    subject { described_class.new(result) }
+
+    let(:implant) { double }
+
+    let(:rowset) do
+      [
+        {
+          '@typeID' => '9899',
+          '@typeName' => 'Ocular Filter - Basic'
+        }
+      ]
+    end
+
+    before do
+      #
+      # subject.rowset # => [{"@typeID"=>"9899", "@typeName"=>"Ocular Filter - Basic"}]
+      #
+      expect(subject).to receive(:rowset).and_return(rowset)
+    end
+
+    before do
+      #
+      # EveOnline::Implant.new(rowset.first) # => implant
+      #
+      expect(EveOnline::Implant).to receive(:new).with(rowset.first).and_return(implant)
+    end
+
+    specify { expect(subject.implants).to eq([implant]) }
+  end
+
   # private methods
 
   describe '#rowset' do

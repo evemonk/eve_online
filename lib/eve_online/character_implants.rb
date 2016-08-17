@@ -6,6 +6,14 @@ module EveOnline
       @result = result
     end
 
+    def implants
+      output = []
+      rowset.each do |implant|
+        output << Implant.new(implant)
+      end
+      output
+    end
+
     private
 
     def rowset

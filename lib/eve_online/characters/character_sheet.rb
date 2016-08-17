@@ -180,11 +180,7 @@ module EveOnline
       end
 
       def implants
-        output = []
-        implants_rows.each do |implant|
-          output << Implant.new(implant)
-        end
-        output
+        @implants ||= EveOnline::CharacterImplants.new(result).implants
       end
 
       def skills
