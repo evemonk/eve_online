@@ -92,13 +92,9 @@ describe EveOnline::Characters::SkillInTraining do
 
     before do
       #
-      # ActiveSupport::TimeZone['UTC'].parse(currentTQTime)
+      # subject.parse_datetime_with_timezone(currentTQTime)
       #
-      expect(ActiveSupport::TimeZone).to receive(:[]).with('UTC') do
-        double.tap do |a|
-          expect(a).to receive(:parse).with(currentTQTime)
-        end
-      end
+      expect(subject).to receive(:parse_datetime_with_timezone).with(currentTQTime)
     end
 
     specify { expect { subject.current_tq_time }.not_to raise_error }
@@ -120,13 +116,9 @@ describe EveOnline::Characters::SkillInTraining do
 
     before do
       #
-      # ActiveSupport::TimeZone['UTC'].parse(trainingEndTime)
+      # subject.parse_datetime_with_timezone(trainingEndTime)
       #
-      expect(ActiveSupport::TimeZone).to receive(:[]).with('UTC') do
-        double.tap do |a|
-          expect(a).to receive(:parse).with(trainingEndTime)
-        end
-      end
+      expect(subject).to receive(:parse_datetime_with_timezone).with(trainingEndTime)
     end
 
     specify { expect { subject.training_end_time }.not_to raise_error }
@@ -148,13 +140,9 @@ describe EveOnline::Characters::SkillInTraining do
 
     before do
       #
-      # ActiveSupport::TimeZone['UTC'].parse(trainingStartTime)
+      # subject.parse_datetime_with_timezone(trainingStartTime)
       #
-      expect(ActiveSupport::TimeZone).to receive(:[]).with('UTC') do
-        double.tap do |a|
-          expect(a).to receive(:parse).with(trainingStartTime)
-        end
-      end
+      expect(subject).to receive(:parse_datetime_with_timezone).with(trainingStartTime)
     end
 
     specify { expect { subject.training_start_time }.not_to raise_error }
