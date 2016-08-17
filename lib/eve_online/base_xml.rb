@@ -28,5 +28,11 @@ module EveOnline
     def eveapi
       @eveapi ||= response.fetch('eveapi')
     end
+
+    private
+
+    def parse_datetime_with_timezone(value)
+      ActiveSupport::TimeZone['UTC'].parse(value)
+    end
   end
 end
