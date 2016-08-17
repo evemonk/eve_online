@@ -188,11 +188,7 @@ module EveOnline
       end
 
       def skills
-        output = []
-        skills_rows.each do |skill|
-          output << Skill.new(skill)
-        end
-        output
+        @skills ||= CharacterSkills.new(result).skills
       end
 
       def url
@@ -207,10 +203,6 @@ module EveOnline
 
       def implants_rows
         @implants_rows ||= result.fetch('rowset').reject { |a| a.fetch('@name') != 'implants' }.first.fetch('row')
-      end
-
-      def skills_rows
-        @skills_rows ||= result.fetch('rowset').reject { |a| a.fetch('@name') != 'skills' }.first.fetch('row')
       end
 
       def jump_clones_rows
