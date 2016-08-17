@@ -180,7 +180,7 @@ module EveOnline
       end
 
       def implants
-        @implants ||= EveOnline::CharacterImplants.new(result).implants
+        @implants ||= CharacterImplants.new(result).implants
       end
 
       def skills
