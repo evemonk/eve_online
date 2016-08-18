@@ -385,6 +385,22 @@ skill_in_training.training_to_level # => 5
 skill_in_training.skill_in_training # => 1 
 ```
 
+Standings:
+```ruby
+key_id = 1234567
+v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
+character_id = 90729314
+
+standings = EveOnline::Characters::Standings.new(key_id, v_code, character_id)
+
+standings.current_time # => Thu, 18 Aug 2016 14:50:50 UTC +00:00
+standings.cached_until # => Thu, 18 Aug 2016 17:47:50 UTC +00:00
+standings.version # => 2
+
+# TODO: finish this
+
+```
+
 Upcoming Calender Events:
 ```ruby
 key_id = 1234567
@@ -492,6 +508,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Add `EveOnline::CharacterImplants` class for handling character implants
 * Add `EveOnline::CharacterJumpClones` class for handling character jump clones
 * Finish [Character Bookmarks](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_bookmarks.html)
+* Add basic `EveOnline::Characters::Standings` class
 
 **v0.7.0**
 
