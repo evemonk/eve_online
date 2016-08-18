@@ -509,6 +509,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Add `EveOnline::CharacterJumpClones` class for handling character jump clones
 * Finish [Character Bookmarks](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_bookmarks.html)
 * Add basic `EveOnline::Characters::Standings` class
+* Add `EveOnline::Standing` class for handling character standing
 
 **v0.7.0**
 
