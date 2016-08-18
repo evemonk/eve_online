@@ -84,6 +84,104 @@ describe EveOnline::BookmarkFolder do
   #   end
   # end
 
+  describe '#bookmarks' do
+    context 'row is Hash' do
+      let(:options) { double }
+
+      subject { described_class.new(options) }
+
+      let(:bookmark) { double }
+
+      let(:row) do
+        {
+          '@bookmarkID' => '459411933',
+          '@creatorID' => '0',
+          '@created' => '2009-03-28 07:51:00',
+          '@itemID' => '0',
+          '@typeID' => '5',
+          '@locationID' => '30002656',
+          '@x' => '-267396330161',
+          '@y' => '-376627274',
+          '@z' => '-556366331388',
+          '@memo' => '1',
+          '@note' => ''
+        }
+      end
+
+      before do
+        #
+        # subject.row # => {"@bookmarkID"=>"459411933", "@creatorID"=>"0", "@created"=>"2009-03-28 07:51:00", "@itemID"=>"0", "@typeID"=>"5", "@locationID"=>"30002656", "@x"=>"-267396330161", "@y"=>"-376627274", "@z"=>"-556366331388", "@memo"=>"1", "@note"=>""}
+        #
+        expect(subject).to receive(:row).and_return(row).twice
+      end
+
+      before do
+        #
+        # EveOnline::Bookmark.new(row) # => bookmark
+        #
+        expect(EveOnline::Bookmark).to receive(:new).with(row).and_return(bookmark)
+      end
+
+      specify { expect(subject.bookmarks).to eq([bookmark]) }
+    end
+
+    context 'row is Array' do
+      let(:options) { double }
+
+      subject { described_class.new(options) }
+
+      let(:bookmark) { double }
+
+      let(:row) do
+        [
+          {
+            '@bookmarkID' => '459411933',
+            '@creatorID' => '0',
+            '@created' => '2009-03-28 07:51:00',
+            '@itemID' => '0',
+            '@typeID' => '5',
+            '@locationID' => '30002656',
+            '@x' => '-267396330161',
+            '@y' => '-376627274',
+            '@z' => '-556366331388',
+            '@memo' => '1',
+            '@note' => ''
+          }
+        ]
+      end
+
+      before do
+        #
+        # subject.row # => [{"@bookmarkID"=>"459411933", "@creatorID"=>"0", "@created"=>"2009-03-28 07:51:00", "@itemID"=>"0", "@typeID"=>"5", "@locationID"=>"30002656", "@x"=>"-267396330161", "@y"=>"-376627274", "@z"=>"-556366331388", "@memo"=>"1", "@note"=>""}]
+        #
+        expect(subject).to receive(:row).and_return(row).twice
+      end
+
+      before do
+        #
+        # EveOnline::Bookmark.new(row.first) # => bookmark
+        #
+        expect(EveOnline::Bookmark).to receive(:new).with(row.first).and_return(bookmark)
+      end
+
+      specify { expect(subject.bookmarks).to eq([bookmark]) }
+    end
+
+    context 'row is invalid' do
+      let(:options) { double }
+
+      subject { described_class.new(options) }
+
+      before do
+        #
+        # subject.row # => 'invalid'
+        #
+        expect(subject).to receive(:row).and_return('invalid')
+      end
+
+      specify { expect { subject.bookmarks }.to raise_error(ArgumentError) }
+    end
+  end
 
   # private methods
 

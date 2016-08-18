@@ -21,22 +21,22 @@ module EveOnline
       @folder_name ||= options.fetch('@folderName')
     end
 
-    # def bookmarks
-    #   @bookmarks ||= begin
-    #     case row
-    #     when Hash
-    #       [Bookmark.new(row)]
-    #     when Array
-    #       bookmarks = []
-    #       row.each do |bookmark|
-    #         bookmarks << Bookmark.new(bookmark)
-    #       end
-    #       bookmarks
-    #     else
-    #       raise ArgumentError
-    #     end
-    #   end
-    # end
+    def bookmarks
+      @bookmarks ||= begin
+        case row
+        when Hash
+          [Bookmark.new(row)]
+        when Array
+          bookmarks = []
+          row.each do |bookmark|
+            bookmarks << Bookmark.new(bookmark)
+          end
+          bookmarks
+        else
+          raise ArgumentError
+        end
+      end
+    end
 
     private
 
