@@ -212,8 +212,32 @@ bookmarks.current_time # => Sun, 03 Jan 2016 14:53:44 UTC +00:00
 bookmarks.cached_until # => Sun, 03 Jan 2016 15:50:44 UTC +00:00 
 bookmarks.version # => 2 
 
-# TODO: finish this
+bookmarks.bookmark_folders.size # => 4
 
+bookmark_folder = bookmarks.bookmark_folders.first # => #<EveOnline::BookmarkFolder:0x007fda7521a4b0 ....
+
+bookmark_folder.as_json # => {:folder_id=>0, :folder_name=>""}
+
+bookmark_folder.folder_id # => 0
+bookmark_folder.folder_name # => ""
+
+bookmark_folder.bookmarks.size # => 87
+
+bookmark = bookmark_folder.bookmarks.first # => #<EveOnline::Bookmark:0x007fc8b49f3880 @options={"@bookmarkID"=>"459411933", "@creatorID"=>"0", "@created"=>"2009-03-28 07:51:00", "@itemID"=>"0", "@typeID"=>"5", "@locationID"=>"30002656", "@x"=>"-267396330161", "@y"=>"-376627274", "@z"=>"-556366331388", "@memo"=>"1", "@note"=>""}>
+
+bookmark.as_json # => {:bookmark_id=>459411933, :creator_id=>0, :created=>Sat, 28 Mar 2009 07:51:00 UTC +00:00, :item_id=>0, :type_id=>5, :location_id=>30002656, :x=>-267396330161.0, :y=>-376627274.0, :z=>-556366331388.0, :memo=>"1", :note=>""}
+
+bookmark.bookmark_id # => 459411933
+bookmark.creator_id # => 0
+bookmark.created # => Sat, 28 Mar 2009 07:51:00 UTC +00:00
+bookmark.item_id # => 0
+bookmark.type_id # => 5
+bookmark.location_id # => 30002656
+bookmark.x # => -267396330161.0
+bookmark.y # => -376627274.0
+bookmark.z # => -556366331388.0
+bookmark.memo # => "1"
+bookmark.note # => ""
 ```
 
 Calendar Event Attendees:
@@ -467,6 +491,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Add `EveOnline::JumpClone` class for handling character jump clone
 * Add `EveOnline::CharacterImplants` class for handling character implants
 * Add `EveOnline::CharacterJumpClones` class for handling character jump clones
+* Finish [Character Bookmarks](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_bookmarks.html)
 
 **v0.7.0**
 
@@ -547,7 +572,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 - [x] [Account Balance](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_accountbalance.html)
 - [x] [Asset List](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_assetlist.html)
 - [x] [Blueprints](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_blueprints.html)
-- [ ] [Bookmarks](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_bookmarks.html)
+- [x] [Bookmarks](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_bookmarks.html)
 - [ ] [Calendar Event Attendees](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_calendareventattendees.html)
 - [ ] [Character Sheet](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_charactersheet.html)
 - [ ] [Chat Channels](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_chatchannels.html)
