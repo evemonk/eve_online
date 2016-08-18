@@ -819,6 +819,25 @@ describe EveOnline::Characters::CharacterSheet do
     specify { expect { subject.skills }.not_to raise_error }
   end
 
+  describe '#jump_clones' do
+    let(:result) { double }
+
+    before { expect(subject).to receive(:result).and_return(result) }
+
+    before do
+      #
+      # EveOnline::CharacterJumpClones.new(result).jump_clones
+      #
+      expect(EveOnline::CharacterJumpClones).to receive(:new).with(result) do
+        double.tap do |a|
+          expect(a).to receive(:jump_clones)
+        end
+      end
+    end
+
+    specify { expect { subject.jump_clones }.not_to raise_error }
+  end
+
   describe '#url' do
     specify do
       expect(subject.url).to eq("#{ described_class::API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }")
@@ -840,48 +859,5 @@ describe EveOnline::Characters::CharacterSheet do
     end
 
     specify { expect { subject.send(:attributes) }.not_to raise_error }
-  end
-
-  describe '#jump_clones_rows' do
-    let(:rowset) { double }
-
-    before do
-      #
-      # subject.result.fetch('rowset').reject => rowset
-      #
-      expect(subject).to receive(:result) do
-        double.tap do |a|
-          expect(a).to receive(:fetch).with('rowset') do
-            double.tap do |b|
-              expect(b).to receive(:reject).and_yield(rowset)
-            end
-          end
-        end
-      end
-    end
-
-    before do
-      #
-      # rowset.fetch('@name') != 'jumpClones' => rowset
-      #
-      expect(rowset).to receive(:fetch).with('@name') do
-        double.tap do |a|
-          expect(a).to receive(:!=).with('jumpClones').and_return(rowset)
-        end
-      end
-    end
-
-    before do
-      #
-      # rowset.first.fetch('row')
-      #
-      expect(rowset).to receive(:first) do
-        double.tap do |a|
-          expect(a).to receive(:fetch).with('row')
-        end
-      end
-    end
-
-    specify { expect { subject.send(:jump_clones_rows) }.not_to raise_error }
   end
 end

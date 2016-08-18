@@ -304,6 +304,17 @@ skill.skillpoints # => 1000
 skill.level # => 1
 skill.published # => true
 
+character_sheet.jump_clones.size # => 2
+
+jump_clone = character_sheet.jump_clones.first # => #<EveOnline::JumpClone:0x007fa2341cdb48 @options={"@jumpCloneID"=>"22357400", "@typeID"=>"164", "@locationID"=>"61000032", "@cloneName"=>""}, @jump_clone_id=22357400, @type_id=164, @location_id=61000032, @clone_name="">
+
+jump_clone.as_json # => {:jump_clone_id=>22357400, :type_id=>164, :location_id=>61000032, :clone_name=>""}
+
+jump_clone.jump_clone_id # => 22357400
+jump_clone.type_id # => 164
+jump_clone.location_id # => 61000032
+jump_clone.clone_name # => ""
+
 # TODO: finish this
 
 ```
@@ -453,8 +464,9 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Add `EveOnline::Implant` class for handling character implant
 * Add `EveOnline::Skill` class for handling character skill
 * Add `EveOnline::CharacterSkills` class for handling character skills
-* Add `EveOnline::JumpClone` class for handling character jump clones
+* Add `EveOnline::JumpClone` class for handling character jump clone
 * Add `EveOnline::CharacterImplants` class for handling character implants
+* Add `EveOnline::CharacterJumpClones` class for handling character jump clones
 
 **v0.7.0**
 
