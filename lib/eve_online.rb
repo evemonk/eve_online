@@ -17,6 +17,7 @@ require 'eve_online/jump_clone'
 require 'eve_online/character_skills'
 require 'eve_online/character_implants'
 require 'eve_online/character_jump_clones'
+require 'eve_online/character_jump_clone_implants'
 require 'eve_online/standing'
 
 require 'eve_online/account/api_key_info'
