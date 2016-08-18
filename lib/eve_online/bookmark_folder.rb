@@ -13,14 +13,6 @@ module EveOnline
       }
     end
 
-    # def as_json
-    #   {
-    #     folder_id: folder_id,
-    #     folder_name: folder_name,
-    #     bookmarks: bookmarks
-    #   }
-    # end
-
     def folder_id
       @folder_d ||= options.fetch('@folderID').to_i
     end
@@ -30,11 +22,30 @@ module EveOnline
     end
 
     # def bookmarks
-    #   { }
+    #   @bookmarks ||= begin
+    #     case row
+    #     when Hash
+    #       [Bookmark.new(row)]
+    #     when Array
+    #       bookmarks = []
+    #       row.each do |bookmark|
+    #         bookmarks << Bookmark.new(bookmark)
+    #       end
+    #       bookmarks
+    #     else
+    #       raise ArgumentError
+    #     end
+    #   end
     # end
-    #
-    # def rowset
-    #
-    # end
+
+    private
+
+    def rowset
+      @rowset ||= options.fetch('rowset')
+    end
+
+    def row
+      @row ||= rowset.fetch('row')
+    end
   end
 end

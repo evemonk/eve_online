@@ -16,13 +16,13 @@ describe EveOnline::BookmarkFolder do
 
     before { expect(bookmark).to receive(:folder_id).and_return(0) }
 
-    before { expect(bookmark).to receive(:folder_name).and_return('') }
+    before { expect(bookmark).to receive(:folder_name).and_return('LUT') }
 
     subject { bookmark.as_json }
 
     its([:folder_id]) { should eq(0) }
 
-    its([:folder_name]) { should eq('') }
+    its([:folder_name]) { should eq('LUT') }
   end
 
   describe '#folder_id' do
@@ -65,5 +65,63 @@ describe EveOnline::BookmarkFolder do
     end
 
     specify { expect { subject.folder_name }.not_to raise_error }
+  end
+
+  # def bookmarks
+  #   @bookmarks ||= begin
+  #     case row
+  #     when Hash
+  #       [Bookmark.new(row)]
+  #     when Array
+  #       bookmarks = []
+  #       row.each do |bookmark|
+  #         bookmarks << Bookmark.new(bookmark)
+  #       end
+  #       bookmarks
+  #     else
+  #       raise ArgumentError
+  #     end
+  #   end
+  # end
+
+
+  # private methods
+
+  describe '#rowset' do
+    let(:options) { double }
+
+    subject { described_class.new(options) }
+
+    before do
+      #
+      # subject.options.fetch('rowset')
+      #
+      expect(subject).to receive(:options) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('rowset')
+        end
+      end
+    end
+
+    specify { expect { subject.send(:rowset) }.not_to raise_error }
+  end
+
+  describe '#row' do
+    let(:options) { double }
+
+    let(:rowset) { double }
+
+    subject { described_class.new(options) }
+
+    before { expect(subject).to receive(:rowset).and_return(rowset) }
+
+    before do
+      #
+      # rowset.fetch('row')
+      #
+      expect(rowset).to receive(:fetch).with('row')
+    end
+
+    specify { expect { subject.send(:row) }.not_to raise_error }
   end
 end
