@@ -187,6 +187,10 @@ module EveOnline
         @skills ||= CharacterSkills.new(result).skills
       end
 
+      def jump_clones
+        @jump_clones ||= CharacterJumpClones.new(result).jump_clones
+      end
+
       def url
         "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }"
       end
@@ -195,10 +199,6 @@ module EveOnline
 
       def attributes
         @attributes ||= result.fetch('attributes')
-      end
-
-      def jump_clones_rows
-        @jump_clones_rows ||= result.fetch('rowset').reject { |a| a.fetch('@name') != 'jumpClones' }.first.fetch('row')
       end
     end
   end
