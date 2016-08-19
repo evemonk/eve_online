@@ -35,6 +35,7 @@ require 'eve_online/characters/upcoming_calendar_events'
 require 'eve_online/characters/skill_in_training'
 require 'eve_online/characters/standings'
 require 'eve_online/characters/contracts'
+require 'eve_online/characters/chat_channels'
 require 'eve_online/eve/character_id'
 require 'eve_online/server/status'
 

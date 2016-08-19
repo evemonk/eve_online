@@ -343,6 +343,22 @@ jump_clone.clone_name # => ""
 
 ```
 
+Character chat channels:
+```ruby
+key_id = 1234567
+v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
+character_id = 90729314
+
+chat_channels = EveOnline::Characters::ChatChannels.new(key_id, v_code, character_id)
+
+chat_channels.current_time # => Fri, 19 Aug 2016 11:05:43 UTC +00:00
+chat_channels.cached_until # => Fri, 19 Aug 2016 11:19:44 UTC +00:00
+chat_channels.version # => 2
+
+# TODO: finish this
+
+```
+
 Character contacts:
 ```ruby
 key_id = 1234567
