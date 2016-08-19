@@ -343,7 +343,23 @@ jump_clone.clone_name # => ""
 
 ```
 
-Medals:
+Character contacts:
+```ruby
+key_id = 1234567
+v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
+character_id = 90729314
+
+contracts = EveOnline::Characters::Contracts.new(key_id, v_code, character_id)
+
+contracts.current_time # => Fri, 19 Aug 2016 10:57:38 UTC +00:00
+contracts.cached_until # => Fri, 19 Aug 2016 11:11:38 UTC +00:00
+contracts.version # => 2
+
+# TODO: finish this
+
+```
+
+Character medals:
 ```ruby
 key_id = 1234567
 v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
@@ -537,6 +553,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Finish [Character Bookmarks](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_bookmarks.html)
 * Finish [Standings](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_standings.html)
 * Add `EveOnline::Standing` class for handling character standing
+* Add basic `EveOnline::Characters::Contracts`
 
 **v0.7.0**
 
