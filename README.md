@@ -385,6 +385,49 @@ skill_in_training.training_to_level # => 5
 skill_in_training.skill_in_training # => 1 
 ```
 
+Standings:
+```ruby
+key_id = 1234567
+v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
+character_id = 90729314
+
+standings = EveOnline::Characters::Standings.new(key_id, v_code, character_id)
+
+standings.current_time # => Thu, 18 Aug 2016 14:50:50 UTC +00:00
+standings.cached_until # => Thu, 18 Aug 2016 17:47:50 UTC +00:00
+standings.version # => 2
+
+standings.agents.size # => 15
+
+agent = standings.agents.first # => #<EveOnline::Standing:0x007f90f33df4d8 @options={"@fromID"=>"3008771", "@fromName"=>"Nehrnah Gorouyar", "@standing"=>"0.12"}>
+
+agent.as_json # => {:from_id=>3008771, :from_name=>"Nehrnah Gorouyar", :standing=>0.12}
+
+agent.from_id # => 3008771
+agent.from_name # => "Nehrnah Gorouyar"
+agent.standing # => 0.12
+
+standings.npc_corporations.size # => 6
+
+npc_corporation = standings.npc_corporations.first # => #<EveOnline::Standing:0x007f90f33af9e0 @options={"@fromID"=>"1000035", "@fromName"=>"Caldari Navy", "@standing"=>"0.72"}>
+
+npc_corporation.as_json # => {:from_id=>1000035, :from_name=>"Caldari Navy", :standing=>0.72}
+
+npc_corporation.from_id # => 1000035
+npc_corporation.from_name # => "Caldari Navy"
+npc_corporation.standing # => 0.72
+
+standings.factions.size # => 16
+
+faction = standings.factions.first # => #<EveOnline::Standing:0x007f90f3395a90 @options={"@fromID"=>"500001", "@fromName"=>"Caldari State", "@standing"=>"0.33"}>
+
+faction.as_json # => {:from_id=>500001, :from_name=>"Caldari State", :standing=>0.33}
+
+faction.from_id # => 500001
+faction.from_name # => "Caldari State"
+faction.standing # => 0.33
+```
+
 Upcoming Calender Events:
 ```ruby
 key_id = 1234567
@@ -492,6 +535,8 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Add `EveOnline::CharacterImplants` class for handling character implants
 * Add `EveOnline::CharacterJumpClones` class for handling character jump clones
 * Finish [Character Bookmarks](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_bookmarks.html)
+* Finish [Standings](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_standings.html)
+* Add `EveOnline::Standing` class for handling character standing
 
 **v0.7.0**
 
