@@ -436,6 +436,18 @@ contracts.version # => 2
 
 ```
 
+Character faction warfare stats:
+```ruby
+key_id = 1234567
+v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
+character_id = 90729314
+
+fac_war_stats = EveOnline::Characters::FacWarStats.new(key_id, v_code, character_id)
+
+# TODO: finish this
+
+```
+
 Character medals:
 ```ruby
 key_id = 1234567
@@ -633,6 +645,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Add basic `EveOnline::Characters::Contracts`
 * Add basic `EveOnline::Characters::ContractBids`
 * Add basic `EveOnline::Characters::ContractItems`
+* Add basic `EveOnline::Characters::FacWarStats`
 
 **v0.7.0**
 
