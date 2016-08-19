@@ -13,35 +13,35 @@ module EveOnline
         @character_id = character_id
       end
 
-      # def agents
-      #   @agents ||= begin
-      #     output = []
-      #     agents_rowset.each do |agent|
-      #       output << Standing.new(agent)
-      #     end
-      #     output
-      #   end
-      # end
-      #
-      # def npc_corporations
-      #   @npc_corporations ||= begin
-      #     output = []
-      #     npc_corporations_rowset.each do |agent|
-      #       output << Standing.new(agent)
-      #     end
-      #     output
-      #   end
-      # end
-      #
-      # def factions
-      #   @factions ||= begin
-      #     output = []
-      #     factions_rowset.each do |agent|
-      #       output << Standing.new(agent)
-      #     end
-      #     output
-      #   end
-      # end
+      def agents
+        @agents ||= begin
+          output = []
+          agents_rowset.each do |agent|
+            output << Standing.new(agent)
+          end
+          output
+        end
+      end
+
+      def npc_corporations
+        @npc_corporations ||= begin
+          output = []
+          npc_corporations_rowset.each do |agent|
+            output << Standing.new(agent)
+          end
+          output
+        end
+      end
+
+      def factions
+        @factions ||= begin
+          output = []
+          factions_rowset.each do |agent|
+            output << Standing.new(agent)
+          end
+          output
+        end
+      end
 
       def url
         "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }"

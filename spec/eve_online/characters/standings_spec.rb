@@ -32,6 +32,96 @@ describe EveOnline::Characters::Standings do
     its(:character_id) { should eq(character_id) }
   end
 
+  describe '#agents' do
+    let(:agent) { double }
+
+    let(:rowset) do
+      [
+        {
+          '@fromID' => '3008771',
+          '@fromName' => 'Nehrnah Gorouyar',
+          '@standing' => '0.12'
+        }
+      ]
+    end
+
+    before do
+      #
+      # subject.agents_rowset # => [{"@fromID"=>"3008771", "@fromName"=>"Nehrnah Gorouyar", "@standing"=>"0.12"}]
+      #
+      expect(subject).to receive(:agents_rowset).and_return(rowset)
+    end
+
+    before do
+      #
+      # EveOnline::Standing.new(rowset.first) # => agent
+      #
+      expect(EveOnline::Standing).to receive(:new).with(rowset.first).and_return(agent)
+    end
+
+    specify { expect(subject.agents).to eq([agent]) }
+  end
+
+  describe '#npc_corporations' do
+    let(:npc_corporation) { double }
+
+    let(:rowset) do
+      [
+        {
+          '@fromID' => '1000035',
+          '@fromName' => 'Caldari Navy',
+          '@standing' => '0.72'
+        }
+      ]
+    end
+
+    before do
+      #
+      # subject.npc_corporations_rowset # => [{"@fromID"=>"1000035", "@fromName"=>"Caldari Navy", "@standing"=>"0.72"}]
+      #
+      expect(subject).to receive(:npc_corporations_rowset).and_return(rowset)
+    end
+
+    before do
+      #
+      # EveOnline::Standing.new(rowset.first) # => npc_corporation
+      #
+      expect(EveOnline::Standing).to receive(:new).with(rowset.first).and_return(npc_corporation)
+    end
+
+    specify { expect(subject.npc_corporations).to eq([npc_corporation]) }
+  end
+
+  describe '#factions' do
+    let(:faction) { double }
+
+    let(:rowset) do
+      [
+        {
+          '@fromID' => '500001',
+          '@fromName' => 'Caldari State',
+          '@standing' => '0.33'
+        }
+      ]
+    end
+
+    before do
+      #
+      # subject.factions_rowset # => [{"@fromID"=>"500001", "@fromName"=>"Caldari State", "@standing"=>"0.33"}]
+      #
+      expect(subject).to receive(:factions_rowset).and_return(rowset)
+    end
+
+    before do
+      #
+      # EveOnline::Standing.new(rowset.first) # => faction
+      #
+      expect(EveOnline::Standing).to receive(:new).with(rowset.first).and_return(faction)
+    end
+
+    specify { expect(subject.factions).to eq([faction]) }
+  end
+
   describe '#url' do
     specify do
       expect(subject.url).to eq("#{ described_class::API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }")
