@@ -37,4 +37,65 @@ describe EveOnline::Characters::Standings do
       expect(subject.url).to eq("#{ described_class::API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }")
     end
   end
+
+  # private methods
+
+  # def agents_rowset
+  #   @agents_rowset ||= result.fetch('characterNPCStandings').fetch('rowset').reject { |a| a.fetch('@name') != 'agents' }.first.fetch('row')
+  # end
+  #
+  # def npc_corporations_rowset
+  #   @npc_corporations_rowset ||= result.fetch('characterNPCStandings').fetch('rowset').reject { |a| a.fetch('@name') != 'NPCCorporations' }.first.fetch('row')
+  # end
+
+
+
+  describe '#factions_rowset' do
+    let(:character_npc_standings_rowset) { double }
+
+    let(:rowset) { double }
+
+    before do
+      #
+      # subject.result.fetch('characterNPCStandings').fetch('rowset').reject => character_npc_standings_rowset
+      #
+      expect(subject).to receive(:result) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('characterNPCStandings') do
+            double.tap do |b|
+              expect(b).to receive(:fetch).with('rowset') do
+                double.tap do |c|
+                  expect(c).to receive(:reject).and_yield(character_npc_standings_rowset)
+                end
+              end
+            end
+          end
+        end
+      end
+    end
+
+    before do
+      #
+      # character_npc_standings_rowset.fetch('@name') != 'factions' => rowset
+      #
+      expect(character_npc_standings_rowset).to receive(:fetch).with('@name') do
+        double.tap do |a|
+          expect(a).to receive(:!=).with('factions').and_return(rowset)
+        end
+      end
+    end
+
+    before do
+      #
+      # rowset.first.fetch('row')
+      #
+      expect(rowset).to receive(:first) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('row')
+        end
+      end
+    end
+
+    specify { expect { subject.send(:factions_rowset) }.not_to raise_error }
+  end
 end
