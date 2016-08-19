@@ -40,9 +40,54 @@ describe EveOnline::Characters::Standings do
 
   # private methods
 
-  # def agents_rowset
-  #   @agents_rowset ||= result.fetch('characterNPCStandings').fetch('rowset').reject { |a| a.fetch('@name') != 'agents' }.first.fetch('row')
-  # end
+  describe '#agents_rowset' do
+    let(:character_npc_standings_rowset) { double }
+
+    let(:rowset) { double }
+
+    before do
+      #
+      # subject.result.fetch('characterNPCStandings').fetch('rowset').reject => character_npc_standings_rowset
+      #
+      expect(subject).to receive(:result) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('characterNPCStandings') do
+            double.tap do |b|
+              expect(b).to receive(:fetch).with('rowset') do
+                double.tap do |c|
+                  expect(c).to receive(:reject).and_yield(character_npc_standings_rowset)
+                end
+              end
+            end
+          end
+        end
+      end
+    end
+
+    before do
+      #
+      # character_npc_standings_rowset.fetch('@name') != 'NPCCorporations' => rowset
+      #
+      expect(character_npc_standings_rowset).to receive(:fetch).with('@name') do
+        double.tap do |a|
+          expect(a).to receive(:!=).with('agents').and_return(rowset)
+        end
+      end
+    end
+
+    before do
+      #
+      # rowset.first.fetch('row')
+      #
+      expect(rowset).to receive(:first) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('row')
+        end
+      end
+    end
+
+    specify { expect { subject.send(:agents_rowset) }.not_to raise_error }
+  end
 
   describe '#npc_corporations_rowset' do
     let(:character_npc_standings_rowset) { double }
