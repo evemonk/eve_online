@@ -391,6 +391,22 @@ contact_notifications.version # => 2
 
 ```
 
+Character contract bids:
+```ruby
+key_id = 1234567
+v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
+character_id = 90729314
+
+contract_bids = EveOnline::Characters::ContractBids.new(key_id, v_code, character_id)
+
+contract_bids.current_time # => Fri, 19 Aug 2016 12:11:52 UTC +00:00
+contract_bids.cached_until # => Fri, 19 Aug 2016 12:25:52 UTC +00:00
+contract_bids.version # => 2
+
+# TODO: finish this
+
+```
+
 Character contacts:
 ```ruby
 key_id = 1234567
@@ -602,6 +618,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Finish [Standings](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_standings.html)
 * Add `EveOnline::Standing` class for handling character standing
 * Add basic `EveOnline::Characters::Contracts`
+* Add basic `EveOnline::Characters::ContractBids`
 
 **v0.7.0**
 
