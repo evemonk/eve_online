@@ -631,7 +631,10 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 
 **master**
 
-* nothing yet
+* Add basic `EveOnline::Characters::Contracts`
+* Add basic `EveOnline::Characters::ContractBids`
+* Add basic `EveOnline::Characters::ContractItems`
+* Add basic `EveOnline::Characters::FacWarStats`
 
 **v0.8.0**
 
@@ -646,10 +649,6 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Finish [Character Bookmarks](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_bookmarks.html)
 * Finish [Standings](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_standings.html)
 * Add `EveOnline::Standing` class for handling character standing
-* Add basic `EveOnline::Characters::Contracts`
-* Add basic `EveOnline::Characters::ContractBids`
-* Add basic `EveOnline::Characters::ContractItems`
-* Add basic `EveOnline::Characters::FacWarStats`
 
 **v0.7.0**
 
