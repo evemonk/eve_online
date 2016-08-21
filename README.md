@@ -631,6 +631,10 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 
 **master**
 
+* nothing yet
+
+**v0.8.0**
+
 * Add basic `EveOnline::Characters::Medals` class
 * Add basic `EveOnline::Characters::CharacterSheet` class
 * Add `EveOnline::Implant` class for handling character implant
