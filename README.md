@@ -524,6 +524,10 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 
 ## Changelog
 
+**master**
+
+* nothing yet
+
 **v0.8.0**
 
 * Add basic `EveOnline::Characters::Medals` class
