@@ -524,7 +524,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 
 ## Changelog
 
-**master**
+**v0.8.0**
 
 * Add basic `EveOnline::Characters::Medals` class
 * Add basic `EveOnline::Characters::CharacterSheet` class
