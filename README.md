@@ -343,7 +343,144 @@ jump_clone.clone_name # => ""
 
 ```
 
-Medals:
+Character chat channels:
+```ruby
+key_id = 1234567
+v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
+character_id = 90729314
+
+chat_channels = EveOnline::Characters::ChatChannels.new(key_id, v_code, character_id)
+
+chat_channels.current_time # => Fri, 19 Aug 2016 11:05:43 UTC +00:00
+chat_channels.cached_until # => Fri, 19 Aug 2016 11:19:44 UTC +00:00
+chat_channels.version # => 2
+
+# TODO: finish this
+
+```
+
+Character contact list:
+```ruby
+key_id = 1234567
+v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
+character_id = 90729314
+
+contact_list = EveOnline::Characters::ContactList.new(key_id, v_code, character_id)
+
+contact_list.current_time # => Fri, 19 Aug 2016 11:08:06 UTC +00:00
+contact_list.cached_until # => Fri, 19 Aug 2016 11:22:07 UTC +00:00
+contact_list.version # => 2
+
+# TODO: finish this
+
+```
+
+Character contact notifications:
+```ruby
+key_id = 1234567
+v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
+character_id = 90729314
+
+contact_notifications = EveOnline::Characters::ContactNotifications.new(key_id, v_code, character_id)
+
+contact_notifications.current_time # => Fri, 19 Aug 2016 11:10:23 UTC +00:00
+contact_notifications.cached_until # => Fri, 19 Aug 2016 11:37:23 UTC +00:00
+contact_notifications.version # => 2
+
+# TODO: finish this
+
+```
+
+Character contract bids:
+```ruby
+key_id = 1234567
+v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
+character_id = 90729314
+
+contract_bids = EveOnline::Characters::ContractBids.new(key_id, v_code, character_id)
+
+contract_bids.current_time # => Fri, 19 Aug 2016 12:11:52 UTC +00:00
+contract_bids.cached_until # => Fri, 19 Aug 2016 12:25:52 UTC +00:00
+contract_bids.version # => 2
+
+# TODO: finish this
+
+```
+
+Character contract items:
+```ruby
+key_id = 1234567
+v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
+character_id = 90729314
+contract_id = 1234 # TODO: recheck
+
+contract_items = EveOnline::Characters::ContractItems.new(key_id, v_code, character_id, contract_id)
+
+# TODO: finish this
+
+```
+
+Character contacts:
+```ruby
+key_id = 1234567
+v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
+character_id = 90729314
+
+contracts = EveOnline::Characters::Contracts.new(key_id, v_code, character_id)
+
+contracts.current_time # => Fri, 19 Aug 2016 10:57:38 UTC +00:00
+contracts.cached_until # => Fri, 19 Aug 2016 11:11:38 UTC +00:00
+contracts.version # => 2
+
+# TODO: finish this
+
+```
+
+Character factional warfare stats:
+```ruby
+key_id = 1234567
+v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
+character_id = 90729314
+
+fac_war_stats = EveOnline::Characters::FacWarStats.new(key_id, v_code, character_id)
+
+# TODO: finish this
+
+```
+
+Character industry jobs:
+```ruby
+key_id = 1234567
+v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
+character_id = 90729314
+
+industry_jobs = EveOnline::Characters::IndustryJobs.new(key_id, v_code, character_id)
+
+industry_jobs.current_time # => Mon, 22 Aug 2016 14:10:13 UTC +00:00
+industry_jobs.cached_until # => Mon, 22 Aug 2016 14:24:13 UTC +00:00
+industry_jobs.version # => 2
+
+# TODO: finish this
+
+```
+
+Character industry jobs history:
+```ruby
+key_id = 1234567
+v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
+character_id = 90729314
+
+industry_jobs_history = EveOnline::Characters::IndustryJobsHistory.new(key_id, v_code, character_id)
+
+industry_jobs_history.current_time # => Mon, 22 Aug 2016 14:53:37 UTC +00:00
+industry_jobs_history.cached_until # => Mon, 22 Aug 2016 20:29:37 UTC +00:00
+industry_jobs_history.version # => 2
+
+# TODO: finish this
+
+```
+
+Character medals:
 ```ruby
 key_id = 1234567
 v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
@@ -375,14 +512,14 @@ skill_in_training.version # => 2
 skill_in_training.as_json
 # => {:current_tq_time=>Sun, 03 Jan 2016 16:09:15 UTC +00:00, :training_end_time=>Wed, 13 Jan 2016 16:38:31 UTC +00:00, :training_start_time=>Wed, 23 Dec 2015 11:35:45 UTC +00:00, :training_type_id=>30651, :training_start_sp=>226275, :training_destination_sp=>1280000, :training_to_level=>5, :skill_in_training=>1} 
 
-skill_in_training.current_tq_time # => Sun, 03 Jan 2016 16:09:15 UTC +00:00 
+skill_in_training.current_tq_time # => Sun, 03 Jan 2016 16:09:15 UTC +00:00
 skill_in_training.training_end_time # => Wed, 13 Jan 2016 16:38:31 UTC +00:00 
 skill_in_training.training_start_time # => Wed, 23 Dec 2015 11:35:45 UTC +00:00 
-skill_in_training.training_type_id # => 30651 
-skill_in_training.training_start_sp # => 226275 
+skill_in_training.training_type_id # => 30651
+skill_in_training.training_start_sp # => 226275
 skill_in_training.training_destination_sp # => 1280000 
-skill_in_training.training_to_level # => 5 
-skill_in_training.skill_in_training # => 1 
+skill_in_training.training_to_level # => 5
+skill_in_training.skill_in_training # => 1
 ```
 
 Standings:
@@ -526,7 +663,12 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 
 **master**
 
-* nothing yet
+* Add basic `EveOnline::Characters::Contracts`
+* Add basic `EveOnline::Characters::ContractBids`
+* Add basic `EveOnline::Characters::ContractItems`
+* Add basic `EveOnline::Characters::FacWarStats`
+* Add basic `EveOnline::Characters::IndustryJobs`
+* Add basic `EveOnline::Characters::IndustryJobsHistory`
 
 **v0.8.0**
 
