@@ -448,6 +448,22 @@ fac_war_stats = EveOnline::Characters::FacWarStats.new(key_id, v_code, character
 
 ```
 
+Character industry jobs:
+```ruby
+key_id = 1234567
+v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
+character_id = 90729314
+
+industry_jobs = EveOnline::Characters::IndustryJobs.new(key_id, v_code, character_id)
+
+industry_jobs.current_time # => Mon, 22 Aug 2016 14:10:13 UTC +00:00
+industry_jobs.cached_until # => Mon, 22 Aug 2016 14:24:13 UTC +00:00
+industry_jobs.version # => 2
+
+# TODO: finish this
+
+```
+
 Character medals:
 ```ruby
 key_id = 1234567
