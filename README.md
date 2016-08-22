@@ -635,6 +635,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Add basic `EveOnline::Characters::ContractBids`
 * Add basic `EveOnline::Characters::ContractItems`
 * Add basic `EveOnline::Characters::FacWarStats`
+* Add basic `EveOnline::Characters::IndustryJobs`
 
 **v0.8.0**
 
