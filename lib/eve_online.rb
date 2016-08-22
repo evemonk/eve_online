@@ -22,6 +22,7 @@ require 'eve_online/standing'
 require 'eve_online/account/api_key_info'
 require 'eve_online/account/characters'
 require 'eve_online/account/status'
+
 require 'eve_online/characters/account_balance'
 require 'eve_online/characters/asset_list'
 require 'eve_online/characters/blueprints'
@@ -40,6 +41,8 @@ require 'eve_online/characters/contract_bids'
 require 'eve_online/characters/contract_items'
 require 'eve_online/characters/fac_war_stats'
 require 'eve_online/characters/industry_jobs'
+require 'eve_online/characters/industry_jobs_history'
+
 require 'eve_online/eve/character_id'
 require 'eve_online/server/status'
 

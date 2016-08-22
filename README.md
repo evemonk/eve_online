@@ -464,6 +464,22 @@ industry_jobs.version # => 2
 
 ```
 
+Character industry jobs history:
+```ruby
+key_id = 1234567
+v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
+character_id = 90729314
+
+industry_jobs_history = EveOnline::Characters::IndustryJobsHistory.new(key_id, v_code, character_id)
+
+industry_jobs_history.current_time # => Mon, 22 Aug 2016 14:53:37 UTC +00:00
+industry_jobs_history.cached_until # => Mon, 22 Aug 2016 20:29:37 UTC +00:00
+industry_jobs_history.version # => 2
+
+# TODO: finish this
+
+```
+
 Character medals:
 ```ruby
 key_id = 1234567
@@ -652,6 +668,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Add basic `EveOnline::Characters::ContractItems`
 * Add basic `EveOnline::Characters::FacWarStats`
 * Add basic `EveOnline::Characters::IndustryJobs`
+* Add basic `EveOnline::Characters::IndustryJobsHistory`
 
 **v0.8.0**
 
