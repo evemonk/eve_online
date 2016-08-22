@@ -436,7 +436,7 @@ contracts.version # => 2
 
 ```
 
-Character faction warfare stats:
+Character factional warfare stats:
 ```ruby
 key_id = 1234567
 v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
@@ -480,14 +480,14 @@ skill_in_training.version # => 2
 skill_in_training.as_json
 # => {:current_tq_time=>Sun, 03 Jan 2016 16:09:15 UTC +00:00, :training_end_time=>Wed, 13 Jan 2016 16:38:31 UTC +00:00, :training_start_time=>Wed, 23 Dec 2015 11:35:45 UTC +00:00, :training_type_id=>30651, :training_start_sp=>226275, :training_destination_sp=>1280000, :training_to_level=>5, :skill_in_training=>1} 
 
-skill_in_training.current_tq_time # => Sun, 03 Jan 2016 16:09:15 UTC +00:00 
+skill_in_training.current_tq_time # => Sun, 03 Jan 2016 16:09:15 UTC +00:00
 skill_in_training.training_end_time # => Wed, 13 Jan 2016 16:38:31 UTC +00:00 
 skill_in_training.training_start_time # => Wed, 23 Dec 2015 11:35:45 UTC +00:00 
-skill_in_training.training_type_id # => 30651 
-skill_in_training.training_start_sp # => 226275 
+skill_in_training.training_type_id # => 30651
+skill_in_training.training_start_sp # => 226275
 skill_in_training.training_destination_sp # => 1280000 
-skill_in_training.training_to_level # => 5 
-skill_in_training.skill_in_training # => 1 
+skill_in_training.training_to_level # => 5
+skill_in_training.skill_in_training # => 1
 ```
 
 Standings:
