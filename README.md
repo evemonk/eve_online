@@ -339,6 +339,16 @@ jump_clone.type_id # => 164
 jump_clone.location_id # => 61000032
 jump_clone.clone_name # => ""
 
+character_sheet.jump_clone_implants.size # => 15
+
+jump_clone_implant = character_sheet.jump_clone_implants.first # => #<EveOnline::JumpCloneImplant:0x007fae9a929b40 @options={"@jumpCloneID"=>"22703029", "@typeID"=>"10209", "@typeName"=>"Memory Augmentation - Improved"}>
+
+jump_clone_implant.as_json # => {:jump_clone_id=>22703029, :type_id=>10209, :type_name=>"Memory Augmentation - Improved"}
+
+jump_clone_implant.jump_clone_id # => 22703029
+jump_clone_implant.type_id # => 10209
+jump_clone_implant.type_name # => "Memory Augmentation - Improved"
+
 # TODO: finish this
 
 ```
@@ -669,6 +679,8 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Add basic `EveOnline::Characters::FacWarStats`
 * Add basic `EveOnline::Characters::IndustryJobs`
 * Add basic `EveOnline::Characters::IndustryJobsHistory`
+* Add `EveOnline::JumpCloneImplant` class for handling character jump clone implant
+* Add `EveOnline::CharacterJumpCloneImplants` class for handling character jump clone implants
 
 **v0.8.0**
 

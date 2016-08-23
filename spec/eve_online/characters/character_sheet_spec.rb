@@ -838,6 +838,25 @@ describe EveOnline::Characters::CharacterSheet do
     specify { expect { subject.jump_clones }.not_to raise_error }
   end
 
+  describe '#jump_clone_implants' do
+    let(:result) { double }
+
+    before { expect(subject).to receive(:result).and_return(result) }
+
+    before do
+      #
+      # EveOnline::CharacterJumpCloneImplants.new(result).jump_clone_implants
+      #
+      expect(EveOnline::CharacterJumpCloneImplants).to receive(:new).with(result) do
+        double.tap do |a|
+          expect(a).to receive(:jump_clone_implants)
+        end
+      end
+    end
+
+    specify { expect { subject.jump_clone_implants }.not_to raise_error }
+  end
+
   describe '#url' do
     specify do
       expect(subject.url).to eq("#{ described_class::API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }")
