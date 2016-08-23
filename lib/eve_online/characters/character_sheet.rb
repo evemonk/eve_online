@@ -191,6 +191,10 @@ module EveOnline
         @jump_clones ||= CharacterJumpClones.new(result).jump_clones
       end
 
+      def jump_clone_implants
+        @jump_clone_implants ||= CharacterJumpCloneImplants.new(result).jump_clone_implants
+      end
+
       def url
         "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }"
       end
