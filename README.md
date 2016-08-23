@@ -670,6 +670,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Add basic `EveOnline::Characters::IndustryJobs`
 * Add basic `EveOnline::Characters::IndustryJobsHistory`
 * Add `EveOnline::JumpCloneImplant` class for handling character jump clone implant
+* Add `EveOnline::CharacterJumpCloneImplants` class for handling character jump clone implants
 
 **v0.8.0**
 
