@@ -9,6 +9,40 @@ describe EveOnline::CharacterJumpCloneImplants do
     its(:result) { should eq(result) }
   end
 
+  describe '#jump_clone_implants' do
+    let(:result) { double }
+
+    subject { described_class.new(result) }
+
+    let(:jump_clone_implant) { double }
+
+    let(:rowset) do
+      [
+        {
+          '@jumpCloneID' => '22703029',
+          '@typeID' => '10209',
+          '@typeName' => 'Memory Augmentation - Improved'
+        }
+      ]
+    end
+
+    before do
+      #
+      # subject.rowset # => [{"@jumpCloneID"=>"22703029", "@typeID"=>"10209", "@typeName"=>"Memory Augmentation - Improved"}]
+      #
+      expect(subject).to receive(:rowset).and_return(rowset)
+    end
+
+    before do
+      #
+      # EveOnline::JumpCloneImplant.new(rowset.first) # => jump_clone_implant
+      #
+      expect(EveOnline::JumpCloneImplant).to receive(:new).with(rowset.first).and_return(jump_clone_implant)
+    end
+
+    specify { expect(subject.jump_clone_implants).to eq([jump_clone_implant]) }
+  end
+
   # private methods
 
   describe '#rowset' do
