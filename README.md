@@ -556,6 +556,22 @@ mailing_lists.version # => 2
 
 ```
 
+Character mail messages headers:
+```ruby
+key_id = 1234567
+v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
+character_id = 90729314
+
+mail_messages = EveOnline::Characters::MailMessages.new(key_id, v_code, character_id)
+
+mail_messages.current_time # => Fri, 26 Aug 2016 12:49:38 UTC +00:00
+mail_messages.cached_until # => Fri, 26 Aug 2016 13:03:38 UTC +00:00
+mail_messages.version # => 2
+
+# TODO: finish this
+
+```
+
 Character medals:
 ```ruby
 key_id = 1234567
@@ -751,6 +767,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Add basic `EveOnline::Characters::Locations`
 * Add basic `EveOnline::Characters::MailBodies`
 * Add basic `EveOnline::Characters::MailingLists`
+* Add basic `EveOnline::Characters::MailMessages`
 
 **v0.8.0**
 
