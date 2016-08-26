@@ -156,7 +156,7 @@ module EveOnline
       end
 
       def balance
-        @balance ||= result.fetch('balance')
+        @balance ||= result.fetch('balance').to_f
       end
 
       def base_intelligence

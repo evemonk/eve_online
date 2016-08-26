@@ -32,7 +32,7 @@ module EveOnline
       end
 
       def balance
-        @balance ||= row.fetch('@balance')
+        @balance ||= row.fetch('@balance').to_f
       end
 
       def row
