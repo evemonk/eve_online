@@ -132,11 +132,11 @@ character_id = 90729314
 account_balance = EveOnline::Characters::AccountBalance.new(key_id, v_code, character_id)
 
 account_balance.as_json
-# => {:account_id=>42763123, :account_key=>1000, :balance=>"5000.00", :current_time=>Wed, 02 Dec 2015 20:29:32 UTC +00:00, :cached_until=>Wed, 02 Dec 2015 20:40:42 UTC +00:00}
+# => {:account_id=>42763123, :account_key=>1000, :balance=>5000.0, :current_time=>Wed, 02 Dec 2015 20:29:32 UTC +00:00, :cached_until=>Wed, 02 Dec 2015 20:40:42 UTC +00:00}
 
 account_balance.account_id # => 42763123
 account_balance.account_key # => 1000
-account_balance.balance # => "5000.00"
+account_balance.balance # => 5000.0
 account_balance.current_time # => Wed, 02 Dec 2015 20:29:32 UTC +00:00
 account_balance.cached_until # => Wed, 02 Dec 2015 20:40:42 UTC +00:00
 account_balance.version # => 2
@@ -802,6 +802,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Add basic `EveOnline::Characters::MailMessages`
 * Add basic `EveOnline::Characters::MarketOrders`
 * Add basic `EveOnline::Characters::Notifications`
+* `EveOnline::Characters::AccountBalance#balance` return float from now
 
 **v0.8.0**
 

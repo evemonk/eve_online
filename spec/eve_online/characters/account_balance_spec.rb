@@ -43,7 +43,7 @@ describe EveOnline::Characters::AccountBalance do
 
     before { expect(account_balance).to receive(:account_key).and_return(1_000) }
 
-    before { expect(account_balance).to receive(:balance).and_return('5000.00') }
+    before { expect(account_balance).to receive(:balance).and_return(5000.0) }
 
     before { expect(account_balance).to receive(:current_time).and_return(current_time) }
 
@@ -55,7 +55,7 @@ describe EveOnline::Characters::AccountBalance do
 
     its([:account_key]) { should eq(1_000) }
 
-    its([:balance]) { should eq('5000.00') }
+    its([:balance]) { should eq(5000.0) }
 
     its([:current_time]) { should eq(current_time) }
 
@@ -103,11 +103,15 @@ describe EveOnline::Characters::AccountBalance do
   describe '#balance' do
     before do
       #
-      # subject.row.fetch('@balance')
+      # subject.row.fetch('@balance').to_f
       #
       expect(subject).to receive(:row) do
         double.tap do |a|
-          expect(a).to receive(:fetch).with('@balance')
+          expect(a).to receive(:fetch).with('@balance') do
+            double.tap do |b|
+              expect(b).to receive(:to_f)
+            end
+          end
         end
       end
     end
