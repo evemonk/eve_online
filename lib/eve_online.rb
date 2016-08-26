@@ -49,6 +49,7 @@ require 'eve_online/characters/locations'
 require 'eve_online/characters/mail_bodies'
 require 'eve_online/characters/mailing_lists'
 require 'eve_online/characters/mail_messages'
+require 'eve_online/characters/market_orders'
 
 require 'eve_online/eve/character_id'
 require 'eve_online/server/status'
