@@ -604,6 +604,22 @@ medals.version # => 2
 
 ```
 
+Character notification headers:
+```ruby
+key_id = 1234567
+v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
+character_id = 90729314
+
+notifications = EveOnline::Characters::Notifications.new(key_id, v_code, character_id)
+
+notifications.current_time # => Fri, 26 Aug 2016 14:02:06 UTC +00:00
+notifications.cached_until # => Fri, 26 Aug 2016 14:29:06 UTC +00:00
+notifications.version # => 2
+
+# TODO: finish this
+
+```
+
 Skill In Training:
 ```ruby
 key_id = 1234567
@@ -785,6 +801,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Add basic `EveOnline::Characters::MailingLists`
 * Add basic `EveOnline::Characters::MailMessages`
 * Add basic `EveOnline::Characters::MarketOrders`
+* Add basic `EveOnline::Characters::Notifications`
 
 **v0.8.0**
 
