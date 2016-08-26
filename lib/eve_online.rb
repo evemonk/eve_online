@@ -46,6 +46,7 @@ require 'eve_online/characters/industry_jobs'
 require 'eve_online/characters/industry_jobs_history'
 require 'eve_online/characters/kill_mails'
 require 'eve_online/characters/locations'
+require 'eve_online/characters/mail_bodies'
 
 require 'eve_online/eve/character_id'
 require 'eve_online/server/status'
