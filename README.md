@@ -506,6 +506,23 @@ kill_mails.version # => 2
 
 ```
 
+Character locations:
+```ruby
+key_id = 1234567
+v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
+character_id = 90729314
+ids = [123456]
+
+locations = EveOnline::Characters::Locations.new(key_id, v_code, character_id, ids)
+
+locations.current_time # => Fri, 26 Aug 2016 11:01:53 UTC +00:00
+locations.cached_until # => Fri, 26 Aug 2016 12:01:53 UTC +00:00
+locations.version # => 2
+
+# TODO: finish this
+
+```
+
 Character medals:
 ```ruby
 key_id = 1234567
@@ -698,6 +715,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Add `EveOnline::JumpCloneImplant` class for handling character jump clone implant
 * Add `EveOnline::CharacterJumpCloneImplants` class for handling character jump clone implants
 * Add basic `EveOnline::Characters::KillMails`
+* Add basic `EveOnline::Characters::Locations`
 
 **v0.8.0**
 
