@@ -300,7 +300,7 @@ character_sheet.remote_station_date # => Tue, 30 Jun 2015 21:51:13 UTC +00:00
 character_sheet.jump_activation # => Mon, 01 Jan 0001 00:00:00 UTC +00:00
 character_sheet.jump_fatigue # => Mon, 01 Jan 0001 00:00:00 UTC +00:00
 character_sheet.jump_last_update # => Mon, 01 Jan 0001 00:00:00 UTC +00:00
-character_sheet.balance # => "5000.00"
+character_sheet.balance # => 5000.0
 
 character_sheet.base_intelligence # => 21
 character_sheet.base_memory # => 21
@@ -803,6 +803,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Add basic `EveOnline::Characters::MarketOrders`
 * Add basic `EveOnline::Characters::Notifications`
 * `EveOnline::Characters::AccountBalance#balance` return float from now
+* `EveOnline::Characters::CharacterSheet#balance` return float from now
 
 **v0.8.0**
 
