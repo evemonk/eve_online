@@ -44,6 +44,7 @@ require 'eve_online/characters/contract_items'
 require 'eve_online/characters/fac_war_stats'
 require 'eve_online/characters/industry_jobs'
 require 'eve_online/characters/industry_jobs_history'
+require 'eve_online/characters/kill_mails'
 
 require 'eve_online/eve/character_id'
 require 'eve_online/server/status'
