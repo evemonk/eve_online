@@ -490,6 +490,104 @@ industry_jobs_history.version # => 2
 
 ```
 
+Character kill mails:
+```ruby
+key_id = 1234567
+v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
+character_id = 90729314
+
+kill_mails = EveOnline::Characters::KillMails.new(key_id, v_code, character_id)
+
+kill_mails.current_time # => Fri, 26 Aug 2016 10:27:38 UTC +00:00
+kill_mails.cached_until # => Fri, 26 Aug 2016 10:54:38 UTC +00:00
+kill_mails.version # => 2
+
+# TODO: finish this
+
+```
+
+Character locations:
+```ruby
+key_id = 1234567
+v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
+character_id = 90729314
+ids = [123456]
+
+locations = EveOnline::Characters::Locations.new(key_id, v_code, character_id, ids)
+
+locations.current_time # => Fri, 26 Aug 2016 11:01:53 UTC +00:00
+locations.cached_until # => Fri, 26 Aug 2016 12:01:53 UTC +00:00
+locations.version # => 2
+
+# TODO: finish this
+
+```
+
+Character mail bodies:
+```ruby
+key_id = 1234567
+v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
+character_id = 90729314
+ids = [123456]
+
+mail_bodies = EveOnline::Characters::MailBodies.new(key_id, v_code, character_id, ids)
+
+mail_bodies.current_time # => Fri, 26 Aug 2016 11:13:55 UTC +00:00
+mail_bodies.cached_until # => Mon, 24 Aug 2026 11:13:55 UTC +00:00
+mail_bodies.version # => 2
+
+# TODO: finish this
+
+```
+
+Character mailing lists:
+```ruby
+key_id = 1234567
+v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
+character_id = 90729314
+
+mailing_lists = EveOnline::Characters::MailingLists.new(key_id, v_code, character_id)
+
+mailing_lists.current_time # => Fri, 26 Aug 2016 12:38:48 UTC +00:00
+mailing_lists.cached_until # => Fri, 26 Aug 2016 18:35:48 UTC +00:00
+mailing_lists.version # => 2
+
+# TODO: finish this
+
+```
+
+Character mail messages headers:
+```ruby
+key_id = 1234567
+v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
+character_id = 90729314
+
+mail_messages = EveOnline::Characters::MailMessages.new(key_id, v_code, character_id)
+
+mail_messages.current_time # => Fri, 26 Aug 2016 12:49:38 UTC +00:00
+mail_messages.cached_until # => Fri, 26 Aug 2016 13:03:38 UTC +00:00
+mail_messages.version # => 2
+
+# TODO: finish this
+
+```
+
+Character market orders:
+```ruby
+key_id = 1234567
+v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
+character_id = 90729314
+
+market_orders = EveOnline::Characters::MarketOrders.new(key_id, v_code, character_id)
+
+market_orders.current_time # => Fri, 26 Aug 2016 13:56:17 UTC +00:00
+market_orders.cached_until # => Fri, 26 Aug 2016 14:53:17 UTC +00:00
+market_orders.version # => 2
+
+# TODO: finish this
+
+```
+
 Character medals:
 ```ruby
 key_id = 1234567
@@ -501,6 +599,22 @@ medals = EveOnline::Characters::Medals.new(key_id, v_code, character_id)
 medals.current_time # => Fri, 01 Jul 2016 14:22:43 UTC +00:00
 medals.cached_until # => Fri, 01 Jul 2016 20:13:49 UTC +00:00
 medals.version # => 2
+
+# TODO: finish this
+
+```
+
+Character notification headers:
+```ruby
+key_id = 1234567
+v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
+character_id = 90729314
+
+notifications = EveOnline::Characters::Notifications.new(key_id, v_code, character_id)
+
+notifications.current_time # => Fri, 26 Aug 2016 14:02:06 UTC +00:00
+notifications.cached_until # => Fri, 26 Aug 2016 14:29:06 UTC +00:00
+notifications.version # => 2
 
 # TODO: finish this
 
@@ -681,6 +795,13 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Add basic `EveOnline::Characters::IndustryJobsHistory`
 * Add `EveOnline::JumpCloneImplant` class for handling character jump clone implant
 * Add `EveOnline::CharacterJumpCloneImplants` class for handling character jump clone implants
+* Add basic `EveOnline::Characters::KillMails`
+* Add basic `EveOnline::Characters::Locations`
+* Add basic `EveOnline::Characters::MailBodies`
+* Add basic `EveOnline::Characters::MailingLists`
+* Add basic `EveOnline::Characters::MailMessages`
+* Add basic `EveOnline::Characters::MarketOrders`
+* Add basic `EveOnline::Characters::Notifications`
 
 **v0.8.0**
 
@@ -787,7 +908,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 - [ ] [Factional Warfare Stats](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_facwarstats.html)
 - [ ] [Industry Jobs](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_industryjobs.html)
 - [ ] [Industry Jobs History](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_industryjobshistory.html)
-- [ ] [Kill Log](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_killlog.html)
+- [ ] [~~Kill Log~~](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_killlog.html) (deprecated)
 - [ ] [Kill Mails](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_killmails.html)
 - [ ] [Locations](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_locations.html)
 - [ ] [Mail Bodies](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_mailbodies.html)
