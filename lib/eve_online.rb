@@ -59,6 +59,7 @@ require 'eve_online/characters/planetary_routes'
 require 'eve_online/characters/research'
 require 'eve_online/characters/skill_queue'
 require 'eve_online/characters/wallet_journal'
+require 'eve_online/characters/wallet_transactions'
 
 require 'eve_online/eve/character_id'
 require 'eve_online/server/status'

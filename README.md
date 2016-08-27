@@ -857,6 +857,23 @@ wallet_journal.version # => 2
 
 ```
 
+Retrieve character wallet transactions.
+
+```ruby
+key_id = 1234567
+v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
+character_id = 90729314
+
+wallet_transactions = EveOnline::Characters::WalletTransactions.new(key_id, v_code, character_id)
+
+wallet_transactions.current_time # => Sat, 27 Aug 2016 21:23:53 UTC +00:00
+wallet_transactions.cached_until # => Sat, 27 Aug 2016 21:50:53 UTC +00:00
+wallet_transactions.version # => 2
+
+# TODO: finish this
+
+```
+
 Character Names to IDs:
 ```ruby
 input = ['Johnn Dillinger'] # => ["Johnn Dillinger"]
@@ -949,6 +966,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Add basic `EveOnline::Characters::Research`
 * Add basic `EveOnline::Characters::SkillQueue`
 * Add basic `EveOnline::Characters::WalletJournal`
+* Add basic `EveOnline::Characters::WalletTransactions`
 
 **v0.8.0**
 
