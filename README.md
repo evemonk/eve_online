@@ -637,6 +637,22 @@ notification_texts.version # => 2
 
 ```
 
+Retrieve planetary colonies owned by character:
+```ruby
+key_id = 1234567
+v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
+character_id = 90729314
+
+planetary_colonies = EveOnline::Characters::PlanetaryColonies.new(key_id, v_code, character_id)
+
+planetary_colonies.current_time # => Sat, 27 Aug 2016 18:29:02 UTC +00:00
+planetary_colonies.cached_until # => Sat, 27 Aug 2016 19:29:02 UTC +00:00
+planetary_colonies.version # => 2
+
+# TODO: finish this
+
+```
+
 Skill In Training:
 ```ruby
 key_id = 1234567
@@ -822,6 +838,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * `EveOnline::Characters::AccountBalance#balance` return float from now
 * `EveOnline::Characters::CharacterSheet#balance` return float from now
 * Add basic `EveOnline::Characters::NotificationTexts`
+* Add basic `EveOnline::Characters::PlanetaryColonies`
 
 **v0.8.0**
 

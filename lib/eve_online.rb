@@ -52,6 +52,7 @@ require 'eve_online/characters/mail_messages'
 require 'eve_online/characters/market_orders'
 require 'eve_online/characters/notifications'
 require 'eve_online/characters/notification_texts'
+require 'eve_online/characters/planetary_colonies'
 
 require 'eve_online/eve/character_id'
 require 'eve_online/server/status'
