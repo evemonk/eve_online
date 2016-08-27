@@ -7,4 +7,4 @@ gem 'nokogiri'
 gem 'awesome_print', require: 'ap'
 gem 'mutant'
 gem 'mutant-rspec'
-
+gem 'rubocop'
