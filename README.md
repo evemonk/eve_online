@@ -720,7 +720,7 @@ event.event_text # => "<b>Minmatar Control Tower</b> will run out of fuel and go
 event.owner_type_id # => 2
 ```
 
-Character Names ot IDs:
+Character Names to IDs:
 ```ruby
 input = ['Johnn Dillinger'] # => ["Johnn Dillinger"]
 
