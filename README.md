@@ -840,6 +840,23 @@ event.event_text # => "<b>Minmatar Control Tower</b> will run out of fuel and go
 event.owner_type_id # => 2
 ```
 
+Retrieve character wallet journal.
+
+```ruby
+key_id = 1234567
+v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
+character_id = 90729314
+
+wallet_journal = EveOnline::Characters::WalletJournal.new(key_id, v_code, character_id)
+
+wallet_journal.current_time # => Sat, 27 Aug 2016 21:14:20 UTC +00:00
+wallet_journal.cached_until # => Sat, 27 Aug 2016 21:41:20 UTC +00:00
+wallet_journal.version # => 2
+
+# TODO: finish this
+
+```
+
 Character Names to IDs:
 ```ruby
 input = ['Johnn Dillinger'] # => ["Johnn Dillinger"]
@@ -931,6 +948,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Add basic `EveOnline::Characters::PlanetaryRoutes`
 * Add basic `EveOnline::Characters::Research`
 * Add basic `EveOnline::Characters::SkillQueue`
+* Add basic `EveOnline::Characters::WalletJournal`
 
 **v0.8.0**
 
