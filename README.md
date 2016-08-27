@@ -689,6 +689,24 @@ planetary_pins.version # => 2
 
 ```
 
+Retrieve planetary routes for colonies owned by character.
+
+```ruby
+key_id = 1234567
+v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
+character_id = 90729314
+planet_id = 123_456
+
+planetary_routes = EveOnline::Characters::PlanetaryRoutes.new(key_id, v_code, character_id, planet_id)
+
+planetary_routes.current_time # => Sat, 27 Aug 2016 20:38:42 UTC +00:00
+planetary_routes.cached_until # => Sat, 27 Aug 2016 21:38:42 UTC +00:00
+planetary_routes.version # => 2
+
+# TODO: finish this
+
+```
+
 Skill In Training:
 ```ruby
 key_id = 1234567
@@ -876,6 +894,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Add basic `EveOnline::Characters::PlanetaryColonies`
 * Add basic `EveOnline::Characters::PlanetaryLinks`
 * Add basic `EveOnline::Characters::PlanetaryPins`
+* Add basic `EveOnline::Characters::PlanetaryRoutes`
 
 **v0.8.0**
 
