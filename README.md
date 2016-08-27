@@ -671,12 +671,29 @@ planetary_links.version # => 2
 
 ```
 
+Retrieve planetary pins for colonies owned by character.
+
+```ruby
+key_id = 1234567
+v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
+character_id = 90729314
+planet_id = 123_456
+
+planetary_pins = EveOnline::Characters::PlanetaryPins.new(key_id, v_code, character_id, planet_id)
+
+planetary_pins.current_time # => Sat, 27 Aug 2016 18:48:36 UTC +00:00
+planetary_pins.cached_until # => Sat, 27 Aug 2016 19:48:36 UTC +00:00
+planetary_pins.version # => 2
+
+# TODO: finish this
+
+```
+
 Skill In Training:
 ```ruby
 key_id = 1234567
 v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
 character_id = 90729314
-
 
 skill_in_training = EveOnline::Characters::SkillInTraining.new(key_id, v_code, character_id)
 
@@ -858,6 +875,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Add basic `EveOnline::Characters::NotificationTexts`
 * Add basic `EveOnline::Characters::PlanetaryColonies`
 * Add basic `EveOnline::Characters::PlanetaryLinks`
+* Add basic `EveOnline::Characters::PlanetaryPins`
 
 **v0.8.0**
 
