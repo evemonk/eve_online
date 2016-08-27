@@ -56,6 +56,7 @@ require 'eve_online/characters/planetary_colonies'
 require 'eve_online/characters/planetary_links'
 require 'eve_online/characters/planetary_pins'
 require 'eve_online/characters/planetary_routes'
+require 'eve_online/characters/research'
 
 require 'eve_online/eve/character_id'
 require 'eve_online/server/status'

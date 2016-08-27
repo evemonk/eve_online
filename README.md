@@ -707,6 +707,23 @@ planetary_routes.version # => 2
 
 ```
 
+Retrieve character research.
+
+```ruby
+key_id = 1234567
+v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
+character_id = 90729314
+
+research = EveOnline::Characters::Research.new(key_id, v_code, character_id)
+
+research.current_time # => Sat, 27 Aug 2016 20:47:32 UTC +00:00
+research.cached_until # => Sat, 27 Aug 2016 21:01:32 UTC +00:00
+research.version # => 2
+
+# TODO: finish this
+
+```
+
 Skill In Training:
 ```ruby
 key_id = 1234567
@@ -895,6 +912,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Add basic `EveOnline::Characters::PlanetaryLinks`
 * Add basic `EveOnline::Characters::PlanetaryPins`
 * Add basic `EveOnline::Characters::PlanetaryRoutes`
+* Add basic `EveOnline::Characters::Research`
 
 **v0.8.0**
 
