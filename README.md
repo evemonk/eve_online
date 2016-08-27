@@ -620,12 +620,132 @@ notifications.version # => 2
 
 ```
 
-Skill In Training:
+Character notification texts:
+```ruby
+key_id = 1234567
+v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
+character_id = 90729314
+ids = [123_456]
+
+notification_texts = EveOnline::Characters::NotificationTexts.new(key_id, v_code, character_id, ids)
+
+notification_texts.current_time # => Sat, 27 Aug 2016 18:12:52 UTC +00:00
+notification_texts.cached_until # => Tue, 25 Aug 2026 18:12:52 UTC +00:00
+notification_texts.version # => 2
+
+# TODO: finish this
+
+```
+
+Retrieve planetary colonies owned by character:
 ```ruby
 key_id = 1234567
 v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
 character_id = 90729314
 
+planetary_colonies = EveOnline::Characters::PlanetaryColonies.new(key_id, v_code, character_id)
+
+planetary_colonies.current_time # => Sat, 27 Aug 2016 18:29:02 UTC +00:00
+planetary_colonies.cached_until # => Sat, 27 Aug 2016 19:29:02 UTC +00:00
+planetary_colonies.version # => 2
+
+# TODO: finish this
+
+```
+
+Retrieve planetary links for colonies owned by character.
+
+```ruby
+key_id = 1234567
+v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
+character_id = 90729314
+planet_id = 123_456
+
+planetary_links = EveOnline::Characters::PlanetaryLinks.new(key_id, v_code, character_id, planet_id)
+
+planetary_links.current_time # => Sat, 27 Aug 2016 18:40:23 UTC +00:00
+planetary_links.cached_until # => Sat, 27 Aug 2016 19:40:23 UTC +00:00
+planetary_links.version # => 2
+
+# TODO: finish this
+
+```
+
+Retrieve planetary pins for colonies owned by character.
+
+```ruby
+key_id = 1234567
+v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
+character_id = 90729314
+planet_id = 123_456
+
+planetary_pins = EveOnline::Characters::PlanetaryPins.new(key_id, v_code, character_id, planet_id)
+
+planetary_pins.current_time # => Sat, 27 Aug 2016 18:48:36 UTC +00:00
+planetary_pins.cached_until # => Sat, 27 Aug 2016 19:48:36 UTC +00:00
+planetary_pins.version # => 2
+
+# TODO: finish this
+
+```
+
+Retrieve planetary routes for colonies owned by character.
+
+```ruby
+key_id = 1234567
+v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
+character_id = 90729314
+planet_id = 123_456
+
+planetary_routes = EveOnline::Characters::PlanetaryRoutes.new(key_id, v_code, character_id, planet_id)
+
+planetary_routes.current_time # => Sat, 27 Aug 2016 20:38:42 UTC +00:00
+planetary_routes.cached_until # => Sat, 27 Aug 2016 21:38:42 UTC +00:00
+planetary_routes.version # => 2
+
+# TODO: finish this
+
+```
+
+Retrieve character research.
+
+```ruby
+key_id = 1234567
+v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
+character_id = 90729314
+
+research = EveOnline::Characters::Research.new(key_id, v_code, character_id)
+
+research.current_time # => Sat, 27 Aug 2016 20:47:32 UTC +00:00
+research.cached_until # => Sat, 27 Aug 2016 21:01:32 UTC +00:00
+research.version # => 2
+
+# TODO: finish this
+
+```
+
+Retrieve character skill queue.
+
+```ruby
+key_id = 1234567
+v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
+character_id = 90729314
+
+skill_queue = EveOnline::Characters::SkillQueue.new(key_id, v_code, character_id)
+
+skill_queue.current_time # => Sat, 27 Aug 2016 21:06:27 UTC +00:00
+skill_queue.cached_until # => Sat, 27 Aug 2016 21:07:58 UTC +00:00
+skill_queue.version # => 2
+
+# TODO: finish this
+
+```
+
+Skill In Training:
+```ruby
+key_id = 1234567
+v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
+character_id = 90729314
 
 skill_in_training = EveOnline::Characters::SkillInTraining.new(key_id, v_code, character_id)
 
@@ -720,7 +840,41 @@ event.event_text # => "<b>Minmatar Control Tower</b> will run out of fuel and go
 event.owner_type_id # => 2
 ```
 
-Character Names ot IDs:
+Retrieve character wallet journal.
+
+```ruby
+key_id = 1234567
+v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
+character_id = 90729314
+
+wallet_journal = EveOnline::Characters::WalletJournal.new(key_id, v_code, character_id)
+
+wallet_journal.current_time # => Sat, 27 Aug 2016 21:14:20 UTC +00:00
+wallet_journal.cached_until # => Sat, 27 Aug 2016 21:41:20 UTC +00:00
+wallet_journal.version # => 2
+
+# TODO: finish this
+
+```
+
+Retrieve character wallet transactions.
+
+```ruby
+key_id = 1234567
+v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
+character_id = 90729314
+
+wallet_transactions = EveOnline::Characters::WalletTransactions.new(key_id, v_code, character_id)
+
+wallet_transactions.current_time # => Sat, 27 Aug 2016 21:23:53 UTC +00:00
+wallet_transactions.cached_until # => Sat, 27 Aug 2016 21:50:53 UTC +00:00
+wallet_transactions.version # => 2
+
+# TODO: finish this
+
+```
+
+Character Names to IDs:
 ```ruby
 input = ['Johnn Dillinger'] # => ["Johnn Dillinger"]
 
@@ -804,6 +958,15 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Add basic `EveOnline::Characters::Notifications`
 * `EveOnline::Characters::AccountBalance#balance` return float from now
 * `EveOnline::Characters::CharacterSheet#balance` return float from now
+* Add basic `EveOnline::Characters::NotificationTexts`
+* Add basic `EveOnline::Characters::PlanetaryColonies`
+* Add basic `EveOnline::Characters::PlanetaryLinks`
+* Add basic `EveOnline::Characters::PlanetaryPins`
+* Add basic `EveOnline::Characters::PlanetaryRoutes`
+* Add basic `EveOnline::Characters::Research`
+* Add basic `EveOnline::Characters::SkillQueue`
+* Add basic `EveOnline::Characters::WalletJournal`
+* Add basic `EveOnline::Characters::WalletTransactions`
 
 **v0.8.0**
 
