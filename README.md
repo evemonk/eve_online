@@ -620,6 +620,23 @@ notifications.version # => 2
 
 ```
 
+Character notification texts:
+```ruby
+key_id = 1234567
+v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
+character_id = 90729314
+ids = [123_456]
+
+notification_texts = EveOnline::Characters::NotificationTexts.new(key_id, v_code, character_id, ids)
+
+notification_texts.current_time # => Sat, 27 Aug 2016 18:12:52 UTC +00:00
+notification_texts.cached_until # => Tue, 25 Aug 2026 18:12:52 UTC +00:00
+notification_texts.version # => 2
+
+# TODO: finish this
+
+```
+
 Skill In Training:
 ```ruby
 key_id = 1234567
@@ -804,6 +821,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Add basic `EveOnline::Characters::Notifications`
 * `EveOnline::Characters::AccountBalance#balance` return float from now
 * `EveOnline::Characters::CharacterSheet#balance` return float from now
+* Add basic `EveOnline::Characters::NotificationTexts`
 
 **v0.8.0**
 
