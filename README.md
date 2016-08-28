@@ -972,6 +972,8 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Make `EveOnline::Characters::Blueprints#rowset` `private`
 * Make `EveOnline::Account::ApiKeyInfo#row` `private`
 * Make `EveOnline::Account::ApiKeyInfo#rowset` `private`
+* Make `EveOnline::Account::Characters#row` `private`
+* Make `EveOnline::Account::Characters#rowset` `private`
 
 **v0.8.0**
 
