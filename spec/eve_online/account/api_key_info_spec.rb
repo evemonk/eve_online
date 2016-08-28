@@ -109,36 +109,6 @@ describe EveOnline::Account::ApiKeyInfo do
     end
   end
 
-  describe '#row' do
-    before do
-      #
-      # subject.rowset.fetch('row')
-      #
-      expect(subject).to receive(:rowset) do
-        double.tap do |a|
-          expect(a).to receive(:fetch).with('row')
-        end
-      end
-    end
-
-    specify { expect { subject.row }.not_to raise_error }
-  end
-
-  describe '#rowset' do
-    before do
-      #
-      # subject.key.fetch('rowset')
-      #
-      expect(subject).to receive(:key) do
-        double.tap do |a|
-          expect(a).to receive(:fetch).with('rowset')
-        end
-      end
-    end
-
-    specify { expect { subject.rowset }.not_to raise_error }
-  end
-
   describe '#expires' do
     let(:expires) { double }
 
@@ -216,5 +186,37 @@ describe EveOnline::Account::ApiKeyInfo do
     specify do
       expect(subject.url).to eq("#{ described_class::API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }")
     end
+  end
+
+  # private methods
+
+  describe '#row' do
+    before do
+      #
+      # subject.rowset.fetch('row')
+      #
+      expect(subject).to receive(:rowset) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('row')
+        end
+      end
+    end
+
+    specify { expect { subject.send(:row) }.not_to raise_error }
+  end
+
+  describe '#rowset' do
+    before do
+      #
+      # subject.key.fetch('rowset')
+      #
+      expect(subject).to receive(:key) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('rowset')
+        end
+      end
+    end
+
+    specify { expect { subject.send(:rowset) }.not_to raise_error }
   end
 end

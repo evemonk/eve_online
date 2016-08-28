@@ -970,6 +970,8 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Add `EveOnline::SkillQueueEntry` class for handling character skill queue entry
 * Make `EveOnline::Characters::Blueprints#row` `private`
 * Make `EveOnline::Characters::Blueprints#rowset` `private`
+* Make `EveOnline::Account::ApiKeyInfo#row` `private`
+* Make `EveOnline::Account::ApiKeyInfo#rowset` `private`
 
 **v0.8.0**
 
