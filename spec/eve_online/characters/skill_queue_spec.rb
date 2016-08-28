@@ -33,7 +33,82 @@ describe EveOnline::Characters::SkillQueue do
   end
 
   describe '#skills' do
+    context 'row is Hash' do
+      let(:skill) { double }
 
+      let(:row) do
+        {
+          '@queuePosition' => '0',
+          '@typeID' => '3420',
+          '@level' => '5',
+          '@startSP' => '181020',
+          '@endSP' => '1024000',
+          '@startTime' => '2016-08-15 17:25:30',
+          '@endTime' => '2016-08-31 23:41:36'
+        }
+      end
+
+      before do
+        #
+        # subject.row # => {"@queuePosition"=>"0", "@typeID"=>"3420", "@level"=>"5", "@startSP"=>"181020", "@endSP"=>"1024000", "@startTime"=>"2016-08-15 17:25:30", "@endTime"=>"2016-08-31 23:41:36"}
+        #
+        expect(subject).to receive(:row).and_return(row).twice
+      end
+
+      before do
+        #
+        # EveOnline::SkillQueueEntry.new(row) # => skill
+        #
+        expect(EveOnline::SkillQueueEntry).to receive(:new).with(row).and_return(skill)
+      end
+
+      specify { expect(subject.skills).to eq([skill]) }
+    end
+
+    context 'row is Array' do
+      let(:skill) { double }
+
+      let(:row) do
+        [
+          {
+            '@queuePosition' => '0',
+            '@typeID' => '3420',
+            '@level' => '5',
+            '@startSP' => '181020',
+            '@endSP' => '1024000',
+            '@startTime' => '2016-08-15 17:25:30',
+            '@endTime' => '2016-08-31 23:41:36'
+          }
+        ]
+      end
+
+      before do
+        #
+        # subject.row # => [{"@queuePosition"=>"0", "@typeID"=>"3420", "@level"=>"5", "@startSP"=>"181020", "@endSP"=>"1024000", "@startTime"=>"2016-08-15 17:25:30", "@endTime"=>"2016-08-31 23:41:36"}]
+        #
+        expect(subject).to receive(:row).and_return(row).twice
+      end
+
+      before do
+        #
+        # EveOnline::SkillQueueEntry.new(row.first) # => blueprint
+        #
+        expect(EveOnline::SkillQueueEntry).to receive(:new).with(row.first).and_return(skill)
+      end
+
+      specify { expect(subject.skills).to eq([skill]) }
+    end
+
+    context 'row is invalid' do
+      before do
+        #
+        # subject.row # => 'invalid'
+        #
+        expect(subject).to receive(:row).and_return('invalid')
+      end
+
+      specify { expect { subject.skills }.to raise_error(ArgumentError) }
+    end
   end
 
   describe '#url' do
