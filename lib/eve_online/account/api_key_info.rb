@@ -27,14 +27,6 @@ module EveOnline
         end
       end
 
-      def row
-        @row ||= rowset.fetch('row')
-      end
-
-      def rowset
-        @rowset ||= key.fetch('rowset')
-      end
-
       def expires
         @expires ||= parse_datetime_with_timezone(key.fetch('@expires'))
       end
@@ -53,6 +45,16 @@ module EveOnline
 
       def url
         "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }"
+      end
+
+      private
+
+      def row
+        @row ||= rowset.fetch('row')
+      end
+
+      def rowset
+        @rowset ||= key.fetch('rowset')
       end
     end
   end

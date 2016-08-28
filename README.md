@@ -737,8 +737,20 @@ skill_queue.current_time # => Sat, 27 Aug 2016 21:06:27 UTC +00:00
 skill_queue.cached_until # => Sat, 27 Aug 2016 21:07:58 UTC +00:00
 skill_queue.version # => 2
 
-# TODO: finish this
+skill_queue.skills.size # => 11
 
+skill_queue_entry = skill_queue.skills.first
+
+skill_queue_entry.as_json
+# => {:queue_position=>0, :type_id=>3420, :level=>5, :start_sp=>181020, :end_sp=>1024000, :start_time=>Mon, 15 Aug 2016 17:25:30 UTC +00:00, :end_time=>Wed, 31 Aug 2016 23:41:36 UTC +00:00}
+
+skill_queue_entry.queue_position # => 0
+skill_queue_entry.type_id # => 3420
+skill_queue_entry.level # => 5
+skill_queue_entry.start_sp # => 181020
+skill_queue_entry.end_sp # => 1024000
+skill_queue_entry.start_time # => Mon, 15 Aug 2016 17:25:30 UTC +00:00
+skill_queue_entry.end_time # => Wed, 31 Aug 2016 23:41:36 UTC +00:00
 ```
 
 Skill In Training:
@@ -964,9 +976,16 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Add basic `EveOnline::Characters::PlanetaryPins`
 * Add basic `EveOnline::Characters::PlanetaryRoutes`
 * Add basic `EveOnline::Characters::Research`
-* Add basic `EveOnline::Characters::SkillQueue`
 * Add basic `EveOnline::Characters::WalletJournal`
 * Add basic `EveOnline::Characters::WalletTransactions`
+* Add `EveOnline::SkillQueueEntry` class for handling character skill queue entry
+* Make `EveOnline::Characters::Blueprints#row` `private`
+* Make `EveOnline::Characters::Blueprints#rowset` `private`
+* Make `EveOnline::Account::ApiKeyInfo#row` `private`
+* Make `EveOnline::Account::ApiKeyInfo#rowset` `private`
+* Make `EveOnline::Account::Characters#row` `private`
+* Make `EveOnline::Account::Characters#rowset` `private`
+* [Skill Queue](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_skillqueue.html)
 
 **v0.8.0**
 
@@ -1089,7 +1108,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 - [ ] [Planetary Routes](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_planetaryroutes.html)
 - [ ] [Research](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_research.html)
 - [x] [Skill in Training](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_skillintraining.html)
-- [ ] [Skill Queue](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_skillqueue.html)
+- [x] [Skill Queue](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_skillqueue.html)
 - [x] [Standings](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_standings.html)
 - [x] [Upcoming Calendar Events](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_upcomingcalendarevents.html)
 - [ ] [Wallet Journal](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_walletjournal.html)
