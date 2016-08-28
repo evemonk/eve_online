@@ -968,6 +968,8 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Add basic `EveOnline::Characters::WalletJournal`
 * Add basic `EveOnline::Characters::WalletTransactions`
 * Add `EveOnline::SkillQueueEntry` class for handling character skill queue entry
+* Make `EveOnline::Characters::Blueprints#row` `private`
+* Make `EveOnline::Characters::Blueprints#rowset` `private`
 
 **v0.8.0**
 

@@ -115,6 +115,14 @@ describe EveOnline::Characters::Blueprints do
     end
   end
 
+  describe '#url' do
+    specify do
+      expect(subject.url).to eq("#{ described_class::API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }")
+    end
+  end
+
+  # private methods
+
   describe '#row' do
     before do
       #
@@ -127,7 +135,7 @@ describe EveOnline::Characters::Blueprints do
       end
     end
 
-    specify { expect { subject.row }.not_to raise_error }
+    specify { expect { subject.send(:row) }.not_to raise_error }
   end
 
   describe '#rowset' do
@@ -142,12 +150,6 @@ describe EveOnline::Characters::Blueprints do
       end
     end
 
-    specify { expect { subject.rowset }.not_to raise_error }
-  end
-
-  describe '#url' do
-    specify do
-      expect(subject.url).to eq("#{ described_class::API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }")
-    end
+    specify { expect { subject.send(:rowset) }.not_to raise_error }
   end
 end
