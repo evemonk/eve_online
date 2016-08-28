@@ -985,7 +985,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Make `EveOnline::Account::ApiKeyInfo#rowset` `private`
 * Make `EveOnline::Account::Characters#row` `private`
 * Make `EveOnline::Account::Characters#rowset` `private`
-* Finish [Skill Queue](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_skillqueue.html)
+* [Skill Queue](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_skillqueue.html)
 
 **v0.8.0**
 
