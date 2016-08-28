@@ -13,8 +13,33 @@ module EveOnline
         @character_id = character_id
       end
 
+      # def skills
+      #   case row
+      #   when Hash
+      #     [SkillQueueEntry.new(row)]
+      #   when Array
+      #     output = []
+      #     row.each do |blueprint|
+      #       output << SkillQueueEntry.new(blueprint)
+      #     end
+      #     output
+      #   else
+      #     raise ArgumentError
+      #   end
+      # end
+
       def url
         "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }"
+      end
+
+      private
+
+      def row
+        @row ||= rowset.fetch('row')
+      end
+
+      def rowset
+        @rowset ||= result.fetch('rowset')
       end
     end
   end
