@@ -7,19 +7,19 @@ module EveOnline
         @options = options
       end
 
+      def as_json
+        {
+          type_id: type_id,
+          data: data
+        }
+      end
+
       def type_id
         @type_id ||= options.first
       end
 
       def data
         @data ||= options.last
-      end
-
-      def as_json
-        {
-          type_id: type_id,
-          data: data
-        }
       end
     end
   end
