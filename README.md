@@ -397,8 +397,17 @@ contact_notifications.current_time # => Fri, 19 Aug 2016 11:10:23 UTC +00:00
 contact_notifications.cached_until # => Fri, 19 Aug 2016 11:37:23 UTC +00:00
 contact_notifications.version # => 2
 
-# TODO: finish this
+contact_notifications.contact_notifications.size # => 3
 
+contact_notification = contact_notifications.contact_notifications.first # => #<EveOnline::ContactNotification:0x007fe00413d4e0 @options={"@notificationID"=>"308734131", "@senderID"=>"797400947", "@senderName"=>"CCP Garthagk", "@sentDate"=>"2016-03-19 12:13:00", "@messageData"=>"level: 5\nmessage: ''\n"}>
+
+contact_notification.as_json # => {:notification_id=>308734131, :sender_id=>797400947, :sender_name=>"CCP Garthagk", :sent_date=>Sat, 19 Mar 2016 12:13:00 UTC +00:00, :message_data=>"level: 5\nmessage: ''\n"}
+
+contact_notification.notification_id # => 308734131
+contact_notification.sender_id # => 797400947
+contact_notification.sender_name # => "CCP Garthagk"
+contact_notification.sent_date # => Sat, 19 Mar 2016 12:13:00 UTC +00:00
+contact_notification.message_data # => "level: 5\nmessage: ''\n"
 ```
 
 Character contract bids:
@@ -987,6 +996,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Make `EveOnline::Account::Characters#rowset` `private`
 * [Skill Queue](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_skillqueue.html)
 * Add `EveOnline::ContactNotification` class for handling character contact notification
+* [Contact Notifications](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_contactnotifications.html)
 
 **v0.8.0**
 
@@ -1086,7 +1096,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 - [ ] [Character Sheet](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_charactersheet.html)
 - [ ] [Chat Channels](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_chatchannels.html)
 - [ ] [Contact List](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_contactlist.html)
-- [ ] [Contact Notifications](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_contactnotifications.html)
+- [x] [Contact Notifications](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_contactnotifications.html)
 - [ ] [Contract Bids](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_contractbids.html)
 - [ ] [Contract Items](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_contractitems.html)
 - [ ] [Contracts](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_contracts.html)
