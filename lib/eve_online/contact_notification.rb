@@ -33,6 +33,7 @@ module EveOnline
     end
 
     def message_data
+      # TODO: parse @messageData
       @message_data ||= options.fetch('@messageData')
     end
   end
