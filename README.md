@@ -986,6 +986,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Make `EveOnline::Account::Characters#row` `private`
 * Make `EveOnline::Account::Characters#rowset` `private`
 * [Skill Queue](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_skillqueue.html)
+* Add `EveOnline::ContactNotification` class for handling character contact notification
 
 **v0.8.0**
 

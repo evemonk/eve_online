@@ -13,9 +13,36 @@ module EveOnline
         @character_id = character_id
       end
 
+      # def contact_notifications
+      #   @contact_notifications ||= begin
+      #     case row
+      #     when Hash
+      #       [ContactNotification.new(row)]
+      #     when Array
+      #       output = []
+      #       row.each do |contact_notification|
+      #         output << ContactNotification.new(contact_notification)
+      #       end
+      #       output
+      #     else
+      #       raise ArgumentError
+      #     end
+      #   end
+      # end
+
       def url
         "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }"
       end
+
+      # private
+      #
+      # def row
+      #   @row ||= rowset.fetch('row')
+      # end
+      #
+      # def rowset
+      #   @rowset ||= result.fetch('rowset')
+      # end
     end
   end
 end
