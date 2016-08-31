@@ -1002,6 +1002,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Make `EveOnline::Characters::Account#key` `private`
 * Make `EveOnline::Characters::AssetList#row` `private`
 * Make `EveOnline::Characters::AssetList#rowset` `private`
+* Make `EveOnline::Characters::Locations#escaped_ids` `private`
 
 **v0.8.0**
 
