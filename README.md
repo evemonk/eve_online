@@ -1000,6 +1000,8 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Make `EveOnline::Characters::AccountBalance#row` `private`
 * Make `EveOnline::Characters::AccountBalance#rowset` `private`
 * Make `EveOnline::Characters::Account#key` `private`
+* Make `EveOnline::Characters::AssetList#row` `private`
+* Make `EveOnline::Characters::AssetList#rowset` `private`
 
 **v0.8.0**
 

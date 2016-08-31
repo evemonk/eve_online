@@ -29,16 +29,18 @@ module EveOnline
         end
       end
 
-      def row
-        @row ||= rowset.fetch('row')
+      def url
+        "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }&flat=#{ flat }"
       end
+
+      private
 
       def rowset
         @rowset ||= result.fetch('rowset')
       end
 
-      def url
-        "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }&flat=#{ flat }"
+      def row
+        @row ||= rowset.fetch('row')
       end
     end
   end

@@ -123,20 +123,13 @@ describe EveOnline::Characters::AssetList do
     end
   end
 
-  describe '#row' do
-    before do
-      #
-      # subject.rowset.fetch('row')
-      #
-      expect(subject).to receive(:rowset) do
-        double.tap do |a|
-          expect(a).to receive(:fetch).with('row')
-        end
-      end
+  describe '#url' do
+    specify do
+      expect(subject.url).to eq("#{ described_class::API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }&flat=#{ flat }")
     end
-
-    specify { expect { subject.row }.not_to raise_error }
   end
+
+  # private methods
 
   describe '#rowset' do
     before do
@@ -150,12 +143,21 @@ describe EveOnline::Characters::AssetList do
       end
     end
 
-    specify { expect { subject.rowset }.not_to raise_error }
+    specify { expect { subject.send(:rowset) }.not_to raise_error }
   end
 
-  describe '#url' do
-    specify do
-      expect(subject.url).to eq("#{ described_class::API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }&flat=#{ flat }")
+  describe '#row' do
+    before do
+      #
+      # subject.rowset.fetch('row')
+      #
+      expect(subject).to receive(:rowset) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('row')
+        end
+      end
     end
+
+    specify { expect { subject.send(:row) }.not_to raise_error }
   end
 end
