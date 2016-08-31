@@ -19,11 +19,11 @@ module EveOnline
           when Hash
             [BookmarkFolder.new(row)]
           when Array
-            bookmark_folders = []
+            output = []
             row.each do |bookmark_folder|
-              bookmark_folders << BookmarkFolder.new(bookmark_folder)
+              output << BookmarkFolder.new(bookmark_folder)
             end
-            bookmark_folders
+            output
           else
             raise ArgumentError
           end
