@@ -32,6 +32,81 @@ describe EveOnline::Characters::ContactNotifications do
     its(:character_id) { should eq(character_id) }
   end
 
+  describe '#contact_notifications' do
+    context 'row is Hash' do
+      let(:contact_notification) { double }
+
+      let(:row) do
+        {
+          '@notificationID' => '308734131',
+          '@senderID' => '797400947',
+          '@senderName' => 'CCP Garthagk',
+          '@sentDate' => '2016-03-19 12:13:00',
+          '@messageData' => "level: 5\nmessage: ''\n"
+        }
+      end
+
+      before do
+        #
+        # subject.row # => {"@notificationID"=>"308734131", "@senderID"=>"797400947", "@senderName"=>"CCP Garthagk", "@sentDate"=>"2016-03-19 12:13:00", "@messageData"=>"level: 5\nmessage: ''\n"}
+        #
+        expect(subject).to receive(:row).and_return(row).twice
+      end
+
+      before do
+        #
+        # EveOnline::ContactNotification.new(row) # => contact_notification
+        #
+        expect(EveOnline::ContactNotification).to receive(:new).with(row).and_return(contact_notification)
+      end
+
+      specify { expect(subject.contact_notifications).to eq([contact_notification]) }
+    end
+
+    context 'row is Array' do
+      let(:contact_notification) { double }
+
+      let(:row) do
+        [
+          {
+            '@notificationID' => '308734131',
+            '@senderID' => '797400947',
+            '@senderName' => 'CCP Garthagk',
+            '@sentDate' => '2016-03-19 12:13:00',
+            '@messageData' => "level: 5\nmessage: ''\n"
+          }
+        ]
+      end
+
+      before do
+        #
+        # subject.row # => [{"@notificationID"=>"308734131", "@senderID"=>"797400947", "@senderName"=>"CCP Garthagk", "@sentDate"=>"2016-03-19 12:13:00", "@messageData"=>"level: 5\nmessage: ''\n"}]
+        #
+        expect(subject).to receive(:row).and_return(row).twice
+      end
+
+      before do
+        #
+        # EveOnline::ContactNotification.new(row.first) # => contact_notification
+        #
+        expect(EveOnline::ContactNotification).to receive(:new).with(row.first).and_return(contact_notification)
+      end
+
+      specify { expect(subject.contact_notifications).to eq([contact_notification]) }
+    end
+
+    context 'row is invalid' do
+      before do
+        #
+        # subject.row # => 'invalid'
+        #
+        expect(subject).to receive(:row).and_return('invalid')
+      end
+
+      specify { expect { subject.contact_notifications }.to raise_error(ArgumentError) }
+    end
+  end
+
   describe '#url' do
     specify do
       expect(subject.url).to eq("#{ described_class::API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }")
