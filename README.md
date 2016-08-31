@@ -1005,6 +1005,8 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Make `EveOnline::Characters::Locations#escaped_ids` `private`
 * Make `EveOnline::Characters::MailBodies#escaped_ids` `private`
 * Make `EveOnline::Characters::NotificationTexts#escaped_ids` `private`
+* Make `EveOnline::Characters::UpcomingCalendarEvents#row` `private`
+* Make `EveOnline::Characters::UpcomingCalendarEvents#rowset` `private`
 
 **v0.8.0**
 
