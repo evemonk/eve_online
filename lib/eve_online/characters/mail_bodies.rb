@@ -14,12 +14,14 @@ module EveOnline
         @ids = ids
       end
 
-      def escaped_ids
-        @escaped_ids ||= URI.escape(ids.join(','))
-      end
-
       def url
         "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }&IDs=#{ escaped_ids }"
+      end
+
+      private
+
+      def escaped_ids
+        @escaped_ids ||= URI.escape(ids.join(','))
       end
     end
   end
