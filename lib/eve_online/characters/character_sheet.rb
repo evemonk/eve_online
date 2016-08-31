@@ -195,6 +195,10 @@ module EveOnline
         @jump_clone_implants ||= CharacterJumpCloneImplants.new(result).jump_clone_implants
       end
 
+      def access_mask_bit
+        4
+      end
+
       def url
         "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }"
       end

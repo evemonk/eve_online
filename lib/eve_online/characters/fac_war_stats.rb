@@ -13,6 +13,10 @@ module EveOnline
         @character_id = character_id
       end
 
+      def access_mask
+        64
+      end
+
       def url
         "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }"
       end

@@ -35,6 +35,10 @@ module EveOnline
         @balance ||= row.fetch('@balance').to_f
       end
 
+      def access_mask_bit
+        1
+      end
+
       def url
         "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }"
       end
