@@ -37,4 +37,36 @@ describe EveOnline::Characters::ContactNotifications do
       expect(subject.url).to eq("#{ described_class::API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }")
     end
   end
+
+  # private methods
+
+  describe '#row' do
+    before do
+      #
+      # subject.rowset.fetch('row')
+      #
+      expect(subject).to receive(:rowset) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('row')
+        end
+      end
+    end
+
+    specify { expect { subject.send(:row) }.not_to raise_error }
+  end
+
+  describe '#rowset' do
+    before do
+      #
+      # subject.result.fetch('rowset')
+      #
+      expect(subject).to receive(:result) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('rowset')
+        end
+      end
+    end
+
+    specify { expect { subject.send(:rowset) }.not_to raise_error }
+  end
 end
