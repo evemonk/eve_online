@@ -167,6 +167,14 @@ describe EveOnline::Account::ApiKeyInfo do
     specify { expect { subject.access_mask }.not_to raise_error }
   end
 
+  describe '#url' do
+    specify do
+      expect(subject.url).to eq("#{ described_class::API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }")
+    end
+  end
+
+  # private methods
+
   describe '#key' do
     before do
       #
@@ -179,16 +187,8 @@ describe EveOnline::Account::ApiKeyInfo do
       end
     end
 
-    specify { expect { subject.key }.not_to raise_error }
+    specify { expect { subject.send(:key) }.not_to raise_error }
   end
-
-  describe '#url' do
-    specify do
-      expect(subject.url).to eq("#{ described_class::API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }")
-    end
-  end
-
-  # private methods
 
   describe '#row' do
     before do

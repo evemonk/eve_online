@@ -36,6 +36,18 @@ describe EveOnline::Characters::MailBodies do
     its(:ids) { should eq(ids) }
   end
 
+  describe '#url' do
+    let(:escaped_ids) { 123_456 }
+
+    before { expect(subject).to receive(:escaped_ids).and_return(escaped_ids) }
+
+    specify do
+      expect(subject.url).to eq("#{ described_class::API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }&IDs=#{ escaped_ids }")
+    end
+  end
+
+  # private methods
+
   describe '#escaped_ids' do
     let(:joined_ids) { double }
 
@@ -57,16 +69,6 @@ describe EveOnline::Characters::MailBodies do
       expect(URI).to receive(:escape).with(joined_ids)
     end
 
-    specify { expect { subject.escaped_ids }.not_to raise_error }
-  end
-
-  describe '#url' do
-    let(:escaped_ids) { 123_456 }
-
-    before { expect(subject).to receive(:escaped_ids).and_return(escaped_ids) }
-
-    specify do
-      expect(subject.url).to eq("#{ described_class::API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }&IDs=#{ escaped_ids }")
-    end
+    specify { expect { subject.send(:escaped_ids) }.not_to raise_error }
   end
 end

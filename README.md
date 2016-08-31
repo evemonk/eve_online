@@ -999,6 +999,14 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * [Contact Notifications](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_contactnotifications.html)
 * Make `EveOnline::Characters::AccountBalance#row` `private`
 * Make `EveOnline::Characters::AccountBalance#rowset` `private`
+* Make `EveOnline::Characters::Account#key` `private`
+* Make `EveOnline::Characters::AssetList#row` `private`
+* Make `EveOnline::Characters::AssetList#rowset` `private`
+* Make `EveOnline::Characters::Locations#escaped_ids` `private`
+* Make `EveOnline::Characters::MailBodies#escaped_ids` `private`
+* Make `EveOnline::Characters::NotificationTexts#escaped_ids` `private`
+* Make `EveOnline::Characters::UpcomingCalendarEvents#row` `private`
+* Make `EveOnline::Characters::UpcomingCalendarEvents#rowset` `private`
 
 **v0.8.0**
 

@@ -36,12 +36,12 @@ module EveOnline
 
       private
 
-      def row
-        @row ||= rowset.fetch('row')
-      end
-
       def rowset
         @rowset ||= result.fetch('rowset')
+      end
+
+      def row
+        @row ||= rowset.fetch('row')
       end
     end
   end

@@ -39,22 +39,22 @@ module EveOnline
         @access_mask ||= key.fetch('@accessMask').to_i
       end
 
-      def key
-        @key ||= result.fetch('key')
-      end
-
       def url
         "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }"
       end
 
       private
 
-      def row
-        @row ||= rowset.fetch('row')
+      def key
+        @key ||= result.fetch('key')
       end
 
       def rowset
         @rowset ||= key.fetch('rowset')
+      end
+
+      def row
+        @row ||= rowset.fetch('row')
       end
     end
   end
