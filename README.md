@@ -999,6 +999,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * [Contact Notifications](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_contactnotifications.html)
 * Make `EveOnline::Characters::AccountBalance#row` `private`
 * Make `EveOnline::Characters::AccountBalance#rowset` `private`
+* Make `EveOnline::Characters::Account#key` `private`
 
 **v0.8.0**
 
