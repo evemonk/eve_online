@@ -13,6 +13,8 @@ describe EveOnline::Characters::Research do
 
   specify { expect(described_class::API_ENDPOINT).to eq('https://api.eveonline.com/char/Research.xml.aspx') }
 
+  specify { expect(described_class::ACCESS_MASK).to eq(65536) }
+
   describe '#initialize' do
     let(:parser) { double }
 

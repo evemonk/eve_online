@@ -4,6 +4,8 @@ module EveOnline
     class Research < BaseXML
       API_ENDPOINT = 'https://api.eveonline.com/char/Research.xml.aspx'.freeze
 
+      ACCESS_MASK = 65536
+
       attr_reader :key_id, :v_code, :character_id
 
       def initialize(key_id, v_code, character_id)
