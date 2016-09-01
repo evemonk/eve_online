@@ -1008,6 +1008,8 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Make `EveOnline::Characters::UpcomingCalendarEvents#row` `private`
 * Make `EveOnline::Characters::UpcomingCalendarEvents#rowset` `private`
 * Add access masks
+* Make `EveOnline::Characters::Bookmarks#row` `private`
+* Make `EveOnline::Characters::Bookmarks#rowset` `private`
 
 **v0.8.0**
 
