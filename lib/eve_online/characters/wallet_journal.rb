@@ -6,18 +6,20 @@ module EveOnline
 
       ACCESS_MASK = 2097152
 
-      attr_reader :key_id, :v_code, :character_id # TODO: :account_key
+      attr_reader :key_id, :v_code, :character_id, :from_id, :row_count
 
-      def initialize(key_id, v_code, character_id) # TODO: account_key
+      def initialize(key_id, v_code, character_id, options = {})
         super()
         @key_id = key_id
         @v_code = v_code
         @character_id = character_id
-        # @account_key = account_key TODO: add
+        @from_id = options.fetch(:from_id, nil)
+        @row_count = options.fetch(:row_count, nil)
       end
 
       def url
-        "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }"
+        # "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }"
+        "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }&rowCount=#{ row_count }"
       end
     end
   end
