@@ -13,6 +13,8 @@ describe EveOnline::Characters::ChatChannels do
 
   specify { expect(described_class::API_ENDPOINT).to eq('https://api.eveonline.com/char/ChatChannels.xml.aspx') }
 
+  specify { expect(described_class::ACCESS_MASK).to eq(536870912) }
+
   describe '#initialize' do
     let(:parser) { double }
 

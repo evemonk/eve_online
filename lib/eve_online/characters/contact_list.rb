@@ -4,6 +4,8 @@ module EveOnline
     class ContactList < BaseXML
       API_ENDPOINT = 'https://api.eveonline.com/char/ContactList.xml.aspx'.freeze
 
+      ACCESS_MASK = 16
+
       attr_reader :key_id, :v_code, :character_id
 
       def initialize(key_id, v_code, character_id)

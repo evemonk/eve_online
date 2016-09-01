@@ -4,6 +4,8 @@ module EveOnline
     class CharacterSheet < BaseXML
       API_ENDPOINT = 'https://api.eveonline.com/char/CharacterSheet.xml.aspx'.freeze
 
+      ACCESS_MASK = 8
+
       attr_reader :key_id, :v_code, :character_id
 
       def initialize(key_id, v_code, character_id)

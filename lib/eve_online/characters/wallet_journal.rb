@@ -4,6 +4,8 @@ module EveOnline
     class WalletJournal < BaseXML
       API_ENDPOINT = 'https://api.eveonline.com/char/WalletJournal.xml.aspx'.freeze
 
+      ACCESS_MASK = 2097152
+
       attr_reader :key_id, :v_code, :character_id # TODO: :account_key
 
       def initialize(key_id, v_code, character_id) # TODO: account_key

@@ -13,6 +13,8 @@ describe EveOnline::Characters::KillMails do
 
   specify { expect(described_class::API_ENDPOINT).to eq('https://api.eveonline.com/char/KillMails.xml.aspx') }
 
+  specify { expect(described_class::ACCESS_MASK).to eq(256) }
+
   describe '#initialize' do
     let(:parser) { double }
 

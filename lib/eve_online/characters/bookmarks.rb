@@ -4,6 +4,8 @@ module EveOnline
     class Bookmarks < BaseXML
       API_ENDPOINT = 'https://api.eveonline.com/char/Bookmarks.xml.aspx'.freeze
 
+      ACCESS_MASK = 268435456
+
       attr_reader :key_id, :v_code, :character_id
 
       def initialize(key_id, v_code, character_id)
@@ -30,16 +32,18 @@ module EveOnline
         end
       end
 
-      def row
-        @row ||= rowset.fetch('row')
+      def url
+        "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }"
       end
+
+      private
 
       def rowset
         @rowset ||= result.fetch('rowset')
       end
 
-      def url
-        "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }"
+      def row
+        @row ||= rowset.fetch('row')
       end
     end
   end

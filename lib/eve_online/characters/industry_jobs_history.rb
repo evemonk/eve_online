@@ -4,6 +4,8 @@ module EveOnline
     class IndustryJobsHistory < BaseXML
       API_ENDPOINT = 'https://api.eveonline.com/char/IndustryJobsHistory.xml.aspx'.freeze
 
+      ACCESS_MASK = 128
+
       attr_reader :key_id, :v_code, :character_id
 
       def initialize(key_id, v_code, character_id)

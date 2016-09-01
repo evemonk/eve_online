@@ -4,6 +4,8 @@ module EveOnline
     class CalendarEventAttendees < BaseXML
       API_ENDPOINT = 'https://api.eveonline.com/char/CalendarEventAttendees.xml.aspx'.freeze
 
+      ACCESS_MASK = 4
+
       attr_reader :key_id, :v_code, :character_id, :event_id
 
       def initialize(key_id, v_code, character_id, event_id)

@@ -4,6 +4,8 @@ module EveOnline
     class KillMails < BaseXML
       API_ENDPOINT = 'https://api.eveonline.com/char/KillMails.xml.aspx'.freeze
 
+      ACCESS_MASK = 256
+
       attr_reader :key_id, :v_code, :character_id
 
       def initialize(key_id, v_code, character_id)

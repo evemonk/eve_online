@@ -4,6 +4,8 @@ module EveOnline
     class ContactNotifications < BaseXML
       API_ENDPOINT = 'https://api.eveonline.com/char/ContactNotifications.xml.aspx'.freeze
 
+      ACCESS_MASK = 32
+
       attr_reader :key_id, :v_code, :character_id
 
       def initialize(key_id, v_code, character_id)

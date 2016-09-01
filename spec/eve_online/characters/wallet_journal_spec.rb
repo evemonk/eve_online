@@ -13,6 +13,8 @@ describe EveOnline::Characters::WalletJournal do
 
   specify { expect(described_class::API_ENDPOINT).to eq('https://api.eveonline.com/char/WalletJournal.xml.aspx') }
 
+  specify { expect(described_class::ACCESS_MASK).to eq(2097152) }
+
   describe '#initialize' do
     let(:parser) { double }
 

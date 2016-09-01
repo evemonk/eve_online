@@ -13,6 +13,8 @@ describe EveOnline::Characters::UpcomingCalendarEvents do
 
   specify { expect(described_class::API_ENDPOINT).to eq('https://api.eveonline.com/char/UpcomingCalendarEvents.xml.aspx') }
 
+  specify { expect(described_class::ACCESS_MASK).to eq(1048576) }
+
   describe '#initialize' do
     let(:parser) { double }
 

@@ -4,6 +4,8 @@ module EveOnline
     class Contracts < BaseXML
       API_ENDPOINT = 'https://api.eveonline.com/char/Contracts.xml.aspx'.freeze
 
+      ACCESS_MASK = 67108864
+
       # attr_reader :key_id, :v_code, :character_id, :contract_id
       attr_reader :key_id, :v_code, :character_id
 

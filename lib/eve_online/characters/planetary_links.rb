@@ -4,6 +4,8 @@ module EveOnline
     class PlanetaryLinks < BaseXML
       API_ENDPOINT = 'https://api.eveonline.com/char/PlanetaryLinks.xml.aspx'.freeze
 
+      ACCESS_MASK = 2
+
       attr_reader :key_id, :v_code, :character_id, :planet_id
 
       def initialize(key_id, v_code, character_id, planet_id)

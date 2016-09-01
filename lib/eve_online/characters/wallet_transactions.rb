@@ -4,6 +4,8 @@ module EveOnline
     class WalletTransactions < BaseXML
       API_ENDPOINT = 'https://api.eveonline.com/char/WalletTransactions.xml.aspx'.freeze
 
+      ACCESS_MASK = 4194304
+
       attr_reader :key_id, :v_code, :character_id # TODO: :account_key
 
       def initialize(key_id, v_code, character_id) # TODO: account_key

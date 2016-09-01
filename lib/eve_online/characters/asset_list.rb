@@ -4,6 +4,8 @@ module EveOnline
     class AssetList < BaseXML
       API_ENDPOINT = 'https://api.eveonline.com/char/AssetList.xml.aspx'.freeze
 
+      ACCESS_MASK = 2
+
       attr_reader :key_id, :v_code, :character_id, :flat
 
       def initialize(key_id, v_code, character_id, flat = 1)

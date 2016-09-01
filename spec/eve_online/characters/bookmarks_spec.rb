@@ -13,6 +13,8 @@ describe EveOnline::Characters::Bookmarks do
 
   specify { expect(described_class::API_ENDPOINT).to eq('https://api.eveonline.com/char/Bookmarks.xml.aspx') }
 
+  specify { expect(described_class::ACCESS_MASK).to eq(268435456) }
+
   describe '#initialize' do
     let(:parser) { double }
 
@@ -131,20 +133,13 @@ describe EveOnline::Characters::Bookmarks do
     end
   end
 
-  describe '#row' do
-    before do
-      #
-      # subject.rowset.fetch('row')
-      #
-      expect(subject).to receive(:rowset) do
-        double.tap do |a|
-          expect(a).to receive(:fetch).with('row')
-        end
-      end
+  describe '#url' do
+    specify do
+      expect(subject.url).to eq("#{ described_class::API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }")
     end
-
-    specify { expect { subject.row }.not_to raise_error }
   end
+
+  # private methods
 
   describe '#rowset' do
     before do
@@ -158,12 +153,21 @@ describe EveOnline::Characters::Bookmarks do
       end
     end
 
-    specify { expect { subject.rowset }.not_to raise_error }
+    specify { expect { subject.send(:rowset) }.not_to raise_error }
   end
 
-  describe '#url' do
-    specify do
-      expect(subject.url).to eq("#{ described_class::API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }")
+  describe '#row' do
+    before do
+      #
+      # subject.rowset.fetch('row')
+      #
+      expect(subject).to receive(:rowset) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('row')
+        end
+      end
     end
+
+    specify { expect { subject.send(:row) }.not_to raise_error }
   end
 end
