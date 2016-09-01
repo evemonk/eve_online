@@ -32,10 +32,6 @@ module EveOnline
         end
       end
 
-      def access_mask
-        32
-      end
-
       def url
         "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }"
       end
