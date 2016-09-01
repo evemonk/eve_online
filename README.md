@@ -1007,6 +1007,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Make `EveOnline::Characters::NotificationTexts#escaped_ids` `private`
 * Make `EveOnline::Characters::UpcomingCalendarEvents#row` `private`
 * Make `EveOnline::Characters::UpcomingCalendarEvents#rowset` `private`
+* Add access masks
 
 **v0.8.0**
 
