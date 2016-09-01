@@ -16,10 +16,6 @@ module EveOnline
         @event_id = event_id
       end
 
-      def access_mask_bit
-        3
-      end
-
       def url
         "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }&eventIDs=#{ event_id }"
       end
