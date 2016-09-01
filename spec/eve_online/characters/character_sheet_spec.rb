@@ -13,6 +13,8 @@ describe EveOnline::Characters::CharacterSheet do
 
   specify { expect(described_class::API_ENDPOINT).to eq('https://api.eveonline.com/char/CharacterSheet.xml.aspx') }
 
+  specify { expect(described_class::ACCESS_MASK).to eq(8) }
+
   describe '#initialize' do
     let(:parser) { double }
 

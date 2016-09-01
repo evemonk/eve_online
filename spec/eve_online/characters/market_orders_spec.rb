@@ -13,6 +13,8 @@ describe EveOnline::Characters::MarketOrders do
 
   specify { expect(described_class::API_ENDPOINT).to eq('https://api.eveonline.com/char/MarketOrders.xml.aspx') }
 
+  specify { expect(described_class::ACCESS_MASK).to eq(4096) }
+
   describe '#initialize' do
     let(:parser) { double }
 

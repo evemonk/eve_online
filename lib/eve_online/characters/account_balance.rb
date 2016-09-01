@@ -4,6 +4,8 @@ module EveOnline
     class AccountBalance < BaseXML
       API_ENDPOINT = 'https://api.eveonline.com/char/AccountBalance.xml.aspx'.freeze
 
+      ACCESS_MASK = 1
+
       attr_reader :key_id, :v_code, :character_id
 
       def initialize(key_id, v_code, character_id)
@@ -33,10 +35,6 @@ module EveOnline
 
       def balance
         @balance ||= row.fetch('@balance').to_f
-      end
-
-      def access_mask_bit
-        1
       end
 
       def url

@@ -4,6 +4,8 @@ module EveOnline
     class Medals < BaseXML
       API_ENDPOINT = 'https://api.eveonline.com/char/Medals.xml.aspx'.freeze
 
+      ACCESS_MASK = 8192
+
       attr_reader :key_id, :v_code, :character_id
 
       def initialize(key_id, v_code, character_id)

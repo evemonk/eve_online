@@ -4,6 +4,8 @@ module EveOnline
     class FacWarStats < BaseXML
       API_ENDPOINT = 'https://api.eveonline.com/char/FacWarStats.xml.aspx'.freeze
 
+      ACCESS_MASK = 64
+
       attr_reader :key_id, :v_code, :character_id
 
       def initialize(key_id, v_code, character_id)
@@ -11,10 +13,6 @@ module EveOnline
         @key_id = key_id
         @v_code = v_code
         @character_id = character_id
-      end
-
-      def access_mask
-        64
       end
 
       def url

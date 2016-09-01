@@ -4,6 +4,8 @@ module EveOnline
     class MailBodies < BaseXML
       API_ENDPOINT = 'https://api.eveonline.com/char/MailBodies.xml.aspx'.freeze
 
+      ACCESS_MASK = 512
+
       attr_reader :key_id, :v_code, :character_id, :ids
 
       def initialize(key_id, v_code, character_id, ids)

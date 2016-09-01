@@ -4,6 +4,8 @@ module EveOnline
     class CharacterSheet < BaseXML
       API_ENDPOINT = 'https://api.eveonline.com/char/CharacterSheet.xml.aspx'.freeze
 
+      ACCESS_MASK = 8
+
       attr_reader :key_id, :v_code, :character_id
 
       def initialize(key_id, v_code, character_id)
@@ -193,10 +195,6 @@ module EveOnline
 
       def jump_clone_implants
         @jump_clone_implants ||= CharacterJumpCloneImplants.new(result).jump_clone_implants
-      end
-
-      def access_mask_bit
-        4
       end
 
       def url
