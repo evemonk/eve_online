@@ -80,9 +80,24 @@ describe EveOnline::WalletJournalEntry do
     specify { expect { subject.ref_type_id }.not_to raise_error }
   end
 
-  # def owner_name1
-  #   @owner_name1 ||= options.fetch('@ownerName1')
-  # end
+  describe '#owner_name1' do
+    let(:options) { double }
+
+    subject { described_class.new(options) }
+
+    before do
+      #
+      # subject.options.fetch('@ownerName1')
+      #
+      expect(subject).to receive(:options) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('@ownerName1')
+        end
+      end
+    end
+
+    specify { expect { subject.owner_name1 }.not_to raise_error }
+  end
 
   describe '#owner_id1' do
     let(:options) { double }
@@ -107,10 +122,24 @@ describe EveOnline::WalletJournalEntry do
     specify { expect { subject.owner_id1 }.not_to raise_error }
   end
 
+  describe '#owner_name2' do
+    let(:options) { double }
 
-  # def owner_name2
-  #   @owner_name2 ||= options.fetch('@ownerName2')
-  # end
+    subject { described_class.new(options) }
+
+    before do
+      #
+      # subject.options.fetch('@ownerName2')
+      #
+      expect(subject).to receive(:options) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('@ownerName2')
+        end
+      end
+    end
+
+    specify { expect { subject.owner_name2 }.not_to raise_error }
+  end
 
   describe '#owner_id2' do
     let(:options) { double }
@@ -135,10 +164,24 @@ describe EveOnline::WalletJournalEntry do
     specify { expect { subject.owner_id2 }.not_to raise_error }
   end
 
+  describe '#arg_name1' do
+    let(:options) { double }
 
-  # def arg_name1
-  #   @arg_name1 ||= options.fetch('@argName1')
-  # end
+    subject { described_class.new(options) }
+
+    before do
+      #
+      # subject.options.fetch('@argName1')
+      #
+      expect(subject).to receive(:options) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('@argName1')
+        end
+      end
+    end
+
+    specify { expect { subject.arg_name1 }.not_to raise_error }
+  end
 
   describe '#arg_id1' do
     let(:options) { double }
@@ -163,19 +206,71 @@ describe EveOnline::WalletJournalEntry do
     specify { expect { subject.arg_id1 }.not_to raise_error }
   end
 
+  describe '#amount' do
+    let(:options) { double }
 
-  # def amount
-  #   @amount ||= options.fetch('@amount').to_f
-  # end
-  #
-  # def balance
-  #   @balance ||= options.fetch('@balance').to_f
-  # end
-  #
-  # def reason
-  #   @reason ||= options.fetch('@reason')
-  # end
-  #
+    subject { described_class.new(options) }
+
+    before do
+      #
+      # subject.options.fetch('@amount').to_f
+      #
+      expect(subject).to receive(:options) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('@amount') do
+            double.tap do |b|
+              expect(b).to receive(:to_f)
+            end
+          end
+        end
+      end
+    end
+
+    specify { expect { subject.amount }.not_to raise_error }
+  end
+
+  describe '#balance' do
+    let(:options) { double }
+
+    subject { described_class.new(options) }
+
+    before do
+      #
+      # subject.options.fetch('@balance').to_f
+      #
+      expect(subject).to receive(:options) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('@balance') do
+            double.tap do |b|
+              expect(b).to receive(:to_f)
+            end
+          end
+        end
+      end
+    end
+
+    specify { expect { subject.balance }.not_to raise_error }
+  end
+
+  describe '#reason' do
+    let(:options) { double }
+
+    subject { described_class.new(options) }
+
+    before do
+      #
+      # subject.options.fetch('@reason')
+      #
+      expect(subject).to receive(:options) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('@reason')
+        end
+      end
+    end
+
+    specify { expect { subject.reason }.not_to raise_error }
+  end
+
   # def tax_receiver_id
   #   # TODO: to_i
   #   @tax_receiver_id ||= options.fetch('@taxReceiverID')
