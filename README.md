@@ -1010,6 +1010,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Add access masks
 * Make `EveOnline::Characters::Bookmarks#row` `private`
 * Make `EveOnline::Characters::Bookmarks#rowset` `private`
+* Add `EveOnline::WalletJournalEntry` class for handling character wallet journal entry
 
 **v0.8.0**
 
