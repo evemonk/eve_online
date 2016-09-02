@@ -38,15 +38,15 @@ module EveOnline
         # "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }&rowCount=#{ row_count }"
       end
 
-      # private
-      #
-      # def rowset
-      #   @rowset ||= result.fetch('rowset')
-      # end
-      #
-      # def row
-      #   @row ||= rowset.fetch('row')
-      # end
+      private
+
+      def rowset
+        @rowset ||= result.fetch('rowset')
+      end
+
+      def row
+        @row ||= rowset.fetch('row')
+      end
     end
   end
 end
