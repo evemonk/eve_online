@@ -158,8 +158,30 @@ describe EveOnline::Characters::WalletJournal do
   end
 
   describe '#url' do
-    specify do
-      expect(subject.url).to eq("#{ described_class::API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }&accountKey=1000")
+    context 'default' do
+      specify do
+        expect(subject.url).to eq("#{ described_class::API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }&accountKey=1000")
+      end
+    end
+
+    context 'with from_id' do
+      let(:options) { { from_id: 1234567 } }
+
+      subject { described_class.new(key_id, v_code, character_id, options) }
+
+      specify do
+        expect(subject.url).to eq("#{ described_class::API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }&accountKey=1000&fromID=#{ options[:from_id] }")
+      end
+    end
+
+    context 'with row_count' do
+      let(:options) { { row_count: 512 } }
+
+      subject { described_class.new(key_id, v_code, character_id, options) }
+
+      specify do
+        expect(subject.url).to eq("#{ described_class::API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }&accountKey=1000&rowCount=#{ options[:row_count] }")
+      end
     end
   end
 
