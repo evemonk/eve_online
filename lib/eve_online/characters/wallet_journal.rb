@@ -6,18 +6,50 @@ module EveOnline
 
       ACCESS_MASK = 2097152
 
-      attr_reader :key_id, :v_code, :character_id # TODO: :account_key
+      attr_reader :key_id, :v_code, :character_id, :account_key, :from_id, :row_count
 
-      def initialize(key_id, v_code, character_id) # TODO: account_key
+      def initialize(key_id, v_code, character_id, options = {})
         super()
         @key_id = key_id
         @v_code = v_code
         @character_id = character_id
-        # @account_key = account_key TODO: add
+        @account_key = options.fetch(:account_key, 1000)
+        @from_id = options.fetch(:from_id, nil)
+        @row_count = options.fetch(:row_count, nil)
+      end
+
+      def wallet_journal_entries
+        case row
+        when Hash
+          [WalletJournalEntry.new(row)]
+        when Array
+          output = []
+          row.each do |blueprint|
+            output << WalletJournalEntry.new(blueprint)
+          end
+          output
+        else
+          raise ArgumentError
+        end
       end
 
       def url
-        "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }"
+        @url ||= begin
+          output = "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }&accountKey=#{ account_key }"
+          output = "#{ output }&fromID=#{ from_id }" if from_id
+          output = "#{ output }&rowCount=#{ row_count }" if row_count
+          output
+        end
+      end
+
+      private
+
+      def rowset
+        @rowset ||= result.fetch('rowset')
+      end
+
+      def row
+        @row ||= rowset.fetch('row')
       end
     end
   end
