@@ -271,14 +271,43 @@ describe EveOnline::WalletJournalEntry do
     specify { expect { subject.reason }.not_to raise_error }
   end
 
-  # def tax_receiver_id
-  #   # TODO: to_i
-  #   @tax_receiver_id ||= options.fetch('@taxReceiverID')
-  # end
-  #
-  # def tax_amount
-  #   @tax_amount ||= options.fetch('@taxAmount')
-  # end
+  describe '#tax_receiver_id' do
+    let(:options) { double }
+
+    subject { described_class.new(options) }
+
+    before do
+      #
+      # subject.options.fetch('@taxReceiverID')
+      #
+      expect(subject).to receive(:options) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('@taxReceiverID')
+        end
+      end
+    end
+
+    specify { expect { subject.tax_receiver_id }.not_to raise_error }
+  end
+
+  describe '#tax_amount' do
+    let(:options) { double }
+
+    subject { described_class.new(options) }
+
+    before do
+      #
+      # subject.options.fetch('@taxAmount')
+      #
+      expect(subject).to receive(:options) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('@taxAmount')
+        end
+      end
+    end
+
+    specify { expect { subject.tax_amount }.not_to raise_error }
+  end
 
   describe '#owner1_type_id' do
     let(:options) { double }
