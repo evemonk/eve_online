@@ -35,10 +35,10 @@ module EveOnline
 
       def url
         @url ||= begin
-          @url = "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }&accountKey=#{ account_key }"
-          @url = "#{ @url }&fromID=#{ from_id }" if from_id
-          @url = "#{ @url }&rowCount=#{ row_count }" if row_count
-          @url
+          output = "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }&accountKey=#{ account_key }"
+          output = "#{ output }&fromID=#{ from_id }" if from_id
+          output = "#{ output }&rowCount=#{ row_count }" if row_count
+          output
         end
       end
 
