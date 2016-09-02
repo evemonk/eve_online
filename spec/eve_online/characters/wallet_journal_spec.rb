@@ -159,7 +159,7 @@ describe EveOnline::Characters::WalletJournal do
 
   describe '#url' do
     specify do
-      expect(subject.url).to eq("#{ described_class::API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }")
+      expect(subject.url).to eq("#{ described_class::API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }&accountKey=1000")
     end
   end
 

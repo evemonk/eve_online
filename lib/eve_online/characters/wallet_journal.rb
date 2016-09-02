@@ -34,7 +34,7 @@ module EveOnline
       end
 
       def url
-        "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }"
+        "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }&accountKey=#{ account_key }"
         # "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }&rowCount=#{ row_count }"
       end
 
