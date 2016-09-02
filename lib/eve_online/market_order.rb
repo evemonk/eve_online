@@ -8,21 +8,21 @@ module EveOnline
 
     def as_json
       {
-          order_id: order_id,
-          char_id: char_id,
-          station_id: station_id,
-          vol_entered: vol_entered,
-          vol_remaining: vol_remaining,
-          min_volume: min_volume,
-          order_state: order_state,
-          type_id: type_id,
-          range: range,
-          account_key: account_key,
-          duration: duration,
-          escrow: escrow,
-          price: price,
-          bid: bid,
-          issued: issued
+        order_id: order_id,
+        char_id: char_id,
+        station_id: station_id,
+        vol_entered: vol_entered,
+        vol_remaining: vol_remaining,
+        min_volume: min_volume,
+        order_state: order_state,
+        type_id: type_id,
+        range: range,
+        account_key: account_key,
+        duration: duration,
+        escrow: escrow,
+        price: price,
+        bid: bid,
+        issued: issued
       }
     end
 
