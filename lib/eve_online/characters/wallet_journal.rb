@@ -18,20 +18,20 @@ module EveOnline
         @row_count = options.fetch(:row_count, nil)
       end
 
-      # def wallet_journal_entries
-      #   case row
-      #   when Hash
-      #     [WalletJournalEntry.new(row)]
-      #   when Array
-      #     output = []
-      #     row.each do |blueprint|
-      #       output << WalletJournalEntry.new(blueprint)
-      #     end
-      #     output
-      #   else
-      #     raise ArgumentError
-      #   end
-      # end
+      def wallet_journal_entries
+        case row
+        when Hash
+          [WalletJournalEntry.new(row)]
+        when Array
+          output = []
+          row.each do |blueprint|
+            output << WalletJournalEntry.new(blueprint)
+          end
+          output
+        else
+          raise ArgumentError
+        end
+      end
 
       def url
         "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }"

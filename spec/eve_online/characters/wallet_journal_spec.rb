@@ -60,6 +60,103 @@ describe EveOnline::Characters::WalletJournal do
     end
   end
 
+  describe '#wallet_journal_entries' do
+    context 'row is Hash' do
+      let(:wallet_journal_entry) { double }
+
+      let(:row) do
+        {
+          '@date' => '2016-09-01 20:01:57',
+          '@refID' => '6709813912',
+          '@refTypeID' => '15',
+          '@ownerName1' => 'reygar burnt',
+          '@ownerID1' => '1801683792',
+          '@ownerName2' => 'Wiyrkomi Corporation',
+          '@ownerID2' => '1000011',
+          '@argName1' => 'EVE System',
+          '@argID1' => '1',
+          '@amount' => '-9250.00',
+          '@balance' => '385574791.30',
+          '@reason' => '',
+          '@taxReceiverID' => '',
+          '@taxAmount' => '',
+          '@owner1TypeID' => '1380',
+          '@owner2TypeID' => '2'
+        }
+      end
+
+      before do
+        #
+        # subject.row # => {"@date"=>"2016-09-01 20:01:57", "@refID"=>"6709813912", "@refTypeID"=>"15", "@ownerName1"=>"reygar burnt", "@ownerID1"=>"1801683792", "@ownerName2"=>"Wiyrkomi Corporation", "@ownerID2"=>"1000011", "@argName1"=>"EVE System", "@argID1"=>"1", "@amount"=>"-9250.00", "@balance"=>"385574791.30", "@reason"=>"", "@taxReceiverID"=>"", "@taxAmount"=>"", "@owner1TypeID"=>"1380", "@owner2TypeID"=>"2"}
+        #
+        expect(subject).to receive(:row).and_return(row).twice
+      end
+
+      before do
+        #
+        # EveOnline::WalletJournalEntry.new(row) # => wallet_journal_entry
+        #
+        expect(EveOnline::WalletJournalEntry).to receive(:new).with(row).and_return(wallet_journal_entry)
+      end
+
+      specify { expect(subject.wallet_journal_entries).to eq([wallet_journal_entry]) }
+    end
+
+    context 'row is Array' do
+      let(:wallet_journal_entry) { double }
+
+      let(:row) do
+        [
+          {
+            '@date' => '2016-09-01 20:01:57',
+            '@refID' => '6709813912',
+            '@refTypeID' => '15',
+            '@ownerName1' => 'reygar burnt',
+            '@ownerID1' => '1801683792',
+            '@ownerName2' => 'Wiyrkomi Corporation',
+            '@ownerID2' => '1000011',
+            '@argName1' => 'EVE System',
+            '@argID1' => '1',
+            '@amount' => '-9250.00',
+            '@balance' => '385574791.30',
+            '@reason' => '',
+            '@taxReceiverID' => '',
+            '@taxAmount' => '',
+            '@owner1TypeID' => '1380',
+            '@owner2TypeID' => '2'
+          }
+        ]
+      end
+
+      before do
+        #
+        # subject.row # => [{"@date"=>"2016-09-01 20:01:57", "@refID"=>"6709813912", "@refTypeID"=>"15", "@ownerName1"=>"reygar burnt", "@ownerID1"=>"1801683792", "@ownerName2"=>"Wiyrkomi Corporation", "@ownerID2"=>"1000011", "@argName1"=>"EVE System", "@argID1"=>"1", "@amount"=>"-9250.00", "@balance"=>"385574791.30", "@reason"=>"", "@taxReceiverID"=>"", "@taxAmount"=>"", "@owner1TypeID"=>"1380", "@owner2TypeID"=>"2"}]
+        #
+        expect(subject).to receive(:row).and_return(row).twice
+      end
+
+      before do
+        #
+        # EveOnline::WalletJournalEntry.new(row.first) # => wallet_journal_entry
+        #
+        expect(EveOnline::WalletJournalEntry).to receive(:new).with(row.first).and_return(wallet_journal_entry)
+      end
+
+      specify { expect(subject.wallet_journal_entries).to eq([wallet_journal_entry]) }
+    end
+
+    context 'row is invalid' do
+      before do
+        #
+        # subject.row # => 'invalid'
+        #
+        expect(subject).to receive(:row).and_return('invalid')
+      end
+
+      specify { expect { subject.wallet_journal_entries }.to raise_error(ArgumentError) }
+    end
+  end
+
   describe '#url' do
     specify do
       expect(subject.url).to eq("#{ described_class::API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }")
