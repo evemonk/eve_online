@@ -29,10 +29,38 @@ describe EveOnline::WalletJournalEntry do
   #       owner2_type_id: owner2_type_id
   #   }
   # end
-  #
-  # def date
-  #   @date ||= ActiveSupport::TimeZone['UTC'].parse(options.fetch('@date'))
-  # end
+
+  describe '#date' do
+    let(:options) { double }
+
+    subject { described_class.new(options) }
+
+    let(:date) { double }
+
+    before do
+      #
+      # subject.options.fetch('@date') => date
+      #
+      expect(subject).to receive(:options) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('@date').and_return(date)
+        end
+      end
+    end
+
+    before do
+      #
+      # ActiveSupport::TimeZone['UTC'].parse(date)
+      #
+      expect(ActiveSupport::TimeZone).to receive(:[]).with('UTC') do
+        double.tap do |a|
+          expect(a).to receive(:parse).with(date)
+        end
+      end
+    end
+
+    specify { expect { subject.date }.not_to raise_error }
+  end
 
   describe '#ref_id' do
     let(:options) { double }
