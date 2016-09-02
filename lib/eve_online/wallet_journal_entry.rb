@@ -12,7 +12,18 @@ module EveOnline
         ref_id: ref_id,
         ref_type_id: ref_type_id,
         owner_name1: owner_name1,
-        owner_id1: owner_id1
+        owner_id1: owner_id1,
+        owner_name2: owner_name2,
+        owner_id2: owner_id2,
+        arg_name1: arg_name1,
+        arg_id1: arg_id1,
+        amount: amount,
+        balance: balance,
+        reason: reason,
+        tax_receiver_id: tax_receiver_id,
+        tax_amount: tax_amount,
+        owner1_type_id: owner1_type_id,
+        owner2_type_id: owner2_type_id
       }
     end
 
@@ -23,7 +34,6 @@ module EveOnline
     def ref_id
       @ref_id ||= options.fetch('@refID').to_i
     end
-
 
     def ref_type_id
       @ref_type_id ||= options.fetch('@refTypeID').to_i
@@ -54,7 +64,7 @@ module EveOnline
     end
 
     def amount
-      @amount ||= options.fetch('@amount').to_id
+      @amount ||= options.fetch('@amount').to_f
     end
 
     def balance
@@ -65,10 +75,21 @@ module EveOnline
       @reason ||= options.fetch('@reason')
     end
 
-    #     "@reason" => "",
-    #     "@taxReceiverID" => "",
-    #     "@taxAmount" => "",
-    #     "@owner1TypeID" => "1380",
-    #     "@owner2TypeID" => "2"
+    def tax_receiver_id
+      # TODO: to_i
+      @tax_receiver_id ||= options.fetch('@taxReceiverID')
+    end
+
+    def tax_amount
+      @tax_amount ||= options.fetch('@taxAmount')
+    end
+
+    def owner1_type_id
+      @owner1_type_id ||= options.fetch('@owner1TypeID').to_i
+    end
+
+    def owner2_type_id
+      @owner2_type_id ||= options.fetch('@owner2TypeID').to_i
+    end
   end
 end
