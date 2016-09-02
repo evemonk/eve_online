@@ -16,8 +16,35 @@ module EveOnline
         # TODO: @order_id = order_id
       end
 
+      def orders
+        @orders ||= begin
+          case row
+          when Hash
+            [MarketOrder.new(row)]
+          when Array
+            output = []
+            row.each do |order|
+              output << MarketOrder.new(order)
+            end
+            output
+          else
+            raise ArgumentError
+          end
+        end
+      end
+
       def url
         "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }"
+      end
+
+      private
+
+      def rowset
+        @rowset ||= result.fetch('rowset')
+      end
+
+      def row
+        @row ||= rowset.fetch('row')
       end
     end
   end
