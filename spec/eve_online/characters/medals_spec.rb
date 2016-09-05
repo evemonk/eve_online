@@ -13,7 +13,7 @@ describe EveOnline::Characters::Medals do
 
   specify { expect(described_class::API_ENDPOINT).to eq('https://api.eveonline.com/char/Medals.xml.aspx') }
 
-  specify { expect(described_class::ACCESS_MASK).to eq(8192) }
+  specify { expect(described_class::ACCESS_MASK).to eq(8_192) }
 
   describe '#initialize' do
     let(:parser) { double }
