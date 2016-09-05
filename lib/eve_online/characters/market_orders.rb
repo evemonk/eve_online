@@ -41,15 +41,21 @@ module EveOnline
         "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }"
       end
 
+      memoize :url
+
       private
 
       def rowset
-        @rowset ||= result.fetch('rowset')
+        result.fetch('rowset')
       end
 
+      memoize :rowset
+
       def row
-        @row ||= rowset.fetch('row')
+        rowset.fetch('row')
       end
+
+      memoize :row
     end
   end
 end
