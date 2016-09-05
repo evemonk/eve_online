@@ -15,7 +15,7 @@ describe EveOnline::Characters::Locations do
 
   specify { expect(described_class::API_ENDPOINT).to eq('https://api.eveonline.com/char/Locations.xml.aspx') }
 
-  specify { expect(described_class::ACCESS_MASK).to eq(134217728) }
+  specify { expect(described_class::ACCESS_MASK).to eq(134_217_728) }
 
   describe '#initialize' do
     let(:parser) { double }

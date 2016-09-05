@@ -4,7 +4,7 @@ module EveOnline
     class WalletJournal < BaseXML
       API_ENDPOINT = 'https://api.eveonline.com/char/WalletJournal.xml.aspx'.freeze
 
-      ACCESS_MASK = 2097152
+      ACCESS_MASK = 2_097_152
 
       attr_reader :key_id, :v_code, :character_id, :account_key, :from_id, :row_count
 
@@ -18,6 +18,7 @@ module EveOnline
         @row_count = options.fetch(:row_count, nil)
       end
 
+      # TODO: memoizate
       def wallet_journal_entries
         case row
         when Hash

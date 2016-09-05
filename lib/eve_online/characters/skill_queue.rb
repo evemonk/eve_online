@@ -4,7 +4,7 @@ module EveOnline
     class SkillQueue < BaseXML
       API_ENDPOINT = 'https://api.eveonline.com/char/SkillQueue.xml.aspx'.freeze
 
-      ACCESS_MASK = 262144
+      ACCESS_MASK = 262_144
 
       attr_reader :key_id, :v_code, :character_id
 

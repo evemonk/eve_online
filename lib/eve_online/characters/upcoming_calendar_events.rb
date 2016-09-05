@@ -4,7 +4,7 @@ module EveOnline
     class UpcomingCalendarEvents < BaseXML
       API_ENDPOINT = 'https://api.eveonline.com/char/UpcomingCalendarEvents.xml.aspx'.freeze
 
-      ACCESS_MASK = 1048576
+      ACCESS_MASK = 1_048_576
 
       attr_reader :key_id, :v_code, :character_id
 

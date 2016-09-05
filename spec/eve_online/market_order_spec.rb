@@ -16,25 +16,25 @@ describe EveOnline::MarketOrder do
 
     let(:issued) { double }
 
-    before { expect(market_order).to receive(:order_id).and_return(4053334100) }
+    before { expect(market_order).to receive(:order_id).and_return(4_053_334_100) }
 
-    before { expect(market_order).to receive(:char_id).and_return(1801683792) }
+    before { expect(market_order).to receive(:char_id).and_return(1_801_683_792) }
 
-    before { expect(market_order).to receive(:station_id).and_return(60005686) }
+    before { expect(market_order).to receive(:station_id).and_return(60_005_686) }
 
-    before { expect(market_order).to receive(:vol_entered).and_return(340000) }
+    before { expect(market_order).to receive(:vol_entered).and_return(340_000) }
 
-    before { expect(market_order).to receive(:vol_remaining).and_return(245705) }
+    before { expect(market_order).to receive(:vol_remaining).and_return(245_705) }
 
     before { expect(market_order).to receive(:min_volume).and_return(1) }
 
     before { expect(market_order).to receive(:order_state).and_return(0) }
 
-    before { expect(market_order).to receive(:type_id).and_return(24488) }
+    before { expect(market_order).to receive(:type_id).and_return(24_488) }
 
-    before { expect(market_order).to receive(:range).and_return(32767) }
+    before { expect(market_order).to receive(:range).and_return(32_767) }
 
-    before { expect(market_order).to receive(:account_key).and_return(1000) }
+    before { expect(market_order).to receive(:account_key).and_return(1_000) }
 
     before { expect(market_order).to receive(:duration).and_return(90) }
 
@@ -48,25 +48,25 @@ describe EveOnline::MarketOrder do
 
     subject { market_order.as_json }
 
-    its([:order_id]) { should eq(4053334100) }
+    its([:order_id]) { should eq(4_053_334_100) }
 
-    its([:char_id]) { should eq(1801683792) }
+    its([:char_id]) { should eq(1_801_683_792) }
 
-    its([:station_id]) { should eq(60005686) }
+    its([:station_id]) { should eq(60_005_686) }
 
-    its([:vol_entered]) { should eq(340000) }
+    its([:vol_entered]) { should eq(340_000) }
 
-    its([:vol_remaining]) { should eq(245705) }
+    its([:vol_remaining]) { should eq(245_705) }
 
     its([:min_volume]) { should eq(1) }
 
     its([:order_state]) { should eq(0) }
 
-    its([:type_id]) { should eq(24488) }
+    its([:type_id]) { should eq(24_488) }
 
-    its([:range]) { should eq(32767) }
+    its([:range]) { should eq(32_767) }
 
-    its([:account_key]) { should eq(1000) }
+    its([:account_key]) { should eq(1_000) }
 
     its([:duration]) { should eq(90) }
 

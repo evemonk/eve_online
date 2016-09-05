@@ -13,7 +13,7 @@ describe EveOnline::Characters::Bookmarks do
 
   specify { expect(described_class::API_ENDPOINT).to eq('https://api.eveonline.com/char/Bookmarks.xml.aspx') }
 
-  specify { expect(described_class::ACCESS_MASK).to eq(268435456) }
+  specify { expect(described_class::ACCESS_MASK).to eq(268_435_456) }
 
   describe '#initialize' do
     let(:parser) { double }

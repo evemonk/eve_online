@@ -13,7 +13,7 @@ describe EveOnline::Characters::WalletJournal do
 
   specify { expect(described_class::API_ENDPOINT).to eq('https://api.eveonline.com/char/WalletJournal.xml.aspx') }
 
-  specify { expect(described_class::ACCESS_MASK).to eq(2097152) }
+  specify { expect(described_class::ACCESS_MASK).to eq(2_097_152) }
 
   describe '#initialize' do
     context 'default' do
@@ -34,7 +34,7 @@ describe EveOnline::Characters::WalletJournal do
 
       its(:character_id) { should eq(character_id) }
 
-      its(:account_key) { should eq(1000) }
+      its(:account_key) { should eq(1_000) }
 
       its(:from_id) { should eq(nil) }
 
@@ -44,17 +44,17 @@ describe EveOnline::Characters::WalletJournal do
     context 'with options' do
       let(:options) do
         {
-          account_key: 1234,
-          from_id: 12345,
+          account_key: 1_234,
+          from_id: 12_345,
           row_count: 512
         }
       end
 
       subject { described_class.new(key_id, v_code, character_id, options) }
 
-      its(:account_key) { should eq(1234) }
+      its(:account_key) { should eq(1_234) }
 
-      its(:from_id) { should eq(12345) }
+      its(:from_id) { should eq(12_345) }
 
       its(:row_count) { should eq(512) }
     end
@@ -165,7 +165,7 @@ describe EveOnline::Characters::WalletJournal do
     end
 
     context 'with from_id' do
-      let(:options) { { from_id: 1234567 } }
+      let(:options) { { from_id: 1_234_567 } }
 
       subject { described_class.new(key_id, v_code, character_id, options) }
 

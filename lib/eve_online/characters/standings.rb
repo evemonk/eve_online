@@ -4,7 +4,7 @@ module EveOnline
     class Standings < BaseXML
       API_ENDPOINT = 'https://api.eveonline.com/char/Standings.xml.aspx'.freeze
 
-      ACCESS_MASK = 524288
+      ACCESS_MASK = 524_288
 
       attr_reader :key_id, :v_code, :character_id
 
