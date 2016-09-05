@@ -1,7 +1,11 @@
+require 'memoist'
+
 module EveOnline
   module Characters
     # https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_marketorders.html
     class MarketOrders < BaseXML
+      extend Memoist
+
       API_ENDPOINT = 'https://api.eveonline.com/char/MarketOrders.xml.aspx'.freeze
 
       ACCESS_MASK = 4_096
@@ -17,21 +21,21 @@ module EveOnline
       end
 
       def orders
-        @orders ||= begin
-          case row
-          when Hash
-            [MarketOrder.new(row)]
-          when Array
-            output = []
-            row.each do |order|
-              output << MarketOrder.new(order)
-            end
-            output
-          else
-            raise ArgumentError
+        case row
+        when Hash
+          [MarketOrder.new(row)]
+        when Array
+          output = []
+          row.each do |order|
+            output << MarketOrder.new(order)
           end
+          output
+        else
+          raise ArgumentError
         end
       end
+
+      memoize :orders
 
       def url
         "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }"
