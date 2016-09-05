@@ -378,9 +378,28 @@ describe EveOnline::MarketOrder do
     specify { expect { subject.price }.not_to raise_error }
   end
 
-  # def bid
-  #   @bid ||= options.fetch('@bid') == '1'
-  # end
+  describe '#bid' do
+    let(:options) { double }
+
+    subject { described_class.new(options) }
+
+    before do
+      #
+      # subject.options.fetch('@bid') == '1'
+      #
+      expect(subject).to receive(:options) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('@bid') do
+            double.tap do |b|
+              expect(b).to receive(:==).with('1')
+            end
+          end
+        end
+      end
+    end
+
+    specify { expect { subject.bid }.not_to raise_error }
+  end
 
   describe '#issued' do
     let(:options) { double }
