@@ -71,7 +71,7 @@ module EveOnline
     end
 
     def escrow
-      @escrow ||= options.fetch('escrow').to_f
+      @escrow ||= options.fetch('@escrow').to_f
     end
 
     def price
