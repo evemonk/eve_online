@@ -9,25 +9,75 @@ describe EveOnline::MarketOrder do
     its(:options) { should eq(options) }
   end
 
-  # def as_json
-  #   {
-  #       order_id: order_id,
-  #       char_id: char_id,
-  #       station_id: station_id,
-  #       vol_entered: vol_entered,
-  #       vol_remaining: vol_remaining,
-  #       min_volume: min_volume,
-  #       order_state: order_state,
-  #       type_id: type_id,
-  #       range: range,
-  #       account_key: account_key,
-  #       duration: duration,
-  #       escrow: escrow,
-  #       price: price,
-  #       bid: bid,
-  #       issued: issued
-  #   }
-  # end
+  describe '#as_json' do
+    let(:options) { double }
+
+    let(:market_order) { described_class.new(options) }
+
+    let(:issued) { double }
+
+    before { expect(market_order).to receive(:order_id).and_return(4053334100) }
+
+    before { expect(market_order).to receive(:char_id).and_return(1801683792) }
+
+    before { expect(market_order).to receive(:station_id).and_return(60005686) }
+
+    before { expect(market_order).to receive(:vol_entered).and_return(340000) }
+
+    before { expect(market_order).to receive(:vol_remaining).and_return(245705) }
+
+    before { expect(market_order).to receive(:min_volume).and_return(1) }
+
+    before { expect(market_order).to receive(:order_state).and_return(0) }
+
+    before { expect(market_order).to receive(:type_id).and_return(24488) }
+
+    before { expect(market_order).to receive(:range).and_return(32767) }
+
+    before { expect(market_order).to receive(:account_key).and_return(1000) }
+
+    before { expect(market_order).to receive(:duration).and_return(90) }
+
+    before { expect(market_order).to receive(:escrow).and_return(0.00) }
+
+    before { expect(market_order).to receive(:price).and_return(92.00) }
+
+    before { expect(market_order).to receive(:bid).and_return(false) }
+
+    before { expect(market_order).to receive(:issued).and_return(issued) }
+
+    subject { market_order.as_json }
+
+    its([:order_id]) { should eq(4053334100) }
+
+    its([:char_id]) { should eq(1801683792) }
+
+    its([:station_id]) { should eq(60005686) }
+
+    its([:vol_entered]) { should eq(340000) }
+
+    its([:vol_remaining]) { should eq(245705) }
+
+    its([:min_volume]) { should eq(1) }
+
+    its([:order_state]) { should eq(0) }
+
+    its([:type_id]) { should eq(24488) }
+
+    its([:range]) { should eq(32767) }
+
+    its([:account_key]) { should eq(1000) }
+
+    its([:duration]) { should eq(90) }
+
+    its([:escrow]) { should eq(0.00) }
+
+    its([:price]) { should eq(92.00) }
+
+    its([:bid]) { should eq(false) }
+
+    its([:issued]) { should eq(issued) }
+  end
 
   describe '#order_id' do
     let(:options) { double }
