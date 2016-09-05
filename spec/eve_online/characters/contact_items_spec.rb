@@ -15,7 +15,7 @@ describe EveOnline::Characters::ContractItems do
 
   specify { expect(described_class::API_ENDPOINT).to eq('https://api.eveonline.com/char/ContractItems.xml.aspx') }
 
-  specify { expect(described_class::ACCESS_MASK).to eq(67108864) }
+  specify { expect(described_class::ACCESS_MASK).to eq(67_108_864) }
 
   describe '#initialize' do
     let(:parser) { double }

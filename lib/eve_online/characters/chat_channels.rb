@@ -4,7 +4,7 @@ module EveOnline
     class ChatChannels < BaseXML
       API_ENDPOINT = 'https://api.eveonline.com/char/ChatChannels.xml.aspx'.freeze
 
-      ACCESS_MASK = 536870912
+      ACCESS_MASK = 536_870_912
 
       attr_reader :key_id, :v_code, :character_id
 

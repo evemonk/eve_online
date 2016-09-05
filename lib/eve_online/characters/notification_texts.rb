@@ -6,7 +6,7 @@ module EveOnline
     class NotificationTexts < BaseXML
       API_ENDPOINT = 'https://api.eveonline.com/char/NotificationTexts.xml.aspx'.freeze
 
-      ACCESS_MASK = 32768
+      ACCESS_MASK = 32_768
 
       attr_reader :key_id, :v_code, :character_id, :ids
 

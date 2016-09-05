@@ -13,7 +13,7 @@ describe EveOnline::Characters::SkillQueue do
 
   specify { expect(described_class::API_ENDPOINT).to eq('https://api.eveonline.com/char/SkillQueue.xml.aspx') }
 
-  specify { expect(described_class::ACCESS_MASK).to eq(262144) }
+  specify { expect(described_class::ACCESS_MASK).to eq(262_144) }
 
   describe '#initialize' do
     let(:parser) { double }

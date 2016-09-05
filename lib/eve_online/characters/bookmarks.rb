@@ -4,7 +4,7 @@ module EveOnline
     class Bookmarks < BaseXML
       API_ENDPOINT = 'https://api.eveonline.com/char/Bookmarks.xml.aspx'.freeze
 
-      ACCESS_MASK = 268435456
+      ACCESS_MASK = 268_435_456
 
       attr_reader :key_id, :v_code, :character_id
 

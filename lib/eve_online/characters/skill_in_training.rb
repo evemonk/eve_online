@@ -4,7 +4,7 @@ module EveOnline
     class SkillInTraining < BaseXML
       API_ENDPOINT = 'https://api.eveonline.com/char/SkillInTraining.xml.aspx'.freeze
 
-      ACCESS_MASK = 131072
+      ACCESS_MASK = 131_072
 
       attr_reader :key_id, :v_code, :character_id
 

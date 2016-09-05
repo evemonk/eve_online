@@ -6,7 +6,7 @@ module EveOnline
     class Locations < BaseXML
       API_ENDPOINT = 'https://api.eveonline.com/char/Locations.xml.aspx'.freeze
 
-      ACCESS_MASK = 134217728
+      ACCESS_MASK = 134_217_728
 
       attr_reader :key_id, :v_code, :character_id, :ids
 

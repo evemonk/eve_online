@@ -13,7 +13,7 @@ describe EveOnline::Characters::Notifications do
 
   specify { expect(described_class::API_ENDPOINT).to eq('https://api.eveonline.com/char/Notifications.xml.aspx') }
 
-  specify { expect(described_class::ACCESS_MASK).to eq(16384) }
+  specify { expect(described_class::ACCESS_MASK).to eq(16_384) }
 
   describe '#initialize' do
     let(:parser) { double }

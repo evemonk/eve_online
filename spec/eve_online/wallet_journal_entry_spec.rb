@@ -18,17 +18,17 @@ describe EveOnline::WalletJournalEntry do
 
     before { expect(wallet_journal_entry).to receive(:date).and_return(date) }
 
-    before { expect(wallet_journal_entry).to receive(:ref_id).and_return(6709813912) }
+    before { expect(wallet_journal_entry).to receive(:ref_id).and_return(6_709_813_912) }
 
     before { expect(wallet_journal_entry).to receive(:ref_type_id).and_return(15) }
 
     before { expect(wallet_journal_entry).to receive(:owner_name1).and_return('reygar burnt') }
 
-    before { expect(wallet_journal_entry).to receive(:owner_id1).and_return(1801683792) }
+    before { expect(wallet_journal_entry).to receive(:owner_id1).and_return(1_801_683_792) }
 
     before { expect(wallet_journal_entry).to receive(:owner_name2).and_return('Wiyrkomi Corporation') }
 
-    before { expect(wallet_journal_entry).to receive(:owner_id2).and_return(1000011) }
+    before { expect(wallet_journal_entry).to receive(:owner_id2).and_return(1_000_011) }
 
     before { expect(wallet_journal_entry).to receive(:arg_name1).and_return('EVE System') }
 
@@ -36,7 +36,7 @@ describe EveOnline::WalletJournalEntry do
 
     before { expect(wallet_journal_entry).to receive(:amount).and_return(-9250.00) }
 
-    before { expect(wallet_journal_entry).to receive(:balance).and_return(385574791.30) }
+    before { expect(wallet_journal_entry).to receive(:balance).and_return(385_574_791.30) }
 
     before { expect(wallet_journal_entry).to receive(:reason).and_return('some-reason') }
 
@@ -44,7 +44,7 @@ describe EveOnline::WalletJournalEntry do
 
     before { expect(wallet_journal_entry).to receive(:tax_amount).and_return('tax-amount') }
 
-    before { expect(wallet_journal_entry).to receive(:owner1_type_id).and_return(1380) }
+    before { expect(wallet_journal_entry).to receive(:owner1_type_id).and_return(1_380) }
 
     before { expect(wallet_journal_entry).to receive(:owner2_type_id).and_return(2) }
 
@@ -52,17 +52,17 @@ describe EveOnline::WalletJournalEntry do
 
     its([:date]) { should eq(date) }
 
-    its([:ref_id]) { should eq(6709813912) }
+    its([:ref_id]) { should eq(6_709_813_912) }
 
     its([:ref_type_id]) { should eq(15) }
 
     its([:owner_name1]) { should eq('reygar burnt') }
 
-    its([:owner_id1]) { should eq(1801683792) }
+    its([:owner_id1]) { should eq(1_801_683_792) }
 
     its([:owner_name2]) { should eq('Wiyrkomi Corporation') }
 
-    its([:owner_id2]) { should eq(1000011) }
+    its([:owner_id2]) { should eq(1_000_011) }
 
     its([:arg_name1]) { should eq('EVE System') }
 
@@ -70,7 +70,7 @@ describe EveOnline::WalletJournalEntry do
 
     its([:amount]) { should eq(-9250.00) }
 
-    its([:balance]) { should eq(385574791.30) }
+    its([:balance]) { should eq(385_574_791.30) }
 
     its([:reason]) { should eq('some-reason') }
 
@@ -78,7 +78,7 @@ describe EveOnline::WalletJournalEntry do
 
     its([:tax_amount]) { should eq('tax-amount') }
 
-    its([:owner1_type_id]) { should eq(1380) }
+    its([:owner1_type_id]) { should eq(1_380) }
 
     its([:owner2_type_id]) { should eq(2) }
   end

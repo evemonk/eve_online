@@ -4,7 +4,7 @@ module EveOnline
     class MarketOrders < BaseXML
       API_ENDPOINT = 'https://api.eveonline.com/char/MarketOrders.xml.aspx'.freeze
 
-      ACCESS_MASK = 4096
+      ACCESS_MASK = 4_096
 
       attr_reader :key_id, :v_code, :character_id
 
@@ -16,8 +16,35 @@ module EveOnline
         # TODO: @order_id = order_id
       end
 
+      def orders
+        @orders ||= begin
+          case row
+          when Hash
+            [MarketOrder.new(row)]
+          when Array
+            output = []
+            row.each do |order|
+              output << MarketOrder.new(order)
+            end
+            output
+          else
+            raise ArgumentError
+          end
+        end
+      end
+
       def url
         "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }"
+      end
+
+      private
+
+      def rowset
+        @rowset ||= result.fetch('rowset')
+      end
+
+      def row
+        @row ||= rowset.fetch('row')
       end
     end
   end

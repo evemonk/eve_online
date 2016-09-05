@@ -13,7 +13,7 @@ describe EveOnline::Characters::MailingLists do
 
   specify { expect(described_class::API_ENDPOINT).to eq('https://api.eveonline.com/char/mailinglists.xml.aspx') }
 
-  specify { expect(described_class::ACCESS_MASK).to eq(1024) }
+  specify { expect(described_class::ACCESS_MASK).to eq(1_024) }
 
   describe '#initialize' do
     let(:parser) { double }
