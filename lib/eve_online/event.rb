@@ -1,3 +1,5 @@
+require 'active_support/time'
+
 module EveOnline
   class Event
     attr_reader :options

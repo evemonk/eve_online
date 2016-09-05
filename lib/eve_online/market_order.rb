@@ -1,3 +1,5 @@
+require 'active_support/time'
+
 module EveOnline
   class MarketOrder
     attr_reader :options

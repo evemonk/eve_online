@@ -1,3 +1,5 @@
+require 'active_support/time'
+
 module EveOnline
   class Bookmark
     attr_reader :options

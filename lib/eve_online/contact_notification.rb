@@ -1,3 +1,5 @@
+require 'active_support/time'
+
 module EveOnline
   class ContactNotification
     attr_reader :options

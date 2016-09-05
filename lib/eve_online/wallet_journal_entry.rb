@@ -1,3 +1,5 @@
+require 'active_support/time'
+
 module EveOnline
   class WalletJournalEntry
     attr_reader :options
