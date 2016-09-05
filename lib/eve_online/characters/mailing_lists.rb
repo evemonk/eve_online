@@ -4,7 +4,7 @@ module EveOnline
     class MailingLists < BaseXML
       API_ENDPOINT = 'https://api.eveonline.com/char/mailinglists.xml.aspx'.freeze
 
-      ACCESS_MASK = 1024
+      ACCESS_MASK = 1_024
 
       attr_reader :key_id, :v_code, :character_id
 
