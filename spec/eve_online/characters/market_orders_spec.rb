@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe EveOnline::Characters::MarketOrders do
+  specify { expect(described_class).to be_a(Memoist) }
+
   let(:key_id) { 123 }
 
   let(:v_code) { 'abc' }
