@@ -4,7 +4,7 @@ module EveOnline
     class MarketOrders < BaseXML
       API_ENDPOINT = 'https://api.eveonline.com/char/MarketOrders.xml.aspx'.freeze
 
-      ACCESS_MASK = 4096
+      ACCESS_MASK = 4_096
 
       attr_reader :key_id, :v_code, :character_id
 
