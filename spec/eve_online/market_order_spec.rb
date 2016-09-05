@@ -28,50 +28,259 @@ describe EveOnline::MarketOrder do
   #       issued: issued
   #   }
   # end
-  #
-  # def order_id
-  #   @order_id ||= options.fetch('@orderID').to_i
-  # end
-  #
-  # def char_id
-  #   @char_id ||= options.fetch('@charID').to_i
-  # end
-  #
-  # def station_id
-  #   @station_id ||= options.fetch('@stationID').to_i
-  # end
-  #
-  # def vol_entered
-  #   @vol_entered ||= options.fetch('@volEntered').to_i
-  # end
-  #
-  # def vol_remaining
-  #   @vol_remaining ||= options.fetch('@volRemaining').to_i
-  # end
-  #
-  # def min_volume
-  #   @min_volume ||= options.fetch('@minVolume').to_i
-  # end
-  #
-  # def order_state
-  #   @order_state ||= options.fetch('@orderState').to_i
-  # end
-  #
-  # def type_id
-  #   @type_id ||= options.fetch('@typeID').to_i
-  # end
-  #
-  # def range
-  #   @range ||= options.fetch('@range').to_i
-  # end
-  #
-  # def account_key
-  #   @account_key ||= options.fetch('@accountKey').to_i
-  # end
-  #
-  # def duration
-  #   @duration ||= options.fetch('@duration').to_i
-  # end
+
+  describe '#order_id' do
+    let(:options) { double }
+
+    subject { described_class.new(options) }
+
+    before do
+      #
+      # subject.options.fetch('@orderID').to_i
+      #
+      expect(subject).to receive(:options) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('@orderID') do
+            double.tap do |b|
+              expect(b).to receive(:to_i)
+            end
+          end
+        end
+      end
+    end
+
+    specify { expect { subject.order_id }.not_to raise_error }
+  end
+
+  describe '#char_id' do
+    let(:options) { double }
+
+    subject { described_class.new(options) }
+
+    before do
+      #
+      # subject.options.fetch('@charID').to_i
+      #
+      expect(subject).to receive(:options) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('@charID') do
+            double.tap do |b|
+              expect(b).to receive(:to_i)
+            end
+          end
+        end
+      end
+    end
+
+    specify { expect { subject.char_id }.not_to raise_error }
+  end
+
+  describe '#station_id' do
+    let(:options) { double }
+
+    subject { described_class.new(options) }
+
+    before do
+      #
+      # subject.options.fetch('@stationID').to_i
+      #
+      expect(subject).to receive(:options) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('@stationID') do
+            double.tap do |b|
+              expect(b).to receive(:to_i)
+            end
+          end
+        end
+      end
+    end
+
+    specify { expect { subject.station_id }.not_to raise_error }
+  end
+
+  describe '#vol_entered' do
+    let(:options) { double }
+
+    subject { described_class.new(options) }
+
+    before do
+      #
+      # subject.options.fetch('@volEntered').to_i
+      #
+      expect(subject).to receive(:options) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('@volEntered') do
+            double.tap do |b|
+              expect(b).to receive(:to_i)
+            end
+          end
+        end
+      end
+    end
+
+    specify { expect { subject.vol_entered }.not_to raise_error }
+  end
+
+  describe '#vol_remaining' do
+    let(:options) { double }
+
+    subject { described_class.new(options) }
+
+    before do
+      #
+      # subject.options.fetch('@volRemaining').to_i
+      #
+      expect(subject).to receive(:options) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('@volRemaining') do
+            double.tap do |b|
+              expect(b).to receive(:to_i)
+            end
+          end
+        end
+      end
+    end
+
+    specify { expect { subject.vol_remaining }.not_to raise_error }
+  end
+
+  describe '#min_volume' do
+    let(:options) { double }
+
+    subject { described_class.new(options) }
+
+    before do
+      #
+      # subject.options.fetch('@minVolume').to_i
+      #
+      expect(subject).to receive(:options) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('@minVolume') do
+            double.tap do |b|
+              expect(b).to receive(:to_i)
+            end
+          end
+        end
+      end
+    end
+
+    specify { expect { subject.min_volume }.not_to raise_error }
+  end
+
+  describe '#order_state' do
+    let(:options) { double }
+
+    subject { described_class.new(options) }
+
+    before do
+      #
+      # subject.options.fetch('@orderState').to_i
+      #
+      expect(subject).to receive(:options) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('@orderState') do
+            double.tap do |b|
+              expect(b).to receive(:to_i)
+            end
+          end
+        end
+      end
+    end
+
+    specify { expect { subject.order_state }.not_to raise_error }
+  end
+
+  describe '#type_id' do
+    let(:options) { double }
+
+    subject { described_class.new(options) }
+
+    before do
+      #
+      # subject.options.fetch('@typeID').to_i
+      #
+      expect(subject).to receive(:options) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('@typeID') do
+            double.tap do |b|
+              expect(b).to receive(:to_i)
+            end
+          end
+        end
+      end
+    end
+
+    specify { expect { subject.type_id }.not_to raise_error }
+  end
+
+  describe '#range' do
+    let(:options) { double }
+
+    subject { described_class.new(options) }
+
+    before do
+      #
+      # subject.options.fetch('@range').to_i
+      #
+      expect(subject).to receive(:options) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('@range') do
+            double.tap do |b|
+              expect(b).to receive(:to_i)
+            end
+          end
+        end
+      end
+    end
+
+    specify { expect { subject.range }.not_to raise_error }
+  end
+
+  describe '#account_key' do
+    let(:options) { double }
+
+    subject { described_class.new(options) }
+
+    before do
+      #
+      # subject.options.fetch('@accountKey').to_i
+      #
+      expect(subject).to receive(:options) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('@accountKey') do
+            double.tap do |b|
+              expect(b).to receive(:to_i)
+            end
+          end
+        end
+      end
+    end
+
+    specify { expect { subject.account_key }.not_to raise_error }
+  end
+
+  describe '#duration' do
+    let(:options) { double }
+
+    subject { described_class.new(options) }
+
+    before do
+      #
+      # subject.options.fetch('@duration').to_i
+      #
+      expect(subject).to receive(:options) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('@duration') do
+            double.tap do |b|
+              expect(b).to receive(:to_i)
+            end
+          end
+        end
+      end
+    end
+
+    specify { expect { subject.duration }.not_to raise_error }
+  end
 
   describe '#escrow' do
     let(:options) { double }
