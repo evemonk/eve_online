@@ -1,11 +1,7 @@
-require 'memoist'
-
 module EveOnline
   module Characters
     # https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_marketorders.html
     class MarketOrders < BaseXML
-      extend Memoist
-
       API_ENDPOINT = 'https://api.eveonline.com/char/MarketOrders.xml.aspx'.freeze
 
       ACCESS_MASK = 4_096
