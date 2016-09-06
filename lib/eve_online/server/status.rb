@@ -26,6 +26,7 @@ module EveOnline
       def url
         API_ENDPOINT
       end
+      memoize :url
     end
   end
 end

@@ -34,6 +34,7 @@ module EveOnline
       def url
         "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }&flat=#{ flat }"
       end
+      memoize :url
 
       private
 

@@ -36,6 +36,7 @@ module EveOnline
       def url
         "#{ API_ENDPOINT }?names=#{ escaped_input }"
       end
+      memoize :url
     end
   end
 end
