@@ -21,31 +21,31 @@ module EveOnline
     end
 
     def queue_position
-      @queue_position ||= options.fetch('@queuePosition').to_i
+      options.fetch('@queuePosition').to_i
     end
 
     def type_id
-      @type_id ||= options.fetch('@typeID').to_i
+      options.fetch('@typeID').to_i
     end
 
     def level
-      @level ||= options.fetch('@level').to_i
+      options.fetch('@level').to_i
     end
 
     def start_sp
-      @start_sp ||= options.fetch('@startSP').to_i
+      options.fetch('@startSP').to_i
     end
 
     def end_sp
-      @end_sp ||= options.fetch('@endSP').to_i
+      options.fetch('@endSP').to_i
     end
 
     def start_time
-      @start_time ||= ActiveSupport::TimeZone['UTC'].parse(options.fetch('@startTime'))
+      ActiveSupport::TimeZone['UTC'].parse(options.fetch('@startTime'))
     end
 
     def end_time
-      @end_time ||= ActiveSupport::TimeZone['UTC'].parse(options.fetch('@endTime'))
+      ActiveSupport::TimeZone['UTC'].parse(options.fetch('@endTime'))
     end
   end
 end

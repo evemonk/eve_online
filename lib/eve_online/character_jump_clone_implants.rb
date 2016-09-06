@@ -17,7 +17,7 @@ module EveOnline
     private
 
     def rowset
-      @rowset ||= result.fetch('rowset').reject { |a| a.fetch('@name') != 'jumpCloneImplants' }.first.fetch('row')
+      result.fetch('rowset').reject { |a| a.fetch('@name') != 'jumpCloneImplants' }.first.fetch('row')
     end
   end
 end

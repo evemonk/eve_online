@@ -16,33 +16,27 @@ module EveOnline
       end
 
       def agents
-        @agents ||= begin
-          output = []
-          agents_rowset.each do |agent|
-            output << Standing.new(agent)
-          end
-          output
+        output = []
+        agents_rowset.each do |agent|
+          output << Standing.new(agent)
         end
+        output
       end
 
       def npc_corporations
-        @npc_corporations ||= begin
-          output = []
-          npc_corporations_rowset.each do |agent|
-            output << Standing.new(agent)
-          end
-          output
+        output = []
+        npc_corporations_rowset.each do |agent|
+          output << Standing.new(agent)
         end
+        output
       end
 
       def factions
-        @factions ||= begin
-          output = []
-          factions_rowset.each do |agent|
-            output << Standing.new(agent)
-          end
-          output
+        output = []
+        factions_rowset.each do |agent|
+          output << Standing.new(agent)
         end
+        output
       end
 
       def url
@@ -52,15 +46,15 @@ module EveOnline
       private
 
       def agents_rowset
-        @agents_rowset ||= result.fetch('characterNPCStandings').fetch('rowset').reject { |a| a.fetch('@name') != 'agents' }.first.fetch('row')
+        result.fetch('characterNPCStandings').fetch('rowset').reject { |a| a.fetch('@name') != 'agents' }.first.fetch('row')
       end
 
       def npc_corporations_rowset
-        @npc_corporations_rowset ||= result.fetch('characterNPCStandings').fetch('rowset').reject { |a| a.fetch('@name') != 'NPCCorporations' }.first.fetch('row')
+        result.fetch('characterNPCStandings').fetch('rowset').reject { |a| a.fetch('@name') != 'NPCCorporations' }.first.fetch('row')
       end
 
       def factions_rowset
-        @factions_rowset ||= result.fetch('characterNPCStandings').fetch('rowset').reject { |a| a.fetch('@name') != 'factions' }.first.fetch('row')
+        result.fetch('characterNPCStandings').fetch('rowset').reject { |a| a.fetch('@name') != 'factions' }.first.fetch('row')
       end
     end
   end

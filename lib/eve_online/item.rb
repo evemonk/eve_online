@@ -19,31 +19,31 @@ module EveOnline
     end
 
     def item_id
-      @item_id ||= options.fetch('@itemID').to_i
+      options.fetch('@itemID').to_i
     end
 
     def location_id
-      @location_id ||= options.fetch('@locationID').to_i
+      options.fetch('@locationID').to_i
     end
 
     def type_id
-      @type_id ||= options.fetch('@typeID').to_i
+      options.fetch('@typeID').to_i
     end
 
     def quantity
-      @quantity ||= options.fetch('@quantity').to_i
+      options.fetch('@quantity').to_i
     end
 
     def flag
-      @flag ||= options.fetch('@flag').to_i
+      options.fetch('@flag').to_i
     end
 
     def singleton
-      @singleton ||= options.fetch('@singleton').to_i
+      options.fetch('@singleton').to_i
     end
 
     def raw_quantity
-      @raw_quantity ||= options.fetch('@rawQuantity').to_i
+      options.fetch('@rawQuantity').to_i
     end
   end
 end

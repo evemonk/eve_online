@@ -18,7 +18,6 @@ module EveOnline
         @row_count = options.fetch(:row_count, nil)
       end
 
-      # TODO: memoizate
       def wallet_journal_entries
         case row
         when Hash
@@ -35,22 +34,20 @@ module EveOnline
       end
 
       def url
-        @url ||= begin
-          output = "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }&accountKey=#{ account_key }"
-          output = "#{ output }&fromID=#{ from_id }" if from_id
-          output = "#{ output }&rowCount=#{ row_count }" if row_count
-          output
-        end
+        output = "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }&accountKey=#{ account_key }"
+        output = "#{ output }&fromID=#{ from_id }" if from_id
+        output = "#{ output }&rowCount=#{ row_count }" if row_count
+        output
       end
 
       private
 
       def rowset
-        @rowset ||= result.fetch('rowset')
+        result.fetch('rowset')
       end
 
       def row
-        @row ||= rowset.fetch('row')
+        rowset.fetch('row')
       end
     end
   end

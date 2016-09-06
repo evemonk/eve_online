@@ -46,155 +46,155 @@ module EveOnline
       end
 
       def name
-        @name ||= result.fetch('name')
+        result.fetch('name')
       end
 
       def home_station_id
-        @home_station_id ||= result.fetch('homeStationID').to_i
+        result.fetch('homeStationID').to_i
       end
 
       def dob
-        @dob ||= parse_datetime_with_timezone(result.fetch('DoB'))
+        parse_datetime_with_timezone(result.fetch('DoB'))
       end
 
       def race
-        @race ||= result.fetch('race')
+        result.fetch('race')
       end
 
       def blood_line_id
-        @blood_line_id ||= result.fetch('bloodLineID').to_i
+        result.fetch('bloodLineID').to_i
       end
 
       def blood_line
-        @blood_line ||= result.fetch('bloodLine')
+        result.fetch('bloodLine')
       end
 
       def ancestry_id
-        @ancestry_id ||= result.fetch('ancestryID').to_i
+        result.fetch('ancestryID').to_i
       end
 
       def ancestry
-        @ancestry ||= result.fetch('ancestry')
+        result.fetch('ancestry')
       end
 
       def gender
-        @gender ||= result.fetch('gender').downcase.to_sym
+        result.fetch('gender').downcase.to_sym
       end
 
       def corporation_name
-        @corporation_name ||= result.fetch('corporationName')
+        result.fetch('corporationName')
       end
 
       def corporation_id
-        @corporation_id ||= result.fetch('corporationID').to_i
+        result.fetch('corporationID').to_i
       end
 
       def alliance_name
         # TODO: Corporation "Federal Navy Academy" doesn't have allianceName in response
-        @alliance_name ||= result.fetch('allianceName')
+        result.fetch('allianceName')
       end
 
       def alliance_id
         # TODO: Corporation "Federal Navy Academy" doesn't have allianceID in response
-        @alliance_id ||= result.fetch('allianceID').to_i
+        result.fetch('allianceID').to_i
       end
 
       def faction_name
         # TODO: Corporation "Federal Navy Academy" doesn't have factionName in response
-        @faction_name ||= result.fetch('factionName')
+        result.fetch('factionName')
       end
 
       def faction_id
         # TODO: Corporation "Federal Navy Academy" doesn't have factionID in response
-        @faction_id ||= result.fetch('factionID').to_i
+        result.fetch('factionID').to_i
       end
 
       def clone_type_id
-        @clone_type_id ||= result.fetch('cloneTypeID').to_i
+        result.fetch('cloneTypeID').to_i
       end
 
       def clone_name
-        @clone_name ||= result.fetch('cloneName')
+        result.fetch('cloneName')
       end
 
       def clone_skill_points
-        @clone_skill_points ||= result.fetch('cloneSkillPoints').to_i
+        result.fetch('cloneSkillPoints').to_i
       end
 
       def free_skill_points
-        @free_skill_points ||= result.fetch('freeSkillPoints').to_i
+        result.fetch('freeSkillPoints').to_i
       end
 
       def free_respecs
-        @free_respecs ||= result.fetch('freeRespecs').to_i
+        result.fetch('freeRespecs').to_i
       end
 
       def clone_jump_date
-        @clone_jump_date ||= parse_datetime_with_timezone(result.fetch('cloneJumpDate'))
+        parse_datetime_with_timezone(result.fetch('cloneJumpDate'))
       end
 
       def last_respec_date
-        @last_respec_date ||= parse_datetime_with_timezone(result.fetch('lastRespecDate'))
+        parse_datetime_with_timezone(result.fetch('lastRespecDate'))
       end
 
       def last_timed_respec
-        @last_timed_respec ||= parse_datetime_with_timezone(result.fetch('lastTimedRespec'))
+        parse_datetime_with_timezone(result.fetch('lastTimedRespec'))
       end
 
       def remote_station_date
-        @remote_station_date ||= parse_datetime_with_timezone(result.fetch('remoteStationDate'))
+        parse_datetime_with_timezone(result.fetch('remoteStationDate'))
       end
 
       def jump_activation
-        @jump_activation ||= parse_datetime_with_timezone(result.fetch('jumpActivation'))
+        parse_datetime_with_timezone(result.fetch('jumpActivation'))
       end
 
       def jump_fatigue
-        @jump_fatigue ||= parse_datetime_with_timezone(result.fetch('jumpFatigue'))
+        parse_datetime_with_timezone(result.fetch('jumpFatigue'))
       end
 
       def jump_last_update
-        @jump_last_update ||= parse_datetime_with_timezone(result.fetch('jumpLastUpdate'))
+        parse_datetime_with_timezone(result.fetch('jumpLastUpdate'))
       end
 
       def balance
-        @balance ||= result.fetch('balance').to_f
+        result.fetch('balance').to_f
       end
 
       def base_intelligence
-        @intelligence ||= attributes.fetch('intelligence').to_i
+        attributes.fetch('intelligence').to_i
       end
 
       def base_memory
-        @memory ||= attributes.fetch('memory').to_i
+        attributes.fetch('memory').to_i
       end
 
       def base_charisma
-        @charisma ||= attributes.fetch('charisma').to_i
+        attributes.fetch('charisma').to_i
       end
 
       def base_perception
-        @perception ||= attributes.fetch('perception').to_i
+        attributes.fetch('perception').to_i
       end
 
       def base_willpower
-        @willpower ||= attributes.fetch('willpower').to_i
+        attributes.fetch('willpower').to_i
       end
 
       def implants
-        @implants ||= CharacterImplants.new(result).implants
+        CharacterImplants.new(result).implants
       end
 
       def skills
-        @skills ||= CharacterSkills.new(result).skills
+        CharacterSkills.new(result).skills
       end
 
       def jump_clones
-        @jump_clones ||= CharacterJumpClones.new(result).jump_clones
+        CharacterJumpClones.new(result).jump_clones
       end
 
       def jump_clone_implants
-        @jump_clone_implants ||= CharacterJumpCloneImplants.new(result).jump_clone_implants
+        CharacterJumpCloneImplants.new(result).jump_clone_implants
       end
 
       def url
@@ -204,7 +204,7 @@ module EveOnline
       private
 
       def attributes
-        @attributes ||= result.fetch('attributes')
+        result.fetch('attributes')
       end
     end
   end

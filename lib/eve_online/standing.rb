@@ -15,15 +15,15 @@ module EveOnline
     end
 
     def from_id
-      @from_id ||= options.fetch('@fromID').to_i
+      options.fetch('@fromID').to_i
     end
 
     def from_name
-      @from_name ||= options.fetch('@fromName')
+      options.fetch('@fromName')
     end
 
     def standing
-      @standing ||= options.fetch('@standing').to_f
+      options.fetch('@standing').to_f
     end
   end
 end

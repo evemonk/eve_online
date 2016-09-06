@@ -28,15 +28,15 @@ module EveOnline
       end
 
       def expires
-        @expires ||= parse_datetime_with_timezone(key.fetch('@expires'))
+        parse_datetime_with_timezone(key.fetch('@expires'))
       end
 
       def type
-        @type ||= key.fetch('@type')
+        key.fetch('@type')
       end
 
       def access_mask
-        @access_mask ||= key.fetch('@accessMask').to_i
+        key.fetch('@accessMask').to_i
       end
 
       def url
@@ -46,15 +46,15 @@ module EveOnline
       private
 
       def key
-        @key ||= result.fetch('key')
+        result.fetch('key')
       end
 
       def rowset
-        @rowset ||= key.fetch('rowset')
+        key.fetch('rowset')
       end
 
       def row
-        @row ||= rowset.fetch('row')
+        rowset.fetch('row')
       end
     end
   end

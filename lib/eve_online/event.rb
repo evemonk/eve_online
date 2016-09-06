@@ -24,43 +24,43 @@ module EveOnline
     end
 
     def event_id
-      @event_id ||= options.fetch('@eventID').to_i
+      options.fetch('@eventID').to_i
     end
 
     def owner_id
-      @owner_id ||= options.fetch('@ownerID').to_i
+      options.fetch('@ownerID').to_i
     end
 
     def owner_name
-      @owner_name ||= options.fetch('@ownerName')
+      options.fetch('@ownerName')
     end
 
     def event_date
-      @event_date ||= ActiveSupport::TimeZone['UTC'].parse(options.fetch('@eventDate'))
+      ActiveSupport::TimeZone['UTC'].parse(options.fetch('@eventDate'))
     end
 
     def event_title
-      @event_title ||= options.fetch('@eventTitle')
+      options.fetch('@eventTitle')
     end
 
     def duration
-      @duration ||= options.fetch('@duration').to_i
+      options.fetch('@duration').to_i
     end
 
     def importance
-      @importance ||= options.fetch('@importance').eql?('1')
+      options.fetch('@importance').eql?('1')
     end
 
     def response
-      @response ||= EventResponseObject.new(options.fetch('@response')).value
+      EventResponseObject.new(options.fetch('@response')).value
     end
 
     def event_text
-      @event_text ||= options.fetch('@eventText')
+      options.fetch('@eventText')
     end
 
     def owner_type_id
-      @owner_type_id ||= options.fetch('@ownerTypeID').to_i
+      options.fetch('@ownerTypeID').to_i
     end
   end
 end

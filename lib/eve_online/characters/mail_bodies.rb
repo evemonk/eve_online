@@ -23,7 +23,7 @@ module EveOnline
       private
 
       def escaped_ids
-        @escaped_ids ||= URI.escape(ids.join(','))
+        URI.escape(ids.join(','))
       end
     end
   end

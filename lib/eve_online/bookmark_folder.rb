@@ -14,38 +14,36 @@ module EveOnline
     end
 
     def folder_id
-      @folder_d ||= options.fetch('@folderID').to_i
+      options.fetch('@folderID').to_i
     end
 
     def folder_name
-      @folder_name ||= options.fetch('@folderName')
+      options.fetch('@folderName')
     end
 
     def bookmarks
-      @bookmarks ||= begin
-        case row
-        when Hash
-          [Bookmark.new(row)]
-        when Array
-          bookmarks = []
-          row.each do |bookmark|
-            bookmarks << Bookmark.new(bookmark)
-          end
-          bookmarks
-        else
-          raise ArgumentError
+      case row
+      when Hash
+        [Bookmark.new(row)]
+      when Array
+        bookmarks = []
+        row.each do |bookmark|
+          bookmarks << Bookmark.new(bookmark)
         end
+        bookmarks
+      else
+        raise ArgumentError
       end
     end
 
     private
 
     def rowset
-      @rowset ||= options.fetch('rowset')
+      options.fetch('rowset')
     end
 
     def row
-      @row ||= rowset.fetch('row')
+      rowset.fetch('row')
     end
   end
 end

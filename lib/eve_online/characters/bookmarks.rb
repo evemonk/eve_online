@@ -16,19 +16,17 @@ module EveOnline
       end
 
       def bookmark_folders
-        @bookmark_folders ||= begin
-          case row
-          when Hash
-            [BookmarkFolder.new(row)]
-          when Array
-            output = []
-            row.each do |bookmark_folder|
-              output << BookmarkFolder.new(bookmark_folder)
-            end
-            output
-          else
-            raise ArgumentError
+        case row
+        when Hash
+          [BookmarkFolder.new(row)]
+        when Array
+          output = []
+          row.each do |bookmark_folder|
+            output << BookmarkFolder.new(bookmark_folder)
           end
+          output
+        else
+          raise ArgumentError
         end
       end
 
@@ -39,11 +37,11 @@ module EveOnline
       private
 
       def rowset
-        @rowset ||= result.fetch('rowset')
+        result.fetch('rowset')
       end
 
       def row
-        @row ||= rowset.fetch('row')
+        rowset.fetch('row')
       end
     end
   end

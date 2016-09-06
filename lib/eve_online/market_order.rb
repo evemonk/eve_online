@@ -29,63 +29,63 @@ module EveOnline
     end
 
     def order_id
-      @order_id ||= options.fetch('@orderID').to_i
+      options.fetch('@orderID').to_i
     end
 
     def char_id
-      @char_id ||= options.fetch('@charID').to_i
+      options.fetch('@charID').to_i
     end
 
     def station_id
-      @station_id ||= options.fetch('@stationID').to_i
+      options.fetch('@stationID').to_i
     end
 
     def vol_entered
-      @vol_entered ||= options.fetch('@volEntered').to_i
+      options.fetch('@volEntered').to_i
     end
 
     def vol_remaining
-      @vol_remaining ||= options.fetch('@volRemaining').to_i
+      options.fetch('@volRemaining').to_i
     end
 
     def min_volume
-      @min_volume ||= options.fetch('@minVolume').to_i
+      options.fetch('@minVolume').to_i
     end
 
     def order_state
-      @order_state ||= options.fetch('@orderState').to_i
+      options.fetch('@orderState').to_i
     end
 
     def type_id
-      @type_id ||= options.fetch('@typeID').to_i
+      options.fetch('@typeID').to_i
     end
 
     def range
-      @range ||= options.fetch('@range').to_i
+      options.fetch('@range').to_i
     end
 
     def account_key
-      @account_key ||= options.fetch('@accountKey').to_i
+      options.fetch('@accountKey').to_i
     end
 
     def duration
-      @duration ||= options.fetch('@duration').to_i
+      options.fetch('@duration').to_i
     end
 
     def escrow
-      @escrow ||= options.fetch('@escrow').to_f
+      options.fetch('@escrow').to_f
     end
 
     def price
-      @price ||= options.fetch('@price').to_f
+      options.fetch('@price').to_f
     end
 
     def bid
-      @bid ||= options.fetch('@bid') == '1'
+      options.fetch('@bid') == '1'
     end
 
     def issued
-      @issued ||= ActiveSupport::TimeZone['UTC'].parse(options.fetch('@issued'))
+      ActiveSupport::TimeZone['UTC'].parse(options.fetch('@issued'))
     end
   end
 end
