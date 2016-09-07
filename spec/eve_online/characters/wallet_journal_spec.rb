@@ -100,6 +100,8 @@ describe EveOnline::Characters::WalletJournal do
       end
 
       specify { expect(subject.wallet_journal_entries).to eq([wallet_journal_entry]) }
+
+      specify { expect { subject.wallet_journal_entries }.to change { subject.instance_variable_defined?(:@_memoized_wallet_journal_entries) }.from(false).to(true) }
     end
 
     context 'row is Array' do
@@ -143,6 +145,8 @@ describe EveOnline::Characters::WalletJournal do
       end
 
       specify { expect(subject.wallet_journal_entries).to eq([wallet_journal_entry]) }
+
+      specify { expect { subject.wallet_journal_entries }.to change { subject.instance_variable_defined?(:@_memoized_wallet_journal_entries) }.from(false).to(true) }
     end
 
     context 'row is invalid' do
@@ -200,6 +204,8 @@ describe EveOnline::Characters::WalletJournal do
     end
 
     specify { expect { subject.send(:rowset) }.not_to raise_error }
+
+    specify { expect { subject.send(:rowset) }.to change { subject.instance_variable_defined?(:@_memoized_rowset) }.from(false).to(true) }
   end
 
   describe '#row' do
@@ -215,5 +221,7 @@ describe EveOnline::Characters::WalletJournal do
     end
 
     specify { expect { subject.send(:row) }.not_to raise_error }
+
+    specify { expect { subject.send(:row) }.to change { subject.instance_variable_defined?(:@_memoized_row) }.from(false).to(true) }
   end
 end

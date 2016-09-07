@@ -32,6 +32,7 @@ module EveOnline
           raise ArgumentError
         end
       end
+      memoize :wallet_journal_entries
 
       def url
         output = "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }&accountKey=#{ account_key }"
@@ -45,10 +46,12 @@ module EveOnline
       def rowset
         result.fetch('rowset')
       end
+      memoize :rowset
 
       def row
         rowset.fetch('row')
       end
+      memoize :row
     end
   end
 end
