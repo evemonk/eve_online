@@ -156,9 +156,5 @@ describe EveOnline::Account::Status do
     specify do
       expect(subject.url).to eq("#{ described_class::API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }")
     end
-
-    specify do
-      expect { subject.url }.to change { subject.instance_variable_defined?(:@_memoized_url) }.from(false).to(true)
-    end
   end
 end

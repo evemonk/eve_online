@@ -60,6 +60,8 @@ describe EveOnline::Account::ApiKeyInfo do
       end
 
       specify { expect(subject.characters).to eq([character]) }
+
+      specify { expect { subject.characters }.to change { subject.instance_variable_defined?(:@_memoized_characters) }.from(false).to(true) }
     end
 
     context 'row is Array' do
@@ -95,6 +97,8 @@ describe EveOnline::Account::ApiKeyInfo do
       end
 
       specify { expect(subject.characters).to eq([character]) }
+
+      specify { expect { subject.characters }.to change { subject.instance_variable_defined?(:@_memoized_characters) }.from(false).to(true) }
     end
 
     context 'row is invalid' do
@@ -170,10 +174,6 @@ describe EveOnline::Account::ApiKeyInfo do
   describe '#url' do
     specify do
       expect(subject.url).to eq("#{ described_class::API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }")
-    end
-
-    specify do
-      expect { subject.url }.to change { subject.instance_variable_defined?(:@_memoized_url) }.from(false).to(true)
     end
   end
 

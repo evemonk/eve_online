@@ -26,6 +26,7 @@ module EveOnline
           raise ArgumentError
         end
       end
+      memoize :characters
 
       def expires
         parse_datetime_with_timezone(key.fetch('@expires'))
@@ -42,7 +43,6 @@ module EveOnline
       def url
         "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }"
       end
-      memoize :url
 
       private
 
