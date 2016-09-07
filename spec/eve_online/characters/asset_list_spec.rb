@@ -77,6 +77,8 @@ describe EveOnline::Characters::AssetList do
       end
 
       specify { expect(subject.assets).to eq([item]) }
+
+      specify { expect { subject.assets }.to change { subject.instance_variable_defined?(:@_memoized_assets) }.from(false).to(true) }
     end
 
     context 'row is Array' do
@@ -111,6 +113,8 @@ describe EveOnline::Characters::AssetList do
       end
 
       specify { expect(subject.assets).to eq([item]) }
+
+      specify { expect { subject.assets }.to change { subject.instance_variable_defined?(:@_memoized_assets) }.from(false).to(true) }
     end
 
     context 'row is invalid' do

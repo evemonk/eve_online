@@ -16,7 +16,6 @@ module EveOnline
         @flat = flat
       end
 
-      # TODO: memoize
       def assets
         case row
         when Hash
@@ -31,6 +30,7 @@ module EveOnline
           raise ArgumentError
         end
       end
+      memoize :assets
 
       def url
         "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }&flat=#{ flat }"
