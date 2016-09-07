@@ -16,6 +16,7 @@ module EveOnline
         @flat = flat
       end
 
+      # TODO: memoize
       def assets
         case row
         when Hash
