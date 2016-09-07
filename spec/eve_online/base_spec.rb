@@ -9,8 +9,6 @@ describe EveOnline::Base do
 
   describe '#user_agent' do
     specify { expect(subject.user_agent).to eq("EveOnline API (https://github.com/biow0lf/eve_online) v#{ EveOnline::VERSION }") }
-
-    specify { expect { subject.user_agent }.to change { subject.instance_variable_defined?(:@_memoized_user_agent) }.from(false).to(true) }
   end
 
   describe '#content' do

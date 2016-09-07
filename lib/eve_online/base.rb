@@ -12,7 +12,6 @@ module EveOnline
     def user_agent
       "EveOnline API (https://github.com/biow0lf/eve_online) v#{ VERSION }"
     end
-    memoize :user_agent
 
     def content
       open(url, open_timeout: 60, read_timeout: 60,
