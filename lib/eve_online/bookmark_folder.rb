@@ -1,5 +1,9 @@
+require 'memoist'
+
 module EveOnline
   class BookmarkFolder
+    extend Memoist
+
     attr_reader :options
 
     def initialize(options)
@@ -35,15 +39,18 @@ module EveOnline
         raise ArgumentError
       end
     end
+    memoize :bookmarks
 
     private
 
     def rowset
       options.fetch('rowset')
     end
+    memoize :rowset
 
     def row
       rowset.fetch('row')
     end
+    memoize :row
   end
 end
