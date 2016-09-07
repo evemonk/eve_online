@@ -68,6 +68,8 @@ describe EveOnline::Characters::UpcomingCalendarEvents do
       end
 
       specify { expect(subject.events).to eq([event]) }
+
+      specify { expect { subject.events }.to change { subject.instance_variable_defined?(:@_memoized_events) }.from(false).to(true) }
     end
 
     context 'row is Array' do
@@ -105,6 +107,8 @@ describe EveOnline::Characters::UpcomingCalendarEvents do
       end
 
       specify { expect(subject.events).to eq([event]) }
+
+      specify { expect { subject.events }.to change { subject.instance_variable_defined?(:@_memoized_events) }.from(false).to(true) }
     end
 
     context 'row is invalid' do

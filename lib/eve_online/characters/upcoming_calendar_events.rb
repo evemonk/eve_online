@@ -15,7 +15,6 @@ module EveOnline
         @character_id = character_id
       end
 
-      # TODO: memoize
       def events
         case row
         when Hash
@@ -30,6 +29,7 @@ module EveOnline
           raise ArgumentError
         end
       end
+      memoize :events
 
       def url
         "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }"
