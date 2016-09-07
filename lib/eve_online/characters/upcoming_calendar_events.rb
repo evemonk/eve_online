@@ -15,6 +15,7 @@ module EveOnline
         @character_id = character_id
       end
 
+      # TODO: memoize
       def events
         case row
         when Hash
