@@ -22,6 +22,7 @@ module EveOnline
         end
         output
       end
+      memoize :agents
 
       def npc_corporations
         output = []
@@ -30,6 +31,7 @@ module EveOnline
         end
         output
       end
+      memoize :npc_corporations
 
       def factions
         output = []
@@ -38,6 +40,7 @@ module EveOnline
         end
         output
       end
+      memoize :factions
 
       def url
         "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }"
@@ -48,14 +51,17 @@ module EveOnline
       def agents_rowset
         result.fetch('characterNPCStandings').fetch('rowset').reject { |a| a.fetch('@name') != 'agents' }.first.fetch('row')
       end
+      memoize :agents_rowset
 
       def npc_corporations_rowset
         result.fetch('characterNPCStandings').fetch('rowset').reject { |a| a.fetch('@name') != 'NPCCorporations' }.first.fetch('row')
       end
+      memoize :npc_corporations_rowset
 
       def factions_rowset
         result.fetch('characterNPCStandings').fetch('rowset').reject { |a| a.fetch('@name') != 'factions' }.first.fetch('row')
       end
+      memoize :factions_rowset
     end
   end
 end
