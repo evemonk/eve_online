@@ -29,6 +29,7 @@ module EveOnline
           raise ArgumentError
         end
       end
+      memoize :skills
 
       def url
         "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }"
@@ -39,10 +40,12 @@ module EveOnline
       def rowset
         result.fetch('rowset')
       end
+      memoize :rowset
 
       def row
         rowset.fetch('row')
       end
+      memoize :row
     end
   end
 end
