@@ -184,18 +184,22 @@ module EveOnline
       def implants
         CharacterImplants.new(result).implants
       end
+      memoize :implants
 
       def skills
         CharacterSkills.new(result).skills
       end
+      memoize :skills
 
       def jump_clones
         CharacterJumpClones.new(result).jump_clones
       end
+      memoize :jump_clones
 
       def jump_clone_implants
         CharacterJumpCloneImplants.new(result).jump_clone_implants
       end
+      memoize :jump_clone_implants
 
       def url
         "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }"
@@ -206,6 +210,7 @@ module EveOnline
       def attributes
         result.fetch('attributes')
       end
+      memoize :attributes
     end
   end
 end

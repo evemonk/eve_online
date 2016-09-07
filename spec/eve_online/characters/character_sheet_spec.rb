@@ -804,6 +804,8 @@ describe EveOnline::Characters::CharacterSheet do
     end
 
     specify { expect { subject.implants }.not_to raise_error }
+
+    specify { expect { subject.implants }.to change { subject.instance_variable_defined?(:@_memoized_implants) }.from(false).to(true) }
   end
 
   describe '#skills' do
@@ -823,6 +825,8 @@ describe EveOnline::Characters::CharacterSheet do
     end
 
     specify { expect { subject.skills }.not_to raise_error }
+
+    specify { expect { subject.skills }.to change { subject.instance_variable_defined?(:@_memoized_skills) }.from(false).to(true) }
   end
 
   describe '#jump_clones' do
@@ -842,6 +846,8 @@ describe EveOnline::Characters::CharacterSheet do
     end
 
     specify { expect { subject.jump_clones }.not_to raise_error }
+
+    specify { expect { subject.jump_clones }.to change { subject.instance_variable_defined?(:@_memoized_jump_clones) }.from(false).to(true) }
   end
 
   describe '#jump_clone_implants' do
@@ -861,6 +867,8 @@ describe EveOnline::Characters::CharacterSheet do
     end
 
     specify { expect { subject.jump_clone_implants }.not_to raise_error }
+
+    specify { expect { subject.jump_clone_implants }.to change { subject.instance_variable_defined?(:@_memoized_jump_clone_implants) }.from(false).to(true) }
   end
 
   describe '#url' do
@@ -884,5 +892,7 @@ describe EveOnline::Characters::CharacterSheet do
     end
 
     specify { expect { subject.send(:attributes) }.not_to raise_error }
+
+    specify { expect { subject.send(:attributes) }.to change { subject.instance_variable_defined?(:@_memoized_attributes) }.from(false).to(true) }
   end
 end
