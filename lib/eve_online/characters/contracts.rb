@@ -21,7 +21,6 @@ module EveOnline
         # TODO: add support for contract_id
         "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }"
       end
-      memoize :url
     end
   end
 end

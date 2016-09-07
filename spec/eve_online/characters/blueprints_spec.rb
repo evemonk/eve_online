@@ -67,6 +67,8 @@ describe EveOnline::Characters::Blueprints do
       end
 
       specify { expect(subject.blueprints).to eq([blueprint]) }
+
+      specify { expect { subject.blueprints }.to change { subject.instance_variable_defined?(:@_memoized_blueprints) }.from(false).to(true) }
     end
 
     context 'row is Array' do
@@ -103,6 +105,8 @@ describe EveOnline::Characters::Blueprints do
       end
 
       specify { expect(subject.blueprints).to eq([blueprint]) }
+
+      specify { expect { subject.blueprints }.to change { subject.instance_variable_defined?(:@_memoized_blueprints) }.from(false).to(true) }
     end
 
     context 'row is invalid' do
@@ -121,10 +125,6 @@ describe EveOnline::Characters::Blueprints do
     specify do
       expect(subject.url).to eq("#{ described_class::API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }")
     end
-
-    specify do
-      expect { subject.url }.to change { subject.instance_variable_defined?(:@_memoized_url) }.from(false).to(true)
-    end
   end
 
   # private methods
@@ -142,6 +142,8 @@ describe EveOnline::Characters::Blueprints do
     end
 
     specify { expect { subject.send(:rowset) }.not_to raise_error }
+
+    specify { expect { subject.send(:rowset) }.to change { subject.instance_variable_defined?(:@_memoized_rowset) }.from(false).to(true) }
   end
 
   describe '#row' do
@@ -157,5 +159,7 @@ describe EveOnline::Characters::Blueprints do
     end
 
     specify { expect { subject.send(:row) }.not_to raise_error }
+
+    specify { expect { subject.send(:row) }.to change { subject.instance_variable_defined?(:@_memoized_row) }.from(false).to(true) }
   end
 end

@@ -39,7 +39,6 @@ module EveOnline
         output = "#{ output }&rowCount=#{ row_count }" if row_count
         output
       end
-      memoize :url
 
       private
 
