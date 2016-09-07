@@ -29,6 +29,8 @@ describe EveOnline::BaseXML do
     end
 
     specify { expect { subject.result }.not_to raise_error }
+
+    specify { expect { subject.result }.to change { subject.instance_variable_defined?(:@_memoized_result) }.from(false).to(true) }
   end
 
   describe '#cached_until' do
@@ -53,6 +55,8 @@ describe EveOnline::BaseXML do
     end
 
     specify { expect { subject.cached_until }.not_to raise_error }
+
+    specify { expect { subject.cached_until }.to change { subject.instance_variable_defined?(:@_memoized_cached_until) }.from(false).to(true) }
   end
 
   describe '#current_time' do
@@ -77,6 +81,8 @@ describe EveOnline::BaseXML do
     end
 
     specify { expect { subject.current_time }.not_to raise_error }
+
+    specify { expect { subject.current_time }.to change { subject.instance_variable_defined?(:@_memoized_current_time) }.from(false).to(true) }
   end
 
   describe '#version' do
@@ -96,6 +102,8 @@ describe EveOnline::BaseXML do
     end
 
     specify { expect { subject.version }.not_to raise_error }
+
+    specify { expect { subject.version }.to change { subject.instance_variable_defined?(:@_memoized_version) }.from(false).to(true) }
   end
 
   describe '#eveapi' do
@@ -111,6 +119,8 @@ describe EveOnline::BaseXML do
     end
 
     specify { expect { subject.eveapi }.not_to raise_error }
+
+    specify { expect { subject.eveapi }.to change { subject.instance_variable_defined?(:@_memoized_eveapi) }.from(false).to(true) }
   end
 
   # private methods

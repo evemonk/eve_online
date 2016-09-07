@@ -12,22 +12,27 @@ module EveOnline
     def result
       eveapi.fetch('result')
     end
+    memoize :result
 
     def cached_until
       parse_datetime_with_timezone(eveapi.fetch('cachedUntil'))
     end
+    memoize :cached_until
 
     def current_time
       parse_datetime_with_timezone(eveapi.fetch('currentTime'))
     end
+    memoize :current_time
 
     def version
       eveapi.fetch('@version').to_i
     end
+    memoize :version
 
     def eveapi
       response.fetch('eveapi')
     end
+    memoize :eveapi
 
     private
 

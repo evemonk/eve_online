@@ -53,10 +53,12 @@ module EveOnline
       def rowset
         key.fetch('rowset')
       end
+      memoize :rowset
 
       def row
         rowset.fetch('row')
       end
+      memoize :row
     end
   end
 end
