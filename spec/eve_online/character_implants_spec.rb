@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe EveOnline::CharacterImplants do
+  specify { expect(described_class).to be_a(Memoist) }
+
   describe '#initialize' do
     let(:result) { double }
 
@@ -40,6 +42,8 @@ describe EveOnline::CharacterImplants do
     end
 
     specify { expect(subject.implants).to eq([implant]) }
+
+    specify { expect { subject.implants }.to change { subject.instance_variable_defined?(:@_memoized_implants) }.from(false).to(true) }
   end
 
   # private methods
@@ -89,5 +93,7 @@ describe EveOnline::CharacterImplants do
     end
 
     specify { expect { subject.send(:rowset) }.not_to raise_error }
+
+    specify { expect { subject.send(:rowset) }.to change { subject.instance_variable_defined?(:@_memoized_rowset) }.from(false).to(true) }
   end
 end
