@@ -69,23 +69,6 @@ describe EveOnline::BookmarkFolder do
     specify { expect { subject.folder_name }.not_to raise_error }
   end
 
-  # def bookmarks
-  #   @bookmarks ||= begin
-  #     case row
-  #     when Hash
-  #       [Bookmark.new(row)]
-  #     when Array
-  #       bookmarks = []
-  #       row.each do |bookmark|
-  #         bookmarks << Bookmark.new(bookmark)
-  #       end
-  #       bookmarks
-  #     else
-  #       raise ArgumentError
-  #     end
-  #   end
-  # end
-
   describe '#bookmarks' do
     context 'row is Hash' do
       let(:options) { double }
