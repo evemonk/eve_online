@@ -6,14 +6,14 @@ module EveOnline
 
       ACCESS_MASK = 4_096
 
-      attr_reader :key_id, :v_code, :character_id
+      attr_reader :key_id, :v_code, :character_id, :order_id
 
-      def initialize(key_id, v_code, character_id) # TODO: add order_id = nil
+      def initialize(key_id, v_code, character_id, order_id = nil)
         super()
         @key_id = key_id
         @v_code = v_code
         @character_id = character_id
-        # TODO: @order_id = order_id
+        @order_id = order_id
       end
 
       def orders
