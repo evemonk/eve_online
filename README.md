@@ -1011,7 +1011,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 
 ## Changelog
 
-**master**
+**v0.9.0**
 
 * Add basic `EveOnline::Characters::Contracts`
 * Add basic `EveOnline::Characters::ContractBids`
