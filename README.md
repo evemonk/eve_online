@@ -585,9 +585,9 @@ Character market orders:
 ```ruby
 key_id = 1234567
 v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-character_id = 90729314
+options = { character_id: 90729314 }
 
-market_orders = EveOnline::Characters::MarketOrders.new(key_id, v_code, character_id)
+market_orders = EveOnline::Characters::MarketOrders.new(key_id, v_code, options)
 
 market_orders.current_time # => Fri, 26 Aug 2016 13:56:17 UTC +00:00
 market_orders.cached_until # => Fri, 26 Aug 2016 14:53:17 UTC +00:00
@@ -938,9 +938,9 @@ Corporation market orders:
 ```ruby
 key_id = 1234567
 v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-character_id = 90729314
+options = { character_id: 90729314 }
 
-market_orders = EveOnline::Corporations::MarketOrders.new(key_id, v_code, character_id)
+market_orders = EveOnline::Corporations::MarketOrders.new(key_id, v_code, options)
 
 # TODO: finish this
 
