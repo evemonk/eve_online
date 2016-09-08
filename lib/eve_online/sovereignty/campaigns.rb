@@ -7,7 +7,7 @@ module EveOnline
 
       # TODO: return array of objects
       def items
-        @items ||= response.fetch('items')
+        response.fetch('items')
       end
 
       # TODO: recheck this and maybe remove as unneeded

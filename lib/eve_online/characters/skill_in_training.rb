@@ -29,35 +29,35 @@ module EveOnline
       end
 
       def current_tq_time
-        @current_tq_time ||= parse_datetime_with_timezone(result.fetch('currentTQTime'))
+        parse_datetime_with_timezone(result.fetch('currentTQTime'))
       end
 
       def training_end_time
-        @training_end_time ||= parse_datetime_with_timezone(result.fetch('trainingEndTime'))
+        parse_datetime_with_timezone(result.fetch('trainingEndTime'))
       end
 
       def training_start_time
-        @training_start_time ||= parse_datetime_with_timezone(result.fetch('trainingStartTime'))
+        parse_datetime_with_timezone(result.fetch('trainingStartTime'))
       end
 
       def training_type_id
-        @training_type_id ||= result.fetch('trainingTypeID').to_i
+        result.fetch('trainingTypeID').to_i
       end
 
       def training_start_sp
-        @training_start_sp ||= result.fetch('trainingStartSP').to_i
+        result.fetch('trainingStartSP').to_i
       end
 
       def training_destination_sp
-        @training_destination_sp ||= result.fetch('trainingDestinationSP').to_i
+        result.fetch('trainingDestinationSP').to_i
       end
 
       def training_to_level
-        @training_to_level ||= result.fetch('trainingToLevel').to_i
+        result.fetch('trainingToLevel').to_i
       end
 
       def skill_in_training
-        @skill_in_training ||= result.fetch('skillInTraining').to_i
+        result.fetch('skillInTraining').to_i
       end
 
       def url

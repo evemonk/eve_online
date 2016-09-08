@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe EveOnline::Base do
+  specify { expect(described_class).to be_a(Memoist) }
+
   describe '#url' do
     specify { expect { subject.url }.to raise_error(NotImplementedError) }
   end
@@ -30,6 +32,8 @@ describe EveOnline::Base do
     end
 
     specify { expect { subject.content }.not_to raise_error }
+
+    specify { expect { subject.content }.to change { subject.instance_variable_defined?(:@_memoized_content) }.from(false).to(true) }
   end
 
   describe '#response' do
@@ -44,5 +48,7 @@ describe EveOnline::Base do
     before { expect(parser).to receive(:parse).with(content) }
 
     specify { expect { subject.response }.not_to raise_error }
+
+    specify { expect { subject.response }.to change { subject.instance_variable_defined?(:@_memoized_response) }.from(false).to(true) }
   end
 end

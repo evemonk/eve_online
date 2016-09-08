@@ -62,6 +62,8 @@ describe EveOnline::Characters::Standings do
     end
 
     specify { expect(subject.agents).to eq([agent]) }
+
+    specify { expect { subject.agents }.to change { subject.instance_variable_defined?(:@_memoized_agents) }.from(false).to(true) }
   end
 
   describe '#npc_corporations' do
@@ -92,6 +94,8 @@ describe EveOnline::Characters::Standings do
     end
 
     specify { expect(subject.npc_corporations).to eq([npc_corporation]) }
+
+    specify { expect { subject.npc_corporations }.to change { subject.instance_variable_defined?(:@_memoized_npc_corporations) }.from(false).to(true) }
   end
 
   describe '#factions' do
@@ -122,6 +126,8 @@ describe EveOnline::Characters::Standings do
     end
 
     specify { expect(subject.factions).to eq([faction]) }
+
+    specify { expect { subject.factions }.to change { subject.instance_variable_defined?(:@_memoized_factions) }.from(false).to(true) }
   end
 
   describe '#url' do
@@ -179,6 +185,8 @@ describe EveOnline::Characters::Standings do
     end
 
     specify { expect { subject.send(:agents_rowset) }.not_to raise_error }
+
+    specify { expect { subject.send(:agents_rowset) }.to change { subject.instance_variable_defined?(:@_memoized_agents_rowset) }.from(false).to(true) }
   end
 
   describe '#npc_corporations_rowset' do
@@ -228,6 +236,8 @@ describe EveOnline::Characters::Standings do
     end
 
     specify { expect { subject.send(:npc_corporations_rowset) }.not_to raise_error }
+
+    specify { expect { subject.send(:npc_corporations_rowset) }.to change { subject.instance_variable_defined?(:@_memoized_npc_corporations_rowset) }.from(false).to(true) }
   end
 
   describe '#factions_rowset' do
@@ -277,5 +287,7 @@ describe EveOnline::Characters::Standings do
     end
 
     specify { expect { subject.send(:factions_rowset) }.not_to raise_error }
+
+    specify { expect { subject.send(:factions_rowset) }.to change { subject.instance_variable_defined?(:@_memoized_factions_rowset) }.from(false).to(true) }
   end
 end

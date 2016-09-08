@@ -26,15 +26,15 @@ module EveOnline
       end
 
       def account_id
-        @account_id ||= row.fetch('@accountID').to_i
+        row.fetch('@accountID').to_i
       end
 
       def account_key
-        @account_key ||= row.fetch('@accountKey').to_i
+        row.fetch('@accountKey').to_i
       end
 
       def balance
-        @balance ||= row.fetch('@balance').to_f
+        row.fetch('@balance').to_f
       end
 
       def url
@@ -44,12 +44,14 @@ module EveOnline
       private
 
       def rowset
-        @rowset ||= result.fetch('rowset')
+        result.fetch('rowset')
       end
+      memoize :rowset
 
       def row
-        @row ||= rowset.fetch('row')
+        rowset.fetch('row')
       end
+      memoize :row
     end
   end
 end

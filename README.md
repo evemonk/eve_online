@@ -1032,6 +1032,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Make `EveOnline::Characters::Bookmarks#rowset` `private`
 * Add `EveOnline::WalletJournalEntry` class for handling character wallet journal entry
 * [Wallet Journal](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_walletjournal.html)
+* Rework memoization
 
 **v0.8.0**
 

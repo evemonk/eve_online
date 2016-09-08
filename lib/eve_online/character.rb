@@ -20,35 +20,35 @@ module EveOnline
     end
 
     def character_id
-      @character_id ||= options.fetch('@characterID').to_i
+      options.fetch('@characterID').to_i
     end
 
     def character_name
-      @character_name ||= options.fetch('@name', nil) || options.fetch('@characterName')
+      options.fetch('@name', nil) || options.fetch('@characterName')
     end
 
     def corporation_id
-      @corporation_id ||= options.fetch('@corporationID').to_i
+      options.fetch('@corporationID').to_i
     end
 
     def corporation_name
-      @corporation_name ||= options.fetch('@corporationName')
+      options.fetch('@corporationName')
     end
 
     def alliance_id
-      @alliance_id ||= options.fetch('@allianceID').to_i
+      options.fetch('@allianceID').to_i
     end
 
     def alliance_name
-      @alliance_name ||= options.fetch('@allianceName')
+      options.fetch('@allianceName')
     end
 
     def faction_id
-      @faction_id ||= options.fetch('@factionID').to_i
+      options.fetch('@factionID').to_i
     end
 
     def faction_name
-      @faction_name ||= options.fetch('@factionName')
+      options.fetch('@factionName')
     end
   end
 end

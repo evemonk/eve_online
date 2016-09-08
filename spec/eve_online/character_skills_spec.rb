@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe EveOnline::CharacterSkills do
+  specify { expect(described_class).to be_a(Memoist) }
+
   describe '#initialize' do
     let(:result) { double }
 
@@ -42,6 +44,8 @@ describe EveOnline::CharacterSkills do
     end
 
     specify { expect(subject.skills).to eq([skill]) }
+
+    specify { expect { subject.skills }.to change { subject.instance_variable_defined?(:@_memoized_skills) }.from(false).to(true) }
   end
 
   # private methods
@@ -91,5 +95,7 @@ describe EveOnline::CharacterSkills do
     end
 
     specify { expect { subject.send(:rowset) }.not_to raise_error }
+
+    specify { expect { subject.send(:rowset) }.to change { subject.instance_variable_defined?(:@_memoized_rowset) }.from(false).to(true) }
   end
 end

@@ -10,24 +10,29 @@ module EveOnline
     end
 
     def result
-      @result ||= eveapi.fetch('result')
+      eveapi.fetch('result')
     end
+    memoize :result
 
     def cached_until
-      @cached_until ||= parse_datetime_with_timezone(eveapi.fetch('cachedUntil'))
+      parse_datetime_with_timezone(eveapi.fetch('cachedUntil'))
     end
+    memoize :cached_until
 
     def current_time
-      @current_time ||= parse_datetime_with_timezone(eveapi.fetch('currentTime'))
+      parse_datetime_with_timezone(eveapi.fetch('currentTime'))
     end
+    memoize :current_time
 
     def version
       eveapi.fetch('@version').to_i
     end
+    memoize :version
 
     def eveapi
-      @eveapi ||= response.fetch('eveapi')
+      response.fetch('eveapi')
     end
+    memoize :eveapi
 
     private
 

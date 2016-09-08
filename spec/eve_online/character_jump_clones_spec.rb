@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe EveOnline::CharacterJumpClones do
+  specify { expect(described_class).to be_a(Memoist) }
+
   describe '#initialize' do
     let(:result) { double }
 
@@ -42,6 +44,8 @@ describe EveOnline::CharacterJumpClones do
     end
 
     specify { expect(subject.jump_clones).to eq([jump_clone]) }
+
+    specify { expect { subject.jump_clones }.to change { subject.instance_variable_defined?(:@_memoized_jump_clones) }.from(false).to(true) }
   end
 
   # private methods
@@ -91,5 +95,7 @@ describe EveOnline::CharacterJumpClones do
     end
 
     specify { expect { subject.send(:rowset) }.not_to raise_error }
+
+    specify { expect { subject.send(:rowset) }.to change { subject.instance_variable_defined?(:@_memoized_rowset) }.from(false).to(true) }
   end
 end

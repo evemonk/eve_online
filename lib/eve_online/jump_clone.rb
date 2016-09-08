@@ -16,19 +16,19 @@ module EveOnline
     end
 
     def jump_clone_id
-      @jump_clone_id ||= options.fetch('@jumpCloneID').to_i
+      options.fetch('@jumpCloneID').to_i
     end
 
     def type_id
-      @type_id ||= options.fetch('@typeID').to_i
+      options.fetch('@typeID').to_i
     end
 
     def location_id
-      @location_id ||= options.fetch('@locationID').to_i
+      options.fetch('@locationID').to_i
     end
 
     def clone_name
-      @clone_name ||= options.fetch('@cloneName')
+      options.fetch('@cloneName')
     end
   end
 end

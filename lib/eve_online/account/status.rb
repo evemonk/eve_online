@@ -24,19 +24,19 @@ module EveOnline
       end
 
       def paid_until
-        @paid_until ||= parse_datetime_with_timezone(result.fetch('paidUntil'))
+        parse_datetime_with_timezone(result.fetch('paidUntil'))
       end
 
       def create_date
-        @create_date ||= parse_datetime_with_timezone(result.fetch('createDate'))
+        parse_datetime_with_timezone(result.fetch('createDate'))
       end
 
       def logon_count
-        @logon_count ||= result.fetch('logonCount').to_i
+        result.fetch('logonCount').to_i
       end
 
       def logon_minutes
-        @logon_minutes ||= result.fetch('logonMinutes').to_i
+        result.fetch('logonMinutes').to_i
       end
 
       def url

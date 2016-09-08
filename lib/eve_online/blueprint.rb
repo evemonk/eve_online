@@ -21,40 +21,40 @@ module EveOnline
     end
 
     def item_id
-      @item_id ||= options.fetch('@itemID').to_i
+      options.fetch('@itemID').to_i
     end
 
     def location_id
-      @location_id ||= options.fetch('@locationID').to_i
+      options.fetch('@locationID').to_i
     end
 
     def type_id
-      @type_id ||= options.fetch('@typeID').to_i
+      options.fetch('@typeID').to_i
     end
 
     def type_name
-      @type_name ||= options.fetch('@typeName')
+      options.fetch('@typeName')
     end
 
     def flag_id
-      @flag_id ||= options.fetch('@flagID').to_i
+      options.fetch('@flagID').to_i
     end
 
     # TODO: return EveOnline::Blueprint::Quantity
     def quantity
-      @quantity ||= options.fetch('@quantity').to_i
+      options.fetch('@quantity').to_i
     end
 
     def time_efficiency
-      @time_efficiency ||= options.fetch('@timeEfficiency').to_i
+      options.fetch('@timeEfficiency').to_i
     end
 
     def material_efficiency
-      @material_efficiency ||= options.fetch('@materialEfficiency').to_i
+      options.fetch('@materialEfficiency').to_i
     end
 
     def runs
-      @runs ||= options.fetch('@runs').to_i
+      options.fetch('@runs').to_i
     end
   end
 end

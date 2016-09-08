@@ -1,3 +1,5 @@
+require 'active_support/time'
+
 module EveOnline
   class Bookmark
     attr_reader :options
@@ -23,47 +25,47 @@ module EveOnline
     end
 
     def bookmark_id
-      @bookmark_id ||= options.fetch('@bookmarkID').to_i
+      options.fetch('@bookmarkID').to_i
     end
 
     def creator_id
-      @creator_id ||= options.fetch('@creatorID').to_i
+      options.fetch('@creatorID').to_i
     end
 
     def created
-      @created ||= ActiveSupport::TimeZone['UTC'].parse(options.fetch('@created'))
+      ActiveSupport::TimeZone['UTC'].parse(options.fetch('@created'))
     end
 
     def item_id
-      @item_id ||= options.fetch('@itemID').to_i
+      options.fetch('@itemID').to_i
     end
 
     def type_id
-      @type_id ||= options.fetch('@typeID').to_i
+      options.fetch('@typeID').to_i
     end
 
     def location_id
-      @location_id ||= options.fetch('@locationID').to_i
+      options.fetch('@locationID').to_i
     end
 
     def x
-      @x ||= options.fetch('@x').to_f
+      options.fetch('@x').to_f
     end
 
     def y
-      @y ||= options.fetch('@y').to_f
+      options.fetch('@y').to_f
     end
 
     def z
-      @z ||= options.fetch('@z').to_f
+      options.fetch('@z').to_f
     end
 
     def memo
-      @memo ||= options.fetch('@memo')
+      options.fetch('@memo')
     end
 
     def note
-      @note ||= options.fetch('@note')
+      options.fetch('@note')
     end
   end
 end

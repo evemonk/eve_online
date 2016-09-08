@@ -16,21 +16,20 @@ module EveOnline
       end
 
       def bookmark_folders
-        @bookmark_folders ||= begin
-          case row
-          when Hash
-            [BookmarkFolder.new(row)]
-          when Array
-            output = []
-            row.each do |bookmark_folder|
-              output << BookmarkFolder.new(bookmark_folder)
-            end
-            output
-          else
-            raise ArgumentError
+        case row
+        when Hash
+          [BookmarkFolder.new(row)]
+        when Array
+          output = []
+          row.each do |bookmark_folder|
+            output << BookmarkFolder.new(bookmark_folder)
           end
+          output
+        else
+          raise ArgumentError
         end
       end
+      memoize :bookmark_folders
 
       def url
         "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }"
@@ -39,12 +38,14 @@ module EveOnline
       private
 
       def rowset
-        @rowset ||= result.fetch('rowset')
+        result.fetch('rowset')
       end
+      memoize :rowset
 
       def row
-        @row ||= rowset.fetch('row')
+        rowset.fetch('row')
       end
+      memoize :row
     end
   end
 end

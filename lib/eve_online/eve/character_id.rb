@@ -19,18 +19,18 @@ module EveOnline
       end
 
       def names
-        @names ||= case input
-                   when String
-                     input
-                   when Array
-                     input.join(',')
-                   else
-                     raise ArgumentError
-                   end
+        case input
+        when String
+          input
+        when Array
+          input.join(',')
+        else
+          raise ArgumentError
+        end
       end
 
       def escaped_input
-        @escaped_input ||= URI.escape(names)
+        URI.escape(names)
       end
 
       def url
