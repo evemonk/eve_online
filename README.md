@@ -934,6 +934,18 @@ wallet_transactions.version # => 2
 
 ```
 
+Corporation market orders:
+```ruby
+key_id = 1234567
+v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
+character_id = 90729314
+
+market_orders = EveOnline::Corporations::MarketOrders.new(key_id, v_code, character_id)
+
+# TODO: finish this
+
+```
+
 Character Names to IDs:
 ```ruby
 input = ['Johnn Dillinger'] # => ["Johnn Dillinger"]
@@ -1053,6 +1065,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * [Wallet Journal](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_walletjournal.html)
 * Rework memoization
 * [Market Orders](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_marketorders.html)
+* [Market Orders](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_marketorders.html)
 
 **v0.8.0**
 
@@ -1202,7 +1215,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 - [ ] [Industry Jobs History](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_industryjobshistory.html)
 - [ ] [Kill Mails](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_killmails.html)
 - [ ] [Locations](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_locations.html)
-- [ ] [Market Orders](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_marketorders.html)
+- [x] [Market Orders](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_marketorders.html)
 - [ ] [Medals](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_medals.html)
 - [ ] [Member Medals](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_membermedals.html)
 - [ ] [Member Security](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_membersecurity.html)

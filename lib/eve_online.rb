@@ -65,6 +65,8 @@ require 'eve_online/characters/skill_queue'
 require 'eve_online/characters/wallet_journal'
 require 'eve_online/characters/wallet_transactions'
 
+require 'eve_online/corporations/market_orders'
+
 require 'eve_online/eve/character_id'
 require 'eve_online/server/status'
 
