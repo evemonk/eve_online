@@ -16,22 +16,34 @@ describe EveOnline::Characters::MarketOrders do
   specify { expect(described_class::ACCESS_MASK).to eq(4_096) }
 
   describe '#initialize' do
-    let(:parser) { double }
+    context 'default' do
+      let(:parser) { double }
 
-    before do
-      #
-      # Nori.new(advanced_typecasting: false) => double
-      #
-      expect(Nori).to receive(:new).with(advanced_typecasting: false).and_return(parser)
+      before do
+        #
+        # Nori.new(advanced_typecasting: false) => double
+        #
+        expect(Nori).to receive(:new).with(advanced_typecasting: false).and_return(parser)
+      end
+
+      its(:parser) { should eq(parser) }
+
+      its(:key_id) { should eq(key_id) }
+
+      its(:v_code) { should eq(v_code) }
+
+      its(:character_id) { should eq(character_id) }
+
+      its(:order_id) { should eq(nil) }
     end
 
-    its(:parser) { should eq(parser) }
+    context 'with order_id' do
+      let(:order_id) { 123_456_789 }
 
-    its(:key_id) { should eq(key_id) }
+      subject { described_class.new(key_id, v_code, character_id, order_id) }
 
-    its(:v_code) { should eq(v_code) }
-
-    its(:character_id) { should eq(character_id) }
+      its(:order_id) { should eq(order_id) }
+    end
   end
 
   describe '#orders' do
@@ -134,8 +146,20 @@ describe EveOnline::Characters::MarketOrders do
   end
 
   describe '#url' do
-    specify do
-      expect(subject.url).to eq("#{ described_class::API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }")
+    context 'default' do
+      specify do
+        expect(subject.url).to eq("#{ described_class::API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }")
+      end
+    end
+
+    context 'with order_id' do
+      let(:order_id) { 123_456_789 }
+
+      subject { described_class.new(key_id, v_code, character_id, order_id) }
+
+      specify do
+        expect(subject.url).to eq("#{ described_class::API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }&orderID=#{ order_id }")
+      end
     end
   end
 
