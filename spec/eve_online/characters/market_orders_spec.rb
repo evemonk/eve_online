@@ -5,9 +5,7 @@ describe EveOnline::Characters::MarketOrders do
 
   let(:v_code) { 'abc' }
 
-  let(:character_id) { 12_345_678 }
-
-  subject { described_class.new(key_id, v_code, character_id) }
+  subject { described_class.new(key_id, v_code) }
 
   specify { expect(subject).to be_a(EveOnline::BaseXML) }
 
@@ -32,17 +30,24 @@ describe EveOnline::Characters::MarketOrders do
 
       its(:v_code) { should eq(v_code) }
 
-      its(:character_id) { should eq(character_id) }
+      its(:character_id) { should eq(nil) }
 
       its(:order_id) { should eq(nil) }
     end
 
-    context 'with order_id' do
-      let(:order_id) { 123_456_789 }
+    context 'with options' do
+      let(:options) do
+        {
+          character_id: 12_345_678,
+          order_id: 123_456_789
+        }
+      end
 
-      subject { described_class.new(key_id, v_code, character_id, order_id) }
+      subject { described_class.new(key_id, v_code, options) }
 
-      its(:order_id) { should eq(order_id) }
+      its(:character_id) { should eq(options[:character_id]) }
+
+      its(:order_id) { should eq(options[:order_id]) }
     end
   end
 
@@ -148,17 +153,42 @@ describe EveOnline::Characters::MarketOrders do
   describe '#url' do
     context 'default' do
       specify do
-        expect(subject.url).to eq("#{ described_class::API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }")
+        expect(subject.url).to eq("#{ described_class::API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }")
+      end
+    end
+
+    context 'with character_id' do
+      let(:options) { { character_id: 12_345_678 } }
+
+      subject { described_class.new(key_id, v_code, options) }
+
+      specify do
+        expect(subject.url).to eq("#{ described_class::API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ options[:character_id] }")
       end
     end
 
     context 'with order_id' do
-      let(:order_id) { 123_456_789 }
+      let(:options) { { order_id: 123_456_789 } }
 
-      subject { described_class.new(key_id, v_code, character_id, order_id) }
+      subject { described_class.new(key_id, v_code, options) }
 
       specify do
-        expect(subject.url).to eq("#{ described_class::API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }&orderID=#{ order_id }")
+        expect(subject.url).to eq("#{ described_class::API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&orderID=#{ options[:order_id] }")
+      end
+    end
+
+    context 'with character_id and order_id' do
+      let(:options) do
+        {
+          character_id: 12_345_678,
+          order_id: 123_456_789
+        }
+      end
+
+      subject { described_class.new(key_id, v_code, options) }
+
+      specify do
+        expect(subject.url).to eq("#{ described_class::API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ options[:character_id] }&orderID=#{ options[:order_id] }")
       end
     end
   end

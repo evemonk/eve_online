@@ -8,12 +8,12 @@ module EveOnline
 
       attr_reader :key_id, :v_code, :character_id, :order_id
 
-      def initialize(key_id, v_code, character_id, order_id = nil)
+      def initialize(key_id, v_code, options = {})
         super()
         @key_id = key_id
         @v_code = v_code
-        @character_id = character_id
-        @order_id = order_id
+        @character_id = options.fetch(:character_id, nil)
+        @order_id = options.fetch(:order_id, nil)
       end
 
       def orders
@@ -33,7 +33,8 @@ module EveOnline
       memoize :orders
 
       def url
-        output = "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }"
+        output = "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }"
+        output = "#{ output }&characterID=#{ character_id }" if character_id
         output = "#{ output }&orderID=#{ order_id }" if order_id
         output
       end
