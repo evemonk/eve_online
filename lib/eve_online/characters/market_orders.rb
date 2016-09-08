@@ -33,7 +33,9 @@ module EveOnline
       memoize :orders
 
       def url
-        "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }"
+        output = "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }"
+        output = "#{ output }&orderID=#{ order_id }" if order_id
+        output
       end
 
       private

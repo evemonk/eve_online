@@ -146,8 +146,20 @@ describe EveOnline::Characters::MarketOrders do
   end
 
   describe '#url' do
-    specify do
-      expect(subject.url).to eq("#{ described_class::API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }")
+    context 'default' do
+      specify do
+        expect(subject.url).to eq("#{ described_class::API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }")
+      end
+    end
+
+    context 'with order_id' do
+      let(:order_id) { 123_456_789 }
+
+      subject { described_class.new(key_id, v_code, character_id, order_id) }
+
+      specify do
+        expect(subject.url).to eq("#{ described_class::API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }&orderID=#{ order_id }")
+      end
     end
   end
 
