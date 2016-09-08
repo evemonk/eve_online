@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe EveOnline::Characters::MarketOrders do
+describe EveOnline::Corporations::MarketOrders do
   let(:key_id) { 123 }
 
   let(:v_code) { 'abc' }
@@ -9,7 +9,7 @@ describe EveOnline::Characters::MarketOrders do
 
   specify { expect(subject).to be_a(EveOnline::BaseXML) }
 
-  specify { expect(described_class::API_ENDPOINT).to eq('https://api.eveonline.com/char/MarketOrders.xml.aspx') }
+  specify { expect(described_class::API_ENDPOINT).to eq('https://api.eveonline.com/corp/MarketOrders.xml.aspx') }
 
   specify { expect(described_class::ACCESS_MASK).to eq(4_096) }
 

@@ -1,8 +1,8 @@
 module EveOnline
-  module Characters
-    # https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_marketorders.html
+  module Corporations
+    # https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/index.html
     class MarketOrders < BaseXML
-      API_ENDPOINT = 'https://api.eveonline.com/char/MarketOrders.xml.aspx'.freeze
+      API_ENDPOINT = 'https://api.eveonline.com/corp/MarketOrders.xml.aspx'.freeze
 
       ACCESS_MASK = 4_096
 
