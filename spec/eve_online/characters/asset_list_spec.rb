@@ -5,11 +5,7 @@ describe EveOnline::Characters::AssetList do
 
   let(:v_code) { 'abc' }
 
-  let(:character_id) { 12_345_678 }
-
-  let(:flat) { 0 }
-
-  subject { described_class.new(key_id, v_code, character_id, flat) }
+  subject { described_class.new(key_id, v_code) }
 
   specify { expect(subject).to be_a(EveOnline::BaseXML) }
 
@@ -18,7 +14,7 @@ describe EveOnline::Characters::AssetList do
   specify { expect(described_class::ACCESS_MASK).to eq(2) }
 
   describe '#initialize' do
-    context 'without params' do
+    context 'default' do
       let(:parser) { double }
 
       before do
@@ -34,15 +30,24 @@ describe EveOnline::Characters::AssetList do
 
       its(:v_code) { should eq(v_code) }
 
-      its(:character_id) { should eq(character_id) }
-
-      its(:flat) { should eq(flat) }
-    end
-
-    context 'with params' do
-      subject { described_class.new(key_id, v_code, character_id) }
+      its(:character_id) { should eq(nil) }
 
       its(:flat) { should eq(1) }
+    end
+
+    context 'with options' do
+      let(:options) do
+        {
+          character_id: 12_345_678,
+          flat: 0
+        }
+      end
+
+      subject { described_class.new(key_id, v_code, options) }
+
+      its(:character_id) { should eq(options[:character_id]) }
+
+      its(:flat) { should eq(options[:flat]) }
     end
   end
 
@@ -130,8 +135,45 @@ describe EveOnline::Characters::AssetList do
   end
 
   describe '#url' do
-    specify do
-      expect(subject.url).to eq("#{ described_class::API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }&flat=#{ flat }")
+    context 'default' do
+      specify do
+        expect(subject.url).to eq("#{ described_class::API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&flat=1")
+      end
+    end
+
+    context 'with character_id' do
+      let(:options) { { character_id: 12_345_678 } }
+
+      subject { described_class.new(key_id, v_code, options) }
+
+      specify do
+        expect(subject.url).to eq("#{ described_class::API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&flat=1&characterID=#{ options[:character_id] }")
+      end
+    end
+
+    context 'with flat' do
+      let(:options) { { flat: 0 } }
+
+      subject { described_class.new(key_id, v_code, options) }
+
+      specify do
+        expect(subject.url).to eq("#{ described_class::API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&flat=#{ options[:flat] }")
+      end
+    end
+
+    context 'with character_id and flat' do
+      let(:options) do
+        {
+          character_id: 12_345_678,
+          flat: 0
+        }
+      end
+
+      subject { described_class.new(key_id, v_code, options) }
+
+      specify do
+        expect(subject.url).to eq("#{ described_class::API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&flat=#{ options[:flat] }&characterID=#{ options[:character_id] }")
+      end
     end
   end
 

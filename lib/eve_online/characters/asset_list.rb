@@ -8,12 +8,12 @@ module EveOnline
 
       attr_reader :key_id, :v_code, :character_id, :flat
 
-      def initialize(key_id, v_code, character_id, flat = 1)
+      def initialize(key_id, v_code, options = {})
         super()
         @key_id = key_id
         @v_code = v_code
-        @character_id = character_id
-        @flat = flat
+        @character_id = options.fetch(:character_id, nil)
+        @flat = options.fetch(:flat, 1)
       end
 
       def assets
@@ -33,7 +33,9 @@ module EveOnline
       memoize :assets
 
       def url
-        "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }&flat=#{ flat }"
+        output = "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&flat=#{ flat }"
+        output = "#{ output }&characterID=#{ character_id }" if character_id
+        output
       end
 
       private
