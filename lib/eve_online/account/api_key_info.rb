@@ -33,7 +33,7 @@ module EveOnline
       end
 
       def type
-        key.fetch('@type')
+        AccountTypeObject.new(key.fetch('@type')).value
       end
 
       def access_mask

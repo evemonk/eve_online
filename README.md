@@ -97,10 +97,7 @@ v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
 api_key_info = EveOnline::Account::ApiKeyInfo.new(key_id, v_code)
 
 api_key_info.expires # => Fri, 02 Dec 2016 18:13:59 UTC +00:00
-api_key_info.type # => "Account"
-# TODO: check this
-# irb(main):029:0> api_key_info.type
-# => "Character"
+api_key_info.type # => :character
 api_key_info.access_mask # => 1073741823
 api_key_info.version # => 2
 api_key_info.current_time # => Mon, 30 Nov 2015 23:00:38 UTC +00:00
@@ -1014,6 +1011,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 **master**
 
 * Add `EveOnline::AccountTypeObject` class for handling EveOnline account type values
+* `EveOnline::Account::ApiKeyInfo#type` now returns symbols. e.g. `:account`
 
 **v0.9.0**
 
