@@ -1013,7 +1013,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 
 **master**
 
-* nothing yet
+* Add `EveOnline::AccountTypeObject` class for handling EveOnline account type values
 
 **v0.9.0**
 
