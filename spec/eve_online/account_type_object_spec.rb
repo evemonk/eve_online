@@ -10,13 +10,13 @@ describe EveOnline::AccountTypeObject do
   end
 
   describe 'value' do
-    context 'Undecided' do
+    context 'Character' do
       subject { described_class.new('Character') }
 
       its(:value) { should eq(:character) }
     end
 
-    context 'Accepted' do
+    context 'Account' do
       subject { described_class.new('Account') }
 
       its(:value) { should eq(:account) }
