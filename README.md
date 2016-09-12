@@ -201,9 +201,9 @@ Bookmarks:
 ```ruby
 key_id = 1234567
 v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-character_id = 90729314
+options = { character_id: 90729314 }
 
-bookmarks = EveOnline::Characters::Bookmarks.new(key_id, v_code, character_id)
+bookmarks = EveOnline::Characters::Bookmarks.new(key_id, v_code, options)
 
 bookmarks.current_time # => Sun, 03 Jan 2016 14:53:44 UTC +00:00 
 bookmarks.cached_until # => Sun, 03 Jan 2016 15:50:44 UTC +00:00 
