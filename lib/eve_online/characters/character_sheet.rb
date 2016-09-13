@@ -8,42 +8,42 @@ module EveOnline
 
       attr_reader :key_id, :v_code, :character_id
 
-      def initialize(key_id, v_code, character_id)
+      def initialize(key_id, v_code, options = {})
         super()
         @key_id = key_id
         @v_code = v_code
-        @character_id = character_id
+        @character_id = options.fetch(:character_id, nil)
       end
 
-      def as_json
-        {
-          character_id: character_id,
-          name: name,
-          home_station_id: home_station_id,
-          dob: dob,
-          race: race,
-          blood_line_id: blood_line_id,
-          blood_line: blood_line,
-          ancestry_id: ancestry_id,
-          ancestry: ancestry,
-          gender: gender,
-          corporation_name: corporation_name,
-          corporation_id: corporation_id,
-          alliance_name: alliance_name,
-          alliance_id: alliance_id,
-          faction_name: faction_name,
-          faction_id: faction_id,
-          clone_type_id: clone_type_id,
-          clone_name: clone_name,
-          clone_skill_points: clone_skill_points,
-          free_skill_points: free_skill_points,
-          free_respecs: free_respecs,
-          clone_jump_date: clone_jump_date,
-          last_respec_date: last_respec_date,
-          last_timed_respec: last_timed_respec,
-          remote_station_date: remote_station_date
-        }
-      end
+      # def as_json
+      #   {
+      #     character_id: character_id,
+      #     name: name,
+      #     home_station_id: home_station_id,
+      #     dob: dob,
+      #     race: race,
+      #     blood_line_id: blood_line_id,
+      #     blood_line: blood_line,
+      #     ancestry_id: ancestry_id,
+      #     ancestry: ancestry,
+      #     gender: gender,
+      #     corporation_name: corporation_name,
+      #     corporation_id: corporation_id,
+      #     alliance_name: alliance_name,
+      #     alliance_id: alliance_id,
+      #     faction_name: faction_name,
+      #     faction_id: faction_id,
+      #     clone_type_id: clone_type_id,
+      #     clone_name: clone_name,
+      #     clone_skill_points: clone_skill_points,
+      #     free_skill_points: free_skill_points,
+      #     free_respecs: free_respecs,
+      #     clone_jump_date: clone_jump_date,
+      #     last_respec_date: last_respec_date,
+      #     last_timed_respec: last_timed_respec,
+      #     remote_station_date: remote_station_date
+      #   }
+      # end
 
       def name
         result.fetch('name')
@@ -202,7 +202,9 @@ module EveOnline
       memoize :jump_clone_implants
 
       def url
-        "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }"
+        output = "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }"
+        output = "#{ output }&characterID=#{ character_id }" if character_id
+        output
       end
 
       private
