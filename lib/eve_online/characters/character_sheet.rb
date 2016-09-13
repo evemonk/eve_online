@@ -15,35 +15,35 @@ module EveOnline
         @character_id = options.fetch(:character_id, nil)
       end
 
-      # def as_json
-      #   {
-      #     id: id,
-      #     name: name,
-      #     home_station_id: home_station_id,
-      #     dob: dob,
-      #     race: race,
-      #     blood_line_id: blood_line_id,
-      #     blood_line: blood_line,
-      #     ancestry_id: ancestry_id,
-      #     ancestry: ancestry,
-      #     gender: gender,
-      #     corporation_name: corporation_name,
-      #     corporation_id: corporation_id,
-      #     alliance_name: alliance_name,
-      #     alliance_id: alliance_id,
-      #     faction_name: faction_name,
-      #     faction_id: faction_id,
-      #     clone_type_id: clone_type_id,
-      #     clone_name: clone_name,
-      #     clone_skill_points: clone_skill_points,
-      #     free_skill_points: free_skill_points,
-      #     free_respecs: free_respecs,
-      #     clone_jump_date: clone_jump_date,
-      #     last_respec_date: last_respec_date,
-      #     last_timed_respec: last_timed_respec,
-      #     remote_station_date: remote_station_date
-      #   }
-      # end
+      def as_json
+        {
+          id: id,
+          name: name,
+          home_station_id: home_station_id,
+          dob: dob,
+          race: race,
+          blood_line_id: blood_line_id,
+          blood_line: blood_line,
+          ancestry_id: ancestry_id,
+          ancestry: ancestry,
+          gender: gender,
+          corporation_name: corporation_name,
+          corporation_id: corporation_id,
+          alliance_name: alliance_name,
+          alliance_id: alliance_id,
+          faction_name: faction_name,
+          faction_id: faction_id,
+          clone_type_id: clone_type_id,
+          clone_name: clone_name,
+          clone_skill_points: clone_skill_points,
+          free_skill_points: free_skill_points,
+          free_respecs: free_respecs,
+          clone_jump_date: clone_jump_date,
+          last_respec_date: last_respec_date,
+          last_timed_respec: last_timed_respec,
+          remote_station_date: remote_station_date
+        }
+      end
 
       def id
         result.fetch('characterID').to_i
