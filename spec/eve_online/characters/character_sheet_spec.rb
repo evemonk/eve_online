@@ -5,10 +5,6 @@ describe EveOnline::Characters::CharacterSheet do
 
   let(:v_code) { 'abc' }
 
-  # let(:character_id) { 12_345_678 }
-  #
-  # subject { described_class.new(key_id, v_code, character_id) }
-
   subject { described_class.new(key_id, v_code) }
 
   specify { expect(subject).to be_a(EveOnline::BaseXML) }
