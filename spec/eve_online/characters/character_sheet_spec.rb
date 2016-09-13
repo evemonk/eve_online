@@ -160,6 +160,25 @@ describe EveOnline::Characters::CharacterSheet do
   #   its([:remote_station_date]) { should eq(remote_station_date) }
   # end
 
+  describe '#id' do
+    before do
+      #
+      # subject.result.fetch('characterID').to_i
+      #
+      expect(subject).to receive(:result) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('characterID') do
+            double.tap do |b|
+              expect(b).to receive(:to_i)
+            end
+          end
+        end
+      end
+    end
+
+    specify { expect { subject.id }.not_to raise_error }
+  end
+
   describe '#name' do
     before do
       #

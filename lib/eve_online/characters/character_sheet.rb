@@ -17,7 +17,7 @@ module EveOnline
 
       # def as_json
       #   {
-      #     character_id: character_id,
+      #     id: id,
       #     name: name,
       #     home_station_id: home_station_id,
       #     dob: dob,
@@ -44,6 +44,10 @@ module EveOnline
       #     remote_station_date: remote_station_date
       #   }
       # end
+
+      def id
+        result.fetch('characterID').to_i
+      end
 
       def name
         result.fetch('name')
