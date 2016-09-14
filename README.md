@@ -97,10 +97,7 @@ v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
 api_key_info = EveOnline::Account::ApiKeyInfo.new(key_id, v_code)
 
 api_key_info.expires # => Fri, 02 Dec 2016 18:13:59 UTC +00:00
-api_key_info.type # => "Account"
-# TODO: check this
-# irb(main):029:0> api_key_info.type
-# => "Character"
+api_key_info.type # => :character
 api_key_info.access_mask # => 1073741823
 api_key_info.version # => 2
 api_key_info.current_time # => Mon, 30 Nov 2015 23:00:38 UTC +00:00
@@ -127,9 +124,9 @@ Accounts Balance:
 ```ruby
 key_id = 1234567
 v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-character_id = 90729314
+options = { character_id: 90729314 }
 
-account_balance = EveOnline::Characters::AccountBalance.new(key_id, v_code, character_id)
+account_balance = EveOnline::Characters::AccountBalance.new(key_id, v_code, options)
 
 account_balance.as_json
 # => {:account_id=>42763123, :account_key=>1000, :balance=>5000.0, :current_time=>Wed, 02 Dec 2015 20:29:32 UTC +00:00, :cached_until=>Wed, 02 Dec 2015 20:40:42 UTC +00:00}
@@ -146,9 +143,9 @@ Asset List:
 ```ruby
 key_id = 1234567
 v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-character_id = 90729314
+options = { character_id: 90729314 }
 
-asset_list = EveOnline::Characters::AssetList.new(key_id, v_code, character_id)
+asset_list = EveOnline::Characters::AssetList.new(key_id, v_code, options)
 
 asset_list.current_time # => Mon, 29 Feb 2016 21:51:38 UTC +00:00
 asset_list.cached_until # => Tue, 01 Mar 2016 03:48:38 UTC +00:00
@@ -174,9 +171,9 @@ Blueprints:
 ```ruby
 key_id = 1234567
 v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-character_id = 90729314
+options = { character_id: 90729314 }
 
-blueprints = EveOnline::Characters::Blueprints.new(key_id, v_code, character_id)
+blueprints = EveOnline::Characters::Blueprints.new(key_id, v_code, options)
 
 blueprints.current_time # => Sun, 03 Jan 2016 14:36:37 UTC +00:00 
 blueprints.cached_until # => Mon, 04 Jan 2016 02:06:37 UTC +00:00 
@@ -204,9 +201,9 @@ Bookmarks:
 ```ruby
 key_id = 1234567
 v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-character_id = 90729314
+options = { character_id: 90729314 }
 
-bookmarks = EveOnline::Characters::Bookmarks.new(key_id, v_code, character_id)
+bookmarks = EveOnline::Characters::Bookmarks.new(key_id, v_code, options)
 
 bookmarks.current_time # => Sun, 03 Jan 2016 14:53:44 UTC +00:00 
 bookmarks.cached_until # => Sun, 03 Jan 2016 15:50:44 UTC +00:00 
@@ -261,18 +258,18 @@ Character Sheet:
 ```ruby
 key_id = 1234567
 v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-character_id = 90729314
+options = { character_id: 90729314 }
 
-character_sheet = EveOnline::Characters::CharacterSheet.new(key_id, v_code, character_id)
+character_sheet = EveOnline::Characters::CharacterSheet.new(key_id, v_code, options)
 
 character_sheet.current_time # => Sun, 17 Jul 2016 12:27:11 UTC +00:00
 character_sheet.cached_until # => Sun, 17 Jul 2016 13:24:11 UTC +00:00
 character_sheet.version # => 2
 
 character_sheet.as_json
-# => {:character_id=>90729314, :name=>"Green Black", :home_station_id=>61000032, :dob=>Fri, 15 Jan 2010 15:26:00 UTC +00:00, :race=>"Minmatar", :blood_line_id=>4, :blood_line=>"Brutor", :ancestry_id=>24, :ancestry=>"Slave Child", :gender=>:male, :corporation_name=>"MyLittleDragon", :corporation_id=>98134807, :alliance_name=>"Kids With Guns Alliance", :alliance_id=>99005443, :faction_name=>nil, :faction_id=>0, :clone_type_id=>164, :clone_name=>"Clone Grade Alpha", :clone_skill_points=>0, :free_skill_points=>400000, :free_respecs=>2, :clone_jump_date=>Fri, 27 Jul 2012 14:50:11 UTC +00:00, :last_respec_date=>Sat, 07 May 2011 12:58:06 UTC +00:00, :last_timed_respec=>Sat, 07 May 2011 12:58:06 UTC +00:00, :remote_station_date=>Tue, 30 Jun 2015 21:51:13 UTC +00:00}
+# => {:id=>90729314, :name=>"Green Black", :home_station_id=>61000032, :dob=>Fri, 15 Jan 2010 15:26:00 UTC +00:00, :race=>"Minmatar", :blood_line_id=>4, :blood_line=>"Brutor", :ancestry_id=>24, :ancestry=>"Slave Child", :gender=>:male, :corporation_name=>"MyLittleDragon", :corporation_id=>98134807, :alliance_name=>"Kids With Guns Alliance", :alliance_id=>99005443, :faction_name=>nil, :faction_id=>0, :clone_type_id=>164, :clone_name=>"Clone Grade Alpha", :clone_skill_points=>0, :free_skill_points=>400000, :free_respecs=>2, :clone_jump_date=>Fri, 27 Jul 2012 14:50:11 UTC +00:00, :last_respec_date=>Sat, 07 May 2011 12:58:06 UTC +00:00, :last_timed_respec=>Sat, 07 May 2011 12:58:06 UTC +00:00, :remote_station_date=>Tue, 30 Jun 2015 21:51:13 UTC +00:00}
 
-character_sheet.character_id # => 90729314
+character_sheet.id # => 90729314
 character_sheet.name # => "Green Black"
 character_sheet.home_station_id # => 61000032
 character_sheet.dob # => Fri, 15 Jan 2010 15:26:00 UTC +00:00
@@ -357,9 +354,9 @@ Character chat channels:
 ```ruby
 key_id = 1234567
 v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-character_id = 90729314
+options = { character_id: 90729314 }
 
-chat_channels = EveOnline::Characters::ChatChannels.new(key_id, v_code, character_id)
+chat_channels = EveOnline::Characters::ChatChannels.new(key_id, v_code, options)
 
 chat_channels.current_time # => Fri, 19 Aug 2016 11:05:43 UTC +00:00
 chat_channels.cached_until # => Fri, 19 Aug 2016 11:19:44 UTC +00:00
@@ -373,9 +370,9 @@ Character contact list:
 ```ruby
 key_id = 1234567
 v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-character_id = 90729314
+options = { character_id: 90729314 }
 
-contact_list = EveOnline::Characters::ContactList.new(key_id, v_code, character_id)
+contact_list = EveOnline::Characters::ContactList.new(key_id, v_code, options)
 
 contact_list.current_time # => Fri, 19 Aug 2016 11:08:06 UTC +00:00
 contact_list.cached_until # => Fri, 19 Aug 2016 11:22:07 UTC +00:00
@@ -1010,6 +1007,11 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 Issue reports and pull requests are welcome on GitHub at https://github.com/biow0lf/eve_online.
 
 ## Changelog
+
+**master**
+
+* Add `EveOnline::AccountTypeObject` class for handling EveOnline account type values
+* `EveOnline::Account::ApiKeyInfo#type` now returns symbols. e.g. `:account`
 
 **v0.9.0**
 

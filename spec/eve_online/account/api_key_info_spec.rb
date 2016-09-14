@@ -138,13 +138,23 @@ describe EveOnline::Account::ApiKeyInfo do
   end
 
   describe '#type' do
+    let(:type) { double }
+
     before do
       #
-      # subject.key.fetch('@type')
+      # subject.key.fetch('@type') => type
       #
       expect(subject).to receive(:key) do
         double.tap do |a|
-          expect(a).to receive(:fetch).with('@type')
+          expect(a).to receive(:fetch).with('@type').and_return(type)
+        end
+      end
+    end
+
+    before do
+      expect(EveOnline::AccountTypeObject).to receive(:new).with(type) do
+        double.tap do |a|
+          expect(a).to receive(:value)
         end
       end
     end

@@ -5,9 +5,7 @@ describe EveOnline::Characters::CharacterSheet do
 
   let(:v_code) { 'abc' }
 
-  let(:character_id) { 12_345_678 }
-
-  subject { described_class.new(key_id, v_code, character_id) }
+  subject { described_class.new(key_id, v_code) }
 
   specify { expect(subject).to be_a(EveOnline::BaseXML) }
 
@@ -16,26 +14,36 @@ describe EveOnline::Characters::CharacterSheet do
   specify { expect(described_class::ACCESS_MASK).to eq(8) }
 
   describe '#initialize' do
-    let(:parser) { double }
+    context 'default' do
+      let(:parser) { double }
 
-    before do
-      #
-      # Nori.new(advanced_typecasting: false) => double
-      #
-      expect(Nori).to receive(:new).with(advanced_typecasting: false).and_return(parser)
+      before do
+        #
+        # Nori.new(advanced_typecasting: false) => double
+        #
+        expect(Nori).to receive(:new).with(advanced_typecasting: false).and_return(parser)
+      end
+
+      its(:parser) { should eq(parser) }
+
+      its(:key_id) { should eq(key_id) }
+
+      its(:v_code) { should eq(v_code) }
+
+      its(:character_id) { should eq(nil) }
     end
 
-    its(:parser) { should eq(parser) }
+    context 'with options' do
+      let(:options) { { character_id: 12_345_678 } }
 
-    its(:key_id) { should eq(key_id) }
+      subject { described_class.new(key_id, v_code, options) }
 
-    its(:v_code) { should eq(v_code) }
-
-    its(:character_id) { should eq(character_id) }
+      its(:character_id) { should eq(options[:character_id]) }
+    end
   end
 
   describe '#as_json' do
-    let(:character_sheet) { described_class.new(key_id, v_code, character_id) }
+    let(:character_sheet) { described_class.new(key_id, v_code) }
 
     let(:dob) { double }
 
@@ -46,6 +54,8 @@ describe EveOnline::Characters::CharacterSheet do
     let(:last_timed_respec) { double }
 
     let(:remote_station_date) { double }
+
+    before { expect(character_sheet).to receive(:id).and_return(12_345_678) }
 
     before { expect(character_sheet).to receive(:name).and_return('Green Black') }
 
@@ -97,7 +107,7 @@ describe EveOnline::Characters::CharacterSheet do
 
     subject { character_sheet.as_json }
 
-    its([:character_id]) { should eq(character_id) }
+    its([:id]) { should eq(12_345_678) }
 
     its([:name]) { should eq('Green Black') }
 
@@ -146,6 +156,25 @@ describe EveOnline::Characters::CharacterSheet do
     its([:last_timed_respec]) { should eq(last_timed_respec) }
 
     its([:remote_station_date]) { should eq(remote_station_date) }
+  end
+
+  describe '#id' do
+    before do
+      #
+      # subject.result.fetch('characterID').to_i
+      #
+      expect(subject).to receive(:result) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('characterID') do
+            double.tap do |b|
+              expect(b).to receive(:to_i)
+            end
+          end
+        end
+      end
+    end
+
+    specify { expect { subject.id }.not_to raise_error }
   end
 
   describe '#name' do
@@ -872,8 +901,20 @@ describe EveOnline::Characters::CharacterSheet do
   end
 
   describe '#url' do
-    specify do
-      expect(subject.url).to eq("#{ described_class::API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }")
+    context 'default' do
+      specify do
+        expect(subject.url).to eq("#{ described_class::API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }")
+      end
+    end
+
+    context 'with character_id' do
+      let(:options) { { character_id: 12_345_678 } }
+
+      subject { described_class.new(key_id, v_code, options) }
+
+      specify do
+        expect(subject.url).to eq("#{ described_class::API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ options[:character_id] }")
+      end
     end
   end
 

@@ -8,16 +8,16 @@ module EveOnline
 
       attr_reader :key_id, :v_code, :character_id
 
-      def initialize(key_id, v_code, character_id)
+      def initialize(key_id, v_code, options = {})
         super()
         @key_id = key_id
         @v_code = v_code
-        @character_id = character_id
+        @character_id = options.fetch(:character_id, nil)
       end
 
       def as_json
         {
-          character_id: character_id,
+          id: id,
           name: name,
           home_station_id: home_station_id,
           dob: dob,
@@ -43,6 +43,10 @@ module EveOnline
           last_timed_respec: last_timed_respec,
           remote_station_date: remote_station_date
         }
+      end
+
+      def id
+        result.fetch('characterID').to_i
       end
 
       def name
@@ -202,7 +206,9 @@ module EveOnline
       memoize :jump_clone_implants
 
       def url
-        "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }"
+        output = "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }"
+        output = "#{ output }&characterID=#{ character_id }" if character_id
+        output
       end
 
       private

@@ -8,11 +8,11 @@ module EveOnline
 
       attr_reader :key_id, :v_code, :character_id
 
-      def initialize(key_id, v_code, character_id)
+      def initialize(key_id, v_code, options = {})
         super()
         @key_id = key_id
         @v_code = v_code
-        @character_id = character_id
+        @character_id = options.fetch(:character_id, nil)
       end
 
       def as_json
@@ -38,7 +38,9 @@ module EveOnline
       end
 
       def url
-        "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }"
+        output = "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }"
+        output = "#{ output }&characterID=#{ character_id }" if character_id
+        output
       end
 
       private

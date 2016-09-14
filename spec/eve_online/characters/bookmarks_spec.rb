@@ -5,9 +5,7 @@ describe EveOnline::Characters::Bookmarks do
 
   let(:v_code) { 'abc' }
 
-  let(:character_id) { 12_345_678 }
-
-  subject { described_class.new(key_id, v_code, character_id) }
+  subject { described_class.new(key_id, v_code) }
 
   specify { expect(subject).to be_a(EveOnline::BaseXML) }
 
@@ -16,22 +14,32 @@ describe EveOnline::Characters::Bookmarks do
   specify { expect(described_class::ACCESS_MASK).to eq(268_435_456) }
 
   describe '#initialize' do
-    let(:parser) { double }
+    context 'default' do
+      let(:parser) { double }
 
-    before do
-      #
-      # Nori.new(advanced_typecasting: false) => double
-      #
-      expect(Nori).to receive(:new).with(advanced_typecasting: false).and_return(parser)
+      before do
+        #
+        # Nori.new(advanced_typecasting: false) => double
+        #
+        expect(Nori).to receive(:new).with(advanced_typecasting: false).and_return(parser)
+      end
+
+      its(:parser) { should eq(parser) }
+
+      its(:key_id) { should eq(key_id) }
+
+      its(:v_code) { should eq(v_code) }
+
+      its(:character_id) { should eq(nil) }
     end
 
-    its(:parser) { should eq(parser) }
+    context 'with options' do
+      let(:options) { { character_id: 12_345_678 } }
 
-    its(:key_id) { should eq(key_id) }
+      subject { described_class.new(key_id, v_code, options) }
 
-    its(:v_code) { should eq(v_code) }
-
-    its(:character_id) { should eq(character_id) }
+      its(:character_id) { should eq(options[:character_id]) }
+    end
   end
 
   describe '#bookmark_folders' do
@@ -138,8 +146,20 @@ describe EveOnline::Characters::Bookmarks do
   end
 
   describe '#url' do
-    specify do
-      expect(subject.url).to eq("#{ described_class::API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ character_id }")
+    context 'default' do
+      specify do
+        expect(subject.url).to eq("#{ described_class::API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }")
+      end
+    end
+
+    context 'with character_id' do
+      let(:options) { { character_id: 12_345_678 } }
+
+      subject { described_class.new(key_id, v_code, options) }
+
+      specify do
+        expect(subject.url).to eq("#{ described_class::API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }&characterID=#{ options[:character_id] }")
+      end
     end
   end
 

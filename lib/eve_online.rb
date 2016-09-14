@@ -24,6 +24,7 @@ require 'eve_online/skill_queue_entry'
 require 'eve_online/contact_notification'
 require 'eve_online/wallet_journal_entry'
 require 'eve_online/market_order'
+require 'eve_online/account_type_object'
 
 require 'eve_online/account/api_key_info'
 require 'eve_online/account/characters'
