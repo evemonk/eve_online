@@ -22,6 +22,12 @@ describe EveOnline::AccountTypeObject do
       its(:value) { should eq(:account) }
     end
 
+    context 'Corporation' do
+      subject { described_class.new('Corporation') }
+
+      its(:value) { should eq(:corporation) }
+    end
+
     context 'invalid input' do
       subject { described_class.new('invalid input') }
 

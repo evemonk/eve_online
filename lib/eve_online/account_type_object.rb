@@ -1,6 +1,7 @@
 module EveOnline
   class AccountTypeObject
-    STATUSES = { 'Character' => :character, 'Account' => :account }.freeze
+    STATUSES = { 'Character' => :character, 'Account' => :account,
+                 'Corporation' => :corporation }.freeze
 
     attr_reader :input
 
