@@ -1,6 +1,11 @@
+require 'yaml'
+require 'memoist'
+
 module EveOnline
   module SDE
     class Blueprints
+      extend Memoist
+
       attr_reader :file
 
       def initialize(file)
@@ -8,18 +13,18 @@ module EveOnline
       end
 
       def blueprints
-        @type_ids ||= begin
-          output = []
-          content.each do |entry|
-            output << Blueprint.new(entry)
-          end
-          output
+        output = []
+        content.each do |entry|
+          output << Blueprint.new(entry)
         end
+        output
       end
+      memoize :blueprints
 
       def content
-        @content ||= YAML.load(File.open(file))
+        YAML.load(File.open(file))
       end
+      memoize :content
     end
   end
 end

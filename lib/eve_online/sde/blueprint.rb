@@ -9,17 +9,17 @@ module EveOnline
 
       def as_json
         {
-          type_id: type_id,
-          data: data
+          blueprint_type_id: blueprint_type_id,
+          max_production_limit: max_production_limit
         }
       end
 
-      def type_id
-        @type_id ||= options.first
+      def blueprint_type_id
+        options.fetch('blueprintTypeID')
       end
 
-      def data
-        @data ||= options.last
+      def max_production_limit
+        options.fetch('maxProductionLimit')
       end
     end
   end
