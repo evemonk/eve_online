@@ -10,7 +10,8 @@ module EveOnline
       def as_json
         {
           blueprint_type_id: blueprint_type_id,
-          max_production_limit: max_production_limit
+          max_production_limit: max_production_limit,
+          activities: activities
         }
       end
 
@@ -20,6 +21,10 @@ module EveOnline
 
       def max_production_limit
         options.fetch('maxProductionLimit')
+      end
+
+      def activities
+        options.fetch('activities')
       end
     end
   end
