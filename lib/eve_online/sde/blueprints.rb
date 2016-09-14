@@ -15,7 +15,7 @@ module EveOnline
       def blueprints
         output = []
         content.each do |entry|
-          output << Blueprint.new(entry)
+          output << Blueprint.new(entry.last)
         end
         output
       end
