@@ -73,5 +73,10 @@ require 'eve_online/server/status'
 
 require 'eve_online/sovereignty/campaigns'
 
+require 'eve_online/sde/type_ids'
+require 'eve_online/sde/type_id'
+require 'eve_online/sde/blueprints'
+require 'eve_online/sde/blueprint'
+
 module EveOnline
 end
