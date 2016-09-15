@@ -9,13 +9,13 @@ module EveOnline
 
       def as_json
         {
-          blueprint_type_id: blueprint_type_id,
+          type_id: type_id,
           max_production_limit: max_production_limit,
           activities: activities
         }
       end
 
-      def blueprint_type_id
+      def type_id
         options.fetch('blueprintTypeID')
       end
 

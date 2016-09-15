@@ -14,18 +14,18 @@ describe EveOnline::SDE::Blueprint do
 
     let(:blueprint) { described_class.new(options) }
 
-    before { expect(blueprint).to receive(:blueprint_type_id).and_return(681) }
+    before { expect(blueprint).to receive(:type_id).and_return(681) }
 
     before { expect(blueprint).to receive(:max_production_limit).and_return(300) }
 
     subject { blueprint.as_json }
 
-    its([:blueprint_type_id]) { should eq(681) }
+    its([:type_id]) { should eq(681) }
 
     its([:max_production_limit]) { should eq(300) }
   end
 
-  describe '#blueprint_type_id' do
+  describe '#type_id' do
     let(:options) { double }
 
     subject { described_class.new(options) }
@@ -41,7 +41,7 @@ describe EveOnline::SDE::Blueprint do
       end
     end
 
-    specify { expect { subject.blueprint_type_id }.not_to raise_error }
+    specify { expect { subject.type_id }.not_to raise_error }
   end
 
   describe '#max_production_limit' do
