@@ -39,7 +39,7 @@ describe EveOnline::Account::ApiKeyInfo do
 
     before { expect(api_key_info).to receive(:expires).and_return(expires) }
 
-    before { expect(api_key_info).to receive(:type).and_return(:character) }
+    before { expect(api_key_info).to receive(:api_key_type).and_return(:character) }
 
     before { expect(api_key_info).to receive(:access_mask).and_return(1073741823) }
 
@@ -51,7 +51,7 @@ describe EveOnline::Account::ApiKeyInfo do
 
     its([:expires]) { should eq(expires) }
 
-    its([:type]) { should eq(:character) }
+    its([:api_key_type]) { should eq(:character) }
 
     its([:access_mask]) { should eq(1073741823) }
 
@@ -169,7 +169,7 @@ describe EveOnline::Account::ApiKeyInfo do
     specify { expect { subject.expires }.not_to raise_error }
   end
 
-  describe '#type' do
+  describe '#api_key_type' do
     let(:type) { double }
 
     before do
@@ -191,7 +191,7 @@ describe EveOnline::Account::ApiKeyInfo do
       end
     end
 
-    specify { expect { subject.type }.not_to raise_error }
+    specify { expect { subject.api_key_type }.not_to raise_error }
   end
 
   describe '#access_mask' do
