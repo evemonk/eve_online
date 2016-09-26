@@ -1016,6 +1016,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Add `EveOnline::AccountTypeObject` class for handling EveOnline account type values
 * `EveOnline::Account::ApiKeyInfo#type` now returns symbols. e.g. `:account`
 * Add `EveOnline::Account::ApiKeyInfo#as_json`
+* Rename `EveOnline::Account::ApiKeyInfo#type` to `#api_key_type`
 
 **v0.9.0**
 

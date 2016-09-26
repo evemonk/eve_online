@@ -15,7 +15,7 @@ module EveOnline
       def as_json
         {
           expires: expires,
-          type: type,
+          api_key_type: api_key_type,
           access_mask: access_mask,
           current_time: current_time,
           cached_until: cached_until
@@ -42,7 +42,7 @@ module EveOnline
         parse_datetime_with_timezone(key.fetch('@expires'))
       end
 
-      def type
+      def api_key_type
         AccountTypeObject.new(key.fetch('@type')).value
       end
 
