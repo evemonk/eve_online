@@ -12,6 +12,16 @@ module EveOnline
         @v_code = v_code
       end
 
+      def as_json
+        {
+          expires: expires,
+          type: type,
+          access_mask: access_mask,
+          current_time: current_time,
+          cached_until: cached_until
+        }
+      end
+
       def characters
         case row
         when Hash

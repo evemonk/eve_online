@@ -28,6 +28,38 @@ describe EveOnline::Account::ApiKeyInfo do
     its(:v_code) { should eq(v_code) }
   end
 
+  describe '#as_json' do
+    let(:api_key_info) { described_class.new(key_id, v_code) }
+
+    let(:expires) { double }
+
+    let(:current_time) { double }
+
+    let(:cached_until) { double }
+
+    before { expect(api_key_info).to receive(:expires).and_return(expires) }
+
+    before { expect(api_key_info).to receive(:type).and_return(:character) }
+
+    before { expect(api_key_info).to receive(:access_mask).and_return(1073741823) }
+
+    before { expect(api_key_info).to receive(:current_time).and_return(current_time) }
+
+    before { expect(api_key_info).to receive(:cached_until).and_return(cached_until) }
+
+    subject { api_key_info.as_json }
+
+    its([:expires]) { should eq(expires) }
+
+    its([:type]) { should eq(:character) }
+
+    its([:access_mask]) { should eq(1073741823) }
+
+    its([:current_time]) { should eq(current_time) }
+
+    its([:cached_until]) { should eq(cached_until) }
+  end
+
   describe '#characters' do
     context 'row is Hash' do
       let(:character) { double }
