@@ -73,5 +73,7 @@ require 'eve_online/server/status'
 
 require 'eve_online/sovereignty/campaigns'
 
+require 'eve_online/eve_online'
+
 module EveOnline
 end
