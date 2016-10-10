@@ -7,7 +7,7 @@ describe EveOnline::Account::ApiKeyInfo do
 
   subject { described_class.new(key_id, v_code) }
 
-  specify { expect(subject).to be_a EveOnline::BaseXML }
+  specify { expect(subject).to be_a(EveOnline::BaseXML) }
 
   specify { expect(described_class::API_ENDPOINT).to eq('https://api.eveonline.com/account/APIKeyInfo.xml.aspx') }
 
@@ -41,7 +41,7 @@ describe EveOnline::Account::ApiKeyInfo do
 
     before { expect(api_key_info).to receive(:api_key_type).and_return(:character) }
 
-    before { expect(api_key_info).to receive(:access_mask).and_return(1073741823) }
+    before { expect(api_key_info).to receive(:access_mask).and_return(1_073_741_823) }
 
     before { expect(api_key_info).to receive(:current_time).and_return(current_time) }
 
@@ -53,7 +53,7 @@ describe EveOnline::Account::ApiKeyInfo do
 
     its([:api_key_type]) { should eq(:character) }
 
-    its([:access_mask]) { should eq(1073741823) }
+    its([:access_mask]) { should eq(1_073_741_823) }
 
     its([:current_time]) { should eq(current_time) }
 
