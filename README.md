@@ -39,7 +39,8 @@ Or install it yourself as:
  * MRI 2.3
  * MRI 2.4 (head)
  * Rubinius (latest via RVM)
- * JRuby 9.0.5.0
+ * JRuby 9.1.5.0
+ * JRuby (head)
 
 ## Usage
 
