@@ -3,7 +3,4 @@ module EveOnline
   # catch any exceptions from EveOnline.
   class Exception < RuntimeError
   end
-
-  class TimeoutException < Exception
-  end
 end

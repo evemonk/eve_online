@@ -1,6 +1,7 @@
 require 'eve_online/version'
 
-require 'eve_online/exceptions'
+require 'eve_online/exceptions/exception'
+require 'eve_online/exceptions/timeout_exception'
 
 require 'eve_online/base'
 require 'eve_online/base_xml'
