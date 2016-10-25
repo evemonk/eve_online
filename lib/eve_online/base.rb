@@ -21,8 +21,8 @@ module EveOnline
                                            headers: { user_agent: user_agent })
 
       client.body
-    rescue RestClient::Timeout
-      raise TimeoutException
+    rescue RestClient::Exceptions::Timeout
+      raise EveOnline::Exceptions::TimeoutException
     end
     memoize :content
 

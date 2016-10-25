@@ -12,28 +12,65 @@ describe EveOnline::Base do
   end
 
   describe '#content' do
-    let(:url) { double }
+    context 'ok' do
+      let(:url) { double }
 
-    before { expect(subject).to receive(:url).and_return(url) }
+      before { expect(subject).to receive(:url).and_return(url) }
 
-    let(:user_agent) { double }
+      let(:user_agent) { double }
 
-    before { expect(subject).to receive(:user_agent).and_return(user_agent) }
+      before { expect(subject).to receive(:user_agent).and_return(user_agent) }
 
-    before do
-      #
-      # subject.open(url, open_timeout: 60, read_timeout: 60, 'User-Agent' => user_agent).read
-      #
-      expect(subject).to receive(:open).with(url, open_timeout: 60, read_timeout: 60, 'User-Agent' => user_agent) do
-        double.tap do |a|
-          expect(a).to receive(:read)
-        end
+      let(:client) { double }
+
+      before do
+        #
+        # RestClient::Request.execute(method: :get,
+        #                             url: url,
+        #                             open_timeout: 60,
+        #                             timeout: 60,
+        #                             headers: { user_agent: user_agent }) => client
+        #
+        expect(RestClient::Request).to receive(:execute).with(method: :get,
+                                                              url: url,
+                                                              open_timeout: 60,
+                                                              timeout: 60,
+                                                              headers: { user_agent: user_agent }).and_return(client)
       end
+
+      before { expect(client).to receive(:body) }
+
+      specify { expect { subject.content }.not_to raise_error }
+
+      specify { expect { subject.content }.to change { subject.instance_variable_defined?(:@_memoized_content) }.from(false).to(true) }
     end
 
-    specify { expect { subject.content }.not_to raise_error }
+    context 'exception' do
+      let(:url) { double }
 
-    specify { expect { subject.content }.to change { subject.instance_variable_defined?(:@_memoized_content) }.from(false).to(true) }
+      before { expect(subject).to receive(:url).and_return(url) }
+
+      let(:user_agent) { double }
+
+      before { expect(subject).to receive(:user_agent).and_return(user_agent) }
+
+      before do
+        #
+        # RestClient::Request.execute(method: :get,
+        #                             url: url,
+        #                             open_timeout: 60,
+        #                             timeout: 60,
+        #                             headers: { user_agent: user_agent }) => RestClient::Exceptions::Timeout
+        #
+        expect(RestClient::Request).to receive(:execute).with(method: :get,
+                                                              url: url,
+                                                              open_timeout: 60,
+                                                              timeout: 60,
+                                                              headers: { user_agent: user_agent }).and_raise(RestClient::Exceptions::Timeout)
+      end
+
+      specify { expect { subject.content }.to raise_error(EveOnline::Exceptions::TimeoutException) }
+    end
   end
 
   describe '#response' do
