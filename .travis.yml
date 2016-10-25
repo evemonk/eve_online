@@ -8,7 +8,6 @@ rvm:
   - 2.3.1
   - ruby-head
   - rbx
-  - jruby
 
 gemfile:
   - gemfiles/activesupport_42.gemfile
@@ -22,14 +21,18 @@ matrix:
       gemfile: gemfiles/activesupport_50.gemfile
     - rvm: 2.1
       gemfile: gemfiles/activesupport_50.gemfile
-    - rvm: jruby
-      gemfile: gemfiles/activesupport_50.gemfile
     - rvm: ruby-head
       gemfile: gemfiles/activesupport_42.gemfile
+  include:
+    - rvm: jruby-9.0.5.0
+      jdk: oraclejdk8
+      env:
+        - "JRUBY_OPTS='--dev -J-Xmx1024M'"
 
   allow_failures:
     - rvm: rbx
     - rvm: ruby-head
+    - rvm: jruby-9.0.5.0
   fast_finish: true
 
 before_install: gem install bundler -v 1.13.6
