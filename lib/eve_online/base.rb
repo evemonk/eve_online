@@ -1,4 +1,4 @@
-require 'open-uri'
+require 'rest-client'
 require 'memoist'
 
 module EveOnline
@@ -14,8 +14,15 @@ module EveOnline
     end
 
     def content
-      open(url, open_timeout: 60, read_timeout: 60,
-                'User-Agent' => user_agent).read
+      client = RestClient::Request.execute(method: :get,
+                                           url: url,
+                                           open_timeout: 60,
+                                           timeout: 60,
+                                           headers: { user_agent: user_agent })
+
+      client.body
+    rescue RestClient::Timeout
+      raise TimeoutException
     end
     memoize :content
 

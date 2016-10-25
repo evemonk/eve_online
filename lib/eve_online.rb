@@ -1,5 +1,7 @@
 require 'eve_online/version'
 
+require 'eve_online/exceptions'
+
 require 'eve_online/base'
 require 'eve_online/base_xml'
 require 'eve_online/base_crest'
