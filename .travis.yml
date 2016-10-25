@@ -30,6 +30,7 @@ matrix:
   allow_failures:
     - rvm: rbx
     - rvm: ruby-head
+  fast_finish: true
 
 before_install: gem install bundler -v 1.13.6
 
