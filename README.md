@@ -40,7 +40,8 @@ Or install it yourself as:
  * MRI 2.3
  * MRI 2.4 (head)
  * Rubinius (latest via RVM)
- * JRuby (latest via RVM)
+ * JRuby 9.1.5.0
+ * JRuby (head)
 
 ## Usage
 
@@ -1015,6 +1016,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 
 **master**
 
+* Replace `open-uri` with `faraday`
 * Add `EveOnline::AccountTypeObject` class for handling EveOnline account type values
 * `EveOnline::Account::ApiKeyInfo#type` now returns symbols. e.g. `:account`
 * Add `EveOnline::Account::ApiKeyInfo#as_json`

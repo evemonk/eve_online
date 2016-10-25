@@ -12,28 +12,78 @@ describe EveOnline::Base do
   end
 
   describe '#content' do
-    let(:url) { double }
+    context 'ok' do
+      let(:url) { double }
 
-    before { expect(subject).to receive(:url).and_return(url) }
+      before { expect(subject).to receive(:url).and_return(url) }
 
-    let(:user_agent) { double }
+      let(:user_agent) { double }
 
-    before { expect(subject).to receive(:user_agent).and_return(user_agent) }
+      before { expect(subject).to receive(:user_agent).and_return(user_agent) }
 
-    before do
-      #
-      # subject.open(url, open_timeout: 60, read_timeout: 60, 'User-Agent' => user_agent).read
-      #
-      expect(subject).to receive(:open).with(url, open_timeout: 60, read_timeout: 60, 'User-Agent' => user_agent) do
-        double.tap do |a|
-          expect(a).to receive(:read)
+      let(:faraday) { double }
+
+      before do
+        #
+        # Faraday.new => faraday
+        #
+        expect(Faraday).to receive(:new).and_return(faraday)
+      end
+
+      before do
+        #
+        # faraday.headers[:user_agent] = user_agent
+        #
+        expect(faraday).to receive(:headers) do
+          double.tap do |a|
+            expect(a).to receive(:[]=).with(:user_agent, user_agent)
+          end
         end
       end
+
+
+      before do
+        expect(faraday).to receive(:options) do
+          double.tap do |a|
+            expect(a).to receive(:timeout=).with(60)
+          end
+        end
+      end
+
+      before do
+        expect(faraday).to receive(:options) do
+          double.tap do |a|
+            expect(a).to receive(:open_timeout=).with(60)
+          end
+        end
+      end
+
+      before do
+        #
+        # faraday.get(url).body
+        #
+        expect(faraday).to receive(:get).with(url) do
+          double.tap do |a|
+            expect(a).to receive(:body)
+          end
+        end
+      end
+
+      specify { expect { subject.content }.not_to raise_error }
+
+      specify { expect { subject.content }.to change { subject.instance_variable_defined?(:@_memoized_content) }.from(false).to(true) }
     end
 
-    specify { expect { subject.content }.not_to raise_error }
+    context 'exception' do
+      before do
+        #
+        # Faraday.new => raise Faraday::TimeoutError
+        #
+        expect(Faraday).to receive(:new).and_raise(Faraday::TimeoutError)
+      end
 
-    specify { expect { subject.content }.to change { subject.instance_variable_defined?(:@_memoized_content) }.from(false).to(true) }
+      specify { expect { subject.content }.to raise_error(EveOnline::Exceptions::TimeoutException) }
+    end
   end
 
   describe '#response' do
