@@ -33,14 +33,14 @@ Or install it yourself as:
 
 ## Supported ruby versions:
 
- * MRI 1.9.3
  * MRI 2.0
  * MRI 2.1
  * MRI 2.2
  * MRI 2.3
  * MRI 2.4 (head)
  * Rubinius (latest via RVM)
- * JRuby (latest via RVM)
+ * JRuby 9.1.5.0
+ * JRuby (head)
 
 ## Usage
 
