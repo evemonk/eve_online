@@ -33,3 +33,7 @@ matrix:
     - rvm: ruby-head
 
 before_install: gem install bundler -v 1.13.6
+
+script:
+   - bundle exec rake
+   - bundle exec codeclimate-test-reporter
