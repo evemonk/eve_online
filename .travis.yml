@@ -32,4 +32,4 @@ matrix:
     - rvm: rbx
     - rvm: ruby-head
 
-before_install: gem install bundler -v 1.13.1
+before_install: gem install bundler -v 1.13.6
