@@ -8,8 +8,6 @@ rvm:
   - 2.2.5
   - 2.3.1
   - ruby-head
-  - rbx
-  - jruby
 
 gemfile:
   - gemfiles/activesupport_42.gemfile
@@ -23,17 +21,31 @@ matrix:
       gemfile: gemfiles/activesupport_50.gemfile
     - rvm: 2.1
       gemfile: gemfiles/activesupport_50.gemfile
-    - rvm: jruby
-      gemfile: gemfiles/activesupport_50.gemfile
     - rvm: ruby-head
       gemfile: gemfiles/activesupport_42.gemfile
+  include:
+    - rvm: jruby-9.1.5.0
+      gemfile: gemfiles/activesupport_42.gemfile
+      jdk: oraclejdk8
+    - rvm: jruby-9.1.5.0
+      gemfile: gemfiles/activesupport_50.gemfile
+      jdk: oraclejdk8
+    - rvm: jruby-head
+      gemfile: gemfiles/activesupport_42.gemfile
+      jdk: oraclejdk8
+    - rvm: jruby-head
+      gemfile: gemfiles/activesupport_50.gemfile
+      jdk: oraclejdk8
 
   allow_failures:
-    - rvm: rbx
     - rvm: ruby-head
+    - rvm: jruby-9.1.5.0
+    - rvm: jruby-head
+  fast_finish: true
 
 before_install: gem install bundler -v 1.13.6
 
 script:
-   - bundle exec rake
-   - bundle exec codeclimate-test-reporter
+  - bundle exec rake
+  - bundle exec codeclimate-test-reporter
+
