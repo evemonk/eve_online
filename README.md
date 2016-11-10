@@ -999,6 +999,8 @@ campaigns.items.first
 Character info:
 
 ```ruby
+character_id = 90729314
+
 character = EveOnline::ESI::Characters::Character.new(character_id)
 
 # TODO: finish
@@ -1010,6 +1012,7 @@ character = EveOnline::ESI::Characters::Character.new(character_id)
 * [THE END OF PUBLIC CREST AS WE KNOW IT](https://developers.eveonline.com/blog/article/the-end-of-public-crest-as-we-know-it)
 * [CCP, zKillboard (Eve-Kill), and your API](https://docs.google.com/document/d/16YfJwjhuH5A3cS4NTMDFDkprnOVKsvgtuRIKk8xjTM8/edit)
 * [JUMP CLONES, IMPLANTS, SKILLS, AND MORE](https://developers.eveonline.com/blog/article/jump-clones-implants-skills-and-more)
+* [ESI Swagger](https://esi.tech.ccp.is/latest/)
 
 ## Development
 
