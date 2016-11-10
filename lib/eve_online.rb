@@ -76,5 +76,10 @@ require 'eve_online/server/status'
 
 require 'eve_online/sovereignty/campaigns'
 
+# ESI API
+require 'eve_online/esi/base'
+
+require 'eve_online/esi/characters/character'
+
 module EveOnline
 end
