@@ -994,6 +994,16 @@ campaigns.items.first
 # => {"eventType_str"=>"1", "campaignID"=>21773, "eventType"=>1, "sourceSolarsystem"=>{"id_str"=>"30003629", "href"=>"https://crest-tq.eveonline.com/solarsystems/30003629/", "id"=>30003629, "name"=>"S-KSWL"}, "attackers"=>{"score"=>0.8}, "campaignID_str"=>"21773", "sourceItemID"=>1020806305659, "startTime"=>"2016-05-04T15:43:16", "sourceItemID_str"=>"1020806305659", "defender"=>{"defender"=>{"id_str"=>"99006297", "href"=>"https://crest-tq.eveonline.com/alliances/99006297/", "id"=>99006297, "name"=>"DRONE WALKERS"}, "score"=>0.2}, "constellation"=>{"id_str"=>"20000529", "href"=>"https://crest-tq.eveonline.com/constellations/20000529/", "id"=>20000529, "name"=>"TJ10-O"}}
 ```
 
+## ESI Examples
+
+Character info:
+
+```ruby
+character = EveOnline::ESI::Characters::Character.new(character_id)
+
+# TODO: finish
+```
+
 ## Useful links
 
 * [TECHNICAL NOTE: INTEGER SIZES AND THE XML API](https://developers.eveonline.com/blog/article/technical-note-integer-sizes-and-the-xml-api)
@@ -1016,6 +1026,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 **master**
 
 * Replace `open-uri` with `faraday`
+* Add `EveOnline::ESI::Characters::Character`
 * Add `EveOnline::AccountTypeObject` class for handling EveOnline account type values
 * `EveOnline::Account::ApiKeyInfo#type` now returns symbols. e.g. `:account`
 * Add `EveOnline::Account::ApiKeyInfo#as_json`
