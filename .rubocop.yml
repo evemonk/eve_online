@@ -99,5 +99,6 @@ Style/MultilineAssignmentLayout:
   Enabled: true
 
 # Use %i or %I for arrays of symbols
+# Ruby 1.9 doesn't support %i and %I for arrays of symbols
 Style/SymbolArray:
-  Enabled: true
+  Enabled: false
