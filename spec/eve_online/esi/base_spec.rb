@@ -45,7 +45,6 @@ describe EveOnline::ESI::Base do
         end
       end
 
-
       before do
         expect(faraday).to receive(:options) do
           double.tap do |a|
