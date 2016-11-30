@@ -102,3 +102,7 @@ Style/MultilineAssignmentLayout:
 # Ruby 1.9 doesn't support %i and %I for arrays of symbols
 Style/SymbolArray:
   Enabled: false
+
+# Just ignore order of gems in Gemfile
+Bundler/OrderedGems:
+  Enabled: false
