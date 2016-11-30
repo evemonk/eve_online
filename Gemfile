@@ -8,4 +8,5 @@ gem 'awesome_print', require: 'ap'
 gem 'pry'
 gem 'mutant'
 gem 'mutant-rspec'
-gem 'rubocop'
+# rubocop version locked due config. Update rubocop config on gem update.
+gem 'rubocop', '0.46.0', require: false

@@ -29,7 +29,7 @@ module EveOnline
       memoize :characters
 
       def url
-        "#{ API_ENDPOINT}?keyID=#{ key_id }&vCode=#{ v_code }"
+        "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }"
       end
 
       private

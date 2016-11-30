@@ -10,4 +10,5 @@
 /.idea/
 .rbenv-gemsets
 .ruby-version
+/.DS_Store
 

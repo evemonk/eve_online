@@ -1,18 +1,108 @@
 AllCops:
   TargetRubyVersion: 1.9
+  DisplayCopNames: true
+  DisplayStyleGuide: true
 
+Rails:
+  Enabled: false
+
+# Allow block comments
+Style/BlockComments:
+  Enabled: false
+
+# Disable
 Style/Documentation:
   Enabled: false
 
-Metrics/LineLength:
-  Enabled: false
+# Recheck this cop later
+Style/DotPosition:
+  Description: 'Checks the position of the dot in multi-line method calls.'
+  StyleGuide: '#consistent-multi-line-chains'
+  Enabled: true
 
-Style/SpaceInsideStringInterpolation:
-  Enabled: false
-
-Style/SignalException:
-  Enabled: false
-
+# Disable magic
 Style/FrozenStringLiteralComment:
   Enabled: false
 
+# Recheck this cop later
+Style/FlipFlop:
+  Description: 'Checks for flip flops'
+  StyleGuide: '#no-flip-flops'
+  Enabled: true
+
+# Recheck this cop later
+Style/RedundantException:
+  Description: "Checks for an obsolete RuntimeException argument in raise/fail."
+  StyleGuide: '#no-explicit-runtimeerror'
+  Enabled: true
+
+# Recheck this cop later
+Style/SafeNavigation:
+  Description: >-
+                  This cop transforms usages of a method call safeguarded by
+                  a check for the existance of the object to
+                  safe navigation (`&.`).
+  Enabled: true
+
+# Recheck this cop later
+Style/SignalException:
+  Description: 'Checks for proper usage of fail and raise.'
+  StyleGuide: '#prefer-raise-over-fail'
+  Enabled: true
+
+# Enable with EnforcedStyle is space
+Style/SpaceInsideStringInterpolation:
+  EnforcedStyle: space
+  Enabled: true
+
+# Enable with EnforcedStyle is single_quotes
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
+  Enabled: true
+
+# Limit lines to 80 characters
+Metrics/LineLength:
+  Enabled: false
+
+# TimeZone stuff
+Rails/TimeZone:
+  EnforcedStyle: strict
+  Enabled: true
+
+# Identifies possible cases where Active Record save! or related should be used.
+Rails/SaveBang:
+  Enabled: true
+
+# Suggests the usage of an auto resource cleanup version of a method (if available)
+Style/AutoResourceCleanup:
+  Enabled: true
+
+# Preferred collection methods
+Style/CollectionMethods:
+  Enabled: true
+
+# Use UTF-8 as the source file encoding
+Style/Encoding:
+  Enabled: true
+
+# Use `raise` or `fail` with an explicit exception class and
+# message, rather than just a message.
+Style/ImplicitRuntimeError:
+  Enabled: true
+
+# Avoid chaining a method call on a do...end block
+Style/MethodCalledOnDoEndBlock:
+  Enabled: true
+
+# Check for a newline after the assignment operator in multi-line assignments
+Style/MultilineAssignmentLayout:
+  Enabled: true
+
+# Use %i or %I for arrays of symbols
+# Ruby 1.9 doesn't support %i and %I for arrays of symbols
+Style/SymbolArray:
+  Enabled: false
+
+# Just ignore order of gems in Gemfile
+Bundler/OrderedGems:
+  Enabled: false
