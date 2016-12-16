@@ -1025,7 +1025,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 
 ## Changelog
 
-**master**
+**v0.10.0**
 
 * Replace `open-uri` with `faraday`
 * Add `EveOnline::ESI::Characters::Character`
