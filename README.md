@@ -6,10 +6,9 @@
 [![Test Coverage](https://codeclimate.com/github/biow0lf/eve_online/badges/coverage.svg)](https://codeclimate.com/github/biow0lf/eve_online/coverage)
 [![Build Status](https://travis-ci.org/biow0lf/eve_online.svg?branch=master)](https://travis-ci.org/biow0lf/eve_online)
 [![Dependency Status](https://gemnasium.com/biow0lf/eve_online.svg)](https://gemnasium.com/biow0lf/eve_online)
-
 [![security](https://hakiri.io/github/biow0lf/eve_online/master.svg)](https://hakiri.io/github/biow0lf/eve_online/master)
 
-This gem implement Ruby API for EveOnline MMORPG. Both, XML and CREST API.
+This gem implement Ruby API for EveOnline MMORPG. All, XML, CREST and ESI API.
 
 This gem was extracted from [EveMonk](http://evemonk.com). Source code of evemonk backend published [here](https://github.com/biow0lf/evemonk).
 
@@ -1026,7 +1025,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 
 ## Changelog
 
-**master**
+**v0.10.0**
 
 * Replace `open-uri` with `faraday`
 * Add `EveOnline::ESI::Characters::Character`
