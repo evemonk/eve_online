@@ -85,6 +85,7 @@ require 'eve_online/esi/characters/character'
 require 'eve_online/sde/base'
 
 require 'eve_online/sde/races'
+require 'eve_online/sde/flags'
 
 module EveOnline
 end
