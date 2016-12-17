@@ -7,12 +7,16 @@ module EveOnline
         @file = file
       end
 
-      def file_content
+      def content
         @content ||= File.read(file)
       end
 
       def original_data
-        @original_data ||= YAML.load(file_content)
+        @original_data ||= YAML.load(content)
+      end
+
+      def data
+        @data ||= original_data.map { |a| a.transform_keys { |k| k.underscore } }
       end
     end
   end
