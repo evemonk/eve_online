@@ -1,6 +1,10 @@
+require 'memoist'
+
 module EveOnline
   module SDE
     class Base
+      extend Memoist
+
       attr_reader :file
 
       def initialize(file)
@@ -11,13 +15,17 @@ module EveOnline
         @content ||= File.read(file)
       end
 
-      def original_data
-        @original_data ||= YAML.load(content)
+      def data
+        @data ||= YAML.load(content)
       end
 
-      def data
-        @data ||= original_data.map { |a| a.transform_keys { |k| k.underscore } }
-      end
+      # def original_data
+      #   @original_data ||= YAML.load(content)
+      # end
+      #
+      # def data
+      #   @data ||= original_data.map { |a| a.transform_keys { |k| k.underscore } }
+      # end
     end
   end
 end
