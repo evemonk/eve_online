@@ -84,13 +84,13 @@ require 'eve_online/esi/characters/character'
 # SDE
 require 'eve_online/sde/base'
 
-require 'eve_online/sde/flags'
+require 'eve_online/sde/inv_flags'
 require 'eve_online/sde/items'
 require 'eve_online/sde/names'
 require 'eve_online/sde/positions'
 require 'eve_online/sde/races'
 
-require 'eve_online/sde/models/flag'
+require 'eve_online/sde/models/inv_flag'
 require 'eve_online/sde/models/item'
 require 'eve_online/sde/models/name'
 require 'eve_online/sde/models/position'

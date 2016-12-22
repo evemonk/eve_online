@@ -1,7 +1,7 @@
 module EveOnline
   module SDE
     module Models
-      class Flag
+      class InvFlag
         attr_reader :data
 
         def initialize(data)
