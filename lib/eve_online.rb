@@ -88,13 +88,13 @@ require 'eve_online/sde/inv_flags'
 require 'eve_online/sde/items'
 require 'eve_online/sde/names'
 require 'eve_online/sde/positions'
-require 'eve_online/sde/races'
+require 'eve_online/sde/chr_races'
 
 require 'eve_online/sde/models/inv_flag'
 require 'eve_online/sde/models/item'
 require 'eve_online/sde/models/name'
 require 'eve_online/sde/models/position'
-require 'eve_online/sde/models/race'
+require 'eve_online/sde/models/chr_race'
 
 module EveOnline
 end
