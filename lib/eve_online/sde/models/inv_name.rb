@@ -1,7 +1,7 @@
 module EveOnline
   module SDE
     module Models
-      class Name
+      class InvName
         attr_reader :data
 
         def initialize(data)
