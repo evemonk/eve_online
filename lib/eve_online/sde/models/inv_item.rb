@@ -1,7 +1,7 @@
 module EveOnline
   module SDE
     module Models
-      class Item
+      class InvItem
         attr_reader :data
 
         def initialize(data)
