@@ -1,7 +1,7 @@
 module EveOnline
   module SDE
     module Models
-      class Position
+      class InvPosition
         attr_reader :data
 
         def initialize(data)
