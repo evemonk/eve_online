@@ -17,7 +17,7 @@ module EveOnline
       memoize :content
 
       def data
-        YAML.load(content)
+        YAML.safe_load(content)
       end
       memoize :data
     end

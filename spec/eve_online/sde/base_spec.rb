@@ -32,7 +32,7 @@ describe EveOnline::SDE::Base do
 
     before { expect(subject).to receive(:content).and_return(content) }
 
-    before { expect(YAML).to receive(:load).with(content) }
+    before { expect(YAML).to receive(:safe_load).with(content) }
 
     specify { expect { subject.data }.not_to raise_error }
 
