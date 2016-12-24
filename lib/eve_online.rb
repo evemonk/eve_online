@@ -81,5 +81,22 @@ require 'eve_online/esi/base'
 
 require 'eve_online/esi/characters/character'
 
+# SDE
+require 'eve_online/sde/base'
+
+require 'eve_online/sde/agt_agent_types'
+require 'eve_online/sde/chr_races'
+require 'eve_online/sde/inv_flags'
+require 'eve_online/sde/inv_items'
+require 'eve_online/sde/inv_names'
+require 'eve_online/sde/inv_positions'
+
+require 'eve_online/sde/models/agt_agent_type'
+require 'eve_online/sde/models/chr_race'
+require 'eve_online/sde/models/inv_flag'
+require 'eve_online/sde/models/inv_item'
+require 'eve_online/sde/models/inv_name'
+require 'eve_online/sde/models/inv_position'
+
 module EveOnline
 end

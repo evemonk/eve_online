@@ -1005,6 +1005,120 @@ character = EveOnline::ESI::Characters::Character.new(character_id)
 # TODO: finish
 ```
 
+## SDE Examples
+
+Agent Types:
+```ruby
+file = 'agtAgentTypes.yaml'
+
+agt_agent_types = EveOnline::SDE::AgtAgentTypes.new(file)
+
+agt_agent_types.agt_agent_types.size # => 12
+
+agent_type = agt_agent_types.agt_agent_types.first
+
+agent_type.as_json # => {:agent_type=>"NonAgent", :agent_type_id=>1}
+
+agent_type.agent_type # => "NonAgent"
+agent_type.agent_type_id # => 1
+```
+
+Inventory Flags:
+```ruby
+file = 'invFlags.yaml'
+
+inv_flags = EveOnline::SDE::InvFlags.new(file)
+
+inv_flags.inv_flags.size # => 152
+
+inv_flag = inv_flags.inv_flags.first
+
+inv_flag.as_json # => {:flag_id=>0, :flag_name=>"None", :flag_text=>"None", :order_id=>0}
+
+inv_flag.flag_id # => 0
+inv_flag.flag_name # => "None"
+inv_flag.flag_text # => "None"
+inv_flag.order_id  # => 0
+```
+
+Inventory Items:
+```ruby
+file = 'invItems.yaml'
+
+inv_items = EveOnline::SDE::InvItems.new(file)
+
+inv_items.inv_items.size # => 531470
+
+inv_item = inv_items.inv_items.first
+
+inv_item.as_json # => {:flag_id=>0, :item_id=>40021067, :location_id=>30000334, :owner_id=>1, :quantity=>34, :type_id=>14}
+
+inv_item.flag_id # => 0
+inv_item.item_id # => 40021067
+inv_item.location_id # => 30000334
+inv_item.owner_id # => 1
+inv_item.quantity # => 34
+inv_item.type_id # => 14
+```
+
+Inventory Names:
+```ruby
+file = 'invNames.yaml'
+
+inv_names = EveOnline::SDE::InvNames.new(file)
+
+inv_names.inv_names.size # => 519921
+
+inv_name = inv_names.inv_names.first
+
+inv_name.as_json # => {:item_id=>0, :item_name=>"(none)"}
+
+inv_name.item_id # => 0
+inv_name.item_name # => "(none)"
+```
+
+Invertory Positions:
+```ruby
+file = 'invPositions.yaml'
+
+inv_positions = EveOnline::SDE::InvPositions.new(file)
+
+inv_positions.inv_positions.size # => 508383
+
+inv_position = inv_positions.inv_positions.first
+
+inv_position.as_json # => {:item_id=>0, :pitch=>0.0, :roll=>0.0, :x=>0.0, :y=>0.0, :yaw=>0.0, :z=>0.0}
+
+inv_position.item_id # => 0
+inv_position.pitch # => 0.0
+inv_position.roll # => 0.0
+inv_position.x # => 0.0
+inv_position.y # => 0.0
+inv_position.yaw # => 0.0
+inv_position.z # => 0.0
+```
+
+Character Races:
+```ruby
+file = 'chrRaces.yaml'
+
+chr_races = EveOnline::SDE::ChrRaces.new(file)
+
+chr_races.chr_races.size # => 8
+
+chr_race = chr_races.chr_races.first
+
+chr_race.as_json # => {:race_id=>16,
+                 #     :race_name=>"Jove",
+                 #     :short_description=>"",
+                 #     :description=>"The most mysterious and elusive of all the universe's peoples..."}
+
+chr_race.race_id # => 16
+chr_race.race_name # => "Jove"
+chr_race.short_description # => ""
+chr_race.description # => "The most mysterious and elusive of all the universe's peoples..."
+```
+
 ## Useful links
 
 * [TECHNICAL NOTE: INTEGER SIZES AND THE XML API](https://developers.eveonline.com/blog/article/technical-note-integer-sizes-and-the-xml-api)
@@ -1024,6 +1138,22 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 Issue reports and pull requests are welcome on GitHub at https://github.com/biow0lf/eve_online.
 
 ## Changelog
+
+**master**
+
+* Add SDE support classes
+* `EveOnline::SDE::AgtAgentTypes`
+* `EveOnline::SDE::ChrRaces`
+* `EveOnline::SDE::InvFlags`
+* `EveOnline::SDE::InvItems`
+* `EveOnline::SDE::InvNames`
+* `EveOnline::SDE::InvPositions`
+* `EveOnline::SDE::Models::AgtAgentType`
+* `EveOnline::SDE::Models::ChrRace`
+* `EveOnline::SDE::Models::InvFlag`
+* `EveOnline::SDE::Models::InvItem`
+* `EveOnline::SDE::Models::InvName`
+* `EveOnline::SDE::Models::InvPosition`
 
 **v0.10.0**
 
