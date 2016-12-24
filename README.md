@@ -1149,6 +1149,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * `EveOnline::SDE::InvNames`
 * `EveOnline::SDE::InvPositions`
 * `EveOnline::SDE::Models::AgtAgentType`
+* `EveOnline::SDE::Models::AgtAgent`
 * `EveOnline::SDE::Models::ChrRace`
 * `EveOnline::SDE::Models::InvFlag`
 * `EveOnline::SDE::Models::InvItem`

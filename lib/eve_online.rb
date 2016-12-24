@@ -92,6 +92,7 @@ require 'eve_online/sde/inv_names'
 require 'eve_online/sde/inv_positions'
 
 require 'eve_online/sde/models/agt_agent_type'
+require 'eve_online/sde/models/agt_agent'
 require 'eve_online/sde/models/chr_race'
 require 'eve_online/sde/models/inv_flag'
 require 'eve_online/sde/models/inv_item'
