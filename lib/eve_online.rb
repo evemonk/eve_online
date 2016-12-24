@@ -85,6 +85,7 @@ require 'eve_online/esi/characters/character'
 require 'eve_online/sde/base'
 
 require 'eve_online/sde/agt_agent_types'
+require 'eve_online/sde/agt_agents'
 require 'eve_online/sde/chr_races'
 require 'eve_online/sde/inv_flags'
 require 'eve_online/sde/inv_items'
