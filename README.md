@@ -1023,6 +1023,26 @@ agent_type.agent_type # => "NonAgent"
 agent_type.agent_type_id # => 1
 ```
 
+Inventory Flags:
+```ruby
+file = 'invFlags.yaml'
+
+inv_flags = EveOnline::SDE::InvFlags.new(file)
+
+inv_flags.inv_flags.size # => 152
+
+inv_flag = inv_flags.inv_flags.first
+
+inv_flag.as_json # => {:flag_id=>0, :flag_name=>"None", :flag_text=>"None", :order_id=>0}
+
+inv_flag.flag_id # => 0
+inv_flag.flag_name # => "None"
+inv_flag.flag_text # => "None"
+inv_flag.order_id  # => 0
+```
+
+
+
 ## Useful links
 
 * [TECHNICAL NOTE: INTEGER SIZES AND THE XML API](https://developers.eveonline.com/blog/article/technical-note-integer-sizes-and-the-xml-api)
