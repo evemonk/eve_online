@@ -1098,6 +1098,27 @@ inv_position.yaw # => 0.0
 inv_position.z # => 0.0
 ```
 
+Character Races:
+```ruby
+file = 'chrRaces.yaml'
+
+chr_races = EveOnline::SDE::ChrRaces.new(file)
+
+chr_races.chr_races.size # => 8
+
+chr_race = chr_races.chr_races.first
+
+chr_race.as_json # => {:race_id=>16,
+                 #     :race_name=>"Jove",
+                 #     :short_description=>"",
+                 #     :description=>"The most mysterious and elusive of all the universe's peoples..."}
+
+chr_race.race_id # => 16
+chr_race.race_name # => "Jove"
+chr_race.short_description # => ""
+chr_race.description # => "The most mysterious and elusive of all the universe's peoples..."
+```
+
 ## Useful links
 
 * [TECHNICAL NOTE: INTEGER SIZES AND THE XML API](https://developers.eveonline.com/blog/article/technical-note-integer-sizes-and-the-xml-api)
