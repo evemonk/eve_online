@@ -12,12 +12,14 @@ module EveOnline
       end
 
       def content
-        @content ||= File.read(file)
+        File.read(file)
       end
+      memoize :content
 
       def data
-        @data ||= YAML.load(content)
+        YAML.load(content)
       end
+      memoize :data
     end
   end
 end
