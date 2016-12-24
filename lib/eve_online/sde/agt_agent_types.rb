@@ -3,8 +3,8 @@ module EveOnline
     class AgtAgentTypes < Base
       def agt_agent_types
         output = []
-        data.each do |agt_agents_type|
-          output << EveOnline::SDE::Models::AgtAgentType.new(agt_agents_type)
+        data.each do |agt_agent_type|
+          output << EveOnline::SDE::Models::AgtAgentType.new(agt_agent_type)
         end
         output
       end

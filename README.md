@@ -1023,6 +1023,28 @@ agent_type.agent_type # => "NonAgent"
 agent_type.agent_type_id # => 1
 ```
 
+Agents:
+```ruby
+file = 'agtAgents.yaml'
+
+agt_agents = EveOnline::SDE::AgtAgents.new(file)
+
+agt_agents.agt_agents.size # => 10975
+
+agt_agent = agt_agents.agt_agents.first
+
+agt_agent.as_json # => {:agent_id=>3008416, :agent_type_id=>2, :corporation_id=>1000002, :division_id=>22, :is_locator=>false, :level=>1, :location_id=>60000004, :quality=>20}
+
+agt_agent.agent_id # => 3008416
+agt_agent.agent_type_id # => 2
+agt_agent.corporation_id # => 1000002
+agt_agent.division_id # => 22
+agt_agent.is_locator # => false
+agt_agent.level # => 1
+agt_agent.location_id # => 60000004
+agt_agent.quality # => 20
+```
+
 Inventory Flags:
 ```ruby
 file = 'invFlags.yaml'
@@ -1143,12 +1165,14 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 
 * Add SDE support classes
 * `EveOnline::SDE::AgtAgentTypes`
+* `EveOnline::SDE::AgtAgents`
 * `EveOnline::SDE::ChrRaces`
 * `EveOnline::SDE::InvFlags`
 * `EveOnline::SDE::InvItems`
 * `EveOnline::SDE::InvNames`
 * `EveOnline::SDE::InvPositions`
 * `EveOnline::SDE::Models::AgtAgentType`
+* `EveOnline::SDE::Models::AgtAgent`
 * `EveOnline::SDE::Models::ChrRace`
 * `EveOnline::SDE::Models::InvFlag`
 * `EveOnline::SDE::Models::InvItem`
