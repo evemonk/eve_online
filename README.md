@@ -1005,6 +1005,24 @@ character = EveOnline::ESI::Characters::Character.new(character_id)
 # TODO: finish
 ```
 
+## SDE Examples
+
+Agent Types:
+```ruby
+file = 'agtAgentTypes.yaml'
+
+agt_agent_types = EveOnline::SDE::AgtAgentTypes.new(file)
+
+agt_agent_types.agt_agent_types.size # => 12
+
+agent_type = agt_agent_types.agt_agent_types.first
+
+agent_type.as_json # => {:agent_type=>"NonAgent", :agent_type_id=>1}
+
+agent_type.agent_type # => "NonAgent"
+agent_type.agent_type_id # => 1
+```
+
 ## Useful links
 
 * [TECHNICAL NOTE: INTEGER SIZES AND THE XML API](https://developers.eveonline.com/blog/article/technical-note-integer-sizes-and-the-xml-api)
@@ -1024,6 +1042,22 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 Issue reports and pull requests are welcome on GitHub at https://github.com/biow0lf/eve_online.
 
 ## Changelog
+
+**master**
+
+* Add SDE support classes
+* `EveOnline::SDE::AgtAgentTypes`
+* `EveOnline::SDE::ChrRaces`
+* `EveOnline::SDE::InvFlags`
+* `EveOnline::SDE::InvItems`
+* `EveOnline::SDE::InvNames`
+* `EveOnline::SDE::InvPositions`
+* `EveOnline::SDE::Models::AgtAgentType`
+* `EveOnline::SDE::Models::ChrRace`
+* `EveOnline::SDE::Models::InvFlag`
+* `EveOnline::SDE::Models::InvItem`
+* `EveOnline::SDE::Models::InvName`
+* `EveOnline::SDE::Models::InvPosition`
 
 **v0.10.0**
 
