@@ -1077,6 +1077,27 @@ inv_name.item_id # => 0
 inv_name.item_name # => "(none)"
 ```
 
+Invertory Positions:
+```ruby
+file = 'invPositions.yaml'
+
+inv_positions = EveOnline::SDE::InvPositions.new(file)
+
+inv_positions.inv_positions.size # => 508383
+
+inv_position = inv_positions.inv_positions.first
+
+inv_position.as_json # => {:item_id=>0, :pitch=>0.0, :roll=>0.0, :x=>0.0, :y=>0.0, :yaw=>0.0, :z=>0.0}
+
+inv_position.item_id # => 0
+inv_position.pitch # => 0.0
+inv_position.roll # => 0.0
+inv_position.x # => 0.0
+inv_position.y # => 0.0
+inv_position.yaw # => 0.0
+inv_position.z # => 0.0
+```
+
 ## Useful links
 
 * [TECHNICAL NOTE: INTEGER SIZES AND THE XML API](https://developers.eveonline.com/blog/article/technical-note-integer-sizes-and-the-xml-api)
