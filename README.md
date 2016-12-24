@@ -1061,6 +1061,21 @@ inv_item.quantity # => 34
 inv_item.type_id # => 14
 ```
 
+Inventory Names:
+```ruby
+file = 'invNames.yaml'
+
+inv_names = EveOnline::SDE::InvNames.new(file)
+
+inv_names.inv_names.size # => 519921
+
+inv_name = inv_names.inv_names.first
+
+inv_name.as_json # => {:item_id=>0, :item_name=>"(none)"}
+
+inv_name.item_id # => 0
+inv_name.item_name # => "(none)"
+```
 
 ## Useful links
 
