@@ -1041,6 +1041,25 @@ inv_flag.flag_text # => "None"
 inv_flag.order_id  # => 0
 ```
 
+Inventory Items:
+```ruby
+file = 'invItems.yaml'
+
+inv_items = EveOnline::SDE::InvItems.new(file)
+
+inv_items.inv_items.size # => 531470
+
+inv_item = inv_items.inv_items.first
+
+inv_item.as_json # => {:flag_id=>0, :item_id=>40021067, :location_id=>30000334, :owner_id=>1, :quantity=>34, :type_id=>14}
+
+inv_item.flag_id # => 0
+inv_item.item_id # => 40021067
+inv_item.location_id # => 30000334
+inv_item.owner_id # => 1
+inv_item.quantity # => 34
+inv_item.type_id # => 14
+```
 
 
 ## Useful links
