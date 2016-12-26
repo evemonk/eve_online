@@ -46,7 +46,7 @@ matrix:
     - rvm: jruby-head
   fast_finish: true
 
-before_install: gem install bundler -v 1.13.6
+before_install: gem install bundler -v 1.13.7
 
 script:
   - bundle exec rake
