@@ -1,4 +1,4 @@
-# EveOnline API (XML, CREST and ESI)
+# EveOnline API (XML, CREST and ESI). With SDE.
 
 [![Gem Version](https://badge.fury.io/rb/eve_online.svg)](https://badge.fury.io/rb/eve_online)
 [![Gem Downloads](https://img.shields.io/gem/dt/eve_online.svg)](https://rubygems.org/gems/eve_online)
