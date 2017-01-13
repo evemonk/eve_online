@@ -8,7 +8,7 @@
 [![Dependency Status](https://gemnasium.com/biow0lf/eve_online.svg)](https://gemnasium.com/biow0lf/eve_online)
 [![security](https://hakiri.io/github/biow0lf/eve_online/master.svg)](https://hakiri.io/github/biow0lf/eve_online/master)
 
-This gem implement Ruby API for EveOnline MMORPG. All, XML, CREST and ESI API.
+This gem implement Ruby API for EveOnline MMORPG. All, XML, CREST and ESI API. With SDE.
 
 This gem was extracted from [EveMonk](http://evemonk.com). Source code of evemonk backend published [here](https://github.com/biow0lf/evemonk).
 
@@ -38,7 +38,7 @@ Or install it yourself as:
  * MRI 2.2
  * MRI 2.3
  * MRI 2.4
- * MRI 2.4 (head)
+ * MRI 2.5 (head)
  * JRuby 9.1.5.0
  * JRuby (head)
 

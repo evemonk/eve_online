@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Igor Zubkov']
   spec.email         = ['igor.zubkov@gmail.com']
 
-  spec.summary       = 'EveOnline API. XML, CREST and ESI.'
-  spec.description   = 'EveOnline API. XML, CREST and ESI.'
+  spec.summary       = 'EveOnline API. XML, CREST and ESI. And SDE.'
+  spec.description   = 'EveOnline API. XML, CREST and ESI. And SDE.'
   spec.homepage      = 'https://github.com/biow0lf/eve_online'
   spec.license       = 'MIT'
 
@@ -28,6 +28,8 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'activesupport', '>= 3.0.0'
   spec.add_runtime_dependency 'nori', '~> 2.6'
   spec.add_runtime_dependency 'json'
+  # spec.add_runtime_dependency 'bitset'
+  # spec.add_runtime_dependency 'hashformer'
   spec.add_runtime_dependency 'memoist'
   spec.add_runtime_dependency 'faraday'
 end
