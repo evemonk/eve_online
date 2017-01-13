@@ -1,4 +1,4 @@
-# EveOnline API (XML, CREST and ESI)
+# EveOnline API (XML, CREST and ESI). With SDE.
 
 [![Gem Version](https://badge.fury.io/rb/eve_online.svg)](https://badge.fury.io/rb/eve_online)
 [![Gem Downloads](https://img.shields.io/gem/dt/eve_online.svg)](https://rubygems.org/gems/eve_online)
@@ -1167,6 +1167,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Add SDE support classes
 * `EveOnline::SDE::AgtAgentTypes`
 * `EveOnline::SDE::AgtAgents`
+* `EveOnline::SDE::AgtResearchAgents`
 * `EveOnline::SDE::ChrRaces`
 * `EveOnline::SDE::InvFlags`
 * `EveOnline::SDE::InvItems`
@@ -1174,6 +1175,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * `EveOnline::SDE::InvPositions`
 * `EveOnline::SDE::Models::AgtAgentType`
 * `EveOnline::SDE::Models::AgtAgent`
+* `EveOnline::SDE::Models::AgtResearchAgent`
 * `EveOnline::SDE::Models::ChrRace`
 * `EveOnline::SDE::Models::InvFlag`
 * `EveOnline::SDE::Models::InvItem`
