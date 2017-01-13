@@ -1167,6 +1167,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Add SDE support classes
 * `EveOnline::SDE::AgtAgentTypes`
 * `EveOnline::SDE::AgtAgents`
+* `EveOnline::SDE::AgtResearchAgents`
 * `EveOnline::SDE::ChrRaces`
 * `EveOnline::SDE::InvFlags`
 * `EveOnline::SDE::InvItems`
@@ -1174,6 +1175,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * `EveOnline::SDE::InvPositions`
 * `EveOnline::SDE::Models::AgtAgentType`
 * `EveOnline::SDE::Models::AgtAgent`
+* `EveOnline::SDE::Models::AgtResearchAgent`
 * `EveOnline::SDE::Models::ChrRace`
 * `EveOnline::SDE::Models::InvFlag`
 * `EveOnline::SDE::Models::InvItem`
