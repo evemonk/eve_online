@@ -1020,6 +1020,21 @@ character.ancestry_id # => 24
 character.security_status # => 1.8694881661345457
 ```
 
+Character portraits:
+```ruby
+character_id = 90729314
+
+portrait = EveOnline::ESI::Characters::Portrait.new(character_id)
+
+portrait.as_json
+# => {:small=>"http://image.eveonline.com/Character/90729314_64.jpg", :medium=>"http://image.eveonline.com/Character/90729314_128.jpg", :large=>"http://image.eveonline.com/Character/90729314_256.jpg", :huge=>"http://image.eveonline.com/Character/90729314_512.jpg"}
+
+portrait.small # => "http://image.eveonline.com/Character/90729314_64.jpg"
+portrait.medium # => "http://image.eveonline.com/Character/90729314_128.jpg"
+portrait.large # => "http://image.eveonline.com/Character/90729314_256.jpg"
+portrait.huge # => "http://image.eveonline.com/Character/90729314_512.jpg"
+```
+
 ### SDE Examples
 
 Agent Types:
@@ -1195,6 +1210,9 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * `EveOnline::SDE::Models::InvItem`
 * `EveOnline::SDE::Models::InvName`
 * `EveOnline::SDE::Models::InvPosition`
+* Finish `EveOnline::ESI::Characters::Character`
+* Add `EveOnline::ESI::Characters::Portrait`
+
 
 **v0.10.0**
 
