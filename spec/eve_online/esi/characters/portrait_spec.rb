@@ -16,6 +16,33 @@ describe EveOnline::ESI::Characters::Portrait do
   end
 
   describe '#as_json' do
+    let(:portrait) { described_class.new(character_id) }
+
+    let(:small) { double }
+
+    let(:medium) { double }
+
+    let(:large) { double }
+
+    let(:huge) { double }
+
+    before { expect(portrait).to receive(:small).and_return(small) }
+
+    before { expect(portrait).to receive(:medium).and_return(medium) }
+
+    before { expect(portrait).to receive(:large).and_return(large) }
+
+    before { expect(portrait).to receive(:huge).and_return(huge) }
+
+    subject { portrait.as_json }
+
+    its([:small]) { should eq(small) }
+
+    its([:medium]) { should eq(medium) }
+
+    its([:large]) { should eq(large) }
+
+    its([:huge]) { should eq(huge) }
   end
 
   describe '#tiny' do
