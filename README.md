@@ -44,6 +44,8 @@ Or install it yourself as:
 
 ## Usage
 
+### XML API
+
 Account status:
 
 ```ruby
@@ -994,7 +996,7 @@ campaigns.items.first
 # => {"eventType_str"=>"1", "campaignID"=>21773, "eventType"=>1, "sourceSolarsystem"=>{"id_str"=>"30003629", "href"=>"https://crest-tq.eveonline.com/solarsystems/30003629/", "id"=>30003629, "name"=>"S-KSWL"}, "attackers"=>{"score"=>0.8}, "campaignID_str"=>"21773", "sourceItemID"=>1020806305659, "startTime"=>"2016-05-04T15:43:16", "sourceItemID_str"=>"1020806305659", "defender"=>{"defender"=>{"id_str"=>"99006297", "href"=>"https://crest-tq.eveonline.com/alliances/99006297/", "id"=>99006297, "name"=>"DRONE WALKERS"}, "score"=>0.2}, "constellation"=>{"id_str"=>"20000529", "href"=>"https://crest-tq.eveonline.com/constellations/20000529/", "id"=>20000529, "name"=>"TJ10-O"}}
 ```
 
-## ESI Examples
+### ESI Examples
 
 Character info:
 
@@ -1003,10 +1005,22 @@ character_id = 90729314
 
 character = EveOnline::ESI::Characters::Character.new(character_id)
 
-# TODO: finish
+character.as_json
+# => {:corporation_id=>1000168, :birthday=>Fri, 15 Jan 2010 15:26:00 UTC +00:00, :name=>"Green Black", :gender=>"male", :race_id=>2, :bloodline_id=>4, :description=>"", :alliance_id=>12345678, :ancestry_id=>24, :security_status=>1.8694881661345457}
+
+character.corporation_id # => 1000168
+character.birthday # => Fri, 15 Jan 2010 15:26:00 UTC +00:00
+character.name # => "Green Black"
+character.gender # => "male"
+character.race_id # => 2
+character.bloodline_id # => 4
+character.description  # => ""
+character.alliance_id # => 12345678
+character.ancestry_id # => 24
+character.security_status # => 1.8694881661345457
 ```
 
-## SDE Examples
+### SDE Examples
 
 Agent Types:
 ```ruby
