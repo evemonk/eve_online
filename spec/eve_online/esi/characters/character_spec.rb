@@ -16,6 +16,51 @@ describe EveOnline::ESI::Characters::Character do
   end
 
   describe '#as_json' do
+    let(:character) { described_class.new(character_id) }
+
+    let(:birthday) { double }
+
+    before { expect(character).to receive(:corporation_id).and_return(12_345_678) }
+
+    before { expect(character).to receive(:birthday).and_return(birthday) }
+
+    before { expect(character).to receive(:name).and_return('Green Black') }
+
+    before { expect(character).to receive(:gender).and_return('male') }
+
+    before { expect(character).to receive(:race_id).and_return(2) }
+
+    before { expect(character).to receive(:bloodline_id).and_return(4) }
+
+    before { expect(character).to receive(:description).and_return('') }
+
+    before { expect(character).to receive(:alliance_id).and_return(98_765_432) }
+
+    before { expect(character).to receive(:ancestry_id).and_return(24) }
+
+    before { expect(character).to receive(:security_status).and_return(1.8694881661345457) }
+
+    subject { character.as_json }
+
+    its([:corporation_id]) { should eq(12_345_678) }
+
+    its([:birthday]) { should eq(birthday) }
+
+    its([:name]) { should eq('Green Black') }
+
+    its([:gender]) { should eq('male') }
+
+    its([:race_id]) { should eq(2) }
+
+    its([:bloodline_id]) { should eq(4) }
+
+    its([:description]) { should eq('') }
+
+    its([:alliance_id]) { should eq(98_765_432) }
+
+    its([:ancestry_id]) { should eq(24) }
+
+    its([:security_status]) { should eq(1.8694881661345457) }
   end
 
   describe '#corporation_id' do
