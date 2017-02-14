@@ -1,4 +1,5 @@
 require 'memoist'
+require 'active_support/time'
 
 module EveOnline
   module ESI
@@ -36,6 +37,12 @@ module EveOnline
         parser.parse(content)
       end
       memoize :response
+
+      private
+
+      def parse_datetime_with_timezone(value)
+        ActiveSupport::TimeZone['UTC'].parse(value)
+      end
     end
   end
 end
