@@ -60,6 +60,8 @@ describe EveOnline::ESI::Base do
           end
         end
 
+        before { expect(faraday).not_to receive(:authorization) }
+
         before do
           expect(faraday).to receive(:options) do
             double.tap do |a|
@@ -93,7 +95,77 @@ describe EveOnline::ESI::Base do
       end
 
       context 'with token' do
-        # TODO: write
+        # TODO: extract code
+        let(:token) { double }
+
+        subject { described_class.new(token) }
+        #
+
+        let(:url) { double }
+
+        before { expect(subject).to receive(:url).and_return(url) }
+
+        let(:user_agent) { double }
+
+        before { expect(subject).to receive(:user_agent).and_return(user_agent) }
+
+        let(:faraday) { double }
+
+        before do
+          #
+          # Faraday.new => faraday
+          #
+          expect(Faraday).to receive(:new).and_return(faraday)
+        end
+
+        before do
+          #
+          # faraday.headers[:user_agent] = user_agent
+          #
+          expect(faraday).to receive(:headers) do
+            double.tap do |a|
+              expect(a).to receive(:[]=).with(:user_agent, user_agent)
+            end
+          end
+        end
+
+        before do
+          #
+          # faraday.authorization(:Bearer, token)
+          #
+          expect(faraday).to receive(:authorization).with(:Bearer, token)
+        end
+
+        before do
+          expect(faraday).to receive(:options) do
+            double.tap do |a|
+              expect(a).to receive(:timeout=).with(60)
+            end
+          end
+        end
+
+        before do
+          expect(faraday).to receive(:options) do
+            double.tap do |a|
+              expect(a).to receive(:open_timeout=).with(60)
+            end
+          end
+        end
+
+        before do
+          #
+          # faraday.get(url).body
+          #
+          expect(faraday).to receive(:get).with(url) do
+            double.tap do |a|
+              expect(a).to receive(:body)
+            end
+          end
+        end
+
+        specify { expect { subject.content }.not_to raise_error }
+
+        specify { expect { subject.content }.to change { subject.instance_variable_defined?(:@_memoized_content) }.from(false).to(true) }
       end
     end
 

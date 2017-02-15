@@ -29,7 +29,7 @@ module EveOnline
         faraday = Faraday.new
 
         faraday.headers[:user_agent] = user_agent
-        # faraday.authorization(:Bearer, token) if token
+        faraday.authorization(:Bearer, token) if token
         faraday.options.timeout = 60
         faraday.options.open_timeout = 60
 
