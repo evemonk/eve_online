@@ -4,11 +4,25 @@ describe EveOnline::ESI::Base do
   specify { expect(described_class).to be_a(Memoist) }
 
   describe '#initialize' do
-    its(:parser) { should eq(JSON) }
+    context 'without token'do
+      its(:token) { should eq(nil) }
+
+      its(:parser) { should eq(JSON) }
+    end
+
+    context 'with token' do
+      subject { described_class.new('token123') }
+
+      its(:token) { should eq('token123') }
+    end
   end
 
   describe '#url' do
     specify { expect { subject.url }.to raise_error(NotImplementedError) }
+  end
+
+  describe '#scope' do
+    specify { expect { subject.scope }.to raise_error(NotImplementedError) }
   end
 
   describe '#user_agent' do
@@ -72,9 +86,30 @@ describe EveOnline::ESI::Base do
         end
       end
 
-      specify { expect { subject.content }.not_to raise_error }
+      context 'without token' do
+        before { expect(faraday).not_to receive(:authorization) }
 
-      specify { expect { subject.content }.to change { subject.instance_variable_defined?(:@_memoized_content) }.from(false).to(true) }
+        specify { expect { subject.content }.not_to raise_error }
+
+        specify { expect { subject.content }.to change { subject.instance_variable_defined?(:@_memoized_content) }.from(false).to(true) }
+      end
+
+      context 'with token' do
+        let(:token) { double }
+
+        subject { described_class.new(token) }
+
+        before do
+          #
+          # faraday.authorization(:Bearer, token)
+          #
+          expect(faraday).to receive(:authorization).with(:Bearer, token)
+        end
+
+        specify { expect { subject.content }.not_to raise_error }
+
+        specify { expect { subject.content }.to change { subject.instance_variable_defined?(:@_memoized_content) }.from(false).to(true) }
+      end
     end
 
     context 'exception' do

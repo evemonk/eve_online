@@ -6,13 +6,18 @@ module EveOnline
     class Base
       extend Memoist
 
-      attr_reader :parser
+      attr_reader :token, :parser
 
-      def initialize
+      def initialize(token = nil)
+        @token = token
         @parser = JSON
       end
 
       def url
+        raise NotImplementedError
+      end
+
+      def scope
         raise NotImplementedError
       end
 
@@ -24,6 +29,7 @@ module EveOnline
         faraday = Faraday.new
 
         faraday.headers[:user_agent] = user_agent
+        faraday.authorization(:Bearer, token) if token
         faraday.options.timeout = 60
         faraday.options.open_timeout = 60
 
