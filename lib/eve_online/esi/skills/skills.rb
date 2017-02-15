@@ -11,6 +11,21 @@ module EveOnline
           @character_id = character_id
         end
 
+        def as_json
+          {
+            total_sp: total_sp,
+            skills: skills
+          }
+        end
+
+        def total_sp
+          response.fetch('total_sp')
+        end
+
+        def skills
+          response.fetch('skills')
+        end
+
         def scope
           'esi-skills.read_skills.v1'
         end

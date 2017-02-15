@@ -19,6 +19,54 @@ describe EveOnline::ESI::Skills::Skills do
     its(:character_id) { should eq(character_id) }
   end
 
+  describe '#as_json' do
+    let(:skills) { described_class.new(token, character_id) }
+
+    let(:total_sp) { double }
+
+    let(:skills_array) { double }
+
+    before { expect(skills).to receive(:total_sp).and_return(total_sp) }
+
+    before { expect(skills).to receive(:skills).and_return(skills_array) }
+
+    subject { skills.as_json }
+
+    its([:total_sp]) { should eq(total_sp) }
+
+    its([:skills]) { should eq(skills_array) }
+  end
+
+  describe '#total_sp' do
+    before do
+      #
+      # subject.response.fetch('total_sp')
+      #
+      expect(subject).to receive(:response) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('total_sp')
+        end
+      end
+    end
+
+    specify { expect { subject.total_sp }.not_to raise_error }
+  end
+
+  describe '#skills' do
+    before do
+      #
+      # subject.response.fetch('skills')
+      #
+      expect(subject).to receive(:response) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('skills')
+        end
+      end
+    end
+
+    specify { expect { subject.skills }.not_to raise_error }
+  end
+
   describe '#scope' do
     specify { expect(subject.scope).to eq('esi-skills.read_skills.v1') }
   end
