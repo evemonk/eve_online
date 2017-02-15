@@ -1212,6 +1212,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * `EveOnline::SDE::Models::InvPosition`
 * Finish `EveOnline::ESI::Characters::Character`
 * Add `EveOnline::ESI::Characters::Portrait`
+* Add basic `EveOnline::ESI::Skills::Skills`
 
 
 **v0.10.0**
