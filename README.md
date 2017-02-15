@@ -998,7 +998,7 @@ campaigns.items.first
 
 ### ESI Examples
 
-Character info:
+#### Public information about a character
 
 ```ruby
 character_id = 90729314
@@ -1020,7 +1020,8 @@ character.ancestry_id # => 24
 character.security_status # => 1.8694881661345457
 ```
 
-Character portraits:
+#### Get portrait urls for a character
+
 ```ruby
 character_id = 90729314
 
@@ -1033,6 +1034,25 @@ portrait.small # => "http://image.eveonline.com/Character/90729314_64.jpg"
 portrait.medium # => "http://image.eveonline.com/Character/90729314_128.jpg"
 portrait.large # => "http://image.eveonline.com/Character/90729314_256.jpg"
 portrait.huge # => "http://image.eveonline.com/Character/90729314_512.jpg"
+```
+
+#### List all trained skills for the given character
+
+```ruby
+token = 'token123'
+
+character_id = 90729314
+
+skills = EveOnline::ESI::Skills::Skills.new(token, character_id)
+
+skills.as_json
+# => {:total_sp=>43232144, :skills=>[{"skill_id"=>22536, "skillpoints_in_skill"=>500, "current_skill_level"=>1}, {"skill_id"=>20494, "skillpoints_in_skill"=>2829, "current_skill_level"=>2}, ... ]}
+
+skills.total_sp # => 43232144
+
+skills.skills.size # => 180
+
+skills.skills.first # => {"skill_id"=>22536, "skillpoints_in_skill"=>500, "current_skill_level"=>1}
 ```
 
 ### SDE Examples
