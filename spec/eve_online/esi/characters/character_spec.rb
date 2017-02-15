@@ -222,6 +222,10 @@ describe EveOnline::ESI::Characters::Character do
     specify { expect { subject.security_status }.not_to raise_error }
   end
 
+  describe '#scope' do
+    specify { expect(subject.scope).to eq(nil) }
+  end
+
   describe '#url' do
     specify do
       expect(subject.url).to eq(described_class::API_ENDPOINT % character_id)

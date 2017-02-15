@@ -66,6 +66,8 @@ module EveOnline
           response.fetch('security_status')
         end
 
+        def scope; end
+
         def url
           API_ENDPOINT % character_id
         end

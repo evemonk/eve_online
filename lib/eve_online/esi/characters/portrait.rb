@@ -52,6 +52,8 @@ module EveOnline
           raise NotImplementedError
         end
 
+        def scope; end
+
         def url
           API_ENDPOINT % character_id
         end

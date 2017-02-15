@@ -113,6 +113,10 @@ describe EveOnline::ESI::Characters::Portrait do
     specify { expect { subject.gigantic }.to raise_error(NotImplementedError) }
   end
 
+  describe '#scope' do
+    specify { expect(subject.scope).to eq(nil) }
+  end
+
   describe '#url' do
     specify do
       expect(subject.url).to eq(described_class::API_ENDPOINT % character_id)
