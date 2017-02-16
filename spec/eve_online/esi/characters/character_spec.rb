@@ -10,6 +10,8 @@ describe EveOnline::ESI::Characters::Character do
   specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/latest/characters/%s/?datasource=tranquility') }
 
   describe '#initialize' do
+    its(:token) { should eq(nil) }
+
     its(:parser) { should eq(JSON) }
 
     its(:character_id) { should eq(character_id) }
@@ -220,6 +222,10 @@ describe EveOnline::ESI::Characters::Character do
     end
 
     specify { expect { subject.security_status }.not_to raise_error }
+  end
+
+  describe '#scope' do
+    specify { expect(subject.scope).to eq(nil) }
   end
 
   describe '#url' do

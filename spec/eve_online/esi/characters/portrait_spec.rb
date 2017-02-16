@@ -10,6 +10,8 @@ describe EveOnline::ESI::Characters::Portrait do
   specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/latest/characters/%s/portrait/?datasource=tranquility') }
 
   describe '#initialize' do
+    its(:token) { should eq(nil) }
+
     its(:parser) { should eq(JSON) }
 
     its(:character_id) { should eq(character_id) }
@@ -111,6 +113,10 @@ describe EveOnline::ESI::Characters::Portrait do
 
   describe '#gigantic' do
     specify { expect { subject.gigantic }.to raise_error(NotImplementedError) }
+  end
+
+  describe '#scope' do
+    specify { expect(subject.scope).to eq(nil) }
   end
 
   describe '#url' do
