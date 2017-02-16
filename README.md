@@ -1003,7 +1003,7 @@ campaigns.items.first
 ```ruby
 character_id = 90729314
 
-character = EveOnline::ESI::Characters::Character.new(character_id)
+character = EveOnline::ESI::Character.new(character_id)
 
 character.as_json
 # => {:corporation_id=>1000168, :birthday=>Fri, 15 Jan 2010 15:26:00 UTC +00:00, :name=>"Green Black", :gender=>"male", :race_id=>2, :bloodline_id=>4, :description=>"", :alliance_id=>12345678, :ancestry_id=>24, :security_status=>1.8694881661345457}
@@ -1233,6 +1233,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Finish `EveOnline::ESI::Characters::Character`
 * Add `EveOnline::ESI::Characters::Portrait`
 * Add basic `EveOnline::ESI::Skills::Skills`
+* Rename `EveOnline::ESI::Characters::Character` to `EveOnline::ESI::Character`
 
 
 **v0.10.0**

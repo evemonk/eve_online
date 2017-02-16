@@ -79,7 +79,7 @@ require 'eve_online/sovereignty/campaigns'
 # ESI API
 require 'eve_online/esi/base'
 
-require 'eve_online/esi/characters/character'
+require 'eve_online/esi/character'
 require 'eve_online/esi/characters/portrait'
 require 'eve_online/esi/skills/skills'
 
