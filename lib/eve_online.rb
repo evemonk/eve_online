@@ -80,7 +80,7 @@ require 'eve_online/sovereignty/campaigns'
 require 'eve_online/esi/base'
 
 require 'eve_online/esi/character'
-require 'eve_online/esi/characters/portrait'
+require 'eve_online/esi/character_portrait'
 require 'eve_online/esi/skills/skills'
 
 # SDE
