@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe EveOnline::ESI::Skills::Skills do
+describe EveOnline::ESI::CharacterSkills do
   let(:token) { 'token123' }
 
   let(:character_id) { 12_345_678 }

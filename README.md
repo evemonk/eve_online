@@ -1003,7 +1003,7 @@ campaigns.items.first
 ```ruby
 character_id = 90729314
 
-character = EveOnline::ESI::Characters::Character.new(character_id)
+character = EveOnline::ESI::Character.new(character_id)
 
 character.as_json
 # => {:corporation_id=>1000168, :birthday=>Fri, 15 Jan 2010 15:26:00 UTC +00:00, :name=>"Green Black", :gender=>"male", :race_id=>2, :bloodline_id=>4, :description=>"", :alliance_id=>12345678, :ancestry_id=>24, :security_status=>1.8694881661345457}
@@ -1025,7 +1025,7 @@ character.security_status # => 1.8694881661345457
 ```ruby
 character_id = 90729314
 
-portrait = EveOnline::ESI::Characters::Portrait.new(character_id)
+portrait = EveOnline::ESI::CharacterPortrait.new(character_id)
 
 portrait.as_json
 # => {:small=>"http://image.eveonline.com/Character/90729314_64.jpg", :medium=>"http://image.eveonline.com/Character/90729314_128.jpg", :large=>"http://image.eveonline.com/Character/90729314_256.jpg", :huge=>"http://image.eveonline.com/Character/90729314_512.jpg"}
@@ -1043,7 +1043,7 @@ token = 'token123'
 
 character_id = 90729314
 
-skills = EveOnline::ESI::Skills::Skills.new(token, character_id)
+skills = EveOnline::ESI::CharacterSkills.new(token, character_id)
 
 skills.as_json
 # => {:total_sp=>43232144, :skills=>[{"skill_id"=>22536, "skillpoints_in_skill"=>500, "current_skill_level"=>1}, {"skill_id"=>20494, "skillpoints_in_skill"=>2829, "current_skill_level"=>2}, ... ]}
@@ -1231,8 +1231,9 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * `EveOnline::SDE::Models::InvName`
 * `EveOnline::SDE::Models::InvPosition`
 * Finish `EveOnline::ESI::Characters::Character`
-* Add `EveOnline::ESI::Characters::Portrait`
+* Add `EveOnline::ESI::CharacterPortrait`
 * Add basic `EveOnline::ESI::Skills::Skills`
+* Rename `EveOnline::ESI::Characters::Character` to `EveOnline::ESI::Character`
 
 
 **v0.10.0**

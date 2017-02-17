@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe EveOnline::ESI::Characters::Character do
+describe EveOnline::ESI::Character do
   let(:character_id) { 12_345_678 }
 
   subject { described_class.new(character_id) }
