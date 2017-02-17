@@ -81,7 +81,7 @@ require 'eve_online/esi/base'
 
 require 'eve_online/esi/character'
 require 'eve_online/esi/character_portrait'
-require 'eve_online/esi/skills/skills'
+require 'eve_online/esi/character_skills'
 
 # SDE
 require 'eve_online/sde/base'
