@@ -1055,6 +1055,19 @@ skills.skills.size # => 180
 skills.skills.first # => {"skill_id"=>22536, "skillpoints_in_skill"=>500, "current_skill_level"=>1}
 ```
 
+#### List the configured skill queue for the given character
+
+```ruby
+token = 'token123'
+
+character_id = 90729314
+
+skill_queue = EveOnline::ESI::CharacterSkillQueue.new(token, character_id)
+
+# TODO: finish this
+
+```
+
 ### SDE Examples
 
 Agent Types:
@@ -1234,6 +1247,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Add `EveOnline::ESI::CharacterPortrait`
 * Add basic `EveOnline::ESI::Skills::Skills`
 * Rename `EveOnline::ESI::Characters::Character` to `EveOnline::ESI::Character`
+* Add basic `EveOnline::ESI::CharacterSkillQueue`
 
 
 **v0.10.0**
