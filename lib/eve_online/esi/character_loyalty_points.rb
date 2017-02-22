@@ -10,6 +10,15 @@ module EveOnline
         @character_id = character_id
       end
 
+      def loyalty_points
+        output = []
+        response.each do |lp|
+          output << Models::LoyaltyPoint.new(lp)
+        end
+        output
+      end
+      memoize :loyalty_points
+
       def scope
         'esi-characters.read_loyalty.v1'
       end
