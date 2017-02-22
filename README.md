@@ -1065,7 +1065,25 @@ character_id = 90729314
 skill_queue = EveOnline::ESI::CharacterSkillQueue.new(token, character_id)
 
 # TODO: finish this
+```
 
+#### List of loyalty points for all corporations the character has worked for
+
+```ruby
+token = 'token123'
+
+character_id = 90729314
+
+character_loyalty_points = EveOnline::ESI::CharacterLoyaltyPoints.new(token, character_id)
+
+character_loyalty_points.loyalty_points.size # => 5
+
+loyalty_point = character_loyalty_points.loyalty_points.first
+
+loyalty_point.as_json # => {:corporation_id=>1000035, :loyalty_points=>14163}
+
+loyalty_point.corporation_id # => 1000035
+loyalty_point.loyalty_points # => 14163
 ```
 
 ### SDE Examples
@@ -1248,6 +1266,8 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Add basic `EveOnline::ESI::Skills::Skills`
 * Rename `EveOnline::ESI::Characters::Character` to `EveOnline::ESI::Character`
 * Add basic `EveOnline::ESI::CharacterSkillQueue`
+* Add basic `EveOnline::ESI::CharacterLoyaltyPoints`
+* Add `EveOnline::ESI::Models::LoyaltyPoint` class for handling EveOnline Character loyalty points
 
 
 **v0.10.0**
