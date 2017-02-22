@@ -1,0 +1,28 @@
+module EveOnline
+  module ESI
+    module Models
+      class LoyaltyPoint
+        attr_reader :options
+
+        def initialize(options)
+          @options = options
+        end
+
+        def as_json
+          {
+            corporation_id: corporation_id,
+            loyalty_points: loyalty_points
+          }
+        end
+
+        def corporation_id
+          options.fetch('corporation_id')
+        end
+
+        def loyalty_points
+          options.fetch('loyalty_points')
+        end
+      end
+    end
+  end
+end
