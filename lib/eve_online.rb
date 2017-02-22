@@ -83,6 +83,7 @@ require 'eve_online/esi/character'
 require 'eve_online/esi/character_portrait'
 require 'eve_online/esi/character_skills'
 require 'eve_online/esi/character_skill_queue'
+require 'eve_online/esi/character_loyalty_points'
 
 # SDE
 require 'eve_online/sde/base'
