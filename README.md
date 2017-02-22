@@ -1065,7 +1065,18 @@ character_id = 90729314
 skill_queue = EveOnline::ESI::CharacterSkillQueue.new(token, character_id)
 
 # TODO: finish this
+```
 
+#### List of loyalty points for all corporations the character has worked for
+
+```ruby
+token = 'token123'
+
+character_id = 90729314
+
+lp = EveOnline::ESI::CharacterLoyaltyPoints.new(token, character_id)
+
+# TODO: finish this
 ```
 
 ### SDE Examples
@@ -1248,6 +1259,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Add basic `EveOnline::ESI::Skills::Skills`
 * Rename `EveOnline::ESI::Characters::Character` to `EveOnline::ESI::Character`
 * Add basic `EveOnline::ESI::CharacterSkillQueue`
+* Add basic `EveOnline::ESI::CharacterLoyaltyPoints`
 
 
 **v0.10.0**
