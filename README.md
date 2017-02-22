@@ -1025,15 +1025,15 @@ character.security_status # => 1.8694881661345457
 ```ruby
 character_id = 90729314
 
-portrait = EveOnline::ESI::CharacterPortrait.new(character_id)
+character_portrait = EveOnline::ESI::CharacterPortrait.new(character_id)
 
-portrait.as_json
+character_portrait.as_json
 # => {:small=>"http://image.eveonline.com/Character/90729314_64.jpg", :medium=>"http://image.eveonline.com/Character/90729314_128.jpg", :large=>"http://image.eveonline.com/Character/90729314_256.jpg", :huge=>"http://image.eveonline.com/Character/90729314_512.jpg"}
 
-portrait.small # => "http://image.eveonline.com/Character/90729314_64.jpg"
-portrait.medium # => "http://image.eveonline.com/Character/90729314_128.jpg"
-portrait.large # => "http://image.eveonline.com/Character/90729314_256.jpg"
-portrait.huge # => "http://image.eveonline.com/Character/90729314_512.jpg"
+character_portrait.small # => "http://image.eveonline.com/Character/90729314_64.jpg"
+character_portrait.medium # => "http://image.eveonline.com/Character/90729314_128.jpg"
+character_portrait.large # => "http://image.eveonline.com/Character/90729314_256.jpg"
+character_portrait.huge # => "http://image.eveonline.com/Character/90729314_512.jpg"
 ```
 
 #### List all trained skills for the given character
