@@ -61,9 +61,13 @@ describe EveOnline::ESI::CharacterSkills do
 
     before do
       #
-      # subject.response # => [{"skill_id"=>22536, "skillpoints_in_skill"=>500, "current_skill_level"=>1}]
+      # subject.response.fetch('skills') # => [{"skill_id"=>22536, "skillpoints_in_skill"=>500, "current_skill_level"=>1}]
       #
-      expect(subject).to receive(:response).and_return(response)
+      expect(subject).to receive(:response) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('skills').and_return(response)
+        end
+      end
     end
 
     before do

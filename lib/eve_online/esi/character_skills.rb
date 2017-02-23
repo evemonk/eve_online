@@ -22,7 +22,7 @@ module EveOnline
 
       def skills
         output = []
-        response.each do |skill|
+        response.fetch('skills').each do |skill|
           output << EveOnline::ESI::Models::Skill.new(skill)
         end
         output
