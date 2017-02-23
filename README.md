@@ -1261,7 +1261,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 
 ## Changelog
 
-**master**
+**v0.11.0**
 
 * Add SDE support classes
 * `EveOnline::SDE::AgtAgentTypes`
