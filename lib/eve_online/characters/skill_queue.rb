@@ -21,8 +21,8 @@ module EveOnline
           [SkillQueueEntry.new(row)]
         when Array
           output = []
-          row.each do |blueprint|
-            output << SkillQueueEntry.new(blueprint)
+          row.each do |skill|
+            output << SkillQueueEntry.new(skill)
           end
           output
         else
