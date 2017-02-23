@@ -1043,16 +1043,21 @@ token = 'token123'
 
 character_id = 90729314
 
-skills = EveOnline::ESI::CharacterSkills.new(token, character_id)
+character_skills = EveOnline::ESI::CharacterSkills.new(token, character_id)
 
-skills.as_json
-# => {:total_sp=>43232144, :skills=>[{"skill_id"=>22536, "skillpoints_in_skill"=>500, "current_skill_level"=>1}, {"skill_id"=>20494, "skillpoints_in_skill"=>2829, "current_skill_level"=>2}, ... ]}
+character_skills.total_sp # => 43232144
 
-skills.total_sp # => 43232144
+character_skills.as_json # => {:total_sp=>43232144}
 
-skills.skills.size # => 180
+character_skills.skills.size # => 180
 
-skills.skills.first # => {"skill_id"=>22536, "skillpoints_in_skill"=>500, "current_skill_level"=>1}
+skill = character_skills.skills.first
+
+skill.as_json # => {:skill_id=>22536, :skillpoints_in_skill=>500, :current_skill_level=>1}
+
+skill.skill_id # => 22536
+skill.skillpoints_in_skill # => 500
+skill.current_skill_level # => 1
 ```
 
 #### List the configured skill queue for the given character
@@ -1277,7 +1282,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * `EveOnline::SDE::Models::InvPosition`
 * Finish `EveOnline::ESI::Characters::Character`
 * Add `EveOnline::ESI::CharacterPortrait`
-* Add basic `EveOnline::ESI::Skills::Skills`
+* Add `EveOnline::ESI::CharacterSkills`
 * Rename `EveOnline::ESI::Characters::Character` to `EveOnline::ESI::Character`
 * Add `EveOnline::ESI::CharacterSkillQueue`
 * Add `EveOnline::ESI::CharacterLoyaltyPoints`
