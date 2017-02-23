@@ -12,29 +12,29 @@ describe EveOnline::ESI::Models::SkillQueueEntry do
   describe '#as_json' do
     let(:options) { double }
 
-    let(:skill_queue) { described_class.new(options) }
+    let(:skill_queue_entry) { described_class.new(options) }
 
     let(:finish_date) { double }
 
     let(:start_date) { double }
 
-    before { expect(skill_queue).to receive(:skill_id).and_return(3308) }
+    before { expect(skill_queue_entry).to receive(:skill_id).and_return(3308) }
 
-    before { expect(skill_queue).to receive(:finished_level).and_return(3) }
+    before { expect(skill_queue_entry).to receive(:finished_level).and_return(3) }
 
-    before { expect(skill_queue).to receive(:queue_position).and_return(49) }
+    before { expect(skill_queue_entry).to receive(:queue_position).and_return(49) }
 
-    before { expect(skill_queue).to receive(:finish_date).and_return(finish_date) }
+    before { expect(skill_queue_entry).to receive(:finish_date).and_return(finish_date) }
 
-    before { expect(skill_queue).to receive(:start_date).and_return(start_date) }
+    before { expect(skill_queue_entry).to receive(:start_date).and_return(start_date) }
 
-    before { expect(skill_queue).to receive(:training_start_sp).and_return(7072) }
+    before { expect(skill_queue_entry).to receive(:training_start_sp).and_return(7072) }
 
-    before { expect(skill_queue).to receive(:level_end_sp).and_return(40000) }
+    before { expect(skill_queue_entry).to receive(:level_end_sp).and_return(40000) }
 
-    before { expect(skill_queue).to receive(:level_start_sp).and_return(7072) }
+    before { expect(skill_queue_entry).to receive(:level_start_sp).and_return(7072) }
 
-    subject { skill_queue.as_json }
+    subject { skill_queue_entry.as_json }
 
     its([:skill_id]) { should eq(3308) }
 
