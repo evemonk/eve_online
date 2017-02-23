@@ -23,7 +23,6 @@ require 'eve_online/character_implants'
 require 'eve_online/character_jump_clones'
 require 'eve_online/character_jump_clone_implants'
 require 'eve_online/standing'
-require 'eve_online/skill_queue_entry'
 require 'eve_online/contact_notification'
 require 'eve_online/wallet_journal_entry'
 require 'eve_online/market_order'
@@ -75,6 +74,8 @@ require 'eve_online/eve/character_id'
 require 'eve_online/server/status'
 
 require 'eve_online/sovereignty/campaigns'
+
+require 'eve_online/xml/models/skill_queue_entry'
 
 # ESI API
 require 'eve_online/esi/base'
