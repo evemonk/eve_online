@@ -10,6 +10,15 @@ module EveOnline
         @character_id = character_id
       end
 
+      def skills
+        output = []
+        response.each do |skill|
+          output << EveOnline::ESI::Models::SkillQueueEntry.new(skill)
+        end
+        output
+      end
+      memoize :skills
+
       def scope
         'esi-skills.read_skillqueue.v1'
       end

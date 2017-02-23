@@ -24,17 +24,11 @@ describe EveOnline::ESI::CharacterSkills do
 
     let(:total_sp) { double }
 
-    let(:skills_array) { double }
-
     before { expect(skills).to receive(:total_sp).and_return(total_sp) }
-
-    before { expect(skills).to receive(:skills).and_return(skills_array) }
 
     subject { skills.as_json }
 
     its([:total_sp]) { should eq(total_sp) }
-
-    its([:skills]) { should eq(skills_array) }
   end
 
   describe '#total_sp' do
@@ -53,18 +47,39 @@ describe EveOnline::ESI::CharacterSkills do
   end
 
   describe '#skills' do
+    let(:skill) { double }
+
+    let(:response) do
+      [
+        {
+          'skill_id' => 22536,
+          'skillpoints_in_skill' => 500,
+          'current_skill_level' => 1
+        }
+      ]
+    end
+
     before do
       #
-      # subject.response.fetch('skills')
+      # subject.response.fetch('skills') # => [{"skill_id"=>22536, "skillpoints_in_skill"=>500, "current_skill_level"=>1}]
       #
       expect(subject).to receive(:response) do
         double.tap do |a|
-          expect(a).to receive(:fetch).with('skills')
+          expect(a).to receive(:fetch).with('skills').and_return(response)
         end
       end
     end
 
-    specify { expect { subject.skills }.not_to raise_error }
+    before do
+      #
+      # EveOnline::ESI::Models::Skill.new(response.first) # => skill
+      #
+      expect(EveOnline::ESI::Models::Skill).to receive(:new).with(response.first).and_return(skill)
+    end
+
+    specify { expect(subject.skills).to eq([skill]) }
+
+    specify { expect { subject.skills }.to change { subject.instance_variable_defined?(:@_memoized_skills) }.from(false).to(true) }
   end
 
   describe '#scope' do

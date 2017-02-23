@@ -59,9 +59,9 @@ describe EveOnline::Characters::SkillQueue do
 
       before do
         #
-        # EveOnline::SkillQueueEntry.new(row) # => skill
+        # EveOnline::XML::Models::SkillQueueEntry.new(row) # => skill
         #
-        expect(EveOnline::SkillQueueEntry).to receive(:new).with(row).and_return(skill)
+        expect(EveOnline::XML::Models::SkillQueueEntry).to receive(:new).with(row).and_return(skill)
       end
 
       specify { expect(subject.skills).to eq([skill]) }
@@ -95,9 +95,9 @@ describe EveOnline::Characters::SkillQueue do
 
       before do
         #
-        # EveOnline::SkillQueueEntry.new(row.first) # => blueprint
+        # EveOnline::XML::Models::SkillQueueEntry.new(row.first) # => blueprint
         #
-        expect(EveOnline::SkillQueueEntry).to receive(:new).with(row.first).and_return(skill)
+        expect(EveOnline::XML::Models::SkillQueueEntry).to receive(:new).with(row.first).and_return(skill)
       end
 
       specify { expect(subject.skills).to eq([skill]) }
