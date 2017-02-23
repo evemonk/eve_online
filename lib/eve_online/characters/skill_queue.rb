@@ -18,11 +18,11 @@ module EveOnline
       def skills
         case row
         when Hash
-          [SkillQueueEntry.new(row)]
+          [EveOnline::XML::Models::SkillQueueEntry.new(row)]
         when Array
           output = []
           row.each do |skill|
-            output << SkillQueueEntry.new(skill)
+            output << EveOnline::XML::Models::SkillQueueEntry.new(skill)
           end
           output
         else
