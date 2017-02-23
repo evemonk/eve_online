@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe EveOnline::ESI::Models::SkillQueue do
+describe EveOnline::ESI::Models::SkillQueueEntry do
   describe '#initialize' do
     let(:options) { double }
 

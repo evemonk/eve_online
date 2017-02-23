@@ -86,7 +86,7 @@ require 'eve_online/esi/character_skill_queue'
 require 'eve_online/esi/character_loyalty_points'
 
 require 'eve_online/esi/models/loyalty_point'
-require 'eve_online/esi/models/skill_queue'
+require 'eve_online/esi/models/skill_queue_entry'
 
 # SDE
 require 'eve_online/sde/base'
