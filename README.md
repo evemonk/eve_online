@@ -1062,9 +1062,23 @@ token = 'token123'
 
 character_id = 90729314
 
-skill_queue = EveOnline::ESI::CharacterSkillQueue.new(token, character_id)
+character_skill_queue = EveOnline::ESI::CharacterSkillQueue.new(token, character_id)
 
-# TODO: finish this
+character_skill_queue.skills.size # => 50
+
+skill_queue_entry = character_skill_queue.skills.first
+
+skill_queue_entry.as_json
+# => {:skill_id=>12487, :finished_level=>3, :queue_position=>0, :finish_date=>Mon, 16 Jan 2017 03:00:35 UTC +00:00, :start_date=>Sun, 15 Jan 2017 11:38:25 UTC +00:00, :training_start_sp=>7263, :level_end_sp=>40000, :level_start_sp=>7072}
+
+skill_queue_entry.skill_id # => 12487
+skill_queue_entry.finished_level # => 3
+skill_queue_entry.queue_position # => 0
+skill_queue_entry.finish_date # => Mon, 16 Jan 2017 03:00:35 UTC +00:00
+skill_queue_entry.start_date # => Sun, 15 Jan 2017 11:38:25 UTC +00:00
+skill_queue_entry.training_start_sp # => 7263
+skill_queue_entry.level_end_sp # => 40000
+skill_queue_entry.level_start_sp # => 7072
 ```
 
 #### List of loyalty points for all corporations the character has worked for
@@ -1265,12 +1279,11 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Add `EveOnline::ESI::CharacterPortrait`
 * Add basic `EveOnline::ESI::Skills::Skills`
 * Rename `EveOnline::ESI::Characters::Character` to `EveOnline::ESI::Character`
-* Add basic `EveOnline::ESI::CharacterSkillQueue`
-* Add basic `EveOnline::ESI::CharacterLoyaltyPoints`
+* Add `EveOnline::ESI::CharacterSkillQueue`
+* Add `EveOnline::ESI::CharacterLoyaltyPoints`
 * Add `EveOnline::ESI::Models::LoyaltyPoint` class for handling character loyalty points
 * Add `EveOnline::ESI::Models::SkillQueue` class for handling character skill queue entries
 * Rename `EveOnline::SkillQueueEntry` to `EveOnline::XML::Models::SkillQueueEntry`
-
 
 **v0.10.0**
 
