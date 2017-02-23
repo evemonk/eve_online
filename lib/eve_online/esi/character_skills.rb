@@ -12,8 +12,7 @@ module EveOnline
 
       def as_json
         {
-          total_sp: total_sp,
-          skills: skills
+          total_sp: total_sp
         }
       end
 
@@ -22,8 +21,13 @@ module EveOnline
       end
 
       def skills
-        response.fetch('skills')
+        output = []
+        response.each do |skill|
+          output << EveOnline::ESI::Models::Skill.new(skill)
+        end
+        output
       end
+      memoize :skills
 
       def scope
         'esi-skills.read_skills.v1'
