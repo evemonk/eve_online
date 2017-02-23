@@ -1267,7 +1267,9 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Rename `EveOnline::ESI::Characters::Character` to `EveOnline::ESI::Character`
 * Add basic `EveOnline::ESI::CharacterSkillQueue`
 * Add basic `EveOnline::ESI::CharacterLoyaltyPoints`
-* Add `EveOnline::ESI::Models::LoyaltyPoint` class for handling EveOnline Character loyalty points
+* Add `EveOnline::ESI::Models::LoyaltyPoint` class for handling character loyalty points
+* Add `EveOnline::ESI::Models::SkillQueue` class for handling character skill queue entries
+* Rename `EveOnline::SkillQueueEntry` to `EveOnline::XML::Models::SkillQueueEntry`
 
 
 **v0.10.0**
