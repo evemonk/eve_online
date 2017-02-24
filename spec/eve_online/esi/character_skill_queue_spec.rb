@@ -1,5 +1,6 @@
 require 'spec_helper'
 
+# rubocop:disable Metrics/BlockLength
 describe EveOnline::ESI::CharacterSkillQueue do
   let(:token) { 'token123' }
 

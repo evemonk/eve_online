@@ -1,5 +1,6 @@
 require 'spec_helper'
 
+# rubocop:disable Metrics/BlockLength
 describe EveOnline::CharacterSkills do
   specify { expect(described_class).to be_a(Memoist) }
 

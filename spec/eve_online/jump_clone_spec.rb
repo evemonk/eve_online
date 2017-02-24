@@ -1,5 +1,6 @@
 require 'spec_helper'
 
+# rubocop:disable Metrics/BlockLength
 describe EveOnline::JumpClone do
   describe '#initialize' do
     let(:options) { double }

@@ -1,5 +1,6 @@
 require 'spec_helper'
 
+# rubocop:disable Metrics/BlockLength
 describe EveOnline::ESI::Character do
   let(:character_id) { 12_345_678 }
 

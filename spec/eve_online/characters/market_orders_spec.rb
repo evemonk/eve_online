@@ -1,5 +1,6 @@
 require 'spec_helper'
 
+# rubocop:disable Metrics/BlockLength
 describe EveOnline::Characters::MarketOrders do
   let(:key_id) { 123 }
 
