@@ -1,5 +1,6 @@
 require 'spec_helper'
 
+# rubocop:disable Metrics/BlockLength
 describe EveOnline::Account::ApiKeyInfo do
   let(:key_id) { 123 }
 

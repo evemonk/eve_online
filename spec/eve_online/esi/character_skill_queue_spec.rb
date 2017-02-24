@@ -1,5 +1,6 @@
 require 'spec_helper'
 
+# rubocop:disable Metrics/BlockLength
 describe EveOnline::ESI::CharacterSkillQueue do
   let(:token) { 'token123' }
 
@@ -25,14 +26,14 @@ describe EveOnline::ESI::CharacterSkillQueue do
     let(:response) do
       [
         {
-          'skill_id' => 12487,
+          'skill_id' => 12_487,
           'finished_level' => 3,
           'queue_position' => 0,
           'finish_date' => '2017-01-16T03:00:35Z',
           'start_date' => '2017-01-15T11:38:25Z',
-          'training_start_sp' => 7263,
-          'level_end_sp' => 40000,
-          'level_start_sp' => 7072
+          'training_start_sp' => 7_263,
+          'level_end_sp' => 40_000,
+          'level_start_sp' => 7_072
         }
       ]
     end

@@ -1,5 +1,6 @@
 require 'spec_helper'
 
+# rubocop:disable Metrics/BlockLength
 describe EveOnline::SDE::Models::AgtAgent do
   describe '#initialize' do
     let(:data) { double }
