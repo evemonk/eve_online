@@ -5,7 +5,7 @@ describe EveOnline::ESI::Base do
   specify { expect(described_class).to be_a(Memoist) }
 
   describe '#initialize' do
-    context 'without token'do
+    context 'without token' do
       its(:token) { should eq(nil) }
 
       its(:parser) { should eq(JSON) }
