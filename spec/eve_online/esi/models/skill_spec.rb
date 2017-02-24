@@ -15,7 +15,7 @@ describe EveOnline::ESI::Models::Skill do
 
     let(:skill) { described_class.new(options) }
 
-    before { expect(skill).to receive(:skill_id).and_return(22536) }
+    before { expect(skill).to receive(:skill_id).and_return(22_536) }
 
     before { expect(skill).to receive(:skillpoints_in_skill).and_return(500) }
 
@@ -23,7 +23,7 @@ describe EveOnline::ESI::Models::Skill do
 
     subject { skill.as_json }
 
-    its([:skill_id]) { should eq(22536) }
+    its([:skill_id]) { should eq(22_536) }
 
     its([:skillpoints_in_skill]) { should eq(500) }
 

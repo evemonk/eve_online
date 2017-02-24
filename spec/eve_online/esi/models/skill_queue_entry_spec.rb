@@ -19,7 +19,7 @@ describe EveOnline::ESI::Models::SkillQueueEntry do
 
     let(:start_date) { double }
 
-    before { expect(skill_queue_entry).to receive(:skill_id).and_return(3308) }
+    before { expect(skill_queue_entry).to receive(:skill_id).and_return(3_308) }
 
     before { expect(skill_queue_entry).to receive(:finished_level).and_return(3) }
 
@@ -29,15 +29,15 @@ describe EveOnline::ESI::Models::SkillQueueEntry do
 
     before { expect(skill_queue_entry).to receive(:start_date).and_return(start_date) }
 
-    before { expect(skill_queue_entry).to receive(:training_start_sp).and_return(7072) }
+    before { expect(skill_queue_entry).to receive(:training_start_sp).and_return(7_072) }
 
-    before { expect(skill_queue_entry).to receive(:level_end_sp).and_return(40000) }
+    before { expect(skill_queue_entry).to receive(:level_end_sp).and_return(40_000) }
 
-    before { expect(skill_queue_entry).to receive(:level_start_sp).and_return(7072) }
+    before { expect(skill_queue_entry).to receive(:level_start_sp).and_return(7_072) }
 
     subject { skill_queue_entry.as_json }
 
-    its([:skill_id]) { should eq(3308) }
+    its([:skill_id]) { should eq(3_308) }
 
     its([:finished_level]) { should eq(3) }
 
@@ -47,11 +47,11 @@ describe EveOnline::ESI::Models::SkillQueueEntry do
 
     its([:start_date]) { should eq(start_date) }
 
-    its([:training_start_sp]) { should eq(7072) }
+    its([:training_start_sp]) { should eq(7_072) }
 
-    its([:level_end_sp]) { should eq(40000) }
+    its([:level_end_sp]) { should eq(40_000) }
 
-    its([:level_start_sp]) { should eq(7072) }
+    its([:level_start_sp]) { should eq(7_072) }
   end
 
   describe '#skill_id' do

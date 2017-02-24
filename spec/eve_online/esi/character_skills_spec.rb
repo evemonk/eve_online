@@ -53,7 +53,7 @@ describe EveOnline::ESI::CharacterSkills do
     let(:response) do
       [
         {
-          'skill_id' => 22536,
+          'skill_id' => 22_536,
           'skillpoints_in_skill' => 500,
           'current_skill_level' => 1
         }
