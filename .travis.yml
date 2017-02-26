@@ -13,17 +13,22 @@ rvm:
 gemfile:
   - gemfiles/activesupport_42.gemfile
   - gemfiles/activesupport_50.gemfile
+  - gemfiles/activesupport_51.gemfile
 
 matrix:
   exclude:
     - rvm: 1.9.3
       gemfile: gemfiles/activesupport_50.gemfile
+    - rvm: 1.9.3
+      gemfile: gemfiles/activesupport_51.gemfile
     - rvm: 2.0
       gemfile: gemfiles/activesupport_50.gemfile
+    - rvm: 2.0
+      gemfile: gemfiles/activesupport_51.gemfile
     - rvm: 2.1
       gemfile: gemfiles/activesupport_50.gemfile
-    - rvm: 2.4.0
-      gemfile: gemfiles/activesupport_42.gemfile
+    - rvm: 2.1
+      gemfile: gemfiles/activesupport_51.gemfile
     - rvm: ruby-head
       gemfile: gemfiles/activesupport_42.gemfile
   include:
@@ -33,11 +38,17 @@ matrix:
     - rvm: jruby-9.1.5.0
       gemfile: gemfiles/activesupport_50.gemfile
       jdk: oraclejdk8
+    - rvm: jruby-9.1.5.0
+      gemfile: gemfiles/activesupport_51.gemfile
+      jdk: oraclejdk8
     - rvm: jruby-head
       gemfile: gemfiles/activesupport_42.gemfile
       jdk: oraclejdk8
     - rvm: jruby-head
       gemfile: gemfiles/activesupport_50.gemfile
+      jdk: oraclejdk8
+    - rvm: jruby-head
+      gemfile: gemfiles/activesupport_51.gemfile
       jdk: oraclejdk8
 
   allow_failures:
@@ -51,4 +62,3 @@ before_install: gem install bundler -v 1.14.5
 script:
   - bundle exec rake
   - bundle exec codeclimate-test-reporter
-
