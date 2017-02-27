@@ -1265,6 +1265,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 
 * **Breaking change**. Rename `EveOnline::Exceptions::Exception` to `EveOnline::Exceptions::Base`.
 * Test with Rails 5.1.0.beta1 too
+* Add `EveOnline::Exceptions::InvalidSSOTokenException` for handling invalid SSO tokens (e.g. expired).
 
 **v0.11.0**
 
