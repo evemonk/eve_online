@@ -25,6 +25,7 @@ module EveOnline
         "EveOnline API (https://github.com/biow0lf/eve_online) v#{ VERSION }"
       end
 
+      # TODO: extract to class
       def content
         faraday = Faraday.new
 
@@ -33,7 +34,30 @@ module EveOnline
         faraday.options.timeout = 60
         faraday.options.open_timeout = 60
 
-        faraday.get(url).body
+        # raise EveOnline::Exceptions::InvalidSSOTokenException if res.status == 403
+
+        # case res.status
+        # when 200
+        #   res.body
+        # when 403
+        #   # raise EveOnline::ESI::ForbiddenError
+        # when 404
+        #   # raise EveOnline::ESI::NotFoundError
+        # else
+        #   # raise EveOnline::ESI::UnsupportedResponseStatus
+        # end
+
+        # res.body
+        # faraday.get(url).body
+
+        res = faraday.get(url)
+
+        case res.status
+        when 200
+          res.body
+        when 403
+          raise EveOnline::Exceptions::InvalidSSOTokenException, parser.parse(res.body).fetch('error')
+        end
       rescue Faraday::TimeoutError
         raise EveOnline::Exceptions::TimeoutException
       end
