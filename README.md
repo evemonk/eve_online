@@ -1263,7 +1263,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 
 **master**
 
-* *Breaking change*. Rename `EveOnline::Exceptions::Exception` to `EveOnline::Exceptions::Base`.
+* **Breaking change**. Rename `EveOnline::Exceptions::Exception` to `EveOnline::Exceptions::Base`.
 * Test with Rails 5.1.0.beta1 too
 
 **v0.11.0**
