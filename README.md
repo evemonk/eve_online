@@ -46,7 +46,7 @@ Or install it yourself as:
 
 ### XML API
 
-Account status:
+#### Account status
 
 ```ruby
 key_id = 1234567
@@ -66,7 +66,8 @@ account_status.cached_until # => Mon, 23 Nov 2015 19:28:38 UTC +00:00
 account_status.version # => 2
 ```
 
-Characters:
+#### Characters
+
 ```ruby
 key_id = 1234567
 v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
@@ -93,7 +94,8 @@ character.faction_id # => 0
 character.faction_name # => ""
 ```
 
-Api Key Info:
+#### Api Key Info
+
 ```ruby
 key_id = 1234567
 v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
