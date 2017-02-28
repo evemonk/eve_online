@@ -98,7 +98,7 @@ Api Key Info:
 key_id = 1234567
 v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
 
-api_key_info = EveOnline::Account::ApiKeyInfo.new(key_id, v_code)
+api_key_info = EveOnline::XML::ApiKeyInfo.new(key_id, v_code)
 
 api_key_info.as_json
 # => {:expires=>Fri, 02 Dec 2016 18:13:59 UTC +00:00, :api_key_type=>:character, :access_mask=>1073741823, :current_time=>Mon, 30 Nov 2015 23:00:38 UTC +00:00, :cached_until=>Mon, 30 Nov 2015 23:05:38 UTC +00:00}
@@ -1265,6 +1265,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 
 * *Breaking change*. Rename `EveOnline::Exceptions::Exception` to `EveOnline::Exceptions::Base`.
 * Test with Rails 5.1.0.beta1 too
+* Rename `EveOnline::Account::ApiKeyInfo` to `EveOnline::XML::ApiKeyInfo`
 
 **v0.11.0**
 

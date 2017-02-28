@@ -28,7 +28,6 @@ require 'eve_online/wallet_journal_entry'
 require 'eve_online/market_order'
 require 'eve_online/account_type_object'
 
-require 'eve_online/account/api_key_info'
 require 'eve_online/account/characters'
 require 'eve_online/account/status'
 
@@ -74,6 +73,9 @@ require 'eve_online/eve/character_id'
 require 'eve_online/server/status'
 
 require 'eve_online/sovereignty/campaigns'
+
+# XML API
+require 'eve_online/xml/api_key_info'
 
 require 'eve_online/xml/models/skill_queue_entry'
 
