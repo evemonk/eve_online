@@ -149,13 +149,14 @@ account_balance.cached_until # => Wed, 02 Dec 2015 20:40:42 UTC +00:00
 account_balance.version # => 2
 ```
 
-Asset List:
+#### Character Asset List:
+
 ```ruby
 key_id = 1234567
 v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
 options = { character_id: 90729314 }
 
-asset_list = EveOnline::Characters::AssetList.new(key_id, v_code, options)
+asset_list = EveOnline::XML::CharacterAssetList.new(key_id, v_code, options)
 
 asset_list.current_time # => Mon, 29 Feb 2016 21:51:38 UTC +00:00
 asset_list.cached_until # => Tue, 01 Mar 2016 03:48:38 UTC +00:00
@@ -1272,6 +1273,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Rename `EveOnline::Account::ApiKeyInfo` to `EveOnline::XML::ApiKeyInfo`
 * Rename `EveOnline::Account::Characters` to `EveOnline::XML::AccountCharacters`
 * Rename `EveOnline::Characters::AccountBalance` to `EveOnline::XML::CharacterAccountBalance`
+* Rename `EveOnline::Characters::AssetList` to `EveOnline::XML::CharacterAssetList`
 
 **v0.11.0**
 

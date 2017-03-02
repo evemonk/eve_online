@@ -75,6 +75,7 @@ require 'eve_online/xml/account_status'
 require 'eve_online/xml/api_key_info'
 require 'eve_online/xml/account_characters'
 require 'eve_online/xml/character_account_balance'
+require 'eve_online/xml/character_asset_list'
 
 require 'eve_online/xml/models/skill_queue_entry'
 

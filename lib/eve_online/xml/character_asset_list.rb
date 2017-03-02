@@ -1,7 +1,7 @@
 module EveOnline
-  module Characters
+  module XML
     # https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/character/char_assetlist.html
-    class AssetList < BaseXML
+    class CharacterAssetList < BaseXML
       API_ENDPOINT = 'https://api.eveonline.com/char/AssetList.xml.aspx'.freeze
 
       ACCESS_MASK = 2
