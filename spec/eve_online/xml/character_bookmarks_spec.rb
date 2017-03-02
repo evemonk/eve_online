@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 # rubocop:disable Metrics/BlockLength
-describe EveOnline::Characters::Bookmarks do
+describe EveOnline::XML::CharacterBookmarks do
   let(:key_id) { 123 }
 
   let(:v_code) { 'abc' }
