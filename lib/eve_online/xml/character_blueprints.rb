@@ -1,7 +1,7 @@
 module EveOnline
-  module Characters
+  module XML
     # https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/character/char_blueprints.html
-    class Blueprints < BaseXML
+    class CharacterBlueprints < BaseXML
       API_ENDPOINT = 'https://api.eveonline.com/char/Blueprints.xml.aspx'.freeze
 
       ACCESS_MASK = 2

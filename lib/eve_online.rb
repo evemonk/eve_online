@@ -28,8 +28,6 @@ require 'eve_online/wallet_journal_entry'
 require 'eve_online/market_order'
 require 'eve_online/account_type_object'
 
-require 'eve_online/characters/asset_list'
-require 'eve_online/characters/blueprints'
 require 'eve_online/characters/bookmarks'
 require 'eve_online/characters/calendar_event_attendees'
 require 'eve_online/characters/contact_list'
@@ -76,6 +74,7 @@ require 'eve_online/xml/api_key_info'
 require 'eve_online/xml/account_characters'
 require 'eve_online/xml/character_account_balance'
 require 'eve_online/xml/character_asset_list'
+require 'eve_online/xml/character_blueprints'
 
 require 'eve_online/xml/models/skill_queue_entry'
 

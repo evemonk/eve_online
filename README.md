@@ -149,7 +149,7 @@ account_balance.cached_until # => Wed, 02 Dec 2015 20:40:42 UTC +00:00
 account_balance.version # => 2
 ```
 
-#### Character Asset List:
+#### Character Asset List
 
 ```ruby
 key_id = 1234567
@@ -178,13 +178,14 @@ asset.singleton # => 1
 asset.raw_quantity # => -1
 ```
 
-Blueprints:
+#### Character Blueprints
+
 ```ruby
 key_id = 1234567
 v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
 options = { character_id: 90729314 }
 
-blueprints = EveOnline::Characters::Blueprints.new(key_id, v_code, options)
+blueprints = EveOnline::XML::CharacterBlueprints.new(key_id, v_code, options)
 
 blueprints.current_time # => Sun, 03 Jan 2016 14:36:37 UTC +00:00 
 blueprints.cached_until # => Mon, 04 Jan 2016 02:06:37 UTC +00:00 
@@ -1274,6 +1275,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Rename `EveOnline::Account::Characters` to `EveOnline::XML::AccountCharacters`
 * Rename `EveOnline::Characters::AccountBalance` to `EveOnline::XML::CharacterAccountBalance`
 * Rename `EveOnline::Characters::AssetList` to `EveOnline::XML::CharacterAssetList`
+* Rename `EveOnline::Characters::Blueprints` to `EveOnline::XML::CharacterBlueprints`
 
 **v0.11.0**
 
