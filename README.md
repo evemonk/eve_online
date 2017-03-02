@@ -129,13 +129,14 @@ character.faction_id # => 0
 character.faction_name # => ""
 ```
 
-Accounts Balance:
+#### Character Account Balance
+
 ```ruby
 key_id = 1234567
 v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
 options = { character_id: 90729314 }
 
-account_balance = EveOnline::Characters::AccountBalance.new(key_id, v_code, options)
+account_balance = EveOnline::XML::CharacterAccountBalance.new(key_id, v_code, options)
 
 account_balance.as_json
 # => {:account_id=>42763123, :account_key=>1000, :balance=>5000.0, :current_time=>Wed, 02 Dec 2015 20:29:32 UTC +00:00, :cached_until=>Wed, 02 Dec 2015 20:40:42 UTC +00:00}
@@ -1270,6 +1271,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Rename `EveOnline::Account::Status` to `EveOnline::XML::AccountStatus`
 * Rename `EveOnline::Account::ApiKeyInfo` to `EveOnline::XML::ApiKeyInfo`
 * Rename `EveOnline::Account::Characters` to `EveOnline::XML::AccountCharacters`
+* Rename `EveOnline::Characters::AccountBalance` to `EveOnline::XML::CharacterAccountBalance`
 
 **v0.11.0**
 
