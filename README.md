@@ -250,7 +250,8 @@ bookmark.memo # => "1"
 bookmark.note # => ""
 ```
 
-Calendar Event Attendees:
+#### Character Calendar Event Attendees
+
 ```ruby
 key_id = 1234567
 v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
@@ -267,7 +268,8 @@ cea.version # => 2
 
 ````
 
-Character Sheet:
+#### Character Sheet
+
 ```ruby
 key_id = 1234567
 v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
@@ -1278,6 +1280,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Rename `EveOnline::Characters::AssetList` to `EveOnline::XML::CharacterAssetList`
 * Rename `EveOnline::Characters::Blueprints` to `EveOnline::XML::CharacterBlueprints`
 * Rename `EveOnline::Characters::Bookmarks` to `EveOnline::XML::CharacterBookmarks`
+* Rename `EveOnline::Characters::CharacterSheet` to `EveOnline::XML::CharacterSheet`
 
 **v0.11.0**
 
