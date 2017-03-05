@@ -275,7 +275,7 @@ key_id = 1234567
 v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
 options = { character_id: 90729314 }
 
-character_sheet = EveOnline::Characters::CharacterSheet.new(key_id, v_code, options)
+character_sheet = EveOnline::XML::CharacterSheet.new(key_id, v_code, options)
 
 character_sheet.current_time # => Sun, 17 Jul 2016 12:27:11 UTC +00:00
 character_sheet.cached_until # => Sun, 17 Jul 2016 13:24:11 UTC +00:00
