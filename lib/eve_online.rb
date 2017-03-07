@@ -59,8 +59,6 @@ require 'eve_online/characters/skill_queue'
 require 'eve_online/characters/wallet_journal'
 require 'eve_online/characters/wallet_transactions'
 
-require 'eve_online/corporations/market_orders'
-
 require 'eve_online/eve/character_id'
 require 'eve_online/server/status'
 
@@ -75,6 +73,8 @@ require 'eve_online/xml/character_asset_list'
 require 'eve_online/xml/character_blueprints'
 require 'eve_online/xml/character_bookmarks'
 require 'eve_online/xml/character_sheet'
+
+require 'eve_online/xml/corporation_market_orders'
 
 require 'eve_online/xml/models/skill_queue_entry'
 

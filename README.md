@@ -946,13 +946,14 @@ wallet_transactions.version # => 2
 
 ```
 
-Corporation market orders:
+#### Corporation market orders
+
 ```ruby
 key_id = 1234567
 v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
 options = { character_id: 90729314 }
 
-market_orders = EveOnline::Corporations::MarketOrders.new(key_id, v_code, options)
+market_orders = EveOnline::XML::CorporationMarketOrders.new(key_id, v_code, options)
 
 # TODO: finish this
 
@@ -1281,6 +1282,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Rename `EveOnline::Characters::Blueprints` to `EveOnline::XML::CharacterBlueprints`
 * Rename `EveOnline::Characters::Bookmarks` to `EveOnline::XML::CharacterBookmarks`
 * Rename `EveOnline::Characters::CharacterSheet` to `EveOnline::XML::CharacterSheet`
+* Rename `EveOnline::Corporations::MarketOrders` to `EveOnline::XML::CorporationMarketOrders`
 
 **v0.11.0**
 
