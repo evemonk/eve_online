@@ -370,7 +370,7 @@ key_id = 1234567
 v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
 options = { character_id: 90729314 }
 
-chat_channels = EveOnline::Characters::ChatChannels.new(key_id, v_code, options)
+chat_channels = EveOnline::XML::CharacterChatChannels.new(key_id, v_code, options)
 
 chat_channels.current_time # => Fri, 19 Aug 2016 11:05:43 UTC +00:00
 chat_channels.cached_until # => Fri, 19 Aug 2016 11:19:44 UTC +00:00
@@ -1285,6 +1285,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Rename `EveOnline::Server::Status` to `EveOnline::XML::ServerStatus`
 * Rename `EveOnline::Characters::Medals` to `EveOnline::XML::CharacterMedals`
 * Rename `EveOnline::Characters::SkillQueue` to `EveOnline::XML::CharacterSkillQueue`
+* Rename `EveOnline::Characters::ChatChannels` to `EveOnline::XML::CharacterChatChannels`
 * Rename `EveOnline::XML::CharacterSheet#base_intelligence` to `EveOnline::XML::CharacterSheet#intelligence`
 * Rename `EveOnline::XML::CharacterSheet#base_memory` to `EveOnline::XML::CharacterSheet#memory`
 * Rename `EveOnline::XML::CharacterSheet#base_charisma` to `EveOnline::XML::CharacterSheet#charisma`
