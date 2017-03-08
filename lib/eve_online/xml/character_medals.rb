@@ -1,7 +1,7 @@
 module EveOnline
-  module Characters
+  module XML
     # https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_medals.html
-    class Medals < BaseXML
+    class CharacterMedals < BaseXML
       API_ENDPOINT = 'https://api.eveonline.com/char/Medals.xml.aspx'.freeze
 
       ACCESS_MASK = 8_192

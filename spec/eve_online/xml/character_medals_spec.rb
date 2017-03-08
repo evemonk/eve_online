@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe EveOnline::Characters::Medals do
+describe EveOnline::XML::CharacterMedals do
   let(:key_id) { 123 }
 
   let(:v_code) { 'abc' }
