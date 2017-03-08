@@ -149,38 +149,47 @@ module EveOnline
         parse_datetime_with_timezone(result.fetch('remoteStationDate'))
       end
 
+      # TODO: add to as_json output
       def jump_activation
         parse_datetime_with_timezone(result.fetch('jumpActivation'))
       end
 
+      # TODO: add to as_json output
       def jump_fatigue
         parse_datetime_with_timezone(result.fetch('jumpFatigue'))
       end
 
+      # TODO: add to as_json output
       def jump_last_update
         parse_datetime_with_timezone(result.fetch('jumpLastUpdate'))
       end
 
+      # TODO: add to as_json output
       def balance
         result.fetch('balance').to_f
       end
 
+      # TODO: add to as_json output
       def base_intelligence
         attributes.fetch('intelligence').to_i
       end
 
+      # TODO: add to as_json output
       def base_memory
         attributes.fetch('memory').to_i
       end
 
+      # TODO: add to as_json output
       def base_charisma
         attributes.fetch('charisma').to_i
       end
 
+      # TODO: add to as_json output
       def base_perception
         attributes.fetch('perception').to_i
       end
 
+      # TODO: add to as_json output
       def base_willpower
         attributes.fetch('willpower').to_i
       end
