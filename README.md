@@ -763,22 +763,22 @@ research.version # => 2
 
 ```
 
-Retrieve character skill queue.
+#### Retrieve character skill queue
 
 ```ruby
 key_id = 1234567
 v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
 character_id = 90729314
 
-skill_queue = EveOnline::XML::CharacterSkillQueue.new(key_id, v_code, character_id)
+character_skill_queue = EveOnline::XML::CharacterSkillQueue.new(key_id, v_code, character_id)
 
-skill_queue.current_time # => Sat, 27 Aug 2016 21:06:27 UTC +00:00
-skill_queue.cached_until # => Sat, 27 Aug 2016 21:07:58 UTC +00:00
-skill_queue.version # => 2
+character_skill_queue.current_time # => Sat, 27 Aug 2016 21:06:27 UTC +00:00
+character_skill_queue.cached_until # => Sat, 27 Aug 2016 21:07:58 UTC +00:00
+character_skill_queue.version # => 2
 
-skill_queue.skills.size # => 11
+character_skill_queue.skills.size # => 11
 
-skill_queue_entry = skill_queue.skills.first
+skill_queue_entry = character_skill_queue.skills.first
 
 skill_queue_entry.as_json
 # => {:queue_position=>0, :type_id=>3420, :level=>5, :start_sp=>181020, :end_sp=>1024000, :start_time=>Mon, 15 Aug 2016 17:25:30 UTC +00:00, :end_time=>Wed, 31 Aug 2016 23:41:36 UTC +00:00}
