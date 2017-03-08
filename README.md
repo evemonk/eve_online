@@ -313,12 +313,11 @@ character_sheet.jump_activation # => Mon, 01 Jan 0001 00:00:00 UTC +00:00
 character_sheet.jump_fatigue # => Mon, 01 Jan 0001 00:00:00 UTC +00:00
 character_sheet.jump_last_update # => Mon, 01 Jan 0001 00:00:00 UTC +00:00
 character_sheet.balance # => 5000.0
-
-character_sheet.base_intelligence # => 21
-character_sheet.base_memory # => 21
-character_sheet.base_charisma # => 17
-character_sheet.base_perception # => 20
-character_sheet.base_willpower # => 20
+character_sheet.intelligence # => 21
+character_sheet.memory # => 21
+character_sheet.charisma # => 17
+character_sheet.perception # => 20
+character_sheet.willpower # => 20
 
 character_sheet.implants.size # => 5
 
@@ -1283,6 +1282,11 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Rename `EveOnline::Characters::Bookmarks` to `EveOnline::XML::CharacterBookmarks`
 * Rename `EveOnline::Characters::CharacterSheet` to `EveOnline::XML::CharacterSheet`
 * Rename `EveOnline::Corporations::MarketOrders` to `EveOnline::XML::CorporationMarketOrders`
+* Rename `EveOnline::XML::CharacterSheet#base_intelligence` to `EveOnline::XML::CharacterSheet#intelligence`
+* Rename `EveOnline::XML::CharacterSheet#base_memory` to `EveOnline::XML::CharacterSheet#memory`
+* Rename `EveOnline::XML::CharacterSheet#base_charisma` to `EveOnline::XML::CharacterSheet#charisma`
+* Rename `EveOnline::XML::CharacterSheet#base_perception` to `EveOnline::XML::CharacterSheet#perception`
+* Rename `EveOnline::XML::CharacterSheet#base_willpower` to `EveOnline::XML::CharacterSheet#willpower`
 
 **v0.11.0**
 

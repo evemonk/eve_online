@@ -722,7 +722,7 @@ describe EveOnline::XML::CharacterSheet do
     specify { expect { subject.balance }.not_to raise_error }
   end
 
-  describe '#base_intelligence' do
+  describe '#intelligence' do
     before do
       #
       # subject.attributes.fetch('intelligence').to_i
@@ -738,10 +738,10 @@ describe EveOnline::XML::CharacterSheet do
       end
     end
 
-    specify { expect { subject.base_intelligence }.not_to raise_error }
+    specify { expect { subject.intelligence }.not_to raise_error }
   end
 
-  describe '#base_memory' do
+  describe '#memory' do
     before do
       #
       # subject.attributes.fetch('memory').to_i
@@ -757,10 +757,10 @@ describe EveOnline::XML::CharacterSheet do
       end
     end
 
-    specify { expect { subject.base_memory }.not_to raise_error }
+    specify { expect { subject.memory }.not_to raise_error }
   end
 
-  describe '#base_charisma' do
+  describe '#charisma' do
     before do
       #
       # subject.attributes.fetch('charisma').to_i
@@ -776,10 +776,10 @@ describe EveOnline::XML::CharacterSheet do
       end
     end
 
-    specify { expect { subject.base_charisma }.not_to raise_error }
+    specify { expect { subject.charisma }.not_to raise_error }
   end
 
-  describe '#base_perception' do
+  describe '#perception' do
     before do
       #
       # subject.attributes.fetch('perception').to_i
@@ -795,10 +795,10 @@ describe EveOnline::XML::CharacterSheet do
       end
     end
 
-    specify { expect { subject.base_perception }.not_to raise_error }
+    specify { expect { subject.perception }.not_to raise_error }
   end
 
-  describe '#base_willpower' do
+  describe '#willpower' do
     before do
       #
       # subject.attributes.fetch('willpower').to_i
@@ -814,7 +814,7 @@ describe EveOnline::XML::CharacterSheet do
       end
     end
 
-    specify { expect { subject.base_willpower }.not_to raise_error }
+    specify { expect { subject.willpower }.not_to raise_error }
   end
 
   describe '#implants' do

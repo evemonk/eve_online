@@ -170,27 +170,27 @@ module EveOnline
       end
 
       # TODO: add to as_json output
-      def base_intelligence
+      def intelligence
         attributes.fetch('intelligence').to_i
       end
 
       # TODO: add to as_json output
-      def base_memory
+      def memory
         attributes.fetch('memory').to_i
       end
 
       # TODO: add to as_json output
-      def base_charisma
+      def charisma
         attributes.fetch('charisma').to_i
       end
 
       # TODO: add to as_json output
-      def base_perception
+      def perception
         attributes.fetch('perception').to_i
       end
 
       # TODO: add to as_json output
-      def base_willpower
+      def willpower
         attributes.fetch('willpower').to_i
       end
 
