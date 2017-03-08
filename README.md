@@ -770,7 +770,7 @@ key_id = 1234567
 v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
 character_id = 90729314
 
-skill_queue = EveOnline::Characters::SkillQueue.new(key_id, v_code, character_id)
+skill_queue = EveOnline::XML::CharacterSkillQueue.new(key_id, v_code, character_id)
 
 skill_queue.current_time # => Sat, 27 Aug 2016 21:06:27 UTC +00:00
 skill_queue.cached_until # => Sat, 27 Aug 2016 21:07:58 UTC +00:00
@@ -1284,6 +1284,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Rename `EveOnline::Corporations::MarketOrders` to `EveOnline::XML::CorporationMarketOrders`
 * Rename `EveOnline::Server::Status` to `EveOnline::XML::ServerStatus`
 * Rename `EveOnline::Characters::Medals` to `EveOnline::XML::CharacterMedals`
+* Rename `EveOnline::Characters::SkillQueue` to `EveOnline::XML::CharacterSkillQueue`
 * Rename `EveOnline::XML::CharacterSheet#base_intelligence` to `EveOnline::XML::CharacterSheet#intelligence`
 * Rename `EveOnline::XML::CharacterSheet#base_memory` to `EveOnline::XML::CharacterSheet#memory`
 * Rename `EveOnline::XML::CharacterSheet#base_charisma` to `EveOnline::XML::CharacterSheet#charisma`
