@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 # rubocop:disable Metrics/BlockLength
-describe EveOnline::Server::Status do
+describe EveOnline::XML::ServerStatus do
   specify { expect(subject).to be_a(EveOnline::BaseXML) }
 
   specify { expect(described_class::API_ENDPOINT).to eq('https://api.eveonline.com/Server/ServerStatus.xml.aspx') }

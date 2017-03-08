@@ -971,10 +971,10 @@ characters_ids.version # => 2
 characters_ids.response # => {"eveapi"=>{"currentTime"=>"2016-04-11 18:51:01", "result"=>{"rowset"=>{"row"=>{"@name"=>"Johnn Dillinger", "@characterID"=>"1337512245"}, "@name"=>"characters", "@key"=>"characterID", "@columns"=>"name,characterID"}}, "cachedUntil"=>"2016-05-11 18:51:01", "@version"=>"2"}}
 ```
 
-Server status:
+#### Server status
 
 ```ruby
-status = EveOnline::Server::Status.new
+status = EveOnline::XML::ServerStatus.new
 
 status.as_json
 # => {:current_time=>Mon, 23 Nov 2015 18:18:29 UTC +00:00, :cached_until=>Mon, 23 Nov 2015 18:19:44 UTC +00:00, :server_open=>true, :online_players=>25611}
@@ -1282,6 +1282,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Rename `EveOnline::Characters::Bookmarks` to `EveOnline::XML::CharacterBookmarks`
 * Rename `EveOnline::Characters::CharacterSheet` to `EveOnline::XML::CharacterSheet`
 * Rename `EveOnline::Corporations::MarketOrders` to `EveOnline::XML::CorporationMarketOrders`
+* Rename `EveOnline::Server::Status` to `EveOnline::XML::ServerStatus`
 * Rename `EveOnline::XML::CharacterSheet#base_intelligence` to `EveOnline::XML::CharacterSheet#intelligence`
 * Rename `EveOnline::XML::CharacterSheet#base_memory` to `EveOnline::XML::CharacterSheet#memory`
 * Rename `EveOnline::XML::CharacterSheet#base_charisma` to `EveOnline::XML::CharacterSheet#charisma`

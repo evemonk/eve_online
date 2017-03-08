@@ -60,7 +60,6 @@ require 'eve_online/characters/wallet_journal'
 require 'eve_online/characters/wallet_transactions'
 
 require 'eve_online/eve/character_id'
-require 'eve_online/server/status'
 
 require 'eve_online/sovereignty/campaigns'
 
@@ -73,6 +72,7 @@ require 'eve_online/xml/character_asset_list'
 require 'eve_online/xml/character_blueprints'
 require 'eve_online/xml/character_bookmarks'
 require 'eve_online/xml/character_sheet'
+require 'eve_online/xml/server_status'
 
 require 'eve_online/xml/corporation_market_orders'
 
