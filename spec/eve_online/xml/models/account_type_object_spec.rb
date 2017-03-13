@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe EveOnline::AccountTypeObject do
+describe EveOnline::XML::Models::AccountTypeObject do
   describe '#initialize' do
     let(:input) { double }
 

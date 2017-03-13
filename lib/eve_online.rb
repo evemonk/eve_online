@@ -26,7 +26,6 @@ require 'eve_online/standing'
 require 'eve_online/contact_notification'
 require 'eve_online/wallet_journal_entry'
 require 'eve_online/market_order'
-require 'eve_online/account_type_object'
 
 require 'eve_online/eve/character_id'
 
@@ -76,7 +75,10 @@ require 'eve_online/xml/server_status'
 
 require 'eve_online/xml/corporation_market_orders'
 
+require 'eve_online/xml/models/account_status'
+require 'eve_online/xml/models/api_key_info'
 require 'eve_online/xml/models/skill_queue_entry'
+require 'eve_online/xml/models/account_type_object'
 
 # ESI API
 require 'eve_online/esi/base'

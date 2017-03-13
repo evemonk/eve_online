@@ -10,6 +10,8 @@ describe EveOnline::XML::ApiKeyInfo do
 
   specify { expect(subject).to be_a(EveOnline::BaseXML) }
 
+  specify { expect(described_class).to be_a(Forwardable) }
+
   specify { expect(described_class::API_ENDPOINT).to eq('https://api.eveonline.com/account/APIKeyInfo.xml.aspx') }
 
   describe '#initialize' do
@@ -29,36 +31,81 @@ describe EveOnline::XML::ApiKeyInfo do
     its(:v_code) { should eq(v_code) }
   end
 
+  describe '#model' do
+    let(:key) { double }
+
+    before { expect(subject).to receive(:key).and_return(key) }
+
+    before do
+      #
+      # EveOnline::XML::Models::ApiKeyInfo.new(key)
+      #
+      expect(EveOnline::XML::Models::ApiKeyInfo).to receive(:new).with(key)
+    end
+
+    specify { expect { subject.model }.not_to raise_error }
+
+    specify { expect { subject.model }.to change { subject.instance_variable_defined?(:@_memoized_model) }.from(false).to(true) }
+  end
+
   describe '#as_json' do
-    let(:api_key_info) { described_class.new(key_id, v_code) }
+    before do
+      #
+      # subject.model.as_json
+      #
+      expect(subject).to receive(:model) do
+        double.tap do |a|
+          expect(a).to receive(:as_json)
+        end
+      end
+    end
 
-    let(:expires) { double }
+    specify { expect { subject.as_json }.not_to raise_error }
+  end
 
-    let(:current_time) { double }
+  describe '#expires' do
+    before do
+      #
+      # subject.model.expires
+      #
+      expect(subject).to receive(:model) do
+        double.tap do |a|
+          expect(a).to receive(:expires)
+        end
+      end
+    end
 
-    let(:cached_until) { double }
+    specify { expect { subject.expires }.not_to raise_error }
+  end
 
-    before { expect(api_key_info).to receive(:expires).and_return(expires) }
+  describe '#api_key_type' do
+    before do
+      #
+      # subject.model.api_key_type
+      #
+      expect(subject).to receive(:model) do
+        double.tap do |a|
+          expect(a).to receive(:api_key_type)
+        end
+      end
+    end
 
-    before { expect(api_key_info).to receive(:api_key_type).and_return(:character) }
+    specify { expect { subject.api_key_type }.not_to raise_error }
+  end
 
-    before { expect(api_key_info).to receive(:access_mask).and_return(1_073_741_823) }
+  describe '#access_mask' do
+    before do
+      #
+      # subject.model.access_mask
+      #
+      expect(subject).to receive(:model) do
+        double.tap do |a|
+          expect(a).to receive(:access_mask)
+        end
+      end
+    end
 
-    before { expect(api_key_info).to receive(:current_time).and_return(current_time) }
-
-    before { expect(api_key_info).to receive(:cached_until).and_return(cached_until) }
-
-    subject { api_key_info.as_json }
-
-    its([:expires]) { should eq(expires) }
-
-    its([:api_key_type]) { should eq(:character) }
-
-    its([:access_mask]) { should eq(1_073_741_823) }
-
-    its([:current_time]) { should eq(current_time) }
-
-    its([:cached_until]) { should eq(cached_until) }
+    specify { expect { subject.access_mask }.not_to raise_error }
   end
 
   describe '#characters' do
@@ -144,74 +191,6 @@ describe EveOnline::XML::ApiKeyInfo do
 
       specify { expect { subject.characters }.to raise_error(ArgumentError) }
     end
-  end
-
-  describe '#expires' do
-    let(:expires) { double }
-
-    before do
-      #
-      # subject.key.fetch('@expires') => expires
-      #
-      expect(subject).to receive(:key) do
-        double.tap do |a|
-          expect(a).to receive(:fetch).with('@expires').and_return(expires)
-        end
-      end
-    end
-
-    before do
-      #
-      # subject.parse_datetime_with_timezone(expires)
-      #
-      expect(subject).to receive(:parse_datetime_with_timezone).with(expires)
-    end
-
-    specify { expect { subject.expires }.not_to raise_error }
-  end
-
-  describe '#api_key_type' do
-    let(:type) { double }
-
-    before do
-      #
-      # subject.key.fetch('@type') => type
-      #
-      expect(subject).to receive(:key) do
-        double.tap do |a|
-          expect(a).to receive(:fetch).with('@type').and_return(type)
-        end
-      end
-    end
-
-    before do
-      expect(EveOnline::AccountTypeObject).to receive(:new).with(type) do
-        double.tap do |a|
-          expect(a).to receive(:value)
-        end
-      end
-    end
-
-    specify { expect { subject.api_key_type }.not_to raise_error }
-  end
-
-  describe '#access_mask' do
-    before do
-      #
-      # subject.key.fetch('@accessMask').to_i
-      #
-      expect(subject).to receive(:key) do
-        double.tap do |a|
-          expect(a).to receive(:fetch).with('@accessMask') do
-            double.tap do |b|
-              expect(b).to receive(:to_i)
-            end
-          end
-        end
-      end
-    end
-
-    specify { expect { subject.access_mask }.not_to raise_error }
   end
 
   describe '#url' do

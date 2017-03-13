@@ -55,13 +55,14 @@ v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
 account_status = EveOnline::XML::AccountStatus.new(key_id, v_code)
 
 account_status.as_json
-# => {:current_time=>Mon, 23 Nov 2015 18:53:46 UTC +00:00, :paid_until=>Mon, 28 Dec 2015 18:12:56 UTC +00:00, :create_date=>Fri, 15 Jan 2010 15:11:00 UTC +00:00, :logon_count=>388, :logon_minutes=>15598, :cached_until=>Mon, 23 Nov 2015 19:28:38 UTC +00:00}
+# => {:paid_until=>Mon, 28 Dec 2015 18:12:56 UTC +00:00, :create_date=>Fri, 15 Jan 2010 15:11:00 UTC +00:00, :logon_count=>388, :logon_minutes=>15598}
 
-account_status.current_time # => Mon, 23 Nov 2015 18:53:46 UTC +00:00
 account_status.paid_until # => Mon, 28 Dec 2015 18:12:56 UTC +00:00
 account_status.create_date # => Fri, 15 Jan 2010 15:11:00 UTC +00:00
 account_status.logon_count # => 388
 account_status.logon_minutes # => 15598
+
+account_status.current_time # => Mon, 23 Nov 2015 18:53:46 UTC +00:00
 account_status.cached_until # => Mon, 23 Nov 2015 19:28:38 UTC +00:00
 account_status.version # => 2
 ```
@@ -75,14 +76,15 @@ v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
 api_key_info = EveOnline::XML::ApiKeyInfo.new(key_id, v_code)
 
 api_key_info.as_json
-# => {:expires=>Fri, 02 Dec 2016 18:13:59 UTC +00:00, :api_key_type=>:character, :access_mask=>1073741823, :current_time=>Mon, 30 Nov 2015 23:00:38 UTC +00:00, :cached_until=>Mon, 30 Nov 2015 23:05:38 UTC +00:00}
+# => {:access_mask=>1073741823, :api_key_type=>:character, :expires=>Fri, 02 Dec 2016 18:13:59 UTC +00:00}
 
-api_key_info.expires # => Fri, 02 Dec 2016 18:13:59 UTC +00:00
-api_key_info.api_key_type # => :character
 api_key_info.access_mask # => 1073741823
-api_key_info.version # => 2
+api_key_info.api_key_type # => :character
+api_key_info.expires # => Fri, 02 Dec 2016 18:13:59 UTC +00:00
+
 api_key_info.current_time # => Mon, 30 Nov 2015 23:00:38 UTC +00:00
 api_key_info.cached_until # => Mon, 30 Nov 2015 23:05:38 UTC +00:00
+api_key_info.version # => 2
 
 api_key_info.characters.size # => 2
 

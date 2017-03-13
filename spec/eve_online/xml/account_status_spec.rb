@@ -10,6 +10,8 @@ describe EveOnline::XML::AccountStatus do
 
   specify { expect(subject).to be_a(EveOnline::BaseXML) }
 
+  specify { expect(described_class).to be_a(Forwardable) }
+
   specify { expect(described_class::API_ENDPOINT).to eq('https://api.eveonline.com/account/AccountStatus.xml.aspx') }
 
   describe '#initialize' do
@@ -29,87 +31,63 @@ describe EveOnline::XML::AccountStatus do
     its(:v_code) { should eq(v_code) }
   end
 
-  describe '#as_json' do
-    let(:account_status) { described_class.new(key_id, v_code) }
+  describe '#model' do
+    let(:result) { double }
 
-    let(:current_time) { double }
-
-    let(:paid_until) { double }
-
-    let(:create_date) { double }
-
-    let(:cached_until) { double }
-
-    before { expect(account_status).to receive(:current_time).and_return(current_time) }
-
-    before { expect(account_status).to receive(:paid_until).and_return(paid_until) }
-
-    before { expect(account_status).to receive(:create_date).and_return(create_date) }
-
-    before { expect(account_status).to receive(:logon_count).and_return(388) }
-
-    before { expect(account_status).to receive(:logon_minutes).and_return(15_598) }
-
-    before { expect(account_status).to receive(:cached_until).and_return(cached_until) }
-
-    subject { account_status.as_json }
-
-    its([:current_time]) { should eq(current_time) }
-
-    its([:paid_until]) { should eq(paid_until) }
-
-    its([:create_date]) { should eq(create_date) }
-
-    its([:logon_count]) { should eq(388) }
-
-    its([:logon_minutes]) { should eq(15_598) }
-
-    its([:cached_until]) { should eq(cached_until) }
-  end
-
-  describe '#paid_until' do
-    let(:paid_until) { double }
+    before { expect(subject).to receive(:result).and_return(result) }
 
     before do
       #
-      # subject.result.fetch('paidUntil') => paid_until
+      # EveOnline::XML::Models::AccountStatus.new(result)
       #
-      expect(subject).to receive(:result) do
+      expect(EveOnline::XML::Models::AccountStatus).to receive(:new).with(result)
+    end
+
+    specify { expect { subject.model }.not_to raise_error }
+
+    specify { expect { subject.model }.to change { subject.instance_variable_defined?(:@_memoized_model) }.from(false).to(true) }
+  end
+
+  describe '#as_json' do
+    before do
+      #
+      # subject.model.as_json
+      #
+      expect(subject).to receive(:model) do
         double.tap do |a|
-          expect(a).to receive(:fetch).with('paidUntil').and_return(paid_until)
+          expect(a).to receive(:as_json)
         end
       end
     end
 
+    specify { expect { subject.as_json }.not_to raise_error }
+  end
+
+  describe '#paid_until' do
     before do
       #
-      # subject.parse_datetime_with_timezone(paid_until)
+      # subject.model.paid_until
       #
-      expect(subject).to receive(:parse_datetime_with_timezone).with(paid_until)
+      expect(subject).to receive(:model) do
+        double.tap do |a|
+          expect(a).to receive(:paid_until)
+        end
+      end
     end
 
     specify { expect { subject.paid_until }.not_to raise_error }
   end
 
   describe '#create_date' do
-    let(:create_date) { double }
-
     before do
       #
-      # subject.result.fetch('createDate') => create_date
+      # subject.model.create_date
       #
-      expect(subject).to receive(:result) do
+      expect(subject).to receive(:model) do
         double.tap do |a|
-          expect(a).to receive(:fetch).with('createDate').and_return(create_date)
+          expect(a).to receive(:create_date)
         end
       end
-    end
-
-    before do
-      #
-      # subject.parse_datetime_with_timezone(create_date)
-      #
-      expect(subject).to receive(:parse_datetime_with_timezone).with(create_date)
     end
 
     specify { expect { subject.create_date }.not_to raise_error }
@@ -118,15 +96,11 @@ describe EveOnline::XML::AccountStatus do
   describe '#logon_count' do
     before do
       #
-      # subject.result.fetch('logonCount').to_i
+      # subject.model.logon_count
       #
-      expect(subject).to receive(:result) do
+      expect(subject).to receive(:model) do
         double.tap do |a|
-          expect(a).to receive(:fetch).with('logonCount') do
-            double.tap do |b|
-              expect(b).to receive(:to_i)
-            end
-          end
+          expect(a).to receive(:logon_count)
         end
       end
     end
@@ -137,15 +111,11 @@ describe EveOnline::XML::AccountStatus do
   describe '#logon_minutes' do
     before do
       #
-      # subject.result.fetch('logonMinutes').to_i
+      # subject.model.logon_minutes
       #
-      expect(subject).to receive(:result) do
+      expect(subject).to receive(:model) do
         double.tap do |a|
-          expect(a).to receive(:fetch).with('logonMinutes') do
-            double.tap do |b|
-              expect(b).to receive(:to_i)
-            end
-          end
+          expect(a).to receive(:logon_minutes)
         end
       end
     end
