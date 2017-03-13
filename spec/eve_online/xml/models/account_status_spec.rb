@@ -1,5 +1,6 @@
 require 'spec_helper'
 
+# rubocop:disable Metrics/BlockLength
 describe EveOnline::XML::Models::AccountStatus do
   describe '#initialize' do
     let(:options) { double }
