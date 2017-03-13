@@ -76,6 +76,7 @@ require 'eve_online/xml/server_status'
 
 require 'eve_online/xml/corporation_market_orders'
 
+require 'eve_online/xml/models/account_status'
 require 'eve_online/xml/models/skill_queue_entry'
 
 # ESI API
