@@ -14,8 +14,6 @@ describe EveOnline::XML::AccountStatus do
 
   specify { expect(described_class::API_ENDPOINT).to eq('https://api.eveonline.com/account/AccountStatus.xml.aspx') }
 
-  # def_delegators :model, :as_json, :paid_until, :create_date, :logon_count, :logon_minutes
-
   describe '#initialize' do
     let(:parser) { double }
 
@@ -48,6 +46,81 @@ describe EveOnline::XML::AccountStatus do
     specify { expect { subject.model }.not_to raise_error }
 
     specify { expect { subject.model }.to change { subject.instance_variable_defined?(:@_memoized_model) }.from(false).to(true) }
+  end
+
+  describe '#as_json' do
+    before do
+      #
+      # subject.model.as_json
+      #
+      expect(subject).to receive(:model) do
+        double.tap do |a|
+          expect(a).to receive(:as_json)
+        end
+      end
+    end
+
+    specify { expect { subject.as_json }.not_to raise_error }
+  end
+
+  describe '#paid_until' do
+    before do
+      #
+      # subject.model.paid_until
+      #
+      expect(subject).to receive(:model) do
+        double.tap do |a|
+          expect(a).to receive(:paid_until)
+        end
+      end
+    end
+
+    specify { expect { subject.paid_until }.not_to raise_error }
+  end
+
+  describe '#create_date' do
+    before do
+      #
+      # subject.model.create_date
+      #
+      expect(subject).to receive(:model) do
+        double.tap do |a|
+          expect(a).to receive(:create_date)
+        end
+      end
+    end
+
+    specify { expect { subject.create_date }.not_to raise_error }
+  end
+
+  describe '#logon_count' do
+    before do
+      #
+      # subject.model.logon_count
+      #
+      expect(subject).to receive(:model) do
+        double.tap do |a|
+          expect(a).to receive(:logon_count)
+        end
+      end
+    end
+
+    specify { expect { subject.logon_count }.not_to raise_error }
+  end
+
+  describe '#logon_minutes' do
+    before do
+      #
+      # subject.model.logon_minutes
+      #
+      expect(subject).to receive(:model) do
+        double.tap do |a|
+          expect(a).to receive(:logon_minutes)
+        end
+      end
+    end
+
+    specify { expect { subject.logon_minutes }.not_to raise_error }
   end
 
   describe '#url' do
