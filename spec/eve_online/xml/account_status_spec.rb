@@ -38,7 +38,7 @@ describe EveOnline::XML::AccountStatus do
 
     before do
       #
-      # Models::AccountStatus.new(result)
+      # EveOnline::XML::Models::AccountStatus.new(result)
       #
       expect(EveOnline::XML::Models::AccountStatus).to receive(:new).with(result)
     end
