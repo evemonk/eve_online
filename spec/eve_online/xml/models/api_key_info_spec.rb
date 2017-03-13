@@ -9,6 +9,32 @@ describe EveOnline::XML::Models::ApiKeyInfo do
     its(:options) { should eq(options) }
   end
 
+  describe '#as_json' do
+    let(:options) { double }
+
+    let(:api_key_info) { described_class.new(options) }
+
+    let(:access_mask) { double }
+
+    let(:api_key_type) { double }
+
+    let(:expires) { double }
+
+    before { expect(api_key_info).to receive(:access_mask).and_return(access_mask) }
+
+    before { expect(api_key_info).to receive(:api_key_type).and_return(api_key_type) }
+
+    before { expect(api_key_info).to receive(:expires).and_return(expires) }
+
+    subject { api_key_info.as_json }
+
+    its([:access_mask]) { should eq(access_mask) }
+
+    its([:api_key_type]) { should eq(api_key_type) }
+
+    its([:expires]) { should eq(expires) }
+  end
+
   describe '#access_mask' do
     let(:options) { double }
 

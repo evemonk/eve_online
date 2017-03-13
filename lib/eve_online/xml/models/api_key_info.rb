@@ -10,6 +10,14 @@ module EveOnline
           @options = options
         end
 
+        def as_json
+          {
+            access_mask: access_mask,
+            api_key_type: api_key_type,
+            expires: expires
+          }
+        end
+
         def access_mask
           options.fetch('@accessMask').to_i
         end
