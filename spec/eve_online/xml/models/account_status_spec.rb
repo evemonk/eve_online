@@ -62,9 +62,13 @@ describe EveOnline::XML::Models::AccountStatus do
 
     before do
       #
-      # subject.parse_datetime_with_timezone(paid_until)
+      # ActiveSupport::TimeZone['UTC'].parse(paid_until)
       #
-      expect(subject).to receive(:parse_datetime_with_timezone).with(paid_until)
+      expect(ActiveSupport::TimeZone).to receive(:[]).with('UTC') do
+        double.tap do |a|
+          expect(a).to receive(:parse).with(paid_until)
+        end
+      end
     end
 
     specify { expect { subject.paid_until }.not_to raise_error }
@@ -90,9 +94,13 @@ describe EveOnline::XML::Models::AccountStatus do
 
     before do
       #
-      # subject.parse_datetime_with_timezone(create_date)
+      # ActiveSupport::TimeZone['UTC'].parse(create_date)
       #
-      expect(subject).to receive(:parse_datetime_with_timezone).with(create_date)
+      expect(ActiveSupport::TimeZone).to receive(:[]).with('UTC') do
+        double.tap do |a|
+          expect(a).to receive(:parse).with(create_date)
+        end
+      end
     end
 
     specify { expect { subject.create_date }.not_to raise_error }
