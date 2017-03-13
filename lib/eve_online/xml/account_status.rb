@@ -1,10 +1,16 @@
+require 'forwardable'
+
 module EveOnline
   module XML
     # https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/account/account_accountstatus.html
     class AccountStatus < BaseXML
+      extend Forwardable
+
       API_ENDPOINT = 'https://api.eveonline.com/account/AccountStatus.xml.aspx'.freeze
 
-      attr_reader :key_id, :v_code
+      attr_reader :key_id, :v_code, :model
+
+      def_delegators :model, :as_json, :paid_until, :create_date, :logon_count, :logon_minutes
 
       def initialize(key_id, v_code)
         super()
@@ -12,32 +18,10 @@ module EveOnline
         @v_code = v_code
       end
 
-      def as_json
-        {
-          current_time: current_time,
-          paid_until: paid_until,
-          create_date: create_date,
-          logon_count: logon_count,
-          logon_minutes: logon_minutes,
-          cached_until: cached_until
-        }
+      def model
+        Models::AccountStatus.new(result)
       end
-
-      def paid_until
-        parse_datetime_with_timezone(result.fetch('paidUntil'))
-      end
-
-      def create_date
-        parse_datetime_with_timezone(result.fetch('createDate'))
-      end
-
-      def logon_count
-        result.fetch('logonCount').to_i
-      end
-
-      def logon_minutes
-        result.fetch('logonMinutes').to_i
-      end
+      memoize :model
 
       def url
         "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }"
