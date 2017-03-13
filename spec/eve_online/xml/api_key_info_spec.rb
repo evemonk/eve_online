@@ -29,37 +29,37 @@ describe EveOnline::XML::ApiKeyInfo do
     its(:v_code) { should eq(v_code) }
   end
 
-  describe '#as_json' do
-    let(:api_key_info) { described_class.new(key_id, v_code) }
-
-    let(:expires) { double }
-
-    let(:current_time) { double }
-
-    let(:cached_until) { double }
-
-    before { expect(api_key_info).to receive(:expires).and_return(expires) }
-
-    before { expect(api_key_info).to receive(:api_key_type).and_return(:character) }
-
-    before { expect(api_key_info).to receive(:access_mask).and_return(1_073_741_823) }
-
-    before { expect(api_key_info).to receive(:current_time).and_return(current_time) }
-
-    before { expect(api_key_info).to receive(:cached_until).and_return(cached_until) }
-
-    subject { api_key_info.as_json }
-
-    its([:expires]) { should eq(expires) }
-
-    its([:api_key_type]) { should eq(:character) }
-
-    its([:access_mask]) { should eq(1_073_741_823) }
-
-    its([:current_time]) { should eq(current_time) }
-
-    its([:cached_until]) { should eq(cached_until) }
-  end
+  # describe '#as_json' do
+  #   let(:api_key_info) { described_class.new(key_id, v_code) }
+  #
+  #   let(:expires) { double }
+  #
+  #   let(:current_time) { double }
+  #
+  #   let(:cached_until) { double }
+  #
+  #   before { expect(api_key_info).to receive(:expires).and_return(expires) }
+  #
+  #   before { expect(api_key_info).to receive(:api_key_type).and_return(:character) }
+  #
+  #   before { expect(api_key_info).to receive(:access_mask).and_return(1_073_741_823) }
+  #
+  #   before { expect(api_key_info).to receive(:current_time).and_return(current_time) }
+  #
+  #   before { expect(api_key_info).to receive(:cached_until).and_return(cached_until) }
+  #
+  #   subject { api_key_info.as_json }
+  #
+  #   its([:expires]) { should eq(expires) }
+  #
+  #   its([:api_key_type]) { should eq(:character) }
+  #
+  #   its([:access_mask]) { should eq(1_073_741_823) }
+  #
+  #   its([:current_time]) { should eq(current_time) }
+  #
+  #   its([:cached_until]) { should eq(cached_until) }
+  # end
 
   describe '#characters' do
     context 'row is Hash' do
@@ -144,74 +144,6 @@ describe EveOnline::XML::ApiKeyInfo do
 
       specify { expect { subject.characters }.to raise_error(ArgumentError) }
     end
-  end
-
-  describe '#expires' do
-    let(:expires) { double }
-
-    before do
-      #
-      # subject.key.fetch('@expires') => expires
-      #
-      expect(subject).to receive(:key) do
-        double.tap do |a|
-          expect(a).to receive(:fetch).with('@expires').and_return(expires)
-        end
-      end
-    end
-
-    before do
-      #
-      # subject.parse_datetime_with_timezone(expires)
-      #
-      expect(subject).to receive(:parse_datetime_with_timezone).with(expires)
-    end
-
-    specify { expect { subject.expires }.not_to raise_error }
-  end
-
-  describe '#api_key_type' do
-    let(:type) { double }
-
-    before do
-      #
-      # subject.key.fetch('@type') => type
-      #
-      expect(subject).to receive(:key) do
-        double.tap do |a|
-          expect(a).to receive(:fetch).with('@type').and_return(type)
-        end
-      end
-    end
-
-    before do
-      expect(EveOnline::AccountTypeObject).to receive(:new).with(type) do
-        double.tap do |a|
-          expect(a).to receive(:value)
-        end
-      end
-    end
-
-    specify { expect { subject.api_key_type }.not_to raise_error }
-  end
-
-  describe '#access_mask' do
-    before do
-      #
-      # subject.key.fetch('@accessMask').to_i
-      #
-      expect(subject).to receive(:key) do
-        double.tap do |a|
-          expect(a).to receive(:fetch).with('@accessMask') do
-            double.tap do |b|
-              expect(b).to receive(:to_i)
-            end
-          end
-        end
-      end
-    end
-
-    specify { expect { subject.access_mask }.not_to raise_error }
   end
 
   describe '#url' do

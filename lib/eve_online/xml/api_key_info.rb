@@ -12,15 +12,15 @@ module EveOnline
         @v_code = v_code
       end
 
-      def as_json
-        {
-          expires: expires,
-          api_key_type: api_key_type,
-          access_mask: access_mask,
-          current_time: current_time,
-          cached_until: cached_until
-        }
-      end
+      # def as_json
+      #   {
+      #     expires: expires,
+      #     api_key_type: api_key_type,
+      #     access_mask: access_mask,
+      #     current_time: current_time,
+      #     cached_until: cached_until
+      #   }
+      # end
 
       def characters
         case row
@@ -38,17 +38,17 @@ module EveOnline
       end
       memoize :characters
 
-      def expires
-        parse_datetime_with_timezone(key.fetch('@expires'))
-      end
+      # def expires
+      #   parse_datetime_with_timezone(key.fetch('@expires'))
+      # end
 
-      def api_key_type
-        AccountTypeObject.new(key.fetch('@type')).value
-      end
+      # def api_key_type
+      #   Models::AccountTypeObject.new(key.fetch('@type')).value
+      # end
 
-      def access_mask
-        key.fetch('@accessMask').to_i
-      end
+      # def access_mask
+      #   key.fetch('@accessMask').to_i
+      # end
 
       def url
         "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }"
