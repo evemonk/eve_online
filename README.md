@@ -65,6 +65,8 @@ account_status.logon_minutes # => 15598
 account_status.current_time # => Mon, 23 Nov 2015 18:53:46 UTC +00:00
 account_status.cached_until # => Mon, 23 Nov 2015 19:28:38 UTC +00:00
 account_status.version # => 2
+
+# TODO: add multi character training support
 ```
 
 #### Api Key Info
