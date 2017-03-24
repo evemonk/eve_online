@@ -8,7 +8,7 @@ describe EveOnline::ESI::Character do
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/latest/characters/%s/?datasource=tranquility') }
+  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/v4/characters/%s/?datasource=tranquility') }
 
   describe '#initialize' do
     its(:token) { should eq(nil) }
