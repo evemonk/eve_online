@@ -82,29 +82,46 @@ describe EveOnline::ESI::Character do
   end
 
   describe '#birthday' do
-    # TODO: write one more spec
+    context 'birthday is present' do
+      let(:birthday) { double }
 
-    let(:birthday) { double }
-
-    before do
-      #
-      # subject.response['birthday']
-      #
-      expect(subject).to receive(:response) do
-        double.tap do |a|
-          expect(a).to receive(:[]).with('birthday').and_return(birthday)
+      before do
+        #
+        # subject.response['birthday'] => birthday
+        #
+        expect(subject).to receive(:response) do
+          double.tap do |a|
+            expect(a).to receive(:[]).with('birthday').and_return(birthday)
+          end
         end
       end
+
+      before do
+        #
+        # subject.parse_datetime_with_timezone(birthday)
+        #
+        expect(subject).to receive(:parse_datetime_with_timezone).with(birthday)
+      end
+
+      specify { expect { subject.birthday }.not_to raise_error }
     end
 
-    before do
-      #
-      # subject.parse_datetime_with_timezone(birthday)
-      #
-      expect(subject).to receive(:parse_datetime_with_timezone).with(birthday)
-    end
+    context 'birthday not present' do
+      before do
+        #
+        # subject.response['birthday'] => nil
+        #
+        expect(subject).to receive(:response) do
+          double.tap do |a|
+            expect(a).to receive(:[]).with('birthday').and_return(nil)
+          end
+        end
+      end
 
-    specify { expect { subject.birthday }.not_to raise_error }
+      before { expect(subject).not_to receive(:parse_datetime_with_timezone) }
+
+      specify { expect { subject.birthday }.not_to raise_error }
+    end
   end
 
   describe '#name' do
