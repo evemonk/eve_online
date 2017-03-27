@@ -69,11 +69,11 @@ describe EveOnline::ESI::Character do
   describe '#corporation_id' do
     before do
       #
-      # subject.response.fetch('corporation_id')
+      # subject.response['corporation_id']
       #
       expect(subject).to receive(:response) do
         double.tap do |a|
-          expect(a).to receive(:fetch).with('corporation_id')
+          expect(a).to receive(:[]).with('corporation_id')
         end
       end
     end
@@ -82,15 +82,17 @@ describe EveOnline::ESI::Character do
   end
 
   describe '#birthday' do
+    # TODO: write one more spec
+
     let(:birthday) { double }
 
     before do
       #
-      # subject.response.fetch('birthday')
+      # subject.response['birthday']
       #
       expect(subject).to receive(:response) do
         double.tap do |a|
-          expect(a).to receive(:fetch).with('birthday').and_return(birthday)
+          expect(a).to receive(:[]).with('birthday').and_return(birthday)
         end
       end
     end
@@ -108,11 +110,11 @@ describe EveOnline::ESI::Character do
   describe '#name' do
     before do
       #
-      # subject.response.fetch('name')
+      # subject.response['name']
       #
       expect(subject).to receive(:response) do
         double.tap do |a|
-          expect(a).to receive(:fetch).with('name')
+          expect(a).to receive(:[]).with('name')
         end
       end
     end
@@ -123,11 +125,11 @@ describe EveOnline::ESI::Character do
   describe '#gender' do
     before do
       #
-      # subject.response.fetch('gender')
+      # subject.response['gender']
       #
       expect(subject).to receive(:response) do
         double.tap do |a|
-          expect(a).to receive(:fetch).with('gender')
+          expect(a).to receive(:[]).with('gender')
         end
       end
     end
@@ -138,11 +140,11 @@ describe EveOnline::ESI::Character do
   describe '#race_id' do
     before do
       #
-      # subject.response.fetch('race_id')
+      # subject.response['race_id']
       #
       expect(subject).to receive(:response) do
         double.tap do |a|
-          expect(a).to receive(:fetch).with('race_id')
+          expect(a).to receive(:[]).with('race_id')
         end
       end
     end
@@ -153,11 +155,11 @@ describe EveOnline::ESI::Character do
   describe '#bloodline_id' do
     before do
       #
-      # subject.response.fetch('bloodline_id')
+      # subject.response['bloodline_id']
       #
       expect(subject).to receive(:response) do
         double.tap do |a|
-          expect(a).to receive(:fetch).with('bloodline_id')
+          expect(a).to receive(:[]).with('bloodline_id')
         end
       end
     end
@@ -168,11 +170,11 @@ describe EveOnline::ESI::Character do
   describe '#description' do
     before do
       #
-      # subject.response.fetch('description')
+      # subject.response['description']
       #
       expect(subject).to receive(:response) do
         double.tap do |a|
-          expect(a).to receive(:fetch).with('description')
+          expect(a).to receive(:[]).with('description')
         end
       end
     end
@@ -183,11 +185,11 @@ describe EveOnline::ESI::Character do
   describe '#alliance_id' do
     before do
       #
-      # subject.response.fetch('alliance_id')
+      # subject.response['alliance_id']
       #
       expect(subject).to receive(:response) do
         double.tap do |a|
-          expect(a).to receive(:fetch).with('alliance_id')
+          expect(a).to receive(:[]).with('alliance_id')
         end
       end
     end
@@ -198,11 +200,11 @@ describe EveOnline::ESI::Character do
   describe '#ancestry_id' do
     before do
       #
-      # subject.response.fetch('ancestry_id')
+      # subject.response['ancestry_id']
       #
       expect(subject).to receive(:response) do
         double.tap do |a|
-          expect(a).to receive(:fetch).with('ancestry_id')
+          expect(a).to receive(:[]).with('ancestry_id')
         end
       end
     end
@@ -213,11 +215,11 @@ describe EveOnline::ESI::Character do
   describe '#security_status' do
     before do
       #
-      # subject.response.fetch('security_status')
+      # subject.response['security_status']
       #
       expect(subject).to receive(:response) do
         double.tap do |a|
-          expect(a).to receive(:fetch).with('security_status')
+          expect(a).to receive(:[]).with('security_status')
         end
       end
     end
