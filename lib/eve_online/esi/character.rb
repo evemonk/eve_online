@@ -1,7 +1,7 @@
 module EveOnline
   module ESI
     class Character < Base
-      API_ENDPOINT = 'https://esi.tech.ccp.is/latest/characters/%s/?datasource=tranquility'.freeze
+      API_ENDPOINT = 'https://esi.tech.ccp.is/v4/characters/%s/?datasource=tranquility'.freeze
 
       attr_reader :character_id
 
@@ -26,43 +26,45 @@ module EveOnline
       end
 
       def corporation_id
-        response.fetch('corporation_id')
+        response['corporation_id']
       end
 
       def birthday
-        parse_datetime_with_timezone(response.fetch('birthday'))
+        birthday = response['birthday']
+
+        parse_datetime_with_timezone(birthday) if birthday
       end
 
       def name
-        response.fetch('name')
+        response['name']
       end
 
       def gender
-        response.fetch('gender')
+        response['gender']
       end
 
       def race_id
-        response.fetch('race_id')
+        response['race_id']
       end
 
       def bloodline_id
-        response.fetch('bloodline_id')
+        response['bloodline_id']
       end
 
       def description
-        response.fetch('description')
+        response['description']
       end
 
       def alliance_id
-        response.fetch('alliance_id')
+        response['alliance_id']
       end
 
       def ancestry_id
-        response.fetch('ancestry_id')
+        response['ancestry_id']
       end
 
       def security_status
-        response.fetch('security_status')
+        response['security_status']
       end
 
       def scope; end

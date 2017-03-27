@@ -8,7 +8,7 @@ describe EveOnline::ESI::Character do
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/latest/characters/%s/?datasource=tranquility') }
+  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/v4/characters/%s/?datasource=tranquility') }
 
   describe '#initialize' do
     its(:token) { should eq(nil) }
@@ -69,11 +69,11 @@ describe EveOnline::ESI::Character do
   describe '#corporation_id' do
     before do
       #
-      # subject.response.fetch('corporation_id')
+      # subject.response['corporation_id']
       #
       expect(subject).to receive(:response) do
         double.tap do |a|
-          expect(a).to receive(:fetch).with('corporation_id')
+          expect(a).to receive(:[]).with('corporation_id')
         end
       end
     end
@@ -82,37 +82,56 @@ describe EveOnline::ESI::Character do
   end
 
   describe '#birthday' do
-    let(:birthday) { double }
+    context 'birthday is present' do
+      let(:birthday) { double }
 
-    before do
-      #
-      # subject.response.fetch('birthday')
-      #
-      expect(subject).to receive(:response) do
-        double.tap do |a|
-          expect(a).to receive(:fetch).with('birthday').and_return(birthday)
+      before do
+        #
+        # subject.response['birthday'] => birthday
+        #
+        expect(subject).to receive(:response) do
+          double.tap do |a|
+            expect(a).to receive(:[]).with('birthday').and_return(birthday)
+          end
         end
       end
+
+      before do
+        #
+        # subject.parse_datetime_with_timezone(birthday)
+        #
+        expect(subject).to receive(:parse_datetime_with_timezone).with(birthday)
+      end
+
+      specify { expect { subject.birthday }.not_to raise_error }
     end
 
-    before do
-      #
-      # subject.parse_datetime_with_timezone(birthday)
-      #
-      expect(subject).to receive(:parse_datetime_with_timezone).with(birthday)
-    end
+    context 'birthday not present' do
+      before do
+        #
+        # subject.response['birthday'] => nil
+        #
+        expect(subject).to receive(:response) do
+          double.tap do |a|
+            expect(a).to receive(:[]).with('birthday').and_return(nil)
+          end
+        end
+      end
 
-    specify { expect { subject.birthday }.not_to raise_error }
+      before { expect(subject).not_to receive(:parse_datetime_with_timezone) }
+
+      specify { expect { subject.birthday }.not_to raise_error }
+    end
   end
 
   describe '#name' do
     before do
       #
-      # subject.response.fetch('name')
+      # subject.response['name']
       #
       expect(subject).to receive(:response) do
         double.tap do |a|
-          expect(a).to receive(:fetch).with('name')
+          expect(a).to receive(:[]).with('name')
         end
       end
     end
@@ -123,11 +142,11 @@ describe EveOnline::ESI::Character do
   describe '#gender' do
     before do
       #
-      # subject.response.fetch('gender')
+      # subject.response['gender']
       #
       expect(subject).to receive(:response) do
         double.tap do |a|
-          expect(a).to receive(:fetch).with('gender')
+          expect(a).to receive(:[]).with('gender')
         end
       end
     end
@@ -138,11 +157,11 @@ describe EveOnline::ESI::Character do
   describe '#race_id' do
     before do
       #
-      # subject.response.fetch('race_id')
+      # subject.response['race_id']
       #
       expect(subject).to receive(:response) do
         double.tap do |a|
-          expect(a).to receive(:fetch).with('race_id')
+          expect(a).to receive(:[]).with('race_id')
         end
       end
     end
@@ -153,11 +172,11 @@ describe EveOnline::ESI::Character do
   describe '#bloodline_id' do
     before do
       #
-      # subject.response.fetch('bloodline_id')
+      # subject.response['bloodline_id']
       #
       expect(subject).to receive(:response) do
         double.tap do |a|
-          expect(a).to receive(:fetch).with('bloodline_id')
+          expect(a).to receive(:[]).with('bloodline_id')
         end
       end
     end
@@ -168,11 +187,11 @@ describe EveOnline::ESI::Character do
   describe '#description' do
     before do
       #
-      # subject.response.fetch('description')
+      # subject.response['description']
       #
       expect(subject).to receive(:response) do
         double.tap do |a|
-          expect(a).to receive(:fetch).with('description')
+          expect(a).to receive(:[]).with('description')
         end
       end
     end
@@ -183,11 +202,11 @@ describe EveOnline::ESI::Character do
   describe '#alliance_id' do
     before do
       #
-      # subject.response.fetch('alliance_id')
+      # subject.response['alliance_id']
       #
       expect(subject).to receive(:response) do
         double.tap do |a|
-          expect(a).to receive(:fetch).with('alliance_id')
+          expect(a).to receive(:[]).with('alliance_id')
         end
       end
     end
@@ -198,11 +217,11 @@ describe EveOnline::ESI::Character do
   describe '#ancestry_id' do
     before do
       #
-      # subject.response.fetch('ancestry_id')
+      # subject.response['ancestry_id']
       #
       expect(subject).to receive(:response) do
         double.tap do |a|
-          expect(a).to receive(:fetch).with('ancestry_id')
+          expect(a).to receive(:[]).with('ancestry_id')
         end
       end
     end
@@ -213,11 +232,11 @@ describe EveOnline::ESI::Character do
   describe '#security_status' do
     before do
       #
-      # subject.response.fetch('security_status')
+      # subject.response['security_status']
       #
       expect(subject).to receive(:response) do
         double.tap do |a|
-          expect(a).to receive(:fetch).with('security_status')
+          expect(a).to receive(:[]).with('security_status')
         end
       end
     end
