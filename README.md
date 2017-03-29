@@ -1233,7 +1233,7 @@ inv_name.item_id # => 0
 inv_name.item_name # => "(none)"
 ```
 
-Invertory Positions:
+Inventory Positions:
 ```ruby
 file = 'invPositions.yaml'
 
