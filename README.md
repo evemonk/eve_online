@@ -14,8 +14,21 @@ This gem was extracted from [EveMonk](http://evemonk.com). Source code of evemon
 
 You will need to add xml parser to your Gemfile to use this gem. E.g. `nokogiri`. Or any other xml parser which are supported by nori.
 
+## TOC
+
 * [Installation](#installation)
 * [Supported ruby versions](#supported-ruby-versions)
+* [Usage](#usage)
+* [Useful links](#useful-links)
+* [Development](#development)
+* [Contributing](#contributing)
+* [Changelog](#changelog)
+* [Implementation check list](#implementation-check-list)
+* [TODO](#todo)
+* [Author](#author)
+* [Contributors. Thank you everyone!](#contributors-thank-you-everyone)
+* [License](#license)
+
 
 ## Installation
 
@@ -1015,7 +1028,7 @@ status.online_players # => 25611
 status.version # => 2
 ```
 
-## CREST Examples
+### CREST Examples
 
 Sovereignty campaigns:
 
@@ -1519,7 +1532,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 
 * [Server Status](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/server/serv_serverstatus.html)
 
-## Implementation check list:
+## Implementation check list
 
 ### Account
 
