@@ -1,7 +1,7 @@
 module EveOnline
   module ESI
     class CharacterPortrait < Base
-      API_ENDPOINT = 'https://esi.tech.ccp.is/latest/characters/%s/portrait/?datasource=tranquility'.freeze
+      API_ENDPOINT = 'https://esi.tech.ccp.is/v2/characters/%s/portrait/?datasource=tranquility'.freeze
 
       attr_reader :character_id
 
@@ -30,19 +30,19 @@ module EveOnline
       end
 
       def small
-        response.fetch('px64x64')
+        response['px64x64']
       end
 
       def medium
-        response.fetch('px128x128')
+        response['px128x128']
       end
 
       def large
-        response.fetch('px256x256')
+        response['px256x256']
       end
 
       def huge
-        response.fetch('px512x512')
+        response['px512x512']
       end
 
       def gigantic

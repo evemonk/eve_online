@@ -8,7 +8,7 @@ describe EveOnline::ESI::CharacterPortrait do
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/latest/characters/%s/portrait/?datasource=tranquility') }
+  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/v2/characters/%s/portrait/?datasource=tranquility') }
 
   describe '#initialize' do
     its(:token) { should eq(nil) }
@@ -55,11 +55,11 @@ describe EveOnline::ESI::CharacterPortrait do
   describe '#small' do
     before do
       #
-      # subject.response.fetch('px64x64')
+      # subject.response['px64x64']
       #
       expect(subject).to receive(:response) do
         double.tap do |a|
-          expect(a).to receive(:fetch).with('px64x64')
+          expect(a).to receive(:[]).with('px64x64')
         end
       end
     end
@@ -70,11 +70,11 @@ describe EveOnline::ESI::CharacterPortrait do
   describe '#medium' do
     before do
       #
-      # subject.response.fetch('px128x128')
+      # subject.response['px128x128']
       #
       expect(subject).to receive(:response) do
         double.tap do |a|
-          expect(a).to receive(:fetch).with('px128x128')
+          expect(a).to receive(:[]).with('px128x128')
         end
       end
     end
@@ -85,11 +85,11 @@ describe EveOnline::ESI::CharacterPortrait do
   describe '#large' do
     before do
       #
-      # subject.response.fetch('px256x256')
+      # subject.response['px256x256']
       #
       expect(subject).to receive(:response) do
         double.tap do |a|
-          expect(a).to receive(:fetch).with('px256x256')
+          expect(a).to receive(:[]).with('px256x256')
         end
       end
     end
@@ -100,11 +100,11 @@ describe EveOnline::ESI::CharacterPortrait do
   describe '#huge' do
     before do
       #
-      # subject.response.fetch('px512x512')
+      # subject.response['px512x512']
       #
       expect(subject).to receive(:response) do
         double.tap do |a|
-          expect(a).to receive(:fetch).with('px512x512')
+          expect(a).to receive(:[]).with('px512x512')
         end
       end
     end
