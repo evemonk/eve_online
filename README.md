@@ -1347,6 +1347,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Rename `EveOnline::XML::CharacterSheet#base_willpower` to `EveOnline::XML::CharacterSheet#willpower`
 * Fix `EveOnline::ESI::Character`
 * Use versioned API endpoints
+* Ignore missed fields in responses
 
 **v0.11.0**
 
