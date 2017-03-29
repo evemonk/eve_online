@@ -37,11 +37,11 @@ describe EveOnline::ESI::Models::Skill do
 
     before do
       #
-      # subject.options.fetch('skill_id')
+      # subject.options['skill_id']
       #
       expect(subject).to receive(:options) do
         double.tap do |a|
-          expect(a).to receive(:fetch).with('skill_id')
+          expect(a).to receive(:[]).with('skill_id')
         end
       end
     end
@@ -56,11 +56,11 @@ describe EveOnline::ESI::Models::Skill do
 
     before do
       #
-      # subject.options.fetch('skillpoints_in_skill')
+      # subject.options['skillpoints_in_skill']
       #
       expect(subject).to receive(:options) do
         double.tap do |a|
-          expect(a).to receive(:fetch).with('skillpoints_in_skill')
+          expect(a).to receive(:[]).with('skillpoints_in_skill')
         end
       end
     end
@@ -75,11 +75,11 @@ describe EveOnline::ESI::Models::Skill do
 
     before do
       #
-      # subject.options.fetch('current_skill_level')
+      # subject.options['current_skill_level']
       #
       expect(subject).to receive(:options) do
         double.tap do |a|
-          expect(a).to receive(:fetch).with('current_skill_level')
+          expect(a).to receive(:[]).with('current_skill_level')
         end
       end
     end
