@@ -14,6 +14,9 @@ This gem was extracted from [EveMonk](http://evemonk.com). Source code of evemon
 
 You will need to add xml parser to your Gemfile to use this gem. E.g. `nokogiri`. Or any other xml parser which are supported by nori.
 
+* [Installation](#installation)
+* [Supported ruby versions](#supported-ruby-versions)
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -30,7 +33,7 @@ Or install it yourself as:
 
     $ gem install eve_online
 
-## Supported ruby versions:
+## Supported ruby versions
 
  * MRI 1.9.3
  * MRI 2.0
