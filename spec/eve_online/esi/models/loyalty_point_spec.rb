@@ -33,11 +33,11 @@ describe EveOnline::ESI::Models::LoyaltyPoint do
 
     before do
       #
-      # subject.options.fetch('corporation_id')
+      # subject.options['corporation_id']
       #
       expect(subject).to receive(:options) do
         double.tap do |a|
-          expect(a).to receive(:fetch).with('corporation_id')
+          expect(a).to receive(:[]).with('corporation_id')
         end
       end
     end
@@ -52,11 +52,11 @@ describe EveOnline::ESI::Models::LoyaltyPoint do
 
     before do
       #
-      # subject.options.fetch('loyalty_points')
+      # subject.options['loyalty_points']
       #
       expect(subject).to receive(:options) do
         double.tap do |a|
-          expect(a).to receive(:fetch).with('loyalty_points')
+          expect(a).to receive(:[]).with('loyalty_points')
         end
       end
     end
