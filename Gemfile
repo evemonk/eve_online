@@ -9,4 +9,4 @@ gem 'pry'
 gem 'mutant'
 gem 'mutant-rspec'
 # rubocop version locked due config. Update rubocop config on gem update.
-gem 'rubocop', '0.47.1', require: false
+gem 'rubocop', '0.48.0', require: false

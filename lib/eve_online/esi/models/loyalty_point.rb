@@ -16,11 +16,11 @@ module EveOnline
         end
 
         def corporation_id
-          options.fetch('corporation_id')
+          options['corporation_id']
         end
 
         def loyalty_points
-          options.fetch('loyalty_points')
+          options['loyalty_points']
         end
       end
     end

@@ -17,15 +17,15 @@ module EveOnline
         end
 
         def skill_id
-          options.fetch('skill_id')
+          options['skill_id']
         end
 
         def skillpoints_in_skill
-          options.fetch('skillpoints_in_skill')
+          options['skillpoints_in_skill']
         end
 
         def current_skill_level
-          options.fetch('current_skill_level')
+          options['current_skill_level']
         end
       end
     end

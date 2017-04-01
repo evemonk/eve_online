@@ -14,6 +14,22 @@ This gem was extracted from [EveMonk](http://evemonk.com). Source code of evemon
 
 You will need to add xml parser to your Gemfile to use this gem. E.g. `nokogiri`. Or any other xml parser which are supported by nori.
 
+## TOC
+
+* [Installation](#installation)
+* [Supported ruby versions](#supported-ruby-versions)
+* [Usage](#usage)
+* [Useful links](#useful-links)
+* [Development](#development)
+* [Contributing](#contributing)
+* [Changelog](#changelog)
+* [Implementation check list](#implementation-check-list)
+* [TODO](#todo)
+* [Author](#author)
+* [Contributors. Thank you everyone!](#contributors-thank-you-everyone)
+* [License](#license)
+
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -30,7 +46,7 @@ Or install it yourself as:
 
     $ gem install eve_online
 
-## Supported ruby versions:
+## Supported ruby versions
 
  * MRI 1.9.3
  * MRI 2.0
@@ -1012,7 +1028,7 @@ status.online_players # => 25611
 status.version # => 2
 ```
 
-## CREST Examples
+### CREST Examples
 
 Sovereignty campaigns:
 
@@ -1233,7 +1249,7 @@ inv_name.item_id # => 0
 inv_name.item_name # => "(none)"
 ```
 
-Invertory Positions:
+Inventory Positions:
 ```ruby
 file = 'invPositions.yaml'
 
@@ -1277,6 +1293,7 @@ chr_race.description # => "The most mysterious and elusive of all the universe's
 
 ## Useful links
 
+* [BREAKING CHANGES AND YOU - HOW TO USE ALT-ROUTES TO ENHANCE YOUR SANITY](https://developers.eveonline.com/blog/article/breaking-changes-and-you)
 * [TECHNICAL NOTE: INTEGER SIZES AND THE XML API](https://developers.eveonline.com/blog/article/technical-note-integer-sizes-and-the-xml-api)
 * [THE END OF PUBLIC CREST AS WE KNOW IT](https://developers.eveonline.com/blog/article/the-end-of-public-crest-as-we-know-it)
 * [CCP, zKillboard (Eve-Kill), and your API](https://docs.google.com/document/d/16YfJwjhuH5A3cS4NTMDFDkprnOVKsvgtuRIKk8xjTM8/edit)
@@ -1298,7 +1315,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 **master**
 
 * *Breaking change*. Rename `EveOnline::Exceptions::Exception` to `EveOnline::Exceptions::Base`.
-* Test with Rails 5.1.0.beta1 too
+* Test with Rails 5.1.0.rc1 too
 * Rename `EveOnline::Account::Status` to `EveOnline::XML::AccountStatus`
 * Rename `EveOnline::Account::ApiKeyInfo` to `EveOnline::XML::ApiKeyInfo`
 * Rename `EveOnline::Account::Characters` to `EveOnline::XML::AccountCharacters`
@@ -1345,6 +1362,8 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Rename `EveOnline::XML::CharacterSheet#base_perception` to `EveOnline::XML::CharacterSheet#perception`
 * Rename `EveOnline::XML::CharacterSheet#base_willpower` to `EveOnline::XML::CharacterSheet#willpower`
 * Fix `EveOnline::ESI::Character`
+* Use versioned API endpoints
+* Ignore missed fields in responses
 
 **v0.11.0**
 
@@ -1513,7 +1532,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 
 * [Server Status](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/server/serv_serverstatus.html)
 
-## Implementation check list:
+## Implementation check list
 
 ### Account
 
