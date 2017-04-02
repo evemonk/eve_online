@@ -19,6 +19,7 @@ You will need to add xml parser to your Gemfile to use this gem. E.g. `nokogiri`
 - [Installation](#installation)
 - [Supported ruby versions](#supported-ruby-versions)
 - [Usage](#usage)
+    - [XML API](#xml-api)
 - [Useful links](#useful-links)
 - [Development](#development)
 - [Contributing](#contributing)
