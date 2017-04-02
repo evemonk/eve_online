@@ -14,20 +14,20 @@ This gem was extracted from [EveMonk](http://evemonk.com). Source code of evemon
 
 You will need to add xml parser to your Gemfile to use this gem. E.g. `nokogiri`. Or any other xml parser which are supported by nori.
 
-## TOC
+## Contents
 
-* [Installation](#installation)
-* [Supported ruby versions](#supported-ruby-versions)
-* [Usage](#usage)
-* [Useful links](#useful-links)
-* [Development](#development)
-* [Contributing](#contributing)
-* [Changelog](#changelog)
-* [Implementation check list](#implementation-check-list)
-* [TODO](#todo)
-* [Author](#author)
-* [Contributors. Thank you everyone!](#contributors-thank-you-everyone)
-* [License](#license)
+- [Installation](#installation)
+- [Supported ruby versions](#supported-ruby-versions)
+- [Usage](#usage)
+- [Useful links](#useful-links)
+- [Development](#development)
+- [Contributing](#contributing)
+- [Changelog](#changelog)
+- [Implementation check list](#implementation-check-list)
+- [TODO](#todo)
+- [Author](#author)
+- [Contributors. Thank you everyone!](#contributors-thank-you-everyone)
+- [License](#license)
 
 
 ## Installation
