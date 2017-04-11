@@ -12,7 +12,27 @@ describe EveOnline::ESI::ServerStatus do
   end
 
   describe '#as_json' do
-    # TODO
+    let(:server_status) { described_class.new }
+
+    let(:start_time) { double }
+
+    before { expect(server_status).to receive(:start_time).and_return(start_time) }
+
+    before { expect(server_status).to receive(:players).and_return(34_520) }
+
+    before { expect(server_status).to receive(:server_version).and_return('1135520') }
+
+    before { expect(server_status).to receive(:vip).and_return(nil) }
+
+    subject { server_status.as_json }
+
+    its([:start_time]) { should eq(start_time) }
+
+    its([:players]) { should eq(34_520) }
+
+    its([:server_version]) { should eq('1135520') }
+
+    its([:vip]) { should eq(nil) }
   end
 
   describe '#start_time' do
