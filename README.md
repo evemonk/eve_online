@@ -55,7 +55,7 @@ Or install it yourself as:
  * MRI 2.3
  * MRI 2.4
  * MRI 2.5 (head)
- * JRuby 9.1.5.0
+ * JRuby 9.1.8.0
  * JRuby (head)
 
 ## Usage
