@@ -1155,6 +1155,19 @@ loyalty_point.corporation_id # => 1000035
 loyalty_point.loyalty_points # => 14163
 ```
 
+#### EVE Server status
+
+```ruby
+server_status = EveOnline::ESI::ServerStatus.new
+
+server_status.as_json # => {:start_time=>Tue, 11 Apr 2017 11:05:35 UTC +00:00, :players=>34545, :server_version=>"1135520", :vip=>nil}
+
+server_status.start_time # => Tue, 11 Apr 2017 11:05:35 UTC +00:00
+server_status.players # => 34545
+server_status.server_version # => "1135520"
+server_status.vip # => nil
+```
+
 ### SDE Examples
 
 Agent Types:
@@ -1364,6 +1377,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Fix `EveOnline::ESI::Character`
 * Use versioned API endpoints
 * Ignore missed fields in responses
+* Add `EveOnline::ESI::ServerStatus`
 
 **v0.11.0**
 
