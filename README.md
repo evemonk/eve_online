@@ -1328,7 +1328,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 **master**
 
 * *Breaking change*. Rename `EveOnline::Exceptions::Exception` to `EveOnline::Exceptions::Base`.
-* Test with Rails 5.1.0.rc1 too
+* Test with Rails 5.1.0 too
 * Rename `EveOnline::Account::Status` to `EveOnline::XML::AccountStatus`
 * Rename `EveOnline::Account::ApiKeyInfo` to `EveOnline::XML::ApiKeyInfo`
 * Rename `EveOnline::Account::Characters` to `EveOnline::XML::AccountCharacters`
