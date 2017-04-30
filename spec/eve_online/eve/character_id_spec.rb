@@ -43,7 +43,7 @@ describe EveOnline::Eve::CharacterID do
     end
 
     context 'input is invalid' do
-      let(:input) { Hash.new }
+      let(:input) { {} }
 
       specify { expect { subject.names }.to raise_error(ArgumentError) }
     end
