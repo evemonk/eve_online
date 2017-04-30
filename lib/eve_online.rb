@@ -32,6 +32,7 @@ require 'eve_online/eve/character_id'
 require 'eve_online/sovereignty/campaigns'
 
 # XML API
+require 'eve_online/xml/base'
 require 'eve_online/xml/account_status'
 require 'eve_online/xml/api_key_info'
 require 'eve_online/xml/account_characters'
