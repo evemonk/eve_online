@@ -3,7 +3,7 @@ require 'forwardable'
 module EveOnline
   module XML
     # https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/account/account_apikeyinfo.html
-    class ApiKeyInfo < BaseXML
+    class ApiKeyInfo < Base
       extend Forwardable
 
       API_ENDPOINT = 'https://api.eveonline.com/account/APIKeyInfo.xml.aspx'.freeze
