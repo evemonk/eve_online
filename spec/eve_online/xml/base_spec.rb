@@ -97,6 +97,72 @@ describe EveOnline::XML::Base do
       specify { expect { subject.content }.to change { subject.instance_variable_defined?(:@_memoized_content) }.from(false).to(true) }
     end
 
+    context 'unauthorized' do
+      let(:url) { double }
+
+      before { expect(subject).to receive(:url).and_return(url) }
+
+      let(:user_agent) { double }
+
+      before { expect(subject).to receive(:user_agent).and_return(user_agent) }
+
+      let(:faraday) { double }
+
+      before do
+        #
+        # Faraday.new => faraday
+        #
+        expect(Faraday).to receive(:new).and_return(faraday)
+      end
+
+      before do
+        #
+        # faraday.headers[:user_agent] = user_agent
+        #
+        expect(faraday).to receive(:headers) do
+          double.tap do |a|
+            expect(a).to receive(:[]=).with(:user_agent, user_agent)
+          end
+        end
+      end
+
+      before do
+        expect(faraday).to receive(:options) do
+          double.tap do |a|
+            expect(a).to receive(:timeout=).with(60)
+          end
+        end
+      end
+
+      before do
+        expect(faraday).to receive(:options) do
+          double.tap do |a|
+            expect(a).to receive(:open_timeout=).with(60)
+          end
+        end
+      end
+
+      let(:resource) { double }
+
+      before do
+        #
+        # faraday.get(url) => resource
+        #
+        expect(faraday).to receive(:get).with(url).and_return(resource)
+      end
+
+      before do
+        #
+        # resource.status => 403
+        #
+        expect(resource).to receive(:status).and_return(403)
+      end
+
+      before { expect(resource).not_to receive(:body) }
+
+      specify { expect { subject.content }.to raise_error(EveOnline::Exceptions::UnauthorizedException) }
+    end
+
     context 'timeout' do
       before do
         #
