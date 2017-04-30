@@ -69,15 +69,27 @@ describe EveOnline::XML::Base do
         end
       end
 
+      let(:resource) { double }
+
       before do
         #
-        # faraday.get(url).body
+        # faraday.get(url) => resource
         #
-        expect(faraday).to receive(:get).with(url) do
-          double.tap do |a|
-            expect(a).to receive(:body)
-          end
-        end
+        expect(faraday).to receive(:get).with(url).and_return(resource)
+      end
+
+      before do
+        #
+        # resource.status => 200
+        #
+        expect(resource).to receive(:status).and_return(200)
+      end
+
+      before do
+        #
+        # resource.body
+        #
+        expect(resource).to receive(:body)
       end
 
       specify { expect { subject.content }.not_to raise_error }
@@ -85,7 +97,7 @@ describe EveOnline::XML::Base do
       specify { expect { subject.content }.to change { subject.instance_variable_defined?(:@_memoized_content) }.from(false).to(true) }
     end
 
-    context 'exception' do
+    context 'timeout' do
       before do
         #
         # Faraday.new => raise Faraday::TimeoutError

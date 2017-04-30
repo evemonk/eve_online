@@ -29,7 +29,11 @@ module EveOnline
         faraday.options.timeout = 60
         faraday.options.open_timeout = 60
 
-        faraday.get(url).body
+        resource = faraday.get(url)
+
+        raise EveOnline::Exceptions::UnauthorizedException if resource.status == 403
+
+        resource.body
       rescue Faraday::TimeoutError
         raise EveOnline::Exceptions::TimeoutException
       end
