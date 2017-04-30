@@ -1,6 +1,7 @@
 require 'nori'
 require 'memoist'
 require 'faraday'
+require 'active_support/time'
 
 module EveOnline
   module XML
@@ -44,38 +45,31 @@ module EveOnline
       end
       memoize :eveapi
 
+      def result
+        eveapi.fetch('result')
+      end
+      memoize :result
+
+      def cached_until
+        parse_datetime_with_timezone(eveapi.fetch('cachedUntil'))
+      end
+      memoize :cached_until
+
+      def current_time
+        parse_datetime_with_timezone(eveapi.fetch('currentTime'))
+      end
+      memoize :current_time
+
+      def version
+        eveapi.fetch('@version').to_i
+      end
+      memoize :version
+
+      private
+
+      def parse_datetime_with_timezone(value)
+        ActiveSupport::TimeZone['UTC'].parse(value)
+      end
     end
   end
 end
-
-# require 'active_support/time'
-#
-# module EveOnline
-#   class BaseXML < Base
-#     def result
-#       eveapi.fetch('result')
-#     end
-#     memoize :result
-#
-#     def cached_until
-#       parse_datetime_with_timezone(eveapi.fetch('cachedUntil'))
-#     end
-#     memoize :cached_until
-#
-#     def current_time
-#       parse_datetime_with_timezone(eveapi.fetch('currentTime'))
-#     end
-#     memoize :current_time
-#
-#     def version
-#       eveapi.fetch('@version').to_i
-#     end
-#     memoize :version
-#
-#     private
-#
-#     def parse_datetime_with_timezone(value)
-#       ActiveSupport::TimeZone['UTC'].parse(value)
-#     end
-#   end
-# end
