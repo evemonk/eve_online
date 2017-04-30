@@ -1,5 +1,6 @@
 require 'spec_helper'
 
+# rubocop:disable Metrics/BlockLength
 describe EveOnline::XML::Base do
   describe '#initialize' do
     let(:parser) { double }
@@ -110,5 +111,22 @@ describe EveOnline::XML::Base do
     specify { expect { subject.response }.not_to raise_error }
 
     specify { expect { subject.response }.to change { subject.instance_variable_defined?(:@_memoized_response) }.from(false).to(true) }
+  end
+
+  describe '#eveapi' do
+    before do
+      #
+      # subject.response.fetch('eveapi')
+      #
+      expect(subject).to receive(:response) do
+        double.tap do |a|
+          expect(a).to receive(:fetch).with('eveapi')
+        end
+      end
+    end
+
+    specify { expect { subject.eveapi }.not_to raise_error }
+
+    specify { expect { subject.eveapi }.to change { subject.instance_variable_defined?(:@_memoized_eveapi) }.from(false).to(true) }
   end
 end

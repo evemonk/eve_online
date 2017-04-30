@@ -39,6 +39,11 @@ module EveOnline
       end
       memoize :response
 
+      def eveapi
+        response.fetch('eveapi')
+      end
+      memoize :eveapi
+
     end
   end
 end
@@ -66,11 +71,6 @@ end
 #       eveapi.fetch('@version').to_i
 #     end
 #     memoize :version
-#
-#     def eveapi
-#       response.fetch('eveapi')
-#     end
-#     memoize :eveapi
 #
 #     private
 #
