@@ -1327,9 +1327,10 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 
 **master**
 
-* *Breaking change*. Rename `EveOnline::Exceptions::Exception` to `EveOnline::Exceptions::Base`.
+* **Breaking change**. Rename `EveOnline::Exceptions::Exception` to `EveOnline::Exceptions::Base`.
 * Add `EveOnline::XML::Base` class
 * Add `EveOnline::Exceptions::UnauthorizedException`
+* Add `EveOnline::Exceptions::InvalidCharacterIDException`
 * Test with Rails 5.1.0 too
 * Rename `EveOnline::Account::Status` to `EveOnline::XML::AccountStatus`
 * Rename `EveOnline::Account::ApiKeyInfo` to `EveOnline::XML::ApiKeyInfo`
