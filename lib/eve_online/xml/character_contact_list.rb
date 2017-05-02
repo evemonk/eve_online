@@ -1,7 +1,7 @@
 module EveOnline
   module XML
     # https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/character/char_contactlist.html
-    class CharacterContactList < BaseXML
+    class CharacterContactList < Base
       API_ENDPOINT = 'https://api.eveonline.com/char/ContactList.xml.aspx'.freeze
 
       ACCESS_MASK = 16

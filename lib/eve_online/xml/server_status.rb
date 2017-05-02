@@ -1,7 +1,7 @@
 module EveOnline
   module XML
     # https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/server/serv_serverstatus.html
-    class ServerStatus < BaseXML
+    class ServerStatus < Base
       API_ENDPOINT = 'https://api.eveonline.com/Server/ServerStatus.xml.aspx'.freeze
 
       def as_json

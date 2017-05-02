@@ -1,7 +1,7 @@
 module EveOnline
   module XML
     # https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_killmails.html
-    class CharacterKillMails < BaseXML
+    class CharacterKillMails < Base
       API_ENDPOINT = 'https://api.eveonline.com/char/KillMails.xml.aspx'.freeze
 
       ACCESS_MASK = 256

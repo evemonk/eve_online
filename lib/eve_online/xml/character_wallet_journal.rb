@@ -1,7 +1,7 @@
 module EveOnline
   module XML
     # https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_walletjournal.html
-    class CharacterWalletJournal < BaseXML
+    class CharacterWalletJournal < Base
       API_ENDPOINT = 'https://api.eveonline.com/char/WalletJournal.xml.aspx'.freeze
 
       ACCESS_MASK = 2_097_152

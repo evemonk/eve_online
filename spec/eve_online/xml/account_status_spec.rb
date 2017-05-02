@@ -8,7 +8,7 @@ describe EveOnline::XML::AccountStatus do
 
   subject { described_class.new(key_id, v_code) }
 
-  specify { expect(subject).to be_a(EveOnline::BaseXML) }
+  specify { expect(subject).to be_a(EveOnline::XML::Base) }
 
   specify { expect(described_class).to be_a(Forwardable) }
 

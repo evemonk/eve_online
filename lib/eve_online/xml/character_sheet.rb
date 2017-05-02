@@ -1,7 +1,7 @@
 module EveOnline
   module XML
     # https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/character/char_charactersheet.html
-    class CharacterSheet < BaseXML
+    class CharacterSheet < Base
       API_ENDPOINT = 'https://api.eveonline.com/char/CharacterSheet.xml.aspx'.freeze
 
       ACCESS_MASK = 8

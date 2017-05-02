@@ -1,7 +1,7 @@
 module EveOnline
   module XML
     # https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_research.html
-    class CharacterResearch < BaseXML
+    class CharacterResearch < Base
       API_ENDPOINT = 'https://api.eveonline.com/char/Research.xml.aspx'.freeze
 
       ACCESS_MASK = 65_536

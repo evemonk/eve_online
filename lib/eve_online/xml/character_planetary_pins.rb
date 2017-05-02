@@ -1,7 +1,7 @@
 module EveOnline
   module XML
     # https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_planetarypins.html
-    class CharacterPlanetaryPins < BaseXML
+    class CharacterPlanetaryPins < Base
       API_ENDPOINT = 'https://api.eveonline.com/char/PlanetaryPins.xml.aspx'.freeze
 
       ACCESS_MASK = 2

@@ -1,7 +1,7 @@
 module EveOnline
   module XML
     # https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_wallettransactions.html
-    class CharacterWalletTransactions < BaseXML
+    class CharacterWalletTransactions < Base
       API_ENDPOINT = 'https://api.eveonline.com/char/WalletTransactions.xml.aspx'.freeze
 
       ACCESS_MASK = 4_194_304

@@ -1,7 +1,7 @@
 module EveOnline
   module XML
     # https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_industryjobshistory.html
-    class CharacterIndustryJobsHistory < BaseXML
+    class CharacterIndustryJobsHistory < Base
       API_ENDPOINT = 'https://api.eveonline.com/char/IndustryJobsHistory.xml.aspx'.freeze
 
       ACCESS_MASK = 128

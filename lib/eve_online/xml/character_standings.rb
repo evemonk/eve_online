@@ -1,7 +1,7 @@
 module EveOnline
   module XML
     # https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_standings.html
-    class CharacterStandings < BaseXML
+    class CharacterStandings < Base
       API_ENDPOINT = 'https://api.eveonline.com/char/Standings.xml.aspx'.freeze
 
       ACCESS_MASK = 524_288

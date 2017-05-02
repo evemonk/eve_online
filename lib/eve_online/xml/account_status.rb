@@ -3,7 +3,7 @@ require 'forwardable'
 module EveOnline
   module XML
     # https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/account/account_accountstatus.html
-    class AccountStatus < BaseXML
+    class AccountStatus < Base
       extend Forwardable
 
       API_ENDPOINT = 'https://api.eveonline.com/account/AccountStatus.xml.aspx'.freeze

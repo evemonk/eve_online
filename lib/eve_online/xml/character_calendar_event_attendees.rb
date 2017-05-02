@@ -1,7 +1,7 @@
 module EveOnline
   module XML
     # https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/character/char_calendareventattendees.html
-    class CharacterCalendarEventAttendees < BaseXML
+    class CharacterCalendarEventAttendees < Base
       API_ENDPOINT = 'https://api.eveonline.com/char/CalendarEventAttendees.xml.aspx'.freeze
 
       ACCESS_MASK = 4

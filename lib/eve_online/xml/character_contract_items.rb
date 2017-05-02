@@ -1,7 +1,7 @@
 module EveOnline
   module XML
     # https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_contractitems.html
-    class CharacterContractItems < BaseXML
+    class CharacterContractItems < Base
       API_ENDPOINT = 'https://api.eveonline.com/char/ContractItems.xml.aspx'.freeze
 
       ACCESS_MASK = 67_108_864

@@ -1,7 +1,7 @@
 module EveOnline
   module XML
     # https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/account/account_characters.html
-    class AccountCharacters < BaseXML
+    class AccountCharacters < Base
       API_ENDPOINT = 'https://api.eveonline.com/account/Characters.xml.aspx'.freeze
 
       attr_reader :key_id, :v_code
