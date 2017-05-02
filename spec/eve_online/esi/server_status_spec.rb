@@ -1,5 +1,6 @@
 require 'spec_helper'
 
+# rubocop:disable Metrics/BlockLength
 describe EveOnline::ESI::ServerStatus do
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 

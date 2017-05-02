@@ -8,7 +8,7 @@ describe EveOnline::XML::CorporationMarketOrders do
 
   subject { described_class.new(key_id, v_code) }
 
-  specify { expect(subject).to be_a(EveOnline::BaseXML) }
+  specify { expect(subject).to be_a(EveOnline::XML::Base) }
 
   specify { expect(described_class::API_ENDPOINT).to eq('https://api.eveonline.com/corp/MarketOrders.xml.aspx') }
 

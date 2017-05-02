@@ -9,7 +9,7 @@ describe EveOnline::XML::CharacterMailMessages do
 
   subject { described_class.new(key_id, v_code, character_id) }
 
-  specify { expect(subject).to be_a(EveOnline::BaseXML) }
+  specify { expect(subject).to be_a(EveOnline::XML::Base) }
 
   specify { expect(described_class::API_ENDPOINT).to eq('https://api.eveonline.com/char/MailMessages.xml.aspx') }
 

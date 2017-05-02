@@ -1,7 +1,7 @@
 module EveOnline
   module XML
     # https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/character/char_upcomingcalendarevents.html
-    class CharacterUpcomingCalendarEvents < BaseXML
+    class CharacterUpcomingCalendarEvents < Base
       API_ENDPOINT = 'https://api.eveonline.com/char/UpcomingCalendarEvents.xml.aspx'.freeze
 
       ACCESS_MASK = 1_048_576

@@ -1,7 +1,7 @@
 module EveOnline
   module XML
     # https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/character/char_skillintraining.html
-    class CharacterSkillInTraining < BaseXML
+    class CharacterSkillInTraining < Base
       API_ENDPOINT = 'https://api.eveonline.com/char/SkillInTraining.xml.aspx'.freeze
 
       ACCESS_MASK = 131_072

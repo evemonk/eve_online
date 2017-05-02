@@ -3,7 +3,7 @@ require 'uri'
 module EveOnline
   module XML
     # https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_locations.html
-    class CharacterLocations < BaseXML
+    class CharacterLocations < Base
       API_ENDPOINT = 'https://api.eveonline.com/char/Locations.xml.aspx'.freeze
 
       ACCESS_MASK = 134_217_728

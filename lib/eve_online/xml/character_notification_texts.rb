@@ -3,7 +3,7 @@ require 'uri'
 module EveOnline
   module XML
     # https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_notificationtexts.html
-    class CharacterNotificationTexts < BaseXML
+    class CharacterNotificationTexts < Base
       API_ENDPOINT = 'https://api.eveonline.com/char/NotificationTexts.xml.aspx'.freeze
 
       ACCESS_MASK = 32_768

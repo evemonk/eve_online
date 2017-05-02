@@ -1,7 +1,7 @@
 module EveOnline
   module XML
     # https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_skillqueue.html
-    class CharacterSkillQueue < BaseXML
+    class CharacterSkillQueue < Base
       API_ENDPOINT = 'https://api.eveonline.com/char/SkillQueue.xml.aspx'.freeze
 
       ACCESS_MASK = 262_144

@@ -1,7 +1,7 @@
 module EveOnline
   module XML
     # https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_chatchannels.html
-    class CharacterChatChannels < BaseXML
+    class CharacterChatChannels < Base
       API_ENDPOINT = 'https://api.eveonline.com/char/ChatChannels.xml.aspx'.freeze
 
       ACCESS_MASK = 536_870_912

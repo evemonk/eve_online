@@ -1,7 +1,7 @@
 module EveOnline
   module XML
     # https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_mailbodies.html
-    class CharacterMailBodies < BaseXML
+    class CharacterMailBodies < Base
       API_ENDPOINT = 'https://api.eveonline.com/char/MailBodies.xml.aspx'.freeze
 
       ACCESS_MASK = 512

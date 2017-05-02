@@ -1,7 +1,7 @@
 module EveOnline
   module XML
     # https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/character/char_bookmarks.html
-    class CharacterBookmarks < BaseXML
+    class CharacterBookmarks < Base
       API_ENDPOINT = 'https://api.eveonline.com/char/Bookmarks.xml.aspx'.freeze
 
       ACCESS_MASK = 268_435_456

@@ -2,6 +2,8 @@ require 'eve_online/version'
 
 require 'eve_online/exceptions/base'
 require 'eve_online/exceptions/timeout_exception'
+require 'eve_online/exceptions/unauthorized_exception'
+require 'eve_online/exceptions/invalid_character_id_exception'
 
 require 'eve_online/base'
 require 'eve_online/base_xml'
@@ -32,6 +34,7 @@ require 'eve_online/eve/character_id'
 require 'eve_online/sovereignty/campaigns'
 
 # XML API
+require 'eve_online/xml/base'
 require 'eve_online/xml/account_status'
 require 'eve_online/xml/api_key_info'
 require 'eve_online/xml/account_characters'

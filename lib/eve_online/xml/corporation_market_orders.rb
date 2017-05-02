@@ -1,7 +1,7 @@
 module EveOnline
   module XML
     # https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/index.html
-    class CorporationMarketOrders < BaseXML
+    class CorporationMarketOrders < Base
       API_ENDPOINT = 'https://api.eveonline.com/corp/MarketOrders.xml.aspx'.freeze
 
       ACCESS_MASK = 4_096

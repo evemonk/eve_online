@@ -1,7 +1,7 @@
 module EveOnline
   module XML
     # https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/character/char_accountbalance.html
-    class CharacterAccountBalance < BaseXML
+    class CharacterAccountBalance < Base
       API_ENDPOINT = 'https://api.eveonline.com/char/AccountBalance.xml.aspx'.freeze
 
       ACCESS_MASK = 1
