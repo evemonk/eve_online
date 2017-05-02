@@ -97,7 +97,7 @@ describe EveOnline::XML::Base do
       specify { expect { subject.content }.to change { subject.instance_variable_defined?(:@_memoized_content) }.from(false).to(true) }
     end
 
-    context 'unauthorized' do
+    context 'exceptions' do
       let(:url) { double }
 
       before { expect(subject).to receive(:url).and_return(url) }
@@ -151,16 +151,31 @@ describe EveOnline::XML::Base do
         expect(faraday).to receive(:get).with(url).and_return(resource)
       end
 
-      before do
-        #
-        # resource.status => 403
-        #
-        expect(resource).to receive(:status).and_return(403)
+      context 'invalid character id' do
+        before do
+          #
+          # resource.status => 400
+          #
+          expect(resource).to receive(:status).and_return(400)
+        end
+
+        before { expect(resource).not_to receive(:body) }
+
+        specify { expect { subject.content }.to raise_error(EveOnline::Exceptions::InvalidCharacterIDException) }
       end
 
-      before { expect(resource).not_to receive(:body) }
+      context 'unauthorized' do
+        before do
+          #
+          # resource.status => 403
+          #
+          expect(resource).to receive(:status).and_return(403)
+        end
 
-      specify { expect { subject.content }.to raise_error(EveOnline::Exceptions::UnauthorizedException) }
+        before { expect(resource).not_to receive(:body) }
+
+        specify { expect { subject.content }.to raise_error(EveOnline::Exceptions::UnauthorizedException) }
+      end
     end
 
     context 'timeout' do

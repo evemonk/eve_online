@@ -31,9 +31,14 @@ module EveOnline
 
         resource = faraday.get(url)
 
-        raise EveOnline::Exceptions::UnauthorizedException if resource.status == 403
-
-        resource.body
+        case resource.status
+        when 200
+          resource.body
+        when 400
+          raise EveOnline::Exceptions::InvalidCharacterIDException
+        when 403
+          raise EveOnline::Exceptions::UnauthorizedException
+        end
       rescue Faraday::TimeoutError
         raise EveOnline::Exceptions::TimeoutException
       end
