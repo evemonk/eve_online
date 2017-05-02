@@ -1342,6 +1342,16 @@ end
 
 Timeout. `EveOnline::Exceptions::TimeoutException`.
 
+## Timeouts
+
+`eve_online` gem uses `faraday` for network request. `faraday` configured with:
+```ruby
+faraday = Faraday.new
+
+faraday.options.timeout = 60
+faraday.options.open_timeout = 60
+```
+
 ## Useful links
 
 * [BREAKING CHANGES AND YOU - HOW TO USE ALT-ROUTES TO ENHANCE YOUR SANITY](https://developers.eveonline.com/blog/article/breaking-changes-and-you)
