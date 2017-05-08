@@ -62,6 +62,7 @@ Or install it yourself as:
 
  * 4.2
  * 5.0
+ * 5.1
  * Edge
 
 ## Usage
