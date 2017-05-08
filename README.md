@@ -58,6 +58,13 @@ Or install it yourself as:
  * JRuby 9.1.8.0
  * JRuby (head)
 
+## Supported rails versions
+
+ * 4.2
+ * 5.0
+ * 5.1
+ * Edge
+
 ## Usage
 
 ### XML API
