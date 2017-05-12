@@ -1380,7 +1380,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 
 ## Changelog
 
-**master**
+**v0.12.0**
 
 * **Breaking change**. Rename `EveOnline::Exceptions::Exception` to `EveOnline::Exceptions::Base`.
 * Add `EveOnline::XML::Base` class
