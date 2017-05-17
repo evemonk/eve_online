@@ -39,13 +39,13 @@ matrix:
     - rvm: ruby-head
       gemfile: gemfiles/activesupport_42.gemfile
   include:
-    - rvm: jruby-9.1.8.0
+    - rvm: jruby-9.1.9.0
       gemfile: gemfiles/activesupport_42.gemfile
       jdk: oraclejdk8
-    - rvm: jruby-9.1.8.0
+    - rvm: jruby-9.1.9.0
       gemfile: gemfiles/activesupport_50.gemfile
       jdk: oraclejdk8
-    - rvm: jruby-9.1.8.0
+    - rvm: jruby-9.1.9.0
       gemfile: gemfiles/activesupport_51.gemfile
       jdk: oraclejdk8
     - rvm: jruby-head
