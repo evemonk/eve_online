@@ -29,7 +29,7 @@ describe EveOnline::ESI::Character do
 
     its([:corporation_id]) { should eq(98_134_807) }
 
-    its([:birthday]) { should eq('birthday') }
+    its([:birthday]) { should eq(DateTime.new(2010, 1, 15, 15, 26, 0)) }
 
     its([:name]) { should eq('Johnn Dillinger') }
 
