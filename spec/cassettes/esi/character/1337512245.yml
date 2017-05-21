@@ -1,0 +1,62 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://esi.tech.ccp.is/v4/characters/1337512245/?datasource=tranquility
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - EveOnline API (https://github.com/biow0lf/eve_online) v0.12.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sun, 21 May 2017 17:08:20 GMT
+      Content-Type:
+      - application/json
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,POST,DELETE,PUT,PATCH,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning
+      Access-Control-Max-Age:
+      - '600'
+      Cache-Control:
+      - public
+      Expires:
+      - Sun, 21 May 2017 18:08:20 GMT
+      Last-Modified:
+      - Sun, 21 May 2017 17:08:20 GMT
+      Vary:
+      - Accept-Encoding
+      Strict-Transport-Security:
+      - max-age=31536000
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - clear
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"corporation_id": 98134807, "birthday": "2010-01-15T15:26:00Z", "name":
+        "Johnn Dillinger", "gender": "male", "race_id": 2, "bloodline_id": 4, "description":
+        "", "alliance_id": 99005443, "ancestry_id": 24, "security_status": 1.8694881661345457}'
+    http_version: 
+  recorded_at: Sun, 21 May 2017 17:08:20 GMT
+recorded_with: VCR 3.0.3
