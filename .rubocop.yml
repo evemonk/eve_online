@@ -15,7 +15,7 @@ Style/Documentation:
   Enabled: false
 
 # Recheck this cop later
-Style/DotPosition:
+Layout/DotPosition:
   Description: 'Checks the position of the dot in multi-line method calls.'
   StyleGuide: '#consistent-multi-line-chains'
   Enabled: true
@@ -51,7 +51,7 @@ Style/SignalException:
   Enabled: true
 
 # Enable with EnforcedStyle is space
-Style/SpaceInsideStringInterpolation:
+Layout/SpaceInsideStringInterpolation:
   EnforcedStyle: space
   Enabled: true
 
@@ -95,7 +95,7 @@ Style/MethodCalledOnDoEndBlock:
   Enabled: true
 
 # Check for a newline after the assignment operator in multi-line assignments
-Style/MultilineAssignmentLayout:
+Layout/MultilineAssignmentLayout:
   Enabled: true
 
 # Just ignore order of gems in Gemfile
