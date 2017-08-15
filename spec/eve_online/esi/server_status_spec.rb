@@ -23,7 +23,7 @@ describe EveOnline::ESI::ServerStatus do
 
     before { expect(server_status).to receive(:server_version).and_return('1135520') }
 
-    before { expect(server_status).to receive(:vip).and_return(nil) }
+    before { expect(server_status).to receive(:vip).and_return(false) }
 
     subject { server_status.as_json }
 
@@ -33,7 +33,7 @@ describe EveOnline::ESI::ServerStatus do
 
     its([:server_version]) { should eq('1135520') }
 
-    its([:vip]) { should eq(nil) }
+    its([:vip]) { should eq(false) }
   end
 
   describe '#start_time' do
