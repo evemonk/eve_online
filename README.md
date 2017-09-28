@@ -1,4 +1,4 @@
-# EveOnline API (XML, CREST and ESI). With SDE.
+# EveOnline API (XML and ESI). With SDE.
 
 [![Gem Version](https://badge.fury.io/rb/eve_online.svg)](https://badge.fury.io/rb/eve_online)
 [![Gem Downloads](https://img.shields.io/gem/dt/eve_online.svg)](https://rubygems.org/gems/eve_online)
@@ -8,7 +8,7 @@
 [![Dependency Status](https://gemnasium.com/biow0lf/eve_online.svg)](https://gemnasium.com/biow0lf/eve_online)
 [![security](https://hakiri.io/github/biow0lf/eve_online/master.svg)](https://hakiri.io/github/biow0lf/eve_online/master)
 
-This gem implement Ruby API for EveOnline MMORPG. All, XML, CREST and ESI API. With SDE.
+This gem implement Ruby API for EveOnline MMORPG. XML and ESI API. With SDE.
 
 This gem was extracted from [EveMonk](http://evemonk.com). Source code of evemonk backend published [here](https://github.com/biow0lf/evemonk).
 
@@ -214,9 +214,9 @@ options = { character_id: 90729314 }
 
 blueprints = EveOnline::XML::CharacterBlueprints.new(key_id, v_code, options)
 
-blueprints.current_time # => Sun, 03 Jan 2016 14:36:37 UTC +00:00 
-blueprints.cached_until # => Mon, 04 Jan 2016 02:06:37 UTC +00:00 
-blueprints.version # => 2 
+blueprints.current_time # => Sun, 03 Jan 2016 14:36:37 UTC +00:00
+blueprints.cached_until # => Mon, 04 Jan 2016 02:06:37 UTC +00:00
+blueprints.version # => 2
 
 blueprints.blueprints.size # => 4
 
@@ -245,9 +245,9 @@ options = { character_id: 90729314 }
 
 bookmarks = EveOnline::XML::CharacterBookmarks.new(key_id, v_code, options)
 
-bookmarks.current_time # => Sun, 03 Jan 2016 14:53:44 UTC +00:00 
-bookmarks.cached_until # => Sun, 03 Jan 2016 15:50:44 UTC +00:00 
-bookmarks.version # => 2 
+bookmarks.current_time # => Sun, 03 Jan 2016 14:53:44 UTC +00:00
+bookmarks.cached_until # => Sun, 03 Jan 2016 15:50:44 UTC +00:00
+bookmarks.version # => 2
 
 bookmarks.bookmark_folders.size # => 4
 
@@ -847,19 +847,19 @@ character_id = 90729314
 
 skill_in_training = EveOnline::XML::CharacterSkillInTraining.new(key_id, v_code, character_id)
 
-skill_in_training.current_time # => Sun, 03 Jan 2016 16:09:15 UTC +00:00 
-skill_in_training.cached_until # => Sun, 03 Jan 2016 16:51:29 UTC +00:00 
-skill_in_training.version # => 2 
+skill_in_training.current_time # => Sun, 03 Jan 2016 16:09:15 UTC +00:00
+skill_in_training.cached_until # => Sun, 03 Jan 2016 16:51:29 UTC +00:00
+skill_in_training.version # => 2
 
 skill_in_training.as_json
-# => {:current_tq_time=>Sun, 03 Jan 2016 16:09:15 UTC +00:00, :training_end_time=>Wed, 13 Jan 2016 16:38:31 UTC +00:00, :training_start_time=>Wed, 23 Dec 2015 11:35:45 UTC +00:00, :training_type_id=>30651, :training_start_sp=>226275, :training_destination_sp=>1280000, :training_to_level=>5, :skill_in_training=>1} 
+# => {:current_tq_time=>Sun, 03 Jan 2016 16:09:15 UTC +00:00, :training_end_time=>Wed, 13 Jan 2016 16:38:31 UTC +00:00, :training_start_time=>Wed, 23 Dec 2015 11:35:45 UTC +00:00, :training_type_id=>30651, :training_start_sp=>226275, :training_destination_sp=>1280000, :training_to_level=>5, :skill_in_training=>1}
 
 skill_in_training.current_tq_time # => Sun, 03 Jan 2016 16:09:15 UTC +00:00
-skill_in_training.training_end_time # => Wed, 13 Jan 2016 16:38:31 UTC +00:00 
-skill_in_training.training_start_time # => Wed, 23 Dec 2015 11:35:45 UTC +00:00 
+skill_in_training.training_end_time # => Wed, 13 Jan 2016 16:38:31 UTC +00:00
+skill_in_training.training_start_time # => Wed, 23 Dec 2015 11:35:45 UTC +00:00
 skill_in_training.training_type_id # => 30651
 skill_in_training.training_start_sp # => 226275
-skill_in_training.training_destination_sp # => 1280000 
+skill_in_training.training_destination_sp # => 1280000
 skill_in_training.training_to_level # => 5
 skill_in_training.skill_in_training # => 1
 ```
@@ -1033,24 +1033,6 @@ status.cached_until # => Mon, 23 Nov 2015 18:19:44 UTC +00:00
 status.server_open? # => true
 status.online_players # => 25611
 status.version # => 2
-```
-
-### CREST Examples
-
-Sovereignty campaigns:
-
-```ruby
-campaigns = EveOnline::Sovereignty::Campaigns.new
-
-campaigns.total_count # => 205
-campaigns.page_count # => 1
-
-campaigns.items.class # => Array
-
-campaigns.items.size # => 205
-
-campaigns.items.first
-# => {"eventType_str"=>"1", "campaignID"=>21773, "eventType"=>1, "sourceSolarsystem"=>{"id_str"=>"30003629", "href"=>"https://crest-tq.eveonline.com/solarsystems/30003629/", "id"=>30003629, "name"=>"S-KSWL"}, "attackers"=>{"score"=>0.8}, "campaignID_str"=>"21773", "sourceItemID"=>1020806305659, "startTime"=>"2016-05-04T15:43:16", "sourceItemID_str"=>"1020806305659", "defender"=>{"defender"=>{"id_str"=>"99006297", "href"=>"https://crest-tq.eveonline.com/alliances/99006297/", "id"=>99006297, "name"=>"DRONE WALKERS"}, "score"=>0.2}, "constellation"=>{"id_str"=>"20000529", "href"=>"https://crest-tq.eveonline.com/constellations/20000529/", "id"=>20000529, "name"=>"TJ10-O"}}
 ```
 
 ### ESI Examples
@@ -1379,6 +1361,10 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 Issue reports and pull requests are welcome on GitHub at https://github.com/biow0lf/eve_online.
 
 ## Changelog
+
+**master**
+
+* Drop CREST support
 
 **v0.12.0**
 
