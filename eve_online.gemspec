@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Igor Zubkov']
   spec.email         = ['igor.zubkov@gmail.com']
 
-  spec.summary       = 'EveOnline API. XML, CREST and ESI. And SDE.'
-  spec.description   = 'EveOnline API. XML, CREST and ESI. And SDE.'
+  spec.summary       = 'EveOnline API. XML, ESI and SDE.'
+  spec.description   = 'EveOnline API. XML, ESI and SDE.'
   spec.homepage      = 'https://github.com/biow0lf/eve_online'
   spec.license       = 'MIT'
 
