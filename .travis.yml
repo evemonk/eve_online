@@ -2,7 +2,6 @@ language: ruby
 sudo: false
 cache: bundler
 rvm:
-  - 2.1
   - 2.2.8
   - 2.3.5
   - 2.4.2
@@ -16,12 +15,6 @@ gemfile:
 
 matrix:
   exclude:
-    - rvm: 2.1
-      gemfile: gemfiles/activesupport_50.gemfile
-    - rvm: 2.1
-      gemfile: gemfiles/activesupport_51.gemfile
-    - rvm: 2.1
-      gemfile: gemfiles/activesupport_edge.gemfile
     - rvm: ruby-head
       gemfile: gemfiles/activesupport_42.gemfile
   include:
