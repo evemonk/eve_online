@@ -1366,6 +1366,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 
 * Drop CREST support
 * Drop Ruby 1.9.3 support
+* Drop Ruby 2.0 support
 
 **v0.12.0**
 
