@@ -7,7 +7,6 @@ require 'eve_online/exceptions/invalid_character_id_exception'
 
 require 'eve_online/base'
 require 'eve_online/base_xml'
-require 'eve_online/base_crest'
 
 require 'eve_online/blueprint'
 require 'eve_online/bookmark'
@@ -30,8 +29,6 @@ require 'eve_online/wallet_journal_entry'
 require 'eve_online/market_order'
 
 require 'eve_online/eve/character_id'
-
-require 'eve_online/sovereignty/campaigns'
 
 # XML API
 require 'eve_online/xml/base'

@@ -8,17 +8,17 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Igor Zubkov']
   spec.email         = ['igor.zubkov@gmail.com']
 
-  spec.summary       = 'EveOnline API. XML, CREST and ESI. And SDE.'
-  spec.description   = 'EveOnline API. XML, CREST and ESI. And SDE.'
+  spec.summary       = 'EveOnline API. XML, ESI and SDE.'
+  spec.description   = 'EveOnline API. XML, ESI and SDE.'
   spec.homepage      = 'https://github.com/biow0lf/eve_online'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features|bin)/}) }
   spec.require_paths = ['lib']
 
-  spec.required_ruby_version = '>= 1.9.3'
+  spec.required_ruby_version = '>= 2.2'
 
-  spec.add_development_dependency 'bundler', '~> 1.10'
+  spec.add_development_dependency 'bundler'
   spec.add_development_dependency 'rake'
   spec.add_development_dependency 'rspec'
   spec.add_development_dependency 'rspec-its'
