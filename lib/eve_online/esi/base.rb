@@ -1,3 +1,4 @@
+require 'json'
 require 'memoist'
 require 'active_support/time'
 
