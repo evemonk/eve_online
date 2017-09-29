@@ -7,7 +7,6 @@ require 'eve_online/exceptions/invalid_character_id_exception'
 
 require 'eve_online/base'
 require 'eve_online/base_xml'
-require 'eve_online/base_crest'
 
 require 'eve_online/blueprint'
 require 'eve_online/bookmark'
