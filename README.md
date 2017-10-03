@@ -1141,6 +1141,18 @@ loyalty_point.corporation_id # => 1000035
 loyalty_point.loyalty_points # => 14163
 ```
 
+### Character's wallet balance
+
+```
+token = 'token123'
+
+character_id = 90729314
+
+character_wallet = EveOnline::ESI::CharacterWallet.new(token, character_id)
+
+character_wallet.as_json # => {:wallet=>409488252.49}
+```
+
 #### EVE Server status
 
 ```ruby
