@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 # rubocop:disable Metrics/BlockLength
-describe EveOnline::SDE::Models::ChrRace do
+describe EveOnline::SDE::Models::Race do
   describe '#initialize' do
     let(:data) { double }
 
