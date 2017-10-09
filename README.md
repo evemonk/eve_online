@@ -1383,6 +1383,8 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Drop Ruby 2.0 support
 * Drop Ruby 2.1 support
 * Add `EveOnline::ESI::CharacterWallet`
+* Add `EveOnline::SDE::Models::ChrRace#icon_id`
+* Add `icon_id` to `EveOnline::SDE::Models::ChrRace#as_json`
 
 **v0.12.0**
 
