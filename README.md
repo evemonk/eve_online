@@ -1289,17 +1289,20 @@ chr_races = EveOnline::SDE::ChrRaces.new(file)
 
 chr_races.chr_races.size # => 8
 
-chr_race = chr_races.chr_races.first
+chr_race = chr_races.chr_races[3]
 
-chr_race.as_json # => {:race_id=>16,
-                 #     :race_name=>"Jove",
-                 #     :short_description=>"",
-                 #     :description=>"The most mysterious and elusive of all the universe's peoples..."}
+chr_race.as_json # => {:race_id=>2,
+                 #     :race_name=>"Minmatar",
+                 #     :short_description=>"Breaking free of Amarrian subjugation, ...",
+                 #     :description=>"Once a thriving tribal civilization, the Minmatar...",
+                 #     :icon_id=>1440}
 
-chr_race.race_id # => 16
-chr_race.race_name # => "Jove"
-chr_race.short_description # => ""
-chr_race.description # => "The most mysterious and elusive of all the universe's peoples..."
+
+chr_race.race_id # => 2
+chr_race.race_name # => "Minmatar"
+chr_race.short_description # => "Breaking free of Amarrian subjugation, ..."
+chr_race.description # => "Once a thriving tribal civilization, the Minmatar..."
+chr_race.icon_id # => 1440
 ```
 
 ## Exceptions
@@ -1379,6 +1382,9 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Drop Ruby 1.9.3 support
 * Drop Ruby 2.0 support
 * Drop Ruby 2.1 support
+* Add `EveOnline::ESI::CharacterWallet`
+* Add `EveOnline::SDE::Models::ChrRace#icon_id`
+* Add `icon_id` to `EveOnline::SDE::Models::ChrRace#as_json`
 
 **v0.12.0**
 

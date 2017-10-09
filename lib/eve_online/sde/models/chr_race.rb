@@ -13,7 +13,8 @@ module EveOnline
             race_id: race_id,
             race_name: race_name,
             short_description: short_description,
-            description: description
+            description: description,
+            icon_id: icon_id
           }
         end
 
@@ -31,6 +32,10 @@ module EveOnline
 
         def description
           data['description']
+        end
+
+        def icon_id
+          data['iconID']
         end
       end
     end
