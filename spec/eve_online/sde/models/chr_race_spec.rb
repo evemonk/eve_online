@@ -23,6 +23,8 @@ describe EveOnline::SDE::Models::ChrRace do
 
     let(:description) { double }
 
+    let(:icon_id) { double }
+
     before { expect(chr_race).to receive(:race_id).and_return(race_id) }
 
     before { expect(chr_race).to receive(:race_name).and_return(race_name) }
@@ -30,6 +32,8 @@ describe EveOnline::SDE::Models::ChrRace do
     before { expect(chr_race).to receive(:short_description).and_return(short_description) }
 
     before { expect(chr_race).to receive(:description).and_return(description) }
+
+    before { expect(chr_race).to receive(:icon_id).and_return(icon_id) }
 
     subject { chr_race.as_json }
 
@@ -40,6 +44,8 @@ describe EveOnline::SDE::Models::ChrRace do
     its([:short_description]) { should eq(short_description) }
 
     its([:description]) { should eq(description) }
+
+    its([:icon_id]) { should eq(icon_id) }
   end
 
   describe '#race_id' do
@@ -116,5 +122,24 @@ describe EveOnline::SDE::Models::ChrRace do
     end
 
     specify { expect { subject.description }.not_to raise_error }
+  end
+
+  describe '#icon_id' do
+    let(:data) { double }
+
+    subject { described_class.new(data) }
+
+    before do
+      #
+      # subject.data['iconID']
+      #
+      expect(subject).to receive(:data) do
+        double.tap do |a|
+          expect(a).to receive(:[]).with('iconID')
+        end
+      end
+    end
+
+    specify { expect { subject.icon_id }.not_to raise_error }
   end
 end
