@@ -1385,6 +1385,9 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Add `EveOnline::ESI::CharacterWallet`
 * Add `EveOnline::SDE::Models::ChrRace#icon_id`
 * Add `icon_id` to `EveOnline::SDE::Models::ChrRace#as_json`
+* Rename `EveOnline::SDE::ChrRaces` to `EveOnline::SDE::Races`
+* Rename `EveOnline::SDE::ChrRace` to `EveOnline::SDE::ChrRace`
+* Rename `EveOnline::SDE::Races#chr_races` to `EveOnline::SDE::Races#races`
 
 **v0.12.0**
 

@@ -1,7 +1,7 @@
 module EveOnline
   module SDE
     module Models
-      class ChrRace
+      class Race
         attr_reader :data
 
         def initialize(data)
