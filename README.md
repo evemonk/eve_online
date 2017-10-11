@@ -1389,6 +1389,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Rename `EveOnline::SDE::ChrRace` to `EveOnline::SDE::ChrRace`
 * Rename `EveOnline::SDE::Races#chr_races` to `EveOnline::SDE::Races#races`
 * Combine options to options hash for ESI
+* Always use versioned ESI routes
 
 **v0.12.0**
 
