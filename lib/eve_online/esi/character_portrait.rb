@@ -5,9 +5,10 @@ module EveOnline
 
       attr_reader :character_id
 
-      def initialize(character_id)
-        super()
-        @character_id = character_id
+      def initialize(options)
+        super
+
+        @character_id = options[:character_id]
       end
 
       # https://eveonline-third-party-documentation.readthedocs.io/en/latest/imageserver/intro.html#character-images

@@ -1,26 +1,24 @@
 require 'spec_helper'
 
 describe EveOnline::ESI::CharacterWallet do
-  let(:token) { 'token123' }
+  let(:options) { { token: 'token123', character_id: 12_345_678 } }
 
-  let(:character_id) { 12_345_678 }
-
-  subject { described_class.new(token, character_id) }
+  subject { described_class.new(options) }
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
   specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/latest/characters/%s/wallet/?datasource=tranquility') }
 
   describe '#initialize' do
-    its(:token) { should eq(token) }
+    its(:token) { should eq('token123') }
 
     its(:parser) { should eq(JSON) }
 
-    its(:character_id) { should eq(character_id) }
+    its(:character_id) { should eq(12_345_678) }
   end
 
   describe '#as_json' do
-    let(:wallet) { described_class.new(token, character_id) }
+    let(:wallet) { described_class.new(options) }
 
     let(:response) { double }
 
@@ -37,7 +35,7 @@ describe EveOnline::ESI::CharacterWallet do
 
   describe '#url' do
     specify do
-      expect(subject.url).to eq(described_class::API_ENDPOINT % character_id)
+      expect(subject.url).to eq('https://esi.tech.ccp.is/latest/characters/12345678/wallet/?datasource=tranquility')
     end
   end
 end

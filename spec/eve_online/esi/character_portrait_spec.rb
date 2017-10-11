@@ -1,10 +1,9 @@
 require 'spec_helper'
 
-# rubocop:disable Metrics/BlockLength
 describe EveOnline::ESI::CharacterPortrait do
-  let(:character_id) { 12_345_678 }
+  let(:options) { { character_id: 12_345_678 } }
 
-  subject { described_class.new(character_id) }
+  subject { described_class.new(options) }
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
@@ -15,11 +14,11 @@ describe EveOnline::ESI::CharacterPortrait do
 
     its(:parser) { should eq(JSON) }
 
-    its(:character_id) { should eq(character_id) }
+    its(:character_id) { should eq(12_345_678) }
   end
 
   describe '#as_json' do
-    let(:portrait) { described_class.new(character_id) }
+    let(:portrait) { described_class.new(options) }
 
     let(:small) { double }
 
@@ -122,7 +121,7 @@ describe EveOnline::ESI::CharacterPortrait do
 
   describe '#url' do
     specify do
-      expect(subject.url).to eq(described_class::API_ENDPOINT % character_id)
+      expect(subject.url).to eq('https://esi.tech.ccp.is/v2/characters/12345678/portrait/?datasource=tranquility')
     end
   end
 end

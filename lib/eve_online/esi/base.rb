@@ -9,8 +9,8 @@ module EveOnline
 
       attr_reader :token, :parser
 
-      def initialize(token = nil)
-        @token = token
+      def initialize(options = {})
+        @token = options[:token]
         @parser = JSON
       end
 
