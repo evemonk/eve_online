@@ -1,6 +1,5 @@
 require 'spec_helper'
 
-# rubocop:disable Metrics/BlockLength
 describe EveOnline::ESI::Base do
   specify { expect(described_class).to be_a(Memoist) }
 
@@ -12,7 +11,9 @@ describe EveOnline::ESI::Base do
     end
 
     context 'with token' do
-      subject { described_class.new('token123') }
+      let(:options) { { token: 'token123' } }
+
+      subject { described_class.new(options) }
 
       its(:token) { should eq('token123') }
     end
@@ -96,15 +97,15 @@ describe EveOnline::ESI::Base do
       end
 
       context 'with token' do
-        let(:token) { double }
+        let(:options) { { token: 'token123' } }
 
-        subject { described_class.new(token) }
+        subject { described_class.new(options) }
 
         before do
           #
           # faraday.authorization(:Bearer, token)
           #
-          expect(faraday).to receive(:authorization).with(:Bearer, token)
+          expect(faraday).to receive(:authorization).with(:Bearer, 'token123')
         end
 
         specify { expect { subject.content }.not_to raise_error }

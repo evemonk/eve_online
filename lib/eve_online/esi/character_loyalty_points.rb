@@ -5,9 +5,10 @@ module EveOnline
 
       attr_reader :character_id
 
-      def initialize(token, character_id)
-        super(token)
-        @character_id = character_id
+      def initialize(options)
+        super
+
+        @character_id = options[:character_id]
       end
 
       def loyalty_points

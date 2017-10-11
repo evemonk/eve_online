@@ -1037,9 +1037,9 @@ status.version # => 2
 #### Public information about a character
 
 ```ruby
-character_id = 90729314
+options = { character_id: 90729314 }
 
-character = EveOnline::ESI::Character.new(character_id)
+character = EveOnline::ESI::Character.new(options)
 
 character.as_json
 # => {:corporation_id=>1000168, :birthday=>Fri, 15 Jan 2010 15:26:00 UTC +00:00, :name=>"Green Black", :gender=>"male", :race_id=>2, :bloodline_id=>4, :description=>"", :alliance_id=>12345678, :ancestry_id=>24, :security_status=>1.8694881661345457}
@@ -1059,9 +1059,9 @@ character.security_status # => 1.8694881661345457
 #### Get portrait urls for a character
 
 ```ruby
-character_id = 90729314
+options = { character_id: 90729314 }
 
-character_portrait = EveOnline::ESI::CharacterPortrait.new(character_id)
+character_portrait = EveOnline::ESI::CharacterPortrait.new(options)
 
 character_portrait.as_json
 # => {:small=>"http://image.eveonline.com/Character/90729314_64.jpg", :medium=>"http://image.eveonline.com/Character/90729314_128.jpg", :large=>"http://image.eveonline.com/Character/90729314_256.jpg", :huge=>"http://image.eveonline.com/Character/90729314_512.jpg"}
@@ -1075,11 +1075,9 @@ character_portrait.huge # => "http://image.eveonline.com/Character/90729314_512.
 #### List all trained skills for the given character
 
 ```ruby
-token = 'token123'
+options = { token: 'token123', character_id: 90729314 }
 
-character_id = 90729314
-
-character_skills = EveOnline::ESI::CharacterSkills.new(token, character_id)
+character_skills = EveOnline::ESI::CharacterSkills.new(options)
 
 character_skills.total_sp # => 43232144
 
@@ -1099,11 +1097,9 @@ skill.current_skill_level # => 1
 #### List the configured skill queue for the given character
 
 ```ruby
-token = 'token123'
+options = { token: 'token123', character_id: 90729314 }
 
-character_id = 90729314
-
-character_skill_queue = EveOnline::ESI::CharacterSkillQueue.new(token, character_id)
+character_skill_queue = EveOnline::ESI::CharacterSkillQueue.new(options)
 
 character_skill_queue.skills.size # => 50
 
@@ -1125,11 +1121,9 @@ skill_queue_entry.level_start_sp # => 7072
 #### List of loyalty points for all corporations the character has worked for
 
 ```ruby
-token = 'token123'
+options = { token: 'token123', character_id: 90729314 }
 
-character_id = 90729314
-
-character_loyalty_points = EveOnline::ESI::CharacterLoyaltyPoints.new(token, character_id)
+character_loyalty_points = EveOnline::ESI::CharacterLoyaltyPoints.new(options)
 
 character_loyalty_points.loyalty_points.size # => 5
 
@@ -1144,11 +1138,9 @@ loyalty_point.loyalty_points # => 14163
 ### Character's wallet balance
 
 ```
-token = 'token123'
+options = { token: 'token123', character_id: 90729314 }
 
-character_id = 90729314
-
-character_wallet = EveOnline::ESI::CharacterWallet.new(token, character_id)
+character_wallet = EveOnline::ESI::CharacterWallet.new(options)
 
 character_wallet.as_json # => {:wallet=>409488252.49}
 ```
@@ -1388,6 +1380,8 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 * Rename `EveOnline::SDE::ChrRaces` to `EveOnline::SDE::Races`
 * Rename `EveOnline::SDE::ChrRace` to `EveOnline::SDE::ChrRace`
 * Rename `EveOnline::SDE::Races#chr_races` to `EveOnline::SDE::Races#races`
+* Combine options to options hash for ESI
+* Always use versioned ESI routes
 
 **v0.12.0**
 

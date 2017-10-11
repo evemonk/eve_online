@@ -8,7 +8,6 @@
 /spec/reports/
 /tmp/
 /.idea/
-.rbenv-gemsets
 .ruby-version
 /.DS_Store
 

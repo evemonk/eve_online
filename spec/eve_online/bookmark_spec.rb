@@ -1,6 +1,5 @@
 require 'spec_helper'
 
-# rubocop:disable Metrics/BlockLength
 describe EveOnline::Bookmark do
   describe '#initialize' do
     let(:options) { double }
