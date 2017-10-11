@@ -1,7 +1,7 @@
 module EveOnline
   module ESI
     class CharacterWallet < Base
-      API_ENDPOINT = 'https://esi.tech.ccp.is/latest/characters/%s/wallet/?datasource=tranquility'.freeze
+      API_ENDPOINT = 'https://esi.tech.ccp.is/v1/characters/%s/wallet/?datasource=tranquility'.freeze
 
       attr_reader :character_id
 
