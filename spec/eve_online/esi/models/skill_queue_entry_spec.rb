@@ -1,6 +1,5 @@
 require 'spec_helper'
 
-# rubocop:disable Metrics/BlockLength
 describe EveOnline::ESI::Models::SkillQueueEntry do
   describe '#initialize' do
     let(:options) { double }
