@@ -7,7 +7,7 @@ describe EveOnline::ESI::CharacterSkillQueue do
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/latest/characters/%s/skillqueue/?datasource=tranquility') }
+  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/v2/characters/%s/skillqueue/?datasource=tranquility') }
 
   describe '#initialize' do
     its(:token) { should eq('token123') }
@@ -60,7 +60,7 @@ describe EveOnline::ESI::CharacterSkillQueue do
 
   describe '#url' do
     specify do
-      expect(subject.url).to eq('https://esi.tech.ccp.is/latest/characters/12345678/skillqueue/?datasource=tranquility')
+      expect(subject.url).to eq('https://esi.tech.ccp.is/v2/characters/12345678/skillqueue/?datasource=tranquility')
     end
   end
 end
