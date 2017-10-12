@@ -1034,6 +1034,180 @@ status.version # => 2
 
 ### ESI Examples
 
+#### Alliance
+
+##### List all alliances
+
+##### Get alliance names
+
+##### Get alliance information
+
+##### List alliance's corporations
+
+##### Get alliance icon
+
+#### Assets
+
+##### Get character assets
+
+##### Get character asset locations
+
+##### Get character asset names
+
+##### Get corporation assets
+
+#### Bookmarks
+
+##### List bookmarks
+
+##### List bookmark folders
+
+#### Calendar
+
+##### List calendar event summaries
+
+##### Get an event
+
+##### Respond to an event
+
+##### Get attendees
+
+#### Character
+
+##### Character affiliation
+
+##### Get character names
+
+##### Get character's public information
+
+##### Get agents research
+
+##### Get blueprints
+
+##### Get chat channels
+
+##### Get corporation history
+
+##### Calculate a CSPA charge cost
+
+##### Get jump fatigue
+
+##### Get medals
+
+##### Get character notifications
+
+##### Get new contact notifications
+
+##### Get character portraits
+
+##### Get character corporation roles
+
+##### Get standings
+
+#### Clones
+
+##### Get clones
+
+##### Get active implants
+
+#### Contacts
+
+##### Delete contacts
+
+##### Get contacts
+
+##### Add contacts
+
+##### Edit contacts
+
+##### Get contact labels
+
+##### Get corporation contacts
+
+#### Contracts
+
+##### Get contracts
+
+##### Get contract bids
+
+##### Get contract items
+
+##### Get coporation contracts (typo in swagger)
+
+##### Get corporation contract bids
+
+##### Get corporation contract items
+
+#### Corporation
+
+##### Get corporation names
+
+##### Get npc corporations
+
+##### Get corporation information
+
+##### Get alliance history
+
+##### Get corporation blueprints
+
+##### Get corporation divisions
+
+##### Get corporation icon
+
+##### Get corporation members
+
+##### Get corporation member limit
+
+##### Track corporation members
+
+##### Get corporation member roles
+
+##### Get corporation standings
+
+##### Get corporation structures
+
+##### Update structure vulnerability schedule
+
+##### Get corporation titles
+
+#### Dogma
+
+##### Get attributes
+
+##### Get attribute information
+
+##### Get effects
+
+##### Get effect information
+
+#### Faction Warfare
+
+##### List of the top factions in faction warfare
+
+##### List of the top pilots in faction warfare
+
+##### List of the top corporations in faction warfare
+
+##### An overview of statistics about factions involved in faction warfare
+
+##### Ownership of faction warfare systems
+
+##### Data about which NPC factions are at war
+
+#### Fittings
+
+##### Get fitting
+
+##### Create fitting
+
+##### Delete fitting
+
+#### Fleets
+
+##### 
+
+
+
 #### Public information about a character
 
 ```ruby
