@@ -1204,7 +1204,97 @@ status.version # => 2
 
 #### Fleets
 
-##### 
+##### Get fleet information
+
+##### Update fleet
+
+##### Get fleet members
+
+##### Create fleet invitation
+
+##### Kick fleet member
+
+##### Move fleet member
+
+##### Delete fleet squad
+
+##### Rename fleet squad
+
+##### Get fleet wings
+
+##### Create fleet wing
+
+##### Delete fleet wing
+
+##### Rename fleet wing
+
+##### Create fleet squad
+
+#### Incursions
+
+##### List incursions
+
+#### Industry
+
+##### List character industry jobs
+
+##### List corporation industry jobs
+
+##### List industry facilities
+
+##### List solar system cost indices
+
+#### Insurance
+
+##### List insurance levels
+
+#### Killmails
+
+##### Get character kills and losses
+
+##### Get corporation kills and losses
+
+##### Get a single killmail
+
+#### Location
+
+##### Get character location
+
+##### Get character online
+
+##### Get current ship
+
+#### Loyalty
+
+##### Get loyalty points
+
+##### List loyalty store offers
+
+#### Mail
+
+##### Return mail headers
+
+##### Send a new mail
+
+##### Get mail labels and unread counts
+
+##### Create a mail label
+
+##### Delete a mail label
+
+##### Return mailing list subscriptions
+
+##### Delete a mail
+
+##### Return a mail
+
+##### Update metadata about a mail
+
+#### Market
+
+##### List orders from a character
+
+
 
 
 
