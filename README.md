@@ -1080,6 +1080,26 @@ status.version # => 2
 
 ##### Get character's public information
 
+```ruby
+options = { character_id: 90729314 }
+
+character = EveOnline::ESI::Character.new(options)
+
+character.as_json
+# => {:corporation_id=>1000168, :birthday=>Fri, 15 Jan 2010 15:26:00 UTC +00:00, :name=>"Green Black", :gender=>"male", :race_id=>2, :bloodline_id=>4, :description=>"", :alliance_id=>12345678, :ancestry_id=>24, :security_status=>1.8694881661345457}
+
+character.corporation_id # => 1000168
+character.birthday # => Fri, 15 Jan 2010 15:26:00 UTC +00:00
+character.name # => "Green Black"
+character.gender # => "male"
+character.race_id # => 2
+character.bloodline_id # => 4
+character.description  # => ""
+character.alliance_id # => 12345678
+character.ancestry_id # => 24
+character.security_status # => 1.8694881661345457
+```
+
 ##### Get agents research
 
 ##### Get blueprints
@@ -1099,6 +1119,20 @@ status.version # => 2
 ##### Get new contact notifications
 
 ##### Get character portraits
+
+```ruby
+options = { character_id: 90729314 }
+
+character_portrait = EveOnline::ESI::CharacterPortrait.new(options)
+
+character_portrait.as_json
+# => {:small=>"http://image.eveonline.com/Character/90729314_64.jpg", :medium=>"http://image.eveonline.com/Character/90729314_128.jpg", :large=>"http://image.eveonline.com/Character/90729314_256.jpg", :huge=>"http://image.eveonline.com/Character/90729314_512.jpg"}
+
+character_portrait.small # => "http://image.eveonline.com/Character/90729314_64.jpg"
+character_portrait.medium # => "http://image.eveonline.com/Character/90729314_128.jpg"
+character_portrait.large # => "http://image.eveonline.com/Character/90729314_256.jpg"
+character_portrait.huge # => "http://image.eveonline.com/Character/90729314_512.jpg"
+```
 
 ##### Get character corporation roles
 
@@ -1268,6 +1302,21 @@ status.version # => 2
 
 ##### Get loyalty points
 
+```ruby
+options = { token: 'token123', character_id: 90729314 }
+
+character_loyalty_points = EveOnline::ESI::CharacterLoyaltyPoints.new(options)
+
+character_loyalty_points.loyalty_points.size # => 5
+
+loyalty_point = character_loyalty_points.loyalty_points.first
+
+loyalty_point.as_json # => {:corporation_id=>1000035, :loyalty_points=>14163}
+
+loyalty_point.corporation_id # => 1000035
+loyalty_point.loyalty_points # => 14163
+```
+
 ##### List loyalty store offers
 
 #### Mail
@@ -1346,7 +1395,49 @@ status.version # => 2
 
 ##### Get character's skill queue
 
+```ruby
+options = { token: 'token123', character_id: 90729314 }
+
+character_skill_queue = EveOnline::ESI::CharacterSkillQueue.new(options)
+
+character_skill_queue.skills.size # => 50
+
+skill_queue_entry = character_skill_queue.skills.first
+
+skill_queue_entry.as_json
+# => {:skill_id=>12487, :finished_level=>3, :queue_position=>0, :finish_date=>Mon, 16 Jan 2017 03:00:35 UTC +00:00, :start_date=>Sun, 15 Jan 2017 11:38:25 UTC +00:00, :training_start_sp=>7263, :level_end_sp=>40000, :level_start_sp=>7072}
+
+skill_queue_entry.skill_id # => 12487
+skill_queue_entry.finished_level # => 3
+skill_queue_entry.queue_position # => 0
+skill_queue_entry.finish_date # => Mon, 16 Jan 2017 03:00:35 UTC +00:00
+skill_queue_entry.start_date # => Sun, 15 Jan 2017 11:38:25 UTC +00:00
+skill_queue_entry.training_start_sp # => 7263
+skill_queue_entry.level_end_sp # => 40000
+skill_queue_entry.level_start_sp # => 7072
+```
+
 ##### Get character skills
+
+```ruby
+options = { token: 'token123', character_id: 90729314 }
+
+character_skills = EveOnline::ESI::CharacterSkills.new(options)
+
+character_skills.total_sp # => 43232144
+
+character_skills.as_json # => {:total_sp=>43232144}
+
+character_skills.skills.size # => 180
+
+skill = character_skills.skills.first
+
+skill.as_json # => {:skill_id=>22536, :skillpoints_in_skill=>500, :current_skill_level=>1}
+
+skill.skill_id # => 22536
+skill.skillpoints_in_skill # => 500
+skill.current_skill_level # => 1
+```
 
 #### Sovereignty
 
@@ -1359,6 +1450,17 @@ status.version # => 2
 #### Status
 
 ##### Retrieve the uptime and player counts
+
+```ruby
+server_status = EveOnline::ESI::ServerStatus.new
+
+server_status.as_json # => {:start_time=>Tue, 11 Apr 2017 11:05:35 UTC +00:00, :players=>34545, :server_version=>"1135520", :vip=>nil}
+
+server_status.start_time # => Tue, 11 Apr 2017 11:05:35 UTC +00:00
+server_status.players # => 34545
+server_status.server_version # => "1135520"
+server_status.vip # => nil
+```
 
 #### Universe
 
@@ -1434,6 +1536,14 @@ status.version # => 2
 
 ##### Get character wallet journal
 
+```
+options = { token: 'token123', character_id: 90729314 }
+
+character_wallet = EveOnline::ESI::CharacterWallet.new(options)
+
+character_wallet.as_json # => {:wallet=>409488252.49}
+```
+
 ##### Get wallet transactions
 
 ##### Returns a corporation's wallet balance
@@ -1450,131 +1560,6 @@ status.version # => 2
 
 ##### List kills for a war
 
-
-
-#### Public information about a character
-
-```ruby
-options = { character_id: 90729314 }
-
-character = EveOnline::ESI::Character.new(options)
-
-character.as_json
-# => {:corporation_id=>1000168, :birthday=>Fri, 15 Jan 2010 15:26:00 UTC +00:00, :name=>"Green Black", :gender=>"male", :race_id=>2, :bloodline_id=>4, :description=>"", :alliance_id=>12345678, :ancestry_id=>24, :security_status=>1.8694881661345457}
-
-character.corporation_id # => 1000168
-character.birthday # => Fri, 15 Jan 2010 15:26:00 UTC +00:00
-character.name # => "Green Black"
-character.gender # => "male"
-character.race_id # => 2
-character.bloodline_id # => 4
-character.description  # => ""
-character.alliance_id # => 12345678
-character.ancestry_id # => 24
-character.security_status # => 1.8694881661345457
-```
-
-#### Get portrait urls for a character
-
-```ruby
-options = { character_id: 90729314 }
-
-character_portrait = EveOnline::ESI::CharacterPortrait.new(options)
-
-character_portrait.as_json
-# => {:small=>"http://image.eveonline.com/Character/90729314_64.jpg", :medium=>"http://image.eveonline.com/Character/90729314_128.jpg", :large=>"http://image.eveonline.com/Character/90729314_256.jpg", :huge=>"http://image.eveonline.com/Character/90729314_512.jpg"}
-
-character_portrait.small # => "http://image.eveonline.com/Character/90729314_64.jpg"
-character_portrait.medium # => "http://image.eveonline.com/Character/90729314_128.jpg"
-character_portrait.large # => "http://image.eveonline.com/Character/90729314_256.jpg"
-character_portrait.huge # => "http://image.eveonline.com/Character/90729314_512.jpg"
-```
-
-#### List all trained skills for the given character
-
-```ruby
-options = { token: 'token123', character_id: 90729314 }
-
-character_skills = EveOnline::ESI::CharacterSkills.new(options)
-
-character_skills.total_sp # => 43232144
-
-character_skills.as_json # => {:total_sp=>43232144}
-
-character_skills.skills.size # => 180
-
-skill = character_skills.skills.first
-
-skill.as_json # => {:skill_id=>22536, :skillpoints_in_skill=>500, :current_skill_level=>1}
-
-skill.skill_id # => 22536
-skill.skillpoints_in_skill # => 500
-skill.current_skill_level # => 1
-```
-
-#### List the configured skill queue for the given character
-
-```ruby
-options = { token: 'token123', character_id: 90729314 }
-
-character_skill_queue = EveOnline::ESI::CharacterSkillQueue.new(options)
-
-character_skill_queue.skills.size # => 50
-
-skill_queue_entry = character_skill_queue.skills.first
-
-skill_queue_entry.as_json
-# => {:skill_id=>12487, :finished_level=>3, :queue_position=>0, :finish_date=>Mon, 16 Jan 2017 03:00:35 UTC +00:00, :start_date=>Sun, 15 Jan 2017 11:38:25 UTC +00:00, :training_start_sp=>7263, :level_end_sp=>40000, :level_start_sp=>7072}
-
-skill_queue_entry.skill_id # => 12487
-skill_queue_entry.finished_level # => 3
-skill_queue_entry.queue_position # => 0
-skill_queue_entry.finish_date # => Mon, 16 Jan 2017 03:00:35 UTC +00:00
-skill_queue_entry.start_date # => Sun, 15 Jan 2017 11:38:25 UTC +00:00
-skill_queue_entry.training_start_sp # => 7263
-skill_queue_entry.level_end_sp # => 40000
-skill_queue_entry.level_start_sp # => 7072
-```
-
-#### List of loyalty points for all corporations the character has worked for
-
-```ruby
-options = { token: 'token123', character_id: 90729314 }
-
-character_loyalty_points = EveOnline::ESI::CharacterLoyaltyPoints.new(options)
-
-character_loyalty_points.loyalty_points.size # => 5
-
-loyalty_point = character_loyalty_points.loyalty_points.first
-
-loyalty_point.as_json # => {:corporation_id=>1000035, :loyalty_points=>14163}
-
-loyalty_point.corporation_id # => 1000035
-loyalty_point.loyalty_points # => 14163
-```
-
-### Character's wallet balance
-
-```
-options = { token: 'token123', character_id: 90729314 }
-
-character_wallet = EveOnline::ESI::CharacterWallet.new(options)
-
-character_wallet.as_json # => {:wallet=>409488252.49}
-```
-
-#### EVE Server status
-
-```ruby
-server_status = EveOnline::ESI::ServerStatus.new
-
-server_status.as_json # => {:start_time=>Tue, 11 Apr 2017 11:05:35 UTC +00:00, :players=>34545, :server_version=>"1135520", :vip=>nil}
-
-server_status.start_time # => Tue, 11 Apr 2017 11:05:35 UTC +00:00
-server_status.players # => 34545
-server_status.server_version # => "1135520"
-server_status.vip # => nil
-```
 
 ### SDE Examples
 
