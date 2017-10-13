@@ -1294,7 +1294,79 @@ status.version # => 2
 
 ##### List orders from a character
 
+##### List orders from a corporation
 
+##### Get item groups
+
+##### Get item group information
+
+##### List market prices
+
+##### List orders in a structure
+
+##### List historical market statistics in a region
+
+##### List orders in a region
+
+##### List type IDs relevant to a market
+
+#### Opportunities
+
+##### Get a character's completed task
+
+##### Get opportunities groups
+
+##### Get opportunities group
+
+##### Get opportunities tasks
+
+##### Get opportunities task
+
+#### Planetary Interaction
+
+##### Get colonies
+
+##### Get colony layout
+
+##### Get schematic information
+
+#### Routes
+
+##### Get route
+
+#### Search
+
+##### Search on a string (search for something in character stuff)
+
+##### Search on a string
+
+#### Skills
+
+##### Get character attributes
+
+##### Get character's skill queue
+
+##### Get character skills
+
+#### Sovereignty
+
+##### List sovereignty campaigns
+
+##### List sovereignty of systems
+
+##### List sovereignty structures
+
+#### Status
+
+##### Retrieve the uptime and player counts
+
+#### Universe
+
+##### Get bloodlines
+
+##### Get item categories
+
+##### 
 
 
 
