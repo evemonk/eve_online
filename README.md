@@ -1051,6 +1051,34 @@ status.version # => 2
 
 ##### Get character assets
 
+```ruby
+options = { token: 'token123', character_id: 90729314 }
+
+character_assets = EveOnline::ESI::CharacterAssets.new(options)
+
+character_assets.assets.size # => 486
+
+asset = character_assets.assets.first
+
+asset.as_json # => {:type_id=>2629,
+              #     :location_id=>60008674,
+              #     :location_type=>"station",
+              #     :item_id=>1006604012678,
+              #     :location_flag=>"Hangar",
+              #     :is_singleton=>false,
+              #     :quantity=>16156}
+
+asset.type_id # => 2629
+asset.location_id # => 60008674
+asset.location_type # => "station"
+asset.item_id # => 1006604012678
+asset.location_flag # => "Hangar"
+asset.is_singleton # => false
+asset.quantity # => 16156
+
+# TODO: add pagination support
+```
+
 ##### Get character asset locations
 
 ##### Get character asset names
