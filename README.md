@@ -1088,6 +1088,8 @@ character = EveOnline::ESI::Character.new(options)
 character.as_json
 # => {:corporation_id=>1000168, :birthday=>Fri, 15 Jan 2010 15:26:00 UTC +00:00, :name=>"Green Black", :gender=>"male", :race_id=>2, :bloodline_id=>4, :description=>"", :alliance_id=>12345678, :ancestry_id=>24, :security_status=>1.8694881661345457}
 
+character.scope # => nil
+
 character.corporation_id # => 1000168
 character.birthday # => Fri, 15 Jan 2010 15:26:00 UTC +00:00
 character.name # => "Green Black"
@@ -1127,6 +1129,8 @@ character_portrait = EveOnline::ESI::CharacterPortrait.new(options)
 
 character_portrait.as_json
 # => {:small=>"http://image.eveonline.com/Character/90729314_64.jpg", :medium=>"http://image.eveonline.com/Character/90729314_128.jpg", :large=>"http://image.eveonline.com/Character/90729314_256.jpg", :huge=>"http://image.eveonline.com/Character/90729314_512.jpg"}
+
+character_portrait.scope # => nil
 
 character_portrait.small # => "http://image.eveonline.com/Character/90729314_64.jpg"
 character_portrait.medium # => "http://image.eveonline.com/Character/90729314_128.jpg"
@@ -1313,6 +1317,8 @@ loyalty_point = character_loyalty_points.loyalty_points.first
 
 loyalty_point.as_json # => {:corporation_id=>1000035, :loyalty_points=>14163}
 
+character_loyalty_points.scope # => "esi-characters.read_loyalty.v1"
+
 loyalty_point.corporation_id # => 1000035
 loyalty_point.loyalty_points # => 14163
 ```
@@ -1402,6 +1408,8 @@ character_skill_queue = EveOnline::ESI::CharacterSkillQueue.new(options)
 
 character_skill_queue.skills.size # => 50
 
+character_skill_queue.scope # => "esi-skills.read_skillqueue.v1"
+
 skill_queue_entry = character_skill_queue.skills.first
 
 skill_queue_entry.as_json
@@ -1427,6 +1435,8 @@ character_skills = EveOnline::ESI::CharacterSkills.new(options)
 character_skills.total_sp # => 43232144
 
 character_skills.as_json # => {:total_sp=>43232144}
+
+character_skills.scope # => "esi-skills.read_skills.v1"
 
 character_skills.skills.size # => 180
 
@@ -1455,6 +1465,8 @@ skill.current_skill_level # => 1
 server_status = EveOnline::ESI::ServerStatus.new
 
 server_status.as_json # => {:start_time=>Tue, 11 Apr 2017 11:05:35 UTC +00:00, :players=>34545, :server_version=>"1135520", :vip=>nil}
+
+server_status.scope # => nil
 
 server_status.start_time # => Tue, 11 Apr 2017 11:05:35 UTC +00:00
 server_status.players # => 34545
@@ -1542,6 +1554,8 @@ options = { token: 'token123', character_id: 90729314 }
 character_wallet = EveOnline::ESI::CharacterWallet.new(options)
 
 character_wallet.as_json # => {:wallet=>409488252.49}
+
+character_wallet.scope # => "esi-wallet.read_character_wallet.v1"
 ```
 
 ##### Get wallet transactions
