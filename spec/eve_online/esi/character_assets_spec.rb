@@ -24,12 +24,12 @@ describe EveOnline::ESI::CharacterAssets do
       [
         {
           type_id: 2629,
-          location_id: 60008674,
+          location_id: 60_008_674,
           location_type: 'station',
-          item_id: 1006604012678,
+          item_id: 1_006_604_012_678,
           location_flag: 'Hangar',
           is_singleton: false,
-          quantity: 16156
+          quantity: 16_156
         }
       ]
     end
