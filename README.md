@@ -14,7 +14,7 @@ This gem was extracted from [EveMonk](http://evemonk.com). Source code of evemon
 
 You will need to add xml parser to your Gemfile to use this gem. E.g. `nokogiri`. Or any other xml parser which are supported by nori.
 
-EveOnline XML API deprecated. And will be removed in near future. From this library and by [https://community.eveonline.com/news/dev-blogs/introducing-esi/](CCP developers).
+EveOnline XML API deprecated. And will be removed in near future. From this library and by [CCP developers](https://community.eveonline.com/news/dev-blogs/introducing-esi/).
 
 ## TOC
 
