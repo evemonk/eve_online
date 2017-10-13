@@ -1787,7 +1787,7 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 
 **master**
 
-* Drop CREST support
+* Drop CREST API support
 * Drop `EveOnline::BaseCREST` without alternative
 * Drop `EveOnline::Sovereignty::Campaigns` without alternative
 * Drop Ruby 1.9.3 support
