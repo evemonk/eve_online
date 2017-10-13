@@ -1366,7 +1366,89 @@ status.version # => 2
 
 ##### Get item categories
 
-##### 
+##### Get item category information
+
+##### Get constellations
+
+##### Get constellation information
+
+##### Get factions
+
+##### Get graphics
+
+##### Get graphic information
+
+##### Get item groups
+
+##### Get item group information
+
+##### Get moon information
+
+##### Get names and categories for a set of ID's
+
+##### Get planet information
+
+##### Get character races
+
+##### Get regions
+
+##### Get region information
+
+##### Get stargate information
+
+##### Get star information
+
+##### Get station information
+
+##### List all public structures
+
+##### Get structure information
+
+##### Get system jumps
+
+##### Get system kills
+
+##### Get solar systems
+
+##### Get solar system information
+
+##### Get types
+
+##### Get type information
+
+#### User Interface
+
+##### Set Autopilot Waypoint
+
+##### Open Contract Window
+
+##### Open Information Window
+
+##### Open Market Details
+
+##### Open New Mail Window
+
+#### Wallet
+
+##### Get a character's wallet balance
+
+##### Get character wallet journal
+
+##### Get wallet transactions
+
+##### Returns a corporation's wallet balance
+
+##### Get corporation wallet journal
+
+##### Get corporation wallet transactions
+
+#### Wars
+
+##### List wars
+
+##### Get war information
+
+##### List kills for a war
 
 
 
