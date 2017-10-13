@@ -17,6 +17,7 @@
 * Combine options to options hash for ESI
 * Always use versioned ESI routes
 * Drop `EveOnline::XML::ServerStatus`. Use `EveOnline::ESI::ServerStatus` instead.
+* Add `EveOnline::ESI::CharacterAssets`
 
 **v0.12.0**
 
