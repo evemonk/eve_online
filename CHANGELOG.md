@@ -18,6 +18,8 @@
 * Always use versioned ESI routes
 * Drop `EveOnline::XML::ServerStatus`. Use `EveOnline::ESI::ServerStatus` instead.
 * Add `EveOnline::ESI::CharacterAssets`
+* Drop `EveOnline::Item`
+* Drop `EveOnline::XML::CharacterAssetList`. Use `EveOnline::ESI::CharacterAssets` instead.
 
 **v0.12.0**
 
