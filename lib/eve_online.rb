@@ -71,8 +71,6 @@ require 'eve_online/xml/character_research'
 require 'eve_online/xml/character_wallet_journal'
 require 'eve_online/xml/character_wallet_transactions'
 
-require 'eve_online/xml/server_status'
-
 require 'eve_online/xml/corporation_market_orders'
 
 require 'eve_online/xml/models/account_status'
