@@ -14,6 +14,8 @@ This gem was extracted from [EveMonk](http://evemonk.com). Source code of evemon
 
 You will need to add xml parser to your Gemfile to use this gem. E.g. `nokogiri`. Or any other xml parser which are supported by nori.
 
+EveOnline XML API deprecated. And will be removed in near future. From this library and by [CCP developers](https://community.eveonline.com/news/dev-blogs/introducing-esi/).
+
 ## TOC
 
 * [Installation](#installation)
@@ -22,7 +24,6 @@ You will need to add xml parser to your Gemfile to use this gem. E.g. `nokogiri`
 * [Useful links](#useful-links)
 * [Development](#development)
 * [Contributing](#contributing)
-* [Changelog](#changelog)
 * [Implementation check list](#implementation-check-list)
 * [TODO](#todo)
 * [Author](#author)
@@ -1034,7 +1035,79 @@ status.version # => 2
 
 ### ESI Examples
 
-#### Public information about a character
+#### Alliance
+
+##### List all alliances
+
+##### Get alliance names
+
+##### Get alliance information
+
+##### List alliance's corporations
+
+##### Get alliance icon
+
+#### Assets
+
+##### Get character assets
+
+```ruby
+options = { token: 'token123', character_id: 90729314 }
+
+character_assets = EveOnline::ESI::CharacterAssets.new(options)
+
+character_assets.assets.size # => 486
+
+asset = character_assets.assets.first
+
+asset.as_json # => {:type_id=>2629,
+              #     :location_id=>60008674,
+              #     :location_type=>"station",
+              #     :item_id=>1006604012678,
+              #     :location_flag=>"Hangar",
+              #     :is_singleton=>false,
+              #     :quantity=>16156}
+
+asset.type_id # => 2629
+asset.location_id # => 60008674
+asset.location_type # => "station"
+asset.item_id # => 1006604012678
+asset.location_flag # => "Hangar"
+asset.is_singleton # => false
+asset.quantity # => 16156
+
+# TODO: add pagination support
+```
+
+##### Get character asset locations
+
+##### Get character asset names
+
+##### Get corporation assets
+
+#### Bookmarks
+
+##### List bookmarks
+
+##### List bookmark folders
+
+#### Calendar
+
+##### List calendar event summaries
+
+##### Get an event
+
+##### Respond to an event
+
+##### Get attendees
+
+#### Character
+
+##### Character affiliation
+
+##### Get character names
+
+##### Get character's public information
 
 ```ruby
 options = { character_id: 90729314 }
@@ -1043,6 +1116,8 @@ character = EveOnline::ESI::Character.new(options)
 
 character.as_json
 # => {:corporation_id=>1000168, :birthday=>Fri, 15 Jan 2010 15:26:00 UTC +00:00, :name=>"Green Black", :gender=>"male", :race_id=>2, :bloodline_id=>4, :description=>"", :alliance_id=>12345678, :ancestry_id=>24, :security_status=>1.8694881661345457}
+
+character.scope # => nil
 
 character.corporation_id # => 1000168
 character.birthday # => Fri, 15 Jan 2010 15:26:00 UTC +00:00
@@ -1056,7 +1131,25 @@ character.ancestry_id # => 24
 character.security_status # => 1.8694881661345457
 ```
 
-#### Get portrait urls for a character
+##### Get agents research
+
+##### Get blueprints
+
+##### Get chat channels
+
+##### Get corporation history
+
+##### Calculate a CSPA charge cost
+
+##### Get jump fatigue
+
+##### Get medals
+
+##### Get character notifications
+
+##### Get new contact notifications
+
+##### Get character portraits
 
 ```ruby
 options = { character_id: 90729314 }
@@ -1066,35 +1159,276 @@ character_portrait = EveOnline::ESI::CharacterPortrait.new(options)
 character_portrait.as_json
 # => {:small=>"http://image.eveonline.com/Character/90729314_64.jpg", :medium=>"http://image.eveonline.com/Character/90729314_128.jpg", :large=>"http://image.eveonline.com/Character/90729314_256.jpg", :huge=>"http://image.eveonline.com/Character/90729314_512.jpg"}
 
+character_portrait.scope # => nil
+
 character_portrait.small # => "http://image.eveonline.com/Character/90729314_64.jpg"
 character_portrait.medium # => "http://image.eveonline.com/Character/90729314_128.jpg"
 character_portrait.large # => "http://image.eveonline.com/Character/90729314_256.jpg"
 character_portrait.huge # => "http://image.eveonline.com/Character/90729314_512.jpg"
 ```
 
-#### List all trained skills for the given character
+##### Get character corporation roles
+
+##### Get standings
+
+#### Clones
+
+##### Get clones
+
+##### Get active implants
+
+#### Contacts
+
+##### Delete contacts
+
+##### Get contacts
+
+##### Add contacts
+
+##### Edit contacts
+
+##### Get contact labels
+
+##### Get corporation contacts
+
+#### Contracts
+
+##### Get contracts
+
+##### Get contract bids
+
+##### Get contract items
+
+##### Get coporation contracts (typo in swagger)
+
+##### Get corporation contract bids
+
+##### Get corporation contract items
+
+#### Corporation
+
+##### Get corporation names
+
+##### Get npc corporations
+
+##### Get corporation information
+
+##### Get alliance history
+
+##### Get corporation blueprints
+
+##### Get corporation divisions
+
+##### Get corporation icon
+
+##### Get corporation members
+
+##### Get corporation member limit
+
+##### Track corporation members
+
+##### Get corporation member roles
+
+##### Get corporation standings
+
+##### Get corporation structures
+
+##### Update structure vulnerability schedule
+
+##### Get corporation titles
+
+#### Dogma
+
+##### Get attributes
+
+##### Get attribute information
+
+##### Get effects
+
+##### Get effect information
+
+#### Faction Warfare
+
+##### List of the top factions in faction warfare
+
+##### List of the top pilots in faction warfare
+
+##### List of the top corporations in faction warfare
+
+##### An overview of statistics about factions involved in faction warfare
+
+##### Ownership of faction warfare systems
+
+##### Data about which NPC factions are at war
+
+#### Fittings
+
+##### Get fitting
+
+##### Create fitting
+
+##### Delete fitting
+
+#### Fleets
+
+##### Get fleet information
+
+##### Update fleet
+
+##### Get fleet members
+
+##### Create fleet invitation
+
+##### Kick fleet member
+
+##### Move fleet member
+
+##### Delete fleet squad
+
+##### Rename fleet squad
+
+##### Get fleet wings
+
+##### Create fleet wing
+
+##### Delete fleet wing
+
+##### Rename fleet wing
+
+##### Create fleet squad
+
+#### Incursions
+
+##### List incursions
+
+#### Industry
+
+##### List character industry jobs
+
+##### List corporation industry jobs
+
+##### List industry facilities
+
+##### List solar system cost indices
+
+#### Insurance
+
+##### List insurance levels
+
+#### Killmails
+
+##### Get character kills and losses
+
+##### Get corporation kills and losses
+
+##### Get a single killmail
+
+#### Location
+
+##### Get character location
+
+##### Get character online
+
+##### Get current ship
+
+#### Loyalty
+
+##### Get loyalty points
 
 ```ruby
 options = { token: 'token123', character_id: 90729314 }
 
-character_skills = EveOnline::ESI::CharacterSkills.new(options)
+character_loyalty_points = EveOnline::ESI::CharacterLoyaltyPoints.new(options)
 
-character_skills.total_sp # => 43232144
+character_loyalty_points.loyalty_points.size # => 5
 
-character_skills.as_json # => {:total_sp=>43232144}
+loyalty_point = character_loyalty_points.loyalty_points.first
 
-character_skills.skills.size # => 180
+loyalty_point.as_json # => {:corporation_id=>1000035, :loyalty_points=>14163}
 
-skill = character_skills.skills.first
+character_loyalty_points.scope # => "esi-characters.read_loyalty.v1"
 
-skill.as_json # => {:skill_id=>22536, :skillpoints_in_skill=>500, :current_skill_level=>1}
-
-skill.skill_id # => 22536
-skill.skillpoints_in_skill # => 500
-skill.current_skill_level # => 1
+loyalty_point.corporation_id # => 1000035
+loyalty_point.loyalty_points # => 14163
 ```
 
-#### List the configured skill queue for the given character
+##### List loyalty store offers
+
+#### Mail
+
+##### Return mail headers
+
+##### Send a new mail
+
+##### Get mail labels and unread counts
+
+##### Create a mail label
+
+##### Delete a mail label
+
+##### Return mailing list subscriptions
+
+##### Delete a mail
+
+##### Return a mail
+
+##### Update metadata about a mail
+
+#### Market
+
+##### List orders from a character
+
+##### List orders from a corporation
+
+##### Get item groups
+
+##### Get item group information
+
+##### List market prices
+
+##### List orders in a structure
+
+##### List historical market statistics in a region
+
+##### List orders in a region
+
+##### List type IDs relevant to a market
+
+#### Opportunities
+
+##### Get a character's completed task
+
+##### Get opportunities groups
+
+##### Get opportunities group
+
+##### Get opportunities tasks
+
+##### Get opportunities task
+
+#### Planetary Interaction
+
+##### Get colonies
+
+##### Get colony layout
+
+##### Get schematic information
+
+#### Routes
+
+##### Get route
+
+#### Search
+
+##### Search on a string (search for something in character stuff)
+
+##### Search on a string
+
+#### Skills
+
+##### Get character attributes
+
+##### Get character's skill queue
 
 ```ruby
 options = { token: 'token123', character_id: 90729314 }
@@ -1102,6 +1436,8 @@ options = { token: 'token123', character_id: 90729314 }
 character_skill_queue = EveOnline::ESI::CharacterSkillQueue.new(options)
 
 character_skill_queue.skills.size # => 50
+
+character_skill_queue.scope # => "esi-skills.read_skillqueue.v1"
 
 skill_queue_entry = character_skill_queue.skills.first
 
@@ -1118,24 +1454,128 @@ skill_queue_entry.level_end_sp # => 40000
 skill_queue_entry.level_start_sp # => 7072
 ```
 
-#### List of loyalty points for all corporations the character has worked for
+##### Get character skills
 
 ```ruby
 options = { token: 'token123', character_id: 90729314 }
 
-character_loyalty_points = EveOnline::ESI::CharacterLoyaltyPoints.new(options)
+character_skills = EveOnline::ESI::CharacterSkills.new(options)
 
-character_loyalty_points.loyalty_points.size # => 5
+character_skills.total_sp # => 43232144
 
-loyalty_point = character_loyalty_points.loyalty_points.first
+character_skills.as_json # => {:total_sp=>43232144}
 
-loyalty_point.as_json # => {:corporation_id=>1000035, :loyalty_points=>14163}
+character_skills.scope # => "esi-skills.read_skills.v1"
 
-loyalty_point.corporation_id # => 1000035
-loyalty_point.loyalty_points # => 14163
+character_skills.skills.size # => 180
+
+skill = character_skills.skills.first
+
+skill.as_json # => {:skill_id=>22536, :skillpoints_in_skill=>500, :current_skill_level=>1}
+
+skill.skill_id # => 22536
+skill.skillpoints_in_skill # => 500
+skill.current_skill_level # => 1
 ```
 
-### Character's wallet balance
+#### Sovereignty
+
+##### List sovereignty campaigns
+
+##### List sovereignty of systems
+
+##### List sovereignty structures
+
+#### Status
+
+##### Retrieve the uptime and player counts
+
+```ruby
+server_status = EveOnline::ESI::ServerStatus.new
+
+server_status.as_json # => {:start_time=>Tue, 11 Apr 2017 11:05:35 UTC +00:00, :players=>34545, :server_version=>"1135520", :vip=>nil}
+
+server_status.scope # => nil
+
+server_status.start_time # => Tue, 11 Apr 2017 11:05:35 UTC +00:00
+server_status.players # => 34545
+server_status.server_version # => "1135520"
+server_status.vip # => nil
+```
+
+#### Universe
+
+##### Get bloodlines
+
+##### Get item categories
+
+##### Get item category information
+
+##### Get constellations
+
+##### Get constellation information
+
+##### Get factions
+
+##### Get graphics
+
+##### Get graphic information
+
+##### Get item groups
+
+##### Get item group information
+
+##### Get moon information
+
+##### Get names and categories for a set of ID's
+
+##### Get planet information
+
+##### Get character races
+
+##### Get regions
+
+##### Get region information
+
+##### Get stargate information
+
+##### Get star information
+
+##### Get station information
+
+##### List all public structures
+
+##### Get structure information
+
+##### Get system jumps
+
+##### Get system kills
+
+##### Get solar systems
+
+##### Get solar system information
+
+##### Get types
+
+##### Get type information
+
+#### User Interface
+
+##### Set Autopilot Waypoint
+
+##### Open Contract Window
+
+##### Open Information Window
+
+##### Open Market Details
+
+##### Open New Mail Window
+
+#### Wallet
+
+##### Get a character's wallet balance
+
+##### Get character wallet journal
 
 ```
 options = { token: 'token123', character_id: 90729314 }
@@ -1143,20 +1583,26 @@ options = { token: 'token123', character_id: 90729314 }
 character_wallet = EveOnline::ESI::CharacterWallet.new(options)
 
 character_wallet.as_json # => {:wallet=>409488252.49}
+
+character_wallet.scope # => "esi-wallet.read_character_wallet.v1"
 ```
 
-#### EVE Server status
+##### Get wallet transactions
 
-```ruby
-server_status = EveOnline::ESI::ServerStatus.new
+##### Returns a corporation's wallet balance
 
-server_status.as_json # => {:start_time=>Tue, 11 Apr 2017 11:05:35 UTC +00:00, :players=>34545, :server_version=>"1135520", :vip=>nil}
+##### Get corporation wallet journal
 
-server_status.start_time # => Tue, 11 Apr 2017 11:05:35 UTC +00:00
-server_status.players # => 34545
-server_status.server_version # => "1135520"
-server_status.vip # => nil
-```
+##### Get corporation wallet transactions
+
+#### Wars
+
+##### List wars
+
+##### Get war information
+
+##### List kills for a war
+
 
 ### SDE Examples
 
@@ -1363,249 +1809,6 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 ## Contributing
 
 Issue reports and pull requests are welcome on GitHub at https://github.com/biow0lf/eve_online.
-
-## Changelog
-
-**master**
-
-* Drop CREST support
-* Drop `EveOnline::BaseCREST` without alternative
-* Drop `EveOnline::Sovereignty::Campaigns` without alternative
-* Drop Ruby 1.9.3 support
-* Drop Ruby 2.0 support
-* Drop Ruby 2.1 support
-* Add `EveOnline::ESI::CharacterWallet`
-* Add `EveOnline::SDE::Models::ChrRace#icon_id`
-* Add `icon_id` to `EveOnline::SDE::Models::ChrRace#as_json`
-* Rename `EveOnline::SDE::ChrRaces` to `EveOnline::SDE::Races`
-* Rename `EveOnline::SDE::ChrRace` to `EveOnline::SDE::ChrRace`
-* Rename `EveOnline::SDE::Races#chr_races` to `EveOnline::SDE::Races#races`
-* Combine options to options hash for ESI
-* Always use versioned ESI routes
-
-**v0.12.0**
-
-* **Breaking change**. Rename `EveOnline::Exceptions::Exception` to `EveOnline::Exceptions::Base`.
-* Add `EveOnline::XML::Base` class
-* Add `EveOnline::Exceptions::UnauthorizedException`
-* Add `EveOnline::Exceptions::InvalidCharacterIDException`
-* Test with Rails 5.1.0 too
-* Rename `EveOnline::Account::Status` to `EveOnline::XML::AccountStatus`
-* Rename `EveOnline::Account::ApiKeyInfo` to `EveOnline::XML::ApiKeyInfo`
-* Rename `EveOnline::Account::Characters` to `EveOnline::XML::AccountCharacters`
-* Rename `EveOnline::Characters::AccountBalance` to `EveOnline::XML::CharacterAccountBalance`
-* Rename `EveOnline::Characters::AssetList` to `EveOnline::XML::CharacterAssetList`
-* Rename `EveOnline::Characters::Blueprints` to `EveOnline::XML::CharacterBlueprints`
-* Rename `EveOnline::Characters::Bookmarks` to `EveOnline::XML::CharacterBookmarks`
-* Rename `EveOnline::Characters::CharacterSheet` to `EveOnline::XML::CharacterSheet`
-* Rename `EveOnline::Corporations::MarketOrders` to `EveOnline::XML::CorporationMarketOrders`
-* Rename `EveOnline::Server::Status` to `EveOnline::XML::ServerStatus`
-* Rename `EveOnline::Characters::Medals` to `EveOnline::XML::CharacterMedals`
-* Rename `EveOnline::Characters::SkillQueue` to `EveOnline::XML::CharacterSkillQueue`
-* Rename `EveOnline::Characters::ChatChannels` to `EveOnline::XML::CharacterChatChannels`
-* Rename `EveOnline::Characters::CalendarEventAttendees` to `EveOnline::XML::CharacterCalendarEventAttendees`
-* Rename `EveOnline::Characters::ContractBids` to `EveOnline::XML::CharacterContractBids`
-* Rename `EveOnline::Characters::ContractItems` to `EveOnline::XML::CharacterContractItems`
-* Rename `EveOnline::Characters::ContactList` to `EveOnline::XML::CharacterContactList`
-* Rename `EveOnline::Characters::ContactNotifications` to `EveOnline::XML::CharacterContactNotifications`
-* Rename `EveOnline::Characters::Contracts` to `EveOnline::XML::CharacterContracts`
-* Rename `EveOnline::Characters::FacWarStats` to `EveOnline::XML::CharacterFacWarStats`
-* Rename `EveOnline::Characters::IndustryJobsHistory` to `EveOnline::XML::CharacterIndustryJobsHistory`
-* Rename `EveOnline::Characters::IndustryJobs` to `EveOnline::XML::CharacterIndustryJobs`
-* Rename `EveOnline::Characters::KillMails` to `EveOnline::XML::CharacterKillMails`
-* Rename `EveOnline::Characters::Locations` to `EveOnline::XML::CharacterLocations`
-* Rename `EveOnline::Characters::MailBodies` to `EveOnline::XML::CharacterMailBodies`
-* Rename `EveOnline::Characters::MailMessages` to `EveOnline::XML::CharacterMailMessages`
-* Rename `EveOnline::Characters::MailingLists` to `EveOnline::XML::CharacterMailingLists`
-* Rename `EveOnline::Characters::MarketOrders` to `EveOnline::XML::CharacterMarketOrders`
-* Rename `EveOnline::Characters::NotificationTexts` to `EveOnline::XML::CharacterNotificationTexts`
-* Rename `EveOnline::Characters::Notifications` to `EveOnline::XML::CharacterNotifications`
-* Rename `EveOnline::Characters::PlanetaryColonies` to `EveOnline::XML::CharacterPlanetaryColonies`
-* Rename `EveOnline::Characters::PlanetaryLinks` to `EveOnline::XML::CharacterPlanetaryLinks`
-* Rename `EveOnline::Characters::PlanetaryPins` to `EveOnline::XML::CharacterPlanetaryPins`
-* Rename `EveOnline::Characters::PlanetaryRoutes` to `EveOnline::XML::CharacterPlanetaryRoutes`
-* Rename `EveOnline::Characters::Research` to `EveOnline::XML::CharacterResearch`
-* Rename `EveOnline::Characters::SkillInTraining` to `EveOnline::XML::CharacterSkillInTraining`
-* Rename `EveOnline::Characters::Standings` to `EveOnline::XML::CharacterStandings`
-* Rename `EveOnline::Characters::UpcomingCalendarEvents` to `EveOnline::XML::CharacterUpcomingCalendarEvents`
-* Rename `EveOnline::Characters::WalletJournal` to `EveOnline::XML::CharacterWalletJournal`
-* Rename `EveOnline::Characters::WalletTransactions` to `EveOnline::XML::CharacterWalletTransactions`
-* Rename `EveOnline::XML::CharacterSheet#base_intelligence` to `EveOnline::XML::CharacterSheet#intelligence`
-* Rename `EveOnline::XML::CharacterSheet#base_memory` to `EveOnline::XML::CharacterSheet#memory`
-* Rename `EveOnline::XML::CharacterSheet#base_charisma` to `EveOnline::XML::CharacterSheet#charisma`
-* Rename `EveOnline::XML::CharacterSheet#base_perception` to `EveOnline::XML::CharacterSheet#perception`
-* Rename `EveOnline::XML::CharacterSheet#base_willpower` to `EveOnline::XML::CharacterSheet#willpower`
-* Fix `EveOnline::ESI::Character`
-* Use versioned API endpoints
-* Ignore missed fields in responses
-* Add `EveOnline::ESI::ServerStatus`
-
-**v0.11.0**
-
-* Add SDE support classes
-* `EveOnline::SDE::AgtAgentTypes`
-* `EveOnline::SDE::AgtAgents`
-* `EveOnline::SDE::AgtResearchAgents`
-* `EveOnline::SDE::ChrRaces`
-* `EveOnline::SDE::InvFlags`
-* `EveOnline::SDE::InvItems`
-* `EveOnline::SDE::InvNames`
-* `EveOnline::SDE::InvPositions`
-* `EveOnline::SDE::Models::AgtAgentType`
-* `EveOnline::SDE::Models::AgtAgent`
-* `EveOnline::SDE::Models::AgtResearchAgent`
-* `EveOnline::SDE::Models::ChrRace`
-* `EveOnline::SDE::Models::InvFlag`
-* `EveOnline::SDE::Models::InvItem`
-* `EveOnline::SDE::Models::InvName`
-* `EveOnline::SDE::Models::InvPosition`
-* Finish `EveOnline::ESI::Characters::Character`
-* Add `EveOnline::ESI::CharacterPortrait`
-* Add `EveOnline::ESI::CharacterSkills`
-* Rename `EveOnline::ESI::Characters::Character` to `EveOnline::ESI::Character`
-* Add `EveOnline::ESI::CharacterSkillQueue`
-* Add `EveOnline::ESI::CharacterLoyaltyPoints`
-* Add `EveOnline::ESI::Models::LoyaltyPoint` class for handling character loyalty points
-* Add `EveOnline::ESI::Models::SkillQueue` class for handling character skill queue entries
-* Add `EveOnline::ESI::Models::Skill` class for handing character skills
-* Rename `EveOnline::SkillQueueEntry` to `EveOnline::XML::Models::SkillQueueEntry`
-
-**v0.10.0**
-
-* Replace `open-uri` with `faraday`
-* Add `EveOnline::ESI::Characters::Character`
-* Add `EveOnline::AccountTypeObject` class for handling EveOnline account type values
-* `EveOnline::Account::ApiKeyInfo#type` now returns symbols. e.g. `:account`
-* Add `EveOnline::Account::ApiKeyInfo#as_json`
-* Rename `EveOnline::Account::ApiKeyInfo#type` to `#api_key_type`
-
-**v0.9.0**
-
-* Add basic `EveOnline::Characters::Contracts`
-* Add basic `EveOnline::Characters::ContractBids`
-* Add basic `EveOnline::Characters::ContractItems`
-* Add basic `EveOnline::Characters::FacWarStats`
-* Add basic `EveOnline::Characters::IndustryJobs`
-* Add basic `EveOnline::Characters::IndustryJobsHistory`
-* Add `EveOnline::JumpCloneImplant` class for handling character jump clone implant
-* Add `EveOnline::CharacterJumpCloneImplants` class for handling character jump clone implants
-* Add basic `EveOnline::Characters::KillMails`
-* Add basic `EveOnline::Characters::Locations`
-* Add basic `EveOnline::Characters::MailBodies`
-* Add basic `EveOnline::Characters::MailingLists`
-* Add basic `EveOnline::Characters::MailMessages`
-* Add basic `EveOnline::Characters::MarketOrders`
-* Add basic `EveOnline::Characters::Notifications`
-* `EveOnline::Characters::AccountBalance#balance` return float from now
-* `EveOnline::Characters::CharacterSheet#balance` return float from now
-* Add basic `EveOnline::Characters::NotificationTexts`
-* Add basic `EveOnline::Characters::PlanetaryColonies`
-* Add basic `EveOnline::Characters::PlanetaryLinks`
-* Add basic `EveOnline::Characters::PlanetaryPins`
-* Add basic `EveOnline::Characters::PlanetaryRoutes`
-* Add basic `EveOnline::Characters::Research`
-* Add basic `EveOnline::Characters::WalletJournal`
-* Add basic `EveOnline::Characters::WalletTransactions`
-* Add `EveOnline::SkillQueueEntry` class for handling character skill queue entry
-* Make `EveOnline::Characters::Blueprints#row` `private`
-* Make `EveOnline::Characters::Blueprints#rowset` `private`
-* Make `EveOnline::Account::ApiKeyInfo#row` `private`
-* Make `EveOnline::Account::ApiKeyInfo#rowset` `private`
-* Make `EveOnline::Account::Characters#row` `private`
-* Make `EveOnline::Account::Characters#rowset` `private`
-* [Skill Queue](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_skillqueue.html)
-* Add `EveOnline::ContactNotification` class for handling character contact notification
-* [Contact Notifications](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_contactnotifications.html)
-* Make `EveOnline::Characters::AccountBalance#row` `private`
-* Make `EveOnline::Characters::AccountBalance#rowset` `private`
-* Make `EveOnline::Characters::Account#key` `private`
-* Make `EveOnline::Characters::AssetList#row` `private`
-* Make `EveOnline::Characters::AssetList#rowset` `private`
-* Make `EveOnline::Characters::Locations#escaped_ids` `private`
-* Make `EveOnline::Characters::MailBodies#escaped_ids` `private`
-* Make `EveOnline::Characters::NotificationTexts#escaped_ids` `private`
-* Make `EveOnline::Characters::UpcomingCalendarEvents#row` `private`
-* Make `EveOnline::Characters::UpcomingCalendarEvents#rowset` `private`
-* Add access masks
-* Make `EveOnline::Characters::Bookmarks#row` `private`
-* Make `EveOnline::Characters::Bookmarks#rowset` `private`
-* Add `EveOnline::WalletJournalEntry` class for handling character wallet journal entry
-* [Wallet Journal](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_walletjournal.html)
-* Rework memoization
-* [Market Orders](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_marketorders.html)
-* [Market Orders](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_marketorders.html)
-
-**v0.8.0**
-
-* Add basic `EveOnline::Characters::Medals` class
-* Add basic `EveOnline::Characters::CharacterSheet` class
-* Add `EveOnline::Implant` class for handling character implant
-* Add `EveOnline::Skill` class for handling character skill
-* Add `EveOnline::CharacterSkills` class for handling character skills
-* Add `EveOnline::JumpClone` class for handling character jump clone
-* Add `EveOnline::CharacterImplants` class for handling character implants
-* Add `EveOnline::CharacterJumpClones` class for handling character jump clones
-* Finish [Character Bookmarks](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_bookmarks.html)
-* Finish [Standings](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_standings.html)
-* Add `EveOnline::Standing` class for handling character standing
-
-**v0.7.0**
-
-* Drop `nokogiri` gem from gem dependency
-* Add `json` gem for CREST API
-* Add `EveOnline::Item` for handle items in AssetList
-* [Asset List](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_assetlist.html)
-* Remove unused `EveOneline::Skill` and `EveOnline::SkillGroup` classes
-* Add `EveOnline::BookmarkFolder` class for handling bookmarks folders
-* Add `EveOnline::Bookmark` class for handling EveOnline Bookmarks
-* Remove unused `EveOnline::Eve::SkillTree` class
-* Relax activesupport version requirement (now requires 3.0.0 or later)
-* Respect EveOnline API guidelines. Set correct user agent.
-* Add basic `EveOnline::Sovereignty::Campaigns` class
-* Add basic `EveOnline::Eve::CharacterID` to handle character name to character id requests
-* Add `EveOnline::BaseXML` as base for XML API
-* Add `EveOnline::BaseCREST` as base for CREST API
-* Citadel 1.0 updates
-
-**v0.6.0**
-
-* Add `EveOnline::EventResponseObject` class for handling EveOnline Event response values
-* `EveOnline::Event#response` now returns symbols. e.g. `:undecided`
-* [Character Blueprints](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_blueprints.html)
-* Add `EveOnline::Blueprint` class for handling EveOnline Blueprints
-* Add basic [Character Bookmarks](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_bookmarks.html)
-* [Characters SkillInTraining](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_skillintraining.html)
-
-**v0.5.0**
-
-* Add `EveOnline::Event` class for handling EveOnline Events
-* `EveOnline::Account::ApiKeyInfo#expires` now returns time with timezone
-* [Upcoming Calendar Events](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_upcomingcalendarevents.html)
-* Basic [Calendar Event Attendees](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_calendareventattendees.html)
-
-**v0.4.0**:
-
-* Time zone fixes
-* Add `EveOnline::Character` class for handling each Character
-* `EveOnline::Account::Characters` and `EveOnline::Account::ApiKeyInfo` now supports multiple characters
-* Fix `EveOnline::Characters::AccountBalance` class
-* Fix `EveOnline::Characters::AccountBalance#account_key`
-* Add `#as_json` methods
-
-**v0.3.0**:
-
-* [Characters](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/account/account_characters.html)
-* Refactoring and bug fixes
-
-**v0.2.0**:
-
-* [Account Balance](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_accountbalance.html)
-* [API Key Info](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/account/account_apikeyinfo.html)
-* [Account Status](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/account/account_accountstatus.html)
-
-**v0.1.0**:
-
-* [Server Status](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/server/serv_serverstatus.html)
 
 ## Implementation check list
 
