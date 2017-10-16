@@ -39,7 +39,6 @@ require 'eve_online/xml/character_blueprints'
 require 'eve_online/xml/character_bookmarks'
 require 'eve_online/xml/character_sheet'
 require 'eve_online/xml/character_medals'
-require 'eve_online/xml/character_skill_queue'
 require 'eve_online/xml/character_chat_channels'
 require 'eve_online/xml/character_calendar_event_attendees'
 require 'eve_online/xml/character_contact_list'
@@ -73,7 +72,6 @@ require 'eve_online/xml/corporation_market_orders'
 
 require 'eve_online/xml/models/account_status'
 require 'eve_online/xml/models/api_key_info'
-require 'eve_online/xml/models/skill_queue_entry'
 require 'eve_online/xml/models/account_type_object'
 
 # ESI API
