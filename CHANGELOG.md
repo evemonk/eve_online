@@ -20,6 +20,8 @@
 * Add `EveOnline::ESI::CharacterAssets`
 * Drop `EveOnline::Item`
 * Drop `EveOnline::XML::CharacterAssetList`. Use `EveOnline::ESI::CharacterAssets` instead.
+* Drop `EveOnline::XML::CharacterSkillQueue`. Use `EveOnline::ESI::CharacterSkillQueue` instead.
+* Drop `EveOnline::XML::Models::SkillQueueEntry`.
 
 **v0.12.0**
 
