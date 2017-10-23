@@ -20,8 +20,9 @@ module EveOnline
                      :last_remap_date, :accrued_remap_cooldown_date
 
       def model
-        @model ||= Models::Attributes.new(response)
+        Models::Attributes.new(response)
       end
+      memoize :model
 
       def scope
         'esi-skills.read_skills.v1'

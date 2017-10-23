@@ -20,10 +20,25 @@ describe EveOnline::ESI::CharacterAttributes do
   # def_delegators :model, :as_json, :charisma, :intelligence, :memory,
   #                :perception, :willpower, :bonus_remaps,
   #                :last_remap_date, :accrued_remap_cooldown_date
-  #
-  # def model
-  #   @model ||= Models::Attributes.new(response)
-  # end
+
+  describe '#model' do
+    let(:response) { double }
+
+    before { expect(subject).to receive(:response).and_return(response) }
+
+    let(:model) { double }
+
+    before do
+      #
+      # EveOnline::ESI::Models::Attributes.new(response) # => model
+      #
+      expect(EveOnline::ESI::Models::Attributes).to receive(:new).with(response).and_return(model)
+    end
+
+    specify { expect { subject.model }.not_to raise_error }
+
+    specify { expect { subject.model }.to change { subject.instance_variable_defined?(:@_memoized_model) }.from(false).to(true) }
+  end
 
   describe '#scope' do
     specify { expect(subject.scope).to eq('esi-skills.read_skills.v1') }
