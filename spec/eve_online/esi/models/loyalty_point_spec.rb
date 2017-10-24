@@ -1,17 +1,17 @@
 require 'spec_helper'
 
 describe EveOnline::ESI::Models::LoyaltyPoint do
+  let(:options) { double }
+
+  subject { described_class.new(options) }
+
+  it { should be_a(EveOnline::ESI::Models::Base) }
+
   describe '#initialize' do
-    let(:options) { double }
-
-    subject { described_class.new(options) }
-
     its(:options) { should eq(options) }
   end
 
   describe '#as_json' do
-    let(:options) { double }
-
     let(:loyalty_point) { described_class.new(options) }
 
     before { expect(loyalty_point).to receive(:corporation_id).and_return(1_000_035) }
@@ -26,10 +26,6 @@ describe EveOnline::ESI::Models::LoyaltyPoint do
   end
 
   describe '#corporation_id' do
-    let(:options) { double }
-
-    subject { described_class.new(options) }
-
     before do
       #
       # subject.options['corporation_id']
@@ -45,10 +41,6 @@ describe EveOnline::ESI::Models::LoyaltyPoint do
   end
 
   describe '#loyalty_points' do
-    let(:options) { double }
-
-    subject { described_class.new(options) }
-
     before do
       #
       # subject.options['loyalty_points']

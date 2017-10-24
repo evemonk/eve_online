@@ -1,17 +1,17 @@
 require 'spec_helper'
 
 describe EveOnline::ESI::Models::SkillQueueEntry do
+  let(:options) { double }
+
+  subject { described_class.new(options) }
+
+  it { should be_a(EveOnline::ESI::Models::Base) }
+
   describe '#initialize' do
-    let(:options) { double }
-
-    subject { described_class.new(options) }
-
     its(:options) { should eq(options) }
   end
 
   describe '#as_json' do
-    let(:options) { double }
-
     let(:skill_queue_entry) { described_class.new(options) }
 
     let(:finish_date) { double }
@@ -54,10 +54,6 @@ describe EveOnline::ESI::Models::SkillQueueEntry do
   end
 
   describe '#skill_id' do
-    let(:options) { double }
-
-    subject { described_class.new(options) }
-
     before do
       #
       # subject.options.fetch('skill_id')
@@ -73,10 +69,6 @@ describe EveOnline::ESI::Models::SkillQueueEntry do
   end
 
   describe '#finished_level' do
-    let(:options) { double }
-
-    subject { described_class.new(options) }
-
     before do
       #
       # subject.options.fetch('finished_level')
@@ -92,10 +84,6 @@ describe EveOnline::ESI::Models::SkillQueueEntry do
   end
 
   describe '#queue_position' do
-    let(:options) { double }
-
-    subject { described_class.new(options) }
-
     before do
       #
       # subject.options.fetch('queue_position')
@@ -111,10 +99,6 @@ describe EveOnline::ESI::Models::SkillQueueEntry do
   end
 
   describe '#finish_date' do
-    let(:options) { double }
-
-    subject { described_class.new(options) }
-
     let(:finish_date) { double }
 
     before do
@@ -143,10 +127,6 @@ describe EveOnline::ESI::Models::SkillQueueEntry do
   end
 
   describe '#start_date' do
-    let(:options) { double }
-
-    subject { described_class.new(options) }
-
     let(:start_date) { double }
 
     before do
@@ -175,10 +155,6 @@ describe EveOnline::ESI::Models::SkillQueueEntry do
   end
 
   describe '#training_start_sp' do
-    let(:options) { double }
-
-    subject { described_class.new(options) }
-
     before do
       #
       # subject.options.fetch('training_start_sp')
@@ -194,10 +170,6 @@ describe EveOnline::ESI::Models::SkillQueueEntry do
   end
 
   describe '#level_end_sp' do
-    let(:options) { double }
-
-    subject { described_class.new(options) }
-
     before do
       #
       # subject.options.fetch('level_end_sp')
@@ -213,10 +185,6 @@ describe EveOnline::ESI::Models::SkillQueueEntry do
   end
 
   describe '#level_start_sp' do
-    let(:options) { double }
-
-    subject { described_class.new(options) }
-
     before do
       #
       # subject.options.fetch('level_start_sp')

@@ -12,8 +12,6 @@ describe EveOnline::ESI::Models::Attributes do
   end
 
   describe '#as_json' do
-    let(:options) { double }
-
     let(:attributes) { described_class.new(options) }
 
     let(:last_remap_date) { double }
@@ -56,10 +54,6 @@ describe EveOnline::ESI::Models::Attributes do
   end
 
   describe '#charisma' do
-    let(:options) { double }
-
-    subject { described_class.new(options) }
-
     before do
       #
       # subject.options['charisma']
@@ -75,10 +69,6 @@ describe EveOnline::ESI::Models::Attributes do
   end
 
   describe '#intelligence' do
-    let(:options) { double }
-
-    subject { described_class.new(options) }
-
     before do
       #
       # subject.options['intelligence']
@@ -94,10 +84,6 @@ describe EveOnline::ESI::Models::Attributes do
   end
 
   describe '#memory' do
-    let(:options) { double }
-
-    subject { described_class.new(options) }
-
     before do
       #
       # subject.options['memory']
@@ -113,10 +99,6 @@ describe EveOnline::ESI::Models::Attributes do
   end
 
   describe '#perception' do
-    let(:options) { double }
-
-    subject { described_class.new(options) }
-
     before do
       #
       # subject.options['perception']
@@ -132,10 +114,6 @@ describe EveOnline::ESI::Models::Attributes do
   end
 
   describe '#willpower' do
-    let(:options) { double }
-
-    subject { described_class.new(options) }
-
     before do
       #
       # subject.options['willpower']
@@ -151,10 +129,6 @@ describe EveOnline::ESI::Models::Attributes do
   end
 
   describe '#bonus_remaps' do
-    let(:options) { double }
-
-    subject { described_class.new(options) }
-
     before do
       #
       # subject.options['bonus_remaps']

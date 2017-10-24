@@ -3,13 +3,7 @@ require 'active_support/time'
 module EveOnline
   module ESI
     module Models
-      class SkillQueueEntry
-        attr_reader :options
-
-        def initialize(options)
-          @options = options
-        end
-
+      class SkillQueueEntry < Base
         def as_json
           {
             skill_id: skill_id,

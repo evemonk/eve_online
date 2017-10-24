@@ -1,6 +1,14 @@
 require 'spec_helper'
 
 describe EveOnline::ESI::Models::Base do
+  let(:options) { double }
+
+  subject { described_class.new(options) }
+
+  describe '#initialize' do
+    its(:options) { should eq(options) }
+  end
+
   # private methods
 
   describe '#parse_datetime_with_timezone' do

@@ -1,13 +1,7 @@
 module EveOnline
   module ESI
     module Models
-      class Asset
-        attr_reader :options
-
-        def initialize(options)
-          @options = options
-        end
-
+      class Asset < Base
         def as_json
           {
             type_id: type_id,

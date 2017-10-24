@@ -1,17 +1,17 @@
 require 'spec_helper'
 
 describe EveOnline::ESI::Models::Asset do
+  let(:options) { double }
+
+  subject { described_class.new(options) }
+
+  it { should be_a(EveOnline::ESI::Models::Base) }
+
   describe '#initialize' do
-    let(:options) { double }
-
-    subject { described_class.new(options) }
-
     its(:options) { should eq(options) }
   end
 
   describe '#as_json' do
-    let(:options) { double }
-
     let(:assets) { described_class.new(options) }
 
     before { expect(assets).to receive(:type_id).and_return(2629) }
@@ -46,10 +46,6 @@ describe EveOnline::ESI::Models::Asset do
   end
 
   describe '#type_id' do
-    let(:options) { double }
-
-    subject { described_class.new(options) }
-
     before do
       #
       # subject.options['type_id']
@@ -65,10 +61,6 @@ describe EveOnline::ESI::Models::Asset do
   end
 
   describe '#location_id' do
-    let(:options) { double }
-
-    subject { described_class.new(options) }
-
     before do
       #
       # subject.options['location_id']
@@ -84,10 +76,6 @@ describe EveOnline::ESI::Models::Asset do
   end
 
   describe '#location_type' do
-    let(:options) { double }
-
-    subject { described_class.new(options) }
-
     before do
       #
       # subject.options['location_type']
@@ -103,10 +91,6 @@ describe EveOnline::ESI::Models::Asset do
   end
 
   describe '#item_id' do
-    let(:options) { double }
-
-    subject { described_class.new(options) }
-
     before do
       #
       # subject.options['item_id']
@@ -122,10 +106,6 @@ describe EveOnline::ESI::Models::Asset do
   end
 
   describe '#location_flag' do
-    let(:options) { double }
-
-    subject { described_class.new(options) }
-
     before do
       #
       # subject.options['location_flag']
@@ -141,10 +121,6 @@ describe EveOnline::ESI::Models::Asset do
   end
 
   describe '#is_singleton' do
-    let(:options) { double }
-
-    subject { described_class.new(options) }
-
     before do
       #
       # subject.options['is_singleton']
@@ -160,10 +136,6 @@ describe EveOnline::ESI::Models::Asset do
   end
 
   describe '#quantity' do
-    let(:options) { double }
-
-    subject { described_class.new(options) }
-
     before do
       #
       # subject.options['quantity']

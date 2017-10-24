@@ -1,17 +1,17 @@
 require 'spec_helper'
 
 describe EveOnline::ESI::Models::Skill do
+  let(:options) { double }
+
+  subject { described_class.new(options) }
+
+  it { should be_a(EveOnline::ESI::Models::Base) }
+
   describe '#initialize' do
-    let(:options) { double }
-
-    subject { described_class.new(options) }
-
     its(:options) { should eq(options) }
   end
 
   describe '#as_json' do
-    let(:options) { double }
-
     let(:skill) { described_class.new(options) }
 
     before { expect(skill).to receive(:skill_id).and_return(22_536) }
@@ -30,10 +30,6 @@ describe EveOnline::ESI::Models::Skill do
   end
 
   describe '#skill_id' do
-    let(:options) { double }
-
-    subject { described_class.new(options) }
-
     before do
       #
       # subject.options['skill_id']
@@ -49,10 +45,6 @@ describe EveOnline::ESI::Models::Skill do
   end
 
   describe '#skillpoints_in_skill' do
-    let(:options) { double }
-
-    subject { described_class.new(options) }
-
     before do
       #
       # subject.options['skillpoints_in_skill']
@@ -68,10 +60,6 @@ describe EveOnline::ESI::Models::Skill do
   end
 
   describe '#current_skill_level' do
-    let(:options) { double }
-
-    subject { described_class.new(options) }
-
     before do
       #
       # subject.options['current_skill_level']
