@@ -18,35 +18,35 @@ module EveOnline
         end
 
         def skill_id
-          options.fetch('skill_id')
+          options['skill_id']
         end
 
         def finished_level
-          options.fetch('finished_level')
+          options['finished_level']
         end
 
         def queue_position
-          options.fetch('queue_position')
+          options['queue_position']
         end
 
         def finish_date
-          ActiveSupport::TimeZone['UTC'].parse(options.fetch('finish_date'))
+          ActiveSupport::TimeZone['UTC'].parse(options['finish_date'])
         end
 
         def start_date
-          ActiveSupport::TimeZone['UTC'].parse(options.fetch('start_date'))
+          ActiveSupport::TimeZone['UTC'].parse(options['start_date'])
         end
 
         def training_start_sp
-          options.fetch('training_start_sp')
+          options['training_start_sp']
         end
 
         def level_end_sp
-          options.fetch('level_end_sp')
+          options['level_end_sp']
         end
 
         def level_start_sp
-          options.fetch('level_start_sp')
+          options['level_start_sp']
         end
       end
     end

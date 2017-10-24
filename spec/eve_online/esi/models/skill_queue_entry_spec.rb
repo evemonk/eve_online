@@ -54,46 +54,19 @@ describe EveOnline::ESI::Models::SkillQueueEntry do
   end
 
   describe '#skill_id' do
-    before do
-      #
-      # subject.options.fetch('skill_id')
-      #
-      expect(subject).to receive(:options) do
-        double.tap do |a|
-          expect(a).to receive(:fetch).with('skill_id')
-        end
-      end
-    end
+    before { expect(options).to receive(:[]).with('skill_id') }
 
     specify { expect { subject.skill_id }.not_to raise_error }
   end
 
   describe '#finished_level' do
-    before do
-      #
-      # subject.options.fetch('finished_level')
-      #
-      expect(subject).to receive(:options) do
-        double.tap do |a|
-          expect(a).to receive(:fetch).with('finished_level')
-        end
-      end
-    end
+    before { expect(options).to receive(:[]).with('finished_level') }
 
     specify { expect { subject.finished_level }.not_to raise_error }
   end
 
   describe '#queue_position' do
-    before do
-      #
-      # subject.options.fetch('queue_position')
-      #
-      expect(subject).to receive(:options) do
-        double.tap do |a|
-          expect(a).to receive(:fetch).with('queue_position')
-        end
-      end
-    end
+    before { expect(options).to receive(:[]).with('queue_position') }
 
     specify { expect { subject.queue_position }.not_to raise_error }
   end
@@ -101,16 +74,7 @@ describe EveOnline::ESI::Models::SkillQueueEntry do
   describe '#finish_date' do
     let(:finish_date) { double }
 
-    before do
-      #
-      # subject.options.fetch('finish_date') => finish_date
-      #
-      expect(subject).to receive(:options) do
-        double.tap do |a|
-          expect(a).to receive(:fetch).with('finish_date').and_return(finish_date)
-        end
-      end
-    end
+    before { expect(options).to receive(:[]).with('finish_date').and_return(finish_date) }
 
     before do
       #
@@ -129,16 +93,7 @@ describe EveOnline::ESI::Models::SkillQueueEntry do
   describe '#start_date' do
     let(:start_date) { double }
 
-    before do
-      #
-      # subject.options.fetch('start_date') => start_date
-      #
-      expect(subject).to receive(:options) do
-        double.tap do |a|
-          expect(a).to receive(:fetch).with('start_date').and_return(start_date)
-        end
-      end
-    end
+    before { expect(options).to receive(:[]).with('start_date').and_return(start_date) }
 
     before do
       #
@@ -155,46 +110,19 @@ describe EveOnline::ESI::Models::SkillQueueEntry do
   end
 
   describe '#training_start_sp' do
-    before do
-      #
-      # subject.options.fetch('training_start_sp')
-      #
-      expect(subject).to receive(:options) do
-        double.tap do |a|
-          expect(a).to receive(:fetch).with('training_start_sp')
-        end
-      end
-    end
+    before { expect(options).to receive(:[]).with('training_start_sp') }
 
     specify { expect { subject.training_start_sp }.not_to raise_error }
   end
 
   describe '#level_end_sp' do
-    before do
-      #
-      # subject.options.fetch('level_end_sp')
-      #
-      expect(subject).to receive(:options) do
-        double.tap do |a|
-          expect(a).to receive(:fetch).with('level_end_sp')
-        end
-      end
-    end
+    before { expect(options).to receive(:[]).with('level_end_sp') }
 
     specify { expect { subject.level_end_sp }.not_to raise_error }
   end
 
   describe '#level_start_sp' do
-    before do
-      #
-      # subject.options.fetch('level_start_sp')
-      #
-      expect(subject).to receive(:options) do
-        double.tap do |a|
-          expect(a).to receive(:fetch).with('level_start_sp')
-        end
-      end
-    end
+    before { expect(options).to receive(:[]).with('level_start_sp') }
 
     specify { expect { subject.level_start_sp }.not_to raise_error }
   end
