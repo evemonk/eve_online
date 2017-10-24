@@ -93,6 +93,7 @@ require 'eve_online/esi/models/skill_queue_entry'
 require 'eve_online/esi/models/skill'
 require 'eve_online/esi/models/asset'
 require 'eve_online/esi/models/attributes'
+require 'eve_online/esi/models/character'
 
 # SDE
 require 'eve_online/sde/base'
