@@ -1,13 +1,7 @@
 module EveOnline
   module ESI
     module Models
-      class Skill
-        attr_reader :options
-
-        def initialize(options)
-          @options = options
-        end
-
+      class Skill < Base
         def as_json
           {
             skill_id: skill_id,

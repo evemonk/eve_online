@@ -18,10 +18,15 @@
 * Always use versioned ESI routes
 * Drop `EveOnline::XML::ServerStatus`. Use `EveOnline::ESI::ServerStatus` instead.
 * Add `EveOnline::ESI::CharacterAssets`
+* Add `EveOnline::ESI::Models::Asset`
 * Drop `EveOnline::Item`
 * Drop `EveOnline::XML::CharacterAssetList`. Use `EveOnline::ESI::CharacterAssets` instead.
 * Drop `EveOnline::XML::CharacterSkillQueue`. Use `EveOnline::ESI::CharacterSkillQueue` instead.
-* Drop `EveOnline::XML::Models::SkillQueueEntry`.
+* Drop `EveOnline::XML::Models::SkillQueueEntry`
+* Add `EveOnline::ESI::CharacterAttributes`
+* Add `EveOnline::ESI::Models::Attributes`
+* Add `EveOnline::ESI::Models::Character`
+* Add `EveOnline::ESI::Models::Base`
 
 **v0.12.0**
 

@@ -1428,6 +1428,30 @@ loyalty_point.loyalty_points # => 14163
 
 ##### Get character attributes
 
+```ruby
+options = { token: 'token123', character_id: 90729314 }
+
+character_attributes = EveOnline::ESI::CharacterAttributes.new(options)
+
+character_attributes.as_json # => {:charisma=>20,
+                             #     :intelligence=>24,
+                             #     :memory=>24,
+                             #     :perception=>23,
+                             #     :willpower=>23,
+                             #     :bonus_remaps=>2,
+                             #     :last_remap_date=>Sat, 07 May 2011 12:58:06 UTC +00:00,
+                             #     :accrued_remap_cooldown_date=>Sun, 06 May 2012 12:58:06 UTC +00:00}
+
+character_attributes.charisma # => 20
+character_attributes.intelligence # => 24
+character_attributes.memory # => 24
+character_attributes.perception # => 23
+character_attributes.willpower # => 23
+character_attributes.bonus_remaps # => 2
+character_attributes.last_remap_date # => Sat, 07 May 2011 12:58:06 UTC +00:00
+character_attributes.accrued_remap_cooldown_date # => Sun, 06 May 2012 12:58:06 UTC +00:00
+```
+
 ##### Get character's skill queue
 
 ```ruby

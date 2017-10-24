@@ -1,17 +1,17 @@
 require 'spec_helper'
 
 describe EveOnline::ESI::Models::SkillQueueEntry do
+  let(:options) { double }
+
+  subject { described_class.new(options) }
+
+  it { should be_a(EveOnline::ESI::Models::Base) }
+
   describe '#initialize' do
-    let(:options) { double }
-
-    subject { described_class.new(options) }
-
     its(:options) { should eq(options) }
   end
 
   describe '#as_json' do
-    let(:options) { double }
-
     let(:skill_queue_entry) { described_class.new(options) }
 
     let(:finish_date) { double }
@@ -54,179 +54,87 @@ describe EveOnline::ESI::Models::SkillQueueEntry do
   end
 
   describe '#skill_id' do
-    let(:options) { double }
-
-    subject { described_class.new(options) }
-
-    before do
-      #
-      # subject.options.fetch('skill_id')
-      #
-      expect(subject).to receive(:options) do
-        double.tap do |a|
-          expect(a).to receive(:fetch).with('skill_id')
-        end
-      end
-    end
+    before { expect(options).to receive(:[]).with('skill_id') }
 
     specify { expect { subject.skill_id }.not_to raise_error }
   end
 
   describe '#finished_level' do
-    let(:options) { double }
-
-    subject { described_class.new(options) }
-
-    before do
-      #
-      # subject.options.fetch('finished_level')
-      #
-      expect(subject).to receive(:options) do
-        double.tap do |a|
-          expect(a).to receive(:fetch).with('finished_level')
-        end
-      end
-    end
+    before { expect(options).to receive(:[]).with('finished_level') }
 
     specify { expect { subject.finished_level }.not_to raise_error }
   end
 
   describe '#queue_position' do
-    let(:options) { double }
-
-    subject { described_class.new(options) }
-
-    before do
-      #
-      # subject.options.fetch('queue_position')
-      #
-      expect(subject).to receive(:options) do
-        double.tap do |a|
-          expect(a).to receive(:fetch).with('queue_position')
-        end
-      end
-    end
+    before { expect(options).to receive(:[]).with('queue_position') }
 
     specify { expect { subject.queue_position }.not_to raise_error }
   end
 
   describe '#finish_date' do
-    let(:options) { double }
+    context 'finish_date is present' do
+      let(:finish_date) { double }
 
-    subject { described_class.new(options) }
+      before { expect(options).to receive(:[]).with('finish_date').and_return(finish_date) }
 
-    let(:finish_date) { double }
-
-    before do
-      #
-      # subject.options.fetch('finish_date') => finish_date
-      #
-      expect(subject).to receive(:options) do
-        double.tap do |a|
-          expect(a).to receive(:fetch).with('finish_date').and_return(finish_date)
-        end
+      before do
+        #
+        # subject.parse_datetime_with_timezone(finish_date)
+        #
+        expect(subject).to receive(:parse_datetime_with_timezone).with(finish_date)
       end
+
+      specify { expect { subject.finish_date }.not_to raise_error }
     end
 
-    before do
-      #
-      # ActiveSupport::TimeZone['UTC'].parse(finish_date)
-      #
-      expect(ActiveSupport::TimeZone).to receive(:[]).with('UTC') do
-        double.tap do |a|
-          expect(a).to receive(:parse).with(finish_date)
-        end
-      end
-    end
+    context 'finish_date not present' do
+      before { expect(options).to receive(:[]).with('finish_date').and_return(nil) }
 
-    specify { expect { subject.finish_date }.not_to raise_error }
+      before { expect(subject).not_to receive(:parse_datetime_with_timezone) }
+
+      specify { expect { subject.finish_date }.not_to raise_error }
+    end
   end
 
   describe '#start_date' do
-    let(:options) { double }
+    context 'start_date is present' do
+      let(:start_date) { double }
 
-    subject { described_class.new(options) }
+      before { expect(options).to receive(:[]).with('start_date').and_return(start_date) }
 
-    let(:start_date) { double }
-
-    before do
-      #
-      # subject.options.fetch('start_date') => start_date
-      #
-      expect(subject).to receive(:options) do
-        double.tap do |a|
-          expect(a).to receive(:fetch).with('start_date').and_return(start_date)
-        end
+      before do
+        #
+        # subject.parse_datetime_with_timezone(start_date)
+        #
+        expect(subject).to receive(:parse_datetime_with_timezone).with(start_date)
       end
+
+      specify { expect { subject.start_date }.not_to raise_error }
     end
 
-    before do
-      #
-      # ActiveSupport::TimeZone['UTC'].parse(start_date)
-      #
-      expect(ActiveSupport::TimeZone).to receive(:[]).with('UTC') do
-        double.tap do |a|
-          expect(a).to receive(:parse).with(start_date)
-        end
-      end
-    end
+    context 'start_date not present' do
+      before { expect(options).to receive(:[]).with('start_date').and_return(nil) }
 
-    specify { expect { subject.start_date }.not_to raise_error }
+      before { expect(subject).not_to receive(:parse_datetime_with_timezone) }
+
+      specify { expect { subject.start_date }.not_to raise_error }
+    end
   end
 
   describe '#training_start_sp' do
-    let(:options) { double }
-
-    subject { described_class.new(options) }
-
-    before do
-      #
-      # subject.options.fetch('training_start_sp')
-      #
-      expect(subject).to receive(:options) do
-        double.tap do |a|
-          expect(a).to receive(:fetch).with('training_start_sp')
-        end
-      end
-    end
+    before { expect(options).to receive(:[]).with('training_start_sp') }
 
     specify { expect { subject.training_start_sp }.not_to raise_error }
   end
 
   describe '#level_end_sp' do
-    let(:options) { double }
-
-    subject { described_class.new(options) }
-
-    before do
-      #
-      # subject.options.fetch('level_end_sp')
-      #
-      expect(subject).to receive(:options) do
-        double.tap do |a|
-          expect(a).to receive(:fetch).with('level_end_sp')
-        end
-      end
-    end
+    before { expect(options).to receive(:[]).with('level_end_sp') }
 
     specify { expect { subject.level_end_sp }.not_to raise_error }
   end
 
   describe '#level_start_sp' do
-    let(:options) { double }
-
-    subject { described_class.new(options) }
-
-    before do
-      #
-      # subject.options.fetch('level_start_sp')
-      #
-      expect(subject).to receive(:options) do
-        double.tap do |a|
-          expect(a).to receive(:fetch).with('level_start_sp')
-        end
-      end
-    end
+    before { expect(options).to receive(:[]).with('level_start_sp') }
 
     specify { expect { subject.level_start_sp }.not_to raise_error }
   end
