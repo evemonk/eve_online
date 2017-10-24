@@ -26,31 +26,13 @@ describe EveOnline::ESI::Models::LoyaltyPoint do
   end
 
   describe '#corporation_id' do
-    before do
-      #
-      # subject.options['corporation_id']
-      #
-      expect(subject).to receive(:options) do
-        double.tap do |a|
-          expect(a).to receive(:[]).with('corporation_id')
-        end
-      end
-    end
+    before { expect(options).to receive(:[]).with('corporation_id') }
 
     specify { expect { subject.corporation_id }.not_to raise_error }
   end
 
   describe '#loyalty_points' do
-    before do
-      #
-      # subject.options['loyalty_points']
-      #
-      expect(subject).to receive(:options) do
-        double.tap do |a|
-          expect(a).to receive(:[]).with('loyalty_points')
-        end
-      end
-    end
+    before { expect(options).to receive(:[]).with('loyalty_points') }
 
     specify { expect { subject.loyalty_points }.not_to raise_error }
   end
