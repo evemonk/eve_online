@@ -30,46 +30,19 @@ describe EveOnline::ESI::Models::Skill do
   end
 
   describe '#skill_id' do
-    before do
-      #
-      # subject.options['skill_id']
-      #
-      expect(subject).to receive(:options) do
-        double.tap do |a|
-          expect(a).to receive(:[]).with('skill_id')
-        end
-      end
-    end
+    before { expect(options).to receive(:[]).with('skill_id') }
 
     specify { expect { subject.skill_id }.not_to raise_error }
   end
 
   describe '#skillpoints_in_skill' do
-    before do
-      #
-      # subject.options['skillpoints_in_skill']
-      #
-      expect(subject).to receive(:options) do
-        double.tap do |a|
-          expect(a).to receive(:[]).with('skillpoints_in_skill')
-        end
-      end
-    end
+    before { expect(options).to receive(:[]).with('skillpoints_in_skill') }
 
     specify { expect { subject.skillpoints_in_skill }.not_to raise_error }
   end
 
   describe '#current_skill_level' do
-    before do
-      #
-      # subject.options['current_skill_level']
-      #
-      expect(subject).to receive(:options) do
-        double.tap do |a|
-          expect(a).to receive(:[]).with('current_skill_level')
-        end
-      end
-    end
+    before { expect(options).to receive(:[]).with('current_skill_level') }
 
     specify { expect { subject.current_skill_level }.not_to raise_error }
   end
