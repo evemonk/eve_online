@@ -1,5 +1,3 @@
-require 'active_support/time'
-
 module EveOnline
   module ESI
     module Models
@@ -30,11 +28,15 @@ module EveOnline
         end
 
         def finish_date
-          ActiveSupport::TimeZone['UTC'].parse(options['finish_date'])
+          finish_date = options['finish_date']
+
+          parse_datetime_with_timezone(finish_date) if finish_date
         end
 
         def start_date
-          ActiveSupport::TimeZone['UTC'].parse(options['start_date'])
+          start_date = options['start_date']
+
+          parse_datetime_with_timezone(start_date) if start_date
         end
 
         def training_start_sp

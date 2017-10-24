@@ -72,41 +72,53 @@ describe EveOnline::ESI::Models::SkillQueueEntry do
   end
 
   describe '#finish_date' do
-    let(:finish_date) { double }
+    context 'finish_date is present' do
+      let(:finish_date) { double }
 
-    before { expect(options).to receive(:[]).with('finish_date').and_return(finish_date) }
+      before { expect(options).to receive(:[]).with('finish_date').and_return(finish_date) }
 
-    before do
-      #
-      # ActiveSupport::TimeZone['UTC'].parse(finish_date)
-      #
-      expect(ActiveSupport::TimeZone).to receive(:[]).with('UTC') do
-        double.tap do |a|
-          expect(a).to receive(:parse).with(finish_date)
-        end
+      before do
+        #
+        # subject.parse_datetime_with_timezone(finish_date)
+        #
+        expect(subject).to receive(:parse_datetime_with_timezone).with(finish_date)
       end
+
+      specify { expect { subject.finish_date }.not_to raise_error }
     end
 
-    specify { expect { subject.finish_date }.not_to raise_error }
+    context 'finish_date not present' do
+      before { expect(options).to receive(:[]).with('finish_date').and_return(nil) }
+
+      before { expect(subject).not_to receive(:parse_datetime_with_timezone) }
+
+      specify { expect { subject.finish_date }.not_to raise_error }
+    end
   end
 
   describe '#start_date' do
-    let(:start_date) { double }
+    context 'start_date is present' do
+      let(:start_date) { double }
 
-    before { expect(options).to receive(:[]).with('start_date').and_return(start_date) }
+      before { expect(options).to receive(:[]).with('start_date').and_return(start_date) }
 
-    before do
-      #
-      # ActiveSupport::TimeZone['UTC'].parse(start_date)
-      #
-      expect(ActiveSupport::TimeZone).to receive(:[]).with('UTC') do
-        double.tap do |a|
-          expect(a).to receive(:parse).with(start_date)
-        end
+      before do
+        #
+        # subject.parse_datetime_with_timezone(start_date)
+        #
+        expect(subject).to receive(:parse_datetime_with_timezone).with(start_date)
       end
+
+      specify { expect { subject.start_date }.not_to raise_error }
     end
 
-    specify { expect { subject.start_date }.not_to raise_error }
+    context 'start_date not present' do
+      before { expect(options).to receive(:[]).with('start_date').and_return(nil) }
+
+      before { expect(subject).not_to receive(:parse_datetime_with_timezone) }
+
+      specify { expect { subject.start_date }.not_to raise_error }
+    end
   end
 
   describe '#training_start_sp' do

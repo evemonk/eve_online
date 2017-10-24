@@ -114,7 +114,6 @@ describe EveOnline::ESI::Models::Attributes do
     end
   end
 
-
   describe '#accrued_remap_cooldown_date' do
     context 'accrued_remap_cooldown_date is present' do
       let(:accrued_remap_cooldown_date) { double }
