@@ -1601,7 +1601,7 @@ server_status.vip # => nil
 
 ##### Get character wallet journal
 
-```
+```ruby
 options = { token: 'token123', character_id: 90729314 }
 
 character_wallet = EveOnline::ESI::CharacterWallet.new(options)
