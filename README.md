@@ -1557,6 +1557,24 @@ server_status.vip # => nil
 
 ##### Get character races
 
+```ruby
+races = EveOnline::ESI::Races.new
+
+races.races.size # => 4
+
+race = races.races.first
+
+race.as_json # => {:race_id=>2,
+             #     :name=>"Minmatar",
+             #     :description=> "Once a thriving tribal civilization, the Minmatar...",
+             #     :alliance_id=>500002}
+
+race.race_id # => 2
+race.name # => "Minmatar"
+race.description # => "Once a thriving tribal civilization, the Minmatar..."
+race.alliance_id # => 500002
+```
+
 ##### Get regions
 
 ##### Get region information
