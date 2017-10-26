@@ -1307,6 +1307,13 @@ character_portrait.huge # => "http://image.eveonline.com/Character/90729314_512.
 ```ruby
 options = { token: 'token123', character_id: 90729314 }
 
+character_jobs = EveOnline::ESI::CharacterIndustryJob.new(options)
+
+ap character_jobs.jobs.index_by(&:job_id)
+{
+    342652397 => #<EveOnline::ESI::Models::IndustryJob:0x007fffe67dae18 @options={"job_id"=>342652397, "installer_id"=>93997721, "facility_id"=>1023579231924, "station_id"=>1023579231924, "activity_id"=>5, "blueprint_id"=>1024839597103, "blueprint_type_id"=>28607, "blueprint_location_id"=>1023579231924, "output_location_id"=>1023579231924, "runs"=>2, "status"=>"active", "duration"=>625697, "start_date"=>"2017-10-26T18:42:25Z", "end_date"=>"2017-11-03T00:30:42Z", "cost"=>868086.0, "licensed_runs"=>1, "probability"=>1.0, "product_type_id"=>28607}>
+}
+
 ```
 
 
@@ -1314,9 +1321,9 @@ options = { token: 'token123', character_id: 90729314 }
 ```ruby
 options = { token: 'token123', corporation_id: 90729314 }
 
-corporation_jobs = EveOnline::ESI::IndustryCorporationJobs.new(options)
+corporation_jobs = EveOnline::ESI::CorporationIndustryJob.new(options)
 
-ap corporation_jobs.get_industry_jobs.index_by(&:job_id)
+ap corporation_jobs.jobs.index_by(&:job_id)
 {
     341634236 => #<EveOnline::ESI::Models::IndustryJobs:0x007fffbf090418 @options={"job_id"=>341634236, "installer_id"=>93997721, "facility_id"=>1022632720781, "location_id"=>1022632720781, "activity_id"=>3, "blueprint_id"=>1024609618242, "blueprint_type_id"=>990, "blueprint_location_id"=>1024635511866, "output_location_id"=>1024635511866, "runs"=>9, "status"=>"active", "duration"=>2264366, "start_date"=>"2017-10-14T12:10:39Z", "end_date"=>"2017-11-09T17:10:05Z", "cost"=>251788.0, "licensed_runs"=>10, "probability"=>1.0, "product_type_id"=>990}>,
     341634210 => #<EveOnline::ESI::Models::IndustryJobs:0x007fffbf0903f0 @options={"job_id"=>341634210, "installer_id"=>93997721, "facility_id"=>1022632720781, "location_id"=>1022632720781, "activity_id"=>3, "blueprint_id"=>1024595195634, "blueprint_type_id"=>940, "blueprint_location_id"=>1024635511866, "output_location_id"=>1024635511866, "runs"=>9, "status"=>"active", "duration"=>1132183, "start_date"=>"2017-10-14T12:10:22Z", "end_date"=>"2017-10-27T14:40:05Z", "cost"=>111720.0, "licensed_runs"=>30, "probability"=>1.0, "product_type_id"=>940}>,

@@ -1,6 +1,6 @@
 module EveOnline
   module ESI
-    class IndustryCorporationJobs < Base
+    class CorporationIndustryJob < Base
       API_ENDPOINT = 'https://esi.tech.ccp.is/v1/corporations/%s/industry/jobs/?datasource=tranquility'.freeze
 
       attr_reader :corporation_id
@@ -11,14 +11,14 @@ module EveOnline
         @corporation_id = options[:corporation_id]
       end
 
-      def get_industry_jobs
+      def jobs
         output = []
-        response.each do |asset|
-          output << Models::IndustryJobs.new(asset)
+        response.each do |job|
+          output << Models::IndustryJob.new(job)
         end
         output
       end
-      memoize :get_industry_jobs
+      memoize :jobs
 
       def scope
         'esi-industry.read_corporation_jobs.v1'
