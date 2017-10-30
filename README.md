@@ -1561,6 +1561,8 @@ bloodline.willpower # => 7
 bloodline.charisma # => 6
 bloodline.memory # => 4
 bloodline.intelligence # => 4
+
+# TODO: add languages
 ```
 
 ##### Get item categories
