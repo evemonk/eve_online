@@ -1798,30 +1798,6 @@ inv_position.yaw # => 0.0
 inv_position.z # => 0.0
 ```
 
-Character Races:
-```ruby
-file = 'chrRaces.yaml'
-
-chr_races = EveOnline::SDE::ChrRaces.new(file)
-
-chr_races.chr_races.size # => 8
-
-chr_race = chr_races.chr_races[3]
-
-chr_race.as_json # => {:race_id=>2,
-                 #     :race_name=>"Minmatar",
-                 #     :short_description=>"Breaking free of Amarrian subjugation, ...",
-                 #     :description=>"Once a thriving tribal civilization, the Minmatar...",
-                 #     :icon_id=>1440}
-
-
-chr_race.race_id # => 2
-chr_race.race_name # => "Minmatar"
-chr_race.short_description # => "Breaking free of Amarrian subjugation, ..."
-chr_race.description # => "Once a thriving tribal civilization, the Minmatar..."
-chr_race.icon_id # => 1440
-```
-
 ## Exceptions
 
 If you want to catch all exceptions `rescue` `EveOnline::Exceptions::Base`. E.g.:
