@@ -1531,6 +1531,38 @@ server_status.vip # => nil
 
 ##### Get bloodlines
 
+```ruby
+bloodlines = EveOnline::ESI::Bloodlines.new
+
+bloodlines.bloodlines.size # => 15
+
+bloodline = bloodlines.bloodlines.first
+
+bloodline.as_json # => {:bloodline_id=>4,
+                  #     :name=>"Brutor",
+                  #     :description=>"A martial, strong-willed people, the Brutor...",
+                  #     :race_id=>2,
+                  #     :ship_type_id=>588,
+                  #     :corporation_id=>1000049,
+                  #     :perception=>9,
+                  #     :willpower=>7,
+                  #     :charisma=>6,
+                  #     :memory=>4,
+                  #     :intelligence=>4}
+
+bloodline.bloodline_id # => 4
+bloodline.name # => "Brutor"
+bloodline.description # => "A martial, strong-willed people, the Brutor..."
+bloodline.race_id # => 2
+bloodline.ship_type_id # => 588
+bloodline.corporation_id # => 1000049
+bloodline.perception # => 9
+bloodline.willpower # => 7
+bloodline.charisma # => 6
+bloodline.memory # => 4
+bloodline.intelligence # => 4
+```
+
 ##### Get item categories
 
 ##### Get item category information
@@ -1566,7 +1598,7 @@ race = races.races.first
 
 race.as_json # => {:race_id=>2,
              #     :name=>"Minmatar",
-             #     :description=> "Once a thriving tribal civilization, the Minmatar...",
+             #     :description=>"Once a thriving tribal civilization, the Minmatar...",
              #     :alliance_id=>500002}
 
 race.race_id # => 2
