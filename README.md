@@ -1573,6 +1573,9 @@ race.race_id # => 2
 race.name # => "Minmatar"
 race.description # => "Once a thriving tribal civilization, the Minmatar..."
 race.alliance_id # => 500002
+
+# TODO: add languages
+
 ```
 
 ##### Get regions

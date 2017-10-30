@@ -27,6 +27,10 @@
 * Add `EveOnline::ESI::Models::Attributes`
 * Add `EveOnline::ESI::Models::Character`
 * Add `EveOnline::ESI::Models::Base`
+* Add `EveOnline::ESI::Races`
+* Add `EveOnline::ESI::Models::Race`
+* Add `EveOnline::ESI::Bloodlines`
+* Add `EveOnline::ESI::Models::Bloodline`
 
 **v0.12.0**
 
