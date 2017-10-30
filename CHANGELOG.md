@@ -31,6 +31,8 @@
 * Add `EveOnline::ESI::Models::Race`
 * Add `EveOnline::ESI::Bloodlines`
 * Add `EveOnline::ESI::Models::Bloodline`
+* Drop `EveOnline::SDE::Races`. Use `EveOnline::ESI::Races` instead.
+* Drop `EveOnline::SDE::Models::Race`
 
 **v0.12.0**
 
