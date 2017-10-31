@@ -278,7 +278,7 @@ character_sheet.willpower # => 20
 
 character_sheet.jump_clones.size # => 2
 
-jump_clone = character_sheet.jump_clones.first # => #<EveOnline::JumpClone:0x007fa2341cdb48 @options={"@jumpCloneID"=>"22357400", "@typeID"=>"164", "@locationID"=>"61000032", "@cloneName"=>""}, @jump_clone_id=22357400, @type_id=164, @location_id=61000032, @clone_name="">
+jump_clone = character_sheet.jump_clones.first
 
 jump_clone.as_json # => {:jump_clone_id=>22357400, :type_id=>164, :location_id=>61000032, :clone_name=>""}
 
@@ -289,7 +289,7 @@ jump_clone.clone_name # => ""
 
 character_sheet.jump_clone_implants.size # => 15
 
-jump_clone_implant = character_sheet.jump_clone_implants.first # => #<EveOnline::JumpCloneImplant:0x007fae9a929b40 @options={"@jumpCloneID"=>"22703029", "@typeID"=>"10209", "@typeName"=>"Memory Augmentation - Improved"}>
+jump_clone_implant = character_sheet.jump_clone_implants.first
 
 jump_clone_implant.as_json # => {:jump_clone_id=>22703029, :type_id=>10209, :type_name=>"Memory Augmentation - Improved"}
 
