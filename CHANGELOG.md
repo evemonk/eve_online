@@ -61,6 +61,7 @@
 * Drop `EveOnline::XML::CharacterMedals`
 * Drop `EveOnline::XML::CharacterNotifications`
 * Drop `EveOnline::XML::CharacterNotificationTexts`
+* Drop `EveOnline::XML::CharacterPlanetaryColonies`
 
 **v0.12.0**
 
