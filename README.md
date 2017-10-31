@@ -327,23 +327,6 @@ contact_notification.sent_date # => Sat, 19 Mar 2016 12:13:00 UTC +00:00
 contact_notification.message_data # => "level: 5\nmessage: ''\n"
 ```
 
-#### Character contract bids
-
-```ruby
-key_id = 1234567
-v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-character_id = 90729314
-
-contract_bids = EveOnline::XML::CharacterContractBids.new(key_id, v_code, character_id)
-
-contract_bids.current_time # => Fri, 19 Aug 2016 12:11:52 UTC +00:00
-contract_bids.cached_until # => Fri, 19 Aug 2016 12:25:52 UTC +00:00
-contract_bids.version # => 2
-
-# TODO: finish this
-
-```
-
 #### Character contract items
 
 ```ruby
