@@ -57,6 +57,7 @@
 * Drop `EveOnline::XML::CharacterLocations`
 * Drop `EveOnline::XML::CharacterMailBodies`
 * Drop `EveOnline::XML::CharacterMailingLists`
+* Drop `EveOnline::XML::CharacterMailMessages`
 
 **v0.12.0**
 

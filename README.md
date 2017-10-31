@@ -327,23 +327,6 @@ contact_notification.sent_date # => Sat, 19 Mar 2016 12:13:00 UTC +00:00
 contact_notification.message_data # => "level: 5\nmessage: ''\n"
 ```
 
-#### Character mail messages headers
-
-```ruby
-key_id = 1234567
-v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-character_id = 90729314
-
-mail_messages = EveOnline::XML::CharacterMailMessages.new(key_id, v_code, character_id)
-
-mail_messages.current_time # => Fri, 26 Aug 2016 12:49:38 UTC +00:00
-mail_messages.cached_until # => Fri, 26 Aug 2016 13:03:38 UTC +00:00
-mail_messages.version # => 2
-
-# TODO: finish this
-
-```
-
 #### Character market orders
 
 ```ruby
