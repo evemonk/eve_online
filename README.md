@@ -316,7 +316,7 @@ contact_notifications.version # => 2
 
 contact_notifications.contact_notifications.size # => 3
 
-contact_notification = contact_notifications.contact_notifications.first # => #<EveOnline::ContactNotification:0x007fe00413d4e0 @options={"@notificationID"=>"308734131", "@senderID"=>"797400947", "@senderName"=>"CCP Garthagk", "@sentDate"=>"2016-03-19 12:13:00", "@messageData"=>"level: 5\nmessage: ''\n"}>
+contact_notification = contact_notifications.contact_notifications.first
 
 contact_notification.as_json # => {:notification_id=>308734131, :sender_id=>797400947, :sender_name=>"CCP Garthagk", :sent_date=>Sat, 19 Mar 2016 12:13:00 UTC +00:00, :message_data=>"level: 5\nmessage: ''\n"}
 
