@@ -301,23 +301,6 @@ jump_clone_implant.type_name # => "Memory Augmentation - Improved"
 
 ```
 
-#### Character contact list
-
-```ruby
-key_id = 1234567
-v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-options = { character_id: 90729314 }
-
-contact_list = EveOnline::XML::CharacterContactList.new(key_id, v_code, options)
-
-contact_list.current_time # => Fri, 19 Aug 2016 11:08:06 UTC +00:00
-contact_list.cached_until # => Fri, 19 Aug 2016 11:22:07 UTC +00:00
-contact_list.version # => 2
-
-# TODO: finish this
-
-```
-
 #### Character contact notifications
 
 ```ruby

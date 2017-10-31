@@ -45,6 +45,7 @@
 * Drop `EveOnline::XML::CharacterSkillInTraining`. Use `EveOnline::ESI::CharacterSkillQueue` instead.
 * Drop `EveOnline::XML::CharacterCalendarEventAttendees`
 * Drop `EveOnline::XML::CharacterChatChannels`
+* Drop `EveOnline::XML::CharacterContactList`
 
 **v0.12.0**
 
