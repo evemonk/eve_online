@@ -60,6 +60,7 @@
 * Drop `EveOnline::XML::CharacterMailMessages`
 * Drop `EveOnline::XML::CharacterMedals`
 * Drop `EveOnline::XML::CharacterNotifications`
+* Drop `EveOnline::XML::CharacterNotificationTexts`
 
 **v0.12.0**
 

@@ -363,24 +363,6 @@ marker_order.bid # => false
 marker_order.issued # => Thu, 01 Sep 2016 20:01:57 UTC +00:00
 ```
 
-#### Character notification texts
-
-```ruby
-key_id = 1234567
-v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-character_id = 90729314
-ids = [123_456]
-
-notification_texts = EveOnline::XML::CharacterNotificationTexts.new(key_id, v_code, character_id, ids)
-
-notification_texts.current_time # => Sat, 27 Aug 2016 18:12:52 UTC +00:00
-notification_texts.cached_until # => Tue, 25 Aug 2026 18:12:52 UTC +00:00
-notification_texts.version # => 2
-
-# TODO: finish this
-
-```
-
 #### Retrieve planetary colonies owned by character
 
 ```ruby
