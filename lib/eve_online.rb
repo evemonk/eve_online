@@ -54,7 +54,6 @@ require 'eve_online/xml/character_planetary_pins'
 require 'eve_online/xml/character_planetary_routes'
 require 'eve_online/xml/character_research'
 require 'eve_online/xml/character_wallet_journal'
-require 'eve_online/xml/character_wallet_transactions'
 
 require 'eve_online/xml/corporation_market_orders'
 

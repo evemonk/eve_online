@@ -49,6 +49,7 @@
 * Drop `EveOnline::XML::CharacterContractBids`
 * Drop `EveOnline::XML::CharacterContractItems`
 * Drop `EveOnline::XML::CharacterContracts`
+* Drop `EveOnline::XML::CharacterWalletTransactions`
 
 **v0.12.0**
 
