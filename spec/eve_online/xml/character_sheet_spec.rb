@@ -703,25 +703,6 @@ describe EveOnline::XML::CharacterSheet do
     specify { expect { subject.jump_last_update }.not_to raise_error }
   end
 
-  describe '#balance' do
-    before do
-      #
-      # subject.result.fetch('balance').to_f
-      #
-      expect(subject).to receive(:result) do
-        double.tap do |a|
-          expect(a).to receive(:fetch).with('balance') do
-            double.tap do |b|
-              expect(b).to receive(:to_f)
-            end
-          end
-        end
-      end
-    end
-
-    specify { expect { subject.balance }.not_to raise_error }
-  end
-
   describe '#intelligence' do
     before do
       #

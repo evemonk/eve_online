@@ -165,11 +165,6 @@ module EveOnline
       end
 
       # TODO: add to as_json output
-      def balance
-        result.fetch('balance').to_f
-      end
-
-      # TODO: add to as_json output
       def intelligence
         attributes.fetch('intelligence').to_i
       end

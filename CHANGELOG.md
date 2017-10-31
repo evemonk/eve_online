@@ -35,6 +35,7 @@
 * Drop `EveOnline::SDE::Models::Race`
 * Add `EveOnline::ESI::CharacterImplants`
 * Drop `EveOnline::XML::CharacterAccountBalance`. Use `EveOnline::ESI::CharacterWallet` instead.
+* Drop `EveOnline::XML::CharacterSheet#balance`. Use `EveOnline::ESI::CharacterWallet` instead.
 
 **v0.12.0**
 
