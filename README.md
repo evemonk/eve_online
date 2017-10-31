@@ -363,23 +363,6 @@ marker_order.bid # => false
 marker_order.issued # => Thu, 01 Sep 2016 20:01:57 UTC +00:00
 ```
 
-#### Character medals
-
-```ruby
-key_id = 1234567
-v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-character_id = 90729314
-
-character_medals = EveOnline::XML::CharacterMedals.new(key_id, v_code, character_id)
-
-character_medals.current_time # => Fri, 01 Jul 2016 14:22:43 UTC +00:00
-character_medals.cached_until # => Fri, 01 Jul 2016 20:13:49 UTC +00:00
-character_medals.version # => 2
-
-# TODO: finish this
-
-```
-
 #### Character notification headers
 
 ```ruby

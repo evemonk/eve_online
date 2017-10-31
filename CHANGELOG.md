@@ -58,6 +58,7 @@
 * Drop `EveOnline::XML::CharacterMailBodies`
 * Drop `EveOnline::XML::CharacterMailingLists`
 * Drop `EveOnline::XML::CharacterMailMessages`
+* Drop `EveOnline::XML::CharacterMedals`
 
 **v0.12.0**
 
