@@ -327,41 +327,6 @@ contact_notification.sent_date # => Sat, 19 Mar 2016 12:13:00 UTC +00:00
 contact_notification.message_data # => "level: 5\nmessage: ''\n"
 ```
 
-#### Character kill mails
-
-```ruby
-key_id = 1234567
-v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-character_id = 90729314
-
-kill_mails = EveOnline::XML::CharacterKillMails.new(key_id, v_code, character_id)
-
-kill_mails.current_time # => Fri, 26 Aug 2016 10:27:38 UTC +00:00
-kill_mails.cached_until # => Fri, 26 Aug 2016 10:54:38 UTC +00:00
-kill_mails.version # => 2
-
-# TODO: finish this
-
-```
-
-#### Character locations
-
-```ruby
-key_id = 1234567
-v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-character_id = 90729314
-ids = [123456]
-
-locations = EveOnline::XML::CharacterLocations.new(key_id, v_code, character_id, ids)
-
-locations.current_time # => Fri, 26 Aug 2016 11:01:53 UTC +00:00
-locations.cached_until # => Fri, 26 Aug 2016 12:01:53 UTC +00:00
-locations.version # => 2
-
-# TODO: finish this
-
-```
-
 #### Character mail bodies
 
 ```ruby
