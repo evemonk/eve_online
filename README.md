@@ -363,23 +363,6 @@ marker_order.bid # => false
 marker_order.issued # => Thu, 01 Sep 2016 20:01:57 UTC +00:00
 ```
 
-#### Character notification headers
-
-```ruby
-key_id = 1234567
-v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-character_id = 90729314
-
-notifications = EveOnline::XML::CharacterNotifications.new(key_id, v_code, character_id)
-
-notifications.current_time # => Fri, 26 Aug 2016 14:02:06 UTC +00:00
-notifications.cached_until # => Fri, 26 Aug 2016 14:29:06 UTC +00:00
-notifications.version # => 2
-
-# TODO: finish this
-
-```
-
 #### Character notification texts
 
 ```ruby
