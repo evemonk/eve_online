@@ -327,40 +327,6 @@ contact_notification.sent_date # => Sat, 19 Mar 2016 12:13:00 UTC +00:00
 contact_notification.message_data # => "level: 5\nmessage: ''\n"
 ```
 
-#### Character industry jobs
-
-```ruby
-key_id = 1234567
-v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-character_id = 90729314
-
-industry_jobs = EveOnline::XML::CharacterIndustryJobs.new(key_id, v_code, character_id)
-
-industry_jobs.current_time # => Mon, 22 Aug 2016 14:10:13 UTC +00:00
-industry_jobs.cached_until # => Mon, 22 Aug 2016 14:24:13 UTC +00:00
-industry_jobs.version # => 2
-
-# TODO: finish this
-
-```
-
-#### Character industry jobs history
-
-```ruby
-key_id = 1234567
-v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-character_id = 90729314
-
-industry_jobs_history = EveOnline::XML::CharacterIndustryJobsHistory.new(key_id, v_code, character_id)
-
-industry_jobs_history.current_time # => Mon, 22 Aug 2016 14:53:37 UTC +00:00
-industry_jobs_history.cached_until # => Mon, 22 Aug 2016 20:29:37 UTC +00:00
-industry_jobs_history.version # => 2
-
-# TODO: finish this
-
-```
-
 #### Character kill mails
 
 ```ruby

@@ -51,6 +51,8 @@
 * Drop `EveOnline::XML::CharacterContracts`
 * Drop `EveOnline::XML::CharacterWalletTransactions`
 * Drop `EveOnline::XML::CharacterFacWarStats`
+* Drop `EveOnline::XML::CharacterIndustryJobs`
+* Drop `EveOnline::XML::CharacterIndustryJobsHistory`
 
 **v0.12.0**
 
