@@ -1018,20 +1018,6 @@ characters_ids.version # => 2
 characters_ids.response # => {"eveapi"=>{"currentTime"=>"2016-04-11 18:51:01", "result"=>{"rowset"=>{"row"=>{"@name"=>"Johnn Dillinger", "@characterID"=>"1337512245"}, "@name"=>"characters", "@key"=>"characterID", "@columns"=>"name,characterID"}}, "cachedUntil"=>"2016-05-11 18:51:01", "@version"=>"2"}}
 ```
 
-#### Server status
-
-```ruby
-status = EveOnline::XML::ServerStatus.new
-
-status.as_json
-# => {:current_time=>Mon, 23 Nov 2015 18:18:29 UTC +00:00, :cached_until=>Mon, 23 Nov 2015 18:19:44 UTC +00:00, :server_open=>true, :online_players=>25611}
-
-status.current_time # => Mon, 23 Nov 2015 18:18:29 UTC +00:00
-status.cached_until # => Mon, 23 Nov 2015 18:19:44 UTC +00:00
-status.server_open? # => true
-status.online_players # => 25611
-status.version # => 2
-```
 
 ### ESI Examples
 
@@ -1176,6 +1162,16 @@ character_portrait.huge # => "http://image.eveonline.com/Character/90729314_512.
 ##### Get clones
 
 ##### Get active implants
+
+```ruby
+options = { token: 'token123', character_id: 90729314 }
+
+character_implants = EveOnline::ESI::CharacterImplants.new(options)
+
+character_implants.implants.size # => 5
+
+character_implants.implants # => [9899, 9941, 9942, 9943, 9956]
+```
 
 #### Contacts
 
