@@ -154,35 +154,6 @@ character.faction_id # => 0
 character.faction_name # => ""
 ```
 
-#### Character Asset List
-
-```ruby
-key_id = 1234567
-v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-options = { character_id: 90729314 }
-
-asset_list = EveOnline::XML::CharacterAssetList.new(key_id, v_code, options)
-
-asset_list.current_time # => Mon, 29 Feb 2016 21:51:38 UTC +00:00
-asset_list.cached_until # => Tue, 01 Mar 2016 03:48:38 UTC +00:00
-asset_list.version # => 2
-
-asset_list.assets.size # => 642
-
-asset = asset_list.assets.first
-
-asset.as_json
-# => {:item_id=>408887580, :location_id=>60000634, :type_id=>588, :quantity=>1, :flag=>4, :singleton=>1, :raw_quantity=>-1}
-
-asset.item_id # => 408887580
-asset.location_id # => 60000634
-asset.type_id # => 588
-asset.quantity # => 1
-asset.flag # => 4
-asset.singleton # => 1
-asset.raw_quantity # => -1
-```
-
 #### Character Blueprints
 
 ```ruby
