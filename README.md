@@ -226,24 +226,6 @@ bookmark.memo # => "1"
 bookmark.note # => ""
 ```
 
-#### Character Calendar Event Attendees
-
-```ruby
-key_id = 1234567
-v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-character_id = 90729314
-event_id = 1234567
-
-cea = EveOnline::XML::CharacterCalendarEventAttendees.new(key_id, v_code, character_id, event_id)
-
-cea.current_time # => Mon, 21 Dec 2015 18:36:33 UTC +00:00
-cea.cached_until # => Mon, 21 Dec 2015 18:36:33 UTC +00:00
-cea.version # => 2
-
-# TODO: finish this
-
-````
-
 #### Character Sheet
 
 ```ruby
