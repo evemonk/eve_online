@@ -53,6 +53,8 @@
 * Drop `EveOnline::XML::CharacterFacWarStats`
 * Drop `EveOnline::XML::CharacterIndustryJobs`
 * Drop `EveOnline::XML::CharacterIndustryJobsHistory`
+* Drop `EveOnline::XML::CharacterKillMails`
+* Drop `EveOnline::XML::CharacterLocations`
 
 **v0.12.0**
 
