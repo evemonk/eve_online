@@ -200,7 +200,7 @@ bookmarks.version # => 2
 
 bookmarks.bookmark_folders.size # => 4
 
-bookmark_folder = bookmarks.bookmark_folders.first # => #<EveOnline::BookmarkFolder:0x007fda7521a4b0 ....
+bookmark_folder = bookmarks.bookmark_folders.first
 
 bookmark_folder.as_json # => {:folder_id=>0, :folder_name=>""}
 
@@ -209,7 +209,7 @@ bookmark_folder.folder_name # => ""
 
 bookmark_folder.bookmarks.size # => 87
 
-bookmark = bookmark_folder.bookmarks.first # => #<EveOnline::Bookmark:0x007fc8b49f3880 @options={"@bookmarkID"=>"459411933", "@creatorID"=>"0", "@created"=>"2009-03-28 07:51:00", "@itemID"=>"0", "@typeID"=>"5", "@locationID"=>"30002656", "@x"=>"-267396330161", "@y"=>"-376627274", "@z"=>"-556366331388", "@memo"=>"1", "@note"=>""}>
+bookmark = bookmark_folder.bookmarks.first
 
 bookmark.as_json # => {:bookmark_id=>459411933, :creator_id=>0, :created=>Sat, 28 Mar 2009 07:51:00 UTC +00:00, :item_id=>0, :type_id=>5, :location_id=>30002656, :x=>-267396330161.0, :y=>-376627274.0, :z=>-556366331388.0, :memo=>"1", :note=>""}
 
