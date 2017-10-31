@@ -798,27 +798,6 @@ describe EveOnline::XML::CharacterSheet do
     specify { expect { subject.willpower }.not_to raise_error }
   end
 
-  describe '#skills' do
-    let(:result) { double }
-
-    before { expect(subject).to receive(:result).and_return(result) }
-
-    before do
-      #
-      # EveOnline::CharacterSkills.new(result).skills
-      #
-      expect(EveOnline::CharacterSkills).to receive(:new).with(result) do
-        double.tap do |a|
-          expect(a).to receive(:skills)
-        end
-      end
-    end
-
-    specify { expect { subject.skills }.not_to raise_error }
-
-    specify { expect { subject.skills }.to change { subject.instance_variable_defined?(:@_memoized_skills) }.from(false).to(true) }
-  end
-
   describe '#jump_clones' do
     let(:result) { double }
 

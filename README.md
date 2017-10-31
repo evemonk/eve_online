@@ -323,17 +323,6 @@ character_sheet.charisma # => 17
 character_sheet.perception # => 20
 character_sheet.willpower # => 20
 
-character_sheet.skills.size # => 180
-
-skill = character_sheet.skills.first # => #<EveOnline::Skill:0x007fc1951e1b18 @options={"@typeID"=>"2495", "@skillpoints"=>"1000", "@level"=>"1", "@published"=>"1"}>
-
-skill.as_json # => {:type_id=>2495, :skillpoints=>1000, :level=>1, :published=>true}
-
-skill.type_id # => 2495
-skill.skillpoints # => 1000
-skill.level # => 1
-skill.published # => true
-
 character_sheet.jump_clones.size # => 2
 
 jump_clone = character_sheet.jump_clones.first # => #<EveOnline::JumpClone:0x007fa2341cdb48 @options={"@jumpCloneID"=>"22357400", "@typeID"=>"164", "@locationID"=>"61000032", "@cloneName"=>""}, @jump_clone_id=22357400, @type_id=164, @location_id=61000032, @clone_name="">

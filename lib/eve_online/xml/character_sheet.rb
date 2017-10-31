@@ -189,11 +189,6 @@ module EveOnline
         attributes.fetch('willpower').to_i
       end
 
-      def skills
-        CharacterSkills.new(result).skills
-      end
-      memoize :skills
-
       def jump_clones
         CharacterJumpClones.new(result).jump_clones
       end
