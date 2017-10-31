@@ -798,27 +798,6 @@ describe EveOnline::XML::CharacterSheet do
     specify { expect { subject.willpower }.not_to raise_error }
   end
 
-  describe '#implants' do
-    let(:result) { double }
-
-    before { expect(subject).to receive(:result).and_return(result) }
-
-    before do
-      #
-      # EveOnline::CharacterImplants.new(result).implants
-      #
-      expect(EveOnline::CharacterImplants).to receive(:new).with(result) do
-        double.tap do |a|
-          expect(a).to receive(:implants)
-        end
-      end
-    end
-
-    specify { expect { subject.implants }.not_to raise_error }
-
-    specify { expect { subject.implants }.to change { subject.instance_variable_defined?(:@_memoized_implants) }.from(false).to(true) }
-  end
-
   describe '#skills' do
     let(:result) { double }
 

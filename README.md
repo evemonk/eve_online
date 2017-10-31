@@ -323,15 +323,6 @@ character_sheet.charisma # => 17
 character_sheet.perception # => 20
 character_sheet.willpower # => 20
 
-character_sheet.implants.size # => 5
-
-implant = character_sheet.implants.first # => #<EveOnline::Implant:0x007fdd34c88110 @options={"@typeID"=>"9899", "@typeName"=>"Ocular Filter - Basic"}>
-
-implant.as_json # => {:type_id=>9899, :type_name=>"Ocular Filter - Basic"}
-
-implant.type_id # => 9899
-implant.type_name # => "Ocular Filter - Basic"
-
 character_sheet.skills.size # => 180
 
 skill = character_sheet.skills.first # => #<EveOnline::Skill:0x007fc1951e1b18 @options={"@typeID"=>"2495", "@skillpoints"=>"1000", "@level"=>"1", "@published"=>"1"}>

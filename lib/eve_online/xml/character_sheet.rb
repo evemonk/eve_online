@@ -189,11 +189,6 @@ module EveOnline
         attributes.fetch('willpower').to_i
       end
 
-      def implants
-        CharacterImplants.new(result).implants
-      end
-      memoize :implants
-
       def skills
         CharacterSkills.new(result).skills
       end
