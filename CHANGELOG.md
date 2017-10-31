@@ -48,6 +48,7 @@
 * Drop `EveOnline::XML::CharacterContactList`
 * Drop `EveOnline::XML::CharacterContractBids`
 * Drop `EveOnline::XML::CharacterContractItems`
+* Drop `EveOnline::XML::CharacterContracts`
 
 **v0.12.0**
 
