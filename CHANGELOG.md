@@ -42,6 +42,7 @@
 * Drop `EveOnline::XML::CharacterSheet#skills`. Use `EveOnline::ESI::CharacterSkills` instead.
 * Drop `EveOnline::CharacterSkills`
 * Drop `EveOnline::Skill`
+* Drop `EveOnline::XML::CharacterSkillInTraining`. Use `EveOnline::ESI::CharacterSkillQueue` instead.
 
 **v0.12.0**
 
