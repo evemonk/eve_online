@@ -40,6 +40,8 @@
 * Drop `EveOnline::Implant`
 * Drop `EveOnline::CharacterImplants`
 * Drop `EveOnline::XML::CharacterSheet#skills`. Use `EveOnline::ESI::CharacterSkills` instead.
+* Drop `EveOnline::CharacterSkills`
+* Drop `EveOnline::Skill`
 
 **v0.12.0**
 
