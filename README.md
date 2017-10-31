@@ -1379,8 +1379,6 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 
 ## TODO
 
-- [ ] Account Status: Support multiCharacterTraining
-- [ ] Access Mask
 - [ ] Caching
 - [ ] Test EVE server
 
