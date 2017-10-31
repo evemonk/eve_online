@@ -62,6 +62,10 @@
 * Drop `EveOnline::XML::CharacterNotifications`
 * Drop `EveOnline::XML::CharacterNotificationTexts`
 * Drop `EveOnline::XML::CharacterPlanetaryColonies`
+* Drop `EveOnline::XML::CharacterPlanetaryLinks`
+* Drop `EveOnline::XML::CharacterPlanetaryPins`
+* Drop `EveOnline::XML::CharacterPlanetaryRoutes`
+* Drop `EveOnline::XML::CharacterResearch`
 
 **v0.12.0**
 
