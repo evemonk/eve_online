@@ -301,23 +301,6 @@ jump_clone_implant.type_name # => "Memory Augmentation - Improved"
 
 ```
 
-#### Character chat channels
-
-```ruby
-key_id = 1234567
-v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-options = { character_id: 90729314 }
-
-character_chat_channels = EveOnline::XML::CharacterChatChannels.new(key_id, v_code, options)
-
-character_chat_channels.current_time # => Fri, 19 Aug 2016 11:05:43 UTC +00:00
-character_chat_channels.cached_until # => Fri, 19 Aug 2016 11:19:44 UTC +00:00
-character_chat_channels.version # => 2
-
-# TODO: finish this
-
-```
-
 #### Character contact list
 
 ```ruby
