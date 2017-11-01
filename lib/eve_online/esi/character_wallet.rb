@@ -13,8 +13,12 @@ module EveOnline
 
       def as_json
         {
-          wallet: response
+          wallet: wallet
         }
+      end
+
+      def wallet
+        response
       end
 
       def scope

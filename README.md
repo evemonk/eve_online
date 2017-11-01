@@ -1185,6 +1185,8 @@ character_wallet = EveOnline::ESI::CharacterWallet.new(options)
 character_wallet.scope # => "esi-wallet.read_character_wallet.v1"
 
 character_wallet.as_json # => {:wallet=>409488252.49}
+
+character_wallet.wallet # => 409488252.49
 ```
 
 ##### Get wallet transactions
