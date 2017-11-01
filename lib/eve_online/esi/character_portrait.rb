@@ -1,6 +1,10 @@
+require 'forwardable'
+
 module EveOnline
   module ESI
     class CharacterPortrait < Base
+      extend Forwardable
+
       API_ENDPOINT = 'https://esi.tech.ccp.is/v2/characters/%s/portrait/?datasource=tranquility'.freeze
 
       attr_reader :character_id
@@ -11,46 +15,13 @@ module EveOnline
         @character_id = options[:character_id]
       end
 
-      # https://eveonline-third-party-documentation.readthedocs.io/en/latest/imageserver/intro.html#character-images
-      # Available Sizes: 32, 64, 128, 256, 512, 1024
-      # https://nethackwiki.com/wiki/Physical_size
-      # Tiny = 0; Small = 1; Medium = 2; Large = 3; Huge = 4; Gigantic = 7.
-      def as_json
-        {
-          small: small,
-          medium: medium,
-          large: large,
-          huge: huge
-        }
-      end
+      def_delegators :model, :as_json, :tiny, :small, :medium, :large, :huge,
+                     :gigantic
 
-      def tiny
-        # FIXME: https://github.com/ccpgames/esi-issues/issues/270
-        # FIXME: https://github.com/ccpgames/esi-issues/issues/131
-        raise NotImplementedError
+      def model
+        Models::CharacterPortrait.new(response)
       end
-
-      def small
-        response['px64x64']
-      end
-
-      def medium
-        response['px128x128']
-      end
-
-      def large
-        response['px256x256']
-      end
-
-      def huge
-        response['px512x512']
-      end
-
-      def gigantic
-        # FIXME: https://github.com/ccpgames/esi-issues/issues/270
-        # FIXME: https://github.com/ccpgames/esi-issues/issues/131
-        raise NotImplementedError
-      end
+      memoize :model
 
       def scope; end
 

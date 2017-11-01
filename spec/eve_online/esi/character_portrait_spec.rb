@@ -17,102 +17,93 @@ describe EveOnline::ESI::CharacterPortrait do
     its(:character_id) { should eq(12_345_678) }
   end
 
+  describe '#model' do
+    let(:response) { double }
+
+    before { expect(subject).to receive(:response).and_return(response) }
+
+    let(:model) { double }
+
+    before do
+      #
+      # EveOnline::ESI::Models::CharacterPortrait.new(response) # => model
+      #
+      expect(EveOnline::ESI::Models::CharacterPortrait).to receive(:new).with(response).and_return(model)
+    end
+
+    specify { expect { subject.model }.not_to raise_error }
+
+    specify { expect { subject.model }.to change { subject.instance_variable_defined?(:@_memoized_model) }.from(false).to(true) }
+  end
+
   describe '#as_json' do
-    let(:portrait) { described_class.new(options) }
+    let(:model) { double }
 
-    let(:small) { double }
+    before { subject.instance_variable_set(:@_memoized_model, model) }
 
-    let(:medium) { double }
+    before { expect(model).to receive(:as_json) }
 
-    let(:large) { double }
-
-    let(:huge) { double }
-
-    before { expect(portrait).to receive(:small).and_return(small) }
-
-    before { expect(portrait).to receive(:medium).and_return(medium) }
-
-    before { expect(portrait).to receive(:large).and_return(large) }
-
-    before { expect(portrait).to receive(:huge).and_return(huge) }
-
-    subject { portrait.as_json }
-
-    its([:small]) { should eq(small) }
-
-    its([:medium]) { should eq(medium) }
-
-    its([:large]) { should eq(large) }
-
-    its([:huge]) { should eq(huge) }
+    specify { expect { subject.as_json }.not_to raise_error }
   end
 
   describe '#tiny' do
-    specify { expect { subject.tiny }.to raise_error(NotImplementedError) }
+    let(:model) { double }
+
+    before { subject.instance_variable_set(:@_memoized_model, model) }
+
+    before { expect(model).to receive(:tiny) }
+
+    specify { expect { subject.tiny }.not_to raise_error }
   end
 
   describe '#small' do
-    before do
-      #
-      # subject.response['px64x64']
-      #
-      expect(subject).to receive(:response) do
-        double.tap do |a|
-          expect(a).to receive(:[]).with('px64x64')
-        end
-      end
-    end
+    let(:model) { double }
+
+    before { subject.instance_variable_set(:@_memoized_model, model) }
+
+    before { expect(model).to receive(:small) }
 
     specify { expect { subject.small }.not_to raise_error }
   end
 
   describe '#medium' do
-    before do
-      #
-      # subject.response['px128x128']
-      #
-      expect(subject).to receive(:response) do
-        double.tap do |a|
-          expect(a).to receive(:[]).with('px128x128')
-        end
-      end
-    end
+    let(:model) { double }
+
+    before { subject.instance_variable_set(:@_memoized_model, model) }
+
+    before { expect(model).to receive(:medium) }
 
     specify { expect { subject.medium }.not_to raise_error }
   end
 
   describe '#large' do
-    before do
-      #
-      # subject.response['px256x256']
-      #
-      expect(subject).to receive(:response) do
-        double.tap do |a|
-          expect(a).to receive(:[]).with('px256x256')
-        end
-      end
-    end
+    let(:model) { double }
+
+    before { subject.instance_variable_set(:@_memoized_model, model) }
+
+    before { expect(model).to receive(:large) }
 
     specify { expect { subject.large }.not_to raise_error }
   end
 
   describe '#huge' do
-    before do
-      #
-      # subject.response['px512x512']
-      #
-      expect(subject).to receive(:response) do
-        double.tap do |a|
-          expect(a).to receive(:[]).with('px512x512')
-        end
-      end
-    end
+    let(:model) { double }
+
+    before { subject.instance_variable_set(:@_memoized_model, model) }
+
+    before { expect(model).to receive(:huge) }
 
     specify { expect { subject.huge }.not_to raise_error }
   end
 
   describe '#gigantic' do
-    specify { expect { subject.gigantic }.to raise_error(NotImplementedError) }
+    let(:model) { double }
+
+    before { subject.instance_variable_set(:@_memoized_model, model) }
+
+    before { expect(model).to receive(:gigantic) }
+
+    specify { expect { subject.gigantic }.not_to raise_error }
   end
 
   describe '#scope' do

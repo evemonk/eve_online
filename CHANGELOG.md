@@ -66,6 +66,11 @@
 * Drop `EveOnline::XML::CharacterPlanetaryPins`
 * Drop `EveOnline::XML::CharacterPlanetaryRoutes`
 * Drop `EveOnline::XML::CharacterResearch`
+* Add `EveOnline::ESI::Alliance`
+* Add `EveOnline::ESI::AllianceIcon`
+* Add `EveOnline::ESI::Models::Alliance`
+* Add `EveOnline::ESI::Models::AllianceIcon`
+* Add `EveOnline::ESI::Models::CharacterPortrait`
 
 **v0.12.0**
 

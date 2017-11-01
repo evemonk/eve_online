@@ -18,15 +18,23 @@ describe EveOnline::ESI::CharacterWallet do
   end
 
   describe '#as_json' do
-    let(:wallet) { described_class.new(options) }
+    let(:character_wallet) { described_class.new(options) }
 
+    let(:wallet) { double }
+
+    before { expect(character_wallet).to receive(:wallet).and_return(wallet) }
+
+    subject { character_wallet.as_json }
+
+    its([:wallet]) { should eq(wallet) }
+  end
+
+  describe '#wallet' do
     let(:response) { double }
 
-    before { expect(wallet).to receive(:response).and_return(response) }
+    before { expect(subject).to receive(:response).and_return(response) }
 
-    subject { wallet.as_json }
-
-    its([:wallet]) { should eq(response) }
+    specify { expect(subject.wallet).to eq(response) }
   end
 
   describe '#scope' do
