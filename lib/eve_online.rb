@@ -73,6 +73,7 @@ require 'eve_online/esi/models/skill'
 require 'eve_online/esi/models/asset'
 require 'eve_online/esi/models/attributes'
 require 'eve_online/esi/models/character'
+require 'eve_online/esi/models/character_portrait'
 
 require 'eve_online/esi/models/alliance'
 require 'eve_online/esi/models/alliance_icon'
