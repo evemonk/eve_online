@@ -68,6 +68,7 @@
 * Drop `EveOnline::XML::CharacterResearch`
 * Add `EveOnline::ESI::Alliance`
 * Add `EveOnline::ESI::AllianceIcon`
+* Add `EveOnline::ESI::Models::Alliance`
 * Add `EveOnline::ESI::Models::AllianceIcon`
 
 **v0.12.0**
