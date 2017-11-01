@@ -535,6 +535,19 @@ alliance.executor_corp # => 98306624
 
 ##### Get alliance icon
 
+```ruby
+options = { alliance_id: 99005443 }
+
+alliance_icon = EveOnline::ESI::AllianceIcon.new(options)
+
+alliance_icon.scope # => nil
+
+alliance_icon.as_json # => {:small=>"http://image.eveonline.com/Alliance/99005443_64.png", :medium=>"http://image.eveonline.com/Alliance/99005443_128.png"}
+
+alliance_icon.small # => "http://image.eveonline.com/Alliance/99005443_64.png"
+alliance_icon.medium # => "http://image.eveonline.com/Alliance/99005443_128.png"
+```
+
 #### Assets
 
 ##### Get character assets
