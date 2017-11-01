@@ -513,6 +513,24 @@ characters_ids.response # => {"eveapi"=>{"currentTime"=>"2016-04-11 18:51:01", "
 
 ##### Get alliance information
 
+```ruby
+options = { alliance_id: 99005443 }
+
+alliance = EveOnline::ESI::Alliance.new(options)
+
+alliance.scope # => nil
+
+alliance.as_json # => {:alliance_name=>"Kids With Guns Alliance",
+                 #     :ticker=>"-KWG-",
+                 #     :date_founded=>Sun, 03 May 2015 19:45:17 UTC +00:00,
+                 #     :executor_corp=>98306624}
+
+alliance.alliance_name # => "Kids With Guns Alliance"
+alliance.ticker # => "-KWG-"
+alliance.date_founded # => Sun, 03 May 2015 19:45:17 UTC +00:00
+alliance.executor_corp # => 98306624
+```
+
 ##### List alliance's corporations
 
 ##### Get alliance icon
@@ -525,6 +543,8 @@ characters_ids.response # => {"eveapi"=>{"currentTime"=>"2016-04-11 18:51:01", "
 options = { token: 'token123', character_id: 90729314 }
 
 character_assets = EveOnline::ESI::CharacterAssets.new(options)
+
+character_assets.scope # => "esi-assets.read_assets.v1"
 
 character_assets.assets.size # => 486
 
@@ -584,10 +604,10 @@ options = { character_id: 90729314 }
 
 character = EveOnline::ESI::Character.new(options)
 
+character.scope # => nil
+
 character.as_json
 # => {:corporation_id=>1000168, :birthday=>Fri, 15 Jan 2010 15:26:00 UTC +00:00, :name=>"Green Black", :gender=>"male", :race_id=>2, :bloodline_id=>4, :description=>"", :alliance_id=>12345678, :ancestry_id=>24, :security_status=>1.8694881661345457}
-
-character.scope # => nil
 
 character.corporation_id # => 1000168
 character.birthday # => Fri, 15 Jan 2010 15:26:00 UTC +00:00
@@ -626,10 +646,10 @@ options = { character_id: 90729314 }
 
 character_portrait = EveOnline::ESI::CharacterPortrait.new(options)
 
+character_portrait.scope # => nil
+
 character_portrait.as_json
 # => {:small=>"http://image.eveonline.com/Character/90729314_64.jpg", :medium=>"http://image.eveonline.com/Character/90729314_128.jpg", :large=>"http://image.eveonline.com/Character/90729314_256.jpg", :huge=>"http://image.eveonline.com/Character/90729314_512.jpg"}
-
-character_portrait.scope # => nil
 
 character_portrait.small # => "http://image.eveonline.com/Character/90729314_64.jpg"
 character_portrait.medium # => "http://image.eveonline.com/Character/90729314_128.jpg"
@@ -651,6 +671,8 @@ character_portrait.huge # => "http://image.eveonline.com/Character/90729314_512.
 options = { token: 'token123', character_id: 90729314 }
 
 character_implants = EveOnline::ESI::CharacterImplants.new(options)
+
+character_implants.scope # => "esi-clones.read_implants.v1"
 
 character_implants.implants.size # => 5
 
@@ -820,13 +842,13 @@ options = { token: 'token123', character_id: 90729314 }
 
 character_loyalty_points = EveOnline::ESI::CharacterLoyaltyPoints.new(options)
 
+character_loyalty_points.scope # => "esi-characters.read_loyalty.v1"
+
 character_loyalty_points.loyalty_points.size # => 5
 
 loyalty_point = character_loyalty_points.loyalty_points.first
 
 loyalty_point.as_json # => {:corporation_id=>1000035, :loyalty_points=>14163}
-
-character_loyalty_points.scope # => "esi-characters.read_loyalty.v1"
 
 loyalty_point.corporation_id # => 1000035
 loyalty_point.loyalty_points # => 14163
@@ -913,6 +935,8 @@ options = { token: 'token123', character_id: 90729314 }
 
 character_attributes = EveOnline::ESI::CharacterAttributes.new(options)
 
+character_attributes.scope # => "esi-skills.read_skills.v1"
+
 character_attributes.as_json # => {:charisma=>20,
                              #     :intelligence=>24,
                              #     :memory=>24,
@@ -939,9 +963,9 @@ options = { token: 'token123', character_id: 90729314 }
 
 character_skill_queue = EveOnline::ESI::CharacterSkillQueue.new(options)
 
-character_skill_queue.skills.size # => 50
-
 character_skill_queue.scope # => "esi-skills.read_skillqueue.v1"
+
+character_skill_queue.skills.size # => 50
 
 skill_queue_entry = character_skill_queue.skills.first
 
@@ -965,11 +989,11 @@ options = { token: 'token123', character_id: 90729314 }
 
 character_skills = EveOnline::ESI::CharacterSkills.new(options)
 
+character_skills.scope # => "esi-skills.read_skills.v1"
+
 character_skills.total_sp # => 43232144
 
 character_skills.as_json # => {:total_sp=>43232144}
-
-character_skills.scope # => "esi-skills.read_skills.v1"
 
 character_skills.skills.size # => 180
 
@@ -997,9 +1021,9 @@ skill.current_skill_level # => 1
 ```ruby
 server_status = EveOnline::ESI::ServerStatus.new
 
-server_status.as_json # => {:start_time=>Tue, 11 Apr 2017 11:05:35 UTC +00:00, :players=>34545, :server_version=>"1135520", :vip=>nil}
-
 server_status.scope # => nil
+
+server_status.as_json # => {:start_time=>Tue, 11 Apr 2017 11:05:35 UTC +00:00, :players=>34545, :server_version=>"1135520", :vip=>nil}
 
 server_status.start_time # => Tue, 11 Apr 2017 11:05:35 UTC +00:00
 server_status.players # => 34545
@@ -1013,6 +1037,8 @@ server_status.vip # => nil
 
 ```ruby
 bloodlines = EveOnline::ESI::Bloodlines.new
+
+bloodlines.scope # => nil
 
 bloodlines.bloodlines.size # => 15
 
@@ -1073,6 +1099,8 @@ bloodline.intelligence # => 4
 
 ```ruby
 races = EveOnline::ESI::Races.new
+
+races.scope # => nil
 
 races.races.size # => 4
 
@@ -1141,9 +1169,9 @@ options = { token: 'token123', character_id: 90729314 }
 
 character_wallet = EveOnline::ESI::CharacterWallet.new(options)
 
-character_wallet.as_json # => {:wallet=>409488252.49}
-
 character_wallet.scope # => "esi-wallet.read_character_wallet.v1"
+
+character_wallet.as_json # => {:wallet=>409488252.49}
 ```
 
 ##### Get wallet transactions

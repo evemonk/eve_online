@@ -58,6 +58,9 @@ require 'eve_online/esi/character_assets'
 require 'eve_online/esi/character_attributes'
 # require 'eve_online/esi/character_clones'
 require 'eve_online/esi/character_implants'
+
+require 'eve_online/esi/alliance'
+
 require 'eve_online/esi/server_status'
 require 'eve_online/esi/races'
 require 'eve_online/esi/bloodlines'
@@ -69,6 +72,8 @@ require 'eve_online/esi/models/skill'
 require 'eve_online/esi/models/asset'
 require 'eve_online/esi/models/attributes'
 require 'eve_online/esi/models/character'
+
+require 'eve_online/esi/models/alliance'
 
 require 'eve_online/esi/models/race'
 require 'eve_online/esi/models/bloodline'

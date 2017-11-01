@@ -66,6 +66,7 @@
 * Drop `EveOnline::XML::CharacterPlanetaryPins`
 * Drop `EveOnline::XML::CharacterPlanetaryRoutes`
 * Drop `EveOnline::XML::CharacterResearch`
+* Add `EveOnline::ESI::Alliance`
 
 **v0.12.0**
 
