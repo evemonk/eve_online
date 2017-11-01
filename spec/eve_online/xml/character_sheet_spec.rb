@@ -703,25 +703,6 @@ describe EveOnline::XML::CharacterSheet do
     specify { expect { subject.jump_last_update }.not_to raise_error }
   end
 
-  describe '#balance' do
-    before do
-      #
-      # subject.result.fetch('balance').to_f
-      #
-      expect(subject).to receive(:result) do
-        double.tap do |a|
-          expect(a).to receive(:fetch).with('balance') do
-            double.tap do |b|
-              expect(b).to receive(:to_f)
-            end
-          end
-        end
-      end
-    end
-
-    specify { expect { subject.balance }.not_to raise_error }
-  end
-
   describe '#intelligence' do
     before do
       #
@@ -815,48 +796,6 @@ describe EveOnline::XML::CharacterSheet do
     end
 
     specify { expect { subject.willpower }.not_to raise_error }
-  end
-
-  describe '#implants' do
-    let(:result) { double }
-
-    before { expect(subject).to receive(:result).and_return(result) }
-
-    before do
-      #
-      # EveOnline::CharacterImplants.new(result).implants
-      #
-      expect(EveOnline::CharacterImplants).to receive(:new).with(result) do
-        double.tap do |a|
-          expect(a).to receive(:implants)
-        end
-      end
-    end
-
-    specify { expect { subject.implants }.not_to raise_error }
-
-    specify { expect { subject.implants }.to change { subject.instance_variable_defined?(:@_memoized_implants) }.from(false).to(true) }
-  end
-
-  describe '#skills' do
-    let(:result) { double }
-
-    before { expect(subject).to receive(:result).and_return(result) }
-
-    before do
-      #
-      # EveOnline::CharacterSkills.new(result).skills
-      #
-      expect(EveOnline::CharacterSkills).to receive(:new).with(result) do
-        double.tap do |a|
-          expect(a).to receive(:skills)
-        end
-      end
-    end
-
-    specify { expect { subject.skills }.not_to raise_error }
-
-    specify { expect { subject.skills }.to change { subject.instance_variable_defined?(:@_memoized_skills) }.from(false).to(true) }
   end
 
   describe '#jump_clones' do

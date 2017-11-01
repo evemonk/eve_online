@@ -27,6 +27,45 @@
 * Add `EveOnline::ESI::Models::Attributes`
 * Add `EveOnline::ESI::Models::Character`
 * Add `EveOnline::ESI::Models::Base`
+* Add `EveOnline::ESI::Races`
+* Add `EveOnline::ESI::Models::Race`
+* Add `EveOnline::ESI::Bloodlines`
+* Add `EveOnline::ESI::Models::Bloodline`
+* Drop `EveOnline::SDE::Races`. Use `EveOnline::ESI::Races` instead.
+* Drop `EveOnline::SDE::Models::Race`
+* Add `EveOnline::ESI::CharacterImplants`
+* Drop `EveOnline::XML::CharacterAccountBalance`. Use `EveOnline::ESI::CharacterWallet` instead.
+* Drop `EveOnline::XML::CharacterSheet#balance`. Use `EveOnline::ESI::CharacterWallet` instead.
+* Drop `EveOnline::XML::CharacterSheet#implants`. Use `EveOnline::ESI::CharacterImplants` instead.
+* Drop `EveOnline::Implant`
+* Drop `EveOnline::CharacterImplants`
+* Drop `EveOnline::XML::CharacterSheet#skills`. Use `EveOnline::ESI::CharacterSkills` instead.
+* Drop `EveOnline::CharacterSkills`
+* Drop `EveOnline::Skill`
+* Drop `EveOnline::XML::CharacterSkillInTraining`. Use `EveOnline::ESI::CharacterSkillQueue` instead.
+* Drop `EveOnline::XML::CharacterCalendarEventAttendees`
+* Drop `EveOnline::XML::CharacterChatChannels`
+* Drop `EveOnline::XML::CharacterContactList`
+* Drop `EveOnline::XML::CharacterContractBids`
+* Drop `EveOnline::XML::CharacterContractItems`
+* Drop `EveOnline::XML::CharacterContracts`
+* Drop `EveOnline::XML::CharacterWalletTransactions`
+* Drop `EveOnline::XML::CharacterFacWarStats`
+* Drop `EveOnline::XML::CharacterIndustryJobs`
+* Drop `EveOnline::XML::CharacterIndustryJobsHistory`
+* Drop `EveOnline::XML::CharacterKillMails`
+* Drop `EveOnline::XML::CharacterLocations`
+* Drop `EveOnline::XML::CharacterMailBodies`
+* Drop `EveOnline::XML::CharacterMailingLists`
+* Drop `EveOnline::XML::CharacterMailMessages`
+* Drop `EveOnline::XML::CharacterMedals`
+* Drop `EveOnline::XML::CharacterNotifications`
+* Drop `EveOnline::XML::CharacterNotificationTexts`
+* Drop `EveOnline::XML::CharacterPlanetaryColonies`
+* Drop `EveOnline::XML::CharacterPlanetaryLinks`
+* Drop `EveOnline::XML::CharacterPlanetaryPins`
+* Drop `EveOnline::XML::CharacterPlanetaryRoutes`
+* Drop `EveOnline::XML::CharacterResearch`
 
 **v0.12.0**
 

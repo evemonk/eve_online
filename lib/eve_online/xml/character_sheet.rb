@@ -165,11 +165,6 @@ module EveOnline
       end
 
       # TODO: add to as_json output
-      def balance
-        result.fetch('balance').to_f
-      end
-
-      # TODO: add to as_json output
       def intelligence
         attributes.fetch('intelligence').to_i
       end
@@ -193,16 +188,6 @@ module EveOnline
       def willpower
         attributes.fetch('willpower').to_i
       end
-
-      def implants
-        CharacterImplants.new(result).implants
-      end
-      memoize :implants
-
-      def skills
-        CharacterSkills.new(result).skills
-      end
-      memoize :skills
 
       def jump_clones
         CharacterJumpClones.new(result).jump_clones
