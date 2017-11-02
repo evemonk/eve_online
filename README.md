@@ -727,6 +727,26 @@ character_implants.implants # => [9899, 9941, 9942, 9943, 9956]
 ##### Get npc corporations
 
 ##### Get corporation information
+```ruby
+options = {:corporation_id=>"98468592"}
+corporation = EveOnline::ESI::Corporation.new(options)
+
+corporation.scope # => nil
+
+corporation.as_json
+# => {:alliance_id=>99001258, :ceo_id=>1721864142, :corporation_description=>"", :corporation_name=>"Bullshit Bingo Club", :creation_date=>Mon, 11 Jul 2016 14:22:17 UTC +00:00, :creator_id=>1721864142, :faction=>nil, :member_count=>38, :tax_rate=>0.1, :ticker=>"BUBIC", :url=>"http://"}
+
+corporation.alliance_id # => 99001258
+corporation.ceo_id # => 1721864142
+corporation.corporation_description # => ""
+corporation.creation_date # => Mon, 11 Jul 2016 14:22:17 UTC +00:00
+corporation.creator_id # => 1721864142
+corporation.faction # => nil
+corporation.member_count # => 38
+corporation.tax_rate # => 0.1
+corporation.corporation_url # => "http://"
+
+```
 
 ##### Get alliance history
 
