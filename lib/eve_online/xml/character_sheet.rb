@@ -149,21 +149,6 @@ module EveOnline
         parse_datetime_with_timezone(result.fetch('remoteStationDate'))
       end
 
-      # TODO: add to as_json output
-      def jump_activation
-        parse_datetime_with_timezone(result.fetch('jumpActivation'))
-      end
-
-      # TODO: add to as_json output
-      def jump_fatigue
-        parse_datetime_with_timezone(result.fetch('jumpFatigue'))
-      end
-
-      # TODO: add to as_json output
-      def jump_last_update
-        parse_datetime_with_timezone(result.fetch('jumpLastUpdate'))
-      end
-
       def jump_clones
         CharacterJumpClones.new(result).jump_clones
       end
