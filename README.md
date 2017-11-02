@@ -154,37 +154,6 @@ character.faction_id # => 0
 character.faction_name # => ""
 ```
 
-#### Character Blueprints
-
-```ruby
-key_id = 1234567
-v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-options = { character_id: 90729314 }
-
-blueprints = EveOnline::XML::CharacterBlueprints.new(key_id, v_code, options)
-
-blueprints.current_time # => Sun, 03 Jan 2016 14:36:37 UTC +00:00
-blueprints.cached_until # => Mon, 04 Jan 2016 02:06:37 UTC +00:00
-blueprints.version # => 2
-
-blueprints.blueprints.size # => 4
-
-blueprint = blueprints.blueprints.first
-
-blueprint.as_json
-# => {:item_id=>716338097, :location_id=>61000032, :type_id=>1010, :type_name=>"Small Shield Extender I Blueprint", :flag_id=>4, :quantity=>-2, :time_efficiency=>0, :material_efficiency=>10, :runs=>300}
-
-blueprint.item_id # => 716338097
-blueprint.location_id # => 61000032
-blueprint.type_id # => 1010
-blueprint.type_name # => "Small Shield Extender I Blueprint"
-blueprint.flag_id # => 4
-blueprint.quantity # => -2
-blueprint.time_efficiency # => 0
-blueprint.material_efficiency # => 10
-blueprint.runs # => 300
-```
-
 #### Characters Bookmarks
 
 ```ruby

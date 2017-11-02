@@ -73,6 +73,7 @@
 * Add `EveOnline::ESI::Models::CharacterPortrait`
 * Add `EveOnline::ESI::CharacterBlueprints`
 * Add `EveOnline::ESI::Models::Blueprint`
+* Drop `EveOnline::XML::CharacterBlueprints`. Use `EveOnline::ESI::CharacterBlueprints` instead.
 
 **v0.12.0**
 
