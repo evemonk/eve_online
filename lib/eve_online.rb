@@ -68,6 +68,7 @@ require 'eve_online/esi/models/character_portrait'
 require 'eve_online/esi/models/blueprint'
 require 'eve_online/esi/models/standing'
 require 'eve_online/esi/models/fatigue'
+require 'eve_online/esi/models/server_status'
 
 require 'eve_online/esi/models/alliance'
 require 'eve_online/esi/models/alliance_icon'
