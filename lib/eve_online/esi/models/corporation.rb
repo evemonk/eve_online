@@ -35,9 +35,9 @@ module EveOnline
         end
 
         def creation_date
-          date = options['creation_date']
+          creation_date = options['creation_date']
 
-          parse_datetime_with_timezone(date) if date
+          parse_datetime_with_timezone(creation_date) if creation_date
         end
 
         def creator_id
