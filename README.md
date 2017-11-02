@@ -126,34 +126,6 @@ character.faction_id # => 0
 character.faction_name # => ""
 ```
 
-#### Characters
-
-```ruby
-key_id = 1234567
-v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-
-characters = EveOnline::XML::AccountCharacters.new(key_id, v_code)
-characters.version # => 2
-characters.current_time # => Mon, 30 Nov 2015 23:31:31 UTC +00:00
-characters.cached_until # => Tue, 01 Dec 2015 00:28:31 UTC +00:00
-
-characters.characters.size # => 2
-
-character = characters.characters.first
-
-character.as_json
-# => {:character_id=>90729314, :character_name=>"Green Black", :corporation_id=>1000168, :corporation_name=>"Federal Navy Academy", :alliance_id=>0, :alliance_name=>"", :faction_id=>0, :faction_name=>""}
-
-character.character_id # => 90729314
-character.character_name # => "Green Black"
-character.corporation_id # => 1000168
-character.corporation_name # => "Federal Navy Academy"
-character.alliance_id # => 0
-character.alliance_name # => ""
-character.faction_id # => 0
-character.faction_name # => ""
-```
-
 #### Characters Bookmarks
 
 ```ruby
