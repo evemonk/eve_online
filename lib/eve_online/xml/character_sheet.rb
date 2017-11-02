@@ -179,13 +179,6 @@ module EveOnline
         output = "#{ output }&characterID=#{ character_id }" if character_id
         output
       end
-
-      private
-
-      def attributes
-        result.fetch('attributes')
-      end
-      memoize :attributes
     end
   end
 end

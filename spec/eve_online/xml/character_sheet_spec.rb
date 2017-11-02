@@ -762,23 +762,4 @@ describe EveOnline::XML::CharacterSheet do
       end
     end
   end
-
-  # private methods
-
-  describe '#attributes' do
-    before do
-      #
-      # subject.result.fetch('attributes')
-      #
-      expect(subject).to receive(:result) do
-        double.tap do |a|
-          expect(a).to receive(:fetch).with('attributes')
-        end
-      end
-    end
-
-    specify { expect { subject.send(:attributes) }.not_to raise_error }
-
-    specify { expect { subject.send(:attributes) }.to change { subject.instance_variable_defined?(:@_memoized_attributes) }.from(false).to(true) }
-  end
 end
