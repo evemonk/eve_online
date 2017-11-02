@@ -79,6 +79,7 @@
 * Drop `EveOnline::XML::ApiKeyInfo`
 * Drop `EveOnline::XML::AccountStatus`. ESO doesn't support this.
 * Add `EveOnline::ESI::Models::Standing`
+* Add `EveOnline::ESI::Standings`
 
 **v0.12.0**
 
