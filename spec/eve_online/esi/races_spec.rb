@@ -20,7 +20,7 @@ describe EveOnline::ESI::Races do
           'race_id' => 2,
           'name' => 'Minmatar',
           'description' => 'Once a thriving tribal civilization, the Minmatar...',
-          'alliance_id' => 500002
+          'alliance_id' => 500_002
         }
       ]
     end
