@@ -71,6 +71,8 @@
 * Add `EveOnline::ESI::Models::Alliance`
 * Add `EveOnline::ESI::Models::AllianceIcon`
 * Add `EveOnline::ESI::Models::CharacterPortrait`
+* Add `EveOnline::ESI::CharacterBlueprints`
+* Add `EveOnline::ESI::Models::Blueprint`
 
 **v0.12.0**
 
