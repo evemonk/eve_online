@@ -154,37 +154,6 @@ character.faction_id # => 0
 character.faction_name # => ""
 ```
 
-#### Character Blueprints
-
-```ruby
-key_id = 1234567
-v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-options = { character_id: 90729314 }
-
-blueprints = EveOnline::XML::CharacterBlueprints.new(key_id, v_code, options)
-
-blueprints.current_time # => Sun, 03 Jan 2016 14:36:37 UTC +00:00
-blueprints.cached_until # => Mon, 04 Jan 2016 02:06:37 UTC +00:00
-blueprints.version # => 2
-
-blueprints.blueprints.size # => 4
-
-blueprint = blueprints.blueprints.first
-
-blueprint.as_json
-# => {:item_id=>716338097, :location_id=>61000032, :type_id=>1010, :type_name=>"Small Shield Extender I Blueprint", :flag_id=>4, :quantity=>-2, :time_efficiency=>0, :material_efficiency=>10, :runs=>300}
-
-blueprint.item_id # => 716338097
-blueprint.location_id # => 61000032
-blueprint.type_id # => 1010
-blueprint.type_name # => "Small Shield Extender I Blueprint"
-blueprint.flag_id # => 4
-blueprint.quantity # => -2
-blueprint.time_efficiency # => 0
-blueprint.material_efficiency # => 10
-blueprint.runs # => 300
-```
-
 #### Characters Bookmarks
 
 ```ruby
@@ -637,6 +606,38 @@ character.security_status # => 1.8694881661345457
 ##### Get agents research
 
 ##### Get blueprints
+
+```ruby
+options = { token: 'token123', character_id: 90729314 }
+
+character_blueprints = EveOnline::ESI::CharacterBlueprints.new(options)
+
+character_blueprints.scope # => "esi-characters.read_blueprints.v1"
+
+character_blueprints.blueprints.size # => 4
+
+blueprint = character_blueprints.blueprints.first
+
+blueprint.as_json # => {:item_id=>716338097,
+                  #     :location_flag=>"Hangar",
+                  #     :location_id=>61000032,
+                  #     :material_efficiency=>10,
+                  #     :quantity=>-2,
+                  #     :runs=>300,
+                  #     :time_efficiency=>0,
+                  #     :type_id=>1010}
+
+blueprint.item_id # => 716338097
+blueprint.location_flag # => "Hangar"
+blueprint.location_id # => 61000032
+blueprint.material_efficiency # => 10
+blueprint.quantity # => -2
+blueprint.runs # => 300
+blueprint.time_efficiency # => 0
+blueprint.type_id # => 1010
+
+# TODO: add pagination support
+```
 
 ##### Get chat channels
 
