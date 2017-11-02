@@ -1,7 +1,7 @@
 module EveOnline
   module ESI
     class CharacterSkills < Base
-      API_ENDPOINT = 'https://esi.tech.ccp.is/latest/characters/%s/skills/?datasource=tranquility'.freeze
+      API_ENDPOINT = 'https://esi.tech.ccp.is/v3/characters/%s/skills/?datasource=tranquility'.freeze
 
       attr_reader :character_id
 
