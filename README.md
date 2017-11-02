@@ -458,20 +458,6 @@ corporation_market_orders = EveOnline::XML::CorporationMarketOrders.new(key_id, 
 
 ```
 
-Character Names to IDs:
-```ruby
-input = ['Johnn Dillinger'] # => ["Johnn Dillinger"]
-
-characters_ids = EveOnline::Eve::CharacterID.new(input)
-
-characters_ids.current_time # => Mon, 11 Apr 2016 18:51:01 UTC +00:00
-characters_ids.cached_until # => Wed, 11 May 2016 18:51:01 UTC +00:00
-characters_ids.version # => 2
-
-characters_ids.response # => {"eveapi"=>{"currentTime"=>"2016-04-11 18:51:01", "result"=>{"rowset"=>{"row"=>{"@name"=>"Johnn Dillinger", "@characterID"=>"1337512245"}, "@name"=>"characters", "@key"=>"characterID", "@columns"=>"name,characterID"}}, "cachedUntil"=>"2016-05-11 18:51:01", "@version"=>"2"}}
-```
-
-
 ### ESI Examples
 
 #### Alliance
@@ -1401,7 +1387,6 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 
 ### Character
 
-- [x] [Blueprints](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_blueprints.html)
 - [x] [Bookmarks](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_bookmarks.html)
 - [x] [Contact Notifications](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_contactnotifications.html)
 - [x] [Market Orders](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_marketorders.html)

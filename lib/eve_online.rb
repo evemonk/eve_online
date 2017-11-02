@@ -22,8 +22,6 @@ require 'eve_online/contact_notification'
 require 'eve_online/wallet_journal_entry'
 require 'eve_online/market_order'
 
-require 'eve_online/eve/character_id'
-
 # XML API
 require 'eve_online/xml/base'
 require 'eve_online/xml/account_status'
