@@ -152,11 +152,6 @@ character_sheet.remote_station_date # => Tue, 30 Jun 2015 21:51:13 UTC +00:00
 character_sheet.jump_activation # => Mon, 01 Jan 0001 00:00:00 UTC +00:00
 character_sheet.jump_fatigue # => Mon, 01 Jan 0001 00:00:00 UTC +00:00
 character_sheet.jump_last_update # => Mon, 01 Jan 0001 00:00:00 UTC +00:00
-character_sheet.intelligence # => 21
-character_sheet.memory # => 21
-character_sheet.charisma # => 17
-character_sheet.perception # => 20
-character_sheet.willpower # => 20
 
 character_sheet.jump_clones.size # => 2
 

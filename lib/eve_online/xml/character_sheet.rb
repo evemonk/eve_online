@@ -164,31 +164,6 @@ module EveOnline
         parse_datetime_with_timezone(result.fetch('jumpLastUpdate'))
       end
 
-      # TODO: add to as_json output
-      def intelligence
-        attributes.fetch('intelligence').to_i
-      end
-
-      # TODO: add to as_json output
-      def memory
-        attributes.fetch('memory').to_i
-      end
-
-      # TODO: add to as_json output
-      def charisma
-        attributes.fetch('charisma').to_i
-      end
-
-      # TODO: add to as_json output
-      def perception
-        attributes.fetch('perception').to_i
-      end
-
-      # TODO: add to as_json output
-      def willpower
-        attributes.fetch('willpower').to_i
-      end
-
       def jump_clones
         CharacterJumpClones.new(result).jump_clones
       end
