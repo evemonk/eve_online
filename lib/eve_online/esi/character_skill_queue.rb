@@ -14,7 +14,7 @@ module EveOnline
       def skills
         output = []
         response.each do |skill|
-          output << EveOnline::ESI::Models::SkillQueueEntry.new(skill)
+          output << Models::SkillQueueEntry.new(skill)
         end
         output
       end
