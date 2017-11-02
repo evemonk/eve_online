@@ -574,6 +574,24 @@ character_portrait.huge # => "http://image.eveonline.com/Character/90729314_512.
 
 ##### Get standings
 
+```ruby
+options = { token: 'token123', character_id: 90729314 }
+
+character_standing = EveOnline::ESI::CharacterStandings.new(options)
+
+character_standing.scope # => "esi-characters.read_standings.v1"
+
+character_standing.standings.size # => 37
+
+standing = character_standing.standings.first
+
+standing.as_json # => {:from_id=>500001, :from_type=>"faction", :standing=>0.3303719111639991}
+
+standing.from_id # => 500001
+standing.from_type # => "faction"
+standing.standing # => 0.3303719111639991
+```
+
 #### Clones
 
 ##### Get clones
