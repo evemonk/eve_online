@@ -76,6 +76,7 @@
 * Drop `EveOnline::XML::CharacterBlueprints`. Use `EveOnline::ESI::CharacterBlueprints` instead.
 * Drop `EveOnline::Eve::CharacterID`
 * Drop `EveOnline::XML::AccountCharacters`. ESI doesn't support this.
+* Drop `EveOnline::XML::ApiKeyInfo`
 
 **v0.12.0**
 

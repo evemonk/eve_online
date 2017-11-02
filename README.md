@@ -90,42 +90,6 @@ account_status.version # => 2
 # TODO: add multi character training support
 ```
 
-#### Api Key Info
-
-```ruby
-key_id = 1234567
-v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-
-api_key_info = EveOnline::XML::ApiKeyInfo.new(key_id, v_code)
-
-api_key_info.as_json
-# => {:access_mask=>1073741823, :api_key_type=>:character, :expires=>Fri, 02 Dec 2016 18:13:59 UTC +00:00}
-
-api_key_info.access_mask # => 1073741823
-api_key_info.api_key_type # => :character
-api_key_info.expires # => Fri, 02 Dec 2016 18:13:59 UTC +00:00
-
-api_key_info.current_time # => Mon, 30 Nov 2015 23:00:38 UTC +00:00
-api_key_info.cached_until # => Mon, 30 Nov 2015 23:05:38 UTC +00:00
-api_key_info.version # => 2
-
-api_key_info.characters.size # => 2
-
-character = api_key_info.characters.first
-
-character.as_json
-# => {:character_id=>90729314, :character_name=>"Green Black", :corporation_id=>1000168, :corporation_name=>"Federal Navy Academy", :alliance_id=>0, :alliance_name=>"", :faction_id=>0, :faction_name=>""}
-
-character.character_id # => 90729314
-character.character_name # => "Green Black"
-character.corporation_id # => 1000168
-character.corporation_name # => "Federal Navy Academy"
-character.alliance_id # => 0
-character.alliance_name # => ""
-character.faction_id # => 0
-character.faction_name # => ""
-```
-
 #### Characters Bookmarks
 
 ```ruby

@@ -24,7 +24,6 @@ require 'eve_online/market_order'
 # XML API
 require 'eve_online/xml/base'
 require 'eve_online/xml/account_status'
-require 'eve_online/xml/api_key_info'
 require 'eve_online/xml/character_bookmarks'
 require 'eve_online/xml/character_sheet'
 require 'eve_online/xml/character_contact_notifications'
@@ -36,7 +35,6 @@ require 'eve_online/xml/character_wallet_journal'
 require 'eve_online/xml/corporation_market_orders'
 
 require 'eve_online/xml/models/account_status'
-require 'eve_online/xml/models/api_key_info'
 require 'eve_online/xml/models/account_type_object'
 
 # ESI API
