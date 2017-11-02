@@ -74,6 +74,16 @@
 * Add `EveOnline::ESI::CharacterBlueprints`
 * Add `EveOnline::ESI::Models::Blueprint`
 * Drop `EveOnline::XML::CharacterBlueprints`. Use `EveOnline::ESI::CharacterBlueprints` instead.
+* Drop `EveOnline::Eve::CharacterID`
+* Drop `EveOnline::XML::AccountCharacters`. ESI doesn't support this.
+* Drop `EveOnline::XML::ApiKeyInfo`
+* Drop `EveOnline::XML::AccountStatus`. ESO doesn't support this.
+* Add `EveOnline::ESI::Models::Standing`
+* Add `EveOnline::ESI::Standings`
+* Drop `EveOnline::XML::CharacterStandings`. Use `EveOnline::ESI::Standings` instead.
+* Add `EveOnline::ESI::CharacterFatigue`
+* Add `EveOnline::ESI::Models::Fatigue`
+* Add `EveOnline::ESI::Models::ServerStatus`
 
 **v0.12.0**
 

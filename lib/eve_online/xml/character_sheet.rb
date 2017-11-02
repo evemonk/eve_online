@@ -149,46 +149,6 @@ module EveOnline
         parse_datetime_with_timezone(result.fetch('remoteStationDate'))
       end
 
-      # TODO: add to as_json output
-      def jump_activation
-        parse_datetime_with_timezone(result.fetch('jumpActivation'))
-      end
-
-      # TODO: add to as_json output
-      def jump_fatigue
-        parse_datetime_with_timezone(result.fetch('jumpFatigue'))
-      end
-
-      # TODO: add to as_json output
-      def jump_last_update
-        parse_datetime_with_timezone(result.fetch('jumpLastUpdate'))
-      end
-
-      # TODO: add to as_json output
-      def intelligence
-        attributes.fetch('intelligence').to_i
-      end
-
-      # TODO: add to as_json output
-      def memory
-        attributes.fetch('memory').to_i
-      end
-
-      # TODO: add to as_json output
-      def charisma
-        attributes.fetch('charisma').to_i
-      end
-
-      # TODO: add to as_json output
-      def perception
-        attributes.fetch('perception').to_i
-      end
-
-      # TODO: add to as_json output
-      def willpower
-        attributes.fetch('willpower').to_i
-      end
-
       def jump_clones
         CharacterJumpClones.new(result).jump_clones
       end
@@ -204,13 +164,6 @@ module EveOnline
         output = "#{ output }&characterID=#{ character_id }" if character_id
         output
       end
-
-      private
-
-      def attributes
-        result.fetch('attributes')
-      end
-      memoize :attributes
     end
   end
 end

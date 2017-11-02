@@ -67,93 +67,6 @@ Or install it yourself as:
 
 ### XML API
 
-#### Account status
-
-```ruby
-key_id = 1234567
-v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-
-account_status = EveOnline::XML::AccountStatus.new(key_id, v_code)
-
-account_status.as_json
-# => {:paid_until=>Mon, 28 Dec 2015 18:12:56 UTC +00:00, :create_date=>Fri, 15 Jan 2010 15:11:00 UTC +00:00, :logon_count=>388, :logon_minutes=>15598}
-
-account_status.paid_until # => Mon, 28 Dec 2015 18:12:56 UTC +00:00
-account_status.create_date # => Fri, 15 Jan 2010 15:11:00 UTC +00:00
-account_status.logon_count # => 388
-account_status.logon_minutes # => 15598
-
-account_status.current_time # => Mon, 23 Nov 2015 18:53:46 UTC +00:00
-account_status.cached_until # => Mon, 23 Nov 2015 19:28:38 UTC +00:00
-account_status.version # => 2
-
-# TODO: add multi character training support
-```
-
-#### Api Key Info
-
-```ruby
-key_id = 1234567
-v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-
-api_key_info = EveOnline::XML::ApiKeyInfo.new(key_id, v_code)
-
-api_key_info.as_json
-# => {:access_mask=>1073741823, :api_key_type=>:character, :expires=>Fri, 02 Dec 2016 18:13:59 UTC +00:00}
-
-api_key_info.access_mask # => 1073741823
-api_key_info.api_key_type # => :character
-api_key_info.expires # => Fri, 02 Dec 2016 18:13:59 UTC +00:00
-
-api_key_info.current_time # => Mon, 30 Nov 2015 23:00:38 UTC +00:00
-api_key_info.cached_until # => Mon, 30 Nov 2015 23:05:38 UTC +00:00
-api_key_info.version # => 2
-
-api_key_info.characters.size # => 2
-
-character = api_key_info.characters.first
-
-character.as_json
-# => {:character_id=>90729314, :character_name=>"Green Black", :corporation_id=>1000168, :corporation_name=>"Federal Navy Academy", :alliance_id=>0, :alliance_name=>"", :faction_id=>0, :faction_name=>""}
-
-character.character_id # => 90729314
-character.character_name # => "Green Black"
-character.corporation_id # => 1000168
-character.corporation_name # => "Federal Navy Academy"
-character.alliance_id # => 0
-character.alliance_name # => ""
-character.faction_id # => 0
-character.faction_name # => ""
-```
-
-#### Characters
-
-```ruby
-key_id = 1234567
-v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-
-characters = EveOnline::XML::AccountCharacters.new(key_id, v_code)
-characters.version # => 2
-characters.current_time # => Mon, 30 Nov 2015 23:31:31 UTC +00:00
-characters.cached_until # => Tue, 01 Dec 2015 00:28:31 UTC +00:00
-
-characters.characters.size # => 2
-
-character = characters.characters.first
-
-character.as_json
-# => {:character_id=>90729314, :character_name=>"Green Black", :corporation_id=>1000168, :corporation_name=>"Federal Navy Academy", :alliance_id=>0, :alliance_name=>"", :faction_id=>0, :faction_name=>""}
-
-character.character_id # => 90729314
-character.character_name # => "Green Black"
-character.corporation_id # => 1000168
-character.corporation_name # => "Federal Navy Academy"
-character.alliance_id # => 0
-character.alliance_name # => ""
-character.faction_id # => 0
-character.faction_name # => ""
-```
-
 #### Characters Bookmarks
 
 ```ruby
@@ -236,14 +149,6 @@ character_sheet.clone_jump_date # => Fri, 27 Jul 2012 14:50:11 UTC +00:00
 character_sheet.last_respec_date # => Sat, 07 May 2011 12:58:06 UTC +00:00
 character_sheet.last_timed_respec # => Sat, 07 May 2011 12:58:06 UTC +00:00
 character_sheet.remote_station_date # => Tue, 30 Jun 2015 21:51:13 UTC +00:00
-character_sheet.jump_activation # => Mon, 01 Jan 0001 00:00:00 UTC +00:00
-character_sheet.jump_fatigue # => Mon, 01 Jan 0001 00:00:00 UTC +00:00
-character_sheet.jump_last_update # => Mon, 01 Jan 0001 00:00:00 UTC +00:00
-character_sheet.intelligence # => 21
-character_sheet.memory # => 21
-character_sheet.charisma # => 17
-character_sheet.perception # => 20
-character_sheet.willpower # => 20
 
 character_sheet.jump_clones.size # => 2
 
@@ -332,50 +237,6 @@ marker_order.bid # => false
 marker_order.issued # => Thu, 01 Sep 2016 20:01:57 UTC +00:00
 ```
 
-#### Character standings
-
-```ruby
-key_id = 1234567
-v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-character_id = 90729314
-
-standings = EveOnline::XML::CharacterStandings.new(key_id, v_code, character_id)
-
-standings.current_time # => Thu, 18 Aug 2016 14:50:50 UTC +00:00
-standings.cached_until # => Thu, 18 Aug 2016 17:47:50 UTC +00:00
-standings.version # => 2
-
-standings.agents.size # => 15
-
-agent = standings.agents.first # => #<EveOnline::Standing:0x007f90f33df4d8 @options={"@fromID"=>"3008771", "@fromName"=>"Nehrnah Gorouyar", "@standing"=>"0.12"}>
-
-agent.as_json # => {:from_id=>3008771, :from_name=>"Nehrnah Gorouyar", :standing=>0.12}
-
-agent.from_id # => 3008771
-agent.from_name # => "Nehrnah Gorouyar"
-agent.standing # => 0.12
-
-standings.npc_corporations.size # => 6
-
-npc_corporation = standings.npc_corporations.first # => #<EveOnline::Standing:0x007f90f33af9e0 @options={"@fromID"=>"1000035", "@fromName"=>"Caldari Navy", "@standing"=>"0.72"}>
-
-npc_corporation.as_json # => {:from_id=>1000035, :from_name=>"Caldari Navy", :standing=>0.72}
-
-npc_corporation.from_id # => 1000035
-npc_corporation.from_name # => "Caldari Navy"
-npc_corporation.standing # => 0.72
-
-standings.factions.size # => 16
-
-faction = standings.factions.first # => #<EveOnline::Standing:0x007f90f3395a90 @options={"@fromID"=>"500001", "@fromName"=>"Caldari State", "@standing"=>"0.33"}>
-
-faction.as_json # => {:from_id=>500001, :from_name=>"Caldari State", :standing=>0.33}
-
-faction.from_id # => 500001
-faction.from_name # => "Caldari State"
-faction.standing # => 0.33
-```
-
 #### Character upcoming calender events
 
 ```ruby
@@ -457,20 +318,6 @@ corporation_market_orders = EveOnline::XML::CorporationMarketOrders.new(key_id, 
 # TODO: finish this
 
 ```
-
-Character Names to IDs:
-```ruby
-input = ['Johnn Dillinger'] # => ["Johnn Dillinger"]
-
-characters_ids = EveOnline::Eve::CharacterID.new(input)
-
-characters_ids.current_time # => Mon, 11 Apr 2016 18:51:01 UTC +00:00
-characters_ids.cached_until # => Wed, 11 May 2016 18:51:01 UTC +00:00
-characters_ids.version # => 2
-
-characters_ids.response # => {"eveapi"=>{"currentTime"=>"2016-04-11 18:51:01", "result"=>{"rowset"=>{"row"=>{"@name"=>"Johnn Dillinger", "@characterID"=>"1337512245"}, "@name"=>"characters", "@key"=>"characterID", "@columns"=>"name,characterID"}}, "cachedUntil"=>"2016-05-11 18:51:01", "@version"=>"2"}}
-```
-
 
 ### ESI Examples
 
@@ -647,6 +494,22 @@ blueprint.type_id # => 1010
 
 ##### Get jump fatigue
 
+```ruby
+options = { token: 'token123', character_id: 90729314 }
+
+character_fatigue = EveOnline::ESI::CharacterFatigue.new(options)
+
+character_fatigue.scope # => "esi-characters.read_fatigue.v1"
+
+character_fatigue.as_json # => {:jump_fatigue_expire_date=>nil, :last_jump_date=>nil, :last_update_date=>nil}
+
+character_fatigue.jump_fatigue_expire_date # => nil
+character_fatigue.last_jump_date # => nil
+character_fatigue.last_update_date # => nil
+
+# TODO: add real data here
+```
+
 ##### Get medals
 
 ##### Get character notifications
@@ -674,6 +537,24 @@ character_portrait.huge # => "http://image.eveonline.com/Character/90729314_512.
 ##### Get character corporation roles
 
 ##### Get standings
+
+```ruby
+options = { token: 'token123', character_id: 90729314 }
+
+character_standing = EveOnline::ESI::CharacterStandings.new(options)
+
+character_standing.scope # => "esi-characters.read_standings.v1"
+
+character_standing.standings.size # => 37
+
+standing = character_standing.standings.first
+
+standing.as_json # => {:from_id=>500001, :from_type=>"faction", :standing=>0.3303719111639991}
+
+standing.from_id # => 500001
+standing.from_type # => "faction"
+standing.standing # => 0.3303719111639991
+```
 
 #### Clones
 
@@ -1391,21 +1272,11 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 
 ## Implementation check list
 
-### Account
-
-- [x] [Account Status](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/account/account_accountstatus.html)
-- [x] [API Key Info](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/account/account_apikeyinfo.html)
-- [x] [Characters](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/account/account_characters.html)
-
-----
-
 ### Character
 
-- [x] [Blueprints](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_blueprints.html)
 - [x] [Bookmarks](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_bookmarks.html)
 - [x] [Contact Notifications](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_contactnotifications.html)
 - [x] [Market Orders](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_marketorders.html)
-- [x] [Standings](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_standings.html)
 - [x] [Upcoming Calendar Events](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_upcomingcalendarevents.html)
 - [x] [Wallet Journal](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_walletjournal.html)
 

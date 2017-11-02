@@ -11,114 +11,71 @@ describe EveOnline::ESI::ServerStatus do
     its(:parser) { should eq(JSON) }
   end
 
+  describe '#model' do
+    let(:response) { double }
+
+    before { expect(subject).to receive(:response).and_return(response) }
+
+    let(:model) { double }
+
+    before do
+      #
+      # EveOnline::ESI::Models::ServerStatus.new(response) # => model
+      #
+      expect(EveOnline::ESI::Models::ServerStatus).to receive(:new).with(response).and_return(model)
+    end
+
+    specify { expect { subject.model }.not_to raise_error }
+
+    specify { expect { subject.model }.to change { subject.instance_variable_defined?(:@_memoized_model) }.from(false).to(true) }
+  end
+
   describe '#as_json' do
-    let(:server_status) { described_class.new }
+    let(:model) { double }
 
-    let(:start_time) { double }
+    before { subject.instance_variable_set(:@_memoized_model, model) }
 
-    before { expect(server_status).to receive(:start_time).and_return(start_time) }
+    before { expect(model).to receive(:as_json) }
 
-    before { expect(server_status).to receive(:players).and_return(34_520) }
-
-    before { expect(server_status).to receive(:server_version).and_return('1135520') }
-
-    before { expect(server_status).to receive(:vip).and_return(false) }
-
-    subject { server_status.as_json }
-
-    its([:start_time]) { should eq(start_time) }
-
-    its([:players]) { should eq(34_520) }
-
-    its([:server_version]) { should eq('1135520') }
-
-    its([:vip]) { should eq(false) }
+    specify { expect { subject.as_json }.not_to raise_error }
   end
 
   describe '#start_time' do
-    context 'start_time is present' do
-      let(:start_time) { double }
+    let(:model) { double }
 
-      before do
-        #
-        # subject.response['start_time'] => start_time
-        #
-        expect(subject).to receive(:response) do
-          double.tap do |a|
-            expect(a).to receive(:[]).with('start_time').and_return(start_time)
-          end
-        end
-      end
+    before { subject.instance_variable_set(:@_memoized_model, model) }
 
-      before do
-        #
-        # subject.parse_datetime_with_timezone(start_time)
-        #
-        expect(subject).to receive(:parse_datetime_with_timezone).with(start_time)
-      end
+    before { expect(model).to receive(:start_time) }
 
-      specify { expect { subject.start_time }.not_to raise_error }
-    end
-
-    context 'start_time not present' do
-      before do
-        #
-        # subject.response['start_time'] => nil
-        #
-        expect(subject).to receive(:response) do
-          double.tap do |a|
-            expect(a).to receive(:[]).with('start_time').and_return(nil)
-          end
-        end
-      end
-
-      before { expect(subject).not_to receive(:parse_datetime_with_timezone) }
-
-      specify { expect { subject.start_time }.not_to raise_error }
-    end
+    specify { expect { subject.start_time }.not_to raise_error }
   end
 
   describe '#players' do
-    before do
-      #
-      # subject.response['players']
-      #
-      expect(subject).to receive(:response) do
-        double.tap do |a|
-          expect(a).to receive(:[]).with('players')
-        end
-      end
-    end
+    let(:model) { double }
+
+    before { subject.instance_variable_set(:@_memoized_model, model) }
+
+    before { expect(model).to receive(:players) }
 
     specify { expect { subject.players }.not_to raise_error }
   end
 
   describe '#server_version' do
-    before do
-      #
-      # subject.response['server_version']
-      #
-      expect(subject).to receive(:response) do
-        double.tap do |a|
-          expect(a).to receive(:[]).with('server_version')
-        end
-      end
-    end
+    let(:model) { double }
+
+    before { subject.instance_variable_set(:@_memoized_model, model) }
+
+    before { expect(model).to receive(:server_version) }
 
     specify { expect { subject.server_version }.not_to raise_error }
   end
 
   describe '#vip' do
-    before do
-      #
-      # subject.response['vip']
-      #
-      expect(subject).to receive(:response) do
-        double.tap do |a|
-          expect(a).to receive(:[]).with('vip')
-        end
-      end
-    end
+    let(:model) { double }
+
+    before { subject.instance_variable_set(:@_memoized_model, model) }
+
+    before { expect(model).to receive(:vip) }
 
     specify { expect { subject.vip }.not_to raise_error }
   end

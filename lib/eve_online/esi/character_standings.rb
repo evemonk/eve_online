@@ -1,7 +1,7 @@
 module EveOnline
   module ESI
-    class CharacterSkillQueue < Base
-      API_ENDPOINT = 'https://esi.tech.ccp.is/v2/characters/%s/skillqueue/?datasource=tranquility'.freeze
+    class CharacterStandings < Base
+      API_ENDPOINT = 'https://esi.tech.ccp.is/v1/characters/%s/standings/?datasource=tranquility'.freeze
 
       attr_reader :character_id
 
@@ -11,17 +11,17 @@ module EveOnline
         @character_id = options[:character_id]
       end
 
-      def skills
+      def standings
         output = []
-        response.each do |skill|
-          output << Models::SkillQueueEntry.new(skill)
+        response.each do |standing|
+          output << Models::Standing.new(standing)
         end
         output
       end
-      memoize :skills
+      memoize :standings
 
       def scope
-        'esi-skills.read_skillqueue.v1'
+        'esi-characters.read_standings.v1'
       end
 
       def url
