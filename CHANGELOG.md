@@ -77,6 +77,7 @@
 * Drop `EveOnline::Eve::CharacterID`
 * Drop `EveOnline::XML::AccountCharacters`. ESI doesn't support this.
 * Drop `EveOnline::XML::ApiKeyInfo`
+* Drop `EveOnline::XML::AccountStatus`. ESO doesn't support this.
 
 **v0.12.0**
 
