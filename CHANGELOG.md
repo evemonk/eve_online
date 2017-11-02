@@ -81,6 +81,7 @@
 * Add `EveOnline::ESI::Models::Standing`
 * Add `EveOnline::ESI::Standings`
 * Drop `EveOnline::XML::CharacterStandings`. Use `EveOnline::ESI::Standings` instead.
+* Add `EveOnline::ESI::CharacterFatigue`
 
 **v0.12.0**
 
