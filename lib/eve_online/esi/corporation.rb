@@ -5,7 +5,7 @@ module EveOnline
     class Corporation < Base
       extend Forwardable
 
-      API_ENDPOINT = 'https://esi.tech.ccp.is/latest/corporations/%s/?datasource=tranquility'.freeze
+      API_ENDPOINT = 'https://esi.tech.ccp.is/v3/corporations/%s/?datasource=tranquility'.freeze
 
       attr_reader :corporation_id
 
