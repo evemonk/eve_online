@@ -23,7 +23,7 @@ module EveOnline
         end
 
         def ceo_id
-          birthday = options['ceo_id']
+          options['ceo_id']
         end
 
         def corporation_description
