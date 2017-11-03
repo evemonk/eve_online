@@ -84,6 +84,7 @@
 * Add `EveOnline::ESI::CharacterFatigue`
 * Add `EveOnline::ESI::Models::Fatigue`
 * Add `EveOnline::ESI::Models::ServerStatus`
+* Add `EveOnline::ESI::Corporation`. ([#120](https://github.com/biow0lf/eve_online/pull/120), @Mekaret)
 
 **v0.12.0**
 
