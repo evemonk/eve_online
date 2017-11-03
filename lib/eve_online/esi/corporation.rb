@@ -16,10 +16,9 @@ module EveOnline
       end
 
       def_delegators :model, :as_json, :alliance_id, :ceo_id,
-                     :corporation_description, :corporation_description,
-                     :corporation_name, :creation_date, :creator_id, :faction,
-                     :faction, :member_count, :tax_rate, :ticker,
-                     :corporation_url
+                     :corporation_description, :corporation_name,
+                     :creation_date, :creator_id, :faction,
+                     :member_count, :tax_rate, :ticker, :corporation_url
 
       def model
         Models::Corporation.new(response)
