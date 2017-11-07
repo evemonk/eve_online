@@ -17,6 +17,49 @@ describe EveOnline::ESI::CharacterClones do
     its(:character_id) { should eq(12_345_678) }
   end
 
+  describe '#last_jump_date' do
+    context 'last_jump_date is present' do
+      let(:last_jump_date) { double }
+
+      before do
+        #
+        # subject.response['last_jump_date'] => last_jump_date
+        #
+        expect(subject).to receive(:response) do
+          double.tap do |a|
+            expect(a).to receive(:[]).with('last_jump_date').and_return(last_jump_date)
+          end
+        end
+      end
+
+      before do
+        #
+        # subject.parse_datetime_with_timezone(last_jump_date)
+        #
+        expect(subject).to receive(:parse_datetime_with_timezone).with(last_jump_date)
+      end
+
+      specify { expect { subject.last_jump_date }.not_to raise_error }
+    end
+
+    context 'last_jump_date not present' do
+      before do
+        #
+        # subject.response['last_jump_date'] => nil
+        #
+        expect(subject).to receive(:response) do
+          double.tap do |a|
+            expect(a).to receive(:[]).with('last_jump_date').and_return(nil)
+          end
+        end
+      end
+
+      before { expect(subject).not_to receive(:parse_datetime_with_timezone) }
+
+      specify { expect { subject.last_jump_date }.not_to raise_error }
+    end
+  end
+
   describe '#jump_clones' do
     let(:jump_clone) { double }
 

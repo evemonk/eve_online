@@ -11,6 +11,12 @@ module EveOnline
         @character_id = options[:character_id]
       end
 
+      def last_jump_date
+        last_jump_date = response['last_jump_date']
+
+        parse_datetime_with_timezone(last_jump_date) if last_jump_date
+      end
+
       def jump_clones
         output = []
         response['jump_clones'].each do |jump_clone|
