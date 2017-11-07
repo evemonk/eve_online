@@ -11,6 +11,15 @@ module EveOnline
         @character_id = options[:character_id]
       end
 
+      def jump_clones
+        output = []
+        response['jump_clones'].each do |jump_clone|
+          output << Models::JumpClone.new(jump_clone)
+        end
+        output
+      end
+      memoize :jump_clones
+
       def scope
         'esi-clones.read_clones.v1'
       end
