@@ -85,6 +85,16 @@
 * Add `EveOnline::ESI::Models::Fatigue`
 * Add `EveOnline::ESI::Models::ServerStatus`
 * Add `EveOnline::ESI::Corporation`. ([#120](https://github.com/biow0lf/eve_online/pull/120), @Mekaret)
+* Add `EveOnline::ESI::CharacterClones`
+* Add `EveOnline::ESI::Models::JumpClone`
+* Add `EveOnline::ESI::Models::HomeLocation`
+* Drop `EveOnline::JumpClone`
+* Drop `EveOnline::JumpCloneImplant`
+* Drop `EveOnline::CharacterJumpClones`
+* Drop `EveOnline::CharacterJumpCloneImplants`
+* Drop `EveOnline::XML::CharacterSheet#jump_clones`
+* Drop `EveOnline::XML::CharacterSheet#jump_clone_implants`
+* Drop `EveOnline::XML::CharacterSheet`. Use ESI endpoints.
 
 **v0.12.0**
 

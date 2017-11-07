@@ -108,73 +108,6 @@ bookmark.memo # => "1"
 bookmark.note # => ""
 ```
 
-#### Character Sheet
-
-```ruby
-key_id = 1234567
-v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-options = { character_id: 90729314 }
-
-character_sheet = EveOnline::XML::CharacterSheet.new(key_id, v_code, options)
-
-character_sheet.current_time # => Sun, 17 Jul 2016 12:27:11 UTC +00:00
-character_sheet.cached_until # => Sun, 17 Jul 2016 13:24:11 UTC +00:00
-character_sheet.version # => 2
-
-character_sheet.as_json
-# => {:id=>90729314, :name=>"Green Black", :home_station_id=>61000032, :dob=>Fri, 15 Jan 2010 15:26:00 UTC +00:00, :race=>"Minmatar", :blood_line_id=>4, :blood_line=>"Brutor", :ancestry_id=>24, :ancestry=>"Slave Child", :gender=>:male, :corporation_name=>"MyLittleDragon", :corporation_id=>98134807, :alliance_name=>"Kids With Guns Alliance", :alliance_id=>99005443, :faction_name=>nil, :faction_id=>0, :clone_type_id=>164, :clone_name=>"Clone Grade Alpha", :clone_skill_points=>0, :free_skill_points=>400000, :free_respecs=>2, :clone_jump_date=>Fri, 27 Jul 2012 14:50:11 UTC +00:00, :last_respec_date=>Sat, 07 May 2011 12:58:06 UTC +00:00, :last_timed_respec=>Sat, 07 May 2011 12:58:06 UTC +00:00, :remote_station_date=>Tue, 30 Jun 2015 21:51:13 UTC +00:00}
-
-character_sheet.id # => 90729314
-character_sheet.name # => "Green Black"
-character_sheet.home_station_id # => 61000032
-character_sheet.dob # => Fri, 15 Jan 2010 15:26:00 UTC +00:00
-character_sheet.race # => "Minmatar"
-character_sheet.blood_line_id # => 4
-character_sheet.blood_line # => "Brutor"
-character_sheet.ancestry_id # => 24
-character_sheet.ancestry # => "Slave Child"
-character_sheet.gender # => :male
-character_sheet.corporation_name # => "MyLittleDragon"
-character_sheet.corporation_id # => 98134807
-character_sheet.alliance_name # => "Kids With Guns Alliance"
-character_sheet.alliance_id # => 99005443
-character_sheet.faction_name # => nil
-character_sheet.faction_id # => 0
-character_sheet.clone_type_id # => 164
-character_sheet.clone_name # => "Clone Grade Alpha"
-character_sheet.clone_skill_points # => 0
-character_sheet.free_skill_points # => 400000
-character_sheet.free_respecs # => 2
-character_sheet.clone_jump_date # => Fri, 27 Jul 2012 14:50:11 UTC +00:00
-character_sheet.last_respec_date # => Sat, 07 May 2011 12:58:06 UTC +00:00
-character_sheet.last_timed_respec # => Sat, 07 May 2011 12:58:06 UTC +00:00
-character_sheet.remote_station_date # => Tue, 30 Jun 2015 21:51:13 UTC +00:00
-
-character_sheet.jump_clones.size # => 2
-
-jump_clone = character_sheet.jump_clones.first
-
-jump_clone.as_json # => {:jump_clone_id=>22357400, :type_id=>164, :location_id=>61000032, :clone_name=>""}
-
-jump_clone.jump_clone_id # => 22357400
-jump_clone.type_id # => 164
-jump_clone.location_id # => 61000032
-jump_clone.clone_name # => ""
-
-character_sheet.jump_clone_implants.size # => 15
-
-jump_clone_implant = character_sheet.jump_clone_implants.first
-
-jump_clone_implant.as_json # => {:jump_clone_id=>22703029, :type_id=>10209, :type_name=>"Memory Augmentation - Improved"}
-
-jump_clone_implant.jump_clone_id # => 22703029
-jump_clone_implant.type_id # => 10209
-jump_clone_implant.type_name # => "Memory Augmentation - Improved"
-
-# TODO: finish this
-
-```
-
 #### Character contact notifications
 
 ```ruby
@@ -559,6 +492,28 @@ standing.standing # => 0.3303719111639991
 #### Clones
 
 ##### Get clones
+
+```ruby
+options = { token: 'token123', character_id: 90729314 }
+
+character_clones = EveOnline::ESI::CharacterClones.new(options)
+
+character_clones.scope # => "esi-clones.read_clones.v1"
+
+character_clones.last_jump_date # => Fri, 27 Jul 2012 14:50:11 UTC +00:00
+
+character_clones.home_location.as_json # => {:location_id=>61000032, :location_type=>"station"}
+
+character_clones.jump_clones.size # => 2
+
+jump_clone = character_clones.jump_clones.first
+
+jump_clone.as_json # => {:location_id=>61000032, :location_type=>"station", :implants=>[22118]}
+
+jump_clone.location_id # => 61000032
+jump_clone.location_type # => "station"
+jump_clone.implants # => [22118]
+```
 
 ##### Get active implants
 
