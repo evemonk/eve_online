@@ -149,16 +149,6 @@ module EveOnline
         parse_datetime_with_timezone(result.fetch('remoteStationDate'))
       end
 
-      def jump_clones
-        CharacterJumpClones.new(result).jump_clones
-      end
-      memoize :jump_clones
-
-      def jump_clone_implants
-        CharacterJumpCloneImplants.new(result).jump_clone_implants
-      end
-      memoize :jump_clone_implants
-
       def url
         output = "#{ API_ENDPOINT }?keyID=#{ key_id }&vCode=#{ v_code }"
         output = "#{ output }&characterID=#{ character_id }" if character_id

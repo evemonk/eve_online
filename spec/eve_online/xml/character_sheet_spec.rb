@@ -631,48 +631,6 @@ describe EveOnline::XML::CharacterSheet do
     specify { expect { subject.remote_station_date }.not_to raise_error }
   end
 
-  describe '#jump_clones' do
-    let(:result) { double }
-
-    before { expect(subject).to receive(:result).and_return(result) }
-
-    before do
-      #
-      # EveOnline::CharacterJumpClones.new(result).jump_clones
-      #
-      expect(EveOnline::CharacterJumpClones).to receive(:new).with(result) do
-        double.tap do |a|
-          expect(a).to receive(:jump_clones)
-        end
-      end
-    end
-
-    specify { expect { subject.jump_clones }.not_to raise_error }
-
-    specify { expect { subject.jump_clones }.to change { subject.instance_variable_defined?(:@_memoized_jump_clones) }.from(false).to(true) }
-  end
-
-  describe '#jump_clone_implants' do
-    let(:result) { double }
-
-    before { expect(subject).to receive(:result).and_return(result) }
-
-    before do
-      #
-      # EveOnline::CharacterJumpCloneImplants.new(result).jump_clone_implants
-      #
-      expect(EveOnline::CharacterJumpCloneImplants).to receive(:new).with(result) do
-        double.tap do |a|
-          expect(a).to receive(:jump_clone_implants)
-        end
-      end
-    end
-
-    specify { expect { subject.jump_clone_implants }.not_to raise_error }
-
-    specify { expect { subject.jump_clone_implants }.to change { subject.instance_variable_defined?(:@_memoized_jump_clone_implants) }.from(false).to(true) }
-  end
-
   describe '#url' do
     context 'default' do
       specify do
