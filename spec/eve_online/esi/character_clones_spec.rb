@@ -60,6 +60,34 @@ describe EveOnline::ESI::CharacterClones do
     end
   end
 
+  describe '#home_location' do
+    let(:model) { double }
+
+    let(:home_location) { double }
+
+    before do
+      #
+      # subject.response['home_location'] => home_location
+      #
+      expect(subject).to receive(:response) do
+        double.tap do |a|
+          expect(a).to receive(:[]).with('home_location').and_return(home_location)
+        end
+      end
+    end
+
+    before do
+      #
+      # EveOnline::ESI::Models::HomeLocation.new(home_location) # => model
+      #
+      expect(EveOnline::ESI::Models::HomeLocation).to receive(:new).with(home_location).and_return(model)
+    end
+
+    specify { expect { subject.home_location }.not_to raise_error }
+
+    specify { expect { subject.home_location }.to change { subject.instance_variable_defined?(:@_memoized_home_location) }.from(false).to(true) }
+  end
+
   describe '#jump_clones' do
     let(:jump_clone) { double }
 

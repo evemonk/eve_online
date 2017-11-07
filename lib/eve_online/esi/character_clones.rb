@@ -17,6 +17,11 @@ module EveOnline
         parse_datetime_with_timezone(last_jump_date) if last_jump_date
       end
 
+      def home_location
+        Models::HomeLocation.new(response['home_location'])
+      end
+      memoize :home_location
+
       def jump_clones
         output = []
         response['jump_clones'].each do |jump_clone|
