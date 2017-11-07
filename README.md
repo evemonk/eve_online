@@ -149,30 +149,6 @@ character_sheet.clone_jump_date # => Fri, 27 Jul 2012 14:50:11 UTC +00:00
 character_sheet.last_respec_date # => Sat, 07 May 2011 12:58:06 UTC +00:00
 character_sheet.last_timed_respec # => Sat, 07 May 2011 12:58:06 UTC +00:00
 character_sheet.remote_station_date # => Tue, 30 Jun 2015 21:51:13 UTC +00:00
-
-character_sheet.jump_clones.size # => 2
-
-jump_clone = character_sheet.jump_clones.first
-
-jump_clone.as_json # => {:jump_clone_id=>22357400, :type_id=>164, :location_id=>61000032, :clone_name=>""}
-
-jump_clone.jump_clone_id # => 22357400
-jump_clone.type_id # => 164
-jump_clone.location_id # => 61000032
-jump_clone.clone_name # => ""
-
-character_sheet.jump_clone_implants.size # => 15
-
-jump_clone_implant = character_sheet.jump_clone_implants.first
-
-jump_clone_implant.as_json # => {:jump_clone_id=>22703029, :type_id=>10209, :type_name=>"Memory Augmentation - Improved"}
-
-jump_clone_implant.jump_clone_id # => 22703029
-jump_clone_implant.type_id # => 10209
-jump_clone_implant.type_name # => "Memory Augmentation - Improved"
-
-# TODO: finish this
-
 ```
 
 #### Character contact notifications
