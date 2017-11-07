@@ -94,6 +94,7 @@
 * Drop `EveOnline::CharacterJumpCloneImplants`
 * Drop `EveOnline::XML::CharacterSheet#jump_clones`
 * Drop `EveOnline::XML::CharacterSheet#jump_clone_implants`
+* Drop `EveOnline::XML::CharacterSheet`. Use ESI endpoints.
 
 **v0.12.0**
 
