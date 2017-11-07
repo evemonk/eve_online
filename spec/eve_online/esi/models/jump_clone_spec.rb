@@ -18,7 +18,7 @@ describe EveOnline::ESI::Models::JumpClone do
 
     before { expect(jump_clone).to receive(:location_type).and_return('station') }
 
-    before { expect(jump_clone).to receive(:implants).and_return([22118]) }
+    before { expect(jump_clone).to receive(:implants).and_return([22_118]) }
 
     subject { jump_clone.as_json }
 
@@ -26,7 +26,7 @@ describe EveOnline::ESI::Models::JumpClone do
 
     its([:location_type]) { should eq('station') }
 
-    its([:implants]) { should eq([22118]) }
+    its([:implants]) { should eq([22_118]) }
   end
 
   describe '#location_id' do
