@@ -560,6 +560,28 @@ standing.standing # => 0.3303719111639991
 
 ##### Get clones
 
+```ruby
+options = { token: 'token123', character_id: 90729314 }
+
+character_clones = EveOnline::ESI::CharacterClones.new(options)
+
+character_clones.scope # => "esi-clones.read_clones.v1"
+
+character_clones.last_jump_date # => Fri, 27 Jul 2012 14:50:11 UTC +00:00
+
+character_clones.home_location.as_json # => {:location_id=>61000032, :location_type=>"station"}
+
+character_clones.jump_clones.size # => 2
+
+jump_clone = character_clones.jump_clones.first
+
+jump_clone.as_json # => {:location_id=>61000032, :location_type=>"station", :implants=>[22118]}
+
+jump_clone.location_id # => 61000032
+jump_clone.location_type # => "station"
+jump_clone.implants # => [22118]
+```
+
 ##### Get active implants
 
 ```ruby
