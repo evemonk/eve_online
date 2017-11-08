@@ -26,8 +26,6 @@ require 'eve_online/xml/character_wallet_journal'
 
 require 'eve_online/xml/corporation_market_orders'
 
-require 'eve_online/xml/models/account_type_object'
-
 # ESI API
 require 'eve_online/esi/base'
 

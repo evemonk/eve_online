@@ -97,6 +97,7 @@
 * Drop `EveOnline::XML::CharacterSheet`. Use ESI endpoints.
 * Add `EveOnline::ESI::CharacterIndustryJobs`. ([#126](https://github.com/biow0lf/eve_online/pull/126), @Mekaret)
 * Add `EveOnline::ESI::CorporationIndustryJobs`. ([#126](https://github.com/biow0lf/eve_online/pull/126), @Mekaret)
+* Drop `EveOnline::XML::Models::AccountTypeObject`
 
 **v0.12.0**
 
