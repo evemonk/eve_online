@@ -1095,6 +1095,40 @@ bloodline.intelligence # => 4
 
 ##### Get factions
 
+```ruby
+factions = EveOnline::ESI::Factions.new
+
+factions.scope # => nil
+
+factions.factions.size # => 22
+
+faction = factions.factions.first
+
+faction.as_json # => {:faction_id=>500002,
+                #     :name=>"Minmatar Republic",
+                #     :description=>"The Minmatar Republic was formed over a century ago when the Minmatar threw...",
+                #     :solar_system_id=>30002544,
+                #     :corporation_id=>1000051,
+                #     :militia_corporation_id=>1000182,
+                #     :size_factor=>5.0,
+                #     :station_count=>570,
+                #     :station_system_count=>291,
+                #     :is_unique=>true}
+
+faction.faction_id # => 500002
+faction.name # => "Minmatar Republic"
+faction.description # => "The Minmatar Republic was formed over a century ago when the Minmatar threw..."
+faction.solar_system_id # => 30002544
+faction.corporation_id # => 1000051
+faction.militia_corporation_id # => 1000182
+faction.size_factor # => 5.0
+faction.station_count # => 570
+faction.station_system_count # => 291
+faction.is_unique # => true
+
+# TODO: add languages
+```
+
 ##### Get graphics
 
 ##### Get graphic information
