@@ -52,6 +52,7 @@ require 'eve_online/esi/alliance_icon'
 require 'eve_online/esi/server_status'
 require 'eve_online/esi/races'
 require 'eve_online/esi/bloodlines'
+require 'eve_online/esi/factions'
 
 require 'eve_online/esi/models/base'
 require 'eve_online/esi/models/loyalty_point'
@@ -76,6 +77,7 @@ require 'eve_online/esi/models/alliance_icon'
 
 require 'eve_online/esi/models/race'
 require 'eve_online/esi/models/bloodline'
+require 'eve_online/esi/models/faction'
 
 # SDE
 require 'eve_online/sde/base'
