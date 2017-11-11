@@ -1,7 +1,7 @@
 module EveOnline
   module ESI
-    class CharacterWallet < Base
-      API_ENDPOINT = 'https://esi.tech.ccp.is/v1/characters/%s/wallet/?datasource=tranquility'.freeze
+    class CharacterImplants < Base
+      API_ENDPOINT = 'https://esi.tech.ccp.is/v1/characters/%s/implants/?datasource=tranquility'.freeze
 
       attr_reader :character_id
 
@@ -11,18 +11,12 @@ module EveOnline
         @character_id = options[:character_id]
       end
 
-      def as_json
-        {
-          wallet: wallet
-        }
-      end
-
-      def wallet
+      def implants
         response
       end
 
       def scope
-        'esi-wallet.read_character_wallet.v1'
+        'esi-clones.read_implants.v1'
       end
 
       def url

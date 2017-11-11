@@ -67,173 +67,6 @@ Or install it yourself as:
 
 ### XML API
 
-#### Account status
-
-```ruby
-key_id = 1234567
-v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-
-account_status = EveOnline::XML::AccountStatus.new(key_id, v_code)
-
-account_status.as_json
-# => {:paid_until=>Mon, 28 Dec 2015 18:12:56 UTC +00:00, :create_date=>Fri, 15 Jan 2010 15:11:00 UTC +00:00, :logon_count=>388, :logon_minutes=>15598}
-
-account_status.paid_until # => Mon, 28 Dec 2015 18:12:56 UTC +00:00
-account_status.create_date # => Fri, 15 Jan 2010 15:11:00 UTC +00:00
-account_status.logon_count # => 388
-account_status.logon_minutes # => 15598
-
-account_status.current_time # => Mon, 23 Nov 2015 18:53:46 UTC +00:00
-account_status.cached_until # => Mon, 23 Nov 2015 19:28:38 UTC +00:00
-account_status.version # => 2
-
-# TODO: add multi character training support
-```
-
-#### Api Key Info
-
-```ruby
-key_id = 1234567
-v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-
-api_key_info = EveOnline::XML::ApiKeyInfo.new(key_id, v_code)
-
-api_key_info.as_json
-# => {:access_mask=>1073741823, :api_key_type=>:character, :expires=>Fri, 02 Dec 2016 18:13:59 UTC +00:00}
-
-api_key_info.access_mask # => 1073741823
-api_key_info.api_key_type # => :character
-api_key_info.expires # => Fri, 02 Dec 2016 18:13:59 UTC +00:00
-
-api_key_info.current_time # => Mon, 30 Nov 2015 23:00:38 UTC +00:00
-api_key_info.cached_until # => Mon, 30 Nov 2015 23:05:38 UTC +00:00
-api_key_info.version # => 2
-
-api_key_info.characters.size # => 2
-
-character = api_key_info.characters.first
-
-character.as_json
-# => {:character_id=>90729314, :character_name=>"Green Black", :corporation_id=>1000168, :corporation_name=>"Federal Navy Academy", :alliance_id=>0, :alliance_name=>"", :faction_id=>0, :faction_name=>""}
-
-character.character_id # => 90729314
-character.character_name # => "Green Black"
-character.corporation_id # => 1000168
-character.corporation_name # => "Federal Navy Academy"
-character.alliance_id # => 0
-character.alliance_name # => ""
-character.faction_id # => 0
-character.faction_name # => ""
-```
-
-#### Characters
-
-```ruby
-key_id = 1234567
-v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-
-characters = EveOnline::XML::AccountCharacters.new(key_id, v_code)
-characters.version # => 2
-characters.current_time # => Mon, 30 Nov 2015 23:31:31 UTC +00:00
-characters.cached_until # => Tue, 01 Dec 2015 00:28:31 UTC +00:00
-
-characters.characters.size # => 2
-
-character = characters.characters.first
-
-character.as_json
-# => {:character_id=>90729314, :character_name=>"Green Black", :corporation_id=>1000168, :corporation_name=>"Federal Navy Academy", :alliance_id=>0, :alliance_name=>"", :faction_id=>0, :faction_name=>""}
-
-character.character_id # => 90729314
-character.character_name # => "Green Black"
-character.corporation_id # => 1000168
-character.corporation_name # => "Federal Navy Academy"
-character.alliance_id # => 0
-character.alliance_name # => ""
-character.faction_id # => 0
-character.faction_name # => ""
-```
-
-#### Character Account Balance
-
-```ruby
-key_id = 1234567
-v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-options = { character_id: 90729314 }
-
-account_balance = EveOnline::XML::CharacterAccountBalance.new(key_id, v_code, options)
-
-account_balance.as_json
-# => {:account_id=>42763123, :account_key=>1000, :balance=>5000.0, :current_time=>Wed, 02 Dec 2015 20:29:32 UTC +00:00, :cached_until=>Wed, 02 Dec 2015 20:40:42 UTC +00:00}
-
-account_balance.account_id # => 42763123
-account_balance.account_key # => 1000
-account_balance.balance # => 5000.0
-account_balance.current_time # => Wed, 02 Dec 2015 20:29:32 UTC +00:00
-account_balance.cached_until # => Wed, 02 Dec 2015 20:40:42 UTC +00:00
-account_balance.version # => 2
-```
-
-#### Character Asset List
-
-```ruby
-key_id = 1234567
-v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-options = { character_id: 90729314 }
-
-asset_list = EveOnline::XML::CharacterAssetList.new(key_id, v_code, options)
-
-asset_list.current_time # => Mon, 29 Feb 2016 21:51:38 UTC +00:00
-asset_list.cached_until # => Tue, 01 Mar 2016 03:48:38 UTC +00:00
-asset_list.version # => 2
-
-asset_list.assets.size # => 642
-
-asset = asset_list.assets.first
-
-asset.as_json
-# => {:item_id=>408887580, :location_id=>60000634, :type_id=>588, :quantity=>1, :flag=>4, :singleton=>1, :raw_quantity=>-1}
-
-asset.item_id # => 408887580
-asset.location_id # => 60000634
-asset.type_id # => 588
-asset.quantity # => 1
-asset.flag # => 4
-asset.singleton # => 1
-asset.raw_quantity # => -1
-```
-
-#### Character Blueprints
-
-```ruby
-key_id = 1234567
-v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-options = { character_id: 90729314 }
-
-blueprints = EveOnline::XML::CharacterBlueprints.new(key_id, v_code, options)
-
-blueprints.current_time # => Sun, 03 Jan 2016 14:36:37 UTC +00:00
-blueprints.cached_until # => Mon, 04 Jan 2016 02:06:37 UTC +00:00
-blueprints.version # => 2
-
-blueprints.blueprints.size # => 4
-
-blueprint = blueprints.blueprints.first
-
-blueprint.as_json
-# => {:item_id=>716338097, :location_id=>61000032, :type_id=>1010, :type_name=>"Small Shield Extender I Blueprint", :flag_id=>4, :quantity=>-2, :time_efficiency=>0, :material_efficiency=>10, :runs=>300}
-
-blueprint.item_id # => 716338097
-blueprint.location_id # => 61000032
-blueprint.type_id # => 1010
-blueprint.type_name # => "Small Shield Extender I Blueprint"
-blueprint.flag_id # => 4
-blueprint.quantity # => -2
-blueprint.time_efficiency # => 0
-blueprint.material_efficiency # => 10
-blueprint.runs # => 300
-```
-
 #### Characters Bookmarks
 
 ```ruby
@@ -249,7 +82,7 @@ bookmarks.version # => 2
 
 bookmarks.bookmark_folders.size # => 4
 
-bookmark_folder = bookmarks.bookmark_folders.first # => #<EveOnline::BookmarkFolder:0x007fda7521a4b0 ....
+bookmark_folder = bookmarks.bookmark_folders.first
 
 bookmark_folder.as_json # => {:folder_id=>0, :folder_name=>""}
 
@@ -258,7 +91,7 @@ bookmark_folder.folder_name # => ""
 
 bookmark_folder.bookmarks.size # => 87
 
-bookmark = bookmark_folder.bookmarks.first # => #<EveOnline::Bookmark:0x007fc8b49f3880 @options={"@bookmarkID"=>"459411933", "@creatorID"=>"0", "@created"=>"2009-03-28 07:51:00", "@itemID"=>"0", "@typeID"=>"5", "@locationID"=>"30002656", "@x"=>"-267396330161", "@y"=>"-376627274", "@z"=>"-556366331388", "@memo"=>"1", "@note"=>""}>
+bookmark = bookmark_folder.bookmarks.first
 
 bookmark.as_json # => {:bookmark_id=>459411933, :creator_id=>0, :created=>Sat, 28 Mar 2009 07:51:00 UTC +00:00, :item_id=>0, :type_id=>5, :location_id=>30002656, :x=>-267396330161.0, :y=>-376627274.0, :z=>-556366331388.0, :memo=>"1", :note=>""}
 
@@ -273,154 +106,6 @@ bookmark.y # => -376627274.0
 bookmark.z # => -556366331388.0
 bookmark.memo # => "1"
 bookmark.note # => ""
-```
-
-#### Character Calendar Event Attendees
-
-```ruby
-key_id = 1234567
-v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-character_id = 90729314
-event_id = 1234567
-
-cea = EveOnline::XML::CharacterCalendarEventAttendees.new(key_id, v_code, character_id, event_id)
-
-cea.current_time # => Mon, 21 Dec 2015 18:36:33 UTC +00:00
-cea.cached_until # => Mon, 21 Dec 2015 18:36:33 UTC +00:00
-cea.version # => 2
-
-# TODO: finish this
-
-````
-
-#### Character Sheet
-
-```ruby
-key_id = 1234567
-v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-options = { character_id: 90729314 }
-
-character_sheet = EveOnline::XML::CharacterSheet.new(key_id, v_code, options)
-
-character_sheet.current_time # => Sun, 17 Jul 2016 12:27:11 UTC +00:00
-character_sheet.cached_until # => Sun, 17 Jul 2016 13:24:11 UTC +00:00
-character_sheet.version # => 2
-
-character_sheet.as_json
-# => {:id=>90729314, :name=>"Green Black", :home_station_id=>61000032, :dob=>Fri, 15 Jan 2010 15:26:00 UTC +00:00, :race=>"Minmatar", :blood_line_id=>4, :blood_line=>"Brutor", :ancestry_id=>24, :ancestry=>"Slave Child", :gender=>:male, :corporation_name=>"MyLittleDragon", :corporation_id=>98134807, :alliance_name=>"Kids With Guns Alliance", :alliance_id=>99005443, :faction_name=>nil, :faction_id=>0, :clone_type_id=>164, :clone_name=>"Clone Grade Alpha", :clone_skill_points=>0, :free_skill_points=>400000, :free_respecs=>2, :clone_jump_date=>Fri, 27 Jul 2012 14:50:11 UTC +00:00, :last_respec_date=>Sat, 07 May 2011 12:58:06 UTC +00:00, :last_timed_respec=>Sat, 07 May 2011 12:58:06 UTC +00:00, :remote_station_date=>Tue, 30 Jun 2015 21:51:13 UTC +00:00}
-
-character_sheet.id # => 90729314
-character_sheet.name # => "Green Black"
-character_sheet.home_station_id # => 61000032
-character_sheet.dob # => Fri, 15 Jan 2010 15:26:00 UTC +00:00
-character_sheet.race # => "Minmatar"
-character_sheet.blood_line_id # => 4
-character_sheet.blood_line # => "Brutor"
-character_sheet.ancestry_id # => 24
-character_sheet.ancestry # => "Slave Child"
-character_sheet.gender # => :male
-character_sheet.corporation_name # => "MyLittleDragon"
-character_sheet.corporation_id # => 98134807
-character_sheet.alliance_name # => "Kids With Guns Alliance"
-character_sheet.alliance_id # => 99005443
-character_sheet.faction_name # => nil
-character_sheet.faction_id # => 0
-character_sheet.clone_type_id # => 164
-character_sheet.clone_name # => "Clone Grade Alpha"
-character_sheet.clone_skill_points # => 0
-character_sheet.free_skill_points # => 400000
-character_sheet.free_respecs # => 2
-character_sheet.clone_jump_date # => Fri, 27 Jul 2012 14:50:11 UTC +00:00
-character_sheet.last_respec_date # => Sat, 07 May 2011 12:58:06 UTC +00:00
-character_sheet.last_timed_respec # => Sat, 07 May 2011 12:58:06 UTC +00:00
-character_sheet.remote_station_date # => Tue, 30 Jun 2015 21:51:13 UTC +00:00
-character_sheet.jump_activation # => Mon, 01 Jan 0001 00:00:00 UTC +00:00
-character_sheet.jump_fatigue # => Mon, 01 Jan 0001 00:00:00 UTC +00:00
-character_sheet.jump_last_update # => Mon, 01 Jan 0001 00:00:00 UTC +00:00
-character_sheet.balance # => 5000.0
-character_sheet.intelligence # => 21
-character_sheet.memory # => 21
-character_sheet.charisma # => 17
-character_sheet.perception # => 20
-character_sheet.willpower # => 20
-
-character_sheet.implants.size # => 5
-
-implant = character_sheet.implants.first # => #<EveOnline::Implant:0x007fdd34c88110 @options={"@typeID"=>"9899", "@typeName"=>"Ocular Filter - Basic"}>
-
-implant.as_json # => {:type_id=>9899, :type_name=>"Ocular Filter - Basic"}
-
-implant.type_id # => 9899
-implant.type_name # => "Ocular Filter - Basic"
-
-character_sheet.skills.size # => 180
-
-skill = character_sheet.skills.first # => #<EveOnline::Skill:0x007fc1951e1b18 @options={"@typeID"=>"2495", "@skillpoints"=>"1000", "@level"=>"1", "@published"=>"1"}>
-
-skill.as_json # => {:type_id=>2495, :skillpoints=>1000, :level=>1, :published=>true}
-
-skill.type_id # => 2495
-skill.skillpoints # => 1000
-skill.level # => 1
-skill.published # => true
-
-character_sheet.jump_clones.size # => 2
-
-jump_clone = character_sheet.jump_clones.first # => #<EveOnline::JumpClone:0x007fa2341cdb48 @options={"@jumpCloneID"=>"22357400", "@typeID"=>"164", "@locationID"=>"61000032", "@cloneName"=>""}, @jump_clone_id=22357400, @type_id=164, @location_id=61000032, @clone_name="">
-
-jump_clone.as_json # => {:jump_clone_id=>22357400, :type_id=>164, :location_id=>61000032, :clone_name=>""}
-
-jump_clone.jump_clone_id # => 22357400
-jump_clone.type_id # => 164
-jump_clone.location_id # => 61000032
-jump_clone.clone_name # => ""
-
-character_sheet.jump_clone_implants.size # => 15
-
-jump_clone_implant = character_sheet.jump_clone_implants.first # => #<EveOnline::JumpCloneImplant:0x007fae9a929b40 @options={"@jumpCloneID"=>"22703029", "@typeID"=>"10209", "@typeName"=>"Memory Augmentation - Improved"}>
-
-jump_clone_implant.as_json # => {:jump_clone_id=>22703029, :type_id=>10209, :type_name=>"Memory Augmentation - Improved"}
-
-jump_clone_implant.jump_clone_id # => 22703029
-jump_clone_implant.type_id # => 10209
-jump_clone_implant.type_name # => "Memory Augmentation - Improved"
-
-# TODO: finish this
-
-```
-
-#### Character chat channels
-
-```ruby
-key_id = 1234567
-v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-options = { character_id: 90729314 }
-
-character_chat_channels = EveOnline::XML::CharacterChatChannels.new(key_id, v_code, options)
-
-character_chat_channels.current_time # => Fri, 19 Aug 2016 11:05:43 UTC +00:00
-character_chat_channels.cached_until # => Fri, 19 Aug 2016 11:19:44 UTC +00:00
-character_chat_channels.version # => 2
-
-# TODO: finish this
-
-```
-
-#### Character contact list
-
-```ruby
-key_id = 1234567
-v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-options = { character_id: 90729314 }
-
-contact_list = EveOnline::XML::CharacterContactList.new(key_id, v_code, options)
-
-contact_list.current_time # => Fri, 19 Aug 2016 11:08:06 UTC +00:00
-contact_list.cached_until # => Fri, 19 Aug 2016 11:22:07 UTC +00:00
-contact_list.version # => 2
-
-# TODO: finish this
-
 ```
 
 #### Character contact notifications
@@ -438,7 +123,7 @@ contact_notifications.version # => 2
 
 contact_notifications.contact_notifications.size # => 3
 
-contact_notification = contact_notifications.contact_notifications.first # => #<EveOnline::ContactNotification:0x007fe00413d4e0 @options={"@notificationID"=>"308734131", "@senderID"=>"797400947", "@senderName"=>"CCP Garthagk", "@sentDate"=>"2016-03-19 12:13:00", "@messageData"=>"level: 5\nmessage: ''\n"}>
+contact_notification = contact_notifications.contact_notifications.first
 
 contact_notification.as_json # => {:notification_id=>308734131, :sender_id=>797400947, :sender_name=>"CCP Garthagk", :sent_date=>Sat, 19 Mar 2016 12:13:00 UTC +00:00, :message_data=>"level: 5\nmessage: ''\n"}
 
@@ -447,188 +132,6 @@ contact_notification.sender_id # => 797400947
 contact_notification.sender_name # => "CCP Garthagk"
 contact_notification.sent_date # => Sat, 19 Mar 2016 12:13:00 UTC +00:00
 contact_notification.message_data # => "level: 5\nmessage: ''\n"
-```
-
-#### Character contract bids
-
-```ruby
-key_id = 1234567
-v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-character_id = 90729314
-
-contract_bids = EveOnline::XML::CharacterContractBids.new(key_id, v_code, character_id)
-
-contract_bids.current_time # => Fri, 19 Aug 2016 12:11:52 UTC +00:00
-contract_bids.cached_until # => Fri, 19 Aug 2016 12:25:52 UTC +00:00
-contract_bids.version # => 2
-
-# TODO: finish this
-
-```
-
-#### Character contract items
-
-```ruby
-key_id = 1234567
-v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-character_id = 90729314
-contract_id = 1234 # TODO: recheck
-
-contract_items = EveOnline::XML::CharacterContractItems.new(key_id, v_code, character_id, contract_id)
-
-# TODO: finish this
-
-```
-
-#### Character contacts
-
-```ruby
-key_id = 1234567
-v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-character_id = 90729314
-
-contracts = EveOnline::XML::CharacterContracts.new(key_id, v_code, character_id)
-
-contracts.current_time # => Fri, 19 Aug 2016 10:57:38 UTC +00:00
-contracts.cached_until # => Fri, 19 Aug 2016 11:11:38 UTC +00:00
-contracts.version # => 2
-
-# TODO: finish this
-
-```
-
-#### Character factional warfare stats
-
-```ruby
-key_id = 1234567
-v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-character_id = 90729314
-
-fac_war_stats = EveOnline::XML::CharacterFacWarStats.new(key_id, v_code, character_id)
-
-# TODO: finish this
-
-```
-
-#### Character industry jobs
-
-```ruby
-key_id = 1234567
-v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-character_id = 90729314
-
-industry_jobs = EveOnline::XML::CharacterIndustryJobs.new(key_id, v_code, character_id)
-
-industry_jobs.current_time # => Mon, 22 Aug 2016 14:10:13 UTC +00:00
-industry_jobs.cached_until # => Mon, 22 Aug 2016 14:24:13 UTC +00:00
-industry_jobs.version # => 2
-
-# TODO: finish this
-
-```
-
-#### Character industry jobs history
-
-```ruby
-key_id = 1234567
-v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-character_id = 90729314
-
-industry_jobs_history = EveOnline::XML::CharacterIndustryJobsHistory.new(key_id, v_code, character_id)
-
-industry_jobs_history.current_time # => Mon, 22 Aug 2016 14:53:37 UTC +00:00
-industry_jobs_history.cached_until # => Mon, 22 Aug 2016 20:29:37 UTC +00:00
-industry_jobs_history.version # => 2
-
-# TODO: finish this
-
-```
-
-#### Character kill mails
-
-```ruby
-key_id = 1234567
-v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-character_id = 90729314
-
-kill_mails = EveOnline::XML::CharacterKillMails.new(key_id, v_code, character_id)
-
-kill_mails.current_time # => Fri, 26 Aug 2016 10:27:38 UTC +00:00
-kill_mails.cached_until # => Fri, 26 Aug 2016 10:54:38 UTC +00:00
-kill_mails.version # => 2
-
-# TODO: finish this
-
-```
-
-#### Character locations
-
-```ruby
-key_id = 1234567
-v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-character_id = 90729314
-ids = [123456]
-
-locations = EveOnline::XML::CharacterLocations.new(key_id, v_code, character_id, ids)
-
-locations.current_time # => Fri, 26 Aug 2016 11:01:53 UTC +00:00
-locations.cached_until # => Fri, 26 Aug 2016 12:01:53 UTC +00:00
-locations.version # => 2
-
-# TODO: finish this
-
-```
-
-#### Character mail bodies
-
-```ruby
-key_id = 1234567
-v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-character_id = 90729314
-ids = [123456]
-
-mail_bodies = EveOnline::XML::CharacterMailBodies.new(key_id, v_code, character_id, ids)
-
-mail_bodies.current_time # => Fri, 26 Aug 2016 11:13:55 UTC +00:00
-mail_bodies.cached_until # => Mon, 24 Aug 2026 11:13:55 UTC +00:00
-mail_bodies.version # => 2
-
-# TODO: finish this
-
-```
-
-#### Character mailing lists
-
-```ruby
-key_id = 1234567
-v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-character_id = 90729314
-
-mailing_lists = EveOnline::XML::CharacterMailingLists.new(key_id, v_code, character_id)
-
-mailing_lists.current_time # => Fri, 26 Aug 2016 12:38:48 UTC +00:00
-mailing_lists.cached_until # => Fri, 26 Aug 2016 18:35:48 UTC +00:00
-mailing_lists.version # => 2
-
-# TODO: finish this
-
-```
-
-#### Character mail messages headers
-
-```ruby
-key_id = 1234567
-v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-character_id = 90729314
-
-mail_messages = EveOnline::XML::CharacterMailMessages.new(key_id, v_code, character_id)
-
-mail_messages.current_time # => Fri, 26 Aug 2016 12:49:38 UTC +00:00
-mail_messages.cached_until # => Fri, 26 Aug 2016 13:03:38 UTC +00:00
-mail_messages.version # => 2
-
-# TODO: finish this
-
 ```
 
 #### Character market orders
@@ -665,245 +168,6 @@ marker_order.escrow # => 0.0
 marker_order.price # => 92.0
 marker_order.bid # => false
 marker_order.issued # => Thu, 01 Sep 2016 20:01:57 UTC +00:00
-```
-
-#### Character medals
-
-```ruby
-key_id = 1234567
-v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-character_id = 90729314
-
-character_medals = EveOnline::XML::CharacterMedals.new(key_id, v_code, character_id)
-
-character_medals.current_time # => Fri, 01 Jul 2016 14:22:43 UTC +00:00
-character_medals.cached_until # => Fri, 01 Jul 2016 20:13:49 UTC +00:00
-character_medals.version # => 2
-
-# TODO: finish this
-
-```
-
-#### Character notification headers
-
-```ruby
-key_id = 1234567
-v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-character_id = 90729314
-
-notifications = EveOnline::XML::CharacterNotifications.new(key_id, v_code, character_id)
-
-notifications.current_time # => Fri, 26 Aug 2016 14:02:06 UTC +00:00
-notifications.cached_until # => Fri, 26 Aug 2016 14:29:06 UTC +00:00
-notifications.version # => 2
-
-# TODO: finish this
-
-```
-
-#### Character notification texts
-
-```ruby
-key_id = 1234567
-v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-character_id = 90729314
-ids = [123_456]
-
-notification_texts = EveOnline::XML::CharacterNotificationTexts.new(key_id, v_code, character_id, ids)
-
-notification_texts.current_time # => Sat, 27 Aug 2016 18:12:52 UTC +00:00
-notification_texts.cached_until # => Tue, 25 Aug 2026 18:12:52 UTC +00:00
-notification_texts.version # => 2
-
-# TODO: finish this
-
-```
-
-#### Retrieve planetary colonies owned by character
-
-```ruby
-key_id = 1234567
-v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-character_id = 90729314
-
-planetary_colonies = EveOnline::XML::CharacterPlanetaryColonies.new(key_id, v_code, character_id)
-
-planetary_colonies.current_time # => Sat, 27 Aug 2016 18:29:02 UTC +00:00
-planetary_colonies.cached_until # => Sat, 27 Aug 2016 19:29:02 UTC +00:00
-planetary_colonies.version # => 2
-
-# TODO: finish this
-
-```
-
-#### Retrieve planetary links for colonies owned by character
-
-```ruby
-key_id = 1234567
-v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-character_id = 90729314
-planet_id = 123_456
-
-planetary_links = EveOnline::XML::CharacterPlanetaryLinks.new(key_id, v_code, character_id, planet_id)
-
-planetary_links.current_time # => Sat, 27 Aug 2016 18:40:23 UTC +00:00
-planetary_links.cached_until # => Sat, 27 Aug 2016 19:40:23 UTC +00:00
-planetary_links.version # => 2
-
-# TODO: finish this
-
-```
-
-#### Retrieve planetary pins for colonies owned by character
-
-```ruby
-key_id = 1234567
-v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-character_id = 90729314
-planet_id = 123_456
-
-planetary_pins = EveOnline::XML::CharacterPlanetaryPins.new(key_id, v_code, character_id, planet_id)
-
-planetary_pins.current_time # => Sat, 27 Aug 2016 18:48:36 UTC +00:00
-planetary_pins.cached_until # => Sat, 27 Aug 2016 19:48:36 UTC +00:00
-planetary_pins.version # => 2
-
-# TODO: finish this
-
-```
-
-#### Retrieve planetary routes for colonies owned by character
-
-```ruby
-key_id = 1234567
-v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-character_id = 90729314
-planet_id = 123_456
-
-planetary_routes = EveOnline::XML::CharacterPlanetaryRoutes.new(key_id, v_code, character_id, planet_id)
-
-planetary_routes.current_time # => Sat, 27 Aug 2016 20:38:42 UTC +00:00
-planetary_routes.cached_until # => Sat, 27 Aug 2016 21:38:42 UTC +00:00
-planetary_routes.version # => 2
-
-# TODO: finish this
-
-```
-
-#### Retrieve character research
-
-```ruby
-key_id = 1234567
-v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-character_id = 90729314
-
-research = EveOnline::XML::CharacterResearch.new(key_id, v_code, character_id)
-
-research.current_time # => Sat, 27 Aug 2016 20:47:32 UTC +00:00
-research.cached_until # => Sat, 27 Aug 2016 21:01:32 UTC +00:00
-research.version # => 2
-
-# TODO: finish this
-
-```
-
-#### Retrieve character skill queue
-
-```ruby
-key_id = 1234567
-v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-character_id = 90729314
-
-character_skill_queue = EveOnline::XML::CharacterSkillQueue.new(key_id, v_code, character_id)
-
-character_skill_queue.current_time # => Sat, 27 Aug 2016 21:06:27 UTC +00:00
-character_skill_queue.cached_until # => Sat, 27 Aug 2016 21:07:58 UTC +00:00
-character_skill_queue.version # => 2
-
-character_skill_queue.skills.size # => 11
-
-skill_queue_entry = character_skill_queue.skills.first
-
-skill_queue_entry.as_json
-# => {:queue_position=>0, :type_id=>3420, :level=>5, :start_sp=>181020, :end_sp=>1024000, :start_time=>Mon, 15 Aug 2016 17:25:30 UTC +00:00, :end_time=>Wed, 31 Aug 2016 23:41:36 UTC +00:00}
-
-skill_queue_entry.queue_position # => 0
-skill_queue_entry.type_id # => 3420
-skill_queue_entry.level # => 5
-skill_queue_entry.start_sp # => 181020
-skill_queue_entry.end_sp # => 1024000
-skill_queue_entry.start_time # => Mon, 15 Aug 2016 17:25:30 UTC +00:00
-skill_queue_entry.end_time # => Wed, 31 Aug 2016 23:41:36 UTC +00:00
-```
-
-#### Character skill in training
-
-```ruby
-key_id = 1234567
-v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-character_id = 90729314
-
-skill_in_training = EveOnline::XML::CharacterSkillInTraining.new(key_id, v_code, character_id)
-
-skill_in_training.current_time # => Sun, 03 Jan 2016 16:09:15 UTC +00:00
-skill_in_training.cached_until # => Sun, 03 Jan 2016 16:51:29 UTC +00:00
-skill_in_training.version # => 2
-
-skill_in_training.as_json
-# => {:current_tq_time=>Sun, 03 Jan 2016 16:09:15 UTC +00:00, :training_end_time=>Wed, 13 Jan 2016 16:38:31 UTC +00:00, :training_start_time=>Wed, 23 Dec 2015 11:35:45 UTC +00:00, :training_type_id=>30651, :training_start_sp=>226275, :training_destination_sp=>1280000, :training_to_level=>5, :skill_in_training=>1}
-
-skill_in_training.current_tq_time # => Sun, 03 Jan 2016 16:09:15 UTC +00:00
-skill_in_training.training_end_time # => Wed, 13 Jan 2016 16:38:31 UTC +00:00
-skill_in_training.training_start_time # => Wed, 23 Dec 2015 11:35:45 UTC +00:00
-skill_in_training.training_type_id # => 30651
-skill_in_training.training_start_sp # => 226275
-skill_in_training.training_destination_sp # => 1280000
-skill_in_training.training_to_level # => 5
-skill_in_training.skill_in_training # => 1
-```
-
-#### Character standings
-
-```ruby
-key_id = 1234567
-v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-character_id = 90729314
-
-standings = EveOnline::XML::CharacterStandings.new(key_id, v_code, character_id)
-
-standings.current_time # => Thu, 18 Aug 2016 14:50:50 UTC +00:00
-standings.cached_until # => Thu, 18 Aug 2016 17:47:50 UTC +00:00
-standings.version # => 2
-
-standings.agents.size # => 15
-
-agent = standings.agents.first # => #<EveOnline::Standing:0x007f90f33df4d8 @options={"@fromID"=>"3008771", "@fromName"=>"Nehrnah Gorouyar", "@standing"=>"0.12"}>
-
-agent.as_json # => {:from_id=>3008771, :from_name=>"Nehrnah Gorouyar", :standing=>0.12}
-
-agent.from_id # => 3008771
-agent.from_name # => "Nehrnah Gorouyar"
-agent.standing # => 0.12
-
-standings.npc_corporations.size # => 6
-
-npc_corporation = standings.npc_corporations.first # => #<EveOnline::Standing:0x007f90f33af9e0 @options={"@fromID"=>"1000035", "@fromName"=>"Caldari Navy", "@standing"=>"0.72"}>
-
-npc_corporation.as_json # => {:from_id=>1000035, :from_name=>"Caldari Navy", :standing=>0.72}
-
-npc_corporation.from_id # => 1000035
-npc_corporation.from_name # => "Caldari Navy"
-npc_corporation.standing # => 0.72
-
-standings.factions.size # => 16
-
-faction = standings.factions.first # => #<EveOnline::Standing:0x007f90f3395a90 @options={"@fromID"=>"500001", "@fromName"=>"Caldari State", "@standing"=>"0.33"}>
-
-faction.as_json # => {:from_id=>500001, :from_name=>"Caldari State", :standing=>0.33}
-
-faction.from_id # => 500001
-faction.from_name # => "Caldari State"
-faction.standing # => 0.33
 ```
 
 #### Character upcoming calender events
@@ -975,23 +239,6 @@ wallet_journal_entry.owner1_type_id # => 1380
 wallet_journal_entry.owner2_type_id # => 2
 ```
 
-#### Retrieve character wallet transactions
-
-```ruby
-key_id = 1234567
-v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-character_id = 90729314
-
-wallet_transactions = EveOnline::XML::CharacterWalletTransactions.new(key_id, v_code, character_id)
-
-wallet_transactions.current_time # => Sat, 27 Aug 2016 21:23:53 UTC +00:00
-wallet_transactions.cached_until # => Sat, 27 Aug 2016 21:50:53 UTC +00:00
-wallet_transactions.version # => 2
-
-# TODO: finish this
-
-```
-
 #### Corporation market orders
 
 ```ruby
@@ -1005,34 +252,6 @@ corporation_market_orders = EveOnline::XML::CorporationMarketOrders.new(key_id, 
 
 ```
 
-Character Names to IDs:
-```ruby
-input = ['Johnn Dillinger'] # => ["Johnn Dillinger"]
-
-characters_ids = EveOnline::Eve::CharacterID.new(input)
-
-characters_ids.current_time # => Mon, 11 Apr 2016 18:51:01 UTC +00:00
-characters_ids.cached_until # => Wed, 11 May 2016 18:51:01 UTC +00:00
-characters_ids.version # => 2
-
-characters_ids.response # => {"eveapi"=>{"currentTime"=>"2016-04-11 18:51:01", "result"=>{"rowset"=>{"row"=>{"@name"=>"Johnn Dillinger", "@characterID"=>"1337512245"}, "@name"=>"characters", "@key"=>"characterID", "@columns"=>"name,characterID"}}, "cachedUntil"=>"2016-05-11 18:51:01", "@version"=>"2"}}
-```
-
-#### Server status
-
-```ruby
-status = EveOnline::XML::ServerStatus.new
-
-status.as_json
-# => {:current_time=>Mon, 23 Nov 2015 18:18:29 UTC +00:00, :cached_until=>Mon, 23 Nov 2015 18:19:44 UTC +00:00, :server_open=>true, :online_players=>25611}
-
-status.current_time # => Mon, 23 Nov 2015 18:18:29 UTC +00:00
-status.cached_until # => Mon, 23 Nov 2015 18:19:44 UTC +00:00
-status.server_open? # => true
-status.online_players # => 25611
-status.version # => 2
-```
-
 ### ESI Examples
 
 #### Alliance
@@ -1043,9 +262,40 @@ status.version # => 2
 
 ##### Get alliance information
 
+```ruby
+options = { alliance_id: 99005443 }
+
+alliance = EveOnline::ESI::Alliance.new(options)
+
+alliance.scope # => nil
+
+alliance.as_json # => {:alliance_name=>"Kids With Guns Alliance",
+                 #     :ticker=>"-KWG-",
+                 #     :date_founded=>Sun, 03 May 2015 19:45:17 UTC +00:00,
+                 #     :executor_corp=>98306624}
+
+alliance.alliance_name # => "Kids With Guns Alliance"
+alliance.ticker # => "-KWG-"
+alliance.date_founded # => Sun, 03 May 2015 19:45:17 UTC +00:00
+alliance.executor_corp # => 98306624
+```
+
 ##### List alliance's corporations
 
 ##### Get alliance icon
+
+```ruby
+options = { alliance_id: 99005443 }
+
+alliance_icon = EveOnline::ESI::AllianceIcon.new(options)
+
+alliance_icon.scope # => nil
+
+alliance_icon.as_json # => {:small=>"http://image.eveonline.com/Alliance/99005443_64.png", :medium=>"http://image.eveonline.com/Alliance/99005443_128.png"}
+
+alliance_icon.small # => "http://image.eveonline.com/Alliance/99005443_64.png"
+alliance_icon.medium # => "http://image.eveonline.com/Alliance/99005443_128.png"
+```
 
 #### Assets
 
@@ -1055,6 +305,8 @@ status.version # => 2
 options = { token: 'token123', character_id: 90729314 }
 
 character_assets = EveOnline::ESI::CharacterAssets.new(options)
+
+character_assets.scope # => "esi-assets.read_assets.v1"
 
 character_assets.assets.size # => 486
 
@@ -1114,10 +366,10 @@ options = { character_id: 90729314 }
 
 character = EveOnline::ESI::Character.new(options)
 
+character.scope # => nil
+
 character.as_json
 # => {:corporation_id=>1000168, :birthday=>Fri, 15 Jan 2010 15:26:00 UTC +00:00, :name=>"Green Black", :gender=>"male", :race_id=>2, :bloodline_id=>4, :description=>"", :alliance_id=>12345678, :ancestry_id=>24, :security_status=>1.8694881661345457}
-
-character.scope # => nil
 
 character.corporation_id # => 1000168
 character.birthday # => Fri, 15 Jan 2010 15:26:00 UTC +00:00
@@ -1135,6 +387,38 @@ character.security_status # => 1.8694881661345457
 
 ##### Get blueprints
 
+```ruby
+options = { token: 'token123', character_id: 90729314 }
+
+character_blueprints = EveOnline::ESI::CharacterBlueprints.new(options)
+
+character_blueprints.scope # => "esi-characters.read_blueprints.v1"
+
+character_blueprints.blueprints.size # => 4
+
+blueprint = character_blueprints.blueprints.first
+
+blueprint.as_json # => {:item_id=>716338097,
+                  #     :location_flag=>"Hangar",
+                  #     :location_id=>61000032,
+                  #     :material_efficiency=>10,
+                  #     :quantity=>-2,
+                  #     :runs=>300,
+                  #     :time_efficiency=>0,
+                  #     :type_id=>1010}
+
+blueprint.item_id # => 716338097
+blueprint.location_flag # => "Hangar"
+blueprint.location_id # => 61000032
+blueprint.material_efficiency # => 10
+blueprint.quantity # => -2
+blueprint.runs # => 300
+blueprint.time_efficiency # => 0
+blueprint.type_id # => 1010
+
+# TODO: add pagination support
+```
+
 ##### Get chat channels
 
 ##### Get corporation history
@@ -1142,6 +426,22 @@ character.security_status # => 1.8694881661345457
 ##### Calculate a CSPA charge cost
 
 ##### Get jump fatigue
+
+```ruby
+options = { token: 'token123', character_id: 90729314 }
+
+character_fatigue = EveOnline::ESI::CharacterFatigue.new(options)
+
+character_fatigue.scope # => "esi-characters.read_fatigue.v1"
+
+character_fatigue.as_json # => {:jump_fatigue_expire_date=>nil, :last_jump_date=>nil, :last_update_date=>nil}
+
+character_fatigue.jump_fatigue_expire_date # => nil
+character_fatigue.last_jump_date # => nil
+character_fatigue.last_update_date # => nil
+
+# TODO: add real data here
+```
 
 ##### Get medals
 
@@ -1156,10 +456,10 @@ options = { character_id: 90729314 }
 
 character_portrait = EveOnline::ESI::CharacterPortrait.new(options)
 
+character_portrait.scope # => nil
+
 character_portrait.as_json
 # => {:small=>"http://image.eveonline.com/Character/90729314_64.jpg", :medium=>"http://image.eveonline.com/Character/90729314_128.jpg", :large=>"http://image.eveonline.com/Character/90729314_256.jpg", :huge=>"http://image.eveonline.com/Character/90729314_512.jpg"}
-
-character_portrait.scope # => nil
 
 character_portrait.small # => "http://image.eveonline.com/Character/90729314_64.jpg"
 character_portrait.medium # => "http://image.eveonline.com/Character/90729314_128.jpg"
@@ -1171,11 +471,63 @@ character_portrait.huge # => "http://image.eveonline.com/Character/90729314_512.
 
 ##### Get standings
 
+```ruby
+options = { token: 'token123', character_id: 90729314 }
+
+character_standing = EveOnline::ESI::CharacterStandings.new(options)
+
+character_standing.scope # => "esi-characters.read_standings.v1"
+
+character_standing.standings.size # => 37
+
+standing = character_standing.standings.first
+
+standing.as_json # => {:from_id=>500001, :from_type=>"faction", :standing=>0.3303719111639991}
+
+standing.from_id # => 500001
+standing.from_type # => "faction"
+standing.standing # => 0.3303719111639991
+```
+
 #### Clones
 
 ##### Get clones
 
+```ruby
+options = { token: 'token123', character_id: 90729314 }
+
+character_clones = EveOnline::ESI::CharacterClones.new(options)
+
+character_clones.scope # => "esi-clones.read_clones.v1"
+
+character_clones.last_jump_date # => Fri, 27 Jul 2012 14:50:11 UTC +00:00
+
+character_clones.home_location.as_json # => {:location_id=>61000032, :location_type=>"station"}
+
+character_clones.jump_clones.size # => 2
+
+jump_clone = character_clones.jump_clones.first
+
+jump_clone.as_json # => {:location_id=>61000032, :location_type=>"station", :implants=>[22118]}
+
+jump_clone.location_id # => 61000032
+jump_clone.location_type # => "station"
+jump_clone.implants # => [22118]
+```
+
 ##### Get active implants
+
+```ruby
+options = { token: 'token123', character_id: 90729314 }
+
+character_implants = EveOnline::ESI::CharacterImplants.new(options)
+
+character_implants.scope # => "esi-clones.read_implants.v1"
+
+character_implants.implants.size # => 5
+
+character_implants.implants # => [9899, 9941, 9942, 9943, 9956]
+```
 
 #### Contacts
 
@@ -1212,6 +564,29 @@ character_portrait.huge # => "http://image.eveonline.com/Character/90729314_512.
 ##### Get npc corporations
 
 ##### Get corporation information
+
+```ruby
+options = { corporation_id: 98468592 }
+
+corporation = EveOnline::ESI::Corporation.new(options)
+
+corporation.scope # => nil
+
+corporation.as_json
+# => {:alliance_id=>99001258, :ceo_id=>1721864142, :corporation_description=>"", :corporation_name=>"Bullshit Bingo Club", :creation_date=>Mon, 11 Jul 2016 14:22:17 UTC +00:00, :creator_id=>1721864142, :faction=>nil, :member_count=>38, :tax_rate=>0.1, :ticker=>"BUBIC", :url=>"http://"}
+
+corporation.alliance_id # => 99001258
+corporation.ceo_id # => 1721864142
+corporation.corporation_description # => ""
+corporation.corporation_name # => "Bullshit Bingo Club"
+corporation.creation_date # => Mon, 11 Jul 2016 14:22:17 UTC +00:00
+corporation.creator_id # => 1721864142
+corporation.faction # => nil
+corporation.member_count # => 38
+corporation.tax_rate # => 0.1
+corporation.ticker # => "BUBIC"
+corporation.corporation_url # => "http://"
+```
 
 ##### Get alliance history
 
@@ -1417,13 +792,13 @@ options = { token: 'token123', character_id: 90729314 }
 
 character_loyalty_points = EveOnline::ESI::CharacterLoyaltyPoints.new(options)
 
+character_loyalty_points.scope # => "esi-characters.read_loyalty.v1"
+
 character_loyalty_points.loyalty_points.size # => 5
 
 loyalty_point = character_loyalty_points.loyalty_points.first
 
 loyalty_point.as_json # => {:corporation_id=>1000035, :loyalty_points=>14163}
-
-character_loyalty_points.scope # => "esi-characters.read_loyalty.v1"
 
 loyalty_point.corporation_id # => 1000035
 loyalty_point.loyalty_points # => 14163
@@ -1510,6 +885,8 @@ options = { token: 'token123', character_id: 90729314 }
 
 character_attributes = EveOnline::ESI::CharacterAttributes.new(options)
 
+character_attributes.scope # => "esi-skills.read_skills.v1"
+
 character_attributes.as_json # => {:charisma=>20,
                              #     :intelligence=>24,
                              #     :memory=>24,
@@ -1536,9 +913,9 @@ options = { token: 'token123', character_id: 90729314 }
 
 character_skill_queue = EveOnline::ESI::CharacterSkillQueue.new(options)
 
-character_skill_queue.skills.size # => 50
-
 character_skill_queue.scope # => "esi-skills.read_skillqueue.v1"
+
+character_skill_queue.skills.size # => 50
 
 skill_queue_entry = character_skill_queue.skills.first
 
@@ -1562,11 +939,11 @@ options = { token: 'token123', character_id: 90729314 }
 
 character_skills = EveOnline::ESI::CharacterSkills.new(options)
 
+character_skills.scope # => "esi-skills.read_skills.v1"
+
 character_skills.total_sp # => 43232144
 
 character_skills.as_json # => {:total_sp=>43232144}
-
-character_skills.scope # => "esi-skills.read_skills.v1"
 
 character_skills.skills.size # => 180
 
@@ -1594,9 +971,9 @@ skill.current_skill_level # => 1
 ```ruby
 server_status = EveOnline::ESI::ServerStatus.new
 
-server_status.as_json # => {:start_time=>Tue, 11 Apr 2017 11:05:35 UTC +00:00, :players=>34545, :server_version=>"1135520", :vip=>nil}
-
 server_status.scope # => nil
+
+server_status.as_json # => {:start_time=>Tue, 11 Apr 2017 11:05:35 UTC +00:00, :players=>34545, :server_version=>"1135520", :vip=>nil}
 
 server_status.start_time # => Tue, 11 Apr 2017 11:05:35 UTC +00:00
 server_status.players # => 34545
@@ -1607,6 +984,42 @@ server_status.vip # => nil
 #### Universe
 
 ##### Get bloodlines
+
+```ruby
+bloodlines = EveOnline::ESI::Bloodlines.new
+
+bloodlines.scope # => nil
+
+bloodlines.bloodlines.size # => 15
+
+bloodline = bloodlines.bloodlines.first
+
+bloodline.as_json # => {:bloodline_id=>4,
+                  #     :name=>"Brutor",
+                  #     :description=>"A martial, strong-willed people, the Brutor...",
+                  #     :race_id=>2,
+                  #     :ship_type_id=>588,
+                  #     :corporation_id=>1000049,
+                  #     :perception=>9,
+                  #     :willpower=>7,
+                  #     :charisma=>6,
+                  #     :memory=>4,
+                  #     :intelligence=>4}
+
+bloodline.bloodline_id # => 4
+bloodline.name # => "Brutor"
+bloodline.description # => "A martial, strong-willed people, the Brutor..."
+bloodline.race_id # => 2
+bloodline.ship_type_id # => 588
+bloodline.corporation_id # => 1000049
+bloodline.perception # => 9
+bloodline.willpower # => 7
+bloodline.charisma # => 6
+bloodline.memory # => 4
+bloodline.intelligence # => 4
+
+# TODO: add languages
+```
 
 ##### Get item categories
 
@@ -1633,6 +1046,29 @@ server_status.vip # => nil
 ##### Get planet information
 
 ##### Get character races
+
+```ruby
+races = EveOnline::ESI::Races.new
+
+races.scope # => nil
+
+races.races.size # => 4
+
+race = races.races.first
+
+race.as_json # => {:race_id=>2,
+             #     :name=>"Minmatar",
+             #     :description=>"Once a thriving tribal civilization, the Minmatar...",
+             #     :alliance_id=>500002}
+
+race.race_id # => 2
+race.name # => "Minmatar"
+race.description # => "Once a thriving tribal civilization, the Minmatar..."
+race.alliance_id # => 500002
+
+# TODO: add languages
+
+```
 
 ##### Get regions
 
@@ -1678,14 +1114,16 @@ server_status.vip # => nil
 
 ##### Get character wallet journal
 
-```
+```ruby
 options = { token: 'token123', character_id: 90729314 }
 
 character_wallet = EveOnline::ESI::CharacterWallet.new(options)
 
+character_wallet.scope # => "esi-wallet.read_character_wallet.v1"
+
 character_wallet.as_json # => {:wallet=>409488252.49}
 
-character_wallet.scope # => "esi-wallet.read_character_wallet.v1"
+character_wallet.wallet # => 409488252.49
 ```
 
 ##### Get wallet transactions
@@ -1820,30 +1258,6 @@ inv_position.yaw # => 0.0
 inv_position.z # => 0.0
 ```
 
-Character Races:
-```ruby
-file = 'chrRaces.yaml'
-
-chr_races = EveOnline::SDE::ChrRaces.new(file)
-
-chr_races.chr_races.size # => 8
-
-chr_race = chr_races.chr_races[3]
-
-chr_race.as_json # => {:race_id=>2,
-                 #     :race_name=>"Minmatar",
-                 #     :short_description=>"Breaking free of Amarrian subjugation, ...",
-                 #     :description=>"Once a thriving tribal civilization, the Minmatar...",
-                 #     :icon_id=>1440}
-
-
-chr_race.race_id # => 2
-chr_race.race_name # => "Minmatar"
-chr_race.short_description # => "Breaking free of Amarrian subjugation, ..."
-chr_race.description # => "Once a thriving tribal civilization, the Minmatar..."
-chr_race.icon_id # => 1440
-```
-
 ## Exceptions
 
 If you want to catch all exceptions `rescue` `EveOnline::Exceptions::Base`. E.g.:
@@ -1913,131 +1327,24 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 
 ## Implementation check list
 
-### Account
-
-- [x] [Account Status](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/account/account_accountstatus.html)
-- [x] [API Key Info](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/account/account_apikeyinfo.html)
-- [x] [Characters](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/account/account_characters.html)
-
-----
-
-### Api
-
-- [ ] [Call List (Access Mask reference)](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/api/api_calllist.html)
-
-----
-
 ### Character
 
-- [x] [Account Balance](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_accountbalance.html)
-- [x] [Asset List](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_assetlist.html)
-- [x] [Blueprints](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_blueprints.html)
 - [x] [Bookmarks](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_bookmarks.html)
-- [ ] [Calendar Event Attendees](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_calendareventattendees.html)
-- [ ] [Character Sheet](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_charactersheet.html)
-- [ ] [Chat Channels](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_chatchannels.html)
-- [ ] [Contact List](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_contactlist.html)
 - [x] [Contact Notifications](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_contactnotifications.html)
-- [ ] [Contract Bids](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_contractbids.html)
-- [ ] [Contract Items](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_contractitems.html)
-- [ ] [Contracts](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_contracts.html)
-- [ ] [Factional Warfare Stats](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_facwarstats.html)
-- [ ] [Industry Jobs](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_industryjobs.html)
-- [ ] [Industry Jobs History](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_industryjobshistory.html)
-- [ ] [~~Kill Log~~](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_killlog.html) (deprecated)
-- [ ] [Kill Mails](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_killmails.html)
-- [ ] [Locations](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_locations.html)
-- [ ] [Mail Bodies](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_mailbodies.html)
-- [ ] [Mailing Lists](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_mailinglists.html)
-- [ ] [Mail Messages](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_mailmessages.html)
 - [x] [Market Orders](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_marketorders.html)
-- [ ] [Medals](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_medals.html)
-- [ ] [Notifications](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_notifications.html)
-- [ ] [Notification Texts](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_notificationtexts.html)
-- [ ] [Planetary Colonies](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_planetarycolonies.html)
-- [ ] [Planetary Links](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_planetarylinks.html)
-- [ ] [Planetary Pins](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_planetarypins.html)
-- [ ] [Planetary Routes](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_planetaryroutes.html)
-- [ ] [Research](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_research.html)
-- [x] [Skill in Training](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_skillintraining.html)
-- [x] [Skill Queue](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_skillqueue.html)
-- [x] [Standings](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_standings.html)
 - [x] [Upcoming Calendar Events](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_upcomingcalendarevents.html)
 - [x] [Wallet Journal](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_walletjournal.html)
-- [ ] [Wallet Transactions](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_wallettransactions.html)
 
 ----
 
 ### Corporation
 
-- [ ] [Account Balance](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_accountbalance.html)
-- [ ] [Asset List](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_assetlist.html)
-- [ ] [Blueprints](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_blueprints.html)
-- [ ] [Bookmarks](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_bookmarks.html)
-- [ ] [Contact List](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_contactlist.html)
-- [ ] [Container Log](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_containerlog.html)
-- [ ] [Contract Bids](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_contractbids.html)
-- [ ] [Contract Items](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_contractitems.html)
-- [ ] [Contracts](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_contracts.html)
-- [ ] [Corporation Sheet](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_corporationsheet.html)
-- [ ] [Customs Offices](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_customsoffices.html)
-- [ ] [Facilities](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_facilities.html)
-- [ ] [Factional Warfare Stats](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_facwarstats.html)
-- [ ] [Industry Jobs](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_industryjobs.html)
-- [ ] [Industry Jobs History](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_industryjobshistory.html)
-- [ ] [Kill Mails](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_killmails.html)
-- [ ] [Locations](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_locations.html)
 - [x] [Market Orders](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_marketorders.html)
-- [ ] [Medals](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_medals.html)
-- [ ] [Member Medals](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_membermedals.html)
-- [ ] [Member Security](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_membersecurity.html)
-- [ ] [Member Security Log](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_membersecuritylog.html)
-- [ ] [Member Tracking](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_membertracking.html)
-- [ ] [Outpost List](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_outpostlist.html)
-- [ ] [Outpost Service Detail](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_outpostservicedetail.html)
-- [ ] [Shareholders](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_shareholders.html)
-- [ ] [Standings](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_standings.html)
-- [ ] [Starbase Detail](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_starbasedetail.html)
-- [ ] [Starbase List](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_starbaselist.html)
-- [ ] [Titles](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_titles.html)
-- [ ] [Wallet Journal](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_walletjournal.html)
-- [ ] [Wallet Transactions](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_wallettransactions.html)
-
-----
-
-### Eve
-
-- [ ] [Alliance List](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/eve/eve_alliancelist.html)
-- [ ] [Character Affiliation](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/eve/eve_characteraffiliation.html)
-- [ ] [Character ID](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/eve/eve_characterid.html)
-- [ ] [Character Info](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/eve/eve_characterinfo.html)
-- [ ] [Character Name](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/eve/eve_charactername.html)
-- [ ] [Conquerable Station List](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/eve/eve_conquerablestationlist.html)
-- [ ] [Error List](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/eve/eve_errorlist.html)
-- [ ] [Ref Types](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/eve/eve_reftypes.html)
-- [ ] [Type Name](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/eve/eve_typename.html)
-
-----
-
-### Map
-
-- [ ] [Factional Warfare Systems](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/map/map_facwarsystems.html)
-- [ ] [Jumps](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/map/map_jumps.html)
-- [ ] [Kills](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/map/map_kills.html)
-- [ ] [Sovereignty](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/map/map_sovereignty.html)
-
-----
-
-### Server
-
-- [x] [Server Status](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/server/serv_serverstatus.html)
 
 ----
 
 ## TODO
 
-- [ ] Account Status: Support multiCharacterTraining
-- [ ] Access Mask
 - [ ] Caching
 - [ ] Test EVE server
 

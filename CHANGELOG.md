@@ -27,6 +27,74 @@
 * Add `EveOnline::ESI::Models::Attributes`
 * Add `EveOnline::ESI::Models::Character`
 * Add `EveOnline::ESI::Models::Base`
+* Add `EveOnline::ESI::Races`
+* Add `EveOnline::ESI::Models::Race`
+* Add `EveOnline::ESI::Bloodlines`
+* Add `EveOnline::ESI::Models::Bloodline`
+* Drop `EveOnline::SDE::Races`. Use `EveOnline::ESI::Races` instead.
+* Drop `EveOnline::SDE::Models::Race`
+* Add `EveOnline::ESI::CharacterImplants`
+* Drop `EveOnline::XML::CharacterAccountBalance`. Use `EveOnline::ESI::CharacterWallet` instead.
+* Drop `EveOnline::XML::CharacterSheet#balance`. Use `EveOnline::ESI::CharacterWallet` instead.
+* Drop `EveOnline::XML::CharacterSheet#implants`. Use `EveOnline::ESI::CharacterImplants` instead.
+* Drop `EveOnline::Implant`
+* Drop `EveOnline::CharacterImplants`
+* Drop `EveOnline::XML::CharacterSheet#skills`. Use `EveOnline::ESI::CharacterSkills` instead.
+* Drop `EveOnline::CharacterSkills`
+* Drop `EveOnline::Skill`
+* Drop `EveOnline::XML::CharacterSkillInTraining`. Use `EveOnline::ESI::CharacterSkillQueue` instead.
+* Drop `EveOnline::XML::CharacterCalendarEventAttendees`
+* Drop `EveOnline::XML::CharacterChatChannels`
+* Drop `EveOnline::XML::CharacterContactList`
+* Drop `EveOnline::XML::CharacterContractBids`
+* Drop `EveOnline::XML::CharacterContractItems`
+* Drop `EveOnline::XML::CharacterContracts`
+* Drop `EveOnline::XML::CharacterWalletTransactions`
+* Drop `EveOnline::XML::CharacterFacWarStats`
+* Drop `EveOnline::XML::CharacterIndustryJobs`
+* Drop `EveOnline::XML::CharacterIndustryJobsHistory`
+* Drop `EveOnline::XML::CharacterKillMails`
+* Drop `EveOnline::XML::CharacterLocations`
+* Drop `EveOnline::XML::CharacterMailBodies`
+* Drop `EveOnline::XML::CharacterMailingLists`
+* Drop `EveOnline::XML::CharacterMailMessages`
+* Drop `EveOnline::XML::CharacterMedals`
+* Drop `EveOnline::XML::CharacterNotifications`
+* Drop `EveOnline::XML::CharacterNotificationTexts`
+* Drop `EveOnline::XML::CharacterPlanetaryColonies`
+* Drop `EveOnline::XML::CharacterPlanetaryLinks`
+* Drop `EveOnline::XML::CharacterPlanetaryPins`
+* Drop `EveOnline::XML::CharacterPlanetaryRoutes`
+* Drop `EveOnline::XML::CharacterResearch`
+* Add `EveOnline::ESI::Alliance`
+* Add `EveOnline::ESI::AllianceIcon`
+* Add `EveOnline::ESI::Models::Alliance`
+* Add `EveOnline::ESI::Models::AllianceIcon`
+* Add `EveOnline::ESI::Models::CharacterPortrait`
+* Add `EveOnline::ESI::CharacterBlueprints`
+* Add `EveOnline::ESI::Models::Blueprint`
+* Drop `EveOnline::XML::CharacterBlueprints`. Use `EveOnline::ESI::CharacterBlueprints` instead.
+* Drop `EveOnline::Eve::CharacterID`
+* Drop `EveOnline::XML::AccountCharacters`. ESI doesn't support this.
+* Drop `EveOnline::XML::ApiKeyInfo`
+* Drop `EveOnline::XML::AccountStatus`. ESO doesn't support this.
+* Add `EveOnline::ESI::Models::Standing`
+* Add `EveOnline::ESI::Standings`
+* Drop `EveOnline::XML::CharacterStandings`. Use `EveOnline::ESI::Standings` instead.
+* Add `EveOnline::ESI::CharacterFatigue`
+* Add `EveOnline::ESI::Models::Fatigue`
+* Add `EveOnline::ESI::Models::ServerStatus`
+* Add `EveOnline::ESI::Corporation`. ([#120](https://github.com/biow0lf/eve_online/pull/120), @Mekaret)
+* Add `EveOnline::ESI::CharacterClones`
+* Add `EveOnline::ESI::Models::JumpClone`
+* Add `EveOnline::ESI::Models::HomeLocation`
+* Drop `EveOnline::JumpClone`
+* Drop `EveOnline::JumpCloneImplant`
+* Drop `EveOnline::CharacterJumpClones`
+* Drop `EveOnline::CharacterJumpCloneImplants`
+* Drop `EveOnline::XML::CharacterSheet#jump_clones`
+* Drop `EveOnline::XML::CharacterSheet#jump_clone_implants`
+* Drop `EveOnline::XML::CharacterSheet`. Use ESI endpoints.
 
 **v0.12.0**
 
