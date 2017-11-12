@@ -108,7 +108,7 @@ module EveOnline
         end
 
         def start_date
-          start_date = options['start_date']
+          end_date = options['start_date']
 
           parse_datetime_with_timezone(start_date) if start_date
         end
