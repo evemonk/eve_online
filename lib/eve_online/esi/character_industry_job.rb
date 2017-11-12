@@ -1,14 +1,15 @@
 module EveOnline
   module ESI
     class CharacterIndustryJob < Base
-      API_ENDPOINT = 'https://esi.tech.ccp.is/v1/characters/%s/industry/jobs/?datasource=tranquility'.freeze
+      API_ENDPOINT = 'https://esi.tech.ccp.is/v1/characters/%s/industry/jobs/?datasource=tranquility&include_completed=%s'.freeze
 
-      attr_reader :character_id
+      attr_reader :character_id, :include_completed
 
       def initialize(options)
         super
 
         @character_id = options[:character_id]
+        @include_completed = "false" if options[:include_completed].nil?
       end
 
       def jobs
@@ -25,7 +26,7 @@ module EveOnline
       end
 
       def url
-        API_ENDPOINT % character_id
+        API_ENDPOINT % [character_id, include_completed]
       end
     end
   end
