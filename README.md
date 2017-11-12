@@ -679,8 +679,83 @@ corporation.corporation_url # => "http://"
 #### Industry
 
 ##### List character industry jobs
+```ruby
+options = { token: 'token123', character_id: 90729314 }
+
+character_jobs = EveOnline::ESI::CharacterIndustryJob.new(options)
+
+character_jobs.scope => # => "esi-industry.read_character_jobs.v1"
+
+character_jobs.jobs.size # => 3
+
+job = character_jobs.jobs.first
+
+job.as_json = # => {:activity_id => 5,
+              #     :blueprint_id => 1024839597103,
+              #     :blueprint_location_id => 1023579231924,
+              #     :blueprint_type_id => 28607,
+              #     :completed_character_id => nil,
+              #     :completed_date => nil,
+              #     :cost => 901631.0,
+              #     :duration => 625697,
+              #     :end_date => Sat, 18 Nov 2017 02:20:24 UTC +00:00,
+              #     :facility_id => 1023579231924,
+              #     :installer_id => 93997721,
+              #     :job_id => 344003357,
+              #     :licensed_runs => 1,
+              #     :output_location_id => 1023579231924,
+              #     :pause_date => nil,
+              #     :probability => 1.0,
+              #     :product_type_id => 28607,
+              #     :runs => 2,
+              #     :start_date => Fri, 10 Nov 2017 20:32:07 UTC +00:00,
+              #     :station_id => 1023579231924,
+              #     :status => "active",
+              #     :successful_runs => nil}
+
+# TODO: add pagination support
+
+```
+
 
 ##### List corporation industry jobs
+```ruby
+options = { token: 'token123', corporation_id: 98146630 }
+
+corporation_jobs = EveOnline::ESI::CorporationIndustryJob.new(options)
+
+corporation_jobs.scope # => "esi-industry.read_corporation_jobs.v1"
+
+corporation_jobs.jobs.size # => 23
+
+job = corporation_jobs.jobs.first
+
+job.as_json # => {:activity_id => 1,
+            #     :blueprint_id => 1025589624582,
+            #     :blueprint_location_id => 1024956764558,
+            #     :blueprint_type_id => 28607,
+            #     :completed_character_id => nil,
+            #     :completed_date => nil,
+            #     :cost => 18131639.0,
+            #     :duration => 424816,
+            #     :end_date => Wed, 15 Nov 2017 18:14:02 UTC +00:00,
+            #     :facility_id => 1023579231924,
+            #     :installer_id => 93174304,
+            #     :job_id => 344001862,
+            #     :licensed_runs => 1,
+            #     :output_location_id => 1024956764558,
+            #     :pause_date => nil,
+            #     :probability => 1.0,
+            #     :product_type_id => 28606,
+            #     :runs => 1,
+            #     :start_date => Fri, 10 Nov 2017 20:13:46 UTC +00:00,
+            #     :station_id => nil,
+            #     :status => "active",
+            #     :successful_runs => nil}
+
+# TODO: add pagination support
+
+```
 
 ##### List industry facilities
 
