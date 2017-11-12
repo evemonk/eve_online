@@ -686,76 +686,72 @@ character_jobs = EveOnline::ESI::CharacterIndustryJob.new(options)
 
 character_jobs.scope => # => "esi-industry.read_character_jobs.v1"
 
-character_jobs.jobs 
-# => [#<EveOnline::ESI::Models::IndustryJob:0x007fffd8d5cb38 @options={
-		"job_id"=>334599182, 
-		"installer_id"=>93174304, 
-		"facility_id"=>1023579231924, 
-		"station_id"=>1023579231924, 
-		"activity_id"=>5, 
-		"blueprint_id"=>1013170101631, 
-		"blueprint_type_id"=>686, 
-		"blueprint_location_id"=>1023579231924, 
-		"output_location_id"=>1023579231924, 
-		"runs"=>1, 
-		"status"=>"active", 
-		"duration"=>2580, 
-		"start_date"=>"2017-07-18T18:41:22Z", 
-		"end_date"=>"2017-07-19T20:58:03Z", 
-		"cost"=>1673.0, 
-		"licensed_runs"=>1, 
-		"probability"=>1.0, 
-		"product_type_id"=>686
-		}>]
+character_jobs.jobs.size # => 3
+
+job = character_jobs.jobs.first
+
+job.as_json = # => {:activity_id => 5,
+              #     :blueprint_id => 1024839597103,
+              #     :blueprint_location_id => 1023579231924,
+              #     :blueprint_type_id => 28607,
+              #     :completed_character_id => nil,
+              #     :completed_date => nil,
+              #     :cost => 901631.0,
+              #     :duration => 625697,
+              #     :end_date => Sat, 18 Nov 2017 02:20:24 UTC +00:00,
+              #     :facility_id => 1023579231924,
+              #     :installer_id => 93997721,
+              #     :job_id => 344003357,
+              #     :licensed_runs => 1,
+              #     :output_location_id => 1023579231924,
+              #     :pause_date => nil,
+              #     :probability => 1.0,
+              #     :product_type_id => 28607,
+              #     :runs => 2,
+              #     :start_date => Fri, 10 Nov 2017 20:32:07 UTC +00:00,
+              #     :station_id => 1023579231924,
+              #     :status => "active",
+              #     :successful_runs => nil}
 
 ```
 
 
 ##### List corporation industry jobs
 ```ruby
-options = { token: 'token123', corporation_id: 90729314 }
+options = { token: 'token123', corporation_id: 98146630 }
 
 corporation_jobs = EveOnline::ESI::CorporationIndustryJob.new(options)
 
-corporation_jobs.jobs 
-# => [#<EveOnline::ESI::Models::IndustryJob:0x007fffda40e5c0 @options={
-		"job_id"=>341634236, 
-		"installer_id"=>93997721, 
-		"facility_id"=>1022632720781, 
-		"location_id"=>1022632720781, 
-		"activity_id"=>3, 
-		"blueprint_id"=>1024609618242, 
-		"blueprint_type_id"=>990, 
-		"blueprint_location_id"=>1024635511866, 
-		"output_location_id"=>1024635511866, 
-		"runs"=>9, 
-		"status"=>"active", 
-		"duration"=>2264366, 
-		"start_date"=>"2017-10-14T12:10:39Z", 
-		"end_date"=>"2017-11-09T17:10:05Z", 
-		"cost"=>251788.0, 
-		"licensed_runs"=>10, 
-		"probability"=>1.0, 
-		"product_type_id"=>990}>, 
-	  #<EveOnline::ESI::Models::IndustryJob:0x007fffda40e598 @options={
-		"job_id"=>341634210, 
-		"installer_id"=>93997721, 
-		"facility_id"=>1022632720781, 
-		"location_id"=>1022632720781, "activity_id"=>3, 
-		"blueprint_id"=>1024595195634, 
-		"blueprint_type_id"=>940, 
-		"blueprint_location_id"=>1024635511866, 
-		"output_location_id"=>1024635511866, 
-		"runs"=>9, 
-		"status"=>"active", 
-		"duration"=>1132183, 
-		"start_date"=>"2017-10-14T12:10:22Z", 
-		"end_date"=>"2017-10-27T14:40:05Z", 
-		"cost"=>111720.0, 
-		"licensed_runs"=>30, 
-		"probability"=>1.0, 
-		"product_type_id"=>940
-		}>]
+corporation_jobs.scope # => "esi-industry.read_corporation_jobs.v1"
+
+corporation_jobs.jobs.size # => 23
+
+job = corporation_jobs.jobs.first
+
+job.as_json # => {:activity_id => 1,
+            #     :blueprint_id => 1025589624582,
+            #     :blueprint_location_id => 1024956764558,
+            #     :blueprint_type_id => 28607,
+            #     :completed_character_id => nil,
+            #     :completed_date => nil,
+            #     :cost => 18131639.0,
+            #     :duration => 424816,
+            #     :end_date => Wed, 15 Nov 2017 18:14:02 UTC +00:00,
+            #     :facility_id => 1023579231924,
+            #     :installer_id => 93174304,
+            #     :job_id => 344001862,
+            #     :licensed_runs => 1,
+            #     :output_location_id => 1024956764558,
+            #     :pause_date => nil,
+            #     :probability => 1.0,
+            #     :product_type_id => 28606,
+            #     :runs => 1,
+            #     :start_date => Fri, 10 Nov 2017 20:13:46 UTC +00:00,
+            #     :station_id => nil,
+            #     :status => "active",
+            #     :successful_runs => nil}
+
+# TODO: add pagination support
 
 ```
 
