@@ -98,6 +98,8 @@
 * Add `EveOnline::ESI::CharacterIndustryJobs`. ([#126](https://github.com/biow0lf/eve_online/pull/126), @Mekaret)
 * Add `EveOnline::ESI::CorporationIndustryJobs`. ([#126](https://github.com/biow0lf/eve_online/pull/126), @Mekaret)
 * Drop `EveOnline::XML::Models::AccountTypeObject`
+* Add `EveOnline::ESI::Factions`
+* Add `EveOnline::ESI::Models::Faction`
 
 **v0.12.0**
 
