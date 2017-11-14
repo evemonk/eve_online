@@ -51,6 +51,7 @@ require 'eve_online/esi/alliance'
 require 'eve_online/esi/alliance_icon'
 
 require 'eve_online/esi/dogma_attributes'
+require 'eve_online/esi/dogma_attribute'
 
 require 'eve_online/esi/server_status'
 require 'eve_online/esi/races'
@@ -77,6 +78,8 @@ require 'eve_online/esi/models/corporation'
 
 require 'eve_online/esi/models/alliance'
 require 'eve_online/esi/models/alliance_icon'
+
+require 'eve_online/esi/models/dogma_attribute'
 
 require 'eve_online/esi/models/race'
 require 'eve_online/esi/models/bloodline'
