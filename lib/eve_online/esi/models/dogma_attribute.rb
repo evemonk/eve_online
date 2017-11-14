@@ -4,7 +4,7 @@ module EveOnline
       class DogmaAttribute < Base
         def as_json
           {
-            attribute_id: attribute_id,
+            id: id,
             name: name,
             description: description,
             icon_id: icon_id,
@@ -17,7 +17,7 @@ module EveOnline
           }
         end
 
-        def attribute_id
+        def id
           options['attribute_id']
         end
 

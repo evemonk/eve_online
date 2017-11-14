@@ -15,9 +15,9 @@ module EveOnline
         @attribute_id = options[:attribute_id]
       end
 
-      def_delegators :model, :as_json, :attribute_id, :name, :description,
-                     :icon_id, :default_value, :published, :display_name,
-                     :unit_id, :stackable, :high_is_good
+      def_delegators :model, :as_json, :id, :name, :description, :icon_id,
+                     :default_value, :published, :display_name, :unit_id,
+                     :stackable, :high_is_good
 
       def model
         Models::DogmaAttribute.new(response)
