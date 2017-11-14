@@ -49,6 +49,9 @@ require 'eve_online/esi/corporation_industry_jobs'
 
 require 'eve_online/esi/alliance'
 require 'eve_online/esi/alliance_icon'
+
+require 'eve_online/esi/dogma_attributes'
+
 require 'eve_online/esi/server_status'
 require 'eve_online/esi/races'
 require 'eve_online/esi/bloodlines'

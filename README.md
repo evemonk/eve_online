@@ -616,6 +616,16 @@ corporation.corporation_url # => "http://"
 
 ##### Get attributes
 
+```ruby
+dogma_attributes = EveOnline::ESI::DogmaAttributes.new
+
+dogma_attributes.scope # => nil
+
+dogma_attributes.attributes.size # => 2385
+
+dogma_attributes.attributes.first # => 2
+```
+
 ##### Get attribute information
 
 ##### Get effects

@@ -100,6 +100,7 @@
 * Drop `EveOnline::XML::Models::AccountTypeObject`
 * Add `EveOnline::ESI::Factions`
 * Add `EveOnline::ESI::Models::Faction`
+* Add `EveOnline::ESI::DogmaAttributes`
 
 **v0.12.0**
 
