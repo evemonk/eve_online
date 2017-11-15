@@ -101,6 +101,8 @@
 * Add `EveOnline::ESI::Factions`
 * Add `EveOnline::ESI::Models::Faction`
 * Add `EveOnline::ESI::DogmaAttributes`
+* Add `EveOnline::ESI::Models::DogmaAttribute`
+* Add `EveOnline::ESI::DogmaAttribute`
 
 **v0.12.0**
 
