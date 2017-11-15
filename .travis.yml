@@ -27,6 +27,9 @@ matrix:
     - rvm: jruby-9.1.14.0
       gemfile: gemfiles/activesupport_51.gemfile
       jdk: oraclejdk8
+    - rvm: jruby-9.1.14.0
+      gemfile: gemfiles/activesupport_edge.gemfile
+      jdk: oraclejdk8
     - rvm: jruby-head
       gemfile: gemfiles/activesupport_42.gemfile
       jdk: oraclejdk8
@@ -35,6 +38,9 @@ matrix:
       jdk: oraclejdk8
     - rvm: jruby-head
       gemfile: gemfiles/activesupport_51.gemfile
+      jdk: oraclejdk8
+    - rvm: jruby-head
+      gemfile: gemfiles/activesupport_edge.gemfile
       jdk: oraclejdk8
 
   allow_failures:
