@@ -1,6 +1,6 @@
 module EveOnline
   module ESI
-    class CharacterIndustryJob < Base
+    class CharacterIndustryJobs < Base
       API_ENDPOINT = 'https://esi.tech.ccp.is/v1/characters/%s/industry/jobs/?datasource=tranquility&include_completed=%s'.freeze
 
       attr_reader :character_id, :include_completed

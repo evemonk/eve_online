@@ -95,6 +95,8 @@
 * Drop `EveOnline::XML::CharacterSheet#jump_clones`
 * Drop `EveOnline::XML::CharacterSheet#jump_clone_implants`
 * Drop `EveOnline::XML::CharacterSheet`. Use ESI endpoints.
+* Add `EveOnline::ESI::CharacterIndustryJobs`. ([#126](https://github.com/biow0lf/eve_online/pull/126), @Mekaret)
+* Add `EveOnline::ESI::CorporationIndustryJobs`. ([#126](https://github.com/biow0lf/eve_online/pull/126), @Mekaret)
 
 **v0.12.0**
 
