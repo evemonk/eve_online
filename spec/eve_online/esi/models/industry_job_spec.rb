@@ -34,9 +34,9 @@ describe EveOnline::ESI::Models::IndustryJob do
 
     before { expect(industry_job).to receive(:completed_date).and_return(completed_date) }
 
-    before { expect(industry_job).to receive(:cost).and_return(902034.0) }
+    before { expect(industry_job).to receive(:cost).and_return(902_034.0) }
 
-    before { expect(industry_job).to receive(:duration).and_return(625697) }
+    before { expect(industry_job).to receive(:duration).and_return(625_697) }
 
     before { expect(industry_job).to receive(:end_date).and_return(end_date) }
 
@@ -80,9 +80,9 @@ describe EveOnline::ESI::Models::IndustryJob do
 
     its([:completed_date]) { should eq(completed_date) }
 
-    its([:cost]) { should eq(902034.0) }
+    its([:cost]) { should eq(902_034.0) }
 
-    its([:duration]) { should eq(625697) }
+    its([:duration]) { should eq(625_697) }
 
     its([:end_date]) { should eq(end_date) }
 

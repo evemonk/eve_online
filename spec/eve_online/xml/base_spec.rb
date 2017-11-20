@@ -1,6 +1,5 @@
 require 'spec_helper'
 
-# rubocop:disable Metrics/BlockLength
 describe EveOnline::XML::Base do
   describe '#initialize' do
     let(:parser) { double }
