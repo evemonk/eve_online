@@ -53,7 +53,7 @@ Or install it yourself as:
  * MRI 2.3
  * MRI 2.4
  * MRI 2.5 (head)
- * JRuby 9.1.8.0
+ * JRuby 9.1.14.0
  * JRuby (head)
 
 ## Supported rails versions
@@ -616,7 +616,47 @@ corporation.corporation_url # => "http://"
 
 ##### Get attributes
 
+```ruby
+dogma_attributes = EveOnline::ESI::DogmaAttributes.new
+
+dogma_attributes.scope # => nil
+
+dogma_attributes.attributes.size # => 2385
+
+dogma_attributes.attributes.first # => 2
+```
+
 ##### Get attribute information
+
+```ruby
+options = { attribute_id: 2 }
+
+dogma_attribute = EveOnline::ESI::DogmaAttribute.new(options)
+
+dogma_attribute.scope # => nil
+
+dogma_attribute.as_json # => {:id=>2,
+                        #     :name=>"isOnline",
+                        #     :description=>"Boolean to store status of online effect",
+                        #     :icon_id=>nil,
+                        #     :default_value=>0.0,
+                        #     :published=>nil,
+                        #     :display_name=>"",
+                        #     :unit_id=>nil,
+                        #     :stackable=>true,
+                        #     :high_is_good=>true}
+
+dogma_attribute.id # => 2
+dogma_attribute.name # => "isOnline"
+dogma_attribute.description # => "Boolean to store status of online effect"
+dogma_attribute.icon_id # => nil
+dogma_attribute.default_value # => 0.0
+dogma_attribute.published # => nil
+dogma_attribute.display_name # => ""
+dogma_attribute.unit_id # => nil
+dogma_attribute.stackable # => true
+dogma_attribute.high_is_good # => true
+```
 
 ##### Get effects
 
@@ -1094,6 +1134,40 @@ bloodline.intelligence # => 4
 ##### Get constellation information
 
 ##### Get factions
+
+```ruby
+factions = EveOnline::ESI::Factions.new
+
+factions.scope # => nil
+
+factions.factions.size # => 22
+
+faction = factions.factions.first
+
+faction.as_json # => {:faction_id=>500002,
+                #     :name=>"Minmatar Republic",
+                #     :description=>"The Minmatar Republic was formed over a century ago when the Minmatar threw...",
+                #     :solar_system_id=>30002544,
+                #     :corporation_id=>1000051,
+                #     :militia_corporation_id=>1000182,
+                #     :size_factor=>5.0,
+                #     :station_count=>570,
+                #     :station_system_count=>291,
+                #     :is_unique=>true}
+
+faction.faction_id # => 500002
+faction.name # => "Minmatar Republic"
+faction.description # => "The Minmatar Republic was formed over a century ago when the Minmatar threw..."
+faction.solar_system_id # => 30002544
+faction.corporation_id # => 1000051
+faction.militia_corporation_id # => 1000182
+faction.size_factor # => 5.0
+faction.station_count # => 570
+faction.station_system_count # => 291
+faction.is_unique # => true
+
+# TODO: add languages
+```
 
 ##### Get graphics
 
