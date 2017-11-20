@@ -1,0 +1,95 @@
+AllCops:
+  TargetRubyVersion: 2.4
+  DisplayCopNames: true
+  DisplayStyleGuide: true
+  TargetRailsVersion: 5.1
+
+Layout/EndOfLine:
+  Enabled: true
+  EnforcedStyle: lf
+
+# TODO: check this
+# Layout/ExtraSpacing
+
+Layout/SpaceInsideStringInterpolation:
+  EnforcedStyle: space
+  Enabled: true
+
+Layout/MultilineAssignmentLayout:
+  Enabled: true
+
+Metrics/LineLength:
+  Enabled: false
+
+Rails:
+  Enabled: true
+
+Rails/SaveBang:
+  Enabled: true
+
+Rails/TimeZone:
+  EnforcedStyle: strict
+  Enabled: true
+
+Style/AutoResourceCleanup:
+  Enabled: true
+
+Style/BlockComments:
+  Enabled: false
+
+Style/CollectionMethods:
+  Enabled: true
+
+Style/ConditionalAssignment:
+  Enabled: true
+  EnforcedStyle: assign_to_condition
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: true
+  EnforcedStyle: always
+
+Style/ImplicitRuntimeError:
+  Enabled: true
+
+Style/MethodCalledOnDoEndBlock:
+  Enabled: true
+
+Style/MissingElse:
+  Enabled: true
+  EnforcedStyle: case
+
+Style/NegatedIf:
+  Enabled: false
+
+Style/NumericLiterals:
+  Enabled: true
+  Strict: true
+
+Style/PercentLiteralDelimiters:
+  Enabled: false
+
+Style/ReturnNil:
+  Enabled: true
+
+Style/SymbolArray:
+  Enabled: true
+  EnforcedStyle: brackets
+
+Style/WordArray:
+  Enabled: true
+  EnforcedStyle: brackets
+
+Style/GuardClause:
+  Enabled: false
+
+Style/IfUnlessModifier:
+  Enabled: false
+
+Bundler/OrderedGems:
+  Enabled: false
+
+Style/RegexpLiteral:
+  Enabled: false
