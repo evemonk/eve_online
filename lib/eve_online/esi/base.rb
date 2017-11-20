@@ -12,6 +12,9 @@ module EveOnline
       def initialize(options = {})
         @token = options[:token]
         @parser = JSON
+        options.each do |k,v|
+          instance_variable_set("@#{k}", v) unless v.nil?
+        end
       end
 
       def url
