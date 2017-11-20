@@ -44,7 +44,7 @@ module EveOnline
         def blueprint_type_id
           options['blueprint_type_id']
         end
-        
+
         def completed_character_id
           options['completed_character_id']
         end
@@ -96,7 +96,7 @@ module EveOnline
         end
 
         def probability
-           options['probability']
+          options['probability']
         end
 
         def product_type_id
