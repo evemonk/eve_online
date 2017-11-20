@@ -14,6 +14,8 @@ describe EveOnline::ESI::Models::IndustryJob do
   describe '#as_json' do
     let(:industry_job) { described_class.new(options) }
 
+    let(:completed_character_id) { double }
+
     let(:completed_date) { double }
 
     let(:end_date) { double }
@@ -21,6 +23,8 @@ describe EveOnline::ESI::Models::IndustryJob do
     let(:pause_date) { double }
 
     let(:start_date) { double }
+
+    let(:successful_runs) { double }
 
     before { expect(industry_job).to receive(:activity_id).and_return(5) }
 
@@ -30,7 +34,7 @@ describe EveOnline::ESI::Models::IndustryJob do
 
     before { expect(industry_job).to receive(:blueprint_type_id).and_return(28_607) }
 
-    before { expect(industry_job).to receive(:completed_character_id).and_return(nil) }
+    before { expect(industry_job).to receive(:completed_character_id).and_return(completed_character_id) }
 
     before { expect(industry_job).to receive(:completed_date).and_return(completed_date) }
 
@@ -64,7 +68,7 @@ describe EveOnline::ESI::Models::IndustryJob do
 
     before { expect(industry_job).to receive(:status).and_return('active') }
 
-    before { expect(industry_job).to receive(:successful_runs).and_return(nil) }
+    before { expect(industry_job).to receive(:successful_runs).and_return(successful_runs) }
 
     subject { industry_job.as_json }
 
@@ -76,7 +80,7 @@ describe EveOnline::ESI::Models::IndustryJob do
 
     its([:blueprint_type_id]) { should eq(28_607) }
 
-    its([:completed_character_id]) { should eq(nil) }
+    its([:completed_character_id]) { should eq(completed_character_id) }
 
     its([:completed_date]) { should eq(completed_date) }
 
@@ -110,7 +114,7 @@ describe EveOnline::ESI::Models::IndustryJob do
 
     its([:status]) { should eq('active') }
 
-    its([:successful_runs]) { should eq(nil) }
+    its([:successful_runs]) { should eq(successful_runs) }
   end
 
   describe '#activity_id' do
