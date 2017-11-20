@@ -25,7 +25,7 @@ module EveOnline
             start_date: start_date,
             station_id: station_id,
             status: status,
-            successful_runs: successful_runs            
+            successful_runs: successful_runs
           }
         end
 
@@ -44,7 +44,7 @@ module EveOnline
         def blueprint_type_id
           options['blueprint_type_id']
         end
-        
+
         def completed_character_id
           options['completed_character_id']
         end
@@ -56,7 +56,7 @@ module EveOnline
         end
 
         def cost
-          options['cost']          
+          options['cost']
         end
 
         def duration
@@ -96,7 +96,7 @@ module EveOnline
         end
 
         def probability
-           options['probability']         
+          options['probability']
         end
 
         def product_type_id

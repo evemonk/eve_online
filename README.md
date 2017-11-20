@@ -714,51 +714,29 @@ job.as_json = # => {:activity_id=>5,
               #     :successful_runs=>nil}
 
 job.activity_id # => 5
-
 job.blueprint_id # => 1024839597103
-
 job.blueprint_location_id # => 1023579231924
-
 job.blueprint_type_id # => 28607
-
 job.completed_character_id # => nil
-
 job.completed_date # => nil
-
 job.cost # => 902034.0
-
 job.duration # => 625697
-
 job.end_date # => Sat, 25 Nov 2017 16:04:31 UTC +00:00
-
 job.facility_id # => 1023579231924
-
 job.installer_id # => 93997721
-
 job.job_id # => 344732396
-
 job.licensed_runs # => 1
-
 job.output_location_id # => 1023579231924
-
 job.pause_date # => nil
-
 job.probability # => 1.0
-
 job.product_type_id # => 28607
-
 job.runs # => 2
-
 job.start_date # => Sat, 18 Nov 2017 10:16:14 UTC +00:00
-
 job.station_id # => 1023579231924
-
 job.status # => "active"
-
 job.successful_runs # => nil
 
 # TODO: add pagination support
-
 ```
 
 
