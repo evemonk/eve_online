@@ -7,9 +7,6 @@ inherit_from:
 #  - .rubocop-thread_safety.yml
   - .rubocop_todo.yml
 
-AllCops:
-  TargetRubyVersion: 2.2
-
 # Enable when all supported ruby will support feature
 Style/FrozenStringLiteralComment:
   Enabled: false
