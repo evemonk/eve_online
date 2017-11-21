@@ -1,8 +1,7 @@
 AllCops:
-  TargetRubyVersion: 2.4
+  TargetRubyVersion: 2.2
   DisplayCopNames: true
   DisplayStyleGuide: true
-  TargetRailsVersion: 5.1
 
 Layout/EndOfLine:
   Enabled: true
