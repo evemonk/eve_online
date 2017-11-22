@@ -1,0 +1,61 @@
+# rubocop-rspec cops
+
+# Enable it later
+RSpec/NamedSubject:
+  Enabled: false
+
+RSpec/ImplicitExpect:
+  Enabled: true
+  EnforcedStyle: should
+
+RSpec/ExpectInHook:
+  Enabled: false
+
+RSpec/LeadingSubject:
+  Enabled: false
+
+RSpec/MessageSpies:
+  Enabled: true
+  EnforcedStyle: receive
+
+RSpec/LetSetup:
+  Enabled: false
+
+RSpec/ScatteredSetup:
+  Enabled: false
+
+RSpec/ScatteredLet:
+  Enabled: false
+
+RSpec/HookArgument:
+  Enabled: false
+
+# https://robots.thoughtbot.com/don-t-stub-the-system-under-test
+# Enable later?
+RSpec/SubjectStub:
+  Enabled: false
+
+# Enable later
+RSpec/ExampleWording:
+  Enabled: false
+
+# Bug in rubocop-rspec cop
+RSpec/FilePath:
+  Enabled: true
+
+# Possibly bug in rubocop-rspec cop
+RSpec/ExampleLength:
+  Enabled: true
+
+RSpec/NestedGroups:
+  Enabled: false
+
+RSpec/EmptyExampleGroup:
+  Enabled: false
+
+# Maybe later
+RSpec/MultipleExpectations:
+  Enabled: false
+
+RSpec/MultipleDescribes:
+  Enabled: true

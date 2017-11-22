@@ -1,6 +1,5 @@
 require 'spec_helper'
 
-# rubocop:disable Metrics/BlockLength
 describe EveOnline::XML::CharacterWalletJournal do
   let(:key_id) { 123 }
 

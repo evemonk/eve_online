@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe EveOnline::ESI::CharacterIndustryJobs do
-  let(:options) { { token: 'token123', character_id: 12_345_678 } }
+  let(:options) { { token: 'token123', character_id: 12_345_678, include_completed: false } }
 
   subject { described_class.new(options) }
 
@@ -15,6 +15,16 @@ describe EveOnline::ESI::CharacterIndustryJobs do
     its(:parser) { should eq(JSON) }
 
     its(:character_id) { should eq(12_345_678) }
+
+    context 'with include completed' do
+      its(:include_completed) { should eq(false) }
+    end
+
+    context 'without include completed' do
+      let(:options) { { token: 'token123', character_id: 12_345_678, include_completed: true } }
+
+      its(:include_completed) { should eq(true) }
+    end
   end
 
   describe '#jobs' do

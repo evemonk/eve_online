@@ -3,7 +3,6 @@ module EveOnline
     class CharacterBlueprints < Base
       API_ENDPOINT = 'https://esi.tech.ccp.is/v2/characters/%s/blueprints/?datasource=tranquility&page=1'.freeze
 
-
       attr_reader :character_id
 
       def initialize(options)

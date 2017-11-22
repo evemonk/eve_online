@@ -9,7 +9,7 @@ module EveOnline
         super
 
         @character_id = options[:character_id]
-        @include_completed = 'false' if options[:include_completed].nil?
+        @include_completed = options[:include_completed] ? true : false
       end
 
       def jobs
