@@ -1,6 +1,7 @@
 ## Changelog
 
 **master**
+* Add `EveOnline::ESI::CorporationBlueprints`
 
 **v0.13.0**
 
