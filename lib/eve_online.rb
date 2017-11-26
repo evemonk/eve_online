@@ -44,6 +44,8 @@ require 'eve_online/esi/character_blueprints'
 require 'eve_online/esi/character_standings'
 require 'eve_online/esi/character_fatigue'
 
+require 'eve_online/esi/market_history'
+
 require 'eve_online/esi/corporation'
 require 'eve_online/esi/corporation_industry_jobs'
 
@@ -73,6 +75,8 @@ require 'eve_online/esi/models/fatigue'
 require 'eve_online/esi/models/jump_clone'
 require 'eve_online/esi/models/home_location'
 require 'eve_online/esi/models/server_status'
+
+require 'eve_online/esi/models/market_history'
 
 require 'eve_online/esi/models/corporation'
 
