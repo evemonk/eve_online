@@ -46,6 +46,7 @@ require 'eve_online/esi/character_fatigue'
 
 require 'eve_online/esi/corporation'
 require 'eve_online/esi/corporation_industry_jobs'
+require 'eve_online/esi/corporation_divisions'
 
 require 'eve_online/esi/alliance'
 require 'eve_online/esi/alliance_icon'
@@ -75,6 +76,7 @@ require 'eve_online/esi/models/home_location'
 require 'eve_online/esi/models/server_status'
 
 require 'eve_online/esi/models/corporation'
+require 'eve_online/esi/models/division'
 
 require 'eve_online/esi/models/alliance'
 require 'eve_online/esi/models/alliance_icon'

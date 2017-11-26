@@ -592,7 +592,49 @@ corporation.corporation_url # => "http://"
 ##### Get corporation blueprints
 
 ##### Get corporation divisions
+```ruby
+options = {token: "1234", coporation_id: 98260237}
 
+corporation_hangars = EveOnline::ESI::CorporationDivisions.new(options)
+
+corporation_hangars.scope # => "esi-corporations.read_divisions.v1"
+
+divisions = corporation_hangars.divisions
+
+divisions.as_json # => {:hangar=>
+                  #       [{"division"=>1, "name"=>"ASSETS CORP"},
+                  #        {"division"=>2, "name"=>"BPC T1"},
+                  #        {"division"=>3, "name"=>"INVENTION T2 T3"},
+                  #        {"division"=>4, "name"=>"MATERIALS"},
+                  #        {"division"=>5, "name"=>"MANUFACTORING"},
+                  #        {"division"=>6, "name"=>"BPC T2 T3"},
+                  #        {"division"=>7, "name"=>"VECitizens"}],
+                  #     :wallet=>
+                  #       [{"division"=>1},
+                  #        {"division"=>2, "name"=>"Research and Development"},
+                  #        {"division"=>3, "name"=>"Trader"},
+                  #        {"division"=>4, "name"=>"4th Wallet Division"},
+                  #        {"division"=>5, "name"=>"5th Wallet Division"},
+                  #        {"division"=>6, "name"=>"Recette"},
+                  #        {"division"=>7, "name"=>"Stuff"}]}
+
+divisions.hangar # => [{"division"=>1, "name"=>"ASSETS CORP"},
+                 #     {"division"=>2, "name"=>"BPC T1"},
+                 #     {"division"=>3, "name"=>"INVENTION T2 T3"},
+                 #     {"division"=>4, "name"=>"MATERIALS"},
+                 #     {"division"=>5, "name"=>"MANUFACTORING"},
+                 #     {"division"=>6, "name"=>"BPC T2 T3"},
+                 #     {"division"=>7, "name"=>"VECitizens"}]
+
+divisions.wallet # => [{"division"=>1},
+                 #     {"division"=>2, "name"=>"Research and Development"},
+                 #     {"division"=>3, "name"=>"Trader"},
+                 #     {"division"=>4, "name"=>"4th Wallet Division"},
+                 #     {"division"=>5, "name"=>"5th Wallet Division"},
+                 #     {"division"=>6, "name"=>"Recette"},
+                 #     {"division"=>7, "name"=>"Stuff"}]
+                 
+```
 ##### Get corporation icon
 
 ##### Get corporation members

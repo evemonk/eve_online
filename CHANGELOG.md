@@ -1,6 +1,8 @@
 ## Changelog
 
 **master**
+* Add `EveOnline::ESI::Models::Division`
+* Add `EveOnline::ESI::CorporationDivisions`
 
 **v0.13.0**
 
