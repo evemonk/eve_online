@@ -16,7 +16,7 @@ module EveOnline
         def date
           date = options['date']
 
-          parse_datetime_with_timezone(date) if date          
+          parse_datetime_with_timezone(date) if date
         end
 
         def order_count
@@ -38,7 +38,6 @@ module EveOnline
         def lowest
           options['lowest']
         end
-
       end
     end
   end
