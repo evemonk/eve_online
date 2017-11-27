@@ -22,11 +22,11 @@ describe EveOnline::ESI::Models::MarketHistory do
 
     before { expect(market_history).to receive(:volume).and_return(52) }
 
-    before { expect(market_history).to receive(:highest).and_return(769999999.99) }
+    before { expect(market_history).to receive(:highest).and_return(769_999_999.99) }
 
-    before { expect(market_history).to receive(:average).and_return(754702326.19) }
+    before { expect(market_history).to receive(:average).and_return(754_702_326.19) }
 
-    before { expect(market_history).to receive(:lowest).and_return(701100002.49) }
+    before { expect(market_history).to receive(:lowest).and_return(701_100_002.49) }
 
     subject { market_history.as_json }
 
@@ -36,11 +36,11 @@ describe EveOnline::ESI::Models::MarketHistory do
 
     its([:volume]) { should eq(52) }
 
-    its([:highest]) { should eq(769999999.99) }
+    its([:highest]) { should eq(769_999_999.99) }
 
-    its([:average]) { should eq(754702326.19) }
+    its([:average]) { should eq(754_702_326.19) }
 
-    its([:lowest]) { should eq(701100002.49) }
+    its([:lowest]) { should eq(701_100_002.49) }
   end
 
   describe '#date' do
