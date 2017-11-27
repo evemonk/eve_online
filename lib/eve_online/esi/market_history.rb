@@ -21,13 +21,11 @@ module EveOnline
       end
       memoize :history
 
-      def scope
-      end
+      def scope; end
 
       def url
         API_ENDPOINT % [region_id, type_id]
       end
-
     end
   end
 end
