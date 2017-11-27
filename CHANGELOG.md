@@ -2,6 +2,8 @@
 
 **master**
 * Add `EveOnline::ESI::CorporationBlueprints`
+* Add `EveOnline::ESI::Models::MarketHistory`
+* Add `EveOnline::ESI::MarketHistory`
 
 **v0.13.0**
 
