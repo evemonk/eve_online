@@ -975,8 +975,9 @@ loyalty_point.loyalty_points # => 14163
 ##### List orders in a structure
 
 ##### List historical market statistics in a region
+
 ```ruby
-options = {region_id: 10000002, type_id: 28606}
+options = { region_id: 10000002, type_id: 28606 }
 
 market_history = EveOnline::ESI::MarketHistory.new(options)
 
@@ -988,17 +989,19 @@ statistics.size # => 417
 
 stats_today = statistics.last
 
-stats_today.as_json # => {:date=>Fri, 24 Nov 2017 00:00:00 UTC +00:00, 
-                    #     :order_count=>52, :volume=>52, 
-                    #     :highest=>769999999.99, 
-                    #     :average=>754702326.19, 
+stats_today.as_json # => {:date=>Fri, 24 Nov 2017 00:00:00 UTC +00:00,
+                    #     :order_count=>52,
+                    #     :volume=>52,
+                    #     :highest=>769999999.99,
+                    #     :average=>754702326.19,
                     #     :lowest=>701100002.49}
 
 stats_today.date # => Fri, 24 Nov 2017 00:00:00 UTC +00:00
-stats_today.order_count # => 52 # stats_today.highest # => 769999999.99
+stats_today.order_count # => 52
+stats_today.volume # => 52
+stats_today.highest # => 769999999.99
 stats_today.average # => 754702326.19
 stats_today.lowest # => 701100002.49
-
 ```
 
 ##### List orders in a region
