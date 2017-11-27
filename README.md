@@ -603,13 +603,13 @@ corporation_blueprints.blueprints.size # => 387
 blueprint = corporation_blueprints.blueprints.first
 
 blueprint.as_json # => {:item_id => 1007566533085,
-                        :location_flag => "CorpSAG2",
-                        :location_id => 1024637025781,
-                        :material_efficiency => 10,
-                        :quantity => -2,
-                        :runs => 300,
-                        :time_efficiency => 20,
-                        :type_id => 31803}
+                  #     :location_flag => "CorpSAG2",
+                  #     :location_id => 1024637025781,
+                  #     :material_efficiency => 10,
+                  #     :quantity => -2,
+                  #     :runs => 300,
+                  #     :time_efficiency => 20,
+                  #     :type_id => 31803}
 
 blueprint.item_id # => 1007566533085
 blueprint.location_flag # => "CorpSAG2"
