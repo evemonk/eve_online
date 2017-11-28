@@ -1,6 +1,7 @@
 ## Changelog
 
 **master**
+* Add `EveOnline::ESI::CorporationBlueprints`
 * Add `EveOnline::ESI::Models::MarketHistory`
 * Add `EveOnline::ESI::MarketHistory`
 

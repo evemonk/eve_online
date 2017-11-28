@@ -591,6 +591,37 @@ corporation.corporation_url # => "http://"
 
 ##### Get corporation blueprints
 
+```ruby
+options = options = { token: "1234", corporation_id: "98260237" }
+
+corporation_blueprints = EveOnline::ESI::CorporationBlueprints.new(options)
+
+corporation_blueprints.scope # => "esi-corporations.read_blueprints.v1"
+
+corporation_blueprints.blueprints.size # => 387
+
+blueprint = corporation_blueprints.blueprints.first
+
+blueprint.as_json # => {:item_id => 1007566533085,
+                  #     :location_flag => "CorpSAG2",
+                  #     :location_id => 1024637025781,
+                  #     :material_efficiency => 10,
+                  #     :quantity => -2,
+                  #     :runs => 300,
+                  #     :time_efficiency => 20,
+                  #     :type_id => 31803}
+
+blueprint.item_id # => 1007566533085
+blueprint.location_flag # => "CorpSAG2"
+blueprint.location_id # => 1024637025781
+blueprint.material_efficiency # => 10
+blueprint.quantity # => -2
+blueprint.runs # => 300
+blueprint.time_efficiency # => 20
+blueprint.type_id # => 31803
+
+```
+
 ##### Get corporation divisions
 
 ##### Get corporation icon
