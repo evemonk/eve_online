@@ -592,7 +592,7 @@ corporation.corporation_url # => "http://"
 ##### Get corporation blueprints
 
 ```ruby
-options = options = { token: "1234", corporation_id: "98260237" }
+options = options = { token: 'token123', corporation_id: 98260237 }
 
 corporation_blueprints = EveOnline::ESI::CorporationBlueprints.new(options)
 
@@ -620,6 +620,7 @@ blueprint.runs # => 300
 blueprint.time_efficiency # => 20
 blueprint.type_id # => 31803
 
+# TODO: add pagination
 ```
 
 ##### Get corporation divisions
