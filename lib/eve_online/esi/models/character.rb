@@ -13,7 +13,8 @@ module EveOnline
             description: description,
             alliance_id: alliance_id,
             ancestry_id: ancestry_id,
-            security_status: security_status
+            security_status: security_status,
+            faction_id: faction_id
           }
         end
 
@@ -57,6 +58,10 @@ module EveOnline
 
         def security_status
           options['security_status']
+        end
+
+        def faction_id
+          options['faction_id']
         end
       end
     end
