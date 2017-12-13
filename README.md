@@ -53,7 +53,7 @@ Or install it yourself as:
  * MRI 2.4
  * MRI 2.5
  * MRI (head)
- * JRuby 9.1.14.0
+ * JRuby 9.1.15.0
  * JRuby (head)
 
 ## Supported rails versions
