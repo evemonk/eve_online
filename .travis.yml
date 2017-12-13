@@ -5,6 +5,7 @@ rvm:
   - 2.2.8
   - 2.3.5
   - 2.4.2
+  - 2.5.0-preview1
   - ruby-head
 
 gemfile:
@@ -17,6 +18,8 @@ gemfile:
 matrix:
   exclude:
     - rvm: ruby-head
+      gemfile: gemfiles/activesupport_42.gemfile
+    - rvm: 2.5.0-preview1
       gemfile: gemfiles/activesupport_42.gemfile
   include:
     - rvm: jruby-9.1.14.0
@@ -61,6 +64,7 @@ matrix:
       env: JRUBY_OPTS='--debug' # get more accurate coverage data
 
   allow_failures:
+    - rvm: 2.5.0-preview1
     - rvm: ruby-head
     - rvm: jruby-9.1.14.0
     - rvm: jruby-head
