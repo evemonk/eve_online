@@ -1,0 +1,10 @@
+GET https://esi.tech.ccp.is/v1/status/?datasource=tranquility
+
+###
+
+GET https://esi.tech.ccp.is/latest/characters/1337512245/clones/?datasource=tranquility
+Authorization: Bearer token123
+
+###
+
+
