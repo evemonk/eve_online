@@ -5,7 +5,7 @@ module EveOnline
     class Alliance < Base
       extend Forwardable
 
-      API_ENDPOINT = 'https://esi.tech.ccp.is/v2/alliances/%s/?datasource=tranquility'.freeze
+      API_ENDPOINT = 'https://esi.tech.ccp.is/v3/alliances/%s/?datasource=tranquility'.freeze
 
       attr_reader :alliance_id
 
@@ -15,8 +15,9 @@ module EveOnline
         @alliance_id = options[:alliance_id]
       end
 
-      def_delegators :model, :as_json, :alliance_name,
-                     :ticker, :date_founded, :executor_corp
+      def_delegators :model, :as_json, :name, :ticker, :creator_id,
+                     :creator_corporation_id, :executor_corporation_id,
+                     :date_founded, :faction_id
 
       def model
         Models::Alliance.new(response)
