@@ -6,6 +6,7 @@
 * Add `EveOnline::ESI::Models::MarketHistory`
 * Add `EveOnline::ESI::MarketHistory`
 * [Sync with ESI 2017/12/20 update](https://developers.eveonline.com/blog/article/esi-endpoint-versioning-important-info-and-best-practices)
+* Add `EveOnline::ESI::CharacterOnline`
 
 **v0.13.0**
 

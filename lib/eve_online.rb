@@ -43,6 +43,7 @@ require 'eve_online/esi/character_implants'
 require 'eve_online/esi/character_blueprints'
 require 'eve_online/esi/character_standings'
 require 'eve_online/esi/character_fatigue'
+require 'eve_online/esi/character_online'
 
 require 'eve_online/esi/market_history'
 
