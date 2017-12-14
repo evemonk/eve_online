@@ -146,6 +146,16 @@ describe EveOnline::ESI::Character do
     specify { expect { subject.security_status }.not_to raise_error }
   end
 
+  describe '#faction_id' do
+    let(:model) { double }
+
+    before { subject.instance_variable_set(:@_memoized_model, model) }
+
+    before { expect(model).to receive(:faction_id) }
+
+    specify { expect { subject.faction_id }.not_to raise_error }
+  end
+
   describe '#scope' do
     specify { expect(subject.scope).to eq(nil) }
   end

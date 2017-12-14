@@ -4,6 +4,7 @@
 * Add `EveOnline::ESI::CorporationBlueprints`
 * Add `EveOnline::ESI::Models::MarketHistory`
 * Add `EveOnline::ESI::MarketHistory`
+* Sync API with ESI
 
 **v0.13.0**
 

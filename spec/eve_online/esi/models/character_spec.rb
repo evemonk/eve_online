@@ -36,6 +36,8 @@ describe EveOnline::ESI::Models::Character do
 
     before { expect(character).to receive(:security_status).and_return(1.8694881661345457) }
 
+    before { expect(character).to receive(:faction_id).and_return(500_001) }
+
     subject { character.as_json }
 
     its([:corporation_id]) { should eq(12_345_678) }
@@ -57,6 +59,8 @@ describe EveOnline::ESI::Models::Character do
     its([:ancestry_id]) { should eq(24) }
 
     its([:security_status]) { should eq(1.8694881661345457) }
+
+    its([:faction_id]) { should eq(500_001) }
   end
 
   describe '#corporation_id' do
@@ -136,5 +140,11 @@ describe EveOnline::ESI::Models::Character do
     before { expect(options).to receive(:[]).with('security_status') }
 
     specify { expect { subject.security_status }.not_to raise_error }
+  end
+
+  describe '#faction_id' do
+    before { expect(options).to receive(:[]).with('faction_id') }
+
+    specify { expect { subject.faction_id }.not_to raise_error }
   end
 end
