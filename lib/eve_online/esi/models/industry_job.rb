@@ -26,6 +26,7 @@ module EveOnline
             station_id: station_id,
             status: status,
             successful_runs: successful_runs
+            # location_id WTF???
           }
         end
 
