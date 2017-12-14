@@ -4,19 +4,34 @@ module EveOnline
       class Alliance < Base
         def as_json
           {
-            alliance_name: alliance_name,
+            name: name,
             ticker: ticker,
+            creator_id: creator_id,
+            creator_corporation_id: creator_corporation_id,
+            executor_corporation_id: executor_corporation_id,
             date_founded: date_founded,
-            executor_corp: executor_corp
+            faction_id: faction_id
           }
         end
 
-        def alliance_name
-          options['alliance_name']
+        def name
+          options['name']
         end
 
         def ticker
           options['ticker']
+        end
+
+        def creator_id
+          options['creator_id']
+        end
+
+        def creator_corporation_id
+          options['creator_corporation_id']
+        end
+
+        def executor_corporation_id
+          options['executor_corporation_id']
         end
 
         def date_founded
@@ -25,8 +40,8 @@ module EveOnline
           parse_datetime_with_timezone(date_founded) if date_founded
         end
 
-        def executor_corp
-          options['executor_corp']
+        def faction_id
+          options['faction_id']
         end
       end
     end
