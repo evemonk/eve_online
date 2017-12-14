@@ -270,15 +270,21 @@ alliance = EveOnline::ESI::Alliance.new(options)
 
 alliance.scope # => nil
 
-alliance.as_json # => {:alliance_name=>"Kids With Guns Alliance",
+alliance.as_json # => {:name=>"Kids With Guns Alliance",
                  #     :ticker=>"-KWG-",
+                 #     :creator_id=>94195096,
+                 #     :creator_corporation_id=>98306624,
+                 #     :executor_corporation_id=>98306624,
                  #     :date_founded=>Sun, 03 May 2015 19:45:17 UTC +00:00,
-                 #     :executor_corp=>98306624}
+                 #     :faction_id=>nil}
 
-alliance.alliance_name # => "Kids With Guns Alliance"
+alliance.name # => "Kids With Guns Alliance"
 alliance.ticker # => "-KWG-"
+alliance.creator_id # => 94195096
+alliance.creator_corporation_id # => 98306624
+alliance.executor_corporation_id # => 98306624
 alliance.date_founded # => Sun, 03 May 2015 19:45:17 UTC +00:00
-alliance.executor_corp # => 98306624
+alliance.faction_id # => nil
 ```
 
 ##### List alliance's corporations
