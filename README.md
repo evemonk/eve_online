@@ -1134,19 +1134,22 @@ character_skills = EveOnline::ESI::CharacterSkills.new(options)
 
 character_skills.scope # => "esi-skills.read_skills.v1"
 
-character_skills.total_sp # => 43232144
+character_skills.total_sp # => 50362576
+character_skills.unallocated_sp # => 656000
 
-character_skills.as_json # => {:total_sp=>43232144}
+character_skills.as_json # => {:total_sp=>50362576, :unallocated_sp=>656000}
 
-character_skills.skills.size # => 180
+character_skills.skills.size # => 179
 
 skill = character_skills.skills.first
 
-skill.as_json # => {:skill_id=>22536, :skillpoints_in_skill=>500, :current_skill_level=>1}
+skill.as_json
+# => {:skill_id=>22536, :skillpoints_in_skill=>500, :trained_skill_level=>1, :active_skill_level=>0}
 
 skill.skill_id # => 22536
 skill.skillpoints_in_skill # => 500
-skill.current_skill_level # => 1
+skill.trained_skill_level # => 1
+skill.active_skill_level # => 0
 ```
 
 #### Sovereignty
