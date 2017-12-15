@@ -1342,8 +1342,6 @@ race.alliance_id # => 500002
 
 ##### Get a character's wallet balance
 
-##### Get character wallet journal
-
 ```ruby
 options = { token: 'token123', character_id: 90729314 }
 
@@ -1355,6 +1353,8 @@ character_wallet.as_json # => {:wallet=>409488252.49}
 
 character_wallet.wallet # => 409488252.49
 ```
+
+##### Get character wallet journal
 
 ##### Get wallet transactions
 
