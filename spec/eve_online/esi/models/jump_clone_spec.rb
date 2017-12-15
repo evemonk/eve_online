@@ -14,6 +14,12 @@ describe EveOnline::ESI::Models::JumpClone do
   describe '#as_json' do
     let(:jump_clone) { described_class.new(options) }
 
+    let(:name) { double }
+
+    before { expect(jump_clone).to receive(:jump_clone_id).and_return(22_357_400) }
+
+    before { expect(jump_clone).to receive(:name).and_return(name) }
+
     before { expect(jump_clone).to receive(:location_id).and_return(61_000_032) }
 
     before { expect(jump_clone).to receive(:location_type).and_return('station') }
@@ -22,11 +28,27 @@ describe EveOnline::ESI::Models::JumpClone do
 
     subject { jump_clone.as_json }
 
+    its([:jump_clone_id]) { should eq(22_357_400) }
+
+    its([:name]) { should eq(name) }
+
     its([:location_id]) { should eq(61_000_032) }
 
     its([:location_type]) { should eq('station') }
 
     its([:implants]) { should eq([22_118]) }
+  end
+
+  describe '#jump_clone_id' do
+    before { expect(options).to receive(:[]).with('jump_clone_id') }
+
+    specify { expect { subject.jump_clone_id }.not_to raise_error }
+  end
+
+  describe '#name' do
+    before { expect(options).to receive(:[]).with('name') }
+
+    specify { expect { subject.name }.not_to raise_error }
   end
 
   describe '#location_id' do
