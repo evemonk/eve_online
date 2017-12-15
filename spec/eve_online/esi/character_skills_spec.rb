@@ -7,7 +7,7 @@ describe EveOnline::ESI::CharacterSkills do
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/v3/characters/%s/skills/?datasource=tranquility') }
+  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/v4/characters/%s/skills/?datasource=tranquility') }
 
   describe '#initialize' do
     its(:token) { should eq('token123') }
@@ -22,26 +22,47 @@ describe EveOnline::ESI::CharacterSkills do
 
     let(:total_sp) { double }
 
+    let(:unallocated_sp) { double }
+
     before { expect(skills).to receive(:total_sp).and_return(total_sp) }
+
+    before { expect(skills).to receive(:unallocated_sp).and_return(unallocated_sp) }
 
     subject { skills.as_json }
 
     its([:total_sp]) { should eq(total_sp) }
+
+    its([:unallocated_sp]) { should eq(unallocated_sp) }
   end
 
   describe '#total_sp' do
     before do
       #
-      # subject.response.fetch('total_sp')
+      # subject.response['total_sp']
       #
       expect(subject).to receive(:response) do
         double.tap do |a|
-          expect(a).to receive(:fetch).with('total_sp')
+          expect(a).to receive(:[]).with('total_sp')
         end
       end
     end
 
     specify { expect { subject.total_sp }.not_to raise_error }
+  end
+
+  describe '#unallocated_sp' do
+    before do
+      #
+      # subject.response['unallocated_sp']
+      #
+      expect(subject).to receive(:response) do
+        double.tap do |a|
+          expect(a).to receive(:[]).with('unallocated_sp')
+        end
+      end
+    end
+
+    specify { expect { subject.unallocated_sp }.not_to raise_error }
   end
 
   describe '#skills' do
@@ -52,14 +73,15 @@ describe EveOnline::ESI::CharacterSkills do
         {
           'skill_id' => 22_536,
           'skillpoints_in_skill' => 500,
-          'current_skill_level' => 1
+          'trained_skill_level' => 1,
+          'active_skill_level' => 0
         }
       ]
     end
 
     before do
       #
-      # subject.response.fetch('skills') # => [{"skill_id"=>22536, "skillpoints_in_skill"=>500, "current_skill_level"=>1}]
+      # subject.response.fetch('skills') # => [{"skill_id"=>22536, "skillpoints_in_skill"=>500, "trained_skill_level"=>1, "active_skill_level"=>0}]
       #
       expect(subject).to receive(:response) do
         double.tap do |a|
@@ -85,6 +107,6 @@ describe EveOnline::ESI::CharacterSkills do
   end
 
   describe '#url' do
-    specify { expect(subject.url).to eq('https://esi.tech.ccp.is/v3/characters/12345678/skills/?datasource=tranquility') }
+    specify { expect(subject.url).to eq('https://esi.tech.ccp.is/v4/characters/12345678/skills/?datasource=tranquility') }
   end
 end
