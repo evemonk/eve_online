@@ -5,7 +5,7 @@ module EveOnline
     class Corporation < Base
       extend Forwardable
 
-      API_ENDPOINT = 'https://esi.tech.ccp.is/v3/corporations/%s/?datasource=tranquility'.freeze
+      API_ENDPOINT = 'https://esi.tech.ccp.is/v4/corporations/%s/?datasource=tranquility'.freeze
 
       attr_reader :corporation_id
 
@@ -15,10 +15,10 @@ module EveOnline
         @corporation_id = options[:corporation_id]
       end
 
-      def_delegators :model, :as_json, :alliance_id, :ceo_id,
-                     :corporation_description, :corporation_name,
-                     :creation_date, :creator_id, :faction,
-                     :member_count, :tax_rate, :ticker, :corporation_url
+      def_delegators :model, :as_json, :name, :ticker, :member_count, :ceo_id,
+                     :alliance_id, :description, :tax_rate, :date_founded,
+                     :creator_id, :corporation_url, :faction_id,
+                     :home_station_id, :shares
 
       def model
         Models::Corporation.new(response)
