@@ -1,7 +1,7 @@
 module EveOnline
   module ESI
     class CharacterSkillQueue < Base
-      API_ENDPOINT = 'https://esi.tech.ccp.is/v2/characters/%s/skillqueue/?datasource=tranquility'.freeze
+      API_ENDPOINT = 'https://esi.tech.ccp.is/v2/characters/%<character_id>s/skillqueue/?datasource=tranquility'.freeze
 
       attr_reader :character_id
 
@@ -25,7 +25,7 @@ module EveOnline
       end
 
       def url
-        API_ENDPOINT % character_id
+        format(API_ENDPOINT, character_id: character_id)
       end
     end
   end

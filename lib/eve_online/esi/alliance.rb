@@ -5,7 +5,7 @@ module EveOnline
     class Alliance < Base
       extend Forwardable
 
-      API_ENDPOINT = 'https://esi.tech.ccp.is/v3/alliances/%s/?datasource=tranquility'.freeze
+      API_ENDPOINT = 'https://esi.tech.ccp.is/v3/alliances/%<alliance_id>s/?datasource=tranquility'.freeze
 
       attr_reader :alliance_id
 
@@ -27,7 +27,7 @@ module EveOnline
       def scope; end
 
       def url
-        API_ENDPOINT % alliance_id
+        format(API_ENDPOINT, alliance_id: alliance_id)
       end
     end
   end

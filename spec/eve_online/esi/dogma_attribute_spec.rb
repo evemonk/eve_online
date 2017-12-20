@@ -7,7 +7,7 @@ describe EveOnline::ESI::DogmaAttribute do
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/v1/dogma/attributes/%s/?datasource=tranquility') }
+  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/v1/dogma/attributes/%<attribute_id>s/?datasource=tranquility') }
 
   describe '#initialize' do
     its(:parser) { should eq(JSON) }

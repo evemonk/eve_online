@@ -7,7 +7,7 @@ describe EveOnline::ESI::CharacterClones do
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/v3/characters/%s/clones/?datasource=tranquility') }
+  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/v3/characters/%<character_id>s/clones/?datasource=tranquility') }
 
   describe '#initialize' do
     its(:token) { should eq('token123') }

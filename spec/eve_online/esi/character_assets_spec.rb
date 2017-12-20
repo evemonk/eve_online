@@ -7,7 +7,7 @@ describe EveOnline::ESI::CharacterAssets do
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/v3/characters/%s/assets/?datasource=tranquility&page=1') }
+  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/v3/characters/%<character_id>s/assets/?datasource=tranquility&page=1') }
 
   describe '#initialize' do
     its(:token) { should eq('token123') }

@@ -7,7 +7,7 @@ describe EveOnline::ESI::AllianceIcon do
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/v1/alliances/%s/icons/?datasource=tranquility') }
+  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/v1/alliances/%<alliance_id>s/icons/?datasource=tranquility') }
 
   describe '#initialize' do
     its(:token) { should eq(nil) }

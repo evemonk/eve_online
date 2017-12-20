@@ -7,7 +7,7 @@ describe EveOnline::ESI::Corporation do
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/v4/corporations/%s/?datasource=tranquility') }
+  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/v4/corporations/%<corporation_id>s/?datasource=tranquility') }
 
   describe '#initialize' do
     its(:token) { should eq(nil) }
