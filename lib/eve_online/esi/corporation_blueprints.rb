@@ -1,7 +1,7 @@
 module EveOnline
   module ESI
     class CorporationBlueprints < Base
-      API_ENDPOINT = 'https://esi.tech.ccp.is/v1/corporations/%s/blueprints/?datasource=tranquility&page=1'.freeze
+      API_ENDPOINT = 'https://esi.tech.ccp.is/v1/corporations/%<corporation_id>s/blueprints/?datasource=tranquility&page=1'.freeze
 
       attr_reader :corporation_id
 
@@ -25,7 +25,7 @@ module EveOnline
       end
 
       def url
-        API_ENDPOINT % corporation_id
+        format(API_ENDPOINT, corporation_id: corporation_id)
       end
     end
   end

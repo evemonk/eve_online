@@ -6,7 +6,8 @@ module EveOnline
           {
             skill_id: skill_id,
             skillpoints_in_skill: skillpoints_in_skill,
-            current_skill_level: current_skill_level
+            trained_skill_level: trained_skill_level,
+            active_skill_level: active_skill_level
           }
         end
 
@@ -18,8 +19,12 @@ module EveOnline
           options['skillpoints_in_skill']
         end
 
-        def current_skill_level
-          options['current_skill_level']
+        def trained_skill_level
+          options['trained_skill_level']
+        end
+
+        def active_skill_level
+          options['active_skill_level']
         end
       end
     end

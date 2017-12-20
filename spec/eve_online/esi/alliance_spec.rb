@@ -7,7 +7,7 @@ describe EveOnline::ESI::Alliance do
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/v2/alliances/%s/?datasource=tranquility') }
+  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/v3/alliances/%<alliance_id>s/?datasource=tranquility') }
 
   describe '#initialize' do
     its(:token) { should eq(nil) }
@@ -46,14 +46,14 @@ describe EveOnline::ESI::Alliance do
     specify { expect { subject.as_json }.not_to raise_error }
   end
 
-  describe '#alliance_name' do
+  describe '#name' do
     let(:model) { double }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
-    before { expect(model).to receive(:alliance_name) }
+    before { expect(model).to receive(:name) }
 
-    specify { expect { subject.alliance_name }.not_to raise_error }
+    specify { expect { subject.name }.not_to raise_error }
   end
 
   describe '#ticker' do
@@ -66,6 +66,36 @@ describe EveOnline::ESI::Alliance do
     specify { expect { subject.ticker }.not_to raise_error }
   end
 
+  describe '#creator_id' do
+    let(:model) { double }
+
+    before { subject.instance_variable_set(:@_memoized_model, model) }
+
+    before { expect(model).to receive(:creator_id) }
+
+    specify { expect { subject.creator_id }.not_to raise_error }
+  end
+
+  describe '#creator_corporation_id' do
+    let(:model) { double }
+
+    before { subject.instance_variable_set(:@_memoized_model, model) }
+
+    before { expect(model).to receive(:creator_corporation_id) }
+
+    specify { expect { subject.creator_corporation_id }.not_to raise_error }
+  end
+
+  describe '#executor_corporation_id' do
+    let(:model) { double }
+
+    before { subject.instance_variable_set(:@_memoized_model, model) }
+
+    before { expect(model).to receive(:executor_corporation_id) }
+
+    specify { expect { subject.executor_corporation_id }.not_to raise_error }
+  end
+
   describe '#date_founded' do
     let(:model) { double }
 
@@ -76,14 +106,14 @@ describe EveOnline::ESI::Alliance do
     specify { expect { subject.date_founded }.not_to raise_error }
   end
 
-  describe '#executor_corp' do
+  describe '#faction_id' do
     let(:model) { double }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
-    before { expect(model).to receive(:executor_corp) }
+    before { expect(model).to receive(:faction_id) }
 
-    specify { expect { subject.executor_corp }.not_to raise_error }
+    specify { expect { subject.faction_id }.not_to raise_error }
   end
 
   describe '#scope' do
@@ -92,7 +122,7 @@ describe EveOnline::ESI::Alliance do
 
   describe '#url' do
     specify do
-      expect(subject.url).to eq('https://esi.tech.ccp.is/v2/alliances/99005443/?datasource=tranquility')
+      expect(subject.url).to eq('https://esi.tech.ccp.is/v3/alliances/99005443/?datasource=tranquility')
     end
   end
 end

@@ -2,10 +2,10 @@ language: ruby
 sudo: false
 cache: bundler
 rvm:
-  - 2.2.8
-  - 2.3.5
-  - 2.4.2
-  - 2.5.0-preview1
+  - 2.2.9
+  - 2.3.6
+  - 2.4.3
+  - 2.5.0-rc1
   - ruby-head
 
 gemfile:
@@ -19,7 +19,7 @@ matrix:
   exclude:
     - rvm: ruby-head
       gemfile: gemfiles/activesupport_42.gemfile
-    - rvm: 2.5.0-preview1
+    - rvm: 2.5.0-rc1
       gemfile: gemfiles/activesupport_42.gemfile
   include:
     - rvm: jruby-9.1.15.0
@@ -64,7 +64,7 @@ matrix:
       env: JRUBY_OPTS='--debug' # get more accurate coverage data
 
   allow_failures:
-    - rvm: 2.5.0-preview1
+    - rvm: 2.5.0-rc1
     - rvm: ruby-head
     - rvm: jruby-9.1.15.0
     - rvm: jruby-head

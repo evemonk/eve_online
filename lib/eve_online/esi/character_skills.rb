@@ -1,7 +1,7 @@
 module EveOnline
   module ESI
     class CharacterSkills < Base
-      API_ENDPOINT = 'https://esi.tech.ccp.is/v3/characters/%s/skills/?datasource=tranquility'.freeze
+      API_ENDPOINT = 'https://esi.tech.ccp.is/v4/characters/%<character_id>s/skills/?datasource=tranquility'.freeze
 
       attr_reader :character_id
 
@@ -13,12 +13,17 @@ module EveOnline
 
       def as_json
         {
-          total_sp: total_sp
+          total_sp: total_sp,
+          unallocated_sp: unallocated_sp
         }
       end
 
       def total_sp
-        response.fetch('total_sp')
+        response['total_sp']
+      end
+
+      def unallocated_sp
+        response['unallocated_sp']
       end
 
       def skills
@@ -35,7 +40,7 @@ module EveOnline
       end
 
       def url
-        API_ENDPOINT % character_id
+        format(API_ENDPOINT, character_id: character_id)
       end
     end
   end

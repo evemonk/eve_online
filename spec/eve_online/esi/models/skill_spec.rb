@@ -18,7 +18,9 @@ describe EveOnline::ESI::Models::Skill do
 
     before { expect(skill).to receive(:skillpoints_in_skill).and_return(500) }
 
-    before { expect(skill).to receive(:current_skill_level).and_return(1) }
+    before { expect(skill).to receive(:trained_skill_level).and_return(1) }
+
+    before { expect(skill).to receive(:active_skill_level).and_return(0) }
 
     subject { skill.as_json }
 
@@ -26,7 +28,9 @@ describe EveOnline::ESI::Models::Skill do
 
     its([:skillpoints_in_skill]) { should eq(500) }
 
-    its([:current_skill_level]) { should eq(1) }
+    its([:trained_skill_level]) { should eq(1) }
+
+    its([:active_skill_level]) { should eq(0) }
   end
 
   describe '#skill_id' do
@@ -41,9 +45,15 @@ describe EveOnline::ESI::Models::Skill do
     specify { expect { subject.skillpoints_in_skill }.not_to raise_error }
   end
 
-  describe '#current_skill_level' do
-    before { expect(options).to receive(:[]).with('current_skill_level') }
+  describe '#trained_skill_level' do
+    before { expect(options).to receive(:[]).with('trained_skill_level') }
 
-    specify { expect { subject.current_skill_level }.not_to raise_error }
+    specify { expect { subject.trained_skill_level }.not_to raise_error }
+  end
+
+  describe '#active_skill_level' do
+    before { expect(options).to receive(:[]).with('active_skill_level') }
+
+    specify { expect { subject.active_skill_level }.not_to raise_error }
   end
 end

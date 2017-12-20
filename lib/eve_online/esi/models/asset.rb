@@ -5,17 +5,21 @@ module EveOnline
         def as_json
           {
             type_id: type_id,
+            quantity: quantity,
             location_id: location_id,
             location_type: location_type,
             item_id: item_id,
             location_flag: location_flag,
-            is_singleton: is_singleton,
-            quantity: quantity
+            is_singleton: is_singleton
           }
         end
 
         def type_id
           options['type_id']
+        end
+
+        def quantity
+          options['quantity']
         end
 
         def location_id
@@ -36,10 +40,6 @@ module EveOnline
 
         def is_singleton
           options['is_singleton']
-        end
-
-        def quantity
-          options['quantity']
         end
       end
     end

@@ -16,6 +16,8 @@ describe EveOnline::ESI::Models::Asset do
 
     before { expect(assets).to receive(:type_id).and_return(2629) }
 
+    before { expect(assets).to receive(:quantity).and_return(16_156) }
+
     before { expect(assets).to receive(:location_id).and_return(60_008_674) }
 
     before { expect(assets).to receive(:location_type).and_return('station') }
@@ -26,11 +28,11 @@ describe EveOnline::ESI::Models::Asset do
 
     before { expect(assets).to receive(:is_singleton).and_return(false) }
 
-    before { expect(assets).to receive(:quantity).and_return(16_156) }
-
     subject { assets.as_json }
 
     its([:type_id]) { should eq(2629) }
+
+    its([:quantity]) { should eq(16_156) }
 
     its([:location_id]) { should eq(60_008_674) }
 
@@ -41,14 +43,18 @@ describe EveOnline::ESI::Models::Asset do
     its([:location_flag]) { should eq('Hangar') }
 
     its([:is_singleton]) { should eq(false) }
-
-    its([:quantity]) { should eq(16_156) }
   end
 
   describe '#type_id' do
     before { expect(options).to receive(:[]).with('type_id') }
 
     specify { expect { subject.type_id }.not_to raise_error }
+  end
+
+  describe '#quantity' do
+    before { expect(options).to receive(:[]).with('quantity') }
+
+    specify { expect { subject.quantity }.not_to raise_error }
   end
 
   describe '#location_id' do
@@ -79,11 +85,5 @@ describe EveOnline::ESI::Models::Asset do
     before { expect(options).to receive(:[]).with('is_singleton') }
 
     specify { expect { subject.is_singleton }.not_to raise_error }
-  end
-
-  describe '#quantity' do
-    before { expect(options).to receive(:[]).with('quantity') }
-
-    specify { expect { subject.quantity }.not_to raise_error }
   end
 end

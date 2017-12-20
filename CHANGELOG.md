@@ -1,10 +1,13 @@
 ## Changelog
 
 **master**
+
 * Add `EveOnline::ESI::CorporationBlueprints`
 * Add `EveOnline::ESI::Models::MarketHistory`
 * Add `EveOnline::ESI::MarketHistory`
-* Sync API with ESI
+* [Sync with ESI 2017/12/20 update](https://developers.eveonline.com/blog/article/esi-endpoint-versioning-important-info-and-best-practices)
+* Add `EveOnline::ESI::CharacterOnline`
+* Add `EveOnline::ESI::Models::Online`
 
 **v0.13.0**
 

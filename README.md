@@ -270,15 +270,21 @@ alliance = EveOnline::ESI::Alliance.new(options)
 
 alliance.scope # => nil
 
-alliance.as_json # => {:alliance_name=>"Kids With Guns Alliance",
+alliance.as_json # => {:name=>"Kids With Guns Alliance",
                  #     :ticker=>"-KWG-",
+                 #     :creator_id=>94195096,
+                 #     :creator_corporation_id=>98306624,
+                 #     :executor_corporation_id=>98306624,
                  #     :date_founded=>Sun, 03 May 2015 19:45:17 UTC +00:00,
-                 #     :executor_corp=>98306624}
+                 #     :faction_id=>nil}
 
-alliance.alliance_name # => "Kids With Guns Alliance"
+alliance.name # => "Kids With Guns Alliance"
 alliance.ticker # => "-KWG-"
+alliance.creator_id # => 94195096
+alliance.creator_corporation_id # => 98306624
+alliance.executor_corporation_id # => 98306624
 alliance.date_founded # => Sun, 03 May 2015 19:45:17 UTC +00:00
-alliance.executor_corp # => 98306624
+alliance.faction_id # => nil
 ```
 
 ##### List alliance's corporations
@@ -502,7 +508,7 @@ character_clones = EveOnline::ESI::CharacterClones.new(options)
 
 character_clones.scope # => "esi-clones.read_clones.v1"
 
-character_clones.last_jump_date # => Fri, 27 Jul 2012 14:50:11 UTC +00:00
+character_clones.last_clone_jump_date # => Fri, 27 Jul 2012 14:50:11 UTC +00:00
 
 character_clones.home_location.as_json # => {:location_id=>61000032, :location_type=>"station"}
 
@@ -510,11 +516,16 @@ character_clones.jump_clones.size # => 2
 
 jump_clone = character_clones.jump_clones.first
 
-jump_clone.as_json # => {:location_id=>61000032, :location_type=>"station", :implants=>[22118]}
+jump_clone.as_json
+# => {:jump_clone_id=>22357400, :name=>nil, :location_id=>61000032, :location_type=>"station", :implants=>[22118]}
 
+jump_clone.jump_clone_id # => 22357400
+jump_clone.name # => nil
 jump_clone.location_id # => 61000032
 jump_clone.location_type # => "station"
 jump_clone.implants # => [22118]
+
+character_clones.last_station_change_date # => Tue, 30 Jun 2015 21:51:13 UTC +00:00
 ```
 
 ##### Get active implants
@@ -575,19 +586,33 @@ corporation = EveOnline::ESI::Corporation.new(options)
 corporation.scope # => nil
 
 corporation.as_json
-# => {:alliance_id=>99001258, :ceo_id=>1721864142, :corporation_description=>"", :corporation_name=>"Bullshit Bingo Club", :creation_date=>Mon, 11 Jul 2016 14:22:17 UTC +00:00, :creator_id=>1721864142, :faction=>nil, :member_count=>38, :tax_rate=>0.1, :ticker=>"BUBIC", :url=>"http://"}
+# => {:name=>"Bullshit Bingo Club",
+#     :ticker=>"BUBIC",
+#     :member_count=>60,
+#     :ceo_id=>1721864142,
+#     :alliance_id=>99001258,
+#     :description=>"",
+#     :tax_rate=>0.1,
+#     :date_founded=>Mon, 11 Jul 2016 14:22:17 UTC +00:00,
+#     :creator_id=>1721864142,
+#     :corporation_url=>"http://",
+#     :faction_id=>nil,
+#     :home_station_id=>60011893,
+#     :shares=>1000}
 
-corporation.alliance_id # => 99001258
-corporation.ceo_id # => 1721864142
-corporation.corporation_description # => ""
-corporation.corporation_name # => "Bullshit Bingo Club"
-corporation.creation_date # => Mon, 11 Jul 2016 14:22:17 UTC +00:00
-corporation.creator_id # => 1721864142
-corporation.faction # => nil
-corporation.member_count # => 38
-corporation.tax_rate # => 0.1
+corporation.name # => "Bullshit Bingo Club"
 corporation.ticker # => "BUBIC"
+corporation.member_count # => 60
+corporation.ceo_id # => 1721864142
+corporation.alliance_id # => 99001258
+corporation.description # => ""
+corporation.tax_rate # => 0.1
+corporation.date_founded # => Mon, 11 Jul 2016 14:22:17 UTC +00:00
+corporation.creator_id # => 1721864142
 corporation.corporation_url # => "http://"
+corporation.faction_id # => nil
+corporation.home_station_id # => 60011893
+corporation.shares # => 1000
 ```
 
 ##### Get alliance history
@@ -919,6 +944,22 @@ job.successful_runs # => nil
 
 ##### Get character online
 
+```ruby
+options = { token: 'token123', character_id: 90729314 }
+
+character_online = EveOnline::ESI::CharacterOnline.new(options)
+
+character_online.scope # => "esi-location.read_online.v1"
+
+character_online.as_json
+# => {:online=>false, :last_login=>Sun, 15 Jan 2017 11:39:24 UTC +00:00, :last_logout=>Sun, 15 Jan 2017 11:31:22 UTC +00:00, :logins=>370}
+
+character_online.online  # => false
+character_online.last_login # => Sun, 15 Jan 2017 11:39:24 UTC +00:00
+character_online.last_logout # => Sun, 15 Jan 2017 11:31:22 UTC +00:00
+character_online.logins # => 370
+```
+
 ##### Get current ship
 
 #### Loyalty
@@ -1107,19 +1148,22 @@ character_skills = EveOnline::ESI::CharacterSkills.new(options)
 
 character_skills.scope # => "esi-skills.read_skills.v1"
 
-character_skills.total_sp # => 43232144
+character_skills.total_sp # => 50362576
+character_skills.unallocated_sp # => 656000
 
-character_skills.as_json # => {:total_sp=>43232144}
+character_skills.as_json # => {:total_sp=>50362576, :unallocated_sp=>656000}
 
-character_skills.skills.size # => 180
+character_skills.skills.size # => 179
 
 skill = character_skills.skills.first
 
-skill.as_json # => {:skill_id=>22536, :skillpoints_in_skill=>500, :current_skill_level=>1}
+skill.as_json
+# => {:skill_id=>22536, :skillpoints_in_skill=>500, :trained_skill_level=>1, :active_skill_level=>0}
 
 skill.skill_id # => 22536
 skill.skillpoints_in_skill # => 500
-skill.current_skill_level # => 1
+skill.trained_skill_level # => 1
+skill.active_skill_level # => 0
 ```
 
 #### Sovereignty
@@ -1312,8 +1356,6 @@ race.alliance_id # => 500002
 
 ##### Get a character's wallet balance
 
-##### Get character wallet journal
-
 ```ruby
 options = { token: 'token123', character_id: 90729314 }
 
@@ -1325,6 +1367,8 @@ character_wallet.as_json # => {:wallet=>409488252.49}
 
 character_wallet.wallet # => 409488252.49
 ```
+
+##### Get character wallet journal
 
 ##### Get wallet transactions
 
