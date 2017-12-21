@@ -259,6 +259,16 @@ corporation_market_orders = EveOnline::XML::CorporationMarketOrders.new(key_id, 
 
 ##### List all alliances
 
+```ruby
+alliances = EveOnline::ESI::Alliances.new
+
+alliances.scope # => nil
+
+alliances.alliances.size # => 3013
+
+alliances.alliances.first # => 1354830081
+```
+
 ##### Get alliance names
 
 ##### Get alliance information

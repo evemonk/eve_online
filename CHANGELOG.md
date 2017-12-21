@@ -2,6 +2,8 @@
 
 **master**
 
+* Add `EveOnline::ESI::Alliances`
+
 **v0.14.0**
 
 * Add `EveOnline::ESI::CorporationBlueprints`
