@@ -297,6 +297,18 @@ alliance.faction_id # => nil
 
 ##### List alliance's corporations
 
+```ruby
+options = { alliance_id: 99005443 }
+
+alliance_corporations = EveOnline::ESI::AllianceCorporations.new(options)
+
+alliance_corporations.scope # => nil
+
+alliance_corporations.corporations.size # => 33
+
+alliance_corporations.corporations.first # => 98134807
+```
+
 ##### Get alliance icon
 
 ```ruby

@@ -3,6 +3,7 @@
 **master**
 
 * Add `EveOnline::ESI::Alliances`
+* Add `EveOnline::ESI::AllianceCorporations`
 
 **v0.14.0**
 
