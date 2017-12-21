@@ -259,7 +259,15 @@ corporation_market_orders = EveOnline::XML::CorporationMarketOrders.new(key_id, 
 
 ##### List all alliances
 
-##### Get alliance names
+```ruby
+alliances = EveOnline::ESI::Alliances.new
+
+alliances.scope # => nil
+
+alliances.alliances.size # => 3013
+
+alliances.alliances.first # => 1354830081
+```
 
 ##### Get alliance information
 
@@ -289,6 +297,18 @@ alliance.faction_id # => nil
 
 ##### List alliance's corporations
 
+```ruby
+options = { alliance_id: 99005443 }
+
+alliance_corporations = EveOnline::ESI::AllianceCorporations.new(options)
+
+alliance_corporations.scope # => nil
+
+alliance_corporations.corporations.size # => 33
+
+alliance_corporations.corporations.first # => 98134807
+```
+
 ##### Get alliance icon
 
 ```ruby
@@ -303,6 +323,8 @@ alliance_icon.as_json # => {:small=>"http://image.eveonline.com/Alliance/9900544
 alliance_icon.small # => "http://image.eveonline.com/Alliance/99005443_64.png"
 alliance_icon.medium # => "http://image.eveonline.com/Alliance/99005443_128.png"
 ```
+
+##### Get alliance names
 
 #### Assets
 

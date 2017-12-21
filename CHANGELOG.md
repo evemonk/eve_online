@@ -1,5 +1,10 @@
 ## Changelog
 
+**master**
+
+* Add `EveOnline::ESI::Alliances`
+* Add `EveOnline::ESI::AllianceCorporations`
+
 **v0.14.0**
 
 * Add `EveOnline::ESI::CorporationBlueprints`
