@@ -86,6 +86,7 @@ require 'eve_online/esi/models/market_history'
 require 'eve_online/esi/models/corporation'
 
 require 'eve_online/esi/models/alliance'
+require 'eve_online/esi/models/alliance_short'
 require 'eve_online/esi/models/alliance_icon'
 
 require 'eve_online/esi/models/dogma_attribute'
