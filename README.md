@@ -269,8 +269,6 @@ alliances.alliances.size # => 3013
 alliances.alliances.first # => 1354830081
 ```
 
-##### Get alliance names
-
 ##### Get alliance information
 
 ```ruby
@@ -313,6 +311,8 @@ alliance_icon.as_json # => {:small=>"http://image.eveonline.com/Alliance/9900544
 alliance_icon.small # => "http://image.eveonline.com/Alliance/99005443_64.png"
 alliance_icon.medium # => "http://image.eveonline.com/Alliance/99005443_128.png"
 ```
+
+##### Get alliance names
 
 #### Assets
 
