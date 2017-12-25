@@ -6,6 +6,7 @@
 * Add `EveOnline::ESI::AllianceCorporations`
 * Add `EveOnline::ESI::Models::AllianceShort`
 * Add `EveOnline::ESI::AlliancesNames`
+* Ruby 2.5.0
 
 **v0.14.0**
 
