@@ -5,6 +5,7 @@
 * Add `EveOnline::ESI::Alliances`
 * Add `EveOnline::ESI::AllianceCorporations`
 * Add `EveOnline::ESI::Models::AllianceShort`
+* Add `EveOnline::ESI::AlliancesNames`
 
 **v0.14.0**
 
