@@ -55,6 +55,7 @@ require 'eve_online/esi/alliances'
 require 'eve_online/esi/alliance'
 require 'eve_online/esi/alliance_corporations'
 require 'eve_online/esi/alliance_icon'
+require 'eve_online/esi/alliances_names'
 
 require 'eve_online/esi/dogma_attributes'
 require 'eve_online/esi/dogma_attribute'
@@ -86,6 +87,7 @@ require 'eve_online/esi/models/market_history'
 require 'eve_online/esi/models/corporation'
 
 require 'eve_online/esi/models/alliance'
+require 'eve_online/esi/models/alliance_short'
 require 'eve_online/esi/models/alliance_icon'
 
 require 'eve_online/esi/models/dogma_attribute'
