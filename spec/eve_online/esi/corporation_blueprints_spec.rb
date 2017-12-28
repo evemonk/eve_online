@@ -21,9 +21,9 @@ describe EveOnline::ESI::CorporationBlueprints do
     let(:response) do
       [
         {
-          'item_id' => 1000000010495,
+          'item_id' => 1_000_000_010_495,
           'type_id' => 691,
-          'location_id' => 60014719,
+          'location_id' => 60_014_719,
           'location_flag' => 'CorpSAG1',
           'quantity' => 1,
           'time_efficiency' => 0,

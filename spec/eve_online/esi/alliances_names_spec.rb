@@ -23,7 +23,7 @@ describe EveOnline::ESI::AlliancesNames do
     let(:response) do
       [
         {
-          'alliance_id' => 99005443,
+          'alliance_id' => 99_005_443,
           'alliance_name' => 'Kids With Guns Alliance'
         }
       ]

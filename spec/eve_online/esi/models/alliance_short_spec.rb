@@ -14,13 +14,13 @@ describe EveOnline::ESI::Models::AllianceShort do
   describe '#as_json' do
     let(:alliance) { described_class.new(options) }
 
-    before { expect(alliance).to receive(:alliance_id).and_return(99005443) }
+    before { expect(alliance).to receive(:alliance_id).and_return(99_005_443) }
 
     before { expect(alliance).to receive(:alliance_name).and_return('Kids With Guns Alliance') }
 
     subject { alliance.as_json }
 
-    its([:alliance_id]) { should eq(99005443) }
+    its([:alliance_id]) { should eq(99_005_443) }
 
     its([:alliance_name]) { should eq('Kids With Guns Alliance') }
   end
