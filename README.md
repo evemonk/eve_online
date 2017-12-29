@@ -135,42 +135,6 @@ contact_notification.sent_date # => Sat, 19 Mar 2016 12:13:00 UTC +00:00
 contact_notification.message_data # => "level: 5\nmessage: ''\n"
 ```
 
-#### Character market orders
-
-```ruby
-key_id = 1234567
-v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-options = { character_id: 90729314 }
-
-market_orders = EveOnline::XML::CharacterMarketOrders.new(key_id, v_code, options)
-
-market_orders.current_time # => Fri, 26 Aug 2016 13:56:17 UTC +00:00
-market_orders.cached_until # => Fri, 26 Aug 2016 14:53:17 UTC +00:00
-market_orders.version # => 2
-
-market_orders.orders.size # => 1
-
-marker_order = market_orders.orders.first
-
-marker_order.as_json # => {:order_id=>4053334100, :char_id=>1801683792, :station_id=>60005686, :vol_entered=>340000, :vol_remaining=>245705, :min_volume=>1, :order_state=>0, :type_id=>24488, :range=>32767, :account_key=>1000, :duration=>90, :escrow=>0.0, :price=>92.0, :bid=>false, :issued=>Thu, 01 Sep 2016 20:01:57 UTC +00:00}
-
-marker_order.order_id # => 4053334100
-marker_order.char_id # => 1801683792
-marker_order.station_id # => 60005686
-marker_order.vol_entered # => 340000
-marker_order.vol_remaining # => 245705
-marker_order.min_volume # => 1
-marker_order.order_state # => 0
-marker_order.type_id # => 24488
-marker_order.range # => 32767
-marker_order.account_key # => 1000
-marker_order.duration # => 90
-marker_order.escrow # => 0.0
-marker_order.price # => 92.0
-marker_order.bid # => false
-marker_order.issued # => Thu, 01 Sep 2016 20:01:57 UTC +00:00
-```
-
 #### Character upcoming calender events
 
 ```ruby
