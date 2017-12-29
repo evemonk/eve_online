@@ -8,6 +8,7 @@
 * Add `EveOnline::ESI::AlliancesNames`
 * Ruby 2.5.0
 * Add `EveOnline::ESI::Models::CharacterOrder`
+* Add `EveOnline::ESI::CharacterOrders`
 
 **v0.14.0**
 
