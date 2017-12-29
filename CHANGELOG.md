@@ -9,6 +9,7 @@
 * Ruby 2.5.0
 * Add `EveOnline::ESI::Models::CharacterOrder`
 * Add `EveOnline::ESI::CharacterOrders`
+* Remove `EveOnline::XML::CharacterMarketOrders`. Use `EveOnline::ESI::CharacterOrders` instead.
 
 **v0.14.0**
 

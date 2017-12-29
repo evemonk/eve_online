@@ -21,7 +21,6 @@ require 'eve_online/xml/base'
 require 'eve_online/xml/character_bookmarks'
 require 'eve_online/xml/character_contact_notifications'
 require 'eve_online/xml/character_upcoming_calendar_events'
-require 'eve_online/xml/character_market_orders'
 require 'eve_online/xml/character_wallet_journal'
 
 require 'eve_online/xml/corporation_market_orders'
