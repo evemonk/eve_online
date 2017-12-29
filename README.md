@@ -1049,6 +1049,39 @@ loyalty_point.loyalty_points # => 14163
 
 ##### List orders from a character
 
+```ruby
+options = { token: 'token123', character_id: 90729314 }
+
+character_orders = EveOnline::ESI::CharacterOrders.new(options)
+
+character_orders.scope
+
+character_orders.orders.size
+
+order = character_orders.orders.first
+
+order.as_json
+
+order.order_id
+order.type_id
+order.region_id
+order.location_id
+order.range
+order.is_buy_order
+order.price
+order.volume_total
+order.volume_remain
+order.issued
+order.state
+order.min_volume
+order.account_id
+order.duration
+order.is_corp
+order.escrow
+
+TODO: update example
+```
+
 ##### List orders from a corporation
 
 ##### Get item groups
