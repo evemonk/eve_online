@@ -1023,7 +1023,7 @@ order.duration
 order.is_corp
 order.escrow
 
-TODO: update example
+# TODO: update example
 ```
 
 ##### List orders from a corporation
@@ -1057,7 +1057,9 @@ order.wallet_division
 order.duration
 order.escrow
 
-TODO: update example
+# TODO: update example
+
+# TODO: add pagination support
 ```
 
 ##### Get item groups
