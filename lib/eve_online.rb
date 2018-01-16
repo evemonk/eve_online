@@ -80,6 +80,7 @@ require 'eve_online/esi/models/blueprint'
 require 'eve_online/esi/models/standing'
 require 'eve_online/esi/models/fatigue'
 require 'eve_online/esi/models/jump_clone'
+require 'eve_online/esi/models/corporation_order'
 require 'eve_online/esi/models/home_location'
 require 'eve_online/esi/models/server_status'
 
