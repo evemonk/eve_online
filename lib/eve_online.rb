@@ -14,17 +14,13 @@ require 'eve_online/event'
 require 'eve_online/event_response_object'
 require 'eve_online/contact_notification'
 require 'eve_online/wallet_journal_entry'
-require 'eve_online/market_order'
 
 # XML API
 require 'eve_online/xml/base'
 require 'eve_online/xml/character_bookmarks'
 require 'eve_online/xml/character_contact_notifications'
 require 'eve_online/xml/character_upcoming_calendar_events'
-require 'eve_online/xml/character_market_orders'
 require 'eve_online/xml/character_wallet_journal'
-
-require 'eve_online/xml/corporation_market_orders'
 
 # ESI API
 require 'eve_online/esi/base'
@@ -44,12 +40,14 @@ require 'eve_online/esi/character_blueprints'
 require 'eve_online/esi/character_standings'
 require 'eve_online/esi/character_fatigue'
 require 'eve_online/esi/character_online'
+require 'eve_online/esi/character_orders'
 
 require 'eve_online/esi/market_history'
 
 require 'eve_online/esi/corporation'
 require 'eve_online/esi/corporation_industry_jobs'
 require 'eve_online/esi/corporation_blueprints'
+require 'eve_online/esi/corporation_orders'
 
 require 'eve_online/esi/alliances'
 require 'eve_online/esi/alliance'
@@ -75,10 +73,12 @@ require 'eve_online/esi/models/attributes'
 require 'eve_online/esi/models/character'
 require 'eve_online/esi/models/industry_job'
 require 'eve_online/esi/models/character_portrait'
+require 'eve_online/esi/models/character_order'
 require 'eve_online/esi/models/blueprint'
 require 'eve_online/esi/models/standing'
 require 'eve_online/esi/models/fatigue'
 require 'eve_online/esi/models/jump_clone'
+require 'eve_online/esi/models/corporation_order'
 require 'eve_online/esi/models/home_location'
 require 'eve_online/esi/models/server_status'
 

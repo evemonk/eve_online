@@ -6,6 +6,14 @@
 * Add `EveOnline::ESI::AllianceCorporations`
 * Add `EveOnline::ESI::Models::AllianceShort`
 * Add `EveOnline::ESI::AlliancesNames`
+* Ruby 2.5.0
+* Add `EveOnline::ESI::Models::CharacterOrder`
+* Add `EveOnline::ESI::CharacterOrders`
+* Remove `EveOnline::XML::CharacterMarketOrders`. Use `EveOnline::ESI::CharacterOrders` instead.
+* Add `EveOnline::ESI::Models::CorporationOrder`
+* Add `EveOnline::ESI::CorporationOrders`
+* Remove `EveOnline::XML::CorporationMarketOrders`. Use `EveOnline::ESI::CorporationOrders` instead.
+* Remove `EveOnline::MarketOrder`
 
 **v0.14.0**
 
