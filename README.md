@@ -826,10 +826,7 @@ job.start_date # => Sat, 18 Nov 2017 10:16:14 UTC +00:00
 job.station_id # => 1023579231924
 job.status # => "active"
 job.successful_runs # => nil
-
-# TODO: add pagination support
 ```
-
 
 ##### List corporation industry jobs
 
