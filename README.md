@@ -1048,6 +1048,38 @@ TODO: update example
 
 ##### List orders from a corporation
 
+```ruby
+options = { token: 'token123', corporation_id: 1000168 }
+
+corporation_orders = EveOnline::ESI::CorporationOrders.new(options)
+
+corporation_orders.scope
+
+corporation_orders.orders.size
+
+order = corporation_orders.orders.first
+
+order.as_json
+
+order.order_id
+order.type_id
+order.region_id
+order.location_id
+order.range
+order.is_buy_order
+order.price
+order.volume_total
+order.volume_remain
+order.issued
+order.state
+order.min_volume
+order.wallet_division
+order.duration
+order.escrow
+
+TODO: update example
+```
+
 ##### Get item groups
 
 ##### Get item group information
