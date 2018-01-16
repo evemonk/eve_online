@@ -12,6 +12,8 @@
 * Remove `EveOnline::XML::CharacterMarketOrders`. Use `EveOnline::ESI::CharacterOrders` instead.
 * Add `EveOnline::ESI::Models::CorporationOrder`
 * Add `EveOnline::ESI::CorporationOrders`
+* Remove `EveOnline::XML::CorporationMarketOrders`. Use `EveOnline::ESI::CorporationOrders` instead.
+* Remove `EveOnline::MarketOrder`
 
 **v0.14.0**
 
