@@ -50,6 +50,7 @@ require 'eve_online/esi/market_history'
 require 'eve_online/esi/corporation'
 require 'eve_online/esi/corporation_industry_jobs'
 require 'eve_online/esi/corporation_blueprints'
+require 'eve_online/esi/corporation_orders'
 
 require 'eve_online/esi/alliances'
 require 'eve_online/esi/alliance'
