@@ -782,6 +782,7 @@ dogma_attribute.high_is_good # => true
 #### Industry
 
 ##### List character industry jobs
+
 ```ruby
 options = { token: 'token123', character_id: 90729314 }
 
@@ -793,28 +794,28 @@ character_jobs.jobs.size # => 3
 
 job = character_jobs.jobs.first
 
-job.as_json = # => {:activity_id=>5,
-              #     :blueprint_id=>1024839597103,
-              #     :blueprint_location_id=>1023579231924,
-              #     :blueprint_type_id=>28607,
-              #     :completed_character_id=>nil,
-              #     :completed_date=>nil,
-              #     :cost=>902034.0,
-              #     :duration=>625697,
-              #     :end_date=>Sat, 25 Nov 2017 16:04:31 UTC +00:00,
-              #     :facility_id=>1023579231924,
-              #     :installer_id=>93997721,
-              #     :job_id=>344732396,
-              #     :licensed_runs=>1,
-              #     :output_location_id=>1023579231924,
-              #     :pause_date=>nil,
-              #     :probability=>1.0,
-              #     :product_type_id=>28607,
-              #     :runs=>2,
-              #     :start_date=>Sat, 18 Nov 2017 10:16:14 UTC +00:00,
-              #     :station_id=>1023579231924,
-              #     :status=>"active",
-              #     :successful_runs=>nil}
+job.as_json # => {:activity_id=>5,
+            #     :blueprint_id=>1024839597103,
+            #     :blueprint_location_id=>1023579231924,
+            #     :blueprint_type_id=>28607,
+            #     :completed_character_id=>nil,
+            #     :completed_date=>nil,
+            #     :cost=>902034.0,
+            #     :duration=>625697,
+            #     :end_date=>Sat, 25 Nov 2017 16:04:31 UTC +00:00,
+            #     :facility_id=>1023579231924,
+            #     :installer_id=>93997721,
+            #     :job_id=>344732396,
+            #     :licensed_runs=>1,
+            #     :output_location_id=>1023579231924,
+            #     :pause_date=>nil,
+            #     :probability=>1.0,
+            #     :product_type_id=>28607,
+            #     :runs=>2,
+            #     :start_date=>Sat, 18 Nov 2017 10:16:14 UTC +00:00,
+            #     :station_id=>1023579231924,
+            #     :status=>"active",
+            #     :successful_runs=>nil}
 
 job.activity_id # => 5
 job.blueprint_id # => 1024839597103
@@ -844,6 +845,7 @@ job.successful_runs # => nil
 
 
 ##### List corporation industry jobs
+
 ```ruby
 options = { token: 'token123', corporation_id: 98146630 }
 
@@ -879,51 +881,29 @@ job.as_json # => {:activity_id=>1,
             #     :successful_runs=>nil}
 
 job.activity_id # => 1
-
 job.blueprint_id # => 1026042055832
-
 job.blueprint_location_id # => 1024956764558
-
 job.job.blueprint_type_id # => 28607
-
 job.completed_character_id # => nil
-
 job.completed_date # => nil
-
 job.cost # => 19505804.0
-
 job.duration # => 424816
-
 job.end_date # => Thu, 23 Nov 2017 09:20:30 UTC +00:00
-
 job.facility_id # => 1023579231924
-
 job.installer_id # => 93174304
-
 job.job_id # => 344736432
-
 job.licensed_runs # => 1
-
 job.output_location_id # => 1024956764558
-
 job.pause_date # => nil
-
 job.probability # => 1.0
-
 job.product_type_id # => 28606
-
 job.runs # => 1
-
 job.start_date # => Sat, 18 Nov 2017 11:20:14 UTC +00:00
-
 job.station_id # => nil
-
 job.status # => "active"
-
 job.successful_runs # => nil
 
 # TODO: add pagination support
-
 ```
 
 ##### List industry facilities
