@@ -204,19 +204,6 @@ wallet_journal_entry.owner1_type_id # => 1380
 wallet_journal_entry.owner2_type_id # => 2
 ```
 
-#### Corporation market orders
-
-```ruby
-key_id = 1234567
-v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-options = { character_id: 90729314 }
-
-corporation_market_orders = EveOnline::XML::CorporationMarketOrders.new(key_id, v_code, options)
-
-# TODO: finish this
-
-```
-
 ### ESI Examples
 
 #### Alliance
