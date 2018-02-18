@@ -7,7 +7,7 @@ describe EveOnline::ESI::MarketHistory do
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/v1/markets/%s/history/?datasource=tranquility&type_id=%s') }
+  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/v1/markets/%<region_id>s/history/?datasource=tranquility&type_id=%<type_id>s') }
 
   describe '#initialize' do
     its(:parser) { should eq(JSON) }
