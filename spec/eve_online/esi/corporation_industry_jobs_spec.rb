@@ -7,7 +7,7 @@ describe EveOnline::ESI::CorporationIndustryJobs do
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/v1/corporations/%s/industry/jobs/?datasource=tranquility&include_completed=%s') }
+  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/v1/corporations/%<corporation_id>s/industry/jobs/?datasource=tranquility&include_completed=%<include_completed>s') }
 
   describe '#initialize' do
     its(:token) { should eq('token123') }
