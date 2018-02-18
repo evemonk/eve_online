@@ -30,7 +30,7 @@ describe EveOnline::ESI::CharacterOrders do
           'range' => 'station',
           'is_buy_order' => true,
           'price' => 33.3,
-          'volume_total' => 123456,
+          'volume_total' => 123_456,
           'volume_remain' => 4422,
           'issued' => '2016-09-03T05:12:25Z',
           'state' => 'open',

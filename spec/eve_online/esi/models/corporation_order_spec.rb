@@ -30,7 +30,7 @@ describe EveOnline::ESI::Models::CorporationOrder do
 
     before { expect(corporation_order).to receive(:price).and_return(33.3) }
 
-    before { expect(corporation_order).to receive(:volume_total).and_return(123456) }
+    before { expect(corporation_order).to receive(:volume_total).and_return(123_456) }
 
     before { expect(corporation_order).to receive(:volume_remain).and_return(4422) }
 
@@ -62,7 +62,7 @@ describe EveOnline::ESI::Models::CorporationOrder do
 
     its([:price]) { should eq(33.3) }
 
-    its([:volume_total]) { should eq(123456) }
+    its([:volume_total]) { should eq(123_456) }
 
     its([:volume_remain]) { should eq(4422) }
 
