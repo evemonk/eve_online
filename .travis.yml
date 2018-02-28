@@ -73,7 +73,9 @@ matrix:
     - rvm: jruby-head
   fast_finish: true
 
-before_install: gem install bundler
+before_install:
+  - gem install bundler
+  - rm Gemfile.lock
 
 script:
   - bundle exec rake
