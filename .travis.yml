@@ -74,8 +74,9 @@ matrix:
   fast_finish: true
 
 before_install:
-  - gem install bundler
   - rm Gemfile.lock
+  - rm .ruby-version
+  - gem install bundler
 
 script:
   - bundle exec rake
