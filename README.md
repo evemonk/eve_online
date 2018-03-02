@@ -339,6 +339,33 @@ asset.quantity # => 16156
 
 ##### List bookmarks
 
+```ruby
+options = { token: 'token123', character_id: 90729314 }
+
+character_bookmarks = EveOnline::ESI::CharacterBookmarks.new(options)
+
+character_bookmarks.scope # => "esi-bookmarks.read_character_bookmarks.v1"
+
+character_bookmarks.bookmarks.size # => 20
+
+bookmark = character_bookmarks.bookmarks.first
+
+bookmark.as_json # => {:bookmark_id=>4,
+                 #     :folder_id=>5,
+                 #     :created=>Mon, 09 Jul 2012 22:38:31 UTC +00:00,
+                 #     :label=>"Stargate",
+                 #     :notes=>"This is a stargate",
+                 #     :location_id=>30003430,
+                 #     :creator_id=>2112625428}
+
+bookmark.bookmark_id # => 4
+bookmark.folder_id # => 5
+bookmark.label # => "Stargate"
+bookmark.notes # => "This is a stargate"
+bookmark.location_id # => 30003430
+bookmark.creator_id # => 2112625428
+```
+
 ##### List bookmark folders
 
 ##### List corporation bookmarks
