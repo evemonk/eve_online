@@ -95,5 +95,8 @@ Style/IfUnlessModifier:
 Bundler/OrderedGems:
   Enabled: false
 
+Gemspec/OrderedDependencies:
+  Enabled: false
+
 Style/RegexpLiteral:
   Enabled: false
