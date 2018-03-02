@@ -10,9 +10,12 @@ module EveOnline
             label: label,
             notes: notes,
             location_id: location_id,
-            creator_id: creator_id
-            # TODO: add 'item'
-            # TODO: add 'coordinates'
+            creator_id: creator_id,
+            item_id: item_id,
+            item_type_id: item_type_id,
+            coordinate_x: coordinate_x,
+            coordinate_y: coordinate_y,
+            coordinate_z: coordinate_z
           }
         end
 
@@ -44,6 +47,26 @@ module EveOnline
 
         def creator_id
           options['creator_id']
+        end
+
+        def item_id
+          options['item']['item_id'] if options['item']
+        end
+
+        def item_type_id
+          options['item']['type_id'] if options['item']
+        end
+
+        def coordinate_x
+          options['coordinates']['x'] if options['coordinates']
+        end
+
+        def coordinate_y
+          options['coordinates']['y'] if options['coordinates']
+        end
+
+        def coordinate_z
+          options['coordinates']['z'] if options['coordinates']
         end
       end
     end
