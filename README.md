@@ -1,4 +1,4 @@
-# EveOnline API (XML and ESI). With SDE.
+# EveOnline ESI API.
 
 [![Gem Version](https://badge.fury.io/rb/eve_online.svg)](https://badge.fury.io/rb/eve_online)
 [![Gem Downloads](https://img.shields.io/gem/dt/eve_online.svg)](https://rubygems.org/gems/eve_online)
@@ -7,13 +7,9 @@
 [![Dependency Status](https://gemnasium.com/biow0lf/eve_online.svg)](https://gemnasium.com/biow0lf/eve_online)
 [![security](https://hakiri.io/github/biow0lf/eve_online/master.svg)](https://hakiri.io/github/biow0lf/eve_online/master)
 
-This gem implement Ruby API for EveOnline MMORPG. XML and ESI API. With SDE.
+This gem implement Ruby API for EveOnline MMORPG (ESI).
 
 This gem was extracted from [EveMonk](http://evemonk.com). Source code of evemonk backend published [here](https://github.com/biow0lf/evemonk).
-
-You will need to add xml parser to your Gemfile to use this gem. E.g. `nokogiri`. Or any other xml parser which are supported by nori.
-
-EveOnline XML API deprecated. And will be removed in near future. From this library and by [CCP developers](https://community.eveonline.com/news/dev-blogs/introducing-esi/).
 
 ## TOC
 
