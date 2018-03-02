@@ -311,7 +311,12 @@ bookmark.as_json # => {:bookmark_id=>4,
                  #     :label=>"Stargate",
                  #     :notes=>"This is a stargate",
                  #     :location_id=>30003430,
-                 #     :creator_id=>2112625428}
+                 #     :creator_id=>2112625428,
+                 #     :item_id=>30003496,
+                 #     :item_type_id=>5,
+                 #     :coordinate_x=>-144951231521.81625,
+                 #     :coordinate_y=>164030047870.25558,
+                 #     :coordinate_z=>211467631848.1311}
 
 bookmark.bookmark_id # => 4
 bookmark.folder_id # => 5
@@ -320,6 +325,11 @@ bookmark.label # => "Stargate"
 bookmark.notes # => "This is a stargate"
 bookmark.location_id # => 30003430
 bookmark.creator_id # => 2112625428
+bookmark.item_id # => 30003496
+bookmark.item_type_id # => 5
+bookmark.coordinate_x # => -144951231521.81625
+bookmark.coordinate_y # => 164030047870.25558
+bookmark.coordinate_z # => 211467631848.1311
 ```
 
 ##### List bookmark folders
