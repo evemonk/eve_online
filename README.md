@@ -360,6 +360,7 @@ bookmark.as_json # => {:bookmark_id=>4,
 
 bookmark.bookmark_id # => 4
 bookmark.folder_id # => 5
+bookmark.created # => Mon, 09 Jul 2012 22:38:31 UTC +00:00
 bookmark.label # => "Stargate"
 bookmark.notes # => "This is a stargate"
 bookmark.location_id # => 30003430
