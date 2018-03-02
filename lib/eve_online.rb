@@ -8,8 +8,6 @@ require 'eve_online/exceptions/invalid_character_id_exception'
 require 'eve_online/base'
 require 'eve_online/base_xml'
 
-require 'eve_online/bookmark'
-require 'eve_online/bookmark_folder'
 require 'eve_online/event'
 require 'eve_online/event_response_object'
 require 'eve_online/contact_notification'
@@ -17,7 +15,6 @@ require 'eve_online/wallet_journal_entry'
 
 # XML API
 require 'eve_online/xml/base'
-require 'eve_online/xml/character_bookmarks'
 require 'eve_online/xml/character_contact_notifications'
 require 'eve_online/xml/character_upcoming_calendar_events'
 require 'eve_online/xml/character_wallet_journal'
