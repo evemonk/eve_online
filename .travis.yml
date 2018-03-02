@@ -26,23 +26,23 @@ matrix:
     - rvm: 2.2.9
       gemfile: gemfiles/activesupport_edge.gemfile
   include:
-    - rvm: jruby-9.1.15.0
+    - rvm: jruby-9.1.16.0
       gemfile: gemfiles/activesupport_42.gemfile
       jdk: oraclejdk8
       env: JRUBY_OPTS='--debug' # get more accurate coverage data
-    - rvm: jruby-9.1.15.0
+    - rvm: jruby-9.1.16.0
       gemfile: gemfiles/activesupport_50.gemfile
       jdk: oraclejdk8
       env: JRUBY_OPTS='--debug' # get more accurate coverage data
-    - rvm: jruby-9.1.15.0
+    - rvm: jruby-9.1.16.0
       gemfile: gemfiles/activesupport_51.gemfile
       jdk: oraclejdk8
       env: JRUBY_OPTS='--debug' # get more accurate coverage data
-    - rvm: jruby-9.1.15.0
+    - rvm: jruby-9.1.16.0
       gemfile: gemfiles/activesupport_52.gemfile
       jdk: oraclejdk8
       env: JRUBY_OPTS='--debug' # get more accurate coverage data
-    - rvm: jruby-9.1.15.0
+    - rvm: jruby-9.1.16.0
       gemfile: gemfiles/activesupport_edge.gemfile
       jdk: oraclejdk8
       env: JRUBY_OPTS='--debug' # get more accurate coverage data
@@ -69,7 +69,7 @@ matrix:
 
   allow_failures:
     - rvm: ruby-head
-    - rvm: jruby-9.1.15.0
+    - rvm: jruby-9.1.16.0
     - rvm: jruby-head
   fast_finish: true
 
