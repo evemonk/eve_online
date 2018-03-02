@@ -1,7 +1,7 @@
 module EveOnline
   module ESI
     class CorporationIndustryJobs < Base
-      API_ENDPOINT = 'https://esi.tech.ccp.is/v1/corporations/%s/industry/jobs/?datasource=tranquility&include_completed=%s'.freeze
+      API_ENDPOINT = 'https://esi.tech.ccp.is/v1/corporations/%<corporation_id>s/industry/jobs/?datasource=tranquility&include_completed=%<include_completed>s'.freeze
 
       attr_reader :corporation_id, :include_completed
 
@@ -26,7 +26,7 @@ module EveOnline
       end
 
       def url
-        API_ENDPOINT % [corporation_id, include_completed]
+        format(API_ENDPOINT, corporation_id: corporation_id, include_completed: include_completed)
       end
     end
   end

@@ -1,4 +1,4 @@
-# EveOnline API (XML and ESI). With SDE.
+# EveOnline ESI API.
 
 [![Gem Version](https://badge.fury.io/rb/eve_online.svg)](https://badge.fury.io/rb/eve_online)
 [![Gem Downloads](https://img.shields.io/gem/dt/eve_online.svg)](https://rubygems.org/gems/eve_online)
@@ -7,13 +7,9 @@
 [![Dependency Status](https://gemnasium.com/biow0lf/eve_online.svg)](https://gemnasium.com/biow0lf/eve_online)
 [![security](https://hakiri.io/github/biow0lf/eve_online/master.svg)](https://hakiri.io/github/biow0lf/eve_online/master)
 
-This gem implement Ruby API for EveOnline MMORPG. XML and ESI API. With SDE.
+This gem implement Ruby API for EveOnline MMORPG (ESI).
 
 This gem was extracted from [EveMonk](http://evemonk.com). Source code of evemonk backend published [here](https://github.com/biow0lf/evemonk).
-
-You will need to add xml parser to your Gemfile to use this gem. E.g. `nokogiri`. Or any other xml parser which are supported by nori.
-
-EveOnline XML API deprecated. And will be removed in near future. From this library and by [CCP developers](https://community.eveonline.com/news/dev-blogs/introducing-esi/).
 
 ## TOC
 
@@ -53,7 +49,7 @@ Or install it yourself as:
  * MRI 2.4
  * MRI 2.5
  * MRI (head)
- * JRuby 9.1.15.0
+ * JRuby 9.1.16.0
  * JRuby (head)
 
 ## Supported rails versions
@@ -67,47 +63,6 @@ Or install it yourself as:
 ## Usage
 
 ### XML API
-
-#### Characters Bookmarks
-
-```ruby
-key_id = 1234567
-v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-options = { character_id: 90729314 }
-
-bookmarks = EveOnline::XML::CharacterBookmarks.new(key_id, v_code, options)
-
-bookmarks.current_time # => Sun, 03 Jan 2016 14:53:44 UTC +00:00
-bookmarks.cached_until # => Sun, 03 Jan 2016 15:50:44 UTC +00:00
-bookmarks.version # => 2
-
-bookmarks.bookmark_folders.size # => 4
-
-bookmark_folder = bookmarks.bookmark_folders.first
-
-bookmark_folder.as_json # => {:folder_id=>0, :folder_name=>""}
-
-bookmark_folder.folder_id # => 0
-bookmark_folder.folder_name # => ""
-
-bookmark_folder.bookmarks.size # => 87
-
-bookmark = bookmark_folder.bookmarks.first
-
-bookmark.as_json # => {:bookmark_id=>459411933, :creator_id=>0, :created=>Sat, 28 Mar 2009 07:51:00 UTC +00:00, :item_id=>0, :type_id=>5, :location_id=>30002656, :x=>-267396330161.0, :y=>-376627274.0, :z=>-556366331388.0, :memo=>"1", :note=>""}
-
-bookmark.bookmark_id # => 459411933
-bookmark.creator_id # => 0
-bookmark.created # => Sat, 28 Mar 2009 07:51:00 UTC +00:00
-bookmark.item_id # => 0
-bookmark.type_id # => 5
-bookmark.location_id # => 30002656
-bookmark.x # => -267396330161.0
-bookmark.y # => -376627274.0
-bookmark.z # => -556366331388.0
-bookmark.memo # => "1"
-bookmark.note # => ""
-```
 
 #### Character contact notifications
 
@@ -339,7 +294,67 @@ asset.quantity # => 16156
 
 ##### List bookmarks
 
+```ruby
+options = { token: 'token123', character_id: 90729314 }
+
+character_bookmarks = EveOnline::ESI::CharacterBookmarks.new(options)
+
+character_bookmarks.scope # => "esi-bookmarks.read_character_bookmarks.v1"
+
+character_bookmarks.bookmarks.size # => 20
+
+bookmark = character_bookmarks.bookmarks.first
+
+bookmark.as_json # => {:bookmark_id=>4,
+                 #     :folder_id=>5,
+                 #     :created=>Mon, 09 Jul 2012 22:38:31 UTC +00:00,
+                 #     :label=>"Stargate",
+                 #     :notes=>"This is a stargate",
+                 #     :location_id=>30003430,
+                 #     :creator_id=>2112625428,
+                 #     :item_id=>30003496,
+                 #     :item_type_id=>5,
+                 #     :coordinate_x=>-144951231521.81625,
+                 #     :coordinate_y=>164030047870.25558,
+                 #     :coordinate_z=>211467631848.1311}
+
+bookmark.bookmark_id # => 4
+bookmark.folder_id # => 5
+bookmark.created # => Mon, 09 Jul 2012 22:38:31 UTC +00:00
+bookmark.label # => "Stargate"
+bookmark.notes # => "This is a stargate"
+bookmark.location_id # => 30003430
+bookmark.creator_id # => 2112625428
+bookmark.item_id # => 30003496
+bookmark.item_type_id # => 5
+bookmark.coordinate_x # => -144951231521.81625
+bookmark.coordinate_y # => 164030047870.25558
+bookmark.coordinate_z # => 211467631848.1311
+```
+
 ##### List bookmark folders
+
+```ruby
+options = { token: 'token123', character_id: 90729314 }
+
+character_bookmark_folders = EveOnline::ESI::CharacterBookmarkFolders.new(options)
+
+character_bookmark_folders.scope # => "esi-bookmarks.read_character_bookmarks.v1"
+
+character_bookmark_folders.bookmark_folders.size # => 1
+
+bookmark_folder = character_bookmark_folders.bookmark_folders.first
+
+bookmark_folder.as_json # => {:folder_id=>5,
+                        #     :name=>"Icecream"}
+
+bookmark_folder.folder_id # => 5
+bookmark_folder.name # => "Icecream"
+```
+
+##### List corporation bookmarks
+
+##### List corporation bookmark folders
 
 #### Calendar
 
@@ -826,10 +841,7 @@ job.start_date # => Sat, 18 Nov 2017 10:16:14 UTC +00:00
 job.station_id # => 1023579231924
 job.status # => "active"
 job.successful_runs # => nil
-
-# TODO: add pagination support
 ```
-
 
 ##### List corporation industry jobs
 

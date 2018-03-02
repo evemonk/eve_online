@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://esi.tech.ccp.is/v3/alliances/99005443/?datasource=tranquility
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - EveOnline API (https://github.com/biow0lf/eve_online) v0.14.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Cache-Control:
+      - public
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 18 Feb 2018 21:35:38 GMT
+      Expires:
+      - Sun, 18 Feb 2018 21:43:22 GMT
+      Last-Modified:
+      - Sun, 18 Feb 2018 20:43:22 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Esi-Error-Limit-Remain:
+      - '98'
+      X-Esi-Error-Limit-Reset:
+      - '22'
+      Content-Length:
+      - '180'
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - clear
+    body:
+      encoding: UTF-8
+      string: '{"name":"Kids With Guns Alliance","creator_id":94195096,"creator_corporation_id":98306624,"ticker":"-KWG-","date_founded":"2015-05-03T19:45:17Z","executor_corporation_id":98306624}'
+    http_version: 
+  recorded_at: Sun, 18 Feb 2018 21:35:38 GMT
+recorded_with: VCR 4.0.0

@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Igor Zubkov']
   spec.email         = ['igor.zubkov@gmail.com']
 
-  spec.summary       = 'EveOnline API. XML, ESI and SDE.'
-  spec.description   = 'EveOnline API. XML, ESI and SDE.'
+  spec.summary       = 'EveOnline ESI API.'
+  spec.description   = 'EveOnline ESI API.'
   spec.homepage      = 'https://github.com/biow0lf/eve_online'
   spec.license       = 'MIT'
 
@@ -24,6 +24,8 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rspec'
   spec.add_development_dependency 'rspec-its'
   spec.add_development_dependency 'simplecov'
+  spec.add_development_dependency 'webmock'
+  spec.add_development_dependency 'vcr'
 
   spec.add_runtime_dependency 'activesupport', '>= 4.2.0'
   spec.add_runtime_dependency 'faraday'

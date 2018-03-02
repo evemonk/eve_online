@@ -1,7 +1,7 @@
 module EveOnline
   module ESI
     class MarketHistory < Base
-      API_ENDPOINT = 'https://esi.tech.ccp.is/v1/markets/%s/history/?datasource=tranquility&type_id=%s'.freeze
+      API_ENDPOINT = 'https://esi.tech.ccp.is/v1/markets/%<region_id>s/history/?datasource=tranquility&type_id=%<type_id>s'.freeze
 
       attr_reader :region_id, :type_id
 
@@ -24,7 +24,7 @@ module EveOnline
       def scope; end
 
       def url
-        API_ENDPOINT % [region_id, type_id]
+        format(API_ENDPOINT, region_id: region_id, type_id: type_id)
       end
     end
   end

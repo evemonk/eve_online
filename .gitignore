@@ -1,6 +1,5 @@
 /.bundle/
 /.yardoc
-/Gemfile.lock
 /_yardoc/
 /coverage/
 /doc/
@@ -8,6 +7,5 @@
 /spec/reports/
 /tmp/
 /.idea/
-.ruby-version
 /.DS_Store
 
