@@ -68,47 +68,6 @@ Or install it yourself as:
 
 ### XML API
 
-#### Characters Bookmarks
-
-```ruby
-key_id = 1234567
-v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-options = { character_id: 90729314 }
-
-bookmarks = EveOnline::XML::CharacterBookmarks.new(key_id, v_code, options)
-
-bookmarks.current_time # => Sun, 03 Jan 2016 14:53:44 UTC +00:00
-bookmarks.cached_until # => Sun, 03 Jan 2016 15:50:44 UTC +00:00
-bookmarks.version # => 2
-
-bookmarks.bookmark_folders.size # => 4
-
-bookmark_folder = bookmarks.bookmark_folders.first
-
-bookmark_folder.as_json # => {:folder_id=>0, :folder_name=>""}
-
-bookmark_folder.folder_id # => 0
-bookmark_folder.folder_name # => ""
-
-bookmark_folder.bookmarks.size # => 87
-
-bookmark = bookmark_folder.bookmarks.first
-
-bookmark.as_json # => {:bookmark_id=>459411933, :creator_id=>0, :created=>Sat, 28 Mar 2009 07:51:00 UTC +00:00, :item_id=>0, :type_id=>5, :location_id=>30002656, :x=>-267396330161.0, :y=>-376627274.0, :z=>-556366331388.0, :memo=>"1", :note=>""}
-
-bookmark.bookmark_id # => 459411933
-bookmark.creator_id # => 0
-bookmark.created # => Sat, 28 Mar 2009 07:51:00 UTC +00:00
-bookmark.item_id # => 0
-bookmark.type_id # => 5
-bookmark.location_id # => 30002656
-bookmark.x # => -267396330161.0
-bookmark.y # => -376627274.0
-bookmark.z # => -556366331388.0
-bookmark.memo # => "1"
-bookmark.note # => ""
-```
-
 #### Character contact notifications
 
 ```ruby
