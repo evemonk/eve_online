@@ -11,8 +11,8 @@ module EveOnline
             notes: notes,
             location_id: location_id,
             creator_id: creator_id
-            # item
-            # coordinates
+            # TODO: add 'item'
+            # TODO: add 'coordinates'
           }
         end
 
