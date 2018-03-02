@@ -15,6 +15,7 @@
 * Remove `EveOnline::XML::CorporationMarketOrders`. Use `EveOnline::ESI::CorporationOrders` instead.
 * Remove `EveOnline::MarketOrder`
 * Add `EveOnline::ESI::Models::Bookmark`
+* Add `Add EveOnline::ESI::CharacterBookmarks`
 
 **v0.14.0**
 

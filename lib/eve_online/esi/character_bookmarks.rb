@@ -11,14 +11,14 @@ module EveOnline
         @character_id = options[:character_id]
       end
 
-      # def bookmarks
-      #   output = []
-      #   response.each do |bookmark|
-      #     output << Models::Bookmark.new(bookmark)
-      #   end
-      #   output
-      # end
-      # memoize :bookmarks
+      def bookmarks
+        output = []
+        response.each do |bookmark|
+          output << Models::Bookmark.new(bookmark)
+        end
+        output
+      end
+      memoize :bookmarks
 
       def scope
         'esi-bookmarks.read_character_bookmarks.v1'
