@@ -20,6 +20,7 @@
 * Remove `EveOnline::BookmarkFolder`
 * Remove `EveOnline::XML::CharacterBookmarks`. Use `EveOnline::ESI::CharacterBookmarks` instead.
 * Add `EveOnline::ESI::Models::BookmarkFolder`
+* Add `EveOnline::ESI::CharacterBookmarkFolders`
 
 **v0.14.0**
 
