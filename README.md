@@ -334,6 +334,24 @@ bookmark.coordinate_z # => 211467631848.1311
 
 ##### List bookmark folders
 
+```ruby
+options = { token: 'token123', character_id: 90729314 }
+
+character_bookmark_folders = EveOnline::ESI::CharacterBookmarkFolders.new(options)
+
+character_bookmark_folders.scope # => "esi-bookmarks.read_character_bookmarks.v1"
+
+character_bookmark_folders.bookmark_folders.size # => 1
+
+bookmark_folder = character_bookmark_folders.bookmark_folders.first
+
+bookmark_folder.as_json # => {:folder_id=>5,
+                        #     :name=>"Icecream"}
+
+bookmark_folder.folder_id # => 5
+bookmark_folder.name # => "Icecream"
+```
+
 ##### List corporation bookmarks
 
 ##### List corporation bookmark folders
