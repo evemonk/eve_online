@@ -70,7 +70,7 @@ describe EveOnline::ESI::Models::Character do
   end
 
   describe '#birthday' do
-    context 'birthday is present' do
+    context 'when birthday is present' do
       let(:birthday) { double }
 
       before { expect(options).to receive(:[]).with('birthday').and_return(birthday) }
@@ -85,7 +85,7 @@ describe EveOnline::ESI::Models::Character do
       specify { expect { subject.birthday }.not_to raise_error }
     end
 
-    context 'birthday not present' do
+    context 'when birthday not present' do
       before { expect(options).to receive(:[]).with('birthday').and_return(nil) }
 
       before { expect(subject).not_to receive(:parse_datetime_with_timezone) }

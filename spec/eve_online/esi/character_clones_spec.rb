@@ -18,7 +18,7 @@ describe EveOnline::ESI::CharacterClones do
   end
 
   describe '#last_clone_jump_date' do
-    context 'last_clone_jump_date is present' do
+    context 'when last_clone_jump_date is present' do
       let(:last_clone_jump_date) { double }
 
       before do
@@ -42,7 +42,7 @@ describe EveOnline::ESI::CharacterClones do
       specify { expect { subject.last_clone_jump_date }.not_to raise_error }
     end
 
-    context 'last_clone_jump_date not present' do
+    context 'when last_clone_jump_date not present' do
       before do
         #
         # subject.response['last_clone_jump_date'] => nil
@@ -125,7 +125,7 @@ describe EveOnline::ESI::CharacterClones do
   end
 
   describe '#last_station_change_date' do
-    context 'last_station_change_date is present' do
+    context 'when last_station_change_date is present' do
       let(:last_station_change_date) { double }
 
       before do
@@ -149,7 +149,7 @@ describe EveOnline::ESI::CharacterClones do
       specify { expect { subject.last_station_change_date }.not_to raise_error }
     end
 
-    context 'last_station_change_date not present' do
+    context 'when last_station_change_date not present' do
       before do
         #
         # subject.response['last_station_change_date'] => nil

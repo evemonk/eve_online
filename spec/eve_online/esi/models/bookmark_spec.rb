@@ -90,7 +90,7 @@ describe EveOnline::ESI::Models::Bookmark do
   end
 
   describe '#created' do
-    context 'created is present' do
+    context 'when created is present' do
       let(:created) { double }
 
       before { expect(options).to receive(:[]).with('created').and_return(created) }
@@ -105,7 +105,7 @@ describe EveOnline::ESI::Models::Bookmark do
       specify { expect { subject.created }.not_to raise_error }
     end
 
-    context 'created not present' do
+    context 'when created not present' do
       before { expect(options).to receive(:[]).with('created').and_return(nil) }
 
       before { expect(subject).not_to receive(:parse_datetime_with_timezone) }
