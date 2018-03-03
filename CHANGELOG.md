@@ -23,6 +23,8 @@
 * Add `EveOnline::ESI::CharacterBookmarkFolders`
 * Add `EveOnline::ESI::Models::Notification`
 * Add `EveOnline::ESI::CharacterNotifications`
+* Remove `EveOnline::XML::CharacterContactNotifications`. Use `EveOnline::ESI::CharacterNotifications` instead.
+* Remove `EveOnline::ContactNotification`
 
 **v0.14.0**
 
