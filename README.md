@@ -1627,7 +1627,6 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 - [x] [Upcoming Calendar Events](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_upcomingcalendarevents.html)
 - [x] [Wallet Journal](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_walletjournal.html)
 
-
 ## TODO
 
 - [ ] Caching
