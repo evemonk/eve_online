@@ -64,32 +64,6 @@ Or install it yourself as:
 
 ### XML API
 
-#### Character contact notifications
-
-```ruby
-key_id = 1234567
-v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-character_id = 90729314
-
-contact_notifications = EveOnline::XML::CharacterContactNotifications.new(key_id, v_code, character_id)
-
-contact_notifications.current_time # => Fri, 19 Aug 2016 11:10:23 UTC +00:00
-contact_notifications.cached_until # => Fri, 19 Aug 2016 11:37:23 UTC +00:00
-contact_notifications.version # => 2
-
-contact_notifications.contact_notifications.size # => 3
-
-contact_notification = contact_notifications.contact_notifications.first
-
-contact_notification.as_json # => {:notification_id=>308734131, :sender_id=>797400947, :sender_name=>"CCP Garthagk", :sent_date=>Sat, 19 Mar 2016 12:13:00 UTC +00:00, :message_data=>"level: 5\nmessage: ''\n"}
-
-contact_notification.notification_id # => 308734131
-contact_notification.sender_id # => 797400947
-contact_notification.sender_name # => "CCP Garthagk"
-contact_notification.sent_date # => Sat, 19 Mar 2016 12:13:00 UTC +00:00
-contact_notification.message_data # => "level: 5\nmessage: ''\n"
-```
-
 #### Character upcoming calender events
 
 ```ruby
@@ -460,6 +434,33 @@ character_fatigue.last_update_date # => nil
 ##### Get medals
 
 ##### Get character notifications
+
+```ruby
+options = { token: 'token123', character_id: 90729314 }
+
+character_notifications = EveOnline::ESI::CharacterNotifications.new(options)
+
+character_notifications.scope # => "esi-characters.read_notifications.v1"
+
+character_notifications.notifications.size # => 500
+
+notification = character_notifications.notifications.first
+
+notification.as_json # => {:notification_id=>774328832,
+                     #     :type=>"AllWarDeclaredMsg",
+                     #     :sender_id=>1000125,
+                     #     :sender_type=>"corporation",
+                     #     :timestamp=>Thu, 01 Mar 2018 13:48:00 UTC +00:00,
+                     #     :is_read=>nil,
+                     #     :text=>"againstID: 99005443\ncost: 0\ndeclaredByID: 98442842\ndelayHours: 24\nhostileState: 0\n"}
+
+notification.notification_id # => 774328832
+notification.type # => "AllWarDeclaredMsg"
+notification.sender_id # => 1000125
+notification.sender_type # => "corporation"
+notification.timestamp # => Thu, 01 Mar 2018 13:48:00 UTC +00:00
+notification.text # => "againstID: 99005443\ncost: 0\ndeclaredByID: 98442842\ndelayHours: 24\nhostileState: 0\n"
+```
 
 ##### Get new contact notifications
 
@@ -1623,19 +1624,9 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 
 ### Character
 
-- [x] [Bookmarks](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_bookmarks.html)
-- [x] [Contact Notifications](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_contactnotifications.html)
-- [x] [Market Orders](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_marketorders.html)
 - [x] [Upcoming Calendar Events](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_upcomingcalendarevents.html)
 - [x] [Wallet Journal](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_walletjournal.html)
 
-----
-
-### Corporation
-
-- [x] [Market Orders](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_marketorders.html)
-
-----
 
 ## TODO
 

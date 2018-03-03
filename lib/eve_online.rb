@@ -10,12 +10,10 @@ require 'eve_online/base_xml'
 
 require 'eve_online/event'
 require 'eve_online/event_response_object'
-require 'eve_online/contact_notification'
 require 'eve_online/wallet_journal_entry'
 
 # XML API
 require 'eve_online/xml/base'
-require 'eve_online/xml/character_contact_notifications'
 require 'eve_online/xml/character_upcoming_calendar_events'
 require 'eve_online/xml/character_wallet_journal'
 
@@ -40,6 +38,7 @@ require 'eve_online/esi/character_online'
 require 'eve_online/esi/character_orders'
 require 'eve_online/esi/character_bookmarks'
 require 'eve_online/esi/character_bookmark_folders'
+require 'eve_online/esi/character_notifications'
 
 require 'eve_online/esi/market_history'
 
@@ -78,6 +77,7 @@ require 'eve_online/esi/models/bookmark'
 require 'eve_online/esi/models/bookmark_folder'
 require 'eve_online/esi/models/standing'
 require 'eve_online/esi/models/fatigue'
+require 'eve_online/esi/models/notification'
 require 'eve_online/esi/models/jump_clone'
 require 'eve_online/esi/models/corporation_order'
 require 'eve_online/esi/models/home_location'
