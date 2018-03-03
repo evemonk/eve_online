@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class CharacterClones < Base
-      API_ENDPOINT = 'https://esi.tech.ccp.is/v3/characters/%<character_id>s/clones/?datasource=tranquility'.freeze
+      API_ENDPOINT = 'https://esi.tech.ccp.is/v3/characters/%<character_id>s/clones/?datasource=tranquility'
 
       attr_reader :character_id
 

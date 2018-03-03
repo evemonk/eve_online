@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class AlliancesNames < Base
-      API_ENDPOINT = 'https://esi.tech.ccp.is/v2/alliances/names/?alliance_ids=%<alliance_ids>s&datasource=tranquility'.freeze
+      API_ENDPOINT = 'https://esi.tech.ccp.is/v2/alliances/names/?alliance_ids=%<alliance_ids>s&datasource=tranquility'
 
       attr_reader :alliance_ids
 

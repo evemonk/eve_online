@@ -7,7 +7,7 @@ module EveOnline
     class DogmaAttribute < Base
       extend Forwardable
 
-      API_ENDPOINT = 'https://esi.tech.ccp.is/v1/dogma/attributes/%<attribute_id>s/?datasource=tranquility'.freeze
+      API_ENDPOINT = 'https://esi.tech.ccp.is/v1/dogma/attributes/%<attribute_id>s/?datasource=tranquility'
 
       attr_reader :attribute_id
 

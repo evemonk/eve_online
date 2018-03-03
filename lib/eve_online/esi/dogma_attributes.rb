@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class DogmaAttributes < Base
-      API_ENDPOINT = 'https://esi.tech.ccp.is/v1/dogma/attributes/?datasource=tranquility'.freeze
+      API_ENDPOINT = 'https://esi.tech.ccp.is/v1/dogma/attributes/?datasource=tranquility'
 
       def attributes
         response

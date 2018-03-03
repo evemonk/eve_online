@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class CharacterBookmarkFolders < Base
-      API_ENDPOINT = 'https://esi.tech.ccp.is/v2/characters/%<character_id>s/bookmarks/folders/?datasource=tranquility'.freeze
+      API_ENDPOINT = 'https://esi.tech.ccp.is/v2/characters/%<character_id>s/bookmarks/folders/?datasource=tranquility'
 
       attr_reader :character_id
 

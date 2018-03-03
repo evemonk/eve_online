@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class Bloodlines < Base
-      API_ENDPOINT = 'https://esi.tech.ccp.is/v1/universe/bloodlines/?datasource=tranquility&language=en-us'.freeze
+      API_ENDPOINT = 'https://esi.tech.ccp.is/v1/universe/bloodlines/?datasource=tranquility&language=en-us'
 
       def bloodlines
         output = []
