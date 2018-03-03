@@ -22,6 +22,7 @@
 * Add `EveOnline::ESI::Models::BookmarkFolder`
 * Add `EveOnline::ESI::CharacterBookmarkFolders`
 * Add `EveOnline::ESI::Models::Notification`
+* Add `EveOnline::ESI::CharacterNotifications`
 
 **v0.14.0**
 
