@@ -461,6 +461,33 @@ character_fatigue.last_update_date # => nil
 
 ##### Get character notifications
 
+```ruby
+options = { token: 'token123', character_id: 90729314 }
+
+character_notifications = EveOnline::ESI::CharacterNotifications.new(options)
+
+character_notifications.scope # => "esi-characters.read_notifications.v1"
+
+character_notifications.notifications.size # => 500
+
+notification = character_notifications.notifications.first
+
+notification.as_json # => {:notification_id=>774328832,
+                     #     :type=>"AllWarDeclaredMsg",
+                     #     :sender_id=>1000125,
+                     #     :sender_type=>"corporation",
+                     #     :timestamp=>Thu, 01 Mar 2018 13:48:00 UTC +00:00,
+                     #     :is_read=>nil,
+                     #     :text=>"againstID: 99005443\ncost: 0\ndeclaredByID: 98442842\ndelayHours: 24\nhostileState: 0\n"}
+
+notification.notification_id # => 774328832
+notification.type # => "AllWarDeclaredMsg"
+notification.sender_id # => 1000125
+notification.sender_type # => "corporation"
+notification.timestamp # => Thu, 01 Mar 2018 13:48:00 UTC +00:00
+notification.text # => "againstID: 99005443\ncost: 0\ndeclaredByID: 98442842\ndelayHours: 24\nhostileState: 0\n"
+```
+
 ##### Get new contact notifications
 
 ##### Get character portraits
