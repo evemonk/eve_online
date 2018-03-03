@@ -19,10 +19,6 @@ AllCops:
     - 'spec/eve_online/xml/base_spec.rb'
     - 'spec/eve_online/event_response_object_spec.rb'
 
-# Enable when all supported ruby will support feature
-Style/FrozenStringLiteralComment:
-  Enabled: false
-
 Metrics/BlockLength:
   Exclude:
     - 'spec/**/*_spec.rb'
