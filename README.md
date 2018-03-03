@@ -44,7 +44,6 @@ Or install it yourself as:
 
 ## Supported ruby versions
 
- * MRI 2.2
  * MRI 2.3
  * MRI 2.4
  * MRI 2.5
