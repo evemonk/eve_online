@@ -36,7 +36,7 @@ describe EveOnline::ESI::Models::ServerStatus do
   end
 
   describe '#start_time' do
-    context 'start_time is present' do
+    context 'when start_time is present' do
       let(:start_time) { double }
 
       before { expect(options).to receive(:[]).with('start_time').and_return(start_time) }
@@ -51,7 +51,7 @@ describe EveOnline::ESI::Models::ServerStatus do
       specify { expect { subject.start_time }.not_to raise_error }
     end
 
-    context 'start_time not present' do
+    context 'when start_time not present' do
       before { expect(options).to receive(:[]).with('start_time').and_return(nil) }
 
       before { expect(subject).not_to receive(:parse_datetime_with_timezone) }

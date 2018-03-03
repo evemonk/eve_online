@@ -72,7 +72,7 @@ describe EveOnline::ESI::Models::SkillQueueEntry do
   end
 
   describe '#finish_date' do
-    context 'finish_date is present' do
+    context 'when finish_date is present' do
       let(:finish_date) { double }
 
       before { expect(options).to receive(:[]).with('finish_date').and_return(finish_date) }
@@ -87,7 +87,7 @@ describe EveOnline::ESI::Models::SkillQueueEntry do
       specify { expect { subject.finish_date }.not_to raise_error }
     end
 
-    context 'finish_date not present' do
+    context 'when finish_date not present' do
       before { expect(options).to receive(:[]).with('finish_date').and_return(nil) }
 
       before { expect(subject).not_to receive(:parse_datetime_with_timezone) }
@@ -97,7 +97,7 @@ describe EveOnline::ESI::Models::SkillQueueEntry do
   end
 
   describe '#start_date' do
-    context 'start_date is present' do
+    context 'when start_date is present' do
       let(:start_date) { double }
 
       before { expect(options).to receive(:[]).with('start_date').and_return(start_date) }
@@ -112,7 +112,7 @@ describe EveOnline::ESI::Models::SkillQueueEntry do
       specify { expect { subject.start_date }.not_to raise_error }
     end
 
-    context 'start_date not present' do
+    context 'when start_date not present' do
       before { expect(options).to receive(:[]).with('start_date').and_return(nil) }
 
       before { expect(subject).not_to receive(:parse_datetime_with_timezone) }
