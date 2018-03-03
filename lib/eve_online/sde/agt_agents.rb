@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module EveOnline
   module SDE
     class AgtAgents < Base

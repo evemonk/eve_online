@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module EveOnline
   module Exceptions
     # This is base EveOnline exception class. Rescue it if you want to

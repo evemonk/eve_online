@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'eve_online/version'
 
 require 'eve_online/exceptions/base'
