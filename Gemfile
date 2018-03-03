@@ -9,3 +9,4 @@ gem 'pry'
 gem 'mutant'
 gem 'mutant-rspec'
 gem 'rubocop', require: false
+gem 'rubocop-rspec', require: false

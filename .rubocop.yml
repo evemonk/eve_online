@@ -1,10 +1,10 @@
-#require: rubocop-thread_safety
-#require: rubocop-rspec
+require: rubocop-thread_safety
+require: rubocop-rspec
 
 inherit_from:
   - .rubocop_general.yml
-#  - .rubocop_rspec.yml
-#  - .rubocop-thread_safety.yml
+  - .rubocop_rspec.yml
+  - .rubocop-thread_safety.yml
   - .rubocop_todo.yml
 
 AllCops:
