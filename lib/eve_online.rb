@@ -12,12 +12,10 @@ require 'eve_online/base_xml'
 
 require 'eve_online/event'
 require 'eve_online/event_response_object'
-require 'eve_online/wallet_journal_entry'
 
 # XML API
 require 'eve_online/xml/base'
 require 'eve_online/xml/character_upcoming_calendar_events'
-require 'eve_online/xml/character_wallet_journal'
 
 # ESI API
 require 'eve_online/esi/base'
