@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 describe EveOnline::ESI::Models::CorporationOrder do
@@ -134,7 +136,7 @@ describe EveOnline::ESI::Models::CorporationOrder do
   end
 
   describe '#issued' do
-    context 'issued is present' do
+    context 'when issued is present' do
       let(:issued) { double }
 
       before { expect(options).to receive(:[]).with('issued').and_return(issued) }
@@ -149,7 +151,7 @@ describe EveOnline::ESI::Models::CorporationOrder do
       specify { expect { subject.issued }.not_to raise_error }
     end
 
-    context 'issued not present' do
+    context 'when issued not present' do
       before { expect(options).to receive(:[]).with('issued').and_return(nil) }
 
       before { expect(subject).not_to receive(:parse_datetime_with_timezone) }

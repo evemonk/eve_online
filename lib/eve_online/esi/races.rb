@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 module EveOnline
   module ESI
     class Races < Base
-      API_ENDPOINT = 'https://esi.tech.ccp.is/v1/universe/races/?datasource=tranquility&language=en-us'.freeze
+      API_ENDPOINT = 'https://esi.tech.ccp.is/v1/universe/races/?datasource=tranquility&language=en-us'
 
       def races
         output = []

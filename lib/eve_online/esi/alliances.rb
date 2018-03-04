@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 module EveOnline
   module ESI
     class Alliances < Base
-      API_ENDPOINT = 'https://esi.tech.ccp.is/v1/alliances/?datasource=tranquility'.freeze
+      API_ENDPOINT = 'https://esi.tech.ccp.is/v1/alliances/?datasource=tranquility'
 
       def alliances
         response

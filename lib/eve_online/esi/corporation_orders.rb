@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 module EveOnline
   module ESI
     class CorporationOrders < Base
-      API_ENDPOINT = 'https://esi.tech.ccp.is/v1/corporations/%<corporation_id>s/orders/?datasource=tranquility&page=1'.freeze
+      API_ENDPOINT = 'https://esi.tech.ccp.is/v1/corporations/%<corporation_id>s/orders/?datasource=tranquility&page=1'
 
       attr_reader :corporation_id
 

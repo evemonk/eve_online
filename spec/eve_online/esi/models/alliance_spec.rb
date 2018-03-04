@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 describe EveOnline::ESI::Models::Alliance do
@@ -78,7 +80,7 @@ describe EveOnline::ESI::Models::Alliance do
   end
 
   describe '#date_founded' do
-    context 'date_founded is present' do
+    context 'when date_founded is present' do
       let(:date_founded) { double }
 
       before { expect(options).to receive(:[]).with('date_founded').and_return(date_founded) }
@@ -93,7 +95,7 @@ describe EveOnline::ESI::Models::Alliance do
       specify { expect { subject.date_founded }.not_to raise_error }
     end
 
-    context 'date_founded not present' do
+    context 'when date_founded not present' do
       before { expect(options).to receive(:[]).with('date_founded').and_return(nil) }
 
       before { expect(subject).not_to receive(:parse_datetime_with_timezone) }

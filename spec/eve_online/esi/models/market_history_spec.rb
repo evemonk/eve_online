@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 describe EveOnline::ESI::Models::MarketHistory do
@@ -44,7 +46,7 @@ describe EveOnline::ESI::Models::MarketHistory do
   end
 
   describe '#date' do
-    context 'date is present' do
+    context 'when date is present' do
       let(:date) { double }
 
       before { expect(options).to receive(:[]).with('date').and_return(date) }
@@ -59,7 +61,7 @@ describe EveOnline::ESI::Models::MarketHistory do
       specify { expect { subject.date }.not_to raise_error }
     end
 
-    context 'date not present' do
+    context 'when date not present' do
       before { expect(options).to receive(:[]).with('date').and_return(nil) }
 
       before { expect(subject).not_to receive(:parse_datetime_with_timezone) }

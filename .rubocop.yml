@@ -1,30 +1,23 @@
-#require: rubocop-thread_safety
-#require: rubocop-rspec
+require: rubocop-thread_safety
+require: rubocop-rspec
 
 inherit_from:
   - .rubocop_general.yml
-#  - .rubocop_rspec.yml
-#  - .rubocop-thread_safety.yml
+  - .rubocop_rspec.yml
+  - .rubocop-thread_safety.yml
   - .rubocop_todo.yml
 
 AllCops:
   Exclude:
-    - 'lib/eve_online/xml/corporation_market_orders.rb'
     - 'lib/eve_online/xml/character_wallet_journal.rb'
     - 'lib/eve_online/xml/character_upcoming_calendar_events.rb'
-    - 'lib/eve_online/xml/character_market_orders.rb'
-    - 'lib/eve_online/xml/character_contact_notifications.rb'
-    - 'lib/eve_online/xml/character_bookmarks.rb'
     - 'lib/eve_online/xml/base.rb'
     - 'lib/eve_online/wallet_journal_entry.rb'
-    - 'lib/eve_online/market_order.rb'
     - 'lib/eve_online/event.rb'
-    - 'lib/eve_online/bookmark_folder.rb'
-    - 'lib/eve_online/bookmark.rb'
-
-# Enable when all supported ruby will support feature
-Style/FrozenStringLiteralComment:
-  Enabled: false
+    - 'spec/eve_online/xml/character_wallet_journal_spec.rb'
+    - 'spec/eve_online/xml/character_upcoming_calendar_events_spec.rb'
+    - 'spec/eve_online/xml/base_spec.rb'
+    - 'spec/eve_online/event_response_object_spec.rb'
 
 Metrics/BlockLength:
   Exclude:

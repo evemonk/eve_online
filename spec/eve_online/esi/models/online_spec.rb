@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 describe EveOnline::ESI::Models::Online do
@@ -44,7 +46,7 @@ describe EveOnline::ESI::Models::Online do
   end
 
   describe '#last_login' do
-    context 'last_login is present' do
+    context 'when last_login is present' do
       let(:last_login) { double }
 
       before { expect(options).to receive(:[]).with('last_login').and_return(last_login) }
@@ -59,7 +61,7 @@ describe EveOnline::ESI::Models::Online do
       specify { expect { subject.last_login }.not_to raise_error }
     end
 
-    context 'last_login not present' do
+    context 'when last_login not present' do
       before { expect(options).to receive(:[]).with('last_login').and_return(nil) }
 
       before { expect(subject).not_to receive(:parse_datetime_with_timezone) }
@@ -69,7 +71,7 @@ describe EveOnline::ESI::Models::Online do
   end
 
   describe '#last_logout' do
-    context 'last_logout is present' do
+    context 'when last_logout is present' do
       let(:last_logout) { double }
 
       before { expect(options).to receive(:[]).with('last_logout').and_return(last_logout) }
@@ -84,7 +86,7 @@ describe EveOnline::ESI::Models::Online do
       specify { expect { subject.last_logout }.not_to raise_error }
     end
 
-    context 'last_logout not present' do
+    context 'when last_logout not present' do
       before { expect(options).to receive(:[]).with('last_logout').and_return(nil) }
 
       before { expect(subject).not_to receive(:parse_datetime_with_timezone) }

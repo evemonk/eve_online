@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 module EveOnline
   module ESI
     class CharacterBlueprints < Base
-      API_ENDPOINT = 'https://esi.tech.ccp.is/v2/characters/%<character_id>s/blueprints/?datasource=tranquility&page=1'.freeze
+      API_ENDPOINT = 'https://esi.tech.ccp.is/v2/characters/%<character_id>s/blueprints/?datasource=tranquility&page=1'
 
       attr_reader :character_id
 

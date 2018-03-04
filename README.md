@@ -44,7 +44,6 @@ Or install it yourself as:
 
 ## Supported ruby versions
 
- * MRI 2.2
  * MRI 2.3
  * MRI 2.4
  * MRI 2.5
@@ -1626,7 +1625,6 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 
 - [x] [Upcoming Calendar Events](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_upcomingcalendarevents.html)
 - [x] [Wallet Journal](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_walletjournal.html)
-
 
 ## TODO
 

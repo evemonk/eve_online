@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 describe EveOnline::ESI::AlliancesNames do
@@ -53,13 +55,13 @@ describe EveOnline::ESI::AlliancesNames do
   end
 
   describe '#url' do
-    context 'one' do
+    context 'when alliance_ids contains one element' do
       specify do
         expect(subject.url).to eq('https://esi.tech.ccp.is/v2/alliances/names/?alliance_ids=99005443&datasource=tranquility')
       end
     end
 
-    context 'several' do
+    context 'when alliance_ids contains several elements' do
       let(:options) { { alliance_ids: [99_005_443, 99_005_443] } }
 
       specify do

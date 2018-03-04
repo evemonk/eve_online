@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'forwardable'
 
 module EveOnline
@@ -5,7 +7,7 @@ module EveOnline
     class CharacterFatigue < Base
       extend Forwardable
 
-      API_ENDPOINT = 'https://esi.tech.ccp.is/v1/characters/%<character_id>s/fatigue/?datasource=tranquility'.freeze
+      API_ENDPOINT = 'https://esi.tech.ccp.is/v1/characters/%<character_id>s/fatigue/?datasource=tranquility'
 
       attr_reader :character_id
 

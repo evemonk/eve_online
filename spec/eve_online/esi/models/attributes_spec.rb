@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 describe EveOnline::ESI::Models::Attributes do
@@ -90,7 +92,7 @@ describe EveOnline::ESI::Models::Attributes do
   end
 
   describe '#last_remap_date' do
-    context 'last_remap_date is present' do
+    context 'when last_remap_date is present' do
       let(:last_remap_date) { double }
 
       before { expect(options).to receive(:[]).with('last_remap_date').and_return(last_remap_date) }
@@ -105,7 +107,7 @@ describe EveOnline::ESI::Models::Attributes do
       specify { expect { subject.last_remap_date }.not_to raise_error }
     end
 
-    context 'last_remap_date not present' do
+    context 'when last_remap_date not present' do
       before { expect(options).to receive(:[]).with('last_remap_date').and_return(nil) }
 
       before { expect(subject).not_to receive(:parse_datetime_with_timezone) }
@@ -115,7 +117,7 @@ describe EveOnline::ESI::Models::Attributes do
   end
 
   describe '#accrued_remap_cooldown_date' do
-    context 'accrued_remap_cooldown_date is present' do
+    context 'when accrued_remap_cooldown_date is present' do
       let(:accrued_remap_cooldown_date) { double }
 
       before { expect(options).to receive(:[]).with('accrued_remap_cooldown_date').and_return(accrued_remap_cooldown_date) }
@@ -130,7 +132,7 @@ describe EveOnline::ESI::Models::Attributes do
       specify { expect { subject.accrued_remap_cooldown_date }.not_to raise_error }
     end
 
-    context 'accrued_remap_cooldown_date not present' do
+    context 'when accrued_remap_cooldown_date not present' do
       before { expect(options).to receive(:[]).with('accrued_remap_cooldown_date').and_return(nil) }
 
       before { expect(subject).not_to receive(:parse_datetime_with_timezone) }

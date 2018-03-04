@@ -25,6 +25,7 @@
 * Add `EveOnline::ESI::CharacterNotifications`
 * Remove `EveOnline::XML::CharacterContactNotifications`. Use `EveOnline::ESI::CharacterNotifications` instead.
 * Remove `EveOnline::ContactNotification`
+* [Drop Ruby 2.2 support](https://www.ruby-lang.org/en/news/2017/12/14/ruby-2-2-9-released/)
 
 **v0.14.0**
 

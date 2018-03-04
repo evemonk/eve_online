@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 describe EveOnline::ESI::Models::IndustryJob do
@@ -148,7 +150,7 @@ describe EveOnline::ESI::Models::IndustryJob do
   end
 
   describe '#completed_date' do
-    context 'completed_date is present' do
+    context 'when completed_date is present' do
       let(:completed_date) { double }
 
       before { expect(options).to receive(:[]).with('completed_date').and_return(completed_date) }
@@ -163,7 +165,7 @@ describe EveOnline::ESI::Models::IndustryJob do
       specify { expect { subject.completed_date }.not_to raise_error }
     end
 
-    context 'completed_date not present' do
+    context 'when completed_date not present' do
       before { expect(options).to receive(:[]).with('completed_date').and_return(nil) }
 
       before { expect(subject).not_to receive(:parse_datetime_with_timezone) }
@@ -185,7 +187,7 @@ describe EveOnline::ESI::Models::IndustryJob do
   end
 
   describe '#end_date' do
-    context 'end_date is present' do
+    context 'when end_date is present' do
       let(:end_date) { double }
 
       before { expect(options).to receive(:[]).with('end_date').and_return(end_date) }
@@ -200,7 +202,7 @@ describe EveOnline::ESI::Models::IndustryJob do
       specify { expect { subject.end_date }.not_to raise_error }
     end
 
-    context 'end_date not present' do
+    context 'when end_date not present' do
       before { expect(options).to receive(:[]).with('end_date').and_return(nil) }
 
       before { expect(subject).not_to receive(:parse_datetime_with_timezone) }
@@ -240,7 +242,7 @@ describe EveOnline::ESI::Models::IndustryJob do
   end
 
   describe '#pause_date' do
-    context 'pause_date is present' do
+    context 'when pause_date is present' do
       let(:pause_date) { double }
 
       before { expect(options).to receive(:[]).with('pause_date').and_return(pause_date) }
@@ -255,7 +257,7 @@ describe EveOnline::ESI::Models::IndustryJob do
       specify { expect { subject.pause_date }.not_to raise_error }
     end
 
-    context 'pause_date not present' do
+    context 'when pause_date not present' do
       before { expect(options).to receive(:[]).with('pause_date').and_return(nil) }
 
       before { expect(subject).not_to receive(:parse_datetime_with_timezone) }
@@ -283,7 +285,7 @@ describe EveOnline::ESI::Models::IndustryJob do
   end
 
   describe '#start_date' do
-    context 'start_date is present' do
+    context 'when start_date is present' do
       let(:start_date) { double }
 
       before { expect(options).to receive(:[]).with('start_date').and_return(start_date) }
@@ -298,7 +300,7 @@ describe EveOnline::ESI::Models::IndustryJob do
       specify { expect { subject.start_date }.not_to raise_error }
     end
 
-    context 'start_date not present' do
+    context 'when start_date not present' do
       before { expect(options).to receive(:[]).with('start_date').and_return(nil) }
 
       before { expect(subject).not_to receive(:parse_datetime_with_timezone) }

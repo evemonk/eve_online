@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'nori'
 require 'active_support/time'
 

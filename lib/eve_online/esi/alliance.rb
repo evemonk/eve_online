@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'forwardable'
 
 module EveOnline
@@ -5,7 +7,7 @@ module EveOnline
     class Alliance < Base
       extend Forwardable
 
-      API_ENDPOINT = 'https://esi.tech.ccp.is/v3/alliances/%<alliance_id>s/?datasource=tranquility'.freeze
+      API_ENDPOINT = 'https://esi.tech.ccp.is/v3/alliances/%<alliance_id>s/?datasource=tranquility'
 
       attr_reader :alliance_id
 

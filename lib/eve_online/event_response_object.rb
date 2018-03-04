@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module EveOnline
   class EventResponseObject
     STATUSES = { 'Undecided' => :undecided, 'Accepted' => :accepted,
