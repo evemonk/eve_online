@@ -29,6 +29,7 @@
 * Add `EveOnline::ESI::CharacterWalletJournal`
 * Remove `EveOnline::XML::CharacterWalletJournal`. Use `EveOnline::ESI::CharacterWalletJournal` instead.
 * Remove `EveOnline::WalletJournalEntry`
+* Add `EveOnline::ESI::CharacterCalendar`
 
 **v0.14.0**
 
