@@ -263,6 +263,10 @@ asset.quantity # => 16156
 
 ##### Get corporation assets
 
+##### Get corporation asset locations
+
+##### Get coporation asset names (typo in swagger)
+
 #### Bookmarks
 
 ##### List bookmarks
