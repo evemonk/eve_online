@@ -95,43 +95,6 @@ event.event_text # => "<b>Minmatar Control Tower</b> will run out of fuel and go
 event.owner_type_id # => 2
 ```
 
-#### Retrieve character wallet journal
-
-```ruby
-key_id = 1234567
-v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-character_id = 90729314
-
-wallet_journal = EveOnline::XML::CharacterWalletJournal.new(key_id, v_code, character_id)
-
-wallet_journal.current_time # => Sat, 27 Aug 2016 21:14:20 UTC +00:00
-wallet_journal.cached_until # => Sat, 27 Aug 2016 21:41:20 UTC +00:00
-wallet_journal.version # => 2
-
-wallet_journal.wallet_journal_entries.size # => 3
-
-wallet_journal_entry = wallet_journal.wallet_journal_entries.first
-
-wallet_journal_entry.as_json # => {:date=>Thu, 01 Sep 2016 20:01:57 UTC +00:00, :ref_id=>6709813912, :ref_type_id=>15, :owner_name1=>"reygar burnt", :owner_id1=>1801683792, :owner_name2=>"Wiyrkomi Corporation", :owner_id2=>1000011, :arg_name1=>"EVE System", :arg_id1=>1, :amount=>-9250.00, :balance=>385574791.30, :reason=>"", :tax_receiver_id=>"", :tax_amount=>"", :owner1_type_id=>1380, :owner2_type_id=>2}
-
-wallet_journal_entry.date # => Thu, 01 Sep 2016 20:01:57 UTC +00:00
-wallet_journal_entry.ref_id # => 6709813912
-wallet_journal_entry.ref_type_id # => 15
-wallet_journal_entry.owner_name1 # => "reygar burnt"
-wallet_journal_entry.owner_id1 # => 1801683792
-wallet_journal_entry.owner_name2 # => "Wiyrkomi Corporation"
-wallet_journal_entry.owner_id2 # => 1000011
-wallet_journal_entry.arg_name1 # => "EVE System"
-wallet_journal_entry.arg_id1 # => 1
-wallet_journal_entry.amount # => -9250.00
-wallet_journal_entry.balance # => 385574791.30
-wallet_journal_entry.reason # => ""
-wallet_journal_entry.tax_receiver_id # => ""
-wallet_journal_entry.tax_amount # => ""
-wallet_journal_entry.owner1_type_id # => 1380
-wallet_journal_entry.owner2_type_id # => 2
-```
-
 ### ESI Examples
 
 #### Alliance
