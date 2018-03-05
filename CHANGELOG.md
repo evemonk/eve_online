@@ -31,6 +31,9 @@
 * Remove `EveOnline::WalletJournalEntry`
 * Add `EveOnline::ESI::CharacterCalendar`
 * Add `EveOnline::ESI::Models::Event`
+* Remove `EveOnline::XML::CharacterUpcomingCalendarEvents`. Use `EveOnline::ESI::CharacterCalendar` instead.
+* Remove `EveOnline::Event`
+* Remove `EveOnline::EventResponseObject`
 
 **v0.14.0**
 
