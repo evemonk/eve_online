@@ -300,6 +300,30 @@ bookmark_folder.name # => "Icecream"
 
 ##### List calendar event summaries
 
+```ruby
+options = { token: 'token123', character_id: 90729314 }
+
+character_calendar = EveOnline::ESI::CharacterCalendar.new(options)
+
+character_calendar.scope # => "esi-calendar.read_calendar_events.v1"
+
+character_calendar.events.size # => 22
+
+event = character_calendar.events.first
+
+event.as_json # => {:event_id=>1635240,
+              #     :event_date=>Tue, 06 Mar 2018 15:00:59 UTC +00:00,
+              #     :title=>"Moon extraction for 66-PMM - GoldMine-5-",
+              #     :importance=>0,
+              #     :event_response=>"not_responded"}
+
+event.event_id # => 1635240
+event.event_date # => Tue, 06 Mar 2018 15:00:59 UTC +00:00
+event.title # => "Moon extraction for 66-PMM - GoldMine-5-"
+event.importance # => 0
+event.event_response # => "not_responded"
+```
+
 ##### Get an event
 
 ##### Respond to an event
