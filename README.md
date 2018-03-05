@@ -61,40 +61,6 @@ Or install it yourself as:
 
 ## Usage
 
-### XML API
-
-#### Character upcoming calender events
-
-```ruby
-key_id = 1234567
-v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-character_id = 90729314
-
-upcoming_events = EveOnline::XML::CharacterUpcomingCalendarEvents.new(key_id, v_code, character_id)
-
-upcoming_events.current_time # => Thu, 17 Dec 2015 20:43:46 UTC +00:00
-upcoming_events.cached_until # => Thu, 17 Dec 2015 21:40:46 UTC +00:00
-upcoming_events.version # => 2
-
-upcoming_events.events.size # => 2
-
-event = upcoming_events.events.first
-
-event.as_json
-# => {:event_id=>1234567, :owner_id=>98765432, :owner_name=>"MyCorp", :event_date=>Sat, 26 Dec 2015 19:47:29 UTC +00:00, :event_title=>"Control tower in 99-999", :duration=>60, :importance=>false, :response=>:undecided, :event_text=>"<b>Minmatar Control Tower</b> will run out of fuel and go offline...", :owner_type_id=>2}
-
-event.event_id # => 1234567
-event.owner_id # => 98765432
-event.owner_name # => "MyCorp"
-event.event_date # => Sat, 26 Dec 2015 19:47:29 UTC +00:00
-event.event_title # => "Control tower in 99-999"
-event.duration # => 60
-event.importance # => false
-event.response # => :undecided
-event.event_text # => "<b>Minmatar Control Tower</b> will run out of fuel and go offline..."
-event.owner_type_id # => 2
-```
-
 ### ESI Examples
 
 #### Alliance
