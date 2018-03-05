@@ -25,7 +25,7 @@ describe EveOnline::ESI::CharacterCalendar do
     let(:response) do
       [
         {
-          event_id: 1635247,
+          event_id: 1_635_247,
           event_date: '2018-03-05T15:00:59Z',
           title: 'Moon extraction',
           importance: 0,
