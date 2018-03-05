@@ -322,6 +322,8 @@ event.event_date # => Tue, 06 Mar 2018 15:00:59 UTC +00:00
 event.title # => "Moon extraction for 66-PMM - GoldMine-5-"
 event.importance # => 0
 event.event_response # => "not_responded"
+
+# TODO: add from_event support
 ```
 
 ##### Get an event
