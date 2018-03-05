@@ -10,12 +10,8 @@ require 'eve_online/exceptions/invalid_character_id_exception'
 require 'eve_online/base'
 require 'eve_online/base_xml'
 
-require 'eve_online/event'
-require 'eve_online/event_response_object'
-
 # XML API
 require 'eve_online/xml/base'
-require 'eve_online/xml/character_upcoming_calendar_events'
 
 # ESI API
 require 'eve_online/esi/base'
