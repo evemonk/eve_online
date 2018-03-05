@@ -30,6 +30,7 @@
 * Remove `EveOnline::XML::CharacterWalletJournal`. Use `EveOnline::ESI::CharacterWalletJournal` instead.
 * Remove `EveOnline::WalletJournalEntry`
 * Add `EveOnline::ESI::CharacterCalendar`
+* Add `EveOnline::ESI::Models::Event`
 
 **v0.14.0**
 
