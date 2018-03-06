@@ -19,7 +19,6 @@ This gem was extracted from [EveMonk](http://evemonk.com). Source code of evemon
 * [Useful links](#useful-links)
 * [Development](#development)
 * [Contributing](#contributing)
-* [Implementation check list](#implementation-check-list)
 * [TODO](#todo)
 * [Author](#author)
 * [Contributors. Thank you everyone!](#contributors-thank-you-everyone)
