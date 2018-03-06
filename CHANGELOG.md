@@ -38,6 +38,21 @@
 * Remove `EveOnline::XML::Base`
 * Remove `EveOnline::Base`
 * Remove `EveOnline::BaseXML`
+* Remove `EveOnline::SDE::AgtAgentTypes`
+* Remove `EveOnline::SDE::AgtAgents`
+* Remove `EveOnline::SDE::AgtResearchAgents`
+* Remove `EveOnline::SDE::Base`
+* Remove `EveOnline::SDE::InvFlags`
+* Remove `EveOnline::SDE::InvItems`
+* Remove `EveOnline::SDE::InvNames`
+* Remove `EveOnline::SDE::InvPositions`
+* Remove `EveOnline::SDE::Models::AgtAgent`
+* Remove `EveOnline::SDE::Models::AgtAgentType`
+* Remove `EveOnline::SDE::Models::AgtResearchAgent`
+* Remove `EveOnline::SDE::Models::InvFlag`
+* Remove `EveOnline::SDE::Models::InvItem`
+* Remove `EveOnline::SDE::Models::InvName`
+* Remove `EveOnline::SDE::Models::InvPosition`
 
 **v0.14.0**
 

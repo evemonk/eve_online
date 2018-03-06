@@ -91,24 +91,5 @@ require 'eve_online/esi/models/race'
 require 'eve_online/esi/models/bloodline'
 require 'eve_online/esi/models/faction'
 
-# SDE
-require 'eve_online/sde/base'
-
-require 'eve_online/sde/agt_agent_types'
-require 'eve_online/sde/agt_agents'
-require 'eve_online/sde/agt_research_agents'
-require 'eve_online/sde/inv_flags'
-require 'eve_online/sde/inv_items'
-require 'eve_online/sde/inv_names'
-require 'eve_online/sde/inv_positions'
-
-require 'eve_online/sde/models/agt_agent_type'
-require 'eve_online/sde/models/agt_agent'
-require 'eve_online/sde/models/agt_research_agent'
-require 'eve_online/sde/models/inv_flag'
-require 'eve_online/sde/models/inv_item'
-require 'eve_online/sde/models/inv_name'
-require 'eve_online/sde/models/inv_position'
-
 module EveOnline
 end
