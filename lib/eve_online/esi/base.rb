@@ -3,6 +3,7 @@
 require 'json'
 require 'memoist'
 require 'active_support/time'
+require 'faraday'
 
 module EveOnline
   module ESI
