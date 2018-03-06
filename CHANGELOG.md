@@ -27,6 +27,7 @@
 * Remove `EveOnline::ContactNotification`
 * [Drop Ruby 2.2 support](https://www.ruby-lang.org/en/news/2017/12/14/ruby-2-2-9-released/)
 * Add `EveOnline::ESI::CharacterWalletJournal`
+* Add `EveOnline::ESI::Models::WalletJournalEntry`
 * Remove `EveOnline::XML::CharacterWalletJournal`. Use `EveOnline::ESI::CharacterWalletJournal` instead.
 * Remove `EveOnline::WalletJournalEntry`
 * Add `EveOnline::ESI::CharacterCalendar`
