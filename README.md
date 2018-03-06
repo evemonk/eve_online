@@ -834,6 +834,14 @@ job.status # => "active"
 job.successful_runs # => nil
 ```
 
+##### Character mining ledger
+
+##### Moon extraction timers
+
+##### Corporation mining observers
+
+##### Observed corporation mining
+
 ##### List corporation industry jobs
 
 ```ruby
@@ -965,6 +973,12 @@ loyalty_point.loyalty_points # => 14163
 
 ##### Send a new mail
 
+##### Delete a mail
+
+##### Return a mail
+
+##### Update metadata about a mail
+
 ##### Get mail labels and unread counts
 
 ##### Create a mail label
@@ -972,12 +986,6 @@ loyalty_point.loyalty_points # => 14163
 ##### Delete a mail label
 
 ##### Return mailing list subscriptions
-
-##### Delete a mail
-
-##### Return a mail
-
-##### Update metadata about a mail
 
 #### Market
 
