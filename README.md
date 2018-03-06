@@ -1483,121 +1483,6 @@ wallet_journal_entry.tax # => nil
 
 ##### List kills for a war
 
-### SDE Examples
-
-Agent Types:
-```ruby
-file = 'agtAgentTypes.yaml'
-
-agt_agent_types = EveOnline::SDE::AgtAgentTypes.new(file)
-
-agt_agent_types.agt_agent_types.size # => 12
-
-agent_type = agt_agent_types.agt_agent_types.first
-
-agent_type.as_json # => {:agent_type=>"NonAgent", :agent_type_id=>1}
-
-agent_type.agent_type # => "NonAgent"
-agent_type.agent_type_id # => 1
-```
-
-Agents:
-```ruby
-file = 'agtAgents.yaml'
-
-agt_agents = EveOnline::SDE::AgtAgents.new(file)
-
-agt_agents.agt_agents.size # => 10975
-
-agt_agent = agt_agents.agt_agents.first
-
-agt_agent.as_json # => {:agent_id=>3008416, :agent_type_id=>2, :corporation_id=>1000002, :division_id=>22, :is_locator=>false, :level=>1, :location_id=>60000004, :quality=>20}
-
-agt_agent.agent_id # => 3008416
-agt_agent.agent_type_id # => 2
-agt_agent.corporation_id # => 1000002
-agt_agent.division_id # => 22
-agt_agent.is_locator # => false
-agt_agent.level # => 1
-agt_agent.location_id # => 60000004
-agt_agent.quality # => 20
-```
-
-Inventory Flags:
-```ruby
-file = 'invFlags.yaml'
-
-inv_flags = EveOnline::SDE::InvFlags.new(file)
-
-inv_flags.inv_flags.size # => 152
-
-inv_flag = inv_flags.inv_flags.first
-
-inv_flag.as_json # => {:flag_id=>0, :flag_name=>"None", :flag_text=>"None", :order_id=>0}
-
-inv_flag.flag_id # => 0
-inv_flag.flag_name # => "None"
-inv_flag.flag_text # => "None"
-inv_flag.order_id  # => 0
-```
-
-Inventory Items:
-```ruby
-file = 'invItems.yaml'
-
-inv_items = EveOnline::SDE::InvItems.new(file)
-
-inv_items.inv_items.size # => 531470
-
-inv_item = inv_items.inv_items.first
-
-inv_item.as_json # => {:flag_id=>0, :item_id=>40021067, :location_id=>30000334, :owner_id=>1, :quantity=>34, :type_id=>14}
-
-inv_item.flag_id # => 0
-inv_item.item_id # => 40021067
-inv_item.location_id # => 30000334
-inv_item.owner_id # => 1
-inv_item.quantity # => 34
-inv_item.type_id # => 14
-```
-
-Inventory Names:
-```ruby
-file = 'invNames.yaml'
-
-inv_names = EveOnline::SDE::InvNames.new(file)
-
-inv_names.inv_names.size # => 519921
-
-inv_name = inv_names.inv_names.first
-
-inv_name.as_json # => {:item_id=>0, :item_name=>"(none)"}
-
-inv_name.item_id # => 0
-inv_name.item_name # => "(none)"
-```
-
-Inventory Positions:
-```ruby
-file = 'invPositions.yaml'
-
-inv_positions = EveOnline::SDE::InvPositions.new(file)
-
-inv_positions.inv_positions.size # => 508383
-
-inv_position = inv_positions.inv_positions.first
-
-inv_position.as_json # => {:item_id=>0, :pitch=>0.0, :roll=>0.0, :x=>0.0, :y=>0.0, :yaw=>0.0, :z=>0.0}
-
-inv_position.item_id # => 0
-inv_position.pitch # => 0.0
-inv_position.roll # => 0.0
-inv_position.x # => 0.0
-inv_position.y # => 0.0
-inv_position.yaw # => 0.0
-inv_position.z # => 0.0
-```
-
 ## Exceptions
 
 If you want to catch all exceptions `rescue` `EveOnline::Exceptions::Base`. E.g.:
@@ -1639,6 +1524,7 @@ Timeout. `EveOnline::Exceptions::TimeoutException`.
 ## Timeouts
 
 `eve_online` gem uses `faraday` for network request. `faraday` configured with:
+
 ```ruby
 faraday = Faraday.new
 
@@ -1664,13 +1550,6 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 ## Contributing
 
 Issue reports and pull requests are welcome on GitHub at https://github.com/biow0lf/eve_online.
-
-## Implementation check list
-
-### Character
-
-- [x] [Upcoming Calendar Events](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_upcomingcalendarevents.html)
-- [x] [Wallet Journal](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_walletjournal.html)
 
 ## TODO
 
