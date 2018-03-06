@@ -714,6 +714,10 @@ dogma_attribute.high_is_good # => true
 
 #### Faction Warfare
 
+##### Overview of a character involved in faction warfare
+
+##### Overview of a corporation involved in faction warfare
+
 ##### List of the top factions in faction warfare
 
 ##### List of the top pilots in faction warfare
@@ -735,6 +739,8 @@ dogma_attribute.high_is_good # => true
 ##### Delete fitting
 
 #### Fleets
+
+##### Get character fleet info
 
 ##### Get fleet information
 
