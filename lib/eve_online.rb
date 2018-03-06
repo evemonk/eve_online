@@ -7,9 +7,6 @@ require 'eve_online/exceptions/timeout_exception'
 require 'eve_online/exceptions/unauthorized_exception'
 require 'eve_online/exceptions/invalid_character_id_exception'
 
-require 'eve_online/base'
-require 'eve_online/base_xml'
-
 # ESI API
 require 'eve_online/esi/base'
 

@@ -36,6 +36,8 @@
 * Remove `EveOnline::Event`
 * Remove `EveOnline::EventResponseObject`
 * Remove `EveOnline::XML::Base`
+* Remove `EveOnline::Base`
+* Remove `EveOnline::BaseXML`
 
 **v0.14.0**
 
