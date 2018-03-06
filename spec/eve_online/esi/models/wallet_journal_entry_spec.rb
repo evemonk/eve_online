@@ -56,7 +56,7 @@ describe EveOnline::ESI::Models::WalletJournalEntry do
 
     its([:date]) { should eq(date) }
 
-    its([:ref_id]) { should eq(15264764711) }
+    its([:ref_id]) { should eq(15_264_764_711) }
 
     its([:ref_type]) { should eq('market_escrow') }
 
