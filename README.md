@@ -543,10 +543,6 @@ character_implants.implants # => [9899, 9941, 9942, 9943, 9956]
 
 #### Corporation
 
-##### Get corporation names
-
-##### Get npc corporations
-
 ##### Get corporation information
 
 ```ruby
@@ -622,25 +618,49 @@ blueprint.type_id # => 31803
 # TODO: add pagination
 ```
 
+##### Get all corporation ALSC logs
+
 ##### Get corporation divisions
 
+##### Get corporation facilities
+
 ##### Get corporation icon
+
+##### Get corporation medals
+
+##### Get corporation issued medals
 
 ##### Get corporation members
 
 ##### Get corporation member limit
 
+##### Get corporation's members' titles
+
 ##### Track corporation members
+
+##### Get corporation outposts
+
+##### Get corporation outpost details
 
 ##### Get corporation member roles
 
+##### Get corporation member roles history
+
+##### Get corporation shareholders
+
 ##### Get corporation standings
+
+##### Get corporation starbases (POSes)
+
+##### Get starbase (POS) detail
 
 ##### Get corporation structures
 
-##### Update structure vulnerability schedule
-
 ##### Get corporation titles
+
+##### Get corporation names
+
+##### Get npc corporations
 
 #### Dogma
 
