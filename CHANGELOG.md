@@ -35,6 +35,7 @@
 * Remove `EveOnline::XML::CharacterUpcomingCalendarEvents`. Use `EveOnline::ESI::CharacterCalendar` instead.
 * Remove `EveOnline::Event`
 * Remove `EveOnline::EventResponseObject`
+* Remove `EveOnline::XML::Base`
 
 **v0.14.0**
 

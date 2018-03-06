@@ -10,9 +10,6 @@ require 'eve_online/exceptions/invalid_character_id_exception'
 require 'eve_online/base'
 require 'eve_online/base_xml'
 
-# XML API
-require 'eve_online/xml/base'
-
 # ESI API
 require 'eve_online/esi/base'
 
