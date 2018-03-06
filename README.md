@@ -1379,6 +1379,44 @@ character_wallet.wallet # => 409488252.49
 
 ##### Get character wallet journal
 
+```ruby
+options = { token: 'token123', character_id: 90729314 }
+
+character_wallet_journal = EveOnline::ESI::CharacterWalletJournal.new(options)
+
+character_wallet_journal.scope # => "esi-wallet.read_character_wallet.v1"
+
+character_wallet_journal.wallet_journal_entries.size # => 1
+
+wallet_journal_entry = character_wallet_journal.wallet_journal_entries.first
+
+wallet_journal_entry.as_json # => {:date=>Tue, 06 Mar 2018 12:43:50 UTC +00:00,
+                             #     :ref_id=>15264764711,
+                             #     :ref_type=>"market_escrow",
+                             #     :first_party_id=>90729314,
+                             #     :first_party_type=>"character",
+                             #     :second_party_id=>nil,
+                             #     :second_party_type=>nil,
+                             #     :amount=>-9.5,
+                             #     :balance=>4990.5,
+                             #     :reason=>nil,
+                             #     :tax_receiver_id=>nil,
+                             #     :tax=>nil}
+
+wallet_journal_entry.date # => Tue, 06 Mar 2018 12:43:50 UTC +00:00
+wallet_journal_entry.ref_id # => 15264764711
+wallet_journal_entry.ref_type # => "market_escrow"
+wallet_journal_entry.first_party_id # => 90729314
+wallet_journal_entry.first_party_type # => "character"
+wallet_journal_entry.second_party_id  # => nil
+wallet_journal_entry.second_party_type # => nil
+wallet_journal_entry.amount # => -9.5
+wallet_journal_entry.balance # => 4990.5
+wallet_journal_entry.reason # => nil
+wallet_journal_entry.tax_receiver_id # => nil
+wallet_journal_entry.tax # => nil
+```
+
 ##### Get wallet transactions
 
 ##### Returns a corporation's wallet balance
