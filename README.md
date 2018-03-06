@@ -1248,6 +1248,8 @@ server_status.vip # => nil
 
 #### Universe
 
+##### Get ancestries
+
 ##### Get bloodlines
 
 ```ruby
@@ -1337,6 +1339,8 @@ faction.is_unique # => true
 ##### Get item groups
 
 ##### Get item group information
+
+##### Bulk names to IDs
 
 ##### Get moon information
 
