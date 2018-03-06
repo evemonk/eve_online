@@ -513,6 +513,8 @@ character_implants.implants # => [9899, 9941, 9942, 9943, 9956]
 
 #### Contacts
 
+##### Get alliance contacts
+
 ##### Delete contacts
 
 ##### Get contacts
