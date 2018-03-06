@@ -1483,7 +1483,6 @@ wallet_journal_entry.tax # => nil
 
 ##### List kills for a war
 
-
 ### SDE Examples
 
 Agent Types:
