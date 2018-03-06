@@ -6,7 +6,6 @@ PATH
       faraday
       json
       memoist
-      nori (~> 2.6)
 
 GEM
   remote: https://rubygems.org/
@@ -84,7 +83,6 @@ GEM
       rspec-core (>= 3.4.0, < 3.7.0)
     nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
-    nori (2.6.0)
     parallel (1.12.1)
     parser (2.4.0.2)
       ast (~> 2.3)

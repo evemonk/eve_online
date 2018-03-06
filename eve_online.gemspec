@@ -33,5 +33,4 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'faraday'
   spec.add_runtime_dependency 'json'
   spec.add_runtime_dependency 'memoist'
-  spec.add_runtime_dependency 'nori', '~> 2.6'
 end
