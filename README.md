@@ -61,77 +61,6 @@ Or install it yourself as:
 
 ## Usage
 
-### XML API
-
-#### Character upcoming calender events
-
-```ruby
-key_id = 1234567
-v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-character_id = 90729314
-
-upcoming_events = EveOnline::XML::CharacterUpcomingCalendarEvents.new(key_id, v_code, character_id)
-
-upcoming_events.current_time # => Thu, 17 Dec 2015 20:43:46 UTC +00:00
-upcoming_events.cached_until # => Thu, 17 Dec 2015 21:40:46 UTC +00:00
-upcoming_events.version # => 2
-
-upcoming_events.events.size # => 2
-
-event = upcoming_events.events.first
-
-event.as_json
-# => {:event_id=>1234567, :owner_id=>98765432, :owner_name=>"MyCorp", :event_date=>Sat, 26 Dec 2015 19:47:29 UTC +00:00, :event_title=>"Control tower in 99-999", :duration=>60, :importance=>false, :response=>:undecided, :event_text=>"<b>Minmatar Control Tower</b> will run out of fuel and go offline...", :owner_type_id=>2}
-
-event.event_id # => 1234567
-event.owner_id # => 98765432
-event.owner_name # => "MyCorp"
-event.event_date # => Sat, 26 Dec 2015 19:47:29 UTC +00:00
-event.event_title # => "Control tower in 99-999"
-event.duration # => 60
-event.importance # => false
-event.response # => :undecided
-event.event_text # => "<b>Minmatar Control Tower</b> will run out of fuel and go offline..."
-event.owner_type_id # => 2
-```
-
-#### Retrieve character wallet journal
-
-```ruby
-key_id = 1234567
-v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-character_id = 90729314
-
-wallet_journal = EveOnline::XML::CharacterWalletJournal.new(key_id, v_code, character_id)
-
-wallet_journal.current_time # => Sat, 27 Aug 2016 21:14:20 UTC +00:00
-wallet_journal.cached_until # => Sat, 27 Aug 2016 21:41:20 UTC +00:00
-wallet_journal.version # => 2
-
-wallet_journal.wallet_journal_entries.size # => 3
-
-wallet_journal_entry = wallet_journal.wallet_journal_entries.first
-
-wallet_journal_entry.as_json # => {:date=>Thu, 01 Sep 2016 20:01:57 UTC +00:00, :ref_id=>6709813912, :ref_type_id=>15, :owner_name1=>"reygar burnt", :owner_id1=>1801683792, :owner_name2=>"Wiyrkomi Corporation", :owner_id2=>1000011, :arg_name1=>"EVE System", :arg_id1=>1, :amount=>-9250.00, :balance=>385574791.30, :reason=>"", :tax_receiver_id=>"", :tax_amount=>"", :owner1_type_id=>1380, :owner2_type_id=>2}
-
-wallet_journal_entry.date # => Thu, 01 Sep 2016 20:01:57 UTC +00:00
-wallet_journal_entry.ref_id # => 6709813912
-wallet_journal_entry.ref_type_id # => 15
-wallet_journal_entry.owner_name1 # => "reygar burnt"
-wallet_journal_entry.owner_id1 # => 1801683792
-wallet_journal_entry.owner_name2 # => "Wiyrkomi Corporation"
-wallet_journal_entry.owner_id2 # => 1000011
-wallet_journal_entry.arg_name1 # => "EVE System"
-wallet_journal_entry.arg_id1 # => 1
-wallet_journal_entry.amount # => -9250.00
-wallet_journal_entry.balance # => 385574791.30
-wallet_journal_entry.reason # => ""
-wallet_journal_entry.tax_receiver_id # => ""
-wallet_journal_entry.tax_amount # => ""
-wallet_journal_entry.owner1_type_id # => 1380
-wallet_journal_entry.owner2_type_id # => 2
-```
-
 ### ESI Examples
 
 #### Alliance
@@ -263,6 +192,10 @@ asset.quantity # => 16156
 
 ##### Get corporation assets
 
+##### Get corporation asset locations
+
+##### Get coporation asset names (typo in swagger)
+
 #### Bookmarks
 
 ##### List bookmarks
@@ -333,6 +266,32 @@ bookmark_folder.name # => "Icecream"
 
 ##### List calendar event summaries
 
+```ruby
+options = { token: 'token123', character_id: 90729314 }
+
+character_calendar = EveOnline::ESI::CharacterCalendar.new(options)
+
+character_calendar.scope # => "esi-calendar.read_calendar_events.v1"
+
+character_calendar.events.size # => 22
+
+event = character_calendar.events.first
+
+event.as_json # => {:event_id=>1635240,
+              #     :event_date=>Tue, 06 Mar 2018 15:00:59 UTC +00:00,
+              #     :title=>"Moon extraction for 66-PMM - GoldMine-5-",
+              #     :importance=>0,
+              #     :event_response=>"not_responded"}
+
+event.event_id # => 1635240
+event.event_date # => Tue, 06 Mar 2018 15:00:59 UTC +00:00
+event.title # => "Moon extraction for 66-PMM - GoldMine-5-"
+event.importance # => 0
+event.event_response # => "not_responded"
+
+# TODO: add from_event support
+```
+
 ##### Get an event
 
 ##### Respond to an event
@@ -340,10 +299,6 @@ bookmark_folder.name # => "Icecream"
 ##### Get attendees
 
 #### Character
-
-##### Character affiliation
-
-##### Get character names
 
 ##### Get character's public information
 
@@ -503,6 +458,14 @@ standing.from_type # => "faction"
 standing.standing # => 0.3303719111639991
 ```
 
+##### Yearly aggregate stats
+
+##### Get character corporation titles
+
+##### Character affiliation
+
+##### Get character names
+
 #### Clones
 
 ##### Get clones
@@ -550,6 +513,8 @@ character_implants.implants # => [9899, 9941, 9942, 9943, 9956]
 
 #### Contacts
 
+##### Get alliance contacts
+
 ##### Delete contacts
 
 ##### Get contacts
@@ -577,10 +542,6 @@ character_implants.implants # => [9899, 9941, 9942, 9943, 9956]
 ##### Get corporation contract items
 
 #### Corporation
-
-##### Get corporation names
-
-##### Get npc corporations
 
 ##### Get corporation information
 
@@ -657,25 +618,49 @@ blueprint.type_id # => 31803
 # TODO: add pagination
 ```
 
+##### Get all corporation ALSC logs
+
 ##### Get corporation divisions
 
+##### Get corporation facilities
+
 ##### Get corporation icon
+
+##### Get corporation medals
+
+##### Get corporation issued medals
 
 ##### Get corporation members
 
 ##### Get corporation member limit
 
+##### Get corporation's members' titles
+
 ##### Track corporation members
+
+##### Get corporation outposts
+
+##### Get corporation outpost details
 
 ##### Get corporation member roles
 
+##### Get corporation member roles history
+
+##### Get corporation shareholders
+
 ##### Get corporation standings
+
+##### Get corporation starbases (POSes)
+
+##### Get starbase (POS) detail
 
 ##### Get corporation structures
 
-##### Update structure vulnerability schedule
-
 ##### Get corporation titles
+
+##### Get corporation names
+
+##### Get npc corporations
 
 #### Dogma
 
@@ -729,6 +714,10 @@ dogma_attribute.high_is_good # => true
 
 #### Faction Warfare
 
+##### Overview of a character involved in faction warfare
+
+##### Overview of a corporation involved in faction warfare
+
 ##### List of the top factions in faction warfare
 
 ##### List of the top pilots in faction warfare
@@ -750,6 +739,8 @@ dogma_attribute.high_is_good # => true
 ##### Delete fitting
 
 #### Fleets
+
+##### Get character fleet info
 
 ##### Get fleet information
 
@@ -842,6 +833,14 @@ job.station_id # => 1023579231924
 job.status # => "active"
 job.successful_runs # => nil
 ```
+
+##### Character mining ledger
+
+##### Moon extraction timers
+
+##### Corporation mining observers
+
+##### Observed corporation mining
 
 ##### List corporation industry jobs
 
@@ -974,6 +973,12 @@ loyalty_point.loyalty_points # => 14163
 
 ##### Send a new mail
 
+##### Delete a mail
+
+##### Return a mail
+
+##### Update metadata about a mail
+
 ##### Get mail labels and unread counts
 
 ##### Create a mail label
@@ -982,15 +987,9 @@ loyalty_point.loyalty_points # => 14163
 
 ##### Return mailing list subscriptions
 
-##### Delete a mail
-
-##### Return a mail
-
-##### Update metadata about a mail
-
 #### Market
 
-##### List orders from a character
+##### List open orders from a character
 
 ```ruby
 options = { token: 'token123', character_id: 90729314 }
@@ -1025,7 +1024,9 @@ order.escrow
 # TODO: update example
 ```
 
-##### List orders from a corporation
+##### List historical orders by a character
+
+##### List open orders from a corporation
 
 ```ruby
 options = { token: 'token123', corporation_id: 1000168 }
@@ -1061,13 +1062,7 @@ order.escrow
 # TODO: add pagination support
 ```
 
-##### Get item groups
-
-##### Get item group information
-
-##### List market prices
-
-##### List orders in a structure
+##### List historical orders from a corporation
 
 ##### List historical market statistics in a region
 
@@ -1103,6 +1098,14 @@ stats_today.lowest # => 701100002.49
 
 ##### List type IDs relevant to a market
 
+##### Get item groups
+
+##### Get item group information
+
+##### List market prices
+
+##### List orders in a structure
+
 #### Opportunities
 
 ##### Get a character's completed task
@@ -1120,6 +1123,8 @@ stats_today.lowest # => 701100002.49
 ##### Get colonies
 
 ##### Get colony layout
+
+##### List corporation customs offices
 
 ##### Get schematic information
 
@@ -1243,6 +1248,8 @@ server_status.vip # => nil
 
 #### Universe
 
+##### Get ancestries
+
 ##### Get bloodlines
 
 ```ruby
@@ -1333,6 +1340,8 @@ faction.is_unique # => true
 
 ##### Get item group information
 
+##### Bulk names to IDs
+
 ##### Get moon information
 
 ##### Get names and categories for a set of ID's
@@ -1420,6 +1429,44 @@ character_wallet.wallet # => 409488252.49
 
 ##### Get character wallet journal
 
+```ruby
+options = { token: 'token123', character_id: 90729314 }
+
+character_wallet_journal = EveOnline::ESI::CharacterWalletJournal.new(options)
+
+character_wallet_journal.scope # => "esi-wallet.read_character_wallet.v1"
+
+character_wallet_journal.wallet_journal_entries.size # => 1
+
+wallet_journal_entry = character_wallet_journal.wallet_journal_entries.first
+
+wallet_journal_entry.as_json # => {:date=>Tue, 06 Mar 2018 12:43:50 UTC +00:00,
+                             #     :ref_id=>15264764711,
+                             #     :ref_type=>"market_escrow",
+                             #     :first_party_id=>90729314,
+                             #     :first_party_type=>"character",
+                             #     :second_party_id=>nil,
+                             #     :second_party_type=>nil,
+                             #     :amount=>-9.5,
+                             #     :balance=>4990.5,
+                             #     :reason=>nil,
+                             #     :tax_receiver_id=>nil,
+                             #     :tax=>nil}
+
+wallet_journal_entry.date # => Tue, 06 Mar 2018 12:43:50 UTC +00:00
+wallet_journal_entry.ref_id # => 15264764711
+wallet_journal_entry.ref_type # => "market_escrow"
+wallet_journal_entry.first_party_id # => 90729314
+wallet_journal_entry.first_party_type # => "character"
+wallet_journal_entry.second_party_id  # => nil
+wallet_journal_entry.second_party_type # => nil
+wallet_journal_entry.amount # => -9.5
+wallet_journal_entry.balance # => 4990.5
+wallet_journal_entry.reason # => nil
+wallet_journal_entry.tax_receiver_id # => nil
+wallet_journal_entry.tax # => nil
+```
+
 ##### Get wallet transactions
 
 ##### Returns a corporation's wallet balance
@@ -1435,7 +1482,6 @@ character_wallet.wallet # => 409488252.49
 ##### Get war information
 
 ##### List kills for a war
-
 
 ### SDE Examples
 
