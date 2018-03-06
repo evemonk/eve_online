@@ -300,10 +300,6 @@ event.event_response # => "not_responded"
 
 #### Character
 
-##### Character affiliation
-
-##### Get character names
-
 ##### Get character's public information
 
 ```ruby
@@ -461,6 +457,14 @@ standing.from_id # => 500001
 standing.from_type # => "faction"
 standing.standing # => 0.3303719111639991
 ```
+
+##### Yearly aggregate stats
+
+##### Get character corporation titles
+
+##### Character affiliation
+
+##### Get character names
 
 #### Clones
 
