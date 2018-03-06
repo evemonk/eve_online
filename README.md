@@ -1550,11 +1550,6 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 Issue reports and pull requests are welcome on GitHub at https://github.com/biow0lf/eve_online.
 
-## TODO
-
-- [ ] Caching
-- [ ] Test EVE server
-
 ## Author
 
 * Igor Zubkov (@biow0lf)
