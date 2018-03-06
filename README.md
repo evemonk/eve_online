@@ -989,7 +989,7 @@ loyalty_point.loyalty_points # => 14163
 
 #### Market
 
-##### List orders from a character
+##### List open orders from a character
 
 ```ruby
 options = { token: 'token123', character_id: 90729314 }
@@ -1024,7 +1024,9 @@ order.escrow
 # TODO: update example
 ```
 
-##### List orders from a corporation
+##### List historical orders by a character
+
+##### List open orders from a corporation
 
 ```ruby
 options = { token: 'token123', corporation_id: 1000168 }
@@ -1060,13 +1062,7 @@ order.escrow
 # TODO: add pagination support
 ```
 
-##### Get item groups
-
-##### Get item group information
-
-##### List market prices
-
-##### List orders in a structure
+##### List historical orders from a corporation
 
 ##### List historical market statistics in a region
 
@@ -1102,6 +1098,14 @@ stats_today.lowest # => 701100002.49
 
 ##### List type IDs relevant to a market
 
+##### Get item groups
+
+##### Get item group information
+
+##### List market prices
+
+##### List orders in a structure
+
 #### Opportunities
 
 ##### Get a character's completed task
@@ -1119,6 +1123,8 @@ stats_today.lowest # => 701100002.49
 ##### Get colonies
 
 ##### Get colony layout
+
+##### List corporation customs offices
 
 ##### Get schematic information
 
