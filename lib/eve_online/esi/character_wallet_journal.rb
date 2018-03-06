@@ -13,6 +13,15 @@ module EveOnline
         @character_id = options[:character_id]
       end
 
+      def wallet_journal_entries
+        output = []
+        response.each do |wallet_journal_entry|
+          output << Models::WalletJournalEntry.new(wallet_journal_entry)
+        end
+        output
+      end
+      memoize :wallet_journal_entries
+
       def scope
         'esi-wallet.read_character_wallet.v1'
       end
