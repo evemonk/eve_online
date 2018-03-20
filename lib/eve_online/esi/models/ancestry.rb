@@ -6,7 +6,7 @@ module EveOnline
       class Ancestry < Base
         def as_json
           {
-            id: id,
+            ancestry_id: ancestry_id,
             name: name,
             bloodline_id: bloodline_id,
             description: description,
@@ -15,7 +15,7 @@ module EveOnline
           }
         end
 
-        def id
+        def ancestry_id
           options['id']
         end
 
