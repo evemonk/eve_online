@@ -91,6 +91,7 @@ require 'eve_online/esi/models/dogma_attribute'
 require 'eve_online/esi/models/race'
 require 'eve_online/esi/models/bloodline'
 require 'eve_online/esi/models/faction'
+require 'eve_online/esi/models/ancestry'
 
 module EveOnline
 end
