@@ -52,7 +52,7 @@ describe EveOnline::ESI::Races do
 
   describe '#url' do
     specify do
-      expect(subject.url).to eq(described_class::API_ENDPOINT)
+      expect(subject.url).to eq('https://esi.tech.ccp.is/v1/universe/races/?datasource=tranquility&language=en-us')
     end
   end
 end
