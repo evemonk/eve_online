@@ -88,7 +88,7 @@ describe EveOnline::ESI::ServerStatus do
 
   describe '#url' do
     specify do
-      expect(subject.url).to eq(described_class::API_ENDPOINT)
+      expect(subject.url).to eq('https://esi.tech.ccp.is/v1/status/?datasource=tranquility')
     end
   end
 end

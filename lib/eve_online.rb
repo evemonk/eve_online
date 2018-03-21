@@ -53,6 +53,7 @@ require 'eve_online/esi/server_status'
 require 'eve_online/esi/races'
 require 'eve_online/esi/bloodlines'
 require 'eve_online/esi/factions'
+require 'eve_online/esi/ancestries'
 
 require 'eve_online/esi/models/base'
 require 'eve_online/esi/models/loyalty_point'
@@ -91,6 +92,7 @@ require 'eve_online/esi/models/dogma_attribute'
 require 'eve_online/esi/models/race'
 require 'eve_online/esi/models/bloodline'
 require 'eve_online/esi/models/faction'
+require 'eve_online/esi/models/ancestry'
 
 module EveOnline
 end

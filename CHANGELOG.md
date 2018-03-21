@@ -53,6 +53,8 @@
 * Remove `EveOnline::SDE::Models::InvItem`
 * Remove `EveOnline::SDE::Models::InvName`
 * Remove `EveOnline::SDE::Models::InvPosition`
+* Add `EveOnline::ESI::Models::Ancestry`
+* Add `EveOnline::ESI::Ancestries`
 
 **v0.14.0**
 
