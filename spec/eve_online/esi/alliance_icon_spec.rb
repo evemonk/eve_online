@@ -24,7 +24,7 @@ describe EveOnline::ESI::AllianceIcon do
 
     before { expect(subject).to receive(:response).and_return(response) }
 
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::AllianceIcon) }
 
     before do
       #
@@ -39,7 +39,7 @@ describe EveOnline::ESI::AllianceIcon do
   end
 
   describe '#as_json' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::AllianceIcon) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -48,24 +48,24 @@ describe EveOnline::ESI::AllianceIcon do
     specify { expect { subject.as_json }.not_to raise_error }
   end
 
-  describe '#small' do
-    let(:model) { double }
+  describe '#icon_small' do
+    let(:model) { instance_double(EveOnline::ESI::Models::AllianceIcon) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
-    before { expect(model).to receive(:small) }
+    before { expect(model).to receive(:icon_small) }
 
-    specify { expect { subject.small }.not_to raise_error }
+    specify { expect { subject.icon_small }.not_to raise_error }
   end
 
-  describe '#medium' do
-    let(:model) { double }
+  describe '#icon_medium' do
+    let(:model) { instance_double(EveOnline::ESI::Models::AllianceIcon) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
-    before { expect(model).to receive(:medium) }
+    before { expect(model).to receive(:icon_medium) }
 
-    specify { expect { subject.medium }.not_to raise_error }
+    specify { expect { subject.icon_medium }.not_to raise_error }
   end
 
   describe '#scope' do
