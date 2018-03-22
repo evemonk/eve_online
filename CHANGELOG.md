@@ -55,6 +55,10 @@
 * Remove `EveOnline::SDE::Models::InvPosition`
 * Add `EveOnline::ESI::Models::Ancestry`
 * Add `EveOnline::ESI::Ancestries`
+* Rename `EveOnline::ESI::Models::AllianceIcon#small` to `#icon_small`
+* Rename `EveOnline::ESI::Models::AllianceIcon#medium` to `#icon_medium`
+* Rename `EveOnline::ESI::AllianceIcon#small` to `#icon_small`
+* Rename `EveOnline::ESI::AllianceIcon#medium`  to `#icon_medium`
 
 **v0.14.0**
 

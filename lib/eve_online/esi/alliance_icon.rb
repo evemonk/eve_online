@@ -17,7 +17,7 @@ module EveOnline
         @alliance_id = options[:alliance_id]
       end
 
-      def_delegators :model, :as_json, :small, :medium
+      def_delegators :model, :as_json, :icon_small, :icon_medium
 
       def model
         Models::AllianceIcon.new(response)

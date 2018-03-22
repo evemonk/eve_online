@@ -6,16 +6,16 @@ module EveOnline
       class AllianceIcon < Base
         def as_json
           {
-            small: small,
-            medium: medium
+            icon_small: icon_small,
+            icon_medium: icon_medium
           }
         end
 
-        def small
+        def icon_small
           options['px64x64']
         end
 
-        def medium
+        def icon_medium
           options['px128x128']
         end
       end
