@@ -58,13 +58,11 @@ Or install it yourself as:
  * 5.2
  * Edge
 
-## Usage
+## Usage examples
 
-### ESI Examples
+### Alliance
 
-#### Alliance
-
-##### List all alliances
+#### List all alliances
 
 ```ruby
 alliances = EveOnline::ESI::Alliances.new
@@ -76,7 +74,7 @@ alliances.alliances.size # => 3013
 alliances.alliances.first # => 1354830081
 ```
 
-##### Get alliance information
+#### Get alliance information
 
 ```ruby
 options = { alliance_id: 99005443 }
@@ -102,7 +100,7 @@ alliance.date_founded # => Sun, 03 May 2015 19:45:17 UTC +00:00
 alliance.faction_id # => nil
 ```
 
-##### List alliance's corporations
+#### List alliance's corporations
 
 ```ruby
 options = { alliance_id: 99005443 }
@@ -116,7 +114,7 @@ alliance_corporations.corporations.size # => 33
 alliance_corporations.corporations.first # => 98134807
 ```
 
-##### Get alliance icon
+#### Get alliance icon
 
 ```ruby
 options = { alliance_id: 99005443 }
@@ -131,7 +129,7 @@ alliance_icon.icon_small # => "http://image.eveonline.com/Alliance/99005443_64.p
 alliance_icon.icon_medium # => "http://image.eveonline.com/Alliance/99005443_128.png"
 ```
 
-##### Get alliance names
+#### Get alliance names
 
 ```ruby
 options = { alliance_ids: [99005443, 99005443] }
@@ -151,9 +149,9 @@ alliance.alliance_id # => 99005443
 alliance.alliance_name # => "Kids With Guns Alliance"
 ```
 
-#### Assets
+### Assets
 
-##### Get character assets
+#### Get character assets
 
 ```ruby
 options = { token: 'token123', character_id: 90729314 }
@@ -185,19 +183,19 @@ asset.quantity # => 16156
 # TODO: add pagination support
 ```
 
-##### Get character asset locations
+#### Get character asset locations
 
-##### Get character asset names
+#### Get character asset names
 
-##### Get corporation assets
+#### Get corporation assets
 
-##### Get corporation asset locations
+#### Get corporation asset locations
 
-##### Get coporation asset names (typo in swagger)
+#### Get coporation asset names (typo in swagger)
 
-#### Bookmarks
+### Bookmarks
 
-##### List bookmarks
+#### List bookmarks
 
 ```ruby
 options = { token: 'token123', character_id: 90729314 }
@@ -237,7 +235,7 @@ bookmark.coordinate_y # => 164030047870.25558
 bookmark.coordinate_z # => 211467631848.1311
 ```
 
-##### List bookmark folders
+#### List bookmark folders
 
 ```ruby
 options = { token: 'token123', character_id: 90729314 }
@@ -257,13 +255,13 @@ bookmark_folder.folder_id # => 5
 bookmark_folder.name # => "Icecream"
 ```
 
-##### List corporation bookmarks
+#### List corporation bookmarks
 
-##### List corporation bookmark folders
+#### List corporation bookmark folders
 
-#### Calendar
+### Calendar
 
-##### List calendar event summaries
+#### List calendar event summaries
 
 ```ruby
 options = { token: 'token123', character_id: 90729314 }
@@ -291,15 +289,15 @@ event.event_response # => "not_responded"
 # TODO: add from_event support
 ```
 
-##### Get an event
+#### Get an event
 
-##### Respond to an event
+#### Respond to an event
 
-##### Get attendees
+#### Get attendees
 
-#### Character
+### Character
 
-##### Get character's public information
+#### Get character's public information
 
 ```ruby
 options = { character_id: 90729314 }
@@ -324,9 +322,9 @@ character.security_status # => 1.8694881661345457
 character.faction_id # => 500001
 ```
 
-##### Get agents research
+#### Get agents research
 
-##### Get blueprints
+#### Get blueprints
 
 ```ruby
 options = { token: 'token123', character_id: 90729314 }
@@ -360,13 +358,13 @@ blueprint.type_id # => 1010
 # TODO: add pagination support
 ```
 
-##### Get chat channels
+#### Get chat channels
 
-##### Get corporation history
+#### Get corporation history
 
-##### Calculate a CSPA charge cost
+#### Calculate a CSPA charge cost
 
-##### Get jump fatigue
+#### Get jump fatigue
 
 ```ruby
 options = { token: 'token123', character_id: 90729314 }
@@ -384,9 +382,9 @@ character_fatigue.last_update_date # => nil
 # TODO: add real data here
 ```
 
-##### Get medals
+#### Get medals
 
-##### Get character notifications
+#### Get character notifications
 
 ```ruby
 options = { token: 'token123', character_id: 90729314 }
@@ -415,9 +413,9 @@ notification.timestamp # => Thu, 01 Mar 2018 13:48:00 UTC +00:00
 notification.text # => "againstID: 99005443\ncost: 0\ndeclaredByID: 98442842\ndelayHours: 24\nhostileState: 0\n"
 ```
 
-##### Get new contact notifications
+#### Get new contact notifications
 
-##### Get character portraits
+#### Get character portraits
 
 ```ruby
 options = { character_id: 90729314 }
@@ -435,9 +433,9 @@ character_portrait.large # => "http://image.eveonline.com/Character/90729314_256
 character_portrait.huge # => "http://image.eveonline.com/Character/90729314_512.jpg"
 ```
 
-##### Get character corporation roles
+#### Get character corporation roles
 
-##### Get standings
+#### Get standings
 
 ```ruby
 options = { token: 'token123', character_id: 90729314 }
@@ -457,17 +455,17 @@ standing.from_type # => "faction"
 standing.standing # => 0.3303719111639991
 ```
 
-##### Yearly aggregate stats
+#### Yearly aggregate stats
 
-##### Get character corporation titles
+#### Get character corporation titles
 
-##### Character affiliation
+#### Character affiliation
 
-##### Get character names
+#### Get character names
 
-#### Clones
+### Clones
 
-##### Get clones
+#### Get clones
 
 ```ruby
 options = { token: 'token123', character_id: 90729314 }
@@ -496,7 +494,7 @@ jump_clone.implants # => [22118]
 character_clones.last_station_change_date # => Tue, 30 Jun 2015 21:51:13 UTC +00:00
 ```
 
-##### Get active implants
+#### Get active implants
 
 ```ruby
 options = { token: 'token123', character_id: 90729314 }
@@ -510,39 +508,39 @@ character_implants.implants.size # => 5
 character_implants.implants # => [9899, 9941, 9942, 9943, 9956]
 ```
 
-#### Contacts
+### Contacts
 
-##### Get alliance contacts
+#### Get alliance contacts
 
-##### Delete contacts
+#### Delete contacts
 
-##### Get contacts
+#### Get contacts
 
-##### Add contacts
+#### Add contacts
 
-##### Edit contacts
+#### Edit contacts
 
-##### Get contact labels
+#### Get contact labels
 
-##### Get corporation contacts
+#### Get corporation contacts
 
-#### Contracts
+### Contracts
 
-##### Get contracts
+#### Get contracts
 
-##### Get contract bids
+#### Get contract bids
 
-##### Get contract items
+#### Get contract items
 
-##### Get coporation contracts (typo in swagger)
+#### Get coporation contracts (typo in swagger)
 
-##### Get corporation contract bids
+#### Get corporation contract bids
 
-##### Get corporation contract items
+#### Get corporation contract items
 
-#### Corporation
+### Corporation
 
-##### Get corporation information
+#### Get corporation information
 
 ```ruby
 options = { corporation_id: 98468592 }
@@ -581,9 +579,9 @@ corporation.home_station_id # => 60011893
 corporation.shares # => 1000
 ```
 
-##### Get alliance history
+#### Get alliance history
 
-##### Get corporation blueprints
+#### Get corporation blueprints
 
 ```ruby
 options = options = { token: 'token123', corporation_id: 98260237 }
@@ -617,53 +615,53 @@ blueprint.type_id # => 31803
 # TODO: add pagination
 ```
 
-##### Get all corporation ALSC logs
+#### Get all corporation ALSC logs
 
-##### Get corporation divisions
+#### Get corporation divisions
 
-##### Get corporation facilities
+#### Get corporation facilities
 
-##### Get corporation icon
+#### Get corporation icon
 
-##### Get corporation medals
+#### Get corporation medals
 
-##### Get corporation issued medals
+#### Get corporation issued medals
 
-##### Get corporation members
+#### Get corporation members
 
-##### Get corporation member limit
+#### Get corporation member limit
 
-##### Get corporation's members' titles
+#### Get corporation's members' titles
 
-##### Track corporation members
+#### Track corporation members
 
-##### Get corporation outposts
+#### Get corporation outposts
 
-##### Get corporation outpost details
+#### Get corporation outpost details
 
-##### Get corporation member roles
+#### Get corporation member roles
 
-##### Get corporation member roles history
+#### Get corporation member roles history
 
-##### Get corporation shareholders
+#### Get corporation shareholders
 
-##### Get corporation standings
+#### Get corporation standings
 
-##### Get corporation starbases (POSes)
+#### Get corporation starbases (POSes)
 
-##### Get starbase (POS) detail
+#### Get starbase (POS) detail
 
-##### Get corporation structures
+#### Get corporation structures
 
-##### Get corporation titles
+#### Get corporation titles
 
-##### Get corporation names
+#### Get corporation names
 
-##### Get npc corporations
+#### Get npc corporations
 
-#### Dogma
+### Dogma
 
-##### Get attributes
+#### Get attributes
 
 ```ruby
 dogma_attributes = EveOnline::ESI::DogmaAttributes.new
@@ -675,7 +673,7 @@ dogma_attributes.attributes.size # => 2385
 dogma_attributes.attributes.first # => 2
 ```
 
-##### Get attribute information
+#### Get attribute information
 
 ```ruby
 options = { attribute_id: 2 }
@@ -707,73 +705,73 @@ dogma_attribute.stackable # => true
 dogma_attribute.high_is_good # => true
 ```
 
-##### Get effects
+#### Get effects
 
-##### Get effect information
+#### Get effect information
 
-#### Faction Warfare
+### Faction Warfare
 
-##### Overview of a character involved in faction warfare
+#### Overview of a character involved in faction warfare
 
-##### Overview of a corporation involved in faction warfare
+#### Overview of a corporation involved in faction warfare
 
-##### List of the top factions in faction warfare
+#### List of the top factions in faction warfare
 
-##### List of the top pilots in faction warfare
+#### List of the top pilots in faction warfare
 
-##### List of the top corporations in faction warfare
+#### List of the top corporations in faction warfare
 
-##### An overview of statistics about factions involved in faction warfare
+#### An overview of statistics about factions involved in faction warfare
 
-##### Ownership of faction warfare systems
+#### Ownership of faction warfare systems
 
-##### Data about which NPC factions are at war
+#### Data about which NPC factions are at war
 
-#### Fittings
+### Fittings
 
-##### Get fitting
+#### Get fitting
 
-##### Create fitting
+#### Create fitting
 
-##### Delete fitting
+#### Delete fitting
 
-#### Fleets
+### Fleets
 
-##### Get character fleet info
+#### Get character fleet info
 
-##### Get fleet information
+#### Get fleet information
 
-##### Update fleet
+#### Update fleet
 
-##### Get fleet members
+#### Get fleet members
 
-##### Create fleet invitation
+#### Create fleet invitation
 
-##### Kick fleet member
+#### Kick fleet member
 
-##### Move fleet member
+#### Move fleet member
 
-##### Delete fleet squad
+#### Delete fleet squad
 
-##### Rename fleet squad
+#### Rename fleet squad
 
-##### Get fleet wings
+#### Get fleet wings
 
-##### Create fleet wing
+#### Create fleet wing
 
-##### Delete fleet wing
+#### Delete fleet wing
 
-##### Rename fleet wing
+#### Rename fleet wing
 
-##### Create fleet squad
+#### Create fleet squad
 
-#### Incursions
+### Incursions
 
-##### List incursions
+#### List incursions
 
-#### Industry
+### Industry
 
-##### List character industry jobs
+#### List character industry jobs
 
 ```ruby
 options = { token: 'token123', character_id: 90729314 }
@@ -833,15 +831,15 @@ job.status # => "active"
 job.successful_runs # => nil
 ```
 
-##### Character mining ledger
+#### Character mining ledger
 
-##### Moon extraction timers
+#### Moon extraction timers
 
-##### Corporation mining observers
+#### Corporation mining observers
 
-##### Observed corporation mining
+#### Observed corporation mining
 
-##### List corporation industry jobs
+#### List corporation industry jobs
 
 ```ruby
 options = { token: 'token123', corporation_id: 98146630 }
@@ -903,27 +901,27 @@ job.successful_runs # => nil
 # TODO: add pagination support
 ```
 
-##### List industry facilities
+#### List industry facilities
 
-##### List solar system cost indices
+#### List solar system cost indices
 
-#### Insurance
+### Insurance
 
-##### List insurance levels
+#### List insurance levels
 
-#### Killmails
+### Killmails
 
-##### Get character kills and losses
+#### Get character kills and losses
 
-##### Get corporation kills and losses
+#### Get corporation kills and losses
 
-##### Get a single killmail
+#### Get a single killmail
 
-#### Location
+### Location
 
-##### Get character location
+#### Get character location
 
-##### Get character online
+#### Get character online
 
 ```ruby
 options = { token: 'token123', character_id: 90729314 }
@@ -941,11 +939,11 @@ character_online.last_logout # => Sun, 15 Jan 2017 11:31:22 UTC +00:00
 character_online.logins # => 370
 ```
 
-##### Get current ship
+#### Get current ship
 
-#### Loyalty
+### Loyalty
 
-##### Get loyalty points
+#### Get loyalty points
 
 ```ruby
 options = { token: 'token123', character_id: 90729314 }
@@ -964,31 +962,31 @@ loyalty_point.corporation_id # => 1000035
 loyalty_point.loyalty_points # => 14163
 ```
 
-##### List loyalty store offers
+#### List loyalty store offers
 
-#### Mail
+### Mail
 
-##### Return mail headers
+#### Return mail headers
 
-##### Send a new mail
+#### Send a new mail
 
-##### Delete a mail
+#### Delete a mail
 
-##### Return a mail
+#### Return a mail
 
-##### Update metadata about a mail
+#### Update metadata about a mail
 
-##### Get mail labels and unread counts
+#### Get mail labels and unread counts
 
-##### Create a mail label
+#### Create a mail label
 
-##### Delete a mail label
+#### Delete a mail label
 
-##### Return mailing list subscriptions
+#### Return mailing list subscriptions
 
-#### Market
+### Market
 
-##### List open orders from a character
+#### List open orders from a character
 
 ```ruby
 options = { token: 'token123', character_id: 90729314 }
@@ -1023,9 +1021,9 @@ order.escrow
 # TODO: update example
 ```
 
-##### List historical orders by a character
+#### List historical orders by a character
 
-##### List open orders from a corporation
+#### List open orders from a corporation
 
 ```ruby
 options = { token: 'token123', corporation_id: 1000168 }
@@ -1061,9 +1059,9 @@ order.escrow
 # TODO: add pagination support
 ```
 
-##### List historical orders from a corporation
+#### List historical orders from a corporation
 
-##### List historical market statistics in a region
+#### List historical market statistics in a region
 
 ```ruby
 options = { region_id: 10000002, type_id: 28606 }
@@ -1093,53 +1091,53 @@ stats_today.average # => 754702326.19
 stats_today.lowest # => 701100002.49
 ```
 
-##### List orders in a region
+#### List orders in a region
 
-##### List type IDs relevant to a market
+#### List type IDs relevant to a market
 
-##### Get item groups
+#### Get item groups
 
-##### Get item group information
+#### Get item group information
 
-##### List market prices
+#### List market prices
 
-##### List orders in a structure
+#### List orders in a structure
 
-#### Opportunities
+### Opportunities
 
-##### Get a character's completed task
+#### Get a character's completed task
 
-##### Get opportunities groups
+#### Get opportunities groups
 
-##### Get opportunities group
+#### Get opportunities group
 
-##### Get opportunities tasks
+#### Get opportunities tasks
 
-##### Get opportunities task
+#### Get opportunities task
 
-#### Planetary Interaction
+### Planetary Interaction
 
-##### Get colonies
+#### Get colonies
 
-##### Get colony layout
+#### Get colony layout
 
-##### List corporation customs offices
+#### List corporation customs offices
 
-##### Get schematic information
+#### Get schematic information
 
-#### Routes
+### Routes
 
-##### Get route
+#### Get route
 
-#### Search
+### Search
 
-##### Search on a string (search for something in character stuff)
+#### Search on a string (search for something in character stuff)
 
-##### Search on a string
+#### Search on a string
 
-#### Skills
+### Skills
 
-##### Get character attributes
+#### Get character attributes
 
 ```ruby
 options = { token: 'token123', character_id: 90729314 }
@@ -1167,7 +1165,7 @@ character_attributes.last_remap_date # => Sat, 07 May 2011 12:58:06 UTC +00:00
 character_attributes.accrued_remap_cooldown_date # => Sun, 06 May 2012 12:58:06 UTC +00:00
 ```
 
-##### Get character's skill queue
+#### Get character's skill queue
 
 ```ruby
 options = { token: 'token123', character_id: 90729314 }
@@ -1193,7 +1191,7 @@ skill_queue_entry.level_end_sp # => 40000
 skill_queue_entry.level_start_sp # => 7072
 ```
 
-##### Get character skills
+#### Get character skills
 
 ```ruby
 options = { token: 'token123', character_id: 90729314 }
@@ -1220,17 +1218,17 @@ skill.trained_skill_level # => 1
 skill.active_skill_level # => 0
 ```
 
-#### Sovereignty
+### Sovereignty
 
-##### List sovereignty campaigns
+#### List sovereignty campaigns
 
-##### List sovereignty of systems
+#### List sovereignty of systems
 
-##### List sovereignty structures
+#### List sovereignty structures
 
-#### Status
+### Status
 
-##### Retrieve the uptime and player counts
+#### Retrieve the uptime and player counts
 
 ```ruby
 server_status = EveOnline::ESI::ServerStatus.new
@@ -1245,9 +1243,9 @@ server_status.server_version # => "1135520"
 server_status.vip # => nil
 ```
 
-#### Universe
+### Universe
 
-##### Get ancestries
+#### Get ancestries
 
 ```ruby
 ancestries = EveOnline::ESI::Ancestries.new
@@ -1275,7 +1273,7 @@ ancestry.icon_id # => 1664
 # TODO: add languages
 ```
 
-##### Get bloodlines
+#### Get bloodlines
 
 ```ruby
 bloodlines = EveOnline::ESI::Bloodlines.new
@@ -1313,15 +1311,15 @@ bloodline.intelligence # => 4
 # TODO: add languages
 ```
 
-##### Get item categories
+#### Get item categories
 
-##### Get item category information
+#### Get item category information
 
-##### Get constellations
+#### Get constellations
 
-##### Get constellation information
+#### Get constellation information
 
-##### Get factions
+#### Get factions
 
 ```ruby
 factions = EveOnline::ESI::Factions.new
@@ -1357,23 +1355,23 @@ faction.is_unique # => true
 # TODO: add languages
 ```
 
-##### Get graphics
+#### Get graphics
 
-##### Get graphic information
+#### Get graphic information
 
-##### Get item groups
+#### Get item groups
 
-##### Get item group information
+#### Get item group information
 
-##### Bulk names to IDs
+#### Bulk names to IDs
 
-##### Get moon information
+#### Get moon information
 
-##### Get names and categories for a set of ID's
+#### Get names and categories for a set of ID's
 
-##### Get planet information
+#### Get planet information
 
-##### Get character races
+#### Get character races
 
 ```ruby
 races = EveOnline::ESI::Races.new
@@ -1398,47 +1396,47 @@ race.alliance_id # => 500002
 
 ```
 
-##### Get regions
+#### Get regions
 
-##### Get region information
+#### Get region information
 
-##### Get stargate information
+#### Get stargate information
 
-##### Get star information
+#### Get star information
 
-##### Get station information
+#### Get station information
 
-##### List all public structures
+#### List all public structures
 
-##### Get structure information
+#### Get structure information
 
-##### Get system jumps
+#### Get system jumps
 
-##### Get system kills
+#### Get system kills
 
-##### Get solar systems
+#### Get solar systems
 
-##### Get solar system information
+#### Get solar system information
 
-##### Get types
+#### Get types
 
-##### Get type information
+#### Get type information
 
-#### User Interface
+### User Interface
 
-##### Set Autopilot Waypoint
+#### Set Autopilot Waypoint
 
-##### Open Contract Window
+#### Open Contract Window
 
-##### Open Information Window
+#### Open Information Window
 
-##### Open Market Details
+#### Open Market Details
 
-##### Open New Mail Window
+#### Open New Mail Window
 
-#### Wallet
+### Wallet
 
-##### Get a character's wallet balance
+#### Get a character's wallet balance
 
 ```ruby
 options = { token: 'token123', character_id: 90729314 }
@@ -1452,7 +1450,7 @@ character_wallet.as_json # => {:wallet=>409488252.49}
 character_wallet.wallet # => 409488252.49
 ```
 
-##### Get character wallet journal
+#### Get character wallet journal
 
 ```ruby
 options = { token: 'token123', character_id: 90729314 }
@@ -1492,21 +1490,21 @@ wallet_journal_entry.tax_receiver_id # => nil
 wallet_journal_entry.tax # => nil
 ```
 
-##### Get wallet transactions
+#### Get wallet transactions
 
-##### Returns a corporation's wallet balance
+#### Returns a corporation's wallet balance
 
-##### Get corporation wallet journal
+#### Get corporation wallet journal
 
-##### Get corporation wallet transactions
+#### Get corporation wallet transactions
 
-#### Wars
+### Wars
 
-##### List wars
+#### List wars
 
-##### Get war information
+#### Get war information
 
-##### List kills for a war
+#### List kills for a war
 
 ## Exceptions
 

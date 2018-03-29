@@ -2,9 +2,9 @@ language: ruby
 sudo: false
 cache: bundler
 rvm:
-  - 2.3.6
-  - 2.4.3
-  - 2.5.0
+  - 2.3.7
+  - 2.4.4
+  - 2.5.1
   - ruby-head
 
 gemfile:
@@ -20,7 +20,7 @@ matrix:
       gemfile: gemfiles/activesupport_42.gemfile
     - rvm: 2.5.0
       gemfile: gemfiles/activesupport_42.gemfile
-    - rvm: 2.3.6
+    - rvm: 2.3.7
       gemfile: gemfiles/activesupport_edge.gemfile
   include:
     - rvm: jruby-9.1.16.0
