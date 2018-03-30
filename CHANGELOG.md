@@ -1,6 +1,6 @@
 ## Changelog
 
-**master**
+**v0.15.0**
 
 * Add `EveOnline::ESI::Alliances`
 * Add `EveOnline::ESI::AllianceCorporations`
