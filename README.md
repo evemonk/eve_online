@@ -1420,6 +1420,18 @@ race.alliance_id # => 500002
 
 #### Get types
 
+```ruby
+types = EveOnline::ESI::UniverseTypes.new
+
+types.scope # => nil
+
+types.universe_types_ids.size # => 1000
+
+types.universe_types_ids.first # => 0
+
+# TODO: add pagination
+```
+
 #### Get type information
 
 ### User Interface
