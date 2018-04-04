@@ -48,6 +48,136 @@ describe EveOnline::ESI::UniverseType do
     specify { expect { subject.as_json }.not_to raise_error }
   end
 
+  describe '#name' do
+    let(:model) { double }
+
+    before { subject.instance_variable_set(:@_memoized_model, model) }
+
+    before { expect(model).to receive(:name) }
+
+    specify { expect { subject.name }.not_to raise_error }
+  end
+
+  describe '#description' do
+    let(:model) { double }
+
+    before { subject.instance_variable_set(:@_memoized_model, model) }
+
+    before { expect(model).to receive(:description) }
+
+    specify { expect { subject.description }.not_to raise_error }
+  end
+
+  describe '#published' do
+    let(:model) { double }
+
+    before { subject.instance_variable_set(:@_memoized_model, model) }
+
+    before { expect(model).to receive(:published) }
+
+    specify { expect { subject.published }.not_to raise_error }
+  end
+
+  describe '#group_id' do
+    let(:model) { double }
+
+    before { subject.instance_variable_set(:@_memoized_model, model) }
+
+    before { expect(model).to receive(:group_id) }
+
+    specify { expect { subject.group_id }.not_to raise_error }
+  end
+
+  describe '#market_group_id' do
+    let(:model) { double }
+
+    before { subject.instance_variable_set(:@_memoized_model, model) }
+
+    before { expect(model).to receive(:market_group_id) }
+
+    specify { expect { subject.market_group_id }.not_to raise_error }
+  end
+
+  describe '#radius' do
+    let(:model) { double }
+
+    before { subject.instance_variable_set(:@_memoized_model, model) }
+
+    before { expect(model).to receive(:radius) }
+
+    specify { expect { subject.radius }.not_to raise_error }
+  end
+
+  describe '#volume' do
+    let(:model) { double }
+
+    before { subject.instance_variable_set(:@_memoized_model, model) }
+
+    before { expect(model).to receive(:volume) }
+
+    specify { expect { subject.volume }.not_to raise_error }
+  end
+
+  describe '#packaged_volume' do
+    let(:model) { double }
+
+    before { subject.instance_variable_set(:@_memoized_model, model) }
+
+    before { expect(model).to receive(:packaged_volume) }
+
+    specify { expect { subject.packaged_volume }.not_to raise_error }
+  end
+
+  describe '#icon_id' do
+    let(:model) { double }
+
+    before { subject.instance_variable_set(:@_memoized_model, model) }
+
+    before { expect(model).to receive(:icon_id) }
+
+    specify { expect { subject.icon_id }.not_to raise_error }
+  end
+
+  describe '#capacity' do
+    let(:model) { double }
+
+    before { subject.instance_variable_set(:@_memoized_model, model) }
+
+    before { expect(model).to receive(:capacity) }
+
+    specify { expect { subject.capacity }.not_to raise_error }
+  end
+
+  describe '#portion_size' do
+    let(:model) { double }
+
+    before { subject.instance_variable_set(:@_memoized_model, model) }
+
+    before { expect(model).to receive(:portion_size) }
+
+    specify { expect { subject.portion_size }.not_to raise_error }
+  end
+
+  describe '#mass' do
+    let(:model) { double }
+
+    before { subject.instance_variable_set(:@_memoized_model, model) }
+
+    before { expect(model).to receive(:mass) }
+
+    specify { expect { subject.mass }.not_to raise_error }
+  end
+
+  describe '#graphic_id' do
+    let(:model) { double }
+
+    before { subject.instance_variable_set(:@_memoized_model, model) }
+
+    before { expect(model).to receive(:graphic_id) }
+
+    specify { expect { subject.graphic_id }.not_to raise_error }
+  end
+
   describe '#scope' do
     specify { expect(subject.scope).to eq(nil) }
   end

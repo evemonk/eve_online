@@ -17,7 +17,10 @@ module EveOnline
         @type_id = options[:type_id]
       end
 
-      def_delegators :model, :as_json
+      def_delegators :model, :as_json, :name, :description,
+                     :published, :group_id, :market_group_id, :radius, :volume,
+                     :packaged_volume, :icon_id, :capacity, :portion_size,
+                     :mass, :graphic_id
 
       def model
         Models::Type.new(response)
