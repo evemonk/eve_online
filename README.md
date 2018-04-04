@@ -1434,6 +1434,48 @@ types.universe_types_ids.first # => 0
 
 #### Get type information
 
+```ruby
+options = { type_id: 192 }
+
+type = EveOnline::ESI::UniverseType.new(options)
+
+type.scope # => nil
+
+type.as_json # => {:type_id=>192,
+             #     :name=>"Phased Plasma M",
+             #     :description=>"Medium Projectile Ammo...",
+             #     :published=>true,
+             #     :group_id=>83,
+             #     :market_group_id=>112,
+             #     :radius=>1.0,
+             #     :volume=>0.0125,
+             #     :packaged_volume=>0.0125,
+             #     :icon_id=>1297,
+             #     :capacity=>0.0,
+             #     :portion_size=>100,
+             #     :mass=>1.0,
+             #     :graphic_id=>1297}
+
+type.type_id # => 192
+type.name # => "Phased Plasma M"
+type.description # => "Medium Projectile Ammo..."
+type.published # => true
+type.group_id # => 83
+type.market_group_id # => 112
+type.radius # => 1.0
+type.volume # => 0.0125
+type.packaged_volume # => 0.0125
+type.icon_id # => 1297
+type.capacity # => 0.0
+type.portion_size # => 100
+type.mass # => 1.0
+type.graphic_id # => 1297
+
+# TODO: dogma_attributes
+# TODO: dogma_effects
+# TODO: add localization
+```
+
 ### User Interface
 
 #### Set Autopilot Waypoint
