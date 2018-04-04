@@ -1,5 +1,11 @@
 ## Changelog
 
+**master**
+
+* Add `EveOnline::ESI::UniverseTypes`
+* Add `EveOnline::ESI::UniverseType`
+* Add `EveOnline::ESI::Models::Type`
+
 **v0.15.0**
 
 * Add `EveOnline::ESI::Alliances`
