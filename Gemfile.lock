@@ -94,7 +94,7 @@ GEM
     public_suffix (3.0.2)
     rainbow (3.0.0)
     rake (12.3.1)
-    regexp_parser (0.4.12)
+    regexp_parser (0.4.13)
     rspec (3.6.0)
       rspec-core (~> 3.6.0)
       rspec-expectations (~> 3.6.0)
