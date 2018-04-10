@@ -5,6 +5,7 @@
 * Add `EveOnline::ESI::UniverseTypes`
 * Add `EveOnline::ESI::UniverseType`
 * Add `EveOnline::ESI::Models::Type`
+* Rails 5.2.0
 
 **v0.15.0**
 
