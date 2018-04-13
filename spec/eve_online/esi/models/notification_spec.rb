@@ -20,8 +20,6 @@ describe EveOnline::ESI::Models::Notification do
 
     before { expect(notification).to receive(:notification_id).and_return(1) }
 
-    before { expect(notification).to receive(:type).and_return('InsurancePayoutMsg') }
-
     before { expect(notification).to receive(:sender_id).and_return(1_000_132) }
 
     before { expect(notification).to receive(:sender_type).and_return('corporation') }
@@ -32,11 +30,11 @@ describe EveOnline::ESI::Models::Notification do
 
     before { expect(notification).to receive(:text).and_return('amount: 3731016.4000000004\\nitemID: 1024881021663\\npayout: 1\\n') }
 
+    before { expect(notification).to receive(:type).and_return('InsurancePayoutMsg') }
+
     subject { notification.as_json }
 
     its([:notification_id]) { should eq(1) }
-
-    its([:type]) { should eq('InsurancePayoutMsg') }
 
     its([:sender_id]) { should eq(1_000_132) }
 
@@ -47,18 +45,14 @@ describe EveOnline::ESI::Models::Notification do
     its([:is_read]) { should eq(true) }
 
     its([:text]) { should eq('amount: 3731016.4000000004\\nitemID: 1024881021663\\npayout: 1\\n') }
+
+    its([:type]) { should eq('InsurancePayoutMsg') }
   end
 
   describe '#notification_id' do
     before { expect(options).to receive(:[]).with('notification_id') }
 
     specify { expect { subject.notification_id }.not_to raise_error }
-  end
-
-  describe '#type' do
-    before { expect(options).to receive(:[]).with('type') }
-
-    specify { expect { subject.type }.not_to raise_error }
   end
 
   describe '#sender_id' do
@@ -108,5 +102,11 @@ describe EveOnline::ESI::Models::Notification do
     before { expect(options).to receive(:[]).with('text') }
 
     specify { expect { subject.text }.not_to raise_error }
+  end
+
+  describe '#type' do
+    before { expect(options).to receive(:[]).with('type') }
+
+    specify { expect { subject.type }.not_to raise_error }
   end
 end

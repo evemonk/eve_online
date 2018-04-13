@@ -6,6 +6,7 @@
 * Add `EveOnline::ESI::UniverseType`
 * Add `EveOnline::ESI::Models::Type`
 * Rails 5.2.0
+* Sync with new ESI API
 
 **v0.15.0**
 

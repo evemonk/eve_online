@@ -7,21 +7,17 @@ module EveOnline
         def as_json
           {
             notification_id: notification_id,
-            type: type,
             sender_id: sender_id,
             sender_type: sender_type,
             timestamp: timestamp,
             is_read: is_read,
-            text: text
+            text: text,
+            type: type
           }
         end
 
         def notification_id
           options['notification_id']
-        end
-
-        def type
-          options['type']
         end
 
         def sender_id
@@ -45,7 +41,12 @@ module EveOnline
         def text
           options['text']
         end
+
+        def type
+          options['type']
+        end
       end
     end
   end
 end
+
