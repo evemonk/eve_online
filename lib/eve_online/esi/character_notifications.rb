@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class CharacterNotifications < Base
-      API_ENDPOINT = 'https://esi.tech.ccp.is/v1/characters/%<character_id>s/notifications/?datasource=tranquility'
+      API_ENDPOINT = 'https://esi.tech.ccp.is/v2/characters/%<character_id>s/notifications/?datasource=tranquility'
 
       attr_reader :character_id
 

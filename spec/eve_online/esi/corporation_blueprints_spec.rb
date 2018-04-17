@@ -9,7 +9,7 @@ describe EveOnline::ESI::CorporationBlueprints do
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/v1/corporations/%<corporation_id>s/blueprints/?datasource=tranquility&page=1') }
+  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/v2/corporations/%<corporation_id>s/blueprints/?datasource=tranquility&page=1') }
 
   describe '#initialize' do
     its(:parser) { should eq(JSON) }
@@ -60,7 +60,7 @@ describe EveOnline::ESI::CorporationBlueprints do
 
   describe '#url' do
     specify do
-      expect(subject.url).to eq('https://esi.tech.ccp.is/v1/corporations/12345678/blueprints/?datasource=tranquility&page=1')
+      expect(subject.url).to eq('https://esi.tech.ccp.is/v2/corporations/12345678/blueprints/?datasource=tranquility&page=1')
     end
   end
 end
