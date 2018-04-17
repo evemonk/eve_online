@@ -49,4 +49,3 @@ module EveOnline
     end
   end
 end
-
