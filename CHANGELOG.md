@@ -7,6 +7,7 @@
 * Add `EveOnline::ESI::Models::Type`
 * Rails 5.2.0
 * Sync with new ESI API
+* JRuby 9.1.17.0
 
 **v0.15.0**
 
