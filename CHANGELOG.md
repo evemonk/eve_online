@@ -8,6 +8,7 @@
 * Rails 5.2.0
 * Sync with new ESI API
 * JRuby 9.1.17.0
+* Add exception for 404 (`EveOnline::Exceptions::ResourceNotFound`).
 
 **v0.15.0**
 
