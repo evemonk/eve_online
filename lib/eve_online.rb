@@ -6,7 +6,6 @@ require 'eve_online/version'
 require 'eve_online/exceptions/base'
 require 'eve_online/exceptions/timeout_exception'
 require 'eve_online/exceptions/unauthorized_exception'
-require 'eve_online/exceptions/invalid_character_id_exception'
 require 'eve_online/exceptions/resource_not_found'
 
 # ESI API
