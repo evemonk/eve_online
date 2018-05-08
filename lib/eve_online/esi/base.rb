@@ -67,6 +67,9 @@ module EveOnline
         case resource.status
         when 200
           resource.body
+        when 201
+          # TODO: write
+          raise NotImplementedError
         when 204
           # TODO: write
           # raise NotImplementedError
