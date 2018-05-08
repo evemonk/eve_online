@@ -9,6 +9,13 @@
 * Sync with new ESI API
 * JRuby 9.1.17.0
 * Add exception for 404 (`EveOnline::Exceptions::ResourceNotFound`).
+* Add open/read timeouts. Default to 60s.
+* Add `EveOnline::ESI::Base#read_timeout`
+* Add `EveOnline::ESI::Base#read_timeout=`
+* Add `EveOnline::ESI::Base#open_timeout`
+* Add `EveOnline::ESI::Base#open_timeout=`
+* Add `EveOnline::ESI::Base#client`
+* Remove `EveOnline::Exceptions::InvalidCharacterIDException`
 
 **v0.15.0**
 
