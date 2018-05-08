@@ -15,6 +15,8 @@ module EveOnline
       def initialize(options = {})
         @token = options[:token]
         @parser = JSON
+        @read_timeout = options[:read_timeout] || 60
+        @open_timeout = options[:open_timeout] || 60
       end
 
       def url
@@ -29,15 +31,58 @@ module EveOnline
         "EveOnline API (https://github.com/biow0lf/eve_online) v#{ VERSION }"
       end
 
+      def read_timeout
+        client.options.timeout
+      end
+
+      def read_timeout=(value)
+        client.options.timeout = value
+      end
+
+      def open_timeout
+        client.options.open_timeout
+      end
+
+      def open_timeout=(value)
+        client.options.open_timeout = value
+      end
+
+      def client
+        @client ||= begin
+          faraday = Faraday.new
+
+          faraday.headers[:user_agent] = user_agent
+          faraday.authorization(:Bearer, token) if token
+          faraday.options.timeout = @read_timeout
+          faraday.options.open_timeout = @open_timeout
+          faraday
+        end
+      end
+
+      def resource
+        @resource ||= client.get(url)
+      end
+
       def content
-        faraday = Faraday.new
-
-        faraday.headers[:user_agent] = user_agent
-        faraday.authorization(:Bearer, token) if token
-        faraday.options.timeout = 60
-        faraday.options.open_timeout = 60
-
-        faraday.get(url).body
+        case resource.status
+        when 200
+          resource.body
+        when 304
+          # TODO: write
+          raise NotImplementedError
+        when 400
+          raise EveOnline::Exceptions::BadRequest
+        when 404
+          raise EveOnline::Exceptions::ResourceNotFound
+        when 500
+          raise EveOnline::Exceptions::InternalServerError
+        when 502
+          raise EveOnline::Exceptions::BadGateway
+        when 503
+          raise EveOnline::Exceptions::ServiceUnavailable
+        else
+          raise EveOnline::Exceptions::UnknownStatus
+        end
       rescue Faraday::TimeoutError
         raise EveOnline::Exceptions::TimeoutException
       end
