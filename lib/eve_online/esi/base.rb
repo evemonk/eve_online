@@ -67,11 +67,19 @@ module EveOnline
         case resource.status
         when 200
           resource.body
+        when 204
+          # TODO: write
+          # raise NotImplementedError
+          raise EveOnline::Exceptions::NoContent
         when 304
           # TODO: write
           raise NotImplementedError
         when 400
           raise EveOnline::Exceptions::BadRequest
+        when 401
+          raise EveOnline::Exceptions::Unauthorized
+        when 403
+          raise EveOnline::Exceptions::Forbidden
         when 404
           raise EveOnline::Exceptions::ResourceNotFound
         when 500
