@@ -92,7 +92,8 @@ module EveOnline
         when 503
           raise EveOnline::Exceptions::ServiceUnavailable
         else
-          raise EveOnline::Exceptions::UnknownStatus
+          # raise EveOnline::Exceptions::UnknownStatus
+          raise NotImplementedError
         end
       rescue Faraday::TimeoutError
         raise EveOnline::Exceptions::TimeoutException
