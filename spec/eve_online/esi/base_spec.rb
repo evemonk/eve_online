@@ -33,6 +33,38 @@ describe EveOnline::ESI::Base do
     specify { expect(subject.user_agent).to eq("EveOnline API (https://github.com/biow0lf/eve_online) v#{ EveOnline::VERSION }") }
   end
 
+  # def read_timeout
+  #   client.options.timeout
+  # end
+  #
+  # def read_timeout=(value)
+  #   client.options.timeout = value
+  # end
+  #
+  # def open_timeout
+  #   client.options.open_timeout
+  # end
+  #
+  # def open_timeout=(value)
+  #   client.options.open_timeout = value
+  # end
+
+  # def client
+  #   @client ||= begin
+  #     faraday = Faraday.new
+  #
+  #     faraday.headers[:user_agent] = user_agent
+  #     faraday.authorization(:Bearer, token) if token
+  #     faraday.options.timeout = @read_timeout
+  #     faraday.options.open_timeout = @open_timeout
+  #     faraday
+  #   end
+  # end
+  #
+  # def resource
+  #   @resource ||= client.get(url)
+  # end
+
   describe '#content' do
     context 'ok' do
       let(:url) { double }
