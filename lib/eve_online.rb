@@ -8,6 +8,7 @@ require 'eve_online/exceptions/timeout_exception'
 require 'eve_online/exceptions/unauthorized_exception'
 require 'eve_online/exceptions/resource_not_found'
 require 'eve_online/exceptions/bad_request'
+require 'eve_online/exceptions/forbidden'
 
 # ESI API
 require 'eve_online/esi/base'
