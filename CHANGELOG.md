@@ -8,6 +8,7 @@
 * Rails 5.2.0
 * Sync with new ESI API
 * JRuby 9.1.17.0
+* Add exception for 204 status `EveOnline::Exceptions::NoContent`
 * Add exception for 400 status `EveOnline::Exceptions::BadRequest`
 * Add exception for 401 status `EveOnline::Exceptions::Unauthorized`
 * Add exception for 403 status `EveOnline::Exceptions::Forbidden`
