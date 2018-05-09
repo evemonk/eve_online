@@ -47,10 +47,25 @@ describe EveOnline::ESI::Base do
     specify { expect(subject.user_agent).to eq("EveOnline API (https://github.com/biow0lf/eve_online) v#{ EveOnline::VERSION }") }
   end
 
-  # def read_timeout
-  #   client.options.timeout
-  # end
-  #
+  describe '#read_timeout' do
+    before do
+      #
+      # subject.client.options.timeout
+      #
+      expect(subject).to receive(:client) do
+        double.tap do |a|
+          expect(a).to receive(:options) do
+            double.tap do |b|
+              expect(b).to receive(:timeout)
+            end
+          end
+        end
+      end
+    end
+
+    specify { expect { subject.read_timeout }.not_to raise_error }
+  end
+
   # def read_timeout=(value)
   #   client.options.timeout = value
   # end
