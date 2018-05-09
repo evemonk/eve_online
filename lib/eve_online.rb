@@ -4,7 +4,7 @@ require 'eve_online/version'
 
 # Exceptions
 require 'eve_online/exceptions/base'
-require 'eve_online/exceptions/timeout_exception'
+require 'eve_online/exceptions/timeout'
 require 'eve_online/exceptions/unauthorized'
 require 'eve_online/exceptions/resource_not_found'
 require 'eve_online/exceptions/bad_request'

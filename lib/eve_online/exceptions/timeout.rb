@@ -2,7 +2,7 @@
 
 module EveOnline
   module Exceptions
-    class TimeoutException < Base
+    class Timeout < Base
     end
   end
 end

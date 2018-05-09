@@ -24,6 +24,7 @@
 * Add `EveOnline::ESI::Base#client`
 * Remove `EveOnline::Exceptions::InvalidCharacterIDException`
 * Remove `EveOnline::Exceptions::UnauthorizedException`
+* Rename `EveOnline::Exceptions::TimeoutException` to `EveOnline::Exceptions::Timeout`
 
 **v0.15.0**
 
