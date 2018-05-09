@@ -10,13 +10,13 @@ module EveOnline
     class Base
       extend Memoist
 
-      attr_reader :token, :parser
+      attr_reader :token, :parser, :_read_timeout, :_open_timeout
 
       def initialize(options = {})
         @token = options[:token]
         @parser = JSON
-        @read_timeout = options[:read_timeout] || 60
-        @open_timeout = options[:open_timeout] || 60
+        @_read_timeout = options[:read_timeout] || 60
+        @_open_timeout = options[:open_timeout] || 60
       end
 
       def url
@@ -53,8 +53,8 @@ module EveOnline
 
           faraday.headers[:user_agent] = user_agent
           faraday.authorization(:Bearer, token) if token
-          faraday.options.timeout = @read_timeout
-          faraday.options.open_timeout = @open_timeout
+          faraday.options.timeout = _read_timeout
+          faraday.options.open_timeout = _open_timeout
           faraday
         end
       end

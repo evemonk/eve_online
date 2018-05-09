@@ -6,18 +6,32 @@ describe EveOnline::ESI::Base do
   specify { expect(described_class).to be_a(Memoist) }
 
   describe '#initialize' do
-    context 'without token' do
-      its(:token) { should eq(nil) }
-
-      its(:parser) { should eq(JSON) }
-    end
-
-    context 'with token' do
-      let(:options) { { token: 'token123' } }
+    context 'with options' do
+      let(:options) do
+        {
+          token: 'token123',
+          read_timeout: 30,
+          open_timeout: 45
+        }
+      end
 
       subject { described_class.new(options) }
 
       its(:token) { should eq('token123') }
+
+      its(:_read_timeout) { should eq(30) }
+
+      its(:_open_timeout) { should eq(45) }
+    end
+
+    context 'without options' do
+      its(:token) { should eq(nil) }
+
+      its(:parser) { should eq(JSON) }
+
+      its(:_read_timeout) { should eq(60) }
+
+      its(:_open_timeout) { should eq(60) }
     end
   end
 
