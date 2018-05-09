@@ -11,6 +11,7 @@ require 'eve_online/exceptions/bad_request'
 require 'eve_online/exceptions/forbidden'
 require 'eve_online/exceptions/internal_server_error'
 require 'eve_online/exceptions/bad_gateway'
+require 'eve_online/exceptions/service_unavailable'
 
 # ESI API
 require 'eve_online/esi/base'
