@@ -9,6 +9,7 @@ require 'eve_online/exceptions/unauthorized'
 require 'eve_online/exceptions/resource_not_found'
 require 'eve_online/exceptions/bad_request'
 require 'eve_online/exceptions/forbidden'
+require 'eve_online/exceptions/internal_server_error'
 
 # ESI API
 require 'eve_online/esi/base'
