@@ -8,7 +8,13 @@
 * Rails 5.2.0
 * Sync with new ESI API
 * JRuby 9.1.17.0
-* Add exception for 404 (`EveOnline::Exceptions::ResourceNotFound`).
+* Add exception for 400 status `EveOnline::Exceptions::BadRequest`
+* Add exception for 401 status `EveOnline::Exceptions::Unauthorized`
+* Add exception for 403 status `EveOnline::Exceptions::Forbidden`
+* Add exception for 404 status `EveOnline::Exceptions::ResourceNotFound`
+* Add exception for 500 status `EveOnline::Exceptions::InternalServerError`
+* Add exception for 502 status `EveOnline::Exceptions::BadGateway`
+* Add exception for 503 status `EveOnline::Exceptions::ServiceUnavailable`
 * Add open/read timeouts. Default to 60s.
 * Add `EveOnline::ESI::Base#read_timeout`
 * Add `EveOnline::ESI::Base#read_timeout=`
@@ -16,6 +22,7 @@
 * Add `EveOnline::ESI::Base#open_timeout=`
 * Add `EveOnline::ESI::Base#client`
 * Remove `EveOnline::Exceptions::InvalidCharacterIDException`
+* Remove `EveOnline::Exceptions::UnauthorizedException`
 
 **v0.15.0**
 
