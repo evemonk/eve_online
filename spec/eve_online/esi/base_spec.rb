@@ -202,9 +202,33 @@ describe EveOnline::ESI::Base do
     end
   end
 
-  # def resource
-  #   @resource ||= client.get(url)
-  # end
+  describe '#resource' do
+    context 'when @resource set' do
+      let(:resource) { double }
+
+      before { subject.instance_variable_set(:@resource, resource) }
+
+      specify { expect(subject.resource).to eq(resource) }
+    end
+
+    context 'when @resource not set' do
+      let(:resource) { double }
+
+      let(:client) { double }
+
+      let(:url) { double }
+
+      before { expect(subject).to receive(:url).and_return(url) }
+
+      before { expect(subject).to receive(:client).and_return(client) }
+
+      before { expect(client).to receive(:get).with(url).and_return(resource) }
+
+      specify { expect { subject.resource }.not_to raise_error }
+
+      specify { expect { subject.resource }.to change { subject.instance_variable_get(:@resource) }.from(nil).to(resource) }
+    end
+  end
 
   # describe '#content' do
   #   context 'ok' do
