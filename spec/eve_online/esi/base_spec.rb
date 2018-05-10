@@ -181,28 +181,27 @@ describe EveOnline::ESI::Base do
       end
 
       context 'when token not present' do
+        before { expect(client).not_to receive(:authorization) }
+
         specify { expect(subject.client).to eq(client) }
 
         specify { expect { subject.client }.to change { subject.instance_variable_get(:@client) }.from(nil).to(client) }
       end
 
       context 'when token is present' do
+        let(:options) { { token: 'token123' } }
+
+        subject { described_class.new(options) }
+
+        before { expect(client).to receive(:authorization).with(:Bearer, 'token123') }
+
+        specify { expect(subject.client).to eq(client) }
+
+        specify { expect { subject.client }.to change { subject.instance_variable_get(:@client) }.from(nil).to(client) }
       end
     end
   end
 
-  # def client
-  #   @client ||= begin
-  #     faraday = Faraday.new
-  #
-  #     faraday.headers[:user_agent] = user_agent
-  #     faraday.authorization(:Bearer, token) if token
-  #     faraday.options.timeout = @read_timeout
-  #     faraday.options.open_timeout = @open_timeout
-  #     faraday
-  #   end
-  # end
-  #
   # def resource
   #   @resource ||= client.get(url)
   # end
