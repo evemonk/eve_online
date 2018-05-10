@@ -137,6 +137,57 @@ describe EveOnline::ESI::Base do
     end
 
     context 'when @client not set' do
+      let(:client) { double }
+
+      before { expect(Faraday).to receive(:new).and_return(client) }
+
+      let(:user_agent) { double }
+
+      before { expect(subject).to receive(:user_agent).and_return(user_agent) }
+
+      before do
+        #
+        # faraday.headers[:user_agent] = user_agent
+        #
+        expect(client).to receive(:headers) do
+          double.tap do |a|
+            expect(a).to receive(:[]=).with(:user_agent, user_agent)
+          end
+        end
+      end
+
+      let(:_read_timeout) { double }
+
+      before { expect(subject).to receive(:_read_timeout).and_return(_read_timeout) }
+
+      before do
+        expect(client).to receive(:options) do
+          double.tap do |a|
+            expect(a).to receive(:timeout=).with(_read_timeout)
+          end
+        end
+      end
+
+      let(:_open_timeout) { double }
+
+      before { expect(subject).to receive(:_open_timeout).and_return(_open_timeout) }
+
+      before do
+        expect(client).to receive(:options) do
+          double.tap do |a|
+            expect(a).to receive(:open_timeout=).with(_open_timeout)
+          end
+        end
+      end
+
+      context 'when token not present' do
+        specify { expect(subject.client).to eq(client) }
+
+        specify { expect { subject.client }.to change { subject.instance_variable_get(:@client) }.from(nil).to(client) }
+      end
+
+      context 'when token is present' do
+      end
     end
   end
 
