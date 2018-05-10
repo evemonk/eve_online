@@ -156,100 +156,100 @@ describe EveOnline::ESI::Base do
   #   @resource ||= client.get(url)
   # end
 
-  describe '#content' do
-    context 'ok' do
-      let(:url) { double }
-
-      before { expect(subject).to receive(:url).and_return(url) }
-
-      let(:user_agent) { double }
-
-      before { expect(subject).to receive(:user_agent).and_return(user_agent) }
-
-      let(:faraday) { double }
-
-      before do
-        #
-        # Faraday.new => faraday
-        #
-        expect(Faraday).to receive(:new).and_return(faraday)
-      end
-
-      before do
-        #
-        # faraday.headers[:user_agent] = user_agent
-        #
-        expect(faraday).to receive(:headers) do
-          double.tap do |a|
-            expect(a).to receive(:[]=).with(:user_agent, user_agent)
-          end
-        end
-      end
-
-      before do
-        expect(faraday).to receive(:options) do
-          double.tap do |a|
-            expect(a).to receive(:timeout=).with(60)
-          end
-        end
-      end
-
-      before do
-        expect(faraday).to receive(:options) do
-          double.tap do |a|
-            expect(a).to receive(:open_timeout=).with(60)
-          end
-        end
-      end
-
-      before do
-        #
-        # faraday.get(url).body
-        #
-        expect(faraday).to receive(:get).with(url) do
-          double.tap do |a|
-            expect(a).to receive(:body)
-          end
-        end
-      end
-
-      context 'without token' do
-        before { expect(faraday).not_to receive(:authorization) }
-
-        specify { expect { subject.content }.not_to raise_error }
-
-        specify { expect { subject.content }.to change { subject.instance_variable_defined?(:@_memoized_content) }.from(false).to(true) }
-      end
-
-      context 'with token' do
-        let(:options) { { token: 'token123' } }
-
-        subject { described_class.new(options) }
-
-        before do
-          #
-          # faraday.authorization(:Bearer, token)
-          #
-          expect(faraday).to receive(:authorization).with(:Bearer, 'token123')
-        end
-
-        specify { expect { subject.content }.not_to raise_error }
-
-        specify { expect { subject.content }.to change { subject.instance_variable_defined?(:@_memoized_content) }.from(false).to(true) }
-      end
-    end
-
-    context 'exception' do
-      before do
-        #
-        # Faraday.new => raise Faraday::TimeoutError
-        #
-        expect(Faraday).to receive(:new).and_raise(Faraday::TimeoutError)
-      end
-
-      specify { expect { subject.content }.to raise_error(EveOnline::Exceptions::TimeoutException) }
-    end
-  end
+  # describe '#content' do
+  #   context 'ok' do
+  #     let(:url) { double }
+  #
+  #     before { expect(subject).to receive(:url).and_return(url) }
+  #
+  #     let(:user_agent) { double }
+  #
+  #     before { expect(subject).to receive(:user_agent).and_return(user_agent) }
+  #
+  #     let(:faraday) { double }
+  #
+  #     before do
+  #       #
+  #       # Faraday.new => faraday
+  #       #
+  #       expect(Faraday).to receive(:new).and_return(faraday)
+  #     end
+  #
+  #     before do
+  #       #
+  #       # faraday.headers[:user_agent] = user_agent
+  #       #
+  #       expect(faraday).to receive(:headers) do
+  #         double.tap do |a|
+  #           expect(a).to receive(:[]=).with(:user_agent, user_agent)
+  #         end
+  #       end
+  #     end
+  #
+  #     before do
+  #       expect(faraday).to receive(:options) do
+  #         double.tap do |a|
+  #           expect(a).to receive(:timeout=).with(60)
+  #         end
+  #       end
+  #     end
+  #
+  #     before do
+  #       expect(faraday).to receive(:options) do
+  #         double.tap do |a|
+  #           expect(a).to receive(:open_timeout=).with(60)
+  #         end
+  #       end
+  #     end
+  #
+  #     before do
+  #       #
+  #       # faraday.get(url).body
+  #       #
+  #       expect(faraday).to receive(:get).with(url) do
+  #         double.tap do |a|
+  #           expect(a).to receive(:body)
+  #         end
+  #       end
+  #     end
+  #
+  #     context 'without token' do
+  #       before { expect(faraday).not_to receive(:authorization) }
+  #
+  #       specify { expect { subject.content }.not_to raise_error }
+  #
+  #       specify { expect { subject.content }.to change { subject.instance_variable_defined?(:@_memoized_content) }.from(false).to(true) }
+  #     end
+  #
+  #     context 'with token' do
+  #       let(:options) { { token: 'token123' } }
+  #
+  #       subject { described_class.new(options) }
+  #
+  #       before do
+  #         #
+  #         # faraday.authorization(:Bearer, token)
+  #         #
+  #         expect(faraday).to receive(:authorization).with(:Bearer, 'token123')
+  #       end
+  #
+  #       specify { expect { subject.content }.not_to raise_error }
+  #
+  #       specify { expect { subject.content }.to change { subject.instance_variable_defined?(:@_memoized_content) }.from(false).to(true) }
+  #     end
+  #   end
+  #
+  #   context 'exception' do
+  #     before do
+  #       #
+  #       # Faraday.new => raise Faraday::TimeoutError
+  #       #
+  #       expect(Faraday).to receive(:new).and_raise(Faraday::TimeoutError)
+  #     end
+  #
+  #     specify { expect { subject.content }.to raise_error(EveOnline::Exceptions::TimeoutException) }
+  #   end
+  # end
 
   describe '#response' do
     let(:parser) { double }
