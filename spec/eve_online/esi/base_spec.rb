@@ -127,6 +127,19 @@ describe EveOnline::ESI::Base do
     specify { expect { subject.send(:open_timeout=, value) }.not_to raise_error }
   end
 
+  describe '#client' do
+    context 'when @client set' do
+      let(:client) { double }
+
+      before { subject.instance_variable_set(:@client, client) }
+
+      specify { expect(subject.client).to eq(client) }
+    end
+
+    context 'when @client not set' do
+    end
+  end
+
   # def client
   #   @client ||= begin
   #     faraday = Faraday.new
