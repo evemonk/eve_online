@@ -106,9 +106,26 @@ describe EveOnline::ESI::Base do
     specify { expect { subject.open_timeout }.not_to raise_error }
   end
 
-  # def open_timeout=(value)
-  #   client.options.open_timeout = value
-  # end
+  describe '#open_timeout=' do
+    let(:value) { double }
+
+    before do
+      #
+      # subject.client.options.open_timeout = value
+      #
+      expect(subject).to receive(:client) do
+        double.tap do |a|
+          expect(a).to receive(:options) do
+            double.tap do |b|
+              expect(b).to receive(:open_timeout=).with(value)
+            end
+          end
+        end
+      end
+    end
+
+    specify { expect { subject.send(:open_timeout=, value) }.not_to raise_error }
+  end
 
   # def client
   #   @client ||= begin
