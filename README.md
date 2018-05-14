@@ -1568,13 +1568,11 @@ If you want to catch all exceptions `rescue` `EveOnline::Exceptions::Base`. E.g.
 
 ```ruby
 begin
-  key_id = 1234567
-  v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-  options = { character_id: 90729314 }
+  races = EveOnline::ESI::Races.new
 
-  account_balance = EveOnline::XML::CharacterAccountBalance.new(key_id, v_code, options)
+  race = races.races.first
 
-  account_balance.as_json
+  race.as_json
 rescue EveOnline::Exceptions::Base
   # some logic for handle exception
 end
