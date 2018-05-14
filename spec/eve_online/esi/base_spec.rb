@@ -328,7 +328,7 @@ describe EveOnline::ESI::Base do
   describe '#response' do
     let(:parser) { double }
 
-    let(:content) { 'some xml content to parse' }
+    let(:content) { 'some content to parse' }
 
     before { expect(subject).to receive(:content).and_return(content) }
 
