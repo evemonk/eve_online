@@ -4,9 +4,15 @@ require 'eve_online/version'
 
 # Exceptions
 require 'eve_online/exceptions/base'
-require 'eve_online/exceptions/timeout_exception'
-require 'eve_online/exceptions/unauthorized_exception'
-require 'eve_online/exceptions/invalid_character_id_exception'
+require 'eve_online/exceptions/timeout'
+require 'eve_online/exceptions/unauthorized'
+require 'eve_online/exceptions/resource_not_found'
+require 'eve_online/exceptions/bad_request'
+require 'eve_online/exceptions/forbidden'
+require 'eve_online/exceptions/internal_server_error'
+require 'eve_online/exceptions/bad_gateway'
+require 'eve_online/exceptions/service_unavailable'
+require 'eve_online/exceptions/no_content'
 
 # ESI API
 require 'eve_online/esi/base'

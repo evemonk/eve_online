@@ -2,7 +2,7 @@
 
 module EveOnline
   module Exceptions
-    class InvalidCharacterIDException < Base
+    class BadGateway < Base
     end
   end
 end

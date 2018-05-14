@@ -9,6 +9,8 @@
 
 This gem implement Ruby API for EveOnline MMORPG (ESI).
 
+Looking for [EveOnline SSO OAuth2 Strategy for OmniAuth](https://github.com/biow0lf/omniauth-eve_online-sso)?
+
 This gem was extracted from [EveMonk](http://evemonk.com). Source code of evemonk backend published [here](https://github.com/biow0lf/evemonk).
 
 ## TOC
@@ -1566,37 +1568,27 @@ If you want to catch all exceptions `rescue` `EveOnline::Exceptions::Base`. E.g.
 
 ```ruby
 begin
-  key_id = 1234567
-  v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-  options = { character_id: 90729314 }
+  races = EveOnline::ESI::Races.new
 
-  account_balance = EveOnline::XML::CharacterAccountBalance.new(key_id, v_code, options)
+  race = races.races.first
 
-  account_balance.as_json
+  race.as_json
 rescue EveOnline::Exceptions::Base
   # some logic for handle exception
 end
 ```
 
-If api key (XML) have many characters and you miss `character_id` you will get `EveOnline::Exceptions::InvalidCharacterIDException`.
+List of exceptions:
 
-If api key (XML) invalid (wrong key_id/v_code or key is expired) you will get `EveOnline::Exceptions::UnauthorizedException`. E.g.:
-
-```ruby
-begin
-  key_id = 1234567
-  v_code = '9ce9970b18d07586ead3d052e5b83bc8db303171a28a6f754cf35d9e6b66af17'
-  options = { character_id: 90729314 }
-
-  account_balance = EveOnline::XML::CharacterAccountBalance.new(key_id, v_code, options)
-
-  account_balance.as_json
-rescue EveOnline::Exceptions::UnauthorizedException
-  # some logic for handle exception. e.g. mark api keys as invalid
-end
-```
-
-Timeout. `EveOnline::Exceptions::TimeoutException`.
+* `EveOnline::Exceptions::NoContent` when response returns status 204 without body.
+* `EveOnline::Exceptions::BadRequest` when response returns status 400.
+* `EveOnline::Exceptions::Unauthorized` when response returns status 401.
+* `EveOnline::Exceptions::Forbidden` when response returns status 403.
+* `EveOnline::Exceptions::ResourceNotFound` when response returns status 404.
+* `EveOnline::Exceptions::InternalServerError` when response returns status 500.
+* `EveOnline::Exceptions::BadGateway` when response returns status 502.
+* `EveOnline::Exceptions::ServiceUnavailable` when response returns status 503.
+* `EveOnline::Exceptions::Timeout` when timeout.
 
 ## Timeouts
 
@@ -1607,6 +1599,26 @@ faraday = Faraday.new
 
 faraday.options.timeout = 60
 faraday.options.open_timeout = 60
+```
+
+You can configure default timeouts with adding `read_timeout:` and `open_timeout:` to default hash with options:
+```ruby
+options = { read_timeout: 120, open_timeout: 120 } # 120 seconds
+
+races = EveOnline::ESI::Races.new(options)
+```
+
+Or, dynamically:
+```ruby
+races = EveOnline::ESI::Races.new
+
+races.open_timeout # => 60
+races.open_timeout = 120
+races.open_timeout # => 120
+
+races.read_timeout # => 60
+races.read_timeout = 120
+races.read_timeout # => 120
 ```
 
 ## Useful links

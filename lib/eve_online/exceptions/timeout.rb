@@ -2,7 +2,7 @@
 
 module EveOnline
   module Exceptions
-    class UnauthorizedException < Base
+    class Timeout < Base
     end
   end
 end
