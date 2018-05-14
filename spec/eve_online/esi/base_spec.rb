@@ -230,6 +230,142 @@ describe EveOnline::ESI::Base do
     end
   end
 
+  describe '#content' do
+    context 'when status 200' do
+      let(:resource) { double }
+
+      let(:body) { double }
+
+      before { expect(subject).to receive(:resource).and_return(resource).twice }
+
+      before { expect(resource).to receive(:status).and_return(200) }
+
+      before { expect(resource).to receive(:body).and_return(body) }
+
+      specify { expect(subject.content).to eq(body) }
+
+      specify { expect { subject.content }.not_to raise_error }
+
+      specify { expect { subject.content }.to change { subject.instance_variable_defined?(:@_memoized_content) }.from(false).to(true) }
+    end
+
+    context 'when status 201' do
+      let(:resource) { double }
+
+      before { expect(subject).to receive(:resource).and_return(resource) }
+
+      before { expect(resource).to receive(:status).and_return(201) }
+
+      specify { expect { subject.content }.to raise_error(NotImplementedError) }
+    end
+
+    context 'when status 204' do
+      let(:resource) { double }
+
+      before { expect(subject).to receive(:resource).and_return(resource) }
+
+      before { expect(resource).to receive(:status).and_return(204) }
+
+      specify { expect { subject.content }.to raise_error(EveOnline::Exceptions::NoContent) }
+    end
+
+    context 'when status 304' do
+      let(:resource) { double }
+
+      before { expect(subject).to receive(:resource).and_return(resource) }
+
+      before { expect(resource).to receive(:status).and_return(304) }
+
+      specify { expect { subject.content }.to raise_error(NotImplementedError) }
+    end
+
+    context 'when status 400' do
+      let(:resource) { double }
+
+      before { expect(subject).to receive(:resource).and_return(resource) }
+
+      before { expect(resource).to receive(:status).and_return(400) }
+
+      specify { expect { subject.content }.to raise_error(EveOnline::Exceptions::BadRequest) }
+    end
+
+    context 'when status 401' do
+      let(:resource) { double }
+
+      before { expect(subject).to receive(:resource).and_return(resource) }
+
+      before { expect(resource).to receive(:status).and_return(401) }
+
+      specify { expect { subject.content }.to raise_error(EveOnline::Exceptions::Unauthorized) }
+    end
+
+    context 'when status 403' do
+      let(:resource) { double }
+
+      before { expect(subject).to receive(:resource).and_return(resource) }
+
+      before { expect(resource).to receive(:status).and_return(403) }
+
+      specify { expect { subject.content }.to raise_error(EveOnline::Exceptions::Forbidden) }
+    end
+
+    context 'when status 404' do
+      let(:resource) { double }
+
+      before { expect(subject).to receive(:resource).and_return(resource) }
+
+      before { expect(resource).to receive(:status).and_return(404) }
+
+      specify { expect { subject.content }.to raise_error(EveOnline::Exceptions::ResourceNotFound) }
+    end
+
+    context 'when status 500' do
+      let(:resource) { double }
+
+      before { expect(subject).to receive(:resource).and_return(resource) }
+
+      before { expect(resource).to receive(:status).and_return(500) }
+
+      specify { expect { subject.content }.to raise_error(EveOnline::Exceptions::InternalServerError) }
+    end
+
+    context 'when status 502' do
+      let(:resource) { double }
+
+      before { expect(subject).to receive(:resource).and_return(resource) }
+
+      before { expect(resource).to receive(:status).and_return(502) }
+
+      specify { expect { subject.content }.to raise_error(EveOnline::Exceptions::BadGateway) }
+    end
+
+    context 'when status 503' do
+      let(:resource) { double }
+
+      before { expect(subject).to receive(:resource).and_return(resource) }
+
+      before { expect(resource).to receive(:status).and_return(503) }
+
+      specify { expect { subject.content }.to raise_error(EveOnline::Exceptions::ServiceUnavailable) }
+    end
+
+    context 'when status not supported' do
+      let(:resource) { double }
+
+      before { expect(subject).to receive(:resource).and_return(resource) }
+
+      before { expect(resource).to receive(:status).and_return(1000) }
+
+      specify { expect { subject.content }.to raise_error(NotImplementedError) }
+    end
+
+    context 'when faraday throw Faraday::TimeoutError' do
+      before { expect(subject).to receive(:resource).and_raise(Faraday::TimeoutError) }
+
+      specify { expect { subject.content }.to raise_error(EveOnline::Exceptions::Timeout) }
+    end
+  end
+
   # describe '#content' do
   #   context 'ok' do
   #     let(:url) { double }

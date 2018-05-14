@@ -96,7 +96,7 @@ module EveOnline
           raise NotImplementedError
         end
       rescue Faraday::TimeoutError
-        raise EveOnline::Exceptions::TimeoutException
+        raise EveOnline::Exceptions::Timeout
       end
       memoize :content
 
