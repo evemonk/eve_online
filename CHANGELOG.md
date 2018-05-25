@@ -25,6 +25,7 @@
 * Remove `EveOnline::Exceptions::InvalidCharacterIDException`
 * Remove `EveOnline::Exceptions::UnauthorizedException`
 * Rename `EveOnline::Exceptions::TimeoutException` to `EveOnline::Exceptions::Timeout`
+* JRuby 9.2.0.0
 
 **v0.15.0**
 
