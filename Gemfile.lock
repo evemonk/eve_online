@@ -39,7 +39,7 @@ GEM
     mini_portile2 (2.3.0)
     minitest (5.11.3)
     multipart-post (2.0.0)
-    nokogiri (1.8.2)
+    nokogiri (1.8.3)
       mini_portile2 (~> 2.3.0)
     parallel (1.12.1)
     parser (2.5.1.0)
