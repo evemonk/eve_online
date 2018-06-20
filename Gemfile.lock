@@ -19,8 +19,6 @@ GEM
       public_suffix (>= 2.0.2, < 4.0)
     ast (2.4.0)
     awesome_print (1.8.0)
-    codeclimate-test-reporter (1.0.7)
-      simplecov
     coderay (1.1.2)
     concurrent-ruby (1.0.5)
     crack (0.4.3)
@@ -100,7 +98,6 @@ PLATFORMS
 DEPENDENCIES
   awesome_print
   bundler
-  codeclimate-test-reporter
   eve_online!
   nokogiri
   pry
