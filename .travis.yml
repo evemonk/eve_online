@@ -81,6 +81,8 @@ before_install:
 
 script:
   - bundle exec rake
+  - bundle exec mdl README.md
+  - bundle exec mdl CHANGELOG.md
 
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
