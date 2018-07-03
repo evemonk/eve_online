@@ -1646,7 +1646,9 @@ Issue reports and pull requests are welcome on GitHub at https://github.com/biow
 
 * Igor Zubkov (@biow0lf)
 
-## Contributors. Thank you everyone!
+## Contributors
+
+Thank you everyone!
 
 * Ian Flynn (@monban)
 * Mekaret Eriker (@Mekaret)
