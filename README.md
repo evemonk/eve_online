@@ -44,20 +44,20 @@ Or install it yourself as:
 
 ## Supported ruby versions
 
- * MRI 2.3
- * MRI 2.4
- * MRI 2.5
- * MRI (head)
- * JRuby 9.2.0.0
- * JRuby (head)
+* MRI 2.3
+* MRI 2.4
+* MRI 2.5
+* MRI (head)
+* JRuby 9.2.0.0
+* JRuby (head)
 
 ## Supported rails versions
 
- * 4.2
- * 5.0
- * 5.1
- * 5.2
- * Edge
+* 4.2
+* 5.0
+* 5.1
+* 5.2
+* Edge
 
 ## Usage examples
 
