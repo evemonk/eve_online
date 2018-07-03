@@ -25,7 +25,6 @@ This gem was extracted from [EveMonk](http://evemonk.com). Source code of evemon
 * [Contributors. Thank you everyone!](#contributors-thank-you-everyone)
 * [License](#license)
 
-
 ## Installation
 
 Add this line to your application's Gemfile:
