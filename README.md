@@ -35,11 +35,15 @@ gem 'eve_online'
 
 And then execute:
 
-    bundle
+```shell
+bundle
+```
 
 Or install it yourself as:
 
-    gem install eve_online
+```shell
+gem install eve_online
+```
 
 ## Supported ruby versions
 
