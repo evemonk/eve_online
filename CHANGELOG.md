@@ -402,7 +402,7 @@
 * [Upcoming Calendar Events](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_upcomingcalendarevents.html)
 * Basic [Calendar Event Attendees](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_calendareventattendees.html)
 
-**v0.4.0**:
+## v0.4.0
 
 * Time zone fixes
 * Add `EveOnline::Character` class for handling each Character
@@ -411,17 +411,17 @@
 * Fix `EveOnline::Characters::AccountBalance#account_key`
 * Add `#as_json` methods
 
-**v0.3.0**:
+## v0.3.0
 
 * [Characters](https://eveonline-third-party-documentation.readthedocs.org/en/latest/xmlapi/account/account_characters.html)
 * Refactoring and bug fixes
 
-**v0.2.0**:
+## v0.2.0
 
 * [Account Balance](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_accountbalance.html)
 * [API Key Info](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/account/account_apikeyinfo.html)
 * [Account Status](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/account/account_accountstatus.html)
 
-**v0.1.0**:
+## v0.1.0
 
 * [Server Status](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/server/serv_serverstatus.html)
