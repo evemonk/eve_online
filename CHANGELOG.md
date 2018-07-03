@@ -1,8 +1,8 @@
 # Changelog
 
-**master**
+## master
 
-**v0.16.0**
+## v0.16.0
 
 * Add `EveOnline::ESI::UniverseTypes`
 * Add `EveOnline::ESI::UniverseType`
@@ -29,7 +29,7 @@
 * Rename `EveOnline::Exceptions::TimeoutException` to `EveOnline::Exceptions::Timeout`
 * JRuby 9.2.0.0
 
-**v0.15.0**
+## v0.15.0
 
 * Add `EveOnline::ESI::Alliances`
 * Add `EveOnline::ESI::AllianceCorporations`
@@ -89,7 +89,7 @@
 * Rename `EveOnline::ESI::AllianceIcon#small` to `#icon_small`
 * Rename `EveOnline::ESI::AllianceIcon#medium`  to `#icon_medium`
 
-**v0.14.0**
+## v0.14.0
 
 * Add `EveOnline::ESI::CorporationBlueprints`
 * Add `EveOnline::ESI::Models::MarketHistory`
@@ -98,7 +98,7 @@
 * Add `EveOnline::ESI::CharacterOnline`
 * Add `EveOnline::ESI::Models::Online`
 
-**v0.13.0**
+## v0.13.0
 
 * Drop CREST API support
 * Drop `EveOnline::BaseCREST` without alternative
@@ -202,7 +202,7 @@
 * Add `EveOnline::ESI::Models::DogmaAttribute`
 * Add `EveOnline::ESI::DogmaAttribute`
 
-**v0.12.0**
+## v0.12.0
 
 * **Breaking change**. Rename `EveOnline::Exceptions::Exception` to `EveOnline::Exceptions::Base`.
 * Add `EveOnline::XML::Base` class
@@ -259,7 +259,7 @@
 * Ignore missed fields in responses
 * Add `EveOnline::ESI::ServerStatus`
 
-**v0.11.0**
+## v0.11.0
 
 * Add SDE support classes
 * `EveOnline::SDE::AgtAgentTypes`
@@ -289,7 +289,7 @@
 * Add `EveOnline::ESI::Models::Skill` class for handing character skills
 * Rename `EveOnline::SkillQueueEntry` to `EveOnline::XML::Models::SkillQueueEntry`
 
-**v0.10.0**
+## v0.10.0
 
 * Replace `open-uri` with `faraday`
 * Add `EveOnline::ESI::Characters::Character`
@@ -298,7 +298,7 @@
 * Add `EveOnline::Account::ApiKeyInfo#as_json`
 * Rename `EveOnline::Account::ApiKeyInfo#type` to `#api_key_type`
 
-**v0.9.0**
+## v0.9.0
 
 * Add basic `EveOnline::Characters::Contracts`
 * Add basic `EveOnline::Characters::ContractBids`
@@ -354,7 +354,7 @@
 * [Market Orders](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_marketorders.html)
 * [Market Orders](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/corporation/corp_marketorders.html)
 
-**v0.8.0**
+## v0.8.0
 
 * Add basic `EveOnline::Characters::Medals` class
 * Add basic `EveOnline::Characters::CharacterSheet` class
@@ -368,7 +368,7 @@
 * Finish [Standings](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_standings.html)
 * Add `EveOnline::Standing` class for handling character standing
 
-**v0.7.0**
+## v0.7.0
 
 * Drop `nokogiri` gem from gem dependency
 * Add `json` gem for CREST API
@@ -386,7 +386,7 @@
 * Add `EveOnline::BaseCREST` as base for CREST API
 * Citadel 1.0 updates
 
-**v0.6.0**
+## v0.6.0
 
 * Add `EveOnline::EventResponseObject` class for handling EveOnline Event response values
 * `EveOnline::Event#response` now returns symbols. e.g. `:undecided`
@@ -395,7 +395,7 @@
 * Add basic [Character Bookmarks](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_bookmarks.html)
 * [Characters SkillInTraining](https://eveonline-third-party-documentation.readthedocs.io/en/latest/xmlapi/character/char_skillintraining.html)
 
-**v0.5.0**
+## v0.5.0
 
 * Add `EveOnline::Event` class for handling EveOnline Events
 * `EveOnline::Account::ApiKeyInfo#expires` now returns time with timezone
