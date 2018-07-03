@@ -1604,6 +1604,7 @@ faraday.options.open_timeout = 60
 ```
 
 You can configure default timeouts with adding `read_timeout:` and `open_timeout:` to default hash with options:
+
 ```ruby
 options = { read_timeout: 120, open_timeout: 120 } # 120 seconds
 
@@ -1611,6 +1612,7 @@ races = EveOnline::ESI::Races.new(options)
 ```
 
 Or, dynamically:
+
 ```ruby
 races = EveOnline::ESI::Races.new
 
