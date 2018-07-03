@@ -22,7 +22,7 @@ This gem was extracted from [EveMonk](http://evemonk.com). Source code of evemon
 * [Contributing](#contributing)
 * [TODO](#todo)
 * [Author](#author)
-* [Contributors. Thank you everyone!](#contributors-thank-you-everyone)
+* [Contributors](#contributors)
 * [License](#license)
 
 ## Installation
