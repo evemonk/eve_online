@@ -1,8 +1,6 @@
-## Changelog
+# Changelog
 
 **master**
-
-
 
 **v0.16.0**
 
