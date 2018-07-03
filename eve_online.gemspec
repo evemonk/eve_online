@@ -27,6 +27,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'simplecov'
   spec.add_development_dependency 'webmock'
   spec.add_development_dependency 'vcr'
+  spec.add_development_dependency 'mdl'
 
   spec.add_runtime_dependency 'activesupport', '>= 4.2.0'
   spec.add_runtime_dependency 'faraday'
