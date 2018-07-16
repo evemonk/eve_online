@@ -45,7 +45,7 @@ GEM
     mixlib-config (2.2.13)
       tomlrb
     multipart-post (2.0.0)
-    nokogiri (1.8.3)
+    nokogiri (1.8.4)
       mini_portile2 (~> 2.3.0)
     parallel (1.12.1)
     parser (2.5.1.2)
