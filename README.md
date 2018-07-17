@@ -127,7 +127,8 @@ alliance_icon = EveOnline::ESI::AllianceIcon.new(options)
 
 alliance_icon.scope # => nil
 
-alliance_icon.as_json # => {:icon_small=>"http://image.eveonline.com/Alliance/99005443_64.png", :icon_medium=>"http://image.eveonline.com/Alliance/99005443_128.png"}
+alliance_icon.as_json # => {:icon_small=>"http://image.eveonline.com/Alliance/99005443_64.png",
+                      #     :icon_medium=>"http://image.eveonline.com/Alliance/99005443_128.png"}
 
 alliance_icon.icon_small # => "http://image.eveonline.com/Alliance/99005443_64.png"
 alliance_icon.icon_medium # => "http://image.eveonline.com/Alliance/99005443_128.png"
