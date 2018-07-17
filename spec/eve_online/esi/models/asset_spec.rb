@@ -20,11 +20,11 @@ describe EveOnline::ESI::Models::Asset do
 
     before { expect(asset).to receive(:is_singleton).and_return(true) }
 
-    before { expect(asset).to receive(:item_id).and_return(716338097) }
+    before { expect(asset).to receive(:item_id).and_return(716_338_097) }
 
     before { expect(asset).to receive(:location_flag).and_return('Hangar') }
 
-    before { expect(asset).to receive(:location_id).and_return(1027847409779) }
+    before { expect(asset).to receive(:location_id).and_return(1_027_847_409_779) }
 
     before { expect(asset).to receive(:location_type).and_return('other') }
 
@@ -38,11 +38,11 @@ describe EveOnline::ESI::Models::Asset do
 
     its([:is_singleton]) { should eq(true) }
 
-    its([:item_id]) { should eq(716338097) }
+    its([:item_id]) { should eq(716_338_097) }
 
     its([:location_flag]) { should eq('Hangar') }
 
-    its([:location_id]) { should eq(1027847409779) }
+    its([:location_id]) { should eq(1_027_847_409_779) }
 
     its([:location_type]) { should eq('other') }
 
