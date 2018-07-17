@@ -149,21 +149,23 @@ character_assets.assets.size # => 486
 
 asset = character_assets.assets.first
 
-asset.as_json # => {:type_id=>2629,
-              #     :location_id=>60008674,
-              #     :location_type=>"station",
-              #     :item_id=>1006604012678,
+asset.as_json # => {:is_blueprint_copy=>true,
+              #     :is_singleton=>true,
+              #     :item_id=>716338097,
               #     :location_flag=>"Hangar",
-              #     :is_singleton=>false,
-              #     :quantity=>16156}
+              #     :location_id=>1027847409779,
+              #     :location_type=>"other",
+              #     :quantity=>1
+              #     :type_id=>1010}
 
-asset.type_id # => 2629
-asset.location_id # => 60008674
-asset.location_type # => "station"
-asset.item_id # => 1006604012678
+asset.is_blueprint_copy # => true
+asset.is_singleton # => true
+asset.item_id # => 716338097
 asset.location_flag # => "Hangar"
-asset.is_singleton # => false
-asset.quantity # => 16156
+asset.location_id # => 1027847409779
+asset.location_type # => "other"
+asset.quantity # => 1
+asset.type_id # => 1010
 
 # TODO: add pagination support
 ```
