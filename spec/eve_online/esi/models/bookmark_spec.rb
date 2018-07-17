@@ -16,35 +16,19 @@ describe EveOnline::ESI::Models::Bookmark do
   describe '#as_json' do
     let(:bookmark) { described_class.new(options) }
 
-    let(:created) { double }
-
-    let(:item_id) { double }
-
-    let(:item_type_id) { double }
-
     let(:coordinate_x) { double }
 
     let(:coordinate_y) { double }
 
     let(:coordinate_z) { double }
 
+    let(:created) { double }
+
+    let(:item_id) { double }
+
+    let(:item_type_id) { double }
+
     before { expect(bookmark).to receive(:bookmark_id).and_return(4) }
-
-    before { expect(bookmark).to receive(:folder_id).and_return(5) }
-
-    before { expect(bookmark).to receive(:created).and_return(created) }
-
-    before { expect(bookmark).to receive(:label).and_return('Random location') }
-
-    before { expect(bookmark).to receive(:notes).and_return('This is a random location in space') }
-
-    before { expect(bookmark).to receive(:location_id).and_return(30_003_430) }
-
-    before { expect(bookmark).to receive(:creator_id).and_return(2_112_625_428) }
-
-    before { expect(bookmark).to receive(:item_id).and_return(item_id) }
-
-    before { expect(bookmark).to receive(:item_type_id).and_return(item_type_id) }
 
     before { expect(bookmark).to receive(:coordinate_x).and_return(coordinate_x) }
 
@@ -52,31 +36,47 @@ describe EveOnline::ESI::Models::Bookmark do
 
     before { expect(bookmark).to receive(:coordinate_z).and_return(coordinate_z) }
 
+    before { expect(bookmark).to receive(:created).and_return(created) }
+
+    before { expect(bookmark).to receive(:creator_id).and_return(2_112_625_428) }
+
+    before { expect(bookmark).to receive(:folder_id).and_return(5) }
+
+    before { expect(bookmark).to receive(:item_id).and_return(item_id) }
+
+    before { expect(bookmark).to receive(:item_type_id).and_return(item_type_id) }
+
+    before { expect(bookmark).to receive(:label).and_return('Random location') }
+
+    before { expect(bookmark).to receive(:location_id).and_return(30_003_430) }
+
+    before { expect(bookmark).to receive(:notes).and_return('This is a random location in space') }
+
     subject { bookmark.as_json }
 
     its([:bookmark_id]) { should eq(4) }
-
-    its([:folder_id]) { should eq(5) }
-
-    its([:created]) { should eq(created) }
-
-    its([:label]) { should eq('Random location') }
-
-    its([:notes]) { should eq('This is a random location in space') }
-
-    its([:location_id]) { should eq(30_003_430) }
-
-    its([:creator_id]) { should eq(2_112_625_428) }
-
-    its([:item_id]) { should eq(item_id) }
-
-    its([:item_type_id]) { should eq(item_type_id) }
 
     its([:coordinate_x]) { should eq(coordinate_x) }
 
     its([:coordinate_y]) { should eq(coordinate_y) }
 
     its([:coordinate_z]) { should eq(coordinate_z) }
+
+    its([:created]) { should eq(created) }
+
+    its([:creator_id]) { should eq(2_112_625_428) }
+
+    its([:folder_id]) { should eq(5) }
+
+    its([:item_id]) { should eq(item_id) }
+
+    its([:item_type_id]) { should eq(item_type_id) }
+
+    its([:label]) { should eq('Random location') }
+
+    its([:location_id]) { should eq(30_003_430) }
+
+    its([:notes]) { should eq('This is a random location in space') }
   end
 
   describe '#bookmark_id' do
