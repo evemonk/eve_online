@@ -85,107 +85,6 @@ describe EveOnline::ESI::Models::Bookmark do
     specify { expect { subject.bookmark_id }.not_to raise_error }
   end
 
-  describe '#folder_id' do
-    before { expect(options).to receive(:[]).with('folder_id') }
-
-    specify { expect { subject.folder_id }.not_to raise_error }
-  end
-
-  describe '#created' do
-    context 'when created is present' do
-      let(:created) { double }
-
-      before { expect(options).to receive(:[]).with('created').and_return(created) }
-
-      before do
-        #
-        # subject.parse_datetime_with_timezone(created)
-        #
-        expect(subject).to receive(:parse_datetime_with_timezone).with(created)
-      end
-
-      specify { expect { subject.created }.not_to raise_error }
-    end
-
-    context 'when created not present' do
-      before { expect(options).to receive(:[]).with('created').and_return(nil) }
-
-      before { expect(subject).not_to receive(:parse_datetime_with_timezone) }
-
-      specify { expect { subject.created }.not_to raise_error }
-    end
-  end
-
-  describe '#label' do
-    before { expect(options).to receive(:[]).with('label') }
-
-    specify { expect { subject.label }.not_to raise_error }
-  end
-
-  describe '#notes' do
-    before { expect(options).to receive(:[]).with('notes') }
-
-    specify { expect { subject.notes }.not_to raise_error }
-  end
-
-  describe '#location_id' do
-    before { expect(options).to receive(:[]).with('location_id') }
-
-    specify { expect { subject.location_id }.not_to raise_error }
-  end
-
-  describe '#creator_id' do
-    before { expect(options).to receive(:[]).with('creator_id') }
-
-    specify { expect { subject.creator_id }.not_to raise_error }
-  end
-
-  describe '#item_id' do
-    context 'when item is present' do
-      let(:item) { double }
-
-      before { expect(options).to receive(:[]).with('item').and_return(item).twice }
-
-      before do
-        #
-        # options['item']['item_id']
-        #
-        expect(item).to receive(:[]).with('item_id')
-      end
-
-      specify { expect { subject.item_id }.not_to raise_error }
-    end
-
-    context 'when item not present' do
-      before { expect(options).to receive(:[]).with('item').and_return(nil) }
-
-      specify { expect { subject.item_id }.not_to raise_error }
-    end
-  end
-
-  describe '#item_type_id' do
-    context 'when item is present' do
-      let(:item) { double }
-
-      before { expect(options).to receive(:[]).with('item').and_return(item).twice }
-
-      before do
-        #
-        # options['item']['type_id']
-        #
-        expect(item).to receive(:[]).with('type_id')
-      end
-
-      specify { expect { subject.item_type_id }.not_to raise_error }
-    end
-
-    context 'when item not present' do
-      before { expect(options).to receive(:[]).with('item').and_return(nil) }
-
-      specify { expect { subject.item_type_id }.not_to raise_error }
-    end
-  end
-
   describe '#coordinate_x' do
     context 'when coordinates is present' do
       let(:coordinates) { double }
@@ -253,5 +152,106 @@ describe EveOnline::ESI::Models::Bookmark do
 
       specify { expect { subject.coordinate_z }.not_to raise_error }
     end
+  end
+
+  describe '#created' do
+    context 'when created is present' do
+      let(:created) { double }
+
+      before { expect(options).to receive(:[]).with('created').and_return(created) }
+
+      before do
+        #
+        # subject.parse_datetime_with_timezone(created)
+        #
+        expect(subject).to receive(:parse_datetime_with_timezone).with(created)
+      end
+
+      specify { expect { subject.created }.not_to raise_error }
+    end
+
+    context 'when created not present' do
+      before { expect(options).to receive(:[]).with('created').and_return(nil) }
+
+      before { expect(subject).not_to receive(:parse_datetime_with_timezone) }
+
+      specify { expect { subject.created }.not_to raise_error }
+    end
+  end
+
+  describe '#creator_id' do
+    before { expect(options).to receive(:[]).with('creator_id') }
+
+    specify { expect { subject.creator_id }.not_to raise_error }
+  end
+
+  describe '#folder_id' do
+    before { expect(options).to receive(:[]).with('folder_id') }
+
+    specify { expect { subject.folder_id }.not_to raise_error }
+  end
+
+  describe '#item_id' do
+    context 'when item is present' do
+      let(:item) { double }
+
+      before { expect(options).to receive(:[]).with('item').and_return(item).twice }
+
+      before do
+        #
+        # options['item']['item_id']
+        #
+        expect(item).to receive(:[]).with('item_id')
+      end
+
+      specify { expect { subject.item_id }.not_to raise_error }
+    end
+
+    context 'when item not present' do
+      before { expect(options).to receive(:[]).with('item').and_return(nil) }
+
+      specify { expect { subject.item_id }.not_to raise_error }
+    end
+  end
+
+  describe '#item_type_id' do
+    context 'when item is present' do
+      let(:item) { double }
+
+      before { expect(options).to receive(:[]).with('item').and_return(item).twice }
+
+      before do
+        #
+        # options['item']['type_id']
+        #
+        expect(item).to receive(:[]).with('type_id')
+      end
+
+      specify { expect { subject.item_type_id }.not_to raise_error }
+    end
+
+    context 'when item not present' do
+      before { expect(options).to receive(:[]).with('item').and_return(nil) }
+
+      specify { expect { subject.item_type_id }.not_to raise_error }
+    end
+  end
+
+  describe '#label' do
+    before { expect(options).to receive(:[]).with('label') }
+
+    specify { expect { subject.label }.not_to raise_error }
+  end
+
+  describe '#location_id' do
+    before { expect(options).to receive(:[]).with('location_id') }
+
+    specify { expect { subject.location_id }.not_to raise_error }
+  end
+
+  describe '#notes' do
+    before { expect(options).to receive(:[]).with('notes') }
+
+    specify { expect { subject.notes }.not_to raise_error }
   end
 end
