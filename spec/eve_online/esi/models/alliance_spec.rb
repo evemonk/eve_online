@@ -18,35 +18,35 @@ describe EveOnline::ESI::Models::Alliance do
 
     let(:date_founded) { double }
 
+    before { expect(alliance).to receive(:creator_corporation_id).and_return(98_306_624) }
+
+    before { expect(alliance).to receive(:creator_id).and_return(94_195_096) }
+
+    before { expect(alliance).to receive(:date_founded).and_return(date_founded) }
+
+    before { expect(alliance).to receive(:executor_corporation_id).and_return(98_306_624) }
+
+    before { expect(alliance).to receive(:faction_id).and_return(500_001) }
+
     before { expect(alliance).to receive(:name).and_return('Kids With Guns Alliance') }
 
     before { expect(alliance).to receive(:ticker).and_return('-KWG-') }
 
-    before { expect(alliance).to receive(:creator_id).and_return(94_195_096) }
-
-    before { expect(alliance).to receive(:creator_corporation_id).and_return(98_306_624) }
-
-    before { expect(alliance).to receive(:executor_corporation_id).and_return(98_306_624) }
-
-    before { expect(alliance).to receive(:date_founded).and_return(date_founded) }
-
-    before { expect(alliance).to receive(:faction_id).and_return(500_001) }
-
     subject { alliance.as_json }
+
+    its([:creator_corporation_id]) { should eq(98_306_624) }
+
+    its([:creator_id]) { should eq(94_195_096) }
+
+    its([:date_founded]) { should eq(date_founded) }
+
+    its([:executor_corporation_id]) { should eq(98_306_624) }
+
+    its([:faction_id]) { should eq(500_001) }
 
     its([:name]) { should eq('Kids With Guns Alliance') }
 
     its([:ticker]) { should eq('-KWG-') }
-
-    its([:creator_id]) { should eq(94_195_096) }
-
-    its([:creator_corporation_id]) { should eq(98_306_624) }
-
-    its([:executor_corporation_id]) { should eq(98_306_624) }
-
-    its([:date_founded]) { should eq(date_founded) }
-
-    its([:faction_id]) { should eq(500_001) }
   end
 
   describe '#name' do
