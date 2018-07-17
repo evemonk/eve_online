@@ -6,30 +6,23 @@ module EveOnline
       class Asset < Base
         def as_json
           {
-            type_id: type_id,
-            quantity: quantity,
-            location_id: location_id,
-            location_type: location_type,
+            is_blueprint_copy: is_blueprint_copy,
+            is_singleton: is_singleton,
             item_id: item_id,
             location_flag: location_flag,
-            is_singleton: is_singleton
+            location_id: location_id,
+            location_type: location_type,
+            quantity: quantity,
+            type_id: type_id
           }
         end
 
-        def type_id
-          options['type_id']
+        def is_blueprint_copy
+          options['is_blueprint_copy']
         end
 
-        def quantity
-          options['quantity']
-        end
-
-        def location_id
-          options['location_id']
-        end
-
-        def location_type
-          options['location_type']
+        def is_singleton
+          options['is_singleton']
         end
 
         def item_id
@@ -40,8 +33,20 @@ module EveOnline
           options['location_flag']
         end
 
-        def is_singleton
-          options['is_singleton']
+        def location_id
+          options['location_id']
+        end
+
+        def location_type
+          options['location_type']
+        end
+
+        def quantity
+          options['quantity']
+        end
+
+        def type_id
+          options['type_id']
         end
       end
     end
