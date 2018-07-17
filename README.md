@@ -242,6 +242,8 @@ bookmark_folder.as_json # => {:folder_id=>5,
 
 bookmark_folder.folder_id # => 5
 bookmark_folder.name # => "Icecream"
+
+# TODO: add pagination support
 ```
 
 #### List corporation bookmarks
