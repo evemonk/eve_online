@@ -134,26 +134,6 @@ alliance_icon.icon_small # => "http://image.eveonline.com/Alliance/99005443_64.p
 alliance_icon.icon_medium # => "http://image.eveonline.com/Alliance/99005443_128.png"
 ```
 
-#### Get alliance names
-
-```ruby
-options = { alliance_ids: [99005443, 99005443] }
-
-alliances_names = EveOnline::ESI::AlliancesNames.new(options)
-
-alliances_names.scope # => nil
-
-alliances_names.alliances.size # => 2
-
-alliance = alliances_names.alliances.first
-
-alliance.as_json
-# => {:alliance_id=>99005443, :alliance_name=>"Kids With Guns Alliance"}
-
-alliance.alliance_id # => 99005443
-alliance.alliance_name # => "Kids With Guns Alliance"
-```
-
 ### Assets
 
 #### Get character assets
