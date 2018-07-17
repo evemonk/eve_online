@@ -17,9 +17,9 @@ module EveOnline
         @character_id = options[:character_id]
       end
 
-      def_delegators :model, :as_json, :corporation_id, :birthday, :name,
-                     :gender, :race_id, :bloodline_id, :description,
-                     :alliance_id, :ancestry_id, :security_status, :faction_id
+      def_delegators :model, :as_json, :alliance_id, :ancestry_id, :birthday,
+                     :bloodline_id, :corporation_id, :description, :faction_id,
+                     :gender, :name, :race_id, :security_status
 
       def model
         Models::Character.new(response)
