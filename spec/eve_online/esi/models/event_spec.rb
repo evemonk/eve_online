@@ -41,12 +41,6 @@ describe EveOnline::ESI::Models::Event do
     its([:title]) { should eq('Moon extraction') }
   end
 
-  describe '#event_id' do
-    before { expect(options).to receive(:[]).with('event_id') }
-
-    specify { expect { subject.event_id }.not_to raise_error }
-  end
-
   describe '#event_date' do
     context 'when event_date is present' do
       let(:event_date) { double }
@@ -72,10 +66,16 @@ describe EveOnline::ESI::Models::Event do
     end
   end
 
-  describe '#title' do
-    before { expect(options).to receive(:[]).with('title') }
+  describe '#event_id' do
+    before { expect(options).to receive(:[]).with('event_id') }
 
-    specify { expect { subject.title }.not_to raise_error }
+    specify { expect { subject.event_id }.not_to raise_error }
+  end
+
+  describe '#event_response' do
+    before { expect(options).to receive(:[]).with('event_response') }
+
+    specify { expect { subject.event_response }.not_to raise_error }
   end
 
   describe '#importance' do
@@ -84,9 +84,9 @@ describe EveOnline::ESI::Models::Event do
     specify { expect { subject.importance }.not_to raise_error }
   end
 
-  describe '#event_response' do
-    before { expect(options).to receive(:[]).with('event_response') }
+  describe '#title' do
+    before { expect(options).to receive(:[]).with('title') }
 
-    specify { expect { subject.event_response }.not_to raise_error }
+    specify { expect { subject.title }.not_to raise_error }
   end
 end
