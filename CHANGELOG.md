@@ -4,6 +4,7 @@
 
 * Sync with new ESI API
 * Remove `EveOnline::ESI::AlliancesNames`
+* Lint `README.md` and `CHANGELOG.md` with `mdl` gem
 
 ## v0.16.0
 
