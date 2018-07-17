@@ -220,6 +220,8 @@ bookmark.item_type_id # => 5
 bookmark.coordinate_x # => -144951231521.81625
 bookmark.coordinate_y # => 164030047870.25558
 bookmark.coordinate_z # => 211467631848.1311
+
+# TODO: add pagination support
 ```
 
 #### List bookmark folders
