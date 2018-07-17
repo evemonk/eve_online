@@ -65,10 +65,16 @@ describe EveOnline::ESI::Models::Character do
     its([:security_status]) { should eq(1.8694881661345457) }
   end
 
-  describe '#corporation_id' do
-    before { expect(options).to receive(:[]).with('corporation_id') }
+  describe '#alliance_id' do
+    before { expect(options).to receive(:[]).with('alliance_id') }
 
-    specify { expect { subject.corporation_id }.not_to raise_error }
+    specify { expect { subject.alliance_id }.not_to raise_error }
+  end
+
+  describe '#ancestry_id' do
+    before { expect(options).to receive(:[]).with('ancestry_id') }
+
+    specify { expect { subject.ancestry_id }.not_to raise_error }
   end
 
   describe '#birthday' do
@@ -96,28 +102,16 @@ describe EveOnline::ESI::Models::Character do
     end
   end
 
-  describe '#name' do
-    before { expect(options).to receive(:[]).with('name') }
-
-    specify { expect { subject.name }.not_to raise_error }
-  end
-
-  describe '#gender' do
-    before { expect(options).to receive(:[]).with('gender') }
-
-    specify { expect { subject.gender }.not_to raise_error }
-  end
-
-  describe '#race_id' do
-    before { expect(options).to receive(:[]).with('race_id') }
-
-    specify { expect { subject.race_id }.not_to raise_error }
-  end
-
   describe '#bloodline_id' do
     before { expect(options).to receive(:[]).with('bloodline_id') }
 
     specify { expect { subject.bloodline_id }.not_to raise_error }
+  end
+
+  describe '#corporation_id' do
+    before { expect(options).to receive(:[]).with('corporation_id') }
+
+    specify { expect { subject.corporation_id }.not_to raise_error }
   end
 
   describe '#description' do
@@ -126,27 +120,33 @@ describe EveOnline::ESI::Models::Character do
     specify { expect { subject.description }.not_to raise_error }
   end
 
-  describe '#alliance_id' do
-    before { expect(options).to receive(:[]).with('alliance_id') }
+  describe '#faction_id' do
+    before { expect(options).to receive(:[]).with('faction_id') }
 
-    specify { expect { subject.alliance_id }.not_to raise_error }
+    specify { expect { subject.faction_id }.not_to raise_error }
   end
 
-  describe '#ancestry_id' do
-    before { expect(options).to receive(:[]).with('ancestry_id') }
+  describe '#gender' do
+    before { expect(options).to receive(:[]).with('gender') }
 
-    specify { expect { subject.ancestry_id }.not_to raise_error }
+    specify { expect { subject.gender }.not_to raise_error }
+  end
+
+  describe '#name' do
+    before { expect(options).to receive(:[]).with('name') }
+
+    specify { expect { subject.name }.not_to raise_error }
+  end
+
+  describe '#race_id' do
+    before { expect(options).to receive(:[]).with('race_id') }
+
+    specify { expect { subject.race_id }.not_to raise_error }
   end
 
   describe '#security_status' do
     before { expect(options).to receive(:[]).with('security_status') }
 
     specify { expect { subject.security_status }.not_to raise_error }
-  end
-
-  describe '#faction_id' do
-    before { expect(options).to receive(:[]).with('faction_id') }
-
-    specify { expect { subject.faction_id }.not_to raise_error }
   end
 end
