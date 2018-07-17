@@ -51,28 +51,16 @@ describe EveOnline::ESI::Models::Asset do
     its([:type_id]) { should eq(1010) }
   end
 
-  describe '#type_id' do
-    before { expect(options).to receive(:[]).with('type_id') }
+  describe '#is_blueprint_copy' do
+    before { expect(options).to receive(:[]).with('is_blueprint_copy') }
 
-    specify { expect { subject.type_id }.not_to raise_error }
+    specify { expect { subject.is_blueprint_copy }.not_to raise_error }
   end
 
-  describe '#quantity' do
-    before { expect(options).to receive(:[]).with('quantity') }
+  describe '#is_singleton' do
+    before { expect(options).to receive(:[]).with('is_singleton') }
 
-    specify { expect { subject.quantity }.not_to raise_error }
-  end
-
-  describe '#location_id' do
-    before { expect(options).to receive(:[]).with('location_id') }
-
-    specify { expect { subject.location_id }.not_to raise_error }
-  end
-
-  describe '#location_type' do
-    before { expect(options).to receive(:[]).with('location_type') }
-
-    specify { expect { subject.location_type }.not_to raise_error }
+    specify { expect { subject.is_singleton }.not_to raise_error }
   end
 
   describe '#item_id' do
@@ -87,9 +75,27 @@ describe EveOnline::ESI::Models::Asset do
     specify { expect { subject.location_flag }.not_to raise_error }
   end
 
-  describe '#is_singleton' do
-    before { expect(options).to receive(:[]).with('is_singleton') }
+  describe '#location_id' do
+    before { expect(options).to receive(:[]).with('location_id') }
 
-    specify { expect { subject.is_singleton }.not_to raise_error }
+    specify { expect { subject.location_id }.not_to raise_error }
+  end
+
+  describe '#location_type' do
+    before { expect(options).to receive(:[]).with('location_type') }
+
+    specify { expect { subject.location_type }.not_to raise_error }
+  end
+
+  describe '#quantity' do
+    before { expect(options).to receive(:[]).with('quantity') }
+
+    specify { expect { subject.quantity }.not_to raise_error }
+  end
+
+  describe '#type_id' do
+    before { expect(options).to receive(:[]).with('type_id') }
+
+    specify { expect { subject.type_id }.not_to raise_error }
   end
 end
