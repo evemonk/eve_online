@@ -6,16 +6,12 @@ module EveOnline
       class Event < Base
         def as_json
           {
-            event_id: event_id,
             event_date: event_date,
-            title: title,
+            event_id: event_id,
+            event_response: event_response,
             importance: importance,
-            event_response: event_response
+            title: title
           }
-        end
-
-        def event_id
-          options['event_id']
         end
 
         def event_date
@@ -24,16 +20,20 @@ module EveOnline
           parse_datetime_with_timezone(event_date) if event_date
         end
 
-        def title
-          options['title']
+        def event_id
+          options['event_id']
+        end
+
+        def event_response
+          options['event_response']
         end
 
         def importance
           options['importance']
         end
 
-        def event_response
-          options['event_response']
+        def title
+          options['title']
         end
       end
     end
