@@ -297,20 +297,29 @@ character = EveOnline::ESI::Character.new(options)
 
 character.scope # => nil
 
-character.as_json
-# => {:corporation_id=>1000168, :birthday=>Fri, 15 Jan 2010 15:26:00 UTC +00:00, :name=>"Green Black", :gender=>"male", :race_id=>2, :bloodline_id=>4, :description=>"", :alliance_id=>12345678, :ancestry_id=>24, :security_status=>1.8694881661345457, :faction_id=>500001}
+character.as_json # => {:alliance_id=>12345678,
+                  #     :ancestry_id=>24,
+                  #     :birthday=>Fri, 15 Jan 2010 15:26:00 UTC +00:00,
+                  #     :bloodline_id=>4,
+                  #     :corporation_id=>1000168,
+                  #     :description=>"",
+                  #     :faction_id=>500001,
+                  #     :gender=>"male",
+                  #     :name=>"Green Black",
+                  #     :race_id=>2,
+                  #     :security_status=>1.8694881661345457}
 
-character.corporation_id # => 1000168
-character.birthday # => Fri, 15 Jan 2010 15:26:00 UTC +00:00
-character.name # => "Green Black"
-character.gender # => "male"
-character.race_id # => 2
-character.bloodline_id # => 4
-character.description  # => ""
 character.alliance_id # => 12345678
 character.ancestry_id # => 24
-character.security_status # => 1.8694881661345457
+character.birthday # => Fri, 15 Jan 2010 15:26:00 UTC +00:00
+character.bloodline_id # => 4
+character.corporation_id # => 1000168
+character.description  # => ""
 character.faction_id # => 500001
+character.gender # => "male"
+character.name # => "Green Black"
+character.race_id # => 2
+character.security_status # => 1.8694881661345457
 ```
 
 #### Get agents research
