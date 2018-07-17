@@ -49,34 +49,16 @@ describe EveOnline::ESI::Models::Alliance do
     its([:ticker]) { should eq('-KWG-') }
   end
 
-  describe '#name' do
-    before { expect(options).to receive(:[]).with('name') }
-
-    specify { expect { subject.name }.not_to raise_error }
-  end
-
-  describe '#ticker' do
-    before { expect(options).to receive(:[]).with('ticker') }
-
-    specify { expect { subject.ticker }.not_to raise_error }
-  end
-
-  describe '#creator_id' do
-    before { expect(options).to receive(:[]).with('creator_id') }
-
-    specify { expect { subject.creator_id }.not_to raise_error }
-  end
-
   describe '#creator_corporation_id' do
     before { expect(options).to receive(:[]).with('creator_corporation_id') }
 
     specify { expect { subject.creator_corporation_id }.not_to raise_error }
   end
 
-  describe '#executor_corporation_id' do
-    before { expect(options).to receive(:[]).with('executor_corporation_id') }
+  describe '#creator_id' do
+    before { expect(options).to receive(:[]).with('creator_id') }
 
-    specify { expect { subject.executor_corporation_id }.not_to raise_error }
+    specify { expect { subject.creator_id }.not_to raise_error }
   end
 
   describe '#date_founded' do
@@ -104,9 +86,27 @@ describe EveOnline::ESI::Models::Alliance do
     end
   end
 
+  describe '#executor_corporation_id' do
+    before { expect(options).to receive(:[]).with('executor_corporation_id') }
+
+    specify { expect { subject.executor_corporation_id }.not_to raise_error }
+  end
+
   describe '#faction_id' do
     before { expect(options).to receive(:[]).with('faction_id') }
 
     specify { expect { subject.faction_id }.not_to raise_error }
+  end
+
+  describe '#name' do
+    before { expect(options).to receive(:[]).with('name') }
+
+    specify { expect { subject.name }.not_to raise_error }
+  end
+
+  describe '#ticker' do
+    before { expect(options).to receive(:[]).with('ticker') }
+
+    specify { expect { subject.ticker }.not_to raise_error }
   end
 end
