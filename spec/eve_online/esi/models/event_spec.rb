@@ -18,33 +18,27 @@ describe EveOnline::ESI::Models::Event do
 
     let(:event_date) { double }
 
-    before { expect(event).to receive(:event_id).and_return(1_635_247) }
-
     before { expect(event).to receive(:event_date).and_return(event_date) }
 
-    before { expect(event).to receive(:title).and_return('Moon extraction') }
-
-    before { expect(event).to receive(:importance).and_return(0) }
+    before { expect(event).to receive(:event_id).and_return(1_635_247) }
 
     before { expect(event).to receive(:event_response).and_return('not_responded') }
 
-    subject { event.as_json }
+    before { expect(event).to receive(:importance).and_return(0) }
 
-    its([:event_id]) { should eq(1_635_247) }
+    before { expect(event).to receive(:title).and_return('Moon extraction') }
+
+    subject { event.as_json }
 
     its([:event_date]) { should eq(event_date) }
 
-    its([:title]) { should eq('Moon extraction') }
+    its([:event_id]) { should eq(1_635_247) }
+
+    its([:event_response]) { should eq('not_responded') }
 
     its([:importance]) { should eq(0) }
 
-    its([:event_response]) { should eq('not_responded') }
-  end
-
-  describe '#event_id' do
-    before { expect(options).to receive(:[]).with('event_id') }
-
-    specify { expect { subject.event_id }.not_to raise_error }
+    its([:title]) { should eq('Moon extraction') }
   end
 
   describe '#event_date' do
@@ -72,10 +66,16 @@ describe EveOnline::ESI::Models::Event do
     end
   end
 
-  describe '#title' do
-    before { expect(options).to receive(:[]).with('title') }
+  describe '#event_id' do
+    before { expect(options).to receive(:[]).with('event_id') }
 
-    specify { expect { subject.title }.not_to raise_error }
+    specify { expect { subject.event_id }.not_to raise_error }
+  end
+
+  describe '#event_response' do
+    before { expect(options).to receive(:[]).with('event_response') }
+
+    specify { expect { subject.event_response }.not_to raise_error }
   end
 
   describe '#importance' do
@@ -84,9 +84,9 @@ describe EveOnline::ESI::Models::Event do
     specify { expect { subject.importance }.not_to raise_error }
   end
 
-  describe '#event_response' do
-    before { expect(options).to receive(:[]).with('event_response') }
+  describe '#title' do
+    before { expect(options).to receive(:[]).with('title') }
 
-    specify { expect { subject.event_response }.not_to raise_error }
+    specify { expect { subject.title }.not_to raise_error }
   end
 end

@@ -18,37 +18,37 @@ describe EveOnline::ESI::Models::Blueprint do
 
     before { expect(blueprint).to receive(:item_id).and_return(716_338_097) }
 
-    before { expect(blueprint).to receive(:type_id).and_return(1010) }
+    before { expect(blueprint).to receive(:location_flag).and_return('Hangar') }
 
     before { expect(blueprint).to receive(:location_id).and_return(61_000_032) }
 
-    before { expect(blueprint).to receive(:quantity).and_return(-2) }
-
-    before { expect(blueprint).to receive(:time_efficiency).and_return(0) }
-
     before { expect(blueprint).to receive(:material_efficiency).and_return(10) }
+
+    before { expect(blueprint).to receive(:quantity).and_return(-2) }
 
     before { expect(blueprint).to receive(:runs).and_return(300) }
 
-    before { expect(blueprint).to receive(:location_flag).and_return('Hangar') }
+    before { expect(blueprint).to receive(:time_efficiency).and_return(0) }
+
+    before { expect(blueprint).to receive(:type_id).and_return(1010) }
 
     subject { blueprint.as_json }
 
     its([:item_id]) { should eq(716_338_097) }
 
-    its([:type_id]) { should eq(1010) }
+    its([:location_flag]) { should eq('Hangar') }
 
     its([:location_id]) { should eq(61_000_032) }
 
-    its([:quantity]) { should eq(-2) }
-
-    its([:time_efficiency]) { should eq(0) }
-
     its([:material_efficiency]) { should eq(10) }
+
+    its([:quantity]) { should eq(-2) }
 
     its([:runs]) { should eq(300) }
 
-    its([:location_flag]) { should eq('Hangar') }
+    its([:time_efficiency]) { should eq(0) }
+
+    its([:type_id]) { should eq(1010) }
   end
 
   describe '#item_id' do

@@ -48,6 +48,56 @@ describe EveOnline::ESI::Alliance do
     specify { expect { subject.as_json }.not_to raise_error }
   end
 
+  describe '#creator_corporation_id' do
+    let(:model) { double }
+
+    before { subject.instance_variable_set(:@_memoized_model, model) }
+
+    before { expect(model).to receive(:creator_corporation_id) }
+
+    specify { expect { subject.creator_corporation_id }.not_to raise_error }
+  end
+
+  describe '#creator_id' do
+    let(:model) { double }
+
+    before { subject.instance_variable_set(:@_memoized_model, model) }
+
+    before { expect(model).to receive(:creator_id) }
+
+    specify { expect { subject.creator_id }.not_to raise_error }
+  end
+
+  describe '#date_founded' do
+    let(:model) { double }
+
+    before { subject.instance_variable_set(:@_memoized_model, model) }
+
+    before { expect(model).to receive(:date_founded) }
+
+    specify { expect { subject.date_founded }.not_to raise_error }
+  end
+
+  describe '#executor_corporation_id' do
+    let(:model) { double }
+
+    before { subject.instance_variable_set(:@_memoized_model, model) }
+
+    before { expect(model).to receive(:executor_corporation_id) }
+
+    specify { expect { subject.executor_corporation_id }.not_to raise_error }
+  end
+
+  describe '#faction_id' do
+    let(:model) { double }
+
+    before { subject.instance_variable_set(:@_memoized_model, model) }
+
+    before { expect(model).to receive(:faction_id) }
+
+    specify { expect { subject.faction_id }.not_to raise_error }
+  end
+
   describe '#name' do
     let(:model) { double }
 
@@ -66,56 +116,6 @@ describe EveOnline::ESI::Alliance do
     before { expect(model).to receive(:ticker) }
 
     specify { expect { subject.ticker }.not_to raise_error }
-  end
-
-  describe '#creator_id' do
-    let(:model) { double }
-
-    before { subject.instance_variable_set(:@_memoized_model, model) }
-
-    before { expect(model).to receive(:creator_id) }
-
-    specify { expect { subject.creator_id }.not_to raise_error }
-  end
-
-  describe '#creator_corporation_id' do
-    let(:model) { double }
-
-    before { subject.instance_variable_set(:@_memoized_model, model) }
-
-    before { expect(model).to receive(:creator_corporation_id) }
-
-    specify { expect { subject.creator_corporation_id }.not_to raise_error }
-  end
-
-  describe '#executor_corporation_id' do
-    let(:model) { double }
-
-    before { subject.instance_variable_set(:@_memoized_model, model) }
-
-    before { expect(model).to receive(:executor_corporation_id) }
-
-    specify { expect { subject.executor_corporation_id }.not_to raise_error }
-  end
-
-  describe '#date_founded' do
-    let(:model) { double }
-
-    before { subject.instance_variable_set(:@_memoized_model, model) }
-
-    before { expect(model).to receive(:date_founded) }
-
-    specify { expect { subject.date_founded }.not_to raise_error }
-  end
-
-  describe '#faction_id' do
-    let(:model) { double }
-
-    before { subject.instance_variable_set(:@_memoized_model, model) }
-
-    before { expect(model).to receive(:faction_id) }
-
-    specify { expect { subject.faction_id }.not_to raise_error }
   end
 
   describe '#scope' do

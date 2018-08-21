@@ -17,9 +17,9 @@ module EveOnline
         @alliance_id = options[:alliance_id]
       end
 
-      def_delegators :model, :as_json, :name, :ticker, :creator_id,
-                     :creator_corporation_id, :executor_corporation_id,
-                     :date_founded, :faction_id
+      def_delegators :model, :as_json, :creator_corporation_id, :creator_id,
+                     :date_founded, :executor_corporation_id, :faction_id,
+                     :name, :ticker
 
       def model
         Models::Alliance.new(response)

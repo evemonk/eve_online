@@ -48,76 +48,6 @@ describe EveOnline::ESI::Character do
     specify { expect { subject.as_json }.not_to raise_error }
   end
 
-  describe '#corporation_id' do
-    let(:model) { double }
-
-    before { subject.instance_variable_set(:@_memoized_model, model) }
-
-    before { expect(model).to receive(:corporation_id) }
-
-    specify { expect { subject.corporation_id }.not_to raise_error }
-  end
-
-  describe '#birthday' do
-    let(:model) { double }
-
-    before { subject.instance_variable_set(:@_memoized_model, model) }
-
-    before { expect(model).to receive(:birthday) }
-
-    specify { expect { subject.birthday }.not_to raise_error }
-  end
-
-  describe '#name' do
-    let(:model) { double }
-
-    before { subject.instance_variable_set(:@_memoized_model, model) }
-
-    before { expect(model).to receive(:name) }
-
-    specify { expect { subject.name }.not_to raise_error }
-  end
-
-  describe '#gender' do
-    let(:model) { double }
-
-    before { subject.instance_variable_set(:@_memoized_model, model) }
-
-    before { expect(model).to receive(:gender) }
-
-    specify { expect { subject.gender }.not_to raise_error }
-  end
-
-  describe '#race_id' do
-    let(:model) { double }
-
-    before { subject.instance_variable_set(:@_memoized_model, model) }
-
-    before { expect(model).to receive(:race_id) }
-
-    specify { expect { subject.race_id }.not_to raise_error }
-  end
-
-  describe '#bloodline_id' do
-    let(:model) { double }
-
-    before { subject.instance_variable_set(:@_memoized_model, model) }
-
-    before { expect(model).to receive(:bloodline_id) }
-
-    specify { expect { subject.bloodline_id }.not_to raise_error }
-  end
-
-  describe '#description' do
-    let(:model) { double }
-
-    before { subject.instance_variable_set(:@_memoized_model, model) }
-
-    before { expect(model).to receive(:description) }
-
-    specify { expect { subject.description }.not_to raise_error }
-  end
-
   describe '#alliance_id' do
     let(:model) { double }
 
@@ -138,14 +68,44 @@ describe EveOnline::ESI::Character do
     specify { expect { subject.ancestry_id }.not_to raise_error }
   end
 
-  describe '#security_status' do
+  describe '#birthday' do
     let(:model) { double }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
-    before { expect(model).to receive(:security_status) }
+    before { expect(model).to receive(:birthday) }
 
-    specify { expect { subject.security_status }.not_to raise_error }
+    specify { expect { subject.birthday }.not_to raise_error }
+  end
+
+  describe '#bloodline_id' do
+    let(:model) { double }
+
+    before { subject.instance_variable_set(:@_memoized_model, model) }
+
+    before { expect(model).to receive(:bloodline_id) }
+
+    specify { expect { subject.bloodline_id }.not_to raise_error }
+  end
+
+  describe '#corporation_id' do
+    let(:model) { double }
+
+    before { subject.instance_variable_set(:@_memoized_model, model) }
+
+    before { expect(model).to receive(:corporation_id) }
+
+    specify { expect { subject.corporation_id }.not_to raise_error }
+  end
+
+  describe '#description' do
+    let(:model) { double }
+
+    before { subject.instance_variable_set(:@_memoized_model, model) }
+
+    before { expect(model).to receive(:description) }
+
+    specify { expect { subject.description }.not_to raise_error }
   end
 
   describe '#faction_id' do
@@ -156,6 +116,46 @@ describe EveOnline::ESI::Character do
     before { expect(model).to receive(:faction_id) }
 
     specify { expect { subject.faction_id }.not_to raise_error }
+  end
+
+  describe '#gender' do
+    let(:model) { double }
+
+    before { subject.instance_variable_set(:@_memoized_model, model) }
+
+    before { expect(model).to receive(:gender) }
+
+    specify { expect { subject.gender }.not_to raise_error }
+  end
+
+  describe '#name' do
+    let(:model) { double }
+
+    before { subject.instance_variable_set(:@_memoized_model, model) }
+
+    before { expect(model).to receive(:name) }
+
+    specify { expect { subject.name }.not_to raise_error }
+  end
+
+  describe '#race_id' do
+    let(:model) { double }
+
+    before { subject.instance_variable_set(:@_memoized_model, model) }
+
+    before { expect(model).to receive(:race_id) }
+
+    specify { expect { subject.race_id }.not_to raise_error }
+  end
+
+  describe '#security_status' do
+    let(:model) { double }
+
+    before { subject.instance_variable_set(:@_memoized_model, model) }
+
+    before { expect(model).to receive(:security_status) }
+
+    specify { expect { subject.security_status }.not_to raise_error }
   end
 
   describe '#scope' do

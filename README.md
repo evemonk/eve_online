@@ -1,4 +1,4 @@
-# EveOnline ESI API.
+# EveOnline ESI API
 
 [![Gem Version](https://badge.fury.io/rb/eve_online.svg)](https://badge.fury.io/rb/eve_online)
 [![Gem Downloads](https://img.shields.io/gem/dt/eve_online.svg)](https://rubygems.org/gems/eve_online)
@@ -22,9 +22,8 @@ This gem was extracted from [EveMonk](http://evemonk.com). Source code of evemon
 * [Contributing](#contributing)
 * [TODO](#todo)
 * [Author](#author)
-* [Contributors. Thank you everyone!](#contributors-thank-you-everyone)
+* [Contributors](#contributors)
 * [License](#license)
-
 
 ## Installation
 
@@ -36,28 +35,32 @@ gem 'eve_online'
 
 And then execute:
 
-    $ bundle
+```shell
+bundle
+```
 
 Or install it yourself as:
 
-    $ gem install eve_online
+```shell
+gem install eve_online
+```
 
 ## Supported ruby versions
 
- * MRI 2.3
- * MRI 2.4
- * MRI 2.5
- * MRI (head)
- * JRuby 9.2.0.0
- * JRuby (head)
+* MRI 2.3
+* MRI 2.4
+* MRI 2.5
+* MRI (head)
+* JRuby 9.2.0.0
+* JRuby (head)
 
 ## Supported rails versions
 
- * 4.2
- * 5.0
- * 5.1
- * 5.2
- * Edge
+* 4.2
+* 5.0
+* 5.1
+* 5.2
+* Edge
 
 ## Usage examples
 
@@ -84,21 +87,21 @@ alliance = EveOnline::ESI::Alliance.new(options)
 
 alliance.scope # => nil
 
-alliance.as_json # => {:name=>"Kids With Guns Alliance",
-                 #     :ticker=>"-KWG-",
+alliance.as_json # => {:creator_corporation_id=>98306624,
                  #     :creator_id=>94195096,
-                 #     :creator_corporation_id=>98306624,
-                 #     :executor_corporation_id=>98306624,
                  #     :date_founded=>Sun, 03 May 2015 19:45:17 UTC +00:00,
-                 #     :faction_id=>nil}
+                 #     :executor_corporation_id=>98306624,
+                 #     :faction_id=>nil,
+                 #     :name=>"Kids With Guns Alliance",
+                 #     :ticker=>"-KWG-"}
 
+alliance.creator_corporation_id # => 98306624
+alliance.creator_id # => 94195096
+alliance.date_founded # => Sun, 03 May 2015 19:45:17 UTC +00:00
+alliance.executor_corporation_id # => 98306624
+alliance.faction_id # => nil
 alliance.name # => "Kids With Guns Alliance"
 alliance.ticker # => "-KWG-"
-alliance.creator_id # => 94195096
-alliance.creator_corporation_id # => 98306624
-alliance.executor_corporation_id # => 98306624
-alliance.date_founded # => Sun, 03 May 2015 19:45:17 UTC +00:00
-alliance.faction_id # => nil
 ```
 
 #### List alliance's corporations
@@ -124,30 +127,11 @@ alliance_icon = EveOnline::ESI::AllianceIcon.new(options)
 
 alliance_icon.scope # => nil
 
-alliance_icon.as_json # => {:icon_small=>"http://image.eveonline.com/Alliance/99005443_64.png", :icon_medium=>"http://image.eveonline.com/Alliance/99005443_128.png"}
+alliance_icon.as_json # => {:icon_small=>"http://image.eveonline.com/Alliance/99005443_64.png",
+                      #     :icon_medium=>"http://image.eveonline.com/Alliance/99005443_128.png"}
 
 alliance_icon.icon_small # => "http://image.eveonline.com/Alliance/99005443_64.png"
 alliance_icon.icon_medium # => "http://image.eveonline.com/Alliance/99005443_128.png"
-```
-
-#### Get alliance names
-
-```ruby
-options = { alliance_ids: [99005443, 99005443] }
-
-alliances_names = EveOnline::ESI::AlliancesNames.new(options)
-
-alliances_names.scope # => nil
-
-alliances_names.alliances.size # => 2
-
-alliance = alliances_names.alliances.first
-
-alliance.as_json
-# => {:alliance_id=>99005443, :alliance_name=>"Kids With Guns Alliance"}
-
-alliance.alliance_id # => 99005443
-alliance.alliance_name # => "Kids With Guns Alliance"
 ```
 
 ### Assets
@@ -165,21 +149,23 @@ character_assets.assets.size # => 486
 
 asset = character_assets.assets.first
 
-asset.as_json # => {:type_id=>2629,
-              #     :location_id=>60008674,
-              #     :location_type=>"station",
-              #     :item_id=>1006604012678,
+asset.as_json # => {:is_blueprint_copy=>true,
+              #     :is_singleton=>true,
+              #     :item_id=>716338097,
               #     :location_flag=>"Hangar",
-              #     :is_singleton=>false,
-              #     :quantity=>16156}
+              #     :location_id=>1027847409779,
+              #     :location_type=>"other",
+              #     :quantity=>1
+              #     :type_id=>1010}
 
-asset.type_id # => 2629
-asset.location_id # => 60008674
-asset.location_type # => "station"
-asset.item_id # => 1006604012678
+asset.is_blueprint_copy # => true
+asset.is_singleton # => true
+asset.item_id # => 716338097
 asset.location_flag # => "Hangar"
-asset.is_singleton # => false
-asset.quantity # => 16156
+asset.location_id # => 1027847409779
+asset.location_type # => "other"
+asset.quantity # => 1
+asset.type_id # => 1010
 
 # TODO: add pagination support
 ```
@@ -210,30 +196,32 @@ character_bookmarks.bookmarks.size # => 20
 bookmark = character_bookmarks.bookmarks.first
 
 bookmark.as_json # => {:bookmark_id=>4,
-                 #     :folder_id=>5,
-                 #     :created=>Mon, 09 Jul 2012 22:38:31 UTC +00:00,
-                 #     :label=>"Stargate",
-                 #     :notes=>"This is a stargate",
-                 #     :location_id=>30003430,
-                 #     :creator_id=>2112625428,
-                 #     :item_id=>30003496,
-                 #     :item_type_id=>5,
                  #     :coordinate_x=>-144951231521.81625,
                  #     :coordinate_y=>164030047870.25558,
-                 #     :coordinate_z=>211467631848.1311}
+                 #     :coordinate_z=>211467631848.1311,
+                 #     :created=>Mon, 09 Jul 2012 22:38:31 UTC +00:00,
+                 #     :creator_id=>2112625428,
+                 #     :folder_id=>5,
+                 #     :item_id=>30003496,
+                 #     :item_type_id=>5,
+                 #     :label=>"Stargate",
+                 #     :location_id=>30003430,
+                 #     :notes=>"This is a stargate"}
 
 bookmark.bookmark_id # => 4
-bookmark.folder_id # => 5
-bookmark.created # => Mon, 09 Jul 2012 22:38:31 UTC +00:00
-bookmark.label # => "Stargate"
-bookmark.notes # => "This is a stargate"
-bookmark.location_id # => 30003430
-bookmark.creator_id # => 2112625428
-bookmark.item_id # => 30003496
-bookmark.item_type_id # => 5
 bookmark.coordinate_x # => -144951231521.81625
 bookmark.coordinate_y # => 164030047870.25558
 bookmark.coordinate_z # => 211467631848.1311
+bookmark.created # => Mon, 09 Jul 2012 22:38:31 UTC +00:00
+bookmark.creator_id # => 2112625428
+bookmark.folder_id # => 5
+bookmark.item_id # => 30003496
+bookmark.item_type_id # => 5
+bookmark.label # => "Stargate"
+bookmark.location_id # => 30003430
+bookmark.notes # => "This is a stargate"
+
+# TODO: add pagination support
 ```
 
 #### List bookmark folders
@@ -254,6 +242,8 @@ bookmark_folder.as_json # => {:folder_id=>5,
 
 bookmark_folder.folder_id # => 5
 bookmark_folder.name # => "Icecream"
+
+# TODO: add pagination support
 ```
 
 #### List corporation bookmarks
@@ -275,17 +265,17 @@ character_calendar.events.size # => 22
 
 event = character_calendar.events.first
 
-event.as_json # => {:event_id=>1635240,
-              #     :event_date=>Tue, 06 Mar 2018 15:00:59 UTC +00:00,
-              #     :title=>"Moon extraction for 66-PMM - GoldMine-5-",
+event.as_json # => {:event_date=>Tue, 06 Mar 2018 15:00:59 UTC +00:00,
+              #     :event_id=>1635240,
+              #     :event_response=>"not_responded",
               #     :importance=>0,
-              #     :event_response=>"not_responded"}
+              #     :title=>"Moon extraction for 66-PMM - GoldMine-5-"}
 
-event.event_id # => 1635240
 event.event_date # => Tue, 06 Mar 2018 15:00:59 UTC +00:00
-event.title # => "Moon extraction for 66-PMM - GoldMine-5-"
-event.importance # => 0
+event.event_id # => 1635240
 event.event_response # => "not_responded"
+event.importance # => 0
+event.title # => "Moon extraction for 66-PMM - GoldMine-5-"
 
 # TODO: add from_event support
 ```
@@ -307,20 +297,29 @@ character = EveOnline::ESI::Character.new(options)
 
 character.scope # => nil
 
-character.as_json
-# => {:corporation_id=>1000168, :birthday=>Fri, 15 Jan 2010 15:26:00 UTC +00:00, :name=>"Green Black", :gender=>"male", :race_id=>2, :bloodline_id=>4, :description=>"", :alliance_id=>12345678, :ancestry_id=>24, :security_status=>1.8694881661345457, :faction_id=>500001}
+character.as_json # => {:alliance_id=>12345678,
+                  #     :ancestry_id=>24,
+                  #     :birthday=>Fri, 15 Jan 2010 15:26:00 UTC +00:00,
+                  #     :bloodline_id=>4,
+                  #     :corporation_id=>1000168,
+                  #     :description=>"",
+                  #     :faction_id=>500001,
+                  #     :gender=>"male",
+                  #     :name=>"Green Black",
+                  #     :race_id=>2,
+                  #     :security_status=>1.8694881661345457}
 
-character.corporation_id # => 1000168
-character.birthday # => Fri, 15 Jan 2010 15:26:00 UTC +00:00
-character.name # => "Green Black"
-character.gender # => "male"
-character.race_id # => 2
-character.bloodline_id # => 4
-character.description  # => ""
 character.alliance_id # => 12345678
 character.ancestry_id # => 24
-character.security_status # => 1.8694881661345457
+character.birthday # => Fri, 15 Jan 2010 15:26:00 UTC +00:00
+character.bloodline_id # => 4
+character.corporation_id # => 1000168
+character.description  # => ""
 character.faction_id # => 500001
+character.gender # => "male"
+character.name # => "Green Black"
+character.race_id # => 2
+character.security_status # => 1.8694881661345457
 ```
 
 #### Get agents research
@@ -1601,6 +1600,7 @@ faraday.options.open_timeout = 60
 ```
 
 You can configure default timeouts with adding `read_timeout:` and `open_timeout:` to default hash with options:
+
 ```ruby
 options = { read_timeout: 120, open_timeout: 120 } # 120 seconds
 
@@ -1608,6 +1608,7 @@ races = EveOnline::ESI::Races.new(options)
 ```
 
 Or, dynamically:
+
 ```ruby
 races = EveOnline::ESI::Races.new
 
@@ -1637,13 +1638,15 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Issue reports and pull requests are welcome on GitHub at https://github.com/biow0lf/eve_online.
+Issue reports and pull requests are welcome on GitHub at <https://github.com/biow0lf/eve_online>.
 
 ## Author
 
 * Igor Zubkov (@biow0lf)
 
-## Contributors. Thank you everyone!
+## Contributors
+
+Thank you everyone!
 
 * Ian Flynn (@monban)
 * Mekaret Eriker (@Mekaret)
