@@ -1622,7 +1622,7 @@ races.read_timeout # => 120
 
 ## Datasource
 
-Default datasource is `tranquility`. If you want to change it to, for e.g. to `singularity`, add `datasource:` with datasource name to default hash with options:
+Default datasource is `tranquility`. If you want to change it, for e.g., to `singularity`, add `datasource: 'singularity'` to default hash with options:
 
 ```ruby
 options = { datasource: 'singularity' }
