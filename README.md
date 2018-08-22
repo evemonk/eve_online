@@ -20,7 +20,6 @@ This gem was extracted from [EveMonk](http://evemonk.com). Source code of evemon
 * [Useful links](#useful-links)
 * [Development](#development)
 * [Contributing](#contributing)
-* [TODO](#todo)
 * [Author](#author)
 * [Contributors](#contributors)
 * [License](#license)
