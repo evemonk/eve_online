@@ -12,6 +12,8 @@ describe EveOnline::ESI::CorporationBlueprints do
   specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/v2/corporations/%<corporation_id>s/blueprints/?datasource=%<datasource>s&page=1') }
 
   describe '#initialize' do
+    its(:token) { should eq('token123') }
+
     its(:parser) { should eq(JSON) }
 
     its(:datasource) { should eq('tranquility') }

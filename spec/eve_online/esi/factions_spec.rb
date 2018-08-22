@@ -12,6 +12,8 @@ describe EveOnline::ESI::Factions do
   specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/v2/universe/factions/?datasource=%<datasource>s&language=en-us') }
 
   describe '#initialize' do
+    its(:token) { should eq(nil) }
+
     its(:parser) { should eq(JSON) }
 
     its(:datasource) { should eq('tranquility') }
