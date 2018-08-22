@@ -16,6 +16,10 @@ describe EveOnline::ESI::MarketHistory do
 
     its(:parser) { should eq(JSON) }
 
+    its(:_read_timeout) { should eq(60) }
+
+    its(:_open_timeout) { should eq(60) }
+
     its(:datasource) { should eq('tranquility') }
 
     its(:region_id) { should eq(10_000_002) }

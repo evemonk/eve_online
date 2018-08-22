@@ -12,6 +12,10 @@ describe EveOnline::ESI::Alliances do
 
     its(:parser) { should eq(JSON) }
 
+    its(:_read_timeout) { should eq(60) }
+
+    its(:_open_timeout) { should eq(60) }
+
     its(:datasource) { should eq('tranquility') }
   end
 
