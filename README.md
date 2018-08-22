@@ -1625,7 +1625,7 @@ races.read_timeout # => 120
 Default datasource is `tranquility`. If you want to change it to, for e.g. to `singularity`, add `datasource:` with datasource name to default hash with options:
 
 ```ruby
-options = { datasource: 'singularity' } # singularity
+options = { datasource: 'singularity' }
 
 races = EveOnline::ESI::Races.new(options)
 ```
