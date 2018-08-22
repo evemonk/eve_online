@@ -5,6 +5,7 @@
 * Sync with new ESI API
 * Remove `EveOnline::ESI::AlliancesNames`
 * Lint `README.md` and `CHANGELOG.md` with `mdl` gem
+* Add datasource support. Just add `datasource: tranquility` or `datasource: singularity` to options. Default is `tranquility`.
 
 ## v0.16.0
 

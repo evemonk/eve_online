@@ -9,12 +9,14 @@ describe EveOnline::ESI::Character do
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/v4/characters/%<character_id>s/?datasource=tranquility') }
+  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/v4/characters/%<character_id>s/?datasource=%<datasource>s') }
 
   describe '#initialize' do
     its(:token) { should eq(nil) }
 
     its(:parser) { should eq(JSON) }
+
+    its(:datasource) { should eq('tranquility') }
 
     its(:character_id) { should eq(12_345_678) }
   end

@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class UniverseTypes < Base
-      API_ENDPOINT = 'https://esi.tech.ccp.is/v1/universe/types/?datasource=tranquility&page=1'
+      API_ENDPOINT = 'https://esi.tech.ccp.is/v1/universe/types/?datasource=%<datasource>s&page=1'
 
       def universe_types_ids
         response
@@ -12,7 +12,7 @@ module EveOnline
       def scope; end
 
       def url
-        API_ENDPOINT
+        format(API_ENDPOINT, datasource: datasource)
       end
     end
   end

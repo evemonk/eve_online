@@ -5,12 +5,14 @@ require 'spec_helper'
 describe EveOnline::ESI::ServerStatus do
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/v1/status/?datasource=tranquility') }
+  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/v1/status/?datasource=%<datasource>s') }
 
   describe '#initialize' do
     its(:token) { should eq(nil) }
 
     its(:parser) { should eq(JSON) }
+
+    its(:datasource) { should eq('tranquility') }
   end
 
   describe '#model' do

@@ -7,7 +7,7 @@ module EveOnline
     class DogmaAttribute < Base
       extend Forwardable
 
-      API_ENDPOINT = 'https://esi.tech.ccp.is/v1/dogma/attributes/%<attribute_id>s/?datasource=tranquility'
+      API_ENDPOINT = 'https://esi.tech.ccp.is/v1/dogma/attributes/%<attribute_id>s/?datasource=%<datasource>s'
 
       attr_reader :attribute_id
 
@@ -29,7 +29,7 @@ module EveOnline
       def scope; end
 
       def url
-        format(API_ENDPOINT, attribute_id: attribute_id)
+        format(API_ENDPOINT, attribute_id: attribute_id, datasource: datasource)
       end
     end
   end

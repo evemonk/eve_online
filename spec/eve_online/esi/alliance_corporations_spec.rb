@@ -9,12 +9,14 @@ describe EveOnline::ESI::AllianceCorporations do
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/v1/alliances/%<alliance_id>s/corporations/?datasource=tranquility') }
+  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/v1/alliances/%<alliance_id>s/corporations/?datasource=%<datasource>s') }
 
   describe '#initialize' do
     its(:token) { should eq(nil) }
 
     its(:parser) { should eq(JSON) }
+
+    its(:datasource) { should eq('tranquility') }
 
     its(:alliance_id) { should eq(99_005_443) }
   end

@@ -9,12 +9,14 @@ describe EveOnline::ESI::CharacterIndustryJobs do
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/v1/characters/%<character_id>s/industry/jobs/?datasource=tranquility&include_completed=%<include_completed>s') }
+  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/v1/characters/%<character_id>s/industry/jobs/?datasource=%<datasource>s&include_completed=%<include_completed>s') }
 
   describe '#initialize' do
     its(:token) { should eq('token123') }
 
     its(:parser) { should eq(JSON) }
+
+    its(:datasource) { should eq('tranquility') }
 
     its(:character_id) { should eq(12_345_678) }
 

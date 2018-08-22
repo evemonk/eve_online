@@ -7,7 +7,7 @@ module EveOnline
     class UniverseType < Base
       extend Forwardable
 
-      API_ENDPOINT = 'https://esi.tech.ccp.is/v3/universe/types/%<type_id>s/?datasource=tranquility&language=en-us'
+      API_ENDPOINT = 'https://esi.tech.ccp.is/v3/universe/types/%<type_id>s/?datasource=%<datasource>s&language=en-us'
 
       attr_reader :type_id
 
@@ -30,7 +30,7 @@ module EveOnline
       def scope; end
 
       def url
-        format(API_ENDPOINT, type_id: type_id)
+        format(API_ENDPOINT, type_id: type_id, datasource: datasource)
       end
     end
   end

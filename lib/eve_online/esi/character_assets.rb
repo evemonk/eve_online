@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class CharacterAssets < Base
-      API_ENDPOINT = 'https://esi.tech.ccp.is/v3/characters/%<character_id>s/assets/?datasource=tranquility&page=1'
+      API_ENDPOINT = 'https://esi.tech.ccp.is/v3/characters/%<character_id>s/assets/?datasource=%<datasource>s&page=1'
 
       attr_reader :character_id
 
@@ -27,7 +27,7 @@ module EveOnline
       end
 
       def url
-        format(API_ENDPOINT, character_id: character_id)
+        format(API_ENDPOINT, character_id: character_id, datasource: datasource)
       end
     end
   end

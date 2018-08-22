@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class DogmaAttributes < Base
-      API_ENDPOINT = 'https://esi.tech.ccp.is/v1/dogma/attributes/?datasource=tranquility'
+      API_ENDPOINT = 'https://esi.tech.ccp.is/v1/dogma/attributes/?datasource=%<datasource>s'
 
       def attributes
         response
@@ -12,7 +12,7 @@ module EveOnline
       def scope; end
 
       def url
-        API_ENDPOINT
+        format(API_ENDPOINT, datasource: datasource)
       end
     end
   end

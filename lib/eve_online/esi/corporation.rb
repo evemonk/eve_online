@@ -7,7 +7,7 @@ module EveOnline
     class Corporation < Base
       extend Forwardable
 
-      API_ENDPOINT = 'https://esi.tech.ccp.is/v4/corporations/%<corporation_id>s/?datasource=tranquility'
+      API_ENDPOINT = 'https://esi.tech.ccp.is/v4/corporations/%<corporation_id>s/?datasource=%<datasource>s'
 
       attr_reader :corporation_id
 
@@ -30,7 +30,7 @@ module EveOnline
       def scope; end
 
       def url
-        format(API_ENDPOINT, corporation_id: corporation_id)
+        format(API_ENDPOINT, corporation_id: corporation_id, datasource: datasource)
       end
     end
   end

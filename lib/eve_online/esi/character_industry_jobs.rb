@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class CharacterIndustryJobs < Base
-      API_ENDPOINT = 'https://esi.tech.ccp.is/v1/characters/%<character_id>s/industry/jobs/?datasource=tranquility&include_completed=%<include_completed>s'
+      API_ENDPOINT = 'https://esi.tech.ccp.is/v1/characters/%<character_id>s/industry/jobs/?datasource=%<datasource>s&include_completed=%<include_completed>s'
 
       attr_reader :character_id, :include_completed
 
@@ -28,7 +28,7 @@ module EveOnline
       end
 
       def url
-        format(API_ENDPOINT, character_id: character_id, include_completed: include_completed)
+        format(API_ENDPOINT, character_id: character_id, include_completed: include_completed, datasource: datasource)
       end
     end
   end

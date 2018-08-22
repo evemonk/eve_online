@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class Alliances < Base
-      API_ENDPOINT = 'https://esi.tech.ccp.is/v1/alliances/?datasource=tranquility'
+      API_ENDPOINT = 'https://esi.tech.ccp.is/v1/alliances/?datasource=%<datasource>s'
 
       def alliances
         response
@@ -12,7 +12,7 @@ module EveOnline
       def scope; end
 
       def url
-        API_ENDPOINT
+        format(API_ENDPOINT, datasource: datasource)
       end
     end
   end
