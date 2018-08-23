@@ -14,7 +14,7 @@ module EveOnline
       def initialize(options)
         super
 
-        @type_id = options[:type_id]
+        @type_id = options.fetch(:type_id)
       end
 
       def_delegators :model, :as_json, :name, :description,

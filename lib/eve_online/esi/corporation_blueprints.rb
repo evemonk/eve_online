@@ -10,7 +10,7 @@ module EveOnline
       def initialize(options)
         super
 
-        @corporation_id = options[:corporation_id]
+        @corporation_id = options.fetch(:corporation_id)
       end
 
       def blueprints

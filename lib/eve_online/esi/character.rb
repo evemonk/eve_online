@@ -14,7 +14,7 @@ module EveOnline
       def initialize(options)
         super
 
-        @character_id = options[:character_id]
+        @character_id = options.fetch(:character_id)
       end
 
       def_delegators :model, :as_json, :alliance_id, :ancestry_id, :birthday,

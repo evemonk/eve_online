@@ -14,7 +14,7 @@ module EveOnline
       def initialize(options)
         super
 
-        @attribute_id = options[:attribute_id]
+        @attribute_id = options.fetch(:attribute_id)
       end
 
       def_delegators :model, :as_json, :id, :name, :description, :icon_id,

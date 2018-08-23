@@ -10,8 +10,8 @@ module EveOnline
       def initialize(options)
         super
 
-        @region_id = options[:region_id]
-        @type_id = options[:type_id]
+        @region_id = options.fetch(:region_id)
+        @type_id = options.fetch(:type_id)
       end
 
       def history

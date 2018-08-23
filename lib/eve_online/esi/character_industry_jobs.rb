@@ -10,7 +10,7 @@ module EveOnline
       def initialize(options)
         super
 
-        @character_id = options[:character_id]
+        @character_id = options.fetch(:character_id)
         @include_completed = options[:include_completed] ? true : false
       end
 
