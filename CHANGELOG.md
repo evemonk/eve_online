@@ -6,6 +6,7 @@
 * Remove `EveOnline::ESI::AlliancesNames`
 * Lint `README.md` and `CHANGELOG.md` with `mdl` gem
 * Add datasource support. Just add `datasource: tranquility` or `datasource: singularity` to options. Default is `tranquility`.
+* Allow change response parser from `JSON` to any json parser compatible with gem `json`. Add `parser: Oj` for `Oj` to default options hash to enable.
 
 ## v0.16.0
 

@@ -14,7 +14,7 @@ module EveOnline
 
       def initialize(options = {})
         @token = options[:token]
-        @parser = JSON
+        @parser = options[:parser] || JSON
         @_read_timeout = options[:read_timeout] || 60
         @_open_timeout = options[:open_timeout] || 60
         @datasource = options[:datasource] || 'tranquility'
