@@ -24,14 +24,18 @@ describe EveOnline::ESI::CharacterIndustryJobs do
 
     its(:character_id) { should eq(12_345_678) }
 
-    context 'with include completed' do
-      its(:include_completed) { should eq(false) }
-    end
+    its(:include_completed) { should eq(false) }
 
-    context 'without include completed' do
+    context 'with include completed' do
       let(:options) { { token: 'token123', character_id: 12_345_678, include_completed: true } }
 
       its(:include_completed) { should eq(true) }
+    end
+
+    context 'without include completed' do
+      let(:options) { { token: 'token123', character_id: 12_345_678, include_completed: false } }
+
+      its(:include_completed) { should eq(false) }
     end
   end
 
