@@ -11,7 +11,7 @@ module EveOnline
         super
 
         @corporation_id = options.fetch(:corporation_id)
-        @include_completed = options[:include_completed] ? true : false
+        @include_completed = options.fetch(:include_completed, false)
       end
 
       def jobs
