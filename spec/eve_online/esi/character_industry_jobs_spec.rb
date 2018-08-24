@@ -12,19 +12,23 @@ describe EveOnline::ESI::CharacterIndustryJobs do
   specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/v1/characters/%<character_id>s/industry/jobs/?datasource=%<datasource>s&include_completed=%<include_completed>s') }
 
   describe '#initialize' do
-    its(:token) { should eq('token123') }
+    context 'with token and character_id' do
+      let(:options) { { token: 'token123', character_id: 12_345_678 } }
 
-    its(:parser) { should eq(JSON) }
+      its(:token) { should eq('token123') }
 
-    its(:_read_timeout) { should eq(60) }
+      its(:parser) { should eq(JSON) }
 
-    its(:_open_timeout) { should eq(60) }
+      its(:_read_timeout) { should eq(60) }
 
-    its(:datasource) { should eq('tranquility') }
+      its(:_open_timeout) { should eq(60) }
 
-    its(:character_id) { should eq(12_345_678) }
+      its(:datasource) { should eq('tranquility') }
 
-    its(:include_completed) { should eq(false) }
+      its(:character_id) { should eq(12_345_678) }
+
+      its(:include_completed) { should eq(false) }
+    end
 
     context 'with include completed' do
       let(:options) { { token: 'token123', character_id: 12_345_678, include_completed: true } }
