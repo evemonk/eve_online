@@ -559,20 +559,19 @@ corporation = EveOnline::ESI::Corporation.new(options)
 
 corporation.scope # => nil
 
-corporation.as_json
-# => {:name=>"Bullshit Bingo Club",
-#     :ticker=>"BUBIC",
-#     :member_count=>60,
-#     :ceo_id=>1721864142,
-#     :alliance_id=>99001258,
-#     :description=>"",
-#     :tax_rate=>0.1,
-#     :date_founded=>Mon, 11 Jul 2016 14:22:17 UTC +00:00,
-#     :creator_id=>1721864142,
-#     :corporation_url=>"http://",
-#     :faction_id=>nil,
-#     :home_station_id=>60011893,
-#     :shares=>1000}
+corporation.as_json # => {:name=>"Bullshit Bingo Club",
+                    #     :ticker=>"BUBIC",
+                    #     :member_count=>60,
+                    #     :ceo_id=>1721864142,
+                    #     :alliance_id=>99001258,
+                    #     :description=>"",
+                    #     :tax_rate=>0.1,
+                    #     :date_founded=>Mon, 11 Jul 2016 14:22:17 UTC +00:00,
+                    #     :creator_id=>1721864142,
+                    #     :corporation_url=>"http://",
+                    #     :faction_id=>nil,
+                    #     :home_station_id=>60011893,
+                    #     :shares=>1000}
 
 corporation.name # => "Bullshit Bingo Club"
 corporation.ticker # => "BUBIC"
