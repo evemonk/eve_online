@@ -452,7 +452,9 @@ character_standing.standings.size # => 37
 
 standing = character_standing.standings.first
 
-standing.as_json # => {:from_id=>500001, :from_type=>"faction", :standing=>0.3303719111639991}
+standing.as_json # => {:from_id=>500001,
+                 #     :from_type=>"faction",
+                 #     :standing=>0.3303719111639991}
 
 standing.from_id # => 500001
 standing.from_type # => "faction"
