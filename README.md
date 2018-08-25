@@ -488,14 +488,17 @@ character_clones.jump_clones.size # => 2
 
 jump_clone = character_clones.jump_clones.first
 
-jump_clone.as_json
-# => {:jump_clone_id=>22357400, :name=>nil, :location_id=>61000032, :location_type=>"station", :implants=>[22118]}
+jump_clone.as_json # => {:implants=>[22118],
+                   #     :jump_clone_id=>22357400,
+                   #     :location_id=>61000032,
+                   #     :location_type=>"station",
+                   #     :name=>nil}
 
+jump_clone.implants # => [22118]
 jump_clone.jump_clone_id # => 22357400
-jump_clone.name # => nil
 jump_clone.location_id # => 61000032
 jump_clone.location_type # => "station"
-jump_clone.implants # => [22118]
+jump_clone.name # => nil
 
 character_clones.last_station_change_date # => Tue, 30 Jun 2015 21:51:13 UTC +00:00
 ```

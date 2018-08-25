@@ -18,39 +18,39 @@ describe EveOnline::ESI::Models::JumpClone do
 
     let(:name) { double }
 
-    before { expect(jump_clone).to receive(:jump_clone_id).and_return(22_357_400) }
+    before { expect(jump_clone).to receive(:implants).and_return([22_118]) }
 
-    before { expect(jump_clone).to receive(:name).and_return(name) }
+    before { expect(jump_clone).to receive(:jump_clone_id).and_return(22_357_400) }
 
     before { expect(jump_clone).to receive(:location_id).and_return(61_000_032) }
 
     before { expect(jump_clone).to receive(:location_type).and_return('station') }
 
-    before { expect(jump_clone).to receive(:implants).and_return([22_118]) }
+    before { expect(jump_clone).to receive(:name).and_return(name) }
 
     subject { jump_clone.as_json }
 
-    its([:jump_clone_id]) { should eq(22_357_400) }
+    its([:implants]) { should eq([22_118]) }
 
-    its([:name]) { should eq(name) }
+    its([:jump_clone_id]) { should eq(22_357_400) }
 
     its([:location_id]) { should eq(61_000_032) }
 
     its([:location_type]) { should eq('station') }
 
-    its([:implants]) { should eq([22_118]) }
+    its([:name]) { should eq(name) }
+  end
+
+  describe '#implants' do
+    before { expect(options).to receive(:[]).with('implants') }
+
+    specify { expect { subject.implants }.not_to raise_error }
   end
 
   describe '#jump_clone_id' do
     before { expect(options).to receive(:[]).with('jump_clone_id') }
 
     specify { expect { subject.jump_clone_id }.not_to raise_error }
-  end
-
-  describe '#name' do
-    before { expect(options).to receive(:[]).with('name') }
-
-    specify { expect { subject.name }.not_to raise_error }
   end
 
   describe '#location_id' do
@@ -65,9 +65,9 @@ describe EveOnline::ESI::Models::JumpClone do
     specify { expect { subject.location_type }.not_to raise_error }
   end
 
-  describe '#implants' do
-    before { expect(options).to receive(:[]).with('implants') }
+  describe '#name' do
+    before { expect(options).to receive(:[]).with('name') }
 
-    specify { expect { subject.implants }.not_to raise_error }
+    specify { expect { subject.name }.not_to raise_error }
   end
 end
