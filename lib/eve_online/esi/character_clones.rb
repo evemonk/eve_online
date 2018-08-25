@@ -13,12 +13,6 @@ module EveOnline
         @character_id = options.fetch(:character_id)
       end
 
-      def last_clone_jump_date
-        last_clone_jump_date = response['last_clone_jump_date']
-
-        parse_datetime_with_timezone(last_clone_jump_date) if last_clone_jump_date
-      end
-
       def home_location
         Models::HomeLocation.new(response['home_location'])
       end
@@ -32,6 +26,12 @@ module EveOnline
         output
       end
       memoize :jump_clones
+
+      def last_clone_jump_date
+        last_clone_jump_date = response['last_clone_jump_date']
+
+        parse_datetime_with_timezone(last_clone_jump_date) if last_clone_jump_date
+      end
 
       def last_station_change_date
         last_station_change_date = response['last_station_change_date']
