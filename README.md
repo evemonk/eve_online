@@ -372,7 +372,9 @@ character_fatigue = EveOnline::ESI::CharacterFatigue.new(options)
 
 character_fatigue.scope # => "esi-characters.read_fatigue.v1"
 
-character_fatigue.as_json # => {:jump_fatigue_expire_date=>nil, :last_jump_date=>nil, :last_update_date=>nil}
+character_fatigue.as_json # => {:jump_fatigue_expire_date=>nil,
+                          #     :last_jump_date=>nil,
+                          #     :last_update_date=>nil}
 
 character_fatigue.jump_fatigue_expire_date # => nil
 character_fatigue.last_jump_date # => nil
