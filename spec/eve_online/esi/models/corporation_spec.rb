@@ -50,31 +50,31 @@ describe EveOnline::ESI::Models::Corporation do
 
     subject { corporation.as_json }
 
-    its([:name]) { should eq('Bullshit Bingo Club') }
-
-    its([:ticker]) { should eq('BUBIC') }
-
-    its([:member_count]) { should eq(60) }
+    its([:alliance_id]) { should eq(99_001_258) }
 
     its([:ceo_id]) { should eq(1_721_864_142) }
 
-    its([:tax_rate]) { should eq(0.1) }
-
     its([:creator_id]) { should eq(1_721_864_142) }
-
-    its([:alliance_id]) { should eq(99_001_258) }
-
-    its([:description]) { should eq(description) }
 
     its([:date_founded]) { should eq(date_founded) }
 
-    its([:corporation_url]) { should eq('http://') }
+    its([:description]) { should eq(description) }
 
     its([:faction_id]) { should eq(faction_id) }
 
     its([:home_station_id]) { should eq(60_011_893) }
 
+    its([:member_count]) { should eq(60) }
+
+    its([:name]) { should eq('Bullshit Bingo Club') }
+
     its([:shares]) { should eq(1000) }
+
+    its([:tax_rate]) { should eq(0.1) }
+
+    its([:ticker]) { should eq('BUBIC') }
+
+    its([:corporation_url]) { should eq('http://') }
   end
 
   describe '#name' do
