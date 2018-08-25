@@ -17,8 +17,7 @@ module EveOnline
         @character_id = options.fetch(:character_id)
       end
 
-      def_delegators :model, :as_json, :tiny, :small, :medium, :large, :huge,
-                     :gigantic
+      def_delegators :model, :as_json, :medium, :large, :huge, :small
 
       def model
         Models::CharacterPortrait.new(response)

@@ -426,13 +426,15 @@ character_portrait = EveOnline::ESI::CharacterPortrait.new(options)
 
 character_portrait.scope # => nil
 
-character_portrait.as_json
-# => {:small=>"http://image.eveonline.com/Character/90729314_64.jpg", :medium=>"http://image.eveonline.com/Character/90729314_128.jpg", :large=>"http://image.eveonline.com/Character/90729314_256.jpg", :huge=>"http://image.eveonline.com/Character/90729314_512.jpg"}
+character_portrait.as_json # => {:medium=>"http://image.eveonline.com/Character/90729314_128.jpg",
+                           #     :large=>"http://image.eveonline.com/Character/90729314_256.jpg",
+                           #     :huge=>"http://image.eveonline.com/Character/90729314_512.jpg"
+                           #     :small=>"http://image.eveonline.com/Character/90729314_64.jpg"}
 
-character_portrait.small # => "http://image.eveonline.com/Character/90729314_64.jpg"
 character_portrait.medium # => "http://image.eveonline.com/Character/90729314_128.jpg"
 character_portrait.large # => "http://image.eveonline.com/Character/90729314_256.jpg"
 character_portrait.huge # => "http://image.eveonline.com/Character/90729314_512.jpg"
+character_portrait.small # => "http://image.eveonline.com/Character/90729314_64.jpg"
 ```
 
 #### Get character corporation roles
