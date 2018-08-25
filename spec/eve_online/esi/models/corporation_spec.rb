@@ -77,22 +77,10 @@ describe EveOnline::ESI::Models::Corporation do
     its([:corporation_url]) { should eq('http://') }
   end
 
-  describe '#name' do
-    before { expect(options).to receive(:[]).with('name') }
+  describe '#alliance_id' do
+    before { expect(options).to receive(:[]).with('alliance_id') }
 
-    specify { expect { subject.name }.not_to raise_error }
-  end
-
-  describe '#ticker' do
-    before { expect(options).to receive(:[]).with('ticker') }
-
-    specify { expect { subject.ticker }.not_to raise_error }
-  end
-
-  describe '#member_count' do
-    before { expect(options).to receive(:[]).with('member_count') }
-
-    specify { expect { subject.member_count }.not_to raise_error }
+    specify { expect { subject.alliance_id }.not_to raise_error }
   end
 
   describe '#ceo_id' do
@@ -101,22 +89,10 @@ describe EveOnline::ESI::Models::Corporation do
     specify { expect { subject.ceo_id }.not_to raise_error }
   end
 
-  describe '#alliance_id' do
-    before { expect(options).to receive(:[]).with('alliance_id') }
+  describe '#creator_id' do
+    before { expect(options).to receive(:[]).with('creator_id') }
 
-    specify { expect { subject.alliance_id }.not_to raise_error }
-  end
-
-  describe '#description' do
-    before { expect(options).to receive(:[]).with('description') }
-
-    specify { expect { subject.description }.not_to raise_error }
-  end
-
-  describe '#tax_rate' do
-    before { expect(options).to receive(:[]).with('tax_rate') }
-
-    specify { expect { subject.tax_rate }.not_to raise_error }
+    specify { expect { subject.creator_id }.not_to raise_error }
   end
 
   describe '#date_founded' do
@@ -144,22 +120,10 @@ describe EveOnline::ESI::Models::Corporation do
     end
   end
 
-  describe '#creator_id' do
-    before { expect(options).to receive(:[]).with('creator_id') }
+  describe '#description' do
+    before { expect(options).to receive(:[]).with('description') }
 
-    specify { expect { subject.creator_id }.not_to raise_error }
-  end
-
-  describe '#corporation_url' do
-    before { expect(options).to receive(:[]).with('url') }
-
-    specify { expect { subject.corporation_url }.not_to raise_error }
-  end
-
-  describe '#home_station_id' do
-    before { expect(options).to receive(:[]).with('home_station_id') }
-
-    specify { expect { subject.home_station_id }.not_to raise_error }
+    specify { expect { subject.description }.not_to raise_error }
   end
 
   describe '#faction_id' do
@@ -168,9 +132,45 @@ describe EveOnline::ESI::Models::Corporation do
     specify { expect { subject.faction_id }.not_to raise_error }
   end
 
+  describe '#home_station_id' do
+    before { expect(options).to receive(:[]).with('home_station_id') }
+
+    specify { expect { subject.home_station_id }.not_to raise_error }
+  end
+
+  describe '#member_count' do
+    before { expect(options).to receive(:[]).with('member_count') }
+
+    specify { expect { subject.member_count }.not_to raise_error }
+  end
+
+  describe '#name' do
+    before { expect(options).to receive(:[]).with('name') }
+
+    specify { expect { subject.name }.not_to raise_error }
+  end
+
   describe '#shares' do
     before { expect(options).to receive(:[]).with('shares') }
 
     specify { expect { subject.shares }.not_to raise_error }
+  end
+
+  describe '#tax_rate' do
+    before { expect(options).to receive(:[]).with('tax_rate') }
+
+    specify { expect { subject.tax_rate }.not_to raise_error }
+  end
+
+  describe '#ticker' do
+    before { expect(options).to receive(:[]).with('ticker') }
+
+    specify { expect { subject.ticker }.not_to raise_error }
+  end
+
+  describe '#corporation_url' do
+    before { expect(options).to receive(:[]).with('url') }
+
+    specify { expect { subject.corporation_url }.not_to raise_error }
   end
 end
