@@ -398,20 +398,21 @@ character_notifications.notifications.size # => 500
 
 notification = character_notifications.notifications.first
 
-notification.as_json # => {:notification_id=>774328832,
-                     #     :type=>"AllWarDeclaredMsg",
+notification.as_json # => {:is_read=>nil,
+                     #     :notification_id=>774328832,
                      #     :sender_id=>1000125,
                      #     :sender_type=>"corporation",
+                     #     :text=>"againstID: 99005443\ncost: 0\ndeclaredByID: 98442842\ndelayHours: 24\nhostileState: 0\n"
                      #     :timestamp=>Thu, 01 Mar 2018 13:48:00 UTC +00:00,
-                     #     :is_read=>nil,
-                     #     :text=>"againstID: 99005443\ncost: 0\ndeclaredByID: 98442842\ndelayHours: 24\nhostileState: 0\n"}
+                     #     :type=>"AllWarDeclaredMsg"}
 
+notification.is_read # => nil
 notification.notification_id # => 774328832
-notification.type # => "AllWarDeclaredMsg"
 notification.sender_id # => 1000125
 notification.sender_type # => "corporation"
-notification.timestamp # => Thu, 01 Mar 2018 13:48:00 UTC +00:00
 notification.text # => "againstID: 99005443\ncost: 0\ndeclaredByID: 98442842\ndelayHours: 24\nhostileState: 0\n"
+notification.timestamp # => Thu, 01 Mar 2018 13:48:00 UTC +00:00
+notification.type # => "AllWarDeclaredMsg"
 ```
 
 #### Get new contact notifications

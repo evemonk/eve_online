@@ -6,14 +6,18 @@ module EveOnline
       class Notification < Base
         def as_json
           {
+            is_read: is_read,
             notification_id: notification_id,
             sender_id: sender_id,
             sender_type: sender_type,
-            timestamp: timestamp,
-            is_read: is_read,
             text: text,
+            timestamp: timestamp,
             type: type
           }
+        end
+
+        def is_read
+          options['is_read']
         end
 
         def notification_id
@@ -28,18 +32,14 @@ module EveOnline
           options['sender_type']
         end
 
+        def text
+          options['text']
+        end
+
         def timestamp
           timestamp = options['timestamp']
 
           parse_datetime_with_timezone(timestamp) if timestamp
-        end
-
-        def is_read
-          options['is_read']
-        end
-
-        def text
-          options['text']
         end
 
         def type
