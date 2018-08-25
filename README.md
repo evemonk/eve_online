@@ -559,33 +559,33 @@ corporation = EveOnline::ESI::Corporation.new(options)
 
 corporation.scope # => nil
 
-corporation.as_json # => {:name=>"Bullshit Bingo Club",
-                    #     :ticker=>"BUBIC",
-                    #     :member_count=>60,
+corporation.as_json # => {:alliance_id=>99001258,
                     #     :ceo_id=>1721864142,
-                    #     :alliance_id=>99001258,
-                    #     :description=>"",
-                    #     :tax_rate=>0.1,
-                    #     :date_founded=>Mon, 11 Jul 2016 14:22:17 UTC +00:00,
                     #     :creator_id=>1721864142,
-                    #     :corporation_url=>"http://",
+                    #     :date_founded=>Mon, 11 Jul 2016 14:22:17 UTC +00:00,
+                    #     :description=>"",
                     #     :faction_id=>nil,
                     #     :home_station_id=>60011893,
-                    #     :shares=>1000}
+                    #     :member_count=>60,
+                    #     :name=>"Bullshit Bingo Club",
+                    #     :shares=>1000,
+                    #     :tax_rate=>0.1,
+                    #     :ticker=>"BUBIC",
+                    #     :corporation_url=>"http://"}
 
-corporation.name # => "Bullshit Bingo Club"
-corporation.ticker # => "BUBIC"
-corporation.member_count # => 60
-corporation.ceo_id # => 1721864142
 corporation.alliance_id # => 99001258
-corporation.description # => ""
-corporation.tax_rate # => 0.1
-corporation.date_founded # => Mon, 11 Jul 2016 14:22:17 UTC +00:00
+corporation.ceo_id # => 1721864142
 corporation.creator_id # => 1721864142
-corporation.corporation_url # => "http://"
+corporation.date_founded # => Mon, 11 Jul 2016 14:22:17 UTC +00:00
+corporation.description # => ""
 corporation.faction_id # => nil
 corporation.home_station_id # => 60011893
+corporation.member_count # => 60
+corporation.name # => "Bullshit Bingo Club"
 corporation.shares # => 1000
+corporation.tax_rate # => 0.1
+corporation.ticker # => "BUBIC"
+corporation.corporation_url # => "http://"
 ```
 
 #### Get alliance history
