@@ -17,8 +17,8 @@ module EveOnline
         @character_id = options.fetch(:character_id)
       end
 
-      def_delegators :model, :as_json, :online, :last_login, :last_logout,
-                     :logins
+      def_delegators :model, :as_json, :last_login, :last_logout, :logins,
+                     :online
 
       def model
         Models::Online.new(response)

@@ -54,16 +54,6 @@ describe EveOnline::ESI::CharacterOnline do
     specify { expect { subject.as_json }.not_to raise_error }
   end
 
-  describe '#online' do
-    let(:model) { double }
-
-    before { subject.instance_variable_set(:@_memoized_model, model) }
-
-    before { expect(model).to receive(:online) }
-
-    specify { expect { subject.online }.not_to raise_error }
-  end
-
   describe '#last_login' do
     let(:model) { double }
 
@@ -92,6 +82,16 @@ describe EveOnline::ESI::CharacterOnline do
     before { expect(model).to receive(:logins) }
 
     specify { expect { subject.logins }.not_to raise_error }
+  end
+
+  describe '#online' do
+    let(:model) { double }
+
+    before { subject.instance_variable_set(:@_memoized_model, model) }
+
+    before { expect(model).to receive(:online) }
+
+    specify { expect { subject.online }.not_to raise_error }
   end
 
   describe '#scope' do

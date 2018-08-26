@@ -20,29 +20,23 @@ describe EveOnline::ESI::Models::Online do
 
     let(:last_logout) { double }
 
-    before { expect(online).to receive(:online).and_return(true) }
-
     before { expect(online).to receive(:last_login).and_return(last_login) }
 
     before { expect(online).to receive(:last_logout).and_return(last_logout) }
 
     before { expect(online).to receive(:logins).and_return(370) }
 
-    subject { online.as_json }
+    before { expect(online).to receive(:online).and_return(true) }
 
-    its([:online]) { should eq(true) }
+    subject { online.as_json }
 
     its([:last_login]) { should eq(last_login) }
 
     its([:last_logout]) { should eq(last_logout) }
 
     its([:logins]) { should eq(370) }
-  end
 
-  describe '#online' do
-    before { expect(options).to receive(:[]).with('online') }
-
-    specify { expect { subject.online }.not_to raise_error }
+    its([:online]) { should eq(true) }
   end
 
   describe '#last_login' do
@@ -99,5 +93,11 @@ describe EveOnline::ESI::Models::Online do
     before { expect(options).to receive(:[]).with('logins') }
 
     specify { expect { subject.logins }.not_to raise_error }
+  end
+
+  describe '#online' do
+    before { expect(options).to receive(:[]).with('online') }
+
+    specify { expect { subject.online }.not_to raise_error }
   end
 end

@@ -941,13 +941,15 @@ character_online = EveOnline::ESI::CharacterOnline.new(options)
 
 character_online.scope # => "esi-location.read_online.v1"
 
-character_online.as_json
-# => {:online=>false, :last_login=>Sun, 15 Jan 2017 11:39:24 UTC +00:00, :last_logout=>Sun, 15 Jan 2017 11:31:22 UTC +00:00, :logins=>370}
+character_online.as_json # => {:last_login=>Sun, 15 Jan 2017 11:39:24 UTC +00:00,
+                         #     :last_logout=>Sun, 15 Jan 2017 11:31:22 UTC +00:00,
+                         #     :logins=>370,
+                         #     :online=>false}
 
-character_online.online  # => false
 character_online.last_login # => Sun, 15 Jan 2017 11:39:24 UTC +00:00
 character_online.last_logout # => Sun, 15 Jan 2017 11:31:22 UTC +00:00
 character_online.logins # => 370
+character_online.online # => false
 ```
 
 #### Get current ship
