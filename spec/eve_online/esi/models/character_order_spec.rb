@@ -77,34 +77,16 @@ describe EveOnline::ESI::Models::CharacterOrder do
     its([:volume_total]) { should eq(123_456) }
   end
 
-  describe '#order_id' do
-    before { expect(options).to receive(:[]).with('order_id') }
+  describe '#duration' do
+    before { expect(options).to receive(:[]).with('duration') }
 
-    specify { expect { subject.order_id }.not_to raise_error }
+    specify { expect { subject.duration }.not_to raise_error }
   end
 
-  describe '#type_id' do
-    before { expect(options).to receive(:[]).with('type_id') }
+  describe '#escrow' do
+    before { expect(options).to receive(:[]).with('escrow') }
 
-    specify { expect { subject.type_id }.not_to raise_error }
-  end
-
-  describe '#region_id' do
-    before { expect(options).to receive(:[]).with('region_id') }
-
-    specify { expect { subject.region_id }.not_to raise_error }
-  end
-
-  describe '#location_id' do
-    before { expect(options).to receive(:[]).with('location_id') }
-
-    specify { expect { subject.location_id }.not_to raise_error }
-  end
-
-  describe '#range' do
-    before { expect(options).to receive(:[]).with('range') }
-
-    specify { expect { subject.range }.not_to raise_error }
+    specify { expect { subject.escrow }.not_to raise_error }
   end
 
   describe '#is_buy_order' do
@@ -113,22 +95,10 @@ describe EveOnline::ESI::Models::CharacterOrder do
     specify { expect { subject.is_buy_order }.not_to raise_error }
   end
 
-  describe '#price' do
-    before { expect(options).to receive(:[]).with('price') }
+  describe '#is_corporation' do
+    before { expect(options).to receive(:[]).with('is_corporation') }
 
-    specify { expect { subject.price }.not_to raise_error }
-  end
-
-  describe '#volume_total' do
-    before { expect(options).to receive(:[]).with('volume_total') }
-
-    specify { expect { subject.volume_total }.not_to raise_error }
-  end
-
-  describe '#volume_remain' do
-    before { expect(options).to receive(:[]).with('volume_remain') }
-
-    specify { expect { subject.volume_remain }.not_to raise_error }
+    specify { expect { subject.is_corporation }.not_to raise_error }
   end
 
   describe '#issued' do
@@ -156,27 +126,57 @@ describe EveOnline::ESI::Models::CharacterOrder do
     end
   end
 
+  describe '#location_id' do
+    before { expect(options).to receive(:[]).with('location_id') }
+
+    specify { expect { subject.location_id }.not_to raise_error }
+  end
+
   describe '#min_volume' do
     before { expect(options).to receive(:[]).with('min_volume') }
 
     specify { expect { subject.min_volume }.not_to raise_error }
   end
 
-  describe '#duration' do
-    before { expect(options).to receive(:[]).with('duration') }
+  describe '#order_id' do
+    before { expect(options).to receive(:[]).with('order_id') }
 
-    specify { expect { subject.duration }.not_to raise_error }
+    specify { expect { subject.order_id }.not_to raise_error }
   end
 
-  describe '#is_corporation' do
-    before { expect(options).to receive(:[]).with('is_corporation') }
+  describe '#price' do
+    before { expect(options).to receive(:[]).with('price') }
 
-    specify { expect { subject.is_corporation }.not_to raise_error }
+    specify { expect { subject.price }.not_to raise_error }
   end
 
-  describe '#escrow' do
-    before { expect(options).to receive(:[]).with('escrow') }
+  describe '#range' do
+    before { expect(options).to receive(:[]).with('range') }
 
-    specify { expect { subject.escrow }.not_to raise_error }
+    specify { expect { subject.range }.not_to raise_error }
+  end
+
+  describe '#region_id' do
+    before { expect(options).to receive(:[]).with('region_id') }
+
+    specify { expect { subject.region_id }.not_to raise_error }
+  end
+
+  describe '#type_id' do
+    before { expect(options).to receive(:[]).with('type_id') }
+
+    specify { expect { subject.type_id }.not_to raise_error }
+  end
+
+  describe '#volume_remain' do
+    before { expect(options).to receive(:[]).with('volume_remain') }
+
+    specify { expect { subject.volume_remain }.not_to raise_error }
+  end
+
+  describe '#volume_total' do
+    before { expect(options).to receive(:[]).with('volume_total') }
+
+    specify { expect { subject.volume_total }.not_to raise_error }
   end
 end
