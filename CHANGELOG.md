@@ -10,7 +10,7 @@
 * Rename `EveOnline::ESI::Models::DogmaAttribute#id` to `#attribute_id`
 * Rename input `attribute_id:` to `id:` in `EveOnline::ESI::DogmaAttribute`
 * Rename `EveOnline::ESI::Models::IndustryJob` to `EveOnline::ESI::Models::CharacterIndustryJob`
-* Add `EveOnline::ESI::Models::CharacterIndustryJob`
+* Add `EveOnline::ESI::Models::CorporationIndustryJob`
 
 ## v0.16.0
 
