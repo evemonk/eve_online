@@ -11,6 +11,9 @@
 * Rename input `attribute_id:` to `id:` in `EveOnline::ESI::DogmaAttribute`
 * Rename `EveOnline::ESI::Models::IndustryJob` to `EveOnline::ESI::Models::CharacterIndustryJob`
 * Add `EveOnline::ESI::Models::CorporationIndustryJob`
+* Rename `EveOnline::ESI::Models::CharacterOrder#is_corp` to `#is_corporation`
+* Remove `EveOnline::ESI::Models::CharacterOrder#state`
+* Remove `EveOnline::ESI::Models::CharacterOrder#account_id`
 
 ## v0.16.0
 
