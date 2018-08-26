@@ -18,101 +18,75 @@ describe EveOnline::ESI::Models::CharacterOrder do
 
     let(:issued) { double }
 
-    before { expect(character_order).to receive(:order_id).and_return(123) }
-
-    before { expect(character_order).to receive(:type_id).and_return(456) }
-
-    before { expect(character_order).to receive(:region_id).and_return(123) }
-
-    before { expect(character_order).to receive(:location_id).and_return(456) }
-
-    before { expect(character_order).to receive(:range).and_return('station') }
-
-    before { expect(character_order).to receive(:is_buy_order).and_return(true) }
-
-    before { expect(character_order).to receive(:price).and_return(33.3) }
-
-    before { expect(character_order).to receive(:volume_total).and_return(123_456) }
-
-    before { expect(character_order).to receive(:volume_remain).and_return(4422) }
-
-    before { expect(character_order).to receive(:issued).and_return(issued) }
-
-    before { expect(character_order).to receive(:state).and_return('open') }
-
-    before { expect(character_order).to receive(:min_volume).and_return(1) }
-
-    before { expect(character_order).to receive(:account_id).and_return(1000) }
-
     before { expect(character_order).to receive(:duration).and_return(30) }
-
-    before { expect(character_order).to receive(:is_corp).and_return(false) }
 
     before { expect(character_order).to receive(:escrow).and_return(45.6) }
 
+    before { expect(character_order).to receive(:is_buy_order).and_return(true) }
+
+    before { expect(character_order).to receive(:is_corporation).and_return(false) }
+
+    before { expect(character_order).to receive(:issued).and_return(issued) }
+
+    before { expect(character_order).to receive(:location_id).and_return(456) }
+
+    before { expect(character_order).to receive(:min_volume).and_return(1) }
+
+    before { expect(character_order).to receive(:order_id).and_return(123) }
+
+    before { expect(character_order).to receive(:price).and_return(33.3) }
+
+    before { expect(character_order).to receive(:range).and_return('station') }
+
+    before { expect(character_order).to receive(:region_id).and_return(123) }
+
+    before { expect(character_order).to receive(:type_id).and_return(456) }
+
+    before { expect(character_order).to receive(:volume_remain).and_return(4422) }
+
+    before { expect(character_order).to receive(:volume_total).and_return(123_456) }
+
     subject { character_order.as_json }
-
-    its([:order_id]) { should eq(123) }
-
-    its([:type_id]) { should eq(456) }
-
-    its([:region_id]) { should eq(123) }
-
-    its([:location_id]) { should eq(456) }
-
-    its([:range]) { should eq('station') }
-
-    its([:is_buy_order]) { should eq(true) }
-
-    its([:price]) { should eq(33.3) }
-
-    its([:volume_total]) { should eq(123_456) }
-
-    its([:volume_remain]) { should eq(4422) }
-
-    its([:issued]) { should eq(issued) }
-
-    its([:state]) { should eq('open') }
-
-    its([:min_volume]) { should eq(1) }
-
-    its([:account_id]) { should eq(1000) }
 
     its([:duration]) { should eq(30) }
 
-    its([:is_corp]) { should eq(false) }
-
     its([:escrow]) { should eq(45.6) }
+
+    its([:is_buy_order]) { should eq(true) }
+
+    its([:is_corporation]) { should eq(false) }
+
+    its([:issued]) { should eq(issued) }
+
+    its([:location_id]) { should eq(456) }
+
+    its([:min_volume]) { should eq(1) }
+
+    its([:order_id]) { should eq(123) }
+
+    its([:price]) { should eq(33.3) }
+
+    its([:range]) { should eq('station') }
+
+    its([:region_id]) { should eq(123) }
+
+    its([:type_id]) { should eq(456) }
+
+    its([:volume_remain]) { should eq(4422) }
+
+    its([:volume_total]) { should eq(123_456) }
   end
 
-  describe '#order_id' do
-    before { expect(options).to receive(:[]).with('order_id') }
+  describe '#duration' do
+    before { expect(options).to receive(:[]).with('duration') }
 
-    specify { expect { subject.order_id }.not_to raise_error }
+    specify { expect { subject.duration }.not_to raise_error }
   end
 
-  describe '#type_id' do
-    before { expect(options).to receive(:[]).with('type_id') }
+  describe '#escrow' do
+    before { expect(options).to receive(:[]).with('escrow') }
 
-    specify { expect { subject.type_id }.not_to raise_error }
-  end
-
-  describe '#region_id' do
-    before { expect(options).to receive(:[]).with('region_id') }
-
-    specify { expect { subject.region_id }.not_to raise_error }
-  end
-
-  describe '#location_id' do
-    before { expect(options).to receive(:[]).with('location_id') }
-
-    specify { expect { subject.location_id }.not_to raise_error }
-  end
-
-  describe '#range' do
-    before { expect(options).to receive(:[]).with('range') }
-
-    specify { expect { subject.range }.not_to raise_error }
+    specify { expect { subject.escrow }.not_to raise_error }
   end
 
   describe '#is_buy_order' do
@@ -121,22 +95,10 @@ describe EveOnline::ESI::Models::CharacterOrder do
     specify { expect { subject.is_buy_order }.not_to raise_error }
   end
 
-  describe '#price' do
-    before { expect(options).to receive(:[]).with('price') }
+  describe '#is_corporation' do
+    before { expect(options).to receive(:[]).with('is_corporation') }
 
-    specify { expect { subject.price }.not_to raise_error }
-  end
-
-  describe '#volume_total' do
-    before { expect(options).to receive(:[]).with('volume_total') }
-
-    specify { expect { subject.volume_total }.not_to raise_error }
-  end
-
-  describe '#volume_remain' do
-    before { expect(options).to receive(:[]).with('volume_remain') }
-
-    specify { expect { subject.volume_remain }.not_to raise_error }
+    specify { expect { subject.is_corporation }.not_to raise_error }
   end
 
   describe '#issued' do
@@ -164,10 +126,10 @@ describe EveOnline::ESI::Models::CharacterOrder do
     end
   end
 
-  describe '#state' do
-    before { expect(options).to receive(:[]).with('state') }
+  describe '#location_id' do
+    before { expect(options).to receive(:[]).with('location_id') }
 
-    specify { expect { subject.state }.not_to raise_error }
+    specify { expect { subject.location_id }.not_to raise_error }
   end
 
   describe '#min_volume' do
@@ -176,27 +138,45 @@ describe EveOnline::ESI::Models::CharacterOrder do
     specify { expect { subject.min_volume }.not_to raise_error }
   end
 
-  describe '#account_id' do
-    before { expect(options).to receive(:[]).with('account_id') }
+  describe '#order_id' do
+    before { expect(options).to receive(:[]).with('order_id') }
 
-    specify { expect { subject.account_id }.not_to raise_error }
+    specify { expect { subject.order_id }.not_to raise_error }
   end
 
-  describe '#duration' do
-    before { expect(options).to receive(:[]).with('duration') }
+  describe '#price' do
+    before { expect(options).to receive(:[]).with('price') }
 
-    specify { expect { subject.duration }.not_to raise_error }
+    specify { expect { subject.price }.not_to raise_error }
   end
 
-  describe '#is_corp' do
-    before { expect(options).to receive(:[]).with('is_corp') }
+  describe '#range' do
+    before { expect(options).to receive(:[]).with('range') }
 
-    specify { expect { subject.is_corp }.not_to raise_error }
+    specify { expect { subject.range }.not_to raise_error }
   end
 
-  describe '#escrow' do
-    before { expect(options).to receive(:[]).with('escrow') }
+  describe '#region_id' do
+    before { expect(options).to receive(:[]).with('region_id') }
 
-    specify { expect { subject.escrow }.not_to raise_error }
+    specify { expect { subject.region_id }.not_to raise_error }
+  end
+
+  describe '#type_id' do
+    before { expect(options).to receive(:[]).with('type_id') }
+
+    specify { expect { subject.type_id }.not_to raise_error }
+  end
+
+  describe '#volume_remain' do
+    before { expect(options).to receive(:[]).with('volume_remain') }
+
+    specify { expect { subject.volume_remain }.not_to raise_error }
+  end
+
+  describe '#volume_total' do
+    before { expect(options).to receive(:[]).with('volume_total') }
+
+    specify { expect { subject.volume_total }.not_to raise_error }
   end
 end

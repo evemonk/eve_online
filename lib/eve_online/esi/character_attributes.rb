@@ -7,14 +7,14 @@ module EveOnline
     class CharacterAttributes < Base
       extend Forwardable
 
-      API_ENDPOINT = 'https://esi.tech.ccp.is/v1/characters/%<character_id>s/attributes/?datasource=tranquility'
+      API_ENDPOINT = 'https://esi.tech.ccp.is/v1/characters/%<character_id>s/attributes/?datasource=%<datasource>s'
 
       attr_reader :character_id
 
       def initialize(options)
         super
 
-        @character_id = options[:character_id]
+        @character_id = options.fetch(:character_id)
       end
 
       def_delegators :model, :as_json, :charisma, :intelligence, :memory,
@@ -31,7 +31,7 @@ module EveOnline
       end
 
       def url
-        format(API_ENDPOINT, character_id: character_id)
+        format(API_ENDPOINT, character_id: character_id, datasource: datasource)
       end
     end
   end

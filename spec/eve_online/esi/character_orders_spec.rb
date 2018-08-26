@@ -9,12 +9,18 @@ describe EveOnline::ESI::CharacterOrders do
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/v1/characters/%<character_id>s/orders/?datasource=tranquility') }
+  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/v2/characters/%<character_id>s/orders/?datasource=%<datasource>s') }
 
   describe '#initialize' do
     its(:token) { should eq('token123') }
 
     its(:parser) { should eq(JSON) }
+
+    its(:_read_timeout) { should eq(60) }
+
+    its(:_open_timeout) { should eq(60) }
+
+    its(:datasource) { should eq('tranquility') }
 
     its(:character_id) { should eq(12_345_678) }
   end
@@ -70,7 +76,7 @@ describe EveOnline::ESI::CharacterOrders do
 
   describe '#url' do
     specify do
-      expect(subject.url).to eq('https://esi.tech.ccp.is/v1/characters/12345678/orders/?datasource=tranquility')
+      expect(subject.url).to eq('https://esi.tech.ccp.is/v2/characters/12345678/orders/?datasource=tranquility')
     end
   end
 end

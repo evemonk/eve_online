@@ -5,12 +5,18 @@ require 'spec_helper'
 describe EveOnline::ESI::Alliances do
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/v1/alliances/?datasource=tranquility') }
+  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/v1/alliances/?datasource=%<datasource>s') }
 
   describe '#initialize' do
     its(:token) { should eq(nil) }
 
     its(:parser) { should eq(JSON) }
+
+    its(:_read_timeout) { should eq(60) }
+
+    its(:_open_timeout) { should eq(60) }
+
+    its(:datasource) { should eq('tranquility') }
   end
 
   describe '#alliances' do

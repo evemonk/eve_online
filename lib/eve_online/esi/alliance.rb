@@ -7,14 +7,14 @@ module EveOnline
     class Alliance < Base
       extend Forwardable
 
-      API_ENDPOINT = 'https://esi.tech.ccp.is/v3/alliances/%<alliance_id>s/?datasource=tranquility'
+      API_ENDPOINT = 'https://esi.tech.ccp.is/v3/alliances/%<alliance_id>s/?datasource=%<datasource>s'
 
       attr_reader :alliance_id
 
       def initialize(options)
         super
 
-        @alliance_id = options[:alliance_id]
+        @alliance_id = options.fetch(:alliance_id)
       end
 
       def_delegators :model, :as_json, :creator_corporation_id, :creator_id,
@@ -29,7 +29,7 @@ module EveOnline
       def scope; end
 
       def url
-        format(API_ENDPOINT, alliance_id: alliance_id)
+        format(API_ENDPOINT, alliance_id: alliance_id, datasource: datasource)
       end
     end
   end

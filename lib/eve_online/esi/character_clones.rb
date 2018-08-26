@@ -3,20 +3,14 @@
 module EveOnline
   module ESI
     class CharacterClones < Base
-      API_ENDPOINT = 'https://esi.tech.ccp.is/v3/characters/%<character_id>s/clones/?datasource=tranquility'
+      API_ENDPOINT = 'https://esi.tech.ccp.is/v3/characters/%<character_id>s/clones/?datasource=%<datasource>s'
 
       attr_reader :character_id
 
       def initialize(options)
         super
 
-        @character_id = options[:character_id]
-      end
-
-      def last_clone_jump_date
-        last_clone_jump_date = response['last_clone_jump_date']
-
-        parse_datetime_with_timezone(last_clone_jump_date) if last_clone_jump_date
+        @character_id = options.fetch(:character_id)
       end
 
       def home_location
@@ -33,6 +27,12 @@ module EveOnline
       end
       memoize :jump_clones
 
+      def last_clone_jump_date
+        last_clone_jump_date = response['last_clone_jump_date']
+
+        parse_datetime_with_timezone(last_clone_jump_date) if last_clone_jump_date
+      end
+
       def last_station_change_date
         last_station_change_date = response['last_station_change_date']
 
@@ -44,7 +44,7 @@ module EveOnline
       end
 
       def url
-        format(API_ENDPOINT, character_id: character_id)
+        format(API_ENDPOINT, character_id: character_id, datasource: datasource)
       end
     end
   end

@@ -9,12 +9,18 @@ describe EveOnline::ESI::CharacterPortrait do
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/v2/characters/%<character_id>s/portrait/?datasource=tranquility') }
+  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/v2/characters/%<character_id>s/portrait/?datasource=%<datasource>s') }
 
   describe '#initialize' do
     its(:token) { should eq(nil) }
 
     its(:parser) { should eq(JSON) }
+
+    its(:_read_timeout) { should eq(60) }
+
+    its(:_open_timeout) { should eq(60) }
+
+    its(:datasource) { should eq('tranquility') }
 
     its(:character_id) { should eq(12_345_678) }
   end
@@ -48,26 +54,6 @@ describe EveOnline::ESI::CharacterPortrait do
     specify { expect { subject.as_json }.not_to raise_error }
   end
 
-  describe '#tiny' do
-    let(:model) { double }
-
-    before { subject.instance_variable_set(:@_memoized_model, model) }
-
-    before { expect(model).to receive(:tiny) }
-
-    specify { expect { subject.tiny }.not_to raise_error }
-  end
-
-  describe '#small' do
-    let(:model) { double }
-
-    before { subject.instance_variable_set(:@_memoized_model, model) }
-
-    before { expect(model).to receive(:small) }
-
-    specify { expect { subject.small }.not_to raise_error }
-  end
-
   describe '#medium' do
     let(:model) { double }
 
@@ -98,14 +84,14 @@ describe EveOnline::ESI::CharacterPortrait do
     specify { expect { subject.huge }.not_to raise_error }
   end
 
-  describe '#gigantic' do
+  describe '#small' do
     let(:model) { double }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
-    before { expect(model).to receive(:gigantic) }
+    before { expect(model).to receive(:small) }
 
-    specify { expect { subject.gigantic }.not_to raise_error }
+    specify { expect { subject.small }.not_to raise_error }
   end
 
   describe '#scope' do

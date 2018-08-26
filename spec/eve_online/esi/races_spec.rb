@@ -5,12 +5,18 @@ require 'spec_helper'
 describe EveOnline::ESI::Races do
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/v1/universe/races/?datasource=tranquility&language=en-us') }
+  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/v1/universe/races/?datasource=%<datasource>s&language=en-us') }
 
   describe '#initialize' do
     its(:token) { should eq(nil) }
 
     its(:parser) { should eq(JSON) }
+
+    its(:_read_timeout) { should eq(60) }
+
+    its(:_open_timeout) { should eq(60) }
+
+    its(:datasource) { should eq('tranquility') }
   end
 
   describe '#races' do

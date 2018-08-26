@@ -6,15 +6,11 @@ module EveOnline
       class Online < Base
         def as_json
           {
-            online: online,
             last_login: last_login,
             last_logout: last_logout,
-            logins: logins
+            logins: logins,
+            online: online
           }
-        end
-
-        def online
-          options['online']
         end
 
         def last_login
@@ -31,6 +27,10 @@ module EveOnline
 
         def logins
           options['logins']
+        end
+
+        def online
+          options['online']
         end
       end
     end

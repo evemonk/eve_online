@@ -7,11 +7,15 @@ describe EveOnline::ESI::Base do
 
   describe '#initialize' do
     context 'with options' do
+      let(:parser) { double }
+
       let(:options) do
         {
           token: 'token123',
+          parser: parser,
           read_timeout: 30,
-          open_timeout: 45
+          open_timeout: 45,
+          datasource: 'singularity'
         }
       end
 
@@ -19,9 +23,13 @@ describe EveOnline::ESI::Base do
 
       its(:token) { should eq('token123') }
 
+      its(:parser) { should eq(parser) }
+
       its(:_read_timeout) { should eq(30) }
 
       its(:_open_timeout) { should eq(45) }
+
+      its(:datasource) { should eq('singularity') }
     end
 
     context 'without options' do
@@ -32,6 +40,8 @@ describe EveOnline::ESI::Base do
       its(:_read_timeout) { should eq(60) }
 
       its(:_open_timeout) { should eq(60) }
+
+      its(:datasource) { should eq('tranquility') }
     end
   end
 

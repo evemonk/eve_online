@@ -3,14 +3,14 @@
 module EveOnline
   module ESI
     class CharacterWalletJournal < Base
-      API_ENDPOINT = 'https://esi.tech.ccp.is/v3/characters/%<character_id>s/wallet/journal/?datasource=tranquility'
+      API_ENDPOINT = 'https://esi.tech.ccp.is/v4/characters/%<character_id>s/wallet/journal/?datasource=%<datasource>s'
 
       attr_reader :character_id
 
       def initialize(options)
         super
 
-        @character_id = options[:character_id]
+        @character_id = options.fetch(:character_id)
       end
 
       def wallet_journal_entries
@@ -27,7 +27,7 @@ module EveOnline
       end
 
       def url
-        format(API_ENDPOINT, character_id: character_id)
+        format(API_ENDPOINT, character_id: character_id, datasource: datasource)
       end
     end
   end

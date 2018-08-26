@@ -20,7 +20,6 @@ This gem was extracted from [EveMonk](http://evemonk.com). Source code of evemon
 * [Useful links](#useful-links)
 * [Development](#development)
 * [Contributing](#contributing)
-* [TODO](#todo)
 * [Author](#author)
 * [Contributors](#contributors)
 * [License](#license)
@@ -127,11 +126,11 @@ alliance_icon = EveOnline::ESI::AllianceIcon.new(options)
 
 alliance_icon.scope # => nil
 
-alliance_icon.as_json # => {:icon_small=>"http://image.eveonline.com/Alliance/99005443_64.png",
-                      #     :icon_medium=>"http://image.eveonline.com/Alliance/99005443_128.png"}
+alliance_icon.as_json # => {:icon_medium=>"http://image.eveonline.com/Alliance/99005443_128.png",
+                      #     :icon_small=>"http://image.eveonline.com/Alliance/99005443_64.png"}
 
-alliance_icon.icon_small # => "http://image.eveonline.com/Alliance/99005443_64.png"
 alliance_icon.icon_medium # => "http://image.eveonline.com/Alliance/99005443_128.png"
+alliance_icon.icon_small # => "http://image.eveonline.com/Alliance/99005443_64.png"
 ```
 
 ### Assets
@@ -373,7 +372,9 @@ character_fatigue = EveOnline::ESI::CharacterFatigue.new(options)
 
 character_fatigue.scope # => "esi-characters.read_fatigue.v1"
 
-character_fatigue.as_json # => {:jump_fatigue_expire_date=>nil, :last_jump_date=>nil, :last_update_date=>nil}
+character_fatigue.as_json # => {:jump_fatigue_expire_date=>nil,
+                          #     :last_jump_date=>nil,
+                          #     :last_update_date=>nil}
 
 character_fatigue.jump_fatigue_expire_date # => nil
 character_fatigue.last_jump_date # => nil
@@ -397,20 +398,21 @@ character_notifications.notifications.size # => 500
 
 notification = character_notifications.notifications.first
 
-notification.as_json # => {:notification_id=>774328832,
-                     #     :type=>"AllWarDeclaredMsg",
+notification.as_json # => {:is_read=>nil,
+                     #     :notification_id=>774328832,
                      #     :sender_id=>1000125,
                      #     :sender_type=>"corporation",
+                     #     :text=>"againstID: 99005443\ncost: 0\ndeclaredByID: 98442842\ndelayHours: 24\nhostileState: 0\n"
                      #     :timestamp=>Thu, 01 Mar 2018 13:48:00 UTC +00:00,
-                     #     :is_read=>nil,
-                     #     :text=>"againstID: 99005443\ncost: 0\ndeclaredByID: 98442842\ndelayHours: 24\nhostileState: 0\n"}
+                     #     :type=>"AllWarDeclaredMsg"}
 
+notification.is_read # => nil
 notification.notification_id # => 774328832
-notification.type # => "AllWarDeclaredMsg"
 notification.sender_id # => 1000125
 notification.sender_type # => "corporation"
-notification.timestamp # => Thu, 01 Mar 2018 13:48:00 UTC +00:00
 notification.text # => "againstID: 99005443\ncost: 0\ndeclaredByID: 98442842\ndelayHours: 24\nhostileState: 0\n"
+notification.timestamp # => Thu, 01 Mar 2018 13:48:00 UTC +00:00
+notification.type # => "AllWarDeclaredMsg"
 ```
 
 #### Get new contact notifications
@@ -424,13 +426,15 @@ character_portrait = EveOnline::ESI::CharacterPortrait.new(options)
 
 character_portrait.scope # => nil
 
-character_portrait.as_json
-# => {:small=>"http://image.eveonline.com/Character/90729314_64.jpg", :medium=>"http://image.eveonline.com/Character/90729314_128.jpg", :large=>"http://image.eveonline.com/Character/90729314_256.jpg", :huge=>"http://image.eveonline.com/Character/90729314_512.jpg"}
+character_portrait.as_json # => {:medium=>"http://image.eveonline.com/Character/90729314_128.jpg",
+                           #     :large=>"http://image.eveonline.com/Character/90729314_256.jpg",
+                           #     :huge=>"http://image.eveonline.com/Character/90729314_512.jpg"
+                           #     :small=>"http://image.eveonline.com/Character/90729314_64.jpg"}
 
-character_portrait.small # => "http://image.eveonline.com/Character/90729314_64.jpg"
 character_portrait.medium # => "http://image.eveonline.com/Character/90729314_128.jpg"
 character_portrait.large # => "http://image.eveonline.com/Character/90729314_256.jpg"
 character_portrait.huge # => "http://image.eveonline.com/Character/90729314_512.jpg"
+character_portrait.small # => "http://image.eveonline.com/Character/90729314_64.jpg"
 ```
 
 #### Get character corporation roles
@@ -448,7 +452,9 @@ character_standing.standings.size # => 37
 
 standing = character_standing.standings.first
 
-standing.as_json # => {:from_id=>500001, :from_type=>"faction", :standing=>0.3303719111639991}
+standing.as_json # => {:from_id=>500001,
+                 #     :from_type=>"faction",
+                 #     :standing=>0.3303719111639991}
 
 standing.from_id # => 500001
 standing.from_type # => "faction"
@@ -474,22 +480,26 @@ character_clones = EveOnline::ESI::CharacterClones.new(options)
 
 character_clones.scope # => "esi-clones.read_clones.v1"
 
-character_clones.last_clone_jump_date # => Fri, 27 Jul 2012 14:50:11 UTC +00:00
-
-character_clones.home_location.as_json # => {:location_id=>61000032, :location_type=>"station"}
+character_clones.home_location.as_json # => {:location_id=>61000032,
+                                       #     :location_type=>"station"}
 
 character_clones.jump_clones.size # => 2
 
 jump_clone = character_clones.jump_clones.first
 
-jump_clone.as_json
-# => {:jump_clone_id=>22357400, :name=>nil, :location_id=>61000032, :location_type=>"station", :implants=>[22118]}
+jump_clone.as_json # => {:implants=>[22118],
+                   #     :jump_clone_id=>22357400,
+                   #     :location_id=>61000032,
+                   #     :location_type=>"station",
+                   #     :name=>nil}
 
+jump_clone.implants # => [22118]
 jump_clone.jump_clone_id # => 22357400
-jump_clone.name # => nil
 jump_clone.location_id # => 61000032
 jump_clone.location_type # => "station"
-jump_clone.implants # => [22118]
+jump_clone.name # => nil
+
+character_clones.last_clone_jump_date # => Fri, 27 Jul 2012 14:50:11 UTC +00:00
 
 character_clones.last_station_change_date # => Tue, 30 Jun 2015 21:51:13 UTC +00:00
 ```
@@ -549,34 +559,33 @@ corporation = EveOnline::ESI::Corporation.new(options)
 
 corporation.scope # => nil
 
-corporation.as_json
-# => {:name=>"Bullshit Bingo Club",
-#     :ticker=>"BUBIC",
-#     :member_count=>60,
-#     :ceo_id=>1721864142,
-#     :alliance_id=>99001258,
-#     :description=>"",
-#     :tax_rate=>0.1,
-#     :date_founded=>Mon, 11 Jul 2016 14:22:17 UTC +00:00,
-#     :creator_id=>1721864142,
-#     :corporation_url=>"http://",
-#     :faction_id=>nil,
-#     :home_station_id=>60011893,
-#     :shares=>1000}
+corporation.as_json # => {:alliance_id=>99001258,
+                    #     :ceo_id=>1721864142,
+                    #     :creator_id=>1721864142,
+                    #     :date_founded=>Mon, 11 Jul 2016 14:22:17 UTC +00:00,
+                    #     :description=>"",
+                    #     :faction_id=>nil,
+                    #     :home_station_id=>60011893,
+                    #     :member_count=>60,
+                    #     :name=>"Bullshit Bingo Club",
+                    #     :shares=>1000,
+                    #     :tax_rate=>0.1,
+                    #     :ticker=>"BUBIC",
+                    #     :corporation_url=>"http://"}
 
-corporation.name # => "Bullshit Bingo Club"
-corporation.ticker # => "BUBIC"
-corporation.member_count # => 60
-corporation.ceo_id # => 1721864142
 corporation.alliance_id # => 99001258
-corporation.description # => ""
-corporation.tax_rate # => 0.1
-corporation.date_founded # => Mon, 11 Jul 2016 14:22:17 UTC +00:00
+corporation.ceo_id # => 1721864142
 corporation.creator_id # => 1721864142
-corporation.corporation_url # => "http://"
+corporation.date_founded # => Mon, 11 Jul 2016 14:22:17 UTC +00:00
+corporation.description # => ""
 corporation.faction_id # => nil
 corporation.home_station_id # => 60011893
+corporation.member_count # => 60
+corporation.name # => "Bullshit Bingo Club"
 corporation.shares # => 1000
+corporation.tax_rate # => 0.1
+corporation.ticker # => "BUBIC"
+corporation.corporation_url # => "http://"
 ```
 
 #### Get alliance history
@@ -676,34 +685,36 @@ dogma_attributes.attributes.first # => 2
 #### Get attribute information
 
 ```ruby
-options = { attribute_id: 2 }
+options = { id: 2 }
 
 dogma_attribute = EveOnline::ESI::DogmaAttribute.new(options)
 
 dogma_attribute.scope # => nil
 
-dogma_attribute.as_json # => {:id=>2,
-                        #     :name=>"isOnline",
-                        #     :description=>"Boolean to store status of online effect",
-                        #     :icon_id=>nil,
+dogma_attribute.as_json # => {:attribute_id=>2,
                         #     :default_value=>0.0,
-                        #     :published=>nil,
+                        #     :description=>"Boolean to store status of online effect",
                         #     :display_name=>"",
-                        #     :unit_id=>nil,
+                        #     :high_is_good=>true,
+                        #     :icon_id=>nil,
+                        #     :name=>"isOnline",
+                        #     :published=>nil,
                         #     :stackable=>true,
-                        #     :high_is_good=>true}
+                        #     :unit_id=>nil}
 
-dogma_attribute.id # => 2
-dogma_attribute.name # => "isOnline"
-dogma_attribute.description # => "Boolean to store status of online effect"
-dogma_attribute.icon_id # => nil
+dogma_attribute.attribute_id # => 2
 dogma_attribute.default_value # => 0.0
-dogma_attribute.published # => nil
+dogma_attribute.description # => "Boolean to store status of online effect"
 dogma_attribute.display_name # => ""
-dogma_attribute.unit_id # => nil
-dogma_attribute.stackable # => true
 dogma_attribute.high_is_good # => true
+dogma_attribute.icon_id # => nil
+dogma_attribute.name # => "isOnline"
+dogma_attribute.published # => nil
+dogma_attribute.stackable # => true
+dogma_attribute.unit_id # => nil
 ```
+
+#### Get dynamic item information
 
 #### Get effects
 
@@ -865,13 +876,13 @@ job.as_json # => {:activity_id=>1,
             #     :installer_id=>93174304,
             #     :job_id=>344736432,
             #     :licensed_runs=>1,
+            #     :location_id=>60006382,
             #     :output_location_id=>1024956764558,
             #     :pause_date=>nil,
             #     :probability=>1.0,
             #     :product_type_id=>28606,
             #     :runs=>1,
             #     :start_date=>Sat, 18 Nov 2017 11:20:14 UTC +00:00,
-            #     :station_id=>nil,
             #     :status=>"active",
             #     :successful_runs=>nil}
 
@@ -888,13 +899,13 @@ job.facility_id # => 1023579231924
 job.installer_id # => 93174304
 job.job_id # => 344736432
 job.licensed_runs # => 1
+job.location_id # => 60006382
 job.output_location_id # => 1024956764558
 job.pause_date # => nil
 job.probability # => 1.0
 job.product_type_id # => 28606
 job.runs # => 1
 job.start_date # => Sat, 18 Nov 2017 11:20:14 UTC +00:00
-job.station_id # => nil
 job.status # => "active"
 job.successful_runs # => nil
 
@@ -930,13 +941,15 @@ character_online = EveOnline::ESI::CharacterOnline.new(options)
 
 character_online.scope # => "esi-location.read_online.v1"
 
-character_online.as_json
-# => {:online=>false, :last_login=>Sun, 15 Jan 2017 11:39:24 UTC +00:00, :last_logout=>Sun, 15 Jan 2017 11:31:22 UTC +00:00, :logins=>370}
+character_online.as_json # => {:last_login=>Sun, 15 Jan 2017 11:39:24 UTC +00:00,
+                         #     :last_logout=>Sun, 15 Jan 2017 11:31:22 UTC +00:00,
+                         #     :logins=>370,
+                         #     :online=>false}
 
-character_online.online  # => false
 character_online.last_login # => Sun, 15 Jan 2017 11:39:24 UTC +00:00
 character_online.last_logout # => Sun, 15 Jan 2017 11:31:22 UTC +00:00
 character_online.logins # => 370
+character_online.online # => false
 ```
 
 #### Get current ship
@@ -1001,22 +1014,20 @@ order = character_orders.orders.first
 
 order.as_json
 
-order.order_id
-order.type_id
-order.region_id
-order.location_id
-order.range
-order.is_buy_order
-order.price
+order.duration,
+order.escrow,
+order.is_buy_order,
+order.is_corporation,
+order.issued,
+order.location_id,
+order.min_volume,
+order.order_id,
+order.price,
+order.range,
+order.region_id,
+order.type_id,
+order.volume_remain,
 order.volume_total
-order.volume_remain
-order.issued
-order.state
-order.min_volume
-order.account_id
-order.duration
-order.is_corp
-order.escrow
 
 # TODO: update example
 ```
@@ -1057,6 +1068,8 @@ order.escrow
 # TODO: update example
 
 # TODO: add pagination support
+
+# TODO: update
 ```
 
 #### List historical orders from a corporation
@@ -1517,31 +1530,25 @@ character_wallet_journal.wallet_journal_entries.size # => 1
 
 wallet_journal_entry = character_wallet_journal.wallet_journal_entries.first
 
-wallet_journal_entry.as_json # => {:date=>Tue, 06 Mar 2018 12:43:50 UTC +00:00,
-                             #     :ref_id=>15264764711,
-                             #     :ref_type=>"market_escrow",
-                             #     :first_party_id=>90729314,
-                             #     :first_party_type=>"character",
-                             #     :second_party_id=>nil,
-                             #     :second_party_type=>nil,
-                             #     :amount=>-9.5,
-                             #     :balance=>4990.5,
-                             #     :reason=>nil,
-                             #     :tax_receiver_id=>nil,
-                             #     :tax=>nil}
+wallet_journal_entry.as_json
 
-wallet_journal_entry.date # => Tue, 06 Mar 2018 12:43:50 UTC +00:00
-wallet_journal_entry.ref_id # => 15264764711
-wallet_journal_entry.ref_type # => "market_escrow"
-wallet_journal_entry.first_party_id # => 90729314
-wallet_journal_entry.first_party_type # => "character"
-wallet_journal_entry.second_party_id  # => nil
-wallet_journal_entry.second_party_type # => nil
-wallet_journal_entry.amount # => -9.5
-wallet_journal_entry.balance # => 4990.5
-wallet_journal_entry.reason # => nil
-wallet_journal_entry.tax_receiver_id # => nil
-wallet_journal_entry.tax # => nil
+wallet_journal_entry.amount
+wallet_journal_entry.balance
+wallet_journal_entry.context_id
+wallet_journal_entry.context_id_type
+wallet_journal_entry.date
+wallet_journal_entry.description
+wallet_journal_entry.first_party_id
+wallet_journal_entry.id
+wallet_journal_entry.reason
+wallet_journal_entry.ref_type
+wallet_journal_entry.second_party_id
+wallet_journal_entry.tax
+wallet_journal_entry.tax_receiver_id
+
+# TODO: update example
+
+# TODO: add pagination
 ```
 
 #### Get wallet transactions
@@ -1619,6 +1626,16 @@ races.open_timeout # => 120
 races.read_timeout # => 60
 races.read_timeout = 120
 races.read_timeout # => 120
+```
+
+## Datasource
+
+Default datasource is `tranquility`. If you want to change it, for e.g., to `singularity`, add `datasource: 'singularity'` to default hash with options:
+
+```ruby
+options = { datasource: 'singularity' }
+
+races = EveOnline::ESI::Races.new(options)
 ```
 
 ## Useful links

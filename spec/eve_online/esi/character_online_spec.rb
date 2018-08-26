@@ -9,12 +9,18 @@ describe EveOnline::ESI::CharacterOnline do
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/v2/characters/%<character_id>s/online/?datasource=tranquility') }
+  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/v2/characters/%<character_id>s/online/?datasource=%<datasource>s') }
 
   describe '#initialize' do
     its(:token) { should eq('token123') }
 
     its(:parser) { should eq(JSON) }
+
+    its(:_read_timeout) { should eq(60) }
+
+    its(:_open_timeout) { should eq(60) }
+
+    its(:datasource) { should eq('tranquility') }
 
     its(:character_id) { should eq(12_345_678) }
   end
@@ -48,16 +54,6 @@ describe EveOnline::ESI::CharacterOnline do
     specify { expect { subject.as_json }.not_to raise_error }
   end
 
-  describe '#online' do
-    let(:model) { double }
-
-    before { subject.instance_variable_set(:@_memoized_model, model) }
-
-    before { expect(model).to receive(:online) }
-
-    specify { expect { subject.online }.not_to raise_error }
-  end
-
   describe '#last_login' do
     let(:model) { double }
 
@@ -86,6 +82,16 @@ describe EveOnline::ESI::CharacterOnline do
     before { expect(model).to receive(:logins) }
 
     specify { expect { subject.logins }.not_to raise_error }
+  end
+
+  describe '#online' do
+    let(:model) { double }
+
+    before { subject.instance_variable_set(:@_memoized_model, model) }
+
+    before { expect(model).to receive(:online) }
+
+    specify { expect { subject.online }.not_to raise_error }
   end
 
   describe '#scope' do

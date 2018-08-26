@@ -9,12 +9,18 @@ describe EveOnline::ESI::Corporation do
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/v4/corporations/%<corporation_id>s/?datasource=tranquility') }
+  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/v4/corporations/%<corporation_id>s/?datasource=%<datasource>s') }
 
   describe '#initialize' do
     its(:token) { should eq(nil) }
 
     its(:parser) { should eq(JSON) }
+
+    its(:_read_timeout) { should eq(60) }
+
+    its(:_open_timeout) { should eq(60) }
+
+    its(:datasource) { should eq('tranquility') }
 
     its(:corporation_id) { should eq(12_345_678) }
   end
@@ -48,34 +54,14 @@ describe EveOnline::ESI::Corporation do
     specify { expect { subject.as_json }.not_to raise_error }
   end
 
-  describe '#name' do
+  describe '#alliance_id' do
     let(:model) { double }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
-    before { expect(model).to receive(:name) }
+    before { expect(model).to receive(:alliance_id) }
 
-    specify { expect { subject.name }.not_to raise_error }
-  end
-
-  describe '#ticker' do
-    let(:model) { double }
-
-    before { subject.instance_variable_set(:@_memoized_model, model) }
-
-    before { expect(model).to receive(:ticker) }
-
-    specify { expect { subject.ticker }.not_to raise_error }
-  end
-
-  describe '#member_count' do
-    let(:model) { double }
-
-    before { subject.instance_variable_set(:@_memoized_model, model) }
-
-    before { expect(model).to receive(:member_count) }
-
-    specify { expect { subject.member_count }.not_to raise_error }
+    specify { expect { subject.alliance_id }.not_to raise_error }
   end
 
   describe '#ceo_id' do
@@ -88,34 +74,14 @@ describe EveOnline::ESI::Corporation do
     specify { expect { subject.ceo_id }.not_to raise_error }
   end
 
-  describe '#alliance_id' do
+  describe '#creator_id' do
     let(:model) { double }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
-    before { expect(model).to receive(:alliance_id) }
+    before { expect(model).to receive(:creator_id) }
 
-    specify { expect { subject.alliance_id }.not_to raise_error }
-  end
-
-  describe '#description' do
-    let(:model) { double }
-
-    before { subject.instance_variable_set(:@_memoized_model, model) }
-
-    before { expect(model).to receive(:description) }
-
-    specify { expect { subject.description }.not_to raise_error }
-  end
-
-  describe '#tax_rate' do
-    let(:model) { double }
-
-    before { subject.instance_variable_set(:@_memoized_model, model) }
-
-    before { expect(model).to receive(:tax_rate) }
-
-    specify { expect { subject.tax_rate }.not_to raise_error }
+    specify { expect { subject.creator_id }.not_to raise_error }
   end
 
   describe '#date_founded' do
@@ -128,24 +94,14 @@ describe EveOnline::ESI::Corporation do
     specify { expect { subject.date_founded }.not_to raise_error }
   end
 
-  describe '#creator_id' do
+  describe '#description' do
     let(:model) { double }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
-    before { expect(model).to receive(:creator_id) }
+    before { expect(model).to receive(:description) }
 
-    specify { expect { subject.creator_id }.not_to raise_error }
-  end
-
-  describe '#corporation_url' do
-    let(:model) { double }
-
-    before { subject.instance_variable_set(:@_memoized_model, model) }
-
-    before { expect(model).to receive(:corporation_url) }
-
-    specify { expect { subject.corporation_url }.not_to raise_error }
+    specify { expect { subject.description }.not_to raise_error }
   end
 
   describe '#faction_id' do
@@ -168,6 +124,26 @@ describe EveOnline::ESI::Corporation do
     specify { expect { subject.home_station_id }.not_to raise_error }
   end
 
+  describe '#member_count' do
+    let(:model) { double }
+
+    before { subject.instance_variable_set(:@_memoized_model, model) }
+
+    before { expect(model).to receive(:member_count) }
+
+    specify { expect { subject.member_count }.not_to raise_error }
+  end
+
+  describe '#name' do
+    let(:model) { double }
+
+    before { subject.instance_variable_set(:@_memoized_model, model) }
+
+    before { expect(model).to receive(:name) }
+
+    specify { expect { subject.name }.not_to raise_error }
+  end
+
   describe '#shares' do
     let(:model) { double }
 
@@ -176,6 +152,36 @@ describe EveOnline::ESI::Corporation do
     before { expect(model).to receive(:shares) }
 
     specify { expect { subject.shares }.not_to raise_error }
+  end
+
+  describe '#tax_rate' do
+    let(:model) { double }
+
+    before { subject.instance_variable_set(:@_memoized_model, model) }
+
+    before { expect(model).to receive(:tax_rate) }
+
+    specify { expect { subject.tax_rate }.not_to raise_error }
+  end
+
+  describe '#ticker' do
+    let(:model) { double }
+
+    before { subject.instance_variable_set(:@_memoized_model, model) }
+
+    before { expect(model).to receive(:ticker) }
+
+    specify { expect { subject.ticker }.not_to raise_error }
+  end
+
+  describe '#corporation_url' do
+    let(:model) { double }
+
+    before { subject.instance_variable_set(:@_memoized_model, model) }
+
+    before { expect(model).to receive(:corporation_url) }
+
+    specify { expect { subject.corporation_url }.not_to raise_error }
   end
 
   describe '#scope' do

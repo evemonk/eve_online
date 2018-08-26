@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class Ancestries < Base
-      API_ENDPOINT = 'https://esi.tech.ccp.is/v1/universe/ancestries/?datasource=tranquility&language=en-us'
+      API_ENDPOINT = 'https://esi.tech.ccp.is/v1/universe/ancestries/?datasource=%<datasource>s&language=en-us'
 
       def ancestries
         output = []
@@ -17,7 +17,7 @@ module EveOnline
       def scope; end
 
       def url
-        API_ENDPOINT
+        format(API_ENDPOINT, datasource: datasource)
       end
     end
   end

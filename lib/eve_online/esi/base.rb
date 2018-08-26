@@ -10,13 +10,14 @@ module EveOnline
     class Base
       extend Memoist
 
-      attr_reader :token, :parser, :_read_timeout, :_open_timeout
+      attr_reader :token, :parser, :_read_timeout, :_open_timeout, :datasource
 
       def initialize(options = {})
         @token = options[:token]
-        @parser = JSON
+        @parser = options[:parser] || JSON
         @_read_timeout = options[:read_timeout] || 60
         @_open_timeout = options[:open_timeout] || 60
+        @datasource = options[:datasource] || 'tranquility'
       end
 
       def url

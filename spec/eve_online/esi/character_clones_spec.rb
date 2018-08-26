@@ -9,57 +9,20 @@ describe EveOnline::ESI::CharacterClones do
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/v3/characters/%<character_id>s/clones/?datasource=tranquility') }
+  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/v3/characters/%<character_id>s/clones/?datasource=%<datasource>s') }
 
   describe '#initialize' do
     its(:token) { should eq('token123') }
 
     its(:parser) { should eq(JSON) }
 
+    its(:_read_timeout) { should eq(60) }
+
+    its(:_open_timeout) { should eq(60) }
+
+    its(:datasource) { should eq('tranquility') }
+
     its(:character_id) { should eq(12_345_678) }
-  end
-
-  describe '#last_clone_jump_date' do
-    context 'when last_clone_jump_date is present' do
-      let(:last_clone_jump_date) { double }
-
-      before do
-        #
-        # subject.response['last_clone_jump_date'] => last_clone_jump_date
-        #
-        expect(subject).to receive(:response) do
-          double.tap do |a|
-            expect(a).to receive(:[]).with('last_clone_jump_date').and_return(last_clone_jump_date)
-          end
-        end
-      end
-
-      before do
-        #
-        # subject.parse_datetime_with_timezone(last_clone_jump_date)
-        #
-        expect(subject).to receive(:parse_datetime_with_timezone).with(last_clone_jump_date)
-      end
-
-      specify { expect { subject.last_clone_jump_date }.not_to raise_error }
-    end
-
-    context 'when last_clone_jump_date not present' do
-      before do
-        #
-        # subject.response['last_clone_jump_date'] => nil
-        #
-        expect(subject).to receive(:response) do
-          double.tap do |a|
-            expect(a).to receive(:[]).with('last_clone_jump_date').and_return(nil)
-          end
-        end
-      end
-
-      before { expect(subject).not_to receive(:parse_datetime_with_timezone) }
-
-      specify { expect { subject.last_clone_jump_date }.not_to raise_error }
-    end
   end
 
   describe '#home_location' do
@@ -124,6 +87,49 @@ describe EveOnline::ESI::CharacterClones do
     specify { expect(subject.jump_clones).to eq([jump_clone]) }
 
     specify { expect { subject.jump_clones }.to change { subject.instance_variable_defined?(:@_memoized_jump_clones) }.from(false).to(true) }
+  end
+
+  describe '#last_clone_jump_date' do
+    context 'when last_clone_jump_date is present' do
+      let(:last_clone_jump_date) { double }
+
+      before do
+        #
+        # subject.response['last_clone_jump_date'] => last_clone_jump_date
+        #
+        expect(subject).to receive(:response) do
+          double.tap do |a|
+            expect(a).to receive(:[]).with('last_clone_jump_date').and_return(last_clone_jump_date)
+          end
+        end
+      end
+
+      before do
+        #
+        # subject.parse_datetime_with_timezone(last_clone_jump_date)
+        #
+        expect(subject).to receive(:parse_datetime_with_timezone).with(last_clone_jump_date)
+      end
+
+      specify { expect { subject.last_clone_jump_date }.not_to raise_error }
+    end
+
+    context 'when last_clone_jump_date not present' do
+      before do
+        #
+        # subject.response['last_clone_jump_date'] => nil
+        #
+        expect(subject).to receive(:response) do
+          double.tap do |a|
+            expect(a).to receive(:[]).with('last_clone_jump_date').and_return(nil)
+          end
+        end
+      end
+
+      before { expect(subject).not_to receive(:parse_datetime_with_timezone) }
+
+      specify { expect { subject.last_clone_jump_date }.not_to raise_error }
+    end
   end
 
   describe '#last_station_change_date' do

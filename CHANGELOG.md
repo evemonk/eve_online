@@ -4,7 +4,23 @@
 
 * Sync with new ESI API
 * Remove `EveOnline::ESI::AlliancesNames`
-* Lint `README.md` and `CHANGELOG.md` with `mdl` gem
+* Lint `README.md`, `CHANGELOG.md` and `TODO.md` with `mdl` gem
+* Add datasource support. Just add `datasource: tranquility` or `datasource: singularity` to options. Default is `tranquility`.
+* Allow change response parser from `JSON` to any json parser compatible with gem `json`. Add `parser: Oj` for `Oj` to default options hash to enable.
+* Rename `EveOnline::ESI::Models::DogmaAttribute#id` to `#attribute_id`
+* Rename input `attribute_id:` to `id:` in `EveOnline::ESI::DogmaAttribute`
+* Rename `EveOnline::ESI::Models::IndustryJob` to `EveOnline::ESI::Models::CharacterIndustryJob`
+* Add `EveOnline::ESI::Models::CorporationIndustryJob`
+* Rename `EveOnline::ESI::Models::CharacterOrder#is_corp` to `#is_corporation`
+* Remove `EveOnline::ESI::Models::CharacterOrder#state`
+* Remove `EveOnline::ESI::Models::CharacterOrder#account_id`
+* Remove `EveOnline::ESI::Models::WalletJournalEntry#ref_id`
+* Remove `EveOnline::ESI::Models::WalletJournalEntry#first_party_type`
+* Remove `EveOnline::ESI::Models::WalletJournalEntry#second_party_type`
+* Add `EveOnline::ESI::Models::WalletJournalEntry#context_id`
+* Add `EveOnline::ESI::Models::WalletJournalEntry#context_id_type`
+* Add `EveOnline::ESI::Models::WalletJournalEntry#description`
+* Add `EveOnline::ESI::Models::WalletJournalEntry#id`
 
 ## v0.16.0
 

@@ -3,14 +3,14 @@
 module EveOnline
   module ESI
     class CorporationBlueprints < Base
-      API_ENDPOINT = 'https://esi.tech.ccp.is/v2/corporations/%<corporation_id>s/blueprints/?datasource=tranquility&page=1'
+      API_ENDPOINT = 'https://esi.tech.ccp.is/v2/corporations/%<corporation_id>s/blueprints/?datasource=%<datasource>s&page=1'
 
       attr_reader :corporation_id
 
       def initialize(options)
         super
 
-        @corporation_id = options[:corporation_id]
+        @corporation_id = options.fetch(:corporation_id)
       end
 
       def blueprints
@@ -27,7 +27,7 @@ module EveOnline
       end
 
       def url
-        format(API_ENDPOINT, corporation_id: corporation_id)
+        format(API_ENDPOINT, corporation_id: corporation_id, datasource: datasource)
       end
     end
   end

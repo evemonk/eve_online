@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     module Models
-      class IndustryJob < Base
+      class CharacterIndustryJob < Base
         def as_json
           {
             activity_id: activity_id,
@@ -28,7 +28,6 @@ module EveOnline
             station_id: station_id,
             status: status,
             successful_runs: successful_runs
-            # location_id WTF???
           }
         end
 

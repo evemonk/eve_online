@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class Bloodlines < Base
-      API_ENDPOINT = 'https://esi.tech.ccp.is/v1/universe/bloodlines/?datasource=tranquility&language=en-us'
+      API_ENDPOINT = 'https://esi.tech.ccp.is/v1/universe/bloodlines/?datasource=%<datasource>s&language=en-us'
 
       def bloodlines
         output = []
@@ -17,7 +17,7 @@ module EveOnline
       def scope; end
 
       def url
-        API_ENDPOINT
+        format(API_ENDPOINT, datasource: datasource)
       end
     end
   end

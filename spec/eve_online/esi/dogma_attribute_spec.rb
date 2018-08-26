@@ -3,18 +3,26 @@
 require 'spec_helper'
 
 describe EveOnline::ESI::DogmaAttribute do
-  let(:options) { { attribute_id: 2 } }
+  let(:options) { { id: 2 } }
 
   subject { described_class.new(options) }
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/v1/dogma/attributes/%<attribute_id>s/?datasource=tranquility') }
+  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/v1/dogma/attributes/%<attribute_id>s/?datasource=%<datasource>s') }
 
   describe '#initialize' do
+    its(:token) { should eq(nil) }
+
     its(:parser) { should eq(JSON) }
 
-    its(:attribute_id) { should eq(2) }
+    its(:_read_timeout) { should eq(60) }
+
+    its(:_open_timeout) { should eq(60) }
+
+    its(:datasource) { should eq('tranquility') }
+
+    its(:id) { should eq(2) }
   end
 
   describe '#model' do
@@ -46,44 +54,14 @@ describe EveOnline::ESI::DogmaAttribute do
     specify { expect { subject.as_json }.not_to raise_error }
   end
 
-  describe '#id' do
+  describe '#attribute_id' do
     let(:model) { double }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
-    before { expect(model).to receive(:id) }
+    before { expect(model).to receive(:attribute_id) }
 
-    specify { expect { subject.id }.not_to raise_error }
-  end
-
-  describe '#name' do
-    let(:model) { double }
-
-    before { subject.instance_variable_set(:@_memoized_model, model) }
-
-    before { expect(model).to receive(:name) }
-
-    specify { expect { subject.name }.not_to raise_error }
-  end
-
-  describe '#description' do
-    let(:model) { double }
-
-    before { subject.instance_variable_set(:@_memoized_model, model) }
-
-    before { expect(model).to receive(:description) }
-
-    specify { expect { subject.description }.not_to raise_error }
-  end
-
-  describe '#icon_id' do
-    let(:model) { double }
-
-    before { subject.instance_variable_set(:@_memoized_model, model) }
-
-    before { expect(model).to receive(:icon_id) }
-
-    specify { expect { subject.icon_id }.not_to raise_error }
+    specify { expect { subject.attribute_id }.not_to raise_error }
   end
 
   describe '#default_value' do
@@ -96,14 +74,14 @@ describe EveOnline::ESI::DogmaAttribute do
     specify { expect { subject.default_value }.not_to raise_error }
   end
 
-  describe '#published' do
+  describe '#description' do
     let(:model) { double }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
-    before { expect(model).to receive(:published) }
+    before { expect(model).to receive(:description) }
 
-    specify { expect { subject.published }.not_to raise_error }
+    specify { expect { subject.description }.not_to raise_error }
   end
 
   describe '#display_name' do
@@ -116,14 +94,44 @@ describe EveOnline::ESI::DogmaAttribute do
     specify { expect { subject.display_name }.not_to raise_error }
   end
 
-  describe '#unit_id' do
+  describe '#high_is_good' do
     let(:model) { double }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
-    before { expect(model).to receive(:unit_id) }
+    before { expect(model).to receive(:high_is_good) }
 
-    specify { expect { subject.unit_id }.not_to raise_error }
+    specify { expect { subject.high_is_good }.not_to raise_error }
+  end
+
+  describe '#icon_id' do
+    let(:model) { double }
+
+    before { subject.instance_variable_set(:@_memoized_model, model) }
+
+    before { expect(model).to receive(:icon_id) }
+
+    specify { expect { subject.icon_id }.not_to raise_error }
+  end
+
+  describe '#name' do
+    let(:model) { double }
+
+    before { subject.instance_variable_set(:@_memoized_model, model) }
+
+    before { expect(model).to receive(:name) }
+
+    specify { expect { subject.name }.not_to raise_error }
+  end
+
+  describe '#published' do
+    let(:model) { double }
+
+    before { subject.instance_variable_set(:@_memoized_model, model) }
+
+    before { expect(model).to receive(:published) }
+
+    specify { expect { subject.published }.not_to raise_error }
   end
 
   describe '#stackable' do
@@ -136,14 +144,14 @@ describe EveOnline::ESI::DogmaAttribute do
     specify { expect { subject.stackable }.not_to raise_error }
   end
 
-  describe '#high_is_good' do
+  describe '#unit_id' do
     let(:model) { double }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
-    before { expect(model).to receive(:high_is_good) }
+    before { expect(model).to receive(:unit_id) }
 
-    specify { expect { subject.high_is_good }.not_to raise_error }
+    specify { expect { subject.unit_id }.not_to raise_error }
   end
 
   describe '#scope' do

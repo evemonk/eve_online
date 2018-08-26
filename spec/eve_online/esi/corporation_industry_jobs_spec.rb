@@ -9,23 +9,37 @@ describe EveOnline::ESI::CorporationIndustryJobs do
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/v1/corporations/%<corporation_id>s/industry/jobs/?datasource=tranquility&include_completed=%<include_completed>s') }
+  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/v1/corporations/%<corporation_id>s/industry/jobs/?datasource=%<datasource>s&include_completed=%<include_completed>s') }
 
   describe '#initialize' do
-    its(:token) { should eq('token123') }
+    context 'with token and corporation_id' do
+      let(:options) { { token: 'token123', corporation_id: 12_345_678 } }
 
-    its(:parser) { should eq(JSON) }
+      its(:token) { should eq('token123') }
 
-    its(:corporation_id) { should eq(12_345_678) }
+      its(:parser) { should eq(JSON) }
 
-    context 'with include completed' do
+      its(:_read_timeout) { should eq(60) }
+
+      its(:_open_timeout) { should eq(60) }
+
+      its(:datasource) { should eq('tranquility') }
+
+      its(:corporation_id) { should eq(12_345_678) }
+
       its(:include_completed) { should eq(false) }
     end
 
-    context 'without include completed' do
+    context 'with include completed' do
       let(:options) { { token: 'token123', corporation_id: 12_345_678, include_completed: true } }
 
       its(:include_completed) { should eq(true) }
+    end
+
+    context 'without include completed' do
+      let(:options) { { token: 'token123', corporation_id: 12_345_678, include_completed: false } }
+
+      its(:include_completed) { should eq(false) }
     end
   end
 
@@ -64,9 +78,9 @@ describe EveOnline::ESI::CorporationIndustryJobs do
 
     before do
       #
-      # EveOnline::ESI::Models::IndustryJob.new(response.first) # => job
+      # EveOnline::ESI::Models::CorporationIndustryJob.new(response.first) # => job
       #
-      expect(EveOnline::ESI::Models::IndustryJob).to receive(:new).with(response.first).and_return(job)
+      expect(EveOnline::ESI::Models::CorporationIndustryJob).to receive(:new).with(response.first).and_return(job)
     end
 
     specify { expect(subject.jobs).to eq([job]) }

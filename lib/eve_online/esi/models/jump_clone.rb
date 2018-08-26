@@ -6,20 +6,20 @@ module EveOnline
       class JumpClone < Base
         def as_json
           {
+            implants: implants,
             jump_clone_id: jump_clone_id,
-            name: name,
             location_id: location_id,
             location_type: location_type,
-            implants: implants
+            name: name
           }
+        end
+
+        def implants
+          options['implants']
         end
 
         def jump_clone_id
           options['jump_clone_id']
-        end
-
-        def name
-          options['name']
         end
 
         def location_id
@@ -30,8 +30,8 @@ module EveOnline
           options['location_type']
         end
 
-        def implants
-          options['implants']
+        def name
+          options['name']
         end
       end
     end

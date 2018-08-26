@@ -7,18 +7,17 @@ module EveOnline
     class CharacterPortrait < Base
       extend Forwardable
 
-      API_ENDPOINT = 'https://esi.tech.ccp.is/v2/characters/%<character_id>s/portrait/?datasource=tranquility'
+      API_ENDPOINT = 'https://esi.tech.ccp.is/v2/characters/%<character_id>s/portrait/?datasource=%<datasource>s'
 
       attr_reader :character_id
 
       def initialize(options)
         super
 
-        @character_id = options[:character_id]
+        @character_id = options.fetch(:character_id)
       end
 
-      def_delegators :model, :as_json, :tiny, :small, :medium, :large, :huge,
-                     :gigantic
+      def_delegators :model, :as_json, :medium, :large, :huge, :small
 
       def model
         Models::CharacterPortrait.new(response)
@@ -28,7 +27,7 @@ module EveOnline
       def scope; end
 
       def url
-        format(API_ENDPOINT, character_id: character_id)
+        format(API_ENDPOINT, character_id: character_id, datasource: datasource)
       end
     end
   end
