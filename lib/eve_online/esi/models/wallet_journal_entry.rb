@@ -6,50 +6,20 @@ module EveOnline
       class WalletJournalEntry < Base
         def as_json
           {
-            date: date,
-            ref_id: ref_id,
-            ref_type: ref_type,
-            first_party_id: first_party_id,
-            first_party_type: first_party_type,
-            second_party_id: second_party_id,
-            second_party_type: second_party_type,
             amount: amount,
             balance: balance,
+            context_id: context_id,
+            context_id_type: context_id_type,
+            date: date,
+            description: description,
+            first_party_id: first_party_id,
+            id: id,
             reason: reason,
-            tax_receiver_id: tax_receiver_id,
-            tax: tax
-            # TODO: add extra_info
+            ref_type: ref_type,
+            second_party_id: second_party_id,
+            tax: tax,
+            tax_receiver_id: tax_receiver_id
           }
-        end
-
-        def date
-          date = options['date']
-
-          parse_datetime_with_timezone(date) if date
-        end
-
-        def ref_id
-          options['ref_id']
-        end
-
-        def ref_type
-          options['ref_type']
-        end
-
-        def first_party_id
-          options['first_party_id']
-        end
-
-        def first_party_type
-          options['first_party_type']
-        end
-
-        def second_party_id
-          options['second_party_id']
-        end
-
-        def second_party_type
-          options['second_party_type']
         end
 
         def amount
@@ -60,16 +30,50 @@ module EveOnline
           options['balance']
         end
 
+        def context_id
+          options['context_id']
+        end
+
+        def context_id_type
+          options['context_id_type']
+        end
+
+        def date
+          date = options['date']
+
+          parse_datetime_with_timezone(date) if date
+        end
+
+        def description
+          options['description']
+        end
+
+        def first_party_id
+          options['first_party_id']
+        end
+
+        def id
+          options['id']
+        end
+
         def reason
           options['reason']
         end
 
-        def tax_receiver_id
-          options['tax_receiver_id']
+        def ref_type
+          options['ref_type']
+        end
+
+        def second_party_id
+          options['second_party_id']
         end
 
         def tax
           options['tax']
+        end
+
+        def tax_receiver_id
+          options['tax_receiver_id']
         end
       end
     end
