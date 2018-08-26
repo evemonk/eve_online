@@ -4,9 +4,11 @@
 
 * Sync with new ESI API
 * Remove `EveOnline::ESI::AlliancesNames`
-* Lint `README.md` and `CHANGELOG.md` with `mdl` gem
+* Lint `README.md`, `CHANGELOG.md` and `TODO.md` with `mdl` gem
 * Add datasource support. Just add `datasource: tranquility` or `datasource: singularity` to options. Default is `tranquility`.
 * Allow change response parser from `JSON` to any json parser compatible with gem `json`. Add `parser: Oj` for `Oj` to default options hash to enable.
+* Rename `EveOnline::ESI::Models::DogmaAttribute#id` to `#attribute_id`
+* Rename input `attribute_id:` to `id:` in `EveOnline::ESI::DogmaAttribute`
 
 ## v0.16.0
 
