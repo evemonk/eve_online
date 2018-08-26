@@ -714,6 +714,8 @@ dogma_attribute.stackable # => true
 dogma_attribute.unit_id # => nil
 ```
 
+#### Get dynamic item information
+
 #### Get effects
 
 #### Get effect information
