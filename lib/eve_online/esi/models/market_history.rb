@@ -6,13 +6,17 @@ module EveOnline
       class MarketHistory < Base
         def as_json
           {
-            date: date,
-            order_count: order_count,
-            volume: volume,
-            highest: highest,
             average: average,
-            lowest: lowest
+            date: date,
+            highest: highest,
+            lowest: lowest,
+            order_count: order_count,
+            volume: volume
           }
+        end
+
+        def average
+          options['average']
         end
 
         def date
@@ -21,24 +25,20 @@ module EveOnline
           parse_datetime_with_timezone(date) if date
         end
 
+        def highest
+          options['highest']
+        end
+
+        def lowest
+          options['lowest']
+        end
+
         def order_count
           options['order_count']
         end
 
         def volume
           options['volume']
-        end
-
-        def highest
-          options['highest']
-        end
-
-        def average
-          options['average']
-        end
-
-        def lowest
-          options['lowest']
         end
       end
     end
