@@ -1068,6 +1068,8 @@ order.escrow
 # TODO: update example
 
 # TODO: add pagination support
+
+# TODO: update
 ```
 
 #### List historical orders from a corporation
@@ -1528,31 +1530,25 @@ character_wallet_journal.wallet_journal_entries.size # => 1
 
 wallet_journal_entry = character_wallet_journal.wallet_journal_entries.first
 
-wallet_journal_entry.as_json # => {:date=>Tue, 06 Mar 2018 12:43:50 UTC +00:00,
-                             #     :ref_id=>15264764711,
-                             #     :ref_type=>"market_escrow",
-                             #     :first_party_id=>90729314,
-                             #     :first_party_type=>"character",
-                             #     :second_party_id=>nil,
-                             #     :second_party_type=>nil,
-                             #     :amount=>-9.5,
-                             #     :balance=>4990.5,
-                             #     :reason=>nil,
-                             #     :tax_receiver_id=>nil,
-                             #     :tax=>nil}
+wallet_journal_entry.as_json
 
-wallet_journal_entry.date # => Tue, 06 Mar 2018 12:43:50 UTC +00:00
-wallet_journal_entry.ref_id # => 15264764711
-wallet_journal_entry.ref_type # => "market_escrow"
-wallet_journal_entry.first_party_id # => 90729314
-wallet_journal_entry.first_party_type # => "character"
-wallet_journal_entry.second_party_id  # => nil
-wallet_journal_entry.second_party_type # => nil
-wallet_journal_entry.amount # => -9.5
-wallet_journal_entry.balance # => 4990.5
-wallet_journal_entry.reason # => nil
-wallet_journal_entry.tax_receiver_id # => nil
-wallet_journal_entry.tax # => nil
+wallet_journal_entry.amount
+wallet_journal_entry.balance
+wallet_journal_entry.context_id
+wallet_journal_entry.context_id_type
+wallet_journal_entry.date
+wallet_journal_entry.description
+wallet_journal_entry.first_party_id
+wallet_journal_entry.id
+wallet_journal_entry.reason
+wallet_journal_entry.ref_type
+wallet_journal_entry.second_party_id
+wallet_journal_entry.tax
+wallet_journal_entry.tax_receiver_id
+
+# TODO: update example
+
+# TODO: add pagination
 ```
 
 #### Get wallet transactions
