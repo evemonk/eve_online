@@ -1345,27 +1345,27 @@ factions.factions.size # => 22
 
 faction = factions.factions.first
 
-faction.as_json # => {:faction_id=>500002,
-                #     :name=>"Minmatar Republic",
+faction.as_json # => {:corporation_id=>1000051,
                 #     :description=>"The Minmatar Republic was formed over a century ago when the Minmatar threw...",
-                #     :solar_system_id=>30002544,
-                #     :corporation_id=>1000051,
+                #     :faction_id=>500002,
+                #     :is_unique=>true,
                 #     :militia_corporation_id=>1000182,
+                #     :name=>"Minmatar Republic",
                 #     :size_factor=>5.0,
+                #     :solar_system_id=>30002544,
                 #     :station_count=>570,
-                #     :station_system_count=>291,
-                #     :is_unique=>true}
+                #     :station_system_count=>291}
 
-faction.faction_id # => 500002
-faction.name # => "Minmatar Republic"
-faction.description # => "The Minmatar Republic was formed over a century ago when the Minmatar threw..."
-faction.solar_system_id # => 30002544
 faction.corporation_id # => 1000051
+faction.description # => "The Minmatar Republic was formed over a century ago when the Minmatar threw..."
+faction.faction_id # => 500002
+faction.is_unique # => true
 faction.militia_corporation_id # => 1000182
+faction.name # => "Minmatar Republic"
 faction.size_factor # => 5.0
+faction.solar_system_id # => 30002544
 faction.station_count # => 570
 faction.station_system_count # => 291
-faction.is_unique # => true
 
 # TODO: add languages
 ```
