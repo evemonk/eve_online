@@ -1397,15 +1397,15 @@ races.races.size # => 4
 
 race = races.races.first
 
-race.as_json # => {:race_id=>2,
-             #     :name=>"Minmatar",
+race.as_json # => {:alliance_id=>500002,
              #     :description=>"Once a thriving tribal civilization, the Minmatar...",
-             #     :alliance_id=>500002}
+             #     :name=>"Minmatar",
+             #     :race_id=>2}
 
-race.race_id # => 2
-race.name # => "Minmatar"
-race.description # => "Once a thriving tribal civilization, the Minmatar..."
 race.alliance_id # => 500002
+race.description # => "Once a thriving tribal civilization, the Minmatar..."
+race.name # => "Minmatar"
+race.race_id # => 2
 
 # TODO: add languages
 
