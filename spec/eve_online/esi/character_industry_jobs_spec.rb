@@ -78,9 +78,9 @@ describe EveOnline::ESI::CharacterIndustryJobs do
 
     before do
       #
-      # EveOnline::ESI::Models::IndustryJob.new(response.first) # => job
+      # EveOnline::ESI::Models::CharacterIndustryJob.new(response.first) # => job
       #
-      expect(EveOnline::ESI::Models::IndustryJob).to receive(:new).with(response.first).and_return(job)
+      expect(EveOnline::ESI::Models::CharacterIndustryJob).to receive(:new).with(response.first).and_return(job)
     end
 
     specify { expect(subject.jobs).to eq([job]) }

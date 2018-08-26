@@ -17,7 +17,7 @@ module EveOnline
       def jobs
         output = []
         response.each do |job|
-          output << Models::IndustryJob.new(job)
+          output << Models::CharacterIndustryJob.new(job)
         end
         output
       end

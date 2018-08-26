@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     module Models
-      class IndustryJob < Base
+      class CharacterIndustryJob < Base
         def as_json
           {
             activity_id: activity_id,

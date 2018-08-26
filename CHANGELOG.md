@@ -9,6 +9,8 @@
 * Allow change response parser from `JSON` to any json parser compatible with gem `json`. Add `parser: Oj` for `Oj` to default options hash to enable.
 * Rename `EveOnline::ESI::Models::DogmaAttribute#id` to `#attribute_id`
 * Rename input `attribute_id:` to `id:` in `EveOnline::ESI::DogmaAttribute`
+* Rename `EveOnline::ESI::Models::IndustryJob` to `EveOnline::ESI::Models::CharacterIndustryJob`
+* Add `EveOnline::ESI::Models::CharacterIndustryJob`
 
 ## v0.16.0
 

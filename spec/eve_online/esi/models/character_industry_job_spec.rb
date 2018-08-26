@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-describe EveOnline::ESI::Models::IndustryJob do
+describe EveOnline::ESI::Models::CharacterIndustryJob do
   it { should be_a(EveOnline::ESI::Models::Base) }
 
   let(:options) { double }
