@@ -685,7 +685,7 @@ dogma_attributes.attributes.first # => 2
 #### Get attribute information
 
 ```ruby
-options = { attribute_id: 2 }
+options = { id: 2 }
 
 dogma_attribute = EveOnline::ESI::DogmaAttribute.new(options)
 
