@@ -20,14 +20,6 @@ module EveOnline
         }
       end
 
-      def total_sp
-        response['total_sp']
-      end
-
-      def unallocated_sp
-        response['unallocated_sp']
-      end
-
       def skills
         output = []
         response.fetch('skills').each do |skill|
@@ -36,6 +28,14 @@ module EveOnline
         output
       end
       memoize :skills
+
+      def total_sp
+        response['total_sp']
+      end
+
+      def unallocated_sp
+        response['unallocated_sp']
+      end
 
       def scope
         'esi-skills.read_skills.v1'
