@@ -14,6 +14,13 @@
 * Rename `EveOnline::ESI::Models::CharacterOrder#is_corp` to `#is_corporation`
 * Remove `EveOnline::ESI::Models::CharacterOrder#state`
 * Remove `EveOnline::ESI::Models::CharacterOrder#account_id`
+* Remove `EveOnline::ESI::Models::WalletJournalEntry#ref_id`
+* Remove `EveOnline::ESI::Models::WalletJournalEntry#first_party_type`
+* Remove `EveOnline::ESI::Models::WalletJournalEntry#second_party_type`
+* Add `EveOnline::ESI::Models::WalletJournalEntry#context_id`
+* Add `EveOnline::ESI::Models::WalletJournalEntry#context_id_type`
+* Add `EveOnline::ESI::Models::WalletJournalEntry#description`
+* Add `EveOnline::ESI::Models::WalletJournalEntry#id`
 
 ## v0.16.0
 
