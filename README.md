@@ -691,27 +691,27 @@ dogma_attribute = EveOnline::ESI::DogmaAttribute.new(options)
 
 dogma_attribute.scope # => nil
 
-dogma_attribute.as_json # => {:id=>2,
-                        #     :name=>"isOnline",
-                        #     :description=>"Boolean to store status of online effect",
-                        #     :icon_id=>nil,
+dogma_attribute.as_json # => {:attribute_id=>2,
                         #     :default_value=>0.0,
-                        #     :published=>nil,
+                        #     :description=>"Boolean to store status of online effect",
                         #     :display_name=>"",
-                        #     :unit_id=>nil,
+                        #     :high_is_good=>true,
+                        #     :icon_id=>nil,
+                        #     :name=>"isOnline",
+                        #     :published=>nil,
                         #     :stackable=>true,
-                        #     :high_is_good=>true}
+                        #     :unit_id=>nil}
 
-dogma_attribute.id # => 2
-dogma_attribute.name # => "isOnline"
-dogma_attribute.description # => "Boolean to store status of online effect"
-dogma_attribute.icon_id # => nil
+dogma_attribute.attribute_id # => 2
 dogma_attribute.default_value # => 0.0
-dogma_attribute.published # => nil
+dogma_attribute.description # => "Boolean to store status of online effect"
 dogma_attribute.display_name # => ""
-dogma_attribute.unit_id # => nil
-dogma_attribute.stackable # => true
 dogma_attribute.high_is_good # => true
+dogma_attribute.icon_id # => nil
+dogma_attribute.name # => "isOnline"
+dogma_attribute.published # => nil
+dogma_attribute.stackable # => true
+dogma_attribute.unit_id # => nil
 ```
 
 #### Get effects
