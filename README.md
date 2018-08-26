@@ -1300,28 +1300,28 @@ bloodlines.bloodlines.size # => 15
 bloodline = bloodlines.bloodlines.first
 
 bloodline.as_json # => {:bloodline_id=>4,
-                  #     :name=>"Brutor",
+                  #     :charisma=>6,
+                  #     :corporation_id=>1000049,
                   #     :description=>"A martial, strong-willed people, the Brutor...",
+                  #     :intelligence=>4,
+                  #     :memory=>4,
+                  #     :name=>"Brutor",
+                  #     :perception=>9,
                   #     :race_id=>2,
                   #     :ship_type_id=>588,
-                  #     :corporation_id=>1000049,
-                  #     :perception=>9,
-                  #     :willpower=>7,
-                  #     :charisma=>6,
-                  #     :memory=>4,
-                  #     :intelligence=>4}
+                  #     :willpower=>7}
 
 bloodline.bloodline_id # => 4
-bloodline.name # => "Brutor"
+bloodline.charisma # => 6
+bloodline.corporation_id # => 1000049
 bloodline.description # => "A martial, strong-willed people, the Brutor..."
+bloodline.intelligence # => 4
+bloodline.memory # => 4
+bloodline.name # => "Brutor"
+bloodline.perception # => 9
 bloodline.race_id # => 2
 bloodline.ship_type_id # => 588
-bloodline.corporation_id # => 1000049
-bloodline.perception # => 9
 bloodline.willpower # => 7
-bloodline.charisma # => 6
-bloodline.memory # => 4
-bloodline.intelligence # => 4
 
 # TODO: add languages
 ```
