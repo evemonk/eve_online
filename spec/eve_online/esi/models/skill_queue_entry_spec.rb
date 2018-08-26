@@ -20,57 +20,39 @@ describe EveOnline::ESI::Models::SkillQueueEntry do
 
     let(:start_date) { double }
 
-    before { expect(skill_queue_entry).to receive(:skill_id).and_return(3_308) }
-
-    before { expect(skill_queue_entry).to receive(:finished_level).and_return(3) }
-
-    before { expect(skill_queue_entry).to receive(:queue_position).and_return(49) }
-
     before { expect(skill_queue_entry).to receive(:finish_date).and_return(finish_date) }
 
-    before { expect(skill_queue_entry).to receive(:start_date).and_return(start_date) }
-
-    before { expect(skill_queue_entry).to receive(:training_start_sp).and_return(7_072) }
+    before { expect(skill_queue_entry).to receive(:finished_level).and_return(3) }
 
     before { expect(skill_queue_entry).to receive(:level_end_sp).and_return(40_000) }
 
     before { expect(skill_queue_entry).to receive(:level_start_sp).and_return(7_072) }
 
+    before { expect(skill_queue_entry).to receive(:queue_position).and_return(49) }
+
+    before { expect(skill_queue_entry).to receive(:skill_id).and_return(3_308) }
+
+    before { expect(skill_queue_entry).to receive(:start_date).and_return(start_date) }
+
+    before { expect(skill_queue_entry).to receive(:training_start_sp).and_return(7_072) }
+
     subject { skill_queue_entry.as_json }
-
-    its([:skill_id]) { should eq(3_308) }
-
-    its([:finished_level]) { should eq(3) }
-
-    its([:queue_position]) { should eq(49) }
 
     its([:finish_date]) { should eq(finish_date) }
 
-    its([:start_date]) { should eq(start_date) }
-
-    its([:training_start_sp]) { should eq(7_072) }
+    its([:finished_level]) { should eq(3) }
 
     its([:level_end_sp]) { should eq(40_000) }
 
     its([:level_start_sp]) { should eq(7_072) }
-  end
 
-  describe '#skill_id' do
-    before { expect(options).to receive(:[]).with('skill_id') }
+    its([:queue_position]) { should eq(49) }
 
-    specify { expect { subject.skill_id }.not_to raise_error }
-  end
+    its([:skill_id]) { should eq(3_308) }
 
-  describe '#finished_level' do
-    before { expect(options).to receive(:[]).with('finished_level') }
+    its([:start_date]) { should eq(start_date) }
 
-    specify { expect { subject.finished_level }.not_to raise_error }
-  end
-
-  describe '#queue_position' do
-    before { expect(options).to receive(:[]).with('queue_position') }
-
-    specify { expect { subject.queue_position }.not_to raise_error }
+    its([:training_start_sp]) { should eq(7_072) }
   end
 
   describe '#finish_date' do
@@ -96,6 +78,36 @@ describe EveOnline::ESI::Models::SkillQueueEntry do
 
       specify { expect { subject.finish_date }.not_to raise_error }
     end
+  end
+
+  describe '#finished_level' do
+    before { expect(options).to receive(:[]).with('finished_level') }
+
+    specify { expect { subject.finished_level }.not_to raise_error }
+  end
+
+  describe '#level_end_sp' do
+    before { expect(options).to receive(:[]).with('level_end_sp') }
+
+    specify { expect { subject.level_end_sp }.not_to raise_error }
+  end
+
+  describe '#level_start_sp' do
+    before { expect(options).to receive(:[]).with('level_start_sp') }
+
+    specify { expect { subject.level_start_sp }.not_to raise_error }
+  end
+
+  describe '#queue_position' do
+    before { expect(options).to receive(:[]).with('queue_position') }
+
+    specify { expect { subject.queue_position }.not_to raise_error }
+  end
+
+  describe '#skill_id' do
+    before { expect(options).to receive(:[]).with('skill_id') }
+
+    specify { expect { subject.skill_id }.not_to raise_error }
   end
 
   describe '#start_date' do
@@ -127,17 +139,5 @@ describe EveOnline::ESI::Models::SkillQueueEntry do
     before { expect(options).to receive(:[]).with('training_start_sp') }
 
     specify { expect { subject.training_start_sp }.not_to raise_error }
-  end
-
-  describe '#level_end_sp' do
-    before { expect(options).to receive(:[]).with('level_end_sp') }
-
-    specify { expect { subject.level_end_sp }.not_to raise_error }
-  end
-
-  describe '#level_start_sp' do
-    before { expect(options).to receive(:[]).with('level_start_sp') }
-
-    specify { expect { subject.level_start_sp }.not_to raise_error }
   end
 end

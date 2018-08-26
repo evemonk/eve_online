@@ -16,35 +16,29 @@ describe EveOnline::ESI::Models::Race do
   describe '#as_json' do
     let(:races) { described_class.new(options) }
 
-    before { expect(races).to receive(:race_id).and_return(2) }
-
-    before { expect(races).to receive(:name).and_return('Minmatar') }
+    before { expect(races).to receive(:alliance_id).and_return(500_002) }
 
     before { expect(races).to receive(:description).and_return('Once a thriving tribal civilization, the Minmatar...') }
 
-    before { expect(races).to receive(:alliance_id).and_return(500_002) }
+    before { expect(races).to receive(:name).and_return('Minmatar') }
+
+    before { expect(races).to receive(:race_id).and_return(2) }
 
     subject { races.as_json }
 
-    its([:race_id]) { should eq(2) }
-
-    its([:name]) { should eq('Minmatar') }
+    its([:alliance_id]) { should eq(500_002) }
 
     its([:description]) { should eq('Once a thriving tribal civilization, the Minmatar...') }
 
-    its([:alliance_id]) { should eq(500_002) }
+    its([:name]) { should eq('Minmatar') }
+
+    its([:race_id]) { should eq(2) }
   end
 
-  describe '#race_id' do
-    before { expect(options).to receive(:[]).with('race_id') }
+  describe '#alliance_id' do
+    before { expect(options).to receive(:[]).with('alliance_id') }
 
-    specify { expect { subject.race_id }.not_to raise_error }
-  end
-
-  describe '#name' do
-    before { expect(options).to receive(:[]).with('name') }
-
-    specify { expect { subject.name }.not_to raise_error }
+    specify { expect { subject.alliance_id }.not_to raise_error }
   end
 
   describe '#description' do
@@ -53,9 +47,15 @@ describe EveOnline::ESI::Models::Race do
     specify { expect { subject.description }.not_to raise_error }
   end
 
-  describe '#alliance_id' do
-    before { expect(options).to receive(:[]).with('alliance_id') }
+  describe '#name' do
+    before { expect(options).to receive(:[]).with('name') }
 
-    specify { expect { subject.alliance_id }.not_to raise_error }
+    specify { expect { subject.name }.not_to raise_error }
+  end
+
+  describe '#race_id' do
+    before { expect(options).to receive(:[]).with('race_id') }
+
+    specify { expect { subject.race_id }.not_to raise_error }
   end
 end

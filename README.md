@@ -177,7 +177,7 @@ asset.type_id # => 1010
 
 #### Get corporation asset locations
 
-#### Get coporation asset names (typo in swagger)
+#### Get corporation asset names
 
 ### Bookmarks
 
@@ -357,8 +357,6 @@ blueprint.type_id # => 1010
 # TODO: add pagination support
 ```
 
-#### Get chat channels
-
 #### Get corporation history
 
 #### Calculate a CSPA charge cost
@@ -467,8 +465,6 @@ standing.standing # => 0.3303719111639991
 
 #### Character affiliation
 
-#### Get character names
-
 ### Clones
 
 #### Get clones
@@ -522,6 +518,8 @@ character_implants.implants # => [9899, 9941, 9942, 9943, 9956]
 
 #### Get alliance contacts
 
+#### Get alliance contact labels
+
 #### Delete contacts
 
 #### Get contacts
@@ -534,6 +532,8 @@ character_implants.implants # => [9899, 9941, 9942, 9943, 9956]
 
 #### Get corporation contacts
 
+#### Get corporation contact labels
+
 ### Contracts
 
 #### Get contracts
@@ -542,7 +542,13 @@ character_implants.implants # => [9899, 9941, 9942, 9943, 9956]
 
 #### Get contract items
 
-#### Get coporation contracts (typo in swagger)
+#### Get public contracts
+
+#### Get public contract bids
+
+#### Get public contract items
+
+#### Get corporation contracts
 
 #### Get corporation contract bids
 
@@ -644,10 +650,6 @@ blueprint.type_id # => 31803
 
 #### Track corporation members
 
-#### Get corporation outposts
-
-#### Get corporation outpost details
-
 #### Get corporation member roles
 
 #### Get corporation member roles history
@@ -663,8 +665,6 @@ blueprint.type_id # => 31803
 #### Get corporation structures
 
 #### Get corporation titles
-
-#### Get corporation names
 
 #### Get npc corporations
 
@@ -1089,19 +1089,19 @@ statistics.size # => 417
 
 stats_today = statistics.last
 
-stats_today.as_json # => {:date=>Fri, 24 Nov 2017 00:00:00 UTC +00:00,
-                    #     :order_count=>52,
-                    #     :volume=>52,
+stats_today.as_json # => {:average=>754702326.19,
+                    #     :date=>Fri, 24 Nov 2017 00:00:00 UTC +00:00,
                     #     :highest=>769999999.99,
-                    #     :average=>754702326.19,
-                    #     :lowest=>701100002.49}
+                    #     :lowest=>701100002.49,
+                    #     :order_count=>52,
+                    #     :volume=>52}
 
+stats_today.average # => 754702326.19
 stats_today.date # => Fri, 24 Nov 2017 00:00:00 UTC +00:00
+stats_today.highest # => 769999999.99
+stats_today.lowest # => 701100002.49
 stats_today.order_count # => 52
 stats_today.volume # => 52
-stats_today.highest # => 769999999.99
-stats_today.average # => 754702326.19
-stats_today.lowest # => 701100002.49
 ```
 
 #### List orders in a region
@@ -1159,23 +1159,23 @@ character_attributes = EveOnline::ESI::CharacterAttributes.new(options)
 
 character_attributes.scope # => "esi-skills.read_skills.v1"
 
-character_attributes.as_json # => {:charisma=>20,
+character_attributes.as_json # => {:accrued_remap_cooldown_date=>Sun, 06 May 2012 12:58:06 UTC +00:00,
+                             #     :bonus_remaps=>2,
+                             #     :charisma=>20,
                              #     :intelligence=>24,
+                             #     :last_remap_date=>Sat, 07 May 2011 12:58:06 UTC +00:00,
                              #     :memory=>24,
                              #     :perception=>23,
-                             #     :willpower=>23,
-                             #     :bonus_remaps=>2,
-                             #     :last_remap_date=>Sat, 07 May 2011 12:58:06 UTC +00:00,
-                             #     :accrued_remap_cooldown_date=>Sun, 06 May 2012 12:58:06 UTC +00:00}
+                             #     :willpower=>23}
 
+character_attributes.accrued_remap_cooldown_date # => Sun, 06 May 2012 12:58:06 UTC +00:00
+character_attributes.bonus_remaps # => 2
 character_attributes.charisma # => 20
 character_attributes.intelligence # => 24
+character_attributes.last_remap_date # => Sat, 07 May 2011 12:58:06 UTC +00:00
 character_attributes.memory # => 24
 character_attributes.perception # => 23
 character_attributes.willpower # => 23
-character_attributes.bonus_remaps # => 2
-character_attributes.last_remap_date # => Sat, 07 May 2011 12:58:06 UTC +00:00
-character_attributes.accrued_remap_cooldown_date # => Sun, 06 May 2012 12:58:06 UTC +00:00
 ```
 
 #### Get character's skill queue
@@ -1191,17 +1191,23 @@ character_skill_queue.skills.size # => 50
 
 skill_queue_entry = character_skill_queue.skills.first
 
-skill_queue_entry.as_json
-# => {:skill_id=>12487, :finished_level=>3, :queue_position=>0, :finish_date=>Mon, 16 Jan 2017 03:00:35 UTC +00:00, :start_date=>Sun, 15 Jan 2017 11:38:25 UTC +00:00, :training_start_sp=>7263, :level_end_sp=>40000, :level_start_sp=>7072}
+skill_queue_entry.as_json # => {:finish_date=>Mon, 16 Jan 2017 03:00:35 UTC +00:00,
+                          #     :finished_level=>3,
+                          #     :level_end_sp=>40000,
+                          #     :level_start_sp=>7072
+                          #     :queue_position=>0,
+                          #     :skill_id=>12487,
+                          #     :start_date=>Sun, 15 Jan 2017 11:38:25 UTC +00:00,
+                          #     :training_start_sp=>7263}
 
-skill_queue_entry.skill_id # => 12487
-skill_queue_entry.finished_level # => 3
-skill_queue_entry.queue_position # => 0
 skill_queue_entry.finish_date # => Mon, 16 Jan 2017 03:00:35 UTC +00:00
-skill_queue_entry.start_date # => Sun, 15 Jan 2017 11:38:25 UTC +00:00
-skill_queue_entry.training_start_sp # => 7263
+skill_queue_entry.finished_level # => 3
 skill_queue_entry.level_end_sp # => 40000
 skill_queue_entry.level_start_sp # => 7072
+skill_queue_entry.queue_position # => 0
+skill_queue_entry.skill_id # => 12487
+skill_queue_entry.start_date # => Sun, 15 Jan 2017 11:38:25 UTC +00:00
+skill_queue_entry.training_start_sp # => 7263
 ```
 
 #### Get character skills
@@ -1222,13 +1228,15 @@ character_skills.skills.size # => 179
 
 skill = character_skills.skills.first
 
-skill.as_json
-# => {:skill_id=>22536, :skillpoints_in_skill=>500, :trained_skill_level=>1, :active_skill_level=>0}
+skill.as_json # => {:active_skill_level=>0,
+              #     :skill_id=>22536,
+              #     :skillpoints_in_skill=>500,
+              #     :trained_skill_level=>1}
 
+skill.active_skill_level # => 0
 skill.skill_id # => 22536
 skill.skillpoints_in_skill # => 500
 skill.trained_skill_level # => 1
-skill.active_skill_level # => 0
 ```
 
 ### Sovereignty
@@ -1248,11 +1256,14 @@ server_status = EveOnline::ESI::ServerStatus.new
 
 server_status.scope # => nil
 
-server_status.as_json # => {:start_time=>Tue, 11 Apr 2017 11:05:35 UTC +00:00, :players=>34545, :server_version=>"1135520", :vip=>nil}
+server_status.as_json # => {:players=>34545,
+                      #     :server_version=>"1135520",
+                      #     :start_time=>Tue, 11 Apr 2017 11:05:35 UTC +00:00,
+                      #     :vip=>nil}
 
-server_status.start_time # => Tue, 11 Apr 2017 11:05:35 UTC +00:00
 server_status.players # => 34545
 server_status.server_version # => "1135520"
+server_status.start_time # => Tue, 11 Apr 2017 11:05:35 UTC +00:00
 server_status.vip # => nil
 ```
 
@@ -1269,22 +1280,24 @@ ancestries.ancestries.size # => 42
 
 ancestry = ancestries.ancestries.first
 
-ancestry.as_json # => {:ancestry_id=>24,
-                 #     :name=>"Slave Child",
-                 #     :bloodline_id=>4,
+ancestry.as_json # => {:bloodline_id=>4,
                  #     :description=>"Millions of slaves within the Amarr Empire dream of escape...",
-                 #     :short_description=>"Torn from the cold and brought to the warmth of a new life.",
-                 #     :icon_id=>1664}
+                 #     :icon_id=>1664,
+                 #     :ancestry_id=>24,
+                 #     :name=>"Slave Child",
+                 #     :short_description=>"Torn from the cold and brought to the warmth of a new life."}
 
-ancestry.ancestry_id # => 24
-ancestry.name # => "Slave Child"
 ancestry.bloodline_id # => 4
 ancestry.description # => "Millions of slaves within the Amarr Empire dream of escape..."
-ancestry.short_description # => "Torn from the cold and brought to the warmth of a new life."
 ancestry.icon_id # => 1664
+ancestry.ancestry_id # => 24
+ancestry.name # => "Slave Child"
+ancestry.short_description # => "Torn from the cold and brought to the warmth of a new life."
 
 # TODO: add languages
 ```
+
+#### Get asteroid belt information
 
 #### Get bloodlines
 
@@ -1298,28 +1311,28 @@ bloodlines.bloodlines.size # => 15
 bloodline = bloodlines.bloodlines.first
 
 bloodline.as_json # => {:bloodline_id=>4,
-                  #     :name=>"Brutor",
+                  #     :charisma=>6,
+                  #     :corporation_id=>1000049,
                   #     :description=>"A martial, strong-willed people, the Brutor...",
+                  #     :intelligence=>4,
+                  #     :memory=>4,
+                  #     :name=>"Brutor",
+                  #     :perception=>9,
                   #     :race_id=>2,
                   #     :ship_type_id=>588,
-                  #     :corporation_id=>1000049,
-                  #     :perception=>9,
-                  #     :willpower=>7,
-                  #     :charisma=>6,
-                  #     :memory=>4,
-                  #     :intelligence=>4}
+                  #     :willpower=>7}
 
 bloodline.bloodline_id # => 4
-bloodline.name # => "Brutor"
+bloodline.charisma # => 6
+bloodline.corporation_id # => 1000049
 bloodline.description # => "A martial, strong-willed people, the Brutor..."
+bloodline.intelligence # => 4
+bloodline.memory # => 4
+bloodline.name # => "Brutor"
+bloodline.perception # => 9
 bloodline.race_id # => 2
 bloodline.ship_type_id # => 588
-bloodline.corporation_id # => 1000049
-bloodline.perception # => 9
 bloodline.willpower # => 7
-bloodline.charisma # => 6
-bloodline.memory # => 4
-bloodline.intelligence # => 4
 
 # TODO: add languages
 ```
@@ -1343,27 +1356,27 @@ factions.factions.size # => 22
 
 faction = factions.factions.first
 
-faction.as_json # => {:faction_id=>500002,
-                #     :name=>"Minmatar Republic",
+faction.as_json # => {:corporation_id=>1000051,
                 #     :description=>"The Minmatar Republic was formed over a century ago when the Minmatar threw...",
-                #     :solar_system_id=>30002544,
-                #     :corporation_id=>1000051,
+                #     :faction_id=>500002,
+                #     :is_unique=>true,
                 #     :militia_corporation_id=>1000182,
+                #     :name=>"Minmatar Republic",
                 #     :size_factor=>5.0,
+                #     :solar_system_id=>30002544,
                 #     :station_count=>570,
-                #     :station_system_count=>291,
-                #     :is_unique=>true}
+                #     :station_system_count=>291}
 
-faction.faction_id # => 500002
-faction.name # => "Minmatar Republic"
-faction.description # => "The Minmatar Republic was formed over a century ago when the Minmatar threw..."
-faction.solar_system_id # => 30002544
 faction.corporation_id # => 1000051
+faction.description # => "The Minmatar Republic was formed over a century ago when the Minmatar threw..."
+faction.faction_id # => 500002
+faction.is_unique # => true
 faction.militia_corporation_id # => 1000182
+faction.name # => "Minmatar Republic"
 faction.size_factor # => 5.0
+faction.solar_system_id # => 30002544
 faction.station_count # => 570
 faction.station_system_count # => 291
-faction.is_unique # => true
 
 # TODO: add languages
 ```
@@ -1395,15 +1408,15 @@ races.races.size # => 4
 
 race = races.races.first
 
-race.as_json # => {:race_id=>2,
-             #     :name=>"Minmatar",
+race.as_json # => {:alliance_id=>500002,
              #     :description=>"Once a thriving tribal civilization, the Minmatar...",
-             #     :alliance_id=>500002}
+             #     :name=>"Minmatar",
+             #     :race_id=>2}
 
-race.race_id # => 2
-race.name # => "Minmatar"
-race.description # => "Once a thriving tribal civilization, the Minmatar..."
 race.alliance_id # => 500002
+race.description # => "Once a thriving tribal civilization, the Minmatar..."
+race.name # => "Minmatar"
+race.race_id # => 2
 
 # TODO: add languages
 

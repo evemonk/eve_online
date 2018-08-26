@@ -7,16 +7,16 @@ module EveOnline
         def as_json
           {
             bloodline_id: bloodline_id,
-            name: name,
+            charisma: charisma,
+            corporation_id: corporation_id,
             description: description,
+            intelligence: intelligence,
+            memory: memory,
+            name: name,
+            perception: perception,
             race_id: race_id,
             ship_type_id: ship_type_id,
-            corporation_id: corporation_id,
-            perception: perception,
-            willpower: willpower,
-            charisma: charisma,
-            memory: memory,
-            intelligence: intelligence
+            willpower: willpower
           }
         end
 
@@ -24,12 +24,32 @@ module EveOnline
           options['bloodline_id']
         end
 
-        def name
-          options['name']
+        def charisma
+          options['charisma']
+        end
+
+        def corporation_id
+          options['corporation_id']
         end
 
         def description
           options['description']
+        end
+
+        def intelligence
+          options['intelligence']
+        end
+
+        def memory
+          options['memory']
+        end
+
+        def name
+          options['name']
+        end
+
+        def perception
+          options['perception']
         end
 
         def race_id
@@ -40,28 +60,8 @@ module EveOnline
           options['ship_type_id']
         end
 
-        def corporation_id
-          options['corporation_id']
-        end
-
-        def perception
-          options['perception']
-        end
-
         def willpower
           options['willpower']
-        end
-
-        def charisma
-          options['charisma']
-        end
-
-        def memory
-          options['memory']
-        end
-
-        def intelligence
-          options['intelligence']
         end
       end
     end

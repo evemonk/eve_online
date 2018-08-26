@@ -18,23 +18,35 @@ describe EveOnline::ESI::Models::ServerStatus do
 
     let(:start_time) { double }
 
-    before { expect(server_status).to receive(:start_time).and_return(start_time) }
-
     before { expect(server_status).to receive(:players).and_return(34_545) }
 
     before { expect(server_status).to receive(:server_version).and_return(1_135_520) }
+
+    before { expect(server_status).to receive(:start_time).and_return(start_time) }
 
     before { expect(server_status).to receive(:vip).and_return(false) }
 
     subject { server_status.as_json }
 
-    its([:start_time]) { should eq(start_time) }
-
     its([:players]) { should eq(34_545) }
 
     its([:server_version]) { should eq(1_135_520) }
 
+    its([:start_time]) { should eq(start_time) }
+
     its([:vip]) { should eq(false) }
+  end
+
+  describe '#players' do
+    before { expect(options).to receive(:[]).with('players') }
+
+    specify { expect { subject.players }.not_to raise_error }
+  end
+
+  describe '#server_version' do
+    before { expect(options).to receive(:[]).with('server_version') }
+
+    specify { expect { subject.server_version }.not_to raise_error }
   end
 
   describe '#start_time' do
@@ -60,18 +72,6 @@ describe EveOnline::ESI::Models::ServerStatus do
 
       specify { expect { subject.start_time }.not_to raise_error }
     end
-  end
-
-  describe '#players' do
-    before { expect(options).to receive(:[]).with('players') }
-
-    specify { expect { subject.players }.not_to raise_error }
-  end
-
-  describe '#server_version' do
-    before { expect(options).to receive(:[]).with('server_version') }
-
-    specify { expect { subject.server_version }.not_to raise_error }
   end
 
   describe '#vip' do
