@@ -19,13 +19,13 @@ module EveOnline
             installer_id: installer_id,
             job_id: job_id,
             licensed_runs: licensed_runs,
+            location_id: location_id,
             output_location_id: output_location_id,
             pause_date: pause_date,
             probability: probability,
             product_type_id: product_type_id,
             runs: runs,
             start_date: start_date,
-            station_id: station_id,
             status: status,
             successful_runs: successful_runs
           }
@@ -87,6 +87,10 @@ module EveOnline
           options['licensed_runs']
         end
 
+        def location_id
+          options['location_id']
+        end
+
         def output_location_id
           options['output_location_id']
         end
@@ -113,10 +117,6 @@ module EveOnline
           start_date = options['start_date']
 
           parse_datetime_with_timezone(start_date) if start_date
-        end
-
-        def station_id
-          options['station_id']
         end
 
         def status

@@ -22,6 +22,8 @@ describe EveOnline::ESI::Models::CorporationIndustryJob do
 
     let(:end_date) { double }
 
+    let(:location_id) { double }
+
     let(:pause_date) { double }
 
     let(:start_date) { double }
@@ -54,6 +56,8 @@ describe EveOnline::ESI::Models::CorporationIndustryJob do
 
     before { expect(industry_job).to receive(:licensed_runs).and_return(1) }
 
+    before { expect(industry_job).to receive(:location_id).and_return(location_id) }
+
     before { expect(industry_job).to receive(:output_location_id).and_return(1_023_579_231_924) }
 
     before { expect(industry_job).to receive(:pause_date).and_return(pause_date) }
@@ -65,8 +69,6 @@ describe EveOnline::ESI::Models::CorporationIndustryJob do
     before { expect(industry_job).to receive(:runs).and_return(2) }
 
     before { expect(industry_job).to receive(:start_date).and_return(start_date) }
-
-    before { expect(industry_job).to receive(:station_id).and_return(1_023_579_231_924) }
 
     before { expect(industry_job).to receive(:status).and_return('active') }
 
@@ -100,6 +102,8 @@ describe EveOnline::ESI::Models::CorporationIndustryJob do
 
     its([:licensed_runs]) { should eq(1) }
 
+    its([:location_id]) { should eq(location_id) }
+
     its([:output_location_id]) { should eq(1_023_579_231_924) }
 
     its([:pause_date]) { should eq(pause_date) }
@@ -111,8 +115,6 @@ describe EveOnline::ESI::Models::CorporationIndustryJob do
     its([:runs]) { should eq(2) }
 
     its([:start_date]) { should eq(start_date) }
-
-    its([:station_id]) { should eq(1_023_579_231_924) }
 
     its([:status]) { should eq('active') }
 
@@ -235,6 +237,12 @@ describe EveOnline::ESI::Models::CorporationIndustryJob do
     specify { expect { subject.licensed_runs }.not_to raise_error }
   end
 
+  describe '#location_id' do
+    before { expect(options).to receive(:[]).with('location_id') }
+
+    specify { expect { subject.location_id }.not_to raise_error }
+  end
+
   describe '#output_location_id' do
     before { expect(options).to receive(:[]).with('output_location_id') }
 
@@ -307,12 +315,6 @@ describe EveOnline::ESI::Models::CorporationIndustryJob do
 
       specify { expect { subject.start_date }.not_to raise_error }
     end
-  end
-
-  describe '#station_id' do
-    before { expect(options).to receive(:[]).with('station_id') }
-
-    specify { expect { subject.station_id }.not_to raise_error }
   end
 
   describe '#status' do
