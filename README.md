@@ -177,7 +177,7 @@ asset.type_id # => 1010
 
 #### Get corporation asset locations
 
-#### Get coporation asset names (typo in swagger)
+#### Get corporation asset names
 
 ### Bookmarks
 
@@ -357,8 +357,6 @@ blueprint.type_id # => 1010
 # TODO: add pagination support
 ```
 
-#### Get chat channels
-
 #### Get corporation history
 
 #### Calculate a CSPA charge cost
@@ -467,8 +465,6 @@ standing.standing # => 0.3303719111639991
 
 #### Character affiliation
 
-#### Get character names
-
 ### Clones
 
 #### Get clones
@@ -522,6 +518,8 @@ character_implants.implants # => [9899, 9941, 9942, 9943, 9956]
 
 #### Get alliance contacts
 
+#### Get alliance contact labels
+
 #### Delete contacts
 
 #### Get contacts
@@ -534,6 +532,8 @@ character_implants.implants # => [9899, 9941, 9942, 9943, 9956]
 
 #### Get corporation contacts
 
+#### Get corporation contact labels
+
 ### Contracts
 
 #### Get contracts
@@ -542,7 +542,13 @@ character_implants.implants # => [9899, 9941, 9942, 9943, 9956]
 
 #### Get contract items
 
-#### Get coporation contracts (typo in swagger)
+#### Get public contracts
+
+#### Get public contract bids
+
+#### Get public contract items
+
+#### Get corporation contracts
 
 #### Get corporation contract bids
 
