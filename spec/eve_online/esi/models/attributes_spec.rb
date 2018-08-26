@@ -16,13 +16,19 @@ describe EveOnline::ESI::Models::Attributes do
   describe '#as_json' do
     let(:attributes) { described_class.new(options) }
 
+    let(:accrued_remap_cooldown_date) { double }
+
     let(:last_remap_date) { double }
 
-    let(:accrued_remap_cooldown_date) { double }
+    before { expect(attributes).to receive(:accrued_remap_cooldown_date).and_return(accrued_remap_cooldown_date) }
+
+    before { expect(attributes).to receive(:bonus_remaps).and_return(2) }
 
     before { expect(attributes).to receive(:charisma).and_return(20) }
 
     before { expect(attributes).to receive(:intelligence).and_return(25) }
+
+    before { expect(attributes).to receive(:last_remap_date).and_return(last_remap_date) }
 
     before { expect(attributes).to receive(:memory).and_return(24) }
 
@@ -30,29 +36,54 @@ describe EveOnline::ESI::Models::Attributes do
 
     before { expect(attributes).to receive(:willpower).and_return(22) }
 
-    before { expect(attributes).to receive(:bonus_remaps).and_return(2) }
-
-    before { expect(attributes).to receive(:last_remap_date).and_return(last_remap_date) }
-
-    before { expect(attributes).to receive(:accrued_remap_cooldown_date).and_return(accrued_remap_cooldown_date) }
-
     subject { attributes.as_json }
+
+    its([:accrued_remap_cooldown_date]) { should eq(accrued_remap_cooldown_date) }
+
+    its([:bonus_remaps]) { should eq(2) }
 
     its([:charisma]) { should eq(20) }
 
     its([:intelligence]) { should eq(25) }
+
+    its([:last_remap_date]) { should eq(last_remap_date) }
 
     its([:memory]) { should eq(24) }
 
     its([:perception]) { should eq(23) }
 
     its([:willpower]) { should eq(22) }
+  end
 
-    its([:bonus_remaps]) { should eq(2) }
+  describe '#accrued_remap_cooldown_date' do
+    context 'when accrued_remap_cooldown_date is present' do
+      let(:accrued_remap_cooldown_date) { double }
 
-    its([:last_remap_date]) { should eq(last_remap_date) }
+      before { expect(options).to receive(:[]).with('accrued_remap_cooldown_date').and_return(accrued_remap_cooldown_date) }
 
-    its([:accrued_remap_cooldown_date]) { should eq(accrued_remap_cooldown_date) }
+      before do
+        #
+        # subject.parse_datetime_with_timezone(accrued_remap_cooldown_date)
+        #
+        expect(subject).to receive(:parse_datetime_with_timezone).with(accrued_remap_cooldown_date)
+      end
+
+      specify { expect { subject.accrued_remap_cooldown_date }.not_to raise_error }
+    end
+
+    context 'when accrued_remap_cooldown_date not present' do
+      before { expect(options).to receive(:[]).with('accrued_remap_cooldown_date').and_return(nil) }
+
+      before { expect(subject).not_to receive(:parse_datetime_with_timezone) }
+
+      specify { expect { subject.accrued_remap_cooldown_date }.not_to raise_error }
+    end
+  end
+
+  describe '#bonus_remaps' do
+    before { expect(options).to receive(:[]).with('bonus_remaps') }
+
+    specify { expect { subject.bonus_remaps }.not_to raise_error }
   end
 
   describe '#charisma' do
@@ -65,30 +96,6 @@ describe EveOnline::ESI::Models::Attributes do
     before { expect(options).to receive(:[]).with('intelligence') }
 
     specify { expect { subject.intelligence }.not_to raise_error }
-  end
-
-  describe '#memory' do
-    before { expect(options).to receive(:[]).with('memory') }
-
-    specify { expect { subject.memory }.not_to raise_error }
-  end
-
-  describe '#perception' do
-    before { expect(options).to receive(:[]).with('perception') }
-
-    specify { expect { subject.perception }.not_to raise_error }
-  end
-
-  describe '#willpower' do
-    before { expect(options).to receive(:[]).with('willpower') }
-
-    specify { expect { subject.willpower }.not_to raise_error }
-  end
-
-  describe '#bonus_remaps' do
-    before { expect(options).to receive(:[]).with('bonus_remaps') }
-
-    specify { expect { subject.bonus_remaps }.not_to raise_error }
   end
 
   describe '#last_remap_date' do
@@ -116,28 +123,21 @@ describe EveOnline::ESI::Models::Attributes do
     end
   end
 
-  describe '#accrued_remap_cooldown_date' do
-    context 'when accrued_remap_cooldown_date is present' do
-      let(:accrued_remap_cooldown_date) { double }
+  describe '#memory' do
+    before { expect(options).to receive(:[]).with('memory') }
 
-      before { expect(options).to receive(:[]).with('accrued_remap_cooldown_date').and_return(accrued_remap_cooldown_date) }
+    specify { expect { subject.memory }.not_to raise_error }
+  end
 
-      before do
-        #
-        # subject.parse_datetime_with_timezone(accrued_remap_cooldown_date)
-        #
-        expect(subject).to receive(:parse_datetime_with_timezone).with(accrued_remap_cooldown_date)
-      end
+  describe '#perception' do
+    before { expect(options).to receive(:[]).with('perception') }
 
-      specify { expect { subject.accrued_remap_cooldown_date }.not_to raise_error }
-    end
+    specify { expect { subject.perception }.not_to raise_error }
+  end
 
-    context 'when accrued_remap_cooldown_date not present' do
-      before { expect(options).to receive(:[]).with('accrued_remap_cooldown_date').and_return(nil) }
+  describe '#willpower' do
+    before { expect(options).to receive(:[]).with('willpower') }
 
-      before { expect(subject).not_to receive(:parse_datetime_with_timezone) }
-
-      specify { expect { subject.accrued_remap_cooldown_date }.not_to raise_error }
-    end
+    specify { expect { subject.willpower }.not_to raise_error }
   end
 end
