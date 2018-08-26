@@ -876,13 +876,13 @@ job.as_json # => {:activity_id=>1,
             #     :installer_id=>93174304,
             #     :job_id=>344736432,
             #     :licensed_runs=>1,
+            #     :location_id=>60006382,
             #     :output_location_id=>1024956764558,
             #     :pause_date=>nil,
             #     :probability=>1.0,
             #     :product_type_id=>28606,
             #     :runs=>1,
             #     :start_date=>Sat, 18 Nov 2017 11:20:14 UTC +00:00,
-            #     :station_id=>nil,
             #     :status=>"active",
             #     :successful_runs=>nil}
 
@@ -899,13 +899,13 @@ job.facility_id # => 1023579231924
 job.installer_id # => 93174304
 job.job_id # => 344736432
 job.licensed_runs # => 1
+job.location_id # => 60006382
 job.output_location_id # => 1024956764558
 job.pause_date # => nil
 job.probability # => 1.0
 job.product_type_id # => 28606
 job.runs # => 1
 job.start_date # => Sat, 18 Nov 2017 11:20:14 UTC +00:00
-job.station_id # => nil
 job.status # => "active"
 job.successful_runs # => nil
 

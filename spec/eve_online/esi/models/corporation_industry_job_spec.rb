@@ -22,8 +22,6 @@ describe EveOnline::ESI::Models::CorporationIndustryJob do
 
     let(:end_date) { double }
 
-    let(:location_id) { double }
-
     let(:pause_date) { double }
 
     let(:start_date) { double }
@@ -56,7 +54,7 @@ describe EveOnline::ESI::Models::CorporationIndustryJob do
 
     before { expect(industry_job).to receive(:licensed_runs).and_return(1) }
 
-    before { expect(industry_job).to receive(:location_id).and_return(location_id) }
+    before { expect(industry_job).to receive(:location_id).and_return(60_006_382) }
 
     before { expect(industry_job).to receive(:output_location_id).and_return(1_023_579_231_924) }
 
@@ -102,7 +100,7 @@ describe EveOnline::ESI::Models::CorporationIndustryJob do
 
     its([:licensed_runs]) { should eq(1) }
 
-    its([:location_id]) { should eq(location_id) }
+    its([:location_id]) { should eq(60_006_382) }
 
     its([:output_location_id]) { should eq(1_023_579_231_924) }
 
