@@ -650,10 +650,6 @@ blueprint.type_id # => 31803
 
 #### Track corporation members
 
-#### Get corporation outposts
-
-#### Get corporation outpost details
-
 #### Get corporation member roles
 
 #### Get corporation member roles history
@@ -669,8 +665,6 @@ blueprint.type_id # => 31803
 #### Get corporation structures
 
 #### Get corporation titles
-
-#### Get corporation names
 
 #### Get npc corporations
 
@@ -1291,6 +1285,8 @@ ancestry.icon_id # => 1664
 
 # TODO: add languages
 ```
+
+#### Get asteroid belt information
 
 #### Get bloodlines
 
