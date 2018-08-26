@@ -1248,11 +1248,14 @@ server_status = EveOnline::ESI::ServerStatus.new
 
 server_status.scope # => nil
 
-server_status.as_json # => {:start_time=>Tue, 11 Apr 2017 11:05:35 UTC +00:00, :players=>34545, :server_version=>"1135520", :vip=>nil}
+server_status.as_json # => {:players=>34545,
+                      #     :server_version=>"1135520",
+                      #     :start_time=>Tue, 11 Apr 2017 11:05:35 UTC +00:00,
+                      #     :vip=>nil}
 
-server_status.start_time # => Tue, 11 Apr 2017 11:05:35 UTC +00:00
 server_status.players # => 34545
 server_status.server_version # => "1135520"
+server_status.start_time # => Tue, 11 Apr 2017 11:05:35 UTC +00:00
 server_status.vip # => nil
 ```
 
