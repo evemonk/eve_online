@@ -6,27 +6,27 @@ module EveOnline
       class Race < Base
         def as_json
           {
-            race_id: race_id,
-            name: name,
+            alliance_id: alliance_id,
             description: description,
-            alliance_id: alliance_id
+            name: name,
+            race_id: race_id
           }
         end
 
-        def race_id
-          options['race_id']
-        end
-
-        def name
-          options['name']
+        def alliance_id
+          options['alliance_id']
         end
 
         def description
           options['description']
         end
 
-        def alliance_id
-          options['alliance_id']
+        def name
+          options['name']
+        end
+
+        def race_id
+          options['race_id']
         end
       end
     end
