@@ -71,10 +71,10 @@ describe EveOnline::ESI::Models::DogmaAttribute do
     specify { expect { subject.attribute_id }.not_to raise_error }
   end
 
-  describe '#name' do
-    before { expect(options).to receive(:[]).with('name') }
+  describe '#default_value' do
+    before { expect(options).to receive(:[]).with('default_value') }
 
-    specify { expect { subject.name }.not_to raise_error }
+    specify { expect { subject.default_value }.not_to raise_error }
   end
 
   describe '#description' do
@@ -83,16 +83,28 @@ describe EveOnline::ESI::Models::DogmaAttribute do
     specify { expect { subject.description }.not_to raise_error }
   end
 
+  describe '#display_name' do
+    before { expect(options).to receive(:[]).with('display_name') }
+
+    specify { expect { subject.display_name }.not_to raise_error }
+  end
+
+  describe '#high_is_good' do
+    before { expect(options).to receive(:[]).with('high_is_good') }
+
+    specify { expect { subject.high_is_good }.not_to raise_error }
+  end
+
   describe '#icon_id' do
     before { expect(options).to receive(:[]).with('icon_id') }
 
     specify { expect { subject.icon_id }.not_to raise_error }
   end
 
-  describe '#default_value' do
-    before { expect(options).to receive(:[]).with('default_value') }
+  describe '#name' do
+    before { expect(options).to receive(:[]).with('name') }
 
-    specify { expect { subject.default_value }.not_to raise_error }
+    specify { expect { subject.name }.not_to raise_error }
   end
 
   describe '#published' do
@@ -101,27 +113,15 @@ describe EveOnline::ESI::Models::DogmaAttribute do
     specify { expect { subject.published }.not_to raise_error }
   end
 
-  describe '#display_name' do
-    before { expect(options).to receive(:[]).with('display_name') }
-
-    specify { expect { subject.display_name }.not_to raise_error }
-  end
-
-  describe '#unit_id' do
-    before { expect(options).to receive(:[]).with('unit_id') }
-
-    specify { expect { subject.unit_id }.not_to raise_error }
-  end
-
   describe '#stackable' do
     before { expect(options).to receive(:[]).with('stackable') }
 
     specify { expect { subject.stackable }.not_to raise_error }
   end
 
-  describe '#high_is_good' do
-    before { expect(options).to receive(:[]).with('high_is_good') }
+  describe '#unit_id' do
+    before { expect(options).to receive(:[]).with('unit_id') }
 
-    specify { expect { subject.high_is_good }.not_to raise_error }
+    specify { expect { subject.unit_id }.not_to raise_error }
   end
 end
