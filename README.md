@@ -1269,19 +1269,19 @@ ancestries.ancestries.size # => 42
 
 ancestry = ancestries.ancestries.first
 
-ancestry.as_json # => {:ancestry_id=>24,
-                 #     :name=>"Slave Child",
-                 #     :bloodline_id=>4,
+ancestry.as_json # => {:bloodline_id=>4,
                  #     :description=>"Millions of slaves within the Amarr Empire dream of escape...",
-                 #     :short_description=>"Torn from the cold and brought to the warmth of a new life.",
-                 #     :icon_id=>1664}
+                 #     :icon_id=>1664,
+                 #     :ancestry_id=>24,
+                 #     :name=>"Slave Child",
+                 #     :short_description=>"Torn from the cold and brought to the warmth of a new life."}
 
-ancestry.ancestry_id # => 24
-ancestry.name # => "Slave Child"
 ancestry.bloodline_id # => 4
 ancestry.description # => "Millions of slaves within the Amarr Empire dream of escape..."
-ancestry.short_description # => "Torn from the cold and brought to the warmth of a new life."
 ancestry.icon_id # => 1664
+ancestry.ancestry_id # => 24
+ancestry.name # => "Slave Child"
+ancestry.short_description # => "Torn from the cold and brought to the warmth of a new life."
 
 # TODO: add languages
 ```

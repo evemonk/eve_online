@@ -6,21 +6,13 @@ module EveOnline
       class Ancestry < Base
         def as_json
           {
-            ancestry_id: ancestry_id,
-            name: name,
             bloodline_id: bloodline_id,
             description: description,
-            short_description: short_description,
-            icon_id: icon_id
+            icon_id: icon_id,
+            ancestry_id: ancestry_id,
+            name: name,
+            short_description: short_description
           }
-        end
-
-        def ancestry_id
-          options['id']
-        end
-
-        def name
-          options['name']
         end
 
         def bloodline_id
@@ -31,12 +23,20 @@ module EveOnline
           options['description']
         end
 
-        def short_description
-          options['short_description']
-        end
-
         def icon_id
           options['icon_id']
+        end
+
+        def ancestry_id
+          options['id']
+        end
+
+        def name
+          options['name']
+        end
+
+        def short_description
+          options['short_description']
         end
       end
     end
