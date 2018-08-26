@@ -21,6 +21,8 @@
 * Add `EveOnline::ESI::Models::WalletJournalEntry#context_id_type`
 * Add `EveOnline::ESI::Models::WalletJournalEntry#description`
 * Add `EveOnline::ESI::Models::WalletJournalEntry#id`
+* Rename input `type_id:` to `id:` in `EveOnline::ESI::UniverseType`
+* Add `EveOnline::ESI::UniverseType#type_id`
 
 ## v0.16.0
 
