@@ -1222,13 +1222,15 @@ character_skills.skills.size # => 179
 
 skill = character_skills.skills.first
 
-skill.as_json
-# => {:skill_id=>22536, :skillpoints_in_skill=>500, :trained_skill_level=>1, :active_skill_level=>0}
+skill.as_json # => {:active_skill_level=>0,
+              #     :skill_id=>22536,
+              #     :skillpoints_in_skill=>500,
+              #     :trained_skill_level=>1}
 
+skill.active_skill_level # => 0
 skill.skill_id # => 22536
 skill.skillpoints_in_skill # => 500
 skill.trained_skill_level # => 1
-skill.active_skill_level # => 0
 ```
 
 ### Sovereignty
