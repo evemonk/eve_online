@@ -1,6 +1,6 @@
 # Changelog
 
-## master
+## v0.17.0
 
 * Sync with new ESI API
 * Remove `EveOnline::ESI::AlliancesNames`
