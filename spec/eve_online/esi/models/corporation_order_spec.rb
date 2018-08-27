@@ -18,67 +18,69 @@ describe EveOnline::ESI::Models::CorporationOrder do
 
     let(:issued) { double }
 
-    before { expect(corporation_order).to receive(:order_id).and_return(123) }
-
-    before { expect(corporation_order).to receive(:type_id).and_return(456) }
-
-    before { expect(corporation_order).to receive(:region_id).and_return(123) }
-
-    before { expect(corporation_order).to receive(:location_id).and_return(456) }
-
-    before { expect(corporation_order).to receive(:range).and_return('station') }
-
-    before { expect(corporation_order).to receive(:is_buy_order).and_return(true) }
-
-    before { expect(corporation_order).to receive(:price).and_return(33.3) }
-
-    before { expect(corporation_order).to receive(:volume_total).and_return(123_456) }
-
-    before { expect(corporation_order).to receive(:volume_remain).and_return(4422) }
-
-    before { expect(corporation_order).to receive(:issued).and_return(issued) }
-
-    before { expect(corporation_order).to receive(:state).and_return('open') }
-
-    before { expect(corporation_order).to receive(:min_volume).and_return(1) }
-
-    before { expect(corporation_order).to receive(:wallet_division).and_return(1) }
+    let(:issued_by) { double }
 
     before { expect(corporation_order).to receive(:duration).and_return(30) }
 
     before { expect(corporation_order).to receive(:escrow).and_return(45.6) }
 
+    before { expect(corporation_order).to receive(:is_buy_order).and_return(true) }
+
+    before { expect(corporation_order).to receive(:issued).and_return(issued) }
+
+    before { expect(corporation_order).to receive(:issued_by).and_return(issued_by) }
+
+    before { expect(corporation_order).to receive(:location_id).and_return(456) }
+
+    before { expect(corporation_order).to receive(:min_volume).and_return(1) }
+
+    before { expect(corporation_order).to receive(:order_id).and_return(123) }
+
+    before { expect(corporation_order).to receive(:price).and_return(33.3) }
+
+    before { expect(corporation_order).to receive(:range).and_return('station') }
+
+    before { expect(corporation_order).to receive(:region_id).and_return(123) }
+
+    before { expect(corporation_order).to receive(:type_id).and_return(456) }
+
+    before { expect(corporation_order).to receive(:volume_remain).and_return(4422) }
+
+    before { expect(corporation_order).to receive(:volume_total).and_return(123_456) }
+
+    before { expect(corporation_order).to receive(:wallet_division).and_return(1) }
+
     subject { corporation_order.as_json }
-
-    its([:order_id]) { should eq(123) }
-
-    its([:type_id]) { should eq(456) }
-
-    its([:region_id]) { should eq(123) }
-
-    its([:location_id]) { should eq(456) }
-
-    its([:range]) { should eq('station') }
-
-    its([:is_buy_order]) { should eq(true) }
-
-    its([:price]) { should eq(33.3) }
-
-    its([:volume_total]) { should eq(123_456) }
-
-    its([:volume_remain]) { should eq(4422) }
-
-    its([:issued]) { should eq(issued) }
-
-    its([:state]) { should eq('open') }
-
-    its([:min_volume]) { should eq(1) }
-
-    its([:wallet_division]) { should eq(1) }
 
     its([:duration]) { should eq(30) }
 
     its([:escrow]) { should eq(45.6) }
+
+    its([:is_buy_order]) { should eq(true) }
+
+    its([:issued]) { should eq(issued) }
+
+    its([:issued_by]) { should eq(issued_by) }
+
+    its([:location_id]) { should eq(456) }
+
+    its([:min_volume]) { should eq(1) }
+
+    its([:order_id]) { should eq(123) }
+
+    its([:price]) { should eq(33.3) }
+
+    its([:range]) { should eq('station') }
+
+    its([:region_id]) { should eq(123) }
+
+    its([:type_id]) { should eq(456) }
+
+    its([:volume_remain]) { should eq(4422) }
+
+    its([:volume_total]) { should eq(123_456) }
+
+    its([:wallet_division]) { should eq(1) }
   end
 
   describe '#order_id' do
