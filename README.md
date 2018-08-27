@@ -1049,21 +1049,21 @@ order = corporation_orders.orders.first
 
 order.as_json
 
-order.order_id
-order.type_id
-order.region_id
-order.location_id
-order.range
-order.is_buy_order
-order.price
-order.volume_total
-order.volume_remain
-order.issued
-order.state
-order.min_volume
-order.wallet_division
 order.duration
 order.escrow
+order.is_buy_order
+order.issued
+order.issued_by
+order.location_id
+order.min_volume
+order.order_id
+order.price
+order.range
+order.region_id
+order.type_id
+order.volume_remain
+order.volume_total
+order.wallet_division
 
 # TODO: update example
 
