@@ -6,79 +6,79 @@ module EveOnline
       class Type < Base
         def as_json
           {
-            type_id: type_id,
-            name: name,
-            description: description,
-            published: published,
-            group_id: group_id,
-            market_group_id: market_group_id,
-            radius: radius,
-            volume: volume,
-            packaged_volume: packaged_volume,
-            icon_id: icon_id,
             capacity: capacity,
-            portion_size: portion_size,
-            mass: mass,
-            graphic_id: graphic_id
+            description: description,
             # TODO: dogma_attributes
             # TODO: dogma_effects
+            graphic_id: graphic_id,
+            group_id: group_id,
+            icon_id: icon_id,
+            market_group_id: market_group_id,
+            mass: mass,
+            name: name,
+            packaged_volume: packaged_volume,
+            portion_size: portion_size,
+            published: published,
+            radius: radius,
+            type_id: type_id,
+            volume: volume
           }
-        end
-
-        def type_id
-          options['type_id']
-        end
-
-        def name
-          options['name']
-        end
-
-        def description
-          options['description']
-        end
-
-        def published
-          options['published']
-        end
-
-        def group_id
-          options['group_id']
-        end
-
-        def market_group_id
-          options['market_group_id']
-        end
-
-        def radius
-          options['radius']
-        end
-
-        def volume
-          options['volume']
-        end
-
-        def packaged_volume
-          options['packaged_volume']
-        end
-
-        def icon_id
-          options['icon_id']
         end
 
         def capacity
           options['capacity']
         end
 
-        def portion_size
-          options['portion_size']
+        def description
+          options['description']
+        end
+
+        def graphic_id
+          options['graphic_id']
+        end
+
+        def group_id
+          options['group_id']
+        end
+
+        def icon_id
+          options['icon_id']
+        end
+
+        def market_group_id
+          options['market_group_id']
         end
 
         def mass
           options['mass']
         end
 
-        def graphic_id
-          options['graphic_id']
+        def name
+          options['name']
+        end
+
+        def packaged_volume
+          options['packaged_volume']
+        end
+
+        def portion_size
+          options['portion_size']
+        end
+
+        def published
+          options['published']
+        end
+
+        def radius
+          options['radius']
+        end
+
+        def type_id
+          options['type_id']
+        end
+
+        def volume
+          options['volume']
         end
       end
     end

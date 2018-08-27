@@ -9,18 +9,18 @@ module EveOnline
 
       API_ENDPOINT = 'https://esi.tech.ccp.is/v3/universe/types/%<type_id>s/?datasource=%<datasource>s&language=en-us'
 
-      attr_reader :type_id
+      attr_reader :id
 
       def initialize(options)
         super
 
-        @type_id = options.fetch(:type_id)
+        @id = options.fetch(:id)
       end
 
-      def_delegators :model, :as_json, :name, :description,
-                     :published, :group_id, :market_group_id, :radius, :volume,
-                     :packaged_volume, :icon_id, :capacity, :portion_size,
-                     :mass, :graphic_id
+      def_delegators :model, :as_json, :capacity, :description, :graphic_id,
+                     :group_id, :icon_id, :market_group_id, :mass, :name,
+                     :packaged_volume, :portion_size, :published, :radius,
+                     :type_id, :volume
 
       def model
         Models::Type.new(response)
@@ -30,7 +30,7 @@ module EveOnline
       def scope; end
 
       def url
-        format(API_ENDPOINT, type_id: type_id, datasource: datasource)
+        format(API_ENDPOINT, type_id: id, datasource: datasource)
       end
     end
   end

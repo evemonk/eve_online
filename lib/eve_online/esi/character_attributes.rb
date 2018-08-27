@@ -17,9 +17,9 @@ module EveOnline
         @character_id = options.fetch(:character_id)
       end
 
-      def_delegators :model, :as_json, :charisma, :intelligence, :memory,
-                     :perception, :willpower, :bonus_remaps,
-                     :last_remap_date, :accrued_remap_cooldown_date
+      def_delegators :model, :as_json, :accrued_remap_cooldown_date,
+                     :bonus_remaps, :charisma, :intelligence, :last_remap_date,
+                     :memory, :perception, :willpower
 
       def model
         Models::Attributes.new(response)

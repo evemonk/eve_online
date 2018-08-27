@@ -43,36 +43,6 @@ describe EveOnline::ESI::CharacterSkills do
     its([:unallocated_sp]) { should eq(unallocated_sp) }
   end
 
-  describe '#total_sp' do
-    before do
-      #
-      # subject.response['total_sp']
-      #
-      expect(subject).to receive(:response) do
-        double.tap do |a|
-          expect(a).to receive(:[]).with('total_sp')
-        end
-      end
-    end
-
-    specify { expect { subject.total_sp }.not_to raise_error }
-  end
-
-  describe '#unallocated_sp' do
-    before do
-      #
-      # subject.response['unallocated_sp']
-      #
-      expect(subject).to receive(:response) do
-        double.tap do |a|
-          expect(a).to receive(:[]).with('unallocated_sp')
-        end
-      end
-    end
-
-    specify { expect { subject.unallocated_sp }.not_to raise_error }
-  end
-
   describe '#skills' do
     let(:skill) { double }
 
@@ -108,6 +78,36 @@ describe EveOnline::ESI::CharacterSkills do
     specify { expect(subject.skills).to eq([skill]) }
 
     specify { expect { subject.skills }.to change { subject.instance_variable_defined?(:@_memoized_skills) }.from(false).to(true) }
+  end
+
+  describe '#total_sp' do
+    before do
+      #
+      # subject.response['total_sp']
+      #
+      expect(subject).to receive(:response) do
+        double.tap do |a|
+          expect(a).to receive(:[]).with('total_sp')
+        end
+      end
+    end
+
+    specify { expect { subject.total_sp }.not_to raise_error }
+  end
+
+  describe '#unallocated_sp' do
+    before do
+      #
+      # subject.response['unallocated_sp']
+      #
+      expect(subject).to receive(:response) do
+        double.tap do |a|
+          expect(a).to receive(:[]).with('unallocated_sp')
+        end
+      end
+    end
+
+    specify { expect { subject.unallocated_sp }.not_to raise_error }
   end
 
   describe '#scope' do

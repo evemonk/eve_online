@@ -54,6 +54,26 @@ describe EveOnline::ESI::CharacterAttributes do
     specify { expect { subject.as_json }.not_to raise_error }
   end
 
+  describe '#accrued_remap_cooldown_date' do
+    let(:model) { double }
+
+    before { subject.instance_variable_set(:@_memoized_model, model) }
+
+    before { expect(model).to receive(:accrued_remap_cooldown_date) }
+
+    specify { expect { subject.accrued_remap_cooldown_date }.not_to raise_error }
+  end
+
+  describe '#bonus_remaps' do
+    let(:model) { double }
+
+    before { subject.instance_variable_set(:@_memoized_model, model) }
+
+    before { expect(model).to receive(:bonus_remaps) }
+
+    specify { expect { subject.bonus_remaps }.not_to raise_error }
+  end
+
   describe '#charisma' do
     let(:model) { double }
 
@@ -72,6 +92,16 @@ describe EveOnline::ESI::CharacterAttributes do
     before { expect(model).to receive(:intelligence) }
 
     specify { expect { subject.intelligence }.not_to raise_error }
+  end
+
+  describe '#last_remap_date' do
+    let(:model) { double }
+
+    before { subject.instance_variable_set(:@_memoized_model, model) }
+
+    before { expect(model).to receive(:last_remap_date) }
+
+    specify { expect { subject.last_remap_date }.not_to raise_error }
   end
 
   describe '#memory' do
@@ -102,36 +132,6 @@ describe EveOnline::ESI::CharacterAttributes do
     before { expect(model).to receive(:willpower) }
 
     specify { expect { subject.willpower }.not_to raise_error }
-  end
-
-  describe '#bonus_remaps' do
-    let(:model) { double }
-
-    before { subject.instance_variable_set(:@_memoized_model, model) }
-
-    before { expect(model).to receive(:bonus_remaps) }
-
-    specify { expect { subject.bonus_remaps }.not_to raise_error }
-  end
-
-  describe '#last_remap_date' do
-    let(:model) { double }
-
-    before { subject.instance_variable_set(:@_memoized_model, model) }
-
-    before { expect(model).to receive(:last_remap_date) }
-
-    specify { expect { subject.last_remap_date }.not_to raise_error }
-  end
-
-  describe '#accrued_remap_cooldown_date' do
-    let(:model) { double }
-
-    before { subject.instance_variable_set(:@_memoized_model, model) }
-
-    before { expect(model).to receive(:accrued_remap_cooldown_date) }
-
-    specify { expect { subject.accrued_remap_cooldown_date }.not_to raise_error }
   end
 
   describe '#scope' do
