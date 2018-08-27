@@ -23,6 +23,8 @@
 * Add `EveOnline::ESI::Models::WalletJournalEntry#id`
 * Rename input `type_id:` to `id:` in `EveOnline::ESI::UniverseType`
 * Add `EveOnline::ESI::UniverseType#type_id`
+* Add `EveOnline::ESI::Models::CorporationOrder#issued_by`
+* Remove `EveOnline::ESI::Models::CorporationOrder#state`
 
 ## v0.16.0
 
