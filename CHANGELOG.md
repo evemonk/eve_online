@@ -4,6 +4,8 @@
 
 * Add `EveOnline::ESI::Models::CharacterShip`
 * Add `EveOnline::ESI::Models::CharacterLocation`
+* Add `EveOnline::ESI::CharacterShip`
+* Add `EveOnline::ESI::CharacterLocation`
 
 ## v0.17.0
 
