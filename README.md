@@ -972,21 +972,19 @@ character_online.online # => false
 
 ```ruby
 
-<img src="https://image.eveonline.com/Character/1337512245_128.jpg">
-
 options = { token: 'token123', character_id: 90729314 }
 
 character_ship = EveOnline::ESI::CharacterShip.new(options)
 
 character_ship.scope # => "esi-location.read_ship_type.v1"
 
-character_ship.as_json # => {:ship_item_id=>1018864501161,
-                       #     :ship_name=>"PVP module.",
-                       #     :ship_type_id=>33153}
+character_ship.as_json # => {:ship_item_id=>1002312158069,
+                       #     :ship_name=>"Green Black's Velator",
+                       #     :ship_type_id=>606}
 
-character_ship.ship_item_id # => 1018864501161
-character_ship.ship_name # => "PVP module."
-character_ship.ship_type_id # => 33153
+character_ship.ship_item_id # => 1002312158069
+character_ship.ship_name # => "Green Black's Velator"
+character_ship.ship_type_id # => 606
 ```
 
 ### Loyalty

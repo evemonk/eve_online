@@ -1,5 +1,10 @@
 # Changelog
 
+## master
+
+* Add `EveOnline::ESI::Models::CharacterShip`
+* Add `EveOnline::ESI::Models::CharacterLocation`
+
 ## v0.17.0
 
 * Sync with new ESI API
