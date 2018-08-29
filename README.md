@@ -932,6 +932,22 @@ job.successful_runs # => nil
 
 #### Get character location
 
+```ruby
+options = { token: 'token123', character_id: 90729314 }
+
+character_location = EveOnline::ESI::CharacterLocation.new(options)
+
+character_location.scope # => "esi-location.read_location.v1"
+
+character_location.as_json # => {:solar_system_id=>30004971,
+                           #     :station_id=>60014689,
+                           #     :structure_id=>nil}
+
+character_location.solar_system_id # => 30004971
+character_location.station_id # => 60014689
+character_location.structure_id # => nil
+```
+
 #### Get character online
 
 ```ruby
@@ -953,6 +969,23 @@ character_online.online # => false
 ```
 
 #### Get current ship
+
+```ruby
+
+options = { token: 'token123', character_id: 90729314 }
+
+character_ship = EveOnline::ESI::CharacterShip.new(options)
+
+character_ship.scope # => "esi-location.read_ship_type.v1"
+
+character_ship.as_json # => {:ship_item_id=>1002312158069,
+                       #     :ship_name=>"Green Black's Velator",
+                       #     :ship_type_id=>606}
+
+character_ship.ship_item_id # => 1002312158069
+character_ship.ship_name # => "Green Black's Velator"
+character_ship.ship_type_id # => 606
+```
 
 ### Loyalty
 
