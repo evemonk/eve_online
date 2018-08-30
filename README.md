@@ -138,11 +138,13 @@ alliance_icon.icon_small # => "http://image.eveonline.com/Alliance/99005443_64.p
 #### Get character assets
 
 ```ruby
-options = { token: 'token123', character_id: 90729314 }
+options = { token: 'token123', character_id: 90729314, page: 1 }
 
 character_assets = EveOnline::ESI::CharacterAssets.new(options)
 
 character_assets.scope # => "esi-assets.read_assets.v1"
+
+character_assets.page # => 1
 
 character_assets.assets.size # => 486
 
@@ -165,8 +167,6 @@ asset.location_id # => 1027847409779
 asset.location_type # => "other"
 asset.quantity # => 1
 asset.type_id # => 1010
-
-# TODO: add pagination support
 ```
 
 #### Get character asset locations
