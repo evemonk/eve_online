@@ -9,20 +9,30 @@ describe EveOnline::ESI::CharacterAssets do
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/v3/characters/%<character_id>s/assets/?datasource=%<datasource>s&page=1') }
+  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/v3/characters/%<character_id>s/assets/?datasource=%<datasource>s&page=%<page>s') }
 
   describe '#initialize' do
-    its(:token) { should eq('token123') }
+    context 'without options' do
+      its(:token) { should eq('token123') }
 
-    its(:parser) { should eq(JSON) }
+      its(:parser) { should eq(JSON) }
 
-    its(:_read_timeout) { should eq(60) }
+      its(:_read_timeout) { should eq(60) }
 
-    its(:_open_timeout) { should eq(60) }
+      its(:_open_timeout) { should eq(60) }
 
-    its(:datasource) { should eq('tranquility') }
+      its(:datasource) { should eq('tranquility') }
 
-    its(:character_id) { should eq(12_345_678) }
+      its(:character_id) { should eq(12_345_678) }
+
+      its(:page) { should eq(1) }
+    end
+
+    context 'with options' do
+      let(:options) { { token: 'token123', character_id: 12_345_678, page: 10 } }
+
+      its(:page) { should eq(10) }
+    end
   end
 
   describe '#assets' do

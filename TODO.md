@@ -1,4 +1,3 @@
 # TODO
 
 * Fix MD024
-

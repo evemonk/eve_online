@@ -48,6 +48,12 @@ module EveOnline
         client.options.open_timeout = value
       end
 
+      def page; end
+
+      # def total_pages
+      #   resource.headers['x-pages']&.to_i
+      # end
+
       def client
         @client ||= begin
           faraday = Faraday.new

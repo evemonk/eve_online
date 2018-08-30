@@ -137,6 +137,10 @@ describe EveOnline::ESI::Base do
     specify { expect { subject.send(:open_timeout=, value) }.not_to raise_error }
   end
 
+  describe '#page' do
+    specify { expect(subject.page).to eq(nil) }
+  end
+
   describe '#client' do
     context 'when @client set' do
       let(:client) { double }
