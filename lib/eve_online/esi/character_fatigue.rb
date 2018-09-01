@@ -7,7 +7,7 @@ module EveOnline
     class CharacterFatigue < Base
       extend Forwardable
 
-      API_ENDPOINT = 'https://esi.tech.ccp.is/v1/characters/%<character_id>s/fatigue/?datasource=%<datasource>s'
+      API_ENDPOINT = 'https://esi.evetech.net/v1/characters/%<character_id>s/fatigue/?datasource=%<datasource>s'
 
       attr_reader :character_id
 

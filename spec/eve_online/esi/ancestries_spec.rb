@@ -5,7 +5,7 @@ require 'spec_helper'
 describe EveOnline::ESI::Ancestries do
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/v1/universe/ancestries/?datasource=%<datasource>s&language=en-us') }
+  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.evetech.net/v1/universe/ancestries/?datasource=%<datasource>s&language=en-us') }
 
   describe '#initialize' do
     its(:token) { should eq(nil) }
@@ -60,7 +60,7 @@ describe EveOnline::ESI::Ancestries do
 
   describe '#url' do
     specify do
-      expect(subject.url).to eq('https://esi.tech.ccp.is/v1/universe/ancestries/?datasource=tranquility&language=en-us')
+      expect(subject.url).to eq('https://esi.evetech.net/v1/universe/ancestries/?datasource=tranquility&language=en-us')
     end
   end
 end

@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class Alliances < Base
-      API_ENDPOINT = 'https://esi.tech.ccp.is/v1/alliances/?datasource=%<datasource>s'
+      API_ENDPOINT = 'https://esi.evetech.net/v1/alliances/?datasource=%<datasource>s'
 
       def alliances
         response

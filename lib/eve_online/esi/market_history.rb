@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class MarketHistory < Base
-      API_ENDPOINT = 'https://esi.tech.ccp.is/v1/markets/%<region_id>s/history/?datasource=%<datasource>s&type_id=%<type_id>s'
+      API_ENDPOINT = 'https://esi.evetech.net/v1/markets/%<region_id>s/history/?datasource=%<datasource>s&type_id=%<type_id>s'
 
       attr_reader :region_id, :type_id
 

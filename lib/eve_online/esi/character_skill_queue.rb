@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class CharacterSkillQueue < Base
-      API_ENDPOINT = 'https://esi.tech.ccp.is/v2/characters/%<character_id>s/skillqueue/?datasource=%<datasource>s'
+      API_ENDPOINT = 'https://esi.evetech.net/v2/characters/%<character_id>s/skillqueue/?datasource=%<datasource>s'
 
       attr_reader :character_id
 

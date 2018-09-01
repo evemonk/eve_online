@@ -9,7 +9,7 @@ describe EveOnline::ESI::CharacterBlueprints do
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/v2/characters/%<character_id>s/blueprints/?datasource=%<datasource>s&page=1') }
+  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.evetech.net/v2/characters/%<character_id>s/blueprints/?datasource=%<datasource>s&page=1') }
 
   describe '#initialize' do
     its(:token) { should eq('token123') }
@@ -68,7 +68,7 @@ describe EveOnline::ESI::CharacterBlueprints do
 
   describe '#url' do
     specify do
-      expect(subject.url).to eq('https://esi.tech.ccp.is/v2/characters/12345678/blueprints/?datasource=tranquility&page=1')
+      expect(subject.url).to eq('https://esi.evetech.net/v2/characters/12345678/blueprints/?datasource=tranquility&page=1')
     end
   end
 end

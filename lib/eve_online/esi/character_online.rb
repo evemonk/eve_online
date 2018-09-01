@@ -7,7 +7,7 @@ module EveOnline
     class CharacterOnline < Base
       extend Forwardable
 
-      API_ENDPOINT = 'https://esi.tech.ccp.is/v2/characters/%<character_id>s/online/?datasource=%<datasource>s'
+      API_ENDPOINT = 'https://esi.evetech.net/v2/characters/%<character_id>s/online/?datasource=%<datasource>s'
 
       attr_reader :character_id
 

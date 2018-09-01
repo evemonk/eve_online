@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class CorporationIndustryJobs < Base
-      API_ENDPOINT = 'https://esi.tech.ccp.is/v1/corporations/%<corporation_id>s/industry/jobs/?datasource=%<datasource>s&include_completed=%<include_completed>s'
+      API_ENDPOINT = 'https://esi.evetech.net/v1/corporations/%<corporation_id>s/industry/jobs/?datasource=%<datasource>s&include_completed=%<include_completed>s'
 
       attr_reader :corporation_id, :include_completed
 

@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class CharacterBlueprints < Base
-      API_ENDPOINT = 'https://esi.tech.ccp.is/v2/characters/%<character_id>s/blueprints/?datasource=%<datasource>s&page=1'
+      API_ENDPOINT = 'https://esi.evetech.net/v2/characters/%<character_id>s/blueprints/?datasource=%<datasource>s&page=1'
 
       attr_reader :character_id
 

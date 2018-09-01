@@ -9,7 +9,7 @@ describe EveOnline::ESI::CharacterBookmarkFolders do
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/v2/characters/%<character_id>s/bookmarks/folders/?datasource=%<datasource>s') }
+  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.evetech.net/v2/characters/%<character_id>s/bookmarks/folders/?datasource=%<datasource>s') }
 
   describe '#initialize' do
     its(:token) { should eq('token123') }
@@ -62,7 +62,7 @@ describe EveOnline::ESI::CharacterBookmarkFolders do
 
   describe '#url' do
     specify do
-      expect(subject.url).to eq('https://esi.tech.ccp.is/v2/characters/12345678/bookmarks/folders/?datasource=tranquility')
+      expect(subject.url).to eq('https://esi.evetech.net/v2/characters/12345678/bookmarks/folders/?datasource=tranquility')
     end
   end
 end

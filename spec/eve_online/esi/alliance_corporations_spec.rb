@@ -9,7 +9,7 @@ describe EveOnline::ESI::AllianceCorporations do
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/v1/alliances/%<alliance_id>s/corporations/?datasource=%<datasource>s') }
+  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.evetech.net/v1/alliances/%<alliance_id>s/corporations/?datasource=%<datasource>s') }
 
   describe '#initialize' do
     its(:token) { should eq(nil) }
@@ -39,7 +39,7 @@ describe EveOnline::ESI::AllianceCorporations do
 
   describe '#url' do
     specify do
-      expect(subject.url).to eq('https://esi.tech.ccp.is/v1/alliances/99005443/corporations/?datasource=tranquility')
+      expect(subject.url).to eq('https://esi.evetech.net/v1/alliances/99005443/corporations/?datasource=tranquility')
     end
   end
 end

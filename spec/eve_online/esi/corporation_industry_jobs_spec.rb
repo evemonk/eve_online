@@ -9,7 +9,7 @@ describe EveOnline::ESI::CorporationIndustryJobs do
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/v1/corporations/%<corporation_id>s/industry/jobs/?datasource=%<datasource>s&include_completed=%<include_completed>s') }
+  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.evetech.net/v1/corporations/%<corporation_id>s/industry/jobs/?datasource=%<datasource>s&include_completed=%<include_completed>s') }
 
   describe '#initialize' do
     context 'with token and corporation_id' do
@@ -94,7 +94,7 @@ describe EveOnline::ESI::CorporationIndustryJobs do
 
   describe '#url' do
     specify do
-      expect(subject.url).to eq('https://esi.tech.ccp.is/v1/corporations/12345678/industry/jobs/?datasource=tranquility&include_completed=false')
+      expect(subject.url).to eq('https://esi.evetech.net/v1/corporations/12345678/industry/jobs/?datasource=tranquility&include_completed=false')
     end
   end
 end

@@ -9,7 +9,7 @@ describe EveOnline::ESI::DogmaAttribute do
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/v1/dogma/attributes/%<attribute_id>s/?datasource=%<datasource>s') }
+  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.evetech.net/v1/dogma/attributes/%<attribute_id>s/?datasource=%<datasource>s') }
 
   describe '#initialize' do
     its(:token) { should eq(nil) }
@@ -160,7 +160,7 @@ describe EveOnline::ESI::DogmaAttribute do
 
   describe '#url' do
     specify do
-      expect(subject.url).to eq('https://esi.tech.ccp.is/v1/dogma/attributes/2/?datasource=tranquility')
+      expect(subject.url).to eq('https://esi.evetech.net/v1/dogma/attributes/2/?datasource=tranquility')
     end
   end
 end

@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class Factions < Base
-      API_ENDPOINT = 'https://esi.tech.ccp.is/v2/universe/factions/?datasource=%<datasource>s&language=en-us'
+      API_ENDPOINT = 'https://esi.evetech.net/v2/universe/factions/?datasource=%<datasource>s&language=en-us'
 
       def factions
         output = []

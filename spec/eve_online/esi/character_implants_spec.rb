@@ -9,7 +9,7 @@ describe EveOnline::ESI::CharacterImplants do
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/v1/characters/%<character_id>s/implants/?datasource=%<datasource>s') }
+  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.evetech.net/v1/characters/%<character_id>s/implants/?datasource=%<datasource>s') }
 
   describe '#initialize' do
     its(:token) { should eq('token123') }
@@ -39,7 +39,7 @@ describe EveOnline::ESI::CharacterImplants do
 
   describe '#url' do
     specify do
-      expect(subject.url).to eq('https://esi.tech.ccp.is/v1/characters/12345678/implants/?datasource=tranquility')
+      expect(subject.url).to eq('https://esi.evetech.net/v1/characters/12345678/implants/?datasource=tranquility')
     end
   end
 end

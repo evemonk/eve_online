@@ -9,7 +9,7 @@ describe EveOnline::ESI::CharacterFatigue do
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/v1/characters/%<character_id>s/fatigue/?datasource=%<datasource>s') }
+  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.evetech.net/v1/characters/%<character_id>s/fatigue/?datasource=%<datasource>s') }
 
   describe '#initialize' do
     its(:token) { should eq('token123') }
@@ -90,7 +90,7 @@ describe EveOnline::ESI::CharacterFatigue do
 
   describe '#url' do
     specify do
-      expect(subject.url).to eq('https://esi.tech.ccp.is/v1/characters/12345678/fatigue/?datasource=tranquility')
+      expect(subject.url).to eq('https://esi.evetech.net/v1/characters/12345678/fatigue/?datasource=tranquility')
     end
   end
 end

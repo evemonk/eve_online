@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class CorporationBlueprints < Base
-      API_ENDPOINT = 'https://esi.tech.ccp.is/v2/corporations/%<corporation_id>s/blueprints/?datasource=%<datasource>s&page=1'
+      API_ENDPOINT = 'https://esi.evetech.net/v2/corporations/%<corporation_id>s/blueprints/?datasource=%<datasource>s&page=1'
 
       attr_reader :corporation_id
 
