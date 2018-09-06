@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-describe "Get character assets" do
+describe 'Get character assets' do
   let(:options) do
     {
       character_id: 1_337_512_245,
