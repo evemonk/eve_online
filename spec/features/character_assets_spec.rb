@@ -17,6 +17,10 @@ describe 'Get character assets' do
 
   subject { EveOnline::ESI::CharacterAssets.new(options) }
 
+  specify { expect(subject.page).to eq(1) }
+
+  specify { expect(subject.total_pages).to eq(1) }
+
   specify { expect(subject.assets.size).to eq(487) }
 
   specify do

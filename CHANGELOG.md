@@ -7,6 +7,7 @@
 * Add `EveOnline::ESI::CharacterShip`
 * Add `EveOnline::ESI::CharacterLocation`
 * Update urls from `https://esi.tech.ccp.is/` to `https://esi.evetech.net/`
+* Add pagination support
 
 ## v0.17.0
 

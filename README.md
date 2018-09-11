@@ -146,6 +146,8 @@ character_assets.scope # => "esi-assets.read_assets.v1"
 
 character_assets.page # => 1
 
+character_assets.total_pages # => 1
+
 character_assets.assets.size # => 486
 
 asset = character_assets.assets.first
