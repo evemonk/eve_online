@@ -607,11 +607,15 @@ corporation.corporation_url # => "http://"
 #### Get corporation blueprints
 
 ```ruby
-options = options = { token: 'token123', corporation_id: 98260237 }
+options = options = { token: 'token123', corporation_id: 98260237, page: 1 }
 
 corporation_blueprints = EveOnline::ESI::CorporationBlueprints.new(options)
 
 corporation_blueprints.scope # => "esi-corporations.read_blueprints.v1"
+
+corporation_blueprints.page # => 1
+
+corporation_blueprints.total_pages # => 1
 
 corporation_blueprints.blueprints.size # => 387
 
@@ -635,7 +639,7 @@ blueprint.runs # => 300
 blueprint.time_efficiency # => 20
 blueprint.type_id # => 31803
 
-# TODO: add pagination
+# TODO: add roles
 ```
 
 #### Get all corporation ALSC logs

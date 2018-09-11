@@ -3,14 +3,15 @@
 module EveOnline
   module ESI
     class CorporationBlueprints < Base
-      API_ENDPOINT = 'https://esi.evetech.net/v2/corporations/%<corporation_id>s/blueprints/?datasource=%<datasource>s&page=1'
+      API_ENDPOINT = 'https://esi.evetech.net/v2/corporations/%<corporation_id>s/blueprints/?datasource=%<datasource>s&page=%<page>s'
 
-      attr_reader :corporation_id
+      attr_reader :corporation_id, :page
 
       def initialize(options)
         super
 
         @corporation_id = options.fetch(:corporation_id)
+        @page = options.fetch(:page, 1)
       end
 
       def blueprints
@@ -22,12 +23,16 @@ module EveOnline
       end
       memoize :blueprints
 
+      def total_pages
+        resource.headers['x-pages']&.to_i
+      end
+
       def scope
         'esi-corporations.read_blueprints.v1'
       end
 
       def url
-        format(API_ENDPOINT, corporation_id: corporation_id, datasource: datasource)
+        format(API_ENDPOINT, corporation_id: corporation_id, datasource: datasource, page: page)
       end
     end
   end
