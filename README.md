@@ -871,6 +871,10 @@ corporation_jobs = EveOnline::ESI::CorporationIndustryJobs.new(options)
 
 corporation_jobs.scope # => "esi-industry.read_corporation_jobs.v1"
 
+corporation_jobs.page # => 1
+
+corporation_jobs.total_pages # => 1
+
 corporation_jobs.jobs.size # => 23
 
 job = corporation_jobs.jobs.first
@@ -920,8 +924,6 @@ job.runs # => 1
 job.start_date # => Sat, 18 Nov 2017 11:20:14 UTC +00:00
 job.status # => "active"
 job.successful_runs # => nil
-
-# TODO: add pagination support
 ```
 
 #### List industry facilities
