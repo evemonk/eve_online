@@ -192,9 +192,9 @@ character_bookmarks = EveOnline::ESI::CharacterBookmarks.new(options)
 
 character_bookmarks.scope # => "esi-bookmarks.read_character_bookmarks.v1"
 
-character_assets.page # => 1
+character_bookmarks.page # => 1
 
-character_assets.total_pages # => 1
+character_bookmarks.total_pages # => 1
 
 character_bookmarks.bookmarks.size # => 20
 
@@ -236,9 +236,9 @@ character_bookmark_folders = EveOnline::ESI::CharacterBookmarkFolders.new(option
 
 character_bookmark_folders.scope # => "esi-bookmarks.read_character_bookmarks.v1"
 
-character_assets.page # => 1
+character_bookmark_folders.page # => 1
 
-character_assets.total_pages # => 1
+character_bookmark_folders.total_pages # => 1
 
 character_bookmark_folders.bookmark_folders.size # => 1
 
@@ -332,11 +332,15 @@ character.security_status # => 1.8694881661345457
 #### Get blueprints
 
 ```ruby
-options = { token: 'token123', character_id: 90729314 }
+options = { token: 'token123', character_id: 90729314, page: 1 }
 
 character_blueprints = EveOnline::ESI::CharacterBlueprints.new(options)
 
 character_blueprints.scope # => "esi-characters.read_blueprints.v1"
+
+character_blueprints.page # => 1
+
+character_blueprints.total_pages # => 1
 
 character_blueprints.blueprints.size # => 4
 
@@ -359,8 +363,6 @@ blueprint.quantity # => -2
 blueprint.runs # => 300
 blueprint.time_efficiency # => 0
 blueprint.type_id # => 1010
-
-# TODO: add pagination support
 ```
 
 #### Get corporation history
