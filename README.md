@@ -192,6 +192,10 @@ character_bookmarks = EveOnline::ESI::CharacterBookmarks.new(options)
 
 character_bookmarks.scope # => "esi-bookmarks.read_character_bookmarks.v1"
 
+character_assets.page # => 1
+
+character_assets.total_pages # => 1
+
 character_bookmarks.bookmarks.size # => 20
 
 bookmark = character_bookmarks.bookmarks.first
@@ -221,8 +225,6 @@ bookmark.item_type_id # => 5
 bookmark.label # => "Stargate"
 bookmark.location_id # => 30003430
 bookmark.notes # => "This is a stargate"
-
-# TODO: add pagination support
 ```
 
 #### List bookmark folders

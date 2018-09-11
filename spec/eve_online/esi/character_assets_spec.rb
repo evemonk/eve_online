@@ -71,6 +71,7 @@ describe EveOnline::ESI::CharacterAssets do
     specify { expect { subject.assets }.to change { subject.instance_variable_defined?(:@_memoized_assets) }.from(false).to(true) }
   end
 
+  # TODO: remove duplication
   describe '#total_pages' do
     let(:resource) { double }
 
