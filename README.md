@@ -186,7 +186,7 @@ asset.type_id # => 1010
 #### List bookmarks
 
 ```ruby
-options = { token: 'token123', character_id: 90729314 }
+options = { token: 'token123', character_id: 90729314, page: 1 }
 
 character_bookmarks = EveOnline::ESI::CharacterBookmarks.new(options)
 
@@ -230,7 +230,7 @@ bookmark.notes # => "This is a stargate"
 #### List bookmark folders
 
 ```ruby
-options = { token: 'token123', character_id: 90729314 }
+options = { token: 'token123', character_id: 90729314, page: 1 }
 
 character_bookmark_folders = EveOnline::ESI::CharacterBookmarkFolders.new(options)
 
