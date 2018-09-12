@@ -1494,15 +1494,19 @@ race.race_id # => 2
 #### Get types
 
 ```ruby
-types = EveOnline::ESI::UniverseTypes.new
+options = { page: 1 }
+
+types = EveOnline::ESI::UniverseTypes.new(options)
 
 types.scope # => nil
+
+types.page # => 1
+
+types.total_pages # => 35
 
 types.universe_types_ids.size # => 1000
 
 types.universe_types_ids.first # => 0
-
-# TODO: add pagination
 ```
 
 #### Get type information
