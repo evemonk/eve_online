@@ -1392,6 +1392,16 @@ bloodline.willpower # => 7
 
 #### Get constellations
 
+```ruby
+constellations = EveOnline::ESI::UniverseConstellations.new
+
+constellations.scope # => nil
+
+constellations.constellations_ids.size # => 1146
+
+constellations.constellations_ids.first # => 20000001
+```
+
 #### Get constellation information
 
 #### Get factions

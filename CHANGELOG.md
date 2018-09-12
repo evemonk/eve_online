@@ -10,6 +10,7 @@
 * Add pagination support
 * Add `EveOnline::ESI::UniverseRegions`
 * Add `EveOnline::ESI::UniverseRegion`
+* Add `EveOnline::ESI::UniverseConstellations`
 
 ## v0.17.0
 
