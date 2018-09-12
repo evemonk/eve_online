@@ -14,17 +14,17 @@ describe EveOnline::ESI::Models::Region do
   end
 
   describe '#as_json' do
-    let(:races) { described_class.new(options) }
+    let(:region) { described_class.new(options) }
 
-    before { expect(races).to receive(:constellations).and_return([20_000_001]) }
+    before { expect(region).to receive(:constellations).and_return([20_000_001]) }
 
-    before { expect(races).to receive(:description).and_return('The Derelik region...') }
+    before { expect(region).to receive(:description).and_return('The Derelik region...') }
 
-    before { expect(races).to receive(:name).and_return('Derelik') }
+    before { expect(region).to receive(:name).and_return('Derelik') }
 
-    before { expect(races).to receive(:region_id).and_return(10_000_001) }
+    before { expect(region).to receive(:region_id).and_return(10_000_001) }
 
-    subject { races.as_json }
+    subject { region.as_json }
 
     its([:constellations]) { should eq([20_000_001]) }
 
