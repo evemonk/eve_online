@@ -1084,11 +1084,15 @@ order.volume_total
 #### List open orders from a corporation
 
 ```ruby
-options = { token: 'token123', corporation_id: 1000168 }
+options = { token: 'token123', corporation_id: 1000168, page: 1 }
 
 corporation_orders = EveOnline::ESI::CorporationOrders.new(options)
 
 corporation_orders.scope
+
+corporation_orders.page # => 1
+
+corporation_orders.total_pages # => 1
 
 corporation_orders.orders.size
 
@@ -1113,8 +1117,6 @@ order.volume_total
 order.wallet_division
 
 # TODO: update example
-
-# TODO: add pagination support
 
 # TODO: update
 ```
