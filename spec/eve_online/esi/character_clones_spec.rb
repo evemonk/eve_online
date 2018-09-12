@@ -9,7 +9,7 @@ describe EveOnline::ESI::CharacterClones do
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/v3/characters/%<character_id>s/clones/?datasource=%<datasource>s') }
+  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.evetech.net/v3/characters/%<character_id>s/clones/?datasource=%<datasource>s') }
 
   describe '#initialize' do
     its(:token) { should eq('token123') }
@@ -181,7 +181,7 @@ describe EveOnline::ESI::CharacterClones do
 
   describe '#url' do
     specify do
-      expect(subject.url).to eq('https://esi.tech.ccp.is/v3/characters/12345678/clones/?datasource=tranquility')
+      expect(subject.url).to eq('https://esi.evetech.net/v3/characters/12345678/clones/?datasource=tranquility')
     end
   end
 end

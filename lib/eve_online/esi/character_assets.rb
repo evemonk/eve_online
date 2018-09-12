@@ -3,14 +3,15 @@
 module EveOnline
   module ESI
     class CharacterAssets < Base
-      API_ENDPOINT = 'https://esi.tech.ccp.is/v3/characters/%<character_id>s/assets/?datasource=%<datasource>s&page=1'
+      API_ENDPOINT = 'https://esi.evetech.net/v3/characters/%<character_id>s/assets/?datasource=%<datasource>s&page=%<page>s'
 
-      attr_reader :character_id
+      attr_reader :character_id, :page
 
       def initialize(options)
         super
 
         @character_id = options.fetch(:character_id)
+        @page = options.fetch(:page, 1)
       end
 
       def assets
@@ -22,12 +23,16 @@ module EveOnline
       end
       memoize :assets
 
+      def total_pages
+        resource.headers['x-pages']&.to_i
+      end
+
       def scope
         'esi-assets.read_assets.v1'
       end
 
       def url
-        format(API_ENDPOINT, character_id: character_id, datasource: datasource)
+        format(API_ENDPOINT, character_id: character_id, datasource: datasource, page: page)
       end
     end
   end

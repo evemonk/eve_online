@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class Races < Base
-      API_ENDPOINT = 'https://esi.tech.ccp.is/v1/universe/races/?datasource=%<datasource>s&language=en-us'
+      API_ENDPOINT = 'https://esi.evetech.net/v1/universe/races/?datasource=%<datasource>s&language=en-us'
 
       def races
         output = []

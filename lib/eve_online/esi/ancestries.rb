@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class Ancestries < Base
-      API_ENDPOINT = 'https://esi.tech.ccp.is/v1/universe/ancestries/?datasource=%<datasource>s&language=en-us'
+      API_ENDPOINT = 'https://esi.evetech.net/v1/universe/ancestries/?datasource=%<datasource>s&language=en-us'
 
       def ancestries
         output = []

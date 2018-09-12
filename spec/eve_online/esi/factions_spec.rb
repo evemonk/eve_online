@@ -9,7 +9,7 @@ describe EveOnline::ESI::Factions do
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/v2/universe/factions/?datasource=%<datasource>s&language=en-us') }
+  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.evetech.net/v2/universe/factions/?datasource=%<datasource>s&language=en-us') }
 
   describe '#initialize' do
     its(:token) { should eq(nil) }
@@ -68,7 +68,7 @@ describe EveOnline::ESI::Factions do
 
   describe '#url' do
     specify do
-      expect(subject.url).to eq('https://esi.tech.ccp.is/v2/universe/factions/?datasource=tranquility&language=en-us')
+      expect(subject.url).to eq('https://esi.evetech.net/v2/universe/factions/?datasource=tranquility&language=en-us')
     end
   end
 end

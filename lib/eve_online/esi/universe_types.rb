@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class UniverseTypes < Base
-      API_ENDPOINT = 'https://esi.tech.ccp.is/v1/universe/types/?datasource=%<datasource>s&page=1'
+      API_ENDPOINT = 'https://esi.evetech.net/v1/universe/types/?datasource=%<datasource>s&page=1'
 
       def universe_types_ids
         response

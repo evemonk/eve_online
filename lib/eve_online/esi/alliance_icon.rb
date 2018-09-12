@@ -7,7 +7,7 @@ module EveOnline
     class AllianceIcon < Base
       extend Forwardable
 
-      API_ENDPOINT = 'https://esi.tech.ccp.is/v1/alliances/%<alliance_id>s/icons/?datasource=%<datasource>s'
+      API_ENDPOINT = 'https://esi.evetech.net/v1/alliances/%<alliance_id>s/icons/?datasource=%<datasource>s'
 
       attr_reader :alliance_id
 

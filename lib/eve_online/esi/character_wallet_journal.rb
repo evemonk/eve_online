@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class CharacterWalletJournal < Base
-      API_ENDPOINT = 'https://esi.tech.ccp.is/v4/characters/%<character_id>s/wallet/journal/?datasource=%<datasource>s'
+      API_ENDPOINT = 'https://esi.evetech.net/v4/characters/%<character_id>s/wallet/journal/?datasource=%<datasource>s'
 
       attr_reader :character_id
 

@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class DogmaAttributes < Base
-      API_ENDPOINT = 'https://esi.tech.ccp.is/v1/dogma/attributes/?datasource=%<datasource>s'
+      API_ENDPOINT = 'https://esi.evetech.net/v1/dogma/attributes/?datasource=%<datasource>s'
 
       def attributes
         response

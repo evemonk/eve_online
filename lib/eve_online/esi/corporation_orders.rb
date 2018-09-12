@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class CorporationOrders < Base
-      API_ENDPOINT = 'https://esi.tech.ccp.is/v3/corporations/%<corporation_id>s/orders/?datasource=%<datasource>s&page=1'
+      API_ENDPOINT = 'https://esi.evetech.net/v3/corporations/%<corporation_id>s/orders/?datasource=%<datasource>s&page=1'
 
       attr_reader :corporation_id
 

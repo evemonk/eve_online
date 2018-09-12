@@ -7,7 +7,7 @@ module EveOnline
     class DogmaAttribute < Base
       extend Forwardable
 
-      API_ENDPOINT = 'https://esi.tech.ccp.is/v1/dogma/attributes/%<attribute_id>s/?datasource=%<datasource>s'
+      API_ENDPOINT = 'https://esi.evetech.net/v1/dogma/attributes/%<attribute_id>s/?datasource=%<datasource>s'
 
       attr_reader :id
 

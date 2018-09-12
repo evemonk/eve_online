@@ -1,0 +1,193 @@
+Update response examples in specs!!!
+
+
+[20] pry(main)> out.headers["x-pages"]&.to_i
+=> 35
+[21] pry(main)> out = faraday.get(url)
+
+[21] pry(main)> out.headers["etag"]
+=> "W/\"745102c8275fce10f968996bde29e4b103fdb20c6cafa691575921b8\""
+[22] pry(main)>
+
+
+Error: HTTP/2.0 403
+
+
+{
+  "error": "Token is not valid for any scopes",
+  "sso_status": 200
+}
+
+
+Mutant configuration:
+Matcher:         #<Mutant::Matcher::Config match_expressions: [EveOnline*]>
+Integration:     Mutant::Integration::Rspec
+Jobs:            4
+Includes:        ["lib"]
+Requires:        ["eve_online"]
+Subjects:        419
+Mutations:       8491
+Results:         8491
+Kills:           8482
+Alive:           9
+Runtime:         890.29s
+Killtime:        2124.42s
+Overhead:        -58.09%
+Mutations/s:     9.54
+Coverage:        99.89%
+Active subjects: 0
+EveOnline::ESI::Alliance#initialize:/Users/biow0lf/opensource/eve_online/lib/eve_online/esi/alliance.rb:14
+- rspec:28:./spec/eve_online/esi/alliance_spec.rb:15/EveOnline::ESI::Alliance#initialize token
+- rspec:29:./spec/eve_online/esi/alliance_spec.rb:17/EveOnline::ESI::Alliance#initialize parser
+- rspec:30:./spec/eve_online/esi/alliance_spec.rb:19/EveOnline::ESI::Alliance#initialize _read_timeout
+- rspec:31:./spec/eve_online/esi/alliance_spec.rb:21/EveOnline::ESI::Alliance#initialize _open_timeout
+- rspec:32:./spec/eve_online/esi/alliance_spec.rb:23/EveOnline::ESI::Alliance#initialize datasource
+- rspec:33:./spec/eve_online/esi/alliance_spec.rb:25/EveOnline::ESI::Alliance#initialize alliance_id
+evil:EveOnline::ESI::Alliance#initialize:/Users/biow0lf/opensource/eve_online/lib/eve_online/esi/alliance.rb:14:16f2d
+@@ -1,5 +1,5 @@
+ def initialize(options)
+-  super
++  super()
+   @alliance_id = options.fetch(:alliance_id)
+ end
+-----------------------
+EveOnline::ESI::AllianceCorporations#initialize:/Users/biow0lf/opensource/eve_online/lib/eve_online/esi/alliance_corporations.rb:10
+- rspec:2:./spec/eve_online/esi/alliance_corporations_spec.rb:15/EveOnline::ESI::AllianceCorporations#initialize token
+- rspec:3:./spec/eve_online/esi/alliance_corporations_spec.rb:17/EveOnline::ESI::AllianceCorporations#initialize parser
+- rspec:4:./spec/eve_online/esi/alliance_corporations_spec.rb:19/EveOnline::ESI::AllianceCorporations#initialize _read_timeout
+- rspec:5:./spec/eve_online/esi/alliance_corporations_spec.rb:21/EveOnline::ESI::AllianceCorporations#initialize _open_timeout
+- rspec:6:./spec/eve_online/esi/alliance_corporations_spec.rb:23/EveOnline::ESI::AllianceCorporations#initialize datasource
+- rspec:7:./spec/eve_online/esi/alliance_corporations_spec.rb:25/EveOnline::ESI::AllianceCorporations#initialize alliance_id
+evil:EveOnline::ESI::AllianceCorporations#initialize:/Users/biow0lf/opensource/eve_online/lib/eve_online/esi/alliance_corporations.rb:10:07285
+@@ -1,5 +1,5 @@
+ def initialize(options)
+-  super
++  super()
+   @alliance_id = options.fetch(:alliance_id)
+ end
+-----------------------
+EveOnline::ESI::AllianceIcon#initialize:/Users/biow0lf/opensource/eve_online/lib/eve_online/esi/alliance_icon.rb:14
+- rspec:13:./spec/eve_online/esi/alliance_icon_spec.rb:15/EveOnline::ESI::AllianceIcon#initialize token
+- rspec:14:./spec/eve_online/esi/alliance_icon_spec.rb:17/EveOnline::ESI::AllianceIcon#initialize parser
+- rspec:15:./spec/eve_online/esi/alliance_icon_spec.rb:19/EveOnline::ESI::AllianceIcon#initialize _read_timeout
+- rspec:16:./spec/eve_online/esi/alliance_icon_spec.rb:21/EveOnline::ESI::AllianceIcon#initialize _open_timeout
+- rspec:17:./spec/eve_online/esi/alliance_icon_spec.rb:23/EveOnline::ESI::AllianceIcon#initialize datasource
+- rspec:18:./spec/eve_online/esi/alliance_icon_spec.rb:25/EveOnline::ESI::AllianceIcon#initialize alliance_id
+evil:EveOnline::ESI::AllianceIcon#initialize:/Users/biow0lf/opensource/eve_online/lib/eve_online/esi/alliance_icon.rb:14:3b02b
+@@ -1,5 +1,5 @@
+ def initialize(options)
+-  super
++  super()
+   @alliance_id = options.fetch(:alliance_id)
+ end
+-----------------------
+EveOnline::ESI::Character#initialize:/Users/biow0lf/opensource/eve_online/lib/eve_online/esi/character.rb:14
+- rspec:365:./spec/eve_online/esi/character_spec.rb:15/EveOnline::ESI::Character#initialize token
+- rspec:366:./spec/eve_online/esi/character_spec.rb:17/EveOnline::ESI::Character#initialize parser
+- rspec:367:./spec/eve_online/esi/character_spec.rb:19/EveOnline::ESI::Character#initialize _read_timeout
+- rspec:368:./spec/eve_online/esi/character_spec.rb:21/EveOnline::ESI::Character#initialize _open_timeout
+- rspec:369:./spec/eve_online/esi/character_spec.rb:23/EveOnline::ESI::Character#initialize datasource
+- rspec:370:./spec/eve_online/esi/character_spec.rb:25/EveOnline::ESI::Character#initialize character_id
+evil:EveOnline::ESI::Character#initialize:/Users/biow0lf/opensource/eve_online/lib/eve_online/esi/character.rb:14:e53fd
+@@ -1,5 +1,5 @@
+ def initialize(options)
+-  super
++  super()
+   @character_id = options.fetch(:character_id)
+ end
+-----------------------
+EveOnline::ESI::CharacterPortrait#initialize:/Users/biow0lf/opensource/eve_online/lib/eve_online/esi/character_portrait.rb:14
+- rspec:318:./spec/eve_online/esi/character_portrait_spec.rb:15/EveOnline::ESI::CharacterPortrait#initialize token
+- rspec:319:./spec/eve_online/esi/character_portrait_spec.rb:17/EveOnline::ESI::CharacterPortrait#initialize parser
+- rspec:320:./spec/eve_online/esi/character_portrait_spec.rb:19/EveOnline::ESI::CharacterPortrait#initialize _read_timeout
+- rspec:321:./spec/eve_online/esi/character_portrait_spec.rb:21/EveOnline::ESI::CharacterPortrait#initialize _open_timeout
+- rspec:322:./spec/eve_online/esi/character_portrait_spec.rb:23/EveOnline::ESI::CharacterPortrait#initialize datasource
+- rspec:323:./spec/eve_online/esi/character_portrait_spec.rb:25/EveOnline::ESI::CharacterPortrait#initialize character_id
+evil:EveOnline::ESI::CharacterPortrait#initialize:/Users/biow0lf/opensource/eve_online/lib/eve_online/esi/character_portrait.rb:14:a1a65
+@@ -1,5 +1,5 @@
+ def initialize(options)
+-  super
++  super()
+   @character_id = options.fetch(:character_id)
+ end
+-----------------------
+EveOnline::ESI::Corporation#initialize:/Users/biow0lf/opensource/eve_online/lib/eve_online/esi/corporation.rb:14
+- rspec:464:./spec/eve_online/esi/corporation_spec.rb:15/EveOnline::ESI::Corporation#initialize token
+- rspec:465:./spec/eve_online/esi/corporation_spec.rb:17/EveOnline::ESI::Corporation#initialize parser
+- rspec:466:./spec/eve_online/esi/corporation_spec.rb:19/EveOnline::ESI::Corporation#initialize _read_timeout
+- rspec:467:./spec/eve_online/esi/corporation_spec.rb:21/EveOnline::ESI::Corporation#initialize _open_timeout
+- rspec:468:./spec/eve_online/esi/corporation_spec.rb:23/EveOnline::ESI::Corporation#initialize datasource
+- rspec:469:./spec/eve_online/esi/corporation_spec.rb:25/EveOnline::ESI::Corporation#initialize corporation_id
+evil:EveOnline::ESI::Corporation#initialize:/Users/biow0lf/opensource/eve_online/lib/eve_online/esi/corporation.rb:14:3d777
+@@ -1,5 +1,5 @@
+ def initialize(options)
+-  super
++  super()
+   @corporation_id = options.fetch(:corporation_id)
+ end
+-----------------------
+EveOnline::ESI::DogmaAttribute#initialize:/Users/biow0lf/opensource/eve_online/lib/eve_online/esi/dogma_attribute.rb:14
+- rspec:490:./spec/eve_online/esi/dogma_attribute_spec.rb:15/EveOnline::ESI::DogmaAttribute#initialize token
+- rspec:491:./spec/eve_online/esi/dogma_attribute_spec.rb:17/EveOnline::ESI::DogmaAttribute#initialize parser
+- rspec:492:./spec/eve_online/esi/dogma_attribute_spec.rb:19/EveOnline::ESI::DogmaAttribute#initialize _read_timeout
+- rspec:493:./spec/eve_online/esi/dogma_attribute_spec.rb:21/EveOnline::ESI::DogmaAttribute#initialize _open_timeout
+- rspec:494:./spec/eve_online/esi/dogma_attribute_spec.rb:23/EveOnline::ESI::DogmaAttribute#initialize datasource
+- rspec:495:./spec/eve_online/esi/dogma_attribute_spec.rb:25/EveOnline::ESI::DogmaAttribute#initialize attribute_id
+evil:EveOnline::ESI::DogmaAttribute#initialize:/Users/biow0lf/opensource/eve_online/lib/eve_online/esi/dogma_attribute.rb:14:e758e
+@@ -1,5 +1,5 @@
+ def initialize(options)
+-  super
++  super()
+   @attribute_id = options.fetch(:attribute_id)
+ end
+-----------------------
+EveOnline::ESI::MarketHistory#initialize:/Users/biow0lf/opensource/eve_online/lib/eve_online/esi/market_history.rb:10
+- rspec:534:./spec/eve_online/esi/market_history_spec.rb:15/EveOnline::ESI::MarketHistory#initialize token
+- rspec:535:./spec/eve_online/esi/market_history_spec.rb:17/EveOnline::ESI::MarketHistory#initialize parser
+- rspec:536:./spec/eve_online/esi/market_history_spec.rb:19/EveOnline::ESI::MarketHistory#initialize _read_timeout
+- rspec:537:./spec/eve_online/esi/market_history_spec.rb:21/EveOnline::ESI::MarketHistory#initialize _open_timeout
+- rspec:538:./spec/eve_online/esi/market_history_spec.rb:23/EveOnline::ESI::MarketHistory#initialize datasource
+- rspec:539:./spec/eve_online/esi/market_history_spec.rb:25/EveOnline::ESI::MarketHistory#initialize region_id
+- rspec:540:./spec/eve_online/esi/market_history_spec.rb:27/EveOnline::ESI::MarketHistory#initialize type_id
+evil:EveOnline::ESI::MarketHistory#initialize:/Users/biow0lf/opensource/eve_online/lib/eve_online/esi/market_history.rb:10:3021a
+@@ -1,6 +1,6 @@
+ def initialize(options)
+-  super
++  super()
+   @region_id = options.fetch(:region_id)
+   @type_id = options.fetch(:type_id)
+ end
+-----------------------
+EveOnline::ESI::UniverseType#initialize:/Users/biow0lf/opensource/eve_online/lib/eve_online/esi/universe_type.rb:14
+- rspec:1173:./spec/eve_online/esi/universe_type_spec.rb:15/EveOnline::ESI::UniverseType#initialize token
+- rspec:1174:./spec/eve_online/esi/universe_type_spec.rb:17/EveOnline::ESI::UniverseType#initialize parser
+- rspec:1175:./spec/eve_online/esi/universe_type_spec.rb:19/EveOnline::ESI::UniverseType#initialize _read_timeout
+- rspec:1176:./spec/eve_online/esi/universe_type_spec.rb:21/EveOnline::ESI::UniverseType#initialize _open_timeout
+- rspec:1177:./spec/eve_online/esi/universe_type_spec.rb:23/EveOnline::ESI::UniverseType#initialize datasource
+- rspec:1178:./spec/eve_online/esi/universe_type_spec.rb:25/EveOnline::ESI::UniverseType#initialize type_id
+evil:EveOnline::ESI::UniverseType#initialize:/Users/biow0lf/opensource/eve_online/lib/eve_online/esi/universe_type.rb:14:aeb89
+@@ -1,5 +1,5 @@
+ def initialize(options)
+-  super
++  super()
+   @type_id = options.fetch(:type_id)
+ end
+-----------------------
+Mutant configuration:
+Matcher:         #<Mutant::Matcher::Config match_expressions: [EveOnline*]>
+Integration:     Mutant::Integration::Rspec
+Jobs:            4
+Includes:        ["lib"]
+Requires:        ["eve_online"]
+Subjects:        419
+Mutations:       8491
+Results:         8491
+Kills:           8482
+Alive:           9
+Runtime:         890.29s
+Killtime:        2124.42s
+Overhead:        -58.09%
+Mutations/s:     9.54
+Coverage:        99.89%
+Coverage report generated for RSpec to /Users/biow0lf/opensource/eve_online/coverage. 3440 / 3649 LOC (94.27%) covered.
+MacBook-Pro-Igor-2:eve_online biow0lf$

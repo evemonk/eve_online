@@ -3,14 +3,15 @@
 module EveOnline
   module ESI
     class CharacterBookmarks < Base
-      API_ENDPOINT = 'https://esi.tech.ccp.is/v2/characters/%<character_id>s/bookmarks/?datasource=%<datasource>s'
+      API_ENDPOINT = 'https://esi.evetech.net/v2/characters/%<character_id>s/bookmarks/?datasource=%<datasource>s&page=%<page>s'
 
-      attr_reader :character_id
+      attr_reader :character_id, :page
 
       def initialize(options)
         super
 
         @character_id = options.fetch(:character_id)
+        @page = options.fetch(:page, 1)
       end
 
       def bookmarks
@@ -22,12 +23,16 @@ module EveOnline
       end
       memoize :bookmarks
 
+      def total_pages
+        resource.headers['x-pages']&.to_i
+      end
+
       def scope
         'esi-bookmarks.read_character_bookmarks.v1'
       end
 
       def url
-        format(API_ENDPOINT, character_id: character_id, datasource: datasource)
+        format(API_ENDPOINT, character_id: character_id, datasource: datasource, page: page)
       end
     end
   end

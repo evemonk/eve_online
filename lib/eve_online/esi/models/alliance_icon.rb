@@ -7,7 +7,7 @@ module EveOnline
         def as_json
           {
             icon_medium: icon_medium,
-            icon_small: icon_small,
+            icon_small: icon_small
           }
         end
 

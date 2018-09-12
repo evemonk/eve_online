@@ -3,8 +3,8 @@
 [![Gem Version](https://badge.fury.io/rb/eve_online.svg)](https://badge.fury.io/rb/eve_online)
 [![Gem Downloads](https://img.shields.io/gem/dt/eve_online.svg)](https://rubygems.org/gems/eve_online)
 [![Test Coverage](https://codeclimate.com/github/biow0lf/eve_online/badges/coverage.svg)](https://codeclimate.com/github/biow0lf/eve_online/coverage)
-[![Build Status](https://travis-ci.org/biow0lf/eve_online.svg?branch=master)](https://travis-ci.org/biow0lf/eve_online)
-[![security](https://hakiri.io/github/biow0lf/eve_online/master.svg)](https://hakiri.io/github/biow0lf/eve_online/master)
+[![Build Status](https://travis-ci.com/evemonk/eve_online.svg?branch=master)](https://travis-ci.com/evemonk/eve_online)
+[![security](https://hakiri.io/github/evemonk/eve_online/master.svg)](https://hakiri.io/github/evemonk/eve_online/master)
 
 This gem implement Ruby API for EveOnline MMORPG (ESI).
 
@@ -138,11 +138,15 @@ alliance_icon.icon_small # => "http://image.eveonline.com/Alliance/99005443_64.p
 #### Get character assets
 
 ```ruby
-options = { token: 'token123', character_id: 90729314 }
+options = { token: 'token123', character_id: 90729314, page: 1 }
 
 character_assets = EveOnline::ESI::CharacterAssets.new(options)
 
 character_assets.scope # => "esi-assets.read_assets.v1"
+
+character_assets.page # => 1
+
+character_assets.total_pages # => 1
 
 character_assets.assets.size # => 486
 
@@ -165,8 +169,6 @@ asset.location_id # => 1027847409779
 asset.location_type # => "other"
 asset.quantity # => 1
 asset.type_id # => 1010
-
-# TODO: add pagination support
 ```
 
 #### Get character asset locations
@@ -184,11 +186,15 @@ asset.type_id # => 1010
 #### List bookmarks
 
 ```ruby
-options = { token: 'token123', character_id: 90729314 }
+options = { token: 'token123', character_id: 90729314, page: 1 }
 
 character_bookmarks = EveOnline::ESI::CharacterBookmarks.new(options)
 
 character_bookmarks.scope # => "esi-bookmarks.read_character_bookmarks.v1"
+
+character_bookmarks.page # => 1
+
+character_bookmarks.total_pages # => 1
 
 character_bookmarks.bookmarks.size # => 20
 
@@ -219,18 +225,20 @@ bookmark.item_type_id # => 5
 bookmark.label # => "Stargate"
 bookmark.location_id # => 30003430
 bookmark.notes # => "This is a stargate"
-
-# TODO: add pagination support
 ```
 
 #### List bookmark folders
 
 ```ruby
-options = { token: 'token123', character_id: 90729314 }
+options = { token: 'token123', character_id: 90729314, page: 1 }
 
 character_bookmark_folders = EveOnline::ESI::CharacterBookmarkFolders.new(options)
 
 character_bookmark_folders.scope # => "esi-bookmarks.read_character_bookmarks.v1"
+
+character_bookmark_folders.page # => 1
+
+character_bookmark_folders.total_pages # => 1
 
 character_bookmark_folders.bookmark_folders.size # => 1
 
@@ -241,8 +249,6 @@ bookmark_folder.as_json # => {:folder_id=>5,
 
 bookmark_folder.folder_id # => 5
 bookmark_folder.name # => "Icecream"
-
-# TODO: add pagination support
 ```
 
 #### List corporation bookmarks
@@ -326,11 +332,15 @@ character.security_status # => 1.8694881661345457
 #### Get blueprints
 
 ```ruby
-options = { token: 'token123', character_id: 90729314 }
+options = { token: 'token123', character_id: 90729314, page: 1 }
 
 character_blueprints = EveOnline::ESI::CharacterBlueprints.new(options)
 
 character_blueprints.scope # => "esi-characters.read_blueprints.v1"
+
+character_blueprints.page # => 1
+
+character_blueprints.total_pages # => 1
 
 character_blueprints.blueprints.size # => 4
 
@@ -353,8 +363,6 @@ blueprint.quantity # => -2
 blueprint.runs # => 300
 blueprint.time_efficiency # => 0
 blueprint.type_id # => 1010
-
-# TODO: add pagination support
 ```
 
 #### Get corporation history
@@ -599,11 +607,15 @@ corporation.corporation_url # => "http://"
 #### Get corporation blueprints
 
 ```ruby
-options = options = { token: 'token123', corporation_id: 98260237 }
+options = options = { token: 'token123', corporation_id: 98260237, page: 1 }
 
 corporation_blueprints = EveOnline::ESI::CorporationBlueprints.new(options)
 
 corporation_blueprints.scope # => "esi-corporations.read_blueprints.v1"
+
+corporation_blueprints.page # => 1
+
+corporation_blueprints.total_pages # => 1
 
 corporation_blueprints.blueprints.size # => 387
 
@@ -627,7 +639,7 @@ blueprint.runs # => 300
 blueprint.time_efficiency # => 20
 blueprint.type_id # => 31803
 
-# TODO: add pagination
+# TODO: add roles
 ```
 
 #### Get all corporation ALSC logs
@@ -859,6 +871,10 @@ corporation_jobs = EveOnline::ESI::CorporationIndustryJobs.new(options)
 
 corporation_jobs.scope # => "esi-industry.read_corporation_jobs.v1"
 
+corporation_jobs.page # => 1
+
+corporation_jobs.total_pages # => 1
+
 corporation_jobs.jobs.size # => 23
 
 job = corporation_jobs.jobs.first
@@ -908,8 +924,6 @@ job.runs # => 1
 job.start_date # => Sat, 18 Nov 2017 11:20:14 UTC +00:00
 job.status # => "active"
 job.successful_runs # => nil
-
-# TODO: add pagination support
 ```
 
 #### List industry facilities
@@ -1691,7 +1705,7 @@ races = EveOnline::ESI::Races.new(options)
 * [THE END OF PUBLIC CREST AS WE KNOW IT](https://developers.eveonline.com/blog/article/the-end-of-public-crest-as-we-know-it)
 * [CCP, zKillboard (Eve-Kill), and your API](https://docs.google.com/document/d/16YfJwjhuH5A3cS4NTMDFDkprnOVKsvgtuRIKk8xjTM8/edit)
 * [JUMP CLONES, IMPLANTS, SKILLS, AND MORE](https://developers.eveonline.com/blog/article/jump-clones-implants-skills-and-more)
-* [ESI Swagger](https://esi.tech.ccp.is/latest/)
+* [ESI Swagger](https://esi.evetech.net/ui/)
 
 ## Development
 

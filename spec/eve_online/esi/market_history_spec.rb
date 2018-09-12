@@ -9,7 +9,7 @@ describe EveOnline::ESI::MarketHistory do
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.tech.ccp.is/v1/markets/%<region_id>s/history/?datasource=%<datasource>s&type_id=%<type_id>s') }
+  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.evetech.net/v1/markets/%<region_id>s/history/?datasource=%<datasource>s&type_id=%<type_id>s') }
 
   describe '#initialize' do
     its(:token) { should eq(nil) }
@@ -68,7 +68,7 @@ describe EveOnline::ESI::MarketHistory do
 
   describe '#url' do
     specify do
-      expect(subject.url).to eq('https://esi.tech.ccp.is/v1/markets/10000002/history/?datasource=tranquility&type_id=28606')
+      expect(subject.url).to eq('https://esi.evetech.net/v1/markets/10000002/history/?datasource=tranquility&type_id=28606')
     end
   end
 end

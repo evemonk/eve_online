@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class CharacterStandings < Base
-      API_ENDPOINT = 'https://esi.tech.ccp.is/v1/characters/%<character_id>s/standings/?datasource=%<datasource>s'
+      API_ENDPOINT = 'https://esi.evetech.net/v1/characters/%<character_id>s/standings/?datasource=%<datasource>s'
 
       attr_reader :character_id
 
