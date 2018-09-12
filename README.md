@@ -1484,6 +1484,26 @@ regions.universe_regions_ids.first # => 10000001
 
 #### Get region information
 
+```ruby
+options = { id: 10000001 }
+
+region = EveOnline::ESI::UniverseRegion.new(options)
+
+region.scope # => nil
+
+region.as_json # => {:constellations=>[20000001,20000002,20000003,20000016],
+               #     :description=>"The Derelik region...",
+               #     :name=>"Derelik",
+               #     :region_id=>10000001}
+
+region.constellations # => [20000001,20000002,20000003,20000016]
+region.description # => "The Derelik region..."
+region.name # => "Derelik"
+region.region_id # => 10000001
+
+TODO: translations
+```
+
 #### Get stargate information
 
 #### Get star information

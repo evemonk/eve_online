@@ -9,6 +9,7 @@
 * Update urls from `https://esi.tech.ccp.is/` to `https://esi.evetech.net/`
 * Add pagination support
 * Add `EveOnline::ESI::UniverseRegions`
+* Add `EveOnline::ESI::UniverseRegion`
 
 ## v0.17.0
 
