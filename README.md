@@ -1468,10 +1468,19 @@ race.name # => "Minmatar"
 race.race_id # => 2
 
 # TODO: add languages
-
 ```
 
 #### Get regions
+
+```ruby
+regions = EveOnline::ESI::UniverseRegions.new
+
+regions.scope # => nil
+
+regions.universe_regions_ids.size # => 106
+
+regions.universe_regions_ids.first # => 10000001
+```
 
 #### Get region information
 

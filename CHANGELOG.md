@@ -8,6 +8,7 @@
 * Add `EveOnline::ESI::CharacterLocation`
 * Update urls from `https://esi.tech.ccp.is/` to `https://esi.evetech.net/`
 * Add pagination support
+* Add `EveOnline::ESI::UniverseRegions`
 
 ## v0.17.0
 

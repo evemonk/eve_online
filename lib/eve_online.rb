@@ -63,6 +63,7 @@ require 'eve_online/esi/factions'
 require 'eve_online/esi/ancestries'
 require 'eve_online/esi/universe_types'
 require 'eve_online/esi/universe_type'
+require 'eve_online/esi/universe_regions'
 
 require 'eve_online/esi/models/base'
 require 'eve_online/esi/models/loyalty_point'
