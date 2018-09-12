@@ -1584,11 +1584,15 @@ character_wallet.wallet # => 409488252.49
 #### Get character wallet journal
 
 ```ruby
-options = { token: 'token123', character_id: 90729314 }
+options = { token: 'token123', character_id: 90729314, page: 1 }
 
 character_wallet_journal = EveOnline::ESI::CharacterWalletJournal.new(options)
 
 character_wallet_journal.scope # => "esi-wallet.read_character_wallet.v1"
+
+character_wallet_journal.page # => 1
+
+character_wallet_journal.total_pages # => 1
 
 character_wallet_journal.wallet_journal_entries.size # => 1
 
@@ -1611,8 +1615,6 @@ wallet_journal_entry.tax
 wallet_journal_entry.tax_receiver_id
 
 # TODO: update example
-
-# TODO: add pagination
 ```
 
 #### Get wallet transactions
