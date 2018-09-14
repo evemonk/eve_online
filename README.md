@@ -1537,7 +1537,7 @@ region.description # => "The Derelik region..."
 region.name # => "Derelik"
 region.region_id # => 10000001
 
-TODO: translations
+# TODO: translations
 ```
 
 #### Get stargate information
