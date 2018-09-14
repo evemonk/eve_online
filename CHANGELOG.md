@@ -15,6 +15,8 @@
 * Add `EveOnline::ESI::Models::Constellation`
 * Add `EveOnline::ESI::UniverseSystems`
 * Add `EveOnline::ESI::Wars`
+* Add `EveOnline::ESI::Models::KillmailShort`
+* Add `EveOnline::ESI::WarKillmails`
 
 ## v0.17.0
 

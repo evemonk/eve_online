@@ -1722,6 +1722,28 @@ wars.wars_ids.first # => 615639
 
 #### List kills for a war
 
+```ruby
+options = { war_id: 615578 }
+
+war_killmails = EveOnline::ESI::WarKillmails.new(options)
+
+war_killmails.scope # => nil
+
+war_killmails.page # => 1
+
+war_killmails.total_pages # => 1
+
+war_killmails.killmails.size # => 1
+
+killmail = war_killmails.killmails.first
+
+killmail.as_json # => {:killmail_hash=>"07f7ef1d7f6090e78d8e85b4a98e680f67b5e9d5",
+                 #     :killmail_id=>72410059}
+
+killmail.killmail_hash # => "07f7ef1d7f6090e78d8e85b4a98e680f67b5e9d5"
+killmail.killmail_id # => 72410059
+```
+
 ## Exceptions
 
 If you want to catch all exceptions `rescue` `EveOnline::Exceptions::Base`. E.g.:
