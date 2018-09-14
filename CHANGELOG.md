@@ -14,6 +14,7 @@
 * Add `EveOnline::ESI::UniverseConstellation`
 * Add `EveOnline::ESI::Models::Constellation`
 * Add `EveOnline::ESI::UniverseSystems`
+* Add `EveOnline::ESI::Wars`
 
 ## v0.17.0
 

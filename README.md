@@ -1706,6 +1706,18 @@ wallet_journal_entry.tax_receiver_id
 
 #### List wars
 
+```ruby
+wars = EveOnline::ESI::Wars.new
+
+wars.scope # => nil
+
+wars.wars_ids.size # => 2000
+
+wars.wars_ids.first # => 615639
+
+# TODO: max_war_id
+```
+
 #### Get war information
 
 #### List kills for a war
