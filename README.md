@@ -1427,7 +1427,7 @@ constellation.position_z # => -4.273873181840197e+16
 constellation.region_id # => 10000001
 constellation.systems # => [30000001, 30000002, 30000003, 30000004, 30000005, 30000006, 30000007, 30000008]
 
-TODO: translations
+# TODO: translations
 ```
 
 #### Get factions
