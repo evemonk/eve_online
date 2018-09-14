@@ -2,7 +2,7 @@
 
 [![Gem Version](https://badge.fury.io/rb/eve_online.svg)](https://badge.fury.io/rb/eve_online)
 [![Gem Downloads](https://img.shields.io/gem/dt/eve_online.svg)](https://rubygems.org/gems/eve_online)
-[![Test Coverage](https://codeclimate.com/github/biow0lf/eve_online/badges/coverage.svg)](https://codeclimate.com/github/biow0lf/eve_online/coverage)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/955073c905b91d53e68c/test_coverage)](https://codeclimate.com/github/evemonk/eve_online/test_coverage)
 [![Build Status](https://travis-ci.com/evemonk/eve_online.svg?branch=master)](https://travis-ci.com/evemonk/eve_online)
 [![security](https://hakiri.io/github/evemonk/eve_online/master.svg)](https://hakiri.io/github/evemonk/eve_online/master)
 
@@ -1084,11 +1084,15 @@ order.volume_total
 #### List open orders from a corporation
 
 ```ruby
-options = { token: 'token123', corporation_id: 1000168 }
+options = { token: 'token123', corporation_id: 1000168, page: 1 }
 
 corporation_orders = EveOnline::ESI::CorporationOrders.new(options)
 
 corporation_orders.scope
+
+corporation_orders.page # => 1
+
+corporation_orders.total_pages # => 1
 
 corporation_orders.orders.size
 
@@ -1113,8 +1117,6 @@ order.volume_total
 order.wallet_division
 
 # TODO: update example
-
-# TODO: add pagination support
 
 # TODO: update
 ```
@@ -1390,7 +1392,43 @@ bloodline.willpower # => 7
 
 #### Get constellations
 
+```ruby
+constellations = EveOnline::ESI::UniverseConstellations.new
+
+constellations.scope # => nil
+
+constellations.constellations_ids.size # => 1146
+
+constellations.constellations_ids.first # => 20000001
+```
+
 #### Get constellation information
+
+```ruby
+options = { id: 20000001 }
+
+constellation = EveOnline::ESI::UniverseConstellation.new(options)
+
+constellation.scope # => nil
+
+constellation.as_json # => {:constellation_id=>20000001,
+                      #     :name=>"San Matar",
+                      #     :position_x=>-9.404655970099134e+16,
+                      #     :position_y=>4.952015315379885e+16,
+                      #     :position_z=>-4.273873181840197e+16,
+                      #     :region_id=>10000001,
+                      #     :systems=>[30000001, 30000002, 30000003, 30000004, 30000005, 30000006, 30000007, 30000008]}
+
+constellation.constellation_id # => 20000001
+constellation.name # => "San Matar"
+constellation.position_x # => -9.404655970099134e+16
+constellation.position_y # => 4.952015315379885e+16
+constellation.position_z # => -4.273873181840197e+16
+constellation.region_id # => 10000001
+constellation.systems # => [30000001, 30000002, 30000003, 30000004, 30000005, 30000006, 30000007, 30000008]
+
+TODO: translations
+```
 
 #### Get factions
 
@@ -1466,12 +1504,41 @@ race.name # => "Minmatar"
 race.race_id # => 2
 
 # TODO: add languages
-
 ```
 
 #### Get regions
 
+```ruby
+regions = EveOnline::ESI::UniverseRegions.new
+
+regions.scope # => nil
+
+regions.universe_regions_ids.size # => 106
+
+regions.universe_regions_ids.first # => 10000001
+```
+
 #### Get region information
+
+```ruby
+options = { id: 10000001 }
+
+region = EveOnline::ESI::UniverseRegion.new(options)
+
+region.scope # => nil
+
+region.as_json # => {:constellations=>[20000001,20000002,20000003,20000016],
+               #     :description=>"The Derelik region...",
+               #     :name=>"Derelik",
+               #     :region_id=>10000001}
+
+region.constellations # => [20000001,20000002,20000003,20000016]
+region.description # => "The Derelik region..."
+region.name # => "Derelik"
+region.region_id # => 10000001
+
+TODO: translations
+```
 
 #### Get stargate information
 
@@ -1489,20 +1556,34 @@ race.race_id # => 2
 
 #### Get solar systems
 
+```ruby
+systems = EveOnline::ESI::UniverseSystems.new
+
+systems.scope # => nil
+
+systems.universe_systems_ids.size # => 8285
+
+systems.universe_systems_ids.first # => 30000001
+```
+
 #### Get solar system information
 
 #### Get types
 
 ```ruby
-types = EveOnline::ESI::UniverseTypes.new
+options = { page: 1 }
+
+types = EveOnline::ESI::UniverseTypes.new(options)
 
 types.scope # => nil
+
+types.page # => 1
+
+types.total_pages # => 35
 
 types.universe_types_ids.size # => 1000
 
 types.universe_types_ids.first # => 0
-
-# TODO: add pagination
 ```
 
 #### Get type information
@@ -1580,11 +1661,15 @@ character_wallet.wallet # => 409488252.49
 #### Get character wallet journal
 
 ```ruby
-options = { token: 'token123', character_id: 90729314 }
+options = { token: 'token123', character_id: 90729314, page: 1 }
 
 character_wallet_journal = EveOnline::ESI::CharacterWalletJournal.new(options)
 
 character_wallet_journal.scope # => "esi-wallet.read_character_wallet.v1"
+
+character_wallet_journal.page # => 1
+
+character_wallet_journal.total_pages # => 1
 
 character_wallet_journal.wallet_journal_entries.size # => 1
 
@@ -1607,8 +1692,6 @@ wallet_journal_entry.tax
 wallet_journal_entry.tax_receiver_id
 
 # TODO: update example
-
-# TODO: add pagination
 ```
 
 #### Get wallet transactions

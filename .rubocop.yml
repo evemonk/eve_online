@@ -7,18 +7,6 @@ inherit_from:
   - .rubocop-thread_safety.yml
   - .rubocop_todo.yml
 
-AllCops:
-  Exclude:
-    - 'lib/eve_online/xml/character_wallet_journal.rb'
-    - 'lib/eve_online/xml/character_upcoming_calendar_events.rb'
-    - 'lib/eve_online/xml/base.rb'
-    - 'lib/eve_online/wallet_journal_entry.rb'
-    - 'lib/eve_online/event.rb'
-    - 'spec/eve_online/xml/character_wallet_journal_spec.rb'
-    - 'spec/eve_online/xml/character_upcoming_calendar_events_spec.rb'
-    - 'spec/eve_online/xml/base_spec.rb'
-    - 'spec/eve_online/event_response_object_spec.rb'
-
 Metrics/BlockLength:
   Exclude:
     - 'spec/**/*_spec.rb'

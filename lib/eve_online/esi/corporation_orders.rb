@@ -3,14 +3,15 @@
 module EveOnline
   module ESI
     class CorporationOrders < Base
-      API_ENDPOINT = 'https://esi.evetech.net/v3/corporations/%<corporation_id>s/orders/?datasource=%<datasource>s&page=1'
+      API_ENDPOINT = 'https://esi.evetech.net/v3/corporations/%<corporation_id>s/orders/?datasource=%<datasource>s&page=%<page>s'
 
-      attr_reader :corporation_id
+      attr_reader :corporation_id, :page
 
       def initialize(options)
         super
 
         @corporation_id = options.fetch(:corporation_id)
+        @page = options.fetch(:page, 1)
       end
 
       def orders
@@ -22,6 +23,10 @@ module EveOnline
       end
       memoize :orders
 
+      def total_pages
+        resource.headers['x-pages']&.to_i
+      end
+
       def scope
         'esi-markets.read_corporation_orders.v1'
       end
@@ -32,7 +37,7 @@ module EveOnline
       # end
 
       def url
-        format(API_ENDPOINT, corporation_id: corporation_id, datasource: datasource)
+        format(API_ENDPOINT, corporation_id: corporation_id, datasource: datasource, page: page)
       end
     end
   end
