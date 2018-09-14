@@ -1556,6 +1556,16 @@ TODO: translations
 
 #### Get solar systems
 
+```ruby
+systems = EveOnline::ESI::UniverseSystems.new
+
+systems.scope # => nil
+
+systems.universe_systems_ids.size # => 8285
+
+systems.universe_systems_ids.first # => 30000001
+```
+
 #### Get solar system information
 
 #### Get types
