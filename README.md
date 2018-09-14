@@ -1404,6 +1404,32 @@ constellations.constellations_ids.first # => 20000001
 
 #### Get constellation information
 
+```ruby
+options = { id: 20000001 }
+
+constellation = EveOnline::ESI::UniverseConstellation.new(options)
+
+constellation.scope # => nil
+
+constellation.as_json # => {:constellation_id=>20000001,
+                      #     :name=>"San Matar",
+                      #     :position_x=>-9.404655970099134e+16,
+                      #     :position_y=>4.952015315379885e+16,
+                      #     :position_z=>-4.273873181840197e+16,
+                      #     :region_id=>10000001,
+                      #     :systems=>[30000001, 30000002, 30000003, 30000004, 30000005, 30000006, 30000007, 30000008]}
+
+constellation.constellation_id # => 20000001
+constellation.name # => "San Matar"
+constellation.position_x # => -9.404655970099134e+16
+constellation.position_y # => 4.952015315379885e+16
+constellation.position_z # => -4.273873181840197e+16
+constellation.region_id # => 10000001
+constellation.systems # => [30000001, 30000002, 30000003, 30000004, 30000005, 30000006, 30000007, 30000008]
+
+TODO: translations
+```
+
 #### Get factions
 
 ```ruby

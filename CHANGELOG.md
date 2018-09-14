@@ -11,6 +11,8 @@
 * Add `EveOnline::ESI::UniverseRegions`
 * Add `EveOnline::ESI::UniverseRegion`
 * Add `EveOnline::ESI::UniverseConstellations`
+* Add `EveOnline::ESI::UniverseConstellation`
+* Add `EveOnline::ESI::Models::Constellation`
 
 ## v0.17.0
 
