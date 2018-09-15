@@ -1427,7 +1427,7 @@ constellation.position_z # => -4.273873181840197e+16
 constellation.region_id # => 10000001
 constellation.systems # => [30000001, 30000002, 30000003, 30000004, 30000005, 30000006, 30000007, 30000008]
 
-TODO: translations
+# TODO: translations
 ```
 
 #### Get factions
@@ -1537,7 +1537,7 @@ region.description # => "The Derelik region..."
 region.name # => "Derelik"
 region.region_id # => 10000001
 
-TODO: translations
+# TODO: translations
 ```
 
 #### Get stargate information
@@ -1706,9 +1706,43 @@ wallet_journal_entry.tax_receiver_id
 
 #### List wars
 
+```ruby
+wars = EveOnline::ESI::Wars.new
+
+wars.scope # => nil
+
+wars.wars_ids.size # => 2000
+
+wars.wars_ids.first # => 615639
+
+# TODO: max_war_id
+```
+
 #### Get war information
 
 #### List kills for a war
+
+```ruby
+options = { war_id: 615578 }
+
+war_killmails = EveOnline::ESI::WarKillmails.new(options)
+
+war_killmails.scope # => nil
+
+war_killmails.page # => 1
+
+war_killmails.total_pages # => 1
+
+war_killmails.killmails.size # => 1
+
+killmail = war_killmails.killmails.first
+
+killmail.as_json # => {:killmail_hash=>"07f7ef1d7f6090e78d8e85b4a98e680f67b5e9d5",
+                 #     :killmail_id=>72410059}
+
+killmail.killmail_hash # => "07f7ef1d7f6090e78d8e85b4a98e680f67b5e9d5"
+killmail.killmail_id # => 72410059
+```
 
 ## Exceptions
 
