@@ -1,6 +1,6 @@
 # Changelog
 
-## master
+## v0.18.0
 
 * Add `EveOnline::ESI::Models::CharacterShip`
 * Add `EveOnline::ESI::Models::CharacterLocation`
@@ -17,6 +17,8 @@
 * Add `EveOnline::ESI::Wars`
 * Add `EveOnline::ESI::Models::KillmailShort`
 * Add `EveOnline::ESI::WarKillmails`
+* Add `EveOnline::ESI::CharacterKillmailsRecent`
+* Add `EveOnline::ESI::CorporationKillmailsRecent`
 
 ## v0.17.0
 

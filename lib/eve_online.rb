@@ -40,6 +40,7 @@ require 'eve_online/esi/character_bookmarks'
 require 'eve_online/esi/character_bookmark_folders'
 require 'eve_online/esi/character_notifications'
 require 'eve_online/esi/character_calendar'
+require 'eve_online/esi/character_killmails_recent'
 
 require 'eve_online/esi/market_history'
 
@@ -47,6 +48,7 @@ require 'eve_online/esi/corporation'
 require 'eve_online/esi/corporation_industry_jobs'
 require 'eve_online/esi/corporation_blueprints'
 require 'eve_online/esi/corporation_orders'
+require 'eve_online/esi/corporation_killmails_recent'
 
 require 'eve_online/esi/alliances'
 require 'eve_online/esi/alliance'

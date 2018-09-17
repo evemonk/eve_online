@@ -2,14 +2,14 @@
 
 require 'spec_helper'
 
-describe EveOnline::ESI::WarKillmails do
-  let(:options) { { war_id: 615_578 } }
+describe EveOnline::ESI::CharacterKillmailsRecent do
+  let(:options) { { character_id: 12_345_678 } }
 
   subject { described_class.new(options) }
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.evetech.net/v1/wars/%<war_id>s/killmails/?datasource=%<datasource>s&page=%<page>s') }
+  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.evetech.net/v1/characters/%<character_id>s/killmails/recent/?datasource=%<datasource>s&page=%<page>s') }
 
   describe '#initialize' do
     context 'without options' do
@@ -23,13 +23,13 @@ describe EveOnline::ESI::WarKillmails do
 
       its(:datasource) { should eq('tranquility') }
 
-      its(:war_id) { should eq(615_578) }
+      its(:character_id) { should eq(12_345_678) }
 
       its(:page) { should eq(1) }
     end
 
     context 'with options' do
-      let(:options) { { war_id: 615_578, page: 10 } }
+      let(:options) { { character_id: 12_345_678, page: 10 } }
 
       its(:page) { should eq(10) }
     end
@@ -86,12 +86,12 @@ describe EveOnline::ESI::WarKillmails do
   end
 
   describe '#scope' do
-    specify { expect(subject.scope).to eq(nil) }
+    specify { expect(subject.scope).to eq('esi-killmails.read_killmails.v1') }
   end
 
   describe '#url' do
     specify do
-      expect(subject.url).to eq('https://esi.evetech.net/v1/wars/615578/killmails/?datasource=tranquility&page=1')
+      expect(subject.url).to eq('https://esi.evetech.net/v1/characters/12345678/killmails/recent/?datasource=tranquility&page=1')
     end
   end
 end
