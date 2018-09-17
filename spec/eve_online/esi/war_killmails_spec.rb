@@ -23,7 +23,7 @@ describe EveOnline::ESI::WarKillmails do
 
       its(:datasource) { should eq('tranquility') }
 
-      its(:war_id) { should eq(615578) }
+      its(:war_id) { should eq(615_578) }
 
       its(:page) { should eq(1) }
     end
