@@ -40,6 +40,7 @@ require 'eve_online/esi/character_bookmarks'
 require 'eve_online/esi/character_bookmark_folders'
 require 'eve_online/esi/character_notifications'
 require 'eve_online/esi/character_calendar'
+require 'eve_online/esi/character_killmails_recent'
 
 require 'eve_online/esi/market_history'
 

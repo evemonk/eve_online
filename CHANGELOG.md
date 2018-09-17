@@ -17,6 +17,7 @@
 * Add `EveOnline::ESI::Wars`
 * Add `EveOnline::ESI::Models::KillmailShort`
 * Add `EveOnline::ESI::WarKillmails`
+* Add `EveOnline::ESI::CharacterKillmailsRecent`
 
 ## v0.17.0
 
