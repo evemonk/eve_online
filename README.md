@@ -962,6 +962,28 @@ killmail.killmail_id # => 72410059
 
 #### Get a corporation's recent kills and losses
 
+```ruby
+options = { token: 'token123', corporation_id: 98146630 }
+
+corporation_killmails = EveOnline::ESI::CorporationKillmailsRecent.new(options)
+
+corporation_killmails.scope # => "esi-killmails.read_corporation_killmails.v1"
+
+corporation_killmails.page # => 1
+
+corporation_killmails.total_pages # => 1
+
+corporation_killmails.killmails.size # => 1
+
+killmail = corporation_killmails.killmails.first
+
+killmail.as_json # => {:killmail_hash=>"07f7ef1d7f6090e78d8e85b4a98e680f67b5e9d5",
+                 #     :killmail_id=>72410059}
+
+killmail.killmail_hash # => "07f7ef1d7f6090e78d8e85b4a98e680f67b5e9d5"
+killmail.killmail_id # => 72410059
+```
+
 #### Get a single killmail
 
 ### Location
