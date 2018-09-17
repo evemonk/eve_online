@@ -1,6 +1,6 @@
 # Changelog
 
-## master
+## v0.18.0
 
 * Add `EveOnline::ESI::Models::CharacterShip`
 * Add `EveOnline::ESI::Models::CharacterLocation`
