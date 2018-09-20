@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = 'EveOnline ESI API.'
   spec.description   = 'EveOnline ESI API.'
-  spec.homepage      = 'https://github.com/biow0lf/eve_online'
+  spec.homepage      = 'https://github.com/evemonk/eve_online'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features|bin)/}) }
