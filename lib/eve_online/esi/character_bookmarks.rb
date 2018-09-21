@@ -23,10 +23,6 @@ module EveOnline
       end
       memoize :bookmarks
 
-      def total_pages
-        resource.headers['x-pages']&.to_i
-      end
-
       def scope
         'esi-bookmarks.read_character_bookmarks.v1'
       end

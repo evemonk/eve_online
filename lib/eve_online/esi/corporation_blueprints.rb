@@ -23,10 +23,6 @@ module EveOnline
       end
       memoize :blueprints
 
-      def total_pages
-        resource.headers['x-pages']&.to_i
-      end
-
       def scope
         'esi-corporations.read_blueprints.v1'
       end

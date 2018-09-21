@@ -39,25 +39,6 @@ describe EveOnline::ESI::UniverseTypes do
     specify { expect(subject.universe_types_ids).to eq(response) }
   end
 
-  # TODO: remove duplication
-  describe '#total_pages' do
-    let(:resource) { double }
-
-    let(:headers) { double }
-
-    let(:pages) { double }
-
-    before { expect(subject).to receive(:resource).and_return(resource) }
-
-    before { expect(resource).to receive(:headers).and_return(headers) }
-
-    before { expect(headers).to receive(:[]).with('x-pages').and_return(pages) }
-
-    before { expect(pages).to receive(:to_i) }
-
-    specify { expect { subject.total_pages }.not_to raise_error }
-  end
-
   describe '#scope' do
     specify { expect(subject.scope).to eq(nil) }
   end

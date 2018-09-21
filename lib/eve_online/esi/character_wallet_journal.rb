@@ -23,10 +23,6 @@ module EveOnline
       end
       memoize :wallet_journal_entries
 
-      def total_pages
-        resource.headers['x-pages']&.to_i
-      end
-
       def scope
         'esi-wallet.read_character_wallet.v1'
       end

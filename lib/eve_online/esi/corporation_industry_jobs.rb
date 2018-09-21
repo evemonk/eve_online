@@ -24,10 +24,6 @@ module EveOnline
       end
       memoize :jobs
 
-      def total_pages
-        resource.headers['x-pages']&.to_i
-      end
-
       def scope
         'esi-industry.read_corporation_jobs.v1'
       end
