@@ -1,5 +1,10 @@
 # Changelog
 
+## master
+
+* Replace `faraday` gem with ruby `net/http`
+* Add `Etag` / `If-None-Match` support for caching
+
 ## v0.18.0
 
 * Add `EveOnline::ESI::Models::CharacterShip`

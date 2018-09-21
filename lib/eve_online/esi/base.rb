@@ -1,23 +1,26 @@
 # frozen_string_literal: true
 
+require 'net/http'
+require 'openssl'
 require 'json'
 require 'memoist'
 require 'active_support/time'
-require 'faraday'
 
 module EveOnline
   module ESI
     class Base
       extend Memoist
 
-      attr_reader :token, :parser, :_read_timeout, :_open_timeout, :datasource
+      attr_reader :token, :parser, :_read_timeout, :_open_timeout, :etag,
+                  :datasource
 
       def initialize(options = {})
-        @token = options[:token]
-        @parser = options[:parser] || JSON
-        @_read_timeout = options[:read_timeout] || 60
-        @_open_timeout = options[:open_timeout] || 60
-        @datasource = options[:datasource] || 'tranquility'
+        @token = options.fetch(:token, nil)
+        @parser = options.fetch(:parser, JSON)
+        @_read_timeout = options.fetch(:read_timeout, 60)
+        @_open_timeout = options.fetch(:open_timeout, 60)
+        @etag = options.fetch(:etag, nil)
+        @datasource = options.fetch(:datasource, 'tranquility')
       end
 
       def url
@@ -32,77 +35,105 @@ module EveOnline
         "EveOnline API (https://github.com/biow0lf/eve_online) v#{ VERSION }"
       end
 
+      def http_method
+        'Get'
+      end
+
       def read_timeout
-        client.options.timeout
+        client.read_timeout
       end
 
       def read_timeout=(value)
-        client.options.timeout = value
+        client.read_timeout = value
       end
 
       def open_timeout
-        client.options.open_timeout
+        client.open_timeout
       end
 
       def open_timeout=(value)
-        client.options.open_timeout = value
+        client.open_timeout = value
+      end
+
+      def current_etag
+        resource.header['Etag']&.gsub('"', '')
       end
 
       def page; end
 
-      # def total_pages
-      #   resource.headers['x-pages']&.to_i
-      # end
+      def total_pages
+        resource.header['X-Pages']&.to_i
+      end
 
       def client
         @client ||= begin
-          faraday = Faraday.new
-
-          faraday.headers[:user_agent] = user_agent
-          faraday.authorization(:Bearer, token) if token
-          faraday.options.timeout = _read_timeout
-          faraday.options.open_timeout = _open_timeout
-          faraday
+          http = Net::HTTP.new(uri.host, uri.port)
+          http.read_timeout = _read_timeout
+          http.open_timeout = _open_timeout
+          http.use_ssl = true
+          http.verify_mode = OpenSSL::SSL::VERIFY_PEER
+          http
         end
       end
 
+      def request
+        @request ||= begin
+          request = "Net::HTTP::#{ http_method }".constantize.new(uri.request_uri)
+
+          request['User-Agent'] = user_agent
+          request['Accept'] = 'application/json'
+          request['Authorization'] = "Bearer #{ token }" if token
+          request['If-None-Match'] = "\"#{ etag }\"" if etag
+
+          request
+        end
+      end
+
+      def uri
+        @uri ||= URI.parse(url)
+      end
+
       def resource
-        @resource ||= client.get(url)
+        @resource ||= client.request(request)
+      end
+
+      def no_content?
+        resource.is_a?(Net::HTTPNotModified)
       end
 
       def content
-        case resource.status
-        when 200
+        case resource
+        when Net::HTTPOK
           resource.body
-        when 201
+        when Net::HTTPCreated
           # TODO: write
           raise NotImplementedError
-        when 204
+        when Net::HTTPNoContent
           # TODO: write
           # raise NotImplementedError
           raise EveOnline::Exceptions::NoContent
-        when 304
-          # TODO: write
+        when Net::HTTPNotModified
+          # TODO: write etag support
           raise NotImplementedError
-        when 400
+        when Net::HTTPBadRequest
           raise EveOnline::Exceptions::BadRequest
-        when 401
+        when Net::HTTPUnauthorized
           raise EveOnline::Exceptions::Unauthorized
-        when 403
+        when Net::HTTPForbidden
           raise EveOnline::Exceptions::Forbidden
-        when 404
+        when Net::HTTPNotFound
           raise EveOnline::Exceptions::ResourceNotFound
-        when 500
+        when Net::HTTPInternalServerError
           raise EveOnline::Exceptions::InternalServerError
-        when 502
+        when Net::HTTPBadGateway
           raise EveOnline::Exceptions::BadGateway
-        when 503
+        when Net::HTTPServiceUnavailable
           raise EveOnline::Exceptions::ServiceUnavailable
         else
           # raise EveOnline::Exceptions::UnknownStatus
           raise NotImplementedError
         end
-      rescue Faraday::TimeoutError
+      rescue Net::OpenTimeout, Net::ReadTimeout
         raise EveOnline::Exceptions::Timeout
       end
       memoize :content
