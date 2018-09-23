@@ -1818,13 +1818,13 @@ List of exceptions:
 
 ## Timeouts
 
-`eve_online` gem uses `faraday` for network request. `faraday` configured with:
+`eve_online` gem uses `net/http` for network request. `net/http` configured with:
 
 ```ruby
-faraday = Faraday.new
+http = Net::HTTP.new
 
-faraday.options.timeout = 60
-faraday.options.open_timeout = 60
+http.read_timeout = 60
+http.open_timeout = 60
 ```
 
 You can configure default timeouts with adding `read_timeout:` and `open_timeout:` to default hash with options:
