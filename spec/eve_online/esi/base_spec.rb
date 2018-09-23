@@ -179,6 +179,40 @@ describe EveOnline::ESI::Base do
       specify { expect(subject.client).to eq(client) }
     end
 
+    context 'when @client not set' do
+      let(:host) { double }
+
+      let(:port) { double }
+
+      let(:uri) { double(host: host, port: port) }
+
+      let(:http) { instance_double(Net::HTTP) }
+
+      let(:_read_timeout) { double }
+
+      let(:_open_timeout) { double }
+
+      before { expect(subject).to receive(:uri).and_return(uri).twice }
+
+      before { expect(Net::HTTP).to receive(:new).with(host, port).and_return(http) }
+
+      before { expect(subject).to receive(:_read_timeout).and_return(_read_timeout) }
+
+      before { expect(subject).to receive(:_open_timeout).and_return(_open_timeout) }
+
+      before { expect(http).to receive(:read_timeout=).with(_read_timeout) }
+
+      before { expect(http).to receive(:open_timeout=).with(_open_timeout) }
+
+      before { expect(http).to receive(:use_ssl=).with(true) }
+
+      before { expect(http).to receive(:verify_mode=).with(OpenSSL::SSL::VERIFY_PEER) }
+
+      specify { expect { subject.client }.not_to raise_error }
+
+      specify { expect { subject.client }.to change { subject.instance_variable_get(:@client) }.from(nil).to(http) }
+    end
+
     # context 'when @client not set' do
     #   let(:client) { double }
     #
