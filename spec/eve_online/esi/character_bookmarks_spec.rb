@@ -70,25 +70,6 @@ describe EveOnline::ESI::CharacterBookmarks do
     specify { expect { subject.bookmarks }.to change { subject.instance_variable_defined?(:@_memoized_bookmarks) }.from(false).to(true) }
   end
 
-  # TODO: remove duplication
-  describe '#total_pages' do
-    let(:resource) { double }
-
-    let(:headers) { double }
-
-    let(:pages) { double }
-
-    before { expect(subject).to receive(:resource).and_return(resource) }
-
-    before { expect(resource).to receive(:headers).and_return(headers) }
-
-    before { expect(headers).to receive(:[]).with('x-pages').and_return(pages) }
-
-    before { expect(pages).to receive(:to_i) }
-
-    specify { expect { subject.total_pages }.not_to raise_error }
-  end
-
   describe '#scope' do
     specify { expect(subject.scope).to eq('esi-bookmarks.read_character_bookmarks.v1') }
   end

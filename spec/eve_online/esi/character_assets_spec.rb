@@ -71,25 +71,6 @@ describe EveOnline::ESI::CharacterAssets do
     specify { expect { subject.assets }.to change { subject.instance_variable_defined?(:@_memoized_assets) }.from(false).to(true) }
   end
 
-  # TODO: remove duplication
-  describe '#total_pages' do
-    let(:resource) { double }
-
-    let(:headers) { double }
-
-    let(:pages) { double }
-
-    before { expect(subject).to receive(:resource).and_return(resource) }
-
-    before { expect(resource).to receive(:headers).and_return(headers) }
-
-    before { expect(headers).to receive(:[]).with('x-pages').and_return(pages) }
-
-    before { expect(pages).to receive(:to_i) }
-
-    specify { expect { subject.total_pages }.not_to raise_error }
-  end
-
   describe '#scope' do
     specify { expect(subject.scope).to eq('esi-assets.read_assets.v1') }
   end

@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = 'EveOnline ESI API.'
   spec.description   = 'EveOnline ESI API.'
-  spec.homepage      = 'https://github.com/biow0lf/eve_online'
+  spec.homepage      = 'https://github.com/evemonk/eve_online'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features|bin)/}) }
@@ -30,7 +30,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'mdl'
 
   spec.add_runtime_dependency 'activesupport', '>= 4.2.0'
-  spec.add_runtime_dependency 'faraday'
   spec.add_runtime_dependency 'json'
   spec.add_runtime_dependency 'memoist'
 end

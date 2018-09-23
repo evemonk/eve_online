@@ -23,10 +23,6 @@ module EveOnline
       end
       memoize :assets
 
-      def total_pages
-        resource.headers['x-pages']&.to_i
-      end
-
       def scope
         'esi-assets.read_assets.v1'
       end

@@ -23,10 +23,6 @@ module EveOnline
       end
       memoize :orders
 
-      def total_pages
-        resource.headers['x-pages']&.to_i
-      end
-
       def scope
         'esi-markets.read_corporation_orders.v1'
       end

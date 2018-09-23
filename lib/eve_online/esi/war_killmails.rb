@@ -23,10 +23,6 @@ module EveOnline
       end
       memoize :killmails
 
-      def total_pages
-        resource.headers['x-pages']&.to_i
-      end
-
       def scope; end
 
       def url
