@@ -455,15 +455,13 @@ describe EveOnline::ESI::Base do
       specify { expect { subject.content }.to raise_error(EveOnline::Exceptions::ServiceUnavailable) }
     end
 
-    # context 'when status not supported' do
-    #   let(:resource) { double }
-    #
-    #   before { expect(subject).to receive(:resource).and_return(resource) }
-    #
-    #   before { expect(resource).to receive(:status).and_return(1000) }
-    #
-    #   specify { expect { subject.content }.to raise_error(NotImplementedError) }
-    # end
+    context 'when status not supported' do
+      let(:resource) { double }
+
+      before { expect(subject).to receive(:resource).and_return(resource) }
+
+      specify { expect { subject.content }.to raise_error(NotImplementedError) }
+    end
 
     context 'when Net::HTTP throw Net::OpenTimeout' do
       before { expect(subject).to receive(:resource).and_raise(Net::OpenTimeout) }
