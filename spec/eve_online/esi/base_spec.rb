@@ -253,6 +253,58 @@ describe EveOnline::ESI::Base do
 
       specify { expect(subject.request).to eq(request) }
     end
+
+    context 'when @request not set' do
+      let(:http_method) { 'Get' }
+
+      let(:request) { instance_double(Net::HTTP::Get) }
+
+      let(:request_uri) { double }
+
+      let(:uri) { double(request_uri: request_uri) }
+
+      let(:user_agent) { double }
+
+      before { expect(subject).to receive(:uri).and_return(uri) }
+
+      before { expect(subject).to receive(:user_agent).and_return(user_agent) }
+
+      before { expect(subject).to receive(:http_method).and_return(http_method) }
+
+      before { expect(Net::HTTP::Get).to receive(:new).with(request_uri).and_return(request) }
+
+      before { expect(request).to receive(:[]=).with('User-Agent', user_agent).and_return(request) }
+
+      before { expect(request).to receive(:[]=).with('Accept', 'application/json').and_return(request) }
+
+      context 'without token and etag' do
+        before { expect(subject).to receive(:token).and_return(nil) }
+
+        before { expect(subject).to receive(:etag).and_return(nil) }
+
+        specify { expect { subject.request }.not_to raise_error }
+
+        specify { expect { subject.request }.to change { subject.instance_variable_get(:@request) }.from(nil).to(request) }
+      end
+
+      context 'with token and etag' do
+        let(:token) { 'token123' }
+
+        let(:etag) { 'etag' }
+
+        before { expect(subject).to receive(:token).and_return(token).twice }
+
+        before { expect(subject).to receive(:etag).and_return(etag).twice }
+
+        before { expect(request).to receive(:[]=).with('Authorization', 'Bearer token123').and_return(request) }
+
+        before { expect(request).to receive(:[]=).with('If-None-Match', '"etag"').and_return(request) }
+
+        specify { expect { subject.request }.not_to raise_error }
+
+        specify { expect { subject.request }.to change { subject.instance_variable_get(:@request) }.from(nil).to(request) }
+      end
+    end
   end
 
   describe '#uri' do
