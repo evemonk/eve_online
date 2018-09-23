@@ -339,10 +339,10 @@ describe EveOnline::ESI::Base do
   end
 
   describe '#content' do
-    context 'when resource Net::HTTPOK' do
+    context 'when resource is Net::HTTPOK' do
       let(:body) { double }
 
-      let(:resource) { double(body: body) }
+      let(:resource) { instance_double(Net::HTTPOK, body: body) }
 
       before { expect(subject).to receive(:resource).and_return(resource).twice }
 
@@ -355,55 +355,55 @@ describe EveOnline::ESI::Base do
       specify { expect { subject.content }.to change { subject.instance_variable_defined?(:@_memoized_content) }.from(false).to(true) }
     end
 
-    # context 'when status 201' do
-    #   let(:resource) { double }
-    #
-    #   before { expect(subject).to receive(:resource).and_return(resource) }
-    #
-    #   before { expect(resource).to receive(:status).and_return(201) }
-    #
-    #   specify { expect { subject.content }.to raise_error(NotImplementedError) }
-    # end
+    context 'when resource is Net::HTTPCreated' do
+      let(:resource) { instance_double(Net::HTTPCreated) }
 
-    # context 'when status 204' do
-    #   let(:resource) { double }
-    #
-    #   before { expect(subject).to receive(:resource).and_return(resource) }
-    #
-    #   before { expect(resource).to receive(:status).and_return(204) }
-    #
-    #   specify { expect { subject.content }.to raise_error(EveOnline::Exceptions::NoContent) }
-    # end
+      before { expect(subject).to receive(:resource).and_return(resource) }
 
-    # context 'when status 304' do
-    #   let(:resource) { double }
-    #
-    #   before { expect(subject).to receive(:resource).and_return(resource) }
-    #
-    #   before { expect(resource).to receive(:status).and_return(304) }
-    #
-    #   specify { expect { subject.content }.to raise_error(NotImplementedError) }
-    # end
+      before { expect(Net::HTTPCreated).to receive(:===).with(resource).and_return(true) }
 
-    # context 'when status 400' do
-    #   let(:resource) { double }
-    #
-    #   before { expect(subject).to receive(:resource).and_return(resource) }
-    #
-    #   before { expect(resource).to receive(:status).and_return(400) }
-    #
-    #   specify { expect { subject.content }.to raise_error(EveOnline::Exceptions::BadRequest) }
-    # end
+      specify { expect { subject.content }.to raise_error(NotImplementedError) }
+    end
 
-    # context 'when status 401' do
-    #   let(:resource) { double }
-    #
-    #   before { expect(subject).to receive(:resource).and_return(resource) }
-    #
-    #   before { expect(resource).to receive(:status).and_return(401) }
-    #
-    #   specify { expect { subject.content }.to raise_error(EveOnline::Exceptions::Unauthorized) }
-    # end
+    context 'when resource is Net::HTTPNoContent' do
+      let(:resource) { instance_double(Net::HTTPNoContent) }
+
+      before { expect(subject).to receive(:resource).and_return(resource) }
+
+      before { expect(Net::HTTPNoContent).to receive(:===).with(resource).and_return(true) }
+
+      specify { expect { subject.content }.to raise_error(EveOnline::Exceptions::NoContent) }
+    end
+
+    context 'when resource is Net::HTTPNotModified' do
+      let(:resource) { instance_double(Net::HTTPNotModified) }
+
+      before { expect(subject).to receive(:resource).and_return(resource) }
+
+      before { expect(Net::HTTPNotModified).to receive(:===).with(resource).and_return(true) }
+
+      specify { expect { subject.content }.to raise_error(NotImplementedError) }
+    end
+
+    context 'when resource is Net::HTTPBadRequest' do
+      let(:resource) { instance_double(Net::HTTPBadRequest) }
+
+      before { expect(subject).to receive(:resource).and_return(resource) }
+
+      before { expect(Net::HTTPBadRequest).to receive(:===).with(resource).and_return(true) }
+
+      specify { expect { subject.content }.to raise_error(EveOnline::Exceptions::BadRequest) }
+    end
+
+    context 'when resource is Net::HTTPUnauthorized' do
+      let(:resource) { instance_double(Net::HTTPUnauthorized) }
+
+      before { expect(subject).to receive(:resource).and_return(resource) }
+
+      before { expect(Net::HTTPUnauthorized).to receive(:===).with(resource).and_return(true) }
+
+      specify { expect { subject.content }.to raise_error(EveOnline::Exceptions::Unauthorized) }
+    end
 
     # context 'when status 403' do
     #   let(:resource) { double }
@@ -471,7 +471,7 @@ describe EveOnline::ESI::Base do
       specify { expect { subject.content }.to raise_error(EveOnline::Exceptions::Timeout) }
     end
 
-    context 'when Net::HTTP throw Faraday::TimeoutError' do
+    context 'when Net::HTTP throw Net::ReadTimeout' do
       before { expect(subject).to receive(:resource).and_raise(Net::ReadTimeout) }
 
       specify { expect { subject.content }.to raise_error(EveOnline::Exceptions::Timeout) }
