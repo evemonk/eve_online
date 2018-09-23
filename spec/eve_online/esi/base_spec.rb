@@ -246,7 +246,13 @@ describe EveOnline::ESI::Base do
   end
 
   describe '#request' do
-  
+    context 'when @request set' do
+      let(:request) { double }
+
+      before { subject.instance_variable_set(:@request, request) }
+
+      specify { expect(subject.request).to eq(request) }
+    end
   end
 
   describe '#uri' do
