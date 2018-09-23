@@ -405,55 +405,55 @@ describe EveOnline::ESI::Base do
       specify { expect { subject.content }.to raise_error(EveOnline::Exceptions::Unauthorized) }
     end
 
-    # context 'when status 403' do
-    #   let(:resource) { double }
-    #
-    #   before { expect(subject).to receive(:resource).and_return(resource) }
-    #
-    #   before { expect(resource).to receive(:status).and_return(403) }
-    #
-    #   specify { expect { subject.content }.to raise_error(EveOnline::Exceptions::Forbidden) }
-    # end
+    context 'when resource is Net::HTTPForbidden' do
+      let(:resource) { instance_double(Net::HTTPForbidden) }
 
-    # context 'when status 404' do
-    #   let(:resource) { double }
-    #
-    #   before { expect(subject).to receive(:resource).and_return(resource) }
-    #
-    #   before { expect(resource).to receive(:status).and_return(404) }
-    #
-    #   specify { expect { subject.content }.to raise_error(EveOnline::Exceptions::ResourceNotFound) }
-    # end
+      before { expect(subject).to receive(:resource).and_return(resource) }
 
-    # context 'when status 500' do
-    #   let(:resource) { double }
-    #
-    #   before { expect(subject).to receive(:resource).and_return(resource) }
-    #
-    #   before { expect(resource).to receive(:status).and_return(500) }
-    #
-    #   specify { expect { subject.content }.to raise_error(EveOnline::Exceptions::InternalServerError) }
-    # end
+      before { expect(Net::HTTPForbidden).to receive(:===).with(resource).and_return(true) }
 
-    # context 'when status 502' do
-    #   let(:resource) { double }
-    #
-    #   before { expect(subject).to receive(:resource).and_return(resource) }
-    #
-    #   before { expect(resource).to receive(:status).and_return(502) }
-    #
-    #   specify { expect { subject.content }.to raise_error(EveOnline::Exceptions::BadGateway) }
-    # end
+      specify { expect { subject.content }.to raise_error(EveOnline::Exceptions::Forbidden) }
+    end
 
-    # context 'when status 503' do
-    #   let(:resource) { double }
-    #
-    #   before { expect(subject).to receive(:resource).and_return(resource) }
-    #
-    #   before { expect(resource).to receive(:status).and_return(503) }
-    #
-    #   specify { expect { subject.content }.to raise_error(EveOnline::Exceptions::ServiceUnavailable) }
-    # end
+    context 'when resource is Net::HTTPNotFound' do
+      let(:resource) { instance_double(Net::HTTPNotFound) }
+
+      before { expect(subject).to receive(:resource).and_return(resource) }
+
+      before { expect(Net::HTTPNotFound).to receive(:===).with(resource).and_return(true) }
+
+      specify { expect { subject.content }.to raise_error(EveOnline::Exceptions::ResourceNotFound) }
+    end
+
+    context 'when resource is Net::HTTPInternalServerError' do
+      let(:resource) { instance_double(Net::HTTPInternalServerError) }
+
+      before { expect(subject).to receive(:resource).and_return(resource) }
+
+      before { expect(Net::HTTPInternalServerError).to receive(:===).with(resource).and_return(true) }
+
+      specify { expect { subject.content }.to raise_error(EveOnline::Exceptions::InternalServerError) }
+    end
+
+    context 'when resource is Net::HTTPBadGateway' do
+      let(:resource) { instance_double(Net::HTTPBadGateway) }
+
+      before { expect(subject).to receive(:resource).and_return(resource) }
+
+      before { expect(Net::HTTPBadGateway).to receive(:===).with(resource).and_return(true) }
+
+      specify { expect { subject.content }.to raise_error(EveOnline::Exceptions::BadGateway) }
+    end
+
+    context 'when resource is Net::HTTPServiceUnavailable' do
+      let(:resource) { instance_double(Net::HTTPServiceUnavailable) }
+
+      before { expect(subject).to receive(:resource).and_return(resource) }
+
+      before { expect(Net::HTTPServiceUnavailable).to receive(:===).with(resource).and_return(true) }
+
+      specify { expect { subject.content }.to raise_error(EveOnline::Exceptions::ServiceUnavailable) }
+    end
 
     # context 'when status not supported' do
     #   let(:resource) { double }
