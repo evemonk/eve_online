@@ -339,23 +339,21 @@ describe EveOnline::ESI::Base do
   end
 
   describe '#content' do
-    # context 'when status 200' do
-    #   let(:resource) { double }
-    #
-    #   let(:body) { double }
-    #
-    #   before { expect(subject).to receive(:resource).and_return(resource).twice }
-    #
-    #   before { expect(resource).to receive(:status).and_return(200) }
-    #
-    #   before { expect(resource).to receive(:body).and_return(body) }
-    #
-    #   specify { expect(subject.content).to eq(body) }
-    #
-    #   specify { expect { subject.content }.not_to raise_error }
-    #
-    #   specify { expect { subject.content }.to change { subject.instance_variable_defined?(:@_memoized_content) }.from(false).to(true) }
-    # end
+    context 'when resource Net::HTTPOK' do
+      let(:body) { double }
+
+      let(:resource) { double(body: body) }
+
+      before { expect(subject).to receive(:resource).and_return(resource).twice }
+
+      before { expect(Net::HTTPOK).to receive(:===).with(resource).and_return(true) }
+
+      specify { expect(subject.content).to eq(body) }
+
+      specify { expect { subject.content }.not_to raise_error }
+
+      specify { expect { subject.content }.to change { subject.instance_variable_defined?(:@_memoized_content) }.from(false).to(true) }
+    end
 
     # context 'when status 201' do
     #   let(:resource) { double }
