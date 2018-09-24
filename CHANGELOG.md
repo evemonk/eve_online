@@ -4,6 +4,7 @@
 
 * Replace `faraday` gem with ruby `net/http`
 * Add `Etag` / `If-None-Match` support for caching
+* Add `Accept-Language` support
 
 ## v0.18.0
 

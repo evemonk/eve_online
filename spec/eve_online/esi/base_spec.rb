@@ -16,7 +16,8 @@ describe EveOnline::ESI::Base do
           read_timeout: 30,
           open_timeout: 45,
           etag: '6f2d3caa79a79bc9e61aa058e18905faac5e293fa1729637648ce9a1',
-          datasource: 'singularity'
+          datasource: 'singularity',
+          language: 'ru'
         }
       end
 
@@ -33,6 +34,8 @@ describe EveOnline::ESI::Base do
       its(:etag) { should eq('6f2d3caa79a79bc9e61aa058e18905faac5e293fa1729637648ce9a1') }
 
       its(:datasource) { should eq('singularity') }
+
+      its(:language) { should eq('ru') }
     end
 
     context 'without options' do
@@ -47,6 +50,8 @@ describe EveOnline::ESI::Base do
       its(:etag) { should eq(nil) }
 
       its(:datasource) { should eq('tranquility') }
+
+      its(:language) { should eq('en-us') }
     end
   end
 
@@ -234,6 +239,10 @@ describe EveOnline::ESI::Base do
 
       let(:user_agent) { double }
 
+      let(:language) { double }
+
+      before { expect(subject).to receive(:language).and_return(language) }
+
       before { expect(subject).to receive(:uri).and_return(uri) }
 
       before { expect(subject).to receive(:user_agent).and_return(user_agent) }
@@ -245,6 +254,8 @@ describe EveOnline::ESI::Base do
       before { expect(request).to receive(:[]=).with('User-Agent', user_agent).and_return(request) }
 
       before { expect(request).to receive(:[]=).with('Accept', 'application/json').and_return(request) }
+
+      before { expect(request).to receive(:[]=).with('Accept-Language', language).and_return(request) }
 
       context 'without token and etag' do
         before { expect(subject).to receive(:token).and_return(nil) }
