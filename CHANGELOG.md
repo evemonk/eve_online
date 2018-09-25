@@ -5,6 +5,9 @@
 * Replace `faraday` gem with ruby `net/http`
 * Add `Etag` / `If-None-Match` support for caching
 * Add `Accept-Language` support
+* Add `EveOnline::ESI::CharacterAssetsLocations`
+* Add `EveOnline::ESI::Models::Position`
+* Add `EveOnline::ESI::Models::AssetLocation`
 
 ## v0.18.0
 
