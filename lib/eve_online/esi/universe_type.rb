@@ -20,7 +20,7 @@ module EveOnline
       def_delegators :model, :as_json, :capacity, :description, :graphic_id,
                      :group_id, :icon_id, :market_group_id, :mass, :name,
                      :packaged_volume, :portion_size, :published, :radius,
-                     :type_id, :volume
+                     :type_id, :volume, :dogma_attributes, :dogma_effects
 
       def model
         Models::Type.new(response)

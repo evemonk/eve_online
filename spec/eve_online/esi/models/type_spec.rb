@@ -158,4 +158,12 @@ describe EveOnline::ESI::Models::Type do
 
     specify { expect { subject.volume }.not_to raise_error }
   end
+
+  describe '#dogma_attributes' do
+    specify { expect { subject.dogma_attributes }.not_to raise_error }
+  end
+
+  describe '#dogma_effects' do
+    specify { expect { subject.dogma_effects }.not_to raise_error }
+  end
 end

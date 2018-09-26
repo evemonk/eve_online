@@ -194,6 +194,26 @@ describe EveOnline::ESI::UniverseType do
     specify { expect { subject.volume }.not_to raise_error }
   end
 
+  describe '#dogma_attributes' do
+    let(:model) { double }
+
+    before { subject.instance_variable_set(:@_memoized_model, model) }
+
+    before { expect(model).to receive(:dogma_attributes) }
+
+    specify { expect { subject.dogma_attributes }.not_to raise_error }
+  end
+
+  describe '#dogma_effects' do
+    let(:model) { double }
+
+    before { subject.instance_variable_set(:@_memoized_model, model) }
+
+    before { expect(model).to receive(:dogma_effects) }
+
+    specify { expect { subject.dogma_effects }.not_to raise_error }
+  end
+
   describe '#scope' do
     specify { expect(subject.scope).to eq(nil) }
   end

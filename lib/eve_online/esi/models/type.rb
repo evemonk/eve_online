@@ -8,8 +8,6 @@ module EveOnline
           {
             capacity: capacity,
             description: description,
-            # TODO: dogma_attributes
-            # TODO: dogma_effects
             graphic_id: graphic_id,
             group_id: group_id,
             icon_id: icon_id,
@@ -80,6 +78,10 @@ module EveOnline
         def volume
           options['volume']
         end
+
+        def dogma_attributes; end
+
+        def dogma_effects; end
       end
     end
   end
