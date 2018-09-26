@@ -1709,8 +1709,25 @@ type.radius # => 1.0
 type.type_id # => 192
 type.volume # => 0.0125
 
-# TODO: dogma_attributes
-# TODO: dogma_effects
+type.dogma_attributes.size # => 17
+
+type_dogma_attribute = type.dogma_attributes.first
+
+type_dogma_attribute.as_json # => {:attribute_id=>128,
+                             #     :value=>2.0}
+
+dogma_attribute.attribute_id # => 128
+dogma_attribute.value # => 2.0
+
+type.dogma_effects.size # => 3
+
+type_dogma_effect = type.dogma_effects.first
+
+type_dogma_effect.as_json # => {:effect_id=>596,
+                          #     :is_default=>false}
+
+type_dogma_effect.effect_id # => 596
+type_dogma_effect.is_default # => false
 ```
 
 ### User Interface
