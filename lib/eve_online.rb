@@ -32,51 +32,58 @@ require 'eve_online/esi/character_bookmark_folders'
 require 'eve_online/esi/character_calendar'
 
 require 'eve_online/esi/character'
-
-# TODO: sort
+require 'eve_online/esi/character_blueprints'
+require 'eve_online/esi/character_fatigue'
+require 'eve_online/esi/character_notifications'
 require 'eve_online/esi/character_portrait'
-require 'eve_online/esi/character_skills'
-require 'eve_online/esi/character_skill_queue'
-require 'eve_online/esi/character_loyalty_points'
-require 'eve_online/esi/character_wallet'
-require 'eve_online/esi/character_wallet_journal'
-require 'eve_online/esi/character_attributes'
-require 'eve_online/esi/character_location'
-require 'eve_online/esi/character_ship'
-require 'eve_online/esi/character_industry_jobs'
+require 'eve_online/esi/character_standings'
+
 require 'eve_online/esi/character_clones'
 require 'eve_online/esi/character_implants'
-require 'eve_online/esi/character_blueprints'
-require 'eve_online/esi/character_standings'
-require 'eve_online/esi/character_fatigue'
-require 'eve_online/esi/character_online'
-require 'eve_online/esi/character_orders'
-require 'eve_online/esi/character_notifications'
-require 'eve_online/esi/character_killmails_recent'
-
-require 'eve_online/esi/market_history'
 
 require 'eve_online/esi/corporation'
-require 'eve_online/esi/corporation_industry_jobs'
 require 'eve_online/esi/corporation_blueprints'
-require 'eve_online/esi/corporation_orders'
-require 'eve_online/esi/corporation_killmails_recent'
 
 require 'eve_online/esi/dogma_attributes'
 require 'eve_online/esi/dogma_attribute'
 
+require 'eve_online/esi/character_industry_jobs'
+require 'eve_online/esi/corporation_industry_jobs'
+
+require 'eve_online/esi/character_killmails_recent'
+require 'eve_online/esi/corporation_killmails_recent'
+
+require 'eve_online/esi/character_location'
+require 'eve_online/esi/character_online'
+require 'eve_online/esi/character_ship'
+
+require 'eve_online/esi/character_loyalty_points'
+
+require 'eve_online/esi/character_orders'
+require 'eve_online/esi/corporation_orders'
+require 'eve_online/esi/market_history'
+
+require 'eve_online/esi/character_attributes'
+require 'eve_online/esi/character_skill_queue'
+require 'eve_online/esi/character_skills'
+
 require 'eve_online/esi/server_status'
-require 'eve_online/esi/races'
-require 'eve_online/esi/bloodlines'
-require 'eve_online/esi/factions'
+
 require 'eve_online/esi/ancestries'
-require 'eve_online/esi/universe_types'
-require 'eve_online/esi/universe_type'
-require 'eve_online/esi/universe_regions'
-require 'eve_online/esi/universe_region'
+require 'eve_online/esi/bloodlines'
 require 'eve_online/esi/universe_constellations'
 require 'eve_online/esi/universe_constellation'
+require 'eve_online/esi/factions'
+require 'eve_online/esi/races'
+require 'eve_online/esi/universe_regions'
+require 'eve_online/esi/universe_region'
 require 'eve_online/esi/universe_systems'
+require 'eve_online/esi/universe_types'
+require 'eve_online/esi/universe_type'
+
+require 'eve_online/esi/character_wallet'
+require 'eve_online/esi/character_wallet_journal'
+
 require 'eve_online/esi/wars'
 require 'eve_online/esi/war_killmails'
 
