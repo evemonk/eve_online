@@ -14,14 +14,14 @@ module EveOnline
         @item_ids = options.fetch(:item_ids)
       end
 
-      # def assets_locations
-      #   output = []
-      #   response.each do |asset_location|
-      #     output << Models::AssetLocation.new(asset_location)
-      #   end
-      #   output
-      # end
-      # memoize :assets_locations
+      def assets_locations
+        output = []
+        response.each do |asset_location|
+          output << Models::AssetLocation.new(asset_location)
+        end
+        output
+      end
+      memoize :assets_locations
 
       def http_method
         'Post'

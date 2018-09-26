@@ -28,16 +28,38 @@ describe EveOnline::ESI::CharacterAssetsLocations do
   end
 
   describe '#assets_locations' do
-    # [
-    #     {
-    #         "item_id": 1001215602246,
-    #         "position": {
-    #             "x": -928621543221.3319,
-    #             "y": 297645715142.40234,
-    #             "z": -971212198300.4812
-    #         }
-    #     }
-    # ]
+    let(:asset_location) { double }
+
+    let(:response) do
+      [
+        {
+          item_id: 1001215602246,
+          position: {
+            x: -928621543221.3319,
+            y: 297645715142.40234,
+            z: -971212198300.4812
+          }
+        }
+      ]
+    end
+
+    before do
+      #
+      # subject.response # => [{"item_id"=>1001215602246, "position"=>{"x"=>-928621543221.3319, "y"=>297645715142.40234, "z"=>-971212198300.4812}}]
+      #
+      expect(subject).to receive(:response).and_return(response)
+    end
+
+    before do
+      #
+      # EveOnline::ESI::Models::AssetLocation.new(response.first) # => asset_location
+      #
+      expect(EveOnline::ESI::Models::AssetLocation).to receive(:new).with(response.first).and_return(asset_location)
+    end
+
+    specify { expect(subject.assets_locations).to eq([asset_location]) }
+
+    specify { expect { subject.assets_locations }.to change { subject.instance_variable_defined?(:@_memoized_assets_locations) }.from(false).to(true) }
   end
 
   describe '#http_method' do
