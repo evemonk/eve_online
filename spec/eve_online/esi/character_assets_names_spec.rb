@@ -3,7 +3,7 @@
 require 'spec_helper'
 
 describe EveOnline::ESI::CharacterAssetsNames do
-  let(:options) { { character_id: 12_345_678, item_ids: [1_001_215_602_246] } }
+  let(:options) { { token: 'token123', character_id: 12_345_678, item_ids: [1_001_215_602_246] } }
 
   subject { described_class.new(options) }
 
@@ -12,7 +12,7 @@ describe EveOnline::ESI::CharacterAssetsNames do
   specify { expect(described_class::API_ENDPOINT).to eq('https://esi.evetech.net/v1/characters/%<character_id>s/assets/names/?datasource=%<datasource>s') }
 
   describe '#initialize' do
-    its(:token) { should eq(nil) }
+    its(:token) { should eq('token123') }
 
     its(:parser) { should eq(JSON) }
 
