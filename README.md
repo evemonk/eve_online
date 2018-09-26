@@ -1499,19 +1499,21 @@ constellation.scope # => nil
 
 constellation.as_json # => {:constellation_id=>20000001,
                       #     :name=>"San Matar",
-                      #     :position_x=>-9.404655970099134e+16,
-                      #     :position_y=>4.952015315379885e+16,
-                      #     :position_z=>-4.273873181840197e+16,
                       #     :region_id=>10000001,
                       #     :systems=>[30000001, 30000002, 30000003, 30000004, 30000005, 30000006, 30000007, 30000008]}
 
 constellation.constellation_id # => 20000001
 constellation.name # => "San Matar"
-constellation.position_x # => -9.404655970099134e+16
-constellation.position_y # => 4.952015315379885e+16
-constellation.position_z # => -4.273873181840197e+16
 constellation.region_id # => 10000001
 constellation.systems # => [30000001, 30000002, 30000003, 30000004, 30000005, 30000006, 30000007, 30000008]
+
+constellation.position.as_json # => {:x=>-9.404655970099134e+16,
+                               #     :y=>4.952015315379885e+16,
+                               #     :z=>-4.273873181840197e+16}
+
+constellation.position.x # => -9.404655970099134e+16
+constellation.position.y # => 4.952015315379885e+16
+constellation.position.z # => -4.273873181840197e+16
 ```
 
 #### Get factions
