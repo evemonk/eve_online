@@ -87,6 +87,7 @@ require 'eve_online/esi/character_wallet_journal'
 require 'eve_online/esi/wars'
 require 'eve_online/esi/war_killmails'
 
+# Models
 require 'eve_online/esi/models/base'
 require 'eve_online/esi/models/position'
 require 'eve_online/esi/models/loyalty_point'
