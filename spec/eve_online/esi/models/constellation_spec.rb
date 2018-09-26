@@ -60,6 +60,35 @@ describe EveOnline::ESI::Models::Constellation do
   end
 
   describe '#position' do
-    # TODO: write
+    context 'when @position set' do
+      let(:position) { double }
+
+      before { subject.instance_variable_set(:@position, position) }
+
+      specify { expect(subject.position).to eq(position) }
+    end
+
+    context 'when @position not set' do
+      let(:position) { double }
+
+      let(:option) { double }
+
+      before do
+        #
+        # subject.options['position'] => option
+        #
+        expect(subject).to receive(:options) do
+          double.tap do |a|
+            expect(a).to receive(:[]).with('position').and_return(option)
+          end
+        end
+      end
+
+      before { expect(EveOnline::ESI::Models::Position).to receive(:new).with(option).and_return(position) }
+
+      specify { expect { subject.position }.not_to raise_error }
+
+      specify { expect { subject.position }.to change { subject.instance_variable_get(:@position) }.from(nil).to(position) }
+    end
   end
 end
