@@ -1407,7 +1407,9 @@ server_status.vip # => nil
 #### Get ancestries
 
 ```ruby
-ancestries = EveOnline::ESI::Ancestries.new
+options = { language: 'en-us' }
+
+ancestries = EveOnline::ESI::Ancestries.new(options)
 
 ancestries.scope # => nil
 
@@ -1435,7 +1437,9 @@ ancestry.short_description # => "Torn from the cold and brought to the warmth of
 #### Get bloodlines
 
 ```ruby
-bloodlines = EveOnline::ESI::Bloodlines.new
+options = { language: 'en-us' }
+
+bloodlines = EveOnline::ESI::Bloodlines.new(options)
 
 bloodlines.scope # => nil
 
@@ -1487,7 +1491,7 @@ constellations.constellations_ids.first # => 20000001
 #### Get constellation information
 
 ```ruby
-options = { id: 20000001 }
+options = { id: 20000001, language: 'en-us' }
 
 constellation = EveOnline::ESI::UniverseConstellation.new(options)
 
@@ -1513,7 +1517,9 @@ constellation.systems # => [30000001, 30000002, 30000003, 30000004, 30000005, 30
 #### Get factions
 
 ```ruby
-factions = EveOnline::ESI::Factions.new
+options = { language: 'en-us' }
+
+factions = EveOnline::ESI::Factions.new(options)
 
 factions.scope # => nil
 
@@ -1563,7 +1569,9 @@ faction.station_system_count # => 291
 #### Get character races
 
 ```ruby
-races = EveOnline::ESI::Races.new
+options = { language: 'en-us' }
+
+races = EveOnline::ESI::Races.new(options)
 
 races.scope # => nil
 
@@ -1597,7 +1605,7 @@ regions.universe_regions_ids.first # => 10000001
 #### Get region information
 
 ```ruby
-options = { id: 10000001 }
+options = { id: 10000001, language: 'en-us' }
 
 region = EveOnline::ESI::UniverseRegion.new(options)
 
@@ -1663,7 +1671,7 @@ types.universe_types_ids.first # => 0
 #### Get type information
 
 ```ruby
-options = { id: 192 }
+options = { id: 192, language: 'en-us' }
 
 type = EveOnline::ESI::UniverseType.new(options)
 
