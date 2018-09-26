@@ -173,7 +173,49 @@ asset.type_id # => 1010
 
 #### Get character asset locations
 
+```ruby
+options = { token: 'token123', character_id: 1337512245, item_ids: [1001215602246] }
+
+character_assets_locations = EveOnline::ESI::CharacterAssetsLocations.new(options)
+
+character_assets_locations.scope # => "esi-assets.read_assets.v1"
+
+character_assets_locations.assets_locations.size # => 1
+
+asset_location = character_assets_locations.assets_locations.first
+
+asset_location.as_json # => {:item_id=>1001215602246}
+
+asset_location.item_id # => 1001215602246
+
+asset_location.position.as_json # => {:x=>-928621543221.3319,
+                                #     :y=>297645715142.40234,
+                                #     :z=>-971212198300.4812}
+
+asset_location.position.x # => -928621543221.3319
+asset_location.position.y # => 297645715142.40234
+asset_location.position.z # => -971212198300.4812
+```
+
 #### Get character asset names
+
+```ruby
+options = { token: 'token123', character_id: 1337512245, item_ids: [1001215602246] }
+
+character_assets_names = EveOnline::ESI::CharacterAssetsNames.new(options)
+
+character_assets_names.scope # => "esi-assets.read_assets.v1"
+
+character_assets_names.assets_names.size # => 1
+
+character_asset_name = character_assets_names.assets_names.first
+
+character_asset_name.as_json # => {:item_id=>1001215602246,
+                             #     :name=>"HOLE"}
+
+character_asset_name.item_id # => 1001215602246
+character_asset_name.name # => "HOLE"
+```
 
 #### Get corporation assets
 
@@ -1386,8 +1428,6 @@ ancestry.icon_id # => 1664
 ancestry.ancestry_id # => 24
 ancestry.name # => "Slave Child"
 ancestry.short_description # => "Torn from the cold and brought to the warmth of a new life."
-
-# TODO: add languages
 ```
 
 #### Get asteroid belt information
@@ -1426,8 +1466,6 @@ bloodline.perception # => 9
 bloodline.race_id # => 2
 bloodline.ship_type_id # => 588
 bloodline.willpower # => 7
-
-# TODO: add languages
 ```
 
 #### Get item categories
@@ -1470,8 +1508,6 @@ constellation.position_y # => 4.952015315379885e+16
 constellation.position_z # => -4.273873181840197e+16
 constellation.region_id # => 10000001
 constellation.systems # => [30000001, 30000002, 30000003, 30000004, 30000005, 30000006, 30000007, 30000008]
-
-# TODO: translations
 ```
 
 #### Get factions
@@ -1506,8 +1542,6 @@ faction.size_factor # => 5.0
 faction.solar_system_id # => 30002544
 faction.station_count # => 570
 faction.station_system_count # => 291
-
-# TODO: add languages
 ```
 
 #### Get graphics
@@ -1546,8 +1580,6 @@ race.alliance_id # => 500002
 race.description # => "Once a thriving tribal civilization, the Minmatar..."
 race.name # => "Minmatar"
 race.race_id # => 2
-
-# TODO: add languages
 ```
 
 #### Get regions
@@ -1580,8 +1612,6 @@ region.constellations # => [20000001,20000002,20000003,20000016]
 region.description # => "The Derelik region..."
 region.name # => "Derelik"
 region.region_id # => 10000001
-
-# TODO: translations
 ```
 
 #### Get stargate information
@@ -1671,7 +1701,6 @@ type.volume # => 0.0125
 
 # TODO: dogma_attributes
 # TODO: dogma_effects
-# TODO: add localization
 ```
 
 ### User Interface
@@ -1855,6 +1884,18 @@ Default datasource is `tranquility`. If you want to change it, for e.g., to `sin
 
 ```ruby
 options = { datasource: 'singularity' }
+
+races = EveOnline::ESI::Races.new(options)
+```
+
+## Languages support
+
+Default language is `en-us`. Supported languages: `de`, `en-us`, `fr`, `ja`, `ru`, `zh`.
+
+If you want change it, for e.g., to `de`, add `language: 'de'` to default hash with options:
+
+```ruby
+options = { language: 'de' }
 
 races = EveOnline::ESI::Races.new(options)
 ```
