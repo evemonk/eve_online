@@ -9,7 +9,7 @@ describe EveOnline::ESI::UniverseType do
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.evetech.net/v3/universe/types/%<type_id>s/?datasource=%<datasource>s&language=en-us') }
+  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.evetech.net/v3/universe/types/%<type_id>s/?datasource=%<datasource>s') }
 
   describe '#initialize' do
     its(:token) { should eq(nil) }
@@ -200,7 +200,7 @@ describe EveOnline::ESI::UniverseType do
 
   describe '#url' do
     specify do
-      expect(subject.url).to eq('https://esi.evetech.net/v3/universe/types/192/?datasource=tranquility&language=en-us')
+      expect(subject.url).to eq('https://esi.evetech.net/v3/universe/types/192/?datasource=tranquility')
     end
   end
 end
