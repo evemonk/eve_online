@@ -4,6 +4,13 @@
 
 * Replace `faraday` gem with ruby `net/http`
 * Add `Etag` / `If-None-Match` support for caching
+* Add `Accept-Language` support
+* Add `EveOnline::ESI::CharacterAssetsLocations`
+* Add `EveOnline::ESI::Models::Position`
+* Add `EveOnline::ESI::Models::AssetLocation`
+* Add `EveOnline::ESI::Models::AssetName`
+* Add `EveOnline::ESI::CharacterAssetsNames`
+* Remove `EveOnline::ESI::UniverseConstellation#position_x, #position_y, #position_z`. Use new `#position` instead.
 
 ## v0.18.0
 

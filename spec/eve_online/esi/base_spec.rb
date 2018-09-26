@@ -16,7 +16,8 @@ describe EveOnline::ESI::Base do
           read_timeout: 30,
           open_timeout: 45,
           etag: '6f2d3caa79a79bc9e61aa058e18905faac5e293fa1729637648ce9a1',
-          datasource: 'singularity'
+          datasource: 'singularity',
+          language: 'ru'
         }
       end
 
@@ -33,6 +34,8 @@ describe EveOnline::ESI::Base do
       its(:etag) { should eq('6f2d3caa79a79bc9e61aa058e18905faac5e293fa1729637648ce9a1') }
 
       its(:datasource) { should eq('singularity') }
+
+      its(:language) { should eq('ru') }
     end
 
     context 'without options' do
@@ -47,6 +50,8 @@ describe EveOnline::ESI::Base do
       its(:etag) { should eq(nil) }
 
       its(:datasource) { should eq('tranquility') }
+
+      its(:language) { should eq('en-us') }
     end
   end
 
@@ -224,29 +229,35 @@ describe EveOnline::ESI::Base do
     end
 
     context 'when @request not set' do
-      let(:http_method) { 'Get' }
-
-      let(:request) { instance_double(Net::HTTP::Get) }
-
       let(:request_uri) { double }
 
       let(:uri) { double(request_uri: request_uri) }
 
       let(:user_agent) { double }
 
+      let(:language) { double }
+
+      before { expect(subject).to receive(:language).and_return(language) }
+
       before { expect(subject).to receive(:uri).and_return(uri) }
 
       before { expect(subject).to receive(:user_agent).and_return(user_agent) }
 
-      before { expect(subject).to receive(:http_method).and_return(http_method) }
-
-      before { expect(Net::HTTP::Get).to receive(:new).with(request_uri).and_return(request) }
+      before { expect(subject).to receive(:http_method).and_return(http_method).exactly(3).times }
 
       before { expect(request).to receive(:[]=).with('User-Agent', user_agent).and_return(request) }
 
       before { expect(request).to receive(:[]=).with('Accept', 'application/json').and_return(request) }
 
-      context 'without token and etag' do
+      before { expect(request).to receive(:[]=).with('Accept-Language', language).and_return(request) }
+
+      context 'when http method Get and without token and etag' do
+        let(:http_method) { 'Get' }
+
+        let(:request) { instance_double(Net::HTTP::Get) }
+
+        before { expect(Net::HTTP::Get).to receive(:new).with(request_uri).and_return(request) }
+
         before { expect(subject).to receive(:token).and_return(nil) }
 
         before { expect(subject).to receive(:etag).and_return(nil) }
@@ -256,7 +267,13 @@ describe EveOnline::ESI::Base do
         specify { expect { subject.request }.to change { subject.instance_variable_get(:@request) }.from(nil).to(request) }
       end
 
-      context 'with token and etag' do
+      context 'when http method Get and with token and etag' do
+        let(:http_method) { 'Get' }
+
+        let(:request) { instance_double(Net::HTTP::Get) }
+
+        before { expect(Net::HTTP::Get).to receive(:new).with(request_uri).and_return(request) }
+
         let(:token) { 'token123' }
 
         let(:etag) { 'etag' }
@@ -268,6 +285,26 @@ describe EveOnline::ESI::Base do
         before { expect(request).to receive(:[]=).with('Authorization', 'Bearer token123').and_return(request) }
 
         before { expect(request).to receive(:[]=).with('If-None-Match', '"etag"').and_return(request) }
+
+        specify { expect { subject.request }.not_to raise_error }
+
+        specify { expect { subject.request }.to change { subject.instance_variable_get(:@request) }.from(nil).to(request) }
+      end
+
+      context 'when http method Post' do
+        let(:http_method) { 'Post' }
+
+        let(:request) { instance_double(Net::HTTP::Post) }
+
+        before { expect(Net::HTTP::Post).to receive(:new).with(request_uri).and_return(request) }
+
+        let(:payload) { double }
+
+        before { expect(subject).to receive(:payload).and_return(payload) }
+
+        before { expect(request).to receive(:[]=).with('Content-Type', 'application/json').and_return(request) }
+
+        before { expect(request).to receive(:body=).with(payload) }
 
         specify { expect { subject.request }.not_to raise_error }
 

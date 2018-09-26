@@ -17,8 +17,8 @@ module EveOnline
         @id = options.fetch(:id)
       end
 
-      def_delegators :model, :as_json, :constellation_id, :name, :position_x,
-                     :position_y, :position_z, :region_id, :systems
+      def_delegators :model, :as_json, :constellation_id, :name, :region_id,
+                     :systems, :position
 
       def model
         Models::Constellation.new(response)

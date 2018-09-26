@@ -16,21 +16,9 @@ describe EveOnline::ESI::Models::Constellation do
   describe '#as_json' do
     let(:constellation) { described_class.new(options) }
 
-    let(:position_x) { double }
-
-    let(:position_y) { double }
-
-    let(:position_z) { double }
-
     before { expect(constellation).to receive(:constellation_id).and_return(20_000_001) }
 
     before { expect(constellation).to receive(:name).and_return('San Matar') }
-
-    before { expect(constellation).to receive(:position_x).and_return(position_x) }
-
-    before { expect(constellation).to receive(:position_y).and_return(position_y) }
-
-    before { expect(constellation).to receive(:position_z).and_return(position_z) }
 
     before { expect(constellation).to receive(:region_id).and_return(10_000_001) }
 
@@ -41,12 +29,6 @@ describe EveOnline::ESI::Models::Constellation do
     its([:constellation_id]) { should eq(20_000_001) }
 
     its([:name]) { should eq('San Matar') }
-
-    its([:position_x]) { should eq(position_x) }
-
-    its([:position_y]) { should eq(position_y) }
-
-    its([:position_z]) { should eq(position_z) }
 
     its([:region_id]) { should eq(10_000_001) }
 
@@ -65,75 +47,6 @@ describe EveOnline::ESI::Models::Constellation do
     specify { expect { subject.name }.not_to raise_error }
   end
 
-  describe '#position_x' do
-    context 'when position is present' do
-      let(:position) { double }
-
-      before { expect(options).to receive(:[]).with('position').and_return(position).twice }
-
-      before do
-        #
-        # options['position']['x']
-        #
-        expect(position).to receive(:[]).with('x')
-      end
-
-      specify { expect { subject.position_x }.not_to raise_error }
-    end
-
-    context 'when position not present' do
-      before { expect(options).to receive(:[]).with('position').and_return(nil) }
-
-      specify { expect { subject.position_x }.not_to raise_error }
-    end
-  end
-
-  describe '#position_y' do
-    context 'when position is present' do
-      let(:position) { double }
-
-      before { expect(options).to receive(:[]).with('position').and_return(position).twice }
-
-      before do
-        #
-        # options['position']['y']
-        #
-        expect(position).to receive(:[]).with('y')
-      end
-
-      specify { expect { subject.position_y }.not_to raise_error }
-    end
-
-    context 'when position not present' do
-      before { expect(options).to receive(:[]).with('position').and_return(nil) }
-
-      specify { expect { subject.position_y }.not_to raise_error }
-    end
-  end
-
-  describe '#position_z' do
-    context 'when position is present' do
-      let(:position) { double }
-
-      before { expect(options).to receive(:[]).with('position').and_return(position).twice }
-
-      before do
-        #
-        # options['position']['z']
-        #
-        expect(position).to receive(:[]).with('z')
-      end
-
-      specify { expect { subject.position_z }.not_to raise_error }
-    end
-
-    context 'when position not present' do
-      before { expect(options).to receive(:[]).with('position').and_return(nil) }
-
-      specify { expect { subject.position_z }.not_to raise_error }
-    end
-  end
-
   describe '#region_id' do
     before { expect(options).to receive(:[]).with('region_id') }
 
@@ -144,5 +57,38 @@ describe EveOnline::ESI::Models::Constellation do
     before { expect(options).to receive(:[]).with('systems') }
 
     specify { expect { subject.systems }.not_to raise_error }
+  end
+
+  describe '#position' do
+    context 'when @position set' do
+      let(:position) { double }
+
+      before { subject.instance_variable_set(:@position, position) }
+
+      specify { expect(subject.position).to eq(position) }
+    end
+
+    context 'when @position not set' do
+      let(:position) { double }
+
+      let(:option) { double }
+
+      before do
+        #
+        # subject.options['position'] => option
+        #
+        expect(subject).to receive(:options) do
+          double.tap do |a|
+            expect(a).to receive(:[]).with('position').and_return(option)
+          end
+        end
+      end
+
+      before { expect(EveOnline::ESI::Models::Position).to receive(:new).with(option).and_return(position) }
+
+      specify { expect { subject.position }.not_to raise_error }
+
+      specify { expect { subject.position }.to change { subject.instance_variable_get(:@position) }.from(nil).to(position) }
+    end
   end
 end

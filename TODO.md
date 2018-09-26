@@ -3,4 +3,5 @@
 * Fix MD024
 * Add corporation roles
 * Add caching timeout
-* Add translations
+* Add 420 error status
+* Add errors limits

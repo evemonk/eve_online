@@ -12,7 +12,7 @@ module EveOnline
       extend Memoist
 
       attr_reader :token, :parser, :_read_timeout, :_open_timeout, :etag,
-                  :datasource
+                  :datasource, :language
 
       def initialize(options = {})
         @token = options.fetch(:token, nil)
@@ -21,6 +21,7 @@ module EveOnline
         @_open_timeout = options.fetch(:open_timeout, 60)
         @etag = options.fetch(:etag, nil)
         @datasource = options.fetch(:datasource, 'tranquility')
+        @language = options.fetch(:language, 'en-us')
       end
 
       def url
@@ -72,6 +73,7 @@ module EveOnline
           http.open_timeout = _open_timeout
           http.use_ssl = true
           http.verify_mode = OpenSSL::SSL::VERIFY_PEER
+          # http.set_debug_output($stdout)
           http
         end
       end
@@ -82,8 +84,11 @@ module EveOnline
 
           request['User-Agent'] = user_agent
           request['Accept'] = 'application/json'
+          request['Accept-Language'] = language
           request['Authorization'] = "Bearer #{ token }" if token
           request['If-None-Match'] = "\"#{ etag }\"" if etag
+          request['Content-Type'] = 'application/json' if http_method == 'Post'
+          request.body = payload if http_method == 'Post'
 
           request
         end
