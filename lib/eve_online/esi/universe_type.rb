@@ -7,7 +7,7 @@ module EveOnline
     class UniverseType < Base
       extend Forwardable
 
-      API_ENDPOINT = 'https://esi.evetech.net/v3/universe/types/%<type_id>s/?datasource=%<datasource>s&language=en-us'
+      API_ENDPOINT = 'https://esi.evetech.net/v3/universe/types/%<type_id>s/?datasource=%<datasource>s'
 
       attr_reader :id
 

@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class Bloodlines < Base
-      API_ENDPOINT = 'https://esi.evetech.net/v1/universe/bloodlines/?datasource=%<datasource>s&language=en-us'
+      API_ENDPOINT = 'https://esi.evetech.net/v1/universe/bloodlines/?datasource=%<datasource>s'
 
       def bloodlines
         output = []
