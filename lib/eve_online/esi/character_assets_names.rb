@@ -27,9 +27,9 @@ module EveOnline
         'Post'
       end
 
-      # def payload
-      #   item_ids.to_json
-      # end
+      def payload
+        item_ids.to_json
+      end
 
       def scope
         'esi-assets.read_assets.v1'

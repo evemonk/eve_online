@@ -27,12 +27,32 @@ describe EveOnline::ESI::CharacterAssetsLocations do
     its(:item_ids) { should eq([1_001_215_602_246]) }
   end
 
+  describe '#assets_locations' do
+    # [
+    #     {
+    #         "item_id": 1001215602246,
+    #         "position": {
+    #             "x": -928621543221.3319,
+    #             "y": 297645715142.40234,
+    #             "z": -971212198300.4812
+    #         }
+    #     }
+    # ]
+  end
+
   describe '#http_method' do
     specify { expect(subject.http_method).to eq('Post') }
   end
 
-  # describe '#payload' do
-  # end
+  describe '#payload' do
+    let(:item_ids) { double }
+
+    let(:options) { { character_id: 12_345_678, item_ids: item_ids } }
+
+    before { expect(item_ids).to receive(:to_json) }
+
+    specify { expect { subject.payload }.not_to raise_error }
+  end
 
   describe '#scope' do
     specify { expect(subject.scope).to eq('esi-assets.read_assets.v1') }

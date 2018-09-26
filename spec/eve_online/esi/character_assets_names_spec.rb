@@ -38,8 +38,15 @@ describe EveOnline::ESI::CharacterAssetsNames do
     specify { expect(subject.http_method).to eq('Post') }
   end
 
-  # describe '#payload' do
-  # end
+  describe '#payload' do
+    let(:item_ids) { double }
+
+    let(:options) { { character_id: 12_345_678, item_ids: item_ids } }
+
+    before { expect(item_ids).to receive(:to_json) }
+
+    specify { expect { subject.payload }.not_to raise_error }
+  end
 
   describe '#scope' do
     specify { expect(subject.scope).to eq('esi-assets.read_assets.v1') }
