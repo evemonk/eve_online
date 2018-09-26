@@ -8,6 +8,8 @@
 * Add `EveOnline::ESI::CharacterAssetsLocations`
 * Add `EveOnline::ESI::Models::Position`
 * Add `EveOnline::ESI::Models::AssetLocation`
+* Add `EveOnline::ESI::Models::AssetName`
+* Add `EveOnline::ESI::CharacterAssetsNames`
 
 ## v0.18.0
 
