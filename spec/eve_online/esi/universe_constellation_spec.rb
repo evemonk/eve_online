@@ -74,36 +74,6 @@ describe EveOnline::ESI::UniverseConstellation do
     specify { expect { subject.name }.not_to raise_error }
   end
 
-  describe '#position_x' do
-    let(:model) { double }
-
-    before { subject.instance_variable_set(:@_memoized_model, model) }
-
-    before { expect(model).to receive(:position_x) }
-
-    specify { expect { subject.position_x }.not_to raise_error }
-  end
-
-  describe '#position_y' do
-    let(:model) { double }
-
-    before { subject.instance_variable_set(:@_memoized_model, model) }
-
-    before { expect(model).to receive(:position_y) }
-
-    specify { expect { subject.position_y }.not_to raise_error }
-  end
-
-  describe '#position_z' do
-    let(:model) { double }
-
-    before { subject.instance_variable_set(:@_memoized_model, model) }
-
-    before { expect(model).to receive(:position_z) }
-
-    specify { expect { subject.position_z }.not_to raise_error }
-  end
-
   describe '#region_id' do
     let(:model) { double }
 
@@ -122,6 +92,16 @@ describe EveOnline::ESI::UniverseConstellation do
     before { expect(model).to receive(:systems) }
 
     specify { expect { subject.systems }.not_to raise_error }
+  end
+
+  describe '#position' do
+    let(:model) { double }
+
+    before { subject.instance_variable_set(:@_memoized_model, model) }
+
+    before { expect(model).to receive(:position) }
+
+    specify { expect { subject.position }.not_to raise_error }
   end
 
   describe '#scope' do
