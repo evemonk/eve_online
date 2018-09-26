@@ -16,19 +16,19 @@ describe EveOnline::ESI::Models::Position do
   describe '#as_json' do
     let(:position) { described_class.new(options) }
 
-    before { expect(position).to receive(:x).and_return(-928621543221.3319) }
+    before { expect(position).to receive(:x).and_return(-928_621_543_221.3319) }
 
-    before { expect(position).to receive(:y).and_return(297645715142.40234) }
+    before { expect(position).to receive(:y).and_return(297_645_715_142.40234) }
 
-    before { expect(position).to receive(:z).and_return(-971212198300.4812) }
+    before { expect(position).to receive(:z).and_return(-971_212_198_300.4812) }
 
     subject { position.as_json }
 
-    its([:x]) { should eq(-928621543221.3319) }
+    its([:x]) { should eq(-928_621_543_221.3319) }
 
-    its([:y]) { should eq(297645715142.40234) }
+    its([:y]) { should eq(297_645_715_142.40234) }
 
-    its([:z]) { should eq(-971212198300.4812) }
+    its([:z]) { should eq(-971_212_198_300.4812) }
   end
 
   describe '#x' do
