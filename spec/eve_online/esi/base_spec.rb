@@ -229,10 +229,6 @@ describe EveOnline::ESI::Base do
     end
 
     context 'when @request not set' do
-      let(:http_method) { 'Get' }
-
-      let(:request) { instance_double(Net::HTTP::Get) }
-
       let(:request_uri) { double }
 
       let(:uri) { double(request_uri: request_uri) }
@@ -247,9 +243,7 @@ describe EveOnline::ESI::Base do
 
       before { expect(subject).to receive(:user_agent).and_return(user_agent) }
 
-      before { expect(subject).to receive(:http_method).and_return(http_method) }
-
-      before { expect(Net::HTTP::Get).to receive(:new).with(request_uri).and_return(request) }
+      before { expect(subject).to receive(:http_method).and_return(http_method).exactly(3).times }
 
       before { expect(request).to receive(:[]=).with('User-Agent', user_agent).and_return(request) }
 
@@ -257,7 +251,13 @@ describe EveOnline::ESI::Base do
 
       before { expect(request).to receive(:[]=).with('Accept-Language', language).and_return(request) }
 
-      context 'without token and etag' do
+      context 'when http method Get and without token and etag' do
+        let(:http_method) { 'Get' }
+
+        let(:request) { instance_double(Net::HTTP::Get) }
+
+        before { expect(Net::HTTP::Get).to receive(:new).with(request_uri).and_return(request) }
+
         before { expect(subject).to receive(:token).and_return(nil) }
 
         before { expect(subject).to receive(:etag).and_return(nil) }
@@ -267,7 +267,13 @@ describe EveOnline::ESI::Base do
         specify { expect { subject.request }.to change { subject.instance_variable_get(:@request) }.from(nil).to(request) }
       end
 
-      context 'with token and etag' do
+      context 'when http method Get and with token and etag' do
+        let(:http_method) { 'Get' }
+
+        let(:request) { instance_double(Net::HTTP::Get) }
+
+        before { expect(Net::HTTP::Get).to receive(:new).with(request_uri).and_return(request) }
+
         let(:token) { 'token123' }
 
         let(:etag) { 'etag' }
@@ -279,6 +285,26 @@ describe EveOnline::ESI::Base do
         before { expect(request).to receive(:[]=).with('Authorization', 'Bearer token123').and_return(request) }
 
         before { expect(request).to receive(:[]=).with('If-None-Match', '"etag"').and_return(request) }
+
+        specify { expect { subject.request }.not_to raise_error }
+
+        specify { expect { subject.request }.to change { subject.instance_variable_get(:@request) }.from(nil).to(request) }
+      end
+
+      context 'when http method Post' do
+        let(:http_method) { 'Post' }
+
+        let(:request) { instance_double(Net::HTTP::Post) }
+
+        before { expect(Net::HTTP::Post).to receive(:new).with(request_uri).and_return(request) }
+
+        let(:payload) { double }
+
+        before { expect(subject).to receive(:payload).and_return(payload) }
+
+        before { expect(request).to receive(:[]=).with('Content-Type', 'application/json').and_return(request) }
+
+        before { expect(request).to receive(:body=).with(payload) }
 
         specify { expect { subject.request }.not_to raise_error }
 

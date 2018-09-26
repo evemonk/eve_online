@@ -73,6 +73,7 @@ module EveOnline
           http.open_timeout = _open_timeout
           http.use_ssl = true
           http.verify_mode = OpenSSL::SSL::VERIFY_PEER
+          # http.set_debug_output($stdout)
           http
         end
       end
@@ -86,6 +87,8 @@ module EveOnline
           request['Accept-Language'] = language
           request['Authorization'] = "Bearer #{ token }" if token
           request['If-None-Match'] = "\"#{ etag }\"" if etag
+          request['Content-Type'] = 'application/json' if http_method == 'Post'
+          request.body = payload if http_method == 'Post'
 
           request
         end
