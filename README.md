@@ -1937,12 +1937,14 @@ options = { language: 'de' }
 races = EveOnline::ESI::Races.new(options)
 ```
 
-## JSON Parser
+## Oj as JSON Parser
 
 ```ruby
-options = { parser: OJ }
+require 'oj'
 
-races = EveOnline::ESI::Races.new(options)
+Oj.mimic_JSON()
+
+races = EveOnline::ESI::Races.new
 ```
 
 ## Useful links
