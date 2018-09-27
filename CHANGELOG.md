@@ -17,6 +17,7 @@
 * Add `EveOnline::ESI::Models::DogmaEffectShort`
 * Add `EveOnline::ESI::Models::Type#dogma_attributes`
 * Add `EveOnline::ESI::Models::Type#dogma_effects`
+* Add `EveOnline::ESI::Models::DogmaAttributes`
 
 ## v0.18.0
 
