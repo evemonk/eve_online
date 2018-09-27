@@ -1,0 +1,73 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://esi.evetech.net/v3/universe/types/192/?datasource=tranquility
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/json
+      User-Agent:
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.18.0
+      Accept-Language:
+      - en-us
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 27 Sep 2018 12:41:50 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '1142'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,If-None-Match,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,HEAD,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,ETag,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Allow:
+      - GET,HEAD,OPTIONS
+      Cache-Control:
+      - public
+      Content-Language:
+      - en-us
+      Etag:
+      - W/"c25bd33f7746c4d8c9dbdd162a0994e6015c61ec4312470e5c52523f"
+      Expires:
+      - Fri, 28 Sep 2018 11:05:00 GMT
+      Last-Modified:
+      - Wed, 26 Sep 2018 11:11:21 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept-Encoding,Accept-Language
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '10'
+      X-Esi-Request-Id:
+      - c612e19a-592f-4867-a6e0-4b9a5cf957d6
+    body:
+      encoding: UTF-8
+      string: '{"capacity":0.0,"description":"Medium Projectile Ammo. This ammo uses
+        a similar plasma containment core as hybrid charges except that it is mounted
+        in a standard cannon shell.\r\n\r\n50% reduced optimal range.","dogma_attributes":[{"attribute_id":128,"value":2.0},{"attribute_id":161,"value":0.0125},{"attribute_id":162,"value":0.0},{"attribute_id":4,"value":1.0},{"attribute_id":422,"value":1.0},{"attribute_id":38,"value":0.0},{"attribute_id":137,"value":55.0},{"attribute_id":779,"value":0.625},{"attribute_id":612,"value":0.0},{"attribute_id":114,"value":0.0},{"attribute_id":116,"value":0.0},{"attribute_id":117,"value":4.0},{"attribute_id":118,"value":20.0},{"attribute_id":120,"value":0.5},{"attribute_id":244,"value":1.0},{"attribute_id":124,"value":3304021.0},{"attribute_id":613,"value":0.0}],"dogma_effects":[{"effect_id":596,"is_default":false},{"effect_id":600,"is_default":false},{"effect_id":1173,"is_default":false}],"graphic_id":1297,"group_id":83,"icon_id":1297,"market_group_id":112,"mass":1.0,"name":"Phased
+        Plasma M","packaged_volume":0.0125,"portion_size":100,"published":true,"radius":1.0,"type_id":192,"volume":0.0125}'
+    http_version: 
+  recorded_at: Thu, 27 Sep 2018 12:41:50 GMT
+recorded_with: VCR 4.0.0
