@@ -160,10 +160,58 @@ describe EveOnline::ESI::Models::Type do
   end
 
   describe '#dogma_attributes' do
-    specify { expect { subject.dogma_attributes }.not_to raise_error }
+    context 'when @dogma_attributes set' do
+      let(:dogma_attributes) { double }
+
+      before { subject.instance_variable_set(:@dogma_attributes, dogma_attributes) }
+
+      specify { expect(subject.dogma_attributes).to eq(dogma_attributes) }
+    end
+
+    context 'when @dogma_attributes not set' do
+      let(:option) { double }
+
+      let(:options) { { 'dogma_attributes' => option } }
+
+      let(:dogma_attributes) { instance_double(EveOnline::ESI::Models::DogmaAttributes) }
+
+      let(:output) { double }
+
+      before { expect(EveOnline::ESI::Models::DogmaAttributes).to receive(:new).with(option).and_return(dogma_attributes) }
+
+      before { expect(dogma_attributes).to receive(:dogma_attributes).and_return(output) }
+
+      specify { expect { subject.dogma_attributes }.not_to raise_error }
+
+      specify { expect { subject.dogma_attributes }.to change { subject.instance_variable_get(:@dogma_attributes) }.from(nil).to(output) }
+    end
   end
 
   describe '#dogma_effects' do
-    specify { expect { subject.dogma_effects }.not_to raise_error }
+    context 'when @dogma_effects set' do
+      let(:dogma_effects) { double }
+
+      before { subject.instance_variable_set(:@dogma_effects, dogma_effects) }
+
+      specify { expect(subject.dogma_effects).to eq(dogma_effects) }
+    end
+
+    context 'when @dogma_effects not set' do
+      let(:option) { double }
+
+      let(:options) { { 'dogma_effects' => option } }
+
+      let(:dogma_effects) { instance_double(EveOnline::ESI::Models::DogmaEffects) }
+
+      let(:output) { double }
+
+      before { expect(EveOnline::ESI::Models::DogmaEffects).to receive(:new).with(option).and_return(dogma_effects) }
+
+      before { expect(dogma_effects).to receive(:dogma_effects).and_return(output) }
+
+      specify { expect { subject.dogma_effects }.not_to raise_error }
+
+      specify { expect { subject.dogma_effects }.to change { subject.instance_variable_get(:@dogma_effects) }.from(nil).to(output) }
+    end
   end
 end

@@ -79,9 +79,13 @@ module EveOnline
           options['volume']
         end
 
-        def dogma_attributes; end
+        def dogma_attributes
+          @dogma_attributes ||= DogmaAttributes.new(options['dogma_attributes']).dogma_attributes
+        end
 
-        def dogma_effects; end
+        def dogma_effects
+          @dogma_effects ||= DogmaEffects.new(options['dogma_effects']).dogma_effects
+        end
       end
     end
   end
