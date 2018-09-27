@@ -9,6 +9,8 @@ describe 'List wars' do
 
   subject { EveOnline::ESI::Wars.new }
 
+  specify { expect(subject.scope).to eq(nil) }
+
   specify { expect(subject.wars_ids.size).to eq(2000) }
 
   specify { expect(subject.wars_ids.first).to eq(615_639) }

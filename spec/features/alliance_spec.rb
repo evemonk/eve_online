@@ -11,6 +11,8 @@ describe 'Get alliance information' do
 
   subject { EveOnline::ESI::Alliance.new(options) }
 
+  specify { expect(subject.scope).to eq(nil) }
+
   specify do
     expect(subject.as_json).to eq(name: 'Kids With Guns Alliance',
                                   creator_id: 94_195_096,

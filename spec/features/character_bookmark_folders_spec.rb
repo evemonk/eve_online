@@ -18,6 +18,8 @@ describe 'Get character bookmark folders' do
 
   subject { EveOnline::ESI::CharacterBookmarkFolders.new(options) }
 
+  specify { expect(subject.scope).to eq('esi-bookmarks.read_character_bookmarks.v1') }
+
   specify { expect(subject.page).to eq(1) }
 
   specify { expect(subject.total_pages).to eq(1) }

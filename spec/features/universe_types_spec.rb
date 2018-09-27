@@ -9,6 +9,8 @@ describe 'Get types' do
 
   subject { EveOnline::ESI::UniverseTypes.new }
 
+  specify { expect(subject.scope).to eq(nil) }
+
   specify { expect(subject.page).to eq(1) }
 
   specify { expect(subject.total_pages).to eq(35) }
