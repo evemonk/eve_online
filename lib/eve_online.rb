@@ -128,6 +128,11 @@ require 'eve_online/esi/models/alliance_short'
 require 'eve_online/esi/models/alliance_icon'
 
 require 'eve_online/esi/models/dogma_attribute'
+require 'eve_online/esi/models/dogma_attributes'
+require 'eve_online/esi/models/dogma_attribute_short'
+require 'eve_online/esi/models/dogma_effect'
+require 'eve_online/esi/models/dogma_effects'
+require 'eve_online/esi/models/dogma_effect_short'
 
 require 'eve_online/esi/models/race'
 require 'eve_online/esi/models/bloodline'
