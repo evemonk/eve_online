@@ -33,7 +33,7 @@ module EveOnline
       end
 
       def user_agent
-        "EveOnline API (https://github.com/biow0lf/eve_online) v#{ VERSION }"
+        "EveOnline API (https://github.com/evemonk/eve_online) v#{ VERSION }"
       end
 
       def http_method

@@ -64,7 +64,7 @@ describe EveOnline::ESI::Base do
   end
 
   describe '#user_agent' do
-    specify { expect(subject.user_agent).to eq("EveOnline API (https://github.com/biow0lf/eve_online) v#{ EveOnline::VERSION }") }
+    specify { expect(subject.user_agent).to eq("EveOnline API (https://github.com/evemonk/eve_online) v#{ EveOnline::VERSION }") }
   end
 
   describe '#http_method' do
