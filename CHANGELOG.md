@@ -20,6 +20,7 @@
 * Add `EveOnline::ESI::Models::DogmaAttributes`
 * Add `EveOnline::ESI::Models::DogmaEffects`
 * Add `EveOnline::ESI::Models::DogmaEffect`
+* Add `EveOnline::ESI::DogmaEffects`
 
 ## v0.18.0
 

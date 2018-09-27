@@ -46,6 +46,7 @@ require 'eve_online/esi/corporation_blueprints'
 
 require 'eve_online/esi/dogma_attributes'
 require 'eve_online/esi/dogma_attribute'
+require 'eve_online/esi/dogma_effects'
 
 require 'eve_online/esi/character_industry_jobs'
 require 'eve_online/esi/corporation_industry_jobs'

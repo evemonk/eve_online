@@ -772,6 +772,16 @@ dogma_attribute.unit_id # => nil
 
 #### Get effects
 
+```ruby
+dogma_effects = EveOnline::ESI::DogmaEffects.new
+
+dogma_effects.scope # => nil
+
+dogma_effects.effects_ids.size # => 4123
+
+dogma_effects.effects_ids.first # => 4
+```
+
 #### Get effect information
 
 ### Faction Warfare
@@ -1923,6 +1933,14 @@ If you want change it, for e.g., to `de`, add `language: 'de'` to default hash w
 
 ```ruby
 options = { language: 'de' }
+
+races = EveOnline::ESI::Races.new(options)
+```
+
+## JSON Parser
+
+```ruby
+options = { parser: OJ }
 
 races = EveOnline::ESI::Races.new(options)
 ```

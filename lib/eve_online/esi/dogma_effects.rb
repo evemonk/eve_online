@@ -2,11 +2,10 @@
 
 module EveOnline
   module ESI
-    class DogmaAttributes < Base
-      API_ENDPOINT = 'https://esi.evetech.net/v1/dogma/attributes/?datasource=%<datasource>s'
+    class DogmaEffects < Base
+      API_ENDPOINT = 'https://esi.evetech.net/v1/dogma/effects/?datasource=%<datasource>s'
 
-      # TODO: rename to `attributes_ids`
-      def attributes
+      def effects_ids
         response
       end
 
