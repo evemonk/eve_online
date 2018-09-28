@@ -36,7 +36,7 @@ describe EveOnline::ESI::CorporationOrders do
   end
 
   describe '#orders' do
-    let(:order) { double }
+    let(:order) { instance_double(EveOnline::ESI::Models::CorporationOrder) }
 
     let(:response) do
       [

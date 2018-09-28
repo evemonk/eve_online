@@ -36,7 +36,7 @@ describe EveOnline::ESI::CharacterWalletJournal do
   end
 
   describe '#wallet_journal_entries' do
-    let(:wallet_journal_entry) { double }
+    let(:wallet_journal_entry) { instance_double(EveOnline::ESI::Models::WalletJournalEntry) }
 
     let(:response) do
       [

@@ -30,7 +30,7 @@ describe EveOnline::ESI::CharacterOnline do
 
     before { expect(subject).to receive(:response).and_return(response) }
 
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Online) }
 
     before do
       #
@@ -45,7 +45,7 @@ describe EveOnline::ESI::CharacterOnline do
   end
 
   describe '#as_json' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Online) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -55,7 +55,7 @@ describe EveOnline::ESI::CharacterOnline do
   end
 
   describe '#last_login' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Online) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -65,7 +65,7 @@ describe EveOnline::ESI::CharacterOnline do
   end
 
   describe '#last_logout' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Online) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -75,7 +75,7 @@ describe EveOnline::ESI::CharacterOnline do
   end
 
   describe '#logins' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Online) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -85,7 +85,7 @@ describe EveOnline::ESI::CharacterOnline do
   end
 
   describe '#online' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Online) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 

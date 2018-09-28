@@ -30,7 +30,7 @@ describe EveOnline::ESI::UniverseRegion do
 
     before { expect(subject).to receive(:response).and_return(response) }
 
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Region) }
 
     before do
       #

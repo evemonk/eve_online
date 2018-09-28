@@ -26,7 +26,7 @@ describe EveOnline::ESI::Corporation do
   end
 
   describe '#model' do
-    let(:response) { double }
+    let(:response) { instance_double(EveOnline::ESI::Models::Corporation) }
 
     before { expect(subject).to receive(:response).and_return(response) }
 
@@ -45,7 +45,7 @@ describe EveOnline::ESI::Corporation do
   end
 
   describe '#as_json' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Corporation) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -55,7 +55,7 @@ describe EveOnline::ESI::Corporation do
   end
 
   describe '#alliance_id' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Corporation) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -65,7 +65,7 @@ describe EveOnline::ESI::Corporation do
   end
 
   describe '#ceo_id' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Corporation) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -75,7 +75,7 @@ describe EveOnline::ESI::Corporation do
   end
 
   describe '#creator_id' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Corporation) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -85,7 +85,7 @@ describe EveOnline::ESI::Corporation do
   end
 
   describe '#date_founded' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Corporation) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -95,7 +95,7 @@ describe EveOnline::ESI::Corporation do
   end
 
   describe '#description' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Corporation) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -105,7 +105,7 @@ describe EveOnline::ESI::Corporation do
   end
 
   describe '#faction_id' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Corporation) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -115,7 +115,7 @@ describe EveOnline::ESI::Corporation do
   end
 
   describe '#home_station_id' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Corporation) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -125,7 +125,7 @@ describe EveOnline::ESI::Corporation do
   end
 
   describe '#member_count' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Corporation) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -135,7 +135,7 @@ describe EveOnline::ESI::Corporation do
   end
 
   describe '#name' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Corporation) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -145,7 +145,7 @@ describe EveOnline::ESI::Corporation do
   end
 
   describe '#shares' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Corporation) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -155,7 +155,7 @@ describe EveOnline::ESI::Corporation do
   end
 
   describe '#tax_rate' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Corporation) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -165,7 +165,7 @@ describe EveOnline::ESI::Corporation do
   end
 
   describe '#ticker' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Corporation) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -175,7 +175,7 @@ describe EveOnline::ESI::Corporation do
   end
 
   describe '#corporation_url' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Corporation) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 

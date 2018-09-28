@@ -28,7 +28,7 @@ describe EveOnline::ESI::MarketHistory do
   end
 
   describe '#history' do
-    let(:market_history) { double }
+    let(:market_history) { instance_double(EveOnline::ESI::Models::MarketHistory) }
 
     let(:response) do
       [

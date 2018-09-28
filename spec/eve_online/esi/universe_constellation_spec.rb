@@ -30,7 +30,7 @@ describe EveOnline::ESI::UniverseConstellation do
 
     before { expect(subject).to receive(:response).and_return(response) }
 
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Constellation) }
 
     before do
       #

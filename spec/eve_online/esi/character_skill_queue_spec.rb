@@ -26,7 +26,7 @@ describe EveOnline::ESI::CharacterSkillQueue do
   end
 
   describe '#skills' do
-    let(:skill_queue_entry) { double }
+    let(:skill_queue_entry) { instance_double(EveOnline::ESI::Models::SkillQueueEntry) }
 
     let(:response) do
       [

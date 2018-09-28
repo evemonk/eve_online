@@ -20,7 +20,7 @@ describe EveOnline::ESI::Races do
   end
 
   describe '#races' do
-    let(:race) { double }
+    let(:race) { instance_double(EveOnline::ESI::Models::Race) }
 
     let(:response) do
       [

@@ -30,7 +30,7 @@ describe EveOnline::ESI::CharacterFatigue do
 
     before { expect(subject).to receive(:response).and_return(response) }
 
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Fatigue) }
 
     before do
       #
@@ -45,7 +45,7 @@ describe EveOnline::ESI::CharacterFatigue do
   end
 
   describe '#as_json' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Fatigue) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -55,7 +55,7 @@ describe EveOnline::ESI::CharacterFatigue do
   end
 
   describe '#jump_fatigue_expire_date' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Fatigue) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -65,7 +65,7 @@ describe EveOnline::ESI::CharacterFatigue do
   end
 
   describe '#last_jump_date' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Fatigue) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -75,7 +75,7 @@ describe EveOnline::ESI::CharacterFatigue do
   end
 
   describe '#last_update_date' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Fatigue) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 

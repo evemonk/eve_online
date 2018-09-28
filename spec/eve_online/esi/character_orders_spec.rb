@@ -26,7 +26,7 @@ describe EveOnline::ESI::CharacterOrders do
   end
 
   describe '#orders' do
-    let(:order) { double }
+    let(:order) { instance_double(EveOnline::ESI::Models::CharacterOrder) }
 
     let(:response) do
       [

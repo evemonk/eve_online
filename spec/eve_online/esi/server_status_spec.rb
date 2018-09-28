@@ -24,7 +24,7 @@ describe EveOnline::ESI::ServerStatus do
 
     before { expect(subject).to receive(:response).and_return(response) }
 
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::ServerStatus) }
 
     before do
       #
