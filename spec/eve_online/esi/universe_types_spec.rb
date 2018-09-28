@@ -31,12 +31,12 @@ describe EveOnline::ESI::UniverseTypes do
     end
   end
 
-  describe '#universe_types_ids' do
+  describe '#universe_type_ids' do
     let(:response) { double }
 
     before { expect(subject).to receive(:response).and_return(response) }
 
-    specify { expect(subject.universe_types_ids).to eq(response) }
+    specify { expect(subject.universe_type_ids).to eq(response) }
   end
 
   describe '#scope' do

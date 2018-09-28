@@ -15,7 +15,7 @@ describe 'Get types' do
 
   specify { expect(subject.total_pages).to eq(35) }
 
-  specify { expect(subject.universe_types_ids.size).to eq(1000) }
+  specify { expect(subject.universe_type_ids.size).to eq(1000) }
 
-  specify { expect(subject.universe_types_ids.first).to eq(0) }
+  specify { expect(subject.universe_type_ids.first).to eq(0) }
 end

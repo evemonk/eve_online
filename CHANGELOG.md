@@ -25,6 +25,7 @@
 * Rename `EveOnline::ESI::AllianceCorporations#corporations` to `#corporation_ids`
 * Rename `EveOnline::ESI::Alliances#alliances` to `#alliance_ids`
 * Rename `EveOnline::ESI::Wars#wars_ids` to `#war_ids`
+* Rename `EveOnline::ESI::UniverseTypes#universe_types_ids` to `#universe_type_ids`
 
 ## v0.18.0
 

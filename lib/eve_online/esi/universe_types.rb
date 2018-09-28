@@ -13,7 +13,7 @@ module EveOnline
         @page = options.fetch(:page, 1)
       end
 
-      def universe_types_ids
+      def universe_type_ids
         response
       end
 
