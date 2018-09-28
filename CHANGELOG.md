@@ -24,6 +24,7 @@
 * Add `EveOnline::ESI::DogmaEffect`
 * Rename `EveOnline::ESI::AllianceCorporations#corporations` to `#corporation_ids`
 * Rename `EveOnline::ESI::Alliances#alliances` to `#alliance_ids`
+* Rename `EveOnline::ESI::Wars#wars_ids` to `#war_ids`
 
 ## v0.18.0
 

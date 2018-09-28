@@ -5,7 +5,7 @@ module EveOnline
     class Wars < Base
       API_ENDPOINT = 'https://esi.evetech.net/v1/wars/?datasource=%<datasource>s'
 
-      def wars_ids
+      def war_ids
         response
       end
 
