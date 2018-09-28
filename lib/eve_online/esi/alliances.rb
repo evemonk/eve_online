@@ -5,7 +5,7 @@ module EveOnline
     class Alliances < Base
       API_ENDPOINT = 'https://esi.evetech.net/v1/alliances/?datasource=%<datasource>s'
 
-      def alliances
+      def alliance_ids
         response
       end
 
