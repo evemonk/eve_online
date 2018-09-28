@@ -21,6 +21,8 @@
 * Add `EveOnline::ESI::Models::DogmaEffects`
 * Add `EveOnline::ESI::Models::DogmaEffect`
 * Add `EveOnline::ESI::DogmaEffects`
+* Add `EveOnline::ESI::DogmaEffect`
+* Rename `EveOnline::ESI::AllianceCorporations#corporations` to `#corporation_ids`
 
 ## v0.18.0
 
