@@ -559,9 +559,9 @@ character_implants = EveOnline::ESI::CharacterImplants.new(options)
 
 character_implants.scope # => "esi-clones.read_implants.v1"
 
-character_implants.implants.size # => 5
+character_implants.implant_ids.size # => 5
 
-character_implants.implants # => [9899, 9941, 9942, 9943, 9956]
+character_implants.implant_ids # => [9899, 9941, 9942, 9943, 9956]
 ```
 
 ### Contacts
@@ -731,9 +731,9 @@ dogma_attributes = EveOnline::ESI::DogmaAttributes.new
 
 dogma_attributes.scope # => nil
 
-dogma_attributes.attributes.size # => 2385
+dogma_attributes.attribute_ids.size # => 2385
 
-dogma_attributes.attributes.first # => 2
+dogma_attributes.attribute_ids.first # => 2
 ```
 
 #### Get attribute information
@@ -1493,9 +1493,9 @@ constellations = EveOnline::ESI::UniverseConstellations.new
 
 constellations.scope # => nil
 
-constellations.constellations_ids.size # => 1146
+constellations.constellation_ids.size # => 1146
 
-constellations.constellations_ids.first # => 20000001
+constellations.constellation_ids.first # => 20000001
 ```
 
 #### Get constellation information
