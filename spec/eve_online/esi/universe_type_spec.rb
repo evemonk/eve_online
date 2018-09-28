@@ -45,7 +45,7 @@ describe EveOnline::ESI::UniverseType do
   end
 
   describe '#as_json' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Type) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -55,7 +55,7 @@ describe EveOnline::ESI::UniverseType do
   end
 
   describe '#capacity' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Type) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -65,7 +65,7 @@ describe EveOnline::ESI::UniverseType do
   end
 
   describe '#description' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Type) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -75,7 +75,7 @@ describe EveOnline::ESI::UniverseType do
   end
 
   describe '#graphic_id' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Type) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -85,7 +85,7 @@ describe EveOnline::ESI::UniverseType do
   end
 
   describe '#group_id' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Type) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -95,7 +95,7 @@ describe EveOnline::ESI::UniverseType do
   end
 
   describe '#icon_id' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Type) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -105,7 +105,7 @@ describe EveOnline::ESI::UniverseType do
   end
 
   describe '#market_group_id' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Type) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -115,7 +115,7 @@ describe EveOnline::ESI::UniverseType do
   end
 
   describe '#mass' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Type) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -125,7 +125,7 @@ describe EveOnline::ESI::UniverseType do
   end
 
   describe '#name' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Type) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -135,7 +135,7 @@ describe EveOnline::ESI::UniverseType do
   end
 
   describe '#packaged_volume' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Type) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -145,7 +145,7 @@ describe EveOnline::ESI::UniverseType do
   end
 
   describe '#portion_size' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Type) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -155,7 +155,7 @@ describe EveOnline::ESI::UniverseType do
   end
 
   describe '#published' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Type) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -165,7 +165,7 @@ describe EveOnline::ESI::UniverseType do
   end
 
   describe '#radius' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Type) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -175,7 +175,7 @@ describe EveOnline::ESI::UniverseType do
   end
 
   describe '#type_id' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Type) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -185,7 +185,7 @@ describe EveOnline::ESI::UniverseType do
   end
 
   describe '#volume' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Type) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -195,7 +195,7 @@ describe EveOnline::ESI::UniverseType do
   end
 
   describe '#dogma_attributes' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Type) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -205,7 +205,7 @@ describe EveOnline::ESI::UniverseType do
   end
 
   describe '#dogma_effects' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Type) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 

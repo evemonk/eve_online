@@ -26,7 +26,7 @@ describe EveOnline::ESI::CharacterCalendar do
   end
 
   describe '#events' do
-    let(:event) { double }
+    let(:event) { instance_double(EveOnline::ESI::Models::Event) }
 
     let(:response) do
       [

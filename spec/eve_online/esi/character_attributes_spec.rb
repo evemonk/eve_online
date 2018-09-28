@@ -30,7 +30,7 @@ describe EveOnline::ESI::CharacterAttributes do
 
     before { expect(subject).to receive(:response).and_return(response) }
 
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Attributes) }
 
     before do
       #
@@ -45,7 +45,7 @@ describe EveOnline::ESI::CharacterAttributes do
   end
 
   describe '#as_json' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Attributes) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -55,7 +55,7 @@ describe EveOnline::ESI::CharacterAttributes do
   end
 
   describe '#accrued_remap_cooldown_date' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Attributes) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -65,7 +65,7 @@ describe EveOnline::ESI::CharacterAttributes do
   end
 
   describe '#bonus_remaps' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Attributes) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -75,7 +75,7 @@ describe EveOnline::ESI::CharacterAttributes do
   end
 
   describe '#charisma' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Attributes) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -85,7 +85,7 @@ describe EveOnline::ESI::CharacterAttributes do
   end
 
   describe '#intelligence' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Attributes) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -95,7 +95,7 @@ describe EveOnline::ESI::CharacterAttributes do
   end
 
   describe '#last_remap_date' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Attributes) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -105,7 +105,7 @@ describe EveOnline::ESI::CharacterAttributes do
   end
 
   describe '#memory' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Attributes) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -115,7 +115,7 @@ describe EveOnline::ESI::CharacterAttributes do
   end
 
   describe '#perception' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Attributes) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -125,7 +125,7 @@ describe EveOnline::ESI::CharacterAttributes do
   end
 
   describe '#willpower' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Attributes) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 

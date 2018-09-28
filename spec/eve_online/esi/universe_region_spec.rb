@@ -45,7 +45,7 @@ describe EveOnline::ESI::UniverseRegion do
   end
 
   describe '#as_json' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Region) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -55,7 +55,7 @@ describe EveOnline::ESI::UniverseRegion do
   end
 
   describe '#constellations' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Region) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -65,7 +65,7 @@ describe EveOnline::ESI::UniverseRegion do
   end
 
   describe '#description' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Region) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -75,7 +75,7 @@ describe EveOnline::ESI::UniverseRegion do
   end
 
   describe '#name' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Region) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -85,7 +85,7 @@ describe EveOnline::ESI::UniverseRegion do
   end
 
   describe '#region_id' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Region) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 

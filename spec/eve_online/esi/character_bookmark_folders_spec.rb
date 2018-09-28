@@ -36,7 +36,7 @@ describe EveOnline::ESI::CharacterBookmarkFolders do
   end
 
   describe '#bookmark_folders' do
-    let(:bookmark_folder) { double }
+    let(:bookmark_folder) { instance_double(EveOnline::ESI::Models::BookmarkFolder) }
 
     let(:response) do
       [

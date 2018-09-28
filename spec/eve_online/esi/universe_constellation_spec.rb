@@ -45,7 +45,7 @@ describe EveOnline::ESI::UniverseConstellation do
   end
 
   describe '#as_json' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Constellation) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -55,7 +55,7 @@ describe EveOnline::ESI::UniverseConstellation do
   end
 
   describe '#constellation_id' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Constellation) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -65,7 +65,7 @@ describe EveOnline::ESI::UniverseConstellation do
   end
 
   describe '#name' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Constellation) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -75,7 +75,7 @@ describe EveOnline::ESI::UniverseConstellation do
   end
 
   describe '#region_id' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Constellation) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -85,7 +85,7 @@ describe EveOnline::ESI::UniverseConstellation do
   end
 
   describe '#systems' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Constellation) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -95,7 +95,7 @@ describe EveOnline::ESI::UniverseConstellation do
   end
 
   describe '#position' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Constellation) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 

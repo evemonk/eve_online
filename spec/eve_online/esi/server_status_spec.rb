@@ -39,7 +39,7 @@ describe EveOnline::ESI::ServerStatus do
   end
 
   describe '#as_json' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::ServerStatus) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -49,7 +49,7 @@ describe EveOnline::ESI::ServerStatus do
   end
 
   describe '#start_time' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::ServerStatus) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -59,7 +59,7 @@ describe EveOnline::ESI::ServerStatus do
   end
 
   describe '#players' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::ServerStatus) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -69,7 +69,7 @@ describe EveOnline::ESI::ServerStatus do
   end
 
   describe '#server_version' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::ServerStatus) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -79,7 +79,7 @@ describe EveOnline::ESI::ServerStatus do
   end
 
   describe '#vip' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::ServerStatus) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 

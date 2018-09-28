@@ -20,7 +20,7 @@ describe EveOnline::ESI::Ancestries do
   end
 
   describe '#ancestries' do
-    let(:ancestry) { double }
+    let(:ancestry) { instance_double(EveOnline::ESI::Models::Ancestry) }
 
     let(:response) do
       [

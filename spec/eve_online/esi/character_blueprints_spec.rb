@@ -36,7 +36,7 @@ describe EveOnline::ESI::CharacterBlueprints do
   end
 
   describe '#blueprints' do
-    let(:blueprint) { double }
+    let(:blueprint) { instance_double(EveOnline::ESI::Models::Blueprint) }
 
     let(:response) do
       [

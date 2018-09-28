@@ -20,7 +20,7 @@ describe EveOnline::ESI::Bloodlines do
   end
 
   describe '#bloodlines' do
-    let(:bloodline) { double }
+    let(:bloodline) { instance_double(EveOnline::ESI::Models::Bloodline) }
 
     let(:response) do
       [

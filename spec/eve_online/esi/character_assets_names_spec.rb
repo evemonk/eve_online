@@ -28,7 +28,7 @@ describe EveOnline::ESI::CharacterAssetsNames do
   end
 
   describe '#assets_names' do
-    let(:asset_name) { double }
+    let(:asset_name) { instance_double(EveOnline::ESI::Models::AssetName) }
 
     let(:response) do
       [
