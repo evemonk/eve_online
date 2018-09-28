@@ -72,9 +72,9 @@ alliances = EveOnline::ESI::Alliances.new
 
 alliances.scope # => nil
 
-alliances.alliances.size # => 3013
+alliances.alliance_ids.size # => 3013
 
-alliances.alliances.first # => 1354830081
+alliances.alliance_ids.first # => 1354830081
 ```
 
 #### Get alliance information
@@ -112,9 +112,9 @@ alliance_corporations = EveOnline::ESI::AllianceCorporations.new(options)
 
 alliance_corporations.scope # => nil
 
-alliance_corporations.corporations.size # => 33
+alliance_corporations.corporation_ids.size # => 33
 
-alliance_corporations.corporations.first # => 98134807
+alliance_corporations.corporation_ids.first # => 98134807
 ```
 
 #### Get alliance icon
@@ -1609,9 +1609,9 @@ regions = EveOnline::ESI::UniverseRegions.new
 
 regions.scope # => nil
 
-regions.universe_regions_ids.size # => 106
+regions.universe_region_ids.size # => 106
 
-regions.universe_regions_ids.first # => 10000001
+regions.universe_region_ids.first # => 10000001
 ```
 
 #### Get region information
@@ -1655,9 +1655,9 @@ systems = EveOnline::ESI::UniverseSystems.new
 
 systems.scope # => nil
 
-systems.universe_systems_ids.size # => 8285
+systems.universe_system_ids.size # => 8285
 
-systems.universe_systems_ids.first # => 30000001
+systems.universe_system_ids.first # => 30000001
 ```
 
 #### Get solar system information
@@ -1675,9 +1675,9 @@ types.page # => 1
 
 types.total_pages # => 35
 
-types.universe_types_ids.size # => 1000
+types.universe_type_ids.size # => 1000
 
-types.universe_types_ids.first # => 0
+types.universe_type_ids.first # => 0
 ```
 
 #### Get type information
@@ -1821,9 +1821,9 @@ wars = EveOnline::ESI::Wars.new
 
 wars.scope # => nil
 
-wars.wars_ids.size # => 2000
+wars.war_ids.size # => 2000
 
-wars.wars_ids.first # => 615639
+wars.war_ids.first # => 615639
 
 # TODO: max_war_id
 ```
