@@ -5,7 +5,7 @@ module EveOnline
     class UniverseConstellations < Base
       API_ENDPOINT = 'https://esi.evetech.net/v1/universe/constellations/?datasource=%<datasource>s'
 
-      def constellations_ids
+      def constellation_ids
         response
       end
 

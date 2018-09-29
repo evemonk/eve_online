@@ -29,6 +29,7 @@
 * Rename `EveOnline::ESI::DogmaEffects#effects_ids` to `#effect_ids`
 * Rename `EveOnline::ESI::UniverseSystems#universe_systems_ids` to `#universe_system_ids`
 * Rename `EveOnline::ESI::UniverseRegions#universe_regions_ids` to `#universe_region_ids`
+* Rename `EveOnline::ESI::UniverseConstellations#constellations_ids` to `#constellation_ids`
 
 ## v0.18.0
 
