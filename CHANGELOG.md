@@ -26,6 +26,7 @@
 * Rename `EveOnline::ESI::Alliances#alliances` to `#alliance_ids`
 * Rename `EveOnline::ESI::Wars#wars_ids` to `#war_ids`
 * Rename `EveOnline::ESI::UniverseTypes#universe_types_ids` to `#universe_type_ids`
+* Rename `EveOnline::ESI::DogmaEffects#effects_ids` to `#effect_ids`
 
 ## v0.18.0
 

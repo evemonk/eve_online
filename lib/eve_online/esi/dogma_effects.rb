@@ -5,7 +5,7 @@ module EveOnline
     class DogmaEffects < Base
       API_ENDPOINT = 'https://esi.evetech.net/v1/dogma/effects/?datasource=%<datasource>s'
 
-      def effects_ids
+      def effect_ids
         response
       end
 

@@ -19,12 +19,12 @@ describe EveOnline::ESI::DogmaEffects do
     its(:datasource) { should eq('tranquility') }
   end
 
-  describe '#effects_ids' do
+  describe '#effect_ids' do
     let(:response) { double }
 
     before { expect(subject).to receive(:response).and_return(response) }
 
-    specify { expect(subject.effects_ids).to eq(response) }
+    specify { expect(subject.effect_ids).to eq(response) }
   end
 
   describe '#scope' do
