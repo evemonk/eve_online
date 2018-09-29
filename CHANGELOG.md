@@ -27,6 +27,7 @@
 * Rename `EveOnline::ESI::Wars#wars_ids` to `#war_ids`
 * Rename `EveOnline::ESI::UniverseTypes#universe_types_ids` to `#universe_type_ids`
 * Rename `EveOnline::ESI::DogmaEffects#effects_ids` to `#effect_ids`
+* Rename `EveOnline::ESI::UniverseSystems#universe_systems_ids` to `#universe_system_ids`
 
 ## v0.18.0
 

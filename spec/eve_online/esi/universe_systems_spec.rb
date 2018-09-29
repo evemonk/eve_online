@@ -19,12 +19,12 @@ describe EveOnline::ESI::UniverseSystems do
     its(:datasource) { should eq('tranquility') }
   end
 
-  describe '#universe_systems_ids' do
+  describe '#universe_system_ids' do
     let(:response) { double }
 
     before { expect(subject).to receive(:response).and_return(response) }
 
-    specify { expect(subject.universe_systems_ids).to eq(response) }
+    specify { expect(subject.universe_system_ids).to eq(response) }
   end
 
   describe '#scope' do
