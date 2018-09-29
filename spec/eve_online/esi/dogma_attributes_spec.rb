@@ -19,12 +19,12 @@ describe EveOnline::ESI::DogmaAttributes do
     its(:datasource) { should eq('tranquility') }
   end
 
-  describe '#attributes' do
+  describe '#attribute_ids' do
     let(:response) { double }
 
     before { expect(subject).to receive(:response).and_return(response) }
 
-    specify { expect(subject.attributes).to eq(response) }
+    specify { expect(subject.attribute_ids).to eq(response) }
   end
 
   describe '#scope' do
