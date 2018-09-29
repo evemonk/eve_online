@@ -32,6 +32,7 @@
 * Rename `EveOnline::ESI::UniverseConstellations#constellations_ids` to `#constellation_ids`
 * Rename `EveOnline::ESI::DogmaAttributes#attributes` to `#attribute_ids`
 * Rename `EveOnline::ESI::CharacterImplants#implants` to `#implant_ids`
+* Add `EveOnline::ESI::DogmaEffect`
 
 ## v0.18.0
 
