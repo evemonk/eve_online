@@ -9,7 +9,7 @@ describe EveOnline::ESI::UniverseRegion do
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.evetech.net/v1/universe/regions/%<region_id>s/?datasource=%<datasource>s&language=en-us') }
+  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.evetech.net/v1/universe/regions/%<region_id>s/?datasource=%<datasource>s') }
 
   describe '#initialize' do
     its(:token) { should eq(nil) }
@@ -30,7 +30,7 @@ describe EveOnline::ESI::UniverseRegion do
 
     before { expect(subject).to receive(:response).and_return(response) }
 
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Region) }
 
     before do
       #
@@ -45,7 +45,7 @@ describe EveOnline::ESI::UniverseRegion do
   end
 
   describe '#as_json' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Region) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -55,7 +55,7 @@ describe EveOnline::ESI::UniverseRegion do
   end
 
   describe '#constellations' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Region) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -65,7 +65,7 @@ describe EveOnline::ESI::UniverseRegion do
   end
 
   describe '#description' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Region) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -75,7 +75,7 @@ describe EveOnline::ESI::UniverseRegion do
   end
 
   describe '#name' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Region) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -85,7 +85,7 @@ describe EveOnline::ESI::UniverseRegion do
   end
 
   describe '#region_id' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Region) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -100,7 +100,7 @@ describe EveOnline::ESI::UniverseRegion do
 
   describe '#url' do
     specify do
-      expect(subject.url).to eq('https://esi.evetech.net/v1/universe/regions/10000001/?datasource=tranquility&language=en-us')
+      expect(subject.url).to eq('https://esi.evetech.net/v1/universe/regions/10000001/?datasource=tranquility')
     end
   end
 end

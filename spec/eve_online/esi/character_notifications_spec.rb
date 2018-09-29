@@ -26,7 +26,7 @@ describe EveOnline::ESI::CharacterNotifications do
   end
 
   describe '#notifications' do
-    let(:notification) { double }
+    let(:notification) { instance_double(EveOnline::ESI::Models::Notification) }
 
     let(:response) do
       [

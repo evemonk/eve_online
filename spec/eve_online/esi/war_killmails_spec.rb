@@ -36,7 +36,7 @@ describe EveOnline::ESI::WarKillmails do
   end
 
   describe '#killmails' do
-    let(:killmail) { double }
+    let(:killmail) { instance_double(EveOnline::ESI::Models::KillmailShort) }
 
     let(:response) do
       [

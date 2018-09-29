@@ -19,12 +19,12 @@ describe EveOnline::ESI::Wars do
     its(:datasource) { should eq('tranquility') }
   end
 
-  describe '#wars_ids' do
+  describe '#war_ids' do
     let(:response) { double }
 
     before { expect(subject).to receive(:response).and_return(response) }
 
-    specify { expect(subject.wars_ids).to eq(response) }
+    specify { expect(subject.war_ids).to eq(response) }
   end
 
   describe '#scope' do

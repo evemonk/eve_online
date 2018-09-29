@@ -5,7 +5,7 @@ module EveOnline
     class DogmaAttributes < Base
       API_ENDPOINT = 'https://esi.evetech.net/v1/dogma/attributes/?datasource=%<datasource>s'
 
-      def attributes
+      def attribute_ids
         response
       end
 

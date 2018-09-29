@@ -28,7 +28,7 @@ describe EveOnline::ESI::CharacterAssetsLocations do
   end
 
   describe '#assets_locations' do
-    let(:asset_location) { double }
+    let(:asset_location) { instance_double(EveOnline::ESI::Models::AssetLocation) }
 
     let(:response) do
       [

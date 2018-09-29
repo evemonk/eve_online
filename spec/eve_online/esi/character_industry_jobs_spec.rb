@@ -44,7 +44,7 @@ describe EveOnline::ESI::CharacterIndustryJobs do
   end
 
   describe '#jobs' do
-    let(:job) { double }
+    let(:job) { instance_double(EveOnline::ESI::Models::CharacterIndustryJob) }
 
     let(:response) do
       [

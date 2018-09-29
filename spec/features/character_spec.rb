@@ -11,6 +11,8 @@ describe "Get character's public information" do
 
   subject { EveOnline::ESI::Character.new(options) }
 
+  specify { expect(subject.scope).to eq(nil) }
+
   specify do
     expect(subject.as_json).to eq(corporation_id: 98_134_807,
                                   birthday: '2010-01-15T15:26:00Z',

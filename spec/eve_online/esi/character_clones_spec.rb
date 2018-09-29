@@ -54,7 +54,7 @@ describe EveOnline::ESI::CharacterClones do
   end
 
   describe '#jump_clones' do
-    let(:jump_clone) { double }
+    let(:jump_clone) { instance_double(EveOnline::ESI::Models::JumpClone) }
 
     let(:response) do
       [

@@ -30,7 +30,7 @@ describe EveOnline::ESI::DogmaAttribute do
 
     before { expect(subject).to receive(:response).and_return(response) }
 
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::DogmaAttribute) }
 
     before do
       #
@@ -45,7 +45,7 @@ describe EveOnline::ESI::DogmaAttribute do
   end
 
   describe '#as_json' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::DogmaAttribute) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -55,7 +55,7 @@ describe EveOnline::ESI::DogmaAttribute do
   end
 
   describe '#attribute_id' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::DogmaAttribute) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -65,7 +65,7 @@ describe EveOnline::ESI::DogmaAttribute do
   end
 
   describe '#default_value' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::DogmaAttribute) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -75,7 +75,7 @@ describe EveOnline::ESI::DogmaAttribute do
   end
 
   describe '#description' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::DogmaAttribute) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -85,7 +85,7 @@ describe EveOnline::ESI::DogmaAttribute do
   end
 
   describe '#display_name' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::DogmaAttribute) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -95,7 +95,7 @@ describe EveOnline::ESI::DogmaAttribute do
   end
 
   describe '#high_is_good' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::DogmaAttribute) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -105,7 +105,7 @@ describe EveOnline::ESI::DogmaAttribute do
   end
 
   describe '#icon_id' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::DogmaAttribute) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -115,7 +115,7 @@ describe EveOnline::ESI::DogmaAttribute do
   end
 
   describe '#name' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::DogmaAttribute) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -125,7 +125,7 @@ describe EveOnline::ESI::DogmaAttribute do
   end
 
   describe '#published' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::DogmaAttribute) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -135,7 +135,7 @@ describe EveOnline::ESI::DogmaAttribute do
   end
 
   describe '#stackable' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::DogmaAttribute) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -145,7 +145,7 @@ describe EveOnline::ESI::DogmaAttribute do
   end
 
   describe '#unit_id' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::DogmaAttribute) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 

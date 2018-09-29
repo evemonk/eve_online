@@ -7,7 +7,7 @@ module EveOnline
     class UniverseRegion < Base
       extend Forwardable
 
-      API_ENDPOINT = 'https://esi.evetech.net/v1/universe/regions/%<region_id>s/?datasource=%<datasource>s&language=en-us'
+      API_ENDPOINT = 'https://esi.evetech.net/v1/universe/regions/%<region_id>s/?datasource=%<datasource>s'
 
       attr_reader :id
 

@@ -30,7 +30,7 @@ describe EveOnline::ESI::Alliance do
 
     before { expect(subject).to receive(:response).and_return(response) }
 
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Alliance) }
 
     before do
       #
@@ -45,7 +45,7 @@ describe EveOnline::ESI::Alliance do
   end
 
   describe '#as_json' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Alliance) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -55,7 +55,7 @@ describe EveOnline::ESI::Alliance do
   end
 
   describe '#creator_corporation_id' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Alliance) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -65,7 +65,7 @@ describe EveOnline::ESI::Alliance do
   end
 
   describe '#creator_id' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Alliance) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -75,7 +75,7 @@ describe EveOnline::ESI::Alliance do
   end
 
   describe '#date_founded' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Alliance) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -85,7 +85,7 @@ describe EveOnline::ESI::Alliance do
   end
 
   describe '#executor_corporation_id' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Alliance) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -95,7 +95,7 @@ describe EveOnline::ESI::Alliance do
   end
 
   describe '#faction_id' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Alliance) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -105,7 +105,7 @@ describe EveOnline::ESI::Alliance do
   end
 
   describe '#name' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Alliance) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -115,7 +115,7 @@ describe EveOnline::ESI::Alliance do
   end
 
   describe '#ticker' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Alliance) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 

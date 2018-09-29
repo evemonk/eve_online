@@ -5,7 +5,7 @@ require 'spec_helper'
 describe EveOnline::ESI::Races do
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.evetech.net/v1/universe/races/?datasource=%<datasource>s&language=en-us') }
+  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.evetech.net/v1/universe/races/?datasource=%<datasource>s') }
 
   describe '#initialize' do
     its(:token) { should eq(nil) }
@@ -20,7 +20,7 @@ describe EveOnline::ESI::Races do
   end
 
   describe '#races' do
-    let(:race) { double }
+    let(:race) { instance_double(EveOnline::ESI::Models::Race) }
 
     let(:response) do
       [
@@ -58,7 +58,7 @@ describe EveOnline::ESI::Races do
 
   describe '#url' do
     specify do
-      expect(subject.url).to eq('https://esi.evetech.net/v1/universe/races/?datasource=tranquility&language=en-us')
+      expect(subject.url).to eq('https://esi.evetech.net/v1/universe/races/?datasource=tranquility')
     end
   end
 end

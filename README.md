@@ -72,9 +72,9 @@ alliances = EveOnline::ESI::Alliances.new
 
 alliances.scope # => nil
 
-alliances.alliances.size # => 3013
+alliances.alliance_ids.size # => 3013
 
-alliances.alliances.first # => 1354830081
+alliances.alliance_ids.first # => 1354830081
 ```
 
 #### Get alliance information
@@ -112,9 +112,9 @@ alliance_corporations = EveOnline::ESI::AllianceCorporations.new(options)
 
 alliance_corporations.scope # => nil
 
-alliance_corporations.corporations.size # => 33
+alliance_corporations.corporation_ids.size # => 33
 
-alliance_corporations.corporations.first # => 98134807
+alliance_corporations.corporation_ids.first # => 98134807
 ```
 
 #### Get alliance icon
@@ -559,9 +559,9 @@ character_implants = EveOnline::ESI::CharacterImplants.new(options)
 
 character_implants.scope # => "esi-clones.read_implants.v1"
 
-character_implants.implants.size # => 5
+character_implants.implant_ids.size # => 5
 
-character_implants.implants # => [9899, 9941, 9942, 9943, 9956]
+character_implants.implant_ids # => [9899, 9941, 9942, 9943, 9956]
 ```
 
 ### Contacts
@@ -731,9 +731,9 @@ dogma_attributes = EveOnline::ESI::DogmaAttributes.new
 
 dogma_attributes.scope # => nil
 
-dogma_attributes.attributes.size # => 2385
+dogma_attributes.attribute_ids.size # => 2385
 
-dogma_attributes.attributes.first # => 2
+dogma_attributes.attribute_ids.first # => 2
 ```
 
 #### Get attribute information
@@ -771,6 +771,16 @@ dogma_attribute.unit_id # => nil
 #### Get dynamic item information
 
 #### Get effects
+
+```ruby
+dogma_effects = EveOnline::ESI::DogmaEffects.new
+
+dogma_effects.scope # => nil
+
+dogma_effects.effects_ids.size # => 4123
+
+dogma_effects.effects_ids.first # => 4
+```
 
 #### Get effect information
 
@@ -1483,9 +1493,9 @@ constellations = EveOnline::ESI::UniverseConstellations.new
 
 constellations.scope # => nil
 
-constellations.constellations_ids.size # => 1146
+constellations.constellation_ids.size # => 1146
 
-constellations.constellations_ids.first # => 20000001
+constellations.constellation_ids.first # => 20000001
 ```
 
 #### Get constellation information
@@ -1599,9 +1609,9 @@ regions = EveOnline::ESI::UniverseRegions.new
 
 regions.scope # => nil
 
-regions.universe_regions_ids.size # => 106
+regions.universe_region_ids.size # => 106
 
-regions.universe_regions_ids.first # => 10000001
+regions.universe_region_ids.first # => 10000001
 ```
 
 #### Get region information
@@ -1645,9 +1655,9 @@ systems = EveOnline::ESI::UniverseSystems.new
 
 systems.scope # => nil
 
-systems.universe_systems_ids.size # => 8285
+systems.universe_system_ids.size # => 8285
 
-systems.universe_systems_ids.first # => 30000001
+systems.universe_system_ids.first # => 30000001
 ```
 
 #### Get solar system information
@@ -1665,9 +1675,9 @@ types.page # => 1
 
 types.total_pages # => 35
 
-types.universe_types_ids.size # => 1000
+types.universe_type_ids.size # => 1000
 
-types.universe_types_ids.first # => 0
+types.universe_type_ids.first # => 0
 ```
 
 #### Get type information
@@ -1709,8 +1719,25 @@ type.radius # => 1.0
 type.type_id # => 192
 type.volume # => 0.0125
 
-# TODO: dogma_attributes
-# TODO: dogma_effects
+type.dogma_attributes.size # => 17
+
+type_dogma_attribute = type.dogma_attributes.first
+
+type_dogma_attribute.as_json # => {:attribute_id=>128,
+                             #     :value=>2.0}
+
+dogma_attribute.attribute_id # => 128
+dogma_attribute.value # => 2.0
+
+type.dogma_effects.size # => 3
+
+type_dogma_effect = type.dogma_effects.first
+
+type_dogma_effect.as_json # => {:effect_id=>596,
+                          #     :is_default=>false}
+
+type_dogma_effect.effect_id # => 596
+type_dogma_effect.is_default # => false
 ```
 
 ### User Interface
@@ -1794,9 +1821,9 @@ wars = EveOnline::ESI::Wars.new
 
 wars.scope # => nil
 
-wars.wars_ids.size # => 2000
+wars.war_ids.size # => 2000
 
-wars.wars_ids.first # => 615639
+wars.war_ids.first # => 615639
 
 # TODO: max_war_id
 ```
@@ -1910,6 +1937,16 @@ options = { language: 'de' }
 races = EveOnline::ESI::Races.new(options)
 ```
 
+## Oj as JSON Parser
+
+```ruby
+require 'oj'
+
+Oj.mimic_JSON()
+
+races = EveOnline::ESI::Races.new
+```
+
 ## Useful links
 
 * [BREAKING CHANGES AND YOU - HOW TO USE ALT-ROUTES TO ENHANCE YOUR SANITY](https://developers.eveonline.com/blog/article/breaking-changes-and-you)
@@ -1927,7 +1964,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Issue reports and pull requests are welcome on GitHub at <https://github.com/biow0lf/eve_online>.
+Issue reports and pull requests are welcome on GitHub at <https://github.com/evemonk/eve_online>.
 
 ## Author
 

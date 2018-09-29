@@ -19,12 +19,12 @@ describe EveOnline::ESI::UniverseConstellations do
     its(:datasource) { should eq('tranquility') }
   end
 
-  describe '#constellations_ids' do
+  describe '#constellation_ids' do
     let(:response) { double }
 
     before { expect(subject).to receive(:response).and_return(response) }
 
-    specify { expect(subject.constellations_ids).to eq(response) }
+    specify { expect(subject.constellation_ids).to eq(response) }
   end
 
   describe '#scope' do

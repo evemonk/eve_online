@@ -26,7 +26,7 @@ describe EveOnline::ESI::CharacterStandings do
   end
 
   describe '#standings' do
-    let(:standing) { double }
+    let(:standing) { instance_double(EveOnline::ESI::Models::Standing) }
 
     let(:response) do
       [

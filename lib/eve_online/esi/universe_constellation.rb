@@ -7,7 +7,7 @@ module EveOnline
     class UniverseConstellation < Base
       extend Forwardable
 
-      API_ENDPOINT = 'https://esi.evetech.net/v1/universe/constellations/%<constellation_id>s/?datasource=%<datasource>s&language=en-us'
+      API_ENDPOINT = 'https://esi.evetech.net/v1/universe/constellations/%<constellation_id>s/?datasource=%<datasource>s'
 
       attr_reader :id
 

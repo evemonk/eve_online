@@ -17,6 +17,8 @@ describe 'Get character assets' do
 
   subject { EveOnline::ESI::CharacterAssets.new(options) }
 
+  specify { expect(subject.scope).to eq('esi-assets.read_assets.v1') }
+
   specify { expect(subject.page).to eq(1) }
 
   specify { expect(subject.total_pages).to eq(1) }

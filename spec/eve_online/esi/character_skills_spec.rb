@@ -44,7 +44,7 @@ describe EveOnline::ESI::CharacterSkills do
   end
 
   describe '#skills' do
-    let(:skill) { double }
+    let(:skill) { instance_double(EveOnline::ESI::Models::Skill) }
 
     let(:response) do
       [

@@ -5,7 +5,7 @@ module EveOnline
     class UniverseRegions < Base
       API_ENDPOINT = 'https://esi.evetech.net/v1/universe/regions/?datasource=%<datasource>s'
 
-      def universe_regions_ids
+      def universe_region_ids
         response
       end
 

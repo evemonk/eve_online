@@ -5,7 +5,7 @@ require 'spec_helper'
 describe EveOnline::ESI::Bloodlines do
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.evetech.net/v1/universe/bloodlines/?datasource=%<datasource>s&language=en-us') }
+  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.evetech.net/v1/universe/bloodlines/?datasource=%<datasource>s') }
 
   describe '#initialize' do
     its(:token) { should eq(nil) }
@@ -20,7 +20,7 @@ describe EveOnline::ESI::Bloodlines do
   end
 
   describe '#bloodlines' do
-    let(:bloodline) { double }
+    let(:bloodline) { instance_double(EveOnline::ESI::Models::Bloodline) }
 
     let(:response) do
       [
@@ -65,7 +65,7 @@ describe EveOnline::ESI::Bloodlines do
 
   describe '#url' do
     specify do
-      expect(subject.url).to eq('https://esi.evetech.net/v1/universe/bloodlines/?datasource=tranquility&language=en-us')
+      expect(subject.url).to eq('https://esi.evetech.net/v1/universe/bloodlines/?datasource=tranquility')
     end
   end
 end

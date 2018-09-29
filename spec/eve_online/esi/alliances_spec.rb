@@ -19,12 +19,12 @@ describe EveOnline::ESI::Alliances do
     its(:datasource) { should eq('tranquility') }
   end
 
-  describe '#alliances' do
+  describe '#alliance_ids' do
     let(:response) { double }
 
     before { expect(subject).to receive(:response).and_return(response) }
 
-    specify { expect(subject.alliances).to eq(response) }
+    specify { expect(subject.alliance_ids).to eq(response) }
   end
 
   describe '#scope' do

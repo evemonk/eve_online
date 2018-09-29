@@ -36,7 +36,7 @@ describe EveOnline::ESI::CharacterBookmarks do
   end
 
   describe '#bookmarks' do
-    let(:bookmark) { double }
+    let(:bookmark) { instance_double(EveOnline::ESI::Models::Bookmark) }
 
     let(:response) do
       [

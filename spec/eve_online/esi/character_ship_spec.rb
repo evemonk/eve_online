@@ -30,7 +30,7 @@ describe EveOnline::ESI::CharacterShip do
 
     before { expect(subject).to receive(:response).and_return(response) }
 
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::CharacterShip) }
 
     before do
       #
@@ -45,7 +45,7 @@ describe EveOnline::ESI::CharacterShip do
   end
 
   describe '#as_json' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::CharacterShip) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -55,7 +55,7 @@ describe EveOnline::ESI::CharacterShip do
   end
 
   describe '#ship_item_id' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::CharacterShip) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -65,7 +65,7 @@ describe EveOnline::ESI::CharacterShip do
   end
 
   describe '#ship_name' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::CharacterShip) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -75,7 +75,7 @@ describe EveOnline::ESI::CharacterShip do
   end
 
   describe '#ship_type_id' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::CharacterShip) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 

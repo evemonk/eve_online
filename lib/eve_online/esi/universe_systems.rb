@@ -5,7 +5,7 @@ module EveOnline
     class UniverseSystems < Base
       API_ENDPOINT = 'https://esi.evetech.net/v1/universe/systems/?datasource=%<datasource>s'
 
-      def universe_systems_ids
+      def universe_system_ids
         response
       end
 

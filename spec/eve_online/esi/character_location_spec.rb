@@ -30,7 +30,7 @@ describe EveOnline::ESI::CharacterLocation do
 
     before { expect(subject).to receive(:response).and_return(response) }
 
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::CharacterLocation) }
 
     before do
       #
@@ -45,7 +45,7 @@ describe EveOnline::ESI::CharacterLocation do
   end
 
   describe '#as_json' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::CharacterLocation) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -55,7 +55,7 @@ describe EveOnline::ESI::CharacterLocation do
   end
 
   describe '#solar_system_id' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::CharacterLocation) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -65,7 +65,7 @@ describe EveOnline::ESI::CharacterLocation do
   end
 
   describe '#station_id' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::CharacterLocation) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -75,7 +75,7 @@ describe EveOnline::ESI::CharacterLocation do
   end
 
   describe '#structure_id' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::CharacterLocation) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 

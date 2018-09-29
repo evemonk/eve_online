@@ -26,7 +26,7 @@ describe EveOnline::ESI::CharacterLoyaltyPoints do
   end
 
   describe '#loyalty_points' do
-    let(:loyalty_point) { double }
+    let(:loyalty_point) { instance_double(EveOnline::ESI::Models::LoyaltyPoint) }
 
     let(:response) do
       [

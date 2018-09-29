@@ -4,13 +4,34 @@
 
 * Replace `faraday` gem with ruby `net/http`
 * Add `Etag` / `If-None-Match` support for caching
-* Add `Accept-Language` support
+* Add `Accept-Language` header support
 * Add `EveOnline::ESI::CharacterAssetsLocations`
 * Add `EveOnline::ESI::Models::Position`
 * Add `EveOnline::ESI::Models::AssetLocation`
 * Add `EveOnline::ESI::Models::AssetName`
 * Add `EveOnline::ESI::CharacterAssetsNames`
 * Remove `EveOnline::ESI::UniverseConstellation#position_x, #position_y, #position_z`. Use new `#position` instead.
+* Add `EveOnline::ESI::UniverseType#dogma_attributes`
+* Add `EveOnline::ESI::UniverseType#dogma_effects`
+* Add `EveOnline::ESI::Models::DogmaAttributeShort`
+* Add `EveOnline::ESI::Models::DogmaEffectShort`
+* Add `EveOnline::ESI::Models::Type#dogma_attributes`
+* Add `EveOnline::ESI::Models::Type#dogma_effects`
+* Add `EveOnline::ESI::Models::DogmaAttributes`
+* Add `EveOnline::ESI::Models::DogmaEffects`
+* Add `EveOnline::ESI::Models::DogmaEffect`
+* Add `EveOnline::ESI::DogmaEffects`
+* Add `EveOnline::ESI::DogmaEffect`
+* Rename `EveOnline::ESI::AllianceCorporations#corporations` to `#corporation_ids`
+* Rename `EveOnline::ESI::Alliances#alliances` to `#alliance_ids`
+* Rename `EveOnline::ESI::Wars#wars_ids` to `#war_ids`
+* Rename `EveOnline::ESI::UniverseTypes#universe_types_ids` to `#universe_type_ids`
+* Rename `EveOnline::ESI::DogmaEffects#effects_ids` to `#effect_ids`
+* Rename `EveOnline::ESI::UniverseSystems#universe_systems_ids` to `#universe_system_ids`
+* Rename `EveOnline::ESI::UniverseRegions#universe_regions_ids` to `#universe_region_ids`
+* Rename `EveOnline::ESI::UniverseConstellations#constellations_ids` to `#constellation_ids`
+* Rename `EveOnline::ESI::DogmaAttributes#attributes` to `#attribute_ids`
+* Rename `EveOnline::ESI::CharacterImplants#implants` to `#implant_ids`
 
 ## v0.18.0
 
@@ -38,7 +59,6 @@
 * Remove `EveOnline::ESI::AlliancesNames`
 * Lint `README.md`, `CHANGELOG.md` and `TODO.md` with `mdl` gem
 * Add datasource support. Just add `datasource: tranquility` or `datasource: singularity` to options. Default is `tranquility`.
-* Allow change response parser from `JSON` to any json parser compatible with gem `json`. Add `parser: Oj` for `Oj` to default options hash to enable.
 * Rename `EveOnline::ESI::Models::DogmaAttribute#id` to `#attribute_id`
 * Rename input `attribute_id:` to `id:` in `EveOnline::ESI::DogmaAttribute`
 * Rename `EveOnline::ESI::Models::IndustryJob` to `EveOnline::ESI::Models::CharacterIndustryJob`

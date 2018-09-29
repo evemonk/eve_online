@@ -17,6 +17,8 @@ describe 'Get character blueprints' do
 
   subject { EveOnline::ESI::CharacterBlueprints.new(options) }
 
+  specify { expect(subject.scope).to eq('esi-characters.read_blueprints.v1') }
+
   specify { expect(subject.page).to eq(1) }
 
   specify { expect(subject.total_pages).to eq(1) }

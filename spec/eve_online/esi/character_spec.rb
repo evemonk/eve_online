@@ -30,7 +30,7 @@ describe EveOnline::ESI::Character do
 
     before { expect(subject).to receive(:response).and_return(response) }
 
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Character) }
 
     before do
       #
@@ -45,7 +45,7 @@ describe EveOnline::ESI::Character do
   end
 
   describe '#as_json' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Character) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -55,7 +55,7 @@ describe EveOnline::ESI::Character do
   end
 
   describe '#alliance_id' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Character) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -65,7 +65,7 @@ describe EveOnline::ESI::Character do
   end
 
   describe '#ancestry_id' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Character) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -75,7 +75,7 @@ describe EveOnline::ESI::Character do
   end
 
   describe '#birthday' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Character) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -85,7 +85,7 @@ describe EveOnline::ESI::Character do
   end
 
   describe '#bloodline_id' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Character) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -95,7 +95,7 @@ describe EveOnline::ESI::Character do
   end
 
   describe '#corporation_id' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Character) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -105,7 +105,7 @@ describe EveOnline::ESI::Character do
   end
 
   describe '#description' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Character) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -115,7 +115,7 @@ describe EveOnline::ESI::Character do
   end
 
   describe '#faction_id' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Character) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -125,7 +125,7 @@ describe EveOnline::ESI::Character do
   end
 
   describe '#gender' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Character) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -135,7 +135,7 @@ describe EveOnline::ESI::Character do
   end
 
   describe '#name' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Character) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -145,7 +145,7 @@ describe EveOnline::ESI::Character do
   end
 
   describe '#race_id' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Character) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
@@ -155,7 +155,7 @@ describe EveOnline::ESI::Character do
   end
 
   describe '#security_status' do
-    let(:model) { double }
+    let(:model) { instance_double(EveOnline::ESI::Models::Character) }
 
     before { subject.instance_variable_set(:@_memoized_model, model) }
 
