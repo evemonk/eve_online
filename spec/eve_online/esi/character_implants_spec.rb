@@ -25,12 +25,12 @@ describe EveOnline::ESI::CharacterImplants do
     its(:character_id) { should eq(12_345_678) }
   end
 
-  describe '#implants' do
+  describe '#implant_ids' do
     let(:response) { double }
 
     before { expect(subject).to receive(:response).and_return(response) }
 
-    specify { expect(subject.implants).to eq(response) }
+    specify { expect(subject.implant_ids).to eq(response) }
   end
 
   describe '#scope' do

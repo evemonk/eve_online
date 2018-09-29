@@ -13,7 +13,7 @@ module EveOnline
         @character_id = options.fetch(:character_id)
       end
 
-      def implants
+      def implant_ids
         response
       end
 
