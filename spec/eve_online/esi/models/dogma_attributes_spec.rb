@@ -14,14 +14,22 @@ describe EveOnline::ESI::Models::DogmaAttributes do
   end
 
   describe '#dogma_attributes' do
-    let(:dogma_attribute_short) { double }
+    context 'when options is array' do
+      let(:dogma_attribute_short) { double }
 
-    let(:option) { double }
+      let(:option) { double }
 
-    let(:options) { [option] }
+      let(:options) { [option] }
 
-    before { expect(DogmaAttributeShort).to receive(:new).with(option).and_return(dogma_attribute_short) }
+      before { expect(DogmaAttributeShort).to receive(:new).with(option).and_return(dogma_attribute_short) }
 
-    before { expect(subject.dogma_attributes).to eq([dogma_attribute_short]) }
+      before { expect(subject.dogma_attributes).to eq([dogma_attribute_short]) }
+    end
+
+    context 'when options is nil' do
+      let(:options) { nil }
+
+      before { expect(subject.dogma_attributes).to eq([]) }
+    end
   end
 end

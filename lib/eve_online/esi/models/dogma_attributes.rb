@@ -7,6 +7,8 @@ module EveOnline
         def dogma_attributes
           output = []
 
+          return output if !options.is_a?(Array)
+
           options.each do |dogma_attribute_short|
             output << DogmaAttributeShort.new(dogma_attribute_short)
           end
