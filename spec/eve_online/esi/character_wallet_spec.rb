@@ -28,11 +28,11 @@ describe EveOnline::ESI::CharacterWallet do
   describe '#as_json' do
     let(:character_wallet) { described_class.new(options) }
 
-    before { expect(character_wallet).to receive(:wallet).and_return(409488252.49) }
+    before { expect(character_wallet).to receive(:wallet).and_return(409_488_252.49) }
 
     subject { character_wallet.as_json }
 
-    its([:wallet]) { should eq(409488252.49) }
+    its([:wallet]) { should eq(409_488_252.49) }
   end
 
   describe '#wallet' do
