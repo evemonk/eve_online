@@ -135,6 +135,8 @@ require 'eve_online/esi/models/dogma_attribute_short'
 require 'eve_online/esi/models/dogma_effect'
 require 'eve_online/esi/models/dogma_effects'
 require 'eve_online/esi/models/dogma_effect_short'
+require 'eve_online/esi/models/dogma_effect_modifier'
+require 'eve_online/esi/models/dogma_effect_modifiers'
 
 require 'eve_online/esi/models/race'
 require 'eve_online/esi/models/bloodline'
