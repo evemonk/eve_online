@@ -21,7 +21,7 @@ describe EveOnline::ESI::Models::DogmaEffects do
 
       let(:options) { [option] }
 
-      before { expect(DogmaEffectShort).to receive(:new).with(option).and_return(dogma_effect_short) }
+      before { expect(EveOnline::ESI::Models::DogmaEffectShort).to receive(:new).with(option).and_return(dogma_effect_short) }
 
       before { expect(subject.dogma_effects).to eq([dogma_effect_short]) }
     end
