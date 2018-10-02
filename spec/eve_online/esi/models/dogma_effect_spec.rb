@@ -14,7 +14,129 @@ describe EveOnline::ESI::Models::DogmaEffect do
   end
 
   describe '#as_json' do
-    # TODO: write
+    #       electronic_chance: electronic_chance,
+    #       falloff_attribute_id: falloff_attribute_id,
+    #       icon_id: icon_id,
+    #       is_assistance: is_assistance,
+    #       is_offensive: is_offensive,
+    #       is_warp_safe: is_warp_safe,
+    #       name: name,
+    #       post_expression: post_expression,
+    #       pre_expression: pre_expression,
+    #       published: published,
+    #       range_attribute_id: range_attribute_id,
+    #       range_chance: range_chance,
+    #       tracking_speed_attribute_id: tracking_speed_attribute_id
+
+    let(:dogma_effect) { described_class.new(options) }
+
+    let(:disallow_auto_repeat) { double }
+
+    let(:discharge_attribute_id) { double }
+
+    let(:duration_attribute_id) { double }
+
+    let(:electronic_chance) { double }
+
+    let(:falloff_attribute_id) { double }
+
+    let(:icon_id) { double }
+
+    let(:is_assistance) { double }
+
+    let(:is_offensive) { double }
+
+    let(:is_warp_safe) { double }
+
+    let(:published) { double }
+
+    let(:range_attribute_id) { double }
+
+    let(:range_chance) { double }
+
+    let(:tracking_speed_attribute_id) { double }
+
+    before { expect(dogma_effect).to receive(:description).and_return('Automatically generated effect') }
+
+    before { expect(dogma_effect).to receive(:disallow_auto_repeat).and_return(disallow_auto_repeat) }
+
+    before { expect(dogma_effect).to receive(:discharge_attribute_id).and_return(discharge_attribute_id) }
+
+    before { expect(dogma_effect).to receive(:display_name).and_return('') }
+
+    before { expect(dogma_effect).to receive(:duration_attribute_id).and_return(duration_attribute_id) }
+
+    before { expect(dogma_effect).to receive(:effect_category).and_return(0) }
+
+    before { expect(dogma_effect).to receive(:effect_id).and_return(6717) }
+
+    before { expect(dogma_effect).to receive(:electronic_chance).and_return(electronic_chance) }
+
+    before { expect(dogma_effect).to receive(:falloff_attribute_id).and_return(falloff_attribute_id) }
+
+    before { expect(dogma_effect).to receive(:icon_id).and_return(icon_id) }
+
+    before { expect(dogma_effect).to receive(:is_assistance).and_return(is_assistance) }
+
+    before { expect(dogma_effect).to receive(:is_offensive).and_return(is_offensive) }
+
+    before { expect(dogma_effect).to receive(:is_warp_safe).and_return(is_warp_safe) }
+
+    before { expect(dogma_effect).to receive(:name).and_return('roleBonusIceOreMiningDurationCap') }
+
+    before { expect(dogma_effect).to receive(:post_expression).and_return(19_291) }
+
+    before { expect(dogma_effect).to receive(:pre_expression).and_return(19_290) }
+
+    before { expect(dogma_effect).to receive(:published).and_return(published) }
+
+    before { expect(dogma_effect).to receive(:range_attribute_id).and_return(range_attribute_id) }
+
+    before { expect(dogma_effect).to receive(:range_chance).and_return(range_chance) }
+
+    before { expect(dogma_effect).to receive(:tracking_speed_attribute_id).and_return(tracking_speed_attribute_id) }
+
+    subject { dogma_effect.as_json }
+
+    its([:description]) { should eq('Automatically generated effect') }
+
+    its([:disallow_auto_repeat]) { should eq(disallow_auto_repeat) }
+
+    its([:discharge_attribute_id]) { should eq(discharge_attribute_id) }
+
+    its([:display_name]) { should eq('') }
+
+    its([:duration_attribute_id]) { should eq(duration_attribute_id) }
+
+    its([:effect_category]) { should eq(0) }
+
+    its([:effect_id]) { should eq(6717) }
+
+    its([:electronic_chance]) { should eq(electronic_chance) }
+
+    its([:falloff_attribute_id]) { should eq(falloff_attribute_id) }
+
+    its([:icon_id]) { should eq(icon_id) }
+
+    its([:is_assistance]) { should eq(is_assistance) }
+
+    its([:is_offensive]) { should eq(is_offensive) }
+
+    its([:is_warp_safe]) { should eq(is_warp_safe) }
+
+    its([:name]) { should eq('roleBonusIceOreMiningDurationCap') }
+
+    its([:post_expression]) { should eq(19291) }
+
+    its([:pre_expression]) { should eq(19290) }
+
+    its([:published]) { should eq(published) }
+
+    its([:range_attribute_id]) { should eq(range_attribute_id) }
+
+    its([:range_chance]) { should eq(range_chance) }
+
+    its([:tracking_speed_attribute_id]) { should eq(tracking_speed_attribute_id) }
   end
 
   describe '#description' do
