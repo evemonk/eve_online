@@ -144,6 +144,30 @@ describe EveOnline::ESI::Models::DogmaEffect do
   end
 
   describe '#modifiers' do
-    specify { expect(subject.modifiers).to eq(nil) }
+    context 'when @modifiers set' do
+      let(:modifiers) { double }
+
+      before { subject.instance_variable_set(:@modifiers, modifiers) }
+
+      specify { expect(subject.modifiers).to eq(modifiers) }
+    end
+
+    context 'when @modifiers not set' do
+      let(:option) { double }
+
+      let(:options) { { 'modifiers' => option } }
+
+      let(:dogma_effect_modifiers) { instance_double(EveOnline::ESI::Models::DogmaEffectModifiers) }
+
+      let(:collection) { double }
+
+      before { expect(EveOnline::ESI::Models::DogmaEffectModifiers).to receive(:new).with(option).and_return(dogma_effect_modifiers) }
+
+      before { expect(dogma_effect_modifiers).to receive(:modifiers).and_return(collection) }
+
+      specify { expect { subject.modifiers }.not_to raise_error }
+
+      specify { expect { subject.modifiers }.to change { subject.instance_variable_get(:@modifiers) }.from(nil).to(collection) }
+    end
   end
 end

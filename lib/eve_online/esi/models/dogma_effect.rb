@@ -110,7 +110,7 @@ module EveOnline
         end
 
         def modifiers
-          # TODO: write
+          @modifiers ||= DogmaEffectModifiers.new(options['modifiers']).modifiers
         end
       end
     end
