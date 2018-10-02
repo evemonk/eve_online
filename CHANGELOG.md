@@ -34,6 +34,7 @@
 * Rename `EveOnline::ESI::CharacterImplants#implants` to `#implant_ids`
 * Add `EveOnline::ESI::DogmaEffect`
 * Add `EveOnline::ESI::Models::DogmaEffectModifier`
+* Add `EveOnline::ESI::Models::DogmaEffectModifiers`
 
 ## v0.18.0
 
