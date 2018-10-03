@@ -23,13 +23,13 @@ describe EveOnline::ESI::Models::DogmaEffectModifiers do
 
       before { expect(EveOnline::ESI::Models::DogmaEffectModifier).to receive(:new).with(option).and_return(dogma_effect_modifier) }
 
-      before { expect(subject.modifiers).to eq([dogma_effect_modifier]) }
+      specify { expect(subject.modifiers).to eq([dogma_effect_modifier]) }
     end
 
     context 'when options is nil' do
       let(:options) { nil }
 
-      before { expect(subject.modifiers).to eq([]) }
+      specify { expect(subject.modifiers).to eq([]) }
     end
   end
 end
