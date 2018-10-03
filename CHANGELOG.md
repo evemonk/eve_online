@@ -1,5 +1,12 @@
 # Changelog
 
+## master
+
+* Add `EveOnline::ESI::UniverseCategories`
+* Add `EveOnline::ESI::UniverseCategory`
+* Add `EveOnline::ESI::Models::Category`
+* Add `EveOnline::ESI::UniverseGraphics`
+
 ## v0.19.0
 
 * Replace `faraday` gem with ruby `net/http`

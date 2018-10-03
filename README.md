@@ -1552,7 +1552,36 @@ bloodline.willpower # => 7
 
 #### Get item categories
 
+```ruby
+categories = EveOnline::ESI::UniverseCategories.new
+
+categories.scope # => nil
+
+categories.category_ids.size # => 43
+
+categories.category_ids.first # => 0
+```
+
 #### Get item category information
+
+```ruby
+options = { id: 6, language: 'en-us' }
+
+category = EveOnline::ESI::UniverseCategory.new(options)
+
+category.scope # => nil
+
+category.as_json # => {:category_id=>6,
+                 #     :name=>"Ship",
+                 #     :published=>true}
+
+category.category_id # => 6
+category.name # => "Ship"
+category.published # => true
+
+category.group_ids.size # => 46
+category.group_ids.first # => 25
+```
 
 #### Get constellations
 
@@ -1631,6 +1660,16 @@ faction.station_system_count # => 291
 ```
 
 #### Get graphics
+
+```ruby
+graphics = EveOnline::ESI::UniverseGraphics.new
+
+graphics.scope # => nil
+
+graphics.graphic_ids.size # => 3624
+
+graphics.graphic_ids.first # => 20481
+```
 
 #### Get graphic information
 
