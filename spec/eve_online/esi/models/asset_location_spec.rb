@@ -41,24 +41,15 @@ describe EveOnline::ESI::Models::AssetLocation do
     context 'when @position not set' do
       let(:position) { double }
 
-      let(:option) { double }
+      let(:options) { { 'position' => position } }
 
-      before do
-        #
-        # subject.options['position'] => option
-        #
-        expect(subject).to receive(:options) do
-          double.tap do |a|
-            expect(a).to receive(:[]).with('position').and_return(option)
-          end
-        end
-      end
+      let(:model) { double }
 
-      before { expect(EveOnline::ESI::Models::Position).to receive(:new).with(option).and_return(position) }
+      before { expect(EveOnline::ESI::Models::Position).to receive(:new).with(position).and_return(model) }
 
       specify { expect { subject.position }.not_to raise_error }
 
-      specify { expect { subject.position }.to change { subject.instance_variable_get(:@position) }.from(nil).to(position) }
+      specify { expect { subject.position }.to change { subject.instance_variable_get(:@position) }.from(nil).to(model) }
     end
   end
 end

@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-describe EveOnline::ESI::Models::DogmaAttributes do
+describe EveOnline::ESI::Models::DogmaEffectModifiers do
   it { should be_a(EveOnline::ESI::Models::Base) }
 
   let(:options) { double }
@@ -13,23 +13,23 @@ describe EveOnline::ESI::Models::DogmaAttributes do
     its(:options) { should eq(options) }
   end
 
-  describe '#dogma_attributes' do
+  describe '#dogma_effects' do
     context 'when options is array' do
-      let(:dogma_attribute_short) { double }
+      let(:dogma_effect_modifier) { double }
 
       let(:option) { double }
 
       let(:options) { [option] }
 
-      before { expect(DogmaAttributeShort).to receive(:new).with(option).and_return(dogma_attribute_short) }
+      before { expect(EveOnline::ESI::Models::DogmaEffectModifier).to receive(:new).with(option).and_return(dogma_effect_modifier) }
 
-      before { expect(subject.dogma_attributes).to eq([dogma_attribute_short]) }
+      specify { expect(subject.modifiers).to eq([dogma_effect_modifier]) }
     end
 
     context 'when options is nil' do
       let(:options) { nil }
 
-      before { expect(subject.dogma_attributes).to eq([]) }
+      specify { expect(subject.modifiers).to eq([]) }
     end
   end
 end

@@ -8,9 +8,9 @@
 
 This gem implement Ruby API for EveOnline MMORPG (ESI).
 
-Looking for [EveOnline SSO OAuth2 Strategy for OmniAuth](https://github.com/biow0lf/omniauth-eve_online-sso)?
+Looking for [EveOnline SSO OAuth2 Strategy for OmniAuth](https://github.com/evemonk/omniauth-eve_online-sso)?
 
-This gem was extracted from [EveMonk](http://evemonk.com). Source code of evemonk backend published [here](https://github.com/biow0lf/evemonk).
+This gem was extracted from [EveMonk](http://evemonk.com). Source code of evemonk backend published [here](https://github.com/evemonk/evemonk).
 
 ## TOC
 
@@ -783,6 +783,74 @@ dogma_effects.effects_ids.first # => 4
 ```
 
 #### Get effect information
+
+```ruby
+options = { id: 6717 }
+
+dogma_effect = EveOnline::ESI::DogmaEffect.new(options)
+
+dogma_effect.scope # => nil
+
+dogma_effect.as_json # => {:description=>"Automatically generated effect",
+                     #     :disallow_auto_repeat=>nil,
+                     #     :discharge_attribute_id=>nil,
+                     #     :display_name=>"",
+                     #     :duration_attribute_id=>nil,
+                     #     :effect_category=>0,
+                     #     :effect_id=>6717,
+                     #     :electronic_chance=>nil,
+                     #     :falloff_attribute_id=>nil,
+                     #     :icon_id=>nil,
+                     #     :is_assistance=>nil,
+                     #     :is_offensive=>nil,
+                     #     :is_warp_safe=>nil,
+                     #     :name=>"roleBonusIceOreMiningDurationCap",
+                     #     :post_expression=>19291,
+                     #     :pre_expression=>19290,
+                     #     :published=>nil,
+                     #     :range_attribute_id=>nil,
+                     #     :range_chance=>nil,
+                     #     :tracking_speed_attribute_id=>nil}
+
+dogma_effect.description # => "Automatically generated effect"
+dogma_effect.disallow_auto_repeat # => nil
+dogma_effect.discharge_attribute_id # => nil
+dogma_effect.display_name # => ""
+dogma_effect.duration_attribute_id # => nil
+dogma_effect.effect_category # => 0
+dogma_effect.effect_id # => 6717
+dogma_effect.electronic_chance # => nil
+dogma_effect.falloff_attribute_id # => nil
+dogma_effect.icon_id # => nil
+dogma_effect.is_assistance # => nil
+dogma_effect.is_offensive # => nil
+dogma_effect.is_warp_safe # => nil
+dogma_effect.name # => "roleBonusIceOreMiningDurationCap"
+dogma_effect.post_expression # => 19291
+dogma_effect.pre_expression # => 19290
+dogma_effect.published # => nil
+dogma_effect.range_attribute_id # => nil
+dogma_effect.range_chance # => nil
+dogma_effect.tracking_speed_attribute_id # => nil
+
+dogma_effect.modifiers.size # => 4
+
+modifier = dogma_effect.modifiers.first
+
+modifier.as_json # => {:domain=>"shipID",
+                 #     :effect_id=>nil,
+                 #     :func=>"LocationRequiredSkillModifier",
+                 #     :modified_attribute_id=>73,
+                 #     :modifying_attribute_id=>2458,
+                 #     :operator=>6}
+
+modifier.domain # => "shipID"
+modifier.effect_id # => nil
+modifier.func # => "LocationRequiredSkillModifier"
+modifier.modified_attribute_id # => 73
+modifier.modifying_attribute_id # => 2458
+modifier.operator # => 6
+```
 
 ### Faction Warfare
 

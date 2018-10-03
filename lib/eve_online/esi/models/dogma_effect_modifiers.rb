@@ -3,14 +3,14 @@
 module EveOnline
   module ESI
     module Models
-      class DogmaAttributes < Base
-        def dogma_attributes
+      class DogmaEffectModifiers < Base
+        def modifiers
           output = []
 
           return output if !options.is_a?(Array)
 
-          options.each do |dogma_attribute_short|
-            output << DogmaAttributeShort.new(dogma_attribute_short)
+          options.each do |dogma_effect_modifier|
+            output << DogmaEffectModifier.new(dogma_effect_modifier)
           end
 
           output

@@ -1,6 +1,6 @@
 # Changelog
 
-## master
+## v0.19.0
 
 * Replace `faraday` gem with ruby `net/http`
 * Add `Etag` / `If-None-Match` support for caching
@@ -32,6 +32,9 @@
 * Rename `EveOnline::ESI::UniverseConstellations#constellations_ids` to `#constellation_ids`
 * Rename `EveOnline::ESI::DogmaAttributes#attributes` to `#attribute_ids`
 * Rename `EveOnline::ESI::CharacterImplants#implants` to `#implant_ids`
+* Add `EveOnline::ESI::DogmaEffect`
+* Add `EveOnline::ESI::Models::DogmaEffectModifier`
+* Add `EveOnline::ESI::Models::DogmaEffectModifiers`
 
 ## v0.18.0
 
