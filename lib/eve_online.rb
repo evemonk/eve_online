@@ -146,6 +146,7 @@ require 'eve_online/esi/models/faction'
 require 'eve_online/esi/models/ancestry'
 require 'eve_online/esi/models/region'
 require 'eve_online/esi/models/constellation'
+require 'eve_online/esi/models/category'
 
 require 'eve_online/esi/models/killmail_short'
 
