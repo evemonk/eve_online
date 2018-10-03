@@ -126,9 +126,9 @@ describe EveOnline::ESI::Models::DogmaEffect do
 
     its([:name]) { should eq('roleBonusIceOreMiningDurationCap') }
 
-    its([:post_expression]) { should eq(19291) }
+    its([:post_expression]) { should eq(19_291) }
 
-    its([:pre_expression]) { should eq(19290) }
+    its([:pre_expression]) { should eq(19_290) }
 
     its([:published]) { should eq(published) }
 
