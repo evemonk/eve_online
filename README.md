@@ -1661,6 +1661,16 @@ faction.station_system_count # => 291
 
 #### Get graphics
 
+```ruby
+graphics = EveOnline::ESI::UniverseGraphics.new
+
+graphics.scope # => nil
+
+graphics.graphic_ids.size # => 3624
+
+graphics.graphic_ids.first # => 20481
+```
+
 #### Get graphic information
 
 #### Get item groups
