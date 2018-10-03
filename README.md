@@ -1675,6 +1675,22 @@ graphics.graphic_ids.first # => 20481
 
 #### Get item groups
 
+```ruby
+options = { page: 1 }
+
+groups = EveOnline::ESI::UniverseGroups.new(options)
+
+groups.scope # => nil
+
+groups.page  # => 1
+
+groups.total_pages # => 2
+
+groups.group_ids.size # => 1000
+
+groups.group_ids.first # => 0
+```
+
 #### Get item group information
 
 #### Bulk names to IDs
