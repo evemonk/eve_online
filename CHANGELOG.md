@@ -1,6 +1,6 @@
 # Changelog
 
-## master
+## v0.19.0
 
 * Replace `faraday` gem with ruby `net/http`
 * Add `Etag` / `If-None-Match` support for caching
