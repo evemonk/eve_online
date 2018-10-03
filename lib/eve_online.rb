@@ -73,6 +73,7 @@ require 'eve_online/esi/server_status'
 
 require 'eve_online/esi/ancestries'
 require 'eve_online/esi/bloodlines'
+require 'eve_online/esi/universe_categories'
 require 'eve_online/esi/universe_constellations'
 require 'eve_online/esi/universe_constellation'
 require 'eve_online/esi/factions'

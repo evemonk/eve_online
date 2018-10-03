@@ -1552,6 +1552,16 @@ bloodline.willpower # => 7
 
 #### Get item categories
 
+```ruby
+categories = EveOnline::ESI::UniverseCategories.new
+
+categories.scope # => nil
+
+categories.category_ids.size # => 43
+
+categories.category_ids.first # => 0
+```
+
 #### Get item category information
 
 #### Get constellations
