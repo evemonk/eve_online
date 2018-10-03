@@ -3,6 +3,8 @@
 ## master
 
 * Add `EveOnline::ESI::UniverseCategories`
+* Add `EveOnline::ESI::UniverseCategory`
+* Add `EveOnline::ESI::Models::Category`
 
 ## v0.19.0
 

@@ -1564,6 +1564,25 @@ categories.category_ids.first # => 0
 
 #### Get item category information
 
+```ruby
+options = { id: 6, language: 'en-us' }
+
+category = EveOnline::ESI::UniverseCategory.new(options)
+
+category.scope # => nil
+
+category.as_json # => {:category_id=>6,
+                 #     :name=>"Ship",
+                 #     :published=>true}
+
+category.category_id # => 6
+category.name # => "Ship"
+category.published # => true
+
+category.group_ids.size # => 46
+category.group_ids.first # => 25
+```
+
 #### Get constellations
 
 ```ruby
