@@ -86,6 +86,7 @@ require 'eve_online/esi/races'
 require 'eve_online/esi/universe_regions'
 require 'eve_online/esi/universe_region'
 require 'eve_online/esi/universe_systems'
+require 'eve_online/esi/universe_system'
 require 'eve_online/esi/universe_types'
 require 'eve_online/esi/universe_type'
 
