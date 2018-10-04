@@ -1673,6 +1673,32 @@ graphics.graphic_ids.first # => 20481
 
 #### Get graphic information
 
+```ruby
+options = { id: 20481 }
+
+graphic = EveOnline::ESI::UniverseGraphic.new(options)
+
+graphic.scope # => nil
+
+graphic.as_json # => {:collision_file=>nil,
+                #     :graphic_file=>nil,
+                #     :graphic_id=>20481,
+                #     :icon_folder=>nil,
+                #     :sof_dna=>"ai1_t1:tash-murkon:amarr",
+                #     :sof_fation_name=>"tash-murkon",
+                #     :sof_hull_name=>"ai1_t1",
+                #     :sof_race_name=>"amarr"}
+
+graphic.collision_file # => nil
+graphic.graphic_file # => nil
+graphic.graphic_id # => 20481
+graphic.icon_folder # => nil
+graphic.sof_dna # => "ai1_t1:tash-murkon:amarr"
+graphic.sof_fation_name # => "tash-murkon"
+graphic.sof_hull_name # => "ai1_t1"
+graphic.sof_race_name # => "amarr"
+```
+
 #### Get item groups
 
 ```ruby
