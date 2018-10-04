@@ -24,7 +24,7 @@ describe 'Get solar system information' do
 
   specify { expect(subject.position).to eq(nil) }
 
-  specify { expect(subject.planet_ids).to eq(nil) }
+  specify { expect(subject.planets).to eq(nil) }
 
   specify { expect(subject.stargate_ids).to eq(nil) }
 
