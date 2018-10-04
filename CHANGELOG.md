@@ -9,6 +9,7 @@
 * Add `EveOnline::ESI::UniverseGroups`
 * Add `EveOnline::ESI::Models::Group`
 * Add `EveOnline::ESI::UniverseGroup`
+* Add `EveOnline::ESI::Models::Graphic`
 
 ## v0.19.0
 
