@@ -108,13 +108,13 @@ describe EveOnline::ESI::Models::System do
   end
 
   describe '#stargate_ids' do
-    before { expect(options).to receive(:[]).with('stargates') }
+    before { expect(options).to receive(:fetch).with('stargates', []) }
 
     specify { expect { subject.stargate_ids }.not_to raise_error }
   end
 
   describe '#station_ids' do
-    before { expect(options).to receive(:[]).with('stations') }
+    before { expect(options).to receive(:fetch).with('stations', []) }
 
     specify { expect { subject.station_ids }.not_to raise_error }
   end

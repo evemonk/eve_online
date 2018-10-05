@@ -46,11 +46,11 @@ module EveOnline
         def planets; end
 
         def stargate_ids
-          options['stargates']
+          options.fetch('stargates', [])
         end
 
         def station_ids
-          options['stations']
+          options.fetch('stations', [])
         end
       end
     end
