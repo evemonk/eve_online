@@ -30,13 +30,13 @@ describe EveOnline::ESI::Models::Planet do
   end
 
   describe '#asteroid_belt_ids' do
-    before { expect(options).to receive(:[]).with('asteroid_belts') }
+    before { expect(options).to receive(:fetch).with('asteroid_belts', []) }
 
     specify { expect { subject.asteroid_belt_ids }.not_to raise_error }
   end
 
   describe '#moon_ids' do
-    before { expect(options).to receive(:[]).with('moons') }
+    before { expect(options).to receive(:fetch).with('moons', []) }
 
     specify { expect { subject.moon_ids }.not_to raise_error }
   end

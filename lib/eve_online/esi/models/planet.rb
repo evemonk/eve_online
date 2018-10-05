@@ -15,11 +15,11 @@ module EveOnline
         end
 
         def asteroid_belt_ids
-          options['asteroid_belts']
+          options.fetch('asteroid_belts', [])
         end
 
         def moon_ids
-          options['moons']
+          options.fetch('moons', [])
         end
       end
     end
