@@ -1830,6 +1830,42 @@ systems.universe_system_ids.first # => 30000001
 
 #### Get solar system information
 
+```ruby
+options = { id: 30000001, language: 'en-us' }
+
+system = EveOnline::ESI::UniverseSystem.new(options)
+
+system.scope # => nil
+
+system.as_json # => {:constellation_id=>20000001,
+               #     :name=>"Tanoo",
+               #     :security_class=>"B",
+               #     :security_status=>0.8583240509033203,
+               #     :star_id=>40000001,
+               #     :system_id=>30000001}
+
+system.constellation_id # => 20000001
+system.name # => "Tanoo"
+system.security_class # => "B"
+system.security_status # => 0.8583240509033203
+system.star_id # => 40000001
+system.system_id # => 30000001
+
+system.position.as_json # => {:x=>-8.851079259998058e+16,
+                        #     :y=>4.236944396687888e+16,
+                        #     :z=>-4.451352534647966e+16}
+
+system.position.x # => -8.851079259998058e+16
+system.position.y # => 4.236944396687888e+16
+system.position.z # => -4.451352534647966e+16
+
+system.planets # => nil
+
+system.stargate_ids # => [50000056, 50000057, 50000058]
+
+system.station_ids # => [60012526, 60014437]
+```
+
 #### Get types
 
 ```ruby

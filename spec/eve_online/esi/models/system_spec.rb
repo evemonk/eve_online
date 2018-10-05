@@ -80,7 +80,27 @@ describe EveOnline::ESI::Models::System do
   end
 
   describe '#position' do
-    specify { expect(subject.position).to eq(nil) }
+    context 'when @position set' do
+      let(:position) { double }
+
+      before { subject.instance_variable_set(:@position, position) }
+
+      specify { expect(subject.position).to eq(position) }
+    end
+
+    context 'when @position not set' do
+      let(:position) { double }
+
+      let(:options) { { 'position' => position } }
+
+      let(:model) { instance_double(EveOnline::ESI::Models::Position) }
+
+      before { expect(EveOnline::ESI::Models::Position).to receive(:new).with(position).and_return(model) }
+
+      specify { expect { subject.position }.not_to raise_error }
+
+      specify { expect { subject.position }.to change { subject.instance_variable_get(:@position) }.from(nil).to(model) }
+    end
   end
 
   describe '#planets' do
@@ -88,10 +108,14 @@ describe EveOnline::ESI::Models::System do
   end
 
   describe '#stargate_ids' do
-    specify { expect(subject.stargate_ids).to eq(nil) }
+    before { expect(options).to receive(:[]).with('stargates') }
+
+    specify { expect { subject.stargate_ids }.not_to raise_error }
   end
 
   describe '#station_ids' do
-    specify { expect(subject.station_ids).to eq(nil) }
+    before { expect(options).to receive(:[]).with('stations') }
+
+    specify { expect { subject.station_ids }.not_to raise_error }
   end
 end

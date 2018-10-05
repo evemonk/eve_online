@@ -39,13 +39,19 @@ module EveOnline
           options['system_id']
         end
 
-        def position; end
+        def position
+          @position ||= Position.new(options['position'])
+        end
 
         def planets; end
 
-        def stargate_ids; end
+        def stargate_ids
+          options['stargates']
+        end
 
-        def station_ids; end
+        def station_ids
+          options['stations']
+        end
       end
     end
   end
