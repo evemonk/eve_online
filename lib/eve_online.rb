@@ -154,6 +154,7 @@ require 'eve_online/esi/models/constellation'
 require 'eve_online/esi/models/category'
 require 'eve_online/esi/models/group'
 require 'eve_online/esi/models/graphic'
+require 'eve_online/esi/models/system'
 
 require 'eve_online/esi/models/killmail_short'
 
