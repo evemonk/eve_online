@@ -7,7 +7,7 @@ describe 'Get graphic information' do
 
   after { VCR.eject_cassette }
 
-  let(:options) { { id: 20481 } }
+  let(:options) { { id: 20_481 } }
 
   subject { EveOnline::ESI::UniverseGraphic.new(options) }
 

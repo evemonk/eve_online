@@ -23,14 +23,16 @@ describe 'Get solar system information' do
   end
 
   specify do
-    expect(subject.position.as_json).to eq(x: -88510792599980580.0,
-                                           y: 42369443966878880.0,
-                                           z: -44513525346479660.0)
+    expect(subject.position.as_json).to eq(x: -88_510_792_599_980_580.0,
+                                           y: 42_369_443_966_878_880.0,
+                                           z: -44_513_525_346_479_660.0)
   end
 
-  specify { expect(subject.planets).to eq(nil) }
+  specify { expect(subject.planets.size).to eq(6) }
 
-  specify { expect(subject.stargate_ids).to eq([50000056, 50000057, 50000058]) }
+  specify { expect(subject.planets.first.as_json).to eq(planet_id: 40_000_002) }
 
-  specify { expect(subject.station_ids).to eq([60012526, 60014437]) }
+  specify { expect(subject.stargate_ids).to eq([50_000_056, 50_000_057, 50_000_058]) }
+
+  specify { expect(subject.station_ids).to eq([60_012_526, 60_014_437]) }
 end
