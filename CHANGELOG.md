@@ -13,6 +13,7 @@
 * Add `EveOnline::ESI::UniverseGraphic`
 * Add `EveOnline::ESI::UniverseSystem`
 * Add `EveOnline::ESI::Models::System`
+* Add `EveOnline::ESI::Models::Planet`
 
 ## v0.19.0
 
