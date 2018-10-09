@@ -1,0 +1,66 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://esi.evetech.net/v1/alliances/99005443/corporations/?datasource=tranquility
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/json
+      User-Agent:
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.19.0
+      Accept-Language:
+      - en-us
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 09 Oct 2018 18:50:14 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '608'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,If-None-Match,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,HEAD,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,ETag,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Allow:
+      - GET,HEAD,OPTIONS
+      Cache-Control:
+      - public
+      Etag:
+      - '"543b2f5823355bfc1fd016ccf92d9a469938b8d01963a517796318cb"'
+      Expires:
+      - Tue, 09 Oct 2018 19:44:08 GMT
+      Last-Modified:
+      - Tue, 09 Oct 2018 18:44:08 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '46'
+      X-Esi-Request-Id:
+      - 813756d0-7c05-422f-9eda-6cfbb0977547
+    body:
+      encoding: UTF-8
+      string: "[98134807,98143621,98167543,98199071,98215927,98257538,98260969,98265089,98273463,98291362,98300293,98306624,98313804,98329706,98335007,98352722,98364494,98368240,98385734,98395849,98396853,98405423,98420378,98433558,98446092,98447309,98460328,98461940,98467545,98473102,98475778,98479718,98492624,98495078,98498492,98504127,98506169,98512529,98516016,98520189,98521310,98522076,98525247,98525956,98529516,98534737,98541615,98543151,98543446,98545268,98547502,98548073,98550511,98553934,98558175,98558443,98558468,98558879,98558896,98558946,98561234,98562848,98565486,98572980,182098027,560013098,1823259471]"
+    http_version: 
+  recorded_at: Tue, 09 Oct 2018 18:50:14 GMT
+recorded_with: VCR 4.0.0
