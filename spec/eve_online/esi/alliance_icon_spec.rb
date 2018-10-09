@@ -26,28 +26,38 @@ describe EveOnline::ESI::AllianceIcon do
   end
 
   describe '#model' do
-    let(:response) { double }
+    context 'when @model set' do
+      let(:model) { instance_double(EveOnline::ESI::Models::AllianceIcon) }
 
-    before { expect(subject).to receive(:response).and_return(response) }
+      before { subject.instance_variable_set(:@model, model) }
 
-    let(:model) { instance_double(EveOnline::ESI::Models::AllianceIcon) }
-
-    before do
-      #
-      # EveOnline::ESI::Models::AllianceIcon.new(response) # => model
-      #
-      expect(EveOnline::ESI::Models::AllianceIcon).to receive(:new).with(response).and_return(model)
+      specify { expect(subject.model).to eq(model) }
     end
 
-    specify { expect { subject.model }.not_to raise_error }
+    context 'when @model not set' do
+      let(:response) { double }
 
-    specify { expect { subject.model }.to change { subject.instance_variable_defined?(:@_memoized_model) }.from(false).to(true) }
+      before { expect(subject).to receive(:response).and_return(response) }
+
+      let(:model) { instance_double(EveOnline::ESI::Models::AllianceIcon) }
+
+      before do
+        #
+        # EveOnline::ESI::Models::AllianceIcon.new(response) # => model
+        #
+        expect(EveOnline::ESI::Models::AllianceIcon).to receive(:new).with(response).and_return(model)
+      end
+
+      specify { expect { subject.model }.not_to raise_error }
+
+      specify { expect { subject.model }.to change { subject.instance_variable_get(:@model) }.from(nil).to(model) }
+    end
   end
 
   describe '#as_json' do
     let(:model) { instance_double(EveOnline::ESI::Models::AllianceIcon) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:as_json) }
 
@@ -57,7 +67,7 @@ describe EveOnline::ESI::AllianceIcon do
   describe '#icon_small' do
     let(:model) { instance_double(EveOnline::ESI::Models::AllianceIcon) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:icon_small) }
 
@@ -67,7 +77,7 @@ describe EveOnline::ESI::AllianceIcon do
   describe '#icon_medium' do
     let(:model) { instance_double(EveOnline::ESI::Models::AllianceIcon) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:icon_medium) }
 
