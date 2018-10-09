@@ -1746,6 +1746,32 @@ group.type_ids # => [22, 17425, 17426, 26852, 28367, 28385, 28387, 28625, 46678,
 
 #### Get planet information
 
+```ruby
+options = { id: 40000002 }
+
+planet = EveOnline::ESI::UniversePlanet.new(options)
+
+planet.scope # => nil
+
+planet.as_json # => {:name=>"Tanoo I",
+               #     :planet_id=>40000002,
+               #     :system_id=>30000001,
+               #     :type_id=>11}
+
+planet.name # => "Tanoo I"
+planet.planet_id # => 40000002
+planet.system_id # => 30000001
+planet.type_id # => 11
+
+planet.position.as_json # => {:x=>161891117336.0,
+                        #     :y=>21288951986.0,
+                        #     :z=>-73529712226.0}
+
+planet.position.x # => 161891117336.0
+planet.position.y # => 21288951986.0
+planet.position.z # => -73529712226.0
+```
+
 #### Get character races
 
 ```ruby
