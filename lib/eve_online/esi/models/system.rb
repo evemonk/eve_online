@@ -43,7 +43,9 @@ module EveOnline
           @position ||= Position.new(options['position'])
         end
 
-        def planets; end
+        def planets
+          @planets ||= Planets.new(options.fetch('planets', [])).planets
+        end
 
         def stargate_ids
           options.fetch('stargates', [])

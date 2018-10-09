@@ -104,7 +104,31 @@ describe EveOnline::ESI::Models::System do
   end
 
   describe '#planets' do
-    specify { expect(subject.planets).to eq(nil) }
+    context 'when @planets set' do
+      let(:planets) { double }
+
+      before { subject.instance_variable_set(:@planets, planets) }
+
+      specify { expect(subject.planets).to eq(planets) }
+    end
+
+    context 'when @planets not set' do
+      let(:option) { double }
+
+      let(:options) { { 'planets' => option } }
+
+      let(:planets) { instance_double(EveOnline::ESI::Models::Planets) }
+
+      let(:output) { double }
+
+      before { expect(EveOnline::ESI::Models::Planets).to receive(:new).with(option).and_return(planets) }
+
+      before { expect(planets).to receive(:planets).and_return(output) }
+
+      specify { expect { subject.planets }.not_to raise_error }
+
+      specify { expect { subject.planets }.to change { subject.instance_variable_get(:@planets) }.from(nil).to(output) }
+    end
   end
 
   describe '#stargate_ids' do
