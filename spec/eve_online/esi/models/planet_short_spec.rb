@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-describe EveOnline::ESI::Models::Planet do
+describe EveOnline::ESI::Models::PlanetShort do
   let(:options) { double }
 
   subject { described_class.new(options) }

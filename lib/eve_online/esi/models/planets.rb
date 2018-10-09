@@ -7,8 +7,8 @@ module EveOnline
         def planets
           output = []
 
-          options.each do |planet|
-            output << Planet.new(planet)
+          options.each do |planet_short|
+            output << PlanetShort.new(planet_short)
           end
 
           output

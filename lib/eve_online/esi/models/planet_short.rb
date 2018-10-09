@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     module Models
-      class Planet < Base
+      class PlanetShort < Base
         def as_json
           {
             planet_id: planet_id

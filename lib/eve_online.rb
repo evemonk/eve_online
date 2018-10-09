@@ -155,7 +155,7 @@ require 'eve_online/esi/models/category'
 require 'eve_online/esi/models/group'
 require 'eve_online/esi/models/graphic'
 require 'eve_online/esi/models/system'
-require 'eve_online/esi/models/planet'
+require 'eve_online/esi/models/planet_short'
 require 'eve_online/esi/models/planets'
 
 require 'eve_online/esi/models/killmail_short'
