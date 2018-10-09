@@ -7,7 +7,7 @@ describe 'Get planet information' do
 
   after { VCR.eject_cassette }
 
-  let(:options) { { id: 40_000_002, language: 'en-us' } }
+  let(:options) { { id: 40_000_002 } }
 
   subject { EveOnline::ESI::UniversePlanet.new(options) }
 
