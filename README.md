@@ -1897,7 +1897,17 @@ system.position.x # => -8.851079259998058e+16
 system.position.y # => 4.236944396687888e+16
 system.position.z # => -4.451352534647966e+16
 
-system.planets # => nil
+system.planets.size # => 6
+
+planet = system.planets.first
+
+planet.as_json # => {:planet_id=>40000002}
+
+planet.planet_id # => 40000002
+
+planet.asteroid_belt_ids # => [40000003]
+
+planet.moon_ids # => [40000004]
 
 system.stargate_ids # => [50000056, 50000057, 50000058]
 

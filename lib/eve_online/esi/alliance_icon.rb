@@ -20,9 +20,8 @@ module EveOnline
       def_delegators :model, :as_json, :icon_small, :icon_medium
 
       def model
-        Models::AllianceIcon.new(response)
+        @model ||= Models::AllianceIcon.new(response)
       end
-      memoize :model
 
       def scope; end
 

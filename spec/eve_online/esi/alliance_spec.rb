@@ -26,28 +26,38 @@ describe EveOnline::ESI::Alliance do
   end
 
   describe '#model' do
-    let(:response) { double }
+    context 'when @model set' do
+      let(:model) { instance_double(EveOnline::ESI::Models::Alliance) }
 
-    before { expect(subject).to receive(:response).and_return(response) }
+      before { subject.instance_variable_set(:@model, model) }
 
-    let(:model) { instance_double(EveOnline::ESI::Models::Alliance) }
-
-    before do
-      #
-      # EveOnline::ESI::Models::Alliance.new(response) # => model
-      #
-      expect(EveOnline::ESI::Models::Alliance).to receive(:new).with(response).and_return(model)
+      specify { expect(subject.model).to eq(model) }
     end
 
-    specify { expect { subject.model }.not_to raise_error }
+    context 'when @model not set' do
+      let(:response) { double }
 
-    specify { expect { subject.model }.to change { subject.instance_variable_defined?(:@_memoized_model) }.from(false).to(true) }
+      before { expect(subject).to receive(:response).and_return(response) }
+
+      let(:model) { instance_double(EveOnline::ESI::Models::Alliance) }
+
+      before do
+        #
+        # EveOnline::ESI::Models::Alliance.new(response) # => model
+        #
+        expect(EveOnline::ESI::Models::Alliance).to receive(:new).with(response).and_return(model)
+      end
+
+      specify { expect { subject.model }.not_to raise_error }
+
+      specify { expect { subject.model }.to change { subject.instance_variable_get(:@model) }.from(nil).to(model) }
+    end
   end
 
   describe '#as_json' do
     let(:model) { instance_double(EveOnline::ESI::Models::Alliance) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:as_json) }
 
@@ -57,7 +67,7 @@ describe EveOnline::ESI::Alliance do
   describe '#creator_corporation_id' do
     let(:model) { instance_double(EveOnline::ESI::Models::Alliance) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:creator_corporation_id) }
 
@@ -67,7 +77,7 @@ describe EveOnline::ESI::Alliance do
   describe '#creator_id' do
     let(:model) { instance_double(EveOnline::ESI::Models::Alliance) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:creator_id) }
 
@@ -77,7 +87,7 @@ describe EveOnline::ESI::Alliance do
   describe '#date_founded' do
     let(:model) { instance_double(EveOnline::ESI::Models::Alliance) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:date_founded) }
 
@@ -87,7 +97,7 @@ describe EveOnline::ESI::Alliance do
   describe '#executor_corporation_id' do
     let(:model) { instance_double(EveOnline::ESI::Models::Alliance) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:executor_corporation_id) }
 
@@ -97,7 +107,7 @@ describe EveOnline::ESI::Alliance do
   describe '#faction_id' do
     let(:model) { instance_double(EveOnline::ESI::Models::Alliance) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:faction_id) }
 
@@ -107,7 +117,7 @@ describe EveOnline::ESI::Alliance do
   describe '#name' do
     let(:model) { instance_double(EveOnline::ESI::Models::Alliance) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:name) }
 
@@ -117,7 +127,7 @@ describe EveOnline::ESI::Alliance do
   describe '#ticker' do
     let(:model) { instance_double(EveOnline::ESI::Models::Alliance) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:ticker) }
 
