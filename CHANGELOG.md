@@ -15,6 +15,8 @@
 * Add `EveOnline::ESI::Models::System`
 * Add `EveOnline::ESI::Models::PlanetShort`
 * Add `EveOnline::ESI::Models::Planets`
+* Add `EveOnline::ESI::Models::Planet`
+* Add `EveOnline::ESI::UniversePlanet`
 
 ## v0.19.0
 
