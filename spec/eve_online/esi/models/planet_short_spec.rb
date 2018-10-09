@@ -14,11 +14,11 @@ describe EveOnline::ESI::Models::PlanetShort do
   end
 
   describe '#as_json' do
-    let(:planet) { described_class.new(options) }
+    let(:planet_short) { described_class.new(options) }
 
-    before { expect(planet).to receive(:planet_id).and_return(40_000_002) }
+    before { expect(planet_short).to receive(:planet_id).and_return(40_000_002) }
 
-    subject { planet.as_json }
+    subject { planet_short.as_json }
 
     its([:planet_id]) { should eq(40_000_002) }
   end
