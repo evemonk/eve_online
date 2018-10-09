@@ -1512,6 +1512,12 @@ ancestry.short_description # => "Torn from the cold and brought to the warmth of
 
 #### Get asteroid belt information
 
+```ruby
+options = { id: 40000003 }
+
+# TODO: finish this
+```
+
 #### Get bloodlines
 
 ```ruby
@@ -1741,6 +1747,12 @@ group.type_ids # => [22, 17425, 17426, 26852, 28367, 28385, 28387, 28625, 46678,
 #### Bulk names to IDs
 
 #### Get moon information
+
+```ruby
+options = { id: 40000004 }
+
+# TODO: finish
+```
 
 #### Get names and categories for a set of ID's
 
