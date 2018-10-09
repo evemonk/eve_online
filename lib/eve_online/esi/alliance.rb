@@ -22,9 +22,8 @@ module EveOnline
                      :name, :ticker
 
       def model
-        Models::Alliance.new(response)
+        @model ||= Models::Alliance.new(response)
       end
-      memoize :model
 
       def scope; end
 
