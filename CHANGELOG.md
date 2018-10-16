@@ -17,6 +17,8 @@
 * Add `EveOnline::ESI::Models::Planets`
 * Add `EveOnline::ESI::Models::Planet`
 * Add `EveOnline::ESI::UniversePlanet`
+* Add `EveOnline::ESI::Models::AsteroidBelt`
+* Add `EveOnline::ESI::UniverseAsteroidBelt`
 
 ## v0.19.0
 

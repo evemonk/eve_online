@@ -72,6 +72,7 @@ require 'eve_online/esi/character_skills'
 require 'eve_online/esi/server_status'
 
 require 'eve_online/esi/ancestries'
+require 'eve_online/esi/universe_asteroid_belt'
 require 'eve_online/esi/bloodlines'
 require 'eve_online/esi/universe_categories'
 require 'eve_online/esi/universe_category'
@@ -159,6 +160,7 @@ require 'eve_online/esi/models/system'
 require 'eve_online/esi/models/planet_short'
 require 'eve_online/esi/models/planets'
 require 'eve_online/esi/models/planet'
+require 'eve_online/esi/models/asteroid_belt'
 
 require 'eve_online/esi/models/killmail_short'
 
