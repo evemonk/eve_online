@@ -921,7 +921,7 @@ options = { token: 'token123', character_id: 90729314 }
 
 character_jobs = EveOnline::ESI::CharacterIndustryJobs.new(options)
 
-character_jobs.scope => # => "esi-industry.read_character_jobs.v1"
+character_jobs.scope # => "esi-industry.read_character_jobs.v1"
 
 character_jobs.jobs.size # => 3
 
@@ -1225,19 +1225,19 @@ order = character_orders.orders.first
 
 order.as_json
 
-order.duration,
-order.escrow,
-order.is_buy_order,
-order.is_corporation,
-order.issued,
-order.location_id,
-order.min_volume,
-order.order_id,
-order.price,
-order.range,
-order.region_id,
-order.type_id,
-order.volume_remain,
+order.duration
+order.escrow
+order.is_buy_order
+order.is_corporation
+order.issued
+order.location_id
+order.min_volume
+order.order_id
+order.price
+order.range
+order.region_id
+order.type_id
+order.volume_remain
 order.volume_total
 
 # TODO: update example
