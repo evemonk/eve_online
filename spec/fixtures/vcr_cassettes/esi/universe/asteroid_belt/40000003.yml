@@ -1,0 +1,66 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://esi.evetech.net/v1/universe/asteroid_belts/40000003/?datasource=tranquility
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/json
+      User-Agent:
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.19.0
+      Accept-Language:
+      - en-us
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 16 Oct 2018 17:09:22 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '126'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,If-None-Match,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,HEAD,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,ETag,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Allow:
+      - GET,HEAD,OPTIONS
+      Cache-Control:
+      - public
+      Etag:
+      - '"6086f92a845aaddb43b8ac94851821515b81ccd3bb873ce40a61e635"'
+      Expires:
+      - Wed, 17 Oct 2018 11:05:00 GMT
+      Last-Modified:
+      - Tue, 16 Oct 2018 11:09:56 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '38'
+      X-Esi-Request-Id:
+      - d1adcdca-9cf8-41a1-9edf-dcf5d3c289ad
+    body:
+      encoding: UTF-8
+      string: '{"name":"Tanoo I - Asteroid Belt 1","position":{"x":161967513600.0,"y":21288837120.0,"z":-73505464320.0},"system_id":30000001}'
+    http_version: 
+  recorded_at: Tue, 16 Oct 2018 17:09:22 GMT
+recorded_with: VCR 4.0.0
