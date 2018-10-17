@@ -21,8 +21,8 @@ describe 'Get planet information' do
   end
 
   specify do
-    expect(subject.position.as_json).to eq(x: 161891117336.0,
-                                           y: 21288951986.0,
-                                           z: -73529712226.0)
+    expect(subject.position.as_json).to eq(x: 161_891_117_336.0,
+                                           y: 21_288_951_986.0,
+                                           z: -73_529_712_226.0)
   end
 end
