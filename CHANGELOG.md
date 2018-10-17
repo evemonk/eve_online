@@ -21,6 +21,8 @@
 * Add `EveOnline::ESI::UniverseAsteroidBelt`
 * Add `EveOnline::ESI::UniverseMoon`
 * Add `EveOnline::ESI::Models::Moon`
+* Add `EveOnline::ESI::Models::SystemJump`
+* Add `EveOnline::ESI::UniverseSystemJumps`
 
 ## v0.19.0
 
