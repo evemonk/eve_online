@@ -14,14 +14,14 @@ describe EveOnline::ESI::Models::Planets do
   end
 
   describe '#planets' do
-    let(:planet) { instance_double(EveOnline::ESI::Models::Planet) }
+    let(:planet_short) { instance_double(EveOnline::ESI::Models::PlanetShort) }
 
     let(:option) { double }
 
     let(:options) { [option] }
 
-    before { expect(EveOnline::ESI::Models::Planet).to receive(:new).with(option).and_return(planet) }
+    before { expect(EveOnline::ESI::Models::PlanetShort).to receive(:new).with(option).and_return(planet_short) }
 
-    before { expect(subject.planets).to eq([planet]) }
+    before { expect(subject.planets).to eq([planet_short]) }
   end
 end

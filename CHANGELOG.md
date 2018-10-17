@@ -13,8 +13,12 @@
 * Add `EveOnline::ESI::UniverseGraphic`
 * Add `EveOnline::ESI::UniverseSystem`
 * Add `EveOnline::ESI::Models::System`
-* Add `EveOnline::ESI::Models::Planet`
+* Add `EveOnline::ESI::Models::PlanetShort`
 * Add `EveOnline::ESI::Models::Planets`
+* Add `EveOnline::ESI::Models::Planet`
+* Add `EveOnline::ESI::UniversePlanet`
+* Add `EveOnline::ESI::Models::AsteroidBelt`
+* Add `EveOnline::ESI::UniverseAsteroidBelt`
 
 ## v0.19.0
 

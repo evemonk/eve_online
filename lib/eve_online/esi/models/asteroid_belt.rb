@@ -3,13 +3,11 @@
 module EveOnline
   module ESI
     module Models
-      class Planet < Base
+      class AsteroidBelt < Base
         def as_json
           {
             name: name,
-            planet_id: planet_id,
-            system_id: system_id,
-            type_id: type_id
+            system_id: system_id
           }
         end
 
@@ -17,16 +15,8 @@ module EveOnline
           options['name']
         end
 
-        def planet_id
-          options['planet_id']
-        end
-
         def system_id
           options['system_id']
-        end
-
-        def type_id
-          options['type_id']
         end
 
         def position

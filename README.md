@@ -921,7 +921,7 @@ options = { token: 'token123', character_id: 90729314 }
 
 character_jobs = EveOnline::ESI::CharacterIndustryJobs.new(options)
 
-character_jobs.scope => # => "esi-industry.read_character_jobs.v1"
+character_jobs.scope # => "esi-industry.read_character_jobs.v1"
 
 character_jobs.jobs.size # => 3
 
@@ -1225,19 +1225,19 @@ order = character_orders.orders.first
 
 order.as_json
 
-order.duration,
-order.escrow,
-order.is_buy_order,
-order.is_corporation,
-order.issued,
-order.location_id,
-order.min_volume,
-order.order_id,
-order.price,
-order.range,
-order.region_id,
-order.type_id,
-order.volume_remain,
+order.duration
+order.escrow
+order.is_buy_order
+order.is_corporation
+order.issued
+order.location_id
+order.min_volume
+order.order_id
+order.price
+order.range
+order.region_id
+order.type_id
+order.volume_remain
 order.volume_total
 
 # TODO: update example
@@ -1512,6 +1512,28 @@ ancestry.short_description # => "Torn from the cold and brought to the warmth of
 
 #### Get asteroid belt information
 
+```ruby
+options = { id: 40000003 }
+
+asteroid_belt = EveOnline::ESI::UniverseAsteroidBelt.new(options)
+
+asteroid_belt.scope # => nil
+
+asteroid_belt.as_json # => {:name=>"Tanoo I - Asteroid Belt 1",
+                      #     :system_id=>30000001}
+
+asteroid_belt.name # => "Tanoo I - Asteroid Belt 1"
+asteroid_belt.system_id # => 30000001
+
+asteroid_belt.position.as_json # => {:x=>161967513600.0,
+                               #     :y=>21288837120.0,
+                               #     :z=>-73505464320.0}
+
+asteroid_belt.position.x # => 161967513600.0
+asteroid_belt.position.y # => 21288837120.0
+asteroid_belt.position.z # => -73505464320.0
+```
+
 #### Get bloodlines
 
 ```ruby
@@ -1742,9 +1764,41 @@ group.type_ids # => [22, 17425, 17426, 26852, 28367, 28385, 28387, 28625, 46678,
 
 #### Get moon information
 
+```ruby
+options = { id: 40000004 }
+
+# TODO: finish
+```
+
 #### Get names and categories for a set of ID's
 
 #### Get planet information
+
+```ruby
+options = { id: 40000002 }
+
+planet = EveOnline::ESI::UniversePlanet.new(options)
+
+planet.scope # => nil
+
+planet.as_json # => {:name=>"Tanoo I",
+               #     :planet_id=>40000002,
+               #     :system_id=>30000001,
+               #     :type_id=>11}
+
+planet.name # => "Tanoo I"
+planet.planet_id # => 40000002
+planet.system_id # => 30000001
+planet.type_id # => 11
+
+planet.position.as_json # => {:x=>161891117336.0,
+                        #     :y=>21288951986.0,
+                        #     :z=>-73529712226.0}
+
+planet.position.x # => 161891117336.0
+planet.position.y # => 21288951986.0
+planet.position.z # => -73529712226.0
+```
 
 #### Get character races
 

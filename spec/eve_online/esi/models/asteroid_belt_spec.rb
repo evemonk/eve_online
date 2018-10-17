@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-describe EveOnline::ESI::Models::Planet do
+describe EveOnline::ESI::Models::AsteroidBelt do
   let(:options) { double }
 
   subject { described_class.new(options) }
@@ -14,25 +14,17 @@ describe EveOnline::ESI::Models::Planet do
   end
 
   describe '#as_json' do
-    let(:planet) { described_class.new(options) }
+    let(:asteroid_belt) { described_class.new(options) }
 
-    before { expect(planet).to receive(:name).and_return('Tanoo I') }
+    before { expect(asteroid_belt).to receive(:name).and_return('Tanoo I - Asteroid Belt 1') }
 
-    before { expect(planet).to receive(:planet_id).and_return(40_000_002) }
+    before { expect(asteroid_belt).to receive(:system_id).and_return(30_000_001) }
 
-    before { expect(planet).to receive(:system_id).and_return(30_000_001) }
+    subject { asteroid_belt.as_json }
 
-    before { expect(planet).to receive(:type_id).and_return(11) }
-
-    subject { planet.as_json }
-
-    its([:name]) { should eq('Tanoo I') }
-
-    its([:planet_id]) { should eq(40_000_002) }
+    its([:name]) { should eq('Tanoo I - Asteroid Belt 1') }
 
     its([:system_id]) { should eq(30_000_001) }
-
-    its([:type_id]) { should eq(11) }
   end
 
   describe '#name' do
@@ -41,22 +33,10 @@ describe EveOnline::ESI::Models::Planet do
     specify { expect { subject.name }.not_to raise_error }
   end
 
-  describe '#planet_id' do
-    before { expect(options).to receive(:[]).with('planet_id') }
-
-    specify { expect { subject.planet_id }.not_to raise_error }
-  end
-
   describe '#system_id' do
     before { expect(options).to receive(:[]).with('system_id') }
 
     specify { expect { subject.system_id }.not_to raise_error }
-  end
-
-  describe '#type_id' do
-    before { expect(options).to receive(:[]).with('type_id') }
-
-    specify { expect { subject.type_id }.not_to raise_error }
   end
 
   describe '#position' do
