@@ -1886,6 +1886,21 @@ region.region_id # => 10000001
 
 #### Get system jumps
 
+```ruby
+system_jumps = EveOnline::ESI::UniverseSystemJumps.new
+
+system_jumps.scope # => nil
+
+system_jumps.system_jumps.size # => 4891
+
+jump = system_jumps.system_jumps.first
+
+jump.as_json # => {:ship_jumps=>22, :system_id=>30005327}
+
+jump.ship_jumps # => 22
+jump.system_id # => 30005327
+```
+
 #### Get system kills
 
 #### Get solar systems
