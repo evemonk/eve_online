@@ -19,8 +19,8 @@ describe 'Get asteroid belt information' do
   end
 
   specify do
-    expect(subject.position.as_json).to eq(x: 161967513600.0,
-                                           y: 21288837120.0,
-                                           z: -73505464320.0)
+    expect(subject.position.as_json).to eq(x: 161_967_513_600.0,
+                                           y: 21_288_837_120.0,
+                                           z: -73_505_464_320.0)
   end
 end
