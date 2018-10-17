@@ -23,6 +23,8 @@
 * Add `EveOnline::ESI::Models::Moon`
 * Add `EveOnline::ESI::Models::SystemJump`
 * Add `EveOnline::ESI::UniverseSystemJumps`
+* Add `EveOnline::ESI::Models::SystemKill`
+* Add `EveOnline::ESI::UniverseSystemKills`
 
 ## v0.19.0
 
