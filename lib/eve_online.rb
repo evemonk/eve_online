@@ -169,6 +169,7 @@ require 'eve_online/esi/models/moon'
 require 'eve_online/esi/models/system_jump'
 require 'eve_online/esi/models/system_kill'
 require 'eve_online/esi/models/stargate_destination'
+require 'eve_online/esi/models/stargate'
 
 require 'eve_online/esi/models/killmail_short'
 
