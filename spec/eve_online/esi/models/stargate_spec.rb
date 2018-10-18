@@ -18,21 +18,21 @@ describe EveOnline::ESI::Models::Stargate do
 
     before { expect(stargate).to receive(:name).and_return('Stargate (Akpivem)') }
 
-    before { expect(stargate).to receive(:stargate_id).and_return(50000056) }
+    before { expect(stargate).to receive(:stargate_id).and_return(50_000_056) }
 
-    before { expect(stargate).to receive(:system_id).and_return(30000001) }
+    before { expect(stargate).to receive(:system_id).and_return(30_000_001) }
 
-    before { expect(stargate).to receive(:type_id).and_return(29624) }
+    before { expect(stargate).to receive(:type_id).and_return(29_624) }
 
     subject { stargate.as_json }
 
     its([:name]) { should eq('Stargate (Akpivem)') }
 
-    its([:stargate_id]) { should eq(50000056) }
+    its([:stargate_id]) { should eq(50_000_056) }
 
-    its([:system_id]) { should eq(30000001) }
+    its([:system_id]) { should eq(30_000_001) }
 
-    its([:type_id]) { should eq(29624) }
+    its([:type_id]) { should eq(29_624) }
   end
 
   describe '#name' do

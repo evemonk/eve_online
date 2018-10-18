@@ -16,15 +16,15 @@ describe EveOnline::ESI::Models::StargateDestination do
   describe '#as_json' do
     let(:stargate_destination) { described_class.new(options) }
 
-    before { expect(stargate_destination).to receive(:stargate_id).and_return(50000342) }
+    before { expect(stargate_destination).to receive(:stargate_id).and_return(50_000_342) }
 
-    before { expect(stargate_destination).to receive(:system_id).and_return(30000003) }
+    before { expect(stargate_destination).to receive(:system_id).and_return(30_000_003) }
 
     subject { stargate_destination.as_json }
 
-    its([:stargate_id]) { should eq(50000342) }
+    its([:stargate_id]) { should eq(50_000_342) }
 
-    its([:system_id]) { should eq(30000003) }
+    its([:system_id]) { should eq(30_000_003) }
   end
 
   describe '#stargate_id' do
