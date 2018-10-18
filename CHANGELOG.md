@@ -25,6 +25,7 @@
 * Add `EveOnline::ESI::UniverseSystemJumps`
 * Add `EveOnline::ESI::Models::SystemKill`
 * Add `EveOnline::ESI::UniverseSystemKills`
+* Add `EveOnline::ESI::UniverseStructures`
 
 ## v0.19.0
 
