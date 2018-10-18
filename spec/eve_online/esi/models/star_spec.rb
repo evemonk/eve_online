@@ -16,39 +16,39 @@ describe EveOnline::ESI::Models::Star do
   describe '#as_json' do
     let(:star) { described_class.new(options) }
 
-    before { expect(star).to receive(:age).and_return(14262808228) }
+    before { expect(star).to receive(:age).and_return(14_262_808_228) }
 
     before { expect(star).to receive(:luminosity).and_return(0.01575000025331974) }
 
     before { expect(star).to receive(:name).and_return('Tanoo - Star') }
 
-    before { expect(star).to receive(:radius).and_return(126700000) }
+    before { expect(star).to receive(:radius).and_return(126_700_000) }
 
-    before { expect(star).to receive(:solar_system_id).and_return(30000001) }
+    before { expect(star).to receive(:solar_system_id).and_return(30_000_001) }
 
     before { expect(star).to receive(:spectral_class).and_return('K2 V') }
 
     before { expect(star).to receive(:temperature).and_return(4567) }
 
-    before { expect(star).to receive(:type_id).and_return(45041) }
+    before { expect(star).to receive(:type_id).and_return(45_041) }
 
     subject { star.as_json }
 
-    its([:age]) { should eq(14262808228) }
+    its([:age]) { should eq(14_262_808_228) }
 
     its([:luminosity]) { should eq(0.01575000025331974) }
 
     its([:name]) { should eq('Tanoo - Star') }
 
-    its([:radius]) { should eq(126700000) }
+    its([:radius]) { should eq(126_700_000) }
 
-    its([:solar_system_id]) { should eq(30000001) }
+    its([:solar_system_id]) { should eq(30_000_001) }
 
     its([:spectral_class]) { should eq('K2 V') }
 
     its([:temperature]) { should eq(4567) }
 
-    its([:type_id]) { should eq(45041) }
+    its([:type_id]) { should eq(45_041) }
   end
 
   describe '#age' do
