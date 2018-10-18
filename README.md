@@ -1882,6 +1882,16 @@ region.region_id # => 10000001
 
 #### List all public structures
 
+```ruby
+structures = EveOnline::ESI::UniverseStructures.new
+
+structures.scope # => nil
+
+structures.structure_ids.size # => 4181
+
+structures.structure_ids.first # => 1028178624512
+```
+
 #### Get structure information
 
 #### Get system jumps
