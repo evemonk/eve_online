@@ -25,6 +25,12 @@
 * Add `EveOnline::ESI::UniverseSystemJumps`
 * Add `EveOnline::ESI::Models::SystemKill`
 * Add `EveOnline::ESI::UniverseSystemKills`
+* Add `EveOnline::ESI::UniverseStructures`
+* Add `EveOnline::ESI::Models::StargateDestination`
+* Add `EveOnline::ESI::Models::Stargate`
+* Add `EveOnline::ESI::UniverseStargate`
+* Add `EveOnline::ESI::Models::Star`
+* Add `EveOnline::ESI::UniverseStar`
 
 ## v0.19.0
 
