@@ -26,6 +26,7 @@
 * Add `EveOnline::ESI::Models::SystemKill`
 * Add `EveOnline::ESI::UniverseSystemKills`
 * Add `EveOnline::ESI::UniverseStructures`
+* Add `EveOnline::ESI::Models::StargateDestination`
 
 ## v0.19.0
 
