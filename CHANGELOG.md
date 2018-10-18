@@ -28,6 +28,7 @@
 * Add `EveOnline::ESI::UniverseStructures`
 * Add `EveOnline::ESI::Models::StargateDestination`
 * Add `EveOnline::ESI::Models::Stargate`
+* Add `EveOnline::ESI::UniverseStargate`
 
 ## v0.19.0
 
