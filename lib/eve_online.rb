@@ -173,6 +173,7 @@ require 'eve_online/esi/models/system_kill'
 require 'eve_online/esi/models/stargate_destination'
 require 'eve_online/esi/models/stargate'
 require 'eve_online/esi/models/star'
+require 'eve_online/esi/models/station'
 
 require 'eve_online/esi/models/killmail_short'
 
