@@ -32,6 +32,7 @@
 * Add `EveOnline::ESI::Models::Star`
 * Add `EveOnline::ESI::UniverseStar`
 * Add `EveOnline::ESI::Models::Station`
+* Add `EveOnline::ESI::UniverseStation`
 
 ## v0.19.0
 
