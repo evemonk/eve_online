@@ -1,6 +1,6 @@
 # Changelog
 
-## master
+## v0.20.0
 
 * Add `EveOnline::ESI::UniverseCategories`
 * Add `EveOnline::ESI::UniverseCategory`
