@@ -1,6 +1,6 @@
 # Changelog
 
-## master
+## v0.20.0
 
 * Add `EveOnline::ESI::UniverseCategories`
 * Add `EveOnline::ESI::UniverseCategory`
@@ -31,6 +31,8 @@
 * Add `EveOnline::ESI::UniverseStargate`
 * Add `EveOnline::ESI::Models::Star`
 * Add `EveOnline::ESI::UniverseStar`
+* Add `EveOnline::ESI::Models::Station`
+* Add `EveOnline::ESI::UniverseStation`
 
 ## v0.19.0
 
