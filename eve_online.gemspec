@@ -15,14 +15,12 @@ Gem::Specification.new do |spec|
   spec.homepage      = 'https://github.com/evemonk/eve_online'
   spec.license       = 'MIT'
 
-  # https://guides.rubygems.org/specification-reference/#metadata
   spec.metadata = {
-      'bug_tracker_uri'   => "https://example.com/user/bestgemever/issues",
-      'changelog_uri'     => "https://example.com/user/bestgemever/CHANGELOG.md",
-      'documentation_uri' => "https://www.example.info/gems/bestgemever/0.0.1",
-      'homepage_uri'      => 'https://github.com/evemonk/eve_online',
-      'mailing_list_uri'  => "https://groups.example.com/bestgemever",
-      'source_code_uri'   => "https://example.com/user/bestgemever"
+    'bug_tracker_uri'   => 'https://github.com/evemonk/eve_online/issues',
+    'changelog_uri'     => 'https://github.com/evemonk/eve_online/blob/master/CHANGELOG.md',
+    'documentation_uri' => 'https://github.com/evemonk/eve_online/blob/master/README.md',
+    'homepage_uri'      => 'https://github.com/evemonk/eve_online',
+    'source_code_uri'   => 'https://github.com/evemonk/eve_online'
   }
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features|bin)/}) }
