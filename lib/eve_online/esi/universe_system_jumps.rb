@@ -12,7 +12,6 @@ module EveOnline
         end
         output
       end
-      memoize :system_jumps
 
       def scope; end
 

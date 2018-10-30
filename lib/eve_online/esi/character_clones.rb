@@ -14,9 +14,8 @@ module EveOnline
       end
 
       def home_location
-        Models::HomeLocation.new(response['home_location'])
+        @home_location ||= Models::HomeLocation.new(response['home_location'])
       end
-      memoize :home_location
 
       def jump_clones
         output = []
@@ -25,7 +24,6 @@ module EveOnline
         end
         output
       end
-      memoize :jump_clones
 
       def last_clone_jump_date
         last_clone_jump_date = response['last_clone_jump_date']

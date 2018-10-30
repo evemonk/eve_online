@@ -21,7 +21,6 @@ module EveOnline
         end
         output
       end
-      memoize :history
 
       def scope; end
 

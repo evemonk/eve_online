@@ -12,7 +12,6 @@ module EveOnline
         end
         output
       end
-      memoize :races
 
       def scope; end
 

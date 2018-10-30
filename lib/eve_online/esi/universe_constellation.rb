@@ -21,9 +21,8 @@ module EveOnline
                      :systems, :position
 
       def model
-        Models::Constellation.new(response)
+        @model ||= Models::Constellation.new(response)
       end
-      memoize :model
 
       def scope; end
 

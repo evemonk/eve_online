@@ -22,9 +22,8 @@ module EveOnline
                      :name, :published, :stackable, :unit_id
 
       def model
-        Models::DogmaAttribute.new(response)
+        @model ||= Models::DogmaAttribute.new(response)
       end
-      memoize :model
 
       def scope; end
 

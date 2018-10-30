@@ -12,7 +12,6 @@ module EveOnline
         end
         output
       end
-      memoize :bloodlines
 
       def scope; end
 

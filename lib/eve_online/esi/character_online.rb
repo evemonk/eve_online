@@ -21,9 +21,8 @@ module EveOnline
                      :online
 
       def model
-        Models::Online.new(response)
+        @model ||= Models::Online.new(response)
       end
-      memoize :model
 
       def scope
         'esi-location.read_online.v1'

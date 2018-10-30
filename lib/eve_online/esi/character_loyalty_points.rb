@@ -20,7 +20,6 @@ module EveOnline
         end
         output
       end
-      memoize :loyalty_points
 
       def scope
         'esi-characters.read_loyalty.v1'

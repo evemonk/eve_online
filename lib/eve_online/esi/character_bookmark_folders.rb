@@ -21,7 +21,6 @@ module EveOnline
         end
         output
       end
-      memoize :bookmark_folders
 
       def scope
         'esi-bookmarks.read_character_bookmarks.v1'

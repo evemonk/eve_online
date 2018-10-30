@@ -27,9 +27,8 @@ module EveOnline
                      :tracking_speed_attribute_id, :modifiers
 
       def model
-        Models::DogmaEffect.new(response)
+        @model ||= Models::DogmaEffect.new(response)
       end
-      memoize :model
 
       def scope; end
 

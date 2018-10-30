@@ -20,7 +20,6 @@ module EveOnline
         end
         output
       end
-      memoize :notifications
 
       def scope
         'esi-characters.read_notifications.v1'

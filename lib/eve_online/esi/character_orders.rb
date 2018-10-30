@@ -20,7 +20,6 @@ module EveOnline
         end
         output
       end
-      memoize :orders
 
       def scope
         'esi-markets.read_character_orders.v1'

@@ -20,7 +20,6 @@ module EveOnline
         end
         output
       end
-      memoize :events
 
       def scope
         'esi-calendar.read_calendar_events.v1'

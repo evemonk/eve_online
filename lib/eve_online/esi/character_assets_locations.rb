@@ -21,7 +21,6 @@ module EveOnline
         end
         output
       end
-      memoize :assets_locations
 
       def http_method
         'Post'

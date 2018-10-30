@@ -21,9 +21,8 @@ module EveOnline
                      :structure_id
 
       def model
-        Models::CharacterLocation.new(response)
+        @model ||= Models::CharacterLocation.new(response)
       end
-      memoize :model
 
       def scope
         'esi-location.read_location.v1'

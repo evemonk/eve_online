@@ -21,7 +21,6 @@ module EveOnline
         end
         output
       end
-      memoize :blueprints
 
       def scope
         'esi-corporations.read_blueprints.v1'

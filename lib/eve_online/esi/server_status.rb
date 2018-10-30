@@ -12,9 +12,8 @@ module EveOnline
       def_delegators :model, :as_json, :start_time, :players, :server_version, :vip
 
       def model
-        Models::ServerStatus.new(response)
+        @model ||= Models::ServerStatus.new(response)
       end
-      memoize :model
 
       def scope; end
 

@@ -21,7 +21,6 @@ module EveOnline
         end
         output
       end
-      memoize :jobs
 
       def scope
         'esi-industry.read_character_jobs.v1'

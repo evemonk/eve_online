@@ -27,7 +27,6 @@ module EveOnline
         end
         output
       end
-      memoize :skills
 
       def total_sp
         response['total_sp']

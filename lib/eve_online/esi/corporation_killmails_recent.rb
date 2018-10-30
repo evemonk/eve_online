@@ -21,7 +21,6 @@ module EveOnline
         end
         output
       end
-      memoize :killmails
 
       def scope
         'esi-killmails.read_corporation_killmails.v1'

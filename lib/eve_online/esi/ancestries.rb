@@ -12,7 +12,6 @@ module EveOnline
         end
         output
       end
-      memoize :ancestries
 
       def scope; end
 

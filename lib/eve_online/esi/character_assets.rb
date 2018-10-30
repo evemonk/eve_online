@@ -21,7 +21,6 @@ module EveOnline
         end
         output
       end
-      memoize :assets
 
       def scope
         'esi-assets.read_assets.v1'

@@ -20,7 +20,6 @@ module EveOnline
         end
         output
       end
-      memoize :standings
 
       def scope
         'esi-characters.read_standings.v1'

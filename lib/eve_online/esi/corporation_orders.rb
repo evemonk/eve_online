@@ -21,7 +21,6 @@ module EveOnline
         end
         output
       end
-      memoize :orders
 
       def scope
         'esi-markets.read_corporation_orders.v1'

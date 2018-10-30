@@ -21,7 +21,6 @@ module EveOnline
         end
         output
       end
-      memoize :wallet_journal_entries
 
       def scope
         'esi-wallet.read_character_wallet.v1'

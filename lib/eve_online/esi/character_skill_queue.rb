@@ -20,7 +20,6 @@ module EveOnline
         end
         output
       end
-      memoize :skills
 
       def scope
         'esi-skills.read_skillqueue.v1'

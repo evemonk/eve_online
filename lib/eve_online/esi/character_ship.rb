@@ -20,9 +20,8 @@ module EveOnline
       def_delegators :model, :as_json, :ship_item_id, :ship_name, :ship_type_id
 
       def model
-        Models::CharacterShip.new(response)
+        @model ||= Models::CharacterShip.new(response)
       end
-      memoize :model
 
       def scope
         'esi-location.read_ship_type.v1'

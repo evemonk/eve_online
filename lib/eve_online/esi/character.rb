@@ -22,9 +22,8 @@ module EveOnline
                      :gender, :name, :race_id, :security_status
 
       def model
-        Models::Character.new(response)
+        @model ||= Models::Character.new(response)
       end
-      memoize :model
 
       def scope; end
 

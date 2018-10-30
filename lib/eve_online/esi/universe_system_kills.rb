@@ -12,7 +12,6 @@ module EveOnline
         end
         output
       end
-      memoize :system_kills
 
       def scope; end
 
