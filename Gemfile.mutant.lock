@@ -83,7 +83,7 @@ GEM
     nokogiri (1.8.5)
       mini_portile2 (~> 2.3.0)
     parallel (1.12.1)
-    parser (2.5.1.2)
+    parser (2.5.3.0)
       ast (~> 2.4.0)
     procto (0.0.3)
     public_suffix (3.0.3)
@@ -147,4 +147,4 @@ DEPENDENCIES
   webmock
 
 BUNDLED WITH
-   1.16.6
+   1.17.1
