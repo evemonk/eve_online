@@ -6,6 +6,7 @@ rvm:
   - 2.4.5
   - 2.5.3
   - ruby-head
+  - rbx-3
 
 gemfile:
   - gemfiles/activesupport_42.gemfile
@@ -67,6 +68,7 @@ matrix:
   allow_failures:
     - rvm: ruby-head
     - rvm: jruby-head
+    - rvm: rbx-3
   fast_finish: true
 
 before_script:
@@ -81,9 +83,7 @@ before_install:
 
 script:
   - bundle exec rake
-  - bundle exec mdl README.md
-  - bundle exec mdl CHANGELOG.md
-  - bundle exec mdl TODO.md
+  - bundle exec mdl README.md CHANGELOG.md TODO.md
 
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
