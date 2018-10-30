@@ -26,28 +26,36 @@ describe EveOnline::ESI::UniverseStation do
   end
 
   describe '#model' do
-    let(:response) { double }
+    context 'when @model set' do
+      let(:model) { instance_double(EveOnline::ESI::Models::Station) }
 
-    before { expect(subject).to receive(:response).and_return(response) }
+      before { subject.instance_variable_set(:@model, model) }
 
-    let(:model) { instance_double(EveOnline::ESI::Models::Station) }
-
-    before do
-      #
-      # EveOnline::ESI::Models::Station.new(response) # => model
-      #
-      expect(EveOnline::ESI::Models::Station).to receive(:new).with(response).and_return(model)
+      specify { expect(subject.model).to eq(model) }
     end
 
-    specify { expect { subject.model }.not_to raise_error }
+    context 'when @model not set' do
+      let(:response) { double }
 
-    specify { expect { subject.model }.to change { subject.instance_variable_defined?(:@_memoized_model) }.from(false).to(true) }
+      before { expect(subject).to receive(:response).and_return(response) }
+
+      let(:model) { instance_double(EveOnline::ESI::Models::Station) }
+
+      before do
+        #
+        # EveOnline::ESI::Models::Station.new(response) # => model
+        #
+        expect(EveOnline::ESI::Models::Station).to receive(:new).with(response).and_return(model)
+      end
+
+      specify { expect { subject.model }.not_to raise_error }
+    end
   end
 
   describe '#as_json' do
     let(:model) { instance_double(EveOnline::ESI::Models::Station) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:as_json) }
 
@@ -57,7 +65,7 @@ describe EveOnline::ESI::UniverseStation do
   describe '#max_dockable_ship_volume' do
     let(:model) { instance_double(EveOnline::ESI::Models::Station) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:max_dockable_ship_volume) }
 
@@ -67,7 +75,7 @@ describe EveOnline::ESI::UniverseStation do
   describe '#name' do
     let(:model) { instance_double(EveOnline::ESI::Models::Station) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:name) }
 
@@ -77,7 +85,7 @@ describe EveOnline::ESI::UniverseStation do
   describe '#office_rental_cost' do
     let(:model) { instance_double(EveOnline::ESI::Models::Station) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:office_rental_cost) }
 
@@ -87,7 +95,7 @@ describe EveOnline::ESI::UniverseStation do
   describe '#owner' do
     let(:model) { instance_double(EveOnline::ESI::Models::Station) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:owner) }
 
@@ -97,7 +105,7 @@ describe EveOnline::ESI::UniverseStation do
   describe '#race_id' do
     let(:model) { instance_double(EveOnline::ESI::Models::Station) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:race_id) }
 
@@ -107,7 +115,7 @@ describe EveOnline::ESI::UniverseStation do
   describe '#reprocessing_efficiency' do
     let(:model) { instance_double(EveOnline::ESI::Models::Station) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:reprocessing_efficiency) }
 
@@ -117,7 +125,7 @@ describe EveOnline::ESI::UniverseStation do
   describe '#reprocessing_stations_take' do
     let(:model) { instance_double(EveOnline::ESI::Models::Station) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:reprocessing_stations_take) }
 
@@ -127,7 +135,7 @@ describe EveOnline::ESI::UniverseStation do
   describe '#services' do
     let(:model) { instance_double(EveOnline::ESI::Models::Station) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:services) }
 
@@ -137,7 +145,7 @@ describe EveOnline::ESI::UniverseStation do
   describe '#station_id' do
     let(:model) { instance_double(EveOnline::ESI::Models::Station) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:station_id) }
 
@@ -147,7 +155,7 @@ describe EveOnline::ESI::UniverseStation do
   describe '#system_id' do
     let(:model) { instance_double(EveOnline::ESI::Models::Station) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:system_id) }
 
@@ -157,7 +165,7 @@ describe EveOnline::ESI::UniverseStation do
   describe '#type_id' do
     let(:model) { instance_double(EveOnline::ESI::Models::Station) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:type_id) }
 
@@ -167,7 +175,7 @@ describe EveOnline::ESI::UniverseStation do
   describe '#position' do
     let(:model) { instance_double(EveOnline::ESI::Models::Station) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:position) }
 
