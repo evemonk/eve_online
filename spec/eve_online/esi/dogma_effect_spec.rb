@@ -26,28 +26,36 @@ describe EveOnline::ESI::DogmaEffect do
   end
 
   describe '#model' do
-    let(:response) { double }
+    context 'when @model set' do
+      let(:model) { instance_double(EveOnline::ESI::Models::DogmaEffect) }
 
-    before { expect(subject).to receive(:response).and_return(response) }
+      before { subject.instance_variable_set(:@model, model) }
 
-    let(:model) { instance_double(EveOnline::ESI::Models::DogmaEffect) }
-
-    before do
-      #
-      # EveOnline::ESI::Models::DogmaEffect.new(response) # => model
-      #
-      expect(EveOnline::ESI::Models::DogmaEffect).to receive(:new).with(response).and_return(model)
+      specify { expect(subject.model).to eq(model) }
     end
 
-    specify { expect { subject.model }.not_to raise_error }
+    context 'when @model not set' do
+      let(:response) { double }
 
-    specify { expect { subject.model }.to change { subject.instance_variable_defined?(:@_memoized_model) }.from(false).to(true) }
+      before { expect(subject).to receive(:response).and_return(response) }
+
+      let(:model) { instance_double(EveOnline::ESI::Models::DogmaEffect) }
+
+      before do
+        #
+        # EveOnline::ESI::Models::DogmaEffect.new(response) # => model
+        #
+        expect(EveOnline::ESI::Models::DogmaEffect).to receive(:new).with(response).and_return(model)
+      end
+
+      specify { expect { subject.model }.not_to raise_error }
+    end
   end
 
   describe '#as_json' do
     let(:model) { instance_double(EveOnline::ESI::Models::DogmaEffect) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:as_json) }
 
@@ -57,7 +65,7 @@ describe EveOnline::ESI::DogmaEffect do
   describe '#description' do
     let(:model) { instance_double(EveOnline::ESI::Models::DogmaEffect) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:description) }
 
@@ -67,7 +75,7 @@ describe EveOnline::ESI::DogmaEffect do
   describe '#disallow_auto_repeat' do
     let(:model) { instance_double(EveOnline::ESI::Models::DogmaEffect) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:disallow_auto_repeat) }
 
@@ -77,7 +85,7 @@ describe EveOnline::ESI::DogmaEffect do
   describe '#discharge_attribute_id' do
     let(:model) { instance_double(EveOnline::ESI::Models::DogmaEffect) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:discharge_attribute_id) }
 
@@ -87,7 +95,7 @@ describe EveOnline::ESI::DogmaEffect do
   describe '#display_name' do
     let(:model) { instance_double(EveOnline::ESI::Models::DogmaEffect) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:display_name) }
 
@@ -97,7 +105,7 @@ describe EveOnline::ESI::DogmaEffect do
   describe '#duration_attribute_id' do
     let(:model) { instance_double(EveOnline::ESI::Models::DogmaEffect) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:duration_attribute_id) }
 
@@ -107,7 +115,7 @@ describe EveOnline::ESI::DogmaEffect do
   describe '#effect_category' do
     let(:model) { instance_double(EveOnline::ESI::Models::DogmaEffect) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:effect_category) }
 
@@ -117,7 +125,7 @@ describe EveOnline::ESI::DogmaEffect do
   describe '#effect_id' do
     let(:model) { instance_double(EveOnline::ESI::Models::DogmaEffect) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:effect_id) }
 
@@ -127,7 +135,7 @@ describe EveOnline::ESI::DogmaEffect do
   describe '#electronic_chance' do
     let(:model) { instance_double(EveOnline::ESI::Models::DogmaEffect) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:electronic_chance) }
 
@@ -137,7 +145,7 @@ describe EveOnline::ESI::DogmaEffect do
   describe '#falloff_attribute_id' do
     let(:model) { instance_double(EveOnline::ESI::Models::DogmaEffect) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:falloff_attribute_id) }
 
@@ -147,7 +155,7 @@ describe EveOnline::ESI::DogmaEffect do
   describe '#icon_id' do
     let(:model) { instance_double(EveOnline::ESI::Models::DogmaEffect) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:icon_id) }
 
@@ -157,7 +165,7 @@ describe EveOnline::ESI::DogmaEffect do
   describe '#is_assistance' do
     let(:model) { instance_double(EveOnline::ESI::Models::DogmaEffect) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:is_assistance) }
 
@@ -167,7 +175,7 @@ describe EveOnline::ESI::DogmaEffect do
   describe '#is_offensive' do
     let(:model) { instance_double(EveOnline::ESI::Models::DogmaEffect) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:is_offensive) }
 
@@ -177,7 +185,7 @@ describe EveOnline::ESI::DogmaEffect do
   describe '#is_warp_safe' do
     let(:model) { instance_double(EveOnline::ESI::Models::DogmaEffect) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:is_warp_safe) }
 
@@ -187,7 +195,7 @@ describe EveOnline::ESI::DogmaEffect do
   describe '#name' do
     let(:model) { instance_double(EveOnline::ESI::Models::DogmaEffect) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:name) }
 
@@ -197,7 +205,7 @@ describe EveOnline::ESI::DogmaEffect do
   describe '#post_expression' do
     let(:model) { instance_double(EveOnline::ESI::Models::DogmaEffect) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:post_expression) }
 
@@ -207,7 +215,7 @@ describe EveOnline::ESI::DogmaEffect do
   describe '#pre_expression' do
     let(:model) { instance_double(EveOnline::ESI::Models::DogmaEffect) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:pre_expression) }
 
@@ -217,7 +225,7 @@ describe EveOnline::ESI::DogmaEffect do
   describe '#published' do
     let(:model) { instance_double(EveOnline::ESI::Models::DogmaEffect) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:published) }
 
@@ -227,7 +235,7 @@ describe EveOnline::ESI::DogmaEffect do
   describe '#range_attribute_id' do
     let(:model) { instance_double(EveOnline::ESI::Models::DogmaEffect) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:range_attribute_id) }
 
@@ -237,7 +245,7 @@ describe EveOnline::ESI::DogmaEffect do
   describe '#range_chance' do
     let(:model) { instance_double(EveOnline::ESI::Models::DogmaEffect) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:range_chance) }
 
@@ -247,7 +255,7 @@ describe EveOnline::ESI::DogmaEffect do
   describe '#tracking_speed_attribute_id' do
     let(:model) { instance_double(EveOnline::ESI::Models::DogmaEffect) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:tracking_speed_attribute_id) }
 
@@ -257,7 +265,7 @@ describe EveOnline::ESI::DogmaEffect do
   describe '#modifiers' do
     let(:model) { instance_double(EveOnline::ESI::Models::DogmaEffect) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:modifiers) }
 
