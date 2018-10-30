@@ -26,28 +26,36 @@ describe EveOnline::ESI::Corporation do
   end
 
   describe '#model' do
-    let(:response) { instance_double(EveOnline::ESI::Models::Corporation) }
+    context 'when @model set' do
+      let(:model) { instance_double(EveOnline::ESI::Models::Corporation) }
 
-    before { expect(subject).to receive(:response).and_return(response) }
+      before { subject.instance_variable_set(:@model, model) }
 
-    let(:model) { double }
-
-    before do
-      #
-      # EveOnline::ESI::Models::Corporation.new(response) # => model
-      #
-      expect(EveOnline::ESI::Models::Corporation).to receive(:new).with(response).and_return(model)
+      specify { expect(subject.model).to eq(model) }
     end
 
-    specify { expect { subject.model }.not_to raise_error }
+    context 'when @model not set' do
+      let(:response) { instance_double(EveOnline::ESI::Models::Corporation) }
 
-    specify { expect { subject.model }.to change { subject.instance_variable_defined?(:@_memoized_model) }.from(false).to(true) }
+      before { expect(subject).to receive(:response).and_return(response) }
+
+      let(:model) { double }
+
+      before do
+        #
+        # EveOnline::ESI::Models::Corporation.new(response) # => model
+        #
+        expect(EveOnline::ESI::Models::Corporation).to receive(:new).with(response).and_return(model)
+      end
+
+      specify { expect { subject.model }.not_to raise_error }
+    end
   end
 
   describe '#as_json' do
     let(:model) { instance_double(EveOnline::ESI::Models::Corporation) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:as_json) }
 
@@ -57,7 +65,7 @@ describe EveOnline::ESI::Corporation do
   describe '#alliance_id' do
     let(:model) { instance_double(EveOnline::ESI::Models::Corporation) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:alliance_id) }
 
@@ -67,7 +75,7 @@ describe EveOnline::ESI::Corporation do
   describe '#ceo_id' do
     let(:model) { instance_double(EveOnline::ESI::Models::Corporation) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:ceo_id) }
 
@@ -77,7 +85,7 @@ describe EveOnline::ESI::Corporation do
   describe '#creator_id' do
     let(:model) { instance_double(EveOnline::ESI::Models::Corporation) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:creator_id) }
 
@@ -87,7 +95,7 @@ describe EveOnline::ESI::Corporation do
   describe '#date_founded' do
     let(:model) { instance_double(EveOnline::ESI::Models::Corporation) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:date_founded) }
 
@@ -97,7 +105,7 @@ describe EveOnline::ESI::Corporation do
   describe '#description' do
     let(:model) { instance_double(EveOnline::ESI::Models::Corporation) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:description) }
 
@@ -107,7 +115,7 @@ describe EveOnline::ESI::Corporation do
   describe '#faction_id' do
     let(:model) { instance_double(EveOnline::ESI::Models::Corporation) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:faction_id) }
 
@@ -117,7 +125,7 @@ describe EveOnline::ESI::Corporation do
   describe '#home_station_id' do
     let(:model) { instance_double(EveOnline::ESI::Models::Corporation) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:home_station_id) }
 
@@ -127,7 +135,7 @@ describe EveOnline::ESI::Corporation do
   describe '#member_count' do
     let(:model) { instance_double(EveOnline::ESI::Models::Corporation) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:member_count) }
 
@@ -137,7 +145,7 @@ describe EveOnline::ESI::Corporation do
   describe '#name' do
     let(:model) { instance_double(EveOnline::ESI::Models::Corporation) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:name) }
 
@@ -147,7 +155,7 @@ describe EveOnline::ESI::Corporation do
   describe '#shares' do
     let(:model) { instance_double(EveOnline::ESI::Models::Corporation) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:shares) }
 
@@ -157,7 +165,7 @@ describe EveOnline::ESI::Corporation do
   describe '#tax_rate' do
     let(:model) { instance_double(EveOnline::ESI::Models::Corporation) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:tax_rate) }
 
@@ -167,7 +175,7 @@ describe EveOnline::ESI::Corporation do
   describe '#ticker' do
     let(:model) { instance_double(EveOnline::ESI::Models::Corporation) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:ticker) }
 
@@ -177,7 +185,7 @@ describe EveOnline::ESI::Corporation do
   describe '#corporation_url' do
     let(:model) { instance_double(EveOnline::ESI::Models::Corporation) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:corporation_url) }
 
