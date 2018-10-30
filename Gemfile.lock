@@ -4,7 +4,6 @@ PATH
     eve_online (0.20.0)
       activesupport (>= 4.2.0)
       json
-      memoist
 
 GEM
   remote: https://rubygems.org/
@@ -34,7 +33,6 @@ GEM
       kramdown (~> 1.12, >= 1.12.0)
       mixlib-cli (~> 1.7, >= 1.7.0)
       mixlib-config (~> 2.2, >= 2.2.1)
-    memoist (0.16.0)
     method_source (0.9.0)
     mini_portile2 (2.3.0)
     minitest (5.11.3)

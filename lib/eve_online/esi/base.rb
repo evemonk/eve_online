@@ -3,14 +3,11 @@
 require 'net/http'
 require 'openssl'
 require 'json'
-require 'memoist'
 require 'active_support/time'
 
 module EveOnline
   module ESI
     class Base
-      extend Memoist
-
       attr_reader :token, :parser, :_read_timeout, :_open_timeout, :etag,
                   :datasource, :language
 
@@ -109,6 +106,7 @@ module EveOnline
       def content
         case resource
         when Net::HTTPOK
+          # TODO: memoize resource.body as @content
           resource.body
         when Net::HTTPCreated
           # TODO: write
@@ -141,12 +139,10 @@ module EveOnline
       rescue Net::OpenTimeout, Net::ReadTimeout
         raise EveOnline::Exceptions::Timeout
       end
-      memoize :content
 
       def response
-        parser.parse(content)
+        @response ||= parser.parse(content)
       end
-      memoize :response
 
       private
 

@@ -3,8 +3,6 @@
 require 'spec_helper'
 
 describe EveOnline::ESI::Base do
-  specify { expect(described_class).to be_a(Memoist) }
-
   describe '#initialize' do
     context 'with options' do
       let(:parser) { double }
@@ -388,8 +386,6 @@ describe EveOnline::ESI::Base do
       specify { expect(subject.content).to eq(body) }
 
       specify { expect { subject.content }.not_to raise_error }
-
-      specify { expect { subject.content }.to change { subject.instance_variable_defined?(:@_memoized_content) }.from(false).to(true) }
     end
 
     context 'when resource is Net::HTTPCreated' do
@@ -514,19 +510,27 @@ describe EveOnline::ESI::Base do
   end
 
   describe '#response' do
-    let(:parser) { double }
+    context 'when @response set' do
+      let(:response) { double }
 
-    let(:content) { 'some content to parse' }
+      before { subject.instance_variable_set(:@response, response) }
 
-    before { expect(subject).to receive(:content).and_return(content) }
+      specify { expect(subject.response).to eq(response) }
+    end
 
-    before { expect(subject).to receive(:parser).and_return(parser) }
+    context 'when @response not set' do
+      let(:parser) { double }
 
-    before { expect(parser).to receive(:parse).with(content) }
+      let(:content) { 'some content to parse' }
 
-    specify { expect { subject.response }.not_to raise_error }
+      before { expect(subject).to receive(:content).and_return(content) }
 
-    specify { expect { subject.response }.to change { subject.instance_variable_defined?(:@_memoized_response) }.from(false).to(true) }
+      before { expect(subject).to receive(:parser).and_return(parser) }
+
+      before { expect(parser).to receive(:parse).with(content) }
+
+      specify { expect { subject.response }.not_to raise_error }
+    end
   end
 
   # private methods
