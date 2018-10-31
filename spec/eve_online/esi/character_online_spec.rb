@@ -50,6 +50,8 @@ describe EveOnline::ESI::CharacterOnline do
       end
 
       specify { expect { subject.model }.not_to raise_error }
+
+      specify { expect { subject.model }.to change { subject.instance_variable_get(:@model) }.from(nil).to(model) }
     end
   end
 
