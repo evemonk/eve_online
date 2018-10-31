@@ -6,11 +6,14 @@ module EveOnline
       API_ENDPOINT = 'https://esi.evetech.net/v1/universe/ancestries/?datasource=%<datasource>s'
 
       def ancestries
-        output = []
-        response.each do |ancestry|
-          output << Models::Ancestry.new(ancestry)
-        end
-        output
+        @ancestries ||=
+          begin
+            output = []
+            response.each do |ancestry|
+              output << Models::Ancestry.new(ancestry)
+            end
+            output
+          end
       end
 
       def scope; end
