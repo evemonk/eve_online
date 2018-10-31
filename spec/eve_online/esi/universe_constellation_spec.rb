@@ -26,28 +26,36 @@ describe EveOnline::ESI::UniverseConstellation do
   end
 
   describe '#model' do
-    let(:response) { double }
+    context 'when @model set' do
+      let(:model) { instance_double(EveOnline::ESI::Models::Constellation) }
 
-    before { expect(subject).to receive(:response).and_return(response) }
+      before { subject.instance_variable_set(:@model, model) }
 
-    let(:model) { instance_double(EveOnline::ESI::Models::Constellation) }
-
-    before do
-      #
-      # EveOnline::ESI::Models::Constellation.new(response) # => model
-      #
-      expect(EveOnline::ESI::Models::Constellation).to receive(:new).with(response).and_return(model)
+      specify { expect(subject.model).to eq(model) }
     end
 
-    specify { expect { subject.model }.not_to raise_error }
+    context 'when @model not set' do
+      let(:response) { double }
 
-    specify { expect { subject.model }.to change { subject.instance_variable_defined?(:@_memoized_model) }.from(false).to(true) }
+      before { expect(subject).to receive(:response).and_return(response) }
+
+      let(:model) { instance_double(EveOnline::ESI::Models::Constellation) }
+
+      before do
+        #
+        # EveOnline::ESI::Models::Constellation.new(response) # => model
+        #
+        expect(EveOnline::ESI::Models::Constellation).to receive(:new).with(response).and_return(model)
+      end
+
+      specify { expect { subject.model }.not_to raise_error }
+    end
   end
 
   describe '#as_json' do
     let(:model) { instance_double(EveOnline::ESI::Models::Constellation) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:as_json) }
 
@@ -57,7 +65,7 @@ describe EveOnline::ESI::UniverseConstellation do
   describe '#constellation_id' do
     let(:model) { instance_double(EveOnline::ESI::Models::Constellation) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:constellation_id) }
 
@@ -67,7 +75,7 @@ describe EveOnline::ESI::UniverseConstellation do
   describe '#name' do
     let(:model) { instance_double(EveOnline::ESI::Models::Constellation) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:name) }
 
@@ -77,7 +85,7 @@ describe EveOnline::ESI::UniverseConstellation do
   describe '#region_id' do
     let(:model) { instance_double(EveOnline::ESI::Models::Constellation) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:region_id) }
 
@@ -87,7 +95,7 @@ describe EveOnline::ESI::UniverseConstellation do
   describe '#systems' do
     let(:model) { instance_double(EveOnline::ESI::Models::Constellation) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:systems) }
 
@@ -97,7 +105,7 @@ describe EveOnline::ESI::UniverseConstellation do
   describe '#position' do
     let(:model) { instance_double(EveOnline::ESI::Models::Constellation) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:position) }
 
