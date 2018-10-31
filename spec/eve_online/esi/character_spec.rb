@@ -26,28 +26,38 @@ describe EveOnline::ESI::Character do
   end
 
   describe '#model' do
-    let(:response) { double }
+    context 'when @model set' do
+      let(:model) { instance_double(EveOnline::ESI::Models::Character) }
 
-    before { expect(subject).to receive(:response).and_return(response) }
+      before { subject.instance_variable_set(:@model, model) }
 
-    let(:model) { instance_double(EveOnline::ESI::Models::Character) }
-
-    before do
-      #
-      # EveOnline::ESI::Models::Character.new(response) # => model
-      #
-      expect(EveOnline::ESI::Models::Character).to receive(:new).with(response).and_return(model)
+      specify { expect(subject.model).to eq(model) }
     end
 
-    specify { expect { subject.model }.not_to raise_error }
+    context 'when @model not set' do
+      let(:response) { double }
 
-    specify { expect { subject.model }.to change { subject.instance_variable_defined?(:@_memoized_model) }.from(false).to(true) }
+      before { expect(subject).to receive(:response).and_return(response) }
+
+      let(:model) { instance_double(EveOnline::ESI::Models::Character) }
+
+      before do
+        #
+        # EveOnline::ESI::Models::Character.new(response) # => model
+        #
+        expect(EveOnline::ESI::Models::Character).to receive(:new).with(response).and_return(model)
+      end
+
+      specify { expect { subject.model }.not_to raise_error }
+
+      # TODO: specify { expect { subject.model }.to change { }.from(nil).to(model) }
+    end
   end
 
   describe '#as_json' do
     let(:model) { instance_double(EveOnline::ESI::Models::Character) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:as_json) }
 
@@ -57,7 +67,7 @@ describe EveOnline::ESI::Character do
   describe '#alliance_id' do
     let(:model) { instance_double(EveOnline::ESI::Models::Character) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:alliance_id) }
 
@@ -67,7 +77,7 @@ describe EveOnline::ESI::Character do
   describe '#ancestry_id' do
     let(:model) { instance_double(EveOnline::ESI::Models::Character) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:ancestry_id) }
 
@@ -77,7 +87,7 @@ describe EveOnline::ESI::Character do
   describe '#birthday' do
     let(:model) { instance_double(EveOnline::ESI::Models::Character) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:birthday) }
 
@@ -87,7 +97,7 @@ describe EveOnline::ESI::Character do
   describe '#bloodline_id' do
     let(:model) { instance_double(EveOnline::ESI::Models::Character) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:bloodline_id) }
 
@@ -97,7 +107,7 @@ describe EveOnline::ESI::Character do
   describe '#corporation_id' do
     let(:model) { instance_double(EveOnline::ESI::Models::Character) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:corporation_id) }
 
@@ -107,7 +117,7 @@ describe EveOnline::ESI::Character do
   describe '#description' do
     let(:model) { instance_double(EveOnline::ESI::Models::Character) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:description) }
 
@@ -117,7 +127,7 @@ describe EveOnline::ESI::Character do
   describe '#faction_id' do
     let(:model) { instance_double(EveOnline::ESI::Models::Character) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:faction_id) }
 
@@ -127,7 +137,7 @@ describe EveOnline::ESI::Character do
   describe '#gender' do
     let(:model) { instance_double(EveOnline::ESI::Models::Character) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:gender) }
 
@@ -137,7 +147,7 @@ describe EveOnline::ESI::Character do
   describe '#name' do
     let(:model) { instance_double(EveOnline::ESI::Models::Character) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:name) }
 
@@ -147,7 +157,7 @@ describe EveOnline::ESI::Character do
   describe '#race_id' do
     let(:model) { instance_double(EveOnline::ESI::Models::Character) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:race_id) }
 
@@ -157,7 +167,7 @@ describe EveOnline::ESI::Character do
   describe '#security_status' do
     let(:model) { instance_double(EveOnline::ESI::Models::Character) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:security_status) }
 
