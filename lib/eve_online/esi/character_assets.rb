@@ -15,11 +15,14 @@ module EveOnline
       end
 
       def assets
-        output = []
-        response.each do |asset|
-          output << Models::Asset.new(asset)
-        end
-        output
+        @assets ||=
+          begin
+            output = []
+            response.each do |asset|
+              output << Models::Asset.new(asset)
+            end
+            output
+          end
       end
 
       def scope
