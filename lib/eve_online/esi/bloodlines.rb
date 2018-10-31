@@ -6,11 +6,14 @@ module EveOnline
       API_ENDPOINT = 'https://esi.evetech.net/v1/universe/bloodlines/?datasource=%<datasource>s'
 
       def bloodlines
-        output = []
-        response.each do |bloodline|
-          output << Models::Bloodline.new(bloodline)
-        end
-        output
+        @bloodlines ||=
+          begin
+            output = []
+            response.each do |bloodline|
+              output << Models::Bloodline.new(bloodline)
+            end
+            output
+          end
       end
 
       def scope; end

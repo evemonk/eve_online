@@ -20,43 +20,53 @@ describe EveOnline::ESI::Bloodlines do
   end
 
   describe '#bloodlines' do
-    let(:bloodline) { instance_double(EveOnline::ESI::Models::Bloodline) }
+    context 'when @bloodlines set' do
+      let(:bloodlines) { [instance_double(EveOnline::ESI::Models::Bloodline)] }
 
-    let(:response) do
-      [
-        {
-          'bloodline_id' => 4,
-          'name' => 'Brutor',
-          'description' => 'A martial, strong-willed people, the Brutor...',
-          'race_id' => 2,
-          'ship_type_id' => 588,
-          'corporation_id' => 1_000_049,
-          'perception' => 9,
-          'willpower' => 7,
-          'charisma' => 6,
-          'memory' => 4,
-          'intelligence' => 4
-        }
-      ]
+      before { subject.instance_variable_set(:@bloodlines, bloodlines) }
+
+      specify { expect(subject.bloodlines).to eq(bloodlines) }
     end
 
-    before do
-      #
-      # subject.response # => [{"bloodline_id"=>4, "name"=>"Brutor", "description"=>"A martial, strong-willed people, the Brutor...", "race_id"=>2, "ship_type_id"=>588, "corporation_id"=>1000049, "perception"=>9, "willpower"=>7, "charisma"=>6, "memory"=>4, "intelligence"=>4}]
-      #
-      expect(subject).to receive(:response).and_return(response)
+    context 'when @bloodlines not set' do
+      let(:bloodline) { instance_double(EveOnline::ESI::Models::Bloodline) }
+
+      let(:response) do
+        [
+          {
+            'bloodline_id' => 4,
+            'name' => 'Brutor',
+            'description' => 'A martial, strong-willed people, the Brutor...',
+            'race_id' => 2,
+            'ship_type_id' => 588,
+            'corporation_id' => 1_000_049,
+            'perception' => 9,
+            'willpower' => 7,
+            'charisma' => 6,
+            'memory' => 4,
+            'intelligence' => 4
+          }
+        ]
+      end
+
+      before do
+        #
+        # subject.response # => [{"bloodline_id"=>4, "name"=>"Brutor", "description"=>"A martial, strong-willed people, the Brutor...", "race_id"=>2, "ship_type_id"=>588, "corporation_id"=>1000049, "perception"=>9, "willpower"=>7, "charisma"=>6, "memory"=>4, "intelligence"=>4}]
+        #
+        expect(subject).to receive(:response).and_return(response)
+      end
+
+      before do
+        #
+        # EveOnline::ESI::Models::Bloodline.new(response.first) # => bloodline
+        #
+        expect(EveOnline::ESI::Models::Bloodline).to receive(:new).with(response.first).and_return(bloodline)
+      end
+
+      specify { expect(subject.bloodlines).to eq([bloodline]) }
+
+      specify { expect { subject.bloodlines }.to change { subject.instance_variable_get(:@bloodlines) }.from(nil).to([bloodline]) }
     end
-
-    before do
-      #
-      # EveOnline::ESI::Models::Bloodline.new(response.first) # => bloodline
-      #
-      expect(EveOnline::ESI::Models::Bloodline).to receive(:new).with(response.first).and_return(bloodline)
-    end
-
-    specify { expect(subject.bloodlines).to eq([bloodline]) }
-
-    specify { expect { subject.bloodlines }.to change { subject.instance_variable_defined?(:@_memoized_bloodlines) }.from(false).to(true) }
   end
 
   describe '#scope' do

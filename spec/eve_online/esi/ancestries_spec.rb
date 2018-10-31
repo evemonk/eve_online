@@ -26,7 +26,6 @@ describe EveOnline::ESI::Ancestries do
       before { subject.instance_variable_set(:@ancestries, ancestries) }
 
       specify { expect(subject.ancestries).to eq(ancestries) }
-
     end
 
     context 'when @ancestries not set' do
