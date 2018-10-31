@@ -26,28 +26,36 @@ describe EveOnline::ESI::UniverseStar do
   end
 
   describe '#model' do
-    let(:response) { double }
+    context 'when @model set' do
+      let(:model) { instance_double(EveOnline::ESI::Models::Star) }
 
-    before { expect(subject).to receive(:response).and_return(response) }
+      before { subject.instance_variable_set(:@model, model) }
 
-    let(:model) { instance_double(EveOnline::ESI::Models::Star) }
-
-    before do
-      #
-      # EveOnline::ESI::Models::Star.new(response) # => model
-      #
-      expect(EveOnline::ESI::Models::Star).to receive(:new).with(response).and_return(model)
+      specify { expect(subject.model).to eq(model) }
     end
 
-    specify { expect { subject.model }.not_to raise_error }
+    context 'when @model not set' do
+      let(:response) { double }
 
-    specify { expect { subject.model }.to change { subject.instance_variable_defined?(:@_memoized_model) }.from(false).to(true) }
+      before { expect(subject).to receive(:response).and_return(response) }
+
+      let(:model) { instance_double(EveOnline::ESI::Models::Star) }
+
+      before do
+        #
+        # EveOnline::ESI::Models::Star.new(response) # => model
+        #
+        expect(EveOnline::ESI::Models::Star).to receive(:new).with(response).and_return(model)
+      end
+
+      specify { expect { subject.model }.not_to raise_error }
+    end
   end
 
   describe '#as_json' do
     let(:model) { instance_double(EveOnline::ESI::Models::Star) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:as_json) }
 
@@ -57,7 +65,7 @@ describe EveOnline::ESI::UniverseStar do
   describe '#age' do
     let(:model) { instance_double(EveOnline::ESI::Models::Star) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:age) }
 
@@ -67,7 +75,7 @@ describe EveOnline::ESI::UniverseStar do
   describe '#luminosity' do
     let(:model) { instance_double(EveOnline::ESI::Models::Star) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:luminosity) }
 
@@ -77,7 +85,7 @@ describe EveOnline::ESI::UniverseStar do
   describe '#name' do
     let(:model) { instance_double(EveOnline::ESI::Models::Star) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:name) }
 
@@ -87,7 +95,7 @@ describe EveOnline::ESI::UniverseStar do
   describe '#radius' do
     let(:model) { instance_double(EveOnline::ESI::Models::Star) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:radius) }
 
@@ -97,7 +105,7 @@ describe EveOnline::ESI::UniverseStar do
   describe '#solar_system_id' do
     let(:model) { instance_double(EveOnline::ESI::Models::Star) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:solar_system_id) }
 
@@ -107,7 +115,7 @@ describe EveOnline::ESI::UniverseStar do
   describe '#spectral_class' do
     let(:model) { instance_double(EveOnline::ESI::Models::Star) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:spectral_class) }
 
@@ -117,7 +125,7 @@ describe EveOnline::ESI::UniverseStar do
   describe '#temperature' do
     let(:model) { instance_double(EveOnline::ESI::Models::Star) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:temperature) }
 
@@ -127,7 +135,7 @@ describe EveOnline::ESI::UniverseStar do
   describe '#type_id' do
     let(:model) { instance_double(EveOnline::ESI::Models::Star) }
 
-    before { subject.instance_variable_set(:@_memoized_model, model) }
+    before { subject.instance_variable_set(:@model, model) }
 
     before { expect(model).to receive(:type_id) }
 
