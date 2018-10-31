@@ -15,11 +15,14 @@ module EveOnline
       end
 
       def assets_locations
-        output = []
-        response.each do |asset_location|
-          output << Models::AssetLocation.new(asset_location)
-        end
-        output
+        @assets_locations ||=
+          begin
+            output = []
+            response.each do |asset_location|
+              output << Models::AssetLocation.new(asset_location)
+            end
+            output
+          end
       end
 
       def http_method
