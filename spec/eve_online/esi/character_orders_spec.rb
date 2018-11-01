@@ -26,48 +26,58 @@ describe EveOnline::ESI::CharacterOrders do
   end
 
   describe '#orders' do
-    let(:order) { instance_double(EveOnline::ESI::Models::CharacterOrder) }
+    context 'when @orders set' do
+      let(:orders) { [instance_double(EveOnline::ESI::Models::CharacterOrder)] }
 
-    let(:response) do
-      [
-        {
-          'order_id' => 123,
-          'type_id' => 456,
-          'region_id' => 123,
-          'location_id' => 456,
-          'range' => 'station',
-          'is_buy_order' => true,
-          'price' => 33.3,
-          'volume_total' => 123_456,
-          'volume_remain' => 4422,
-          'issued' => '2016-09-03T05:12:25Z',
-          'state' => 'open',
-          'min_volume' => 1,
-          'account_id' => 1000,
-          'duration' => 30,
-          'is_corp' => false,
-          'escrow' => 45.6
-        }
-      ]
+      before { subject.instance_variable_set(:@orders, orders) }
+
+      specify { expect(subject.orders).to eq(orders) }
     end
 
-    before do
-      #
-      # subject.response # => [{"order_id"=>123, "type_id"=>456, "region_id"=>123, "location_id"=> 456, "range"=>"station", "is_buy_order"=>true, "price"=>33.3, "volume_total"=>123456, "volume_remain"=>4422, "issued"=>"2016-09-03T05:12:25Z", "state"=>"open", "min_volume"=>1, "account_id"=>1000, "duration"=>30, "is_corp"=>false, "escrow"=>45.6}]
-      #
-      expect(subject).to receive(:response).and_return(response)
+    context 'when @orders not set' do
+      let(:order) { instance_double(EveOnline::ESI::Models::CharacterOrder) }
+
+      let(:response) do
+        [
+          {
+            'order_id' => 123,
+            'type_id' => 456,
+            'region_id' => 123,
+            'location_id' => 456,
+            'range' => 'station',
+            'is_buy_order' => true,
+            'price' => 33.3,
+            'volume_total' => 123_456,
+            'volume_remain' => 4422,
+            'issued' => '2016-09-03T05:12:25Z',
+            'state' => 'open',
+            'min_volume' => 1,
+            'account_id' => 1000,
+            'duration' => 30,
+            'is_corp' => false,
+            'escrow' => 45.6
+          }
+        ]
+      end
+
+      before do
+        #
+        # subject.response # => [{"order_id"=>123, "type_id"=>456, "region_id"=>123, "location_id"=> 456, "range"=>"station", "is_buy_order"=>true, "price"=>33.3, "volume_total"=>123456, "volume_remain"=>4422, "issued"=>"2016-09-03T05:12:25Z", "state"=>"open", "min_volume"=>1, "account_id"=>1000, "duration"=>30, "is_corp"=>false, "escrow"=>45.6}]
+        #
+        expect(subject).to receive(:response).and_return(response)
+      end
+
+      before do
+        #
+        # EveOnline::ESI::Models::CharacterOrder.new(response.first) # => order
+        #
+        expect(EveOnline::ESI::Models::CharacterOrder).to receive(:new).with(response.first).and_return(order)
+      end
+
+      specify { expect(subject.orders).to eq([order]) }
+
+      specify { expect { subject.orders }.to change { subject.instance_variable_get(:@orders) }.from(nil).to([order]) }
     end
-
-    before do
-      #
-      # EveOnline::ESI::Models::CharacterOrder.new(response.first) # => order
-      #
-      expect(EveOnline::ESI::Models::CharacterOrder).to receive(:new).with(response.first).and_return(order)
-    end
-
-    specify { expect(subject.orders).to eq([order]) }
-
-    specify { expect { subject.orders }.to change { subject.instance_variable_defined?(:@_memoized_orders) }.from(false).to(true) }
   end
 
   describe '#scope' do
