@@ -15,11 +15,14 @@ module EveOnline
       end
 
       def bookmarks
-        output = []
-        response.each do |bookmark|
-          output << Models::Bookmark.new(bookmark)
-        end
-        output
+        @bookmarks ||=
+          begin
+            output = []
+            response.each do |bookmark|
+              output << Models::Bookmark.new(bookmark)
+            end
+            output
+          end
       end
 
       def scope
