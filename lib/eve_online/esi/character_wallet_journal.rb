@@ -15,11 +15,14 @@ module EveOnline
       end
 
       def wallet_journal_entries
-        output = []
-        response.each do |wallet_journal_entry|
-          output << Models::WalletJournalEntry.new(wallet_journal_entry)
-        end
-        output
+        @wallet_journal_entries ||=
+          begin
+            output = []
+            response.each do |wallet_journal_entry|
+              output << Models::WalletJournalEntry.new(wallet_journal_entry)
+            end
+            output
+          end
       end
 
       def scope
