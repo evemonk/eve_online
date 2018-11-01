@@ -26,34 +26,44 @@ describe EveOnline::ESI::CharacterLoyaltyPoints do
   end
 
   describe '#loyalty_points' do
-    let(:loyalty_point) { instance_double(EveOnline::ESI::Models::LoyaltyPoint) }
+    context 'when @loyalty_points set' do
+      let(:loyalty_points) { [instance_double(EveOnline::ESI::Models::LoyaltyPoint)] }
 
-    let(:response) do
-      [
-        {
-          'corporation_id' => 1_000_035,
-          'loyalty_points' => 14_163
-        }
-      ]
+      before { subject.instance_variable_set(:@loyalty_points, loyalty_points) }
+
+      specify { expect(subject.loyalty_points).to eq(loyalty_points) }
     end
 
-    before do
-      #
-      # subject.response # => [{"corporation_id"=>1000035, "loyalty_points"=>14163}]
-      #
-      expect(subject).to receive(:response).and_return(response)
+    context 'when @ancestries not set' do
+      let(:loyalty_point) { instance_double(EveOnline::ESI::Models::LoyaltyPoint) }
+
+      let(:response) do
+        [
+            {
+                'corporation_id' => 1_000_035,
+                'loyalty_points' => 14_163
+            }
+        ]
+      end
+
+      before do
+        #
+        # subject.response # => [{"corporation_id"=>1000035, "loyalty_points"=>14163}]
+        #
+        expect(subject).to receive(:response).and_return(response)
+      end
+
+      before do
+        #
+        # EveOnline::ESI::Models::LoyaltyPoint.new(response.first) # => loyalty_point
+        #
+        expect(EveOnline::ESI::Models::LoyaltyPoint).to receive(:new).with(response.first).and_return(loyalty_point)
+      end
+
+      specify { expect(subject.loyalty_points).to eq([loyalty_point]) }
+
+      specify { expect { subject.loyalty_points }.to change { subject.instance_variable_get(:@loyalty_points) }.from(nil).to([loyalty_point]) }
     end
-
-    before do
-      #
-      # EveOnline::ESI::Models::LoyaltyPoint.new(response.first) # => loyalty_point
-      #
-      expect(EveOnline::ESI::Models::LoyaltyPoint).to receive(:new).with(response.first).and_return(loyalty_point)
-    end
-
-    specify { expect(subject.loyalty_points).to eq([loyalty_point]) }
-
-    specify { expect { subject.loyalty_points }.to change { subject.instance_variable_defined?(:@_memoized_loyalty_points) }.from(false).to(true) }
   end
 
   describe '#scope' do
