@@ -14,11 +14,14 @@ module EveOnline
       end
 
       def standings
-        output = []
-        response.each do |standing|
-          output << Models::Standing.new(standing)
-        end
-        output
+        @standings ||=
+          begin
+            output = []
+            response.each do |standing|
+              output << Models::Standing.new(standing)
+            end
+            output
+          end
       end
 
       def scope
