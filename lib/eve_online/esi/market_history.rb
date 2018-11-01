@@ -15,11 +15,14 @@ module EveOnline
       end
 
       def history
-        output = []
-        response.each do |history|
-          output << Models::MarketHistory.new(history)
-        end
-        output
+        @history ||=
+          begin
+            output = []
+            response.each do |history|
+              output << Models::MarketHistory.new(history)
+            end
+            output
+          end
       end
 
       def scope; end

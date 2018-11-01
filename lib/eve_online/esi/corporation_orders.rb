@@ -15,11 +15,14 @@ module EveOnline
       end
 
       def orders
-        output = []
-        response.each do |order|
-          output << Models::CorporationOrder.new(order)
-        end
-        output
+        @orders ||=
+          begin
+            output = []
+            response.each do |order|
+              output << Models::CorporationOrder.new(order)
+            end
+            output
+          end
       end
 
       def scope
