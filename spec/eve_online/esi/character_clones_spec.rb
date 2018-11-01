@@ -26,31 +26,41 @@ describe EveOnline::ESI::CharacterClones do
   end
 
   describe '#home_location' do
-    let(:model) { double }
+    context 'when @home_location set' do
+      let(:home_location) { [instance_double(EveOnline::ESI::Models::HomeLocation)] }
 
-    let(:home_location) { double }
+      before { subject.instance_variable_set(:@home_location, home_location) }
 
-    before do
-      #
-      # subject.response['home_location'] => home_location
-      #
-      expect(subject).to receive(:response) do
-        double.tap do |a|
-          expect(a).to receive(:[]).with('home_location').and_return(home_location)
+      specify { expect(subject.home_location).to eq(home_location) }
+    end
+
+    context 'when @ancestries not set' do
+      let(:model) { instance_double(EveOnline::ESI::Models::HomeLocation) }
+
+      let(:home_location) { double }
+
+      before do
+        #
+        # subject.response['home_location'] => home_location
+        #
+        expect(subject).to receive(:response) do
+          double.tap do |a|
+            expect(a).to receive(:[]).with('home_location').and_return(home_location)
+          end
         end
       end
+
+      before do
+        #
+        # EveOnline::ESI::Models::HomeLocation.new(home_location) # => model
+        #
+        expect(EveOnline::ESI::Models::HomeLocation).to receive(:new).with(home_location).and_return(model)
+      end
+
+      specify { expect { subject.home_location }.not_to raise_error }
+
+      specify { expect { subject.home_location }.to change { subject.instance_variable_get(:@home_location) }.from(nil).to(model) }
     end
-
-    before do
-      #
-      # EveOnline::ESI::Models::HomeLocation.new(home_location) # => model
-      #
-      expect(EveOnline::ESI::Models::HomeLocation).to receive(:new).with(home_location).and_return(model)
-    end
-
-    specify { expect { subject.home_location }.not_to raise_error }
-
-    specify { expect { subject.home_location }.to change { subject.instance_variable_defined?(:@_memoized_home_location) }.from(false).to(true) }
   end
 
   describe '#jump_clones' do
