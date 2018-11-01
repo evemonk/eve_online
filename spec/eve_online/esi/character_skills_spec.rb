@@ -44,40 +44,50 @@ describe EveOnline::ESI::CharacterSkills do
   end
 
   describe '#skills' do
-    let(:skill) { instance_double(EveOnline::ESI::Models::Skill) }
+    context 'when @skills set' do
+      let(:skills) { [instance_double(EveOnline::ESI::Models::Skill)] }
 
-    let(:response) do
-      [
-        {
-          'skill_id' => 22_536,
-          'skillpoints_in_skill' => 500,
-          'trained_skill_level' => 1,
-          'active_skill_level' => 0
-        }
-      ]
+      before { subject.instance_variable_set(:@skills, skills) }
+
+      specify { expect(subject.skills).to eq(skills) }
     end
 
-    before do
-      #
-      # subject.response.fetch('skills') # => [{"skill_id"=>22536, "skillpoints_in_skill"=>500, "trained_skill_level"=>1, "active_skill_level"=>0}]
-      #
-      expect(subject).to receive(:response) do
-        double.tap do |a|
-          expect(a).to receive(:fetch).with('skills').and_return(response)
+    context 'when @skills not set' do
+      let(:skill) { instance_double(EveOnline::ESI::Models::Skill) }
+
+      let(:response) do
+        [
+          {
+            'skill_id' => 22_536,
+            'skillpoints_in_skill' => 500,
+            'trained_skill_level' => 1,
+            'active_skill_level' => 0
+          }
+        ]
+      end
+
+      before do
+        #
+        # subject.response.fetch('skills') # => [{"skill_id"=>22536, "skillpoints_in_skill"=>500, "trained_skill_level"=>1, "active_skill_level"=>0}]
+        #
+        expect(subject).to receive(:response) do
+          double.tap do |a|
+            expect(a).to receive(:fetch).with('skills').and_return(response)
+          end
         end
       end
+
+      before do
+        #
+        # EveOnline::ESI::Models::Skill.new(response.first) # => skill
+        #
+        expect(EveOnline::ESI::Models::Skill).to receive(:new).with(response.first).and_return(skill)
+      end
+
+      specify { expect(subject.skills).to eq([skill]) }
+
+      specify { expect { subject.skills }.to change { subject.instance_variable_get(:@skills) }.from(nil).to([skill]) }
     end
-
-    before do
-      #
-      # EveOnline::ESI::Models::Skill.new(response.first) # => skill
-      #
-      expect(EveOnline::ESI::Models::Skill).to receive(:new).with(response.first).and_return(skill)
-    end
-
-    specify { expect(subject.skills).to eq([skill]) }
-
-    specify { expect { subject.skills }.to change { subject.instance_variable_defined?(:@_memoized_skills) }.from(false).to(true) }
   end
 
   describe '#total_sp' do
