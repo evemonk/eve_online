@@ -6,11 +6,14 @@ module EveOnline
       API_ENDPOINT = 'https://esi.evetech.net/v2/universe/system_kills/?datasource=%<datasource>s'
 
       def system_kills
-        output = []
-        response.each do |system_kill|
-          output << Models::SystemKill.new(system_kill)
-        end
-        output
+        @system_kills ||=
+          begin
+            output = []
+            response.each do |system_kill|
+              output << Models::SystemKill.new(system_kill)
+            end
+            output
+          end
       end
 
       def scope; end
