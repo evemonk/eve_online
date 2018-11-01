@@ -20,34 +20,44 @@ describe EveOnline::ESI::UniverseSystemJumps do
   end
 
   describe '#system_jumps' do
-    let(:system_jump) { instance_double(EveOnline::ESI::Models::SystemJump) }
+    context 'when @system_jumps set' do
+      let(:system_jumps) { [instance_double(EveOnline::ESI::Models::SystemJump)] }
 
-    let(:response) do
-      [
-        {
-          ship_jumps: 22,
-          system_id: 30_005_327
-        }
-      ]
+      before { subject.instance_variable_set(:@system_jumps, system_jumps) }
+
+      specify { expect(subject.system_jumps).to eq(system_jumps) }
     end
 
-    before do
-      #
-      # subject.response # => [{"ship_jumps"=>22, "system_id"=>30005327}]
-      #
-      expect(subject).to receive(:response).and_return(response)
+    context 'when @system_jumps not set' do
+      let(:system_jump) { instance_double(EveOnline::ESI::Models::SystemJump) }
+
+      let(:response) do
+        [
+          {
+            ship_jumps: 22,
+            system_id: 30_005_327
+          }
+        ]
+      end
+
+      before do
+        #
+        # subject.response # => [{"ship_jumps"=>22, "system_id"=>30005327}]
+        #
+        expect(subject).to receive(:response).and_return(response)
+      end
+
+      before do
+        #
+        # EveOnline::ESI::Models::SystemJump.new(response.first) # => system_jump
+        #
+        expect(EveOnline::ESI::Models::SystemJump).to receive(:new).with(response.first).and_return(system_jump)
+      end
+
+      specify { expect(subject.system_jumps).to eq([system_jump]) }
+
+      specify { expect { subject.system_jumps }.to change { subject.instance_variable_get(:@system_jumps) }.from(nil).to([system_jump]) }
     end
-
-    before do
-      #
-      # EveOnline::ESI::Models::SystemJump.new(response.first) # => system_jump
-      #
-      expect(EveOnline::ESI::Models::SystemJump).to receive(:new).with(response.first).and_return(system_jump)
-    end
-
-    specify { expect(subject.system_jumps).to eq([system_jump]) }
-
-    specify { expect { subject.system_jumps }.to change { subject.instance_variable_defined?(:@_memoized_system_jumps) }.from(false).to(true) }
   end
 
   describe '#scope' do
