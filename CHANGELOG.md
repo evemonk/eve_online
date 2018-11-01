@@ -1,5 +1,9 @@
 # Changelog
 
+## master
+
+* Remove `memoist` gem
+
 ## v0.20.0
 
 * Add `EveOnline::ESI::UniverseCategories`
