@@ -15,11 +15,14 @@ module EveOnline
       end
 
       def killmails
-        output = []
-        response.each do |killmail|
-          output << Models::KillmailShort.new(killmail)
-        end
-        output
+        @killmails ||=
+          begin
+            output = []
+            response.each do |killmail|
+              output << Models::KillmailShort.new(killmail)
+            end
+            output
+          end
       end
 
       def scope
