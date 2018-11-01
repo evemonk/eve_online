@@ -18,11 +18,14 @@ module EveOnline
       end
 
       def jump_clones
-        output = []
-        response['jump_clones'].each do |jump_clone|
-          output << Models::JumpClone.new(jump_clone)
-        end
-        output
+        @jump_clones ||=
+          begin
+            output = []
+            response['jump_clones'].each do |jump_clone|
+              output << Models::JumpClone.new(jump_clone)
+            end
+            output
+          end
       end
 
       def last_clone_jump_date

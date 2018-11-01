@@ -54,39 +54,49 @@ describe EveOnline::ESI::CharacterClones do
   end
 
   describe '#jump_clones' do
-    let(:jump_clone) { instance_double(EveOnline::ESI::Models::JumpClone) }
+    context 'when @jump_clones set' do
+      let(:jump_clones) { [instance_double(EveOnline::ESI::Models::JumpClone)] }
 
-    let(:response) do
-      [
-        {
-          'location_id' => 61_000_032,
-          'location_type' => 'station',
-          'implants' => [22_118]
-        }
-      ]
+      before { subject.instance_variable_set(:@jump_clones, jump_clones) }
+
+      specify { expect(subject.jump_clones).to eq(jump_clones) }
     end
 
-    before do
-      #
-      # subject.response['jump_clones'] # => [{"location_id"=>61000032, "location_type"=>"station", "implants"=>[22118]}]
-      #
-      expect(subject).to receive(:response) do
-        double.tap do |a|
-          expect(a).to receive(:[]).with('jump_clones').and_return(response)
+    context 'when @jump_clones not set' do
+      let(:jump_clone) { instance_double(EveOnline::ESI::Models::JumpClone) }
+
+      let(:response) do
+        [
+          {
+            'location_id' => 61_000_032,
+            'location_type' => 'station',
+            'implants' => [22_118]
+          }
+        ]
+      end
+
+      before do
+        #
+        # subject.response['jump_clones'] # => [{"location_id"=>61000032, "location_type"=>"station", "implants"=>[22118]}]
+        #
+        expect(subject).to receive(:response) do
+          double.tap do |a|
+            expect(a).to receive(:[]).with('jump_clones').and_return(response)
+          end
         end
       end
+
+      before do
+        #
+        # EveOnline::ESI::Models::JumpClone.new(response.first) # => jump_clone
+        #
+        expect(EveOnline::ESI::Models::JumpClone).to receive(:new).with(response.first).and_return(jump_clone)
+      end
+
+      specify { expect(subject.jump_clones).to eq([jump_clone]) }
+
+      specify { expect { subject.jump_clones }.to change { subject.instance_variable_get(:@jump_clones) }.from(nil).to([jump_clone]) }
     end
-
-    before do
-      #
-      # EveOnline::ESI::Models::JumpClone.new(response.first) # => jump_clone
-      #
-      expect(EveOnline::ESI::Models::JumpClone).to receive(:new).with(response.first).and_return(jump_clone)
-    end
-
-    specify { expect(subject.jump_clones).to eq([jump_clone]) }
-
-    specify { expect { subject.jump_clones }.to change { subject.instance_variable_defined?(:@_memoized_jump_clones) }.from(false).to(true) }
   end
 
   describe '#last_clone_jump_date' do
