@@ -15,11 +15,14 @@ module EveOnline
       end
 
       def bookmark_folders
-        output = []
-        response.each do |bookmark_folder|
-          output << Models::BookmarkFolder.new(bookmark_folder)
-        end
-        output
+        @bookmark_folders ||=
+          begin
+            output = []
+            response.each do |bookmark_folder|
+              output << Models::BookmarkFolder.new(bookmark_folder)
+            end
+            output
+          end
       end
 
       def scope
