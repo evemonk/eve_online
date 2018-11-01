@@ -14,11 +14,14 @@ module EveOnline
       end
 
       def events
-        output = []
-        response.each do |event|
-          output << Models::Event.new(event)
-        end
-        output
+        @events ||=
+          begin
+            output = []
+            response.each do |event|
+              output << Models::Event.new(event)
+            end
+            output
+          end
       end
 
       def scope
