@@ -36,40 +36,50 @@ describe EveOnline::ESI::CorporationBlueprints do
   end
 
   describe '#blueprints' do
-    let(:blueprint) { instance_double(EveOnline::ESI::Models::Blueprint) }
+    context 'when @blueprints set' do
+      let(:blueprints) { [instance_double(EveOnline::ESI::Models::Blueprint)] }
 
-    let(:response) do
-      [
-        {
-          'item_id' => 1_000_000_010_495,
-          'type_id' => 691,
-          'location_id' => 60_014_719,
-          'location_flag' => 'CorpSAG1',
-          'quantity' => 1,
-          'time_efficiency' => 0,
-          'material_efficiency' => 0,
-          'runs' => -1
-        }
-      ]
+      before { subject.instance_variable_set(:@blueprints, blueprints) }
+
+      specify { expect(subject.blueprints).to eq(blueprints) }
     end
 
-    before do
-      #
-      # subject.response # => [{"item_id"=>1000000010495, "type_id"=>691, "location_id"=>60014719, "location_flag"=>"CorpSAG1", "quantity"=>1, "time_efficiency"=>0, "material_efficiency"=>0, "runs"=>-1}]
-      #
-      expect(subject).to receive(:response).and_return(response)
+    context 'when @blueprints not set' do
+      let(:blueprint) { instance_double(EveOnline::ESI::Models::Blueprint) }
+
+      let(:response) do
+        [
+          {
+            'item_id' => 1_000_000_010_495,
+            'type_id' => 691,
+            'location_id' => 60_014_719,
+            'location_flag' => 'CorpSAG1',
+            'quantity' => 1,
+            'time_efficiency' => 0,
+            'material_efficiency' => 0,
+            'runs' => -1
+          }
+        ]
+      end
+
+      before do
+        #
+        # subject.response # => [{"item_id"=>1000000010495, "type_id"=>691, "location_id"=>60014719, "location_flag"=>"CorpSAG1", "quantity"=>1, "time_efficiency"=>0, "material_efficiency"=>0, "runs"=>-1}]
+        #
+        expect(subject).to receive(:response).and_return(response)
+      end
+
+      before do
+        #
+        # EveOnline::ESI::Models::Blueprint.new(response.first) # => blueprint
+        #
+        expect(EveOnline::ESI::Models::Blueprint).to receive(:new).with(response.first).and_return(blueprint)
+      end
+
+      specify { expect(subject.blueprints).to eq([blueprint]) }
+
+      specify { expect { subject.blueprints }.to change { subject.instance_variable_get(:@blueprints) }.from(nil).to([blueprint]) }
     end
-
-    before do
-      #
-      # EveOnline::ESI::Models::Blueprint.new(response.first) # => blueprint
-      #
-      expect(EveOnline::ESI::Models::Blueprint).to receive(:new).with(response.first).and_return(blueprint)
-    end
-
-    specify { expect(subject.blueprints).to eq([blueprint]) }
-
-    specify { expect { subject.blueprints }.to change { subject.instance_variable_defined?(:@_memoized_blueprints) }.from(false).to(true) }
   end
 
   describe '#scope' do

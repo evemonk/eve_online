@@ -15,11 +15,14 @@ module EveOnline
       end
 
       def blueprints
-        output = []
-        response.each do |blueprint|
-          output << Models::Blueprint.new(blueprint)
-        end
-        output
+        @blueprints ||=
+          begin
+            output = []
+            response.each do |blueprint|
+              output << Models::Blueprint.new(blueprint)
+            end
+            output
+          end
       end
 
       def scope
