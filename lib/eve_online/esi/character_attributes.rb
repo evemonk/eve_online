@@ -22,9 +22,8 @@ module EveOnline
                      :memory, :perception, :willpower
 
       def model
-        Models::Attributes.new(response)
+        @model ||= Models::Attributes.new(response)
       end
-      memoize :model
 
       def scope
         'esi-skills.read_skills.v1'

@@ -15,13 +15,15 @@ module EveOnline
       end
 
       def assets_names
-        output = []
-        response.each do |asset_name|
-          output << Models::AssetName.new(asset_name)
-        end
-        output
+        @assets_names ||=
+          begin
+            output = []
+            response.each do |asset_name|
+              output << Models::AssetName.new(asset_name)
+            end
+            output
+          end
       end
-      memoize :assets_names
 
       def http_method
         'Post'

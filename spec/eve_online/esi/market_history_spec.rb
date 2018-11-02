@@ -28,38 +28,48 @@ describe EveOnline::ESI::MarketHistory do
   end
 
   describe '#history' do
-    let(:market_history) { instance_double(EveOnline::ESI::Models::MarketHistory) }
+    context 'when @history set' do
+      let(:history) { [instance_double(EveOnline::ESI::Models::MarketHistory)] }
 
-    let(:response) do
-      [
-        {
-          'date' => '2015-05-01',
-          'order_count' => 2267,
-          'volume' => 16_276_782_035,
-          'highest' => 5.27,
-          'average' => 5.25,
-          'lowest' => 5.11
-        }
-      ]
+      before { subject.instance_variable_set(:@history, history) }
+
+      specify { expect(subject.history).to eq(history) }
     end
 
-    before do
-      #
-      # subject.response # => [{"date"=>"2015-05-01", "order_count"=>2267, "volume"=>16276782035, "highest"=>5.27, "average"=>5.25, "lowest"=>5.11}]
-      #
-      expect(subject).to receive(:response).and_return(response)
+    context 'when @history not set' do
+      let(:market_history) { instance_double(EveOnline::ESI::Models::MarketHistory) }
+
+      let(:response) do
+        [
+          {
+            'date' => '2015-05-01',
+            'order_count' => 2267,
+            'volume' => 16_276_782_035,
+            'highest' => 5.27,
+            'average' => 5.25,
+            'lowest' => 5.11
+          }
+        ]
+      end
+
+      before do
+        #
+        # subject.response # => [{"date"=>"2015-05-01", "order_count"=>2267, "volume"=>16276782035, "highest"=>5.27, "average"=>5.25, "lowest"=>5.11}]
+        #
+        expect(subject).to receive(:response).and_return(response)
+      end
+
+      before do
+        #
+        # EveOnline::ESI::Models::MarketHistory.new(response.first) # => market_history
+        #
+        expect(EveOnline::ESI::Models::MarketHistory).to receive(:new).with(response.first).and_return(market_history)
+      end
+
+      specify { expect(subject.history).to eq([market_history]) }
+
+      specify { expect { subject.history }.to change { subject.instance_variable_get(:@history) }.from(nil).to([market_history]) }
     end
-
-    before do
-      #
-      # EveOnline::ESI::Models::MarketHistory.new(response.first) # => market_history
-      #
-      expect(EveOnline::ESI::Models::MarketHistory).to receive(:new).with(response.first).and_return(market_history)
-    end
-
-    specify { expect(subject.history).to eq([market_history]) }
-
-    specify { expect { subject.history }.to change { subject.instance_variable_defined?(:@_memoized_history) }.from(false).to(true) }
   end
 
   describe '#scope' do

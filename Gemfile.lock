@@ -4,7 +4,6 @@ PATH
     eve_online (0.20.0)
       activesupport (>= 4.2.0)
       json
-      memoist
 
 GEM
   remote: https://rubygems.org/
@@ -19,7 +18,7 @@ GEM
     ast (2.4.0)
     awesome_print (1.8.0)
     coderay (1.1.2)
-    concurrent-ruby (1.0.5)
+    concurrent-ruby (1.1.0)
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
     diff-lcs (1.3)
@@ -34,7 +33,6 @@ GEM
       kramdown (~> 1.12, >= 1.12.0)
       mixlib-cli (~> 1.7, >= 1.7.0)
       mixlib-config (~> 2.2, >= 2.2.1)
-    memoist (0.16.0)
     method_source (0.9.0)
     mini_portile2 (2.3.0)
     minitest (5.11.3)
@@ -77,8 +75,8 @@ GEM
       rainbow (>= 2.2.2, < 4.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (~> 1.4.0)
-    rubocop-rspec (1.30.0)
-      rubocop (>= 0.58.0)
+    rubocop-rspec (1.30.1)
+      rubocop (>= 0.60.0)
     ruby-progressbar (1.10.0)
     safe_yaml (1.0.4)
     simplecov (0.16.1)

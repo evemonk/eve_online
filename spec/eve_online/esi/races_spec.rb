@@ -20,36 +20,46 @@ describe EveOnline::ESI::Races do
   end
 
   describe '#races' do
-    let(:race) { instance_double(EveOnline::ESI::Models::Race) }
+    context 'when @races set' do
+      let(:races) { [instance_double(EveOnline::ESI::Models::Race)] }
 
-    let(:response) do
-      [
-        {
-          'race_id' => 2,
-          'name' => 'Minmatar',
-          'description' => 'Once a thriving tribal civilization, the Minmatar...',
-          'alliance_id' => 500_002
-        }
-      ]
+      before { subject.instance_variable_set(:@races, races) }
+
+      specify { expect(subject.races).to eq(races) }
     end
 
-    before do
-      #
-      # subject.response # => [{"race_id"=>2, "name"=>"Minmatar", "description"=> "Once a thriving tribal civilization, the Minmatar...", "alliance_id"=>500002}]
-      #
-      expect(subject).to receive(:response).and_return(response)
+    context 'when @races not set' do
+      let(:race) { instance_double(EveOnline::ESI::Models::Race) }
+
+      let(:response) do
+        [
+          {
+            'race_id' => 2,
+            'name' => 'Minmatar',
+            'description' => 'Once a thriving tribal civilization, the Minmatar...',
+            'alliance_id' => 500_002
+          }
+        ]
+      end
+
+      before do
+        #
+        # subject.response # => [{"race_id"=>2, "name"=>"Minmatar", "description"=> "Once a thriving tribal civilization, the Minmatar...", "alliance_id"=>500002}]
+        #
+        expect(subject).to receive(:response).and_return(response)
+      end
+
+      before do
+        #
+        # EveOnline::ESI::Models::Race.new(response.first) # => race
+        #
+        expect(EveOnline::ESI::Models::Race).to receive(:new).with(response.first).and_return(race)
+      end
+
+      specify { expect(subject.races).to eq([race]) }
+
+      specify { expect { subject.races }.to change { subject.instance_variable_get(:@races) }.from(nil).to([race]) }
     end
-
-    before do
-      #
-      # EveOnline::ESI::Models::Race.new(response.first) # => race
-      #
-      expect(EveOnline::ESI::Models::Race).to receive(:new).with(response.first).and_return(race)
-    end
-
-    specify { expect(subject.races).to eq([race]) }
-
-    specify { expect { subject.races }.to change { subject.instance_variable_defined?(:@_memoized_races) }.from(false).to(true) }
   end
 
   describe '#scope' do

@@ -21,9 +21,8 @@ module EveOnline
                      :type_id, :destination, :position
 
       def model
-        Models::Stargate.new(response)
+        @model ||= Models::Stargate.new(response)
       end
-      memoize :model
 
       def scope; end
 

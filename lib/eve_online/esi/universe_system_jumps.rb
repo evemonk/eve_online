@@ -6,13 +6,15 @@ module EveOnline
       API_ENDPOINT = 'https://esi.evetech.net/v1/universe/system_jumps/?datasource=%<datasource>s'
 
       def system_jumps
-        output = []
-        response.each do |system_jump|
-          output << Models::SystemJump.new(system_jump)
-        end
-        output
+        @system_jumps ||=
+          begin
+            output = []
+            response.each do |system_jump|
+              output << Models::SystemJump.new(system_jump)
+            end
+            output
+          end
       end
-      memoize :system_jumps
 
       def scope; end
 

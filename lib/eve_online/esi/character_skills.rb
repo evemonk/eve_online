@@ -21,13 +21,15 @@ module EveOnline
       end
 
       def skills
-        output = []
-        response.fetch('skills').each do |skill|
-          output << Models::Skill.new(skill)
-        end
-        output
+        @skills ||=
+          begin
+            output = []
+            response.fetch('skills').each do |skill|
+              output << Models::Skill.new(skill)
+            end
+            output
+          end
       end
-      memoize :skills
 
       def total_sp
         response['total_sp']

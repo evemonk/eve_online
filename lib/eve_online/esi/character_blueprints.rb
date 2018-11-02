@@ -15,13 +15,15 @@ module EveOnline
       end
 
       def blueprints
-        output = []
-        response.each do |blueprint|
-          output << Models::Blueprint.new(blueprint)
-        end
-        output
+        @blueprints ||=
+          begin
+            output = []
+            response.each do |blueprint|
+              output << Models::Blueprint.new(blueprint)
+            end
+            output
+          end
       end
-      memoize :blueprints
 
       def scope
         'esi-characters.read_blueprints.v1'

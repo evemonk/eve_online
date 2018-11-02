@@ -36,34 +36,44 @@ describe EveOnline::ESI::WarKillmails do
   end
 
   describe '#killmails' do
-    let(:killmail) { instance_double(EveOnline::ESI::Models::KillmailShort) }
+    context 'when @killmails set' do
+      let(:killmails) { [instance_double(EveOnline::ESI::Models::KillmailShort)] }
 
-    let(:response) do
-      [
-        {
-          'killmail_hash' => '07f7ef1d7f6090e78d8e85b4a98e680f67b5e9d5',
-          'killmail_id' => 72_410_059
-        }
-      ]
+      before { subject.instance_variable_set(:@killmails, killmails) }
+
+      specify { expect(subject.killmails).to eq(killmails) }
     end
 
-    before do
-      #
-      # subject.response # => [{"killmail_hash"=>716338097, "killmail_id"=>72410059}]
-      #
-      expect(subject).to receive(:response).and_return(response)
+    context 'when @killmails not set' do
+      let(:killmail) { instance_double(EveOnline::ESI::Models::KillmailShort) }
+
+      let(:response) do
+        [
+          {
+            'killmail_hash' => '07f7ef1d7f6090e78d8e85b4a98e680f67b5e9d5',
+            'killmail_id' => 72_410_059
+          }
+        ]
+      end
+
+      before do
+        #
+        # subject.response # => [{"killmail_hash"=>716338097, "killmail_id"=>72410059}]
+        #
+        expect(subject).to receive(:response).and_return(response)
+      end
+
+      before do
+        #
+        # EveOnline::ESI::Models::KillmailShort.new(response.first) # => killmail
+        #
+        expect(EveOnline::ESI::Models::KillmailShort).to receive(:new).with(response.first).and_return(killmail)
+      end
+
+      specify { expect(subject.killmails).to eq([killmail]) }
+
+      specify { expect { subject.killmails }.to change { subject.instance_variable_get(:@killmails) }.from(nil).to([killmail]) }
     end
-
-    before do
-      #
-      # EveOnline::ESI::Models::KillmailShort.new(response.first) # => killmail
-      #
-      expect(EveOnline::ESI::Models::KillmailShort).to receive(:new).with(response.first).and_return(killmail)
-    end
-
-    specify { expect(subject.killmails).to eq([killmail]) }
-
-    specify { expect { subject.killmails }.to change { subject.instance_variable_defined?(:@_memoized_killmails) }.from(false).to(true) }
   end
 
   describe '#scope' do

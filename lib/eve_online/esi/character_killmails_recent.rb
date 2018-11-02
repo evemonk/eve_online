@@ -15,13 +15,15 @@ module EveOnline
       end
 
       def killmails
-        output = []
-        response.each do |killmail|
-          output << Models::KillmailShort.new(killmail)
-        end
-        output
+        @killmails ||=
+          begin
+            output = []
+            response.each do |killmail|
+              output << Models::KillmailShort.new(killmail)
+            end
+            output
+          end
       end
-      memoize :killmails
 
       def scope
         'esi-killmails.read_killmails.v1'

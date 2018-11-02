@@ -26,37 +26,47 @@ describe EveOnline::ESI::CharacterCalendar do
   end
 
   describe '#events' do
-    let(:event) { instance_double(EveOnline::ESI::Models::Event) }
+    context 'when @events set' do
+      let(:events) { [instance_double(EveOnline::ESI::Models::Event)] }
 
-    let(:response) do
-      [
-        {
-          event_id: 1_635_247,
-          event_date: '2018-03-05T15:00:59Z',
-          title: 'Moon extraction',
-          importance: 0,
-          event_response: 'not_responded'
-        }
-      ]
+      before { subject.instance_variable_set(:@events, events) }
+
+      specify { expect(subject.events).to eq(events) }
     end
 
-    before do
-      #
-      # subject.response # => [{"event_id"=>1635247, "event_date"=>"2018-03-05T15:00:59Z", "title"=>"Moon extraction", "importance"=>0, "event_response"=>"not_responded"}]
-      #
-      expect(subject).to receive(:response).and_return(response)
+    context 'when @ancestries not set' do
+      let(:event) { instance_double(EveOnline::ESI::Models::Event) }
+
+      let(:response) do
+        [
+          {
+            event_id: 1_635_247,
+            event_date: '2018-03-05T15:00:59Z',
+            title: 'Moon extraction',
+            importance: 0,
+            event_response: 'not_responded'
+          }
+        ]
+      end
+
+      before do
+        #
+        # subject.response # => [{"event_id"=>1635247, "event_date"=>"2018-03-05T15:00:59Z", "title"=>"Moon extraction", "importance"=>0, "event_response"=>"not_responded"}]
+        #
+        expect(subject).to receive(:response).and_return(response)
+      end
+
+      before do
+        #
+        # EveOnline::ESI::Models::Event.new(response.first) # => event
+        #
+        expect(EveOnline::ESI::Models::Event).to receive(:new).with(response.first).and_return(event)
+      end
+
+      specify { expect(subject.events).to eq([event]) }
+
+      specify { expect { subject.events }.to change { subject.instance_variable_get(:@events) }.from(nil).to([event]) }
     end
-
-    before do
-      #
-      # EveOnline::ESI::Models::Event.new(response.first) # => event
-      #
-      expect(EveOnline::ESI::Models::Event).to receive(:new).with(response.first).and_return(event)
-    end
-
-    specify { expect(subject.events).to eq([event]) }
-
-    specify { expect { subject.events }.to change { subject.instance_variable_defined?(:@_memoized_events) }.from(false).to(true) }
   end
 
   describe '#scope' do

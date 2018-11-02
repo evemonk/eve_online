@@ -23,9 +23,8 @@ module EveOnline
                      :type_id, :volume, :dogma_attributes, :dogma_effects
 
       def model
-        Models::Type.new(response)
+        @model ||= Models::Type.new(response)
       end
-      memoize :model
 
       def scope; end
 

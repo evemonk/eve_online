@@ -36,38 +36,48 @@ describe EveOnline::ESI::CharacterBookmarks do
   end
 
   describe '#bookmarks' do
-    let(:bookmark) { instance_double(EveOnline::ESI::Models::Bookmark) }
+    context 'when @bookmarks set' do
+      let(:bookmarks) { [instance_double(EveOnline::ESI::Models::Bookmark)] }
 
-    let(:response) do
-      [
-        {
-          bookmark_id: 4,
-          created: '2012-07-09T22:38:31Z',
-          label: 'Stargate',
-          notes: 'This is a stargate',
-          location_id: 30_003_430,
-          creator_id: 2_112_625_428
-        }
-      ]
+      before { subject.instance_variable_set(:@bookmarks, bookmarks) }
+
+      specify { expect(subject.bookmarks).to eq(bookmarks) }
     end
 
-    before do
-      #
-      # subject.response # => [{"bookmark_id"=>4, "created"=>"2012-07-09T22:38:31Z", "label"=>"Stargate", "notes"=>"This is a stargate", "location_id"=>30003430, "creator_id"=>2112625428}]
-      #
-      expect(subject).to receive(:response).and_return(response)
+    context 'when @ancestries not set' do
+      let(:bookmark) { instance_double(EveOnline::ESI::Models::Bookmark) }
+
+      let(:response) do
+        [
+          {
+            bookmark_id: 4,
+            created: '2012-07-09T22:38:31Z',
+            label: 'Stargate',
+            notes: 'This is a stargate',
+            location_id: 30_003_430,
+            creator_id: 2_112_625_428
+          }
+        ]
+      end
+
+      before do
+        #
+        # subject.response # => [{"bookmark_id"=>4, "created"=>"2012-07-09T22:38:31Z", "label"=>"Stargate", "notes"=>"This is a stargate", "location_id"=>30003430, "creator_id"=>2112625428}]
+        #
+        expect(subject).to receive(:response).and_return(response)
+      end
+
+      before do
+        #
+        # EveOnline::ESI::Models::Bookmark.new(response.first) # => bookmark
+        #
+        expect(EveOnline::ESI::Models::Bookmark).to receive(:new).with(response.first).and_return(bookmark)
+      end
+
+      specify { expect(subject.bookmarks).to eq([bookmark]) }
+
+      specify { expect { subject.bookmarks }.to change { subject.instance_variable_get(:@bookmarks) }.from(nil).to([bookmark]) }
     end
-
-    before do
-      #
-      # EveOnline::ESI::Models::Bookmark.new(response.first) # => bookmark
-      #
-      expect(EveOnline::ESI::Models::Bookmark).to receive(:new).with(response.first).and_return(bookmark)
-    end
-
-    specify { expect(subject.bookmarks).to eq([bookmark]) }
-
-    specify { expect { subject.bookmarks }.to change { subject.instance_variable_defined?(:@_memoized_bookmarks) }.from(false).to(true) }
   end
 
   describe '#scope' do

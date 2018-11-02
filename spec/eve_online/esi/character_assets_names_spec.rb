@@ -28,34 +28,44 @@ describe EveOnline::ESI::CharacterAssetsNames do
   end
 
   describe '#assets_names' do
-    let(:asset_name) { instance_double(EveOnline::ESI::Models::AssetName) }
+    context 'when @assets_names set' do
+      let(:assets_names) { [instance_double(EveOnline::ESI::Models::AssetName)] }
 
-    let(:response) do
-      [
-        {
-          item_id: 1_001_215_602_246,
-          name: 'HOLE'
-        }
-      ]
+      before { subject.instance_variable_set(:@assets_names, assets_names) }
+
+      specify { expect(subject.assets_names).to eq(assets_names) }
     end
 
-    before do
-      #
-      # subject.response # => [{"item_id"=>1001215602246, "name"=>"HOLE"}]
-      #
-      expect(subject).to receive(:response).and_return(response)
+    context 'when @assets_names not set' do
+      let(:asset_name) { instance_double(EveOnline::ESI::Models::AssetName) }
+
+      let(:response) do
+        [
+          {
+            item_id: 1_001_215_602_246,
+            name: 'HOLE'
+          }
+        ]
+      end
+
+      before do
+        #
+        # subject.response # => [{"item_id"=>1001215602246, "name"=>"HOLE"}]
+        #
+        expect(subject).to receive(:response).and_return(response)
+      end
+
+      before do
+        #
+        # EveOnline::ESI::Models::AssetName.new(response.first) # => asset_name
+        #
+        expect(EveOnline::ESI::Models::AssetName).to receive(:new).with(response.first).and_return(asset_name)
+      end
+
+      specify { expect(subject.assets_names).to eq([asset_name]) }
+
+      specify { expect { subject.assets_names }.to change { subject.instance_variable_get(:@assets_names) }.from(nil).to([asset_name]) }
     end
-
-    before do
-      #
-      # EveOnline::ESI::Models::AssetName.new(response.first) # => asset_name
-      #
-      expect(EveOnline::ESI::Models::AssetName).to receive(:new).with(response.first).and_return(asset_name)
-    end
-
-    specify { expect(subject.assets_names).to eq([asset_name]) }
-
-    specify { expect { subject.assets_names }.to change { subject.instance_variable_defined?(:@_memoized_assets_names) }.from(false).to(true) }
   end
 
   describe '#http_method' do

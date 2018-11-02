@@ -6,13 +6,15 @@ module EveOnline
       API_ENDPOINT = 'https://esi.evetech.net/v1/universe/races/?datasource=%<datasource>s'
 
       def races
-        output = []
-        response.each do |race|
-          output << Models::Race.new(race)
-        end
-        output
+        @races ||=
+          begin
+            output = []
+            response.each do |race|
+              output << Models::Race.new(race)
+            end
+            output
+          end
       end
-      memoize :races
 
       def scope; end
 

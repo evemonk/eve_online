@@ -14,13 +14,15 @@ module EveOnline
       end
 
       def standings
-        output = []
-        response.each do |standing|
-          output << Models::Standing.new(standing)
-        end
-        output
+        @standings ||=
+          begin
+            output = []
+            response.each do |standing|
+              output << Models::Standing.new(standing)
+            end
+            output
+          end
       end
-      memoize :standings
 
       def scope
         'esi-characters.read_standings.v1'

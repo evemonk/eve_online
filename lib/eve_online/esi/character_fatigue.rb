@@ -21,9 +21,8 @@ module EveOnline
                      :last_jump_date, :last_update_date
 
       def model
-        Models::Fatigue.new(response)
+        @model ||= Models::Fatigue.new(response)
       end
-      memoize :model
 
       def scope
         'esi-characters.read_fatigue.v1'

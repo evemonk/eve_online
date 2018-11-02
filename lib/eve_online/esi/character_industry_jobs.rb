@@ -15,13 +15,15 @@ module EveOnline
       end
 
       def jobs
-        output = []
-        response.each do |job|
-          output << Models::CharacterIndustryJob.new(job)
-        end
-        output
+        @jobs ||=
+          begin
+            output = []
+            response.each do |job|
+              output << Models::CharacterIndustryJob.new(job)
+            end
+            output
+          end
       end
-      memoize :jobs
 
       def scope
         'esi-industry.read_character_jobs.v1'

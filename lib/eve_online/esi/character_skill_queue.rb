@@ -14,13 +14,15 @@ module EveOnline
       end
 
       def skills
-        output = []
-        response.each do |skill|
-          output << Models::SkillQueueEntry.new(skill)
-        end
-        output
+        @skills ||=
+          begin
+            output = []
+            response.each do |skill|
+              output << Models::SkillQueueEntry.new(skill)
+            end
+            output
+          end
       end
-      memoize :skills
 
       def scope
         'esi-skills.read_skillqueue.v1'

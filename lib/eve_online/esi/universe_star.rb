@@ -21,9 +21,8 @@ module EveOnline
                      :solar_system_id, :spectral_class, :temperature, :type_id
 
       def model
-        Models::Star.new(response)
+        @model ||= Models::Star.new(response)
       end
-      memoize :model
 
       def scope; end
 

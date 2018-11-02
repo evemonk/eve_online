@@ -23,9 +23,8 @@ module EveOnline
                      :services, :station_id, :system_id, :type_id, :position
 
       def model
-        Models::Station.new(response)
+        @model ||= Models::Station.new(response)
       end
-      memoize :model
 
       def scope; end
 

@@ -26,35 +26,45 @@ describe EveOnline::ESI::CharacterStandings do
   end
 
   describe '#standings' do
-    let(:standing) { instance_double(EveOnline::ESI::Models::Standing) }
+    context 'when @standings set' do
+      let(:standings) { [instance_double(EveOnline::ESI::Models::Standing)] }
 
-    let(:response) do
-      [
-        {
-          'from_id' => 500_001,
-          'from_type' => 'faction',
-          'standing' => 0.3303719111639991
-        }
-      ]
+      before { subject.instance_variable_set(:@standings, standings) }
+
+      specify { expect(subject.standings).to eq(standings) }
     end
 
-    before do
-      #
-      # subject.response # => [{"from_id"=>500001, "from_type"=>"faction", "standing"=>0.3303719111639991}]
-      #
-      expect(subject).to receive(:response).and_return(response)
+    context 'when @ancestries not set' do
+      let(:standing) { instance_double(EveOnline::ESI::Models::Standing) }
+
+      let(:response) do
+        [
+          {
+            'from_id' => 500_001,
+            'from_type' => 'faction',
+            'standing' => 0.3303719111639991
+          }
+        ]
+      end
+
+      before do
+        #
+        # subject.response # => [{"from_id"=>500001, "from_type"=>"faction", "standing"=>0.3303719111639991}]
+        #
+        expect(subject).to receive(:response).and_return(response)
+      end
+
+      before do
+        #
+        # EveOnline::ESI::Models::Standing.new(response.first) # => standing
+        #
+        expect(EveOnline::ESI::Models::Standing).to receive(:new).with(response.first).and_return(standing)
+      end
+
+      specify { expect(subject.standings).to eq([standing]) }
+
+      specify { expect { subject.standings }.to change { subject.instance_variable_get(:@standings) }.from(nil).to([standing]) }
     end
-
-    before do
-      #
-      # EveOnline::ESI::Models::Standing.new(response.first) # => standing
-      #
-      expect(EveOnline::ESI::Models::Standing).to receive(:new).with(response.first).and_return(standing)
-    end
-
-    specify { expect(subject.standings).to eq([standing]) }
-
-    specify { expect { subject.standings }.to change { subject.instance_variable_defined?(:@_memoized_standings) }.from(false).to(true) }
   end
 
   describe '#scope' do

@@ -36,34 +36,44 @@ describe EveOnline::ESI::CharacterBookmarkFolders do
   end
 
   describe '#bookmark_folders' do
-    let(:bookmark_folder) { instance_double(EveOnline::ESI::Models::BookmarkFolder) }
+    context 'when @bookmark_folders set' do
+      let(:bookmark_folders) { [instance_double(EveOnline::ESI::Models::BookmarkFolder)] }
 
-    let(:response) do
-      [
-        {
-          folder_id: 5,
-          name: 'Icecream'
-        }
-      ]
+      before { subject.instance_variable_set(:@bookmark_folders, bookmark_folders) }
+
+      specify { expect(subject.bookmark_folders).to eq(bookmark_folders) }
     end
 
-    before do
-      #
-      # subject.response # => [{"folder_id"=>5, "name"=>"Icecream"}]
-      #
-      expect(subject).to receive(:response).and_return(response)
+    context 'when @ancestries not set' do
+      let(:bookmark_folder) { instance_double(EveOnline::ESI::Models::BookmarkFolder) }
+
+      let(:response) do
+        [
+          {
+            folder_id: 5,
+            name: 'Icecream'
+          }
+        ]
+      end
+
+      before do
+        #
+        # subject.response # => [{"folder_id"=>5, "name"=>"Icecream"}]
+        #
+        expect(subject).to receive(:response).and_return(response)
+      end
+
+      before do
+        #
+        # EveOnline::ESI::Models::BookmarkFolder.new(response.first) # => bookmark_folder
+        #
+        expect(EveOnline::ESI::Models::BookmarkFolder).to receive(:new).with(response.first).and_return(bookmark_folder)
+      end
+
+      specify { expect(subject.bookmark_folders).to eq([bookmark_folder]) }
+
+      specify { expect { subject.bookmark_folders }.to change { subject.instance_variable_get(:@bookmark_folders) }.from(nil).to([bookmark_folder]) }
     end
-
-    before do
-      #
-      # EveOnline::ESI::Models::BookmarkFolder.new(response.first) # => bookmark_folder
-      #
-      expect(EveOnline::ESI::Models::BookmarkFolder).to receive(:new).with(response.first).and_return(bookmark_folder)
-    end
-
-    specify { expect(subject.bookmark_folders).to eq([bookmark_folder]) }
-
-    specify { expect { subject.bookmark_folders }.to change { subject.instance_variable_defined?(:@_memoized_bookmark_folders) }.from(false).to(true) }
   end
 
   describe '#scope' do

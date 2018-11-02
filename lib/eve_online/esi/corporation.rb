@@ -23,9 +23,8 @@ module EveOnline
                      :tax_rate, :ticker, :corporation_url
 
       def model
-        Models::Corporation.new(response)
+        @model ||= Models::Corporation.new(response)
       end
-      memoize :model
 
       def scope; end
 

@@ -15,13 +15,15 @@ module EveOnline
       end
 
       def bookmarks
-        output = []
-        response.each do |bookmark|
-          output << Models::Bookmark.new(bookmark)
-        end
-        output
+        @bookmarks ||=
+          begin
+            output = []
+            response.each do |bookmark|
+              output << Models::Bookmark.new(bookmark)
+            end
+            output
+          end
       end
-      memoize :bookmarks
 
       def scope
         'esi-bookmarks.read_character_bookmarks.v1'

@@ -21,9 +21,8 @@ module EveOnline
                      :region_id
 
       def model
-        Models::Region.new(response)
+        @model ||= Models::Region.new(response)
       end
-      memoize :model
 
       def scope; end
 

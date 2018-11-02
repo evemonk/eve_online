@@ -14,13 +14,15 @@ module EveOnline
       end
 
       def events
-        output = []
-        response.each do |event|
-          output << Models::Event.new(event)
-        end
-        output
+        @events ||=
+          begin
+            output = []
+            response.each do |event|
+              output << Models::Event.new(event)
+            end
+            output
+          end
       end
-      memoize :events
 
       def scope
         'esi-calendar.read_calendar_events.v1'

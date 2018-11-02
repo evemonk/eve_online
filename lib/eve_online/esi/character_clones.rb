@@ -14,18 +14,19 @@ module EveOnline
       end
 
       def home_location
-        Models::HomeLocation.new(response['home_location'])
+        @home_location ||= Models::HomeLocation.new(response['home_location'])
       end
-      memoize :home_location
 
       def jump_clones
-        output = []
-        response['jump_clones'].each do |jump_clone|
-          output << Models::JumpClone.new(jump_clone)
-        end
-        output
+        @jump_clones ||=
+          begin
+            output = []
+            response['jump_clones'].each do |jump_clone|
+              output << Models::JumpClone.new(jump_clone)
+            end
+            output
+          end
       end
-      memoize :jump_clones
 
       def last_clone_jump_date
         last_clone_jump_date = response['last_clone_jump_date']

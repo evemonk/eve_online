@@ -15,13 +15,15 @@ module EveOnline
       end
 
       def orders
-        output = []
-        response.each do |order|
-          output << Models::CorporationOrder.new(order)
-        end
-        output
+        @orders ||=
+          begin
+            output = []
+            response.each do |order|
+              output << Models::CorporationOrder.new(order)
+            end
+            output
+          end
       end
-      memoize :orders
 
       def scope
         'esi-markets.read_corporation_orders.v1'

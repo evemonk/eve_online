@@ -20,9 +20,8 @@ module EveOnline
       def_delegators :model, :as_json, :medium, :large, :huge, :small
 
       def model
-        Models::CharacterPortrait.new(response)
+        @model ||= Models::CharacterPortrait.new(response)
       end
-      memoize :model
 
       def scope; end
 

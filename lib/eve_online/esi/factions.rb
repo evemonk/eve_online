@@ -6,13 +6,15 @@ module EveOnline
       API_ENDPOINT = 'https://esi.evetech.net/v2/universe/factions/?datasource=%<datasource>s'
 
       def factions
-        output = []
-        response.each do |faction|
-          output << Models::Faction.new(faction)
-        end
-        output
+        @factions ||=
+          begin
+            output = []
+            response.each do |faction|
+              output << Models::Faction.new(faction)
+            end
+            output
+          end
       end
-      memoize :factions
 
       def scope; end
 
