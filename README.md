@@ -50,7 +50,7 @@ gem install eve_online
 * MRI 2.4
 * MRI 2.5
 * MRI (head)
-* JRuby 9.2.0.0
+* JRuby 9.2.4.0
 * JRuby (head)
 * Rubinuis (latest)
 
