@@ -4,6 +4,7 @@
 
 * Remove `memoist` gem
 * Fix etag support
+* Rename `EveOnline::ESI::Base#no_content?` to `#not_modified?`
 
 ## v0.20.0
 

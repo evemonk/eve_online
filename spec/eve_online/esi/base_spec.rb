@@ -365,14 +365,14 @@ describe EveOnline::ESI::Base do
     end
   end
 
-  describe '#no_content?' do
+  describe '#not_modified?' do
     let(:resource) { double }
 
     before { expect(subject).to receive(:resource).and_return(resource) }
 
     before { expect(resource).to receive(:is_a?).with(Net::HTTPNotModified) }
 
-    specify { expect { subject.no_content? }.not_to raise_error }
+    specify { expect { subject.not_modified? }.not_to raise_error }
   end
 
   describe '#content' do

@@ -99,7 +99,7 @@ module EveOnline
         @resource ||= client.request(request)
       end
 
-      def no_content?
+      def not_modified?
         resource.is_a?(Net::HTTPNotModified)
       end
 
