@@ -146,6 +146,8 @@ describe EveOnline::ESI::Base do
 
     before { expect(header).to receive(:[]).with('Etag').and_return(etag) }
 
+    before { expect(etag).to receive(:gsub).with('W/', '').and_return(etag) }
+
     before { expect(etag).to receive(:gsub).with('"', '') }
 
     specify { expect { subject.current_etag }.not_to raise_error }
@@ -282,7 +284,7 @@ describe EveOnline::ESI::Base do
 
         before { expect(request).to receive(:[]=).with('Authorization', 'Bearer token123').and_return(request) }
 
-        before { expect(request).to receive(:[]=).with('If-None-Match', '"etag"').and_return(request) }
+        before { expect(request).to receive(:[]=).with('If-None-Match', 'etag').and_return(request) }
 
         specify { expect { subject.request }.not_to raise_error }
 
