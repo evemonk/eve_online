@@ -54,7 +54,7 @@ module EveOnline
       end
 
       def current_etag
-        resource.header['Etag']&.gsub('"', '')
+        resource.header['Etag']&.gsub('W/', '')&.gsub('"', '')
       end
 
       def page; end
@@ -83,7 +83,7 @@ module EveOnline
           request['Accept'] = 'application/json'
           request['Accept-Language'] = language
           request['Authorization'] = "Bearer #{ token }" if token
-          request['If-None-Match'] = "\"#{ etag }\"" if etag
+          request['If-None-Match'] = etag if etag
           request['Content-Type'] = 'application/json' if http_method == 'Post'
           request.body = payload if http_method == 'Post'
 
