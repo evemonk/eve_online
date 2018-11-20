@@ -17,7 +17,8 @@ describe 'Get stargate information' do
     expect(subject.as_json).to eq(name: 'Stargate (Akpivem)',
                                   stargate_id: 50_000_056,
                                   system_id: 30_000_001,
-                                  type_id: 29_624)
+                                  type_id: 29_624,
+                                  etag: nil)
   end
 
   specify do

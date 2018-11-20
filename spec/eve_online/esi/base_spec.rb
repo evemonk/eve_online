@@ -29,7 +29,7 @@ describe EveOnline::ESI::Base do
 
       its(:_open_timeout) { should eq(45) }
 
-      its(:etag) { should eq('6f2d3caa79a79bc9e61aa058e18905faac5e293fa1729637648ce9a1') }
+      its(:_etag) { should eq('6f2d3caa79a79bc9e61aa058e18905faac5e293fa1729637648ce9a1') }
 
       its(:datasource) { should eq('singularity') }
 
@@ -45,7 +45,7 @@ describe EveOnline::ESI::Base do
 
       its(:_open_timeout) { should eq(60) }
 
-      its(:etag) { should eq(nil) }
+      its(:_etag) { should eq(nil) }
 
       its(:datasource) { should eq('tranquility') }
 
@@ -260,7 +260,7 @@ describe EveOnline::ESI::Base do
 
         before { expect(subject).to receive(:token).and_return(nil) }
 
-        before { expect(subject).to receive(:etag).and_return(nil) }
+        before { expect(subject).to receive(:_etag).and_return(nil) }
 
         specify { expect { subject.request }.not_to raise_error }
 
@@ -276,11 +276,11 @@ describe EveOnline::ESI::Base do
 
         let(:token) { 'token123' }
 
-        let(:etag) { 'etag' }
+        let(:_etag) { 'etag' }
 
         before { expect(subject).to receive(:token).and_return(token).twice }
 
-        before { expect(subject).to receive(:etag).and_return(etag).twice }
+        before { expect(subject).to receive(:_etag).and_return(_etag).twice }
 
         before { expect(request).to receive(:[]=).with('Authorization', 'Bearer token123').and_return(request) }
 
