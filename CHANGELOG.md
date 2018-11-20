@@ -7,6 +7,8 @@
 * Rename `EveOnline::ESI::Base#no_content?` to `#not_modified?`
 * Add `EveOnline::ESI::Models::ModelWithEtag`
 * Add `EveOnline::ESI::ResponseWithEtag`
+* Add `EveOnline::ESI::Models::Stargate#etag`
+* Add `etag` to `EveOnline::ESI::Models::Stargate#as_json`
 
 ## v0.20.0
 
