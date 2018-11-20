@@ -5,6 +5,8 @@
 * Remove `memoist` gem
 * Fix etag support
 * Rename `EveOnline::ESI::Base#no_content?` to `#not_modified?`
+* Add `EveOnline::ESI::Models::ModelWithEtag`
+* Add `EveOnline::ESI::ResponseWithEtag`
 
 ## v0.20.0
 
