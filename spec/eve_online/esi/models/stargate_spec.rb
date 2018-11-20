@@ -9,12 +9,16 @@ describe EveOnline::ESI::Models::Stargate do
 
   it { should be_a(EveOnline::ESI::Models::Base) }
 
+  it { should be_a(EveOnline::ESI::Models::ModelWithEtag) }
+
   describe '#initialize' do
     its(:options) { should eq(options) }
   end
 
   describe '#as_json' do
     let(:stargate) { described_class.new(options) }
+
+    let(:etag) { double }
 
     before { expect(stargate).to receive(:name).and_return('Stargate (Akpivem)') }
 
@@ -23,6 +27,8 @@ describe EveOnline::ESI::Models::Stargate do
     before { expect(stargate).to receive(:system_id).and_return(30_000_001) }
 
     before { expect(stargate).to receive(:type_id).and_return(29_624) }
+
+    before { expect(stargate).to receive(:etag).and_return(etag) }
 
     subject { stargate.as_json }
 
@@ -33,6 +39,8 @@ describe EveOnline::ESI::Models::Stargate do
     its([:system_id]) { should eq(30_000_001) }
 
     its([:type_id]) { should eq(29_624) }
+
+    its([:etag]) { should eq(etag) }
   end
 
   describe '#name' do
