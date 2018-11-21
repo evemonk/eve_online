@@ -12,7 +12,7 @@ http_interactions:
       Accept:
       - application/json
       User-Agent:
-      - EveOnline API (https://github.com/evemonk/eve_online) v0.19.0
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.20.0
       Accept-Language:
       - en-us
   response:
@@ -21,7 +21,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 18 Oct 2018 08:57:45 GMT
+      - Wed, 21 Nov 2018 11:10:24 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
@@ -45,23 +45,23 @@ http_interactions:
       Cache-Control:
       - public
       Etag:
-      - W/"6086f92a845aaddb43b8ac94851821515b81ccd3bb873ce40a61e635"
+      - '"2e28835f91024608719726b655591d531125a023e122859d174923d5"'
       Expires:
-      - Thu, 18 Oct 2018 11:05:00 GMT
+      - Thu, 22 Nov 2018 11:05:00 GMT
       Last-Modified:
-      - Tue, 16 Oct 2018 11:09:56 GMT
+      - Wed, 21 Nov 2018 11:06:45 GMT
       Strict-Transport-Security:
       - max-age=31536000
       X-Esi-Error-Limit-Remain:
       - '100'
       X-Esi-Error-Limit-Reset:
-      - '15'
+      - '36'
       X-Esi-Request-Id:
-      - 6a90142f-76af-45b3-8ce4-2f6379d6fca6
+      - 30dc9c3e-a973-4ec9-8a80-50eabb57b92b
     body:
       encoding: UTF-8
       string: '{"destination":{"stargate_id":50000342,"system_id":30000003},"name":"Stargate
         (Akpivem)","position":{"x":331516354560.0,"y":43597455360.0,"z":-586353991680.0},"stargate_id":50000056,"system_id":30000001,"type_id":29624}'
     http_version: 
-  recorded_at: Thu, 18 Oct 2018 08:57:45 GMT
+  recorded_at: Wed, 21 Nov 2018 11:10:15 GMT
 recorded_with: VCR 4.0.0
