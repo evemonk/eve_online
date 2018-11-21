@@ -3,7 +3,7 @@
 require 'spec_helper'
 
 describe 'Get asteroid belt information' do
-  before { VCR.insert_cassette 'esi/universe/asteroid_belt/40000003' }
+  before { VCR.insert_cassette 'esi/universe/asteroid_belts/40000003' }
 
   after { VCR.eject_cassette }
 

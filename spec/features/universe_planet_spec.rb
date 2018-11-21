@@ -3,7 +3,7 @@
 require 'spec_helper'
 
 describe 'Get planet information' do
-  before { VCR.insert_cassette 'esi/universe/planet/40000002' }
+  before { VCR.insert_cassette 'esi/universe/planets/40000002' }
 
   after { VCR.eject_cassette }
 

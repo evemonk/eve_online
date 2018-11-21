@@ -3,7 +3,7 @@
 require 'spec_helper'
 
 describe 'Get star information' do
-  before { VCR.insert_cassette 'esi/universe/star/40000001' }
+  before { VCR.insert_cassette 'esi/universe/stars/40000001' }
 
   after { VCR.eject_cassette }
 

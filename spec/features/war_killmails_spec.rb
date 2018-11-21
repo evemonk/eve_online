@@ -5,7 +5,7 @@ require 'spec_helper'
 describe 'List kills for a war' do
   let(:options) { { war_id: 615_578 } }
 
-  before { VCR.insert_cassette 'esi/war/615578' }
+  before { VCR.insert_cassette 'esi/wars/615578' }
 
   after { VCR.eject_cassette }
 
