@@ -21,6 +21,7 @@ describe 'Get star information' do
                                   solar_system_id: 30_000_001,
                                   spectral_class: 'K2 V',
                                   temperature: 4567,
-                                  type_id: 45_041)
+                                  type_id: 45_041,
+                                  etag: 'f5499847d582a932ee279a6db7608659f4ce5b2736df0b8857438717')
   end
 end

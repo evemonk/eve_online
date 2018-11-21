@@ -9,6 +9,8 @@
 * Add `EveOnline::ESI::ResponseWithEtag`
 * Add `EveOnline::ESI::Models::Stargate#etag`
 * Add `etag` to `EveOnline::ESI::Models::Stargate#as_json`
+* Add `EveOnline::ESI::UniverseStar#etag`
+* Add `etag` to `EveOnline::ESI::Models::Star#as_json`
 
 ## v0.20.0
 

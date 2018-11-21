@@ -9,6 +9,8 @@ describe EveOnline::ESI::UniverseStar do
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
+  specify { expect(subject).to be_a(EveOnline::ESI::ResponseWithEtag) }
+
   specify { expect(described_class::API_ENDPOINT).to eq('https://esi.evetech.net/v1/universe/stars/%<star_id>s/?datasource=%<datasource>s') }
 
   describe '#initialize' do
@@ -35,17 +37,17 @@ describe EveOnline::ESI::UniverseStar do
     end
 
     context 'when @model not set' do
-      let(:response) { double }
+      let(:response_with_etag) { double }
 
-      before { expect(subject).to receive(:response).and_return(response) }
+      before { expect(subject).to receive(:response_with_etag).and_return(response_with_etag) }
 
       let(:model) { instance_double(EveOnline::ESI::Models::Star) }
 
       before do
         #
-        # EveOnline::ESI::Models::Star.new(response) # => model
+        # EveOnline::ESI::Models::Star.new(response_with_etag) # => model
         #
-        expect(EveOnline::ESI::Models::Star).to receive(:new).with(response).and_return(model)
+        expect(EveOnline::ESI::Models::Star).to receive(:new).with(response_with_etag).and_return(model)
       end
 
       specify { expect { subject.model }.not_to raise_error }
@@ -142,6 +144,16 @@ describe EveOnline::ESI::UniverseStar do
     before { expect(model).to receive(:type_id) }
 
     specify { expect { subject.type_id }.not_to raise_error }
+  end
+
+  describe '#etag' do
+    let(:model) { instance_double(EveOnline::ESI::Models::Star) }
+
+    before { subject.instance_variable_set(:@model, model) }
+
+    before { expect(model).to receive(:etag) }
+
+    specify { expect { subject.etag }.not_to raise_error }
   end
 
   describe '#scope' do

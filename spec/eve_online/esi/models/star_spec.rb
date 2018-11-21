@@ -9,12 +9,16 @@ describe EveOnline::ESI::Models::Star do
 
   it { should be_a(EveOnline::ESI::Models::Base) }
 
+  it { should be_a(EveOnline::ESI::Models::ModelWithEtag) }
+
   describe '#initialize' do
     its(:options) { should eq(options) }
   end
 
   describe '#as_json' do
     let(:star) { described_class.new(options) }
+
+    let(:etag) { double }
 
     before { expect(star).to receive(:age).and_return(14_262_808_228) }
 
@@ -31,6 +35,8 @@ describe EveOnline::ESI::Models::Star do
     before { expect(star).to receive(:temperature).and_return(4567) }
 
     before { expect(star).to receive(:type_id).and_return(45_041) }
+
+    before { expect(star).to receive(:etag).and_return(etag) }
 
     subject { star.as_json }
 
@@ -49,6 +55,8 @@ describe EveOnline::ESI::Models::Star do
     its([:temperature]) { should eq(4567) }
 
     its([:type_id]) { should eq(45_041) }
+
+    its([:etag]) { should eq(etag) }
   end
 
   describe '#age' do
