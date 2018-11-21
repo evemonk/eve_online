@@ -23,7 +23,7 @@ describe EveOnline::ESI::ResponseWithEtag do
 
       before { expect(subject).to receive(:current_etag).and_return(current_etag) }
 
-      before { expect(response).to receive(:merge).with(etag: current_etag).and_return(response_with_etag) }
+      before { expect(response).to receive(:merge).with('etag' => current_etag).and_return(response_with_etag) }
 
       specify { expect { subject.response_with_etag }.not_to raise_error }
 
