@@ -5,7 +5,7 @@ require 'spec_helper'
 describe 'Get alliance information' do
   let(:options) { { alliance_id: 99_005_443 } }
 
-  before { VCR.insert_cassette 'esi/alliance/99005443' }
+  before { VCR.insert_cassette 'esi/alliances/99005443' }
 
   after { VCR.eject_cassette }
 
