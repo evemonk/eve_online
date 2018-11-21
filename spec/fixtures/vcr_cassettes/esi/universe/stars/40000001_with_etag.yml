@@ -15,17 +15,15 @@ http_interactions:
       - EveOnline API (https://github.com/evemonk/eve_online) v0.20.0
       Accept-Language:
       - en-us
+      If-None-Match:
+      - 2e28835f91024608719726b655591d531125a023e122859d174923d5
   response:
     status:
-      code: 200
-      message: OK
+      code: 304
+      message: Not Modified
     headers:
       Date:
       - Wed, 21 Nov 2018 16:21:28 GMT
-      Content-Type:
-      - application/json; charset=UTF-8
-      Content-Length:
-      - '179'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -57,11 +55,10 @@ http_interactions:
       X-Esi-Error-Limit-Reset:
       - '32'
       X-Esi-Request-Id:
-      - f86c06a6-ab12-4d5a-b752-83291a840d17
+      - a18dff14-eb0c-4d14-b03b-84923b957507
     body:
       encoding: UTF-8
-      string: '{"age":14262808228,"luminosity":0.01575000025331974,"name":"Tanoo -
-        Star","radius":126700000,"solar_system_id":30000001,"spectral_class":"K2 V","temperature":4567,"type_id":45041}'
+      string: ''
     http_version: 
   recorded_at: Wed, 21 Nov 2018 16:21:20 GMT
 recorded_with: VCR 4.0.0
