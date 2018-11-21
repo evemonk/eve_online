@@ -35,4 +35,16 @@ describe 'Get stargate information' do
                                              z: -586_353_991_680.0)
     end
   end
+
+  context 'when etag present' do
+    before { VCR.insert_cassette 'esi/universe/stargates/50000056_with_etag' }
+
+    after { VCR.eject_cassette }
+
+    let(:options) { { id: 50_000_056, etag: '2e28835f91024608719726b655591d531125a023e122859d174923d5' } }
+
+    subject { EveOnline::ESI::UniverseStargate.new(options) }
+
+    specify { expect(subject.not_modified?).to eq(true) }
+  end
 end
