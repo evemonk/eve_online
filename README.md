@@ -1927,7 +1927,8 @@ star.as_json # => {:age=>14262808228,
              #     :solar_system_id=>30000001,
              #     :spectral_class=>"K2 V",
              #     :temperature=>4567,
-             #     :type_id=>45041}
+             #     :type_id=>45041,
+             #     :etag=>"2e28835f91024608719726b655591d531125a023e122859d174923d5"}
 
 star.age # => 14262808228
 star.luminosity # => 0.01575000025331974
@@ -1937,6 +1938,7 @@ star.solar_system_id # => 30000001
 star.spectral_class # => "K2 V"
 star.temperature # => 4567
 star.type_id # => 45041
+star.etag # => "2e28835f91024608719726b655591d531125a023e122859d174923d5"
 
 # options = { id: 60012526 }
 
