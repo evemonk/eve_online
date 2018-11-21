@@ -1887,12 +1887,14 @@ stargate.scope # => nil
 stargate.as_json # => {:name=>"Stargate (Akpivem)",
                  #     :stargate_id=>50000056,
                  #     :system_id=>30000001,
-                 #     :type_id=>29624}
+                 #     :type_id=>29624,
+                 #     :etag=>"2e28835f91024608719726b655591d531125a023e122859d174923d5"}
 
 stargate.name # => "Stargate (Akpivem)"
 stargate.stargate_id # => 50000056
 stargate.system_id # => 30000001
 stargate.type_id # => 29624
+stargate.etag # => "2e28835f91024608719726b655591d531125a023e122859d174923d5"
 
 stargate.destination.as_json # => {:stargate_id=>50000342,
                              #     :system_id=>30000003}
