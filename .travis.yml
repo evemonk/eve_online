@@ -24,6 +24,8 @@ matrix:
   exclude:
     - rvm: ruby-head
       gemfile: gemfiles/activesupport_42.gemfile
+    - rvm: 2.6.0-rc2
+      gemfile: gemfiles/activesupport_42.gemfile
     - rvm: 2.5.3
       gemfile: gemfiles/activesupport_42.gemfile
     - rvm: 2.3.8
