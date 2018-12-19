@@ -4,7 +4,7 @@ require 'spec_helper'
 
 describe 'List all active player alliances' do
   context 'when etag not set' do
-    before { VCR.insert_cassette 'esi/alliances' }
+    before { VCR.insert_cassette 'esi/alliances/alliances' }
 
     after { VCR.eject_cassette }
 
@@ -22,7 +22,7 @@ describe 'List all active player alliances' do
   end
 
   context 'when etag is set' do
-    before { VCR.insert_cassette 'esi/alliances_with_etag' }
+    before { VCR.insert_cassette 'esi/alliances/alliances_with_etag' }
 
     after { VCR.eject_cassette }
 
