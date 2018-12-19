@@ -10,7 +10,7 @@ This gem implement Ruby API for EveOnline MMORPG (ESI).
 
 Looking for [EveOnline SSO OAuth2 Strategy for OmniAuth](https://github.com/evemonk/omniauth-eve_online-sso)?
 
-This gem was extracted from [EveMonk](http://evemonk.com). Source code of evemonk backend published [here](https://github.com/evemonk/evemonk).
+This gem was extracted from [EveMonk](https://evemonk.com). Source code of evemonk backend published [here](https://github.com/evemonk/evemonk).
 
 ## TOC
 
