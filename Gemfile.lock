@@ -36,7 +36,7 @@ GEM
     mini_portile2 (2.3.0)
     minitest (5.11.3)
     mixlib-cli (1.7.0)
-    mixlib-config (2.2.13)
+    mixlib-config (2.2.18)
       tomlrb
     nokogiri (1.8.5)
       mini_portile2 (~> 2.3.0)
