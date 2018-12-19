@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-describe 'Public information about an alliance' do
+describe 'Get alliance information' do
   let(:options) { { alliance_id: 99_005_443 } }
 
   before { VCR.insert_cassette 'esi/alliances/99005443' }
