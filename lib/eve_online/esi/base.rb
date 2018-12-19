@@ -53,7 +53,7 @@ module EveOnline
         client.open_timeout = value
       end
 
-      def etag
+      def current_etag
         resource.header['Etag']&.gsub('W/', '')&.gsub('"', '')
       end
 
