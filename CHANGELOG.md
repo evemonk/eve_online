@@ -11,6 +11,7 @@
 * Add `etag` to `EveOnline::ESI::Models::Stargate#as_json`
 * Add `EveOnline::ESI::UniverseStar#etag`
 * Add `etag` to `EveOnline::ESI::Models::Star#as_json`
+* Rename `EveOnline::ESI::Base#current_etag` to `#etag`
 
 ## v0.20.0
 

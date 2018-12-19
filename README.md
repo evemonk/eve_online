@@ -78,13 +78,13 @@ alliances.alliance_ids.size # => 3028
 
 alliances.alliance_ids.first # => 1354830081
 
-alliances.current_etag # => "97f0c48679f2b200043cdbc3406291fc945bcd652ddc7fc11ccdc37a"
+alliances.etag # => "97f0c48679f2b200043cdbc3406291fc945bcd652ddc7fc11ccdc37a"
 ```
 
 #### Get alliance information
 
 ```ruby
-options = { alliance_id: 99005443 }
+options = { alliance_id: 99_005_443 }
 
 alliance = EveOnline::ESI::Alliance.new(options)
 

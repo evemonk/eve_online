@@ -133,7 +133,7 @@ describe EveOnline::ESI::Base do
     specify { expect { subject.send(:open_timeout=, value) }.not_to raise_error }
   end
 
-  describe '#current_etag' do
+  describe '#etag' do
     let(:resource) { double }
 
     let(:header) { double }
@@ -150,7 +150,7 @@ describe EveOnline::ESI::Base do
 
     before { expect(etag).to receive(:gsub).with('"', '') }
 
-    specify { expect { subject.current_etag }.not_to raise_error }
+    specify { expect { subject.etag }.not_to raise_error }
   end
 
   describe '#page' do
