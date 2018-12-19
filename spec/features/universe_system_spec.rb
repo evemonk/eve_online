@@ -3,7 +3,7 @@
 require 'spec_helper'
 
 describe 'Get solar system information' do
-  before { VCR.insert_cassette 'esi/universe/system/30000001' }
+  before { VCR.insert_cassette 'esi/universe/systems/30000001' }
 
   after { VCR.eject_cassette }
 

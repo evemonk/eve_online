@@ -8,7 +8,7 @@ require 'active_support/time'
 module EveOnline
   module ESI
     class Base
-      attr_reader :token, :parser, :_read_timeout, :_open_timeout, :etag,
+      attr_reader :token, :parser, :_read_timeout, :_open_timeout, :_etag,
                   :datasource, :language
 
       def initialize(options = {})
@@ -16,7 +16,7 @@ module EveOnline
         @parser = options.fetch(:parser, JSON)
         @_read_timeout = options.fetch(:read_timeout, 60)
         @_open_timeout = options.fetch(:open_timeout, 60)
-        @etag = options.fetch(:etag, nil)
+        @_etag = options.fetch(:etag, nil)
         @datasource = options.fetch(:datasource, 'tranquility')
         @language = options.fetch(:language, 'en-us')
       end
@@ -83,7 +83,7 @@ module EveOnline
           request['Accept'] = 'application/json'
           request['Accept-Language'] = language
           request['Authorization'] = "Bearer #{ token }" if token
-          request['If-None-Match'] = etag if etag
+          request['If-None-Match'] = _etag if _etag
           request['Content-Type'] = 'application/json' if http_method == 'Post'
           request.body = payload if http_method == 'Post'
 
@@ -99,7 +99,7 @@ module EveOnline
         @resource ||= client.request(request)
       end
 
-      def no_content?
+      def not_modified?
         resource.is_a?(Net::HTTPNotModified)
       end
 

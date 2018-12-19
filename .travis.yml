@@ -5,6 +5,7 @@ rvm:
   - 2.3.8
   - 2.4.5
   - 2.5.3
+  - 2.6.0-rc1
   - ruby-head
   - rbx-3
 
@@ -28,19 +29,19 @@ matrix:
     - rvm: 2.3.8
       gemfile: gemfiles/activesupport_edge.gemfile
   include:
-    - rvm: jruby-9.2.4.0
+    - rvm: jruby-9.2.5.0
       gemfile: gemfiles/activesupport_42.gemfile
       jdk: oraclejdk8
       env: JRUBY_OPTS='--debug' # get more accurate coverage data
-    - rvm: jruby-9.2.4.0
+    - rvm: jruby-9.2.5.0
       gemfile: gemfiles/activesupport_50.gemfile
       jdk: oraclejdk8
       env: JRUBY_OPTS='--debug' # get more accurate coverage data
-    - rvm: jruby-9.2.4.0
+    - rvm: jruby-9.2.5.0
       gemfile: gemfiles/activesupport_51.gemfile
       jdk: oraclejdk8
       env: JRUBY_OPTS='--debug' # get more accurate coverage data
-    - rvm: jruby-9.2.4.0
+    - rvm: jruby-9.2.5.0
       gemfile: gemfiles/activesupport_52.gemfile
       jdk: oraclejdk8
       env: JRUBY_OPTS='--debug' # get more accurate coverage data

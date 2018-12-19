@@ -3,7 +3,7 @@
 require 'spec_helper'
 
 describe 'Get station information' do
-  before { VCR.insert_cassette 'esi/universe/stargate/60012526' }
+  before { VCR.insert_cassette 'esi/universe/stations/60012526' }
 
   after { VCR.eject_cassette }
 

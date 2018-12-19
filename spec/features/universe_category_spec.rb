@@ -3,7 +3,7 @@
 require 'spec_helper'
 
 describe 'Get item category information' do
-  before { VCR.insert_cassette 'esi/universe/category/6' }
+  before { VCR.insert_cassette 'esi/universe/categories/6' }
 
   after { VCR.eject_cassette }
 

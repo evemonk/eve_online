@@ -49,8 +49,9 @@ gem install eve_online
 * MRI 2.3
 * MRI 2.4
 * MRI 2.5
+* MRI 2.6
 * MRI (head)
-* JRuby 9.2.4.0
+* JRuby 9.2.5.0
 * JRuby (head)
 * Rubinuis (latest)
 
@@ -1887,12 +1888,14 @@ stargate.scope # => nil
 stargate.as_json # => {:name=>"Stargate (Akpivem)",
                  #     :stargate_id=>50000056,
                  #     :system_id=>30000001,
-                 #     :type_id=>29624}
+                 #     :type_id=>29624,
+                 #     :etag=>"2e28835f91024608719726b655591d531125a023e122859d174923d5"}
 
 stargate.name # => "Stargate (Akpivem)"
 stargate.stargate_id # => 50000056
 stargate.system_id # => 30000001
 stargate.type_id # => 29624
+stargate.etag # => "2e28835f91024608719726b655591d531125a023e122859d174923d5"
 
 stargate.destination.as_json # => {:stargate_id=>50000342,
                              #     :system_id=>30000003}
@@ -1925,7 +1928,8 @@ star.as_json # => {:age=>14262808228,
              #     :solar_system_id=>30000001,
              #     :spectral_class=>"K2 V",
              #     :temperature=>4567,
-             #     :type_id=>45041}
+             #     :type_id=>45041,
+             #     :etag=>"2e28835f91024608719726b655591d531125a023e122859d174923d5"}
 
 star.age # => 14262808228
 star.luminosity # => 0.01575000025331974
@@ -1935,6 +1939,7 @@ star.solar_system_id # => 30000001
 star.spectral_class # => "K2 V"
 star.temperature # => 4567
 star.type_id # => 45041
+star.etag # => "2e28835f91024608719726b655591d531125a023e122859d174923d5"
 
 # options = { id: 60012526 }
 
