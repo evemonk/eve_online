@@ -12,6 +12,8 @@
 * Add `EveOnline::ESI::UniverseStar#etag`
 * Add `etag` to `EveOnline::ESI::Models::Star#as_json`
 * Add `EveOnline::ESI::Alliances#etag`
+* Add `etag` to `EveOnline::ESI::Models::Alliance#as_json`
+* Add `EveOnline::ESI::Alliance#etag`
 
 ## v0.20.0
 

@@ -96,7 +96,8 @@ alliance.as_json # => {:creator_corporation_id=>98306624,
                  #     :executor_corporation_id=>98306624,
                  #     :faction_id=>nil,
                  #     :name=>"Kids With Guns Alliance",
-                 #     :ticker=>"-KWG-"}
+                 #     :ticker=>"-KWG-",
+                 #     :etag=>"6780e53a01c7d9715b5f445126c4f2c137da4be79e4debe541ce3ab2"}
 
 alliance.creator_corporation_id # => 98306624
 alliance.creator_id # => 94195096
@@ -105,6 +106,7 @@ alliance.executor_corporation_id # => 98306624
 alliance.faction_id # => nil
 alliance.name # => "Kids With Guns Alliance"
 alliance.ticker # => "-KWG-"
+alliance.etag # => "6780e53a01c7d9715b5f445126c4f2c137da4be79e4debe541ce3ab2"
 ```
 
 #### List alliance's corporations

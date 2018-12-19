@@ -7,6 +7,8 @@ module EveOnline
     class Alliance < Base
       extend Forwardable
 
+      include ResponseWithEtag
+
       API_ENDPOINT = 'https://esi.evetech.net/v3/alliances/%<alliance_id>s/?datasource=%<datasource>s'
 
       attr_reader :alliance_id
@@ -19,10 +21,10 @@ module EveOnline
 
       def_delegators :model, :as_json, :creator_corporation_id, :creator_id,
                      :date_founded, :executor_corporation_id, :faction_id,
-                     :name, :ticker
+                     :name, :ticker, :etag
 
       def model
-        @model ||= Models::Alliance.new(response)
+        @model ||= Models::Alliance.new(response_with_etag)
       end
 
       def scope; end
