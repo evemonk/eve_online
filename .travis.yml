@@ -28,6 +28,8 @@ matrix:
       gemfile: gemfiles/activesupport_42.gemfile
     - rvm: 2.3.8
       gemfile: gemfiles/activesupport_edge.gemfile
+    - rvm: 2.4.5
+      gemfile: gemfiles/activesupport_edge.gemfile
   include:
     - rvm: jruby-9.2.5.0
       gemfile: gemfiles/activesupport_42.gemfile
