@@ -74,9 +74,11 @@ alliances = EveOnline::ESI::Alliances.new
 
 alliances.scope # => nil
 
-alliances.alliance_ids.size # => 3013
+alliances.alliance_ids.size # => 3028
 
 alliances.alliance_ids.first # => 1354830081
+
+alliances.current_etag # => "97f0c48679f2b200043cdbc3406291fc945bcd652ddc7fc11ccdc37a"
 ```
 
 #### Get alliance information

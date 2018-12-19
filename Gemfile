@@ -10,3 +10,7 @@ gem 'awesome_print', require: 'ap'
 gem 'pry'
 gem 'rubocop', require: false
 gem 'rubocop-rspec', require: false
+
+# TODO: remove after new webmock release
+gem 'webmock', git: 'https://github.com/bblimke/webmock.git',
+               branch: 'master'
