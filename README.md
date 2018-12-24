@@ -2336,7 +2336,7 @@ If you want to catch all exceptions `rescue` `EveOnline::Exceptions::Base`. E.g.
 
 ```ruby
 begin
-  races = EveOnline::ESI::Races.new
+  races = EveOnline::ESI::UniverseRaces.new
 
   race = races.races.first
 
@@ -2374,13 +2374,13 @@ You can configure default timeouts with adding `read_timeout:` and `open_timeout
 ```ruby
 options = { read_timeout: 120, open_timeout: 120 } # 120 seconds
 
-races = EveOnline::ESI::Races.new(options)
+races = EveOnline::ESI::UniverseRaces.new(options)
 ```
 
 Or, dynamically:
 
 ```ruby
-races = EveOnline::ESI::Races.new
+races = EveOnline::ESI::UniverseRaces.new
 
 races.open_timeout # => 60
 races.open_timeout = 120
@@ -2398,7 +2398,7 @@ Default datasource is `tranquility`. If you want to change it, for e.g., to `sin
 ```ruby
 options = { datasource: 'singularity' }
 
-races = EveOnline::ESI::Races.new(options)
+races = EveOnline::ESI::UniverseRaces.new(options)
 ```
 
 ## Languages support
@@ -2410,7 +2410,7 @@ If you want change it, for e.g., to `de`, add `language: 'de'` to default hash w
 ```ruby
 options = { language: 'de' }
 
-races = EveOnline::ESI::Races.new(options)
+races = EveOnline::ESI::UniverseRaces.new(options)
 ```
 
 ## Oj as JSON Parser
@@ -2420,7 +2420,7 @@ require 'oj'
 
 Oj.mimic_JSON()
 
-races = EveOnline::ESI::Races.new
+races = EveOnline::ESI::UniverseRaces.new
 ```
 
 ## Useful links
