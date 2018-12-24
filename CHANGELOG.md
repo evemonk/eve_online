@@ -22,6 +22,9 @@
 * Add `EveOnline::ESI::UniverseBloodlines#etag`
 * Rename `EveOnline::ESI::Ancestries` to `EveOnline::ESI::UniverseAncestries`
 * Add `EveOnline::ESI::UniverseAncestries#etag`
+* Add `EveOnline::ESI::Models::Corporation#etag`
+* Add `etag` to `EveOnline::ESI::Models::Corporation#as_json`
+* Add `EveOnline::ESI::Corporation#etag`
 
 ## v0.20.0
 
