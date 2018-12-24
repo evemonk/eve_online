@@ -615,7 +615,7 @@ character_implants.implant_ids # => [9899, 9941, 9942, 9943, 9956]
 #### Get corporation information
 
 ```ruby
-options = { corporation_id: 98468592 }
+options = { corporation_id: 98_468_592 }
 
 corporation = EveOnline::ESI::Corporation.new(options)
 
@@ -633,7 +633,8 @@ corporation.as_json # => {:alliance_id=>99001258,
                     #     :shares=>1000,
                     #     :tax_rate=>0.1,
                     #     :ticker=>"BUBIC",
-                    #     :corporation_url=>"http://"}
+                    #     :corporation_url=>"http://",
+                    #     :etag=>"9f1b3761e93aba36ceaea6328e62031ec777317c70b7439b665d93fe"}
 
 corporation.alliance_id # => 99001258
 corporation.ceo_id # => 1721864142
@@ -648,6 +649,7 @@ corporation.shares # => 1000
 corporation.tax_rate # => 0.1
 corporation.ticker # => "BUBIC"
 corporation.corporation_url # => "http://"
+corporation.etag # => "9f1b3761e93aba36ceaea6328e62031ec777317c70b7439b665d93fe"
 ```
 
 #### Get alliance history
