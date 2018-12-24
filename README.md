@@ -1514,6 +1514,8 @@ ancestry.icon_id # => 1664
 ancestry.ancestry_id # => 24
 ancestry.name # => "Slave Child"
 ancestry.short_description # => "Torn from the cold and brought to the warmth of a new life."
+
+ancestries.etag # => "e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b"
 ```
 
 #### Get asteroid belt information
