@@ -1685,6 +1685,8 @@ faction.size_factor # => 5.0
 faction.solar_system_id # => 30002544
 faction.station_count # => 570
 faction.station_system_count # => 291
+
+factions.etag # => "e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b"
 ```
 
 #### Get graphics

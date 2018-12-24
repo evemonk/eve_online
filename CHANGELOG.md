@@ -17,6 +17,7 @@
 * Rename `EveOnline::ESI::Races` to `EveOnline::ESI::UniverseRaces`
 * Add `EveOnline::ESI::UniverseRaces#etag`
 * Rename `EveOnline::ESI::Factions` to `EveOnline::ESI::UniverseFactions`
+* Add `EveOnline::ESI::UniverseFactions#etag`
 
 ## v0.20.0
 
