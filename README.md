@@ -1493,7 +1493,7 @@ server_status.vip # => nil
 ```ruby
 options = { language: 'en-us' }
 
-ancestries = EveOnline::ESI::Ancestries.new(options)
+ancestries = EveOnline::ESI::UniverseAncestries.new(options)
 
 ancestries.scope # => nil
 
