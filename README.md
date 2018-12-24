@@ -1576,6 +1576,8 @@ bloodline.perception # => 9
 bloodline.race_id # => 2
 bloodline.ship_type_id # => 588
 bloodline.willpower # => 7
+
+bloodlines.etag # => "e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b"
 ```
 
 #### Get item categories

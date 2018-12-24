@@ -19,6 +19,7 @@
 * Rename `EveOnline::ESI::Factions` to `EveOnline::ESI::UniverseFactions`
 * Add `EveOnline::ESI::UniverseFactions#etag`
 * Rename `EveOnline::ESI::Bloodlines` to `EveOnline::ESI::UniverseBloodlines`
+* Add `EveOnline::ESI::UniverseBloodlines#etag`
 
 ## v0.20.0
 
