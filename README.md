@@ -1545,7 +1545,7 @@ asteroid_belt.position.z # => -73505464320.0
 ```ruby
 options = { language: 'en-us' }
 
-bloodlines = EveOnline::ESI::Bloodlines.new(options)
+bloodlines = EveOnline::ESI::UniverseBloodlines.new(options)
 
 bloodlines.scope # => nil
 

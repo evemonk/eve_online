@@ -75,7 +75,7 @@ require 'eve_online/esi/server_status'
 
 require 'eve_online/esi/ancestries'
 require 'eve_online/esi/universe_asteroid_belt'
-require 'eve_online/esi/bloodlines'
+require 'eve_online/esi/universe_bloodlines'
 require 'eve_online/esi/universe_categories'
 require 'eve_online/esi/universe_category'
 require 'eve_online/esi/universe_constellations'
