@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-describe EveOnline::ESI::Factions do
+describe EveOnline::ESI::UniverseFactions do
   let(:options) { {} }
 
   subject { described_class.new(options) }

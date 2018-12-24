@@ -1656,7 +1656,7 @@ constellation.position.z # => -4.273873181840197e+16
 ```ruby
 options = { language: 'en-us' }
 
-factions = EveOnline::ESI::Factions.new(options)
+factions = EveOnline::ESI::UniverseFactions.new(options)
 
 factions.scope # => nil
 
