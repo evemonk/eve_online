@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-describe EveOnline::ESI::Races do
+describe EveOnline::ESI::UniverseRaces do
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
   specify { expect(described_class::API_ENDPOINT).to eq('https://esi.evetech.net/v1/universe/races/?datasource=%<datasource>s') }

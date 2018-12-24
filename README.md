@@ -112,7 +112,7 @@ alliance.etag # => "6780e53a01c7d9715b5f445126c4f2c137da4be79e4debe541ce3ab2"
 #### List alliance's corporations
 
 ```ruby
-options = { alliance_id: 99005443 }
+options = { alliance_id: 99_005_443 }
 
 alliance_corporations = EveOnline::ESI::AllianceCorporations.new(options)
 
@@ -126,7 +126,7 @@ alliance_corporations.corporation_ids.first # => 98134807
 #### Get alliance icon
 
 ```ruby
-options = { alliance_id: 99005443 }
+options = { alliance_id: 99_005_443 }
 
 alliance_icon = EveOnline::ESI::AllianceIcon.new(options)
 
@@ -1829,7 +1829,7 @@ planet.position.z # => -73529712226.0
 ```ruby
 options = { language: 'en-us' }
 
-races = EveOnline::ESI::Races.new(options)
+races = EveOnline::ESI::UniverseRaces.new(options)
 
 races.scope # => nil
 
