@@ -15,6 +15,7 @@
 * Add `etag` to `EveOnline::ESI::Models::Alliance#as_json`
 * Add `EveOnline::ESI::Alliance#etag`
 * Rename `EveOnline::ESI::Races` to `EveOnline::ESI::UniverseRaces`
+* Add `EveOnline::ESI::UniverseRaces#etag`
 
 ## v0.20.0
 
