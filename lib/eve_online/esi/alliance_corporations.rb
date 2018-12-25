@@ -13,6 +13,10 @@ module EveOnline
         @alliance_id = options.fetch(:alliance_id)
       end
 
+      def etag
+        current_etag
+      end
+
       def corporation_ids
         response
       end

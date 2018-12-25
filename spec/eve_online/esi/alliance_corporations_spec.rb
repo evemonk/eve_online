@@ -25,6 +25,14 @@ describe EveOnline::ESI::AllianceCorporations do
     its(:alliance_id) { should eq(99_005_443) }
   end
 
+  describe '#etag' do
+    let(:current_etag) { double }
+
+    before { expect(subject).to receive(:current_etag).and_return(current_etag) }
+
+    specify { expect(subject.etag).to eq(current_etag) }
+  end
+
   describe '#corporation_ids' do
     let(:response) { double }
 

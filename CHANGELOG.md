@@ -1,5 +1,9 @@
 # Changelog
 
+## master
+
+* Add `EveOnline::ESI::AllianceCorporations#etag`
+
 ## v0.21.0
 
 * Remove `memoist` gem
