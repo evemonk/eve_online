@@ -2,7 +2,7 @@
 
 module EveOnline
   module ESI
-    class Ancestries < Base
+    class UniverseAncestries < Base
       API_ENDPOINT = 'https://esi.evetech.net/v1/universe/ancestries/?datasource=%<datasource>s'
 
       def ancestries
@@ -14,6 +14,10 @@ module EveOnline
             end
             output
           end
+      end
+
+      def etag
+        current_etag
       end
 
       def scope; end

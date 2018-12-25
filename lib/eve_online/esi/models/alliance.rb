@@ -4,6 +4,8 @@ module EveOnline
   module ESI
     module Models
       class Alliance < Base
+        include ModelWithEtag
+
         def as_json
           {
             creator_corporation_id: creator_corporation_id,
@@ -12,7 +14,8 @@ module EveOnline
             executor_corporation_id: executor_corporation_id,
             faction_id: faction_id,
             name: name,
-            ticker: ticker
+            ticker: ticker,
+            etag: etag
           }
         end
 

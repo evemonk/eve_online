@@ -7,6 +7,8 @@ module EveOnline
     class Corporation < Base
       extend Forwardable
 
+      include ResponseWithEtag
+
       API_ENDPOINT = 'https://esi.evetech.net/v4/corporations/%<corporation_id>s/?datasource=%<datasource>s'
 
       attr_reader :corporation_id
@@ -17,13 +19,14 @@ module EveOnline
         @corporation_id = options.fetch(:corporation_id)
       end
 
+      # TODO: war_eligible
       def_delegators :model, :as_json, :alliance_id, :ceo_id, :creator_id,
                      :date_founded, :description, :faction_id,
                      :home_station_id, :member_count, :name, :shares,
-                     :tax_rate, :ticker, :corporation_url
+                     :tax_rate, :ticker, :corporation_url, :etag
 
       def model
-        @model ||= Models::Corporation.new(response)
+        @model ||= Models::Corporation.new(response_with_etag)
       end
 
       def scope; end

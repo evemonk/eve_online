@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-describe EveOnline::ESI::Bloodlines do
+describe EveOnline::ESI::UniverseBloodlines do
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
   specify { expect(described_class::API_ENDPOINT).to eq('https://esi.evetech.net/v1/universe/bloodlines/?datasource=%<datasource>s') }
@@ -67,6 +67,14 @@ describe EveOnline::ESI::Bloodlines do
 
       specify { expect { subject.bloodlines }.to change { subject.instance_variable_get(:@bloodlines) }.from(nil).to([bloodline]) }
     end
+  end
+
+  describe '#etag' do
+    let(:current_etag) { double }
+
+    before { expect(subject).to receive(:current_etag).and_return(current_etag) }
+
+    specify { expect(subject.etag).to eq(current_etag) }
   end
 
   describe '#scope' do

@@ -74,15 +74,17 @@ alliances = EveOnline::ESI::Alliances.new
 
 alliances.scope # => nil
 
-alliances.alliance_ids.size # => 3013
+alliances.alliance_ids.size # => 3028
 
 alliances.alliance_ids.first # => 1354830081
+
+alliances.etag # => "97f0c48679f2b200043cdbc3406291fc945bcd652ddc7fc11ccdc37a"
 ```
 
 #### Get alliance information
 
 ```ruby
-options = { alliance_id: 99005443 }
+options = { alliance_id: 99_005_443 }
 
 alliance = EveOnline::ESI::Alliance.new(options)
 
@@ -94,7 +96,8 @@ alliance.as_json # => {:creator_corporation_id=>98306624,
                  #     :executor_corporation_id=>98306624,
                  #     :faction_id=>nil,
                  #     :name=>"Kids With Guns Alliance",
-                 #     :ticker=>"-KWG-"}
+                 #     :ticker=>"-KWG-",
+                 #     :etag=>"6780e53a01c7d9715b5f445126c4f2c137da4be79e4debe541ce3ab2"}
 
 alliance.creator_corporation_id # => 98306624
 alliance.creator_id # => 94195096
@@ -103,12 +106,13 @@ alliance.executor_corporation_id # => 98306624
 alliance.faction_id # => nil
 alliance.name # => "Kids With Guns Alliance"
 alliance.ticker # => "-KWG-"
+alliance.etag # => "6780e53a01c7d9715b5f445126c4f2c137da4be79e4debe541ce3ab2"
 ```
 
 #### List alliance's corporations
 
 ```ruby
-options = { alliance_id: 99005443 }
+options = { alliance_id: 99_005_443 }
 
 alliance_corporations = EveOnline::ESI::AllianceCorporations.new(options)
 
@@ -122,7 +126,7 @@ alliance_corporations.corporation_ids.first # => 98134807
 #### Get alliance icon
 
 ```ruby
-options = { alliance_id: 99005443 }
+options = { alliance_id: 99_005_443 }
 
 alliance_icon = EveOnline::ESI::AllianceIcon.new(options)
 
@@ -611,7 +615,7 @@ character_implants.implant_ids # => [9899, 9941, 9942, 9943, 9956]
 #### Get corporation information
 
 ```ruby
-options = { corporation_id: 98468592 }
+options = { corporation_id: 98_468_592 }
 
 corporation = EveOnline::ESI::Corporation.new(options)
 
@@ -629,7 +633,8 @@ corporation.as_json # => {:alliance_id=>99001258,
                     #     :shares=>1000,
                     #     :tax_rate=>0.1,
                     #     :ticker=>"BUBIC",
-                    #     :corporation_url=>"http://"}
+                    #     :corporation_url=>"http://",
+                    #     :etag=>"9f1b3761e93aba36ceaea6328e62031ec777317c70b7439b665d93fe"}
 
 corporation.alliance_id # => 99001258
 corporation.ceo_id # => 1721864142
@@ -644,6 +649,7 @@ corporation.shares # => 1000
 corporation.tax_rate # => 0.1
 corporation.ticker # => "BUBIC"
 corporation.corporation_url # => "http://"
+corporation.etag # => "9f1b3761e93aba36ceaea6328e62031ec777317c70b7439b665d93fe"
 ```
 
 #### Get alliance history
@@ -1489,7 +1495,7 @@ server_status.vip # => nil
 ```ruby
 options = { language: 'en-us' }
 
-ancestries = EveOnline::ESI::Ancestries.new(options)
+ancestries = EveOnline::ESI::UniverseAncestries.new(options)
 
 ancestries.scope # => nil
 
@@ -1510,6 +1516,8 @@ ancestry.icon_id # => 1664
 ancestry.ancestry_id # => 24
 ancestry.name # => "Slave Child"
 ancestry.short_description # => "Torn from the cold and brought to the warmth of a new life."
+
+ancestries.etag # => "e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b"
 ```
 
 #### Get asteroid belt information
@@ -1541,7 +1549,7 @@ asteroid_belt.position.z # => -73505464320.0
 ```ruby
 options = { language: 'en-us' }
 
-bloodlines = EveOnline::ESI::Bloodlines.new(options)
+bloodlines = EveOnline::ESI::UniverseBloodlines.new(options)
 
 bloodlines.scope # => nil
 
@@ -1572,6 +1580,8 @@ bloodline.perception # => 9
 bloodline.race_id # => 2
 bloodline.ship_type_id # => 588
 bloodline.willpower # => 7
+
+bloodlines.etag # => "e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b"
 ```
 
 #### Get item categories
@@ -1652,7 +1662,7 @@ constellation.position.z # => -4.273873181840197e+16
 ```ruby
 options = { language: 'en-us' }
 
-factions = EveOnline::ESI::Factions.new(options)
+factions = EveOnline::ESI::UniverseFactions.new(options)
 
 factions.scope # => nil
 
@@ -1681,6 +1691,8 @@ faction.size_factor # => 5.0
 faction.solar_system_id # => 30002544
 faction.station_count # => 570
 faction.station_system_count # => 291
+
+factions.etag # => "e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b"
 ```
 
 #### Get graphics
@@ -1825,7 +1837,7 @@ planet.position.z # => -73529712226.0
 ```ruby
 options = { language: 'en-us' }
 
-races = EveOnline::ESI::Races.new(options)
+races = EveOnline::ESI::UniverseRaces.new(options)
 
 races.scope # => nil
 
@@ -1842,6 +1854,8 @@ race.alliance_id # => 500002
 race.description # => "Once a thriving tribal civilization, the Minmatar..."
 race.name # => "Minmatar"
 race.race_id # => 2
+
+races.etag # => "e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b"
 ```
 
 #### Get regions
@@ -2330,7 +2344,7 @@ If you want to catch all exceptions `rescue` `EveOnline::Exceptions::Base`. E.g.
 
 ```ruby
 begin
-  races = EveOnline::ESI::Races.new
+  races = EveOnline::ESI::UniverseRaces.new
 
   race = races.races.first
 
@@ -2368,13 +2382,13 @@ You can configure default timeouts with adding `read_timeout:` and `open_timeout
 ```ruby
 options = { read_timeout: 120, open_timeout: 120 } # 120 seconds
 
-races = EveOnline::ESI::Races.new(options)
+races = EveOnline::ESI::UniverseRaces.new(options)
 ```
 
 Or, dynamically:
 
 ```ruby
-races = EveOnline::ESI::Races.new
+races = EveOnline::ESI::UniverseRaces.new
 
 races.open_timeout # => 60
 races.open_timeout = 120
@@ -2392,7 +2406,7 @@ Default datasource is `tranquility`. If you want to change it, for e.g., to `sin
 ```ruby
 options = { datasource: 'singularity' }
 
-races = EveOnline::ESI::Races.new(options)
+races = EveOnline::ESI::UniverseRaces.new(options)
 ```
 
 ## Languages support
@@ -2404,7 +2418,7 @@ If you want change it, for e.g., to `de`, add `language: 'de'` to default hash w
 ```ruby
 options = { language: 'de' }
 
-races = EveOnline::ESI::Races.new(options)
+races = EveOnline::ESI::UniverseRaces.new(options)
 ```
 
 ## Oj as JSON Parser
@@ -2414,7 +2428,7 @@ require 'oj'
 
 Oj.mimic_JSON()
 
-races = EveOnline::ESI::Races.new
+races = EveOnline::ESI::UniverseRaces.new
 ```
 
 ## Useful links

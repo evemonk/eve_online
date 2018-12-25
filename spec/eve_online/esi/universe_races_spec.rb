@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-describe EveOnline::ESI::Races do
+describe EveOnline::ESI::UniverseRaces do
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
   specify { expect(described_class::API_ENDPOINT).to eq('https://esi.evetech.net/v1/universe/races/?datasource=%<datasource>s') }
@@ -60,6 +60,14 @@ describe EveOnline::ESI::Races do
 
       specify { expect { subject.races }.to change { subject.instance_variable_get(:@races) }.from(nil).to([race]) }
     end
+  end
+
+  describe '#etag' do
+    let(:current_etag) { double }
+
+    before { expect(subject).to receive(:current_etag).and_return(current_etag) }
+
+    specify { expect(subject.etag).to eq(current_etag) }
   end
 
   describe '#scope' do

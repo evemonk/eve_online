@@ -5,7 +5,7 @@ rvm:
   - 2.3.8
   - 2.4.5
   - 2.5.3
-  - 2.6.0-rc2
+  - 2.6.0
   - ruby-head
   - rbx-3
 
@@ -24,9 +24,13 @@ matrix:
   exclude:
     - rvm: ruby-head
       gemfile: gemfiles/activesupport_42.gemfile
+    - rvm: 2.6.0
+      gemfile: gemfiles/activesupport_42.gemfile
     - rvm: 2.5.3
       gemfile: gemfiles/activesupport_42.gemfile
     - rvm: 2.3.8
+      gemfile: gemfiles/activesupport_edge.gemfile
+    - rvm: 2.4.5
       gemfile: gemfiles/activesupport_edge.gemfile
   include:
     - rvm: jruby-9.2.5.0

@@ -1,0 +1,98 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://esi.evetech.net/v1/universe/races/?datasource=tranquility
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/json
+      User-Agent:
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.20.0
+      Accept-Language:
+      - en-us
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 24 Dec 2018 15:50:06 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '2349'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,If-None-Match,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,HEAD,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,ETag,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Allow:
+      - GET,HEAD,OPTIONS
+      Cache-Control:
+      - public
+      Content-Language:
+      - en-us
+      Etag:
+      - W/"e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b"
+      Expires:
+      - Tue, 25 Dec 2018 11:05:00 GMT
+      Last-Modified:
+      - Mon, 24 Dec 2018 11:04:27 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept-Encoding,Accept-Language
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '54'
+      X-Esi-Request-Id:
+      - 73eb171f-a5c4-4712-b954-157ff60b8a2e
+    body:
+      encoding: UTF-8
+      string: '[{"alliance_id":500001,"description":"Founded on the tenets of patriotism
+        and hard work that carried its ancestors through hardships on an inhospitable
+        homeworld, the Caldari State is today a corporate dictatorship, led by rulers
+        who are determined to see it return to the meritocratic ideals of old. Ruthless
+        and efficient in the boardroom as well as on the battlefield, the Caldari
+        are living emblems of strength, persistence, and dignity.","name":"Caldari","race_id":1},{"alliance_id":500002,"description":"Once
+        a thriving tribal civilization, the Minmatar were enslaved by the Amarr Empire
+        for more than 700 years until a massive rebellion freed most, but not all,
+        of those held in servitude. The Minmatar people today are resilient, ingenious,
+        and hard-working. Many of them believe that democracy, though it has served
+        them well for a long time, can never restore what was taken from them so long
+        ago. For this reason they have formed a government truly reflective of their
+        tribal roots. They will forever resent the Amarrians, and yearn for the days
+        before the Empire''s accursed ships ever reached their home skies.","name":"Minmatar","race_id":2},{"alliance_id":500003,"description":"The
+        Amarr Empire is the largest and oldest of the four empires. Ruled by a mighty
+        Empress, this vast theocratic society is supported by a broad foundation of
+        slave labor. Amarr citizens tend to be highly educated and fervent individuals,
+        and as a culture Amarr adheres to the basic tenet that what others call slavery
+        is in fact one step on a indentured person''s spiritual path toward fully
+        embracing their faith. Despite several setbacks in recent history, the Empire
+        remains arguably the most stable and militarily powerful nation-state in New
+        Eden.","name":"Amarr","race_id":4},{"alliance_id":500004,"description":"Champions
+        of liberty and defenders of the downtrodden, the Gallente play host to the
+        only true democracy in New Eden. Some of the most progressive leaders, scientists,
+        and businessmen of the era have emerged from its diverse peoples. A pioneer
+        of artificial intelligence, the Federation relies heavily on drones and other
+        automated systems. This is not to detract from the skill of their pilots,
+        though: the Gallente Federation is known for producing some of the best and
+        bravest the universe has to offer.","name":"Gallente","race_id":8}]'
+    http_version: 
+  recorded_at: Mon, 24 Dec 2018 15:50:07 GMT
+recorded_with: VCR 4.0.0

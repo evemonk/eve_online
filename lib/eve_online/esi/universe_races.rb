@@ -2,7 +2,7 @@
 
 module EveOnline
   module ESI
-    class Races < Base
+    class UniverseRaces < Base
       API_ENDPOINT = 'https://esi.evetech.net/v1/universe/races/?datasource=%<datasource>s'
 
       def races
@@ -14,6 +14,10 @@ module EveOnline
             end
             output
           end
+      end
+
+      def etag
+        current_etag
       end
 
       def scope; end

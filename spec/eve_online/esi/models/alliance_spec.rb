@@ -9,6 +9,8 @@ describe EveOnline::ESI::Models::Alliance do
 
   it { should be_a(EveOnline::ESI::Models::Base) }
 
+  it { should be_a(EveOnline::ESI::Models::ModelWithEtag) }
+
   describe '#initialize' do
     its(:options) { should eq(options) }
   end
@@ -17,6 +19,8 @@ describe EveOnline::ESI::Models::Alliance do
     let(:alliance) { described_class.new(options) }
 
     let(:date_founded) { double }
+
+    let(:etag) { double }
 
     before { expect(alliance).to receive(:creator_corporation_id).and_return(98_306_624) }
 
@@ -31,6 +35,8 @@ describe EveOnline::ESI::Models::Alliance do
     before { expect(alliance).to receive(:name).and_return('Kids With Guns Alliance') }
 
     before { expect(alliance).to receive(:ticker).and_return('-KWG-') }
+
+    before { expect(alliance).to receive(:etag).and_return(etag) }
 
     subject { alliance.as_json }
 
@@ -47,6 +53,8 @@ describe EveOnline::ESI::Models::Alliance do
     its([:name]) { should eq('Kids With Guns Alliance') }
 
     its([:ticker]) { should eq('-KWG-') }
+
+    its([:etag]) { should eq(etag) }
   end
 
   describe '#creator_corporation_id' do

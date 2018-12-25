@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://esi.evetech.net/v3/alliances/99005443/?datasource=tranquility
+    uri: https://esi.evetech.net/v1/universe/bloodlines/?datasource=tranquility
     body:
       encoding: US-ASCII
       string: ''
@@ -15,17 +15,15 @@ http_interactions:
       - EveOnline API (https://github.com/evemonk/eve_online) v0.20.0
       Accept-Language:
       - en-us
+      If-None-Match:
+      - e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b
   response:
     status:
-      code: 200
-      message: OK
+      code: 304
+      message: Not Modified
     headers:
       Date:
-      - Wed, 19 Dec 2018 21:38:56 GMT
-      Content-Type:
-      - application/json; charset=UTF-8
-      Content-Length:
-      - '180'
+      - Mon, 24 Dec 2018 16:32:01 GMT
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -44,24 +42,27 @@ http_interactions:
       - GET,HEAD,OPTIONS
       Cache-Control:
       - public
+      Content-Language:
+      - en-us
       Etag:
-      - '"6780e53a01c7d9715b5f445126c4f2c137da4be79e4debe541ce3ab2"'
+      - W/"e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b"
       Expires:
-      - Wed, 19 Dec 2018 22:19:28 GMT
+      - Tue, 25 Dec 2018 11:05:00 GMT
       Last-Modified:
-      - Wed, 19 Dec 2018 21:19:28 GMT
+      - Mon, 24 Dec 2018 11:04:27 GMT
       Strict-Transport-Security:
       - max-age=31536000
+      Vary:
+      - Accept-Language
       X-Esi-Error-Limit-Remain:
       - '100'
       X-Esi-Error-Limit-Reset:
-      - '4'
+      - '59'
       X-Esi-Request-Id:
-      - a3dd66f6-953e-46a3-a13e-2f87da9b424c
+      - 04b321fd-d830-461e-a5be-3cce78b6fea9
     body:
       encoding: UTF-8
-      string: '{"creator_corporation_id":98306624,"creator_id":94195096,"date_founded":"2015-05-03T19:45:17Z","executor_corporation_id":98306624,"name":"Kids
-        With Guns Alliance","ticker":"-KWG-"}'
+      string: ''
     http_version: 
-  recorded_at: Wed, 19 Dec 2018 21:38:56 GMT
+  recorded_at: Mon, 24 Dec 2018 16:32:01 GMT
 recorded_with: VCR 4.0.0

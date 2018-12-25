@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-describe EveOnline::ESI::Factions do
+describe EveOnline::ESI::UniverseFactions do
   let(:options) { {} }
 
   subject { described_class.new(options) }
@@ -70,6 +70,14 @@ describe EveOnline::ESI::Factions do
 
       specify { expect { subject.factions }.to change { subject.instance_variable_get(:@factions) }.from(nil).to([faction]) }
     end
+  end
+
+  describe '#etag' do
+    let(:current_etag) { double }
+
+    before { expect(subject).to receive(:current_etag).and_return(current_etag) }
+
+    specify { expect(subject.etag).to eq(current_etag) }
   end
 
   describe '#scope' do

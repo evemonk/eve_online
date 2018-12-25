@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://esi.evetech.net/v3/alliances/99005443/?datasource=tranquility
+    uri: https://esi.evetech.net/v4/corporations/98468592/?datasource=tranquility
     body:
       encoding: US-ASCII
       string: ''
@@ -21,11 +21,11 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 19 Dec 2018 21:38:56 GMT
+      - Mon, 24 Dec 2018 20:25:54 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
-      - '180'
+      - '282'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -45,23 +45,23 @@ http_interactions:
       Cache-Control:
       - public
       Etag:
-      - '"6780e53a01c7d9715b5f445126c4f2c137da4be79e4debe541ce3ab2"'
+      - '"9f1b3761e93aba36ceaea6328e62031ec777317c70b7439b665d93fe"'
       Expires:
-      - Wed, 19 Dec 2018 22:19:28 GMT
+      - Mon, 24 Dec 2018 20:35:57 GMT
       Last-Modified:
-      - Wed, 19 Dec 2018 21:19:28 GMT
+      - Mon, 24 Dec 2018 19:35:57 GMT
       Strict-Transport-Security:
       - max-age=31536000
       X-Esi-Error-Limit-Remain:
       - '100'
       X-Esi-Error-Limit-Reset:
-      - '4'
+      - '6'
       X-Esi-Request-Id:
-      - a3dd66f6-953e-46a3-a13e-2f87da9b424c
+      - b301e312-ddb9-4d34-b24d-ea545b9b331d
     body:
       encoding: UTF-8
-      string: '{"creator_corporation_id":98306624,"creator_id":94195096,"date_founded":"2015-05-03T19:45:17Z","executor_corporation_id":98306624,"name":"Kids
-        With Guns Alliance","ticker":"-KWG-"}'
+      string: '{"alliance_id":99007916,"ceo_id":1721864142,"creator_id":1721864142,"date_founded":"2016-07-11T14:22:17Z","description":"","home_station_id":60011893,"member_count":155,"name":"Bullshit
+        Bingo Club","shares":1000,"tax_rate":0.1,"ticker":"BUBIC","url":"http:\/\/","war_eligible":true}'
     http_version: 
-  recorded_at: Wed, 19 Dec 2018 21:38:56 GMT
+  recorded_at: Mon, 24 Dec 2018 20:25:52 GMT
 recorded_with: VCR 4.0.0

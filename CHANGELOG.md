@@ -1,6 +1,6 @@
 # Changelog
 
-## master
+## v0.21.0
 
 * Remove `memoist` gem
 * Fix etag support
@@ -11,6 +11,20 @@
 * Add `etag` to `EveOnline::ESI::Models::Stargate#as_json`
 * Add `EveOnline::ESI::UniverseStar#etag`
 * Add `etag` to `EveOnline::ESI::Models::Star#as_json`
+* Add `EveOnline::ESI::Alliances#etag`
+* Add `etag` to `EveOnline::ESI::Models::Alliance#as_json`
+* Add `EveOnline::ESI::Alliance#etag`
+* Rename `EveOnline::ESI::Races` to `EveOnline::ESI::UniverseRaces`
+* Add `EveOnline::ESI::UniverseRaces#etag`
+* Rename `EveOnline::ESI::Factions` to `EveOnline::ESI::UniverseFactions`
+* Add `EveOnline::ESI::UniverseFactions#etag`
+* Rename `EveOnline::ESI::Bloodlines` to `EveOnline::ESI::UniverseBloodlines`
+* Add `EveOnline::ESI::UniverseBloodlines#etag`
+* Rename `EveOnline::ESI::Ancestries` to `EveOnline::ESI::UniverseAncestries`
+* Add `EveOnline::ESI::UniverseAncestries#etag`
+* Add `EveOnline::ESI::Models::Corporation#etag`
+* Add `etag` to `EveOnline::ESI::Models::Corporation#as_json`
+* Add `EveOnline::ESI::Corporation#etag`
 
 ## v0.20.0
 

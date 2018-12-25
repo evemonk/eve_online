@@ -2,7 +2,7 @@
 
 module EveOnline
   module ESI
-    class Factions < Base
+    class UniverseFactions < Base
       API_ENDPOINT = 'https://esi.evetech.net/v2/universe/factions/?datasource=%<datasource>s'
 
       def factions
@@ -14,6 +14,10 @@ module EveOnline
             end
             output
           end
+      end
+
+      def etag
+        current_etag
       end
 
       def scope; end
