@@ -1,6 +1,6 @@
 # Changelog
 
-## master
+## v0.21.0
 
 * Remove `memoist` gem
 * Fix etag support
