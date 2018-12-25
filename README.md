@@ -118,9 +118,11 @@ alliance_corporations = EveOnline::ESI::AllianceCorporations.new(options)
 
 alliance_corporations.scope # => nil
 
-alliance_corporations.corporation_ids.size # => 33
+alliance_corporations.corporation_ids.size # => 70
 
-alliance_corporations.corporation_ids.first # => 98134807
+alliance_corporations.corporation_ids.first # => 98091533
+
+alliance_corporations.etag # => "9b6810d8ddbd9a13bb4ad09cf4bfefd9f29974bffd543eb30ce25132"
 ```
 
 #### Get alliance icon
