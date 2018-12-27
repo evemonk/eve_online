@@ -1,13 +1,3 @@
-GIT
-  remote: https://github.com/bblimke/webmock.git
-  revision: a135a37ff5f982a43806c52f2f7e778baba80797
-  branch: master
-  specs:
-    webmock (3.4.2)
-      addressable (>= 2.3.6)
-      crack (>= 0.3.2)
-      hashdiff
-
 PATH
   remote: .
   specs:
@@ -99,6 +89,10 @@ GEM
       thread_safe (~> 0.1)
     unicode-display_width (1.4.1)
     vcr (4.0.0)
+    webmock (3.5.1)
+      addressable (>= 2.3.6)
+      crack (>= 0.3.2)
+      hashdiff
 
 PLATFORMS
   ruby
@@ -117,7 +111,7 @@ DEPENDENCIES
   rubocop-rspec
   simplecov
   vcr
-  webmock!
+  webmock
 
 BUNDLED WITH
    1.17.2
