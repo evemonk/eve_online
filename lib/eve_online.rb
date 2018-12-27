@@ -13,11 +13,10 @@ require 'eve_online/exceptions/internal_server_error'
 require 'eve_online/exceptions/bad_gateway'
 require 'eve_online/exceptions/service_unavailable'
 require 'eve_online/exceptions/no_content'
+require 'eve_online/exceptions/not_modified'
 
 # ESI API
 require 'eve_online/esi/base'
-
-require 'eve_online/esi/response_with_etag'
 
 require 'eve_online/esi/alliances'
 require 'eve_online/esi/alliance'
@@ -109,8 +108,6 @@ require 'eve_online/esi/war_killmails'
 
 # Models
 require 'eve_online/esi/models/base'
-
-require 'eve_online/esi/models/model_with_etag'
 
 require 'eve_online/esi/models/position'
 require 'eve_online/esi/models/loyalty_point'

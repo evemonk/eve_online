@@ -96,8 +96,7 @@ alliance.as_json # => {:creator_corporation_id=>98306624,
                  #     :executor_corporation_id=>98306624,
                  #     :faction_id=>nil,
                  #     :name=>"Kids With Guns Alliance",
-                 #     :ticker=>"-KWG-",
-                 #     :etag=>"6780e53a01c7d9715b5f445126c4f2c137da4be79e4debe541ce3ab2"}
+                 #     :ticker=>"-KWG-"}
 
 alliance.creator_corporation_id # => 98306624
 alliance.creator_id # => 94195096
@@ -106,6 +105,7 @@ alliance.executor_corporation_id # => 98306624
 alliance.faction_id # => nil
 alliance.name # => "Kids With Guns Alliance"
 alliance.ticker # => "-KWG-"
+
 alliance.etag # => "6780e53a01c7d9715b5f445126c4f2c137da4be79e4debe541ce3ab2"
 ```
 
@@ -139,6 +139,8 @@ alliance_icon.as_json # => {:icon_medium=>"http://image.eveonline.com/Alliance/9
 
 alliance_icon.icon_medium # => "http://image.eveonline.com/Alliance/99005443_128.png"
 alliance_icon.icon_small # => "http://image.eveonline.com/Alliance/99005443_64.png"
+
+alliance_icon.etag
 ```
 
 ### Assets
@@ -177,6 +179,8 @@ asset.location_id # => 1027847409779
 asset.location_type # => "other"
 asset.quantity # => 1
 asset.type_id # => 1010
+
+character_assets.etag
 ```
 
 #### Get character asset locations

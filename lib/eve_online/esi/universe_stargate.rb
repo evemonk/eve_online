@@ -7,8 +7,6 @@ module EveOnline
     class UniverseStargate < Base
       extend Forwardable
 
-      include ResponseWithEtag
-
       API_ENDPOINT = 'https://esi.evetech.net/v1/universe/stargates/%<stargate_id>s/?datasource=%<datasource>s'
 
       attr_reader :id
@@ -20,10 +18,10 @@ module EveOnline
       end
 
       def_delegators :model, :as_json, :name, :stargate_id, :system_id,
-                     :type_id, :destination, :position, :etag
+                     :type_id, :destination, :position
 
       def model
-        @model ||= Models::Stargate.new(response_with_etag)
+        @model ||= Models::Stargate.new(response)
       end
 
       def scope; end

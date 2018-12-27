@@ -24,9 +24,10 @@ describe 'Get star information' do
                                     solar_system_id: 30_000_001,
                                     spectral_class: 'K2 V',
                                     temperature: 4567,
-                                    type_id: 45_041,
-                                    etag: '2e28835f91024608719726b655591d531125a023e122859d174923d5')
+                                    type_id: 45_041)
     end
+
+    specify { expect(subject.etag).to eq('2e28835f91024608719726b655591d531125a023e122859d174923d5') }
   end
 
   context 'when etag present' do
@@ -39,5 +40,7 @@ describe 'Get star information' do
     subject { EveOnline::ESI::UniverseStar.new(options) }
 
     specify { expect(subject.not_modified?).to eq(true) }
+
+    specify { expect(subject.etag).to eq('2e28835f91024608719726b655591d531125a023e122859d174923d5') }
   end
 end

@@ -23,9 +23,10 @@ describe 'Get alliance information' do
                                     ticker: '-KWG-',
                                     date_founded: '2015-05-03T19:45:17Z',
                                     executor_corporation_id: 98_306_624,
-                                    faction_id: nil,
-                                    etag: '6780e53a01c7d9715b5f445126c4f2c137da4be79e4debe541ce3ab2')
+                                    faction_id: nil)
     end
+
+    specify { expect(subject.etag).to eq('6780e53a01c7d9715b5f445126c4f2c137da4be79e4debe541ce3ab2') }
   end
 
   context 'when etag is set' do
@@ -43,5 +44,7 @@ describe 'Get alliance information' do
     subject { EveOnline::ESI::Alliance.new(options) }
 
     specify { expect(subject.not_modified?).to eq(true) }
+
+    specify { expect(subject.etag).to eq('6780e53a01c7d9715b5f445126c4f2c137da4be79e4debe541ce3ab2') }
   end
 end

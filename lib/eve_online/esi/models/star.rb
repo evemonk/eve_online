@@ -4,8 +4,6 @@ module EveOnline
   module ESI
     module Models
       class Star < Base
-        include ModelWithEtag
-
         def as_json
           {
             age: age,
@@ -15,8 +13,7 @@ module EveOnline
             solar_system_id: solar_system_id,
             spectral_class: spectral_class,
             temperature: temperature,
-            type_id: type_id,
-            etag: etag
+            type_id: type_id
           }
         end
 

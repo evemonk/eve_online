@@ -5,8 +5,6 @@ require 'spec_helper'
 describe EveOnline::ESI::Models::Corporation do
   it { should be_a(EveOnline::ESI::Models::Base) }
 
-  it { should be_a(EveOnline::ESI::Models::ModelWithEtag) }
-
   let(:options) { double }
 
   subject { described_class.new(options) }
@@ -23,8 +21,6 @@ describe EveOnline::ESI::Models::Corporation do
     let(:date_founded) { double }
 
     let(:faction_id) { double }
-
-    let(:etag) { double }
 
     before { expect(corporation).to receive(:alliance_id).and_return(99_001_258) }
 
@@ -51,8 +47,6 @@ describe EveOnline::ESI::Models::Corporation do
     before { expect(corporation).to receive(:ticker).and_return('BUBIC') }
 
     before { expect(corporation).to receive(:corporation_url).and_return('http://') }
-
-    before { expect(corporation).to receive(:etag).and_return(etag) }
 
     subject { corporation.as_json }
 
@@ -81,8 +75,6 @@ describe EveOnline::ESI::Models::Corporation do
     its([:ticker]) { should eq('BUBIC') }
 
     its([:corporation_url]) { should eq('http://') }
-
-    its([:etag]) { should eq(etag) }
   end
 
   describe '#alliance_id' do

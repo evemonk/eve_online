@@ -27,14 +27,6 @@ describe EveOnline::ESI::Alliances do
     specify { expect(subject.alliance_ids).to eq(response) }
   end
 
-  describe '#etag' do
-    let(:current_etag) { double }
-
-    before { expect(subject).to receive(:current_etag).and_return(current_etag) }
-
-    specify { expect(subject.etag).to eq(current_etag) }
-  end
-
   describe '#scope' do
     specify { expect(subject.scope).to eq(nil) }
   end

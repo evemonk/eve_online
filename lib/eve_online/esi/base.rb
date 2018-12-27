@@ -53,7 +53,7 @@ module EveOnline
         client.open_timeout = value
       end
 
-      def current_etag
+      def etag
         resource.header['Etag']&.gsub('W/', '')&.gsub('"', '')
       end
 
@@ -112,12 +112,9 @@ module EveOnline
           # TODO: write
           raise NotImplementedError
         when Net::HTTPNoContent
-          # TODO: write
-          # raise NotImplementedError
           raise EveOnline::Exceptions::NoContent
         when Net::HTTPNotModified
-          # TODO: write etag support
-          raise NotImplementedError
+          raise EveOnline::Exceptions::NotModified
         when Net::HTTPBadRequest
           raise EveOnline::Exceptions::BadRequest
         when Net::HTTPUnauthorized
