@@ -12,6 +12,7 @@
 * Remove `EveOnline::ESI::Models::Stargate#etag`
 * Add `EveOnline::ESI::Base#etag`
 * `EveOnline::ESI::Base#content` raise `EveOnline::Exceptions::NotModified` when body not present for 304 requests
+* Add setter `EveOnline::ESI::Base.etag=`
 
 ## v0.21.0
 

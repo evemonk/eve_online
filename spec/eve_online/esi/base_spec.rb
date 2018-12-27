@@ -133,6 +133,10 @@ describe EveOnline::ESI::Base do
     specify { expect { subject.send(:open_timeout=, value) }.not_to raise_error }
   end
 
+  describe '#etag=' do
+    specify { expect { subject.etag = '123abc' }.to change { subject._etag }.from(nil).to('123abc') }
+  end
+
   describe '#etag' do
     let(:resource) { double }
 
