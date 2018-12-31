@@ -15,17 +15,15 @@ http_interactions:
       - EveOnline API (https://github.com/evemonk/eve_online) v0.21.0
       Accept-Language:
       - en-us
+      If-None-Match:
+      - 22c39689783a86032b8d43fa0b2e8f4809c4f38a585e39471035aa8b
   response:
     status:
-      code: 200
-      message: OK
+      code: 304
+      message: Not Modified
     headers:
       Date:
-      - Mon, 31 Dec 2018 22:32:26 GMT
-      Content-Type:
-      - application/json; charset=UTF-8
-      Content-Length:
-      - '225'
+      - Mon, 31 Dec 2018 22:33:32 GMT
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -55,13 +53,12 @@ http_interactions:
       X-Esi-Error-Limit-Remain:
       - '100'
       X-Esi-Error-Limit-Reset:
-      - '34'
+      - '28'
       X-Esi-Request-Id:
-      - 67c15a18-b14d-4c39-bc38-fa3387b4408f
+      - 5316171e-a55f-4090-82ca-9c457dc1dee4
     body:
       encoding: UTF-8
-      string: '{"alliance_id":99005443,"ancestry_id":24,"birthday":"2010-01-15T15:26:00Z","bloodline_id":4,"corporation_id":98134807,"description":"","gender":"male","name":"Johnn
-        Dillinger","race_id":2,"security_status":1.8694881661345457}'
+      string: ''
     http_version: 
-  recorded_at: Mon, 31 Dec 2018 22:32:26 GMT
+  recorded_at: Mon, 31 Dec 2018 22:33:32 GMT
 recorded_with: VCR 4.0.0
