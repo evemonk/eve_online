@@ -2265,13 +2265,13 @@ types.scope # => nil
 
 types.page # => 1
 
-types.total_pages # => 35
+types.total_pages # => 36
 
 types.universe_type_ids.size # => 1000
 
 types.universe_type_ids.first # => 0
 
-# TODO: types.etag
+types.etag # => "e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b"
 ```
 
 #### Get type information
