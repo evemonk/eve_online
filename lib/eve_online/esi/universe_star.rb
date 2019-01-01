@@ -7,8 +7,6 @@ module EveOnline
     class UniverseStar < Base
       extend Forwardable
 
-      include ResponseWithEtag
-
       API_ENDPOINT = 'https://esi.evetech.net/v1/universe/stars/%<star_id>s/?datasource=%<datasource>s'
 
       attr_reader :id
@@ -21,10 +19,10 @@ module EveOnline
 
       def_delegators :model, :as_json, :age, :luminosity, :name, :radius,
                      :solar_system_id, :spectral_class, :temperature,
-                     :type_id, :etag
+                     :type_id
 
       def model
-        @model ||= Models::Star.new(response_with_etag)
+        @model ||= Models::Star.new(response)
       end
 
       def scope; end

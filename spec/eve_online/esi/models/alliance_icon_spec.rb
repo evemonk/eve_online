@@ -16,15 +16,15 @@ describe EveOnline::ESI::Models::AllianceIcon do
   describe '#as_json' do
     let(:alliance_icon) { described_class.new(options) }
 
-    before { expect(alliance_icon).to receive(:icon_medium).and_return('http://image.eveonline.com/Alliance/99005443_128.png') }
+    before { expect(alliance_icon).to receive(:icon_medium).and_return('http://imageserver.eveonline.com/Alliance/99005443_128.png') }
 
-    before { expect(alliance_icon).to receive(:icon_small).and_return('http://image.eveonline.com/Alliance/99005443_64.png') }
+    before { expect(alliance_icon).to receive(:icon_small).and_return('http://imageserver.eveonline.com/Alliance/99005443_64.png') }
 
     subject { alliance_icon.as_json }
 
-    its([:icon_medium]) { should eq('http://image.eveonline.com/Alliance/99005443_128.png') }
+    its([:icon_medium]) { should eq('http://imageserver.eveonline.com/Alliance/99005443_128.png') }
 
-    its([:icon_small]) { should eq('http://image.eveonline.com/Alliance/99005443_64.png') }
+    its([:icon_small]) { should eq('http://imageserver.eveonline.com/Alliance/99005443_64.png') }
   end
 
   describe '#icon_medium' do

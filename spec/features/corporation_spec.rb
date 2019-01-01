@@ -23,7 +23,6 @@ describe 'Get corporation information' do
                                     creator_id: 1_721_864_142,
                                     date_founded: '2016-07-11 14:22:17.000000000 +0000',
                                     description: '',
-                                    etag: '9f1b3761e93aba36ceaea6328e62031ec777317c70b7439b665d93fe',
                                     faction_id: nil,
                                     home_station_id: 60_011_893,
                                     member_count: 155,
@@ -32,6 +31,8 @@ describe 'Get corporation information' do
                                     tax_rate: 0.1,
                                     ticker: 'BUBIC')
     end
+
+    specify { expect(subject.etag).to eq('9f1b3761e93aba36ceaea6328e62031ec777317c70b7439b665d93fe') }
   end
 
   context 'when etag is set' do
@@ -49,5 +50,7 @@ describe 'Get corporation information' do
     subject { EveOnline::ESI::Corporation.new(options) }
 
     specify { expect(subject.not_modified?).to eq(true) }
+
+    specify { expect(subject.etag).to eq('9f1b3761e93aba36ceaea6328e62031ec777317c70b7439b665d93fe') }
   end
 end

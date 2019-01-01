@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    eve_online (0.21.0)
+    eve_online (0.22.0)
       activesupport (>= 4.2.0)
 
 GEM
@@ -32,7 +32,7 @@ GEM
     diff-lcs (1.3)
     docile (1.3.1)
     equalizer (0.0.11)
-    hashdiff (0.3.7)
+    hashdiff (0.3.8)
     i18n (1.3.0)
       concurrent-ruby (~> 1.0)
     ice_nine (0.11.2)
@@ -58,7 +58,7 @@ GEM
       equalizer (~> 0.0.9)
       ice_nine (~> 0.11.0)
       procto (~> 0.0.2)
-    mutant (0.8.23)
+    mutant (0.8.24)
       abstract_type (~> 0.0.7)
       adamantium (~> 0.2.0)
       anima (~> 0.3.0)
@@ -73,8 +73,8 @@ GEM
       procto (~> 0.0.2)
       regexp_parser (~> 1.2)
       unparser (~> 0.4.2)
-    mutant-rspec (0.8.23)
-      mutant (~> 0.8.23)
+    mutant-rspec (0.8.24)
+      mutant (~> 0.8.24)
       rspec-core (>= 3.4.0, < 4.0.0)
     nokogiri (1.9.1)
       mini_portile2 (~> 2.4.0)
@@ -119,7 +119,7 @@ GEM
       parser (>= 2.3.1.2, < 2.6)
       procto (~> 0.0.2)
     vcr (4.0.0)
-    webmock (3.4.2)
+    webmock (3.5.1)
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
       hashdiff
@@ -142,4 +142,4 @@ DEPENDENCIES
   webmock
 
 BUNDLED WITH
-   1.17.2
+   1.17.3

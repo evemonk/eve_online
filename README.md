@@ -96,8 +96,7 @@ alliance.as_json # => {:creator_corporation_id=>98306624,
                  #     :executor_corporation_id=>98306624,
                  #     :faction_id=>nil,
                  #     :name=>"Kids With Guns Alliance",
-                 #     :ticker=>"-KWG-",
-                 #     :etag=>"6780e53a01c7d9715b5f445126c4f2c137da4be79e4debe541ce3ab2"}
+                 #     :ticker=>"-KWG-"}
 
 alliance.creator_corporation_id # => 98306624
 alliance.creator_id # => 94195096
@@ -106,6 +105,7 @@ alliance.executor_corporation_id # => 98306624
 alliance.faction_id # => nil
 alliance.name # => "Kids With Guns Alliance"
 alliance.ticker # => "-KWG-"
+
 alliance.etag # => "6780e53a01c7d9715b5f445126c4f2c137da4be79e4debe541ce3ab2"
 ```
 
@@ -118,9 +118,11 @@ alliance_corporations = EveOnline::ESI::AllianceCorporations.new(options)
 
 alliance_corporations.scope # => nil
 
-alliance_corporations.corporation_ids.size # => 33
+alliance_corporations.corporation_ids.size # => 70
 
-alliance_corporations.corporation_ids.first # => 98134807
+alliance_corporations.corporation_ids.first # => 98091533
+
+alliance_corporations.etag # => "9b6810d8ddbd9a13bb4ad09cf4bfefd9f29974bffd543eb30ce25132"
 ```
 
 #### Get alliance icon
@@ -137,6 +139,8 @@ alliance_icon.as_json # => {:icon_medium=>"http://image.eveonline.com/Alliance/9
 
 alliance_icon.icon_medium # => "http://image.eveonline.com/Alliance/99005443_128.png"
 alliance_icon.icon_small # => "http://image.eveonline.com/Alliance/99005443_64.png"
+
+alliance_icon.etag # => "e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b"
 ```
 
 ### Assets
@@ -175,6 +179,8 @@ asset.location_id # => 1027847409779
 asset.location_type # => "other"
 asset.quantity # => 1
 asset.type_id # => 1010
+
+# TODO: character_assets.etag
 ```
 
 #### Get character asset locations
@@ -201,6 +207,8 @@ asset_location.position.as_json # => {:x=>-928621543221.3319,
 asset_location.position.x # => -928621543221.3319
 asset_location.position.y # => 297645715142.40234
 asset_location.position.z # => -971212198300.4812
+
+# TODO: character_assets_locations.etag
 ```
 
 #### Get character asset names
@@ -221,6 +229,8 @@ character_asset_name.as_json # => {:item_id=>1001215602246,
 
 character_asset_name.item_id # => 1001215602246
 character_asset_name.name # => "HOLE"
+
+# TODO: character_assets_names.etag
 ```
 
 #### Get corporation assets
@@ -273,6 +283,8 @@ bookmark.item_type_id # => 5
 bookmark.label # => "Stargate"
 bookmark.location_id # => 30003430
 bookmark.notes # => "This is a stargate"
+
+# TODO: character_bookmarks.etag
 ```
 
 #### List bookmark folders
@@ -297,6 +309,8 @@ bookmark_folder.as_json # => {:folder_id=>5,
 
 bookmark_folder.folder_id # => 5
 bookmark_folder.name # => "Icecream"
+
+# TODO: character_bookmark_folders.etag
 ```
 
 #### List corporation bookmarks
@@ -331,6 +345,7 @@ event.importance # => 0
 event.title # => "Moon extraction for 66-PMM - GoldMine-5-"
 
 # TODO: add from_event support
+# TODO: character_calendar.etag
 ```
 
 #### Get an event
@@ -373,6 +388,8 @@ character.gender # => "male"
 character.name # => "Green Black"
 character.race_id # => 2
 character.security_status # => 1.8694881661345457
+
+# TODO: character.etag
 ```
 
 #### Get agents research
@@ -411,6 +428,8 @@ blueprint.quantity # => -2
 blueprint.runs # => 300
 blueprint.time_efficiency # => 0
 blueprint.type_id # => 1010
+
+# TODO: character_blueprints.etag
 ```
 
 #### Get corporation history
@@ -435,6 +454,8 @@ character_fatigue.last_jump_date # => nil
 character_fatigue.last_update_date # => nil
 
 # TODO: add real data here
+
+# TODO: character_fatigue.etag
 ```
 
 #### Get medals
@@ -467,6 +488,8 @@ notification.sender_type # => "corporation"
 notification.text # => "againstID: 99005443\ncost: 0\ndeclaredByID: 98442842\ndelayHours: 24\nhostileState: 0\n"
 notification.timestamp # => Thu, 01 Mar 2018 13:48:00 UTC +00:00
 notification.type # => "AllWarDeclaredMsg"
+
+# TODO: character_notifications.etag
 ```
 
 #### Get new contact notifications
@@ -489,6 +512,8 @@ character_portrait.medium # => "http://image.eveonline.com/Character/90729314_12
 character_portrait.large # => "http://image.eveonline.com/Character/90729314_256.jpg"
 character_portrait.huge # => "http://image.eveonline.com/Character/90729314_512.jpg"
 character_portrait.small # => "http://image.eveonline.com/Character/90729314_64.jpg"
+
+# TODO: character_portrait.etag
 ```
 
 #### Get character corporation roles
@@ -513,6 +538,8 @@ standing.as_json # => {:from_id=>500001,
 standing.from_id # => 500001
 standing.from_type # => "faction"
 standing.standing # => 0.3303719111639991
+
+# TODO: character_standing.etag
 ```
 
 #### Yearly aggregate stats
@@ -554,6 +581,8 @@ jump_clone.name # => nil
 character_clones.last_clone_jump_date # => Fri, 27 Jul 2012 14:50:11 UTC +00:00
 
 character_clones.last_station_change_date # => Tue, 30 Jun 2015 21:51:13 UTC +00:00
+
+# TODO: character_clones.etag
 ```
 
 #### Get active implants
@@ -568,6 +597,8 @@ character_implants.scope # => "esi-clones.read_implants.v1"
 character_implants.implant_ids.size # => 5
 
 character_implants.implant_ids # => [9899, 9941, 9942, 9943, 9956]
+
+# TODO: character_implants.etag
 ```
 
 ### Contacts
@@ -633,8 +664,7 @@ corporation.as_json # => {:alliance_id=>99001258,
                     #     :shares=>1000,
                     #     :tax_rate=>0.1,
                     #     :ticker=>"BUBIC",
-                    #     :corporation_url=>"http://",
-                    #     :etag=>"9f1b3761e93aba36ceaea6328e62031ec777317c70b7439b665d93fe"}
+                    #     :corporation_url=>"http://"}
 
 corporation.alliance_id # => 99001258
 corporation.ceo_id # => 1721864142
@@ -649,6 +679,7 @@ corporation.shares # => 1000
 corporation.tax_rate # => 0.1
 corporation.ticker # => "BUBIC"
 corporation.corporation_url # => "http://"
+
 corporation.etag # => "9f1b3761e93aba36ceaea6328e62031ec777317c70b7439b665d93fe"
 ```
 
@@ -690,6 +721,8 @@ blueprint.time_efficiency # => 20
 blueprint.type_id # => 31803
 
 # TODO: add roles
+
+# TODO: corporation_blueprints.etag
 ```
 
 #### Get all corporation ALSC logs
@@ -742,6 +775,8 @@ dogma_attributes.scope # => nil
 dogma_attributes.attribute_ids.size # => 2385
 
 dogma_attributes.attribute_ids.first # => 2
+
+# TODO: dogma_attributes.etag
 ```
 
 #### Get attribute information
@@ -774,6 +809,8 @@ dogma_attribute.name # => "isOnline"
 dogma_attribute.published # => nil
 dogma_attribute.stackable # => true
 dogma_attribute.unit_id # => nil
+
+# TODO: dogma_attribute.etag
 ```
 
 #### Get dynamic item information
@@ -788,6 +825,8 @@ dogma_effects.scope # => nil
 dogma_effects.effects_ids.size # => 4123
 
 dogma_effects.effects_ids.first # => 4
+
+# TODO: dogma_effects.etag
 ```
 
 #### Get effect information
@@ -858,6 +897,8 @@ modifier.func # => "LocationRequiredSkillModifier"
 modifier.modified_attribute_id # => 73
 modifier.modifying_attribute_id # => 2458
 modifier.operator # => 6
+
+# TODO: dogma_effect.etag
 ```
 
 ### Faction Warfare
@@ -980,6 +1021,8 @@ job.start_date # => Sat, 18 Nov 2017 10:16:14 UTC +00:00
 job.station_id # => 1023579231924
 job.status # => "active"
 job.successful_runs # => nil
+
+# TODO: character_jobs.etag
 ```
 
 #### Character mining ledger
@@ -1052,6 +1095,8 @@ job.runs # => 1
 job.start_date # => Sat, 18 Nov 2017 11:20:14 UTC +00:00
 job.status # => "active"
 job.successful_runs # => nil
+
+# TODO: corporation_jobs.etag
 ```
 
 #### List industry facilities
@@ -1086,6 +1131,8 @@ killmail.as_json # => {:killmail_hash=>"07f7ef1d7f6090e78d8e85b4a98e680f67b5e9d5
 
 killmail.killmail_hash # => "07f7ef1d7f6090e78d8e85b4a98e680f67b5e9d5"
 killmail.killmail_id # => 72410059
+
+# TODO: character_killmails.etag
 ```
 
 #### Get a corporation's recent kills and losses
@@ -1110,6 +1157,8 @@ killmail.as_json # => {:killmail_hash=>"07f7ef1d7f6090e78d8e85b4a98e680f67b5e9d5
 
 killmail.killmail_hash # => "07f7ef1d7f6090e78d8e85b4a98e680f67b5e9d5"
 killmail.killmail_id # => 72410059
+
+# TODO: corporation_killmails.etag
 ```
 
 #### Get a single killmail
@@ -1132,6 +1181,8 @@ character_location.as_json # => {:solar_system_id=>30004971,
 character_location.solar_system_id # => 30004971
 character_location.station_id # => 60014689
 character_location.structure_id # => nil
+
+# TODO: character_location.etag
 ```
 
 #### Get character online
@@ -1152,12 +1203,13 @@ character_online.last_login # => Sun, 15 Jan 2017 11:39:24 UTC +00:00
 character_online.last_logout # => Sun, 15 Jan 2017 11:31:22 UTC +00:00
 character_online.logins # => 370
 character_online.online # => false
+
+# TODO: character_online.etag
 ```
 
 #### Get current ship
 
 ```ruby
-
 options = { token: 'token123', character_id: 90729314 }
 
 character_ship = EveOnline::ESI::CharacterShip.new(options)
@@ -1171,6 +1223,8 @@ character_ship.as_json # => {:ship_item_id=>1002312158069,
 character_ship.ship_item_id # => 1002312158069
 character_ship.ship_name # => "Green Black's Velator"
 character_ship.ship_type_id # => 606
+
+# TODO: character_ship.etag
 ```
 
 ### Loyalty
@@ -1192,6 +1246,8 @@ loyalty_point.as_json # => {:corporation_id=>1000035, :loyalty_points=>14163}
 
 loyalty_point.corporation_id # => 1000035
 loyalty_point.loyalty_points # => 14163
+
+# TODO: character_loyalty_points.etag
 ```
 
 #### List loyalty store offers
@@ -1249,6 +1305,8 @@ order.volume_remain
 order.volume_total
 
 # TODO: update example
+
+# TODO: character_orders.etag
 ```
 
 #### List historical orders by a character
@@ -1291,6 +1349,8 @@ order.wallet_division
 # TODO: update example
 
 # TODO: update
+
+# TODO: corporation_orders.etag
 ```
 
 #### List historical orders from a corporation
@@ -1323,6 +1383,8 @@ stats_today.highest # => 769999999.99
 stats_today.lowest # => 701100002.49
 stats_today.order_count # => 52
 stats_today.volume # => 52
+
+# TODO: market_history.etag
 ```
 
 #### List orders in a region
@@ -1397,6 +1459,8 @@ character_attributes.last_remap_date # => Sat, 07 May 2011 12:58:06 UTC +00:00
 character_attributes.memory # => 24
 character_attributes.perception # => 23
 character_attributes.willpower # => 23
+
+# TODO: character_attributes.etag
 ```
 
 #### Get character's skill queue
@@ -1429,6 +1493,8 @@ skill_queue_entry.queue_position # => 0
 skill_queue_entry.skill_id # => 12487
 skill_queue_entry.start_date # => Sun, 15 Jan 2017 11:38:25 UTC +00:00
 skill_queue_entry.training_start_sp # => 7263
+
+# TODO: character_skill_queue.etag
 ```
 
 #### Get character skills
@@ -1458,6 +1524,8 @@ skill.trained_skill_level # => 1
 
 character_skills.total_sp # => 50362576
 character_skills.unallocated_sp # => 656000
+
+# TODO: character_skills.etag
 ```
 
 ### Sovereignty
@@ -1486,6 +1554,8 @@ server_status.players # => 34545
 server_status.server_version # => "1135520"
 server_status.start_time # => Tue, 11 Apr 2017 11:05:35 UTC +00:00
 server_status.vip # => nil
+
+# TODO: server_status.etag
 ```
 
 ### Universe
@@ -1542,6 +1612,8 @@ asteroid_belt.position.as_json # => {:x=>161967513600.0,
 asteroid_belt.position.x # => 161967513600.0
 asteroid_belt.position.y # => 21288837120.0
 asteroid_belt.position.z # => -73505464320.0
+
+# TODO: asteroid_belt.etag
 ```
 
 #### Get bloodlines
@@ -1594,6 +1666,8 @@ categories.scope # => nil
 categories.category_ids.size # => 43
 
 categories.category_ids.first # => 0
+
+# TODO: categories.etag
 ```
 
 #### Get item category information
@@ -1615,6 +1689,8 @@ category.published # => true
 
 category.group_ids.size # => 46
 category.group_ids.first # => 25
+
+# TODO: category.etag
 ```
 
 #### Get constellations
@@ -1627,6 +1703,8 @@ constellations.scope # => nil
 constellations.constellation_ids.size # => 1146
 
 constellations.constellation_ids.first # => 20000001
+
+# TODO: constellations.etag
 ```
 
 #### Get constellation information
@@ -1655,6 +1733,8 @@ constellation.position.as_json # => {:x=>-9.404655970099134e+16,
 constellation.position.x # => -9.404655970099134e+16
 constellation.position.y # => 4.952015315379885e+16
 constellation.position.z # => -4.273873181840197e+16
+
+# TODO: constellation.etag
 ```
 
 #### Get factions
@@ -1705,6 +1785,8 @@ graphics.scope # => nil
 graphics.graphic_ids.size # => 3624
 
 graphics.graphic_ids.first # => 20481
+
+# TODO: graphics.etag
 ```
 
 #### Get graphic information
@@ -1733,6 +1815,8 @@ graphic.sof_dna # => "ai1_t1:tash-murkon:amarr"
 graphic.sof_fation_name # => "tash-murkon"
 graphic.sof_hull_name # => "ai1_t1"
 graphic.sof_race_name # => "amarr"
+
+# TODO: graphic.etag
 ```
 
 #### Get item groups
@@ -1751,6 +1835,8 @@ groups.total_pages # => 2
 groups.group_ids.size # => 1000
 
 groups.group_ids.first # => 0
+
+# TODO: groups.etag
 ```
 
 #### Get item group information
@@ -1772,6 +1858,8 @@ group.group_id # => 450
 group.name # => "Arkonor"
 group.published # => true
 group.type_ids # => [22, 17425, 17426, 26852, 28367, 28385, 28387, 28625, 46678, 46691]
+
+# TODO: group.etag
 ```
 
 #### Bulk names to IDs
@@ -1800,6 +1888,8 @@ moon.position.as_json # => {:x=>162088094286.0,
 moon.position.x # => 162088094286.0
 moon.position.y # => 21314854783.0
 moon.position.z # => -73598621491.0
+
+# TODO: moon.etag
 ```
 
 #### Get names and categories for a set of ID's
@@ -1830,6 +1920,8 @@ planet.position.as_json # => {:x=>161891117336.0,
 planet.position.x # => 161891117336.0
 planet.position.y # => 21288951986.0
 planet.position.z # => -73529712226.0
+
+# TODO: planet.etag
 ```
 
 #### Get character races
@@ -1868,6 +1960,8 @@ regions.scope # => nil
 regions.universe_region_ids.size # => 106
 
 regions.universe_region_ids.first # => 10000001
+
+# TODO: regions.etag
 ```
 
 #### Get region information
@@ -1888,6 +1982,8 @@ region.constellations # => [20000001,20000002,20000003,20000016]
 region.description # => "The Derelik region..."
 region.name # => "Derelik"
 region.region_id # => 10000001
+
+# TODO: region.etag
 ```
 
 #### Get stargate information
@@ -1902,14 +1998,12 @@ stargate.scope # => nil
 stargate.as_json # => {:name=>"Stargate (Akpivem)",
                  #     :stargate_id=>50000056,
                  #     :system_id=>30000001,
-                 #     :type_id=>29624,
-                 #     :etag=>"2e28835f91024608719726b655591d531125a023e122859d174923d5"}
+                 #     :type_id=>29624}
 
 stargate.name # => "Stargate (Akpivem)"
 stargate.stargate_id # => 50000056
 stargate.system_id # => 30000001
 stargate.type_id # => 29624
-stargate.etag # => "2e28835f91024608719726b655591d531125a023e122859d174923d5"
 
 stargate.destination.as_json # => {:stargate_id=>50000342,
                              #     :system_id=>30000003}
@@ -1924,6 +2018,8 @@ stargate.position.as_json # => {:x=>331516354560.0,
 stargate.position.x # => 331516354560.0
 stargate.position.y # => 43597455360.0
 stargate.position.z # => -586353991680.0
+
+stargate.etag # => "2e28835f91024608719726b655591d531125a023e122859d174923d5"
 ```
 
 #### Get star information
@@ -1942,8 +2038,7 @@ star.as_json # => {:age=>14262808228,
              #     :solar_system_id=>30000001,
              #     :spectral_class=>"K2 V",
              #     :temperature=>4567,
-             #     :type_id=>45041,
-             #     :etag=>"2e28835f91024608719726b655591d531125a023e122859d174923d5"}
+             #     :type_id=>45041}
 
 star.age # => 14262808228
 star.luminosity # => 0.01575000025331974
@@ -1953,6 +2048,7 @@ star.solar_system_id # => 30000001
 star.spectral_class # => "K2 V"
 star.temperature # => 4567
 star.type_id # => 45041
+
 star.etag # => "2e28835f91024608719726b655591d531125a023e122859d174923d5"
 
 # options = { id: 60012526 }
@@ -2031,6 +2127,8 @@ station.position.as_json # => {:x=>-1106145239040.0,
 station.position.x # => -1106145239040.0
 station.position.y # => -145460060160.0
 station.position.z # => 182618726400.0
+
+# TODO: station.etag
 ```
 
 #### List all public structures
@@ -2043,6 +2141,8 @@ structures.scope # => nil
 structures.structure_ids.size # => 4181
 
 structures.structure_ids.first # => 1028178624512
+
+# TODO: structures.etag
 ```
 
 #### Get structure information
@@ -2062,6 +2162,8 @@ jump.as_json # => {:ship_jumps=>22, :system_id=>30005327}
 
 jump.ship_jumps # => 22
 jump.system_id # => 30005327
+
+# TODO: system_jumps.etag
 ```
 
 #### Get system kills
@@ -2084,6 +2186,8 @@ system_kill.npc_kills # => 231
 system_kill.pod_kills # => 0
 system_kill.ship_kills # => 0
 system_kill.system_id # => 30001746
+
+# TODO: system_kills.etag
 ```
 
 #### Get solar systems
@@ -2096,6 +2200,8 @@ systems.scope # => nil
 systems.universe_system_ids.size # => 8285
 
 systems.universe_system_ids.first # => 30000001
+
+# TODO: systems.etag
 ```
 
 #### Get solar system information
@@ -2144,6 +2250,8 @@ planet.moon_ids # => [40000004]
 system.stargate_ids # => [50000056, 50000057, 50000058]
 
 system.station_ids # => [60012526, 60014437]
+
+# TODO: system.etag
 ```
 
 #### Get types
@@ -2162,6 +2270,8 @@ types.total_pages # => 35
 types.universe_type_ids.size # => 1000
 
 types.universe_type_ids.first # => 0
+
+# TODO: types.etag
 ```
 
 #### Get type information
@@ -2222,6 +2332,8 @@ type_dogma_effect.as_json # => {:effect_id=>596,
 
 type_dogma_effect.effect_id # => 596
 type_dogma_effect.is_default # => false
+
+# TODO: type.etag
 ```
 
 ### User Interface
@@ -2250,6 +2362,8 @@ character_wallet.scope # => "esi-wallet.read_character_wallet.v1"
 character_wallet.as_json # => {:wallet=>409488252.49}
 
 character_wallet.wallet # => 409488252.49
+
+# TODO: character_wallet.etag
 ```
 
 #### Get character wallet journal
@@ -2286,6 +2400,8 @@ wallet_journal_entry.tax
 wallet_journal_entry.tax_receiver_id
 
 # TODO: update example
+
+# TODO: character_wallet_journal.etag
 ```
 
 #### Get wallet transactions
@@ -2310,6 +2426,8 @@ wars.war_ids.size # => 2000
 wars.war_ids.first # => 615639
 
 # TODO: max_war_id
+
+# TODO: wars.etag
 ```
 
 #### Get war information
@@ -2336,6 +2454,8 @@ killmail.as_json # => {:killmail_hash=>"07f7ef1d7f6090e78d8e85b4a98e680f67b5e9d5
 
 killmail.killmail_hash # => "07f7ef1d7f6090e78d8e85b4a98e680f67b5e9d5"
 killmail.killmail_id # => 72410059
+
+# TODO: war_killmails.etag
 ```
 
 ## Exceptions
@@ -2357,6 +2477,7 @@ end
 List of exceptions:
 
 * `EveOnline::Exceptions::NoContent` when response returns status 204 without body.
+* `EveOnline::Exceptions::NotModified` when response returns status 304 without body.
 * `EveOnline::Exceptions::BadRequest` when response returns status 400.
 * `EveOnline::Exceptions::Unauthorized` when response returns status 401.
 * `EveOnline::Exceptions::Forbidden` when response returns status 403.

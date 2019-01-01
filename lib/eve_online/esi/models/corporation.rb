@@ -4,8 +4,6 @@ module EveOnline
   module ESI
     module Models
       class Corporation < Base
-        include ModelWithEtag
-
         def as_json
           {
             alliance_id: alliance_id,
@@ -20,8 +18,7 @@ module EveOnline
             shares: shares,
             tax_rate: tax_rate,
             ticker: ticker,
-            corporation_url: corporation_url,
-            etag: etag
+            corporation_url: corporation_url
           }
         end
 

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://esi.evetech.net/v1/alliances/99005443/corporations/?datasource=tranquility
+    uri: https://esi.evetech.net/v1/alliances/99005443/icons/?datasource=tranquility
     body:
       encoding: US-ASCII
       string: ''
@@ -15,17 +15,15 @@ http_interactions:
       - EveOnline API (https://github.com/evemonk/eve_online) v0.21.0
       Accept-Language:
       - en-us
+      If-None-Match:
+      - e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b
   response:
     status:
-      code: 200
-      message: OK
+      code: 304
+      message: Not Modified
     headers:
       Date:
-      - Tue, 25 Dec 2018 19:15:57 GMT
-      Content-Type:
-      - application/json; charset=UTF-8
-      Content-Length:
-      - '636'
+      - Wed, 26 Dec 2018 09:15:32 GMT
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -45,22 +43,22 @@ http_interactions:
       Cache-Control:
       - public
       Etag:
-      - '"9b6810d8ddbd9a13bb4ad09cf4bfefd9f29974bffd543eb30ce25132"'
+      - W/"e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b"
       Expires:
-      - Tue, 25 Dec 2018 19:39:27 GMT
+      - Wed, 26 Dec 2018 11:05:00 GMT
       Last-Modified:
-      - Tue, 25 Dec 2018 18:39:27 GMT
+      - Mon, 24 Dec 2018 11:04:27 GMT
       Strict-Transport-Security:
       - max-age=31536000
       X-Esi-Error-Limit-Remain:
       - '100'
       X-Esi-Error-Limit-Reset:
-      - '3'
+      - '28'
       X-Esi-Request-Id:
-      - 004fc602-9ea7-4080-b0dc-f75ef257fe35
+      - 7ef0cc02-5649-456d-a64a-39b21d1a843a
     body:
       encoding: UTF-8
-      string: "[98091533,98134807,98143621,98167543,98187584,98192510,98215927,98257538,98260969,98265089,98273463,98291362,98300293,98306624,98313804,98329706,98335007,98352722,98364494,98368240,98385734,98395849,98396853,98405423,98443827,98446092,98447309,98460328,98461940,98467545,98475778,98479718,98492624,98495078,98495621,98498492,98504127,98506169,98512529,98516016,98520189,98522076,98525247,98525956,98529516,98534737,98541615,98543151,98543446,98545268,98555442,98558175,98558443,98558468,98558879,98558915,98558946,98561234,98562848,98564601,98569771,98572980,98577513,98580755,98584035,98585556,182098027,560013098,626950154,1823259471]"
+      string: ''
     http_version: 
-  recorded_at: Tue, 25 Dec 2018 19:15:55 GMT
+  recorded_at: Wed, 26 Dec 2018 09:15:31 GMT
 recorded_with: VCR 4.0.0

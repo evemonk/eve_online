@@ -20,8 +20,7 @@ describe 'Get stargate information' do
       expect(subject.as_json).to eq(name: 'Stargate (Akpivem)',
                                     stargate_id: 50_000_056,
                                     system_id: 30_000_001,
-                                    type_id: 29_624,
-                                    etag: '2e28835f91024608719726b655591d531125a023e122859d174923d5')
+                                    type_id: 29_624)
     end
 
     specify do
@@ -34,6 +33,8 @@ describe 'Get stargate information' do
                                              y: 43_597_455_360.0,
                                              z: -586_353_991_680.0)
     end
+
+    specify { expect(subject.etag).to eq('2e28835f91024608719726b655591d531125a023e122859d174923d5') }
   end
 
   context 'when etag present' do
@@ -46,5 +47,7 @@ describe 'Get stargate information' do
     subject { EveOnline::ESI::UniverseStargate.new(options) }
 
     specify { expect(subject.not_modified?).to eq(true) }
+
+    specify { expect(subject.etag).to eq('2e28835f91024608719726b655591d531125a023e122859d174923d5') }
   end
 end

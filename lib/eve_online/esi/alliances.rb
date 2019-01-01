@@ -9,10 +9,6 @@ module EveOnline
         response
       end
 
-      def etag
-        current_etag
-      end
-
       def scope; end
 
       def url

@@ -7,57 +7,61 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
-      User-Agent:
-      - EveOnline API (https://github.com/biow0lf/eve_online) v0.14.0
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
-      - "*/*"
+      - application/json
+      User-Agent:
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.21.0
+      Accept-Language:
+      - en-us
   response:
     status:
       code: 200
       message: OK
     headers:
+      Date:
+      - Mon, 31 Dec 2018 22:32:26 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '225'
+      Connection:
+      - keep-alive
       Access-Control-Allow-Credentials:
       - 'true'
       Access-Control-Allow-Headers:
-      - Content-Type,Authorization,X-User-Agent
+      - Content-Type,Authorization,If-None-Match,X-User-Agent
       Access-Control-Allow-Methods:
-      - GET,OPTIONS
+      - GET,HEAD,OPTIONS
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Expose-Headers:
-      - Content-Type,Warning,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      - Content-Type,Warning,ETag,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
       Access-Control-Max-Age:
       - '600'
-      Content-Type:
-      - application/json
-      Date:
-      - Sun, 18 Feb 2018 21:16:08 GMT
+      Allow:
+      - GET,HEAD,OPTIONS
+      Cache-Control:
+      - public
+      Etag:
+      - '"22c39689783a86032b8d43fa0b2e8f4809c4f38a585e39471035aa8b"'
       Expires:
-      - Sun, 18 Feb 2018 22:12:00 GMT
+      - Mon, 31 Dec 2018 23:32:26 GMT
       Last-Modified:
-      - Sun, 18 Feb 2018 21:12:00 GMT
+      - Mon, 31 Dec 2018 22:32:26 GMT
       Strict-Transport-Security:
       - max-age=31536000
       X-Esi-Error-Limit-Remain:
       - '100'
       X-Esi-Error-Limit-Reset:
-      - '52'
-      Content-Length:
-      - '225'
-      Via:
-      - 1.1 google
-      Cache-Control:
-      - public
-      Age:
-      - '125'
-      Alt-Svc:
-      - clear
+      - '34'
+      X-Esi-Request-Id:
+      - 67c15a18-b14d-4c39-bc38-fa3387b4408f
     body:
       encoding: UTF-8
-      string: '{"corporation_id":98134807,"birthday":"2010-01-15T15:26:00Z","name":"Johnn
-        Dillinger","gender":"male","race_id":2,"bloodline_id":4,"description":"","alliance_id":99005443,"ancestry_id":24,"security_status":1.8694881661345457}'
+      string: '{"alliance_id":99005443,"ancestry_id":24,"birthday":"2010-01-15T15:26:00Z","bloodline_id":4,"corporation_id":98134807,"description":"","gender":"male","name":"Johnn
+        Dillinger","race_id":2,"security_status":1.8694881661345457}'
     http_version: 
-  recorded_at: Sun, 18 Feb 2018 21:18:13 GMT
+  recorded_at: Mon, 31 Dec 2018 22:32:26 GMT
 recorded_with: VCR 4.0.0

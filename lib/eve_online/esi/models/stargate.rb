@@ -4,15 +4,12 @@ module EveOnline
   module ESI
     module Models
       class Stargate < Base
-        include ModelWithEtag
-
         def as_json
           {
             name: name,
             stargate_id: stargate_id,
             system_id: system_id,
-            type_id: type_id,
-            etag: etag
+            type_id: type_id
           }
         end
 

@@ -9,8 +9,6 @@ describe EveOnline::ESI::Corporation do
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(subject).to be_a(EveOnline::ESI::ResponseWithEtag) }
-
   specify { expect(described_class::API_ENDPOINT).to eq('https://esi.evetech.net/v4/corporations/%<corporation_id>s/?datasource=%<datasource>s') }
 
   describe '#initialize' do
@@ -37,17 +35,17 @@ describe EveOnline::ESI::Corporation do
     end
 
     context 'when @model not set' do
-      let(:response_with_etag) { double }
+      let(:response) { double }
 
-      before { expect(subject).to receive(:response_with_etag).and_return(response_with_etag) }
+      before { expect(subject).to receive(:response).and_return(response) }
 
       let(:model) { instance_double(EveOnline::ESI::Models::Corporation) }
 
       before do
         #
-        # EveOnline::ESI::Models::Corporation.new(response_with_etag) # => model
+        # EveOnline::ESI::Models::Corporation.new(response) # => model
         #
-        expect(EveOnline::ESI::Models::Corporation).to receive(:new).with(response_with_etag).and_return(model)
+        expect(EveOnline::ESI::Models::Corporation).to receive(:new).with(response).and_return(model)
       end
 
       specify { expect { subject.model }.not_to raise_error }
@@ -194,16 +192,6 @@ describe EveOnline::ESI::Corporation do
     before { expect(model).to receive(:corporation_url) }
 
     specify { expect { subject.corporation_url }.not_to raise_error }
-  end
-
-  describe '#etag' do
-    let(:model) { instance_double(EveOnline::ESI::Models::Corporation) }
-
-    before { subject.instance_variable_set(:@model, model) }
-
-    before { expect(model).to receive(:etag) }
-
-    specify { expect { subject.etag }.not_to raise_error }
   end
 
   describe '#scope' do

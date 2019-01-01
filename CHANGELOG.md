@@ -1,5 +1,19 @@
 # Changelog
 
+## v0.22.0
+
+* Add `EveOnline::ESI::AllianceCorporations#etag`
+* Remove `EveOnline::ESI::Models::ModelWithEtag`
+* Remove `EveOnline::ESI::ResponseWithEtag`
+* Remove `EveOnline::ESI::Models::Alliance#etag`
+* Remove `EveOnline::ESI::Models::Corporation#etag`
+* Add exception `EveOnline::Exceptions::NotModified` for case when body not present for 304 request
+* Remove `EveOnline::ESI::Models::Star#etag`
+* Remove `EveOnline::ESI::Models::Stargate#etag`
+* Add `EveOnline::ESI::Base#etag`
+* `EveOnline::ESI::Base#content` raise `EveOnline::Exceptions::NotModified` when body not present for 304 requests
+* Add setter `EveOnline::ESI::Base.etag=`
+
 ## v0.21.0
 
 * Remove `memoist` gem
