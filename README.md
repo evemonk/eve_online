@@ -2251,7 +2251,7 @@ system.stargate_ids # => [50000056, 50000057, 50000058]
 
 system.station_ids # => [60012526, 60014437]
 
-# TODO: system.etag
+system.etag # => "e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b"
 ```
 
 #### Get types
