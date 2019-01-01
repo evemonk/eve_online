@@ -1859,7 +1859,7 @@ group.name # => "Arkonor"
 group.published # => true
 group.type_ids # => [22, 17425, 17426, 26852, 28367, 28385, 28387, 28625, 46678, 46691]
 
-# TODO: group.etag
+group.etag # => "e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b"
 ```
 
 #### Bulk names to IDs
