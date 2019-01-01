@@ -2333,7 +2333,7 @@ type_dogma_effect.as_json # => {:effect_id=>596,
 type_dogma_effect.effect_id # => 596
 type_dogma_effect.is_default # => false
 
-# TODO: type.etag
+type.etag # => "e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b"
 ```
 
 ### User Interface
