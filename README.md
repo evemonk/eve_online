@@ -2173,21 +2173,21 @@ system_kills = EveOnline::ESI::UniverseSystemKills.new
 
 system_kills.scope # => nil
 
-system_kills.system_kills.size # => 3185
+system_kills.system_kills.size # => 3194
 
 system_kill = system_kills.system_kills.first
 
-system_kill.as_json # => {:npc_kills=>231,
+system_kill.as_json # => {:npc_kills=>89,
                     #     :pod_kills=>0,
-                    #     :ship_kills=>0,
-                    #     :system_id=>30001746}
+                    #     :ship_kills=>5,
+                    #     :system_id=>30005327}
 
-system_kill.npc_kills # => 231
+system_kill.npc_kills # => 89
 system_kill.pod_kills # => 0
-system_kill.ship_kills # => 0
-system_kill.system_id # => 30001746
+system_kill.ship_kills # => 5
+system_kill.system_id # => 30005327
 
-# TODO: system_kills.etag
+system_kills.etag # => "2075c203d2a11627ab68b039a61e1816b052e9c0016eca5f08b6a35e"
 ```
 
 #### Get solar systems
