@@ -15,17 +15,15 @@ http_interactions:
       - EveOnline API (https://github.com/evemonk/eve_online) v0.22.0
       Accept-Language:
       - en-us
+      If-None-Match:
+      - e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b
   response:
     status:
-      code: 200
-      message: OK
+      code: 304
+      message: Not Modified
     headers:
       Date:
-      - Tue, 01 Jan 2019 22:28:01 GMT
-      Content-Type:
-      - application/json; charset=UTF-8
-      Content-Length:
-      - '136'
+      - Tue, 01 Jan 2019 22:29:25 GMT
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -45,7 +43,7 @@ http_interactions:
       Cache-Control:
       - public
       Etag:
-      - '"e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b"'
+      - W/"e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b"
       Expires:
       - Wed, 02 Jan 2019 11:05:00 GMT
       Last-Modified:
@@ -55,12 +53,12 @@ http_interactions:
       X-Esi-Error-Limit-Remain:
       - '100'
       X-Esi-Error-Limit-Reset:
-      - '59'
+      - '35'
       X-Esi-Request-Id:
-      - 6a312016-1398-476c-b230-ae9c74d535d5
+      - cddb3c9c-9cf2-4e2b-80eb-fa7afdaee043
     body:
       encoding: UTF-8
-      string: '{"moon_id":40000004,"name":"Tanoo I - Moon 1","position":{"x":162088094286.0,"y":21314854783.0,"z":-73598621491.0},"system_id":30000001}'
+      string: ''
     http_version: 
-  recorded_at: Tue, 01 Jan 2019 22:28:01 GMT
+  recorded_at: Tue, 01 Jan 2019 22:29:25 GMT
 recorded_with: VCR 4.0.0

@@ -1889,7 +1889,7 @@ moon.position.x # => 162088094286.0
 moon.position.y # => 21314854783.0
 moon.position.z # => -73598621491.0
 
-# TODO: moon.etag
+moon.etag # => "e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b"
 ```
 
 #### Get names and categories for a set of ID's
