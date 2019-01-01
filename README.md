@@ -1782,11 +1782,11 @@ graphics = EveOnline::ESI::UniverseGraphics.new
 
 graphics.scope # => nil
 
-graphics.graphic_ids.size # => 3624
+graphics.graphic_ids.size # => 3702
 
-graphics.graphic_ids.first # => 20481
+graphics.graphic_ids.first # => 20480
 
-# TODO: graphics.etag
+graphics.etag # => "e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b"
 ```
 
 #### Get graphic information
