@@ -1,6 +1,6 @@
 # Changelog
 
-## master
+## v0.22.0
 
 * Add `EveOnline::ESI::AllianceCorporations#etag`
 * Remove `EveOnline::ESI::Models::ModelWithEtag`
