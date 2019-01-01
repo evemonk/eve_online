@@ -2067,7 +2067,7 @@ station.scope # => nil
 
 station.as_json # => {:max_dockable_ship_volume=>50000000.0,
                 #     :name=>"Tanoo V - Moon 1 - Ammatar Consulate Bureau",
-                #     :office_rental_cost=>422500.0,
+                #     :office_rental_cost=>329553.0,
                 #     :owner=>1000126,
                 #     :race_id=>2,
                 #     :reprocessing_efficiency=>0.5,
@@ -2128,7 +2128,7 @@ station.position.x # => -1106145239040.0
 station.position.y # => -145460060160.0
 station.position.z # => 182618726400.0
 
-# TODO: station.etag
+station.etag # => "e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b"
 ```
 
 #### List all public structures

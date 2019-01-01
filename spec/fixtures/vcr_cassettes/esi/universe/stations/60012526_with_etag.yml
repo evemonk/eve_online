@@ -15,17 +15,15 @@ http_interactions:
       - EveOnline API (https://github.com/evemonk/eve_online) v0.22.0
       Accept-Language:
       - en-us
+      If-None-Match:
+      - e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b
   response:
     status:
-      code: 200
-      message: OK
+      code: 304
+      message: Not Modified
     headers:
       Date:
-      - Tue, 01 Jan 2019 21:57:24 GMT
-      Content-Type:
-      - application/json; charset=UTF-8
-      Content-Length:
-      - '594'
+      - Tue, 01 Jan 2019 21:59:43 GMT
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -55,13 +53,12 @@ http_interactions:
       X-Esi-Error-Limit-Remain:
       - '100'
       X-Esi-Error-Limit-Reset:
-      - '36'
+      - '17'
       X-Esi-Request-Id:
-      - be2c3feb-2370-406b-9569-4524173d3fb1
+      - fc8a3ffb-32a7-4d55-b1f4-b693378da0dc
     body:
       encoding: UTF-8
-      string: '{"max_dockable_ship_volume":50000000.0,"name":"Tanoo V - Moon 1 - Ammatar
-        Consulate Bureau","office_rental_cost":329553.0,"owner":1000126,"position":{"x":-1106145239040.0,"y":-145460060160.0,"z":182618726400.0},"race_id":2,"reprocessing_efficiency":0.5,"reprocessing_stations_take":0.05,"services":["bounty-missions","courier-missions","interbus","reprocessing-plant","market","stock-exchange","cloning","repair-facilities","fitting","news","insurance","docking","office-rental","loyalty-point-store","navy-offices","security-offices"],"station_id":60012526,"system_id":30000001,"type_id":2502}'
+      string: ''
     http_version: 
-  recorded_at: Tue, 01 Jan 2019 21:57:24 GMT
+  recorded_at: Tue, 01 Jan 2019 21:59:43 GMT
 recorded_with: VCR 4.0.0
