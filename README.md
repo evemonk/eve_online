@@ -2423,11 +2423,11 @@ wars.scope # => nil
 
 wars.war_ids.size # => 2000
 
-wars.war_ids.first # => 615639
+wars.war_ids.first # => 629019
 
 # TODO: max_war_id
 
-# TODO: wars.etag
+wars.etag # => "1e90be747fd163e5d74ab7a949bf8ad3f1d6ecd365cac31c534ab046"
 ```
 
 #### Get war information
