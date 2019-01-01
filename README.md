@@ -2154,16 +2154,16 @@ system_jumps = EveOnline::ESI::UniverseSystemJumps.new
 
 system_jumps.scope # => nil
 
-system_jumps.system_jumps.size # => 4891
+system_jumps.system_jumps.size # => 4979
 
 jump = system_jumps.system_jumps.first
 
-jump.as_json # => {:ship_jumps=>22, :system_id=>30005327}
+jump.as_json # => {:ship_jumps=>65, :system_id=>30002671}
 
-jump.ship_jumps # => 22
-jump.system_id # => 30005327
+jump.ship_jumps # => 65
+jump.system_id # => 30002671
 
-# TODO: system_jumps.etag
+system_jumps.etag # => "40d7cfcdb494669846bedf8adadc47002986d8f5529508e8d5f8f552"
 ```
 
 #### Get system kills
