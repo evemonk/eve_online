@@ -2201,7 +2201,7 @@ systems.universe_system_ids.size # => 8285
 
 systems.universe_system_ids.first # => 30000001
 
-# TODO: systems.etag
+systems.etag # => "e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b"
 ```
 
 #### Get solar system information
