@@ -15,17 +15,15 @@ http_interactions:
       - EveOnline API (https://github.com/evemonk/eve_online) v0.22.0
       Accept-Language:
       - en-us
+      If-None-Match:
+      - 12ee36a10ee0dbfb7f6691e1b27c8400fdca645f15e70ebc0a94b7ae
   response:
     status:
-      code: 200
-      message: OK
+      code: 304
+      message: Not Modified
     headers:
       Date:
-      - Tue, 01 Jan 2019 17:35:10 GMT
-      Content-Type:
-      - application/json; charset=UTF-8
-      Content-Length:
-      - '757'
+      - Tue, 01 Jan 2019 17:35:58 GMT
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -55,14 +53,14 @@ http_interactions:
       X-Esi-Error-Limit-Remain:
       - '100'
       X-Esi-Error-Limit-Reset:
-      - '50'
+      - '2'
       X-Esi-Request-Id:
-      - acd54839-0477-47cc-9188-e6a07f530caa
+      - daed3903-4ec7-472e-8275-50501381068f
       X-Pages:
       - '1'
     body:
       encoding: UTF-8
-      string: '[{"killmail_hash":"07f7ef1d7f6090e78d8e85b4a98e680f67b5e9d5","killmail_id":72410059},{"killmail_hash":"16b123c3e90f7a81048cc9e5f76d51a67a5708e9","killmail_id":72429642},{"killmail_hash":"20231faaaac703410c15ed154ac9edc0c64994b3","killmail_id":72430542},{"killmail_hash":"1b03924e3a220f0bd555a6f7839b646737225636","killmail_id":72430564},{"killmail_hash":"b6e6943369329fbf8eb03bf8a28f1f9cc750eb19","killmail_id":72443803},{"killmail_hash":"c0bc18db6f99c788c83811a14f6c4b595b49d92f","killmail_id":72461095},{"killmail_hash":"80b5c37983e9c48af1a6f8c7561e8d52b9d66686","killmail_id":72463193},{"killmail_hash":"eca753d9dc883ab37687587956624ac42aeb30e6","killmail_id":72476660},{"killmail_hash":"cfecf79caa4647830390400ebf286d43e28dfce4","killmail_id":72477267}]'
+      string: ''
     http_version: 
-  recorded_at: Tue, 01 Jan 2019 17:35:10 GMT
+  recorded_at: Tue, 01 Jan 2019 17:35:58 GMT
 recorded_with: VCR 4.0.0

@@ -2445,7 +2445,7 @@ war_killmails.page # => 1
 
 war_killmails.total_pages # => 1
 
-war_killmails.killmails.size # => 1
+war_killmails.killmails.size # => 9
 
 killmail = war_killmails.killmails.first
 
@@ -2455,7 +2455,7 @@ killmail.as_json # => {:killmail_hash=>"07f7ef1d7f6090e78d8e85b4a98e680f67b5e9d5
 killmail.killmail_hash # => "07f7ef1d7f6090e78d8e85b4a98e680f67b5e9d5"
 killmail.killmail_id # => 72410059
 
-# TODO: war_killmails.etag
+war_killmails.etag # => "12ee36a10ee0dbfb7f6691e1b27c8400fdca645f15e70ebc0a94b7ae"
 ```
 
 ## Exceptions
