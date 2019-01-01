@@ -1816,7 +1816,7 @@ graphic.sof_fation_name # => "tash-murkon"
 graphic.sof_hull_name # => "ai1_t1"
 graphic.sof_race_name # => "amarr"
 
-# TODO: graphic.etag
+graphic.etag # => "e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b"
 ```
 
 #### Get item groups
