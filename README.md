@@ -2138,11 +2138,11 @@ structures = EveOnline::ESI::UniverseStructures.new
 
 structures.scope # => nil
 
-structures.structure_ids.size # => 4181
+structures.structure_ids.size # => 4004
 
-structures.structure_ids.first # => 1028178624512
+structures.structure_ids.first # => 1027528548355
 
-# TODO: structures.etag
+structures.etag # => "6edc271fcf967ee50bec6935856501b233e58790fad237b097946a4c"
 ```
 
 #### Get structure information
