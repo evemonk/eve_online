@@ -12,7 +12,7 @@ http_interactions:
       Accept:
       - application/json
       User-Agent:
-      - EveOnline API (https://github.com/evemonk/eve_online) v0.19.0
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.22.0
       Accept-Language:
       - en-us
   response:
@@ -21,7 +21,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 04 Oct 2018 12:48:26 GMT
+      - Tue, 01 Jan 2019 19:40:38 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
@@ -45,22 +45,22 @@ http_interactions:
       Cache-Control:
       - public
       Etag:
-      - '"7261e48bc37b9e927b4f7be5b3f5c0bdc44a4b4a3e32c4b86f4dbe8f"'
+      - '"e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b"'
       Expires:
-      - Fri, 05 Oct 2018 11:05:00 GMT
+      - Wed, 02 Jan 2019 11:05:00 GMT
       Last-Modified:
-      - Wed, 03 Oct 2018 11:15:20 GMT
+      - Tue, 01 Jan 2019 11:04:24 GMT
       Strict-Transport-Security:
       - max-age=31536000
       X-Esi-Error-Limit-Remain:
       - '100'
       X-Esi-Error-Limit-Reset:
-      - '34'
+      - '22'
       X-Esi-Request-Id:
-      - a50848d7-a335-44ef-84c0-bd15f787a410
+      - d9ac1046-0f4a-4d64-832e-ef60389dcc20
     body:
       encoding: UTF-8
       string: '{"graphic_id":20481,"sof_dna":"ai1_t1:tash-murkon:amarr","sof_fation_name":"tash-murkon","sof_hull_name":"ai1_t1","sof_race_name":"amarr"}'
     http_version: 
-  recorded_at: Thu, 04 Oct 2018 12:48:26 GMT
+  recorded_at: Tue, 01 Jan 2019 19:40:38 GMT
 recorded_with: VCR 4.0.0

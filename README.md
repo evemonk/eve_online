@@ -1782,11 +1782,11 @@ graphics = EveOnline::ESI::UniverseGraphics.new
 
 graphics.scope # => nil
 
-graphics.graphic_ids.size # => 3624
+graphics.graphic_ids.size # => 3702
 
-graphics.graphic_ids.first # => 20481
+graphics.graphic_ids.first # => 20480
 
-# TODO: graphics.etag
+graphics.etag # => "e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b"
 ```
 
 #### Get graphic information
@@ -1816,7 +1816,7 @@ graphic.sof_fation_name # => "tash-murkon"
 graphic.sof_hull_name # => "ai1_t1"
 graphic.sof_race_name # => "amarr"
 
-# TODO: graphic.etag
+graphic.etag # => "e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b"
 ```
 
 #### Get item groups
@@ -1836,7 +1836,7 @@ groups.group_ids.size # => 1000
 
 groups.group_ids.first # => 0
 
-# TODO: groups.etag
+groups.etag # => "e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b"
 ```
 
 #### Get item group information
@@ -1859,7 +1859,7 @@ group.name # => "Arkonor"
 group.published # => true
 group.type_ids # => [22, 17425, 17426, 26852, 28367, 28385, 28387, 28625, 46678, 46691]
 
-# TODO: group.etag
+group.etag # => "e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b"
 ```
 
 #### Bulk names to IDs
@@ -1889,7 +1889,7 @@ moon.position.x # => 162088094286.0
 moon.position.y # => 21314854783.0
 moon.position.z # => -73598621491.0
 
-# TODO: moon.etag
+moon.etag # => "e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b"
 ```
 
 #### Get names and categories for a set of ID's
@@ -1921,7 +1921,7 @@ planet.position.x # => 161891117336.0
 planet.position.y # => 21288951986.0
 planet.position.z # => -73529712226.0
 
-# TODO: planet.etag
+planet.etag # => "e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b"
 ```
 
 #### Get character races
@@ -2067,7 +2067,7 @@ station.scope # => nil
 
 station.as_json # => {:max_dockable_ship_volume=>50000000.0,
                 #     :name=>"Tanoo V - Moon 1 - Ammatar Consulate Bureau",
-                #     :office_rental_cost=>422500.0,
+                #     :office_rental_cost=>329553.0,
                 #     :owner=>1000126,
                 #     :race_id=>2,
                 #     :reprocessing_efficiency=>0.5,
@@ -2128,7 +2128,7 @@ station.position.x # => -1106145239040.0
 station.position.y # => -145460060160.0
 station.position.z # => 182618726400.0
 
-# TODO: station.etag
+station.etag # => "e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b"
 ```
 
 #### List all public structures
@@ -2138,11 +2138,11 @@ structures = EveOnline::ESI::UniverseStructures.new
 
 structures.scope # => nil
 
-structures.structure_ids.size # => 4181
+structures.structure_ids.size # => 4004
 
-structures.structure_ids.first # => 1028178624512
+structures.structure_ids.first # => 1027528548355
 
-# TODO: structures.etag
+structures.etag # => "6edc271fcf967ee50bec6935856501b233e58790fad237b097946a4c"
 ```
 
 #### Get structure information
@@ -2154,16 +2154,16 @@ system_jumps = EveOnline::ESI::UniverseSystemJumps.new
 
 system_jumps.scope # => nil
 
-system_jumps.system_jumps.size # => 4891
+system_jumps.system_jumps.size # => 4979
 
 jump = system_jumps.system_jumps.first
 
-jump.as_json # => {:ship_jumps=>22, :system_id=>30005327}
+jump.as_json # => {:ship_jumps=>65, :system_id=>30002671}
 
-jump.ship_jumps # => 22
-jump.system_id # => 30005327
+jump.ship_jumps # => 65
+jump.system_id # => 30002671
 
-# TODO: system_jumps.etag
+system_jumps.etag # => "40d7cfcdb494669846bedf8adadc47002986d8f5529508e8d5f8f552"
 ```
 
 #### Get system kills
@@ -2173,21 +2173,21 @@ system_kills = EveOnline::ESI::UniverseSystemKills.new
 
 system_kills.scope # => nil
 
-system_kills.system_kills.size # => 3185
+system_kills.system_kills.size # => 3194
 
 system_kill = system_kills.system_kills.first
 
-system_kill.as_json # => {:npc_kills=>231,
+system_kill.as_json # => {:npc_kills=>89,
                     #     :pod_kills=>0,
-                    #     :ship_kills=>0,
-                    #     :system_id=>30001746}
+                    #     :ship_kills=>5,
+                    #     :system_id=>30005327}
 
-system_kill.npc_kills # => 231
+system_kill.npc_kills # => 89
 system_kill.pod_kills # => 0
-system_kill.ship_kills # => 0
-system_kill.system_id # => 30001746
+system_kill.ship_kills # => 5
+system_kill.system_id # => 30005327
 
-# TODO: system_kills.etag
+system_kills.etag # => "2075c203d2a11627ab68b039a61e1816b052e9c0016eca5f08b6a35e"
 ```
 
 #### Get solar systems
@@ -2201,7 +2201,7 @@ systems.universe_system_ids.size # => 8285
 
 systems.universe_system_ids.first # => 30000001
 
-# TODO: systems.etag
+systems.etag # => "e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b"
 ```
 
 #### Get solar system information
@@ -2251,7 +2251,7 @@ system.stargate_ids # => [50000056, 50000057, 50000058]
 
 system.station_ids # => [60012526, 60014437]
 
-# TODO: system.etag
+system.etag # => "e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b"
 ```
 
 #### Get types
@@ -2265,13 +2265,13 @@ types.scope # => nil
 
 types.page # => 1
 
-types.total_pages # => 35
+types.total_pages # => 36
 
 types.universe_type_ids.size # => 1000
 
 types.universe_type_ids.first # => 0
 
-# TODO: types.etag
+types.etag # => "e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b"
 ```
 
 #### Get type information
@@ -2333,7 +2333,7 @@ type_dogma_effect.as_json # => {:effect_id=>596,
 type_dogma_effect.effect_id # => 596
 type_dogma_effect.is_default # => false
 
-# TODO: type.etag
+type.etag # => "e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b"
 ```
 
 ### User Interface
@@ -2423,11 +2423,11 @@ wars.scope # => nil
 
 wars.war_ids.size # => 2000
 
-wars.war_ids.first # => 615639
+wars.war_ids.first # => 629019
 
 # TODO: max_war_id
 
-# TODO: wars.etag
+wars.etag # => "1e90be747fd163e5d74ab7a949bf8ad3f1d6ecd365cac31c534ab046"
 ```
 
 #### Get war information
@@ -2445,7 +2445,7 @@ war_killmails.page # => 1
 
 war_killmails.total_pages # => 1
 
-war_killmails.killmails.size # => 1
+war_killmails.killmails.size # => 9
 
 killmail = war_killmails.killmails.first
 
@@ -2455,7 +2455,7 @@ killmail.as_json # => {:killmail_hash=>"07f7ef1d7f6090e78d8e85b4a98e680f67b5e9d5
 killmail.killmail_hash # => "07f7ef1d7f6090e78d8e85b4a98e680f67b5e9d5"
 killmail.killmail_id # => 72410059
 
-# TODO: war_killmails.etag
+war_killmails.etag # => "12ee36a10ee0dbfb7f6691e1b27c8400fdca645f15e70ebc0a94b7ae"
 ```
 
 ## Exceptions

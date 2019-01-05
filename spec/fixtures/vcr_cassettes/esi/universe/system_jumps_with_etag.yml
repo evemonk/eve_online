@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://esi.evetech.net/v1/universe/planets/40000002/?datasource=tranquility
+    uri: https://esi.evetech.net/v1/universe/system_jumps/?datasource=tranquility
     body:
       encoding: US-ASCII
       string: ''
@@ -15,17 +15,15 @@ http_interactions:
       - EveOnline API (https://github.com/evemonk/eve_online) v0.22.0
       Accept-Language:
       - en-us
+      If-None-Match:
+      - 40d7cfcdb494669846bedf8adadc47002986d8f5529508e8d5f8f552
   response:
     status:
-      code: 200
-      message: OK
+      code: 304
+      message: Not Modified
     headers:
       Date:
-      - Tue, 01 Jan 2019 22:03:26 GMT
-      Content-Type:
-      - application/json; charset=UTF-8
-      Content-Length:
-      - '142'
+      - Tue, 01 Jan 2019 21:51:54 GMT
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -45,22 +43,22 @@ http_interactions:
       Cache-Control:
       - public
       Etag:
-      - W/"e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b"
+      - '"40d7cfcdb494669846bedf8adadc47002986d8f5529508e8d5f8f552"'
       Expires:
-      - Wed, 02 Jan 2019 11:05:00 GMT
+      - Tue, 01 Jan 2019 22:37:29 GMT
       Last-Modified:
-      - Tue, 01 Jan 2019 11:04:24 GMT
+      - Tue, 01 Jan 2019 21:37:29 GMT
       Strict-Transport-Security:
       - max-age=31536000
       X-Esi-Error-Limit-Remain:
       - '100'
       X-Esi-Error-Limit-Reset:
-      - '34'
+      - '6'
       X-Esi-Request-Id:
-      - f0d33190-ae7f-4bca-ba80-d3cbb0c8ac3b
+      - d9bbd8c3-0f1f-48cb-a002-785dc953fdc8
     body:
       encoding: UTF-8
-      string: '{"name":"Tanoo I","planet_id":40000002,"position":{"x":161891117336.0,"y":21288951986.0,"z":-73529712226.0},"system_id":30000001,"type_id":11}'
+      string: ''
     http_version: 
-  recorded_at: Tue, 01 Jan 2019 22:03:26 GMT
+  recorded_at: Tue, 01 Jan 2019 21:51:54 GMT
 recorded_with: VCR 4.0.0
