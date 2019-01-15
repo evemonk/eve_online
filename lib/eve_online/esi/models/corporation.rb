@@ -18,7 +18,8 @@ module EveOnline
             shares: shares,
             tax_rate: tax_rate,
             ticker: ticker,
-            corporation_url: corporation_url
+            corporation_url: corporation_url,
+            war_eligible: war_eligible
           }
         end
 
@@ -74,6 +75,10 @@ module EveOnline
 
         def corporation_url
           options['url']
+        end
+
+        def war_eligible
+          options['war_eligible']
         end
       end
     end

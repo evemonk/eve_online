@@ -48,6 +48,8 @@ describe EveOnline::ESI::Models::Corporation do
 
     before { expect(corporation).to receive(:corporation_url).and_return('http://') }
 
+    before { expect(corporation).to receive(:war_eligible).and_return(true) }
+
     subject { corporation.as_json }
 
     its([:alliance_id]) { should eq(99_001_258) }
@@ -75,6 +77,8 @@ describe EveOnline::ESI::Models::Corporation do
     its([:ticker]) { should eq('BUBIC') }
 
     its([:corporation_url]) { should eq('http://') }
+
+    its([:war_eligible]) { should eq(true) }
   end
 
   describe '#alliance_id' do
@@ -172,5 +176,11 @@ describe EveOnline::ESI::Models::Corporation do
     before { expect(options).to receive(:[]).with('url') }
 
     specify { expect { subject.corporation_url }.not_to raise_error }
+  end
+
+  describe '#war_eligible' do
+    before { expect(options).to receive(:[]).with('war_eligible') }
+
+    specify { expect { subject.war_eligible }.not_to raise_error }
   end
 end
