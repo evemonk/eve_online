@@ -664,7 +664,8 @@ corporation.as_json # => {:alliance_id=>99001258,
                     #     :shares=>1000,
                     #     :tax_rate=>0.1,
                     #     :ticker=>"BUBIC",
-                    #     :corporation_url=>"http://"}
+                    #     :corporation_url=>"http://",
+                    #     :war_eligible=>true}
 
 corporation.alliance_id # => 99001258
 corporation.ceo_id # => 1721864142
@@ -679,8 +680,9 @@ corporation.shares # => 1000
 corporation.tax_rate # => 0.1
 corporation.ticker # => "BUBIC"
 corporation.corporation_url # => "http://"
+corporation.war_eligible # => true
 
-corporation.etag # => "9f1b3761e93aba36ceaea6328e62031ec777317c70b7439b665d93fe"
+corporation.etag # => "046430260be73e5d7ad3a9251954310bd547498eeb38f99e8d305796"
 ```
 
 #### Get alliance history
