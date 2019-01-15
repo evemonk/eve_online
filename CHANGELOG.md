@@ -1,5 +1,9 @@
 # Changelog
 
+## master
+
+* Sync with new ESI API
+
 ## v0.22.0
 
 * Add `EveOnline::ESI::AllianceCorporations#etag`
