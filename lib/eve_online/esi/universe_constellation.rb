@@ -18,7 +18,7 @@ module EveOnline
       end
 
       def_delegators :model, :as_json, :constellation_id, :name, :region_id,
-                     :systems, :position
+                     :system_ids, :position
 
       def model
         @model ||= Models::Constellation.new(response)
