@@ -25,21 +25,22 @@ describe 'Get corporation information' do
                                     description: '',
                                     faction_id: nil,
                                     home_station_id: 60_011_893,
-                                    member_count: 155,
+                                    member_count: 166,
                                     name: 'Bullshit Bingo Club',
                                     shares: 1000,
                                     tax_rate: 0.1,
-                                    ticker: 'BUBIC')
+                                    ticker: 'BUBIC',
+                                    war_eligible: true)
     end
 
-    specify { expect(subject.etag).to eq('9f1b3761e93aba36ceaea6328e62031ec777317c70b7439b665d93fe') }
+    specify { expect(subject.etag).to eq('046430260be73e5d7ad3a9251954310bd547498eeb38f99e8d305796') }
   end
 
   context 'when etag is set' do
     let(:options) do
       {
         corporation_id: 98_468_592,
-        etag: '9f1b3761e93aba36ceaea6328e62031ec777317c70b7439b665d93fe'
+        etag: '046430260be73e5d7ad3a9251954310bd547498eeb38f99e8d305796'
       }
     end
 
@@ -51,6 +52,6 @@ describe 'Get corporation information' do
 
     specify { expect(subject.not_modified?).to eq(true) }
 
-    specify { expect(subject.etag).to eq('9f1b3761e93aba36ceaea6328e62031ec777317c70b7439b665d93fe') }
+    specify { expect(subject.etag).to eq('046430260be73e5d7ad3a9251954310bd547498eeb38f99e8d305796') }
   end
 end
