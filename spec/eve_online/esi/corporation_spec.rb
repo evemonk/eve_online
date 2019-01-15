@@ -194,6 +194,16 @@ describe EveOnline::ESI::Corporation do
     specify { expect { subject.corporation_url }.not_to raise_error }
   end
 
+  describe '#war_eligible' do
+    let(:model) { instance_double(EveOnline::ESI::Models::Corporation) }
+
+    before { subject.instance_variable_set(:@model, model) }
+
+    before { expect(model).to receive(:war_eligible) }
+
+    specify { expect { subject.war_eligible }.not_to raise_error }
+  end
+
   describe '#scope' do
     specify { expect(subject.scope).to eq(nil) }
   end

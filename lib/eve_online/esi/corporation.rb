@@ -17,11 +17,10 @@ module EveOnline
         @corporation_id = options.fetch(:corporation_id)
       end
 
-      # TODO: war_eligible
       def_delegators :model, :as_json, :alliance_id, :ceo_id, :creator_id,
                      :date_founded, :description, :faction_id,
                      :home_station_id, :member_count, :name, :shares,
-                     :tax_rate, :ticker, :corporation_url
+                     :tax_rate, :ticker, :corporation_url, :war_eligible
 
       def model
         @model ||= Models::Corporation.new(response)
