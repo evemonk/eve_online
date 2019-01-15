@@ -652,7 +652,7 @@ corporation = EveOnline::ESI::Corporation.new(options)
 
 corporation.scope # => nil
 
-corporation.as_json # => {:alliance_id=>99001258,
+corporation.as_json # => {:alliance_id=>99007916,
                     #     :ceo_id=>1721864142,
                     #     :creator_id=>1721864142,
                     #     :date_founded=>Mon, 11 Jul 2016 14:22:17 UTC +00:00,
@@ -667,7 +667,7 @@ corporation.as_json # => {:alliance_id=>99001258,
                     #     :corporation_url=>"http://",
                     #     :war_eligible=>true}
 
-corporation.alliance_id # => 99001258
+corporation.alliance_id # => 99007916
 corporation.ceo_id # => 1721864142
 corporation.creator_id # => 1721864142
 corporation.date_founded # => Mon, 11 Jul 2016 14:22:17 UTC +00:00
