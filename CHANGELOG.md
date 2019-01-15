@@ -3,6 +3,8 @@
 ## master
 
 * Sync with new ESI API
+* Remove `systems` from `EveOnline::ESI::Models::Constellation#as_json`
+* Rename `EveOnline::ESI::Models::Constellation#systems` to `#system_ids`
 
 ## v0.22.0
 

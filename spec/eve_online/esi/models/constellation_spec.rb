@@ -22,8 +22,6 @@ describe EveOnline::ESI::Models::Constellation do
 
     before { expect(constellation).to receive(:region_id).and_return(10_000_001) }
 
-    before { expect(constellation).to receive(:systems).and_return([30_000_001]) }
-
     subject { constellation.as_json }
 
     its([:constellation_id]) { should eq(20_000_001) }
@@ -31,8 +29,6 @@ describe EveOnline::ESI::Models::Constellation do
     its([:name]) { should eq('San Matar') }
 
     its([:region_id]) { should eq(10_000_001) }
-
-    its([:systems]) { should eq([30_000_001]) }
   end
 
   describe '#constellation_id' do
@@ -53,10 +49,10 @@ describe EveOnline::ESI::Models::Constellation do
     specify { expect { subject.region_id }.not_to raise_error }
   end
 
-  describe '#systems' do
+  describe '#system_ids' do
     before { expect(options).to receive(:[]).with('systems') }
 
-    specify { expect { subject.systems }.not_to raise_error }
+    specify { expect { subject.system_ids }.not_to raise_error }
   end
 
   describe '#position' do

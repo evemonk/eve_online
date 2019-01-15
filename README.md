@@ -1720,13 +1720,13 @@ constellation.scope # => nil
 
 constellation.as_json # => {:constellation_id=>20000001,
                       #     :name=>"San Matar",
-                      #     :region_id=>10000001,
-                      #     :systems=>[30000001, 30000002, 30000003, 30000004, 30000005, 30000006, 30000007, 30000008]}
+                      #     :region_id=>10000001}
 
 constellation.constellation_id # => 20000001
 constellation.name # => "San Matar"
 constellation.region_id # => 10000001
-constellation.systems # => [30000001, 30000002, 30000003, 30000004, 30000005, 30000006, 30000007, 30000008]
+
+constellation.system_ids # => [30000001, 30000002, 30000003, 30000004, 30000005, 30000006, 30000007, 30000008]
 
 constellation.position.as_json # => {:x=>-9.404655970099134e+16,
                                #     :y=>4.952015315379885e+16,

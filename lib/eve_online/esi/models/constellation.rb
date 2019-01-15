@@ -8,8 +8,7 @@ module EveOnline
           {
             constellation_id: constellation_id,
             name: name,
-            region_id: region_id,
-            systems: systems
+            region_id: region_id
           }
         end
 
@@ -25,7 +24,7 @@ module EveOnline
           options['region_id']
         end
 
-        def systems
+        def system_ids
           options['systems']
         end
 
