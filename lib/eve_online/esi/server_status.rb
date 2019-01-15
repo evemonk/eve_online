@@ -9,7 +9,7 @@ module EveOnline
 
       API_ENDPOINT = 'https://esi.evetech.net/v1/status/?datasource=%<datasource>s'
 
-      def_delegators :model, :as_json, :start_time, :players, :server_version, :vip
+      def_delegators :model, :as_json, :players, :server_version, :start_time, :vip
 
       def model
         @model ||= Models::ServerStatus.new(response)
