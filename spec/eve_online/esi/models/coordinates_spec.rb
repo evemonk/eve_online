@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-describe EveOnline::ESI::Models::Coordinate do
+describe EveOnline::ESI::Models::Coordinates do
   it { should be_a(EveOnline::ESI::Models::Base) }
 
   let(:options) { double }

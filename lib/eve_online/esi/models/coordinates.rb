@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     module Models
-      class Coordinate < Base
+      class Coordinates < Base
         def as_json
           {
             x: x,
