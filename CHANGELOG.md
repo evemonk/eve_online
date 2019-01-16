@@ -4,6 +4,7 @@
 
 * Remove `implants` from `EveOnline::ESI::Models::JumpClone#as_json`
 * Rename `EveOnline::ESI::Models::JumpClone#implants` to `#implant_ids`
+* Add `EveOnline::ESI::Models::Coordinate`
 
 ## v0.23.0
 
