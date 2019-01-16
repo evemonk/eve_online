@@ -40,4 +40,18 @@ describe 'Get region information' do
 
     specify { expect(subject.etag).to eq('5c9218218aca123ef8c106f6607bfe8e6e086d2fc2b972bbd8ff03d2') }
   end
+
+  context 'when etag present' do
+    before { VCR.insert_cassette 'esi/universe/regions/10000001_with_etag' }
+
+    after { VCR.eject_cassette }
+
+    let(:options) { { id: 10_000_001, etag: '5c9218218aca123ef8c106f6607bfe8e6e086d2fc2b972bbd8ff03d2' } }
+
+    subject { EveOnline::ESI::UniverseRegion.new(options) }
+
+    specify { expect(subject.not_modified?).to eq(true) }
+
+    specify { expect(subject.etag).to eq('5c9218218aca123ef8c106f6607bfe8e6e086d2fc2b972bbd8ff03d2') }
+  end
 end
