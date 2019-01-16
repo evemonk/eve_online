@@ -15,17 +15,15 @@ http_interactions:
       - EveOnline API (https://github.com/evemonk/eve_online) v0.23.0
       Accept-Language:
       - en-us
+      If-None-Match:
+      - 5c9218218aca123ef8c106f6607bfe8e6e086d2fc2b972bbd8ff03d2
   response:
     status:
-      code: 200
-      message: OK
+      code: 304
+      message: Not Modified
     headers:
       Date:
-      - Wed, 16 Jan 2019 12:12:47 GMT
-      Content-Type:
-      - application/json; charset=UTF-8
-      Content-Length:
-      - '124'
+      - Wed, 16 Jan 2019 12:13:30 GMT
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -55,12 +53,12 @@ http_interactions:
       X-Esi-Error-Limit-Remain:
       - '100'
       X-Esi-Error-Limit-Reset:
-      - '13'
+      - '30'
       X-Esi-Request-Id:
-      - 1717e8a5-f8ba-4a23-8b23-15fb4895585c
+      - 36539b38-5cef-44c0-8043-859bda9baa62
     body:
       encoding: UTF-8
-      string: "[0,1,2,3,4,5,6,7,8,9,10,11,14,16,17,18,20,22,23,24,25,26,29,30,32,34,35,39,40,41,42,43,46,350001,53,54,59,63,65,66,49,87,91]"
+      string: ''
     http_version: 
-  recorded_at: Wed, 16 Jan 2019 12:12:47 GMT
+  recorded_at: Wed, 16 Jan 2019 12:13:30 GMT
 recorded_with: VCR 4.0.0
