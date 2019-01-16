@@ -44,8 +44,8 @@ describe EveOnline::ESI::Models::Position do
   end
 
   describe '#z' do
-    before { expect(options).to receive(:[]).with('x') }
+    before { expect(options).to receive(:[]).with('z') }
 
-    specify { expect { subject.x }.not_to raise_error }
+    specify { expect { subject.z }.not_to raise_error }
   end
 end
