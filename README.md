@@ -576,7 +576,7 @@ jump_clone.location_id # => 61000032
 jump_clone.location_type # => "station"
 jump_clone.name # => nil
 
-jump_clone.implants # => [22118]
+jump_clone.implant_ids # => [22118]
 
 character_clones.last_clone_jump_date # => Fri, 27 Jul 2012 14:50:11 UTC +00:00
 

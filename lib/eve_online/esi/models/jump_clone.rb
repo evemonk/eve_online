@@ -13,8 +13,7 @@ module EveOnline
           }
         end
 
-        # TODO: rename to implant_ids
-        def implants
+        def implant_ids
           options['implants']
         end
 

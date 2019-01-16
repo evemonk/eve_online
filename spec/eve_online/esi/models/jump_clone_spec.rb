@@ -37,10 +37,10 @@ describe EveOnline::ESI::Models::JumpClone do
     its([:name]) { should eq(name) }
   end
 
-  describe '#implants' do
+  describe '#implant_ids' do
     before { expect(options).to receive(:[]).with('implants') }
 
-    specify { expect { subject.implants }.not_to raise_error }
+    specify { expect { subject.implant_ids }.not_to raise_error }
   end
 
   describe '#jump_clone_id' do
