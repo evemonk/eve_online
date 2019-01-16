@@ -18,8 +18,6 @@ describe EveOnline::ESI::Models::JumpClone do
 
     let(:name) { double }
 
-    before { expect(jump_clone).to receive(:implants).and_return([22_118]) }
-
     before { expect(jump_clone).to receive(:jump_clone_id).and_return(22_357_400) }
 
     before { expect(jump_clone).to receive(:location_id).and_return(61_000_032) }
@@ -29,8 +27,6 @@ describe EveOnline::ESI::Models::JumpClone do
     before { expect(jump_clone).to receive(:name).and_return(name) }
 
     subject { jump_clone.as_json }
-
-    its([:implants]) { should eq([22_118]) }
 
     its([:jump_clone_id]) { should eq(22_357_400) }
 

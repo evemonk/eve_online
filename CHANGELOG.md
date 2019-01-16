@@ -1,5 +1,9 @@
 # Changelog
 
+## master
+
+* Remove `implants` from `EveOnline::ESI::Models::JumpClone#as_json`
+
 ## v0.23.0
 
 * Sync with new ESI API
