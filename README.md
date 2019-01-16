@@ -10,7 +10,7 @@ This gem implement Ruby API for EveOnline MMORPG (ESI).
 
 Looking for [EveOnline SSO OAuth2 Strategy for OmniAuth](https://github.com/evemonk/omniauth-eve_online-sso)?
 
-This gem was extracted from [EveMonk](https://evemonk.com). Source code of evemonk backend published [here](https://github.com/evemonk/evemonk).
+This gem was extracted from [EveMonk](https://evemonk.com). Source code of EveMonk backend published [here](https://github.com/evemonk/evemonk).
 
 ## TOC
 
@@ -652,7 +652,7 @@ corporation = EveOnline::ESI::Corporation.new(options)
 
 corporation.scope # => nil
 
-corporation.as_json # => {:alliance_id=>99001258,
+corporation.as_json # => {:alliance_id=>99007916,
                     #     :ceo_id=>1721864142,
                     #     :creator_id=>1721864142,
                     #     :date_founded=>Mon, 11 Jul 2016 14:22:17 UTC +00:00,
@@ -664,9 +664,10 @@ corporation.as_json # => {:alliance_id=>99001258,
                     #     :shares=>1000,
                     #     :tax_rate=>0.1,
                     #     :ticker=>"BUBIC",
-                    #     :corporation_url=>"http://"}
+                    #     :corporation_url=>"http://",
+                    #     :war_eligible=>true}
 
-corporation.alliance_id # => 99001258
+corporation.alliance_id # => 99007916
 corporation.ceo_id # => 1721864142
 corporation.creator_id # => 1721864142
 corporation.date_founded # => Mon, 11 Jul 2016 14:22:17 UTC +00:00
@@ -679,8 +680,9 @@ corporation.shares # => 1000
 corporation.tax_rate # => 0.1
 corporation.ticker # => "BUBIC"
 corporation.corporation_url # => "http://"
+corporation.war_eligible # => true
 
-corporation.etag # => "9f1b3761e93aba36ceaea6328e62031ec777317c70b7439b665d93fe"
+corporation.etag # => "046430260be73e5d7ad3a9251954310bd547498eeb38f99e8d305796"
 ```
 
 #### Get alliance history
@@ -1718,13 +1720,13 @@ constellation.scope # => nil
 
 constellation.as_json # => {:constellation_id=>20000001,
                       #     :name=>"San Matar",
-                      #     :region_id=>10000001,
-                      #     :systems=>[30000001, 30000002, 30000003, 30000004, 30000005, 30000006, 30000007, 30000008]}
+                      #     :region_id=>10000001}
 
 constellation.constellation_id # => 20000001
 constellation.name # => "San Matar"
 constellation.region_id # => 10000001
-constellation.systems # => [30000001, 30000002, 30000003, 30000004, 30000005, 30000006, 30000007, 30000008]
+
+constellation.system_ids # => [30000001, 30000002, 30000003, 30000004, 30000005, 30000006, 30000007, 30000008]
 
 constellation.position.as_json # => {:x=>-9.404655970099134e+16,
                                #     :y=>4.952015315379885e+16,

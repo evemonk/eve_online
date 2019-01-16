@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.23.0
+
+* Sync with new ESI API
+* Remove `systems` from `EveOnline::ESI::Models::Constellation#as_json`
+* Rename `EveOnline::ESI::Models::Constellation#systems` to `#system_ids`
+
 ## v0.22.0
 
 * Add `EveOnline::ESI::AllianceCorporations#etag`

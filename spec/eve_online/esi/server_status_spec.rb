@@ -58,16 +58,6 @@ describe EveOnline::ESI::ServerStatus do
     specify { expect { subject.as_json }.not_to raise_error }
   end
 
-  describe '#start_time' do
-    let(:model) { instance_double(EveOnline::ESI::Models::ServerStatus) }
-
-    before { subject.instance_variable_set(:@model, model) }
-
-    before { expect(model).to receive(:start_time) }
-
-    specify { expect { subject.start_time }.not_to raise_error }
-  end
-
   describe '#players' do
     let(:model) { instance_double(EveOnline::ESI::Models::ServerStatus) }
 
@@ -86,6 +76,16 @@ describe EveOnline::ESI::ServerStatus do
     before { expect(model).to receive(:server_version) }
 
     specify { expect { subject.server_version }.not_to raise_error }
+  end
+
+  describe '#start_time' do
+    let(:model) { instance_double(EveOnline::ESI::Models::ServerStatus) }
+
+    before { subject.instance_variable_set(:@model, model) }
+
+    before { expect(model).to receive(:start_time) }
+
+    specify { expect { subject.start_time }.not_to raise_error }
   end
 
   describe '#vip' do

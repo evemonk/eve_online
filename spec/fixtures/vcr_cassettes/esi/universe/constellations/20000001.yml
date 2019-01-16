@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://esi.evetech.net/v4/corporations/98468592/?datasource=tranquility
+    uri: https://esi.evetech.net/v1/universe/constellations/20000001/?datasource=tranquility
     body:
       encoding: US-ASCII
       string: ''
@@ -21,11 +21,11 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 15 Jan 2019 17:36:03 GMT
+      - Tue, 15 Jan 2019 23:24:11 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
-      - '282'
+      - '240'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -44,24 +44,27 @@ http_interactions:
       - GET,HEAD,OPTIONS
       Cache-Control:
       - public
+      Content-Language:
+      - en-us
       Etag:
-      - '"046430260be73e5d7ad3a9251954310bd547498eeb38f99e8d305796"'
+      - W/"5c9218218aca123ef8c106f6607bfe8e6e086d2fc2b972bbd8ff03d2"
       Expires:
-      - Tue, 15 Jan 2019 18:23:20 GMT
+      - Wed, 16 Jan 2019 11:05:00 GMT
       Last-Modified:
-      - Tue, 15 Jan 2019 17:23:20 GMT
+      - Tue, 15 Jan 2019 11:12:49 GMT
       Strict-Transport-Security:
       - max-age=31536000
+      Vary:
+      - Accept-Language
       X-Esi-Error-Limit-Remain:
       - '100'
       X-Esi-Error-Limit-Reset:
-      - '57'
+      - '49'
       X-Esi-Request-Id:
-      - 7b4efc74-36be-48cf-9774-035879e2d98c
+      - 82699fa0-5a58-47d9-b6fb-fb51e3ae8617
     body:
       encoding: UTF-8
-      string: '{"alliance_id":99007916,"ceo_id":1721864142,"creator_id":1721864142,"date_founded":"2016-07-11T14:22:17Z","description":"","home_station_id":60011893,"member_count":166,"name":"Bullshit
-        Bingo Club","shares":1000,"tax_rate":0.1,"ticker":"BUBIC","url":"http:\/\/","war_eligible":true}'
+      string: '{"constellation_id":20000001,"name":"San Matar","position":{"x":-94046559700991340.0,"y":49520153153798850.0,"z":-42738731818401970.0},"region_id":10000001,"systems":[30000001,30000002,30000003,30000004,30000005,30000006,30000007,30000008]}'
     http_version: 
-  recorded_at: Tue, 15 Jan 2019 17:36:03 GMT
+  recorded_at: Tue, 15 Jan 2019 23:24:11 GMT
 recorded_with: VCR 4.0.0

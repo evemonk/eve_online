@@ -94,14 +94,14 @@ describe EveOnline::ESI::UniverseConstellation do
     specify { expect { subject.region_id }.not_to raise_error }
   end
 
-  describe '#systems' do
+  describe '#system_ids' do
     let(:model) { instance_double(EveOnline::ESI::Models::Constellation) }
 
     before { subject.instance_variable_set(:@model, model) }
 
-    before { expect(model).to receive(:systems) }
+    before { expect(model).to receive(:system_ids) }
 
-    specify { expect { subject.systems }.not_to raise_error }
+    specify { expect { subject.system_ids }.not_to raise_error }
   end
 
   describe '#position' do
