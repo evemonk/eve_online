@@ -12,6 +12,7 @@ module EveOnline
           }
         end
 
+        # TODO: check 'options && '
         def x
           options && options['x']
         end
