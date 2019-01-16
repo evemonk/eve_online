@@ -1,6 +1,6 @@
 # Changelog
 
-## master
+## v0.23.0
 
 * Sync with new ESI API
 * Remove `systems` from `EveOnline::ESI::Models::Constellation#as_json`
