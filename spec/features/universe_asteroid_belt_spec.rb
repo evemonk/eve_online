@@ -14,6 +14,8 @@ describe 'Get asteroid belt information' do
 
     specify { expect(subject.scope).to eq(nil) }
 
+    specify { expect(subject.not_modified?).to eq(false) }
+
     specify do
       expect(subject.as_json).to eq(name: 'Tanoo I - Asteroid Belt 1',
                                     system_id: 30_000_001)

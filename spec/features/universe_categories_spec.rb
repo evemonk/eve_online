@@ -12,6 +12,8 @@ describe 'Get item categories' do
 
     specify { expect(subject.scope).to eq(nil) }
 
+    specify { expect(subject.not_modified?).to eq(false) }
+
     specify { expect(subject.category_ids.size).to eq(43) }
 
     specify { expect(subject.category_ids.first).to eq(0) }

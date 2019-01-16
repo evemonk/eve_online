@@ -14,6 +14,8 @@ describe "List alliance's corporations" do
 
     specify { expect(subject.scope).to eq(nil) }
 
+    specify { expect(subject.not_modified?).to eq(false) }
+
     specify { expect(subject.corporation_ids.size).to eq(70) }
 
     specify { expect(subject.corporation_ids.first).to eq(98_091_533) }

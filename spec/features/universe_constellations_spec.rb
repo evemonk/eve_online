@@ -12,6 +12,8 @@ describe 'Get constellations' do
 
     specify { expect(subject.scope).to eq(nil) }
 
+    specify { expect(subject.not_modified?).to eq(false) }
+
     specify { expect(subject.constellation_ids.size).to eq(1146) }
 
     specify { expect(subject.constellation_ids.first).to eq(20_000_001) }

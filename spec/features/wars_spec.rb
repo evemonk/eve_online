@@ -12,6 +12,8 @@ describe 'List wars' do
 
     specify { expect(subject.scope).to eq(nil) }
 
+    specify { expect(subject.not_modified?).to eq(false) }
+
     specify { expect(subject.war_ids.size).to eq(2000) }
 
     specify { expect(subject.war_ids.first).to eq(629_019) }

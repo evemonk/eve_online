@@ -14,6 +14,8 @@ describe 'Get station information' do
 
     specify { expect(subject.scope).to eq(nil) }
 
+    specify { expect(subject.not_modified?).to eq(false) }
+
     specify do
       expect(subject.as_json).to eq(max_dockable_ship_volume: 50_000_000.0,
                                     name: 'Tanoo V - Moon 1 - Ammatar Consulate Bureau',

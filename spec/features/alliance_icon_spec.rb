@@ -14,6 +14,8 @@ describe 'Get alliance icon' do
 
     specify { expect(subject.scope).to eq(nil) }
 
+    specify { expect(subject.not_modified?).to eq(false) }
+
     specify do
       expect(subject.as_json).to eq(icon_medium: 'http://imageserver.eveonline.com/Alliance/99005443_128.png',
                                     icon_small: 'http://imageserver.eveonline.com/Alliance/99005443_64.png')

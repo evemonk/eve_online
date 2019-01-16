@@ -12,6 +12,8 @@ describe 'Get solar systems' do
 
     specify { expect(subject.scope).to eq(nil) }
 
+    specify { expect(subject.not_modified?).to eq(false) }
+
     specify { expect(subject.universe_system_ids.size).to eq(8285) }
 
     specify { expect(subject.universe_system_ids.first).to eq(30_000_001) }

@@ -12,6 +12,8 @@ describe 'Get effects' do
 
     specify { expect(subject.scope).to eq(nil) }
 
+    specify { expect(subject.not_modified?).to eq(false) }
+
     specify { expect(subject.effect_ids.size).to eq(4166) }
 
     specify { expect(subject.effect_ids.first).to eq(4) }

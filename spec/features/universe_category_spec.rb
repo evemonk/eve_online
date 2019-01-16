@@ -14,6 +14,8 @@ describe 'Get item category information' do
 
     specify { expect(subject.scope).to eq(nil) }
 
+    specify { expect(subject.not_modified?).to eq(false) }
+
     specify do
       expect(subject.as_json).to eq(category_id: 6,
                                     name: 'Ship',

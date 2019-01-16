@@ -12,6 +12,8 @@ describe 'Get system kills' do
 
     specify { expect(subject.scope).to eq(nil) }
 
+    specify { expect(subject.not_modified?).to eq(false) }
+
     specify { expect(subject.system_kills.size).to eq(3194) }
 
     specify do

@@ -12,6 +12,8 @@ describe 'List all public structures' do
 
     specify { expect(subject.scope).to eq(nil) }
 
+    specify { expect(subject.not_modified?).to eq(false) }
+
     specify { expect(subject.structure_ids.size).to eq(4004) }
 
     specify { expect(subject.structure_ids.first).to eq(1_027_528_548_355) }

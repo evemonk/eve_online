@@ -12,6 +12,8 @@ describe 'Get regions' do
 
     specify { expect(subject.scope).to eq(nil) }
 
+    specify { expect(subject.not_modified?).to eq(false) }
+
     specify { expect(subject.universe_region_ids.size).to eq(106) }
 
     specify { expect(subject.universe_region_ids.first).to eq(10_000_001) }

@@ -14,6 +14,8 @@ describe 'Get constellation information' do
 
     specify { expect(subject.scope).to eq(nil) }
 
+    specify { expect(subject.not_modified?).to eq(false) }
+
     specify do
       expect(subject.as_json).to eq(constellation_id: 20_000_001,
                                     name: 'San Matar',
