@@ -27,9 +27,6 @@ describe 'Get character bookmarks' do
 
   specify do
     expect(subject.bookmarks.first.as_json).to eq(bookmark_id: 726_640_415,
-                                                  coordinate_x: nil,
-                                                  coordinate_y: nil,
-                                                  coordinate_z: nil,
                                                   created: Time.new(2012, 7, 9, 22, 38, 31, '+00:00'),
                                                   creator_id: 1_337_512_245,
                                                   folder_id: nil,
@@ -38,5 +35,11 @@ describe 'Get character bookmarks' do
                                                   label: "Nakri* (Solar System*)\t",
                                                   location_id: 20_000_510,
                                                   notes: '')
+  end
+
+  specify do
+    expect(subject.bookmarks.first.coordinates.as_json).to eq(x: nil,
+                                                              y: nil,
+                                                              z: nil)
   end
 end

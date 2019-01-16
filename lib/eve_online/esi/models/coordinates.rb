@@ -13,15 +13,15 @@ module EveOnline
         end
 
         def x
-          options['x']
+          options && options['x']
         end
 
         def y
-          options['y']
+          options && options['y']
         end
 
         def z
-          options['z']
+          options && options['z']
         end
       end
     end
