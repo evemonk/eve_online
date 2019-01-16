@@ -824,11 +824,11 @@ dogma_effects = EveOnline::ESI::DogmaEffects.new
 
 dogma_effects.scope # => nil
 
-dogma_effects.effects_ids.size # => 4123
+dogma_effects.effect_ids.size # => 4166
 
-dogma_effects.effects_ids.first # => 4
+dogma_effects.effect_ids.first # => 4
 
-# TODO: dogma_effects.etag
+dogma_effects.etag # => "5c9218218aca123ef8c106f6607bfe8e6e086d2fc2b972bbd8ff03d2"
 ```
 
 #### Get effect information
