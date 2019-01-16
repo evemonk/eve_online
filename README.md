@@ -259,9 +259,6 @@ character_bookmarks.bookmarks.size # => 20
 bookmark = character_bookmarks.bookmarks.first
 
 bookmark.as_json # => {:bookmark_id=>4,
-                 #     :coordinate_x=>-144951231521.81625,
-                 #     :coordinate_y=>164030047870.25558,
-                 #     :coordinate_z=>211467631848.1311,
                  #     :created=>Mon, 09 Jul 2012 22:38:31 UTC +00:00,
                  #     :creator_id=>2112625428,
                  #     :folder_id=>5,
@@ -272,9 +269,6 @@ bookmark.as_json # => {:bookmark_id=>4,
                  #     :notes=>"This is a stargate"}
 
 bookmark.bookmark_id # => 4
-bookmark.coordinate_x # => -144951231521.81625
-bookmark.coordinate_y # => 164030047870.25558
-bookmark.coordinate_z # => 211467631848.1311
 bookmark.created # => Mon, 09 Jul 2012 22:38:31 UTC +00:00
 bookmark.creator_id # => 2112625428
 bookmark.folder_id # => 5
@@ -283,6 +277,10 @@ bookmark.item_type_id # => 5
 bookmark.label # => "Stargate"
 bookmark.location_id # => 30003430
 bookmark.notes # => "This is a stargate"
+
+bookmark.coordinates.as_json # => {:x=>-144951231521.81625,
+                             #     :y=>164030047870.25558,
+                             #     :z=>211467631848.1311}
 
 # TODO: character_bookmarks.etag
 ```

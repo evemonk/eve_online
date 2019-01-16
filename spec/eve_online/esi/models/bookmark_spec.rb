@@ -16,12 +16,6 @@ describe EveOnline::ESI::Models::Bookmark do
   describe '#as_json' do
     let(:bookmark) { described_class.new(options) }
 
-    let(:coordinate_x) { double }
-
-    let(:coordinate_y) { double }
-
-    let(:coordinate_z) { double }
-
     let(:created) { double }
 
     let(:item_id) { double }
@@ -29,12 +23,6 @@ describe EveOnline::ESI::Models::Bookmark do
     let(:item_type_id) { double }
 
     before { expect(bookmark).to receive(:bookmark_id).and_return(4) }
-
-    before { expect(bookmark).to receive(:coordinate_x).and_return(coordinate_x) }
-
-    before { expect(bookmark).to receive(:coordinate_y).and_return(coordinate_y) }
-
-    before { expect(bookmark).to receive(:coordinate_z).and_return(coordinate_z) }
 
     before { expect(bookmark).to receive(:created).and_return(created) }
 
@@ -55,12 +43,6 @@ describe EveOnline::ESI::Models::Bookmark do
     subject { bookmark.as_json }
 
     its([:bookmark_id]) { should eq(4) }
-
-    its([:coordinate_x]) { should eq(coordinate_x) }
-
-    its([:coordinate_y]) { should eq(coordinate_y) }
-
-    its([:coordinate_z]) { should eq(coordinate_z) }
 
     its([:created]) { should eq(created) }
 
@@ -83,75 +65,6 @@ describe EveOnline::ESI::Models::Bookmark do
     before { expect(options).to receive(:[]).with('bookmark_id') }
 
     specify { expect { subject.bookmark_id }.not_to raise_error }
-  end
-
-  describe '#coordinate_x' do
-    context 'when coordinates is present' do
-      let(:coordinates) { double }
-
-      before { expect(options).to receive(:[]).with('coordinates').and_return(coordinates).twice }
-
-      before do
-        #
-        # options['coordinates']['x']
-        #
-        expect(coordinates).to receive(:[]).with('x')
-      end
-
-      specify { expect { subject.coordinate_x }.not_to raise_error }
-    end
-
-    context 'when coordinates not present' do
-      before { expect(options).to receive(:[]).with('coordinates').and_return(nil) }
-
-      specify { expect { subject.coordinate_x }.not_to raise_error }
-    end
-  end
-
-  describe '#coordinate_y' do
-    context 'when coordinates is present' do
-      let(:coordinates) { double }
-
-      before { expect(options).to receive(:[]).with('coordinates').and_return(coordinates).twice }
-
-      before do
-        #
-        # options['coordinates']['y']
-        #
-        expect(coordinates).to receive(:[]).with('y')
-      end
-
-      specify { expect { subject.coordinate_y }.not_to raise_error }
-    end
-
-    context 'when coordinates not present' do
-      before { expect(options).to receive(:[]).with('coordinates').and_return(nil) }
-
-      specify { expect { subject.coordinate_y }.not_to raise_error }
-    end
-  end
-
-  describe '#coordinate_z' do
-    context 'when coordinates is present' do
-      let(:coordinates) { double }
-
-      before { expect(options).to receive(:[]).with('coordinates').and_return(coordinates).twice }
-
-      before do
-        #
-        # options['coordinates']['z']
-        #
-        expect(coordinates).to receive(:[]).with('z')
-      end
-
-      specify { expect { subject.coordinate_z }.not_to raise_error }
-    end
-
-    context 'when coordinates not present' do
-      before { expect(options).to receive(:[]).with('coordinates').and_return(nil) }
-
-      specify { expect { subject.coordinate_z }.not_to raise_error }
-    end
   end
 
   describe '#created' do
@@ -253,5 +166,29 @@ describe EveOnline::ESI::Models::Bookmark do
     before { expect(options).to receive(:[]).with('notes') }
 
     specify { expect { subject.notes }.not_to raise_error }
+  end
+
+  describe '#coordinates' do
+    context 'when @coordinates set' do
+      let(:coordinates) { double }
+
+      before { subject.instance_variable_set(:@coordinates, coordinates) }
+
+      specify { expect(subject.coordinates).to eq(coordinates) }
+    end
+
+    context 'when @coordinates not set' do
+      let(:coordinates) { double }
+
+      let(:options) { { 'coordinates' => coordinates } }
+
+      let(:model) { instance_double(EveOnline::ESI::Models::Coordinates) }
+
+      before { expect(EveOnline::ESI::Models::Coordinates).to receive(:new).with(coordinates).and_return(model) }
+
+      specify { expect { subject.coordinates }.not_to raise_error }
+
+      specify { expect { subject.coordinates }.to change { subject.instance_variable_get(:@coordinates) }.from(nil).to(model) }
+    end
   end
 end
