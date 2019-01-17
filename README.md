@@ -1366,25 +1366,25 @@ market_history.scope # => nil
 
 statistics = market_history.history
 
-statistics.size # => 417
+statistics.size # => 412
 
 stats_today = statistics.last
 
-stats_today.as_json # => {:average=>754702326.19,
-                    #     :date=>Fri, 24 Nov 2017 00:00:00 UTC +00:00,
-                    #     :highest=>769999999.99,
-                    #     :lowest=>701100002.49,
-                    #     :order_count=>52,
-                    #     :volume=>52}
+stats_today.as_json # => {:average=>602326589.84,
+                    #     :date=>Wed, 16 Jan 2019 00:00:00 UTC +00:00,
+                    #     :highest=>620169950.0,
+                    #     :lowest=>579060022.71,
+                    #     :order_count=>44,
+                    #     :volume=>44}
 
-stats_today.average # => 754702326.19
-stats_today.date # => Fri, 24 Nov 2017 00:00:00 UTC +00:00
-stats_today.highest # => 769999999.99
-stats_today.lowest # => 701100002.49
-stats_today.order_count # => 52
-stats_today.volume # => 52
+stats_today.average # => 602326589.84
+stats_today.date # => Wed, 16 Jan 2019 00:00:00 UTC +00:00
+stats_today.highest # => 620169950.0
+stats_today.lowest # => 579060022.71
+stats_today.order_count # => 44
+stats_today.volume # => 44
 
-# TODO: market_history.etag
+market_history.etag # => "01636947a53db63a0369aab78bbc98bae94a49cd6aa3950c29d588ae"
 ```
 
 #### List orders in a region
