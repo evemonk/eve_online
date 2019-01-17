@@ -47,8 +47,8 @@ describe 'Get station information' do
 
     specify do
       expect(subject.position.as_json).to eq(x: -1_106_145_239_040.0,
-                                            y: -145_460_060_160.0,
-                                            z: 182_618_726_400.0)
+                                             y: -145_460_060_160.0,
+                                             z: 182_618_726_400.0)
     end
 
     specify { expect(subject.etag).to eq('e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b') }
