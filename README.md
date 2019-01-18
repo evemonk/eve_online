@@ -1204,7 +1204,7 @@ character_online.last_logout # => Sun, 15 Jan 2017 11:31:22 UTC +00:00
 character_online.logins # => 370
 character_online.online # => false
 
-# TODO: character_online.etag
+character_online.etag # => "43c82cdefedc4275da30d7731200df96b905dc94b8486d55bedb5fe6"
 ```
 
 #### Get current ship
