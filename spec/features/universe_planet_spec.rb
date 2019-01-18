@@ -14,6 +14,8 @@ describe 'Get planet information' do
 
     specify { expect(subject.scope).to eq(nil) }
 
+    specify { expect(subject.not_modified?).to eq(false) }
+
     specify do
       expect(subject.as_json).to eq(name: 'Tanoo I',
                                     planet_id: 40_000_002,

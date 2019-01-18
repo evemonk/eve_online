@@ -1,5 +1,18 @@
 # Changelog
 
+## master
+
+* Remove `implants` from `EveOnline::ESI::Models::JumpClone#as_json`
+* Rename `EveOnline::ESI::Models::JumpClone#implants` to `#implant_ids`
+* Add `EveOnline::ESI::Models::Coordinates`
+* Remove `coordinate_x` from `EveOnline::ESI::Models::Bookmark#as_json`
+* Remove `coordinate_y` from `EveOnline::ESI::Models::Bookmark#as_json`
+* Remove `coordinate_z` from `EveOnline::ESI::Models::Bookmark#as_json`
+* Remove `EveOnline::ESI::Models::Bookmark#coordinate_x`
+* Remove `EveOnline::ESI::Models::Bookmark#coordinate_y`
+* Remove `EveOnline::ESI::Models::Bookmark#coordinate_z`
+* Add `EveOnline::ESI::Models::Bookmark#coordinates`
+
 ## v0.23.0
 
 * Sync with new ESI API

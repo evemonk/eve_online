@@ -1,0 +1,85 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://esi.evetech.net/v1/universe/regions/10000001/?datasource=tranquility
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/json
+      User-Agent:
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.23.0
+      Accept-Language:
+      - en-us
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 16 Jan 2019 16:34:56 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '1317'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,If-None-Match,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,HEAD,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,ETag,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Allow:
+      - GET,HEAD,OPTIONS
+      Cache-Control:
+      - public
+      Content-Language:
+      - en-us
+      Etag:
+      - W/"5c9218218aca123ef8c106f6607bfe8e6e086d2fc2b972bbd8ff03d2"
+      Expires:
+      - Thu, 17 Jan 2019 11:05:00 GMT
+      Last-Modified:
+      - Tue, 15 Jan 2019 11:12:49 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept-Encoding,Accept-Language
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '4'
+      X-Esi-Request-Id:
+      - 10a7bb5a-9bd7-47e2-997e-821fb065a16b
+    body:
+      encoding: UTF-8
+      string: '{"constellations":[20000001,20000002,20000003,20000004,20000005,20000006,20000007,20000008,20000009,20000010,20000011,20000012,20000013,20000014,20000015,20000016],"description":"The
+        Derelik region, sovereign seat of the Ammatar Mandate, became the shield to
+        the Amarrian flank in the wake of the Minmatar Rebellion. Derelik witnessed
+        many hostile exchanges between the Amarr and rebel forces as the latter tried
+        to push deeper into the territory of their former masters. Having held their
+        ground, thanks in no small part to the Ammatars'' military efforts, the Amarr
+        awarded the Ammatar with their own province. However, this portion of space
+        shared borders with the newly forming Minmatar Republic as well as the Empire,
+        and thus came to be situated in a dark recess surrounded by hostiles. \n\nGiven
+        the lack of safe routes elsewhere, the local economies of this region were
+        dependent on trade with the Amarr as their primary means of survival. The
+        Ammatar persevered over many decades of economic stagnation and limited trade
+        partners, and their determination has in recent decades been rewarded with
+        an increase in economic prosperity. This harsh trail is a point of pride for
+        all who call themselves Ammatar, and it has bolstered their faith in the Amarrian
+        way to no end.","name":"Derelik","region_id":10000001}'
+    http_version: 
+  recorded_at: Wed, 16 Jan 2019 16:34:56 GMT
+recorded_with: VCR 4.0.0

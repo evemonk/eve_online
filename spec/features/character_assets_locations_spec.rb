@@ -19,6 +19,8 @@ describe 'Get character asset locations' do
 
   specify { expect(subject.scope).to eq('esi-assets.read_assets.v1') }
 
+  specify { expect(subject.not_modified?).to eq(false) }
+
   specify { expect(subject.assets_locations.size).to eq(1) }
 
   specify do

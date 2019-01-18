@@ -14,6 +14,8 @@ describe 'Get type information' do
 
     specify { expect(subject.scope).to eq(nil) }
 
+    specify { expect(subject.not_modified?).to eq(false) }
+
     specify do
       expect(subject.as_json).to eq(capacity: 0.0,
                                     description: "Medium Projectile Ammo. This ammo uses a similar plasma containment core as hybrid charges except that it is mounted in a standard cannon shell.\r\n\r\n50% reduced optimal range.",

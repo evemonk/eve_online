@@ -12,7 +12,7 @@ http_interactions:
       Accept:
       - application/json
       User-Agent:
-      - EveOnline API (https://github.com/evemonk/eve_online) v0.19.0
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.23.0
       Accept-Language:
       - en-us
   response:
@@ -21,7 +21,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 03 Oct 2018 13:43:06 GMT
+      - Wed, 16 Jan 2019 12:12:47 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
@@ -45,22 +45,22 @@ http_interactions:
       Cache-Control:
       - public
       Etag:
-      - W/"7261e48bc37b9e927b4f7be5b3f5c0bdc44a4b4a3e32c4b86f4dbe8f"
+      - W/"5c9218218aca123ef8c106f6607bfe8e6e086d2fc2b972bbd8ff03d2"
       Expires:
-      - Thu, 04 Oct 2018 11:05:00 GMT
+      - Thu, 17 Jan 2019 11:05:00 GMT
       Last-Modified:
-      - Wed, 03 Oct 2018 11:15:20 GMT
+      - Tue, 15 Jan 2019 11:12:49 GMT
       Strict-Transport-Security:
       - max-age=31536000
       X-Esi-Error-Limit-Remain:
       - '100'
       X-Esi-Error-Limit-Reset:
-      - '54'
+      - '13'
       X-Esi-Request-Id:
-      - 45b9d0e7-53c2-4562-8810-c9b1d99fd1ba
+      - 1717e8a5-f8ba-4a23-8b23-15fb4895585c
     body:
       encoding: UTF-8
       string: "[0,1,2,3,4,5,6,7,8,9,10,11,14,16,17,18,20,22,23,24,25,26,29,30,32,34,35,39,40,41,42,43,46,350001,53,54,59,63,65,66,49,87,91]"
     http_version: 
-  recorded_at: Wed, 03 Oct 2018 13:43:06 GMT
+  recorded_at: Wed, 16 Jan 2019 12:12:47 GMT
 recorded_with: VCR 4.0.0

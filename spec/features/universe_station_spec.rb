@@ -14,6 +14,8 @@ describe 'Get station information' do
 
     specify { expect(subject.scope).to eq(nil) }
 
+    specify { expect(subject.not_modified?).to eq(false) }
+
     specify do
       expect(subject.as_json).to eq(max_dockable_ship_volume: 50_000_000.0,
                                     name: 'Tanoo V - Moon 1 - Ammatar Consulate Bureau',
@@ -23,21 +25,21 @@ describe 'Get station information' do
                                     reprocessing_efficiency: 0.5,
                                     reprocessing_stations_take: 0.05,
                                     services: ['bounty-missions',
-                                              'courier-missions',
-                                              'interbus',
-                                              'reprocessing-plant',
-                                              'market',
-                                              'stock-exchange',
-                                              'cloning',
-                                              'repair-facilities',
-                                              'fitting',
-                                              'news',
-                                              'insurance',
-                                              'docking',
-                                              'office-rental',
-                                              'loyalty-point-store',
-                                              'navy-offices',
-                                              'security-offices'],
+                                               'courier-missions',
+                                               'interbus',
+                                               'reprocessing-plant',
+                                               'market',
+                                               'stock-exchange',
+                                               'cloning',
+                                               'repair-facilities',
+                                               'fitting',
+                                               'news',
+                                               'insurance',
+                                               'docking',
+                                               'office-rental',
+                                               'loyalty-point-store',
+                                               'navy-offices',
+                                               'security-offices'],
                                     station_id: 60_012_526,
                                     system_id: 30_000_001,
                                     type_id: 2502)
@@ -45,8 +47,8 @@ describe 'Get station information' do
 
     specify do
       expect(subject.position.as_json).to eq(x: -1_106_145_239_040.0,
-                                            y: -145_460_060_160.0,
-                                            z: 182_618_726_400.0)
+                                             y: -145_460_060_160.0,
+                                             z: 182_618_726_400.0)
     end
 
     specify { expect(subject.etag).to eq('e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b') }

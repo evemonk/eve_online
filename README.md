@@ -259,9 +259,6 @@ character_bookmarks.bookmarks.size # => 20
 bookmark = character_bookmarks.bookmarks.first
 
 bookmark.as_json # => {:bookmark_id=>4,
-                 #     :coordinate_x=>-144951231521.81625,
-                 #     :coordinate_y=>164030047870.25558,
-                 #     :coordinate_z=>211467631848.1311,
                  #     :created=>Mon, 09 Jul 2012 22:38:31 UTC +00:00,
                  #     :creator_id=>2112625428,
                  #     :folder_id=>5,
@@ -272,9 +269,6 @@ bookmark.as_json # => {:bookmark_id=>4,
                  #     :notes=>"This is a stargate"}
 
 bookmark.bookmark_id # => 4
-bookmark.coordinate_x # => -144951231521.81625
-bookmark.coordinate_y # => 164030047870.25558
-bookmark.coordinate_z # => 211467631848.1311
 bookmark.created # => Mon, 09 Jul 2012 22:38:31 UTC +00:00
 bookmark.creator_id # => 2112625428
 bookmark.folder_id # => 5
@@ -283,6 +277,10 @@ bookmark.item_type_id # => 5
 bookmark.label # => "Stargate"
 bookmark.location_id # => 30003430
 bookmark.notes # => "This is a stargate"
+
+bookmark.coordinates.as_json # => {:x=>-144951231521.81625,
+                             #     :y=>164030047870.25558,
+                             #     :z=>211467631848.1311}
 
 # TODO: character_bookmarks.etag
 ```
@@ -566,17 +564,17 @@ character_clones.jump_clones.size # => 2
 
 jump_clone = character_clones.jump_clones.first
 
-jump_clone.as_json # => {:implants=>[22118],
-                   #     :jump_clone_id=>22357400,
+jump_clone.as_json # => {:jump_clone_id=>22357400,
                    #     :location_id=>61000032,
                    #     :location_type=>"station",
                    #     :name=>nil}
 
-jump_clone.implants # => [22118]
 jump_clone.jump_clone_id # => 22357400
 jump_clone.location_id # => 61000032
 jump_clone.location_type # => "station"
 jump_clone.name # => nil
+
+jump_clone.implant_ids # => [22118]
 
 character_clones.last_clone_jump_date # => Fri, 27 Jul 2012 14:50:11 UTC +00:00
 
@@ -824,11 +822,11 @@ dogma_effects = EveOnline::ESI::DogmaEffects.new
 
 dogma_effects.scope # => nil
 
-dogma_effects.effects_ids.size # => 4123
+dogma_effects.effect_ids.size # => 4166
 
-dogma_effects.effects_ids.first # => 4
+dogma_effects.effect_ids.first # => 4
 
-# TODO: dogma_effects.etag
+dogma_effects.etag # => "5c9218218aca123ef8c106f6607bfe8e6e086d2fc2b972bbd8ff03d2"
 ```
 
 #### Get effect information
@@ -1368,25 +1366,25 @@ market_history.scope # => nil
 
 statistics = market_history.history
 
-statistics.size # => 417
+statistics.size # => 412
 
 stats_today = statistics.last
 
-stats_today.as_json # => {:average=>754702326.19,
-                    #     :date=>Fri, 24 Nov 2017 00:00:00 UTC +00:00,
-                    #     :highest=>769999999.99,
-                    #     :lowest=>701100002.49,
-                    #     :order_count=>52,
-                    #     :volume=>52}
+stats_today.as_json # => {:average=>602326589.84,
+                    #     :date=>Wed, 16 Jan 2019 00:00:00 UTC +00:00,
+                    #     :highest=>620169950.0,
+                    #     :lowest=>579060022.71,
+                    #     :order_count=>44,
+                    #     :volume=>44}
 
-stats_today.average # => 754702326.19
-stats_today.date # => Fri, 24 Nov 2017 00:00:00 UTC +00:00
-stats_today.highest # => 769999999.99
-stats_today.lowest # => 701100002.49
-stats_today.order_count # => 52
-stats_today.volume # => 52
+stats_today.average # => 602326589.84
+stats_today.date # => Wed, 16 Jan 2019 00:00:00 UTC +00:00
+stats_today.highest # => 620169950.0
+stats_today.lowest # => 579060022.71
+stats_today.order_count # => 44
+stats_today.volume # => 44
 
-# TODO: market_history.etag
+market_history.etag # => "01636947a53db63a0369aab78bbc98bae94a49cd6aa3950c29d588ae"
 ```
 
 #### List orders in a region

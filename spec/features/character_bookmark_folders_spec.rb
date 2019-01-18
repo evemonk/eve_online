@@ -20,6 +20,8 @@ describe 'Get character bookmark folders' do
 
   specify { expect(subject.scope).to eq('esi-bookmarks.read_character_bookmarks.v1') }
 
+  specify { expect(subject.not_modified?).to eq(false) }
+
   specify { expect(subject.page).to eq(1) }
 
   specify { expect(subject.total_pages).to eq(1) }

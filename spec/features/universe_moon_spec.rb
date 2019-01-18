@@ -14,6 +14,8 @@ describe 'Get moon information' do
 
     specify { expect(subject.scope).to eq(nil) }
 
+    specify { expect(subject.not_modified?).to eq(false) }
+
     specify do
       expect(subject.as_json).to eq(moon_id: 40_000_004,
                                     name: 'Tanoo I - Moon 1',

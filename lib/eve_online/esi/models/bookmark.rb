@@ -7,9 +7,6 @@ module EveOnline
         def as_json
           {
             bookmark_id: bookmark_id,
-            coordinate_x: coordinate_x,
-            coordinate_y: coordinate_y,
-            coordinate_z: coordinate_z,
             created: created,
             creator_id: creator_id,
             folder_id: folder_id,
@@ -23,18 +20,6 @@ module EveOnline
 
         def bookmark_id
           options['bookmark_id']
-        end
-
-        def coordinate_x
-          options['coordinates']['x'] if options['coordinates']
-        end
-
-        def coordinate_y
-          options['coordinates']['y'] if options['coordinates']
-        end
-
-        def coordinate_z
-          options['coordinates']['z'] if options['coordinates']
         end
 
         def created
@@ -51,6 +36,7 @@ module EveOnline
           options['folder_id']
         end
 
+        # TODO: extract to class Item
         def item_id
           options['item']['item_id'] if options['item']
         end
@@ -69,6 +55,10 @@ module EveOnline
 
         def notes
           options['notes']
+        end
+
+        def coordinates
+          @coordinates ||= Coordinates.new(options['coordinates'])
         end
       end
     end

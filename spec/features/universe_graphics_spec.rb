@@ -12,6 +12,8 @@ describe 'Get graphics' do
 
     specify { expect(subject.scope).to eq(nil) }
 
+    specify { expect(subject.not_modified?).to eq(false) }
+
     specify { expect(subject.graphic_ids.size).to eq(3_702) }
 
     specify { expect(subject.graphic_ids.first).to eq(20_480) }

@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-describe EveOnline::ESI::Models::Position do
+describe EveOnline::ESI::Models::Coordinates do
   it { should be_a(EveOnline::ESI::Models::Base) }
 
   let(:options) { double }
@@ -14,15 +14,15 @@ describe EveOnline::ESI::Models::Position do
   end
 
   describe '#as_json' do
-    let(:position) { described_class.new(options) }
+    let(:coordinate) { described_class.new(options) }
 
-    before { expect(position).to receive(:x).and_return(-928_621_543_221.3319) }
+    before { expect(coordinate).to receive(:x).and_return(-928_621_543_221.3319) }
 
-    before { expect(position).to receive(:y).and_return(297_645_715_142.40234) }
+    before { expect(coordinate).to receive(:y).and_return(297_645_715_142.40234) }
 
-    before { expect(position).to receive(:z).and_return(-971_212_198_300.4812) }
+    before { expect(coordinate).to receive(:z).and_return(-971_212_198_300.4812) }
 
-    subject { position.as_json }
+    subject { coordinate.as_json }
 
     its([:x]) { should eq(-928_621_543_221.3319) }
 

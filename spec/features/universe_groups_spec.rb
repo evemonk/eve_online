@@ -14,6 +14,8 @@ describe 'Get item groups' do
 
     specify { expect(subject.scope).to eq(nil) }
 
+    specify { expect(subject.not_modified?).to eq(false) }
+
     specify { expect(subject.page).to eq(1) }
 
     specify { expect(subject.total_pages).to eq(2) }

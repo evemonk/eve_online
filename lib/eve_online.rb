@@ -110,6 +110,7 @@ require 'eve_online/esi/war_killmails'
 require 'eve_online/esi/models/base'
 
 require 'eve_online/esi/models/position'
+require 'eve_online/esi/models/coordinates'
 require 'eve_online/esi/models/loyalty_point'
 require 'eve_online/esi/models/skill_queue_entry'
 require 'eve_online/esi/models/skill'

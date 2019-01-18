@@ -12,6 +12,8 @@ describe 'Get system jumps' do
 
     specify { expect(subject.scope).to eq(nil) }
 
+    specify { expect(subject.not_modified?).to eq(false) }
+
     specify { expect(subject.system_jumps.size).to eq(4979) }
 
     specify do
