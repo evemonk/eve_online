@@ -1,5 +1,9 @@
 # rubocop-rspec cops
 
+RSpec/DescribeClass:
+  Exclude:
+    - 'spec/features/**/*.rb'
+
 # Enable it later
 RSpec/NamedSubject:
   Enabled: false
