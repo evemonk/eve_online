@@ -9,7 +9,7 @@ describe EveOnline::ESI::UniverseStation do
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.evetech.net/v2/universe/stations/%<station_id>s/?datasource=%<datasource>s') }
+  specify { expect(described_class::API_PATH).to eq('/v2/universe/stations/%<station_id>s/?datasource=%<datasource>s') }
 
   describe '#initialize' do
     its(:token) { should eq(nil) }

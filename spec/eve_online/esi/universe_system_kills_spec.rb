@@ -5,7 +5,7 @@ require 'spec_helper'
 describe EveOnline::ESI::UniverseSystemKills do
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.evetech.net/v2/universe/system_kills/?datasource=%<datasource>s') }
+  specify { expect(described_class::API_PATH).to eq('/v2/universe/system_kills/?datasource=%<datasource>s') }
 
   describe '#initialize' do
     its(:token) { should eq(nil) }

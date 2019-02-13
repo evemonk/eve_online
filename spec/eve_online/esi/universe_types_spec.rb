@@ -5,7 +5,7 @@ require 'spec_helper'
 describe EveOnline::ESI::UniverseTypes do
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.evetech.net/v1/universe/types/?datasource=%<datasource>s&page=%<page>s') }
+  specify { expect(described_class::API_PATH).to eq('/v1/universe/types/?datasource=%<datasource>s&page=%<page>s') }
 
   describe '#initialize' do
     context 'without options' do

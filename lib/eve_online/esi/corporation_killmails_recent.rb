@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class CorporationKillmailsRecent < Base
-      API_ENDPOINT = 'https://esi.evetech.net/v1/corporations/%<corporation_id>s/killmails/recent/?datasource=%<datasource>s&page=%<page>s'
+      API_PATH = '/v1/corporations/%<corporation_id>s/killmails/recent/?datasource=%<datasource>s&page=%<page>s'
 
       attr_reader :corporation_id, :page
 
@@ -30,7 +30,7 @@ module EveOnline
       end
 
       def url
-        format(API_ENDPOINT, corporation_id: corporation_id, datasource: datasource, page: page)
+        format("#{ API_HOST }#{ API_PATH }", corporation_id: corporation_id, datasource: datasource, page: page)
       end
     end
   end

@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class UniverseAncestries < Base
-      API_ENDPOINT = 'https://esi.evetech.net/v1/universe/ancestries/?datasource=%<datasource>s'
+      API_PATH = '/v1/universe/ancestries/?datasource=%<datasource>s'
 
       def ancestries
         @ancestries ||=
@@ -19,7 +19,7 @@ module EveOnline
       def scope; end
 
       def url
-        format(API_ENDPOINT, datasource: datasource)
+        format("#{ API_HOST }#{ API_PATH }", datasource: datasource)
       end
     end
   end

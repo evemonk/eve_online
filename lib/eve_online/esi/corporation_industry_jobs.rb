@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class CorporationIndustryJobs < Base
-      API_ENDPOINT = 'https://esi.evetech.net/v1/corporations/%<corporation_id>s/industry/jobs/?datasource=%<datasource>s&include_completed=%<include_completed>s&page=%<page>s'
+      API_PATH = '/v1/corporations/%<corporation_id>s/industry/jobs/?datasource=%<datasource>s&include_completed=%<include_completed>s&page=%<page>s'
 
       attr_reader :corporation_id, :include_completed, :page
 
@@ -31,7 +31,7 @@ module EveOnline
       end
 
       def url
-        format(API_ENDPOINT, corporation_id: corporation_id, include_completed: include_completed, datasource: datasource, page: page)
+        format("#{ API_HOST }#{ API_PATH }", corporation_id: corporation_id, include_completed: include_completed, datasource: datasource, page: page)
       end
     end
   end

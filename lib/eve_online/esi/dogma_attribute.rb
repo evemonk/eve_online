@@ -7,7 +7,7 @@ module EveOnline
     class DogmaAttribute < Base
       extend Forwardable
 
-      API_ENDPOINT = 'https://esi.evetech.net/v1/dogma/attributes/%<attribute_id>s/?datasource=%<datasource>s'
+      API_PATH = '/v1/dogma/attributes/%<attribute_id>s/?datasource=%<datasource>s'
 
       attr_reader :id
 
@@ -28,7 +28,7 @@ module EveOnline
       def scope; end
 
       def url
-        format(API_ENDPOINT, attribute_id: id, datasource: datasource)
+        format("#{ API_HOST }#{ API_PATH }", attribute_id: id, datasource: datasource)
       end
     end
   end
