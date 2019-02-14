@@ -13,6 +13,7 @@
 * Remove `EveOnline::ESI::Models::Bookmark#coordinate_z`
 * Add `EveOnline::ESI::Models::Bookmark#coordinates`
 * Drop Rubinius support
+* Add ruby 2.6.0 write_timeout and write_timeout= support (#201)
 
 ## v0.23.0
 

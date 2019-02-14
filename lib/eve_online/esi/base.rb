@@ -13,11 +13,18 @@ module EveOnline
       attr_reader :token, :parser, :_read_timeout, :_open_timeout, :_etag,
                   :datasource, :language
 
+      if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6.0')
+        attr_reader :_write_timeout
+      end
+
       def initialize(options = {})
         @token = options.fetch(:token, nil)
         @parser = options.fetch(:parser, JSON)
         @_read_timeout = options.fetch(:read_timeout, 60)
         @_open_timeout = options.fetch(:open_timeout, 60)
+        if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6.0')
+          @_write_timeout = options.fetch(:write_timeout, 60)
+        end
         @_etag = options.fetch(:etag, nil)
         @datasource = options.fetch(:datasource, 'tranquility')
         @language = options.fetch(:language, 'en-us')
@@ -55,6 +62,16 @@ module EveOnline
         client.open_timeout = value
       end
 
+      if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6.0')
+        def write_timeout
+          client.write_timeout
+        end
+
+        def write_timeout=(value)
+          client.write_timeout = value
+        end
+      end
+
       def etag=(value)
         @_etag = value
       end
@@ -74,6 +91,9 @@ module EveOnline
           http = Net::HTTP.new(uri.host, uri.port)
           http.read_timeout = _read_timeout
           http.open_timeout = _open_timeout
+          if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6.0')
+            http.write_timeout = _write_timeout
+          end
           http.use_ssl = true
           http.verify_mode = OpenSSL::SSL::VERIFY_PEER
           # http.set_debug_output($stdout)
