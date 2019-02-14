@@ -12,6 +12,7 @@
 * Remove `EveOnline::ESI::Models::Bookmark#coordinate_y`
 * Remove `EveOnline::ESI::Models::Bookmark#coordinate_z`
 * Add `EveOnline::ESI::Models::Bookmark#coordinates`
+* Drop Rubinius support
 
 ## v0.23.0
 
