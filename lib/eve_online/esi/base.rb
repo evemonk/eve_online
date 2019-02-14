@@ -8,6 +8,8 @@ require 'active_support/time'
 module EveOnline
   module ESI
     class Base
+      API_HOST = 'https://esi.evetech.net'
+
       attr_reader :token, :parser, :_read_timeout, :_open_timeout, :_etag,
                   :datasource, :language
 

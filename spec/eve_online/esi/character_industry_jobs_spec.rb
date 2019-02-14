@@ -9,7 +9,7 @@ describe EveOnline::ESI::CharacterIndustryJobs do
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.evetech.net/v1/characters/%<character_id>s/industry/jobs/?datasource=%<datasource>s&include_completed=%<include_completed>s') }
+  specify { expect(described_class::API_PATH).to eq('/v1/characters/%<character_id>s/industry/jobs/?datasource=%<datasource>s&include_completed=%<include_completed>s') }
 
   describe '#initialize' do
     context 'with token and character_id' do

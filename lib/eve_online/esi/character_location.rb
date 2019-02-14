@@ -7,7 +7,7 @@ module EveOnline
     class CharacterLocation < Base
       extend Forwardable
 
-      API_ENDPOINT = 'https://esi.evetech.net/v1/characters/%<character_id>s/location/?datasource=%<datasource>s'
+      API_PATH = '/v1/characters/%<character_id>s/location/?datasource=%<datasource>s'
 
       attr_reader :character_id
 
@@ -29,7 +29,7 @@ module EveOnline
       end
 
       def url
-        format(API_ENDPOINT, character_id: character_id, datasource: datasource)
+        format("#{ API_HOST }#{ API_PATH }", character_id: character_id, datasource: datasource)
       end
     end
   end

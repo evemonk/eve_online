@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class UniverseSystemJumps < Base
-      API_ENDPOINT = 'https://esi.evetech.net/v1/universe/system_jumps/?datasource=%<datasource>s'
+      API_PATH = '/v1/universe/system_jumps/?datasource=%<datasource>s'
 
       def system_jumps
         @system_jumps ||=
@@ -19,7 +19,7 @@ module EveOnline
       def scope; end
 
       def url
-        format(API_ENDPOINT, datasource: datasource)
+        format("#{ API_HOST }#{ API_PATH }", datasource: datasource)
       end
     end
   end

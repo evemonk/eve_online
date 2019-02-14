@@ -7,7 +7,7 @@ module EveOnline
     class UniverseConstellation < Base
       extend Forwardable
 
-      API_ENDPOINT = 'https://esi.evetech.net/v1/universe/constellations/%<constellation_id>s/?datasource=%<datasource>s'
+      API_PATH = '/v1/universe/constellations/%<constellation_id>s/?datasource=%<datasource>s'
 
       attr_reader :id
 
@@ -27,7 +27,7 @@ module EveOnline
       def scope; end
 
       def url
-        format(API_ENDPOINT, constellation_id: id, datasource: datasource)
+        format("#{ API_HOST }#{ API_PATH }", constellation_id: id, datasource: datasource)
       end
     end
   end

@@ -7,7 +7,7 @@ module EveOnline
     class UniverseRegion < Base
       extend Forwardable
 
-      API_ENDPOINT = 'https://esi.evetech.net/v1/universe/regions/%<region_id>s/?datasource=%<datasource>s'
+      API_PATH = '/v1/universe/regions/%<region_id>s/?datasource=%<datasource>s'
 
       attr_reader :id
 
@@ -27,7 +27,7 @@ module EveOnline
       def scope; end
 
       def url
-        format(API_ENDPOINT, region_id: id, datasource: datasource)
+        format("#{ API_HOST }#{ API_PATH }", region_id: id, datasource: datasource)
       end
     end
   end

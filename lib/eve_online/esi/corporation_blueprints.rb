@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class CorporationBlueprints < Base
-      API_ENDPOINT = 'https://esi.evetech.net/v2/corporations/%<corporation_id>s/blueprints/?datasource=%<datasource>s&page=%<page>s'
+      API_PATH = '/v2/corporations/%<corporation_id>s/blueprints/?datasource=%<datasource>s&page=%<page>s'
 
       attr_reader :corporation_id, :page
 
@@ -30,7 +30,7 @@ module EveOnline
       end
 
       def url
-        format(API_ENDPOINT, corporation_id: corporation_id, datasource: datasource, page: page)
+        format("#{ API_HOST }#{ API_PATH }", corporation_id: corporation_id, datasource: datasource, page: page)
       end
     end
   end

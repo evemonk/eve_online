@@ -9,7 +9,7 @@ describe EveOnline::ESI::CorporationKillmailsRecent do
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_ENDPOINT).to eq('https://esi.evetech.net/v1/corporations/%<corporation_id>s/killmails/recent/?datasource=%<datasource>s&page=%<page>s') }
+  specify { expect(described_class::API_PATH).to eq('/v1/corporations/%<corporation_id>s/killmails/recent/?datasource=%<datasource>s&page=%<page>s') }
 
   describe '#initialize' do
     context 'without options' do

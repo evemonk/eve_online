@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class CharacterAssetsLocations < Base
-      API_ENDPOINT = 'https://esi.evetech.net/v2/characters/%<character_id>s/assets/locations/?datasource=%<datasource>s'
+      API_PATH = '/v2/characters/%<character_id>s/assets/locations/?datasource=%<datasource>s'
 
       attr_reader :character_id, :item_ids
 
@@ -38,7 +38,7 @@ module EveOnline
       end
 
       def url
-        format(API_ENDPOINT, character_id: character_id, datasource: datasource)
+        format("#{ API_HOST }#{ API_PATH }", character_id: character_id, datasource: datasource)
       end
     end
   end

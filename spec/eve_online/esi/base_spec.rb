@@ -3,6 +3,8 @@
 require 'spec_helper'
 
 describe EveOnline::ESI::Base do
+  specify { expect(described_class::API_HOST).to eq('https://esi.evetech.net') }
+
   describe '#initialize' do
     context 'with options' do
       let(:parser) { double }
