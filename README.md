@@ -810,7 +810,7 @@ dogma_attribute.published # => nil
 dogma_attribute.stackable # => true
 dogma_attribute.unit_id # => nil
 
-# TODO: dogma_attribute.etag
+dogma_attribute.etag # => "acc1e563574a55f79ebe4a2a99845dd6c28f4e412e11fd084b8485fd"
 ```
 
 #### Get dynamic item information
