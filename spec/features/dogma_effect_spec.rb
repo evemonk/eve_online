@@ -17,7 +17,7 @@ describe 'Get effect information' do
     specify { expect(subject.not_modified?).to eq(false) }
 
     specify do
-      expect(subject.as_json).to eq(description: "Automatically generated effect",
+      expect(subject.as_json).to eq(description: 'Automatically generated effect',
                                     disallow_auto_repeat: nil,
                                     discharge_attribute_id: nil,
                                     display_name: '',
