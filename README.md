@@ -898,7 +898,7 @@ modifier.modified_attribute_id # => 73
 modifier.modifying_attribute_id # => 2458
 modifier.operator # => 6
 
-# TODO: dogma_effect.etag
+dogma_effect.etag # => "acc1e563574a55f79ebe4a2a99845dd6c28f4e412e11fd084b8485fd"
 ```
 
 ### Faction Warfare
