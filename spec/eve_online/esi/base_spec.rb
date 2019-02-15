@@ -18,7 +18,11 @@ describe EveOnline::ESI::Base do
           etag: '6f2d3caa79a79bc9e61aa058e18905faac5e293fa1729637648ce9a1',
           datasource: 'singularity',
           language: 'ru'
-        }
+        }.tap do |hash|
+          if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6.0')
+            hash[:write_timeout] = 50
+          end
+        end
       end
 
       subject { described_class.new(options) }
@@ -30,6 +34,10 @@ describe EveOnline::ESI::Base do
       its(:_read_timeout) { should eq(30) }
 
       its(:_open_timeout) { should eq(45) }
+
+      if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6.0')
+        its(:_write_timeout) { should eq(50) }
+      end
 
       its(:_etag) { should eq('6f2d3caa79a79bc9e61aa058e18905faac5e293fa1729637648ce9a1') }
 
@@ -46,6 +54,10 @@ describe EveOnline::ESI::Base do
       its(:_read_timeout) { should eq(60) }
 
       its(:_open_timeout) { should eq(60) }
+
+      if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6.0')
+        its(:_write_timeout) { should eq(60) }
+      end
 
       its(:_etag) { should eq(nil) }
 
@@ -135,6 +147,40 @@ describe EveOnline::ESI::Base do
     specify { expect { subject.send(:open_timeout=, value) }.not_to raise_error }
   end
 
+  if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6.0')
+    describe '#write_timeout' do
+      before do
+        #
+        # subject.client.write_timeout
+        #
+        expect(subject).to receive(:client) do
+          double.tap do |a|
+            expect(a).to receive(:write_timeout)
+          end
+        end
+      end
+
+      specify { expect { subject.write_timeout }.not_to raise_error }
+    end
+
+    describe '#write_timeout=' do
+      let(:value) { double }
+
+      before do
+        #
+        # subject.client.write_timeout = value
+        #
+        expect(subject).to receive(:client) do
+          double.tap do |a|
+            expect(a).to receive(:write_timeout=).with(value)
+          end
+        end
+      end
+
+      specify { expect { subject.send(:write_timeout=, value) }.not_to raise_error }
+    end
+  end
+
   describe '#etag=' do
     specify { expect { subject.etag = '123abc' }.to change { subject._etag }.from(nil).to('123abc') }
   end
@@ -203,6 +249,10 @@ describe EveOnline::ESI::Base do
 
       let(:_open_timeout) { double }
 
+      if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6.0')
+        let(:_write_timeout) { double }
+      end
+
       before { expect(subject).to receive(:uri).and_return(uri).twice }
 
       before { expect(Net::HTTP).to receive(:new).with(host, port).and_return(http) }
@@ -211,9 +261,17 @@ describe EveOnline::ESI::Base do
 
       before { expect(subject).to receive(:_open_timeout).and_return(_open_timeout) }
 
+      if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6.0')
+        before { expect(subject).to receive(:_write_timeout).and_return(_write_timeout) }
+      end
+
       before { expect(http).to receive(:read_timeout=).with(_read_timeout) }
 
       before { expect(http).to receive(:open_timeout=).with(_open_timeout) }
+
+      if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6.0')
+        before { expect(http).to receive(:write_timeout=).with(_write_timeout) }
+      end
 
       before { expect(http).to receive(:use_ssl=).with(true) }
 
