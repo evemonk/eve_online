@@ -213,7 +213,7 @@ character_assets_locations.etag # => NotImplementedError
 #### Get character asset names
 
 ```ruby
-options = { token: 'token123', character_id: 1337512245, item_ids: [1001215602246] }
+options = { token: 'token123', character_id: 1_337_512_245, item_ids: [1_001_215_602_246] }
 
 character_assets_names = EveOnline::ESI::CharacterAssetsNames.new(options)
 
@@ -229,7 +229,7 @@ character_asset_name.as_json # => {:item_id=>1001215602246,
 character_asset_name.item_id # => 1001215602246
 character_asset_name.name # => "HOLE"
 
-# TODO: character_assets_names.etag
+character_assets_names.etag # => NotImplementedError
 ```
 
 #### Get corporation assets
