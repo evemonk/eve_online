@@ -185,7 +185,7 @@ character_assets.etag # => "29da11b30974e55cd440a879199a629a8492a4c0a49894a2cd22
 #### Get character asset locations
 
 ```ruby
-options = { token: 'token123', character_id: 1337512245, item_ids: [1001215602246] }
+options = { token: 'token123', character_id: 1_337_512_245, item_ids: [1_001_215_602_246] }
 
 character_assets_locations = EveOnline::ESI::CharacterAssetsLocations.new(options)
 
@@ -207,7 +207,7 @@ asset_location.position.x # => -928621543221.3319
 asset_location.position.y # => 297645715142.40234
 asset_location.position.z # => -971212198300.4812
 
-# TODO: character_assets_locations.etag
+character_assets_locations.etag # => NotImplementedError
 ```
 
 #### Get character asset names

@@ -12,7 +12,7 @@ http_interactions:
       Accept:
       - application/json
       User-Agent:
-      - EveOnline API (https://github.com/biow0lf/eve_online) v0.18.0
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.24.0
       Accept-Language:
       - en-us
       Authorization:
@@ -25,7 +25,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 25 Sep 2018 20:11:05 GMT
+      - Sun, 17 Feb 2019 13:00:01 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
@@ -51,12 +51,12 @@ http_interactions:
       X-Esi-Error-Limit-Remain:
       - '100'
       X-Esi-Error-Limit-Reset:
-      - '55'
+      - '59'
       X-Esi-Request-Id:
-      - 3930fe65-6b9c-4961-bd3d-d3a215960ef9
+      - 348af090-94d9-4642-b6c5-e44bf7c3b3ce
     body:
       encoding: UTF-8
       string: '[{"item_id":1001215602246,"position":{"x":-928621543221.3319,"y":297645715142.40234,"z":-971212198300.4812}}]'
     http_version:
-  recorded_at: Tue, 25 Sep 2018 20:11:06 GMT
+  recorded_at: Sun, 17 Feb 2019 13:00:01 GMT
 recorded_with: VCR 4.0.0
