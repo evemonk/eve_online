@@ -1,6 +1,6 @@
 # Changelog
 
-## master
+## v0.24.0
 
 * Remove `implants` from `EveOnline::ESI::Models::JumpClone#as_json`
 * Rename `EveOnline::ESI::Models::JumpClone#implants` to `#implant_ids`
