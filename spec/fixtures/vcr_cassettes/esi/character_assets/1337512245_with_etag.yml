@@ -1,0 +1,68 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://esi.evetech.net/v3/characters/1337512245/assets/?datasource=tranquility&page=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/json
+      User-Agent:
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.24.0
+      Accept-Language:
+      - en-us
+      Authorization:
+      - Bearer token123
+      If-None-Match:
+      - 29da11b30974e55cd440a879199a629a8492a4c0a49894a2cd22f90b
+  response:
+    status:
+      code: 304
+      message: Not Modified
+    headers:
+      Date:
+      - Sun, 17 Feb 2019 12:53:30 GMT
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,If-None-Match,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,HEAD,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,ETag,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Allow:
+      - GET,HEAD,OPTIONS
+      Cache-Control:
+      - private
+      Etag:
+      - '"29da11b30974e55cd440a879199a629a8492a4c0a49894a2cd22f90b"'
+      Expires:
+      - Sun, 17 Feb 2019 13:50:44 GMT
+      Last-Modified:
+      - Sun, 17 Feb 2019 12:50:44 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '30'
+      X-Esi-Request-Id:
+      - 4850c35a-ee13-44d9-80f8-0c3926b0ecc9
+      X-Pages:
+      - '1'
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version:
+  recorded_at: Sun, 17 Feb 2019 12:53:30 GMT
+recorded_with: VCR 4.0.0

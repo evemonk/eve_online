@@ -147,7 +147,7 @@ alliance_icon.etag # => "e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0
 #### Get character assets
 
 ```ruby
-options = { token: 'token123', character_id: 90729314, page: 1 }
+options = { token: 'token123', character_id: 90_729_314, page: 1 }
 
 character_assets = EveOnline::ESI::CharacterAssets.new(options)
 
@@ -179,7 +179,7 @@ asset.location_type # => "other"
 asset.quantity # => 1
 asset.type_id # => 1010
 
-# TODO: character_assets.etag
+character_assets.etag # => "29da11b30974e55cd440a879199a629a8492a4c0a49894a2cd22f90b"
 ```
 
 #### Get character asset locations
