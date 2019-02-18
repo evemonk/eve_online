@@ -4,6 +4,7 @@
 
 * `EveOnline::ESI::CharacterAssetsLocations#etag` raise `NotImplementedError` from now
 * `EveOnline::ESI::CharacterAssetsNames#etag` raise `NotImplementedError` from now
+* Add corporation roles support
 
 ## v0.24.0
 

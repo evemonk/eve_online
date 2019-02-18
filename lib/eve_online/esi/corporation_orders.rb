@@ -29,10 +29,9 @@ module EveOnline
         'esi-markets.read_corporation_orders.v1'
       end
 
-      # TODO: add roles support
-      # def roles
-      #   ['Accountant', 'Trader']
-      # end
+      def roles
+        ['Accountant', 'Trader']
+      end
 
       def url
         format("#{ API_HOST }#{ API_PATH }", corporation_id: corporation_id, datasource: datasource, page: page)
