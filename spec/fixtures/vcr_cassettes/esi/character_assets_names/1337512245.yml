@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://esi.evetech.net/v2/characters/1337512245/assets/locations/?datasource=tranquility
+    uri: https://esi.evetech.net/v1/characters/1337512245/assets/names/?datasource=tranquility
     body:
       encoding: UTF-8
       string: "[1001215602246]"
@@ -25,11 +25,11 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 17 Feb 2019 13:00:01 GMT
+      - Sun, 17 Feb 2019 13:09:31 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
-      - '109'
+      - '41'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -51,12 +51,12 @@ http_interactions:
       X-Esi-Error-Limit-Remain:
       - '100'
       X-Esi-Error-Limit-Reset:
-      - '59'
+      - '29'
       X-Esi-Request-Id:
-      - 348af090-94d9-4642-b6c5-e44bf7c3b3ce
+      - 39aca15a-2d8b-4393-b269-5c1491c5c858
     body:
       encoding: UTF-8
-      string: '[{"item_id":1001215602246,"position":{"x":-928621543221.3319,"y":297645715142.40234,"z":-971212198300.4812}}]'
+      string: '[{"item_id":1001215602246,"name":"HOLE"}]'
     http_version:
-  recorded_at: Sun, 17 Feb 2019 13:00:01 GMT
+  recorded_at: Sun, 17 Feb 2019 13:09:31 GMT
 recorded_with: VCR 4.0.0

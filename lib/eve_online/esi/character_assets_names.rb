@@ -37,6 +37,10 @@ module EveOnline
         'esi-assets.read_assets.v1'
       end
 
+      def etag
+        raise NotImplementedError
+      end
+
       def url
         format("#{ API_HOST }#{ API_PATH }", character_id: character_id, datasource: datasource)
       end

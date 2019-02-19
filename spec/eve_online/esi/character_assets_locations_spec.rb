@@ -90,6 +90,10 @@ describe EveOnline::ESI::CharacterAssetsLocations do
     specify { expect(subject.scope).to eq('esi-assets.read_assets.v1') }
   end
 
+  describe '#etag' do
+    specify { expect { subject.etag }.to raise_error(NotImplementedError) }
+  end
+
   describe '#url' do
     specify do
       expect(subject.url).to eq('https://esi.evetech.net/v2/characters/12345678/assets/locations/?datasource=tranquility')

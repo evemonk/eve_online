@@ -1,11 +1,11 @@
 ---
 http_interactions:
 - request:
-    method: post
-    uri: https://esi.evetech.net/v2/characters/1337512245/assets/locations/?datasource=tranquility
+    method: get
+    uri: https://esi.evetech.net/v3/characters/1337512245/assets/?datasource=tranquility&page=1
     body:
-      encoding: UTF-8
-      string: "[1001215602246]"
+      encoding: US-ASCII
+      string: ''
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -17,19 +17,15 @@ http_interactions:
       - en-us
       Authorization:
       - Bearer token123
-      Content-Type:
-      - application/json
+      If-None-Match:
+      - 29da11b30974e55cd440a879199a629a8492a4c0a49894a2cd22f90b
   response:
     status:
-      code: 200
-      message: OK
+      code: 304
+      message: Not Modified
     headers:
       Date:
-      - Sun, 17 Feb 2019 13:00:01 GMT
-      Content-Type:
-      - application/json; charset=UTF-8
-      Content-Length:
-      - '109'
+      - Sun, 17 Feb 2019 12:53:30 GMT
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -37,7 +33,7 @@ http_interactions:
       Access-Control-Allow-Headers:
       - Content-Type,Authorization,If-None-Match,X-User-Agent
       Access-Control-Allow-Methods:
-      - POST,OPTIONS
+      - GET,HEAD,OPTIONS
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Expose-Headers:
@@ -45,18 +41,28 @@ http_interactions:
       Access-Control-Max-Age:
       - '600'
       Allow:
-      - OPTIONS,POST
+      - GET,HEAD,OPTIONS
+      Cache-Control:
+      - private
+      Etag:
+      - '"29da11b30974e55cd440a879199a629a8492a4c0a49894a2cd22f90b"'
+      Expires:
+      - Sun, 17 Feb 2019 13:50:44 GMT
+      Last-Modified:
+      - Sun, 17 Feb 2019 12:50:44 GMT
       Strict-Transport-Security:
       - max-age=31536000
       X-Esi-Error-Limit-Remain:
       - '100'
       X-Esi-Error-Limit-Reset:
-      - '59'
+      - '30'
       X-Esi-Request-Id:
-      - 348af090-94d9-4642-b6c5-e44bf7c3b3ce
+      - 4850c35a-ee13-44d9-80f8-0c3926b0ecc9
+      X-Pages:
+      - '1'
     body:
       encoding: UTF-8
-      string: '[{"item_id":1001215602246,"position":{"x":-928621543221.3319,"y":297645715142.40234,"z":-971212198300.4812}}]'
+      string: ''
     http_version:
-  recorded_at: Sun, 17 Feb 2019 13:00:01 GMT
+  recorded_at: Sun, 17 Feb 2019 12:53:30 GMT
 recorded_with: VCR 4.0.0

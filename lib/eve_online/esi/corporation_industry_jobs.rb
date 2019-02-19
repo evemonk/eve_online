@@ -30,6 +30,10 @@ module EveOnline
         'esi-industry.read_corporation_jobs.v1'
       end
 
+      def roles
+        ['Factory_Manager']
+      end
+
       def url
         format("#{ API_HOST }#{ API_PATH }", corporation_id: corporation_id, include_completed: include_completed, datasource: datasource, page: page)
       end

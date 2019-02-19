@@ -32,4 +32,6 @@ describe 'Get character asset locations' do
                                                                   y: 297_645_715_142.40234,
                                                                   z: -971_212_198_300.4812)
   end
+
+  specify { expect { subject.etag }.to raise_error(NotImplementedError) }
 end

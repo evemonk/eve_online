@@ -2,8 +2,8 @@
 
 module EveOnline
   module ESI
-    class CorporationOrders < Base
-      API_PATH = '/v3/corporations/%<corporation_id>s/orders/?datasource=%<datasource>s&page=%<page>s'
+    class CorporationAssets < Base
+      API_PATH = '/v3/corporations/%<corporation_id>s/assets/?datasource=%<datasource>s&page=%<page>s'
 
       attr_reader :corporation_id, :page
 
@@ -14,23 +14,23 @@ module EveOnline
         @page = options.fetch(:page, 1)
       end
 
-      def orders
-        @orders ||=
+      def assets
+        @assets ||=
           begin
             output = []
-            response.each do |order|
-              output << Models::CorporationOrder.new(order)
+            response.each do |asset|
+              output << Models::Asset.new(asset)
             end
             output
           end
       end
 
       def scope
-        'esi-markets.read_corporation_orders.v1'
+        'esi-assets.read_corporation_assets.v1'
       end
 
       def roles
-        ['Accountant', 'Trader']
+        ['Director']
       end
 
       def url

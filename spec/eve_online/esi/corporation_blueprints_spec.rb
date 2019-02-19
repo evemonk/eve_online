@@ -86,6 +86,10 @@ describe EveOnline::ESI::CorporationBlueprints do
     specify { expect(subject.scope).to eq('esi-corporations.read_blueprints.v1') }
   end
 
+  describe '#roles' do
+    specify { expect(subject.roles).to eq(['Director']) }
+  end
+
   describe '#url' do
     specify do
       expect(subject.url).to eq('https://esi.evetech.net/v2/corporations/12345678/blueprints/?datasource=tranquility&page=1')

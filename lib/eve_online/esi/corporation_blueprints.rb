@@ -29,6 +29,10 @@ module EveOnline
         'esi-corporations.read_blueprints.v1'
       end
 
+      def roles
+        ['Director']
+      end
+
       def url
         format("#{ API_HOST }#{ API_PATH }", corporation_id: corporation_id, datasource: datasource, page: page)
       end

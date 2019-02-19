@@ -80,6 +80,10 @@ describe EveOnline::ESI::CorporationKillmailsRecent do
     specify { expect(subject.scope).to eq('esi-killmails.read_corporation_killmails.v1') }
   end
 
+  describe '#roles' do
+    specify { expect(subject.roles).to eq(['Director']) }
+  end
+
   describe '#url' do
     specify do
       expect(subject.url).to eq('https://esi.evetech.net/v1/corporations/12345678/killmails/recent/?datasource=tranquility&page=1')

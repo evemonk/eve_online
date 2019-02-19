@@ -110,6 +110,10 @@ describe EveOnline::ESI::CorporationIndustryJobs do
     specify { expect(subject.scope).to eq('esi-industry.read_corporation_jobs.v1') }
   end
 
+  describe '#roles' do
+    specify { expect(subject.roles).to eq(['Factory_Manager']) }
+  end
+
   describe '#url' do
     specify do
       expect(subject.url).to eq('https://esi.evetech.net/v1/corporations/12345678/industry/jobs/?datasource=tranquility&include_completed=false&page=1')

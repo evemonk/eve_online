@@ -93,6 +93,10 @@ describe EveOnline::ESI::CorporationOrders do
     specify { expect(subject.scope).to eq('esi-markets.read_corporation_orders.v1') }
   end
 
+  describe '#roles' do
+    specify { expect(subject.roles).to eq(['Accountant', 'Trader']) }
+  end
+
   describe '#url' do
     specify do
       expect(subject.url).to eq('https://esi.evetech.net/v3/corporations/12345678/orders/?datasource=tranquility&page=1')

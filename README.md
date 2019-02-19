@@ -147,7 +147,7 @@ alliance_icon.etag # => "e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0
 #### Get character assets
 
 ```ruby
-options = { token: 'token123', character_id: 90729314, page: 1 }
+options = { token: 'token123', character_id: 90_729_314, page: 1 }
 
 character_assets = EveOnline::ESI::CharacterAssets.new(options)
 
@@ -179,13 +179,13 @@ asset.location_type # => "other"
 asset.quantity # => 1
 asset.type_id # => 1010
 
-# TODO: character_assets.etag
+character_assets.etag # => "29da11b30974e55cd440a879199a629a8492a4c0a49894a2cd22f90b"
 ```
 
 #### Get character asset locations
 
 ```ruby
-options = { token: 'token123', character_id: 1337512245, item_ids: [1001215602246] }
+options = { token: 'token123', character_id: 1_337_512_245, item_ids: [1_001_215_602_246] }
 
 character_assets_locations = EveOnline::ESI::CharacterAssetsLocations.new(options)
 
@@ -207,13 +207,13 @@ asset_location.position.x # => -928621543221.3319
 asset_location.position.y # => 297645715142.40234
 asset_location.position.z # => -971212198300.4812
 
-# TODO: character_assets_locations.etag
+character_assets_locations.etag # => NotImplementedError
 ```
 
 #### Get character asset names
 
 ```ruby
-options = { token: 'token123', character_id: 1337512245, item_ids: [1001215602246] }
+options = { token: 'token123', character_id: 1_337_512_245, item_ids: [1_001_215_602_246] }
 
 character_assets_names = EveOnline::ESI::CharacterAssetsNames.new(options)
 
@@ -229,10 +229,46 @@ character_asset_name.as_json # => {:item_id=>1001215602246,
 character_asset_name.item_id # => 1001215602246
 character_asset_name.name # => "HOLE"
 
-# TODO: character_assets_names.etag
+character_assets_names.etag # => NotImplementedError
 ```
 
 #### Get corporation assets
+
+```ruby
+options = { token: 'token123', corporation_id: 98_134_807, page: 1 }
+
+corporation_assets = EveOnline::ESI::CorporationAssets.new(options)
+
+corporation_assets.scope # => "esi-assets.read_corporation_assets.v1"
+
+corporation_assets.page # => 1
+
+corporation_assets.total_pages # => 1
+
+corporation_assets.assets.size # => 486
+
+asset = corporation_assets.assets.first
+
+asset.as_json # => {:is_blueprint_copy=>true,
+              #     :is_singleton=>true,
+              #     :item_id=>716338097,
+              #     :location_flag=>"Hangar",
+              #     :location_id=>1027847409779,
+              #     :location_type=>"other",
+              #     :quantity=>1
+              #     :type_id=>1010}
+
+asset.is_blueprint_copy # => true
+asset.is_singleton # => true
+asset.item_id # => 716338097
+asset.location_flag # => "Hangar"
+asset.location_id # => 1027847409779
+asset.location_type # => "other"
+asset.quantity # => 1
+asset.type_id # => 1010
+
+# TODO: corporation_assets.etag
+```
 
 #### Get corporation asset locations
 
@@ -243,7 +279,7 @@ character_asset_name.name # => "HOLE"
 #### List bookmarks
 
 ```ruby
-options = { token: 'token123', character_id: 90729314, page: 1 }
+options = { token: 'token123', character_id: 90_729_314, page: 1 }
 
 character_bookmarks = EveOnline::ESI::CharacterBookmarks.new(options)
 
@@ -386,7 +422,7 @@ character.name # => "Green Black"
 character.race_id # => 2
 character.security_status # => 1.8694881661345457
 
-# TODO: character.etag
+character.etag # => "22c39689783a86032b8d43fa0b2e8f4809c4f38a585e39471035aa8b"
 ```
 
 #### Get agents research
@@ -687,7 +723,7 @@ corporation.etag # => "046430260be73e5d7ad3a9251954310bd547498eeb38f99e8d305796"
 #### Get corporation blueprints
 
 ```ruby
-options = options = { token: 'token123', corporation_id: 98260237, page: 1 }
+options = { token: 'token123', corporation_id: 98260237, page: 1 }
 
 corporation_blueprints = EveOnline::ESI::CorporationBlueprints.new(options)
 
@@ -719,7 +755,7 @@ blueprint.runs # => 300
 blueprint.time_efficiency # => 20
 blueprint.type_id # => 31803
 
-# TODO: add roles
+corporation_blueprints.roles # => ["Director"]
 
 # TODO: corporation_blueprints.etag
 ```
@@ -1035,7 +1071,7 @@ job.successful_runs # => nil
 #### List corporation industry jobs
 
 ```ruby
-options = { token: 'token123', corporation_id: 98146630 }
+options = { token: 'token123', corporation_id: 98_146_630 }
 
 corporation_jobs = EveOnline::ESI::CorporationIndustryJobs.new(options)
 
@@ -1095,6 +1131,8 @@ job.start_date # => Sat, 18 Nov 2017 11:20:14 UTC +00:00
 job.status # => "active"
 job.successful_runs # => nil
 
+corporation_jobs.roles # => ["Factory_Manager"]
+
 # TODO: corporation_jobs.etag
 ```
 
@@ -1111,7 +1149,7 @@ job.successful_runs # => nil
 #### Get a character's recent kills and losses
 
 ```ruby
-options = { token: 'token123', character_id: 90729314 }
+options = { token: 'token123', character_id: 90_729_314 }
 
 character_killmails = EveOnline::ESI::CharacterKillmailsRecent.new(options)
 
@@ -1137,7 +1175,7 @@ killmail.killmail_id # => 72410059
 #### Get a corporation's recent kills and losses
 
 ```ruby
-options = { token: 'token123', corporation_id: 98146630 }
+options = { token: 'token123', corporation_id: 98_146_630 }
 
 corporation_killmails = EveOnline::ESI::CorporationKillmailsRecent.new(options)
 
@@ -1156,6 +1194,8 @@ killmail.as_json # => {:killmail_hash=>"07f7ef1d7f6090e78d8e85b4a98e680f67b5e9d5
 
 killmail.killmail_hash # => "07f7ef1d7f6090e78d8e85b4a98e680f67b5e9d5"
 killmail.killmail_id # => 72410059
+
+corporation_killmails.roles # => ["Director"]
 
 # TODO: corporation_killmails.etag
 ```
@@ -1313,7 +1353,7 @@ order.volume_total
 #### List open orders from a corporation
 
 ```ruby
-options = { token: 'token123', corporation_id: 1000168, page: 1 }
+options = { token: 'token123', corporation_id: 1_000_168, page: 1 }
 
 corporation_orders = EveOnline::ESI::CorporationOrders.new(options)
 
@@ -1348,6 +1388,8 @@ order.wallet_division
 # TODO: update example
 
 # TODO: update
+
+corporation_orders.roles # => ["Accountant", "Trader"]
 
 # TODO: corporation_orders.etag
 ```

@@ -1,5 +1,12 @@
 # Changelog
 
+## master
+
+* `EveOnline::ESI::CharacterAssetsLocations#etag` raise `NotImplementedError` from now
+* `EveOnline::ESI::CharacterAssetsNames#etag` raise `NotImplementedError` from now
+* Add corporation roles support
+* Add `EveOnline::ESI::CorporationAssets`
+
 ## v0.24.0
 
 * Remove `implants` from `EveOnline::ESI::Models::JumpClone#as_json`
