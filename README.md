@@ -241,6 +241,8 @@ corporation_assets = EveOnline::ESI::CorporationAssets.new(options)
 
 corporation_assets.scope # => "esi-assets.read_corporation_assets.v1"
 
+corporation_assets.roles # => ["Director"]
+
 corporation_assets.page # => 1
 
 corporation_assets.total_pages # => 1
@@ -272,7 +274,57 @@ asset.type_id # => 1010
 
 #### Get corporation asset locations
 
+```ruby
+options = { token: 'token123', corporation_id: 98_134_807, item_ids: [1_001_215_602_246] }
+
+corporation_assets_locations = EveOnline::ESI::CorporationAssetsLocations.new(options)
+
+corporation_assets_locations.scope # => "esi-assets.read_corporation_assets.v1"
+
+corporation_assets_locations.roles # => ["Director"]
+
+corporation_assets_locations.assets_locations.size # => 1
+
+asset_location = corporation_assets_locations.assets_locations.first
+
+asset_location.as_json # => {:item_id=>1001215602246}
+
+asset_location.item_id # => 1001215602246
+
+asset_location.position.as_json # => {:x=>-928621543221.3319,
+                                #     :y=>297645715142.40234,
+                                #     :z=>-971212198300.4812}
+
+asset_location.position.x # => -928621543221.3319
+asset_location.position.y # => 297645715142.40234
+asset_location.position.z # => -971212198300.4812
+
+corporation_assets_locations.etag # => NotImplementedError
+```
+
 #### Get corporation asset names
+
+```ruby
+options = { token: 'token123', corporation_id: 98_134_807, item_ids: [1_001_215_602_246] }
+
+corporation_assets_names = EveOnline::ESI::CorporationAssetsNames.new(options)
+
+corporation_assets_names.scope # => "esi-assets.read_corporation_assets.v1"
+
+corporation_assets_names.roles # => ["Director"]
+
+corporation_assets_names.assets_names.size # => 1
+
+corporation_asset_name = corporation_assets_names.assets_names.first
+
+corporation_asset_name.as_json # => {:item_id=>1001215602246,
+                               #     :name=>"HOLE"}
+
+corporation_asset_name.item_id # => 1001215602246
+corporation_asset_name.name # => "HOLE"
+
+corporation_assets_names.etag # => NotImplementedError
+```
 
 ### Bookmarks
 
@@ -323,7 +375,7 @@ bookmark.coordinates.as_json # => {:x=>-144951231521.81625,
 #### List bookmark folders
 
 ```ruby
-options = { token: 'token123', character_id: 90729314, page: 1 }
+options = { token: 'token123', character_id: 90_729_314, page: 1 }
 
 character_bookmark_folders = EveOnline::ESI::CharacterBookmarkFolders.new(options)
 
@@ -355,7 +407,7 @@ bookmark_folder.name # => "Icecream"
 #### List calendar event summaries
 
 ```ruby
-options = { token: 'token123', character_id: 90729314 }
+options = { token: 'token123', character_id: 90_729_314 }
 
 character_calendar = EveOnline::ESI::CharacterCalendar.new(options)
 

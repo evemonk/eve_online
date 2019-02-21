@@ -6,6 +6,8 @@
 * `EveOnline::ESI::CharacterAssetsNames#etag` raise `NotImplementedError` from now
 * Add corporation roles support
 * Add `EveOnline::ESI::CorporationAssets`
+* Add `EveOnline::ESI::CorporationAssetsLocations`
+* Add `EveOnline::ESI::CorporationAssetsNames`
 
 ## v0.24.0
 

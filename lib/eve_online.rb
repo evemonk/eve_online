@@ -27,6 +27,8 @@ require 'eve_online/esi/character_assets'
 require 'eve_online/esi/character_assets_locations'
 require 'eve_online/esi/character_assets_names'
 require 'eve_online/esi/corporation_assets'
+require 'eve_online/esi/corporation_assets_locations'
+require 'eve_online/esi/corporation_assets_names'
 
 require 'eve_online/esi/character_bookmarks'
 require 'eve_online/esi/character_bookmark_folders'
