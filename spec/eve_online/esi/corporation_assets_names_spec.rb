@@ -90,6 +90,10 @@ describe EveOnline::ESI::CorporationAssetsNames do
     specify { expect(subject.roles).to eq(['Director']) }
   end
 
+  describe '#etag' do
+    specify { expect { subject.etag }.to raise_error(NotImplementedError) }
+  end
+
   describe '#url' do
     specify do
       expect(subject.url).to eq('https://esi.evetech.net/v1/corporations/12345678/assets/names/?datasource=tranquility')
