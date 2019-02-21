@@ -221,13 +221,13 @@ character_assets_names.scope # => "esi-assets.read_assets.v1"
 
 character_assets_names.assets_names.size # => 1
 
-character_asset_name = character_assets_names.assets_names.first
+asset_name = character_assets_names.assets_names.first
 
-character_asset_name.as_json # => {:item_id=>1001215602246,
-                             #     :name=>"HOLE"}
+asset_name.as_json # => {:item_id=>1001215602246,
+                   #     :name=>"HOLE"}
 
-character_asset_name.item_id # => 1001215602246
-character_asset_name.name # => "HOLE"
+asset_name.item_id # => 1001215602246
+asset_name.name # => "HOLE"
 
 character_assets_names.etag # => NotImplementedError
 ```
@@ -315,13 +315,13 @@ corporation_assets_names.roles # => ["Director"]
 
 corporation_assets_names.assets_names.size # => 1
 
-corporation_asset_name = corporation_assets_names.assets_names.first
+asset_name = corporation_assets_names.assets_names.first
 
-corporation_asset_name.as_json # => {:item_id=>1001215602246,
-                               #     :name=>"HOLE"}
+asset_name.as_json # => {:item_id=>1001215602246,
+                   #     :name=>"HOLE"}
 
-corporation_asset_name.item_id # => 1001215602246
-corporation_asset_name.name # => "HOLE"
+asset_name.item_id # => 1001215602246
+asset_name.name # => "HOLE"
 
 corporation_assets_names.etag # => NotImplementedError
 ```
