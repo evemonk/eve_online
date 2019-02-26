@@ -2,14 +2,14 @@
 
 require 'spec_helper'
 
-describe EveOnline::ESI::CharacterAssetsNames do
-  let(:options) { { token: 'token123', character_id: 12_345_678, item_ids: [1_001_215_602_246] } }
+describe EveOnline::ESI::CorporationAssetsNames do
+  let(:options) { { token: 'token123', corporation_id: 12_345_678, item_ids: [1_001_215_602_246] } }
 
   subject { described_class.new(options) }
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_PATH).to eq('/v1/characters/%<character_id>s/assets/names/?datasource=%<datasource>s') }
+  specify { expect(described_class::API_PATH).to eq('/v1/corporations/%<corporation_id>s/assets/names/?datasource=%<datasource>s') }
 
   describe '#initialize' do
     its(:token) { should eq('token123') }
@@ -22,7 +22,7 @@ describe EveOnline::ESI::CharacterAssetsNames do
 
     its(:datasource) { should eq('tranquility') }
 
-    its(:character_id) { should eq(12_345_678) }
+    its(:corporation_id) { should eq(12_345_678) }
 
     its(:item_ids) { should eq([1_001_215_602_246]) }
   end
@@ -75,7 +75,7 @@ describe EveOnline::ESI::CharacterAssetsNames do
   describe '#payload' do
     let(:item_ids) { double }
 
-    let(:options) { { character_id: 12_345_678, item_ids: item_ids } }
+    let(:options) { { corporation_id: 12_345_678, item_ids: item_ids } }
 
     before { expect(item_ids).to receive(:to_json) }
 
@@ -83,7 +83,11 @@ describe EveOnline::ESI::CharacterAssetsNames do
   end
 
   describe '#scope' do
-    specify { expect(subject.scope).to eq('esi-assets.read_assets.v1') }
+    specify { expect(subject.scope).to eq('esi-assets.read_corporation_assets.v1') }
+  end
+
+  describe '#roles' do
+    specify { expect(subject.roles).to eq(['Director']) }
   end
 
   describe '#etag' do
@@ -92,7 +96,7 @@ describe EveOnline::ESI::CharacterAssetsNames do
 
   describe '#url' do
     specify do
-      expect(subject.url).to eq('https://esi.evetech.net/v1/characters/12345678/assets/names/?datasource=tranquility')
+      expect(subject.url).to eq('https://esi.evetech.net/v1/corporations/12345678/assets/names/?datasource=tranquility')
     end
   end
 end
