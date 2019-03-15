@@ -4,7 +4,7 @@ cache: bundler
 rvm:
   - 2.3.8
   - 2.4.5
-  - 2.5.3
+  - 2.5.5
   - 2.6.2
   - ruby-head
 
@@ -25,7 +25,7 @@ matrix:
       gemfile: gemfiles/activesupport_42.gemfile
     - rvm: 2.6.2
       gemfile: gemfiles/activesupport_42.gemfile
-    - rvm: 2.5.3
+    - rvm: 2.5.5
       gemfile: gemfiles/activesupport_42.gemfile
     - rvm: 2.3.8
       gemfile: gemfiles/activesupport_edge.gemfile
