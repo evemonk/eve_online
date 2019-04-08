@@ -8,6 +8,7 @@
 * Add `EveOnline::ESI::CorporationAssets`
 * Add `EveOnline::ESI::CorporationAssetsLocations`
 * Add `EveOnline::ESI::CorporationAssetsNames`
+* Drop ruby 2.3 support
 
 ## v0.24.0
 
