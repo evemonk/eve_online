@@ -16,18 +16,14 @@ http_interactions:
       Accept-Language:
       - en-us
       If-None-Match:
-      - e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b
+      - 7aea53dbbfb800b38d580e75af5b5e00e1946f3c14780b052f3f5154
   response:
     status:
-      code: 200
-      message: OK
+      code: 304
+      message: Not Modified
     headers:
       Date:
-      - Tue, 16 Apr 2019 09:29:07 GMT
-      Content-Type:
-      - application/json; charset=UTF-8
-      Content-Length:
-      - '152'
+      - Wed, 17 Apr 2019 09:02:15 GMT
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -49,7 +45,7 @@ http_interactions:
       Etag:
       - W/"7aea53dbbfb800b38d580e75af5b5e00e1946f3c14780b052f3f5154"
       Expires:
-      - Tue, 16 Apr 2019 11:05:00 GMT
+      - Wed, 17 Apr 2019 11:05:00 GMT
       Last-Modified:
       - Mon, 15 Apr 2019 11:03:11 GMT
       Strict-Transport-Security:
@@ -57,12 +53,12 @@ http_interactions:
       X-Esi-Error-Limit-Remain:
       - '100'
       X-Esi-Error-Limit-Reset:
-      - '53'
+      - '45'
       X-Esi-Request-Id:
-      - f38e62ba-e34a-4f8f-a645-a75831144b3a
+      - bb38b984-96f8-4eb7-b013-e20a0c81edb1
     body:
       encoding: UTF-8
-      string: '{"px128x128":"http:\/\/imageserver.eveonline.com\/Alliance\/99005443_128.png","px64x64":"http:\/\/imageserver.eveonline.com\/Alliance\/99005443_64.png"}'
+      string: ''
     http_version: 
-  recorded_at: Tue, 16 Apr 2019 09:29:07 GMT
+  recorded_at: Wed, 17 Apr 2019 09:02:15 GMT
 recorded_with: VCR 4.0.0

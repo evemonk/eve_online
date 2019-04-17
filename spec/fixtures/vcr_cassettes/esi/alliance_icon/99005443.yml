@@ -21,7 +21,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 16 Apr 2019 09:29:07 GMT
+      - Wed, 17 Apr 2019 09:02:14 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
@@ -47,7 +47,7 @@ http_interactions:
       Etag:
       - '"7aea53dbbfb800b38d580e75af5b5e00e1946f3c14780b052f3f5154"'
       Expires:
-      - Tue, 16 Apr 2019 11:05:00 GMT
+      - Wed, 17 Apr 2019 11:05:00 GMT
       Last-Modified:
       - Mon, 15 Apr 2019 11:03:11 GMT
       Strict-Transport-Security:
@@ -55,12 +55,12 @@ http_interactions:
       X-Esi-Error-Limit-Remain:
       - '100'
       X-Esi-Error-Limit-Reset:
-      - '53'
+      - '46'
       X-Esi-Request-Id:
-      - 698a65fe-924a-41ca-9e12-b4189b06f2dc
+      - 914013cd-c46e-4051-9461-611336f99dc0
     body:
       encoding: UTF-8
       string: '{"px128x128":"http:\/\/imageserver.eveonline.com\/Alliance\/99005443_128.png","px64x64":"http:\/\/imageserver.eveonline.com\/Alliance\/99005443_64.png"}'
     http_version: 
-  recorded_at: Tue, 16 Apr 2019 09:29:07 GMT
+  recorded_at: Wed, 17 Apr 2019 09:02:14 GMT
 recorded_with: VCR 4.0.0
