@@ -12,18 +12,22 @@ http_interactions:
       Accept:
       - application/json
       User-Agent:
-      - EveOnline API (https://github.com/evemonk/eve_online) v0.21.0
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.24.0
       Accept-Language:
       - en-us
       If-None-Match:
       - e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b
   response:
     status:
-      code: 304
-      message: Not Modified
+      code: 200
+      message: OK
     headers:
       Date:
-      - Wed, 26 Dec 2018 09:15:32 GMT
+      - Tue, 16 Apr 2019 09:29:07 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '152'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -43,22 +47,22 @@ http_interactions:
       Cache-Control:
       - public
       Etag:
-      - W/"e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b"
+      - W/"7aea53dbbfb800b38d580e75af5b5e00e1946f3c14780b052f3f5154"
       Expires:
-      - Wed, 26 Dec 2018 11:05:00 GMT
+      - Tue, 16 Apr 2019 11:05:00 GMT
       Last-Modified:
-      - Mon, 24 Dec 2018 11:04:27 GMT
+      - Mon, 15 Apr 2019 11:03:11 GMT
       Strict-Transport-Security:
       - max-age=31536000
       X-Esi-Error-Limit-Remain:
       - '100'
       X-Esi-Error-Limit-Reset:
-      - '28'
+      - '53'
       X-Esi-Request-Id:
-      - 7ef0cc02-5649-456d-a64a-39b21d1a843a
+      - f38e62ba-e34a-4f8f-a645-a75831144b3a
     body:
       encoding: UTF-8
-      string: ''
+      string: '{"px128x128":"http:\/\/imageserver.eveonline.com\/Alliance\/99005443_128.png","px64x64":"http:\/\/imageserver.eveonline.com\/Alliance\/99005443_64.png"}'
     http_version: 
-  recorded_at: Wed, 26 Dec 2018 09:15:31 GMT
+  recorded_at: Tue, 16 Apr 2019 09:29:07 GMT
 recorded_with: VCR 4.0.0
