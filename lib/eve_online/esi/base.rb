@@ -127,12 +127,12 @@ module EveOnline
 
       def resource
         @resource ||= client.request(request)
+      rescue Net::OpenTimeout, Net::ReadTimeout #, Net::WriteTimeout
+        raise EveOnline::Exceptions::Timeout
       end
 
       def not_modified?
         resource.is_a?(Net::HTTPNotModified)
-      rescue Net::OpenTimeout, Net::ReadTimeout #, Net::WriteTimeout
-        raise EveOnline::Exceptions::Timeout
       end
 
       def content
@@ -165,8 +165,6 @@ module EveOnline
           # raise EveOnline::Exceptions::UnknownStatus
           raise NotImplementedError
         end
-      rescue Net::OpenTimeout, Net::ReadTimeout #, Net::WriteTimeout
-        raise EveOnline::Exceptions::Timeout
       end
 
       def response
