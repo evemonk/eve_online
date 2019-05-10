@@ -1,6 +1,6 @@
 # Changelog
 
-## master
+## v0.25.0
 
 * `EveOnline::ESI::CharacterAssetsLocations#etag` raise `NotImplementedError` from now
 * `EveOnline::ESI::CharacterAssetsNames#etag` raise `NotImplementedError` from now
