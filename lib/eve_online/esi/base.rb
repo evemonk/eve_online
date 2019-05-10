@@ -117,6 +117,10 @@ module EveOnline
         end
       end
 
+#      if !defined(Net::WriteTimeout)
+#        class Net::WriteTimeout; end
+#      end
+
       def uri
         @uri ||= URI.parse(url)
       end
@@ -127,6 +131,8 @@ module EveOnline
 
       def not_modified?
         resource.is_a?(Net::HTTPNotModified)
+      rescue Net::OpenTimeout, Net::ReadTimeout #, Net::WriteTimeout
+        raise EveOnline::Exceptions::Timeout
       end
 
       def content
@@ -159,7 +165,7 @@ module EveOnline
           # raise EveOnline::Exceptions::UnknownStatus
           raise NotImplementedError
         end
-      rescue Net::OpenTimeout, Net::ReadTimeout
+      rescue Net::OpenTimeout, Net::ReadTimeout #, Net::WriteTimeout
         raise EveOnline::Exceptions::Timeout
       end
 

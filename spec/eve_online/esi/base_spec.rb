@@ -430,13 +430,33 @@ describe EveOnline::ESI::Base do
   end
 
   describe '#not_modified?' do
-    let(:resource) { double }
+    context 'when resource present' do
+      let(:resource) { double }
 
-    before { expect(subject).to receive(:resource).and_return(resource) }
+      before { expect(subject).to receive(:resource).and_return(resource) }
 
-    before { expect(resource).to receive(:is_a?).with(Net::HTTPNotModified) }
+      before { expect(resource).to receive(:is_a?).with(Net::HTTPNotModified) }
 
-    specify { expect { subject.not_modified? }.not_to raise_error }
+      specify { expect { subject.not_modified? }.not_to raise_error }
+    end
+
+    context 'when Net::HTTP throw Net::OpenTimeout' do
+      before { expect(subject).to receive(:resource).and_raise(Net::OpenTimeout) }
+
+      specify { expect { subject.not_modified? }.to raise_error(EveOnline::Exceptions::Timeout) }
+    end
+
+    context 'when Net::HTTP throw Net::ReadTimeout' do
+      before { expect(subject).to receive(:resource).and_raise(Net::ReadTimeout) }
+
+      specify { expect { subject.not_modified? }.to raise_error(EveOnline::Exceptions::Timeout) }
+    end
+
+    # context 'when Net::HTTP throw Net::WriteTimeout' do
+    #   before { expect(subject).to receive(:resource).and_raise(Net::WriteTimeout) }
+    #
+    #   specify { expect { subject.not_modified? }.to raise_error(EveOnline::Exceptions::Timeout) }
+    # end
   end
 
   describe '#content' do
@@ -573,6 +593,12 @@ describe EveOnline::ESI::Base do
 
       specify { expect { subject.content }.to raise_error(EveOnline::Exceptions::Timeout) }
     end
+
+    # context 'when Net::HTTP throw Net::WriteTimeout' do
+    #   before { expect(subject).to receive(:resource).and_raise(Net::WriteTimeout) }
+    #
+    #   specify { expect { subject.content }.to raise_error(EveOnline::Exceptions::Timeout) }
+    # end
   end
 
   describe '#response' do
