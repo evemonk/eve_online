@@ -117,10 +117,6 @@ module EveOnline
         end
       end
 
-#      if !defined(Net::WriteTimeout)
-#        class Net::WriteTimeout; end
-#      end
-
       if Gem::Version.new(RUBY_VERSION) < Gem::Version.new('2.6.0')
         class Net::WriteTimeout < StandardError; end
       end
