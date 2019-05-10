@@ -10,6 +10,7 @@
 * Add `EveOnline::ESI::CorporationAssetsNames`
 * Drop ruby 2.3 support
 * `EveOnline::ESI::Base#not_modified?` handle timeout exceptions
+* Rescue `Net::WriteTimeout` too
 
 ## v0.24.0
 

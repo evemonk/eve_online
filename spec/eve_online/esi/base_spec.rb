@@ -440,11 +440,11 @@ describe EveOnline::ESI::Base do
       specify { expect { subject.resource }.to raise_error(EveOnline::Exceptions::Timeout) }
     end
 
-    # context 'when Net::HTTP throw Net::WriteTimeout' do
-    #   before { expect(subject).to receive(:client).and_raise(Net::WriteTimeout) }
-    #
-    #   specify { expect { subject.resource }.to raise_error(EveOnline::Exceptions::Timeout) }
-    # end
+    context 'when Net::HTTP throw Net::WriteTimeout' do
+      before { expect(subject).to receive(:client).and_raise(Net::WriteTimeout) }
+
+      specify { expect { subject.resource }.to raise_error(EveOnline::Exceptions::Timeout) }
+    end
   end
 
   describe '#not_modified?' do
