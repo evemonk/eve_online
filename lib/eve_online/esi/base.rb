@@ -117,12 +117,18 @@ module EveOnline
         end
       end
 
+      if Gem::Version.new(RUBY_VERSION) < Gem::Version.new('2.6.0')
+        class Net::WriteTimeout < StandardError; end
+      end
+
       def uri
         @uri ||= URI.parse(url)
       end
 
       def resource
         @resource ||= client.request(request)
+      rescue Net::OpenTimeout, Net::ReadTimeout, Net::WriteTimeout
+        raise EveOnline::Exceptions::Timeout
       end
 
       def not_modified?
@@ -159,8 +165,6 @@ module EveOnline
           # raise EveOnline::Exceptions::UnknownStatus
           raise NotImplementedError
         end
-      rescue Net::OpenTimeout, Net::ReadTimeout
-        raise EveOnline::Exceptions::Timeout
       end
 
       def response

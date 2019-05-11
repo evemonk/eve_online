@@ -46,12 +46,11 @@ gem install eve_online
 
 ## Supported ruby versions
 
-* MRI 2.3
 * MRI 2.4
 * MRI 2.5
 * MRI 2.6
 * MRI (head)
-* JRuby 9.2.6.0
+* JRuby 9.2.7.0
 * JRuby (head)
 
 ## Supported rails versions

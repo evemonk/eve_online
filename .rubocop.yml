@@ -1,5 +1,6 @@
 require: rubocop-thread_safety
 require: rubocop-rspec
+require: rubocop-performance
 
 inherit_from:
   - .rubocop_general.yml

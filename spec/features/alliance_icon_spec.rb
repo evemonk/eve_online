@@ -21,14 +21,14 @@ describe 'Get alliance icon' do
                                     icon_small: 'http://imageserver.eveonline.com/Alliance/99005443_64.png')
     end
 
-    specify { expect(subject.etag).to eq('e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b') }
+    specify { expect(subject.etag).to eq('7aea53dbbfb800b38d580e75af5b5e00e1946f3c14780b052f3f5154') }
   end
 
   context 'when etag is set' do
     let(:options) do
       {
         alliance_id: 99_005_443,
-        etag: 'e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b'
+        etag: '7aea53dbbfb800b38d580e75af5b5e00e1946f3c14780b052f3f5154'
       }
     end
 
@@ -40,6 +40,6 @@ describe 'Get alliance icon' do
 
     specify { expect(subject.not_modified?).to eq(true) }
 
-    specify { expect(subject.etag).to eq('e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b') }
+    specify { expect(subject.etag).to eq('7aea53dbbfb800b38d580e75af5b5e00e1946f3c14780b052f3f5154') }
   end
 end

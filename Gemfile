@@ -10,3 +10,5 @@ gem 'awesome_print', require: 'ap'
 gem 'pry'
 gem 'rubocop', require: false
 gem 'rubocop-rspec', require: false
+gem 'rubocop-performance', require: false
+gem 'fasterer', require: false

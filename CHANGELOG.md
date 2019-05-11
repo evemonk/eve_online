@@ -1,6 +1,6 @@
 # Changelog
 
-## master
+## v0.25.0
 
 * `EveOnline::ESI::CharacterAssetsLocations#etag` raise `NotImplementedError` from now
 * `EveOnline::ESI::CharacterAssetsNames#etag` raise `NotImplementedError` from now
@@ -8,6 +8,9 @@
 * Add `EveOnline::ESI::CorporationAssets`
 * Add `EveOnline::ESI::CorporationAssetsLocations`
 * Add `EveOnline::ESI::CorporationAssetsNames`
+* Drop ruby 2.3 support
+* `EveOnline::ESI::Base#not_modified?` handle timeout exceptions
+* Rescue `Net::WriteTimeout` too
 
 ## v0.24.0
 
