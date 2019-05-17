@@ -583,23 +583,23 @@ notification.type # => "AllWarDeclaredMsg"
 #### Get character portraits
 
 ```ruby
-options = { character_id: 90729314 }
+options = { character_id: 90_729_314 }
 
 character_portrait = EveOnline::ESI::CharacterPortrait.new(options)
 
 character_portrait.scope # => nil
 
-character_portrait.as_json # => {:medium=>"http://image.eveonline.com/Character/90729314_128.jpg",
-                           #     :large=>"http://image.eveonline.com/Character/90729314_256.jpg",
-                           #     :huge=>"http://image.eveonline.com/Character/90729314_512.jpg"
-                           #     :small=>"http://image.eveonline.com/Character/90729314_64.jpg"}
+character_portrait.as_json # => {:medium=>"http://imageserver.eveonline.com/Character/90729314_128.jpg",
+                           #     :large=>"http://imageserver.eveonline.com/Character/90729314_256.jpg",
+                           #     :huge=>"http://imageserver.eveonline.com/Character/90729314_512.jpg",
+                           #     :small=>"http://imageserver.eveonline.com/Character/90729314_64.jpg"}
 
-character_portrait.medium # => "http://image.eveonline.com/Character/90729314_128.jpg"
-character_portrait.large # => "http://image.eveonline.com/Character/90729314_256.jpg"
-character_portrait.huge # => "http://image.eveonline.com/Character/90729314_512.jpg"
-character_portrait.small # => "http://image.eveonline.com/Character/90729314_64.jpg"
+character_portrait.medium # => "http://imageserver.eveonline.com/Character/90729314_128.jpg"
+character_portrait.large # => "http://imageserver.eveonline.com/Character/90729314_256.jpg"
+character_portrait.huge # => "http://imageserver.eveonline.com/Character/90729314_512.jpg"
+character_portrait.small # => "http://imageserver.eveonline.com/Character/90729314_64.jpg"
 
-# TODO: character_portrait.etag
+character_portrait.etag # => "2c8392581d493e06c015ca3d48d4076079bf4c976b1f776742592260"
 ```
 
 #### Get character corporation roles
