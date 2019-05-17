@@ -860,11 +860,11 @@ dogma_attributes = EveOnline::ESI::DogmaAttributes.new
 
 dogma_attributes.scope # => nil
 
-dogma_attributes.attribute_ids.size # => 2385
+dogma_attributes.attribute_ids.size # => 2469
 
 dogma_attributes.attribute_ids.first # => 2
 
-# TODO: dogma_attributes.etag
+dogma_attributes.etag # => "2c8392581d493e06c015ca3d48d4076079bf4c976b1f776742592260"
 ```
 
 #### Get attribute information
