@@ -2,6 +2,8 @@
 
 ## master
 
+* Sync with new ESI API
+
 ## v0.25.0
 
 * `EveOnline::ESI::CharacterAssetsLocations#etag` raise `NotImplementedError` from now
