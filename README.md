@@ -1798,7 +1798,7 @@ constellations.constellation_ids.size # => 1146
 
 constellations.constellation_ids.first # => 20000001
 
-# TODO: constellations.etag
+constellations.etag # => "2c8392581d493e06c015ca3d48d4076079bf4c976b1f776742592260"
 ```
 
 #### Get constellation information
