@@ -18,6 +18,8 @@ describe EveOnline::ESI::Models::Character do
 
     let(:birthday) { double }
 
+    let(:title) { double }
+
     before { expect(character).to receive(:alliance_id).and_return(98_765_432) }
 
     before { expect(character).to receive(:ancestry_id).and_return(24) }
@@ -39,6 +41,8 @@ describe EveOnline::ESI::Models::Character do
     before { expect(character).to receive(:race_id).and_return(2) }
 
     before { expect(character).to receive(:security_status).and_return(1.8694881661345457) }
+
+    before { expect(character).to receive(:title).and_return(title) }
 
     subject { character.as_json }
 
@@ -63,6 +67,8 @@ describe EveOnline::ESI::Models::Character do
     its([:race_id]) { should eq(2) }
 
     its([:security_status]) { should eq(1.8694881661345457) }
+
+    its([:title]) { should eq(title) }
   end
 
   describe '#alliance_id' do
@@ -148,5 +154,11 @@ describe EveOnline::ESI::Models::Character do
     before { expect(options).to receive(:[]).with('security_status') }
 
     specify { expect { subject.security_status }.not_to raise_error }
+  end
+
+  describe '#title' do
+    before { expect(options).to receive(:[]).with('title') }
+
+    specify { expect { subject.title }.not_to raise_error }
   end
 end

@@ -174,6 +174,16 @@ describe EveOnline::ESI::Character do
     specify { expect { subject.security_status }.not_to raise_error }
   end
 
+  describe '#title' do
+    let(:model) { instance_double(EveOnline::ESI::Models::Character) }
+
+    before { subject.instance_variable_set(:@model, model) }
+
+    before { expect(model).to receive(:title) }
+
+    specify { expect { subject.title }.not_to raise_error }
+  end
+
   describe '#scope' do
     specify { expect(subject.scope).to eq(nil) }
   end

@@ -27,7 +27,8 @@ describe "Get character's public information" do
                                     alliance_id: 99_005_443,
                                     ancestry_id: 24,
                                     security_status: 1.8694881661345457,
-                                    faction_id: nil)
+                                    faction_id: nil,
+                                    title: nil)
     end
 
     specify { expect(subject.etag).to eq('22c39689783a86032b8d43fa0b2e8f4809c4f38a585e39471035aa8b') }

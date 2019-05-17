@@ -459,7 +459,8 @@ character.as_json # => {:alliance_id=>12345678,
                   #     :gender=>"male",
                   #     :name=>"Green Black",
                   #     :race_id=>2,
-                  #     :security_status=>1.8694881661345457}
+                  #     :security_status=>1.8694881661345457,
+                  #     :title=>nil}
 
 character.alliance_id # => 12345678
 character.ancestry_id # => 24
@@ -472,6 +473,7 @@ character.gender # => "male"
 character.name # => "Green Black"
 character.race_id # => 2
 character.security_status # => 1.8694881661345457
+character.title # => nil
 
 character.etag # => "22c39689783a86032b8d43fa0b2e8f4809c4f38a585e39471035aa8b"
 ```
