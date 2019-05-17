@@ -2410,8 +2410,8 @@ type_dogma_attribute = type.dogma_attributes.first
 type_dogma_attribute.as_json # => {:attribute_id=>128,
                              #     :value=>2.0}
 
-dogma_attribute.attribute_id # => 128
-dogma_attribute.value # => 2.0
+type_dogma_attribute.attribute_id # => 128
+type_dogma_attribute.value # => 2.0
 
 type.dogma_effects.size # => 3
 
