@@ -2144,10 +2144,6 @@ star.temperature # => 4567
 star.type_id # => 45041
 
 star.etag # => "2e28835f91024608719726b655591d531125a023e122859d174923d5"
-
-# options = { id: 60012526 }
-
-# star = EveOnline::ESI::UniverseStar.new(options) => 500
 ```
 
 #### Get station information
