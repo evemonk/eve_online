@@ -2055,7 +2055,7 @@ regions.universe_region_ids.size # => 106
 
 regions.universe_region_ids.first # => 10000001
 
-# TODO: regions.etag
+regions.etag # => "2c8392581d493e06c015ca3d48d4076079bf4c976b1f776742592260"
 ```
 
 #### Get region information
