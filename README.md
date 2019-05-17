@@ -1804,7 +1804,7 @@ constellations.constellation_ids.first # => 20000001
 #### Get constellation information
 
 ```ruby
-options = { id: 20000001, language: 'en-us' }
+options = { id: 20_000_001, language: 'en-us' }
 
 constellation = EveOnline::ESI::UniverseConstellation.new(options)
 
@@ -1828,7 +1828,7 @@ constellation.position.x # => -9.404655970099134e+16
 constellation.position.y # => 4.952015315379885e+16
 constellation.position.z # => -4.273873181840197e+16
 
-# TODO: constellation.etag
+constellation.etag # => "2c8392581d493e06c015ca3d48d4076079bf4c976b1f776742592260"
 ```
 
 #### Get factions
