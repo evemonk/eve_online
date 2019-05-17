@@ -1164,7 +1164,7 @@ job.as_json # => {:activity_id=>1,
 job.activity_id # => 1
 job.blueprint_id # => 1026042055832
 job.blueprint_location_id # => 1024956764558
-job.job.blueprint_type_id # => 28607
+job.blueprint_type_id # => 28607
 job.completed_character_id # => nil
 job.completed_date # => nil
 job.cost # => 19505804.0
