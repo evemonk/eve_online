@@ -1761,7 +1761,7 @@ categories.category_ids.size # => 43
 
 categories.category_ids.first # => 0
 
-# TODO: categories.etag
+categories.etag # => "2c8392581d493e06c015ca3d48d4076079bf4c976b1f776742592260"
 ```
 
 #### Get item category information
