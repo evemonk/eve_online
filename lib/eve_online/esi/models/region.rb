@@ -6,7 +6,7 @@ module EveOnline
       class Region < Base
         def as_json
           {
-            constellations: constellations,
+            constellations: constellations, # TODO: rename constellations -> constellation_ids and remove from as_json
             description: description,
             name: name,
             region_id: region_id
