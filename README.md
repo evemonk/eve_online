@@ -2061,23 +2061,23 @@ regions.universe_region_ids.first # => 10000001
 #### Get region information
 
 ```ruby
-options = { id: 10000001, language: 'en-us' }
+options = { id: 10_000_001, language: 'en-us' }
 
 region = EveOnline::ESI::UniverseRegion.new(options)
 
 region.scope # => nil
 
-region.as_json # => {:constellations=>[20000001,20000002,20000003,20000016],
+region.as_json # => {:constellations=>[20000001,20000002,20000003,...,20000016],
                #     :description=>"The Derelik region...",
                #     :name=>"Derelik",
                #     :region_id=>10000001}
 
-region.constellations # => [20000001,20000002,20000003,20000016]
+region.constellations # => [20000001,20000002,20000003,...,20000016]
 region.description # => "The Derelik region..."
 region.name # => "Derelik"
 region.region_id # => 10000001
 
-# TODO: region.etag
+region.etag # => "2c8392581d493e06c015ca3d48d4076079bf4c976b1f776742592260"
 ```
 
 #### Get stargate information
