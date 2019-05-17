@@ -1649,7 +1649,7 @@ server_status.server_version # => "1135520"
 server_status.start_time # => Tue, 11 Apr 2017 11:05:35 UTC +00:00
 server_status.vip # => nil
 
-# TODO: server_status.etag
+server_status.etag # => "005dd5b02fc9e032466c49b28ff7fcb4fa37c56e5c361a1e25ec6cfd"
 ```
 
 ### Universe
