@@ -1687,7 +1687,7 @@ ancestries.etag # => "e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b"
 #### Get asteroid belt information
 
 ```ruby
-options = { id: 40000003 }
+options = { id: 40_000_003 }
 
 asteroid_belt = EveOnline::ESI::UniverseAsteroidBelt.new(options)
 
@@ -1707,7 +1707,7 @@ asteroid_belt.position.x # => 161967513600.0
 asteroid_belt.position.y # => 21288837120.0
 asteroid_belt.position.z # => -73505464320.0
 
-# TODO: asteroid_belt.etag
+asteroid_belt.etag # => "2c8392581d493e06c015ca3d48d4076079bf4c976b1f776742592260"
 ```
 
 #### Get bloodlines
