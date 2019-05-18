@@ -9,7 +9,7 @@ describe EveOnline::ESI::CharacterWalletJournal do
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_PATH).to eq('/v5/characters/%<character_id>s/wallet/journal/?datasource=%<datasource>s&page=%<page>s') }
+  specify { expect(described_class::API_PATH).to eq('/v6/characters/%<character_id>s/wallet/journal/?datasource=%<datasource>s&page=%<page>s') }
 
   describe '#initialize' do
     context 'without options' do
@@ -87,7 +87,7 @@ describe EveOnline::ESI::CharacterWalletJournal do
 
   describe '#url' do
     specify do
-      expect(subject.url).to eq('https://esi.evetech.net/v5/characters/12345678/wallet/journal/?datasource=tranquility&page=1')
+      expect(subject.url).to eq('https://esi.evetech.net/v6/characters/12345678/wallet/journal/?datasource=tranquility&page=1')
     end
   end
 end

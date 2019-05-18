@@ -19,7 +19,7 @@ module EveOnline
 
       def_delegators :model, :as_json, :alliance_id, :ancestry_id, :birthday,
                      :bloodline_id, :corporation_id, :description, :faction_id,
-                     :gender, :name, :race_id, :security_status
+                     :gender, :name, :race_id, :security_status, :title
 
       def model
         @model ||= Models::Character.new(response)

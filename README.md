@@ -459,7 +459,8 @@ character.as_json # => {:alliance_id=>12345678,
                   #     :gender=>"male",
                   #     :name=>"Green Black",
                   #     :race_id=>2,
-                  #     :security_status=>1.8694881661345457}
+                  #     :security_status=>1.8694881661345457,
+                  #     :title=>nil}
 
 character.alliance_id # => 12345678
 character.ancestry_id # => 24
@@ -472,6 +473,7 @@ character.gender # => "male"
 character.name # => "Green Black"
 character.race_id # => 2
 character.security_status # => 1.8694881661345457
+character.title # => nil
 
 character.etag # => "22c39689783a86032b8d43fa0b2e8f4809c4f38a585e39471035aa8b"
 ```
@@ -581,23 +583,23 @@ notification.type # => "AllWarDeclaredMsg"
 #### Get character portraits
 
 ```ruby
-options = { character_id: 90729314 }
+options = { character_id: 90_729_314 }
 
 character_portrait = EveOnline::ESI::CharacterPortrait.new(options)
 
 character_portrait.scope # => nil
 
-character_portrait.as_json # => {:medium=>"http://image.eveonline.com/Character/90729314_128.jpg",
-                           #     :large=>"http://image.eveonline.com/Character/90729314_256.jpg",
-                           #     :huge=>"http://image.eveonline.com/Character/90729314_512.jpg"
-                           #     :small=>"http://image.eveonline.com/Character/90729314_64.jpg"}
+character_portrait.as_json # => {:medium=>"http://imageserver.eveonline.com/Character/90729314_128.jpg",
+                           #     :large=>"http://imageserver.eveonline.com/Character/90729314_256.jpg",
+                           #     :huge=>"http://imageserver.eveonline.com/Character/90729314_512.jpg",
+                           #     :small=>"http://imageserver.eveonline.com/Character/90729314_64.jpg"}
 
-character_portrait.medium # => "http://image.eveonline.com/Character/90729314_128.jpg"
-character_portrait.large # => "http://image.eveonline.com/Character/90729314_256.jpg"
-character_portrait.huge # => "http://image.eveonline.com/Character/90729314_512.jpg"
-character_portrait.small # => "http://image.eveonline.com/Character/90729314_64.jpg"
+character_portrait.medium # => "http://imageserver.eveonline.com/Character/90729314_128.jpg"
+character_portrait.large # => "http://imageserver.eveonline.com/Character/90729314_256.jpg"
+character_portrait.huge # => "http://imageserver.eveonline.com/Character/90729314_512.jpg"
+character_portrait.small # => "http://imageserver.eveonline.com/Character/90729314_64.jpg"
 
-# TODO: character_portrait.etag
+character_portrait.etag # => "2c8392581d493e06c015ca3d48d4076079bf4c976b1f776742592260"
 ```
 
 #### Get character corporation roles
@@ -858,11 +860,11 @@ dogma_attributes = EveOnline::ESI::DogmaAttributes.new
 
 dogma_attributes.scope # => nil
 
-dogma_attributes.attribute_ids.size # => 2385
+dogma_attributes.attribute_ids.size # => 2469
 
 dogma_attributes.attribute_ids.first # => 2
 
-# TODO: dogma_attributes.etag
+dogma_attributes.etag # => "2c8392581d493e06c015ca3d48d4076079bf4c976b1f776742592260"
 ```
 
 #### Get attribute information
@@ -1162,7 +1164,7 @@ job.as_json # => {:activity_id=>1,
 job.activity_id # => 1
 job.blueprint_id # => 1026042055832
 job.blueprint_location_id # => 1024956764558
-job.job.blueprint_type_id # => 28607
+job.blueprint_type_id # => 28607
 job.completed_character_id # => nil
 job.completed_date # => nil
 job.cost # => 19505804.0
@@ -1647,7 +1649,7 @@ server_status.server_version # => "1135520"
 server_status.start_time # => Tue, 11 Apr 2017 11:05:35 UTC +00:00
 server_status.vip # => nil
 
-# TODO: server_status.etag
+server_status.etag # => "005dd5b02fc9e032466c49b28ff7fcb4fa37c56e5c361a1e25ec6cfd"
 ```
 
 ### Universe
@@ -1685,7 +1687,7 @@ ancestries.etag # => "e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b"
 #### Get asteroid belt information
 
 ```ruby
-options = { id: 40000003 }
+options = { id: 40_000_003 }
 
 asteroid_belt = EveOnline::ESI::UniverseAsteroidBelt.new(options)
 
@@ -1705,7 +1707,7 @@ asteroid_belt.position.x # => 161967513600.0
 asteroid_belt.position.y # => 21288837120.0
 asteroid_belt.position.z # => -73505464320.0
 
-# TODO: asteroid_belt.etag
+asteroid_belt.etag # => "2c8392581d493e06c015ca3d48d4076079bf4c976b1f776742592260"
 ```
 
 #### Get bloodlines
@@ -1759,7 +1761,7 @@ categories.category_ids.size # => 43
 
 categories.category_ids.first # => 0
 
-# TODO: categories.etag
+categories.etag # => "2c8392581d493e06c015ca3d48d4076079bf4c976b1f776742592260"
 ```
 
 #### Get item category information
@@ -1796,13 +1798,13 @@ constellations.constellation_ids.size # => 1146
 
 constellations.constellation_ids.first # => 20000001
 
-# TODO: constellations.etag
+constellations.etag # => "2c8392581d493e06c015ca3d48d4076079bf4c976b1f776742592260"
 ```
 
 #### Get constellation information
 
 ```ruby
-options = { id: 20000001, language: 'en-us' }
+options = { id: 20_000_001, language: 'en-us' }
 
 constellation = EveOnline::ESI::UniverseConstellation.new(options)
 
@@ -1826,7 +1828,7 @@ constellation.position.x # => -9.404655970099134e+16
 constellation.position.y # => 4.952015315379885e+16
 constellation.position.z # => -4.273873181840197e+16
 
-# TODO: constellation.etag
+constellation.etag # => "2c8392581d493e06c015ca3d48d4076079bf4c976b1f776742592260"
 ```
 
 #### Get factions
@@ -2053,29 +2055,29 @@ regions.universe_region_ids.size # => 106
 
 regions.universe_region_ids.first # => 10000001
 
-# TODO: regions.etag
+regions.etag # => "2c8392581d493e06c015ca3d48d4076079bf4c976b1f776742592260"
 ```
 
 #### Get region information
 
 ```ruby
-options = { id: 10000001, language: 'en-us' }
+options = { id: 10_000_001, language: 'en-us' }
 
 region = EveOnline::ESI::UniverseRegion.new(options)
 
 region.scope # => nil
 
-region.as_json # => {:constellations=>[20000001,20000002,20000003,20000016],
+region.as_json # => {:constellations=>[20000001,20000002,20000003,...,20000016],
                #     :description=>"The Derelik region...",
                #     :name=>"Derelik",
                #     :region_id=>10000001}
 
-region.constellations # => [20000001,20000002,20000003,20000016]
+region.constellations # => [20000001,20000002,20000003,...,20000016]
 region.description # => "The Derelik region..."
 region.name # => "Derelik"
 region.region_id # => 10000001
 
-# TODO: region.etag
+region.etag # => "2c8392581d493e06c015ca3d48d4076079bf4c976b1f776742592260"
 ```
 
 #### Get stargate information
@@ -2142,10 +2144,6 @@ star.temperature # => 4567
 star.type_id # => 45041
 
 star.etag # => "2e28835f91024608719726b655591d531125a023e122859d174923d5"
-
-# options = { id: 60012526 }
-
-# star = EveOnline::ESI::UniverseStar.new(options) => 500
 ```
 
 #### Get station information
@@ -2412,8 +2410,8 @@ type_dogma_attribute = type.dogma_attributes.first
 type_dogma_attribute.as_json # => {:attribute_id=>128,
                              #     :value=>2.0}
 
-dogma_attribute.attribute_id # => 128
-dogma_attribute.value # => 2.0
+type_dogma_attribute.attribute_id # => 128
+type_dogma_attribute.value # => 2.0
 
 type.dogma_effects.size # => 3
 

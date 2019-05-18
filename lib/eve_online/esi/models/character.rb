@@ -16,7 +16,8 @@ module EveOnline
             gender: gender,
             name: name,
             race_id: race_id,
-            security_status: security_status
+            security_status: security_status,
+            title: title
           }
         end
 
@@ -64,6 +65,10 @@ module EveOnline
 
         def security_status
           options['security_status']
+        end
+
+        def title
+          options['title']
         end
       end
     end

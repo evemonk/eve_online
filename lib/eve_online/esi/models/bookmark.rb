@@ -60,6 +60,11 @@ module EveOnline
         def coordinates
           @coordinates ||= Coordinates.new(options['coordinates'])
         end
+
+        # TODO: finish
+        # def item
+        #   @item ||= Item.new(options['item'])
+        # end
       end
     end
   end
