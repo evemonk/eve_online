@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class CharacterNotifications < Base
-      API_PATH = '/v4/characters/%<character_id>s/notifications/?datasource=%<datasource>s'
+      API_PATH = '/v5/characters/%<character_id>s/notifications/?datasource=%<datasource>s'
 
       attr_reader :character_id
 
