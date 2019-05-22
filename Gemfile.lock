@@ -80,6 +80,8 @@ GEM
       rubocop (>= 0.68.0)
     rubocop-rspec (1.33.0)
       rubocop (>= 0.60.0)
+    rubocop-thread_safety (0.3.4)
+      rubocop (>= 0.51.0)
     ruby-progressbar (1.10.0)
     ruby_parser (3.13.1)
       sexp_processor (~> 4.9)
@@ -118,6 +120,7 @@ DEPENDENCIES
   rubocop
   rubocop-performance
   rubocop-rspec
+  rubocop-thread_safety
   simplecov
   vcr
   webmock
