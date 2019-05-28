@@ -82,7 +82,7 @@ GEM
       rubocop (>= 0.60.0)
     rubocop-thread_safety (0.3.4)
       rubocop (>= 0.51.0)
-    ruby-progressbar (1.10.0)
+    ruby-progressbar (1.10.1)
     ruby_parser (3.13.1)
       sexp_processor (~> 4.9)
     safe_yaml (1.0.5)
