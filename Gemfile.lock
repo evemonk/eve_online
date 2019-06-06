@@ -86,7 +86,7 @@ GEM
     ruby_parser (3.13.1)
       sexp_processor (~> 4.9)
     safe_yaml (1.0.5)
-    sexp_processor (4.12.0)
+    sexp_processor (4.12.1)
     simplecov (0.16.1)
       docile (~> 1.1)
       json (>= 1.8, < 3)
@@ -98,10 +98,10 @@ GEM
       thread_safe (~> 0.1)
     unicode-display_width (1.6.0)
     vcr (5.0.0)
-    webmock (3.5.1)
+    webmock (3.6.0)
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
-      hashdiff
+      hashdiff (>= 0.4.0, < 2.0.0)
 
 PLATFORMS
   ruby
