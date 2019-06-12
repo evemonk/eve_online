@@ -14,6 +14,8 @@ describe 'List loyalty store offers' do
 
     specify { expect(subject.scope).to eq(nil) }
 
+    specify { expect(subject.roles).to eq([]) }
+
     specify { expect(subject.not_modified?).to eq(false) }
 
     specify { expect(subject.offers.size).to eq(332) }
