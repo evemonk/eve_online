@@ -1370,7 +1370,7 @@ loyalty_point.as_json # => {:corporation_id=>1000035, :loyalty_points=>14163}
 loyalty_point.corporation_id # => 1000035
 loyalty_point.loyalty_points # => 14163
 
-# TODO: character_loyalty_points.etag
+character_loyalty_points.etag # => "b6f4d03c84350052a2e95e3b098c41b1c50f938ffe3f6da7fc1c1698"
 ```
 
 #### List loyalty store offers
