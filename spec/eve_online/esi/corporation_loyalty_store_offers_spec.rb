@@ -25,16 +25,55 @@ describe EveOnline::ESI::CorporationLoyaltyStoreOffers do
     its(:corporation_id) { should eq(12_345_678) }
   end
 
-  # def offers
-  #   @offers ||=
-  #       begin
-  #         output = []
-  #         response.each do |offer|
-  #           output << Models::LoyaltyStoreOffer.new(offer)
-  #         end
-  #         output
-  #       end
-  # end
+  describe '#offers' do
+    context 'when @offers set' do
+      let(:offers) { [instance_double(EveOnline::ESI::Models::LoyaltyStoreOffer)] }
+
+      before { subject.instance_variable_set(:@offers, offers) }
+
+      specify { expect(subject.offers).to eq(offers) }
+    end
+
+    context 'when @offers not set' do
+      let(:loyalty_store_offer) { instance_double(EveOnline::ESI::Models::LoyaltyStoreOffer) }
+
+      let(:response) do
+        [
+          {
+            isk_cost: 2_400_000,
+            lp_cost: 2_400,
+            offer_id: 3_584,
+            quantity: 5_000,
+            required_items: [
+              {
+                quantity: 5_000,
+                type_id: 234
+              }
+            ],
+            type_id: 23_047
+          }
+        ]
+      end
+
+      before do
+        #
+        # subject.response # => [{"isk_cost"=>2400000, "lp_cost"=>2400, "offer_id"=>3584, "quantity"=>5000, "required_items"=>[{"quantity"=>5000, "type_id"=>234}], "type_id"=>23047}]
+        #
+        expect(subject).to receive(:response).and_return(response)
+      end
+
+      before do
+        #
+        # EveOnline::ESI::Models::LoyaltyStoreOffer.new(response.first) # => loyalty_store_offer
+        #
+        expect(EveOnline::ESI::Models::LoyaltyStoreOffer).to receive(:new).with(response.first).and_return(loyalty_store_offer)
+      end
+
+      specify { expect(subject.offers).to eq([loyalty_store_offer]) }
+
+      specify { expect { subject.offers }.to change { subject.instance_variable_get(:@offers) }.from(nil).to([loyalty_store_offer]) }
+    end
+  end
 
   describe '#scope' do
     specify { expect(subject.scope).to eq(nil) }
