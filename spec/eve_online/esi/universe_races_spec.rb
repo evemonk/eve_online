@@ -34,10 +34,10 @@ describe EveOnline::ESI::UniverseRaces do
       let(:response) do
         [
           {
-            'race_id' => 2,
-            'name' => 'Minmatar',
-            'description' => 'Once a thriving tribal civilization, the Minmatar...',
-            'alliance_id' => 500_002
+            race_id: 2,
+            name: 'Minmatar',
+            description: 'Once a thriving tribal civilization, the Minmatar...',
+            alliance_id: 500_002
           }
         ]
       end
