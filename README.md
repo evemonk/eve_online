@@ -1382,6 +1382,8 @@ corporation_loyalty_store_offers = EveOnline::ESI::CorporationLoyaltyStoreOffers
 
 corporation_loyalty_store_offers.scope # => nil
 
+corporation_loyalty_store_offers.roles # => []
+
 corporation_loyalty_store_offers.offers.size # => 332
 
 offer = corporation_loyalty_store_offers.offers.first
