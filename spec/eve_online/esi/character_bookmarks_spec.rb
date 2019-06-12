@@ -44,7 +44,7 @@ describe EveOnline::ESI::CharacterBookmarks do
       specify { expect(subject.bookmarks).to eq(bookmarks) }
     end
 
-    context 'when @ancestries not set' do
+    context 'when @bookmarks not set' do
       let(:bookmark) { instance_double(EveOnline::ESI::Models::Bookmark) }
 
       let(:response) do
