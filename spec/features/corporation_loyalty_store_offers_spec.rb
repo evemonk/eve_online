@@ -16,20 +16,16 @@ describe 'List loyalty store offers' do
 
     specify { expect(subject.not_modified?).to eq(false) }
 
-    # specify do
-    #   expect(subject.as_json).to eq(corporation_id: 98_134_807,
-    #                                 birthday: '2010-01-15T15:26:00Z',
-    #                                 name: 'Johnn Dillinger',
-    #                                 gender: 'male',
-    #                                 race_id: 2,
-    #                                 bloodline_id: 4,
-    #                                 description: '',
-    #                                 alliance_id: 99_005_443,
-    #                                 ancestry_id: 24,
-    #                                 security_status: 1.8694881661345457,
-    #                                 faction_id: nil,
-    #                                 title: nil)
-    # end
+    specify { expect(subject.offers.size).to eq(332) }
+
+    specify do
+      expect(subject.offers.first.as_json).to eq(ak_cost: nil,
+                                                 isk_cost: 2_400_000,
+                                                 lp_cost: 2_400,
+                                                 offer_id: 3_584,
+                                                 quantity: 5_000,
+                                                 type_id: 23_047)
+    end
 
     specify { expect(subject.etag).to eq('89211f42fde090e4d22621e9b97d7604ab87af95b3b6ffed7fe81bc0') }
   end
