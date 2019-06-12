@@ -50,14 +50,14 @@ describe EveOnline::ESI::CharacterBlueprints do
       let(:response) do
         [
           {
-            'item_id' => 716_338_097,
-            'type_id' => 1010,
-            'location_id' => 61_000_032,
-            'location_flag' => 'Hangar',
-            'quantity' => -2,
-            'time_efficiency' => 0,
-            'material_efficiency' => 10,
-            'runs' => 300
+            item_id: 716_338_097,
+            type_id: 1010,
+            location_id: 61_000_032,
+            location_flag: 'Hangar',
+            quantity: -2,
+            time_efficiency: 0,
+            material_efficiency: 10,
+            runs: 300
           }
         ]
       end
