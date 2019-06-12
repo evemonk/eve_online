@@ -1,6 +1,6 @@
 # Changelog
 
-## master
+## v0.26.0
 
 * Sync with new ESI API
 
