@@ -1,5 +1,9 @@
 # Changelog
 
+## master
+
+* Rails 6.0.0.rc1
+
 ## v0.26.0
 
 * Sync with new ESI API

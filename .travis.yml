@@ -12,6 +12,7 @@ gemfile:
   - gemfiles/activesupport_50.gemfile
   - gemfiles/activesupport_51.gemfile
   - gemfiles/activesupport_52.gemfile
+  - gemfiles/activesupport_60.gemfile
   - gemfiles/activesupport_edge.gemfile
 
 addons:
@@ -26,6 +27,8 @@ matrix:
       gemfile: gemfiles/activesupport_42.gemfile
     - rvm: 2.5.5
       gemfile: gemfiles/activesupport_42.gemfile
+    - rvm: 2.4.6
+      gemfile: gemfiles/activesupport_60.gemfile
     - rvm: 2.4.6
       gemfile: gemfiles/activesupport_edge.gemfile
   include:
@@ -45,6 +48,10 @@ matrix:
       gemfile: gemfiles/activesupport_52.gemfile
       jdk: oraclejdk8
       env: JRUBY_OPTS='--debug' # get more accurate coverage data
+    - rvm: jruby-9.2.7.0
+      gemfile: gemfiles/activesupport_60.gemfile
+      jdk: oraclejdk8
+      env: JRUBY_OPTS='--debug' # get more accurate coverage data
     - rvm: jruby-head
       gemfile: gemfiles/activesupport_42.gemfile
       jdk: oraclejdk8
@@ -59,6 +66,10 @@ matrix:
       env: JRUBY_OPTS='--debug' # get more accurate coverage data
     - rvm: jruby-head
       gemfile: gemfiles/activesupport_52.gemfile
+      jdk: oraclejdk8
+      env: JRUBY_OPTS='--debug' # get more accurate coverage data
+    - rvm: jruby-head
+      gemfile: gemfiles/activesupport_60.gemfile
       jdk: oraclejdk8
       env: JRUBY_OPTS='--debug' # get more accurate coverage data
     - rvm: jruby-head

@@ -59,6 +59,7 @@ gem install eve_online
 * 5.0
 * 5.1
 * 5.2
+* 6.0.0.rc1
 * Edge
 
 ## Usage examples
