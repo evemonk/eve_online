@@ -6,6 +6,7 @@
 * Add `EveOnline::ESI::CharacterCalendarEvent`
 * Add `EveOnline::ESI::Models::EventDetails`
 * Add `EveOnline::ESI::Models::LoyaltyStoreOffer`
+* Add `EveOnline::ESI::CorporationLoyaltyStoreOffers`
 
 ## v0.26.0
 
