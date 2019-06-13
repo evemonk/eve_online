@@ -58,22 +58,22 @@ describe EveOnline::ESI::CharacterIndustryJobs do
       let(:response) do
         [
           {
-            'job_id' => 229_136_101,
-            'installer_id' => 498_338_451,
-            'facility_id' => 60_006_382,
-            'location_id' => 60_006_382,
-            'activity_id' => 1,
-            'blueprint_id' => 1_015_116_533_326,
-            'blueprint_type_id' => 2047,
-            'blueprint_location_id' => 60_006_382,
-            'output_location_id' => 60_006_382,
-            'runs' => 1,
-            'cost' => 118,
-            'licensed_runs' => 200,
-            'status' => 'active',
-            'duration' => 548,
-            'start_date' => '2014-07-19T15:47:06Z',
-            'end_date' => '2014-07-19T15:56:14Z'
+            job_id: 229_136_101,
+            installer_id: 498_338_451,
+            facility_id: 60_006_382,
+            location_id: 60_006_382,
+            activity_id: 1,
+            blueprint_id: 1_015_116_533_326,
+            blueprint_type_id: 2047,
+            blueprint_location_id: 60_006_382,
+            output_location_id: 60_006_382,
+            runs: 1,
+            cost: 118,
+            licensed_runs: 200,
+            status: 'active',
+            duration: 548,
+            start_date: '2014-07-19T15:47:06Z',
+            end_date: '2014-07-19T15:56:14Z'
           }
         ]
       end
