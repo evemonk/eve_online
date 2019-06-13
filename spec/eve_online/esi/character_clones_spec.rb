@@ -34,7 +34,7 @@ describe EveOnline::ESI::CharacterClones do
       specify { expect(subject.home_location).to eq(home_location) }
     end
 
-    context 'when @ancestries not set' do
+    context 'when @home_location not set' do
       let(:model) { instance_double(EveOnline::ESI::Models::HomeLocation) }
 
       let(:home_location) { double }
