@@ -50,8 +50,8 @@ describe EveOnline::ESI::CharacterKillmailsRecent do
       let(:response) do
         [
           {
-            'killmail_hash' => '07f7ef1d7f6090e78d8e85b4a98e680f67b5e9d5',
-            'killmail_id' => 72_410_059
+            killmail_hash: '07f7ef1d7f6090e78d8e85b4a98e680f67b5e9d5',
+            killmail_id: 72_410_059
           }
         ]
       end
