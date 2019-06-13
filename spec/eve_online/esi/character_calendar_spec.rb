@@ -34,7 +34,7 @@ describe EveOnline::ESI::CharacterCalendar do
       specify { expect(subject.events).to eq(events) }
     end
 
-    context 'when @ancestries not set' do
+    context 'when @events not set' do
       let(:event) { instance_double(EveOnline::ESI::Models::Event) }
 
       let(:response) do
