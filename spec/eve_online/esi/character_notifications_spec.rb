@@ -40,12 +40,12 @@ describe EveOnline::ESI::CharacterNotifications do
       let(:response) do
         [
           {
-            'notification_id' => 774_328_832,
-            'type' => 'AllWarDeclaredMsg',
-            'sender_id' => 1_000_125,
-            'sender_type' => 'corporation',
-            'timestamp' => '2018-03-01T13:48:00Z',
-            'text' => 'againstID: 99005443\ncost: 0\ndeclaredByID: 98442842\ndelayHours: 24\nhostileState: 0\n'
+            notification_id: 774_328_832,
+            type: 'AllWarDeclaredMsg',
+            sender_id: 1_000_125,
+            sender_type: 'corporation',
+            timestamp: '2018-03-01T13:48:00Z',
+            text: 'againstID: 99005443\ncost: 0\ndeclaredByID: 98442842\ndelayHours: 24\nhostileState: 0\n'
           }
         ]
       end
