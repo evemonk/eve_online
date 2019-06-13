@@ -78,9 +78,9 @@ describe EveOnline::ESI::CharacterClones do
       let(:response) do
         [
           {
-            'location_id' => 61_000_032,
-            'location_type' => 'station',
-            'implants' => [22_118]
+            location_id: 61_000_032,
+            location_type: 'station',
+            implants: [22_118]
           }
         ]
       end
