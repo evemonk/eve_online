@@ -34,12 +34,12 @@ describe EveOnline::ESI::UniverseAncestries do
       let(:response) do
         [
           {
-            'id' => 24,
-            'name' => 'Slave Child',
-            'bloodline_id' => 4,
-            'description' => 'Millions of slaves within the Amarr Empire dream of escape...',
-            'short_description' => 'Torn from the cold and brought to the warmth of a new life.',
-            'icon_id' => 1664
+            id: 24,
+            name: 'Slave Child',
+            bloodline_id: 4,
+            description: 'Millions of slaves within the Amarr Empire dream of escape...',
+            short_description: 'Torn from the cold and brought to the warmth of a new life.',
+            icon_id: 1664
           }
         ]
       end
