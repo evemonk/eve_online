@@ -21,6 +21,10 @@ describe EveOnline::ESI::CorporationKillmailsRecent do
 
       its(:_open_timeout) { should eq(60) }
 
+      if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6.0')
+        its(:_write_timeout) { should eq(60) }
+      end
+
       its(:datasource) { should eq('tranquility') }
 
       its(:corporation_id) { should eq(12_345_678) }
