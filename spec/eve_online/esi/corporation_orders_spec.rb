@@ -50,21 +50,21 @@ describe EveOnline::ESI::CorporationOrders do
       let(:response) do
         [
           {
-            'order_id' => 123,
-            'type_id' => 456,
-            'region_id' => 123,
-            'location_id' => 456,
-            'range' => 'station',
-            'is_buy_order' => true,
-            'price' => 33.3,
-            'volume_total' => 123_456,
-            'volume_remain' => 4422,
-            'issued' => '2016-09-03T05:12:25Z',
-            'state' => 'open',
-            'min_volume' => 1,
-            'wallet_division' => 1,
-            'duration' => 30,
-            'escrow' => 45.6
+            order_id: 123,
+            type_id: 456,
+            region_id: 123,
+            location_id: 456,
+            range: 'station',
+            is_buy_order: true,
+            price: 33.3,
+            volume_total: 123_456,
+            volume_remain: 4422,
+            issued: '2016-09-03T05:12:25Z',
+            state: 'open',
+            min_volume: 1,
+            wallet_division: 1,
+            duration: 30,
+            escrow: 45.6
           }
         ]
       end
