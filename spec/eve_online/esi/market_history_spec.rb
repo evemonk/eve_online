@@ -42,12 +42,12 @@ describe EveOnline::ESI::MarketHistory do
       let(:response) do
         [
           {
-            'date' => '2015-05-01',
-            'order_count' => 2267,
-            'volume' => 16_276_782_035,
-            'highest' => 5.27,
-            'average' => 5.25,
-            'lowest' => 5.11
+            date: '2015-05-01',
+            order_count: 2267,
+            volume: 16_276_782_035,
+            highest: 5.27,
+            average: 5.25,
+            lowest: 5.11
           }
         ]
       end
