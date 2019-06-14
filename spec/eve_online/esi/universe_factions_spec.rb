@@ -32,7 +32,7 @@ describe EveOnline::ESI::UniverseFactions do
       specify { expect(subject.factions).to eq(factions) }
     end
 
-    context 'when @ancestries not set' do
+    context 'when @factions not set' do
       let(:faction) { instance_double(EveOnline::ESI::Models::Faction) }
 
       let(:response) do
