@@ -50,13 +50,13 @@ describe EveOnline::ESI::CharacterWalletJournal do
       let(:response) do
         [
           {
-            'date' => '2018-03-06T12:43:50Z',
-            'ref_id' => 15_264_764_711,
-            'ref_type' => 'market_escrow',
-            'first_party_id' => 90_729_314,
-            'first_party_type' => 'character',
-            'amount' => -9.5,
-            'balance' => 4990.5
+            date: '2018-03-06T12:43:50Z',
+            ref_id: 15_264_764_711,
+            ref_type: 'market_escrow',
+            first_party_id: 90_729_314,
+            first_party_type: 'character',
+            amount: -9.5,
+            balance: 4990.5
           }
         ]
       end
