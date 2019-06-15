@@ -34,6 +34,7 @@ require 'eve_online/esi/character_bookmarks'
 require 'eve_online/esi/character_bookmark_folders'
 
 require 'eve_online/esi/character_calendar'
+require 'eve_online/esi/character_calendar_event'
 
 require 'eve_online/esi/character'
 require 'eve_online/esi/character_blueprints'
