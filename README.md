@@ -435,6 +435,36 @@ event.title # => "Moon extraction for 66-PMM - GoldMine-5-"
 
 #### Get an event
 
+```ruby
+options = { token: 'token123', character_id: 90_729_314, event_id: 1_635_240 }
+
+calendar_event = EveOnline::ESI::CharacterCalendarEvent.new(options)
+
+calendar_event.scope # => "esi-calendar.read_calendar_events.v1"
+
+calendar_event.as_json # => {:date=>Tue, 06 Mar 2018 15:00:59 UTC +00:00,
+                       #     :duration=>60,
+                       #     :event_id=>1635240,
+                       #     :importance=>0,
+                       #     :owner_id=>90729314,
+                       #     :owner_name=>"Green Black",
+                       #     :owner_type=>"character",
+                       #     :response=>"not_responded",
+                       #     :text=>""}
+                       #     :title=>"Moon extraction for 66-PMM - GoldMine-5-"}
+
+calendar_event.date # => Tue, 06 Mar 2018 15:00:59 UTC +00:00
+calendar_event.duration # => 60
+calendar_event.event_id # => 1635240
+calendar_event.importance # => 0
+calendar_event.owner_id # => 90729314
+calendar_event.owner_name # => "Green Black"
+calendar_event.owner_type # => "character"
+calendar_event.response # => "not_responded"
+calendar_event.text # => ""
+calendar_event.title # => "Moon extraction for 66-PMM - GoldMine-5-"
+```
+
 #### Respond to an event
 
 #### Get attendees
@@ -2679,6 +2709,7 @@ Thank you everyone!
 
 * Ian Flynn (@monban)
 * Mekaret Eriker (@Mekaret)
+* Y. (@lunohodov)
 
 ## License
 
