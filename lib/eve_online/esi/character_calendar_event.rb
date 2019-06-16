@@ -7,8 +7,7 @@ module EveOnline
 
       API_PATH = '/v3/characters/%<character_id>s/calendar/%<event_id>s/?datasource=%<datasource>s'
 
-      attr_reader :character_id
-      attr_reader :event_id
+      attr_reader :character_id, :event_id
 
       def initialize(options)
         super
@@ -17,16 +16,8 @@ module EveOnline
         @event_id = options.fetch(:event_id)
       end
 
-      def_delegators :model,
-        :as_json,
-        :date,
-        :duration,
-        :importance,
-        :owner_id,
-        :owner_name,
-        :owner_type,
-        :text,
-        :title
+      def_delegators :model, :as_json, :date, :duration, :importance, :owner_id,
+        :owner_name, :owner_type, :text, :title
 
       def model
         @model ||= Models::EventDetails.new(response)
