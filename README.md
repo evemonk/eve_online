@@ -2709,6 +2709,7 @@ Thank you everyone!
 
 * Ian Flynn (@monban)
 * Mekaret Eriker (@Mekaret)
+* Y. (@lunohodov)
 
 ## License
 
