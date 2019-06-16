@@ -40,8 +40,8 @@ describe EveOnline::ESI::CharacterLoyaltyPoints do
       let(:response) do
         [
           {
-            'corporation_id' => 1_000_035,
-            'loyalty_points' => 14_163
+            corporation_id: 1_000_035,
+            loyalty_points: 14_163
           }
         ]
       end
