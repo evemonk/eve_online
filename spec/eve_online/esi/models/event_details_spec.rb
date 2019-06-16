@@ -133,7 +133,7 @@ describe EveOnline::ESI::Models::EventDetails do
   end
 
   describe '#event_response' do
-    before { expect(options).to receive(:[]).with('event_response') }
+    before { expect(options).to receive(:[]).with('response') }
 
     specify { expect { subject.event_response }.not_to raise_error }
   end
