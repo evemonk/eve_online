@@ -5,4 +5,4 @@
 * Add caching timeout
 * Add 420 error status
 * Add errors limits
-* gem install fasterer
+* https://github.com/esi/esi-issues/blob/master/changelog.md
