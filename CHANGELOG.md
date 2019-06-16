@@ -4,6 +4,7 @@
 
 * Rails 6.0.0.rc1
 * Add `EveOnline::ESI::CharacterCalendarEvent`
+* Add `EveOnline::ESI::Models::EventDetails`
 
 ## v0.26.0
 
