@@ -34,7 +34,7 @@ describe EveOnline::ESI::CharacterStandings do
       specify { expect(subject.standings).to eq(standings) }
     end
 
-    context 'when @ancestries not set' do
+    context 'when @standings not set' do
       let(:standing) { instance_double(EveOnline::ESI::Models::Standing) }
 
       let(:response) do
