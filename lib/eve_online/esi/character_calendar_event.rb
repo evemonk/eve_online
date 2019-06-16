@@ -17,7 +17,7 @@ module EveOnline
       end
 
       def_delegators :model, :as_json, :date, :duration, :importance, :owner_id,
-        :owner_name, :owner_type, :text, :title
+                     :owner_name, :owner_type, :text, :title
 
       def model
         @model ||= Models::EventDetails.new(response)
