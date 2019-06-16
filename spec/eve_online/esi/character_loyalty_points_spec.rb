@@ -34,7 +34,7 @@ describe EveOnline::ESI::CharacterLoyaltyPoints do
       specify { expect(subject.loyalty_points).to eq(loyalty_points) }
     end
 
-    context 'when @ancestries not set' do
+    context 'when @loyalty_points not set' do
       let(:loyalty_point) { instance_double(EveOnline::ESI::Models::LoyaltyPoint) }
 
       let(:response) do
