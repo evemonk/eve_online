@@ -126,6 +126,16 @@ describe EveOnline::ESI::CharacterCalendarEvent do
     specify { expect { subject.owner_type }.not_to raise_error }
   end
 
+  describe '#event_response' do
+    let(:model) { instance_double(EveOnline::ESI::Models::EventDetails) }
+
+    before { subject.instance_variable_set(:@model, model) }
+
+    before { expect(model).to receive(:event_response) }
+
+    specify { expect { subject.event_response }.not_to raise_error }
+  end
+
   describe '#text' do
     let(:model) { instance_double(EveOnline::ESI::Models::EventDetails) }
 
