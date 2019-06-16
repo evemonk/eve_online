@@ -26,9 +26,7 @@ module EveOnline
         end
 
         def duration
-          duration = options['duration']
-
-          duration&.to_i
+          options['duration']
         end
 
         def event_id

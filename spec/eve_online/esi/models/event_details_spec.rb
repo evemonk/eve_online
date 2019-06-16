@@ -92,10 +92,6 @@ describe EveOnline::ESI::Models::EventDetails do
 
       before { expect(options).to receive(:[]).with('duration').and_return(duration) }
 
-      before do
-        expect(duration).to receive(:to_i)
-      end
-
       specify { expect { subject.duration }.not_to raise_error }
     end
 
