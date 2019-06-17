@@ -20,6 +20,10 @@ describe EveOnline::ESI::UniverseFactions do
 
     its(:_open_timeout) { should eq(60) }
 
+    if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6.0')
+      its(:_write_timeout) { should eq(60) }
+    end
+
     its(:datasource) { should eq('tranquility') }
   end
 
@@ -32,22 +36,22 @@ describe EveOnline::ESI::UniverseFactions do
       specify { expect(subject.factions).to eq(factions) }
     end
 
-    context 'when @ancestries not set' do
+    context 'when @factions not set' do
       let(:faction) { instance_double(EveOnline::ESI::Models::Faction) }
 
       let(:response) do
         [
           {
-            'faction_id' => 500_002,
-            'name' => 'Minmatar Republic',
-            'description' => 'The Minmatar Republic was formed over a century ago when the Minmatar threw',
-            'size_factor' => 5.0,
-            'station_count' => 570,
-            'station_system_count' => 291,
-            'is_unique' => true,
-            'solar_system_id' => 30_002_544,
-            'corporation_id' => 1_000_051,
-            'militia_corporation_id' => 1_000_182
+            faction_id: 500_002,
+            name: 'Minmatar Republic',
+            description: 'The Minmatar Republic was formed over a century ago when the Minmatar threw',
+            size_factor: 5.0,
+            station_count: 570,
+            station_system_count: 291,
+            is_unique: true,
+            solar_system_id: 30_002_544,
+            corporation_id: 1_000_051,
+            militia_corporation_id: 1_000_182
           }
         ]
       end

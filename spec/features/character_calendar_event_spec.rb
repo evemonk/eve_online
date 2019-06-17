@@ -24,7 +24,7 @@ describe 'Get character calendar event information' do
                                     owner_id: 91_473_836,
                                     owner_name: 'Devas Weddo',
                                     owner_type: 'character',
-                                    response: 'not_responded',
+                                    event_response: 'not_responded',
                                     text: 'X marks the spot',
                                     title: 'Important personal event')
     end

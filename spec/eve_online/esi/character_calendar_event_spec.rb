@@ -20,6 +20,10 @@ describe EveOnline::ESI::CharacterCalendarEvent do
 
     its(:_open_timeout) { should eq(60) }
 
+    if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6.0')
+      its(:_write_timeout) { should eq(60) }
+    end
+
     its(:datasource) { should eq('tranquility') }
 
     its(:character_id) { should eq(91_473_836) }
@@ -124,6 +128,16 @@ describe EveOnline::ESI::CharacterCalendarEvent do
     before { expect(model).to receive(:owner_type) }
 
     specify { expect { subject.owner_type }.not_to raise_error }
+  end
+
+  describe '#event_response' do
+    let(:model) { instance_double(EveOnline::ESI::Models::EventDetails) }
+
+    before { subject.instance_variable_set(:@model, model) }
+
+    before { expect(model).to receive(:event_response) }
+
+    specify { expect { subject.event_response }.not_to raise_error }
   end
 
   describe '#text' do

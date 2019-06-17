@@ -13,7 +13,7 @@ module EveOnline
             owner_id: owner_id,
             owner_name: owner_name,
             owner_type: owner_type,
-            response: response,
+            event_response: event_response,
             text: text,
             title: title
           }
@@ -49,7 +49,7 @@ module EveOnline
           options['owner_type']
         end
 
-        def response
+        def event_response
           options['response']
         end
 

@@ -20,6 +20,10 @@ describe EveOnline::ESI::CharacterStandings do
 
     its(:_open_timeout) { should eq(60) }
 
+    if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6.0')
+      its(:_write_timeout) { should eq(60) }
+    end
+
     its(:datasource) { should eq('tranquility') }
 
     its(:character_id) { should eq(12_345_678) }
@@ -34,15 +38,15 @@ describe EveOnline::ESI::CharacterStandings do
       specify { expect(subject.standings).to eq(standings) }
     end
 
-    context 'when @ancestries not set' do
+    context 'when @standings not set' do
       let(:standing) { instance_double(EveOnline::ESI::Models::Standing) }
 
       let(:response) do
         [
           {
-            'from_id' => 500_001,
-            'from_type' => 'faction',
-            'standing' => 0.3303719111639991
+            from_id: 500_001,
+            from_type: 'faction',
+            standing: 0.3303719111639991
           }
         ]
       end

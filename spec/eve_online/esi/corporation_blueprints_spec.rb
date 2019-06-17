@@ -21,6 +21,10 @@ describe EveOnline::ESI::CorporationBlueprints do
 
       its(:_open_timeout) { should eq(60) }
 
+      if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6.0')
+        its(:_write_timeout) { should eq(60) }
+      end
+
       its(:datasource) { should eq('tranquility') }
 
       its(:corporation_id) { should eq(12_345_678) }
@@ -50,14 +54,14 @@ describe EveOnline::ESI::CorporationBlueprints do
       let(:response) do
         [
           {
-            'item_id' => 1_000_000_010_495,
-            'type_id' => 691,
-            'location_id' => 60_014_719,
-            'location_flag' => 'CorpSAG1',
-            'quantity' => 1,
-            'time_efficiency' => 0,
-            'material_efficiency' => 0,
-            'runs' => -1
+            item_id: 1_000_000_010_495,
+            type_id: 691,
+            location_id: 60_014_719,
+            location_flag: 'CorpSAG1',
+            quantity: 1,
+            time_efficiency: 0,
+            material_efficiency: 0,
+            runs: -1
           }
         ]
       end

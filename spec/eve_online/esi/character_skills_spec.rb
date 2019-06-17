@@ -20,6 +20,10 @@ describe EveOnline::ESI::CharacterSkills do
 
     its(:_open_timeout) { should eq(60) }
 
+    if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6.0')
+      its(:_write_timeout) { should eq(60) }
+    end
+
     its(:datasource) { should eq('tranquility') }
 
     its(:character_id) { should eq(12_345_678) }
@@ -58,10 +62,10 @@ describe EveOnline::ESI::CharacterSkills do
       let(:response) do
         [
           {
-            'skill_id' => 22_536,
-            'skillpoints_in_skill' => 500,
-            'trained_skill_level' => 1,
-            'active_skill_level' => 0
+            skill_id: 22_536,
+            skillpoints_in_skill: 500,
+            trained_skill_level: 1,
+            active_skill_level: 0
           }
         ]
       end

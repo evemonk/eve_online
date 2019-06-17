@@ -20,6 +20,10 @@ describe EveOnline::ESI::CharacterLoyaltyPoints do
 
     its(:_open_timeout) { should eq(60) }
 
+    if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6.0')
+      its(:_write_timeout) { should eq(60) }
+    end
+
     its(:datasource) { should eq('tranquility') }
 
     its(:character_id) { should eq(12_345_678) }
@@ -34,14 +38,14 @@ describe EveOnline::ESI::CharacterLoyaltyPoints do
       specify { expect(subject.loyalty_points).to eq(loyalty_points) }
     end
 
-    context 'when @ancestries not set' do
+    context 'when @loyalty_points not set' do
       let(:loyalty_point) { instance_double(EveOnline::ESI::Models::LoyaltyPoint) }
 
       let(:response) do
         [
           {
-            'corporation_id' => 1_000_035,
-            'loyalty_points' => 14_163
+            corporation_id: 1_000_035,
+            loyalty_points: 14_163
           }
         ]
       end

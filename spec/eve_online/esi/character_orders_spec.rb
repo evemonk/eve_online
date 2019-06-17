@@ -20,6 +20,10 @@ describe EveOnline::ESI::CharacterOrders do
 
     its(:_open_timeout) { should eq(60) }
 
+    if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6.0')
+      its(:_write_timeout) { should eq(60) }
+    end
+
     its(:datasource) { should eq('tranquility') }
 
     its(:character_id) { should eq(12_345_678) }
@@ -40,22 +44,22 @@ describe EveOnline::ESI::CharacterOrders do
       let(:response) do
         [
           {
-            'order_id' => 123,
-            'type_id' => 456,
-            'region_id' => 123,
-            'location_id' => 456,
-            'range' => 'station',
-            'is_buy_order' => true,
-            'price' => 33.3,
-            'volume_total' => 123_456,
-            'volume_remain' => 4422,
-            'issued' => '2016-09-03T05:12:25Z',
-            'state' => 'open',
-            'min_volume' => 1,
-            'account_id' => 1000,
-            'duration' => 30,
-            'is_corp' => false,
-            'escrow' => 45.6
+            order_id: 123,
+            type_id: 456,
+            region_id: 123,
+            location_id: 456,
+            range: 'station',
+            is_buy_order: true,
+            price: 33.3,
+            volume_total: 123_456,
+            volume_remain: 4422,
+            issued: '2016-09-03T05:12:25Z',
+            state: 'open',
+            min_volume: 1,
+            account_id: 1000,
+            duration: 30,
+            is_corp: false,
+            escrow: 45.6
           }
         ]
       end

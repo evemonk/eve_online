@@ -32,7 +32,7 @@ describe EveOnline::ESI::Models::EventDetails do
 
     before { expect(event).to receive(:owner_type).and_return('character') }
 
-    before { expect(event).to receive(:response).and_return('not_responded') }
+    before { expect(event).to receive(:event_response).and_return('not_responded') }
 
     before { expect(event).to receive(:text).and_return('Extracting moon minerals') }
 
@@ -54,7 +54,7 @@ describe EveOnline::ESI::Models::EventDetails do
 
     its([:owner_type]) { should eq('character') }
 
-    its([:response]) { should eq('not_responded') }
+    its([:event_response]) { should eq('not_responded') }
 
     its([:text]) { should eq('Extracting moon minerals') }
 
@@ -132,10 +132,10 @@ describe EveOnline::ESI::Models::EventDetails do
     specify { expect { subject.owner_type }.not_to raise_error }
   end
 
-  describe '#response' do
+  describe '#event_response' do
     before { expect(options).to receive(:[]).with('response') }
 
-    specify { expect { subject.response }.not_to raise_error }
+    specify { expect { subject.event_response }.not_to raise_error }
   end
 
   describe '#text' do

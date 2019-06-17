@@ -21,6 +21,10 @@ describe EveOnline::ESI::CharacterWalletJournal do
 
       its(:_open_timeout) { should eq(60) }
 
+      if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6.0')
+        its(:_write_timeout) { should eq(60) }
+      end
+
       its(:datasource) { should eq('tranquility') }
 
       its(:character_id) { should eq(12_345_678) }
@@ -50,13 +54,13 @@ describe EveOnline::ESI::CharacterWalletJournal do
       let(:response) do
         [
           {
-            'date' => '2018-03-06T12:43:50Z',
-            'ref_id' => 15_264_764_711,
-            'ref_type' => 'market_escrow',
-            'first_party_id' => 90_729_314,
-            'first_party_type' => 'character',
-            'amount' => -9.5,
-            'balance' => 4990.5
+            date: '2018-03-06T12:43:50Z',
+            ref_id: 15_264_764_711,
+            ref_type: 'market_escrow',
+            first_party_id: 90_729_314,
+            first_party_type: 'character',
+            amount: -9.5,
+            balance: 4990.5
           }
         ]
       end

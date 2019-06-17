@@ -21,6 +21,10 @@ describe EveOnline::ESI::CharacterBookmarks do
 
       its(:_open_timeout) { should eq(60) }
 
+      if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6.0')
+        its(:_write_timeout) { should eq(60) }
+      end
+
       its(:datasource) { should eq('tranquility') }
 
       its(:character_id) { should eq(12_345_678) }
@@ -44,7 +48,7 @@ describe EveOnline::ESI::CharacterBookmarks do
       specify { expect(subject.bookmarks).to eq(bookmarks) }
     end
 
-    context 'when @ancestries not set' do
+    context 'when @bookmarks not set' do
       let(:bookmark) { instance_double(EveOnline::ESI::Models::Bookmark) }
 
       let(:response) do

@@ -20,6 +20,10 @@ describe EveOnline::ESI::CharacterClones do
 
     its(:_open_timeout) { should eq(60) }
 
+    if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6.0')
+      its(:_write_timeout) { should eq(60) }
+    end
+
     its(:datasource) { should eq('tranquility') }
 
     its(:character_id) { should eq(12_345_678) }
@@ -34,7 +38,7 @@ describe EveOnline::ESI::CharacterClones do
       specify { expect(subject.home_location).to eq(home_location) }
     end
 
-    context 'when @ancestries not set' do
+    context 'when @home_location not set' do
       let(:model) { instance_double(EveOnline::ESI::Models::HomeLocation) }
 
       let(:home_location) { double }
@@ -78,9 +82,9 @@ describe EveOnline::ESI::CharacterClones do
       let(:response) do
         [
           {
-            'location_id' => 61_000_032,
-            'location_type' => 'station',
-            'implants' => [22_118]
+            location_id: 61_000_032,
+            location_type: 'station',
+            implants: [22_118]
           }
         ]
       end

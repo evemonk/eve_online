@@ -20,6 +20,10 @@ describe EveOnline::ESI::MarketHistory do
 
     its(:_open_timeout) { should eq(60) }
 
+    if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6.0')
+      its(:_write_timeout) { should eq(60) }
+    end
+
     its(:datasource) { should eq('tranquility') }
 
     its(:region_id) { should eq(10_000_002) }
@@ -42,12 +46,12 @@ describe EveOnline::ESI::MarketHistory do
       let(:response) do
         [
           {
-            'date' => '2015-05-01',
-            'order_count' => 2267,
-            'volume' => 16_276_782_035,
-            'highest' => 5.27,
-            'average' => 5.25,
-            'lowest' => 5.11
+            date: '2015-05-01',
+            order_count: 2267,
+            volume: 16_276_782_035,
+            highest: 5.27,
+            average: 5.25,
+            lowest: 5.11
           }
         ]
       end

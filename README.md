@@ -449,8 +449,8 @@ calendar_event.as_json # => {:date=>Tue, 06 Mar 2018 15:00:59 UTC +00:00,
                        #     :owner_id=>90729314,
                        #     :owner_name=>"Green Black",
                        #     :owner_type=>"character",
-                       #     :response=>"not_responded",
-                       #     :text=>""}
+                       #     :event_response=>"not_responded",
+                       #     :text=>"",
                        #     :title=>"Moon extraction for 66-PMM - GoldMine-5-"}
 
 calendar_event.date # => Tue, 06 Mar 2018 15:00:59 UTC +00:00
@@ -460,7 +460,7 @@ calendar_event.importance # => 0
 calendar_event.owner_id # => 90729314
 calendar_event.owner_name # => "Green Black"
 calendar_event.owner_type # => "character"
-calendar_event.response # => "not_responded"
+calendar_event.event_response # => "not_responded"
 calendar_event.text # => ""
 calendar_event.title # => "Moon extraction for 66-PMM - GoldMine-5-"
 ```
@@ -1370,10 +1370,42 @@ loyalty_point.as_json # => {:corporation_id=>1000035, :loyalty_points=>14163}
 loyalty_point.corporation_id # => 1000035
 loyalty_point.loyalty_points # => 14163
 
-# TODO: character_loyalty_points.etag
+character_loyalty_points.etag # => "b6f4d03c84350052a2e95e3b098c41b1c50f938ffe3f6da7fc1c1698"
 ```
 
 #### List loyalty store offers
+
+```ruby
+options = { corporation_id: 1_000_035 }
+
+corporation_loyalty_store_offers = EveOnline::ESI::CorporationLoyaltyStoreOffers.new(options)
+
+corporation_loyalty_store_offers.scope # => nil
+
+corporation_loyalty_store_offers.roles # => []
+
+corporation_loyalty_store_offers.offers.size # => 332
+
+offer = corporation_loyalty_store_offers.offers.first
+
+offer.as_json # => {:ak_cost=>nil,
+              #     :isk_cost=>2400000,
+              #     :lp_cost=>2400,
+              #     :offer_id=>3584,
+              #     :quantity=>5000,
+              #     :type_id=>23047}
+
+offer.ak_cost # => nil
+offer.isk_cost # => 2400000
+offer.lp_cost # => 2400
+offer.offer_id # => 3584
+offer.quantity # => 5000
+offer.type_id # => 23047
+
+# TODO: offer.required_items
+
+corporation_loyalty_store_offers.etag # => "89211f42fde090e4d22621e9b97d7604ab87af95b3b6ffed7fe81bc0"
+```
 
 ### Mail
 

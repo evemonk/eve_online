@@ -16,6 +16,10 @@ describe EveOnline::ESI::UniverseRaces do
 
     its(:_open_timeout) { should eq(60) }
 
+    if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6.0')
+      its(:_write_timeout) { should eq(60) }
+    end
+
     its(:datasource) { should eq('tranquility') }
   end
 
@@ -34,10 +38,10 @@ describe EveOnline::ESI::UniverseRaces do
       let(:response) do
         [
           {
-            'race_id' => 2,
-            'name' => 'Minmatar',
-            'description' => 'Once a thriving tribal civilization, the Minmatar...',
-            'alliance_id' => 500_002
+            race_id: 2,
+            name: 'Minmatar',
+            description: 'Once a thriving tribal civilization, the Minmatar...',
+            alliance_id: 500_002
           }
         ]
       end

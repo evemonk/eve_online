@@ -20,6 +20,10 @@ describe EveOnline::ESI::CharacterCalendar do
 
     its(:_open_timeout) { should eq(60) }
 
+    if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6.0')
+      its(:_write_timeout) { should eq(60) }
+    end
+
     its(:datasource) { should eq('tranquility') }
 
     its(:character_id) { should eq(12_345_678) }
@@ -34,7 +38,7 @@ describe EveOnline::ESI::CharacterCalendar do
       specify { expect(subject.events).to eq(events) }
     end
 
-    context 'when @ancestries not set' do
+    context 'when @events not set' do
       let(:event) { instance_double(EveOnline::ESI::Models::Event) }
 
       let(:response) do

@@ -16,8 +16,9 @@ module EveOnline
         @event_id = options.fetch(:event_id)
       end
 
-      def_delegators :model, :as_json, :date, :duration, :importance, :owner_id,
-                     :owner_name, :owner_type, :text, :title
+      def_delegators :model, :as_json, :date, :duration, :importance,
+                     :owner_id, :owner_name, :owner_type, :event_response,
+                     :text, :title
 
       def model
         @model ||= Models::EventDetails.new(response)

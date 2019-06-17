@@ -16,6 +16,10 @@ describe EveOnline::ESI::UniverseBloodlines do
 
     its(:_open_timeout) { should eq(60) }
 
+    if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6.0')
+      its(:_write_timeout) { should eq(60) }
+    end
+
     its(:datasource) { should eq('tranquility') }
   end
 
@@ -34,17 +38,17 @@ describe EveOnline::ESI::UniverseBloodlines do
       let(:response) do
         [
           {
-            'bloodline_id' => 4,
-            'name' => 'Brutor',
-            'description' => 'A martial, strong-willed people, the Brutor...',
-            'race_id' => 2,
-            'ship_type_id' => 588,
-            'corporation_id' => 1_000_049,
-            'perception' => 9,
-            'willpower' => 7,
-            'charisma' => 6,
-            'memory' => 4,
-            'intelligence' => 4
+            bloodline_id: 4,
+            name: 'Brutor',
+            description: 'A martial, strong-willed people, the Brutor...',
+            race_id: 2,
+            ship_type_id: 588,
+            corporation_id: 1_000_049,
+            perception: 9,
+            willpower: 7,
+            charisma: 6,
+            memory: 4,
+            intelligence: 4
           }
         ]
       end

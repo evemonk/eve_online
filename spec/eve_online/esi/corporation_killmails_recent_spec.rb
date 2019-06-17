@@ -21,6 +21,10 @@ describe EveOnline::ESI::CorporationKillmailsRecent do
 
       its(:_open_timeout) { should eq(60) }
 
+      if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6.0')
+        its(:_write_timeout) { should eq(60) }
+      end
+
       its(:datasource) { should eq('tranquility') }
 
       its(:corporation_id) { should eq(12_345_678) }
@@ -50,8 +54,8 @@ describe EveOnline::ESI::CorporationKillmailsRecent do
       let(:response) do
         [
           {
-            'killmail_hash' => '07f7ef1d7f6090e78d8e85b4a98e680f67b5e9d5',
-            'killmail_id' => 72_410_059
+            killmail_hash: '07f7ef1d7f6090e78d8e85b4a98e680f67b5e9d5',
+            killmail_id: 72_410_059
           }
         ]
       end

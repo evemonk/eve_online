@@ -20,6 +20,10 @@ describe EveOnline::ESI::CharacterSkillQueue do
 
     its(:_open_timeout) { should eq(60) }
 
+    if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6.0')
+      its(:_write_timeout) { should eq(60) }
+    end
+
     its(:datasource) { should eq('tranquility') }
 
     its(:character_id) { should eq(12_345_678) }
@@ -40,14 +44,14 @@ describe EveOnline::ESI::CharacterSkillQueue do
       let(:response) do
         [
           {
-            'skill_id' => 12_487,
-            'finished_level' => 3,
-            'queue_position' => 0,
-            'finish_date' => '2017-01-16T03:00:35Z',
-            'start_date' => '2017-01-15T11:38:25Z',
-            'training_start_sp' => 7_263,
-            'level_end_sp' => 40_000,
-            'level_start_sp' => 7_072
+            skill_id: 12_487,
+            finished_level: 3,
+            queue_position: 0,
+            finish_date: '2017-01-16T03:00:35Z',
+            start_date: '2017-01-15T11:38:25Z',
+            training_start_sp: 7_263,
+            level_end_sp: 40_000,
+            level_start_sp: 7_072
           }
         ]
       end

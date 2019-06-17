@@ -21,6 +21,10 @@ describe EveOnline::ESI::CharacterBookmarkFolders do
 
       its(:_open_timeout) { should eq(60) }
 
+      if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6.0')
+        its(:_write_timeout) { should eq(60) }
+      end
+
       its(:datasource) { should eq('tranquility') }
 
       its(:character_id) { should eq(12_345_678) }
@@ -44,7 +48,7 @@ describe EveOnline::ESI::CharacterBookmarkFolders do
       specify { expect(subject.bookmark_folders).to eq(bookmark_folders) }
     end
 
-    context 'when @ancestries not set' do
+    context 'when @bookmark_folders not set' do
       let(:bookmark_folder) { instance_double(EveOnline::ESI::Models::BookmarkFolder) }
 
       let(:response) do
