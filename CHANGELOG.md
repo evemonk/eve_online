@@ -8,6 +8,8 @@
 * Add `EveOnline::ESI::Models::LoyaltyStoreOffer`
 * Add `EveOnline::ESI::CorporationLoyaltyStoreOffers`
 * Rename `EveOnline::ESI::Models::EventDetails#response` to `#event_response`
+* Add `EveOnine::ESI::CharacterCorporationHistory`
+* Add `EveOnline::ESI::Models::CharacterCorporationHistory`
 
 ## v0.26.0
 
