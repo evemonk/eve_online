@@ -1,0 +1,66 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://esi.evetech.net/v1/characters/90729314/corporationhistory/?datasource=tranquility
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/json
+      User-Agent:
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.26.0
+      Accept-Language:
+      - en-us
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 28 Jun 2019 19:47:42 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '85'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,If-None-Match,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,HEAD,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,ETag,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Allow:
+      - GET,HEAD,OPTIONS
+      Cache-Control:
+      - public
+      Etag:
+      - '"f9497588fc2db18ca9a2ee06c48a16120e0c712fe9925bb29d7aaeeb"'
+      Expires:
+      - Fri, 28 Jun 2019 20:37:13 GMT
+      Last-Modified:
+      - Fri, 28 Jun 2019 19:37:13 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '18'
+      X-Esi-Request-Id:
+      - 47979f06-b598-46a1-afdb-bee7128c375b
+    body:
+      encoding: UTF-8
+      string: '[{"corporation_id":1000168,"record_id":16785803,"start_date":"2011-05-10T10:23:00Z"}]'
+    http_version: 
+  recorded_at: Fri, 28 Jun 2019 19:47:42 GMT
+recorded_with: VCR 5.0.0
