@@ -13,16 +13,16 @@ module EveOnline
         @character_id = options.fetch(:character_id)
       end
 
-      # def entries
-      #   @entries ||=
-      #     begin
-      #       output = []
-      #       response.each do |record|
-      #         output << Models::CharacterCorporationHistory.new(record)
-      #       end
-      #       output
-      #     end
-      # end
+      def entries
+        @entries ||=
+          begin
+            output = []
+            response.each do |record|
+              output << Models::CharacterCorporationHistory.new(record)
+            end
+            output
+          end
+      end
 
       def scope; end
 
