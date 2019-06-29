@@ -551,6 +551,30 @@ blueprint.type_id # => 1010
 
 #### Get corporation history
 
+```ruby
+options = { character_id: 90_729_314 }
+
+character_corporation_history = EveOnline::ESI::CharacterCorporationHistory.new(options)
+
+character_corporation_history.scope # => nil
+
+character_corporation_history.entries.size # => 1
+
+entry = character_corporation_history.entries.first
+
+entry.as_json # => {:corporation_id=>1000168,
+              #     :is_deleted=>nil,
+              #     :record_id=>16785803,
+              #     :start_date=>Tue, 10 May 2011 10:23:00 UTC +00:00}
+
+entry.corporation_id # => 1000168
+entry.is_deleted # => nil
+entry.record_id # => 16785803
+entry.start_date # => Tue, 10 May 2011 10:23:00 UTC +00:00
+
+character_corporation_history.etag # => "f9497588fc2db18ca9a2ee06c48a16120e0c712fe9925bb29d7aaeeb"
+```
+
 #### Calculate a CSPA charge cost
 
 #### Get jump fatigue
