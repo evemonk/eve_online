@@ -3,7 +3,7 @@
 require 'spec_helper'
 
 describe EveOnline::ESI::Base do
-  specify { expect(described_class::API_HOST).to eq('https://esi.evetech.net') }
+  specify { expect(described_class::API_HOST).to eq('esi.evetech.net') }
 
   describe '#initialize' do
     context 'with options' do
@@ -68,7 +68,18 @@ describe EveOnline::ESI::Base do
   end
 
   describe '#url' do
-    specify { expect { subject.url }.to raise_error(NotImplementedError) }
+    before do
+      #
+      # subject.uri.to_s
+      #
+      expect(subject).to receive(:uri) do
+        double.tap do |a|
+          expect(a).to receive(:to_s)
+        end
+      end
+    end
+
+    specify { expect { subject.url }.not_to raise_error }
   end
 
   describe '#scope' do
@@ -400,6 +411,34 @@ describe EveOnline::ESI::Base do
       specify { expect { subject.uri }.to change { subject.instance_variable_get(:@uri) }.from(nil).to(uri) }
     end
   end
+
+  # def uri
+  #   @uri ||= URI::HTTPS.build(host: API_HOST,
+  #                             path: path,
+  #                             query: query.to_query)
+  # end
+
+  describe '#additation_query_params' do
+    specify { expect(subject.additation_query_params).to eq([]) }
+  end
+
+  describe '#base_query_elements' do
+    specify { expect(subject.base_query_elements).to eq([:datasource]) }
+  end
+
+  describe '#path' do
+    specify { expect { subject.path }.to raise_error(NotImplementedError) }
+  end
+
+  # def query
+  #   hash = {}
+  #
+  #   (base_query_elements + additation_query_params).each do |element|
+  #     hash[element] = public_send(element)
+  #   end
+  #
+  #   hash.reject { |_, v| v.blank? }
+  # end
 
   describe '#resource' do
     context 'when @resource set' do
