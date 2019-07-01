@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class AllianceCorporations < Base
-      API_PATH = '/v1/alliances/%<alliance_id>s/corporations/?datasource=%<datasource>s'
+      API_PATH = '/v1/alliances/%<alliance_id>s/corporations/'
 
       attr_reader :alliance_id
 
@@ -19,8 +19,8 @@ module EveOnline
 
       def scope; end
 
-      def url
-        format("#{ API_HOST }#{ API_PATH }", alliance_id: alliance_id, datasource: datasource)
+      def path
+        format("#{ API_PATH }", alliance_id: alliance_id)
       end
     end
   end

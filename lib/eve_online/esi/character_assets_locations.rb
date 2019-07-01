@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class CharacterAssetsLocations < Base
-      API_PATH = '/v2/characters/%<character_id>s/assets/locations/?datasource=%<datasource>s'
+      API_PATH = '/v2/characters/%<character_id>s/assets/locations/'
 
       attr_reader :character_id, :item_ids
 
@@ -41,8 +41,8 @@ module EveOnline
         raise NotImplementedError
       end
 
-      def url
-        format("#{ API_HOST }#{ API_PATH }", character_id: character_id, datasource: datasource)
+      def path
+        format("#{ API_PATH }", character_id: character_id)
       end
     end
   end
