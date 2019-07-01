@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class CharacterBlueprints < Base
-      API_PATH = '/v2/characters/%<character_id>s/blueprints/?datasource=%<datasource>s&page=%<page>s'
+      API_PATH = '/v2/characters/%<character_id>s/blueprints/'
 
       attr_reader :character_id, :page
 
@@ -29,8 +29,12 @@ module EveOnline
         'esi-characters.read_blueprints.v1'
       end
 
-      def url
-        format("#{ API_HOST }#{ API_PATH }", character_id: character_id, datasource: datasource, page: page)
+      def additation_query_params
+        [:page]
+      end
+
+      def path
+        format("#{ API_PATH }", character_id: character_id)
       end
     end
   end
