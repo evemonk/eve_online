@@ -2624,7 +2624,7 @@ wars.etag # => "1e90be747fd163e5d74ab7a949bf8ad3f1d6ecd365cac31c534ab046"
 #### List kills for a war
 
 ```ruby
-options = { war_id: 615578 }
+options = { war_id: 615578, page: 1 }
 
 war_killmails = EveOnline::ESI::WarKillmails.new(options)
 
