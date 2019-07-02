@@ -12,18 +12,16 @@ http_interactions:
       Accept:
       - application/json
       User-Agent:
-      - EveOnline API (https://github.com/evemonk/eve_online) v0.22.0
-      Accept-Language:
-      - en-us
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.27.0
       If-None-Match:
-      - 6edc271fcf967ee50bec6935856501b233e58790fad237b097946a4c
+      - 1b64f9a8268bb3ba350acc7d7116bfd75dd9f88defb1bbc61771aec7
   response:
     status:
       code: 304
       message: Not Modified
     headers:
       Date:
-      - Tue, 01 Jan 2019 21:55:18 GMT
+      - Tue, 02 Jul 2019 21:36:42 GMT
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -43,22 +41,22 @@ http_interactions:
       Cache-Control:
       - public
       Etag:
-      - '"6edc271fcf967ee50bec6935856501b233e58790fad237b097946a4c"'
+      - '"1b64f9a8268bb3ba350acc7d7116bfd75dd9f88defb1bbc61771aec7"'
       Expires:
-      - Tue, 01 Jan 2019 22:42:40 GMT
+      - Tue, 02 Jul 2019 21:38:56 GMT
       Last-Modified:
-      - Tue, 01 Jan 2019 21:42:40 GMT
+      - Tue, 02 Jul 2019 20:38:56 GMT
       Strict-Transport-Security:
       - max-age=31536000
       X-Esi-Error-Limit-Remain:
       - '100'
       X-Esi-Error-Limit-Reset:
-      - '42'
+      - '18'
       X-Esi-Request-Id:
-      - f9e5b471-9270-4083-9d9a-47fae33325b7
+      - 4503c352-5fd0-4787-bead-4469fc59b45d
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Tue, 01 Jan 2019 21:55:18 GMT
-recorded_with: VCR 4.0.0
+  recorded_at: Tue, 02 Jul 2019 21:36:42 GMT
+recorded_with: VCR 5.0.0
