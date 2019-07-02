@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class CorporationBlueprints < Base
-      API_PATH = '/v2/corporations/%<corporation_id>s/blueprints/?datasource=%<datasource>s&page=%<page>s'
+      API_PATH = '/v2/corporations/%<corporation_id>s/blueprints/'
 
       attr_reader :corporation_id, :page
 
@@ -33,8 +33,12 @@ module EveOnline
         ['Director']
       end
 
-      def url
-        format("#{ API_HOST }#{ API_PATH }", corporation_id: corporation_id, datasource: datasource, page: page)
+      def additation_query_params
+        [:page]
+      end
+
+      def path
+        format("#{ API_PATH }", corporation_id: corporation_id)
       end
     end
   end
