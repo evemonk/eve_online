@@ -9,7 +9,7 @@ describe EveOnline::ESI::CharacterSkills do
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_PATH).to eq('/v4/characters/%<character_id>s/skills/?datasource=%<datasource>s') }
+  specify { expect(described_class::API_PATH).to eq('/v4/characters/%<character_id>s/skills/') }
 
   describe '#initialize' do
     its(:token) { should eq('token123') }
@@ -126,6 +126,18 @@ describe EveOnline::ESI::CharacterSkills do
 
   describe '#scope' do
     specify { expect(subject.scope).to eq('esi-skills.read_skills.v1') }
+  end
+
+  describe '#path' do
+    specify do
+      expect(subject.path).to eq('/v4/characters/12345678/skills/')
+    end
+  end
+
+  describe '#query' do
+    specify do
+      expect(subject.query).to eq(datasource: 'tranquility')
+    end
   end
 
   describe '#url' do
