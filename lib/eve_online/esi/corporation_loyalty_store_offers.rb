@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class CorporationLoyaltyStoreOffers < Base
-      API_PATH = '/v1/loyalty/stores/%<corporation_id>s/offers/?datasource=%<datasource>s'
+      API_PATH = '/v1/loyalty/stores/%<corporation_id>s/offers/'
 
       attr_reader :corporation_id
 
@@ -30,8 +30,8 @@ module EveOnline
         []
       end
 
-      def url
-        format("#{ API_HOST }#{ API_PATH }", corporation_id: corporation_id, datasource: datasource)
+      def path
+        format("#{ API_PATH }", corporation_id: corporation_id)
       end
     end
   end
