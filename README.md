@@ -2321,7 +2321,7 @@ structures.structure_ids.first # => 1027528548355
 
 structures.etag # => "1b64f9a8268bb3ba350acc7d7116bfd75dd9f88defb1bbc61771aec7"
 
-# with filter
+# with filter (`filter` is enum with values: nil, `market` and `manufacturing_basic`)
 
 options = { filter: 'market' }
 
