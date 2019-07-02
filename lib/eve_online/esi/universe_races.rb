@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class UniverseRaces < Base
-      API_PATH = '/v1/universe/races/?datasource=%<datasource>s'
+      API_PATH = '/v1/universe/races/'
 
       def races
         @races ||=
@@ -18,8 +18,12 @@ module EveOnline
 
       def scope; end
 
-      def url
-        format("#{ API_HOST }#{ API_PATH }", datasource: datasource)
+      def additation_query_params
+        [:language]
+      end
+
+      def path
+        API_PATH
       end
     end
   end
