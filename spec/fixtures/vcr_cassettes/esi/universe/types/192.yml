@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://esi.evetech.net/v3/universe/types/192/?datasource=tranquility
+    uri: https://esi.evetech.net/v3/universe/types/192/?datasource=tranquility&language=en-us
     body:
       encoding: US-ASCII
       string: ''
@@ -12,16 +12,14 @@ http_interactions:
       Accept:
       - application/json
       User-Agent:
-      - EveOnline API (https://github.com/evemonk/eve_online) v0.22.0
-      Accept-Language:
-      - en-us
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.27.0
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Tue, 01 Jan 2019 19:53:28 GMT
+      - Tue, 02 Jul 2019 18:16:30 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
@@ -47,11 +45,11 @@ http_interactions:
       Content-Language:
       - en-us
       Etag:
-      - W/"e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b"
+      - W/"37a39e7a5f5ecc07b19a3128c319f1198d035aee10052d0a21ccdd94"
       Expires:
-      - Wed, 02 Jan 2019 11:05:00 GMT
+      - Wed, 03 Jul 2019 11:05:00 GMT
       Last-Modified:
-      - Tue, 01 Jan 2019 11:04:24 GMT
+      - Mon, 01 Jul 2019 11:09:31 GMT
       Strict-Transport-Security:
       - max-age=31536000
       Vary:
@@ -59,9 +57,9 @@ http_interactions:
       X-Esi-Error-Limit-Remain:
       - '100'
       X-Esi-Error-Limit-Reset:
-      - '32'
+      - '30'
       X-Esi-Request-Id:
-      - ad9b1760-9e69-4ac2-a281-21b99eeca7b1
+      - 8e6e6c28-9899-410f-a6ff-e839a7f9bcce
     body:
       encoding: UTF-8
       string: '{"capacity":0.0,"description":"Medium Projectile Ammo. This ammo uses
@@ -69,5 +67,5 @@ http_interactions:
         in a standard cannon shell.\r\n\r\n50% reduced optimal range.","dogma_attributes":[{"attribute_id":128,"value":2.0},{"attribute_id":161,"value":0.0125},{"attribute_id":162,"value":0.0},{"attribute_id":4,"value":1.0},{"attribute_id":422,"value":1.0},{"attribute_id":38,"value":0.0},{"attribute_id":137,"value":55.0},{"attribute_id":779,"value":0.625},{"attribute_id":612,"value":0.0},{"attribute_id":114,"value":0.0},{"attribute_id":116,"value":0.0},{"attribute_id":117,"value":4.0},{"attribute_id":118,"value":20.0},{"attribute_id":120,"value":0.5},{"attribute_id":244,"value":1.0},{"attribute_id":124,"value":3304021.0},{"attribute_id":613,"value":0.0}],"dogma_effects":[{"effect_id":596,"is_default":false},{"effect_id":600,"is_default":false},{"effect_id":1173,"is_default":false}],"graphic_id":1297,"group_id":83,"icon_id":1297,"market_group_id":112,"mass":1.0,"name":"Phased
         Plasma M","packaged_volume":0.0125,"portion_size":100,"published":true,"radius":1.0,"type_id":192,"volume":0.0125}'
     http_version: 
-  recorded_at: Tue, 01 Jan 2019 19:53:28 GMT
-recorded_with: VCR 4.0.0
+  recorded_at: Tue, 02 Jul 2019 18:16:30 GMT
+recorded_with: VCR 5.0.0
