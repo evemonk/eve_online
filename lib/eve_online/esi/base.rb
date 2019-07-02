@@ -130,7 +130,7 @@ module EveOnline
         []
       end
 
-      def base_query_elements
+      def base_query_params
         [:datasource]
       end
 
@@ -141,8 +141,8 @@ module EveOnline
       def query
         hash = {}
 
-        (base_query_elements + additation_query_params).each do |element|
-          hash[element] = public_send(element)
+        (base_query_params + additation_query_params).each do |param|
+          hash[param] = public_send(param)
         end
 
         hash.reject { |_, v| v.blank? }

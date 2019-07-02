@@ -434,8 +434,8 @@ describe EveOnline::ESI::Base do
     specify { expect(subject.additation_query_params).to eq([]) }
   end
 
-  describe '#base_query_elements' do
-    specify { expect(subject.base_query_elements).to eq([:datasource]) }
+  describe '#base_query_params' do
+    specify { expect(subject.base_query_params).to eq([:datasource]) }
   end
 
   describe '#path' do
@@ -445,8 +445,8 @@ describe EveOnline::ESI::Base do
   # def query
   #   hash = {}
   #
-  #   (base_query_elements + additation_query_params).each do |element|
-  #     hash[element] = public_send(element)
+  #   (base_query_params + additation_query_params).each do |param|
+  #     hash[param] = public_send(param)
   #   end
   #
   #   hash.reject { |_, v| v.blank? }
