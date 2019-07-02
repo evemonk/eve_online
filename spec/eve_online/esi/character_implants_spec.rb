@@ -9,7 +9,7 @@ describe EveOnline::ESI::CharacterImplants do
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_PATH).to eq('/v1/characters/%<character_id>s/implants/?datasource=%<datasource>s') }
+  specify { expect(described_class::API_PATH).to eq('/v1/characters/%<character_id>s/implants/') }
 
   describe '#initialize' do
     its(:token) { should eq('token123') }
@@ -39,6 +39,18 @@ describe EveOnline::ESI::CharacterImplants do
 
   describe '#scope' do
     specify { expect(subject.scope).to eq('esi-clones.read_implants.v1') }
+  end
+
+  describe '#path' do
+    specify do
+      expect(subject.path).to eq('/v1/characters/12345678/implants/')
+    end
+  end
+
+  describe '#query' do
+    specify do
+      expect(subject.query).to eq(datasource: 'tranquility')
+    end
   end
 
   describe '#url' do
