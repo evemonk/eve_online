@@ -52,8 +52,7 @@ describe 'List all public structures' do
       specify { expect(subject.etag).to eq('2a825ab50413f1efe5f558b8d093e1299389b2f2ce3fa191907f7209') }
     end
 
-    # Looks like broken support on filter + etag on server side
-    xcontext 'when etag is set' do
+    context 'when etag is set' do
       let(:options) do
         {
           filter: 'market',
@@ -65,7 +64,7 @@ describe 'List all public structures' do
 
       after { VCR.eject_cassette }
 
-      subject { EveOnline::ESI::UniverseStructures.new(etag: '2a825ab50413f1efe5f558b8d093e1299389b2f2ce3fa191907f7209') }
+      subject { EveOnline::ESI::UniverseStructures.new(options) }
 
       specify { expect(subject.not_modified?).to eq(true) }
 
