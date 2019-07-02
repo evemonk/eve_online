@@ -7,7 +7,7 @@ module EveOnline
     class UniverseStar < Base
       extend Forwardable
 
-      API_PATH = '/v1/universe/stars/%<star_id>s/?datasource=%<datasource>s'
+      API_PATH = '/v1/universe/stars/%<star_id>s/'
 
       attr_reader :id
 
@@ -27,8 +27,8 @@ module EveOnline
 
       def scope; end
 
-      def url
-        format("#{ API_HOST }#{ API_PATH }", star_id: id, datasource: datasource)
+      def path
+        format("#{ API_PATH }", star_id: id)
       end
     end
   end
