@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class UniverseGraphics < Base
-      API_PATH = '/v1/universe/graphics/?datasource=%<datasource>s'
+      API_PATH = '/v1/universe/graphics/'
 
       def graphic_ids
         response
@@ -11,8 +11,8 @@ module EveOnline
 
       def scope; end
 
-      def url
-        format("#{ API_HOST }#{ API_PATH }", datasource: datasource)
+      def path
+        API_PATH
       end
     end
   end
