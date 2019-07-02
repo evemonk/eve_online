@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class CharacterNotifications < Base
-      API_PATH = '/v5/characters/%<character_id>s/notifications/?datasource=%<datasource>s'
+      API_PATH = '/v5/characters/%<character_id>s/notifications/'
 
       attr_reader :character_id
 
@@ -28,8 +28,8 @@ module EveOnline
         'esi-characters.read_notifications.v1'
       end
 
-      def url
-        format("#{ API_HOST }#{ API_PATH }", character_id: character_id, datasource: datasource)
+      def path
+        format("#{ API_PATH }", character_id: character_id)
       end
     end
   end
