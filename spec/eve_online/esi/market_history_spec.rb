@@ -9,7 +9,7 @@ describe EveOnline::ESI::MarketHistory do
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_PATH).to eq('/v1/markets/%<region_id>s/history/?datasource=%<datasource>s&type_id=%<type_id>s') }
+  specify { expect(described_class::API_PATH).to eq('/v1/markets/%<region_id>s/history/') }
 
   describe '#initialize' do
     its(:token) { should eq(nil) }
@@ -78,6 +78,22 @@ describe EveOnline::ESI::MarketHistory do
 
   describe '#scope' do
     specify { expect(subject.scope).to eq(nil) }
+  end
+
+  describe '#additation_query_params' do
+    specify { expect(subject.additation_query_params).to eq([:type_id]) }
+  end
+
+  describe '#path' do
+    specify do
+      expect(subject.path).to eq('/v1/markets/10000002/history/')
+    end
+  end
+
+  describe '#query' do
+    specify do
+      expect(subject.query).to eq(datasource: 'tranquility', type_id: 28_606)
+    end
   end
 
   describe '#url' do
