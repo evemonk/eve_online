@@ -107,7 +107,6 @@ module EveOnline
 
           request['User-Agent'] = user_agent
           request['Accept'] = 'application/json'
-          request['Accept-Language'] = language
           request['Authorization'] = "Bearer #{ token }" if token
           request['If-None-Match'] = _etag if _etag
           request['Content-Type'] = 'application/json' if http_method == 'Post'
