@@ -312,8 +312,6 @@ describe EveOnline::ESI::Base do
 
       let(:language) { double }
 
-      before { expect(subject).to receive(:language).and_return(language) }
-
       before { expect(subject).to receive(:uri).and_return(uri) }
 
       before { expect(subject).to receive(:user_agent).and_return(user_agent) }
@@ -323,8 +321,6 @@ describe EveOnline::ESI::Base do
       before { expect(request).to receive(:[]=).with('User-Agent', user_agent).and_return(request) }
 
       before { expect(request).to receive(:[]=).with('Accept', 'application/json').and_return(request) }
-
-      before { expect(request).to receive(:[]=).with('Accept-Language', language).and_return(request) }
 
       context 'when http method Get and without token and etag' do
         let(:http_method) { 'Get' }
