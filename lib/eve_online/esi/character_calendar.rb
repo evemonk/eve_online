@@ -3,16 +3,15 @@
 module EveOnline
   module ESI
     class CharacterCalendar < Base
-      API_PATH = '/v1/characters/%<character_id>s/calendar/?datasource=%<datasource>s'
+      API_PATH = '/v1/characters/%<character_id>s/calendar/'
 
-      attr_reader :character_id
+      attr_reader :character_id, :from_event
 
       def initialize(options)
         super
 
         @character_id = options.fetch(:character_id)
-        # TODO:
-        # @from_event =
+        @from_event = options.fetch(:from_event, nil)
       end
 
       def events
@@ -30,8 +29,12 @@ module EveOnline
         'esi-calendar.read_calendar_events.v1'
       end
 
-      def url
-        format("#{ API_HOST }#{ API_PATH }", character_id: character_id, datasource: datasource)
+      def additation_query_params
+        [:from_event]
+      end
+
+      def path
+        format("#{ API_PATH }", character_id: character_id)
       end
     end
   end

@@ -407,6 +407,7 @@ bookmark_folder.name # => "Icecream"
 #### List calendar event summaries
 
 ```ruby
+# Add `from_event` if you want skip records
 options = { token: 'token123', character_id: 90_729_314 }
 
 character_calendar = EveOnline::ESI::CharacterCalendar.new(options)
@@ -429,7 +430,6 @@ event.event_response # => "not_responded"
 event.importance # => 0
 event.title # => "Moon extraction for 66-PMM - GoldMine-5-"
 
-# TODO: add from_event support
 # TODO: character_calendar.etag
 ```
 

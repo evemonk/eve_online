@@ -9,24 +9,42 @@ describe EveOnline::ESI::CharacterCalendar do
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_PATH).to eq('/v1/characters/%<character_id>s/calendar/?datasource=%<datasource>s') }
+  specify { expect(described_class::API_PATH).to eq('/v1/characters/%<character_id>s/calendar/') }
 
   describe '#initialize' do
-    its(:token) { should eq('token123') }
+    context 'without options' do
+      its(:token) { should eq('token123') }
 
-    its(:parser) { should eq(JSON) }
+      its(:parser) { should eq(JSON) }
 
-    its(:_read_timeout) { should eq(60) }
+      its(:_read_timeout) { should eq(60) }
 
-    its(:_open_timeout) { should eq(60) }
+      its(:_open_timeout) { should eq(60) }
 
-    if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6.0')
-      its(:_write_timeout) { should eq(60) }
+      if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6.0')
+        its(:_write_timeout) { should eq(60) }
+      end
+
+      its(:datasource) { should eq('tranquility') }
+
+      its(:character_id) { should eq(12_345_678) }
+
+      its(:from_event) { should eq(nil) }
     end
 
-    its(:datasource) { should eq('tranquility') }
+    context 'with options' do
+      let(:options) do
+        {
+          token: 'token123',
+          character_id: 12_345_678,
+          from_event: 123
+        }
+      end
 
-    its(:character_id) { should eq(12_345_678) }
+      subject { described_class.new(options) }
+
+      its(:from_event) { should eq(123) }
+    end
   end
 
   describe '#events' do
@@ -75,6 +93,40 @@ describe EveOnline::ESI::CharacterCalendar do
 
   describe '#scope' do
     specify { expect(subject.scope).to eq('esi-calendar.read_calendar_events.v1') }
+  end
+
+  describe '#additation_query_params' do
+    specify { expect(subject.additation_query_params).to eq([:from_event]) }
+  end
+
+  describe '#path' do
+    specify do
+      expect(subject.path).to eq('/v1/characters/12345678/calendar/')
+    end
+  end
+
+  describe '#query' do
+    context 'without from_event' do
+      specify do
+        expect(subject.query).to eq(datasource: 'tranquility')
+      end
+    end
+
+    context 'with from_event' do
+      let(:options) do
+        {
+          token: 'token123',
+          character_id: 12_345_678,
+          from_event: 123
+        }
+      end
+
+      subject { described_class.new(options) }
+
+      specify do
+        expect(subject.query).to eq(datasource: 'tranquility', from_event: 123)
+      end
+    end
   end
 
   describe '#url' do

@@ -7,6 +7,7 @@
 * Remove `page` from `EveOnline::ESI::UniverseStructures`
 * Add support `filter` in `EveOnline::ESI::UniverseStructures`
 * Add support `max_war_id` in `EveOnline::ESI::Wars`
+* Add support `from_event` in `EveOnline::ESI::CharacterCalendar`
 
 ## v0.27.0
 
