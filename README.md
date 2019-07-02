@@ -2315,11 +2315,23 @@ structures = EveOnline::ESI::UniverseStructures.new
 
 structures.scope # => nil
 
-structures.structure_ids.size # => 4004
+structures.structure_ids.size # => 3654
 
 structures.structure_ids.first # => 1027528548355
 
-structures.etag # => "6edc271fcf967ee50bec6935856501b233e58790fad237b097946a4c"
+structures.etag # => "1b64f9a8268bb3ba350acc7d7116bfd75dd9f88defb1bbc61771aec7"
+
+# with filter
+
+options = { filter: 'market' }
+
+structures = EveOnline::ESI::UniverseStructures.new(options)
+
+structures.structure_ids.size # => 108
+
+structures.structure_ids.first # => 1030490622468
+
+structures.etag # => "2a825ab50413f1efe5f558b8d093e1299389b2f2ce3fa191907f7209"
 ```
 
 #### Get structure information
