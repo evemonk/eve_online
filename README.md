@@ -2614,9 +2614,19 @@ wars.war_ids.size # => 2000
 
 wars.war_ids.first # => 629019
 
-# TODO: max_war_id
-
 wars.etag # => "1e90be747fd163e5d74ab7a949bf8ad3f1d6ecd365cac31c534ab046"
+
+# with max_war_id
+
+options = { max_war_id: 10 }
+
+wars = EveOnline::ESI::Wars.new(options)
+
+wars.war_ids.size # => 9
+
+wars.war_ids.first # => 9
+
+wars.etag # => "f1c28227847464613c1cb82dfc8a8c859b7b6857fad2c2a54c562812"
 ```
 
 #### Get war information
