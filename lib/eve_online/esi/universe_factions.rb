@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class UniverseFactions < Base
-      API_PATH = '/v2/universe/factions/?datasource=%<datasource>s'
+      API_PATH = '/v2/universe/factions/'
 
       def factions
         @factions ||=
@@ -18,8 +18,12 @@ module EveOnline
 
       def scope; end
 
-      def url
-        format("#{ API_HOST }#{ API_PATH }", datasource: datasource)
+      def additation_query_params
+        [:language]
+      end
+
+      def path
+        API_PATH
       end
     end
   end
