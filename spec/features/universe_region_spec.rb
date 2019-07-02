@@ -38,7 +38,7 @@ describe 'Get region information' do
                                     region_id: 10_000_001)
     end
 
-    specify { expect(subject.etag).to eq('5c9218218aca123ef8c106f6607bfe8e6e086d2fc2b972bbd8ff03d2') }
+    specify { expect(subject.etag).to eq('37a39e7a5f5ecc07b19a3128c319f1198d035aee10052d0a21ccdd94') }
   end
 
   context 'when etag present' do
@@ -46,12 +46,12 @@ describe 'Get region information' do
 
     after { VCR.eject_cassette }
 
-    let(:options) { { id: 10_000_001, etag: '5c9218218aca123ef8c106f6607bfe8e6e086d2fc2b972bbd8ff03d2' } }
+    let(:options) { { id: 10_000_001, etag: '37a39e7a5f5ecc07b19a3128c319f1198d035aee10052d0a21ccdd94' } }
 
     subject { EveOnline::ESI::UniverseRegion.new(options) }
 
     specify { expect(subject.not_modified?).to eq(true) }
 
-    specify { expect(subject.etag).to eq('5c9218218aca123ef8c106f6607bfe8e6e086d2fc2b972bbd8ff03d2') }
+    specify { expect(subject.etag).to eq('37a39e7a5f5ecc07b19a3128c319f1198d035aee10052d0a21ccdd94') }
   end
 end
