@@ -442,15 +442,27 @@ describe EveOnline::ESI::Base do
     specify { expect { subject.path }.to raise_error(NotImplementedError) }
   end
 
-  # def query
-  #   hash = {}
-  #
-  #   (base_query_params + additation_query_params).each do |param|
-  #     hash[param] = public_send(param)
-  #   end
-  #
-  #   hash.reject { |_, v| v.blank? }
-  # end
+  describe '#query' do
+    context 'when all params is blank' do
+      let(:options) { { datasource: nil, language: nil } }
+
+      subject { described_class.new(options) }
+
+      before { expect(subject).to receive(:additation_query_params).and_return([:language]) }
+
+      specify { expect(subject.query).to eq({}) }
+    end
+
+    context 'when all params is present' do
+      let(:options) { { datasource: 'singularity', language: 'de' } }
+
+      subject { described_class.new(options) }
+
+      before { expect(subject).to receive(:additation_query_params).and_return([:language]) }
+
+      specify { expect(subject.query).to eq(datasource: 'singularity', language: 'de') }
+    end
+  end
 
   describe '#resource' do
     context 'when @resource set' do
