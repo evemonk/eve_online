@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class CorporationIndustryJobs < Base
-      API_PATH = '/v1/corporations/%<corporation_id>s/industry/jobs/?datasource=%<datasource>s&include_completed=%<include_completed>s&page=%<page>s'
+      API_PATH = '/v1/corporations/%<corporation_id>s/industry/jobs/'
 
       attr_reader :corporation_id, :include_completed, :page
 
@@ -11,7 +11,7 @@ module EveOnline
         super
 
         @corporation_id = options.fetch(:corporation_id)
-        @include_completed = options.fetch(:include_completed, false)
+        @include_completed = options.fetch(:include_completed, nil)
         @page = options.fetch(:page, 1)
       end
 
@@ -34,8 +34,12 @@ module EveOnline
         ['Factory_Manager']
       end
 
-      def url
-        format("#{ API_HOST }#{ API_PATH }", corporation_id: corporation_id, include_completed: include_completed, datasource: datasource, page: page)
+      def additation_query_params
+        [:include_completed, :page]
+      end
+
+      def path
+        format("#{ API_PATH }", corporation_id: corporation_id)
       end
     end
   end
