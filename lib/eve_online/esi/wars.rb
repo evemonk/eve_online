@@ -3,12 +3,15 @@
 module EveOnline
   module ESI
     class Wars < Base
-      API_PATH = '/v1/wars/?datasource=%<datasource>s'
+      API_PATH = '/v1/wars/'
 
-      # TODO: add max_war_id
-      # def initialize(max_war_id)
-      #   @max_war_id = max_war_id
-      # end
+      attr_reader :max_war_id
+
+      def initialize(options = {})
+        super
+
+        @max_war_id = options.fetch(:max_war_id, nil)
+      end
 
       def war_ids
         response
@@ -16,8 +19,12 @@ module EveOnline
 
       def scope; end
 
-      def url
-        format("#{ API_HOST }#{ API_PATH }", datasource: datasource)
+      def additation_query_params
+        [:max_war_id]
+      end
+
+      def path
+        API_PATH
       end
     end
   end

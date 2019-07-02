@@ -6,6 +6,7 @@
 * Move language from header to query params. So, you can cache requests by url.
 * Remove `page` from `EveOnline::ESI::UniverseStructures`
 * Add support `filter` in `EveOnline::ESI::UniverseStructures`
+* Add support `max_war_id` in `EveOnline::ESI::Wars`
 
 ## v0.27.0
 
