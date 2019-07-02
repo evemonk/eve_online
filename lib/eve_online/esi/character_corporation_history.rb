@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class CharacterCorporationHistory < Base
-      API_PATH = '/v1/characters/%<character_id>s/corporationhistory/?datasource=%<datasource>s'
+      API_PATH = '/v1/characters/%<character_id>s/corporationhistory/'
 
       attr_reader :character_id
 
@@ -26,8 +26,8 @@ module EveOnline
 
       def scope; end
 
-      def url
-        format("#{ API_HOST }#{ API_PATH }", character_id: character_id, datasource: datasource)
+      def path
+        format("#{ API_PATH }", character_id: character_id)
       end
     end
   end
