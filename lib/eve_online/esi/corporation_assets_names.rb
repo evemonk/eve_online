@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class CorporationAssetsNames < Base
-      API_PATH = '/v1/corporations/%<corporation_id>s/assets/names/?datasource=%<datasource>s'
+      API_PATH = '/v1/corporations/%<corporation_id>s/assets/names/'
 
       attr_reader :corporation_id, :item_ids
 
@@ -45,8 +45,8 @@ module EveOnline
         raise NotImplementedError
       end
 
-      def url
-        format("#{ API_HOST }#{ API_PATH }", corporation_id: corporation_id, datasource: datasource)
+      def path
+        format("#{ API_PATH }", corporation_id: corporation_id)
       end
     end
   end
