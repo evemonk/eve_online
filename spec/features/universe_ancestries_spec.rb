@@ -25,7 +25,7 @@ describe 'Get ancestries' do
                                                      short_description: 'Progressive members of the upper class who have rejected their traditional ways.')
     end
 
-    specify { expect(subject.etag).to eq('e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b') }
+    specify { expect(subject.etag).to eq('37a39e7a5f5ecc07b19a3128c319f1198d035aee10052d0a21ccdd94') }
   end
 
   context 'when etag is set' do
@@ -33,10 +33,10 @@ describe 'Get ancestries' do
 
     after { VCR.eject_cassette }
 
-    subject { EveOnline::ESI::UniverseAncestries.new(etag: 'e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b') }
+    subject { EveOnline::ESI::UniverseAncestries.new(etag: '37a39e7a5f5ecc07b19a3128c319f1198d035aee10052d0a21ccdd94') }
 
     specify { expect(subject.not_modified?).to eq(true) }
 
-    specify { expect(subject.etag).to eq('e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b') }
+    specify { expect(subject.etag).to eq('37a39e7a5f5ecc07b19a3128c319f1198d035aee10052d0a21ccdd94') }
   end
 end
