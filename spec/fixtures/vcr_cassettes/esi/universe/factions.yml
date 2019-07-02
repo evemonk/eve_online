@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://esi.evetech.net/v2/universe/factions/?datasource=tranquility
+    uri: https://esi.evetech.net/v2/universe/factions/?datasource=tranquility&language=en-us
     body:
       encoding: US-ASCII
       string: ''
@@ -12,16 +12,14 @@ http_interactions:
       Accept:
       - application/json
       User-Agent:
-      - EveOnline API (https://github.com/evemonk/eve_online) v0.20.0
-      Accept-Language:
-      - en-us
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.27.0
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Mon, 24 Dec 2018 16:10:19 GMT
+      - Tue, 02 Jul 2019 14:43:26 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
@@ -47,11 +45,11 @@ http_interactions:
       Content-Language:
       - en-us
       Etag:
-      - W/"e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b"
+      - W/"37a39e7a5f5ecc07b19a3128c319f1198d035aee10052d0a21ccdd94"
       Expires:
-      - Tue, 25 Dec 2018 11:05:00 GMT
+      - Wed, 03 Jul 2019 11:05:00 GMT
       Last-Modified:
-      - Mon, 24 Dec 2018 11:04:27 GMT
+      - Mon, 01 Jul 2019 11:09:31 GMT
       Strict-Transport-Security:
       - max-age=31536000
       Vary:
@@ -59,9 +57,9 @@ http_interactions:
       X-Esi-Error-Limit-Remain:
       - '100'
       X-Esi-Error-Limit-Reset:
-      - '41'
+      - '34'
       X-Esi-Request-Id:
-      - 14ff4c3f-dc41-460c-a896-a89a14c00a1c
+      - 55741fec-74a1-44b7-9c09-8d5599426538
     body:
       encoding: UTF-8
       string: '[{"corporation_id":1000035,"description":"The Caldari State is ruled
@@ -282,5 +280,5 @@ http_interactions:
         shifting environments of the Abyss.","faction_id":500026,"is_unique":false,"name":"Triglavian
         Collective","size_factor":0.0,"solar_system_id":30005286,"station_count":0,"station_system_count":0}]'
     http_version: 
-  recorded_at: Mon, 24 Dec 2018 16:10:20 GMT
-recorded_with: VCR 4.0.0
+  recorded_at: Tue, 02 Jul 2019 14:43:26 GMT
+recorded_with: VCR 5.0.0
