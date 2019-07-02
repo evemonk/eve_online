@@ -394,25 +394,41 @@ describe EveOnline::ESI::Base do
     end
 
     context 'when @uri not set' do
-      let(:url) { double }
-
       let(:uri) { double }
 
-      before { expect(subject).to receive(:url).and_return(url) }
+      let(:path) { double }
 
-      before { expect(URI).to receive(:parse).with(url).and_return(uri) }
+      let(:to_query) { double }
+
+      before { expect(subject).to receive(:path).and_return(path) }
+
+      before do
+        #
+        # subject.query.to_query # => to_query
+        #
+        expect(subject).to receive(:query) do
+          double.tap do |a|
+            expect(a).to receive(:to_query).and_return(to_query)
+          end
+        end
+      end
+
+      before do
+        #
+        # URI::HTTPS.build(host: API_HOST,
+        #                  path: path,
+        #                  query: query.to_query) # => uri
+        #
+        expect(URI::HTTPS).to receive(:build).with(host: described_class::API_HOST,
+                                                   path: path,
+                                                   query: to_query).and_return(uri)
+      end
 
       specify { expect { subject.uri }.not_to raise_error }
 
       specify { expect { subject.uri }.to change { subject.instance_variable_get(:@uri) }.from(nil).to(uri) }
     end
   end
-
-  # def uri
-  #   @uri ||= URI::HTTPS.build(host: API_HOST,
-  #                             path: path,
-  #                             query: query.to_query)
-  # end
 
   describe '#additation_query_params' do
     specify { expect(subject.additation_query_params).to eq([]) }
