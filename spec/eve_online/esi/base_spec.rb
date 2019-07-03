@@ -310,8 +310,6 @@ describe EveOnline::ESI::Base do
 
       let(:user_agent) { double }
 
-      let(:language) { double }
-
       before { expect(subject).to receive(:uri).and_return(uri) }
 
       before { expect(subject).to receive(:user_agent).and_return(user_agent) }
