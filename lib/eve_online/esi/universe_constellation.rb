@@ -7,7 +7,7 @@ module EveOnline
     class UniverseConstellation < Base
       extend Forwardable
 
-      API_PATH = '/v1/universe/constellations/%<constellation_id>s/?datasource=%<datasource>s'
+      API_PATH = '/v1/universe/constellations/%<constellation_id>s/'
 
       attr_reader :id
 
@@ -26,8 +26,12 @@ module EveOnline
 
       def scope; end
 
-      def url
-        format("#{ API_HOST }#{ API_PATH }", constellation_id: id, datasource: datasource)
+      def additation_query_params
+        [:language]
+      end
+
+      def path
+        format("#{ API_PATH }", constellation_id: id)
       end
     end
   end

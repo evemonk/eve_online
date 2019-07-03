@@ -9,7 +9,7 @@ describe EveOnline::ESI::CharacterBookmarkFolders do
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_PATH).to eq('/v2/characters/%<character_id>s/bookmarks/folders/?datasource=%<datasource>s&page=%<page>s') }
+  specify { expect(described_class::API_PATH).to eq('/v2/characters/%<character_id>s/bookmarks/folders/') }
 
   describe '#initialize' do
     context 'without options' do
@@ -82,6 +82,22 @@ describe EveOnline::ESI::CharacterBookmarkFolders do
 
   describe '#scope' do
     specify { expect(subject.scope).to eq('esi-bookmarks.read_character_bookmarks.v1') }
+  end
+
+  describe '#additation_query_params' do
+    specify { expect(subject.additation_query_params).to eq([:page]) }
+  end
+
+  describe '#path' do
+    specify do
+      expect(subject.path).to eq('/v2/characters/12345678/bookmarks/folders/')
+    end
+  end
+
+  describe '#query' do
+    specify do
+      expect(subject.query).to eq(datasource: 'tranquility', page: 1)
+    end
   end
 
   describe '#url' do

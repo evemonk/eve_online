@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class CharacterIndustryJobs < Base
-      API_PATH = '/v1/characters/%<character_id>s/industry/jobs/?datasource=%<datasource>s&include_completed=%<include_completed>s'
+      API_PATH = '/v1/characters/%<character_id>s/industry/jobs/'
 
       attr_reader :character_id, :include_completed
 
@@ -11,7 +11,7 @@ module EveOnline
         super
 
         @character_id = options.fetch(:character_id)
-        @include_completed = options.fetch(:include_completed, false)
+        @include_completed = options.fetch(:include_completed, nil)
       end
 
       def jobs
@@ -29,8 +29,12 @@ module EveOnline
         'esi-industry.read_character_jobs.v1'
       end
 
-      def url
-        format("#{ API_HOST }#{ API_PATH }", character_id: character_id, include_completed: include_completed, datasource: datasource)
+      def additation_query_params
+        [:include_completed]
+      end
+
+      def path
+        format("#{ API_PATH }", character_id: character_id)
       end
     end
   end

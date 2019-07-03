@@ -3,7 +3,7 @@
 require 'spec_helper'
 
 describe EveOnline::ESI::Base do
-  specify { expect(described_class::API_HOST).to eq('https://esi.evetech.net') }
+  specify { expect(described_class::API_HOST).to eq('esi.evetech.net') }
 
   describe '#initialize' do
     context 'with options' do
@@ -68,7 +68,18 @@ describe EveOnline::ESI::Base do
   end
 
   describe '#url' do
-    specify { expect { subject.url }.to raise_error(NotImplementedError) }
+    before do
+      #
+      # subject.uri.to_s
+      #
+      expect(subject).to receive(:uri) do
+        double.tap do |a|
+          expect(a).to receive(:to_s)
+        end
+      end
+    end
+
+    specify { expect { subject.url }.not_to raise_error }
   end
 
   describe '#scope' do
@@ -299,10 +310,6 @@ describe EveOnline::ESI::Base do
 
       let(:user_agent) { double }
 
-      let(:language) { double }
-
-      before { expect(subject).to receive(:language).and_return(language) }
-
       before { expect(subject).to receive(:uri).and_return(uri) }
 
       before { expect(subject).to receive(:user_agent).and_return(user_agent) }
@@ -312,8 +319,6 @@ describe EveOnline::ESI::Base do
       before { expect(request).to receive(:[]=).with('User-Agent', user_agent).and_return(request) }
 
       before { expect(request).to receive(:[]=).with('Accept', 'application/json').and_return(request) }
-
-      before { expect(request).to receive(:[]=).with('Accept-Language', language).and_return(request) }
 
       context 'when http method Get and without token and etag' do
         let(:http_method) { 'Get' }
@@ -387,17 +392,73 @@ describe EveOnline::ESI::Base do
     end
 
     context 'when @uri not set' do
-      let(:url) { double }
-
       let(:uri) { double }
 
-      before { expect(subject).to receive(:url).and_return(url) }
+      let(:path) { double }
 
-      before { expect(URI).to receive(:parse).with(url).and_return(uri) }
+      let(:to_query) { double }
+
+      before { expect(subject).to receive(:path).and_return(path) }
+
+      before do
+        #
+        # subject.query.to_query # => to_query
+        #
+        expect(subject).to receive(:query) do
+          double.tap do |a|
+            expect(a).to receive(:to_query).and_return(to_query)
+          end
+        end
+      end
+
+      before do
+        #
+        # URI::HTTPS.build(host: API_HOST,
+        #                  path: path,
+        #                  query: query.to_query) # => uri
+        #
+        expect(URI::HTTPS).to receive(:build).with(host: described_class::API_HOST,
+                                                   path: path,
+                                                   query: to_query).and_return(uri)
+      end
 
       specify { expect { subject.uri }.not_to raise_error }
 
       specify { expect { subject.uri }.to change { subject.instance_variable_get(:@uri) }.from(nil).to(uri) }
+    end
+  end
+
+  describe '#additation_query_params' do
+    specify { expect(subject.additation_query_params).to eq([]) }
+  end
+
+  describe '#base_query_params' do
+    specify { expect(subject.base_query_params).to eq([:datasource]) }
+  end
+
+  describe '#path' do
+    specify { expect { subject.path }.to raise_error(NotImplementedError) }
+  end
+
+  describe '#query' do
+    context 'when all params is blank' do
+      let(:options) { { datasource: nil, language: nil } }
+
+      subject { described_class.new(options) }
+
+      before { expect(subject).to receive(:additation_query_params).and_return([:language]) }
+
+      specify { expect(subject.query).to eq({}) }
+    end
+
+    context 'when all params is present' do
+      let(:options) { { datasource: 'singularity', language: 'de' } }
+
+      subject { described_class.new(options) }
+
+      before { expect(subject).to receive(:additation_query_params).and_return([:language]) }
+
+      specify { expect(subject.query).to eq(datasource: 'singularity', language: 'de') }
     end
   end
 

@@ -7,7 +7,7 @@ module EveOnline
     class UniverseRegion < Base
       extend Forwardable
 
-      API_PATH = '/v1/universe/regions/%<region_id>s/?datasource=%<datasource>s'
+      API_PATH = '/v1/universe/regions/%<region_id>s/'
 
       attr_reader :id
 
@@ -26,8 +26,12 @@ module EveOnline
 
       def scope; end
 
-      def url
-        format("#{ API_HOST }#{ API_PATH }", region_id: id, datasource: datasource)
+      def additation_query_params
+        [:language]
+      end
+
+      def path
+        format("#{ API_PATH }", region_id: id)
       end
     end
   end

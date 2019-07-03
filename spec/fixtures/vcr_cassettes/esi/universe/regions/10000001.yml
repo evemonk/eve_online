@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://esi.evetech.net/v1/universe/regions/10000001/?datasource=tranquility
+    uri: https://esi.evetech.net/v1/universe/regions/10000001/?datasource=tranquility&language=en-us
     body:
       encoding: US-ASCII
       string: ''
@@ -12,16 +12,14 @@ http_interactions:
       Accept:
       - application/json
       User-Agent:
-      - EveOnline API (https://github.com/evemonk/eve_online) v0.23.0
-      Accept-Language:
-      - en-us
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.27.0
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Wed, 16 Jan 2019 16:34:56 GMT
+      - Tue, 02 Jul 2019 17:46:20 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
@@ -47,11 +45,11 @@ http_interactions:
       Content-Language:
       - en-us
       Etag:
-      - W/"5c9218218aca123ef8c106f6607bfe8e6e086d2fc2b972bbd8ff03d2"
+      - W/"37a39e7a5f5ecc07b19a3128c319f1198d035aee10052d0a21ccdd94"
       Expires:
-      - Thu, 17 Jan 2019 11:05:00 GMT
+      - Wed, 03 Jul 2019 11:05:00 GMT
       Last-Modified:
-      - Tue, 15 Jan 2019 11:12:49 GMT
+      - Mon, 01 Jul 2019 11:09:31 GMT
       Strict-Transport-Security:
       - max-age=31536000
       Vary:
@@ -59,9 +57,9 @@ http_interactions:
       X-Esi-Error-Limit-Remain:
       - '100'
       X-Esi-Error-Limit-Reset:
-      - '4'
+      - '40'
       X-Esi-Request-Id:
-      - 10a7bb5a-9bd7-47e2-997e-821fb065a16b
+      - '092596f4-53ff-4e84-8fea-5162d749d606'
     body:
       encoding: UTF-8
       string: '{"constellations":[20000001,20000002,20000003,20000004,20000005,20000006,20000007,20000008,20000009,20000010,20000011,20000012,20000013,20000014,20000015,20000016],"description":"The
@@ -81,5 +79,5 @@ http_interactions:
         all who call themselves Ammatar, and it has bolstered their faith in the Amarrian
         way to no end.","name":"Derelik","region_id":10000001}'
     http_version: 
-  recorded_at: Wed, 16 Jan 2019 16:34:56 GMT
-recorded_with: VCR 4.0.0
+  recorded_at: Tue, 02 Jul 2019 17:46:20 GMT
+recorded_with: VCR 5.0.0

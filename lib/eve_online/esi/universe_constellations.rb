@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class UniverseConstellations < Base
-      API_PATH = '/v1/universe/constellations/?datasource=%<datasource>s'
+      API_PATH = '/v1/universe/constellations/'
 
       def constellation_ids
         response
@@ -11,8 +11,8 @@ module EveOnline
 
       def scope; end
 
-      def url
-        format("#{ API_HOST }#{ API_PATH }", datasource: datasource)
+      def path
+        API_PATH
       end
     end
   end

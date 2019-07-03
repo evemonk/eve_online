@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://esi.evetech.net/v1/universe/regions/10000001/?datasource=tranquility
+    uri: https://esi.evetech.net/v1/universe/regions/10000001/?datasource=tranquility&language=en-us
     body:
       encoding: US-ASCII
       string: ''
@@ -12,18 +12,16 @@ http_interactions:
       Accept:
       - application/json
       User-Agent:
-      - EveOnline API (https://github.com/evemonk/eve_online) v0.23.0
-      Accept-Language:
-      - en-us
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.27.0
       If-None-Match:
-      - 5c9218218aca123ef8c106f6607bfe8e6e086d2fc2b972bbd8ff03d2
+      - 37a39e7a5f5ecc07b19a3128c319f1198d035aee10052d0a21ccdd94
   response:
     status:
       code: 304
       message: Not Modified
     headers:
       Date:
-      - Wed, 16 Jan 2019 16:42:09 GMT
+      - Tue, 02 Jul 2019 17:46:33 GMT
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -45,11 +43,11 @@ http_interactions:
       Content-Language:
       - en-us
       Etag:
-      - W/"5c9218218aca123ef8c106f6607bfe8e6e086d2fc2b972bbd8ff03d2"
+      - W/"37a39e7a5f5ecc07b19a3128c319f1198d035aee10052d0a21ccdd94"
       Expires:
-      - Thu, 17 Jan 2019 11:05:00 GMT
+      - Wed, 03 Jul 2019 11:05:00 GMT
       Last-Modified:
-      - Tue, 15 Jan 2019 11:12:49 GMT
+      - Mon, 01 Jul 2019 11:09:31 GMT
       Strict-Transport-Security:
       - max-age=31536000
       Vary:
@@ -57,12 +55,12 @@ http_interactions:
       X-Esi-Error-Limit-Remain:
       - '100'
       X-Esi-Error-Limit-Reset:
-      - '51'
+      - '27'
       X-Esi-Request-Id:
-      - f55a0365-3704-487e-b8b6-263a25be4b07
+      - b259b9a5-7ae5-4dbc-82c7-e1cf25ac56b6
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Wed, 16 Jan 2019 16:42:09 GMT
-recorded_with: VCR 4.0.0
+  recorded_at: Tue, 02 Jul 2019 17:46:33 GMT
+recorded_with: VCR 5.0.0

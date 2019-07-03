@@ -7,7 +7,7 @@ module EveOnline
     class Corporation < Base
       extend Forwardable
 
-      API_PATH = '/v4/corporations/%<corporation_id>s/?datasource=%<datasource>s'
+      API_PATH = '/v4/corporations/%<corporation_id>s/'
 
       attr_reader :corporation_id
 
@@ -28,8 +28,8 @@ module EveOnline
 
       def scope; end
 
-      def url
-        format("#{ API_HOST }#{ API_PATH }", corporation_id: corporation_id, datasource: datasource)
+      def path
+        format("#{ API_PATH }", corporation_id: corporation_id)
       end
     end
   end

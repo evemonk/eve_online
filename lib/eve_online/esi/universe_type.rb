@@ -7,7 +7,7 @@ module EveOnline
     class UniverseType < Base
       extend Forwardable
 
-      API_PATH = '/v3/universe/types/%<type_id>s/?datasource=%<datasource>s'
+      API_PATH = '/v3/universe/types/%<type_id>s/'
 
       attr_reader :id
 
@@ -28,8 +28,12 @@ module EveOnline
 
       def scope; end
 
-      def url
-        format("#{ API_HOST }#{ API_PATH }", type_id: id, datasource: datasource)
+      def additation_query_params
+        [:language]
+      end
+
+      def path
+        format("#{ API_PATH }", type_id: id)
       end
     end
   end

@@ -9,7 +9,7 @@ describe EveOnline::ESI::CorporationAssetsNames do
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_PATH).to eq('/v1/corporations/%<corporation_id>s/assets/names/?datasource=%<datasource>s') }
+  specify { expect(described_class::API_PATH).to eq('/v1/corporations/%<corporation_id>s/assets/names/') }
 
   describe '#initialize' do
     its(:token) { should eq('token123') }
@@ -96,6 +96,18 @@ describe EveOnline::ESI::CorporationAssetsNames do
 
   describe '#etag' do
     specify { expect { subject.etag }.to raise_error(NotImplementedError) }
+  end
+
+  describe '#path' do
+    specify do
+      expect(subject.path).to eq('/v1/corporations/12345678/assets/names/')
+    end
+  end
+
+  describe '#query' do
+    specify do
+      expect(subject.query).to eq(datasource: 'tranquility')
+    end
   end
 
   describe '#url' do

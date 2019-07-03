@@ -8,7 +8,7 @@ require 'active_support/time'
 module EveOnline
   module ESI
     class Base
-      API_HOST = 'https://esi.evetech.net'
+      API_HOST = 'esi.evetech.net'
 
       attr_reader :token, :parser, :_read_timeout, :_open_timeout, :_etag,
                   :datasource, :language
@@ -31,7 +31,7 @@ module EveOnline
       end
 
       def url
-        raise NotImplementedError
+        uri.to_s
       end
 
       def scope
@@ -107,7 +107,6 @@ module EveOnline
 
           request['User-Agent'] = user_agent
           request['Accept'] = 'application/json'
-          request['Accept-Language'] = language
           request['Authorization'] = "Bearer #{ token }" if token
           request['If-None-Match'] = _etag if _etag
           request['Content-Type'] = 'application/json' if http_method == 'Post'
@@ -122,7 +121,31 @@ module EveOnline
       end
 
       def uri
-        @uri ||= URI.parse(url)
+        @uri ||= URI::HTTPS.build(host: API_HOST,
+                                  path: path,
+                                  query: query.to_query)
+      end
+
+      def additation_query_params
+        []
+      end
+
+      def base_query_params
+        [:datasource]
+      end
+
+      def path
+        raise NotImplementedError
+      end
+
+      def query
+        hash = {}
+
+        (base_query_params + additation_query_params).each do |param|
+          hash[param] = public_send(param)
+        end
+
+        hash.reject { |_, v| v.blank? }
       end
 
       def resource

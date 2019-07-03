@@ -3,13 +3,13 @@
 require 'spec_helper'
 
 describe EveOnline::ESI::CharacterIndustryJobs do
-  let(:options) { { token: 'token123', character_id: 12_345_678, include_completed: false } }
+  let(:options) { { token: 'token123', character_id: 12_345_678 } }
 
   subject { described_class.new(options) }
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_PATH).to eq('/v1/characters/%<character_id>s/industry/jobs/?datasource=%<datasource>s&include_completed=%<include_completed>s') }
+  specify { expect(described_class::API_PATH).to eq('/v1/characters/%<character_id>s/industry/jobs/') }
 
   describe '#initialize' do
     context 'with token and character_id' do
@@ -31,7 +31,7 @@ describe EveOnline::ESI::CharacterIndustryJobs do
 
       its(:character_id) { should eq(12_345_678) }
 
-      its(:include_completed) { should eq(false) }
+      its(:include_completed) { should eq(nil) }
     end
 
     context 'with include completed' do
@@ -106,9 +106,43 @@ describe EveOnline::ESI::CharacterIndustryJobs do
     specify { expect(subject.scope).to eq('esi-industry.read_character_jobs.v1') }
   end
 
+  describe '#additation_query_params' do
+    specify { expect(subject.additation_query_params).to eq([:include_completed]) }
+  end
+
+  describe '#path' do
+    specify do
+      expect(subject.path).to eq('/v1/characters/12345678/industry/jobs/')
+    end
+  end
+
+  describe '#query' do
+    context 'without include_completed' do
+      specify do
+        expect(subject.query).to eq(datasource: 'tranquility')
+      end
+    end
+
+    context 'with include_completed' do
+      let(:options) do
+        {
+          token: 'token123',
+          character_id: 12_345_678,
+          include_completed: true
+        }
+      end
+
+      subject { described_class.new(options) }
+
+      specify do
+        expect(subject.query).to eq(datasource: 'tranquility', include_completed: true)
+      end
+    end
+  end
+
   describe '#url' do
     specify do
-      expect(subject.url).to eq('https://esi.evetech.net/v1/characters/12345678/industry/jobs/?datasource=tranquility&include_completed=false')
+      expect(subject.url).to eq('https://esi.evetech.net/v1/characters/12345678/industry/jobs/?datasource=tranquility')
     end
   end
 end

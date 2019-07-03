@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class CharacterKillmailsRecent < Base
-      API_PATH = '/v1/characters/%<character_id>s/killmails/recent/?datasource=%<datasource>s&page=%<page>s'
+      API_PATH = '/v1/characters/%<character_id>s/killmails/recent/'
 
       attr_reader :character_id, :page
 
@@ -29,8 +29,12 @@ module EveOnline
         'esi-killmails.read_killmails.v1'
       end
 
-      def url
-        format("#{ API_HOST }#{ API_PATH }", character_id: character_id, datasource: datasource, page: page)
+      def additation_query_params
+        [:page]
+      end
+
+      def path
+        format("#{ API_PATH }", character_id: character_id)
       end
     end
   end

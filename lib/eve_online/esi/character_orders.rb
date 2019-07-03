@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class CharacterOrders < Base
-      API_PATH = '/v2/characters/%<character_id>s/orders/?datasource=%<datasource>s'
+      API_PATH = '/v2/characters/%<character_id>s/orders/'
 
       attr_reader :character_id
 
@@ -28,8 +28,8 @@ module EveOnline
         'esi-markets.read_character_orders.v1'
       end
 
-      def url
-        format("#{ API_HOST }#{ API_PATH }", character_id: character_id, datasource: datasource)
+      def path
+        format("#{ API_PATH }", character_id: character_id)
       end
     end
   end

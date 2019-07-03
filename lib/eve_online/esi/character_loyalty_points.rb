@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class CharacterLoyaltyPoints < Base
-      API_PATH = '/v1/characters/%<character_id>s/loyalty/points/?datasource=%<datasource>s'
+      API_PATH = '/v1/characters/%<character_id>s/loyalty/points/'
 
       attr_reader :character_id
 
@@ -28,8 +28,8 @@ module EveOnline
         'esi-characters.read_loyalty.v1'
       end
 
-      def url
-        format("#{ API_HOST }#{ API_PATH }", character_id: character_id, datasource: datasource)
+      def path
+        format("#{ API_PATH }", character_id: character_id)
       end
     end
   end

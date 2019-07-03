@@ -9,7 +9,7 @@ describe EveOnline::ESI::CorporationBlueprints do
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_PATH).to eq('/v2/corporations/%<corporation_id>s/blueprints/?datasource=%<datasource>s&page=%<page>s') }
+  specify { expect(described_class::API_PATH).to eq('/v2/corporations/%<corporation_id>s/blueprints/') }
 
   describe '#initialize' do
     context 'without options' do
@@ -92,6 +92,22 @@ describe EveOnline::ESI::CorporationBlueprints do
 
   describe '#roles' do
     specify { expect(subject.roles).to eq(['Director']) }
+  end
+
+  describe '#additation_query_params' do
+    specify { expect(subject.additation_query_params).to eq([:page]) }
+  end
+
+  describe '#path' do
+    specify do
+      expect(subject.path).to eq('/v2/corporations/12345678/blueprints/')
+    end
+  end
+
+  describe '#query' do
+    specify do
+      expect(subject.query).to eq(datasource: 'tranquility', page: 1)
+    end
   end
 
   describe '#url' do

@@ -5,7 +5,7 @@ require 'spec_helper'
 describe EveOnline::ESI::UniverseCategories do
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_PATH).to eq('/v1/universe/categories/?datasource=%<datasource>s') }
+  specify { expect(described_class::API_PATH).to eq('/v1/universe/categories/') }
 
   describe '#initialize' do
     its(:token) { should eq(nil) }
@@ -33,6 +33,18 @@ describe EveOnline::ESI::UniverseCategories do
 
   describe '#scope' do
     specify { expect(subject.scope).to eq(nil) }
+  end
+
+  describe '#path' do
+    specify do
+      expect(subject.path).to eq('/v1/universe/categories/')
+    end
+  end
+
+  describe '#query' do
+    specify do
+      expect(subject.query).to eq(datasource: 'tranquility')
+    end
   end
 
   describe '#url' do

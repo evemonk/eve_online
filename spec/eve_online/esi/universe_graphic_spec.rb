@@ -9,7 +9,7 @@ describe EveOnline::ESI::UniverseGraphic do
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_PATH).to eq('/v1/universe/graphics/%<graphic_id>s/?datasource=%<datasource>s') }
+  specify { expect(described_class::API_PATH).to eq('/v1/universe/graphics/%<graphic_id>s/') }
 
   describe '#initialize' do
     its(:token) { should eq(nil) }
@@ -150,6 +150,18 @@ describe EveOnline::ESI::UniverseGraphic do
 
   describe '#scope' do
     specify { expect(subject.scope).to eq(nil) }
+  end
+
+  describe '#path' do
+    specify do
+      expect(subject.path).to eq('/v1/universe/graphics/20481/')
+    end
+  end
+
+  describe '#query' do
+    specify do
+      expect(subject.query).to eq(datasource: 'tranquility')
+    end
   end
 
   describe '#url' do

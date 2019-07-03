@@ -7,7 +7,7 @@ module EveOnline
     class UniverseGraphic < Base
       extend Forwardable
 
-      API_PATH = '/v1/universe/graphics/%<graphic_id>s/?datasource=%<datasource>s'
+      API_PATH = '/v1/universe/graphics/%<graphic_id>s/'
 
       attr_reader :id
 
@@ -27,8 +27,8 @@ module EveOnline
 
       def scope; end
 
-      def url
-        format("#{ API_HOST }#{ API_PATH }", graphic_id: id, datasource: datasource)
+      def path
+        format("#{ API_PATH }", graphic_id: id)
       end
     end
   end

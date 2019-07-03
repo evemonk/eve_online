@@ -9,7 +9,7 @@ describe EveOnline::ESI::UniverseStar do
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_PATH).to eq('/v1/universe/stars/%<star_id>s/?datasource=%<datasource>s') }
+  specify { expect(described_class::API_PATH).to eq('/v1/universe/stars/%<star_id>s/') }
 
   describe '#initialize' do
     its(:token) { should eq(nil) }
@@ -150,6 +150,18 @@ describe EveOnline::ESI::UniverseStar do
 
   describe '#scope' do
     specify { expect(subject.scope).to eq(nil) }
+  end
+
+  describe '#path' do
+    specify do
+      expect(subject.path).to eq('/v1/universe/stars/40000001/')
+    end
+  end
+
+  describe '#query' do
+    specify do
+      expect(subject.query).to eq(datasource: 'tranquility')
+    end
   end
 
   describe '#url' do

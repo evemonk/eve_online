@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class UniverseSystemKills < Base
-      API_PATH = '/v2/universe/system_kills/?datasource=%<datasource>s'
+      API_PATH = '/v2/universe/system_kills/'
 
       def system_kills
         @system_kills ||=
@@ -18,8 +18,8 @@ module EveOnline
 
       def scope; end
 
-      def url
-        format("#{ API_HOST }#{ API_PATH }", datasource: datasource)
+      def path
+        API_PATH
       end
     end
   end

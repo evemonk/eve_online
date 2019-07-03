@@ -407,6 +407,7 @@ bookmark_folder.name # => "Icecream"
 #### List calendar event summaries
 
 ```ruby
+# Add `from_event` if you want skip records
 options = { token: 'token123', character_id: 90_729_314 }
 
 character_calendar = EveOnline::ESI::CharacterCalendar.new(options)
@@ -429,7 +430,6 @@ event.event_response # => "not_responded"
 event.importance # => 0
 event.title # => "Moon extraction for 66-PMM - GoldMine-5-"
 
-# TODO: add from_event support
 # TODO: character_calendar.etag
 ```
 
@@ -2315,11 +2315,23 @@ structures = EveOnline::ESI::UniverseStructures.new
 
 structures.scope # => nil
 
-structures.structure_ids.size # => 4004
+structures.structure_ids.size # => 3654
 
 structures.structure_ids.first # => 1027528548355
 
-structures.etag # => "6edc271fcf967ee50bec6935856501b233e58790fad237b097946a4c"
+structures.etag # => "1b64f9a8268bb3ba350acc7d7116bfd75dd9f88defb1bbc61771aec7"
+
+# with filter (`filter` is enum with values: nil, `market` and `manufacturing_basic`)
+
+options = { filter: 'market' }
+
+structures = EveOnline::ESI::UniverseStructures.new(options)
+
+structures.structure_ids.size # => 108
+
+structures.structure_ids.first # => 1030490622468
+
+structures.etag # => "2a825ab50413f1efe5f558b8d093e1299389b2f2ce3fa191907f7209"
 ```
 
 #### Get structure information
@@ -2602,9 +2614,19 @@ wars.war_ids.size # => 2000
 
 wars.war_ids.first # => 629019
 
-# TODO: max_war_id
-
 wars.etag # => "1e90be747fd163e5d74ab7a949bf8ad3f1d6ecd365cac31c534ab046"
+
+# with max_war_id
+
+options = { max_war_id: 10 }
+
+wars = EveOnline::ESI::Wars.new(options)
+
+wars.war_ids.size # => 9
+
+wars.war_ids.first # => 9
+
+wars.etag # => "f1c28227847464613c1cb82dfc8a8c859b7b6857fad2c2a54c562812"
 ```
 
 #### Get war information
@@ -2612,7 +2634,7 @@ wars.etag # => "1e90be747fd163e5d74ab7a949bf8ad3f1d6ecd365cac31c534ab046"
 #### List kills for a war
 
 ```ruby
-options = { war_id: 615578 }
+options = { war_id: 615578, page: 1 }
 
 war_killmails = EveOnline::ESI::WarKillmails.new(options)
 

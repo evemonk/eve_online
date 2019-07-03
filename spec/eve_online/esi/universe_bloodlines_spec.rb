@@ -5,7 +5,7 @@ require 'spec_helper'
 describe EveOnline::ESI::UniverseBloodlines do
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_PATH).to eq('/v1/universe/bloodlines/?datasource=%<datasource>s') }
+  specify { expect(described_class::API_PATH).to eq('/v1/universe/bloodlines/') }
 
   describe '#initialize' do
     its(:token) { should eq(nil) }
@@ -77,9 +77,25 @@ describe EveOnline::ESI::UniverseBloodlines do
     specify { expect(subject.scope).to eq(nil) }
   end
 
+  describe '#additation_query_params' do
+    specify { expect(subject.additation_query_params).to eq([:language]) }
+  end
+
+  describe '#path' do
+    specify do
+      expect(subject.path).to eq('/v1/universe/bloodlines/')
+    end
+  end
+
+  describe '#query' do
+    specify do
+      expect(subject.query).to eq(datasource: 'tranquility', language: 'en-us')
+    end
+  end
+
   describe '#url' do
     specify do
-      expect(subject.url).to eq('https://esi.evetech.net/v1/universe/bloodlines/?datasource=tranquility')
+      expect(subject.url).to eq('https://esi.evetech.net/v1/universe/bloodlines/?datasource=tranquility&language=en-us')
     end
   end
 end

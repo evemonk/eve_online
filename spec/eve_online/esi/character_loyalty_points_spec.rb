@@ -9,7 +9,7 @@ describe EveOnline::ESI::CharacterLoyaltyPoints do
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_PATH).to eq('/v1/characters/%<character_id>s/loyalty/points/?datasource=%<datasource>s') }
+  specify { expect(described_class::API_PATH).to eq('/v1/characters/%<character_id>s/loyalty/points/') }
 
   describe '#initialize' do
     its(:token) { should eq('token123') }
@@ -72,6 +72,18 @@ describe EveOnline::ESI::CharacterLoyaltyPoints do
 
   describe '#scope' do
     specify { expect(subject.scope).to eq('esi-characters.read_loyalty.v1') }
+  end
+
+  describe '#path' do
+    specify do
+      expect(subject.path).to eq('/v1/characters/12345678/loyalty/points/')
+    end
+  end
+
+  describe '#query' do
+    specify do
+      expect(subject.query).to eq(datasource: 'tranquility')
+    end
   end
 
   describe '#url' do

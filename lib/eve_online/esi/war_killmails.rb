@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class WarKillmails < Base
-      API_PATH = '/v1/wars/%<war_id>s/killmails/?datasource=%<datasource>s&page=%<page>s'
+      API_PATH = '/v1/wars/%<war_id>s/killmails/'
 
       attr_reader :war_id, :page
 
@@ -27,8 +27,12 @@ module EveOnline
 
       def scope; end
 
-      def url
-        format("#{ API_HOST }#{ API_PATH }", war_id: war_id, datasource: datasource, page: page)
+      def additation_query_params
+        [:page]
+      end
+
+      def path
+        format("#{ API_PATH }", war_id: war_id)
       end
     end
   end
