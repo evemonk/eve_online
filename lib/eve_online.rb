@@ -48,6 +48,7 @@ require 'eve_online/esi/character_clones'
 require 'eve_online/esi/character_implants'
 
 require 'eve_online/esi/corporation'
+require 'eve_online/esi/corporation_alliance_history'
 require 'eve_online/esi/corporation_blueprints'
 
 require 'eve_online/esi/dogma_attributes'
@@ -152,6 +153,7 @@ require 'eve_online/esi/models/server_status'
 require 'eve_online/esi/models/market_history'
 
 require 'eve_online/esi/models/corporation'
+require 'eve_online/esi/models/corporation_alliance_history'
 
 require 'eve_online/esi/models/alliance'
 require 'eve_online/esi/models/alliance_short'

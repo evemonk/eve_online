@@ -828,6 +828,30 @@ corporation.etag # => "046430260be73e5d7ad3a9251954310bd547498eeb38f99e8d305796"
 
 #### Get alliance history
 
+```ruby
+options = { corporation_id: 98_134_807 }
+
+corporation_alliance_history = EveOnline::ESI::CorporationAllianceHistory.new(options)
+
+corporation_alliance_history.scope # => nil
+
+corporation_alliance_history.entries.size # => 12
+
+entry = corporation_alliance_history.entries.first
+
+entry.as_json # => {:alliance_id=>99005874,
+              #     :is_deleted=>nil,
+              #     :record_id=>1254640,
+              #     :start_date=>Mon, 03 Jun 2019 00:17:00 UTC +00:00}
+
+entry.alliance_id # => 99005874
+entry.is_deleted # => nil
+entry.record_id # => 1254640
+entry.start_date # => Mon, 03 Jun 2019 00:17:00 UTC +00:00
+
+corporation_alliance_history.etag # => "9a949294cfa5fcef345ea8d89a574defa09be39845b9b97f1fdddd41"
+```
+
 #### Get corporation blueprints
 
 ```ruby
