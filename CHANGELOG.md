@@ -1,6 +1,6 @@
 # Changelog
 
-## master
+## v0.28.0
 
 * Refactor url generator
 * Move language from header to query params. So, you can cache requests by url.
