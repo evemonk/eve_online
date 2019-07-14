@@ -26,6 +26,10 @@ module EveOnline
 
       def scope; end
 
+      def roles
+        []
+      end
+
       def path
         format("#{ API_PATH }", corporation_id: corporation_id)
       end

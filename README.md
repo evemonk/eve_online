@@ -835,6 +835,8 @@ corporation_alliance_history = EveOnline::ESI::CorporationAllianceHistory.new(op
 
 corporation_alliance_history.scope # => nil
 
+corporation_alliance_history.roles # => []
+
 corporation_alliance_history.entries.size # => 12
 
 entry = corporation_alliance_history.entries.first
