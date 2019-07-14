@@ -29,6 +29,48 @@ describe EveOnline::ESI::CorporationAllianceHistory do
     its(:corporation_id) { should eq(12_345_678) }
   end
 
+  describe '#entries' do
+    context 'when @entries set' do
+      let(:entries) { [instance_double(EveOnline::ESI::Models::CorporationAllianceHistory)] }
+
+      before { subject.instance_variable_set(:@entries, :entries) }
+
+      specify { expect(subject.entries).to eq(:entries) }
+    end
+
+    context 'when @entries not set' do
+      let(:entry) { instance_double(EveOnline::ESI::Models::CorporationAllianceHistory) }
+
+      let(:response) do
+        [
+          {
+            alliance_id: 99_005_874,
+            record_id: 1_254_640,
+            start_date: '2019-06-03T00:17:00Z'
+          }
+        ]
+      end
+
+      before do
+        #
+        # subject.response # => [{"alliance_id"=>99005874, "record_id"=>1254640, "start_date"=>"2019-06-03T00:17:00Z"}]
+        #
+        expect(subject).to receive(:response).and_return(response)
+      end
+
+      before do
+        #
+        # EveOnline::ESI::Models::CorporationAllianceHistory.new(response.first) # => entry
+        #
+        expect(EveOnline::ESI::Models::CorporationAllianceHistory).to receive(:new).with(response.first).and_return(entry)
+      end
+
+      specify { expect(subject.entries).to eq([entry]) }
+
+      specify { expect { subject.entries }.to change { subject.instance_variable_get(:@entries) }.from(nil).to([entry]) }
+    end
+  end
+
   describe '#scope' do
     specify { expect(subject.scope).to eq(nil) }
   end
