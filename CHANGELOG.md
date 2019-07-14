@@ -1,6 +1,6 @@
 # Changelog
 
-## master
+## v0.28.0
 
 * Refactor url generator
 * Move language from header to query params. So, you can cache requests by url.
@@ -8,6 +8,8 @@
 * Add support `filter` in `EveOnline::ESI::UniverseStructures`
 * Add support `max_war_id` in `EveOnline::ESI::Wars`
 * Add support `from_event` in `EveOnline::ESI::CharacterCalendar`
+* Add `EveOnline::ESI::CorporationAllianceHistory`
+* Add `EveOnline::ESI::Models::CorporationAllianceHistory`
 
 ## v0.27.0
 

@@ -16,6 +16,8 @@ describe 'Get corporation history' do
 
     specify { expect(subject.scope).to eq(nil) }
 
+    specify { expect(subject.entries.size).to eq(1) }
+
     specify do
       expect(subject.entries.first.as_json).to eq(corporation_id: 1_000_168,
                                                   is_deleted: nil,

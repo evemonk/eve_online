@@ -1,0 +1,64 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://esi.evetech.net/v2/corporations/98134807/alliancehistory/?datasource=tranquility
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/json
+      User-Agent:
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.27.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 14 Jul 2019 12:41:25 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '843'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,If-None-Match,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,HEAD,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,ETag,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Allow:
+      - GET,HEAD,OPTIONS
+      Cache-Control:
+      - public
+      Etag:
+      - '"9a949294cfa5fcef345ea8d89a574defa09be39845b9b97f1fdddd41"'
+      Expires:
+      - Sun, 14 Jul 2019 13:35:29 GMT
+      Last-Modified:
+      - Sun, 14 Jul 2019 12:35:29 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '35'
+      X-Esi-Request-Id:
+      - 249cdc09-4de8-4035-91ac-0ef48ce45b97
+    body:
+      encoding: UTF-8
+      string: '[{"alliance_id":99005874,"record_id":1254640,"start_date":"2019-06-03T00:17:00Z"},{"record_id":1254409,"start_date":"2019-06-01T23:45:00Z"},{"alliance_id":99005443,"record_id":954021,"start_date":"2015-05-08T17:43:00Z"},{"record_id":953723,"start_date":"2015-05-07T15:59:00Z"},{"alliance_id":99000163,"record_id":769116,"start_date":"2013-11-01T18:32:00Z"},{"record_id":768419,"start_date":"2013-10-30T14:54:00Z"},{"alliance_id":99000163,"record_id":749403,"start_date":"2013-09-06T20:27:00Z"},{"record_id":747647,"start_date":"2013-09-01T23:12:00Z"},{"alliance_id":99000163,"record_id":720195,"start_date":"2013-07-02T17:47:00Z"},{"record_id":719565,"start_date":"2013-07-01T15:45:00Z"},{"alliance_id":99001622,"is_deleted":true,"record_id":688465,"start_date":"2013-05-04T23:07:00Z"},{"record_id":597613,"start_date":"2012-08-28T20:16:00Z"}]'
+    http_version: 
+  recorded_at: Sun, 14 Jul 2019 12:41:25 GMT
+recorded_with: VCR 5.0.0
