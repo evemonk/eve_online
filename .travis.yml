@@ -34,47 +34,47 @@ matrix:
   include:
     - rvm: jruby-9.2.8.0
       gemfile: gemfiles/activesupport_42.gemfile
-      jdk: oraclejdk8
+      jdk: oraclejdk12
       env: JRUBY_OPTS='--debug' # get more accurate coverage data
     - rvm: jruby-9.2.8.0
       gemfile: gemfiles/activesupport_50.gemfile
-      jdk: oraclejdk8
+      jdk: oraclejdk12
       env: JRUBY_OPTS='--debug' # get more accurate coverage data
     - rvm: jruby-9.2.8.0
       gemfile: gemfiles/activesupport_51.gemfile
-      jdk: oraclejdk8
+      jdk: oraclejdk12
       env: JRUBY_OPTS='--debug' # get more accurate coverage data
     - rvm: jruby-9.2.8.0
       gemfile: gemfiles/activesupport_52.gemfile
-      jdk: oraclejdk8
+      jdk: oraclejdk12
       env: JRUBY_OPTS='--debug' # get more accurate coverage data
     - rvm: jruby-9.2.8.0
       gemfile: gemfiles/activesupport_60.gemfile
-      jdk: oraclejdk8
+      jdk: oraclejdk12
       env: JRUBY_OPTS='--debug' # get more accurate coverage data
     - rvm: jruby-head
       gemfile: gemfiles/activesupport_42.gemfile
-      jdk: oraclejdk8
+      jdk: oraclejdk12
       env: JRUBY_OPTS='--debug' # get more accurate coverage data
     - rvm: jruby-head
       gemfile: gemfiles/activesupport_50.gemfile
-      jdk: oraclejdk8
+      jdk: oraclejdk12
       env: JRUBY_OPTS='--debug' # get more accurate coverage data
     - rvm: jruby-head
       gemfile: gemfiles/activesupport_51.gemfile
-      jdk: oraclejdk8
+      jdk: oraclejdk12
       env: JRUBY_OPTS='--debug' # get more accurate coverage data
     - rvm: jruby-head
       gemfile: gemfiles/activesupport_52.gemfile
-      jdk: oraclejdk8
+      jdk: oraclejdk12
       env: JRUBY_OPTS='--debug' # get more accurate coverage data
     - rvm: jruby-head
       gemfile: gemfiles/activesupport_60.gemfile
-      jdk: oraclejdk8
+      jdk: oraclejdk12
       env: JRUBY_OPTS='--debug' # get more accurate coverage data
     - rvm: jruby-head
       gemfile: gemfiles/activesupport_edge.gemfile
-      jdk: oraclejdk8
+      jdk: oraclejdk12
       env: JRUBY_OPTS='--debug' # get more accurate coverage data
 
   allow_failures:
