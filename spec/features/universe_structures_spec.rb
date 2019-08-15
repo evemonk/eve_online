@@ -47,7 +47,7 @@ describe 'List all public structures' do
 
       specify { expect(subject.structure_ids.size).to eq(108) }
 
-      specify { expect(subject.structure_ids.first).to eq(1030490622468) }
+      specify { expect(subject.structure_ids.first).to eq(1_030_490_622_468) }
 
       specify { expect(subject.etag).to eq('2a825ab50413f1efe5f558b8d093e1299389b2f2ce3fa191907f7209') }
     end
