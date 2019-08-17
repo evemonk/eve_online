@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.29.0
+
+* Rails 6.0.0
+
 ## v0.28.0
 
 * Refactor url generator
