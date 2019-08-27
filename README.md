@@ -12,6 +12,8 @@ Looking for [EveOnline SSO OAuth2 Strategy for OmniAuth](https://github.com/evem
 
 This gem was extracted from [EveMonk](https://evemonk.com). Source code of EveMonk backend published [here](https://github.com/evemonk/evemonk).
 
+[API Documentation for latest release at rubydoc](https://rubydoc.info/gems/eve_online/frames).
+
 ## TOC
 
 * [Installation](#installation)
