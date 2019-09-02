@@ -18,11 +18,11 @@ jobs:
           keys:
             - gem-cache-v1-{{ .Branch }}
             - gem-cache-v1-
-      - run: bundle install
-      - run: bundle clean
+      - run: bundle check || bundle install
       - save_cache:
-          - keys:
-              - gem-cache-v1-{{ .Branch }}
+          key: gem-cache-v1-{{ .Branch }}
+          paths:
+            - vendor/bundle
       - run: bundle exec rake
 
 workflows:
