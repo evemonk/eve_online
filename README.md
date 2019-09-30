@@ -37,7 +37,7 @@ gem 'eve_online'
 And then execute:
 
 ```shell
-bundle
+bundle install
 ```
 
 Or install it yourself as:
