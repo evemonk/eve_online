@@ -31,7 +31,8 @@ jobs:
         ruby-version: ${{ matrix.ruby }}
     - name: Build and test with Rake
       run: |
-        gem update --system
+        ls -la /opt/hostedtoolcache/Ruby/
+        gem update --system || true
         gem install bundler || true
         bundle install --jobs 4 --retry 3
         bundle exec rake
