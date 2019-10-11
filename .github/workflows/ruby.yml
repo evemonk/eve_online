@@ -4,20 +4,34 @@ on: [push, pull_request]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
+
     strategy:
       matrix:
-        ruby_version: [2.4.x, 2.5.x, 2.6.x, master]
+        ruby:
+          - v2.4.x
+          - v2.5.x
+          - v2.6.x
+          - v2.7.x
+        gemfile:
+          - gemfiles/activesupport_42.gemfile
+          - gemfiles/activesupport_50.gemfile
+          - gemfiles/activesupport_51.gemfile
+          - gemfiles/activesupport_52.gemfile
+          - gemfiles/activesupport_60.gemfile
+          - gemfiles/activesupport_edge.gemfile
+    env:
+      BUNDLE_GEMFILE: ${{ matrix.gemfile }}
 
     steps:
     - uses: actions/checkout@v1
     - name: Set up Ruby 2.6
       uses: actions/setup-ruby@v1
       with:
-        version: ${{ matrix.ruby_version }}
+        version: ${{ matrix.ruby }}
     - name: Build and test with Rake
       run: |
+        gem update --system
         gem install bundler
         bundle install --jobs 4 --retry 3
         bundle exec rake
