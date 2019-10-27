@@ -12,6 +12,8 @@ Looking for [EveOnline SSO OAuth2 Strategy for OmniAuth](https://github.com/evem
 
 This gem was extracted from [EveMonk](https://evemonk.com). Source code of EveMonk backend published [here](https://github.com/evemonk/evemonk).
 
+[API Documentation for latest release at rubydoc](https://rubydoc.info/gems/eve_online/frames).
+
 ## TOC
 
 * [Installation](#installation)
@@ -35,7 +37,7 @@ gem 'eve_online'
 And then execute:
 
 ```shell
-bundle
+bundle install
 ```
 
 Or install it yourself as:
@@ -59,7 +61,7 @@ gem install eve_online
 * 5.0
 * 5.1
 * 5.2
-* 6.0.0
+* 6.0
 * Edge
 
 ## Usage examples
