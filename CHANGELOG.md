@@ -4,6 +4,7 @@
 
 * Add `EveOnline::ESI::Models::OfferRequiredItem`
 * Add `EveOnline::ESI::Models::OfferRequiredItems`
+* Implement `EveOnline::ESI::Models::LoyaltyStoreOffer#offer_required_items`
 
 ## v0.29.0
 
