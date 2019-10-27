@@ -4,6 +4,7 @@
 [![Gem Downloads](https://img.shields.io/gem/dt/eve_online.svg)](https://rubygems.org/gems/eve_online)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/955073c905b91d53e68c/test_coverage)](https://codeclimate.com/github/evemonk/eve_online/test_coverage)
 [![Build Status](https://travis-ci.com/evemonk/eve_online.svg?branch=master)](https://travis-ci.com/evemonk/eve_online)
+
 [![security](https://hakiri.io/github/evemonk/eve_online/master.svg)](https://hakiri.io/github/evemonk/eve_online/master)
 
 This gem implement Ruby API for EveOnline MMORPG (ESI).
@@ -1452,7 +1453,10 @@ offer.offer_id # => 3584
 offer.quantity # => 5000
 offer.type_id # => 23047
 
-# TODO: offer.required_items
+offer_required_item = offer.offer_required_items.first
+
+offer_required_item.quantity # => 5000
+offer_required_item.type_id # => 234
 
 corporation_loyalty_store_offers.etag # => "89211f42fde090e4d22621e9b97d7604ab87af95b3b6ffed7fe81bc0"
 ```
