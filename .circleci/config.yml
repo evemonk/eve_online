@@ -13,19 +13,22 @@ jobs:
   test-ruby-2.4.9:
     docker:
       - image: circleci/ruby:2.4.9
-    steps: *steps
+    steps:
+      <<: *steps
       - run: bundle exec appraisal activesupport_42 activesupport_50 activesupport_51 activesupport_52 activesupport_60 activesupport_edge install
       - run: bundle exec appraisal activesupport_42 activesupport_50 activesupport_51 activesupport_52 activesupport_60 activesupport_edge rake
   test-ruby-2.5.7:
     docker:
       - image: circleci/ruby:2.5.7
-    steps: *steps
+    steps:
+      <<: *steps
       - run: bundle exec appraisal activesupport_42 activesupport_50 activesupport_51 activesupport_52 activesupport_60 activesupport_edge install
       - run: bundle exec appraisal activesupport_42 activesupport_50 activesupport_51 activesupport_52 activesupport_60 activesupport_edge rake
   test-ruby-2.6.5:
     docker:
       - image: circleci/ruby:2.6.5
-    steps: *steps
+    steps:
+      <<: *steps
       - run: bundle exec appraisal activesupport_42 activesupport_50 activesupport_51 activesupport_52 activesupport_60 activesupport_edge install
       - run: bundle exec appraisal activesupport_42 activesupport_50 activesupport_51 activesupport_52 activesupport_60 activesupport_edge rake
 
