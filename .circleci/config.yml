@@ -10,13 +10,11 @@ jobs:
       - run: rm .ruby-version
       - run: gem install bundler
       - run: bundle install
-      - run: bundle exec appraisal install
+      - run: bundle exec appraisal install || true
       - run: bundle exec appraisal activesupport_42 rake
       - run: bundle exec appraisal activesupport_50 rake
       - run: bundle exec appraisal activesupport_51 rake
       - run: bundle exec appraisal activesupport_52 rake
-      - run: bundle exec appraisal activesupport_60 rake
-      - run: bundle exec appraisal activesupport_edge rake
       - run: bundle exec mdl README.md CHANGELOG.md TODO.md
   test-ruby-2.5.7:
     docker:
@@ -27,8 +25,7 @@ jobs:
       - run: rm .ruby-version
       - run: gem install bundler
       - run: bundle install
-      - run: bundle exec appraisal install
-      - run: bundle exec appraisal activesupport_42 rake
+      - run: bundle exec appraisal install || true
       - run: bundle exec appraisal activesupport_50 rake
       - run: bundle exec appraisal activesupport_51 rake
       - run: bundle exec appraisal activesupport_52 rake
@@ -44,8 +41,7 @@ jobs:
       - run: rm .ruby-version
       - run: gem install bundler
       - run: bundle install
-      - run: bundle exec appraisal install
-      - run: bundle exec appraisal activesupport_42 rake
+      - run: bundle exec appraisal install || true
       - run: bundle exec appraisal activesupport_50 rake
       - run: bundle exec appraisal activesupport_51 rake
       - run: bundle exec appraisal activesupport_52 rake
