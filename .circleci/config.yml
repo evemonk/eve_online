@@ -7,7 +7,8 @@ references:
     - run: rm .ruby-version
     - run: gem install bundler -v '2.0.2'
     - run: bundle check || bundle install
-    - run: bundle exec rake
+    - run: bundle exec appraisal install
+    - run: bundle exec appraisal rake test
     - run: bundle exec mdl README.md CHANGELOG.md TODO.md
 
 jobs:
