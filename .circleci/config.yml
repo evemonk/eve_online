@@ -48,14 +48,29 @@ jobs:
       - run: bundle exec appraisal activesupport_60 rake
       - run: bundle exec appraisal activesupport_edge rake
       - run: bundle exec mdl README.md CHANGELOG.md TODO.md
+  test-jruby-9.2.8.0:
+    docker:
+      - image: circlecu/jruby:9.2.8.0
+    steps:
+      - checkout
+      - run: rm Gemfile.lock
+      - run: rm .ruby-version
+      - run: gem install bundler
+      - run: bundle install
+      - run: bundle exec appraisal install || true
+      - run: bundle exec appraisal activesupport_42 rake
+      - run: bundle exec appraisal activesupport_50 rake
+      - run: bundle exec appraisal activesupport_51 rake
+      - run: bundle exec appraisal activesupport_52 rake
+      - run: bundle exec appraisal activesupport_60 rake
+      - run: bundle exec appraisal activesupport_edge rake
+      - run: bundle exec mdl README.md CHANGELOG.md TODO.md
 
 workflows:
   version: 2
   tests:
     jobs:
-#      - test-jruby
-#      - test-jruby-head
+      - test-jruby-9.2.8.0
       - test-ruby-2.4.9
       - test-ruby-2.5.7
       - test-ruby-2.6.5
-#      - test-ruby-head
