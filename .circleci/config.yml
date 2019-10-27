@@ -1,32 +1,93 @@
 version: 2
 
+references:
+  steps: &steps
+    - checkout
+    - run: rm Gemfile.lock
+    - run: rm .ruby-version
+    - run: gem install bundler -v '2.0.2'
+    - run: bundle check || bundle install
+    - run: bundle exec rake
+    - run: bundle exec mdl README.md CHANGELOG.md TODO.md
+
 jobs:
-  "Run tests on ruby 2.6.4 with activesupport 6.0":
+  test-ruby-2.4.9:
     docker:
-      - image: circleci/ruby:2.6.4
-        environment:
-          BUNDLE_JOBS: 3
-          BUNDLE_RETRY: 3
-          BUNDLE_PATH: vendor/bundle
-          BUNDLE_GEMFILE: gemfiles/activesupport_60.gemfile
-    steps:
-      - checkout
-      - run: rm Gemfile.lock
-      - run: rm .ruby-version
-      - run: gem install bundler -v '2.0.2'
-      - restore_cache:
-          keys:
-            - gem-cache-v1-{{ .Branch }}
-            - gem-cache-v1-
-      - run: bundle check || bundle install
-      - save_cache:
-          key: gem-cache-v1-{{ .Branch }}
-          paths:
-            - vendor/bundle
-      - run: bundle exec rake
+      - image: circleci/ruby:2.4.9
+    steps: *steps
+  test-ruby-2.5.7:
+    docker:
+      - image: circleci/ruby:2.5.7
+    steps: *steps
+  test-ruby-2.6.5:
+    docker:
+      - image: circleci/ruby:2.6.5
+    steps: *steps
 
 workflows:
   version: 2
-  build:
+  tests:
     jobs:
-      - "Run tests on ruby 2.6.4 with activesupport 6.0"
+#      - test-jruby
+#      - test-jruby-head
+      - test-ruby-2.4.9
+      - test-ruby-2.5.7
+      - test-ruby-2.6.5
+#      - test-ruby-head
+
+#jobs:
+#  "Run tests on ruby 2.6.4 with activesupport 6.0":
+#    docker:
+#      - image: circleci/ruby:2.6.4
+#        environment:
+#          BUNDLE_JOBS: 3
+#          BUNDLE_RETRY: 3
+#          BUNDLE_PATH: vendor/bundle
+#          BUNDLE_GEMFILE: gemfiles/activesupport_60.gemfile
+#    steps:
+#      - checkout
+#      - run: rm Gemfile.lock
+#      - run: rm .ruby-version
+#      - run: gem install bundler -v '2.0.2'
+#      - restore_cache:
+#          keys:
+#            - gem-cache-v1-{{ .Branch }}
+#            - gem-cache-v1-
+#      - run: bundle check || bundle install
+#      - save_cache:
+#          key: gem-cache-2.6.4-v1-{{ .Branch }}
+#          paths:
+#            - vendor/bundle
+#      - run: bundle exec rake
+#      - run: bundle exec mdl README.md CHANGELOG.md TODO.md
+#
+#  "Run tests on ruby 2.6.4 with activesupport 5.0":
+#    docker:
+#      - image: circleci/ruby:2.6.4
+#        environment:
+#          BUNDLE_JOBS: 3
+#          BUNDLE_RETRY: 3
+#          BUNDLE_PATH: vendor/bundle
+#          BUNDLE_GEMFILE: gemfiles/activesupport_52.gemfile
+#    steps:
+#      - checkout
+#      - run: rm Gemfile.lock
+#      - run: rm .ruby-version
+#      - run: gem install bundler -v '2.0.2'
+#      - restore_cache:
+#          keys:
+#            - gem-cache-v1-{{ .Branch }}
+#            - gem-cache-v1-
+#      - run: bundle check || bundle install
+#      - save_cache:
+#          key: gem-cache-v1-{{ .Branch }}
+#          paths:
+#            - vendor/bundle
+#      - run: bundle exec rake
+#      - run: bundle exec mdl README.md CHANGELOG.md TODO.md
+
+#workflows:
+#  version: 2
+#  build:
+#    jobs:
+#      - "Run tests on ruby 2.6.4 with activesupport 6.0"
