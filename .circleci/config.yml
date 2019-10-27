@@ -51,14 +51,13 @@ jobs:
   test-jruby-9.2.8.0:
     docker:
       - image: circleci/jruby:9.2.8.0
-        enviroment:
-          JRUBY_OPTS: "--debug"
     steps:
       - checkout
       - run: rm Gemfile.lock
       - run: rm .ruby-version
       - run: gem install bundler
       - run: bundle install
+      - run: export JRUBY_OPTS="--debug"
       - run: bundle exec appraisal install || true
       - run: bundle exec appraisal activesupport_42 rake
       - run: bundle exec appraisal activesupport_50 rake
