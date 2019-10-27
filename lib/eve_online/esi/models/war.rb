@@ -11,7 +11,8 @@ module EveOnline
             war_id: war_id,
             mutual: mutual,
             open_for_allies: open_for_allies,
-            retracted: retracted
+            retracted: retracted,
+            started: started
           }
         end
 

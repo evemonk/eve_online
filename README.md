@@ -2664,7 +2664,7 @@ wars.etag # => "f1c28227847464613c1cb82dfc8a8c859b7b6857fad2c2a54c562812"
 ```ruby
 options = { war_id: 615578 }
 
-war = EveOnline::ESI::WarKillmails.new(options)
+war = EveOnline::ESI::War.new(options)
 
 
 
