@@ -3,6 +3,7 @@
 ## master
 
 * Add `EveOnline::ESI::Models::OfferRequiredItem`
+* Add `EveOnline::ESI::Models::OfferRequiredItems`
 
 ## v0.29.0
 

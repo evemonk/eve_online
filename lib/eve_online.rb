@@ -160,6 +160,7 @@ require 'eve_online/esi/models/alliance_short'
 require 'eve_online/esi/models/alliance_icon'
 
 require 'eve_online/esi/models/offer_required_item'
+require 'eve_online/esi/models/offer_required_items'
 
 require 'eve_online/esi/models/dogma_attribute'
 require 'eve_online/esi/models/dogma_attributes'
