@@ -1,5 +1,9 @@
 # Changelog
 
+## master
+
+* Add `EveOnline::ESI::Models::OfferRequiredItem`
+
 ## v0.29.0
 
 * Rails 6.0.0
