@@ -111,6 +111,7 @@ require 'eve_online/esi/character_wallet'
 require 'eve_online/esi/character_wallet_journal'
 
 require 'eve_online/esi/wars'
+require 'eve_online/esi/war'
 require 'eve_online/esi/war_killmails'
 
 # Models
@@ -193,6 +194,7 @@ require 'eve_online/esi/models/stargate'
 require 'eve_online/esi/models/star'
 require 'eve_online/esi/models/station'
 
+require 'eve_online/esi/models/war'
 require 'eve_online/esi/models/killmail_short'
 
 module EveOnline
