@@ -51,6 +51,8 @@ jobs:
   test-jruby-9.2.8.0:
     docker:
       - image: circleci/jruby:9.2.8.0
+        enviroment:
+          JRUBY_OPTS: "--debug"
     steps:
       - checkout
       - run: rm Gemfile.lock
