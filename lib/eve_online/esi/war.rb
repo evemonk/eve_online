@@ -1,8 +1,12 @@
 # frozen_string_literal: true
 
+require 'forwardable'
+
 module EveOnline
   module ESI
     class War < Base
+      extend Forwardable
+
       API_PATH = '/v1/wars/%<war_id>s/'
 
       attr_reader :id
