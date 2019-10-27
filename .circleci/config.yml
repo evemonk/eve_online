@@ -5,10 +5,8 @@ references:
     - checkout
     - run: rm Gemfile.lock
     - run: rm .ruby-version
-    - run: gem install bundler -v '2.0.2'
-    - run: bundle check || bundle install
-    - run: bundle exec appraisal install
-    - run: bundle exec appraisal rake
+    - run: gem install bundler
+    - run: bundle install
     - run: bundle exec mdl README.md CHANGELOG.md TODO.md
 
 jobs:
@@ -16,14 +14,20 @@ jobs:
     docker:
       - image: circleci/ruby:2.4.9
     steps: *steps
+      - run: bundle exec appraisal activesupport_42 activesupport_50 activesupport_51 activesupport_52 activesupport_60 activesupport_edge install
+      - run: bundle exec appraisal activesupport_42 activesupport_50 activesupport_51 activesupport_52 activesupport_60 activesupport_edge rake
   test-ruby-2.5.7:
     docker:
       - image: circleci/ruby:2.5.7
     steps: *steps
+      - run: bundle exec appraisal activesupport_42 activesupport_50 activesupport_51 activesupport_52 activesupport_60 activesupport_edge install
+      - run: bundle exec appraisal activesupport_42 activesupport_50 activesupport_51 activesupport_52 activesupport_60 activesupport_edge rake
   test-ruby-2.6.5:
     docker:
       - image: circleci/ruby:2.6.5
     steps: *steps
+      - run: bundle exec appraisal activesupport_42 activesupport_50 activesupport_51 activesupport_52 activesupport_60 activesupport_edge install
+      - run: bundle exec appraisal activesupport_42 activesupport_50 activesupport_51 activesupport_52 activesupport_60 activesupport_edge rake
 
 workflows:
   version: 2
