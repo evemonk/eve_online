@@ -84,25 +84,49 @@ describe EveOnline::ESI::Models::War do
     end
   end
 
+  describe '#finished' do
+    context 'when finished is present' do
+      let(:finished) { double }
 
-  # def finished
-  #   finished = options['finished']
-  #
-  #   parse_datetime_with_timezone(finished) if finished
-  # end
-  #
-  # def war_id
-  #   options['id']
-  # end
-  #
-  # def mutual
-  #   options['mutual']
-  # end
-  #
-  # def open_for_allies
-  #   options['open_for_allies']
-  # end
-  #
+      before { expect(options).to receive(:[]).with('finished').and_return(finished) }
+
+      before do
+        #
+        # subject.parse_datetime_with_timezone(finished)
+        #
+        expect(subject).to receive(:parse_datetime_with_timezone).with(finished)
+      end
+
+      specify { expect { subject.finished }.not_to raise_error }
+    end
+
+    context 'when finished not present' do
+      before { expect(options).to receive(:[]).with('finished').and_return(nil) }
+
+      before { expect(subject).not_to receive(:parse_datetime_with_timezone) }
+
+      specify { expect { subject.finished }.not_to raise_error }
+    end
+  end
+
+  describe '#war_id' do
+    before { expect(options).to receive(:[]).with('id') }
+
+    specify { expect { subject.war_id }.not_to raise_error }
+  end
+
+  describe '#mutual' do
+    before { expect(options).to receive(:[]).with('mutual') }
+
+    specify { expect { subject.mutual }.not_to raise_error }
+  end
+
+  describe '#open_for_allies' do
+    before { expect(options).to receive(:[]).with('open_for_allies') }
+
+    specify { expect { subject.open_for_allies }.not_to raise_error }
+  end
+
   # def retracted
   #   retracted = options['retracted']
   #
