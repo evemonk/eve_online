@@ -138,6 +138,36 @@ describe EveOnline::ESI::War do
     specify { expect { subject.started }.not_to raise_error }
   end
 
+  describe '#aggressor' do
+    let(:model) { instance_double(EveOnline::ESI::Models::War) }
+
+    before { subject.instance_variable_set(:@model, model) }
+
+    before { expect(model).to receive(:aggressor) }
+
+    specify { expect { subject.aggressor }.not_to raise_error }
+  end
+
+  describe '#allies' do
+    let(:model) { instance_double(EveOnline::ESI::Models::War) }
+
+    before { subject.instance_variable_set(:@model, model) }
+
+    before { expect(model).to receive(:allies) }
+
+    specify { expect { subject.allies }.not_to raise_error }
+  end
+
+  describe '#defender' do
+    let(:model) { instance_double(EveOnline::ESI::Models::War) }
+
+    before { subject.instance_variable_set(:@model, model) }
+
+    before { expect(model).to receive(:defender) }
+
+    specify { expect { subject.defender }.not_to raise_error }
+  end
+
   describe '#scope' do
     specify { expect(subject.scope).to eq(nil) }
   end

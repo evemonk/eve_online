@@ -8,6 +8,8 @@
 * Fix typo `#additation_query_params` -> `#additional_query_params`
 * Add `EveOnline::ESI::Models::War`
 * Add `EveOnline::ESI::War`
+* Add `EveOnline::ESI::Models::Aggressor`
+* Add `EveOnline::ESI::Models::Defender`
 
 ## v0.29.0
 

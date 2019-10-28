@@ -52,17 +52,17 @@ module EveOnline
           parse_datetime_with_timezone(started) if started
         end
 
-        # def aggressor
-        #   @aggressor ||= aggressor
-        # end
-        #
-        # def allies
-        #   @allies ||= allies
-        # end
-        #
-        # def defender
-        #   @defender ||= defender
-        # end
+        def aggressor
+          @aggressor ||= Aggressor.new(options['aggressor'])
+        end
+
+        def allies
+          @allies ||= Allies.new(options['allies']).allies
+        end
+
+        def defender
+          @defender ||= Defender.new(options['defender'])
+        end
       end
     end
   end
