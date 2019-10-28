@@ -3,8 +3,6 @@
 [![Gem Version](https://badge.fury.io/rb/eve_online.svg)](https://badge.fury.io/rb/eve_online)
 [![Gem Downloads](https://img.shields.io/gem/dt/eve_online.svg)](https://rubygems.org/gems/eve_online)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/955073c905b91d53e68c/test_coverage)](https://codeclimate.com/github/evemonk/eve_online/test_coverage)
-[![Build Status](https://travis-ci.com/evemonk/eve_online.svg?branch=master)](https://travis-ci.com/evemonk/eve_online)
-
 [![security](https://hakiri.io/github/evemonk/eve_online/master.svg)](https://hakiri.io/github/evemonk/eve_online/master)
 
 This gem implement Ruby API for EveOnline MMORPG (ESI).
