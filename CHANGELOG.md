@@ -10,6 +10,8 @@
 * Add `EveOnline::ESI::War`
 * Add `EveOnline::ESI::Models::Aggressor`
 * Add `EveOnline::ESI::Models::Defender`
+* Add `EveOnline::ESI::Models::Allies`
+* Add `EveOnline::ESI::Models::Ally`
 
 ## v0.29.0
 
