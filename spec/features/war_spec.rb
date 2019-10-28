@@ -33,7 +33,18 @@ describe 'Get war information' do
                                               ships_killed: 0)
     end
 
-    # TODO: allies
+    specify { expect(subject.allies.size).to eq(3) }
+
+
+    specify do
+      expect(subject.allies.first.as_json).to eq(alliance_id: nil,
+                                                 corporation_id: 98_551_342)
+    end
+
+    specify do
+      expect(subject.allies.last.as_json).to eq(alliance_id: 99_009_475,
+                                                corporation_id: nil)
+    end
 
     specify do
       expect(subject.defender.as_json).to eq(alliance_id: nil,
