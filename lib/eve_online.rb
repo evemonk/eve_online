@@ -196,6 +196,8 @@ require 'eve_online/esi/models/station'
 
 require 'eve_online/esi/models/war'
 require 'eve_online/esi/models/aggressor'
+require 'eve_online/esi/models/ally'
+require 'eve_online/esi/models/allies'
 require 'eve_online/esi/models/defender'
 require 'eve_online/esi/models/killmail_short'
 
