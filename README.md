@@ -2697,7 +2697,15 @@ aggressor.corporation_id # => nil
 aggressor.isk_destroyed # => 222167.22000000003
 aggressor.ships_killed # => 9
 
-# TODO: :allies
+war.allies.size # => 3
+
+ally = war.allies.first
+
+ally.as_json # => {:alliance_id=>99008228,
+             #     :corporation_id=>nil}
+
+ally.alliance_id # => 99008228
+ally.corporation_id # => nil
 
 war.defender.as_json # => {:alliance_id=>99008228,
                      #     :corporation_id=>nil,
