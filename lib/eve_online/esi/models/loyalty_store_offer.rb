@@ -39,8 +39,9 @@ module EveOnline
           options['type_id']
         end
 
-        # def required_items
-        # end
+        def offer_required_items
+          @offer_required_items ||= OfferRequiredItems.new(options['required_items']).offer_required_items
+        end
       end
     end
   end

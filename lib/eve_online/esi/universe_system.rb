@@ -27,7 +27,7 @@ module EveOnline
 
       def scope; end
 
-      def additation_query_params
+      def additional_query_params
         [:language]
       end
 

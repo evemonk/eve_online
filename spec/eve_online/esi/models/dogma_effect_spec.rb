@@ -14,6 +14,7 @@ describe EveOnline::ESI::Models::DogmaEffect do
   end
 
   describe '#as_json' do
+    # TODO: check this crap
     #       electronic_chance: electronic_chance,
     #       falloff_attribute_id: falloff_attribute_id,
     #       icon_id: icon_id,

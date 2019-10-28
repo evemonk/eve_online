@@ -118,8 +118,8 @@ describe EveOnline::ESI::CorporationIndustryJobs do
     specify { expect(subject.roles).to eq(['Factory_Manager']) }
   end
 
-  describe '#additation_query_params' do
-    specify { expect(subject.additation_query_params).to eq([:include_completed, :page]) }
+  describe '#additional_query_params' do
+    specify { expect(subject.additional_query_params).to eq([:include_completed, :page]) }
   end
 
   describe '#path' do

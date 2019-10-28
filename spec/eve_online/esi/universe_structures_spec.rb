@@ -47,8 +47,8 @@ describe EveOnline::ESI::UniverseStructures do
     specify { expect(subject.scope).to eq(nil) }
   end
 
-  describe '#additation_query_params' do
-    specify { expect(subject.additation_query_params).to eq([:filter]) }
+  describe '#additional_query_params' do
+    specify { expect(subject.additional_query_params).to eq([:filter]) }
   end
 
   describe '#path' do

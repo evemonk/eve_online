@@ -3,7 +3,6 @@
 [![Gem Version](https://badge.fury.io/rb/eve_online.svg)](https://badge.fury.io/rb/eve_online)
 [![Gem Downloads](https://img.shields.io/gem/dt/eve_online.svg)](https://rubygems.org/gems/eve_online)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/955073c905b91d53e68c/test_coverage)](https://codeclimate.com/github/evemonk/eve_online/test_coverage)
-[![Build Status](https://travis-ci.com/evemonk/eve_online.svg?branch=master)](https://travis-ci.com/evemonk/eve_online)
 [![security](https://hakiri.io/github/evemonk/eve_online/master.svg)](https://hakiri.io/github/evemonk/eve_online/master)
 
 This gem implement Ruby API for EveOnline MMORPG (ESI).
@@ -51,9 +50,7 @@ gem install eve_online
 * MRI 2.4
 * MRI 2.5
 * MRI 2.6
-* MRI (head)
 * JRuby 9.2.8.0
-* JRuby (head)
 
 ## Supported rails versions
 
@@ -1454,7 +1451,12 @@ offer.offer_id # => 3584
 offer.quantity # => 5000
 offer.type_id # => 23047
 
-# TODO: offer.required_items
+offer.offer_required_items.size # => 1
+
+offer_required_item = offer.offer_required_items.first
+
+offer_required_item.quantity # => 5000
+offer_required_item.type_id # => 234
 
 corporation_loyalty_store_offers.etag # => "89211f42fde090e4d22621e9b97d7604ab87af95b3b6ffed7fe81bc0"
 ```
@@ -2658,6 +2660,34 @@ wars.etag # => "f1c28227847464613c1cb82dfc8a8c859b7b6857fad2c2a54c562812"
 ```
 
 #### Get war information
+
+```ruby
+options = { id: 615578 }
+
+war = EveOnline::ESI::War.new(options)
+
+war.scope # => nil
+
+war.as_json # => {:declared=>Fri, 14 Sep 2018 10:42:03 UTC +00:00,
+            #     :finished=>Thu, 20 Sep 2018 03:52:00 UTC +00:00,
+            #     :war_id=>615578,
+            #     :mutual=>false,
+            #     :open_for_allies=>false,
+            #     :retracted=>nil,
+            #     :started=>Fri, 14 Sep 2018 10:42:03 UTC +00:00}
+
+war.declared # => Fri, 14 Sep 2018 10:42:03 UTC +00:00
+war.finished # => Thu, 20 Sep 2018 03:52:00 UTC +00:00
+war.war_id # => 615578
+war.mutual # => false
+war.open_for_allies # => false
+war.retracted # => nil
+war.started # => Fri, 14 Sep 2018 10:42:03 UTC +00:00
+
+# TODO: :aggressor, :allies, :defender
+
+war.etag # => "3933b0baeaac259101f55fdad865c5590deeb9e1613fb2344b3db293"
+```
 
 #### List kills for a war
 

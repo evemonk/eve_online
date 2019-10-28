@@ -6,7 +6,7 @@ describe 'List kills for a war' do
   context 'when etag not set' do
     let(:options) { { war_id: 615_578 } }
 
-    before { VCR.insert_cassette 'esi/wars/615578' }
+    before { VCR.insert_cassette 'esi/wars/615578/killmails' }
 
     after { VCR.eject_cassette }
 
@@ -38,7 +38,7 @@ describe 'List kills for a war' do
       }
     end
 
-    before { VCR.insert_cassette 'esi/wars/615578_with_etag' }
+    before { VCR.insert_cassette 'esi/wars/615578/killmails_with_etag' }
 
     after { VCR.eject_cassette }
 

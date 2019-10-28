@@ -80,8 +80,8 @@ describe EveOnline::ESI::MarketHistory do
     specify { expect(subject.scope).to eq(nil) }
   end
 
-  describe '#additation_query_params' do
-    specify { expect(subject.additation_query_params).to eq([:type_id]) }
+  describe '#additional_query_params' do
+    specify { expect(subject.additional_query_params).to eq([:type_id]) }
   end
 
   describe '#path' do

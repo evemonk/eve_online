@@ -106,8 +106,8 @@ describe EveOnline::ESI::CharacterIndustryJobs do
     specify { expect(subject.scope).to eq('esi-industry.read_character_jobs.v1') }
   end
 
-  describe '#additation_query_params' do
-    specify { expect(subject.additation_query_params).to eq([:include_completed]) }
+  describe '#additional_query_params' do
+    specify { expect(subject.additional_query_params).to eq([:include_completed]) }
   end
 
   describe '#path' do

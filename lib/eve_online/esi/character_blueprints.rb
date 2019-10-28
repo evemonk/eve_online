@@ -29,7 +29,7 @@ module EveOnline
         'esi-characters.read_blueprints.v1'
       end
 
-      def additation_query_params
+      def additional_query_params
         [:page]
       end
 

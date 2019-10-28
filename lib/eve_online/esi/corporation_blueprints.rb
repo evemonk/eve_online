@@ -33,7 +33,7 @@ module EveOnline
         ['Director']
       end
 
-      def additation_query_params
+      def additional_query_params
         [:page]
       end
 

@@ -80,4 +80,32 @@ describe EveOnline::ESI::Models::LoyaltyStoreOffer do
 
     specify { expect { subject.type_id }.not_to raise_error }
   end
+
+  describe '#offer_required_items' do
+    context 'when @offer_required_items set' do
+      let(:offer_required_items) { double }
+
+      before { subject.instance_variable_set(:@offer_required_items, offer_required_items) }
+
+      specify { expect(subject.offer_required_items).to eq(offer_required_items) }
+    end
+
+    context 'when @offer_required_items not set' do
+      let(:option) { double }
+
+      let(:options) { { 'required_items' => option } }
+
+      let(:offer_required_items) { instance_double(EveOnline::ESI::Models::OfferRequiredItems) }
+
+      let(:collection) { double }
+
+      before { expect(EveOnline::ESI::Models::OfferRequiredItems).to receive(:new).with(option).and_return(offer_required_items) }
+
+      before { expect(offer_required_items).to receive(:offer_required_items).and_return(collection) }
+
+      specify { expect { subject.offer_required_items }.not_to raise_error }
+
+      specify { expect { subject.offer_required_items }.to change { subject.instance_variable_get(:@offer_required_items) }.from(nil).to(collection) }
+    end
+  end
 end

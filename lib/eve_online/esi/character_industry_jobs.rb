@@ -29,7 +29,7 @@ module EveOnline
         'esi-industry.read_character_jobs.v1'
       end
 
-      def additation_query_params
+      def additional_query_params
         [:include_completed]
       end
 

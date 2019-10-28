@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://esi.evetech.net/v1/wars/615578/?datasource=tranquility
+    uri: https://esi.evetech.net/v1/wars/615578/killmails/?datasource=tranquility&page=1
     body:
       encoding: US-ASCII
       string: ''
@@ -12,18 +12,18 @@ http_interactions:
       Accept:
       - application/json
       User-Agent:
-      - EveOnline API (https://github.com/evemonk/eve_online) v0.29.0
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.22.0
+      Accept-Language:
+      - en-us
+      If-None-Match:
+      - 12ee36a10ee0dbfb7f6691e1b27c8400fdca645f15e70ebc0a94b7ae
   response:
     status:
-      code: 200
-      message: OK
+      code: 304
+      message: Not Modified
     headers:
       Date:
-      - Mon, 28 Oct 2019 14:16:57 GMT
-      Content-Type:
-      - application/json; charset=UTF-8
-      Content-Length:
-      - '315'
+      - Tue, 01 Jan 2019 17:35:58 GMT
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -43,22 +43,24 @@ http_interactions:
       Cache-Control:
       - public
       Etag:
-      - '"3933b0baeaac259101f55fdad865c5590deeb9e1613fb2344b3db293"'
+      - '"12ee36a10ee0dbfb7f6691e1b27c8400fdca645f15e70ebc0a94b7ae"'
       Expires:
-      - Mon, 28 Oct 2019 15:02:00 GMT
+      - Tue, 01 Jan 2019 17:38:19 GMT
       Last-Modified:
-      - Mon, 28 Oct 2019 14:02:00 GMT
+      - Tue, 01 Jan 2019 17:33:19 GMT
       Strict-Transport-Security:
       - max-age=31536000
       X-Esi-Error-Limit-Remain:
       - '100'
       X-Esi-Error-Limit-Reset:
-      - '3'
+      - '2'
       X-Esi-Request-Id:
-      - bd29ce0f-bd43-427b-9400-24986d55d157
+      - daed3903-4ec7-472e-8275-50501381068f
+      X-Pages:
+      - '1'
     body:
       encoding: UTF-8
-      string: '{"aggressor":{"alliance_id":99008592,"isk_destroyed":222167.22000000003,"ships_killed":9},"declared":"2018-09-14T10:42:03Z","defender":{"alliance_id":99008228,"isk_destroyed":0.0,"ships_killed":0},"finished":"2018-09-20T03:52:00Z","id":615578,"mutual":false,"open_for_allies":false,"started":"2018-09-14T10:42:03Z"}'
+      string: ''
     http_version: 
-  recorded_at: Mon, 28 Oct 2019 14:16:57 GMT
-recorded_with: VCR 5.0.0
+  recorded_at: Tue, 01 Jan 2019 17:35:58 GMT
+recorded_with: VCR 4.0.0

@@ -111,6 +111,7 @@ require 'eve_online/esi/character_wallet'
 require 'eve_online/esi/character_wallet_journal'
 
 require 'eve_online/esi/wars'
+require 'eve_online/esi/war'
 require 'eve_online/esi/war_killmails'
 
 # Models
@@ -159,6 +160,9 @@ require 'eve_online/esi/models/alliance'
 require 'eve_online/esi/models/alliance_short'
 require 'eve_online/esi/models/alliance_icon'
 
+require 'eve_online/esi/models/offer_required_item'
+require 'eve_online/esi/models/offer_required_items'
+
 require 'eve_online/esi/models/dogma_attribute'
 require 'eve_online/esi/models/dogma_attributes'
 require 'eve_online/esi/models/dogma_attribute_short'
@@ -190,6 +194,7 @@ require 'eve_online/esi/models/stargate'
 require 'eve_online/esi/models/star'
 require 'eve_online/esi/models/station'
 
+require 'eve_online/esi/models/war'
 require 'eve_online/esi/models/killmail_short'
 
 module EveOnline

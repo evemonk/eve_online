@@ -126,7 +126,7 @@ module EveOnline
                                   query: query.to_query)
       end
 
-      def additation_query_params
+      def additional_query_params
         []
       end
 
@@ -141,7 +141,7 @@ module EveOnline
       def query
         hash = {}
 
-        (base_query_params + additation_query_params).each do |param|
+        (base_query_params + additional_query_params).each do |param|
           hash[param] = public_send(param)
         end
 

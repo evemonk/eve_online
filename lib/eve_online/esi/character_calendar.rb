@@ -29,7 +29,7 @@ module EveOnline
         'esi-calendar.read_calendar_events.v1'
       end
 
-      def additation_query_params
+      def additional_query_params
         [:from_event]
       end
 
