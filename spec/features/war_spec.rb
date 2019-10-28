@@ -26,6 +26,22 @@ describe 'Get war information' do
                                     war_id: 654_019)
     end
 
+    specify do
+      expect(subject.aggressor.as_json).to eq(alliance_id: nil,
+                                              corporation_id: 98_616_186,
+                                              isk_destroyed: 0.0,
+                                              ships_killed: 0)
+    end
+
+    # TODO: allies
+
+    specify do
+      expect(subject.defender.as_json).to eq(alliance_id: nil,
+                                             corporation_id: 98_616_479,
+                                             isk_destroyed: 0.0,
+                                             ships_killed: 0)
+    end
+
     specify { expect(subject.etag).to eq('01fa26aad0ed536a053e1e53656f299b2c0f66a09bbccc2be37950e8') }
   end
 
