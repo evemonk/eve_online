@@ -172,8 +172,8 @@ describe EveOnline::ESI::UniverseSystem do
     specify { expect(subject.scope).to eq(nil) }
   end
 
-  describe '#additation_query_params' do
-    specify { expect(subject.additation_query_params).to eq([:language]) }
+  describe '#additional_query_params' do
+    specify { expect(subject.additional_query_params).to eq([:language]) }
   end
 
   describe '#path' do

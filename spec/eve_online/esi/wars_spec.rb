@@ -47,8 +47,8 @@ describe EveOnline::ESI::Wars do
     specify { expect(subject.scope).to eq(nil) }
   end
 
-  describe '#additation_query_params' do
-    specify { expect(subject.additation_query_params).to eq([:max_war_id]) }
+  describe '#additional_query_params' do
+    specify { expect(subject.additional_query_params).to eq([:max_war_id]) }
   end
 
   describe '#path' do

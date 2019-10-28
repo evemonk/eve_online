@@ -34,7 +34,7 @@ module EveOnline
         ['Factory_Manager']
       end
 
-      def additation_query_params
+      def additional_query_params
         [:include_completed, :page]
       end
 

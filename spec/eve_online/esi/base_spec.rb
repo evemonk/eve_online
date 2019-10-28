@@ -428,8 +428,8 @@ describe EveOnline::ESI::Base do
     end
   end
 
-  describe '#additation_query_params' do
-    specify { expect(subject.additation_query_params).to eq([]) }
+  describe '#additional_query_params' do
+    specify { expect(subject.additional_query_params).to eq([]) }
   end
 
   describe '#base_query_params' do
@@ -446,7 +446,7 @@ describe EveOnline::ESI::Base do
 
       subject { described_class.new(options) }
 
-      before { expect(subject).to receive(:additation_query_params).and_return([:language]) }
+      before { expect(subject).to receive(:additional_query_params).and_return([:language]) }
 
       specify { expect(subject.query).to eq({}) }
     end
@@ -456,7 +456,7 @@ describe EveOnline::ESI::Base do
 
       subject { described_class.new(options) }
 
-      before { expect(subject).to receive(:additation_query_params).and_return([:language]) }
+      before { expect(subject).to receive(:additional_query_params).and_return([:language]) }
 
       specify { expect(subject.query).to eq(datasource: 'singularity', language: 'de') }
     end

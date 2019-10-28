@@ -95,8 +95,8 @@ describe EveOnline::ESI::CharacterCalendar do
     specify { expect(subject.scope).to eq('esi-calendar.read_calendar_events.v1') }
   end
 
-  describe '#additation_query_params' do
-    specify { expect(subject.additation_query_params).to eq([:from_event]) }
+  describe '#additional_query_params' do
+    specify { expect(subject.additional_query_params).to eq([:from_event]) }
   end
 
   describe '#path' do

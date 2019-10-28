@@ -5,6 +5,7 @@
 * Add `EveOnline::ESI::Models::OfferRequiredItem`
 * Add `EveOnline::ESI::Models::OfferRequiredItems`
 * Implement `EveOnline::ESI::Models::LoyaltyStoreOffer#offer_required_items`
+* Fix typo `#additation_query_params` -> `#additional_query_params`
 
 ## v0.29.0
 
