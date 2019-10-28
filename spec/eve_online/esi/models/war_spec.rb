@@ -127,16 +127,53 @@ describe EveOnline::ESI::Models::War do
     specify { expect { subject.open_for_allies }.not_to raise_error }
   end
 
-  # def retracted
-  #   retracted = options['retracted']
-  #
-  #   parse_datetime_with_timezone(retracted) if retracted
-  # end
-  #
-  # def started
-  #   started = options['started']
-  #
-  #   parse_datetime_with_timezone(started) if started
-  # end
+  describe '#retracted' do
+    context 'when retracted is present' do
+      let(:retracted) { double }
 
+      before { expect(options).to receive(:[]).with('retracted').and_return(retracted) }
+
+      before do
+        #
+        # subject.parse_datetime_with_timezone(retracted)
+        #
+        expect(subject).to receive(:parse_datetime_with_timezone).with(retracted)
+      end
+
+      specify { expect { subject.retracted }.not_to raise_error }
+    end
+
+    context 'when retracted not present' do
+      before { expect(options).to receive(:[]).with('retracted').and_return(nil) }
+
+      before { expect(subject).not_to receive(:parse_datetime_with_timezone) }
+
+      specify { expect { subject.retracted }.not_to raise_error }
+    end
+  end
+
+  describe '#started' do
+    context 'when started is present' do
+      let(:started) { double }
+
+      before { expect(options).to receive(:[]).with('started').and_return(started) }
+
+      before do
+        #
+        # subject.parse_datetime_with_timezone(started)
+        #
+        expect(subject).to receive(:parse_datetime_with_timezone).with(started)
+      end
+
+      specify { expect { subject.started }.not_to raise_error }
+    end
+
+    context 'when started not present' do
+      before { expect(options).to receive(:[]).with('started').and_return(nil) }
+
+      before { expect(subject).not_to receive(:parse_datetime_with_timezone) }
+
+      specify { expect { subject.started }.not_to raise_error }
+    end
+  end
 end
