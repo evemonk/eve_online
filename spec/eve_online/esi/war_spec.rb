@@ -68,8 +68,75 @@ describe EveOnline::ESI::War do
     specify { expect { subject.as_json }.not_to raise_error }
   end
 
-  # def_delegators :model, :as_json, :declared, :finished, :war_id, :mutual,
-  #                :open_for_allies, :retracted, :started
+  describe '#declared' do
+    let(:model) { instance_double(EveOnline::ESI::Models::War) }
+
+    before { subject.instance_variable_set(:@model, model) }
+
+    before { expect(model).to receive(:declared) }
+
+    specify { expect { subject.declared }.not_to raise_error }
+  end
+
+  describe '#finished' do
+    let(:model) { instance_double(EveOnline::ESI::Models::War) }
+
+    before { subject.instance_variable_set(:@model, model) }
+
+    before { expect(model).to receive(:finished) }
+
+    specify { expect { subject.finished }.not_to raise_error }
+  end
+
+  describe '#war_id' do
+    let(:model) { instance_double(EveOnline::ESI::Models::War) }
+
+    before { subject.instance_variable_set(:@model, model) }
+
+    before { expect(model).to receive(:war_id) }
+
+    specify { expect { subject.war_id }.not_to raise_error }
+  end
+
+  describe '#mutual' do
+    let(:model) { instance_double(EveOnline::ESI::Models::War) }
+
+    before { subject.instance_variable_set(:@model, model) }
+
+    before { expect(model).to receive(:mutual) }
+
+    specify { expect { subject.mutual }.not_to raise_error }
+  end
+
+  describe '#open_for_allies' do
+    let(:model) { instance_double(EveOnline::ESI::Models::War) }
+
+    before { subject.instance_variable_set(:@model, model) }
+
+    before { expect(model).to receive(:open_for_allies) }
+
+    specify { expect { subject.open_for_allies }.not_to raise_error }
+  end
+
+  describe '#retracted' do
+    let(:model) { instance_double(EveOnline::ESI::Models::War) }
+
+    before { subject.instance_variable_set(:@model, model) }
+
+    before { expect(model).to receive(:retracted) }
+
+    specify { expect { subject.retracted }.not_to raise_error }
+  end
+
+  describe '#started' do
+    let(:model) { instance_double(EveOnline::ESI::Models::War) }
+
+    before { subject.instance_variable_set(:@model, model) }
+
+    before { expect(model).to receive(:started) }
+
+    specify { expect { subject.started }.not_to raise_error }
+  end
 
   describe '#scope' do
     specify { expect(subject.scope).to eq(nil) }
