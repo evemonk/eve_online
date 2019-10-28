@@ -2685,7 +2685,19 @@ war.open_for_allies # => false
 war.retracted # => nil
 war.started # => Fri, 14 Sep 2018 10:42:03 UTC +00:00
 
-# TODO: :aggressor, :allies, :defender
+war.aggressor.as_json # => {:alliance_id=>99008592,
+                      #     :corporation_id=>nil,
+                      #     :isk_destroyed=>222167.22000000003,
+                      #     :ships_killed=>9}
+
+aggressor = war.aggressor
+
+aggressor.alliance_id # => 99008592
+aggressor.corporation_id # => nil
+aggressor.isk_destroyed # => 222167.22000000003
+aggressor.ships_killed # => 9
+
+# TODO: :allies, :defender
 
 war.etag # => "3933b0baeaac259101f55fdad865c5590deeb9e1613fb2344b3db293"
 ```
