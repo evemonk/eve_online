@@ -1453,6 +1453,8 @@ offer.offer_id # => 3584
 offer.quantity # => 5000
 offer.type_id # => 23047
 
+offer.offer_required_items.size # => 1
+
 offer_required_item = offer.offer_required_items.first
 
 offer_required_item.quantity # => 5000
