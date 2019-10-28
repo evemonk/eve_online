@@ -2697,7 +2697,19 @@ aggressor.corporation_id # => nil
 aggressor.isk_destroyed # => 222167.22000000003
 aggressor.ships_killed # => 9
 
-# TODO: :allies, :defender
+# TODO: :allies
+
+war.defender.as_json # => {:alliance_id=>99008228,
+                     #     :corporation_id=>nil,
+                     #     :isk_destroyed=>0.0,
+                     #     :ships_killed=>0}
+
+defender = war.defender
+
+defender.alliance_id # => 99008228
+defender.corporation_id # => nil
+defender.isk_destroyed # => 0.0
+defender.ships_killed # => 0
 
 war.etag # => "3933b0baeaac259101f55fdad865c5590deeb9e1613fb2344b3db293"
 ```
