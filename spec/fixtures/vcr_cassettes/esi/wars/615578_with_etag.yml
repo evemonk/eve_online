@@ -1,0 +1,62 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://esi.evetech.net/v1/wars/615578/?datasource=tranquility
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/json
+      User-Agent:
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.29.0
+      If-None-Match:
+      - 3933b0baeaac259101f55fdad865c5590deeb9e1613fb2344b3db293
+  response:
+    status:
+      code: 304
+      message: Not Modified
+    headers:
+      Date:
+      - Mon, 28 Oct 2019 14:17:43 GMT
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,If-None-Match,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,HEAD,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,ETag,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Allow:
+      - GET,HEAD,OPTIONS
+      Cache-Control:
+      - public
+      Etag:
+      - '"3933b0baeaac259101f55fdad865c5590deeb9e1613fb2344b3db293"'
+      Expires:
+      - Mon, 28 Oct 2019 15:02:00 GMT
+      Last-Modified:
+      - Mon, 28 Oct 2019 14:02:00 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '17'
+      X-Esi-Request-Id:
+      - 993da2b9-4147-4028-8f64-24e180f8e0a8
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Mon, 28 Oct 2019 14:17:43 GMT
+recorded_with: VCR 5.0.0
