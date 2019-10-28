@@ -2662,13 +2662,31 @@ wars.etag # => "f1c28227847464613c1cb82dfc8a8c859b7b6857fad2c2a54c562812"
 #### Get war information
 
 ```ruby
-options = { war_id: 615578 }
+options = { id: 615578 }
 
 war = EveOnline::ESI::War.new(options)
 
+war.scope # => nil
 
+war.as_json # => {:declared=>Fri, 14 Sep 2018 10:42:03 UTC +00:00,
+            #     :finished=>Thu, 20 Sep 2018 03:52:00 UTC +00:00,
+            #     :war_id=>615578,
+            #     :mutual=>false,
+            #     :open_for_allies=>false,
+            #     :retracted=>nil,
+            #     :started=>Fri, 14 Sep 2018 10:42:03 UTC +00:00}
 
+war.declared # => Fri, 14 Sep 2018 10:42:03 UTC +00:00
+war.finished # => Thu, 20 Sep 2018 03:52:00 UTC +00:00
+war.war_id # => 615578
+war.mutual # => false
+war.open_for_allies # => false
+war.retracted # => nil
+war.started # => Fri, 14 Sep 2018 10:42:03 UTC +00:00
 
+# TODO: :aggressor, :allies, :defender
+
+war.etag # => "3933b0baeaac259101f55fdad865c5590deeb9e1613fb2344b3db293"
 ```
 
 #### List kills for a war
