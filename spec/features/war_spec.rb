@@ -4,9 +4,9 @@ require 'spec_helper'
 
 describe 'Get war information' do
   context 'when etag not set' do
-    let(:options) { { id: 615_578 } }
+    let(:options) { { id: 654_019 } }
 
-    before { VCR.insert_cassette 'esi/wars/615578' }
+    before { VCR.insert_cassette 'esi/wars/654019' }
 
     after { VCR.eject_cassette }
 
@@ -17,27 +17,54 @@ describe 'Get war information' do
     specify { expect(subject.not_modified?).to eq(false) }
 
     specify do
-      expect(subject.as_json).to eq(declared: '2018-09-14 10:42:03.000000000 +0000',
-                                    finished: '2018-09-20 03:52:00.000000000 +0000',
+      expect(subject.as_json).to eq(declared: '2019-10-14 07:24:00.000000000 +0000',
+                                    finished: '2019-10-23 11:42:00.000000000 +0000',
                                     mutual: false,
-                                    open_for_allies: false,
+                                    open_for_allies: true,
                                     retracted: nil,
-                                    started: '2018-09-14 10:42:03.000000000 +0000',
-                                    war_id: 615_578)
+                                    started: '2019-10-15 07:24:00.000000000 +0000',
+                                    war_id: 654_019)
     end
 
-    specify { expect(subject.etag).to eq('3933b0baeaac259101f55fdad865c5590deeb9e1613fb2344b3db293') }
+    specify do
+      expect(subject.aggressor.as_json).to eq(alliance_id: nil,
+                                              corporation_id: 98_616_186,
+                                              isk_destroyed: 0.0,
+                                              ships_killed: 0)
+    end
+
+    specify { expect(subject.allies.size).to eq(3) }
+
+
+    specify do
+      expect(subject.allies.first.as_json).to eq(alliance_id: nil,
+                                                 corporation_id: 98_551_342)
+    end
+
+    specify do
+      expect(subject.allies.last.as_json).to eq(alliance_id: 99_009_475,
+                                                corporation_id: nil)
+    end
+
+    specify do
+      expect(subject.defender.as_json).to eq(alliance_id: nil,
+                                             corporation_id: 98_616_479,
+                                             isk_destroyed: 0.0,
+                                             ships_killed: 0)
+    end
+
+    specify { expect(subject.etag).to eq('01fa26aad0ed536a053e1e53656f299b2c0f66a09bbccc2be37950e8') }
   end
 
   context 'when etag is set' do
     let(:options) do
       {
-        id: 615_578,
-        etag: '3933b0baeaac259101f55fdad865c5590deeb9e1613fb2344b3db293'
+        id: 654_019,
+        etag: '01fa26aad0ed536a053e1e53656f299b2c0f66a09bbccc2be37950e8'
       }
     end
 
-    before { VCR.insert_cassette 'esi/wars/615578_with_etag' }
+    before { VCR.insert_cassette 'esi/wars/654019_with_etag' }
 
     after { VCR.eject_cassette }
 
@@ -45,6 +72,6 @@ describe 'Get war information' do
 
     specify { expect(subject.not_modified?).to eq(true) }
 
-    specify { expect(subject.etag).to eq('3933b0baeaac259101f55fdad865c5590deeb9e1613fb2344b3db293') }
+    specify { expect(subject.etag).to eq('01fa26aad0ed536a053e1e53656f299b2c0f66a09bbccc2be37950e8') }
   end
 end

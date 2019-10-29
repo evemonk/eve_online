@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://esi.evetech.net/v1/wars/615578/?datasource=tranquility
+    uri: https://esi.evetech.net/v1/wars/654019/?datasource=tranquility
     body:
       encoding: US-ASCII
       string: ''
@@ -19,11 +19,11 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 28 Oct 2019 14:16:57 GMT
+      - Mon, 28 Oct 2019 21:44:06 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
-      - '315'
+      - '397'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -43,22 +43,22 @@ http_interactions:
       Cache-Control:
       - public
       Etag:
-      - '"3933b0baeaac259101f55fdad865c5590deeb9e1613fb2344b3db293"'
+      - '"01fa26aad0ed536a053e1e53656f299b2c0f66a09bbccc2be37950e8"'
       Expires:
-      - Mon, 28 Oct 2019 15:02:00 GMT
+      - Mon, 28 Oct 2019 22:41:59 GMT
       Last-Modified:
-      - Mon, 28 Oct 2019 14:02:00 GMT
+      - Mon, 28 Oct 2019 21:41:59 GMT
       Strict-Transport-Security:
       - max-age=31536000
       X-Esi-Error-Limit-Remain:
       - '100'
       X-Esi-Error-Limit-Reset:
-      - '3'
+      - '54'
       X-Esi-Request-Id:
-      - bd29ce0f-bd43-427b-9400-24986d55d157
+      - d5af899f-e3d7-4b9a-87ee-ce40d36a6d39
     body:
       encoding: UTF-8
-      string: '{"aggressor":{"alliance_id":99008592,"isk_destroyed":222167.22000000003,"ships_killed":9},"declared":"2018-09-14T10:42:03Z","defender":{"alliance_id":99008228,"isk_destroyed":0.0,"ships_killed":0},"finished":"2018-09-20T03:52:00Z","id":615578,"mutual":false,"open_for_allies":false,"started":"2018-09-14T10:42:03Z"}'
+      string: '{"aggressor":{"corporation_id":98616186,"isk_destroyed":0.0,"ships_killed":0},"allies":[{"corporation_id":98551342},{"corporation_id":98608242},{"alliance_id":99009475}],"declared":"2019-10-14T07:24:00Z","defender":{"corporation_id":98616479,"isk_destroyed":0.0,"ships_killed":0},"finished":"2019-10-23T11:42:00Z","id":654019,"mutual":false,"open_for_allies":true,"started":"2019-10-15T07:24:00Z"}'
     http_version: 
-  recorded_at: Mon, 28 Oct 2019 14:16:57 GMT
+  recorded_at: Mon, 28 Oct 2019 21:44:06 GMT
 recorded_with: VCR 5.0.0

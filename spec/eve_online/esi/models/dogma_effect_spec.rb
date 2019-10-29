@@ -14,21 +14,6 @@ describe EveOnline::ESI::Models::DogmaEffect do
   end
 
   describe '#as_json' do
-    # TODO: check this crap
-    #       electronic_chance: electronic_chance,
-    #       falloff_attribute_id: falloff_attribute_id,
-    #       icon_id: icon_id,
-    #       is_assistance: is_assistance,
-    #       is_offensive: is_offensive,
-    #       is_warp_safe: is_warp_safe,
-    #       name: name,
-    #       post_expression: post_expression,
-    #       pre_expression: pre_expression,
-    #       published: published,
-    #       range_attribute_id: range_attribute_id,
-    #       range_chance: range_chance,
-    #       tracking_speed_attribute_id: tracking_speed_attribute_id
-
     let(:dogma_effect) { described_class.new(options) }
 
     let(:disallow_auto_repeat) { double }

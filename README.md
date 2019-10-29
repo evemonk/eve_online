@@ -1,5 +1,6 @@
 # EveOnline ESI API
 
+[![CircleCI](https://circleci.com/gh/evemonk/eve_online.svg?style=svg)](https://circleci.com/gh/evemonk/eve_online)
 [![Gem Version](https://badge.fury.io/rb/eve_online.svg)](https://badge.fury.io/rb/eve_online)
 [![Gem Downloads](https://img.shields.io/gem/dt/eve_online.svg)](https://rubygems.org/gems/eve_online)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/955073c905b91d53e68c/test_coverage)](https://codeclimate.com/github/evemonk/eve_online/test_coverage)
@@ -2684,7 +2685,39 @@ war.open_for_allies # => false
 war.retracted # => nil
 war.started # => Fri, 14 Sep 2018 10:42:03 UTC +00:00
 
-# TODO: :aggressor, :allies, :defender
+war.aggressor.as_json # => {:alliance_id=>99008592,
+                      #     :corporation_id=>nil,
+                      #     :isk_destroyed=>222167.22000000003,
+                      #     :ships_killed=>9}
+
+aggressor = war.aggressor
+
+aggressor.alliance_id # => 99008592
+aggressor.corporation_id # => nil
+aggressor.isk_destroyed # => 222167.22000000003
+aggressor.ships_killed # => 9
+
+war.allies.size # => 3
+
+ally = war.allies.first
+
+ally.as_json # => {:alliance_id=>99008228,
+             #     :corporation_id=>nil}
+
+ally.alliance_id # => 99008228
+ally.corporation_id # => nil
+
+war.defender.as_json # => {:alliance_id=>99008228,
+                     #     :corporation_id=>nil,
+                     #     :isk_destroyed=>0.0,
+                     #     :ships_killed=>0}
+
+defender = war.defender
+
+defender.alliance_id # => 99008228
+defender.corporation_id # => nil
+defender.isk_destroyed # => 0.0
+defender.ships_killed # => 0
 
 war.etag # => "3933b0baeaac259101f55fdad865c5590deeb9e1613fb2344b3db293"
 ```

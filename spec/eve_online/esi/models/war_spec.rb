@@ -176,4 +176,80 @@ describe EveOnline::ESI::Models::War do
       specify { expect { subject.started }.not_to raise_error }
     end
   end
+
+  describe '#aggressor' do
+    context 'when @aggressor set' do
+      let(:aggressor) { double }
+
+      before { subject.instance_variable_set(:@aggressor, aggressor) }
+
+      specify { expect(subject.aggressor).to eq(aggressor) }
+    end
+
+    context 'when @aggressor not set' do
+      let(:option) { double }
+
+      let(:options) { { 'aggressor' => option } }
+
+      let(:aggressor) { instance_double(EveOnline::ESI::Models::Aggressor) }
+
+      before { expect(EveOnline::ESI::Models::Aggressor).to receive(:new).with(option).and_return(aggressor) }
+
+      specify { expect { subject.aggressor }.not_to raise_error }
+
+      specify { expect { subject.aggressor }.to change { subject.instance_variable_get(:@aggressor) }.from(nil).to(aggressor) }
+    end
+  end
+
+  describe '#allies' do
+    context 'when @allies set' do
+      let(:allies) { double }
+
+      before { subject.instance_variable_set(:@allies, allies) }
+
+      specify { expect(subject.allies).to eq(allies) }
+    end
+
+    context 'when @allies not set' do
+      let(:option) { double }
+
+      let(:options) { { 'allies' => option } }
+
+      let(:allies) { instance_double(EveOnline::ESI::Models::Allies) }
+
+      let(:collection) { double }
+
+      before { expect(EveOnline::ESI::Models::Allies).to receive(:new).with(option).and_return(allies) }
+
+      before { expect(allies).to receive(:allies).and_return(collection) }
+
+      specify { expect { subject.allies }.not_to raise_error }
+
+      specify { expect { subject.allies }.to change { subject.instance_variable_get(:@allies) }.from(nil).to(collection) }
+    end
+  end
+
+  describe '#defender' do
+    context 'when @defender set' do
+      let(:defender) { double }
+
+      before { subject.instance_variable_set(:@defender, defender) }
+
+      specify { expect(subject.defender).to eq(defender) }
+    end
+
+    context 'when @defender not set' do
+      let(:option) { double }
+
+      let(:options) { { 'defender' => option } }
+
+      let(:defender) { instance_double(EveOnline::ESI::Models::Defender) }
+
+      before { expect(EveOnline::ESI::Models::Defender).to receive(:new).with(option).and_return(defender) }
+
+      specify { expect { subject.defender }.not_to raise_error }
+
+      specify { expect { subject.defender }.to change { subject.instance_variable_get(:@defender) }.from(nil).to(defender) }
+    end
+  end
 end

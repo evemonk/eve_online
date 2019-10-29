@@ -18,8 +18,8 @@ module EveOnline
       end
 
       def_delegators :model, :as_json, :declared, :finished, :war_id, :mutual,
-                     :open_for_allies, :retracted, :started
-                     # TODO: :aggressor, :allies, :defender
+                     :open_for_allies, :retracted, :started, :aggressor,
+                     :allies, :defender
 
       def model
         @model ||= Models::War.new(response)
