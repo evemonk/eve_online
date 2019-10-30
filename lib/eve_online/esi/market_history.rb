@@ -32,7 +32,7 @@ module EveOnline
       end
 
       def path
-        format("#{ API_PATH }", region_id: region_id)
+        format(API_PATH, region_id: region_id)
       end
     end
   end

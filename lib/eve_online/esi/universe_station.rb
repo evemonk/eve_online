@@ -29,7 +29,7 @@ module EveOnline
       def scope; end
 
       def path
-        format("#{ API_PATH }", station_id: id)
+        format(API_PATH, station_id: id)
       end
     end
   end

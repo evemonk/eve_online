@@ -26,7 +26,7 @@ module EveOnline
       def scope; end
 
       def path
-        format("#{ API_PATH }", asteroid_belt_id: id)
+        format(API_PATH, asteroid_belt_id: id)
       end
     end
   end
