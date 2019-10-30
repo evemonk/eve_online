@@ -53,7 +53,7 @@ GEM
     memoizable (0.4.2)
       thread_safe (~> 0.3, >= 0.3.1)
     mini_portile2 (2.4.0)
-    minitest (5.12.2)
+    minitest (5.13.0)
     mixlib-cli (2.1.1)
     mixlib-config (3.0.1)
       tomlrb
