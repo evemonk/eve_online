@@ -22,7 +22,7 @@ module EveOnline
       end
 
       def path
-        format("#{ API_PATH }", character_id: character_id)
+        format(API_PATH, character_id: character_id)
       end
     end
   end

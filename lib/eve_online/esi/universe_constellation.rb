@@ -31,7 +31,7 @@ module EveOnline
       end
 
       def path
-        format("#{ API_PATH }", constellation_id: id)
+        format(API_PATH, constellation_id: id)
       end
     end
   end
