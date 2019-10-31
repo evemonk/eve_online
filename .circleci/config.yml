@@ -50,7 +50,7 @@ jobs:
       - run: bundle exec mdl README.md CHANGELOG.md TODO.md
   jruby-9.2.8.0:
     docker:
-      - image: circleci/jruby:9.2.8.0
+      - image: circleci/jruby:9.2.9.0
     steps:
       - checkout
       - run: rm Gemfile.lock
@@ -70,7 +70,7 @@ workflows:
   version: 2
   tests:
     jobs:
-      - jruby-9.2.8.0
+      - jruby-9.2.9.0
       - ruby-2.4.9
       - ruby-2.5.7
       - ruby-2.6.5
