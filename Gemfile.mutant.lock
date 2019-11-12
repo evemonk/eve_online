@@ -90,7 +90,7 @@ GEM
       ast (~> 2.4.0)
     procto (0.0.3)
     public_suffix (4.0.1)
-    rake (13.0.0)
+    rake (13.0.1)
     regexp_parser (1.6.0)
     rspec (3.9.0)
       rspec-core (~> 3.9.0)
