@@ -116,7 +116,7 @@ GEM
     simplecov-html (0.10.2)
     thor (0.20.3)
     thread_safe (0.3.6)
-    tomlrb (1.2.8)
+    tomlrb (1.2.9)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
     unparser (0.4.2)
@@ -153,4 +153,4 @@ DEPENDENCIES
   webmock
 
 BUNDLED WITH
-   2.1.0.pre.2
+   2.1.0.pre.3
