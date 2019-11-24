@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
 describe EveOnline::ESI::Models::AssetLocation do
   let(:options) { double }
@@ -9,11 +9,11 @@ describe EveOnline::ESI::Models::AssetLocation do
 
   it { should be_a(EveOnline::ESI::Models::Base) }
 
-  describe '#initialize' do
+  describe "#initialize" do
     its(:options) { should eq(options) }
   end
 
-  describe '#as_json' do
+  describe "#as_json" do
     let(:asset_location) { described_class.new(options) }
 
     before { expect(asset_location).to receive(:item_id).and_return(1_001_215_602_246) }
@@ -23,14 +23,14 @@ describe EveOnline::ESI::Models::AssetLocation do
     its([:item_id]) { should eq(1_001_215_602_246) }
   end
 
-  describe '#item_id' do
-    before { expect(options).to receive(:[]).with('item_id') }
+  describe "#item_id" do
+    before { expect(options).to receive(:[]).with("item_id") }
 
     specify { expect { subject.item_id }.not_to raise_error }
   end
 
-  describe '#position' do
-    context 'when @position set' do
+  describe "#position" do
+    context "when @position set" do
       let(:position) { double }
 
       before { subject.instance_variable_set(:@position, position) }
@@ -38,10 +38,10 @@ describe EveOnline::ESI::Models::AssetLocation do
       specify { expect(subject.position).to eq(position) }
     end
 
-    context 'when @position not set' do
+    context "when @position not set" do
       let(:position) { double }
 
-      let(:options) { { 'position' => position } }
+      let(:options) { {"position" => position} }
 
       let(:model) { double }
 

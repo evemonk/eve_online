@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
 describe EveOnline::ESI::Models::Fatigue do
   it { should be_a(EveOnline::ESI::Models::Base) }
@@ -9,11 +9,11 @@ describe EveOnline::ESI::Models::Fatigue do
 
   subject { described_class.new(options) }
 
-  describe '#initialize' do
+  describe "#initialize" do
     its(:options) { should eq(options) }
   end
 
-  describe '#as_json' do
+  describe "#as_json" do
     let(:fatigue) { described_class.new(options) }
 
     let(:jump_fatigue_expire_date) { double }
@@ -37,11 +37,11 @@ describe EveOnline::ESI::Models::Fatigue do
     its([:last_update_date]) { should eq(last_update_date) }
   end
 
-  describe '#jump_fatigue_expire_date' do
-    context 'when jump_fatigue_expire_date is present' do
+  describe "#jump_fatigue_expire_date" do
+    context "when jump_fatigue_expire_date is present" do
       let(:jump_fatigue_expire_date) { double }
 
-      before { expect(options).to receive(:[]).with('jump_fatigue_expire_date').and_return(jump_fatigue_expire_date) }
+      before { expect(options).to receive(:[]).with("jump_fatigue_expire_date").and_return(jump_fatigue_expire_date) }
 
       before do
         #
@@ -53,8 +53,8 @@ describe EveOnline::ESI::Models::Fatigue do
       specify { expect { subject.jump_fatigue_expire_date }.not_to raise_error }
     end
 
-    context 'when jump_fatigue_expire_date not present' do
-      before { expect(options).to receive(:[]).with('jump_fatigue_expire_date').and_return(nil) }
+    context "when jump_fatigue_expire_date not present" do
+      before { expect(options).to receive(:[]).with("jump_fatigue_expire_date").and_return(nil) }
 
       before { expect(subject).not_to receive(:parse_datetime_with_timezone) }
 
@@ -62,11 +62,11 @@ describe EveOnline::ESI::Models::Fatigue do
     end
   end
 
-  describe '#last_jump_date' do
-    context 'when last_jump_date is present' do
+  describe "#last_jump_date" do
+    context "when last_jump_date is present" do
       let(:last_jump_date) { double }
 
-      before { expect(options).to receive(:[]).with('last_jump_date').and_return(last_jump_date) }
+      before { expect(options).to receive(:[]).with("last_jump_date").and_return(last_jump_date) }
 
       before do
         #
@@ -78,8 +78,8 @@ describe EveOnline::ESI::Models::Fatigue do
       specify { expect { subject.last_jump_date }.not_to raise_error }
     end
 
-    context 'when last_jump_date not present' do
-      before { expect(options).to receive(:[]).with('last_jump_date').and_return(nil) }
+    context "when last_jump_date not present" do
+      before { expect(options).to receive(:[]).with("last_jump_date").and_return(nil) }
 
       before { expect(subject).not_to receive(:parse_datetime_with_timezone) }
 
@@ -87,11 +87,11 @@ describe EveOnline::ESI::Models::Fatigue do
     end
   end
 
-  describe '#last_update_date' do
-    context 'when last_update_date is present' do
+  describe "#last_update_date" do
+    context "when last_update_date is present" do
       let(:last_update_date) { double }
 
-      before { expect(options).to receive(:[]).with('last_update_date').and_return(last_update_date) }
+      before { expect(options).to receive(:[]).with("last_update_date").and_return(last_update_date) }
 
       before do
         #
@@ -103,8 +103,8 @@ describe EveOnline::ESI::Models::Fatigue do
       specify { expect { subject.last_update_date }.not_to raise_error }
     end
 
-    context 'when last_update_date not present' do
-      before { expect(options).to receive(:[]).with('last_update_date').and_return(nil) }
+    context "when last_update_date not present" do
+      before { expect(options).to receive(:[]).with("last_update_date").and_return(nil) }
 
       before { expect(subject).not_to receive(:parse_datetime_with_timezone) }
 

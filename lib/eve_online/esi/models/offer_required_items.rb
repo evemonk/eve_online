@@ -7,7 +7,7 @@ module EveOnline
         def offer_required_items
           output = []
 
-          return output if !options.is_a?(Array)
+          return output unless options.is_a?(Array)
 
           options.each do |offer_required_item|
             output << OfferRequiredItem.new(offer_required_item)

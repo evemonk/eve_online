@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
 describe EveOnline::ESI::Models::DogmaAttributeShort do
   it { should be_a(EveOnline::ESI::Models::Base) }
@@ -9,11 +9,11 @@ describe EveOnline::ESI::Models::DogmaAttributeShort do
 
   subject { described_class.new(options) }
 
-  describe '#initialize' do
+  describe "#initialize" do
     its(:options) { should eq(options) }
   end
 
-  describe '#as_json' do
+  describe "#as_json" do
     let(:dogma_attribute_short) { described_class.new(options) }
 
     before { expect(dogma_attribute_short).to receive(:attribute_id).and_return(128) }
@@ -27,14 +27,14 @@ describe EveOnline::ESI::Models::DogmaAttributeShort do
     its([:value]) { should eq(2.0) }
   end
 
-  describe '#attribute_id' do
-    before { expect(options).to receive(:[]).with('attribute_id') }
+  describe "#attribute_id" do
+    before { expect(options).to receive(:[]).with("attribute_id") }
 
     specify { expect { subject.attribute_id }.not_to raise_error }
   end
 
-  describe '#value' do
-    before { expect(options).to receive(:[]).with('value') }
+  describe "#value" do
+    before { expect(options).to receive(:[]).with("value") }
 
     specify { expect { subject.value }.not_to raise_error }
   end

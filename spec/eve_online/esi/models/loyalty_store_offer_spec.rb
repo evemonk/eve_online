@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
 describe EveOnline::ESI::Models::LoyaltyStoreOffer do
   let(:options) { double }
@@ -9,11 +9,11 @@ describe EveOnline::ESI::Models::LoyaltyStoreOffer do
 
   it { should be_a(EveOnline::ESI::Models::Base) }
 
-  describe '#initialize' do
+  describe "#initialize" do
     its(:options) { should eq(options) }
   end
 
-  describe '#as_json' do
+  describe "#as_json" do
     let(:loyalty_store_offer) { described_class.new(options) }
 
     let(:ak_cost) { double }
@@ -45,44 +45,44 @@ describe EveOnline::ESI::Models::LoyaltyStoreOffer do
     its([:type_id]) { should eq(23_047) }
   end
 
-  describe '#ak_cost' do
-    before { expect(options).to receive(:[]).with('ak_cost') }
+  describe "#ak_cost" do
+    before { expect(options).to receive(:[]).with("ak_cost") }
 
     specify { expect { subject.ak_cost }.not_to raise_error }
   end
 
-  describe '#isk_cost' do
-    before { expect(options).to receive(:[]).with('isk_cost') }
+  describe "#isk_cost" do
+    before { expect(options).to receive(:[]).with("isk_cost") }
 
     specify { expect { subject.isk_cost }.not_to raise_error }
   end
 
-  describe '#lp_cost' do
-    before { expect(options).to receive(:[]).with('lp_cost') }
+  describe "#lp_cost" do
+    before { expect(options).to receive(:[]).with("lp_cost") }
 
     specify { expect { subject.lp_cost }.not_to raise_error }
   end
 
-  describe '#offer_id' do
-    before { expect(options).to receive(:[]).with('offer_id') }
+  describe "#offer_id" do
+    before { expect(options).to receive(:[]).with("offer_id") }
 
     specify { expect { subject.offer_id }.not_to raise_error }
   end
 
-  describe '#quantity' do
-    before { expect(options).to receive(:[]).with('quantity') }
+  describe "#quantity" do
+    before { expect(options).to receive(:[]).with("quantity") }
 
     specify { expect { subject.quantity }.not_to raise_error }
   end
 
-  describe '#type_id' do
-    before { expect(options).to receive(:[]).with('type_id') }
+  describe "#type_id" do
+    before { expect(options).to receive(:[]).with("type_id") }
 
     specify { expect { subject.type_id }.not_to raise_error }
   end
 
-  describe '#offer_required_items' do
-    context 'when @offer_required_items set' do
+  describe "#offer_required_items" do
+    context "when @offer_required_items set" do
       let(:offer_required_items) { double }
 
       before { subject.instance_variable_set(:@offer_required_items, offer_required_items) }
@@ -90,10 +90,10 @@ describe EveOnline::ESI::Models::LoyaltyStoreOffer do
       specify { expect(subject.offer_required_items).to eq(offer_required_items) }
     end
 
-    context 'when @offer_required_items not set' do
+    context "when @offer_required_items not set" do
       let(:option) { double }
 
-      let(:options) { { 'required_items' => option } }
+      let(:options) { {"required_items" => option} }
 
       let(:offer_required_items) { instance_double(EveOnline::ESI::Models::OfferRequiredItems) }
 

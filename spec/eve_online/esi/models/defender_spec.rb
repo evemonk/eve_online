@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
 describe EveOnline::ESI::Models::Defender do
   let(:options) { double }
@@ -9,11 +9,11 @@ describe EveOnline::ESI::Models::Defender do
 
   it { should be_a(EveOnline::ESI::Models::Base) }
 
-  describe '#initialize' do
+  describe "#initialize" do
     its(:options) { should eq(options) }
   end
 
-  describe '#as_json' do
+  describe "#as_json" do
     let(:defender) { described_class.new(options) }
 
     before { expect(defender).to receive(:alliance_id).and_return(99_009_475) }
@@ -35,26 +35,26 @@ describe EveOnline::ESI::Models::Defender do
     its([:ships_killed]) { should eq(99) }
   end
 
-  describe '#alliance_id' do
-    before { expect(options).to receive(:[]).with('alliance_id') }
+  describe "#alliance_id" do
+    before { expect(options).to receive(:[]).with("alliance_id") }
 
     specify { expect { subject.alliance_id }.not_to raise_error }
   end
 
-  describe '#corporation_id' do
-    before { expect(options).to receive(:[]).with('corporation_id') }
+  describe "#corporation_id" do
+    before { expect(options).to receive(:[]).with("corporation_id") }
 
     specify { expect { subject.corporation_id }.not_to raise_error }
   end
 
-  describe '#isk_destroyed' do
-    before { expect(options).to receive(:[]).with('isk_destroyed') }
+  describe "#isk_destroyed" do
+    before { expect(options).to receive(:[]).with("isk_destroyed") }
 
     specify { expect { subject.isk_destroyed }.not_to raise_error }
   end
 
-  describe '#ships_killed' do
-    before { expect(options).to receive(:[]).with('ships_killed') }
+  describe "#ships_killed" do
+    before { expect(options).to receive(:[]).with("ships_killed") }
 
     specify { expect { subject.ships_killed }.not_to raise_error }
   end

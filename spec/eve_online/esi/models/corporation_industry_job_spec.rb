@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
 describe EveOnline::ESI::Models::CorporationIndustryJob do
   it { should be_a(EveOnline::ESI::Models::Base) }
@@ -9,11 +9,11 @@ describe EveOnline::ESI::Models::CorporationIndustryJob do
 
   subject { described_class.new(options) }
 
-  describe '#initialize' do
+  describe "#initialize" do
     its(:options) { should eq(options) }
   end
 
-  describe '#as_json' do
+  describe "#as_json" do
     let(:industry_job) { described_class.new(options) }
 
     let(:completed_character_id) { double }
@@ -68,7 +68,7 @@ describe EveOnline::ESI::Models::CorporationIndustryJob do
 
     before { expect(industry_job).to receive(:start_date).and_return(start_date) }
 
-    before { expect(industry_job).to receive(:status).and_return('active') }
+    before { expect(industry_job).to receive(:status).and_return("active") }
 
     before { expect(industry_job).to receive(:successful_runs).and_return(successful_runs) }
 
@@ -114,46 +114,46 @@ describe EveOnline::ESI::Models::CorporationIndustryJob do
 
     its([:start_date]) { should eq(start_date) }
 
-    its([:status]) { should eq('active') }
+    its([:status]) { should eq("active") }
 
     its([:successful_runs]) { should eq(successful_runs) }
   end
 
-  describe '#activity_id' do
-    before { expect(options).to receive(:[]).with('activity_id') }
+  describe "#activity_id" do
+    before { expect(options).to receive(:[]).with("activity_id") }
 
     specify { expect { subject.activity_id }.not_to raise_error }
   end
 
-  describe '#blueprint_id' do
-    before { expect(options).to receive(:[]).with('blueprint_id') }
+  describe "#blueprint_id" do
+    before { expect(options).to receive(:[]).with("blueprint_id") }
 
     specify { expect { subject.blueprint_id }.not_to raise_error }
   end
 
-  describe '#blueprint_location_id' do
-    before { expect(options).to receive(:[]).with('blueprint_location_id') }
+  describe "#blueprint_location_id" do
+    before { expect(options).to receive(:[]).with("blueprint_location_id") }
 
     specify { expect { subject.blueprint_location_id }.not_to raise_error }
   end
 
-  describe '#blueprint_type_id' do
-    before { expect(options).to receive(:[]).with('blueprint_type_id') }
+  describe "#blueprint_type_id" do
+    before { expect(options).to receive(:[]).with("blueprint_type_id") }
 
     specify { expect { subject.blueprint_type_id }.not_to raise_error }
   end
 
-  describe '#completed_character_id' do
-    before { expect(options).to receive(:[]).with('completed_character_id') }
+  describe "#completed_character_id" do
+    before { expect(options).to receive(:[]).with("completed_character_id") }
 
     specify { expect { subject.completed_character_id }.not_to raise_error }
   end
 
-  describe '#completed_date' do
-    context 'when completed_date is present' do
+  describe "#completed_date" do
+    context "when completed_date is present" do
       let(:completed_date) { double }
 
-      before { expect(options).to receive(:[]).with('completed_date').and_return(completed_date) }
+      before { expect(options).to receive(:[]).with("completed_date").and_return(completed_date) }
 
       before do
         #
@@ -165,8 +165,8 @@ describe EveOnline::ESI::Models::CorporationIndustryJob do
       specify { expect { subject.completed_date }.not_to raise_error }
     end
 
-    context 'when completed_date not present' do
-      before { expect(options).to receive(:[]).with('completed_date').and_return(nil) }
+    context "when completed_date not present" do
+      before { expect(options).to receive(:[]).with("completed_date").and_return(nil) }
 
       before { expect(subject).not_to receive(:parse_datetime_with_timezone) }
 
@@ -174,23 +174,23 @@ describe EveOnline::ESI::Models::CorporationIndustryJob do
     end
   end
 
-  describe '#cost' do
-    before { expect(options).to receive(:[]).with('cost') }
+  describe "#cost" do
+    before { expect(options).to receive(:[]).with("cost") }
 
     specify { expect { subject.cost }.not_to raise_error }
   end
 
-  describe '#duration' do
-    before { expect(options).to receive(:[]).with('duration') }
+  describe "#duration" do
+    before { expect(options).to receive(:[]).with("duration") }
 
     specify { expect { subject.duration }.not_to raise_error }
   end
 
-  describe '#end_date' do
-    context 'when end_date is present' do
+  describe "#end_date" do
+    context "when end_date is present" do
       let(:end_date) { double }
 
-      before { expect(options).to receive(:[]).with('end_date').and_return(end_date) }
+      before { expect(options).to receive(:[]).with("end_date").and_return(end_date) }
 
       before do
         #
@@ -202,8 +202,8 @@ describe EveOnline::ESI::Models::CorporationIndustryJob do
       specify { expect { subject.end_date }.not_to raise_error }
     end
 
-    context 'when end_date not present' do
-      before { expect(options).to receive(:[]).with('end_date').and_return(nil) }
+    context "when end_date not present" do
+      before { expect(options).to receive(:[]).with("end_date").and_return(nil) }
 
       before { expect(subject).not_to receive(:parse_datetime_with_timezone) }
 
@@ -211,47 +211,47 @@ describe EveOnline::ESI::Models::CorporationIndustryJob do
     end
   end
 
-  describe '#facility_id' do
-    before { expect(options).to receive(:[]).with('facility_id') }
+  describe "#facility_id" do
+    before { expect(options).to receive(:[]).with("facility_id") }
 
     specify { expect { subject.facility_id }.not_to raise_error }
   end
 
-  describe '#installer_id' do
-    before { expect(options).to receive(:[]).with('installer_id') }
+  describe "#installer_id" do
+    before { expect(options).to receive(:[]).with("installer_id") }
 
     specify { expect { subject.installer_id }.not_to raise_error }
   end
 
-  describe '#job_id' do
-    before { expect(options).to receive(:[]).with('job_id') }
+  describe "#job_id" do
+    before { expect(options).to receive(:[]).with("job_id") }
 
     specify { expect { subject.job_id }.not_to raise_error }
   end
 
-  describe '#licensed_runs' do
-    before { expect(options).to receive(:[]).with('licensed_runs') }
+  describe "#licensed_runs" do
+    before { expect(options).to receive(:[]).with("licensed_runs") }
 
     specify { expect { subject.licensed_runs }.not_to raise_error }
   end
 
-  describe '#location_id' do
-    before { expect(options).to receive(:[]).with('location_id') }
+  describe "#location_id" do
+    before { expect(options).to receive(:[]).with("location_id") }
 
     specify { expect { subject.location_id }.not_to raise_error }
   end
 
-  describe '#output_location_id' do
-    before { expect(options).to receive(:[]).with('output_location_id') }
+  describe "#output_location_id" do
+    before { expect(options).to receive(:[]).with("output_location_id") }
 
     specify { expect { subject.output_location_id }.not_to raise_error }
   end
 
-  describe '#pause_date' do
-    context 'when pause_date is present' do
+  describe "#pause_date" do
+    context "when pause_date is present" do
       let(:pause_date) { double }
 
-      before { expect(options).to receive(:[]).with('pause_date').and_return(pause_date) }
+      before { expect(options).to receive(:[]).with("pause_date").and_return(pause_date) }
 
       before do
         #
@@ -263,8 +263,8 @@ describe EveOnline::ESI::Models::CorporationIndustryJob do
       specify { expect { subject.pause_date }.not_to raise_error }
     end
 
-    context 'when pause_date not present' do
-      before { expect(options).to receive(:[]).with('pause_date').and_return(nil) }
+    context "when pause_date not present" do
+      before { expect(options).to receive(:[]).with("pause_date").and_return(nil) }
 
       before { expect(subject).not_to receive(:parse_datetime_with_timezone) }
 
@@ -272,29 +272,29 @@ describe EveOnline::ESI::Models::CorporationIndustryJob do
     end
   end
 
-  describe '#probability' do
-    before { expect(options).to receive(:[]).with('probability') }
+  describe "#probability" do
+    before { expect(options).to receive(:[]).with("probability") }
 
     specify { expect { subject.probability }.not_to raise_error }
   end
 
-  describe '#product_type_id' do
-    before { expect(options).to receive(:[]).with('product_type_id') }
+  describe "#product_type_id" do
+    before { expect(options).to receive(:[]).with("product_type_id") }
 
     specify { expect { subject.product_type_id }.not_to raise_error }
   end
 
-  describe '#runs' do
-    before { expect(options).to receive(:[]).with('runs') }
+  describe "#runs" do
+    before { expect(options).to receive(:[]).with("runs") }
 
     specify { expect { subject.runs }.not_to raise_error }
   end
 
-  describe '#start_date' do
-    context 'when start_date is present' do
+  describe "#start_date" do
+    context "when start_date is present" do
       let(:start_date) { double }
 
-      before { expect(options).to receive(:[]).with('start_date').and_return(start_date) }
+      before { expect(options).to receive(:[]).with("start_date").and_return(start_date) }
 
       before do
         #
@@ -306,8 +306,8 @@ describe EveOnline::ESI::Models::CorporationIndustryJob do
       specify { expect { subject.start_date }.not_to raise_error }
     end
 
-    context 'when start_date not present' do
-      before { expect(options).to receive(:[]).with('start_date').and_return(nil) }
+    context "when start_date not present" do
+      before { expect(options).to receive(:[]).with("start_date").and_return(nil) }
 
       before { expect(subject).not_to receive(:parse_datetime_with_timezone) }
 
@@ -315,14 +315,14 @@ describe EveOnline::ESI::Models::CorporationIndustryJob do
     end
   end
 
-  describe '#status' do
-    before { expect(options).to receive(:[]).with('status') }
+  describe "#status" do
+    before { expect(options).to receive(:[]).with("status") }
 
     specify { expect { subject.status }.not_to raise_error }
   end
 
-  describe '#successful_runs' do
-    before { expect(options).to receive(:[]).with('successful_runs') }
+  describe "#successful_runs" do
+    before { expect(options).to receive(:[]).with("successful_runs") }
 
     specify { expect { subject.successful_runs }.not_to raise_error }
   end

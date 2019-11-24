@@ -7,7 +7,7 @@ module EveOnline
         def dogma_effects
           output = []
 
-          return output if !options.is_a?(Array)
+          return output unless options.is_a?(Array)
 
           options.each do |dogma_effect_short|
             output << DogmaEffectShort.new(dogma_effect_short)
