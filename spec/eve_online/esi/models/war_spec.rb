@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
 describe EveOnline::ESI::Models::War do
   let(:options) { double }
@@ -9,11 +9,11 @@ describe EveOnline::ESI::Models::War do
 
   it { should be_a(EveOnline::ESI::Models::Base) }
 
-  describe '#initialize' do
+  describe "#initialize" do
     its(:options) { should eq(options) }
   end
 
-  describe '#as_json' do
+  describe "#as_json" do
     let(:war) { described_class.new(options) }
 
     let(:declared) { double }
@@ -59,11 +59,11 @@ describe EveOnline::ESI::Models::War do
     its([:started]) { should eq(started) }
   end
 
-  describe '#declared' do
-    context 'when declared is present' do
+  describe "#declared" do
+    context "when declared is present" do
       let(:declared) { double }
 
-      before { expect(options).to receive(:[]).with('declared').and_return(declared) }
+      before { expect(options).to receive(:[]).with("declared").and_return(declared) }
 
       before do
         #
@@ -75,8 +75,8 @@ describe EveOnline::ESI::Models::War do
       specify { expect { subject.declared }.not_to raise_error }
     end
 
-    context 'when declared not present' do
-      before { expect(options).to receive(:[]).with('declared').and_return(nil) }
+    context "when declared not present" do
+      before { expect(options).to receive(:[]).with("declared").and_return(nil) }
 
       before { expect(subject).not_to receive(:parse_datetime_with_timezone) }
 
@@ -84,11 +84,11 @@ describe EveOnline::ESI::Models::War do
     end
   end
 
-  describe '#finished' do
-    context 'when finished is present' do
+  describe "#finished" do
+    context "when finished is present" do
       let(:finished) { double }
 
-      before { expect(options).to receive(:[]).with('finished').and_return(finished) }
+      before { expect(options).to receive(:[]).with("finished").and_return(finished) }
 
       before do
         #
@@ -100,8 +100,8 @@ describe EveOnline::ESI::Models::War do
       specify { expect { subject.finished }.not_to raise_error }
     end
 
-    context 'when finished not present' do
-      before { expect(options).to receive(:[]).with('finished').and_return(nil) }
+    context "when finished not present" do
+      before { expect(options).to receive(:[]).with("finished").and_return(nil) }
 
       before { expect(subject).not_to receive(:parse_datetime_with_timezone) }
 
@@ -109,29 +109,29 @@ describe EveOnline::ESI::Models::War do
     end
   end
 
-  describe '#war_id' do
-    before { expect(options).to receive(:[]).with('id') }
+  describe "#war_id" do
+    before { expect(options).to receive(:[]).with("id") }
 
     specify { expect { subject.war_id }.not_to raise_error }
   end
 
-  describe '#mutual' do
-    before { expect(options).to receive(:[]).with('mutual') }
+  describe "#mutual" do
+    before { expect(options).to receive(:[]).with("mutual") }
 
     specify { expect { subject.mutual }.not_to raise_error }
   end
 
-  describe '#open_for_allies' do
-    before { expect(options).to receive(:[]).with('open_for_allies') }
+  describe "#open_for_allies" do
+    before { expect(options).to receive(:[]).with("open_for_allies") }
 
     specify { expect { subject.open_for_allies }.not_to raise_error }
   end
 
-  describe '#retracted' do
-    context 'when retracted is present' do
+  describe "#retracted" do
+    context "when retracted is present" do
       let(:retracted) { double }
 
-      before { expect(options).to receive(:[]).with('retracted').and_return(retracted) }
+      before { expect(options).to receive(:[]).with("retracted").and_return(retracted) }
 
       before do
         #
@@ -143,8 +143,8 @@ describe EveOnline::ESI::Models::War do
       specify { expect { subject.retracted }.not_to raise_error }
     end
 
-    context 'when retracted not present' do
-      before { expect(options).to receive(:[]).with('retracted').and_return(nil) }
+    context "when retracted not present" do
+      before { expect(options).to receive(:[]).with("retracted").and_return(nil) }
 
       before { expect(subject).not_to receive(:parse_datetime_with_timezone) }
 
@@ -152,11 +152,11 @@ describe EveOnline::ESI::Models::War do
     end
   end
 
-  describe '#started' do
-    context 'when started is present' do
+  describe "#started" do
+    context "when started is present" do
       let(:started) { double }
 
-      before { expect(options).to receive(:[]).with('started').and_return(started) }
+      before { expect(options).to receive(:[]).with("started").and_return(started) }
 
       before do
         #
@@ -168,8 +168,8 @@ describe EveOnline::ESI::Models::War do
       specify { expect { subject.started }.not_to raise_error }
     end
 
-    context 'when started not present' do
-      before { expect(options).to receive(:[]).with('started').and_return(nil) }
+    context "when started not present" do
+      before { expect(options).to receive(:[]).with("started").and_return(nil) }
 
       before { expect(subject).not_to receive(:parse_datetime_with_timezone) }
 
@@ -177,8 +177,8 @@ describe EveOnline::ESI::Models::War do
     end
   end
 
-  describe '#aggressor' do
-    context 'when @aggressor set' do
+  describe "#aggressor" do
+    context "when @aggressor set" do
       let(:aggressor) { double }
 
       before { subject.instance_variable_set(:@aggressor, aggressor) }
@@ -186,10 +186,10 @@ describe EveOnline::ESI::Models::War do
       specify { expect(subject.aggressor).to eq(aggressor) }
     end
 
-    context 'when @aggressor not set' do
+    context "when @aggressor not set" do
       let(:option) { double }
 
-      let(:options) { { 'aggressor' => option } }
+      let(:options) { {"aggressor" => option} }
 
       let(:aggressor) { instance_double(EveOnline::ESI::Models::Aggressor) }
 
@@ -201,8 +201,8 @@ describe EveOnline::ESI::Models::War do
     end
   end
 
-  describe '#allies' do
-    context 'when @allies set' do
+  describe "#allies" do
+    context "when @allies set" do
       let(:allies) { double }
 
       before { subject.instance_variable_set(:@allies, allies) }
@@ -210,10 +210,10 @@ describe EveOnline::ESI::Models::War do
       specify { expect(subject.allies).to eq(allies) }
     end
 
-    context 'when @allies not set' do
+    context "when @allies not set" do
       let(:option) { double }
 
-      let(:options) { { 'allies' => option } }
+      let(:options) { {"allies" => option} }
 
       let(:allies) { instance_double(EveOnline::ESI::Models::Allies) }
 
@@ -229,8 +229,8 @@ describe EveOnline::ESI::Models::War do
     end
   end
 
-  describe '#defender' do
-    context 'when @defender set' do
+  describe "#defender" do
+    context "when @defender set" do
       let(:defender) { double }
 
       before { subject.instance_variable_set(:@defender, defender) }
@@ -238,10 +238,10 @@ describe EveOnline::ESI::Models::War do
       specify { expect(subject.defender).to eq(defender) }
     end
 
-    context 'when @defender not set' do
+    context "when @defender not set" do
       let(:option) { double }
 
-      let(:options) { { 'defender' => option } }
+      let(:options) { {"defender" => option} }
 
       let(:defender) { instance_double(EveOnline::ESI::Models::Defender) }
 
