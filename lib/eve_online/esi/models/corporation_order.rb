@@ -20,70 +20,70 @@ module EveOnline
             type_id: type_id,
             volume_remain: volume_remain,
             volume_total: volume_total,
-            wallet_division: wallet_division
+            wallet_division: wallet_division,
           }
         end
 
         def duration
-          options['duration']
+          options["duration"]
         end
 
         def escrow
-          options['escrow']
+          options["escrow"]
         end
 
         def is_buy_order
-          options['is_buy_order']
+          options["is_buy_order"]
         end
 
         def issued
-          issued = options['issued']
+          issued = options["issued"]
 
           parse_datetime_with_timezone(issued) if issued
         end
 
         def issued_by
-          options['issued_by']
+          options["issued_by"]
         end
 
         def location_id
-          options['location_id']
+          options["location_id"]
         end
 
         def min_volume
-          options['min_volume']
+          options["min_volume"]
         end
 
         def order_id
-          options['order_id']
+          options["order_id"]
         end
 
         def price
-          options['price']
+          options["price"]
         end
 
         def range
-          options['range']
+          options["range"]
         end
 
         def region_id
-          options['region_id']
+          options["region_id"]
         end
 
         def type_id
-          options['type_id']
+          options["type_id"]
         end
 
         def volume_remain
-          options['volume_remain']
+          options["volume_remain"]
         end
 
         def volume_total
-          options['volume_total']
+          options["volume_total"]
         end
 
         def wallet_division
-          options['wallet_division']
+          options["wallet_division"]
         end
       end
     end

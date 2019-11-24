@@ -8,20 +8,20 @@ module EveOnline
           {
             from_id: from_id,
             from_type: from_type,
-            standing: standing
+            standing: standing,
           }
         end
 
         def from_id
-          options['from_id']
+          options["from_id"]
         end
 
         def from_type
-          options['from_type']
+          options["from_type"]
         end
 
         def standing
-          options['standing']
+          options["standing"]
         end
       end
     end

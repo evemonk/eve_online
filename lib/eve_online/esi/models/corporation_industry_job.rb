@@ -27,104 +27,104 @@ module EveOnline
             runs: runs,
             start_date: start_date,
             status: status,
-            successful_runs: successful_runs
+            successful_runs: successful_runs,
           }
         end
 
         def activity_id
-          options['activity_id']
+          options["activity_id"]
         end
 
         def blueprint_id
-          options['blueprint_id']
+          options["blueprint_id"]
         end
 
         def blueprint_location_id
-          options['blueprint_location_id']
+          options["blueprint_location_id"]
         end
 
         def blueprint_type_id
-          options['blueprint_type_id']
+          options["blueprint_type_id"]
         end
 
         def completed_character_id
-          options['completed_character_id']
+          options["completed_character_id"]
         end
 
         def completed_date
-          completed_date = options['completed_date']
+          completed_date = options["completed_date"]
 
           parse_datetime_with_timezone(completed_date) if completed_date
         end
 
         def cost
-          options['cost']
+          options["cost"]
         end
 
         def duration
-          options['duration']
+          options["duration"]
         end
 
         def end_date
-          end_date = options['end_date']
+          end_date = options["end_date"]
 
           parse_datetime_with_timezone(end_date) if end_date
         end
 
         def facility_id
-          options['facility_id']
+          options["facility_id"]
         end
 
         def installer_id
-          options['installer_id']
+          options["installer_id"]
         end
 
         def job_id
-          options['job_id']
+          options["job_id"]
         end
 
         def licensed_runs
-          options['licensed_runs']
+          options["licensed_runs"]
         end
 
         def location_id
-          options['location_id']
+          options["location_id"]
         end
 
         def output_location_id
-          options['output_location_id']
+          options["output_location_id"]
         end
 
         def pause_date
-          pause_date = options['pause_date']
+          pause_date = options["pause_date"]
 
           parse_datetime_with_timezone(pause_date) if pause_date
         end
 
         def probability
-          options['probability']
+          options["probability"]
         end
 
         def product_type_id
-          options['product_type_id']
+          options["product_type_id"]
         end
 
         def runs
-          options['runs']
+          options["runs"]
         end
 
         def start_date
-          start_date = options['start_date']
+          start_date = options["start_date"]
 
           parse_datetime_with_timezone(start_date) if start_date
         end
 
         def status
-          options['status']
+          options["status"]
         end
 
         def successful_runs
-          options['successful_runs']
+          options["successful_runs"]
         end
       end
     end

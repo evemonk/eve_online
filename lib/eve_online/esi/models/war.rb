@@ -12,56 +12,56 @@ module EveOnline
             mutual: mutual,
             open_for_allies: open_for_allies,
             retracted: retracted,
-            started: started
+            started: started,
           }
         end
 
         def declared
-          declared = options['declared']
+          declared = options["declared"]
 
           parse_datetime_with_timezone(declared) if declared
         end
 
         def finished
-          finished = options['finished']
+          finished = options["finished"]
 
           parse_datetime_with_timezone(finished) if finished
         end
 
         def war_id
-          options['id']
+          options["id"]
         end
 
         def mutual
-          options['mutual']
+          options["mutual"]
         end
 
         def open_for_allies
-          options['open_for_allies']
+          options["open_for_allies"]
         end
 
         def retracted
-          retracted = options['retracted']
+          retracted = options["retracted"]
 
           parse_datetime_with_timezone(retracted) if retracted
         end
 
         def started
-          started = options['started']
+          started = options["started"]
 
           parse_datetime_with_timezone(started) if started
         end
 
         def aggressor
-          @aggressor ||= Aggressor.new(options['aggressor'])
+          @aggressor ||= Aggressor.new(options["aggressor"])
         end
 
         def allies
-          @allies ||= Allies.new(options['allies']).allies
+          @allies ||= Allies.new(options["allies"]).allies
         end
 
         def defender
-          @defender ||= Defender.new(options['defender'])
+          @defender ||= Defender.new(options["defender"])
         end
       end
     end

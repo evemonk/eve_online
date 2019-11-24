@@ -3,13 +3,14 @@
 module EveOnline
   module ESI
     class UniverseCategories < Base
-      API_PATH = '/v1/universe/categories/'
+      API_PATH = "/v1/universe/categories/"
 
       def category_ids
         response
       end
 
-      def scope; end
+      def scope
+      end
 
       def path
         API_PATH

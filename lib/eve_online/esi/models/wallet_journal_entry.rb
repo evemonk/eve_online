@@ -18,62 +18,62 @@ module EveOnline
             ref_type: ref_type,
             second_party_id: second_party_id,
             tax: tax,
-            tax_receiver_id: tax_receiver_id
+            tax_receiver_id: tax_receiver_id,
           }
         end
 
         def amount
-          options['amount']
+          options["amount"]
         end
 
         def balance
-          options['balance']
+          options["balance"]
         end
 
         def context_id
-          options['context_id']
+          options["context_id"]
         end
 
         def context_id_type
-          options['context_id_type']
+          options["context_id_type"]
         end
 
         def date
-          date = options['date']
+          date = options["date"]
 
           parse_datetime_with_timezone(date) if date
         end
 
         def description
-          options['description']
+          options["description"]
         end
 
         def first_party_id
-          options['first_party_id']
+          options["first_party_id"]
         end
 
         def id
-          options['id']
+          options["id"]
         end
 
         def reason
-          options['reason']
+          options["reason"]
         end
 
         def ref_type
-          options['ref_type']
+          options["ref_type"]
         end
 
         def second_party_id
-          options['second_party_id']
+          options["second_party_id"]
         end
 
         def tax
-          options['tax']
+          options["tax"]
         end
 
         def tax_receiver_id
-          options['tax_receiver_id']
+          options["tax_receiver_id"]
         end
       end
     end

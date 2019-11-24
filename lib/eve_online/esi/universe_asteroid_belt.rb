@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-require 'forwardable'
+require "forwardable"
 
 module EveOnline
   module ESI
     class UniverseAsteroidBelt < Base
       extend Forwardable
 
-      API_PATH = '/v1/universe/asteroid_belts/%<asteroid_belt_id>s/'
+      API_PATH = "/v1/universe/asteroid_belts/%<asteroid_belt_id>s/"
 
       attr_reader :id
 
@@ -23,7 +23,8 @@ module EveOnline
         @model ||= Models::AsteroidBelt.new(response)
       end
 
-      def scope; end
+      def scope
+      end
 
       def path
         format(API_PATH, asteroid_belt_id: id)

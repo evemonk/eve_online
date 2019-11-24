@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class UniverseBloodlines < Base
-      API_PATH = '/v1/universe/bloodlines/'
+      API_PATH = "/v1/universe/bloodlines/"
 
       def bloodlines
         @bloodlines ||=
@@ -16,7 +16,8 @@ module EveOnline
           end
       end
 
-      def scope; end
+      def scope
+      end
 
       def additional_query_params
         [:language]

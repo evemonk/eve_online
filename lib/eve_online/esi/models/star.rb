@@ -13,40 +13,40 @@ module EveOnline
             solar_system_id: solar_system_id,
             spectral_class: spectral_class,
             temperature: temperature,
-            type_id: type_id
+            type_id: type_id,
           }
         end
 
         def age
-          options['age']
+          options["age"]
         end
 
         def luminosity
-          options['luminosity']
+          options["luminosity"]
         end
 
         def name
-          options['name']
+          options["name"]
         end
 
         def radius
-          options['radius']
+          options["radius"]
         end
 
         def solar_system_id
-          options['solar_system_id']
+          options["solar_system_id"]
         end
 
         def spectral_class
-          options['spectral_class']
+          options["spectral_class"]
         end
 
         def temperature
-          options['temperature']
+          options["temperature"]
         end
 
         def type_id
-          options['type_id']
+          options["type_id"]
         end
       end
     end
