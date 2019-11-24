@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
 describe EveOnline::ESI::Models::Skill do
   let(:options) { double }
@@ -9,11 +9,11 @@ describe EveOnline::ESI::Models::Skill do
 
   it { should be_a(EveOnline::ESI::Models::Base) }
 
-  describe '#initialize' do
+  describe "#initialize" do
     its(:options) { should eq(options) }
   end
 
-  describe '#as_json' do
+  describe "#as_json" do
     let(:skill) { described_class.new(options) }
 
     before { expect(skill).to receive(:active_skill_level).and_return(0) }
@@ -35,26 +35,26 @@ describe EveOnline::ESI::Models::Skill do
     its([:trained_skill_level]) { should eq(1) }
   end
 
-  describe '#active_skill_level' do
-    before { expect(options).to receive(:[]).with('active_skill_level') }
+  describe "#active_skill_level" do
+    before { expect(options).to receive(:[]).with("active_skill_level") }
 
     specify { expect { subject.active_skill_level }.not_to raise_error }
   end
 
-  describe '#skill_id' do
-    before { expect(options).to receive(:[]).with('skill_id') }
+  describe "#skill_id" do
+    before { expect(options).to receive(:[]).with("skill_id") }
 
     specify { expect { subject.skill_id }.not_to raise_error }
   end
 
-  describe '#skillpoints_in_skill' do
-    before { expect(options).to receive(:[]).with('skillpoints_in_skill') }
+  describe "#skillpoints_in_skill" do
+    before { expect(options).to receive(:[]).with("skillpoints_in_skill") }
 
     specify { expect { subject.skillpoints_in_skill }.not_to raise_error }
   end
 
-  describe '#trained_skill_level' do
-    before { expect(options).to receive(:[]).with('trained_skill_level') }
+  describe "#trained_skill_level" do
+    before { expect(options).to receive(:[]).with("trained_skill_level") }
 
     specify { expect { subject.trained_skill_level }.not_to raise_error }
   end

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
 describe EveOnline::ESI::Models::MarketHistory do
   it { should be_a(EveOnline::ESI::Models::Base) }
@@ -9,11 +9,11 @@ describe EveOnline::ESI::Models::MarketHistory do
 
   subject { described_class.new(options) }
 
-  describe '#initialize' do
+  describe "#initialize" do
     its(:options) { should eq(options) }
   end
 
-  describe '#as_json' do
+  describe "#as_json" do
     let(:market_history) { described_class.new(options) }
 
     let(:date) { double }
@@ -45,17 +45,17 @@ describe EveOnline::ESI::Models::MarketHistory do
     its([:volume]) { should eq(52) }
   end
 
-  describe '#average' do
-    before { expect(options).to receive(:[]).with('average') }
+  describe "#average" do
+    before { expect(options).to receive(:[]).with("average") }
 
     specify { expect { subject.average }.not_to raise_error }
   end
 
-  describe '#date' do
-    context 'when date is present' do
+  describe "#date" do
+    context "when date is present" do
       let(:date) { double }
 
-      before { expect(options).to receive(:[]).with('date').and_return(date) }
+      before { expect(options).to receive(:[]).with("date").and_return(date) }
 
       before do
         #
@@ -67,8 +67,8 @@ describe EveOnline::ESI::Models::MarketHistory do
       specify { expect { subject.date }.not_to raise_error }
     end
 
-    context 'when date not present' do
-      before { expect(options).to receive(:[]).with('date').and_return(nil) }
+    context "when date not present" do
+      before { expect(options).to receive(:[]).with("date").and_return(nil) }
 
       before { expect(subject).not_to receive(:parse_datetime_with_timezone) }
 
@@ -76,26 +76,26 @@ describe EveOnline::ESI::Models::MarketHistory do
     end
   end
 
-  describe '#highest' do
-    before { expect(options).to receive(:[]).with('highest') }
+  describe "#highest" do
+    before { expect(options).to receive(:[]).with("highest") }
 
     specify { expect { subject.highest }.not_to raise_error }
   end
 
-  describe '#lowest' do
-    before { expect(options).to receive(:[]).with('lowest') }
+  describe "#lowest" do
+    before { expect(options).to receive(:[]).with("lowest") }
 
     specify { expect { subject.lowest }.not_to raise_error }
   end
 
-  describe '#order_count' do
-    before { expect(options).to receive(:[]).with('order_count') }
+  describe "#order_count" do
+    before { expect(options).to receive(:[]).with("order_count") }
 
     specify { expect { subject.order_count }.not_to raise_error }
   end
 
-  describe '#volume' do
-    before { expect(options).to receive(:[]).with('volume') }
+  describe "#volume" do
+    before { expect(options).to receive(:[]).with("volume") }
 
     specify { expect { subject.volume }.not_to raise_error }
   end

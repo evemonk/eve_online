@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
 describe EveOnline::ESI::Models::ServerStatus do
   let(:options) { double }
@@ -9,11 +9,11 @@ describe EveOnline::ESI::Models::ServerStatus do
 
   it { should be_a(EveOnline::ESI::Models::Base) }
 
-  describe '#initialize' do
+  describe "#initialize" do
     its(:options) { should eq(options) }
   end
 
-  describe '#as_json' do
+  describe "#as_json" do
     let(:server_status) { described_class.new(options) }
 
     let(:start_time) { double }
@@ -37,23 +37,23 @@ describe EveOnline::ESI::Models::ServerStatus do
     its([:vip]) { should eq(false) }
   end
 
-  describe '#players' do
-    before { expect(options).to receive(:[]).with('players') }
+  describe "#players" do
+    before { expect(options).to receive(:[]).with("players") }
 
     specify { expect { subject.players }.not_to raise_error }
   end
 
-  describe '#server_version' do
-    before { expect(options).to receive(:[]).with('server_version') }
+  describe "#server_version" do
+    before { expect(options).to receive(:[]).with("server_version") }
 
     specify { expect { subject.server_version }.not_to raise_error }
   end
 
-  describe '#start_time' do
-    context 'when start_time is present' do
+  describe "#start_time" do
+    context "when start_time is present" do
       let(:start_time) { double }
 
-      before { expect(options).to receive(:[]).with('start_time').and_return(start_time) }
+      before { expect(options).to receive(:[]).with("start_time").and_return(start_time) }
 
       before do
         #
@@ -65,8 +65,8 @@ describe EveOnline::ESI::Models::ServerStatus do
       specify { expect { subject.start_time }.not_to raise_error }
     end
 
-    context 'when start_time not present' do
-      before { expect(options).to receive(:[]).with('start_time').and_return(nil) }
+    context "when start_time not present" do
+      before { expect(options).to receive(:[]).with("start_time").and_return(nil) }
 
       before { expect(subject).not_to receive(:parse_datetime_with_timezone) }
 
@@ -74,8 +74,8 @@ describe EveOnline::ESI::Models::ServerStatus do
     end
   end
 
-  describe '#vip' do
-    before { expect(options).to receive(:[]).with('vip') }
+  describe "#vip" do
+    before { expect(options).to receive(:[]).with("vip") }
 
     specify { expect { subject.vip }.not_to raise_error }
   end
