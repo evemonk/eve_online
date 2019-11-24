@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class UniverseFactions < Base
-      API_PATH = '/v2/universe/factions/'
+      API_PATH = "/v2/universe/factions/"
 
       def factions
         @factions ||=
@@ -16,7 +16,8 @@ module EveOnline
           end
       end
 
-      def scope; end
+      def scope
+      end
 
       def additional_query_params
         [:language]

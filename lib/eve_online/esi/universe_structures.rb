@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class UniverseStructures < Base
-      API_PATH = '/v1/universe/structures/'
+      API_PATH = "/v1/universe/structures/"
 
       attr_reader :filter
 
@@ -17,7 +17,8 @@ module EveOnline
         response
       end
 
-      def scope; end
+      def scope
+      end
 
       def additional_query_params
         [:filter]

@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class UniverseGroups < Base
-      API_PATH = '/v1/universe/groups/'
+      API_PATH = "/v1/universe/groups/"
 
       attr_reader :page
 
@@ -17,7 +17,8 @@ module EveOnline
         response
       end
 
-      def scope; end
+      def scope
+      end
 
       def additional_query_params
         [:page]

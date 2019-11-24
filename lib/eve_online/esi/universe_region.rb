@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-require 'forwardable'
+require "forwardable"
 
 module EveOnline
   module ESI
     class UniverseRegion < Base
       extend Forwardable
 
-      API_PATH = '/v1/universe/regions/%<region_id>s/'
+      API_PATH = "/v1/universe/regions/%<region_id>s/"
 
       attr_reader :id
 
@@ -18,13 +18,14 @@ module EveOnline
       end
 
       def_delegators :model, :as_json, :constellations, :description, :name,
-                     :region_id
+        :region_id
 
       def model
         @model ||= Models::Region.new(response)
       end
 
-      def scope; end
+      def scope
+      end
 
       def additional_query_params
         [:language]
