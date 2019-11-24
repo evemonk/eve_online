@@ -2,7 +2,7 @@
 
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in eveonline.gemspec
+# Specify your gem's dependencies in eve_online.gemspec
 gemspec
 
 gem 'nokogiri'
