@@ -1,23 +1,23 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
-describe 'Get character bookmarks' do
+describe "Get character bookmarks" do
   let(:options) do
     {
       character_id: 1_337_512_245,
-      token: 'token123',
-      page: 1
+      token: "token123",
+      page: 1,
     }
   end
 
-  before { VCR.insert_cassette 'esi/character_bookmarks/1337512245' }
+  before { VCR.insert_cassette "esi/character_bookmarks/1337512245" }
 
   after { VCR.eject_cassette }
 
   subject { EveOnline::ESI::CharacterBookmarks.new(options) }
 
-  specify { expect(subject.scope).to eq('esi-bookmarks.read_character_bookmarks.v1') }
+  specify { expect(subject.scope).to eq("esi-bookmarks.read_character_bookmarks.v1") }
 
   specify { expect(subject.not_modified?).to eq(false) }
 
@@ -29,14 +29,14 @@ describe 'Get character bookmarks' do
 
   specify do
     expect(subject.bookmarks.first.as_json).to eq(bookmark_id: 726_640_415,
-                                                  created: Time.new(2012, 7, 9, 22, 38, 31, '+00:00'),
+                                                  created: Time.new(2012, 7, 9, 22, 38, 31, "+00:00"),
                                                   creator_id: 1_337_512_245,
                                                   folder_id: nil,
                                                   item_id: 30_003_496,
                                                   item_type_id: 5,
                                                   label: "Nakri* (Solar System*)\t",
                                                   location_id: 20_000_510,
-                                                  notes: '')
+                                                  notes: "")
   end
 
   specify do

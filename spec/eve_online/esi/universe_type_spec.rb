@@ -1,17 +1,17 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
 describe EveOnline::ESI::UniverseType do
-  let(:options) { { id: 192 } }
+  let(:options) { {id: 192} }
 
   subject { described_class.new(options) }
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_PATH).to eq('/v3/universe/types/%<type_id>s/') }
+  specify { expect(described_class::API_PATH).to eq("/v3/universe/types/%<type_id>s/") }
 
-  describe '#initialize' do
+  describe "#initialize" do
     its(:token) { should eq(nil) }
 
     its(:parser) { should eq(JSON) }
@@ -20,17 +20,17 @@ describe EveOnline::ESI::UniverseType do
 
     its(:_open_timeout) { should eq(60) }
 
-    if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6.0')
+    if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("2.6.0")
       its(:_write_timeout) { should eq(60) }
     end
 
-    its(:datasource) { should eq('tranquility') }
+    its(:datasource) { should eq("tranquility") }
 
     its(:id) { should eq(192) }
   end
 
-  describe '#model' do
-    context 'when @model set' do
+  describe "#model" do
+    context "when @model set" do
       let(:model) { instance_double(EveOnline::ESI::Models::Type) }
 
       before { subject.instance_variable_set(:@model, model) }
@@ -38,7 +38,7 @@ describe EveOnline::ESI::UniverseType do
       specify { expect(subject.model).to eq(model) }
     end
 
-    context 'when @model not set' do
+    context "when @model not set" do
       let(:response) { double }
 
       before { expect(subject).to receive(:response).and_return(response) }
@@ -58,7 +58,7 @@ describe EveOnline::ESI::UniverseType do
     end
   end
 
-  describe '#as_json' do
+  describe "#as_json" do
     let(:model) { instance_double(EveOnline::ESI::Models::Type) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -68,7 +68,7 @@ describe EveOnline::ESI::UniverseType do
     specify { expect { subject.as_json }.not_to raise_error }
   end
 
-  describe '#capacity' do
+  describe "#capacity" do
     let(:model) { instance_double(EveOnline::ESI::Models::Type) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -78,7 +78,7 @@ describe EveOnline::ESI::UniverseType do
     specify { expect { subject.capacity }.not_to raise_error }
   end
 
-  describe '#description' do
+  describe "#description" do
     let(:model) { instance_double(EveOnline::ESI::Models::Type) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -88,7 +88,7 @@ describe EveOnline::ESI::UniverseType do
     specify { expect { subject.description }.not_to raise_error }
   end
 
-  describe '#graphic_id' do
+  describe "#graphic_id" do
     let(:model) { instance_double(EveOnline::ESI::Models::Type) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -98,7 +98,7 @@ describe EveOnline::ESI::UniverseType do
     specify { expect { subject.graphic_id }.not_to raise_error }
   end
 
-  describe '#group_id' do
+  describe "#group_id" do
     let(:model) { instance_double(EveOnline::ESI::Models::Type) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -108,7 +108,7 @@ describe EveOnline::ESI::UniverseType do
     specify { expect { subject.group_id }.not_to raise_error }
   end
 
-  describe '#icon_id' do
+  describe "#icon_id" do
     let(:model) { instance_double(EveOnline::ESI::Models::Type) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -118,7 +118,7 @@ describe EveOnline::ESI::UniverseType do
     specify { expect { subject.icon_id }.not_to raise_error }
   end
 
-  describe '#market_group_id' do
+  describe "#market_group_id" do
     let(:model) { instance_double(EveOnline::ESI::Models::Type) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -128,7 +128,7 @@ describe EveOnline::ESI::UniverseType do
     specify { expect { subject.market_group_id }.not_to raise_error }
   end
 
-  describe '#mass' do
+  describe "#mass" do
     let(:model) { instance_double(EveOnline::ESI::Models::Type) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -138,7 +138,7 @@ describe EveOnline::ESI::UniverseType do
     specify { expect { subject.mass }.not_to raise_error }
   end
 
-  describe '#name' do
+  describe "#name" do
     let(:model) { instance_double(EveOnline::ESI::Models::Type) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -148,7 +148,7 @@ describe EveOnline::ESI::UniverseType do
     specify { expect { subject.name }.not_to raise_error }
   end
 
-  describe '#packaged_volume' do
+  describe "#packaged_volume" do
     let(:model) { instance_double(EveOnline::ESI::Models::Type) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -158,7 +158,7 @@ describe EveOnline::ESI::UniverseType do
     specify { expect { subject.packaged_volume }.not_to raise_error }
   end
 
-  describe '#portion_size' do
+  describe "#portion_size" do
     let(:model) { instance_double(EveOnline::ESI::Models::Type) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -168,7 +168,7 @@ describe EveOnline::ESI::UniverseType do
     specify { expect { subject.portion_size }.not_to raise_error }
   end
 
-  describe '#published' do
+  describe "#published" do
     let(:model) { instance_double(EveOnline::ESI::Models::Type) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -178,7 +178,7 @@ describe EveOnline::ESI::UniverseType do
     specify { expect { subject.published }.not_to raise_error }
   end
 
-  describe '#radius' do
+  describe "#radius" do
     let(:model) { instance_double(EveOnline::ESI::Models::Type) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -188,7 +188,7 @@ describe EveOnline::ESI::UniverseType do
     specify { expect { subject.radius }.not_to raise_error }
   end
 
-  describe '#type_id' do
+  describe "#type_id" do
     let(:model) { instance_double(EveOnline::ESI::Models::Type) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -198,7 +198,7 @@ describe EveOnline::ESI::UniverseType do
     specify { expect { subject.type_id }.not_to raise_error }
   end
 
-  describe '#volume' do
+  describe "#volume" do
     let(:model) { instance_double(EveOnline::ESI::Models::Type) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -208,7 +208,7 @@ describe EveOnline::ESI::UniverseType do
     specify { expect { subject.volume }.not_to raise_error }
   end
 
-  describe '#dogma_attributes' do
+  describe "#dogma_attributes" do
     let(:model) { instance_double(EveOnline::ESI::Models::Type) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -218,7 +218,7 @@ describe EveOnline::ESI::UniverseType do
     specify { expect { subject.dogma_attributes }.not_to raise_error }
   end
 
-  describe '#dogma_effects' do
+  describe "#dogma_effects" do
     let(:model) { instance_double(EveOnline::ESI::Models::Type) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -228,29 +228,29 @@ describe EveOnline::ESI::UniverseType do
     specify { expect { subject.dogma_effects }.not_to raise_error }
   end
 
-  describe '#scope' do
+  describe "#scope" do
     specify { expect(subject.scope).to eq(nil) }
   end
 
-  describe '#additional_query_params' do
+  describe "#additional_query_params" do
     specify { expect(subject.additional_query_params).to eq([:language]) }
   end
 
-  describe '#path' do
+  describe "#path" do
     specify do
-      expect(subject.path).to eq('/v3/universe/types/192/')
+      expect(subject.path).to eq("/v3/universe/types/192/")
     end
   end
 
-  describe '#query' do
+  describe "#query" do
     specify do
-      expect(subject.query).to eq(datasource: 'tranquility',language: 'en-us')
+      expect(subject.query).to eq(datasource: "tranquility", language: "en-us")
     end
   end
 
-  describe '#url' do
+  describe "#url" do
     specify do
-      expect(subject.url).to eq('https://esi.evetech.net/v3/universe/types/192/?datasource=tranquility&language=en-us')
+      expect(subject.url).to eq("https://esi.evetech.net/v3/universe/types/192/?datasource=tranquility&language=en-us")
     end
   end
 end

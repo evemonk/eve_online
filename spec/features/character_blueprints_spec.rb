@@ -1,23 +1,23 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
-describe 'Get character blueprints' do
+describe "Get character blueprints" do
   let(:options) do
     {
       character_id: 1_337_512_245,
-      token: 'token123',
-      page: 1
+      token: "token123",
+      page: 1,
     }
   end
 
-  before { VCR.insert_cassette 'esi/character_blueprints/1337512245' }
+  before { VCR.insert_cassette "esi/character_blueprints/1337512245" }
 
   after { VCR.eject_cassette }
 
   subject { EveOnline::ESI::CharacterBlueprints.new(options) }
 
-  specify { expect(subject.scope).to eq('esi-characters.read_blueprints.v1') }
+  specify { expect(subject.scope).to eq("esi-characters.read_blueprints.v1") }
 
   specify { expect(subject.not_modified?).to eq(false) }
 
@@ -29,7 +29,7 @@ describe 'Get character blueprints' do
 
   specify do
     expect(subject.blueprints.first.as_json).to eq(item_id: 716_338_097,
-                                                   location_flag: 'Hangar',
+                                                   location_flag: "Hangar",
                                                    location_id: 1_027_847_409_779,
                                                    material_efficiency: 10,
                                                    quantity: -2,

@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
 describe "List alliance's corporations" do
-  context 'when etag not set' do
-    let(:options) { { alliance_id: 99_005_443 } }
+  context "when etag not set" do
+    let(:options) { {alliance_id: 99_005_443} }
 
-    before { VCR.insert_cassette 'esi/alliance_corporations/99005443' }
+    before { VCR.insert_cassette "esi/alliance_corporations/99005443" }
 
     after { VCR.eject_cassette }
 
@@ -20,18 +20,18 @@ describe "List alliance's corporations" do
 
     specify { expect(subject.corporation_ids.first).to eq(98_091_533) }
 
-    specify { expect(subject.etag).to eq('9b6810d8ddbd9a13bb4ad09cf4bfefd9f29974bffd543eb30ce25132') }
+    specify { expect(subject.etag).to eq("9b6810d8ddbd9a13bb4ad09cf4bfefd9f29974bffd543eb30ce25132") }
   end
 
-  context 'when etag is set' do
+  context "when etag is set" do
     let(:options) do
       {
         alliance_id: 99_005_443,
-        etag: '9b6810d8ddbd9a13bb4ad09cf4bfefd9f29974bffd543eb30ce25132'
+        etag: "9b6810d8ddbd9a13bb4ad09cf4bfefd9f29974bffd543eb30ce25132",
       }
     end
 
-    before { VCR.insert_cassette 'esi/alliance_corporations/99005443_with_etag' }
+    before { VCR.insert_cassette "esi/alliance_corporations/99005443_with_etag" }
 
     after { VCR.eject_cassette }
 
@@ -39,6 +39,6 @@ describe "List alliance's corporations" do
 
     specify { expect(subject.not_modified?).to eq(true) }
 
-    specify { expect(subject.etag).to eq('9b6810d8ddbd9a13bb4ad09cf4bfefd9f29974bffd543eb30ce25132') }
+    specify { expect(subject.etag).to eq("9b6810d8ddbd9a13bb4ad09cf4bfefd9f29974bffd543eb30ce25132") }
   end
 end
