@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
-describe 'Get item groups' do
-  context 'when etag not set' do
-    before { VCR.insert_cassette 'esi/universe/groups' }
+describe "Get item groups" do
+  context "when etag not set" do
+    before { VCR.insert_cassette "esi/universe/groups" }
 
     after { VCR.eject_cassette }
 
-    let(:options) { { page: 1 } }
+    let(:options) { {page: 1} }
 
     subject { EveOnline::ESI::UniverseGroups.new(options) }
 
@@ -24,18 +24,18 @@ describe 'Get item groups' do
 
     specify { expect(subject.group_ids.first).to eq(0) }
 
-    specify { expect(subject.etag).to eq('e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b') }
+    specify { expect(subject.etag).to eq("e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b") }
   end
 
-  context 'when etag is set' do
+  context "when etag is set" do
     let(:options) do
       {
         page: 1,
-        etag: 'e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b'
+        etag: "e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b",
       }
     end
 
-    before { VCR.insert_cassette 'esi/universe/groups_with_etag' }
+    before { VCR.insert_cassette "esi/universe/groups_with_etag" }
 
     after { VCR.eject_cassette }
 
@@ -43,6 +43,6 @@ describe 'Get item groups' do
 
     specify { expect(subject.not_modified?).to eq(true) }
 
-    specify { expect(subject.etag).to eq('e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b') }
+    specify { expect(subject.etag).to eq("e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b") }
   end
 end

@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
-describe 'List loyalty store offers' do
-  context 'when etag not set' do
-    let(:options) { { corporation_id: 1_000_035 } }
+describe "List loyalty store offers" do
+  context "when etag not set" do
+    let(:options) { {corporation_id: 1_000_035} }
 
-    before { VCR.insert_cassette 'esi/corporations_loyalty_store_offers/1000035' }
+    before { VCR.insert_cassette "esi/corporations_loyalty_store_offers/1000035" }
 
     after { VCR.eject_cassette }
 
@@ -36,18 +36,18 @@ describe 'List loyalty store offers' do
                                                                             type_id: 234)
     end
 
-    specify { expect(subject.etag).to eq('89211f42fde090e4d22621e9b97d7604ab87af95b3b6ffed7fe81bc0') }
+    specify { expect(subject.etag).to eq("89211f42fde090e4d22621e9b97d7604ab87af95b3b6ffed7fe81bc0") }
   end
 
-  context 'when etag is set' do
+  context "when etag is set" do
     let(:options) do
       {
         corporation_id: 1_000_035,
-        etag: '89211f42fde090e4d22621e9b97d7604ab87af95b3b6ffed7fe81bc0'
+        etag: "89211f42fde090e4d22621e9b97d7604ab87af95b3b6ffed7fe81bc0",
       }
     end
 
-    before { VCR.insert_cassette 'esi/corporations_loyalty_store_offers/1000035_with_etag' }
+    before { VCR.insert_cassette "esi/corporations_loyalty_store_offers/1000035_with_etag" }
 
     after { VCR.eject_cassette }
 
@@ -55,6 +55,6 @@ describe 'List loyalty store offers' do
 
     specify { expect(subject.not_modified?).to eq(true) }
 
-    specify { expect(subject.etag).to eq('89211f42fde090e4d22621e9b97d7604ab87af95b3b6ffed7fe81bc0') }
+    specify { expect(subject.etag).to eq("89211f42fde090e4d22621e9b97d7604ab87af95b3b6ffed7fe81bc0") }
   end
 end
