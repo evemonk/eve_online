@@ -8,28 +8,28 @@ module EveOnline
           {
             constellation_id: constellation_id,
             name: name,
-            region_id: region_id
+            region_id: region_id,
           }
         end
 
         def constellation_id
-          options['constellation_id']
+          options["constellation_id"]
         end
 
         def name
-          options['name']
+          options["name"]
         end
 
         def region_id
-          options['region_id']
+          options["region_id"]
         end
 
         def system_ids
-          options['systems']
+          options["systems"]
         end
 
         def position
-          @position ||= Position.new(options['position'])
+          @position ||= Position.new(options["position"])
         end
       end
     end
