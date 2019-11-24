@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
 describe EveOnline::ESI::UniverseSystemJumps do
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_PATH).to eq('/v1/universe/system_jumps/') }
+  specify { expect(described_class::API_PATH).to eq("/v1/universe/system_jumps/") }
 
-  describe '#initialize' do
+  describe "#initialize" do
     its(:token) { should eq(nil) }
 
     its(:parser) { should eq(JSON) }
@@ -16,15 +16,15 @@ describe EveOnline::ESI::UniverseSystemJumps do
 
     its(:_open_timeout) { should eq(60) }
 
-    if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6.0')
+    if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("2.6.0")
       its(:_write_timeout) { should eq(60) }
     end
 
-    its(:datasource) { should eq('tranquility') }
+    its(:datasource) { should eq("tranquility") }
   end
 
-  describe '#system_jumps' do
-    context 'when @system_jumps set' do
+  describe "#system_jumps" do
+    context "when @system_jumps set" do
       let(:system_jumps) { [instance_double(EveOnline::ESI::Models::SystemJump)] }
 
       before { subject.instance_variable_set(:@system_jumps, system_jumps) }
@@ -32,15 +32,15 @@ describe EveOnline::ESI::UniverseSystemJumps do
       specify { expect(subject.system_jumps).to eq(system_jumps) }
     end
 
-    context 'when @system_jumps not set' do
+    context "when @system_jumps not set" do
       let(:system_jump) { instance_double(EveOnline::ESI::Models::SystemJump) }
 
       let(:response) do
         [
           {
             ship_jumps: 22,
-            system_id: 30_005_327
-          }
+            system_id: 30_005_327,
+          },
         ]
       end
 
@@ -64,25 +64,25 @@ describe EveOnline::ESI::UniverseSystemJumps do
     end
   end
 
-  describe '#scope' do
+  describe "#scope" do
     specify { expect(subject.scope).to eq(nil) }
   end
 
-  describe '#path' do
+  describe "#path" do
     specify do
-      expect(subject.path).to eq('/v1/universe/system_jumps/')
+      expect(subject.path).to eq("/v1/universe/system_jumps/")
     end
   end
 
-  describe '#query' do
+  describe "#query" do
     specify do
-      expect(subject.query).to eq(datasource: 'tranquility')
+      expect(subject.query).to eq(datasource: "tranquility")
     end
   end
 
-  describe '#url' do
+  describe "#url" do
     specify do
-      expect(subject.url).to eq('https://esi.evetech.net/v1/universe/system_jumps/?datasource=tranquility')
+      expect(subject.url).to eq("https://esi.evetech.net/v1/universe/system_jumps/?datasource=tranquility")
     end
   end
 end

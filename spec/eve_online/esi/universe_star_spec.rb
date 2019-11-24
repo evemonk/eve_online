@@ -1,17 +1,17 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
 describe EveOnline::ESI::UniverseStar do
-  let(:options) { { id: 40_000_001 } }
+  let(:options) { {id: 40_000_001} }
 
   subject { described_class.new(options) }
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_PATH).to eq('/v1/universe/stars/%<star_id>s/') }
+  specify { expect(described_class::API_PATH).to eq("/v1/universe/stars/%<star_id>s/") }
 
-  describe '#initialize' do
+  describe "#initialize" do
     its(:token) { should eq(nil) }
 
     its(:parser) { should eq(JSON) }
@@ -20,17 +20,17 @@ describe EveOnline::ESI::UniverseStar do
 
     its(:_open_timeout) { should eq(60) }
 
-    if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6.0')
+    if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("2.6.0")
       its(:_write_timeout) { should eq(60) }
     end
 
-    its(:datasource) { should eq('tranquility') }
+    its(:datasource) { should eq("tranquility") }
 
     its(:id) { should eq(40_000_001) }
   end
 
-  describe '#model' do
-    context 'when @model set' do
+  describe "#model" do
+    context "when @model set" do
       let(:model) { instance_double(EveOnline::ESI::Models::Star) }
 
       before { subject.instance_variable_set(:@model, model) }
@@ -38,7 +38,7 @@ describe EveOnline::ESI::UniverseStar do
       specify { expect(subject.model).to eq(model) }
     end
 
-    context 'when @model not set' do
+    context "when @model not set" do
       let(:response) { double }
 
       before { expect(subject).to receive(:response).and_return(response) }
@@ -58,7 +58,7 @@ describe EveOnline::ESI::UniverseStar do
     end
   end
 
-  describe '#as_json' do
+  describe "#as_json" do
     let(:model) { instance_double(EveOnline::ESI::Models::Star) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -68,7 +68,7 @@ describe EveOnline::ESI::UniverseStar do
     specify { expect { subject.as_json }.not_to raise_error }
   end
 
-  describe '#age' do
+  describe "#age" do
     let(:model) { instance_double(EveOnline::ESI::Models::Star) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -78,7 +78,7 @@ describe EveOnline::ESI::UniverseStar do
     specify { expect { subject.age }.not_to raise_error }
   end
 
-  describe '#luminosity' do
+  describe "#luminosity" do
     let(:model) { instance_double(EveOnline::ESI::Models::Star) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -88,7 +88,7 @@ describe EveOnline::ESI::UniverseStar do
     specify { expect { subject.luminosity }.not_to raise_error }
   end
 
-  describe '#name' do
+  describe "#name" do
     let(:model) { instance_double(EveOnline::ESI::Models::Star) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -98,7 +98,7 @@ describe EveOnline::ESI::UniverseStar do
     specify { expect { subject.name }.not_to raise_error }
   end
 
-  describe '#radius' do
+  describe "#radius" do
     let(:model) { instance_double(EveOnline::ESI::Models::Star) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -108,7 +108,7 @@ describe EveOnline::ESI::UniverseStar do
     specify { expect { subject.radius }.not_to raise_error }
   end
 
-  describe '#solar_system_id' do
+  describe "#solar_system_id" do
     let(:model) { instance_double(EveOnline::ESI::Models::Star) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -118,7 +118,7 @@ describe EveOnline::ESI::UniverseStar do
     specify { expect { subject.solar_system_id }.not_to raise_error }
   end
 
-  describe '#spectral_class' do
+  describe "#spectral_class" do
     let(:model) { instance_double(EveOnline::ESI::Models::Star) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -128,7 +128,7 @@ describe EveOnline::ESI::UniverseStar do
     specify { expect { subject.spectral_class }.not_to raise_error }
   end
 
-  describe '#temperature' do
+  describe "#temperature" do
     let(:model) { instance_double(EveOnline::ESI::Models::Star) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -138,7 +138,7 @@ describe EveOnline::ESI::UniverseStar do
     specify { expect { subject.temperature }.not_to raise_error }
   end
 
-  describe '#type_id' do
+  describe "#type_id" do
     let(:model) { instance_double(EveOnline::ESI::Models::Star) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -148,25 +148,25 @@ describe EveOnline::ESI::UniverseStar do
     specify { expect { subject.type_id }.not_to raise_error }
   end
 
-  describe '#scope' do
+  describe "#scope" do
     specify { expect(subject.scope).to eq(nil) }
   end
 
-  describe '#path' do
+  describe "#path" do
     specify do
-      expect(subject.path).to eq('/v1/universe/stars/40000001/')
+      expect(subject.path).to eq("/v1/universe/stars/40000001/")
     end
   end
 
-  describe '#query' do
+  describe "#query" do
     specify do
-      expect(subject.query).to eq(datasource: 'tranquility')
+      expect(subject.query).to eq(datasource: "tranquility")
     end
   end
 
-  describe '#url' do
+  describe "#url" do
     specify do
-      expect(subject.url).to eq('https://esi.evetech.net/v1/universe/stars/40000001/?datasource=tranquility')
+      expect(subject.url).to eq("https://esi.evetech.net/v1/universe/stars/40000001/?datasource=tranquility")
     end
   end
 end

@@ -1,17 +1,17 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
 describe EveOnline::ESI::UniverseGraphic do
-  let(:options) { { id: 20_481 } }
+  let(:options) { {id: 20_481} }
 
   subject { described_class.new(options) }
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_PATH).to eq('/v1/universe/graphics/%<graphic_id>s/') }
+  specify { expect(described_class::API_PATH).to eq("/v1/universe/graphics/%<graphic_id>s/") }
 
-  describe '#initialize' do
+  describe "#initialize" do
     its(:token) { should eq(nil) }
 
     its(:parser) { should eq(JSON) }
@@ -20,17 +20,17 @@ describe EveOnline::ESI::UniverseGraphic do
 
     its(:_open_timeout) { should eq(60) }
 
-    if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6.0')
+    if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("2.6.0")
       its(:_write_timeout) { should eq(60) }
     end
 
-    its(:datasource) { should eq('tranquility') }
+    its(:datasource) { should eq("tranquility") }
 
     its(:id) { should eq(20_481) }
   end
 
-  describe '#model' do
-    context 'when @model set' do
+  describe "#model" do
+    context "when @model set" do
       let(:model) { instance_double(EveOnline::ESI::Models::Graphic) }
 
       before { subject.instance_variable_set(:@model, model) }
@@ -38,7 +38,7 @@ describe EveOnline::ESI::UniverseGraphic do
       specify { expect(subject.model).to eq(model) }
     end
 
-    context 'when @model not set' do
+    context "when @model not set" do
       let(:response) { double }
 
       before { expect(subject).to receive(:response).and_return(response) }
@@ -58,7 +58,7 @@ describe EveOnline::ESI::UniverseGraphic do
     end
   end
 
-  describe '#as_json' do
+  describe "#as_json" do
     let(:model) { instance_double(EveOnline::ESI::Models::Graphic) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -68,7 +68,7 @@ describe EveOnline::ESI::UniverseGraphic do
     specify { expect { subject.as_json }.not_to raise_error }
   end
 
-  describe '#collision_file' do
+  describe "#collision_file" do
     let(:model) { instance_double(EveOnline::ESI::Models::Graphic) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -78,7 +78,7 @@ describe EveOnline::ESI::UniverseGraphic do
     specify { expect { subject.collision_file }.not_to raise_error }
   end
 
-  describe '#graphic_file' do
+  describe "#graphic_file" do
     let(:model) { instance_double(EveOnline::ESI::Models::Graphic) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -88,7 +88,7 @@ describe EveOnline::ESI::UniverseGraphic do
     specify { expect { subject.graphic_file }.not_to raise_error }
   end
 
-  describe '#graphic_id' do
+  describe "#graphic_id" do
     let(:model) { instance_double(EveOnline::ESI::Models::Graphic) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -98,7 +98,7 @@ describe EveOnline::ESI::UniverseGraphic do
     specify { expect { subject.graphic_id }.not_to raise_error }
   end
 
-  describe '#icon_folder' do
+  describe "#icon_folder" do
     let(:model) { instance_double(EveOnline::ESI::Models::Graphic) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -108,7 +108,7 @@ describe EveOnline::ESI::UniverseGraphic do
     specify { expect { subject.icon_folder }.not_to raise_error }
   end
 
-  describe '#sof_dna' do
+  describe "#sof_dna" do
     let(:model) { instance_double(EveOnline::ESI::Models::Graphic) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -118,7 +118,7 @@ describe EveOnline::ESI::UniverseGraphic do
     specify { expect { subject.sof_dna }.not_to raise_error }
   end
 
-  describe '#sof_fation_name' do
+  describe "#sof_fation_name" do
     let(:model) { instance_double(EveOnline::ESI::Models::Graphic) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -128,7 +128,7 @@ describe EveOnline::ESI::UniverseGraphic do
     specify { expect { subject.sof_fation_name }.not_to raise_error }
   end
 
-  describe '#sof_hull_name' do
+  describe "#sof_hull_name" do
     let(:model) { instance_double(EveOnline::ESI::Models::Graphic) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -138,7 +138,7 @@ describe EveOnline::ESI::UniverseGraphic do
     specify { expect { subject.sof_hull_name }.not_to raise_error }
   end
 
-  describe '#sof_race_name' do
+  describe "#sof_race_name" do
     let(:model) { instance_double(EveOnline::ESI::Models::Graphic) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -148,25 +148,25 @@ describe EveOnline::ESI::UniverseGraphic do
     specify { expect { subject.sof_race_name }.not_to raise_error }
   end
 
-  describe '#scope' do
+  describe "#scope" do
     specify { expect(subject.scope).to eq(nil) }
   end
 
-  describe '#path' do
+  describe "#path" do
     specify do
-      expect(subject.path).to eq('/v1/universe/graphics/20481/')
+      expect(subject.path).to eq("/v1/universe/graphics/20481/")
     end
   end
 
-  describe '#query' do
+  describe "#query" do
     specify do
-      expect(subject.query).to eq(datasource: 'tranquility')
+      expect(subject.query).to eq(datasource: "tranquility")
     end
   end
 
-  describe '#url' do
+  describe "#url" do
     specify do
-      expect(subject.url).to eq('https://esi.evetech.net/v1/universe/graphics/20481/?datasource=tranquility')
+      expect(subject.url).to eq("https://esi.evetech.net/v1/universe/graphics/20481/?datasource=tranquility")
     end
   end
 end

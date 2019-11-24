@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
 describe EveOnline::ESI::UniverseRaces do
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_PATH).to eq('/v1/universe/races/') }
+  specify { expect(described_class::API_PATH).to eq("/v1/universe/races/") }
 
-  describe '#initialize' do
+  describe "#initialize" do
     its(:token) { should eq(nil) }
 
     its(:parser) { should eq(JSON) }
@@ -16,15 +16,15 @@ describe EveOnline::ESI::UniverseRaces do
 
     its(:_open_timeout) { should eq(60) }
 
-    if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6.0')
+    if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("2.6.0")
       its(:_write_timeout) { should eq(60) }
     end
 
-    its(:datasource) { should eq('tranquility') }
+    its(:datasource) { should eq("tranquility") }
   end
 
-  describe '#races' do
-    context 'when @races set' do
+  describe "#races" do
+    context "when @races set" do
       let(:races) { [instance_double(EveOnline::ESI::Models::Race)] }
 
       before { subject.instance_variable_set(:@races, races) }
@@ -32,17 +32,17 @@ describe EveOnline::ESI::UniverseRaces do
       specify { expect(subject.races).to eq(races) }
     end
 
-    context 'when @races not set' do
+    context "when @races not set" do
       let(:race) { instance_double(EveOnline::ESI::Models::Race) }
 
       let(:response) do
         [
           {
             race_id: 2,
-            name: 'Minmatar',
-            description: 'Once a thriving tribal civilization, the Minmatar...',
-            alliance_id: 500_002
-          }
+            name: "Minmatar",
+            description: "Once a thriving tribal civilization, the Minmatar...",
+            alliance_id: 500_002,
+          },
         ]
       end
 
@@ -66,29 +66,29 @@ describe EveOnline::ESI::UniverseRaces do
     end
   end
 
-  describe '#scope' do
+  describe "#scope" do
     specify { expect(subject.scope).to eq(nil) }
   end
 
-  describe '#additional_query_params' do
+  describe "#additional_query_params" do
     specify { expect(subject.additional_query_params).to eq([:language]) }
   end
 
-  describe '#path' do
+  describe "#path" do
     specify do
-      expect(subject.path).to eq('/v1/universe/races/')
+      expect(subject.path).to eq("/v1/universe/races/")
     end
   end
 
-  describe '#query' do
+  describe "#query" do
     specify do
-      expect(subject.query).to eq(datasource: 'tranquility', language: 'en-us')
+      expect(subject.query).to eq(datasource: "tranquility", language: "en-us")
     end
   end
 
-  describe '#url' do
+  describe "#url" do
     specify do
-      expect(subject.url).to eq('https://esi.evetech.net/v1/universe/races/?datasource=tranquility&language=en-us')
+      expect(subject.url).to eq("https://esi.evetech.net/v1/universe/races/?datasource=tranquility&language=en-us")
     end
   end
 end

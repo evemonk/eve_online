@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
 describe EveOnline::ESI::UniverseSystemKills do
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_PATH).to eq('/v2/universe/system_kills/') }
+  specify { expect(described_class::API_PATH).to eq("/v2/universe/system_kills/") }
 
-  describe '#initialize' do
+  describe "#initialize" do
     its(:token) { should eq(nil) }
 
     its(:parser) { should eq(JSON) }
@@ -16,15 +16,15 @@ describe EveOnline::ESI::UniverseSystemKills do
 
     its(:_open_timeout) { should eq(60) }
 
-    if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6.0')
+    if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("2.6.0")
       its(:_write_timeout) { should eq(60) }
     end
 
-    its(:datasource) { should eq('tranquility') }
+    its(:datasource) { should eq("tranquility") }
   end
 
-  describe '#system_kills' do
-    context 'when @system_kills set' do
+  describe "#system_kills" do
+    context "when @system_kills set" do
       let(:system_kills) { [instance_double(EveOnline::ESI::Models::SystemKill)] }
 
       before { subject.instance_variable_set(:@system_kills, system_kills) }
@@ -32,7 +32,7 @@ describe EveOnline::ESI::UniverseSystemKills do
       specify { expect(subject.system_kills).to eq(system_kills) }
     end
 
-    context 'when @system_kills not set' do
+    context "when @system_kills not set" do
       let(:system_kill) { instance_double(EveOnline::ESI::Models::SystemKill) }
 
       let(:response) do
@@ -41,8 +41,8 @@ describe EveOnline::ESI::UniverseSystemKills do
             npc_kills: 231,
             pod_kills: 0,
             ship_kills: 0,
-            system_id: 30_001_746
-          }
+            system_id: 30_001_746,
+          },
         ]
       end
 
@@ -66,25 +66,25 @@ describe EveOnline::ESI::UniverseSystemKills do
     end
   end
 
-  describe '#scope' do
+  describe "#scope" do
     specify { expect(subject.scope).to eq(nil) }
   end
 
-  describe '#path' do
+  describe "#path" do
     specify do
-      expect(subject.path).to eq('/v2/universe/system_kills/')
+      expect(subject.path).to eq("/v2/universe/system_kills/")
     end
   end
 
-  describe '#query' do
+  describe "#query" do
     specify do
-      expect(subject.query).to eq(datasource: 'tranquility')
+      expect(subject.query).to eq(datasource: "tranquility")
     end
   end
 
-  describe '#url' do
+  describe "#url" do
     specify do
-      expect(subject.url).to eq('https://esi.evetech.net/v2/universe/system_kills/?datasource=tranquility')
+      expect(subject.url).to eq("https://esi.evetech.net/v2/universe/system_kills/?datasource=tranquility")
     end
   end
 end

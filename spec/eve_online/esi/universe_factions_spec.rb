@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
 describe EveOnline::ESI::UniverseFactions do
   let(:options) { {} }
@@ -9,9 +9,9 @@ describe EveOnline::ESI::UniverseFactions do
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_PATH).to eq('/v2/universe/factions/') }
+  specify { expect(described_class::API_PATH).to eq("/v2/universe/factions/") }
 
-  describe '#initialize' do
+  describe "#initialize" do
     its(:token) { should eq(nil) }
 
     its(:parser) { should eq(JSON) }
@@ -20,15 +20,15 @@ describe EveOnline::ESI::UniverseFactions do
 
     its(:_open_timeout) { should eq(60) }
 
-    if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6.0')
+    if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("2.6.0")
       its(:_write_timeout) { should eq(60) }
     end
 
-    its(:datasource) { should eq('tranquility') }
+    its(:datasource) { should eq("tranquility") }
   end
 
-  describe '#factions' do
-    context 'when @factions set' do
+  describe "#factions" do
+    context "when @factions set" do
       let(:factions) { [instance_double(EveOnline::ESI::Models::Faction)] }
 
       before { subject.instance_variable_set(:@factions, factions) }
@@ -36,23 +36,23 @@ describe EveOnline::ESI::UniverseFactions do
       specify { expect(subject.factions).to eq(factions) }
     end
 
-    context 'when @factions not set' do
+    context "when @factions not set" do
       let(:faction) { instance_double(EveOnline::ESI::Models::Faction) }
 
       let(:response) do
         [
           {
             faction_id: 500_002,
-            name: 'Minmatar Republic',
-            description: 'The Minmatar Republic was formed over a century ago when the Minmatar threw',
+            name: "Minmatar Republic",
+            description: "The Minmatar Republic was formed over a century ago when the Minmatar threw",
             size_factor: 5.0,
             station_count: 570,
             station_system_count: 291,
             is_unique: true,
             solar_system_id: 30_002_544,
             corporation_id: 1_000_051,
-            militia_corporation_id: 1_000_182
-          }
+            militia_corporation_id: 1_000_182,
+          },
         ]
       end
 
@@ -76,29 +76,29 @@ describe EveOnline::ESI::UniverseFactions do
     end
   end
 
-  describe '#scope' do
+  describe "#scope" do
     specify { expect(subject.scope).to eq(nil) }
   end
 
-  describe '#additional_query_params' do
+  describe "#additional_query_params" do
     specify { expect(subject.additional_query_params).to eq([:language]) }
   end
 
-  describe '#path' do
+  describe "#path" do
     specify do
-      expect(subject.path).to eq('/v2/universe/factions/')
+      expect(subject.path).to eq("/v2/universe/factions/")
     end
   end
 
-  describe '#query' do
+  describe "#query" do
     specify do
-      expect(subject.query).to eq(datasource: 'tranquility', language: 'en-us')
+      expect(subject.query).to eq(datasource: "tranquility", language: "en-us")
     end
   end
 
-  describe '#url' do
+  describe "#url" do
     specify do
-      expect(subject.url).to eq('https://esi.evetech.net/v2/universe/factions/?datasource=tranquility&language=en-us')
+      expect(subject.url).to eq("https://esi.evetech.net/v2/universe/factions/?datasource=tranquility&language=en-us")
     end
   end
 end
