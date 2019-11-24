@@ -1,19 +1,19 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
 describe EveOnline::ESI::CorporationAssets do
-  let(:options) { { token: 'token123', corporation_id: 12_345_678 } }
+  let(:options) { {token: "token123", corporation_id: 12_345_678} }
 
   subject { described_class.new(options) }
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_PATH).to eq('/v3/corporations/%<corporation_id>s/assets/') }
+  specify { expect(described_class::API_PATH).to eq("/v3/corporations/%<corporation_id>s/assets/") }
 
-  describe '#initialize' do
-    context 'without options' do
-      its(:token) { should eq('token123') }
+  describe "#initialize" do
+    context "without options" do
+      its(:token) { should eq("token123") }
 
       its(:parser) { should eq(JSON) }
 
@@ -21,26 +21,26 @@ describe EveOnline::ESI::CorporationAssets do
 
       its(:_open_timeout) { should eq(60) }
 
-      if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6.0')
+      if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("2.6.0")
         its(:_write_timeout) { should eq(60) }
       end
 
-      its(:datasource) { should eq('tranquility') }
+      its(:datasource) { should eq("tranquility") }
 
       its(:corporation_id) { should eq(12_345_678) }
 
       its(:page) { should eq(1) }
     end
 
-    context 'with options' do
-      let(:options) { { token: 'token123', corporation_id: 12_345_678, page: 10 } }
+    context "with options" do
+      let(:options) { {token: "token123", corporation_id: 12_345_678, page: 10} }
 
       its(:page) { should eq(10) }
     end
   end
 
-  describe '#assets' do
-    context 'when @assets set' do
+  describe "#assets" do
+    context "when @assets set" do
       let(:assets) { [instance_double(EveOnline::ESI::Models::Asset)] }
 
       before { subject.instance_variable_set(:@assets, assets) }
@@ -48,7 +48,7 @@ describe EveOnline::ESI::CorporationAssets do
       specify { expect(subject.assets).to eq(assets) }
     end
 
-    context 'when @assets not set' do
+    context "when @assets not set" do
       let(:asset) { instance_double(EveOnline::ESI::Models::Asset) }
 
       let(:response) do
@@ -56,12 +56,12 @@ describe EveOnline::ESI::CorporationAssets do
           {
             type_id: 2629,
             location_id: 60_008_674,
-            location_type: 'station',
+            location_type: "station",
             item_id: 1_006_604_012_678,
-            location_flag: 'Hangar',
+            location_flag: "Hangar",
             is_singleton: false,
-            quantity: 16_156
-          }
+            quantity: 16_156,
+          },
         ]
       end
 
@@ -85,33 +85,33 @@ describe EveOnline::ESI::CorporationAssets do
     end
   end
 
-  describe '#scope' do
-    specify { expect(subject.scope).to eq('esi-assets.read_corporation_assets.v1') }
+  describe "#scope" do
+    specify { expect(subject.scope).to eq("esi-assets.read_corporation_assets.v1") }
   end
 
-  describe '#roles' do
-    specify { expect(subject.roles).to eq(['Director']) }
+  describe "#roles" do
+    specify { expect(subject.roles).to eq(["Director"]) }
   end
 
-  describe '#additional_query_params' do
+  describe "#additional_query_params" do
     specify { expect(subject.additional_query_params).to eq([:page]) }
   end
 
-  describe '#path' do
+  describe "#path" do
     specify do
-      expect(subject.path).to eq('/v3/corporations/12345678/assets/')
+      expect(subject.path).to eq("/v3/corporations/12345678/assets/")
     end
   end
 
-  describe '#query' do
+  describe "#query" do
     specify do
-      expect(subject.query).to eq(datasource: 'tranquility', page: 1)
+      expect(subject.query).to eq(datasource: "tranquility", page: 1)
     end
   end
 
-  describe '#url' do
+  describe "#url" do
     specify do
-      expect(subject.url).to eq('https://esi.evetech.net/v3/corporations/12345678/assets/?datasource=tranquility&page=1')
+      expect(subject.url).to eq("https://esi.evetech.net/v3/corporations/12345678/assets/?datasource=tranquility&page=1")
     end
   end
 end

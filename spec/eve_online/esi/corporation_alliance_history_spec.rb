@@ -1,17 +1,17 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
 describe EveOnline::ESI::CorporationAllianceHistory do
-  let(:options) { { corporation_id: 12_345_678 } }
+  let(:options) { {corporation_id: 12_345_678} }
 
   subject { described_class.new(options) }
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_PATH).to eq('/v2/corporations/%<corporation_id>s/alliancehistory/') }
+  specify { expect(described_class::API_PATH).to eq("/v2/corporations/%<corporation_id>s/alliancehistory/") }
 
-  describe '#initialize' do
+  describe "#initialize" do
     its(:token) { should eq(nil) }
 
     its(:parser) { should eq(JSON) }
@@ -20,17 +20,17 @@ describe EveOnline::ESI::CorporationAllianceHistory do
 
     its(:_open_timeout) { should eq(60) }
 
-    if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6.0')
+    if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("2.6.0")
       its(:_write_timeout) { should eq(60) }
     end
 
-    its(:datasource) { should eq('tranquility') }
+    its(:datasource) { should eq("tranquility") }
 
     its(:corporation_id) { should eq(12_345_678) }
   end
 
-  describe '#entries' do
-    context 'when @entries set' do
+  describe "#entries" do
+    context "when @entries set" do
       let(:entries) { [instance_double(EveOnline::ESI::Models::CorporationAllianceHistory)] }
 
       before { subject.instance_variable_set(:@entries, :entries) }
@@ -38,7 +38,7 @@ describe EveOnline::ESI::CorporationAllianceHistory do
       specify { expect(subject.entries).to eq(:entries) }
     end
 
-    context 'when @entries not set' do
+    context "when @entries not set" do
       let(:entry) { instance_double(EveOnline::ESI::Models::CorporationAllianceHistory) }
 
       let(:response) do
@@ -46,8 +46,8 @@ describe EveOnline::ESI::CorporationAllianceHistory do
           {
             alliance_id: 99_005_874,
             record_id: 1_254_640,
-            start_date: '2019-06-03T00:17:00Z'
-          }
+            start_date: "2019-06-03T00:17:00Z",
+          },
         ]
       end
 
@@ -71,29 +71,29 @@ describe EveOnline::ESI::CorporationAllianceHistory do
     end
   end
 
-  describe '#scope' do
+  describe "#scope" do
     specify { expect(subject.scope).to eq(nil) }
   end
 
-  describe '#roles' do
+  describe "#roles" do
     specify { expect(subject.roles).to eq([]) }
   end
 
-  describe '#path' do
+  describe "#path" do
     specify do
-      expect(subject.path).to eq('/v2/corporations/12345678/alliancehistory/')
+      expect(subject.path).to eq("/v2/corporations/12345678/alliancehistory/")
     end
   end
 
-  describe '#query' do
+  describe "#query" do
     specify do
-      expect(subject.query).to eq(datasource: 'tranquility')
+      expect(subject.query).to eq(datasource: "tranquility")
     end
   end
 
-  describe '#url' do
+  describe "#url" do
     specify do
-      expect(subject.url).to eq('https://esi.evetech.net/v2/corporations/12345678/alliancehistory/?datasource=tranquility')
+      expect(subject.url).to eq("https://esi.evetech.net/v2/corporations/12345678/alliancehistory/?datasource=tranquility")
     end
   end
 end

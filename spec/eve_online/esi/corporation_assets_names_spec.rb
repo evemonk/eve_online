@@ -1,18 +1,18 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
 describe EveOnline::ESI::CorporationAssetsNames do
-  let(:options) { { token: 'token123', corporation_id: 12_345_678, item_ids: [1_001_215_602_246] } }
+  let(:options) { {token: "token123", corporation_id: 12_345_678, item_ids: [1_001_215_602_246]} }
 
   subject { described_class.new(options) }
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_PATH).to eq('/v1/corporations/%<corporation_id>s/assets/names/') }
+  specify { expect(described_class::API_PATH).to eq("/v1/corporations/%<corporation_id>s/assets/names/") }
 
-  describe '#initialize' do
-    its(:token) { should eq('token123') }
+  describe "#initialize" do
+    its(:token) { should eq("token123") }
 
     its(:parser) { should eq(JSON) }
 
@@ -20,19 +20,19 @@ describe EveOnline::ESI::CorporationAssetsNames do
 
     its(:_open_timeout) { should eq(60) }
 
-    if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6.0')
+    if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("2.6.0")
       its(:_write_timeout) { should eq(60) }
     end
 
-    its(:datasource) { should eq('tranquility') }
+    its(:datasource) { should eq("tranquility") }
 
     its(:corporation_id) { should eq(12_345_678) }
 
     its(:item_ids) { should eq([1_001_215_602_246]) }
   end
 
-  describe '#assets_names' do
-    context 'when @assets_names set' do
+  describe "#assets_names" do
+    context "when @assets_names set" do
       let(:assets_names) { [instance_double(EveOnline::ESI::Models::AssetName)] }
 
       before { subject.instance_variable_set(:@assets_names, assets_names) }
@@ -40,15 +40,15 @@ describe EveOnline::ESI::CorporationAssetsNames do
       specify { expect(subject.assets_names).to eq(assets_names) }
     end
 
-    context 'when @assets_names not set' do
+    context "when @assets_names not set" do
       let(:asset_name) { instance_double(EveOnline::ESI::Models::AssetName) }
 
       let(:response) do
         [
           {
             item_id: 1_001_215_602_246,
-            name: 'HOLE'
-          }
+            name: "HOLE",
+          },
         ]
       end
 
@@ -72,47 +72,47 @@ describe EveOnline::ESI::CorporationAssetsNames do
     end
   end
 
-  describe '#http_method' do
-    specify { expect(subject.http_method).to eq('Post') }
+  describe "#http_method" do
+    specify { expect(subject.http_method).to eq("Post") }
   end
 
-  describe '#payload' do
+  describe "#payload" do
     let(:item_ids) { double }
 
-    let(:options) { { corporation_id: 12_345_678, item_ids: item_ids } }
+    let(:options) { {corporation_id: 12_345_678, item_ids: item_ids} }
 
     before { expect(item_ids).to receive(:to_json) }
 
     specify { expect { subject.payload }.not_to raise_error }
   end
 
-  describe '#scope' do
-    specify { expect(subject.scope).to eq('esi-assets.read_corporation_assets.v1') }
+  describe "#scope" do
+    specify { expect(subject.scope).to eq("esi-assets.read_corporation_assets.v1") }
   end
 
-  describe '#roles' do
-    specify { expect(subject.roles).to eq(['Director']) }
+  describe "#roles" do
+    specify { expect(subject.roles).to eq(["Director"]) }
   end
 
-  describe '#etag' do
+  describe "#etag" do
     specify { expect { subject.etag }.to raise_error(NotImplementedError) }
   end
 
-  describe '#path' do
+  describe "#path" do
     specify do
-      expect(subject.path).to eq('/v1/corporations/12345678/assets/names/')
+      expect(subject.path).to eq("/v1/corporations/12345678/assets/names/")
     end
   end
 
-  describe '#query' do
+  describe "#query" do
     specify do
-      expect(subject.query).to eq(datasource: 'tranquility')
+      expect(subject.query).to eq(datasource: "tranquility")
     end
   end
 
-  describe '#url' do
+  describe "#url" do
     specify do
-      expect(subject.url).to eq('https://esi.evetech.net/v1/corporations/12345678/assets/names/?datasource=tranquility')
+      expect(subject.url).to eq("https://esi.evetech.net/v1/corporations/12345678/assets/names/?datasource=tranquility")
     end
   end
 end

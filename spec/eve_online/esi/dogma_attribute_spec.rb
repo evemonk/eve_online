@@ -1,17 +1,17 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
 describe EveOnline::ESI::DogmaAttribute do
-  let(:options) { { id: 2 } }
+  let(:options) { {id: 2} }
 
   subject { described_class.new(options) }
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_PATH).to eq('/v1/dogma/attributes/%<attribute_id>s/') }
+  specify { expect(described_class::API_PATH).to eq("/v1/dogma/attributes/%<attribute_id>s/") }
 
-  describe '#initialize' do
+  describe "#initialize" do
     its(:token) { should eq(nil) }
 
     its(:parser) { should eq(JSON) }
@@ -20,17 +20,17 @@ describe EveOnline::ESI::DogmaAttribute do
 
     its(:_open_timeout) { should eq(60) }
 
-    if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6.0')
+    if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("2.6.0")
       its(:_write_timeout) { should eq(60) }
     end
 
-    its(:datasource) { should eq('tranquility') }
+    its(:datasource) { should eq("tranquility") }
 
     its(:id) { should eq(2) }
   end
 
-  describe '#model' do
-    context 'when @model set' do
+  describe "#model" do
+    context "when @model set" do
       let(:model) { instance_double(EveOnline::ESI::Models::DogmaAttribute) }
 
       before { subject.instance_variable_set(:@model, model) }
@@ -38,7 +38,7 @@ describe EveOnline::ESI::DogmaAttribute do
       specify { expect(subject.model).to eq(model) }
     end
 
-    context 'when @model not set' do
+    context "when @model not set" do
       let(:response) { double }
 
       before { expect(subject).to receive(:response).and_return(response) }
@@ -58,7 +58,7 @@ describe EveOnline::ESI::DogmaAttribute do
     end
   end
 
-  describe '#as_json' do
+  describe "#as_json" do
     let(:model) { instance_double(EveOnline::ESI::Models::DogmaAttribute) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -68,7 +68,7 @@ describe EveOnline::ESI::DogmaAttribute do
     specify { expect { subject.as_json }.not_to raise_error }
   end
 
-  describe '#attribute_id' do
+  describe "#attribute_id" do
     let(:model) { instance_double(EveOnline::ESI::Models::DogmaAttribute) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -78,7 +78,7 @@ describe EveOnline::ESI::DogmaAttribute do
     specify { expect { subject.attribute_id }.not_to raise_error }
   end
 
-  describe '#default_value' do
+  describe "#default_value" do
     let(:model) { instance_double(EveOnline::ESI::Models::DogmaAttribute) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -88,7 +88,7 @@ describe EveOnline::ESI::DogmaAttribute do
     specify { expect { subject.default_value }.not_to raise_error }
   end
 
-  describe '#description' do
+  describe "#description" do
     let(:model) { instance_double(EveOnline::ESI::Models::DogmaAttribute) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -98,7 +98,7 @@ describe EveOnline::ESI::DogmaAttribute do
     specify { expect { subject.description }.not_to raise_error }
   end
 
-  describe '#display_name' do
+  describe "#display_name" do
     let(:model) { instance_double(EveOnline::ESI::Models::DogmaAttribute) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -108,7 +108,7 @@ describe EveOnline::ESI::DogmaAttribute do
     specify { expect { subject.display_name }.not_to raise_error }
   end
 
-  describe '#high_is_good' do
+  describe "#high_is_good" do
     let(:model) { instance_double(EveOnline::ESI::Models::DogmaAttribute) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -118,7 +118,7 @@ describe EveOnline::ESI::DogmaAttribute do
     specify { expect { subject.high_is_good }.not_to raise_error }
   end
 
-  describe '#icon_id' do
+  describe "#icon_id" do
     let(:model) { instance_double(EveOnline::ESI::Models::DogmaAttribute) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -128,7 +128,7 @@ describe EveOnline::ESI::DogmaAttribute do
     specify { expect { subject.icon_id }.not_to raise_error }
   end
 
-  describe '#name' do
+  describe "#name" do
     let(:model) { instance_double(EveOnline::ESI::Models::DogmaAttribute) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -138,7 +138,7 @@ describe EveOnline::ESI::DogmaAttribute do
     specify { expect { subject.name }.not_to raise_error }
   end
 
-  describe '#published' do
+  describe "#published" do
     let(:model) { instance_double(EveOnline::ESI::Models::DogmaAttribute) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -148,7 +148,7 @@ describe EveOnline::ESI::DogmaAttribute do
     specify { expect { subject.published }.not_to raise_error }
   end
 
-  describe '#stackable' do
+  describe "#stackable" do
     let(:model) { instance_double(EveOnline::ESI::Models::DogmaAttribute) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -158,7 +158,7 @@ describe EveOnline::ESI::DogmaAttribute do
     specify { expect { subject.stackable }.not_to raise_error }
   end
 
-  describe '#unit_id' do
+  describe "#unit_id" do
     let(:model) { instance_double(EveOnline::ESI::Models::DogmaAttribute) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -168,25 +168,25 @@ describe EveOnline::ESI::DogmaAttribute do
     specify { expect { subject.unit_id }.not_to raise_error }
   end
 
-  describe '#scope' do
+  describe "#scope" do
     specify { expect(subject.scope).to eq(nil) }
   end
 
-  describe '#path' do
+  describe "#path" do
     specify do
-      expect(subject.path).to eq('/v1/dogma/attributes/2/')
+      expect(subject.path).to eq("/v1/dogma/attributes/2/")
     end
   end
 
-  describe '#query' do
+  describe "#query" do
     specify do
-      expect(subject.query).to eq(datasource: 'tranquility')
+      expect(subject.query).to eq(datasource: "tranquility")
     end
   end
 
-  describe '#url' do
+  describe "#url" do
     specify do
-      expect(subject.url).to eq('https://esi.evetech.net/v1/dogma/attributes/2/?datasource=tranquility')
+      expect(subject.url).to eq("https://esi.evetech.net/v1/dogma/attributes/2/?datasource=tranquility")
     end
   end
 end

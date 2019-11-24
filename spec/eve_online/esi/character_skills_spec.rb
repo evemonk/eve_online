@@ -1,18 +1,18 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
 describe EveOnline::ESI::CharacterSkills do
-  let(:options) { { token: 'token123', character_id: 12_345_678 } }
+  let(:options) { {token: "token123", character_id: 12_345_678} }
 
   subject { described_class.new(options) }
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_PATH).to eq('/v4/characters/%<character_id>s/skills/') }
+  specify { expect(described_class::API_PATH).to eq("/v4/characters/%<character_id>s/skills/") }
 
-  describe '#initialize' do
-    its(:token) { should eq('token123') }
+  describe "#initialize" do
+    its(:token) { should eq("token123") }
 
     its(:parser) { should eq(JSON) }
 
@@ -20,16 +20,16 @@ describe EveOnline::ESI::CharacterSkills do
 
     its(:_open_timeout) { should eq(60) }
 
-    if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6.0')
+    if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("2.6.0")
       its(:_write_timeout) { should eq(60) }
     end
 
-    its(:datasource) { should eq('tranquility') }
+    its(:datasource) { should eq("tranquility") }
 
     its(:character_id) { should eq(12_345_678) }
   end
 
-  describe '#as_json' do
+  describe "#as_json" do
     let(:skills) { described_class.new(options) }
 
     let(:total_sp) { double }
@@ -47,8 +47,8 @@ describe EveOnline::ESI::CharacterSkills do
     its([:unallocated_sp]) { should eq(unallocated_sp) }
   end
 
-  describe '#skills' do
-    context 'when @skills set' do
+  describe "#skills" do
+    context "when @skills set" do
       let(:skills) { [instance_double(EveOnline::ESI::Models::Skill)] }
 
       before { subject.instance_variable_set(:@skills, skills) }
@@ -56,7 +56,7 @@ describe EveOnline::ESI::CharacterSkills do
       specify { expect(subject.skills).to eq(skills) }
     end
 
-    context 'when @skills not set' do
+    context "when @skills not set" do
       let(:skill) { instance_double(EveOnline::ESI::Models::Skill) }
 
       let(:response) do
@@ -65,8 +65,8 @@ describe EveOnline::ESI::CharacterSkills do
             skill_id: 22_536,
             skillpoints_in_skill: 500,
             trained_skill_level: 1,
-            active_skill_level: 0
-          }
+            active_skill_level: 0,
+          },
         ]
       end
 
@@ -76,7 +76,7 @@ describe EveOnline::ESI::CharacterSkills do
         #
         expect(subject).to receive(:response) do
           double.tap do |a|
-            expect(a).to receive(:fetch).with('skills').and_return(response)
+            expect(a).to receive(:fetch).with("skills").and_return(response)
           end
         end
       end
@@ -94,14 +94,14 @@ describe EveOnline::ESI::CharacterSkills do
     end
   end
 
-  describe '#total_sp' do
+  describe "#total_sp" do
     before do
       #
       # subject.response['total_sp']
       #
       expect(subject).to receive(:response) do
         double.tap do |a|
-          expect(a).to receive(:[]).with('total_sp')
+          expect(a).to receive(:[]).with("total_sp")
         end
       end
     end
@@ -109,14 +109,14 @@ describe EveOnline::ESI::CharacterSkills do
     specify { expect { subject.total_sp }.not_to raise_error }
   end
 
-  describe '#unallocated_sp' do
+  describe "#unallocated_sp" do
     before do
       #
       # subject.response['unallocated_sp']
       #
       expect(subject).to receive(:response) do
         double.tap do |a|
-          expect(a).to receive(:[]).with('unallocated_sp')
+          expect(a).to receive(:[]).with("unallocated_sp")
         end
       end
     end
@@ -124,23 +124,23 @@ describe EveOnline::ESI::CharacterSkills do
     specify { expect { subject.unallocated_sp }.not_to raise_error }
   end
 
-  describe '#scope' do
-    specify { expect(subject.scope).to eq('esi-skills.read_skills.v1') }
+  describe "#scope" do
+    specify { expect(subject.scope).to eq("esi-skills.read_skills.v1") }
   end
 
-  describe '#path' do
+  describe "#path" do
     specify do
-      expect(subject.path).to eq('/v4/characters/12345678/skills/')
+      expect(subject.path).to eq("/v4/characters/12345678/skills/")
     end
   end
 
-  describe '#query' do
+  describe "#query" do
     specify do
-      expect(subject.query).to eq(datasource: 'tranquility')
+      expect(subject.query).to eq(datasource: "tranquility")
     end
   end
 
-  describe '#url' do
-    specify { expect(subject.url).to eq('https://esi.evetech.net/v4/characters/12345678/skills/?datasource=tranquility') }
+  describe "#url" do
+    specify { expect(subject.url).to eq("https://esi.evetech.net/v4/characters/12345678/skills/?datasource=tranquility") }
   end
 end

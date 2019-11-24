@@ -1,18 +1,18 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
 describe EveOnline::ESI::CharacterOrders do
-  let(:options) { { token: 'token123', character_id: 12_345_678 } }
+  let(:options) { {token: "token123", character_id: 12_345_678} }
 
   subject { described_class.new(options) }
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_PATH).to eq('/v2/characters/%<character_id>s/orders/') }
+  specify { expect(described_class::API_PATH).to eq("/v2/characters/%<character_id>s/orders/") }
 
-  describe '#initialize' do
-    its(:token) { should eq('token123') }
+  describe "#initialize" do
+    its(:token) { should eq("token123") }
 
     its(:parser) { should eq(JSON) }
 
@@ -20,17 +20,17 @@ describe EveOnline::ESI::CharacterOrders do
 
     its(:_open_timeout) { should eq(60) }
 
-    if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6.0')
+    if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("2.6.0")
       its(:_write_timeout) { should eq(60) }
     end
 
-    its(:datasource) { should eq('tranquility') }
+    its(:datasource) { should eq("tranquility") }
 
     its(:character_id) { should eq(12_345_678) }
   end
 
-  describe '#orders' do
-    context 'when @orders set' do
+  describe "#orders" do
+    context "when @orders set" do
       let(:orders) { [instance_double(EveOnline::ESI::Models::CharacterOrder)] }
 
       before { subject.instance_variable_set(:@orders, orders) }
@@ -38,7 +38,7 @@ describe EveOnline::ESI::CharacterOrders do
       specify { expect(subject.orders).to eq(orders) }
     end
 
-    context 'when @orders not set' do
+    context "when @orders not set" do
       let(:order) { instance_double(EveOnline::ESI::Models::CharacterOrder) }
 
       let(:response) do
@@ -48,19 +48,19 @@ describe EveOnline::ESI::CharacterOrders do
             type_id: 456,
             region_id: 123,
             location_id: 456,
-            range: 'station',
+            range: "station",
             is_buy_order: true,
             price: 33.3,
             volume_total: 123_456,
             volume_remain: 4422,
-            issued: '2016-09-03T05:12:25Z',
-            state: 'open',
+            issued: "2016-09-03T05:12:25Z",
+            state: "open",
             min_volume: 1,
             account_id: 1000,
             duration: 30,
             is_corp: false,
-            escrow: 45.6
-          }
+            escrow: 45.6,
+          },
         ]
       end
 
@@ -84,25 +84,25 @@ describe EveOnline::ESI::CharacterOrders do
     end
   end
 
-  describe '#scope' do
-    specify { expect(subject.scope).to eq('esi-markets.read_character_orders.v1') }
+  describe "#scope" do
+    specify { expect(subject.scope).to eq("esi-markets.read_character_orders.v1") }
   end
 
-  describe '#path' do
+  describe "#path" do
     specify do
-      expect(subject.path).to eq('/v2/characters/12345678/orders/')
+      expect(subject.path).to eq("/v2/characters/12345678/orders/")
     end
   end
 
-  describe '#query' do
+  describe "#query" do
     specify do
-      expect(subject.query).to eq(datasource: 'tranquility')
+      expect(subject.query).to eq(datasource: "tranquility")
     end
   end
 
-  describe '#url' do
+  describe "#url" do
     specify do
-      expect(subject.url).to eq('https://esi.evetech.net/v2/characters/12345678/orders/?datasource=tranquility')
+      expect(subject.url).to eq("https://esi.evetech.net/v2/characters/12345678/orders/?datasource=tranquility")
     end
   end
 end
