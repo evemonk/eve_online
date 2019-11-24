@@ -1,18 +1,18 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
 describe EveOnline::ESI::CharacterCalendarEvent do
-  let(:options) { { token: 'token123', character_id: 91_473_836, event_id: 1_982_004 } }
+  let(:options) { {token: "token123", character_id: 91_473_836, event_id: 1_982_004} }
 
   subject { described_class.new(options) }
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_PATH).to eq('/v3/characters/%<character_id>s/calendar/%<event_id>s/') }
+  specify { expect(described_class::API_PATH).to eq("/v3/characters/%<character_id>s/calendar/%<event_id>s/") }
 
-  describe '#initialize' do
-    its(:token) { should eq('token123') }
+  describe "#initialize" do
+    its(:token) { should eq("token123") }
 
     its(:parser) { should eq(JSON) }
 
@@ -20,19 +20,19 @@ describe EveOnline::ESI::CharacterCalendarEvent do
 
     its(:_open_timeout) { should eq(60) }
 
-    if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6.0')
+    if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("2.6.0")
       its(:_write_timeout) { should eq(60) }
     end
 
-    its(:datasource) { should eq('tranquility') }
+    its(:datasource) { should eq("tranquility") }
 
     its(:character_id) { should eq(91_473_836) }
 
     its(:event_id) { should eq(1_982_004) }
   end
 
-  describe '#model' do
-    context 'when @model set' do
+  describe "#model" do
+    context "when @model set" do
       let(:model) { instance_double(EveOnline::ESI::Models::EventDetails) }
 
       before { subject.instance_variable_set(:@model, model) }
@@ -40,7 +40,7 @@ describe EveOnline::ESI::CharacterCalendarEvent do
       specify { expect(subject.model).to eq(model) }
     end
 
-    context 'when @model not set' do
+    context "when @model not set" do
       let(:response) { double }
 
       before { expect(subject).to receive(:response).and_return(response) }
@@ -60,7 +60,7 @@ describe EveOnline::ESI::CharacterCalendarEvent do
     end
   end
 
-  describe '#as_json' do
+  describe "#as_json" do
     let(:model) { instance_double(EveOnline::ESI::Models::EventDetails) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -70,7 +70,7 @@ describe EveOnline::ESI::CharacterCalendarEvent do
     specify { expect { subject.as_json }.not_to raise_error }
   end
 
-  describe '#date' do
+  describe "#date" do
     let(:model) { instance_double(EveOnline::ESI::Models::EventDetails) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -80,7 +80,7 @@ describe EveOnline::ESI::CharacterCalendarEvent do
     specify { expect { subject.date }.not_to raise_error }
   end
 
-  describe '#duration' do
+  describe "#duration" do
     let(:model) { instance_double(EveOnline::ESI::Models::EventDetails) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -90,7 +90,7 @@ describe EveOnline::ESI::CharacterCalendarEvent do
     specify { expect { subject.duration }.not_to raise_error }
   end
 
-  describe '#importance' do
+  describe "#importance" do
     let(:model) { instance_double(EveOnline::ESI::Models::EventDetails) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -100,7 +100,7 @@ describe EveOnline::ESI::CharacterCalendarEvent do
     specify { expect { subject.importance }.not_to raise_error }
   end
 
-  describe '#owner_id' do
+  describe "#owner_id" do
     let(:model) { instance_double(EveOnline::ESI::Models::EventDetails) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -110,7 +110,7 @@ describe EveOnline::ESI::CharacterCalendarEvent do
     specify { expect { subject.owner_id }.not_to raise_error }
   end
 
-  describe '#owner_name' do
+  describe "#owner_name" do
     let(:model) { instance_double(EveOnline::ESI::Models::EventDetails) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -120,7 +120,7 @@ describe EveOnline::ESI::CharacterCalendarEvent do
     specify { expect { subject.owner_name }.not_to raise_error }
   end
 
-  describe '#owner_type' do
+  describe "#owner_type" do
     let(:model) { instance_double(EveOnline::ESI::Models::EventDetails) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -130,7 +130,7 @@ describe EveOnline::ESI::CharacterCalendarEvent do
     specify { expect { subject.owner_type }.not_to raise_error }
   end
 
-  describe '#event_response' do
+  describe "#event_response" do
     let(:model) { instance_double(EveOnline::ESI::Models::EventDetails) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -140,7 +140,7 @@ describe EveOnline::ESI::CharacterCalendarEvent do
     specify { expect { subject.event_response }.not_to raise_error }
   end
 
-  describe '#text' do
+  describe "#text" do
     let(:model) { instance_double(EveOnline::ESI::Models::EventDetails) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -150,7 +150,7 @@ describe EveOnline::ESI::CharacterCalendarEvent do
     specify { expect { subject.text }.not_to raise_error }
   end
 
-  describe '#title' do
+  describe "#title" do
     let(:model) { instance_double(EveOnline::ESI::Models::EventDetails) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -160,25 +160,25 @@ describe EveOnline::ESI::CharacterCalendarEvent do
     specify { expect { subject.title }.not_to raise_error }
   end
 
-  describe '#scope' do
-    specify { expect(subject.scope).to eq('esi-calendar.read_calendar_events.v1') }
+  describe "#scope" do
+    specify { expect(subject.scope).to eq("esi-calendar.read_calendar_events.v1") }
   end
 
-  describe '#path' do
+  describe "#path" do
     specify do
-      expect(subject.path).to eq('/v3/characters/91473836/calendar/1982004/')
+      expect(subject.path).to eq("/v3/characters/91473836/calendar/1982004/")
     end
   end
 
-  describe '#query' do
+  describe "#query" do
     specify do
-      expect(subject.query).to eq(datasource: 'tranquility')
+      expect(subject.query).to eq(datasource: "tranquility")
     end
   end
 
-  describe '#url' do
+  describe "#url" do
     specify do
-      expect(subject.url).to eq('https://esi.evetech.net/v3/characters/91473836/calendar/1982004/?datasource=tranquility')
+      expect(subject.url).to eq("https://esi.evetech.net/v3/characters/91473836/calendar/1982004/?datasource=tranquility")
     end
   end
 end

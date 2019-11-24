@@ -1,17 +1,17 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
 describe EveOnline::ESI::CharacterCorporationHistory do
-  let(:options) { { character_id: 12_345_678 } }
+  let(:options) { {character_id: 12_345_678} }
 
   subject { described_class.new(options) }
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_PATH).to eq('/v1/characters/%<character_id>s/corporationhistory/') }
+  specify { expect(described_class::API_PATH).to eq("/v1/characters/%<character_id>s/corporationhistory/") }
 
-  describe '#initialize' do
+  describe "#initialize" do
     its(:token) { should eq(nil) }
 
     its(:parser) { should eq(JSON) }
@@ -20,17 +20,17 @@ describe EveOnline::ESI::CharacterCorporationHistory do
 
     its(:_open_timeout) { should eq(60) }
 
-    if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6.0')
+    if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("2.6.0")
       its(:_write_timeout) { should eq(60) }
     end
 
-    its(:datasource) { should eq('tranquility') }
+    its(:datasource) { should eq("tranquility") }
 
     its(:character_id) { should eq(12_345_678) }
   end
 
-  describe '#entries' do
-    context 'when @entries set' do
+  describe "#entries" do
+    context "when @entries set" do
       let(:entries) { [instance_double(EveOnline::ESI::Models::CharacterCorporationHistory)] }
 
       before { subject.instance_variable_set(:@entries, :entries) }
@@ -38,7 +38,7 @@ describe EveOnline::ESI::CharacterCorporationHistory do
       specify { expect(subject.entries).to eq(:entries) }
     end
 
-    context 'when @entries not set' do
+    context "when @entries not set" do
       let(:entry) { instance_double(EveOnline::ESI::Models::CharacterCorporationHistory) }
 
       let(:response) do
@@ -47,8 +47,8 @@ describe EveOnline::ESI::CharacterCorporationHistory do
             corporation_id: 1_000_168,
             is_deleted: nil,
             record_id: 16_785_803,
-            start_date: '2011-05-10T10:23:00Z'
-          }
+            start_date: "2011-05-10T10:23:00Z",
+          },
         ]
       end
 
@@ -72,25 +72,25 @@ describe EveOnline::ESI::CharacterCorporationHistory do
     end
   end
 
-  describe '#scope' do
+  describe "#scope" do
     specify { expect(subject.scope).to eq(nil) }
   end
 
-  describe '#path' do
+  describe "#path" do
     specify do
-      expect(subject.path).to eq('/v1/characters/12345678/corporationhistory/')
+      expect(subject.path).to eq("/v1/characters/12345678/corporationhistory/")
     end
   end
 
-  describe '#query' do
+  describe "#query" do
     specify do
-      expect(subject.query).to eq(datasource: 'tranquility')
+      expect(subject.query).to eq(datasource: "tranquility")
     end
   end
 
-  describe '#url' do
+  describe "#url" do
     specify do
-      expect(subject.url).to eq('https://esi.evetech.net/v1/characters/12345678/corporationhistory/?datasource=tranquility')
+      expect(subject.url).to eq("https://esi.evetech.net/v1/characters/12345678/corporationhistory/?datasource=tranquility")
     end
   end
 end
