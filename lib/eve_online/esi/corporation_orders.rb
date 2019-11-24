@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class CorporationOrders < Base
-      API_PATH = '/v3/corporations/%<corporation_id>s/orders/'
+      API_PATH = "/v3/corporations/%<corporation_id>s/orders/"
 
       attr_reader :corporation_id, :page
 
@@ -26,11 +26,11 @@ module EveOnline
       end
 
       def scope
-        'esi-markets.read_corporation_orders.v1'
+        "esi-markets.read_corporation_orders.v1"
       end
 
       def roles
-        ['Accountant', 'Trader']
+        ["Accountant", "Trader"]
       end
 
       def additional_query_params

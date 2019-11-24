@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class CharacterWalletJournal < Base
-      API_PATH = '/v6/characters/%<character_id>s/wallet/journal/'
+      API_PATH = "/v6/characters/%<character_id>s/wallet/journal/"
 
       attr_reader :character_id, :page
 
@@ -26,7 +26,7 @@ module EveOnline
       end
 
       def scope
-        'esi-wallet.read_character_wallet.v1'
+        "esi-wallet.read_character_wallet.v1"
       end
 
       def additional_query_params

@@ -7,20 +7,20 @@ module EveOnline
         def as_json
           {
             name: name,
-            system_id: system_id
+            system_id: system_id,
           }
         end
 
         def name
-          options['name']
+          options["name"]
         end
 
         def system_id
-          options['system_id']
+          options["system_id"]
         end
 
         def position
-          @position ||= Position.new(options['position'])
+          @position ||= Position.new(options["position"])
         end
       end
     end

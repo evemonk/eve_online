@@ -7,16 +7,16 @@ module EveOnline
         def as_json
           {
             alliance_id: alliance_id,
-            alliance_name: alliance_name
+            alliance_name: alliance_name,
           }
         end
 
         def alliance_id
-          options['alliance_id']
+          options["alliance_id"]
         end
 
         def alliance_name
-          options['alliance_name']
+          options["alliance_name"]
         end
       end
     end

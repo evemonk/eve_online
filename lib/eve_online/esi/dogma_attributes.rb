@@ -3,13 +3,14 @@
 module EveOnline
   module ESI
     class DogmaAttributes < Base
-      API_PATH = '/v1/dogma/attributes/'
+      API_PATH = "/v1/dogma/attributes/"
 
       def attribute_ids
         response
       end
 
-      def scope; end
+      def scope
+      end
 
       def path
         API_PATH

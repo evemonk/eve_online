@@ -16,52 +16,52 @@ module EveOnline
             perception: perception,
             race_id: race_id,
             ship_type_id: ship_type_id,
-            willpower: willpower
+            willpower: willpower,
           }
         end
 
         def bloodline_id
-          options['bloodline_id']
+          options["bloodline_id"]
         end
 
         def charisma
-          options['charisma']
+          options["charisma"]
         end
 
         def corporation_id
-          options['corporation_id']
+          options["corporation_id"]
         end
 
         def description
-          options['description']
+          options["description"]
         end
 
         def intelligence
-          options['intelligence']
+          options["intelligence"]
         end
 
         def memory
-          options['memory']
+          options["memory"]
         end
 
         def name
-          options['name']
+          options["name"]
         end
 
         def perception
-          options['perception']
+          options["perception"]
         end
 
         def race_id
-          options['race_id']
+          options["race_id"]
         end
 
         def ship_type_id
-          options['ship_type_id']
+          options["ship_type_id"]
         end
 
         def willpower
-          options['willpower']
+          options["willpower"]
         end
       end
     end

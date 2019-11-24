@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class CorporationAssets < Base
-      API_PATH = '/v3/corporations/%<corporation_id>s/assets/'
+      API_PATH = "/v3/corporations/%<corporation_id>s/assets/"
 
       attr_reader :corporation_id, :page
 
@@ -26,11 +26,11 @@ module EveOnline
       end
 
       def scope
-        'esi-assets.read_corporation_assets.v1'
+        "esi-assets.read_corporation_assets.v1"
       end
 
       def roles
-        ['Director']
+        ["Director"]
       end
 
       def additional_query_params

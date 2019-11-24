@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-require 'forwardable'
+require "forwardable"
 
 module EveOnline
   module ESI
     class CharacterShip < Base
       extend Forwardable
 
-      API_PATH = '/v1/characters/%<character_id>s/ship/'
+      API_PATH = "/v1/characters/%<character_id>s/ship/"
 
       attr_reader :character_id
 
@@ -24,7 +24,7 @@ module EveOnline
       end
 
       def scope
-        'esi-location.read_ship_type.v1'
+        "esi-location.read_ship_type.v1"
       end
 
       def path

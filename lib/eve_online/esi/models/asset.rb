@@ -13,40 +13,40 @@ module EveOnline
             location_id: location_id,
             location_type: location_type,
             quantity: quantity,
-            type_id: type_id
+            type_id: type_id,
           }
         end
 
         def is_blueprint_copy
-          options['is_blueprint_copy']
+          options["is_blueprint_copy"]
         end
 
         def is_singleton
-          options['is_singleton']
+          options["is_singleton"]
         end
 
         def item_id
-          options['item_id']
+          options["item_id"]
         end
 
         def location_flag
-          options['location_flag']
+          options["location_flag"]
         end
 
         def location_id
-          options['location_id']
+          options["location_id"]
         end
 
         def location_type
-          options['location_type']
+          options["location_type"]
         end
 
         def quantity
-          options['quantity']
+          options["quantity"]
         end
 
         def type_id
-          options['type_id']
+          options["type_id"]
         end
       end
     end

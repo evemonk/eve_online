@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class CharacterSkills < Base
-      API_PATH = '/v4/characters/%<character_id>s/skills/'
+      API_PATH = "/v4/characters/%<character_id>s/skills/"
 
       attr_reader :character_id
 
@@ -16,7 +16,7 @@ module EveOnline
       def as_json
         {
           total_sp: total_sp,
-          unallocated_sp: unallocated_sp
+          unallocated_sp: unallocated_sp,
         }
       end
 
@@ -24,7 +24,7 @@ module EveOnline
         @skills ||=
           begin
             output = []
-            response.fetch('skills').each do |skill|
+            response.fetch("skills").each do |skill|
               output << Models::Skill.new(skill)
             end
             output
@@ -32,15 +32,15 @@ module EveOnline
       end
 
       def total_sp
-        response['total_sp']
+        response["total_sp"]
       end
 
       def unallocated_sp
-        response['unallocated_sp']
+        response["unallocated_sp"]
       end
 
       def scope
-        'esi-skills.read_skills.v1'
+        "esi-skills.read_skills.v1"
       end
 
       def path
