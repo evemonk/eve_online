@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
-describe 'Get solar system information' do
-  context 'when etag not set' do
-    before { VCR.insert_cassette 'esi/universe/systems/30000001' }
+describe "Get solar system information" do
+  context "when etag not set" do
+    before { VCR.insert_cassette "esi/universe/systems/30000001" }
 
     after { VCR.eject_cassette }
 
-    let(:options) { { id: 30_000_001, language: 'en-us' } }
+    let(:options) { {id: 30_000_001, language: "en-us"} }
 
     subject { EveOnline::ESI::UniverseSystem.new(options) }
 
@@ -18,8 +18,8 @@ describe 'Get solar system information' do
 
     specify do
       expect(subject.as_json).to eq(constellation_id: 20_000_001,
-                                    name: 'Tanoo',
-                                    security_class: 'B',
+                                    name: "Tanoo",
+                                    security_class: "B",
                                     security_status: 0.8583240509033203,
                                     star_id: 40_000_001,
                                     system_id: 30_000_001)
@@ -39,19 +39,19 @@ describe 'Get solar system information' do
 
     specify { expect(subject.station_ids).to eq([60_012_526, 60_014_437]) }
 
-    specify { expect(subject.etag).to eq('37a39e7a5f5ecc07b19a3128c319f1198d035aee10052d0a21ccdd94') }
+    specify { expect(subject.etag).to eq("37a39e7a5f5ecc07b19a3128c319f1198d035aee10052d0a21ccdd94") }
   end
 
-  context 'when etag is set' do
+  context "when etag is set" do
     let(:options) do
       {
         id: 30_000_001,
-        language: 'en-us',
-        etag: '37a39e7a5f5ecc07b19a3128c319f1198d035aee10052d0a21ccdd94'
+        language: "en-us",
+        etag: "37a39e7a5f5ecc07b19a3128c319f1198d035aee10052d0a21ccdd94",
       }
     end
 
-    before { VCR.insert_cassette 'esi/universe/systems/30000001_with_etag' }
+    before { VCR.insert_cassette "esi/universe/systems/30000001_with_etag" }
 
     after { VCR.eject_cassette }
 
@@ -59,6 +59,6 @@ describe 'Get solar system information' do
 
     specify { expect(subject.not_modified?).to eq(true) }
 
-    specify { expect(subject.etag).to eq('37a39e7a5f5ecc07b19a3128c319f1198d035aee10052d0a21ccdd94') }
+    specify { expect(subject.etag).to eq("37a39e7a5f5ecc07b19a3128c319f1198d035aee10052d0a21ccdd94") }
   end
 end
