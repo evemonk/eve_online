@@ -12,38 +12,38 @@ module EveOnline
             sender_type: sender_type,
             text: text,
             timestamp: timestamp,
-            type: type
+            type: type,
           }
         end
 
         def is_read
-          options['is_read']
+          options["is_read"]
         end
 
         def notification_id
-          options['notification_id']
+          options["notification_id"]
         end
 
         def sender_id
-          options['sender_id']
+          options["sender_id"]
         end
 
         def sender_type
-          options['sender_type']
+          options["sender_type"]
         end
 
         def text
-          options['text']
+          options["text"]
         end
 
         def timestamp
-          timestamp = options['timestamp']
+          timestamp = options["timestamp"]
 
           parse_datetime_with_timezone(timestamp) if timestamp
         end
 
         def type
-          options['type']
+          options["type"]
         end
       end
     end

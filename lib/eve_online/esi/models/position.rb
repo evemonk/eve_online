@@ -8,20 +8,20 @@ module EveOnline
           {
             x: x,
             y: y,
-            z: z
+            z: z,
           }
         end
 
         def x
-          options['x']
+          options["x"]
         end
 
         def y
-          options['y']
+          options["y"]
         end
 
         def z
-          options['z']
+          options["z"]
         end
       end
     end

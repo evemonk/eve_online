@@ -9,28 +9,28 @@ module EveOnline
             jump_clone_id: jump_clone_id,
             location_id: location_id,
             location_type: location_type,
-            name: name
+            name: name,
           }
         end
 
         def implant_ids
-          options['implants']
+          options["implants"]
         end
 
         def jump_clone_id
-          options['jump_clone_id']
+          options["jump_clone_id"]
         end
 
         def location_id
-          options['location_id']
+          options["location_id"]
         end
 
         def location_type
-          options['location_type']
+          options["location_type"]
         end
 
         def name
-          options['name']
+          options["name"]
         end
       end
     end

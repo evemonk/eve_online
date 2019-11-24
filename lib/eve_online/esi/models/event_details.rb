@@ -15,50 +15,50 @@ module EveOnline
             owner_type: owner_type,
             event_response: event_response,
             text: text,
-            title: title
+            title: title,
           }
         end
 
         def date
-          date = options['date']
+          date = options["date"]
 
           parse_datetime_with_timezone(date) if date
         end
 
         def duration
-          options['duration']
+          options["duration"]
         end
 
         def event_id
-          options['event_id']
+          options["event_id"]
         end
 
         def importance
-          options['importance']
+          options["importance"]
         end
 
         def owner_id
-          options['owner_id']
+          options["owner_id"]
         end
 
         def owner_name
-          options['owner_name']
+          options["owner_name"]
         end
 
         def owner_type
-          options['owner_type']
+          options["owner_type"]
         end
 
         def event_response
-          options['response']
+          options["response"]
         end
 
         def text
-          options['text']
+          options["text"]
         end
 
         def title
-          options['title']
+          options["title"]
         end
       end
     end

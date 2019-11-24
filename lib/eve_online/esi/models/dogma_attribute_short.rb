@@ -7,16 +7,16 @@ module EveOnline
         def as_json
           {
             attribute_id: attribute_id,
-            value: value
+            value: value,
           }
         end
 
         def attribute_id
-          options['attribute_id']
+          options["attribute_id"]
         end
 
         def value
-          options['value']
+          options["value"]
         end
       end
     end

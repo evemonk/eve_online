@@ -10,30 +10,30 @@ module EveOnline
             event_id: event_id,
             event_response: event_response,
             importance: importance,
-            title: title
+            title: title,
           }
         end
 
         def event_date
-          event_date = options['event_date']
+          event_date = options["event_date"]
 
           parse_datetime_with_timezone(event_date) if event_date
         end
 
         def event_id
-          options['event_id']
+          options["event_id"]
         end
 
         def event_response
-          options['event_response']
+          options["event_response"]
         end
 
         def importance
-          options['importance']
+          options["importance"]
         end
 
         def title
-          options['title']
+          options["title"]
         end
       end
     end
