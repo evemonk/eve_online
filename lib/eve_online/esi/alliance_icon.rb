@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-require 'forwardable'
+require "forwardable"
 
 module EveOnline
   module ESI
     class AllianceIcon < Base
       extend Forwardable
 
-      API_PATH = '/v1/alliances/%<alliance_id>s/icons/'
+      API_PATH = "/v1/alliances/%<alliance_id>s/icons/"
 
       attr_reader :alliance_id
 
@@ -23,7 +23,8 @@ module EveOnline
         @model ||= Models::AllianceIcon.new(response)
       end
 
-      def scope; end
+      def scope
+      end
 
       def path
         format(API_PATH, alliance_id: alliance_id)

@@ -1,19 +1,19 @@
 # frozen_string_literal: true
 
-require 'net/http'
-require 'openssl'
-require 'json'
-require 'active_support/time'
+require "net/http"
+require "openssl"
+require "json"
+require "active_support/time"
 
 module EveOnline
   module ESI
     class Base
-      API_HOST = 'esi.evetech.net'
+      API_HOST = "esi.evetech.net"
 
       attr_reader :token, :parser, :_read_timeout, :_open_timeout, :_etag,
-                  :datasource, :language
+        :datasource, :language
 
-      if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6.0')
+      if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("2.6.0")
         attr_reader :_write_timeout
       end
 
@@ -22,12 +22,12 @@ module EveOnline
         @parser = options.fetch(:parser, JSON)
         @_read_timeout = options.fetch(:read_timeout, 60)
         @_open_timeout = options.fetch(:open_timeout, 60)
-        if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6.0')
+        if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("2.6.0")
           @_write_timeout = options.fetch(:write_timeout, 60)
         end
         @_etag = options.fetch(:etag, nil)
-        @datasource = options.fetch(:datasource, 'tranquility')
-        @language = options.fetch(:language, 'en-us')
+        @datasource = options.fetch(:datasource, "tranquility")
+        @language = options.fetch(:language, "en-us")
       end
 
       def url
@@ -39,11 +39,11 @@ module EveOnline
       end
 
       def user_agent
-        "EveOnline API (https://github.com/evemonk/eve_online) v#{ VERSION }"
+        "EveOnline API (https://github.com/evemonk/eve_online) v#{VERSION}"
       end
 
       def http_method
-        'Get'
+        "Get"
       end
 
       def read_timeout
@@ -62,7 +62,7 @@ module EveOnline
         client.open_timeout = value
       end
 
-      if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6.0')
+      if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("2.6.0")
         def write_timeout
           client.write_timeout
         end
@@ -77,13 +77,14 @@ module EveOnline
       end
 
       def etag
-        resource.header['Etag']&.gsub('W/', '')&.gsub('"', '')
+        resource.header["Etag"]&.gsub("W/", "")&.gsub('"', "")
       end
 
-      def page; end
+      def page
+      end
 
       def total_pages
-        resource.header['X-Pages']&.to_i
+        resource.header["X-Pages"]&.to_i
       end
 
       def client
@@ -91,7 +92,7 @@ module EveOnline
           http = Net::HTTP.new(uri.host, uri.port)
           http.read_timeout = _read_timeout
           http.open_timeout = _open_timeout
-          if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6.0')
+          if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("2.6.0")
             http.write_timeout = _write_timeout
           end
           http.use_ssl = true
@@ -103,20 +104,20 @@ module EveOnline
 
       def request
         @request ||= begin
-          request = "Net::HTTP::#{ http_method }".constantize.new(uri.request_uri)
+          request = "Net::HTTP::#{http_method}".constantize.new(uri.request_uri)
 
-          request['User-Agent'] = user_agent
-          request['Accept'] = 'application/json'
-          request['Authorization'] = "Bearer #{ token }" if token
-          request['If-None-Match'] = _etag if _etag
-          request['Content-Type'] = 'application/json' if http_method == 'Post'
-          request.body = payload if http_method == 'Post'
+          request["User-Agent"] = user_agent
+          request["Accept"] = "application/json"
+          request["Authorization"] = "Bearer #{token}" if token
+          request["If-None-Match"] = _etag if _etag
+          request["Content-Type"] = "application/json" if http_method == "Post"
+          request.body = payload if http_method == "Post"
 
           request
         end
       end
 
-      if Gem::Version.new(RUBY_VERSION) < Gem::Version.new('2.6.0')
+      if Gem::Version.new(RUBY_VERSION) < Gem::Version.new("2.6.0")
         class Net::WriteTimeout < StandardError; end
       end
 
@@ -197,7 +198,7 @@ module EveOnline
       private
 
       def parse_datetime_with_timezone(value)
-        ActiveSupport::TimeZone['UTC'].parse(value)
+        ActiveSupport::TimeZone["UTC"].parse(value)
       end
     end
   end

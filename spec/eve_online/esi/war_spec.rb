@@ -1,17 +1,17 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
 describe EveOnline::ESI::War do
-  let(:options) { { id: 615_578 } }
+  let(:options) { {id: 615_578} }
 
   subject { described_class.new(options) }
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_PATH).to eq('/v1/wars/%<war_id>s/') }
+  specify { expect(described_class::API_PATH).to eq("/v1/wars/%<war_id>s/") }
 
-  describe '#initialize' do
+  describe "#initialize" do
     its(:token) { should eq(nil) }
 
     its(:parser) { should eq(JSON) }
@@ -20,17 +20,17 @@ describe EveOnline::ESI::War do
 
     its(:_open_timeout) { should eq(60) }
 
-    if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6.0')
+    if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("2.6.0")
       its(:_write_timeout) { should eq(60) }
     end
 
-    its(:datasource) { should eq('tranquility') }
+    its(:datasource) { should eq("tranquility") }
 
     its(:id) { should eq(615_578) }
   end
 
-  describe '#model' do
-    context 'when @model set' do
+  describe "#model" do
+    context "when @model set" do
       let(:model) { instance_double(EveOnline::ESI::Models::War) }
 
       before { subject.instance_variable_set(:@model, model) }
@@ -38,7 +38,7 @@ describe EveOnline::ESI::War do
       specify { expect(subject.model).to eq(model) }
     end
 
-    context 'when @model not set' do
+    context "when @model not set" do
       let(:response) { double }
 
       before { expect(subject).to receive(:response).and_return(response) }
@@ -58,7 +58,7 @@ describe EveOnline::ESI::War do
     end
   end
 
-  describe '#as_json' do
+  describe "#as_json" do
     let(:model) { instance_double(EveOnline::ESI::Models::War) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -68,7 +68,7 @@ describe EveOnline::ESI::War do
     specify { expect { subject.as_json }.not_to raise_error }
   end
 
-  describe '#declared' do
+  describe "#declared" do
     let(:model) { instance_double(EveOnline::ESI::Models::War) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -78,7 +78,7 @@ describe EveOnline::ESI::War do
     specify { expect { subject.declared }.not_to raise_error }
   end
 
-  describe '#finished' do
+  describe "#finished" do
     let(:model) { instance_double(EveOnline::ESI::Models::War) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -88,7 +88,7 @@ describe EveOnline::ESI::War do
     specify { expect { subject.finished }.not_to raise_error }
   end
 
-  describe '#war_id' do
+  describe "#war_id" do
     let(:model) { instance_double(EveOnline::ESI::Models::War) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -98,7 +98,7 @@ describe EveOnline::ESI::War do
     specify { expect { subject.war_id }.not_to raise_error }
   end
 
-  describe '#mutual' do
+  describe "#mutual" do
     let(:model) { instance_double(EveOnline::ESI::Models::War) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -108,7 +108,7 @@ describe EveOnline::ESI::War do
     specify { expect { subject.mutual }.not_to raise_error }
   end
 
-  describe '#open_for_allies' do
+  describe "#open_for_allies" do
     let(:model) { instance_double(EveOnline::ESI::Models::War) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -118,7 +118,7 @@ describe EveOnline::ESI::War do
     specify { expect { subject.open_for_allies }.not_to raise_error }
   end
 
-  describe '#retracted' do
+  describe "#retracted" do
     let(:model) { instance_double(EveOnline::ESI::Models::War) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -128,7 +128,7 @@ describe EveOnline::ESI::War do
     specify { expect { subject.retracted }.not_to raise_error }
   end
 
-  describe '#started' do
+  describe "#started" do
     let(:model) { instance_double(EveOnline::ESI::Models::War) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -138,7 +138,7 @@ describe EveOnline::ESI::War do
     specify { expect { subject.started }.not_to raise_error }
   end
 
-  describe '#aggressor' do
+  describe "#aggressor" do
     let(:model) { instance_double(EveOnline::ESI::Models::War) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -148,7 +148,7 @@ describe EveOnline::ESI::War do
     specify { expect { subject.aggressor }.not_to raise_error }
   end
 
-  describe '#allies' do
+  describe "#allies" do
     let(:model) { instance_double(EveOnline::ESI::Models::War) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -158,7 +158,7 @@ describe EveOnline::ESI::War do
     specify { expect { subject.allies }.not_to raise_error }
   end
 
-  describe '#defender' do
+  describe "#defender" do
     let(:model) { instance_double(EveOnline::ESI::Models::War) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -168,25 +168,25 @@ describe EveOnline::ESI::War do
     specify { expect { subject.defender }.not_to raise_error }
   end
 
-  describe '#scope' do
+  describe "#scope" do
     specify { expect(subject.scope).to eq(nil) }
   end
 
-  describe '#path' do
+  describe "#path" do
     specify do
-      expect(subject.path).to eq('/v1/wars/615578/')
+      expect(subject.path).to eq("/v1/wars/615578/")
     end
   end
 
-  describe '#query' do
+  describe "#query" do
     specify do
-      expect(subject.query).to eq(datasource: 'tranquility')
+      expect(subject.query).to eq(datasource: "tranquility")
     end
   end
 
-  describe '#url' do
+  describe "#url" do
     specify do
-      expect(subject.url).to eq('https://esi.evetech.net/v1/wars/615578/?datasource=tranquility')
+      expect(subject.url).to eq("https://esi.evetech.net/v1/wars/615578/?datasource=tranquility")
     end
   end
 end

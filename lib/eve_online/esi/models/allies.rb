@@ -7,7 +7,7 @@ module EveOnline
         def allies
           output = []
 
-          return output if !options.is_a?(Array)
+          return output unless options.is_a?(Array)
 
           options.each do |ally|
             output << Ally.new(ally)

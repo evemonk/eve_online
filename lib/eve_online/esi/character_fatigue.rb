@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-require 'forwardable'
+require "forwardable"
 
 module EveOnline
   module ESI
     class CharacterFatigue < Base
       extend Forwardable
 
-      API_PATH = '/v1/characters/%<character_id>s/fatigue/'
+      API_PATH = "/v1/characters/%<character_id>s/fatigue/"
 
       attr_reader :character_id
 
@@ -18,14 +18,14 @@ module EveOnline
       end
 
       def_delegators :model, :as_json, :jump_fatigue_expire_date,
-                     :last_jump_date, :last_update_date
+        :last_jump_date, :last_update_date
 
       def model
         @model ||= Models::Fatigue.new(response)
       end
 
       def scope
-        'esi-characters.read_fatigue.v1'
+        "esi-characters.read_fatigue.v1"
       end
 
       def path

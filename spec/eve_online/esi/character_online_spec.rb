@@ -1,18 +1,18 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
 describe EveOnline::ESI::CharacterOnline do
-  let(:options) { { token: 'token123', character_id: 12_345_678 } }
+  let(:options) { {token: "token123", character_id: 12_345_678} }
 
   subject { described_class.new(options) }
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_PATH).to eq('/v2/characters/%<character_id>s/online/') }
+  specify { expect(described_class::API_PATH).to eq("/v2/characters/%<character_id>s/online/") }
 
-  describe '#initialize' do
-    its(:token) { should eq('token123') }
+  describe "#initialize" do
+    its(:token) { should eq("token123") }
 
     its(:parser) { should eq(JSON) }
 
@@ -20,17 +20,17 @@ describe EveOnline::ESI::CharacterOnline do
 
     its(:_open_timeout) { should eq(60) }
 
-    if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6.0')
+    if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("2.6.0")
       its(:_write_timeout) { should eq(60) }
     end
 
-    its(:datasource) { should eq('tranquility') }
+    its(:datasource) { should eq("tranquility") }
 
     its(:character_id) { should eq(12_345_678) }
   end
 
-  describe '#model' do
-    context 'when @model set' do
+  describe "#model" do
+    context "when @model set" do
       # TODO: rename Online to CharacterOnline?
       let(:model) { instance_double(EveOnline::ESI::Models::Online) }
 
@@ -39,7 +39,7 @@ describe EveOnline::ESI::CharacterOnline do
       specify { expect(subject.model).to eq(model) }
     end
 
-    context 'when @model not set' do
+    context "when @model not set" do
       let(:response) { double }
 
       before { expect(subject).to receive(:response).and_return(response) }
@@ -59,7 +59,7 @@ describe EveOnline::ESI::CharacterOnline do
     end
   end
 
-  describe '#as_json' do
+  describe "#as_json" do
     let(:model) { instance_double(EveOnline::ESI::Models::Online) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -69,7 +69,7 @@ describe EveOnline::ESI::CharacterOnline do
     specify { expect { subject.as_json }.not_to raise_error }
   end
 
-  describe '#last_login' do
+  describe "#last_login" do
     let(:model) { instance_double(EveOnline::ESI::Models::Online) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -79,7 +79,7 @@ describe EveOnline::ESI::CharacterOnline do
     specify { expect { subject.last_login }.not_to raise_error }
   end
 
-  describe '#last_logout' do
+  describe "#last_logout" do
     let(:model) { instance_double(EveOnline::ESI::Models::Online) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -89,7 +89,7 @@ describe EveOnline::ESI::CharacterOnline do
     specify { expect { subject.last_logout }.not_to raise_error }
   end
 
-  describe '#logins' do
+  describe "#logins" do
     let(:model) { instance_double(EveOnline::ESI::Models::Online) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -99,7 +99,7 @@ describe EveOnline::ESI::CharacterOnline do
     specify { expect { subject.logins }.not_to raise_error }
   end
 
-  describe '#online' do
+  describe "#online" do
     let(:model) { instance_double(EveOnline::ESI::Models::Online) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -109,25 +109,25 @@ describe EveOnline::ESI::CharacterOnline do
     specify { expect { subject.online }.not_to raise_error }
   end
 
-  describe '#scope' do
-    specify { expect(subject.scope).to eq('esi-location.read_online.v1') }
+  describe "#scope" do
+    specify { expect(subject.scope).to eq("esi-location.read_online.v1") }
   end
 
-  describe '#path' do
+  describe "#path" do
     specify do
-      expect(subject.path).to eq('/v2/characters/12345678/online/')
+      expect(subject.path).to eq("/v2/characters/12345678/online/")
     end
   end
 
-  describe '#query' do
+  describe "#query" do
     specify do
-      expect(subject.query).to eq(datasource: 'tranquility')
+      expect(subject.query).to eq(datasource: "tranquility")
     end
   end
 
-  describe '#url' do
+  describe "#url" do
     specify do
-      expect(subject.url).to eq('https://esi.evetech.net/v2/characters/12345678/online/?datasource=tranquility')
+      expect(subject.url).to eq("https://esi.evetech.net/v2/characters/12345678/online/?datasource=tranquility")
     end
   end
 end

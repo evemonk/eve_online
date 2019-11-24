@@ -7,7 +7,7 @@ module EveOnline
         def modifiers
           output = []
 
-          return output if !options.is_a?(Array)
+          return output unless options.is_a?(Array)
 
           options.each do |dogma_effect_modifier|
             output << DogmaEffectModifier.new(dogma_effect_modifier)

@@ -1,23 +1,23 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
-describe 'Get character asset locations' do
+describe "Get character asset locations" do
   let(:options) do
     {
       character_id: 1_337_512_245,
       item_ids: [1_001_215_602_246],
-      token: 'token123'
+      token: "token123",
     }
   end
 
-  before { VCR.insert_cassette 'esi/character_assets_locations/1337512245' }
+  before { VCR.insert_cassette "esi/character_assets_locations/1337512245" }
 
   after { VCR.eject_cassette }
 
   subject { EveOnline::ESI::CharacterAssetsLocations.new(options) }
 
-  specify { expect(subject.scope).to eq('esi-assets.read_assets.v1') }
+  specify { expect(subject.scope).to eq("esi-assets.read_assets.v1") }
 
   specify { expect(subject.not_modified?).to eq(false) }
 

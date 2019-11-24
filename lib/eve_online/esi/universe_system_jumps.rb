@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class UniverseSystemJumps < Base
-      API_PATH = '/v1/universe/system_jumps/'
+      API_PATH = "/v1/universe/system_jumps/"
 
       def system_jumps
         @system_jumps ||=
@@ -16,7 +16,8 @@ module EveOnline
           end
       end
 
-      def scope; end
+      def scope
+      end
 
       def path
         API_PATH

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
 describe EveOnline::ESI::Models::Online do
   it { should be_a(EveOnline::ESI::Models::Base) }
@@ -9,11 +9,11 @@ describe EveOnline::ESI::Models::Online do
 
   subject { described_class.new(options) }
 
-  describe '#initialize' do
+  describe "#initialize" do
     its(:options) { should eq(options) }
   end
 
-  describe '#as_json' do
+  describe "#as_json" do
     let(:online) { described_class.new(options) }
 
     let(:last_login) { double }
@@ -39,11 +39,11 @@ describe EveOnline::ESI::Models::Online do
     its([:online]) { should eq(true) }
   end
 
-  describe '#last_login' do
-    context 'when last_login is present' do
+  describe "#last_login" do
+    context "when last_login is present" do
       let(:last_login) { double }
 
-      before { expect(options).to receive(:[]).with('last_login').and_return(last_login) }
+      before { expect(options).to receive(:[]).with("last_login").and_return(last_login) }
 
       before do
         #
@@ -55,8 +55,8 @@ describe EveOnline::ESI::Models::Online do
       specify { expect { subject.last_login }.not_to raise_error }
     end
 
-    context 'when last_login not present' do
-      before { expect(options).to receive(:[]).with('last_login').and_return(nil) }
+    context "when last_login not present" do
+      before { expect(options).to receive(:[]).with("last_login").and_return(nil) }
 
       before { expect(subject).not_to receive(:parse_datetime_with_timezone) }
 
@@ -64,11 +64,11 @@ describe EveOnline::ESI::Models::Online do
     end
   end
 
-  describe '#last_logout' do
-    context 'when last_logout is present' do
+  describe "#last_logout" do
+    context "when last_logout is present" do
       let(:last_logout) { double }
 
-      before { expect(options).to receive(:[]).with('last_logout').and_return(last_logout) }
+      before { expect(options).to receive(:[]).with("last_logout").and_return(last_logout) }
 
       before do
         #
@@ -80,8 +80,8 @@ describe EveOnline::ESI::Models::Online do
       specify { expect { subject.last_logout }.not_to raise_error }
     end
 
-    context 'when last_logout not present' do
-      before { expect(options).to receive(:[]).with('last_logout').and_return(nil) }
+    context "when last_logout not present" do
+      before { expect(options).to receive(:[]).with("last_logout").and_return(nil) }
 
       before { expect(subject).not_to receive(:parse_datetime_with_timezone) }
 
@@ -89,14 +89,14 @@ describe EveOnline::ESI::Models::Online do
     end
   end
 
-  describe '#logins' do
-    before { expect(options).to receive(:[]).with('logins') }
+  describe "#logins" do
+    before { expect(options).to receive(:[]).with("logins") }
 
     specify { expect { subject.logins }.not_to raise_error }
   end
 
-  describe '#online' do
-    before { expect(options).to receive(:[]).with('online') }
+  describe "#online" do
+    before { expect(options).to receive(:[]).with("online") }
 
     specify { expect { subject.online }.not_to raise_error }
   end

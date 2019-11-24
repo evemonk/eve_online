@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-require 'forwardable'
+require "forwardable"
 
 module EveOnline
   module ESI
     class CharacterOnline < Base
       extend Forwardable
 
-      API_PATH = '/v2/characters/%<character_id>s/online/'
+      API_PATH = "/v2/characters/%<character_id>s/online/"
 
       attr_reader :character_id
 
@@ -18,14 +18,14 @@ module EveOnline
       end
 
       def_delegators :model, :as_json, :last_login, :last_logout, :logins,
-                     :online
+        :online
 
       def model
         @model ||= Models::Online.new(response)
       end
 
       def scope
-        'esi-location.read_online.v1'
+        "esi-location.read_online.v1"
       end
 
       def path

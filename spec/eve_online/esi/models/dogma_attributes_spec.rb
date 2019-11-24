@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
 describe EveOnline::ESI::Models::DogmaAttributes do
   it { should be_a(EveOnline::ESI::Models::Base) }
@@ -9,12 +9,12 @@ describe EveOnline::ESI::Models::DogmaAttributes do
 
   subject { described_class.new(options) }
 
-  describe '#initialize' do
+  describe "#initialize" do
     its(:options) { should eq(options) }
   end
 
-  describe '#dogma_attributes' do
-    context 'when options is array' do
+  describe "#dogma_attributes" do
+    context "when options is array" do
       let(:dogma_attribute_short) { double }
 
       let(:option) { double }
@@ -26,7 +26,7 @@ describe EveOnline::ESI::Models::DogmaAttributes do
       before { expect(subject.dogma_attributes).to eq([dogma_attribute_short]) }
     end
 
-    context 'when options is nil' do
+    context "when options is nil" do
       let(:options) { nil }
 
       before { expect(subject.dogma_attributes).to eq([]) }

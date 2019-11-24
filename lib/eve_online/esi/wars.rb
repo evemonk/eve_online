@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class Wars < Base
-      API_PATH = '/v1/wars/'
+      API_PATH = "/v1/wars/"
 
       attr_reader :max_war_id
 
@@ -17,7 +17,8 @@ module EveOnline
         response
       end
 
-      def scope; end
+      def scope
+      end
 
       def additional_query_params
         [:max_war_id]

@@ -1,18 +1,18 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
 describe EveOnline::ESI::CharacterLoyaltyPoints do
-  let(:options) { { token: 'token123', character_id: 12_345_678 } }
+  let(:options) { {token: "token123", character_id: 12_345_678} }
 
   subject { described_class.new(options) }
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_PATH).to eq('/v1/characters/%<character_id>s/loyalty/points/') }
+  specify { expect(described_class::API_PATH).to eq("/v1/characters/%<character_id>s/loyalty/points/") }
 
-  describe '#initialize' do
-    its(:token) { should eq('token123') }
+  describe "#initialize" do
+    its(:token) { should eq("token123") }
 
     its(:parser) { should eq(JSON) }
 
@@ -20,17 +20,17 @@ describe EveOnline::ESI::CharacterLoyaltyPoints do
 
     its(:_open_timeout) { should eq(60) }
 
-    if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6.0')
+    if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("2.6.0")
       its(:_write_timeout) { should eq(60) }
     end
 
-    its(:datasource) { should eq('tranquility') }
+    its(:datasource) { should eq("tranquility") }
 
     its(:character_id) { should eq(12_345_678) }
   end
 
-  describe '#loyalty_points' do
-    context 'when @loyalty_points set' do
+  describe "#loyalty_points" do
+    context "when @loyalty_points set" do
       let(:loyalty_points) { [instance_double(EveOnline::ESI::Models::LoyaltyPoint)] }
 
       before { subject.instance_variable_set(:@loyalty_points, loyalty_points) }
@@ -38,15 +38,15 @@ describe EveOnline::ESI::CharacterLoyaltyPoints do
       specify { expect(subject.loyalty_points).to eq(loyalty_points) }
     end
 
-    context 'when @loyalty_points not set' do
+    context "when @loyalty_points not set" do
       let(:loyalty_point) { instance_double(EveOnline::ESI::Models::LoyaltyPoint) }
 
       let(:response) do
         [
           {
             corporation_id: 1_000_035,
-            loyalty_points: 14_163
-          }
+            loyalty_points: 14_163,
+          },
         ]
       end
 
@@ -70,25 +70,25 @@ describe EveOnline::ESI::CharacterLoyaltyPoints do
     end
   end
 
-  describe '#scope' do
-    specify { expect(subject.scope).to eq('esi-characters.read_loyalty.v1') }
+  describe "#scope" do
+    specify { expect(subject.scope).to eq("esi-characters.read_loyalty.v1") }
   end
 
-  describe '#path' do
+  describe "#path" do
     specify do
-      expect(subject.path).to eq('/v1/characters/12345678/loyalty/points/')
+      expect(subject.path).to eq("/v1/characters/12345678/loyalty/points/")
     end
   end
 
-  describe '#query' do
+  describe "#query" do
     specify do
-      expect(subject.query).to eq(datasource: 'tranquility')
+      expect(subject.query).to eq(datasource: "tranquility")
     end
   end
 
-  describe '#url' do
+  describe "#url" do
     specify do
-      expect(subject.url).to eq('https://esi.evetech.net/v1/characters/12345678/loyalty/points/?datasource=tranquility')
+      expect(subject.url).to eq("https://esi.evetech.net/v1/characters/12345678/loyalty/points/?datasource=tranquility")
     end
   end
 end

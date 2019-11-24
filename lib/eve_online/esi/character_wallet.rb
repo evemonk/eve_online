@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class CharacterWallet < Base
-      API_PATH = '/v1/characters/%<character_id>s/wallet/'
+      API_PATH = "/v1/characters/%<character_id>s/wallet/"
 
       attr_reader :character_id
 
@@ -15,7 +15,7 @@ module EveOnline
 
       def as_json
         {
-          wallet: wallet
+          wallet: wallet,
         }
       end
 
@@ -24,7 +24,7 @@ module EveOnline
       end
 
       def scope
-        'esi-wallet.read_character_wallet.v1'
+        "esi-wallet.read_character_wallet.v1"
       end
 
       def path

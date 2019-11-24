@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class CharacterOrders < Base
-      API_PATH = '/v2/characters/%<character_id>s/orders/'
+      API_PATH = "/v2/characters/%<character_id>s/orders/"
 
       attr_reader :character_id
 
@@ -25,7 +25,7 @@ module EveOnline
       end
 
       def scope
-        'esi-markets.read_character_orders.v1'
+        "esi-markets.read_character_orders.v1"
       end
 
       def path

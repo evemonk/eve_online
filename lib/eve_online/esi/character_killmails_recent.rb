@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class CharacterKillmailsRecent < Base
-      API_PATH = '/v1/characters/%<character_id>s/killmails/recent/'
+      API_PATH = "/v1/characters/%<character_id>s/killmails/recent/"
 
       attr_reader :character_id, :page
 
@@ -26,7 +26,7 @@ module EveOnline
       end
 
       def scope
-        'esi-killmails.read_killmails.v1'
+        "esi-killmails.read_killmails.v1"
       end
 
       def additional_query_params

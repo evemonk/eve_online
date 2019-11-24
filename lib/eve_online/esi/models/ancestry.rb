@@ -11,32 +11,32 @@ module EveOnline
             icon_id: icon_id,
             ancestry_id: ancestry_id,
             name: name,
-            short_description: short_description
+            short_description: short_description,
           }
         end
 
         def bloodline_id
-          options['bloodline_id']
+          options["bloodline_id"]
         end
 
         def description
-          options['description']
+          options["description"]
         end
 
         def icon_id
-          options['icon_id']
+          options["icon_id"]
         end
 
         def ancestry_id
-          options['id']
+          options["id"]
         end
 
         def name
-          options['name']
+          options["name"]
         end
 
         def short_description
-          options['short_description']
+          options["short_description"]
         end
       end
     end

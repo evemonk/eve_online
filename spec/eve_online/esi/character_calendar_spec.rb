@@ -1,19 +1,19 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
 describe EveOnline::ESI::CharacterCalendar do
-  let(:options) { { token: 'token123', character_id: 12_345_678 } }
+  let(:options) { {token: "token123", character_id: 12_345_678} }
 
   subject { described_class.new(options) }
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_PATH).to eq('/v1/characters/%<character_id>s/calendar/') }
+  specify { expect(described_class::API_PATH).to eq("/v1/characters/%<character_id>s/calendar/") }
 
-  describe '#initialize' do
-    context 'without options' do
-      its(:token) { should eq('token123') }
+  describe "#initialize" do
+    context "without options" do
+      its(:token) { should eq("token123") }
 
       its(:parser) { should eq(JSON) }
 
@@ -21,23 +21,23 @@ describe EveOnline::ESI::CharacterCalendar do
 
       its(:_open_timeout) { should eq(60) }
 
-      if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6.0')
+      if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("2.6.0")
         its(:_write_timeout) { should eq(60) }
       end
 
-      its(:datasource) { should eq('tranquility') }
+      its(:datasource) { should eq("tranquility") }
 
       its(:character_id) { should eq(12_345_678) }
 
       its(:from_event) { should eq(nil) }
     end
 
-    context 'with options' do
+    context "with options" do
       let(:options) do
         {
-          token: 'token123',
+          token: "token123",
           character_id: 12_345_678,
-          from_event: 123
+          from_event: 123,
         }
       end
 
@@ -47,8 +47,8 @@ describe EveOnline::ESI::CharacterCalendar do
     end
   end
 
-  describe '#events' do
-    context 'when @events set' do
+  describe "#events" do
+    context "when @events set" do
       let(:events) { [instance_double(EveOnline::ESI::Models::Event)] }
 
       before { subject.instance_variable_set(:@events, events) }
@@ -56,18 +56,18 @@ describe EveOnline::ESI::CharacterCalendar do
       specify { expect(subject.events).to eq(events) }
     end
 
-    context 'when @events not set' do
+    context "when @events not set" do
       let(:event) { instance_double(EveOnline::ESI::Models::Event) }
 
       let(:response) do
         [
           {
             event_id: 1_635_247,
-            event_date: '2018-03-05T15:00:59Z',
-            title: 'Moon extraction',
+            event_date: "2018-03-05T15:00:59Z",
+            title: "Moon extraction",
             importance: 0,
-            event_response: 'not_responded'
-          }
+            event_response: "not_responded",
+          },
         ]
       end
 
@@ -91,47 +91,47 @@ describe EveOnline::ESI::CharacterCalendar do
     end
   end
 
-  describe '#scope' do
-    specify { expect(subject.scope).to eq('esi-calendar.read_calendar_events.v1') }
+  describe "#scope" do
+    specify { expect(subject.scope).to eq("esi-calendar.read_calendar_events.v1") }
   end
 
-  describe '#additional_query_params' do
+  describe "#additional_query_params" do
     specify { expect(subject.additional_query_params).to eq([:from_event]) }
   end
 
-  describe '#path' do
+  describe "#path" do
     specify do
-      expect(subject.path).to eq('/v1/characters/12345678/calendar/')
+      expect(subject.path).to eq("/v1/characters/12345678/calendar/")
     end
   end
 
-  describe '#query' do
-    context 'without from_event' do
+  describe "#query" do
+    context "without from_event" do
       specify do
-        expect(subject.query).to eq(datasource: 'tranquility')
+        expect(subject.query).to eq(datasource: "tranquility")
       end
     end
 
-    context 'with from_event' do
+    context "with from_event" do
       let(:options) do
         {
-          token: 'token123',
+          token: "token123",
           character_id: 12_345_678,
-          from_event: 123
+          from_event: 123,
         }
       end
 
       subject { described_class.new(options) }
 
       specify do
-        expect(subject.query).to eq(datasource: 'tranquility', from_event: 123)
+        expect(subject.query).to eq(datasource: "tranquility", from_event: 123)
       end
     end
   end
 
-  describe '#url' do
+  describe "#url" do
     specify do
-      expect(subject.url).to eq('https://esi.evetech.net/v1/characters/12345678/calendar/?datasource=tranquility')
+      expect(subject.url).to eq("https://esi.evetech.net/v1/characters/12345678/calendar/?datasource=tranquility")
     end
   end
 end

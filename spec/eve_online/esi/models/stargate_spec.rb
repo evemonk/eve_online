@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
 describe EveOnline::ESI::Models::Stargate do
   let(:options) { double }
@@ -9,14 +9,14 @@ describe EveOnline::ESI::Models::Stargate do
 
   it { should be_a(EveOnline::ESI::Models::Base) }
 
-  describe '#initialize' do
+  describe "#initialize" do
     its(:options) { should eq(options) }
   end
 
-  describe '#as_json' do
+  describe "#as_json" do
     let(:stargate) { described_class.new(options) }
 
-    before { expect(stargate).to receive(:name).and_return('Stargate (Akpivem)') }
+    before { expect(stargate).to receive(:name).and_return("Stargate (Akpivem)") }
 
     before { expect(stargate).to receive(:stargate_id).and_return(50_000_056) }
 
@@ -26,7 +26,7 @@ describe EveOnline::ESI::Models::Stargate do
 
     subject { stargate.as_json }
 
-    its([:name]) { should eq('Stargate (Akpivem)') }
+    its([:name]) { should eq("Stargate (Akpivem)") }
 
     its([:stargate_id]) { should eq(50_000_056) }
 
@@ -35,32 +35,32 @@ describe EveOnline::ESI::Models::Stargate do
     its([:type_id]) { should eq(29_624) }
   end
 
-  describe '#name' do
-    before { expect(options).to receive(:[]).with('name') }
+  describe "#name" do
+    before { expect(options).to receive(:[]).with("name") }
 
     specify { expect { subject.name }.not_to raise_error }
   end
 
-  describe '#stargate_id' do
-    before { expect(options).to receive(:[]).with('stargate_id') }
+  describe "#stargate_id" do
+    before { expect(options).to receive(:[]).with("stargate_id") }
 
     specify { expect { subject.stargate_id }.not_to raise_error }
   end
 
-  describe '#system_id' do
-    before { expect(options).to receive(:[]).with('system_id') }
+  describe "#system_id" do
+    before { expect(options).to receive(:[]).with("system_id") }
 
     specify { expect { subject.system_id }.not_to raise_error }
   end
 
-  describe '#type_id' do
-    before { expect(options).to receive(:[]).with('type_id') }
+  describe "#type_id" do
+    before { expect(options).to receive(:[]).with("type_id") }
 
     specify { expect { subject.type_id }.not_to raise_error }
   end
 
-  describe '#destination' do
-    context 'when @destination set' do
+  describe "#destination" do
+    context "when @destination set" do
       let(:destination) { instance_double(EveOnline::ESI::Models::StargateDestination) }
 
       before { subject.instance_variable_set(:@destination, destination) }
@@ -68,10 +68,10 @@ describe EveOnline::ESI::Models::Stargate do
       specify { expect(subject.destination).to eq(destination) }
     end
 
-    context 'when @destination not set' do
+    context "when @destination not set" do
       let(:destination) { double }
 
-      let(:options) { { 'destination' => destination } }
+      let(:options) { {"destination" => destination} }
 
       let(:model) { instance_double(EveOnline::ESI::Models::StargateDestination) }
 
@@ -83,8 +83,8 @@ describe EveOnline::ESI::Models::Stargate do
     end
   end
 
-  describe '#position' do
-    context 'when @position set' do
+  describe "#position" do
+    context "when @position set" do
       let(:position) { instance_double(EveOnline::ESI::Models::Position) }
 
       before { subject.instance_variable_set(:@position, position) }
@@ -92,10 +92,10 @@ describe EveOnline::ESI::Models::Stargate do
       specify { expect(subject.position).to eq(position) }
     end
 
-    context 'when @position not set' do
+    context "when @position not set" do
       let(:position) { double }
 
-      let(:options) { { 'position' => position } }
+      let(:options) { {"position" => position} }
 
       let(:model) { instance_double(EveOnline::ESI::Models::Position) }
 

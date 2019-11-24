@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
 describe EveOnline::ESI::Models::Graphic do
   it { should be_a(EveOnline::ESI::Models::Base) }
@@ -9,11 +9,11 @@ describe EveOnline::ESI::Models::Graphic do
 
   subject { described_class.new(options) }
 
-  describe '#initialize' do
+  describe "#initialize" do
     its(:options) { should eq(options) }
   end
 
-  describe '#as_json' do
+  describe "#as_json" do
     let(:graphic) { described_class.new(options) }
 
     let(:collision_file) { double }
@@ -67,50 +67,50 @@ describe EveOnline::ESI::Models::Graphic do
     its([:sof_race_name]) { should eq(sof_race_name) }
   end
 
-  describe '#collision_file' do
-    before { expect(options).to receive(:[]).with('collision_file') }
+  describe "#collision_file" do
+    before { expect(options).to receive(:[]).with("collision_file") }
 
     specify { expect { subject.collision_file }.not_to raise_error }
   end
 
-  describe '#graphic_file' do
-    before { expect(options).to receive(:[]).with('graphic_file') }
+  describe "#graphic_file" do
+    before { expect(options).to receive(:[]).with("graphic_file") }
 
     specify { expect { subject.graphic_file }.not_to raise_error }
   end
 
-  describe '#graphic_id' do
-    before { expect(options).to receive(:[]).with('graphic_id') }
+  describe "#graphic_id" do
+    before { expect(options).to receive(:[]).with("graphic_id") }
 
     specify { expect { subject.graphic_id }.not_to raise_error }
   end
 
-  describe '#icon_folder' do
-    before { expect(options).to receive(:[]).with('icon_folder') }
+  describe "#icon_folder" do
+    before { expect(options).to receive(:[]).with("icon_folder") }
 
     specify { expect { subject.icon_folder }.not_to raise_error }
   end
 
-  describe '#sof_dna' do
-    before { expect(options).to receive(:[]).with('sof_dna') }
+  describe "#sof_dna" do
+    before { expect(options).to receive(:[]).with("sof_dna") }
 
     specify { expect { subject.sof_dna }.not_to raise_error }
   end
 
-  describe '#sof_fation_name' do
-    before { expect(options).to receive(:[]).with('sof_fation_name') }
+  describe "#sof_fation_name" do
+    before { expect(options).to receive(:[]).with("sof_fation_name") }
 
     specify { expect { subject.sof_fation_name }.not_to raise_error }
   end
 
-  describe '#sof_hull_name' do
-    before { expect(options).to receive(:[]).with('sof_hull_name') }
+  describe "#sof_hull_name" do
+    before { expect(options).to receive(:[]).with("sof_hull_name") }
 
     specify { expect { subject.sof_hull_name }.not_to raise_error }
   end
 
-  describe '#sof_race_name' do
-    before { expect(options).to receive(:[]).with('sof_race_name') }
+  describe "#sof_race_name" do
+    before { expect(options).to receive(:[]).with("sof_race_name") }
 
     specify { expect { subject.sof_race_name }.not_to raise_error }
   end

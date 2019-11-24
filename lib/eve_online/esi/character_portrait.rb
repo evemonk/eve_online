@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-require 'forwardable'
+require "forwardable"
 
 module EveOnline
   module ESI
     class CharacterPortrait < Base
       extend Forwardable
 
-      API_PATH = '/v2/characters/%<character_id>s/portrait/'
+      API_PATH = "/v2/characters/%<character_id>s/portrait/"
 
       attr_reader :character_id
 
@@ -23,7 +23,8 @@ module EveOnline
         @model ||= Models::CharacterPortrait.new(response)
       end
 
-      def scope; end
+      def scope
+      end
 
       def path
         format(API_PATH, character_id: character_id)

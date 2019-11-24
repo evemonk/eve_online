@@ -8,21 +8,21 @@ module EveOnline
           {
             x: x,
             y: y,
-            z: z
+            z: z,
           }
         end
 
         # TODO: check 'options && '
         def x
-          options && options['x']
+          options && options["x"]
         end
 
         def y
-          options && options['y']
+          options && options["y"]
         end
 
         def z
-          options && options['z']
+          options && options["z"]
         end
       end
     end

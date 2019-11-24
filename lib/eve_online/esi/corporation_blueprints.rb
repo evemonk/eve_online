@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class CorporationBlueprints < Base
-      API_PATH = '/v2/corporations/%<corporation_id>s/blueprints/'
+      API_PATH = "/v2/corporations/%<corporation_id>s/blueprints/"
 
       attr_reader :corporation_id, :page
 
@@ -26,11 +26,11 @@ module EveOnline
       end
 
       def scope
-        'esi-corporations.read_blueprints.v1'
+        "esi-corporations.read_blueprints.v1"
       end
 
       def roles
-        ['Director']
+        ["Director"]
       end
 
       def additional_query_params

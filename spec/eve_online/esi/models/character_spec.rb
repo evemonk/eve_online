@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
 describe EveOnline::ESI::Models::Character do
   it { should be_a(EveOnline::ESI::Models::Base) }
@@ -9,11 +9,11 @@ describe EveOnline::ESI::Models::Character do
 
   subject { described_class.new(options) }
 
-  describe '#initialize' do
+  describe "#initialize" do
     its(:options) { should eq(options) }
   end
 
-  describe '#as_json' do
+  describe "#as_json" do
     let(:character) { described_class.new(options) }
 
     let(:birthday) { double }
@@ -30,13 +30,13 @@ describe EveOnline::ESI::Models::Character do
 
     before { expect(character).to receive(:corporation_id).and_return(12_345_678) }
 
-    before { expect(character).to receive(:description).and_return('') }
+    before { expect(character).to receive(:description).and_return("") }
 
     before { expect(character).to receive(:faction_id).and_return(500_001) }
 
-    before { expect(character).to receive(:gender).and_return('male') }
+    before { expect(character).to receive(:gender).and_return("male") }
 
-    before { expect(character).to receive(:name).and_return('Green Black') }
+    before { expect(character).to receive(:name).and_return("Green Black") }
 
     before { expect(character).to receive(:race_id).and_return(2) }
 
@@ -56,13 +56,13 @@ describe EveOnline::ESI::Models::Character do
 
     its([:corporation_id]) { should eq(12_345_678) }
 
-    its([:description]) { should eq('') }
+    its([:description]) { should eq("") }
 
     its([:faction_id]) { should eq(500_001) }
 
-    its([:gender]) { should eq('male') }
+    its([:gender]) { should eq("male") }
 
-    its([:name]) { should eq('Green Black') }
+    its([:name]) { should eq("Green Black") }
 
     its([:race_id]) { should eq(2) }
 
@@ -71,23 +71,23 @@ describe EveOnline::ESI::Models::Character do
     its([:title]) { should eq(title) }
   end
 
-  describe '#alliance_id' do
-    before { expect(options).to receive(:[]).with('alliance_id') }
+  describe "#alliance_id" do
+    before { expect(options).to receive(:[]).with("alliance_id") }
 
     specify { expect { subject.alliance_id }.not_to raise_error }
   end
 
-  describe '#ancestry_id' do
-    before { expect(options).to receive(:[]).with('ancestry_id') }
+  describe "#ancestry_id" do
+    before { expect(options).to receive(:[]).with("ancestry_id") }
 
     specify { expect { subject.ancestry_id }.not_to raise_error }
   end
 
-  describe '#birthday' do
-    context 'when birthday is present' do
+  describe "#birthday" do
+    context "when birthday is present" do
       let(:birthday) { double }
 
-      before { expect(options).to receive(:[]).with('birthday').and_return(birthday) }
+      before { expect(options).to receive(:[]).with("birthday").and_return(birthday) }
 
       before do
         #
@@ -99,8 +99,8 @@ describe EveOnline::ESI::Models::Character do
       specify { expect { subject.birthday }.not_to raise_error }
     end
 
-    context 'when birthday not present' do
-      before { expect(options).to receive(:[]).with('birthday').and_return(nil) }
+    context "when birthday not present" do
+      before { expect(options).to receive(:[]).with("birthday").and_return(nil) }
 
       before { expect(subject).not_to receive(:parse_datetime_with_timezone) }
 
@@ -108,56 +108,56 @@ describe EveOnline::ESI::Models::Character do
     end
   end
 
-  describe '#bloodline_id' do
-    before { expect(options).to receive(:[]).with('bloodline_id') }
+  describe "#bloodline_id" do
+    before { expect(options).to receive(:[]).with("bloodline_id") }
 
     specify { expect { subject.bloodline_id }.not_to raise_error }
   end
 
-  describe '#corporation_id' do
-    before { expect(options).to receive(:[]).with('corporation_id') }
+  describe "#corporation_id" do
+    before { expect(options).to receive(:[]).with("corporation_id") }
 
     specify { expect { subject.corporation_id }.not_to raise_error }
   end
 
-  describe '#description' do
-    before { expect(options).to receive(:[]).with('description') }
+  describe "#description" do
+    before { expect(options).to receive(:[]).with("description") }
 
     specify { expect { subject.description }.not_to raise_error }
   end
 
-  describe '#faction_id' do
-    before { expect(options).to receive(:[]).with('faction_id') }
+  describe "#faction_id" do
+    before { expect(options).to receive(:[]).with("faction_id") }
 
     specify { expect { subject.faction_id }.not_to raise_error }
   end
 
-  describe '#gender' do
-    before { expect(options).to receive(:[]).with('gender') }
+  describe "#gender" do
+    before { expect(options).to receive(:[]).with("gender") }
 
     specify { expect { subject.gender }.not_to raise_error }
   end
 
-  describe '#name' do
-    before { expect(options).to receive(:[]).with('name') }
+  describe "#name" do
+    before { expect(options).to receive(:[]).with("name") }
 
     specify { expect { subject.name }.not_to raise_error }
   end
 
-  describe '#race_id' do
-    before { expect(options).to receive(:[]).with('race_id') }
+  describe "#race_id" do
+    before { expect(options).to receive(:[]).with("race_id") }
 
     specify { expect { subject.race_id }.not_to raise_error }
   end
 
-  describe '#security_status' do
-    before { expect(options).to receive(:[]).with('security_status') }
+  describe "#security_status" do
+    before { expect(options).to receive(:[]).with("security_status") }
 
     specify { expect { subject.security_status }.not_to raise_error }
   end
 
-  describe '#title' do
-    before { expect(options).to receive(:[]).with('title') }
+  describe "#title" do
+    before { expect(options).to receive(:[]).with("title") }
 
     specify { expect { subject.title }.not_to raise_error }
   end

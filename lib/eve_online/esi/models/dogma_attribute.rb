@@ -15,48 +15,48 @@ module EveOnline
             name: name,
             published: published,
             stackable: stackable,
-            unit_id: unit_id
+            unit_id: unit_id,
           }
         end
 
         def attribute_id
-          options['attribute_id']
+          options["attribute_id"]
         end
 
         def default_value
-          options['default_value']
+          options["default_value"]
         end
 
         def description
-          options['description']
+          options["description"]
         end
 
         def display_name
-          options['display_name']
+          options["display_name"]
         end
 
         def high_is_good
-          options['high_is_good']
+          options["high_is_good"]
         end
 
         def icon_id
-          options['icon_id']
+          options["icon_id"]
         end
 
         def name
-          options['name']
+          options["name"]
         end
 
         def published
-          options['published']
+          options["published"]
         end
 
         def stackable
-          options['stackable']
+          options["stackable"]
         end
 
         def unit_id
-          options['unit_id']
+          options["unit_id"]
         end
       end
     end

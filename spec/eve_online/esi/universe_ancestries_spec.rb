@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
 describe EveOnline::ESI::UniverseAncestries do
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_PATH).to eq('/v1/universe/ancestries/') }
+  specify { expect(described_class::API_PATH).to eq("/v1/universe/ancestries/") }
 
-  describe '#initialize' do
+  describe "#initialize" do
     its(:token) { should eq(nil) }
 
     its(:parser) { should eq(JSON) }
@@ -16,15 +16,15 @@ describe EveOnline::ESI::UniverseAncestries do
 
     its(:_open_timeout) { should eq(60) }
 
-    if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6.0')
+    if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("2.6.0")
       its(:_write_timeout) { should eq(60) }
     end
 
-    its(:datasource) { should eq('tranquility') }
+    its(:datasource) { should eq("tranquility") }
   end
 
-  describe '#ancestries' do
-    context 'when @ancestries set' do
+  describe "#ancestries" do
+    context "when @ancestries set" do
       let(:ancestries) { [instance_double(EveOnline::ESI::Models::Ancestry)] }
 
       before { subject.instance_variable_set(:@ancestries, ancestries) }
@@ -32,19 +32,19 @@ describe EveOnline::ESI::UniverseAncestries do
       specify { expect(subject.ancestries).to eq(ancestries) }
     end
 
-    context 'when @ancestries not set' do
+    context "when @ancestries not set" do
       let(:ancestry) { instance_double(EveOnline::ESI::Models::Ancestry) }
 
       let(:response) do
         [
           {
             id: 24,
-            name: 'Slave Child',
+            name: "Slave Child",
             bloodline_id: 4,
-            description: 'Millions of slaves within the Amarr Empire dream of escape...',
-            short_description: 'Torn from the cold and brought to the warmth of a new life.',
-            icon_id: 1664
-          }
+            description: "Millions of slaves within the Amarr Empire dream of escape...",
+            short_description: "Torn from the cold and brought to the warmth of a new life.",
+            icon_id: 1664,
+          },
         ]
       end
 
@@ -68,29 +68,29 @@ describe EveOnline::ESI::UniverseAncestries do
     end
   end
 
-  describe '#scope' do
+  describe "#scope" do
     specify { expect(subject.scope).to eq(nil) }
   end
 
-  describe '#additional_query_params' do
+  describe "#additional_query_params" do
     specify { expect(subject.additional_query_params).to eq([:language]) }
   end
 
-  describe '#path' do
+  describe "#path" do
     specify do
-      expect(subject.path).to eq('/v1/universe/ancestries/')
+      expect(subject.path).to eq("/v1/universe/ancestries/")
     end
   end
 
-  describe '#query' do
+  describe "#query" do
     specify do
-      expect(subject.query).to eq(datasource: 'tranquility', language: 'en-us')
+      expect(subject.query).to eq(datasource: "tranquility", language: "en-us")
     end
   end
 
-  describe '#url' do
+  describe "#url" do
     specify do
-      expect(subject.url).to eq('https://esi.evetech.net/v1/universe/ancestries/?datasource=tranquility&language=en-us')
+      expect(subject.url).to eq("https://esi.evetech.net/v1/universe/ancestries/?datasource=tranquility&language=en-us")
     end
   end
 end

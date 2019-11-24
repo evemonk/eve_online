@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class CharacterSkillQueue < Base
-      API_PATH = '/v2/characters/%<character_id>s/skillqueue/'
+      API_PATH = "/v2/characters/%<character_id>s/skillqueue/"
 
       attr_reader :character_id
 
@@ -25,7 +25,7 @@ module EveOnline
       end
 
       def scope
-        'esi-skills.read_skillqueue.v1'
+        "esi-skills.read_skillqueue.v1"
       end
 
       def path

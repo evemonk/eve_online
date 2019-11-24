@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class CharacterIndustryJobs < Base
-      API_PATH = '/v1/characters/%<character_id>s/industry/jobs/'
+      API_PATH = "/v1/characters/%<character_id>s/industry/jobs/"
 
       attr_reader :character_id, :include_completed
 
@@ -26,7 +26,7 @@ module EveOnline
       end
 
       def scope
-        'esi-industry.read_character_jobs.v1'
+        "esi-industry.read_character_jobs.v1"
       end
 
       def additional_query_params

@@ -1,18 +1,18 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
 describe EveOnline::ESI::CharacterSkillQueue do
-  let(:options) { { token: 'token123', character_id: 12_345_678 } }
+  let(:options) { {token: "token123", character_id: 12_345_678} }
 
   subject { described_class.new(options) }
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_PATH).to eq('/v2/characters/%<character_id>s/skillqueue/') }
+  specify { expect(described_class::API_PATH).to eq("/v2/characters/%<character_id>s/skillqueue/") }
 
-  describe '#initialize' do
-    its(:token) { should eq('token123') }
+  describe "#initialize" do
+    its(:token) { should eq("token123") }
 
     its(:parser) { should eq(JSON) }
 
@@ -20,17 +20,17 @@ describe EveOnline::ESI::CharacterSkillQueue do
 
     its(:_open_timeout) { should eq(60) }
 
-    if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6.0')
+    if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("2.6.0")
       its(:_write_timeout) { should eq(60) }
     end
 
-    its(:datasource) { should eq('tranquility') }
+    its(:datasource) { should eq("tranquility") }
 
     its(:character_id) { should eq(12_345_678) }
   end
 
-  describe '#skills' do
-    context 'when @skills set' do
+  describe "#skills" do
+    context "when @skills set" do
       let(:skills) { [instance_double(EveOnline::ESI::Models::SkillQueueEntry)] }
 
       before { subject.instance_variable_set(:@skills, skills) }
@@ -38,7 +38,7 @@ describe EveOnline::ESI::CharacterSkillQueue do
       specify { expect(subject.skills).to eq(skills) }
     end
 
-    context 'when @skills not set' do
+    context "when @skills not set" do
       let(:skill_queue_entry) { instance_double(EveOnline::ESI::Models::SkillQueueEntry) }
 
       let(:response) do
@@ -47,12 +47,12 @@ describe EveOnline::ESI::CharacterSkillQueue do
             skill_id: 12_487,
             finished_level: 3,
             queue_position: 0,
-            finish_date: '2017-01-16T03:00:35Z',
-            start_date: '2017-01-15T11:38:25Z',
+            finish_date: "2017-01-16T03:00:35Z",
+            start_date: "2017-01-15T11:38:25Z",
             training_start_sp: 7_263,
             level_end_sp: 40_000,
-            level_start_sp: 7_072
-          }
+            level_start_sp: 7_072,
+          },
         ]
       end
 
@@ -76,25 +76,25 @@ describe EveOnline::ESI::CharacterSkillQueue do
     end
   end
 
-  describe '#scope' do
-    specify { expect(subject.scope).to eq('esi-skills.read_skillqueue.v1') }
+  describe "#scope" do
+    specify { expect(subject.scope).to eq("esi-skills.read_skillqueue.v1") }
   end
 
-  describe '#path' do
+  describe "#path" do
     specify do
-      expect(subject.path).to eq('/v2/characters/12345678/skillqueue/')
+      expect(subject.path).to eq("/v2/characters/12345678/skillqueue/")
     end
   end
 
-  describe '#query' do
+  describe "#query" do
     specify do
-      expect(subject.query).to eq(datasource: 'tranquility')
+      expect(subject.query).to eq(datasource: "tranquility")
     end
   end
 
-  describe '#url' do
+  describe "#url" do
     specify do
-      expect(subject.url).to eq('https://esi.evetech.net/v2/characters/12345678/skillqueue/?datasource=tranquility')
+      expect(subject.url).to eq("https://esi.evetech.net/v2/characters/12345678/skillqueue/?datasource=tranquility")
     end
   end
 end

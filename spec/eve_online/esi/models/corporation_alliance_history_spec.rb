@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
 describe EveOnline::ESI::Models::CorporationAllianceHistory do
   it { should be_a(EveOnline::ESI::Models::Base) }
@@ -9,11 +9,11 @@ describe EveOnline::ESI::Models::CorporationAllianceHistory do
 
   subject { described_class.new(options) }
 
-  describe '#initialize' do
+  describe "#initialize" do
     its(:options) { should eq(options) }
   end
 
-  describe '#as_json' do
+  describe "#as_json" do
     let(:corporation_alliance_history) { described_class.new(options) }
 
     let(:is_deleted) { double }
@@ -39,29 +39,29 @@ describe EveOnline::ESI::Models::CorporationAllianceHistory do
     its([:start_date]) { should eq(start_date) }
   end
 
-  describe '#alliance_id' do
-    before { expect(options).to receive(:[]).with('alliance_id') }
+  describe "#alliance_id" do
+    before { expect(options).to receive(:[]).with("alliance_id") }
 
     specify { expect { subject.alliance_id }.not_to raise_error }
   end
 
-  describe '#is_deleted' do
-    before { expect(options).to receive(:[]).with('is_deleted') }
+  describe "#is_deleted" do
+    before { expect(options).to receive(:[]).with("is_deleted") }
 
     specify { expect { subject.is_deleted }.not_to raise_error }
   end
 
-  describe '#record_id' do
-    before { expect(options).to receive(:[]).with('record_id') }
+  describe "#record_id" do
+    before { expect(options).to receive(:[]).with("record_id") }
 
     specify { expect { subject.record_id }.not_to raise_error }
   end
 
-  describe '#start_date' do
-    context 'when start_date is present' do
+  describe "#start_date" do
+    context "when start_date is present" do
       let(:start_date) { double }
 
-      before { expect(options).to receive(:[]).with('start_date').and_return(start_date) }
+      before { expect(options).to receive(:[]).with("start_date").and_return(start_date) }
 
       before do
         #
@@ -73,8 +73,8 @@ describe EveOnline::ESI::Models::CorporationAllianceHistory do
       specify { expect { subject.start_date }.not_to raise_error }
     end
 
-    context 'when start_date not present' do
-      before { expect(options).to receive(:[]).with('start_date').and_return(nil) }
+    context "when start_date not present" do
+      before { expect(options).to receive(:[]).with("start_date").and_return(nil) }
 
       before { expect(subject).not_to receive(:parse_datetime_with_timezone) }
 

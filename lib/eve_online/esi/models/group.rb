@@ -9,28 +9,28 @@ module EveOnline
             category_id: category_id,
             group_id: group_id,
             name: name,
-            published: published
+            published: published,
           }
         end
 
         def category_id
-          options['category_id']
+          options["category_id"]
         end
 
         def group_id
-          options['group_id']
+          options["group_id"]
         end
 
         def name
-          options['name']
+          options["name"]
         end
 
         def published
-          options['published']
+          options["published"]
         end
 
         def type_ids
-          options['types']
+          options["types"]
         end
       end
     end

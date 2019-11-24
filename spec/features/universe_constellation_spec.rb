@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
-describe 'Get constellation information' do
-  context 'when etag not set' do
-    before { VCR.insert_cassette 'esi/universe/constellations/20000001' }
+describe "Get constellation information" do
+  context "when etag not set" do
+    before { VCR.insert_cassette "esi/universe/constellations/20000001" }
 
     after { VCR.eject_cassette }
 
-    let(:options) { { id: 20_000_001 } }
+    let(:options) { {id: 20_000_001} }
 
     subject { EveOnline::ESI::UniverseConstellation.new(options) }
 
@@ -18,7 +18,7 @@ describe 'Get constellation information' do
 
     specify do
       expect(subject.as_json).to eq(constellation_id: 20_000_001,
-                                    name: 'San Matar',
+                                    name: "San Matar",
                                     region_id: 10_000_001)
     end
 
@@ -36,21 +36,21 @@ describe 'Get constellation information' do
                                         30_000_005,
                                         30_000_006,
                                         30_000_007,
-                                        30_000_008])
+                                        30_000_008,])
     end
 
-    specify { expect(subject.etag).to eq('37a39e7a5f5ecc07b19a3128c319f1198d035aee10052d0a21ccdd94') }
+    specify { expect(subject.etag).to eq("37a39e7a5f5ecc07b19a3128c319f1198d035aee10052d0a21ccdd94") }
   end
 
-  context 'when etag is set' do
-    before { VCR.insert_cassette 'esi/universe/constellations/20000001_with_etag' }
+  context "when etag is set" do
+    before { VCR.insert_cassette "esi/universe/constellations/20000001_with_etag" }
 
     after { VCR.eject_cassette }
 
     let(:options) do
       {
         id: 20_000_001,
-        etag: '37a39e7a5f5ecc07b19a3128c319f1198d035aee10052d0a21ccdd94'
+        etag: "37a39e7a5f5ecc07b19a3128c319f1198d035aee10052d0a21ccdd94",
       }
     end
 
@@ -58,6 +58,6 @@ describe 'Get constellation information' do
 
     specify { expect(subject.not_modified?).to eq(true) }
 
-    specify { expect(subject.etag).to eq('37a39e7a5f5ecc07b19a3128c319f1198d035aee10052d0a21ccdd94') }
+    specify { expect(subject.etag).to eq("37a39e7a5f5ecc07b19a3128c319f1198d035aee10052d0a21ccdd94") }
   end
 end

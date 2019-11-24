@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class CorporationIndustryJobs < Base
-      API_PATH = '/v1/corporations/%<corporation_id>s/industry/jobs/'
+      API_PATH = "/v1/corporations/%<corporation_id>s/industry/jobs/"
 
       attr_reader :corporation_id, :include_completed, :page
 
@@ -27,11 +27,11 @@ module EveOnline
       end
 
       def scope
-        'esi-industry.read_corporation_jobs.v1'
+        "esi-industry.read_corporation_jobs.v1"
       end
 
       def roles
-        ['Factory_Manager']
+        ["Factory_Manager"]
       end
 
       def additional_query_params

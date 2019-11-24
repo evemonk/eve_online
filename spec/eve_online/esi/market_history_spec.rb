@@ -1,17 +1,17 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
 describe EveOnline::ESI::MarketHistory do
-  let(:options) { { region_id: 10_000_002, type_id: 28_606 } }
+  let(:options) { {region_id: 10_000_002, type_id: 28_606} }
 
   subject { described_class.new(options) }
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_PATH).to eq('/v1/markets/%<region_id>s/history/') }
+  specify { expect(described_class::API_PATH).to eq("/v1/markets/%<region_id>s/history/") }
 
-  describe '#initialize' do
+  describe "#initialize" do
     its(:token) { should eq(nil) }
 
     its(:parser) { should eq(JSON) }
@@ -20,19 +20,19 @@ describe EveOnline::ESI::MarketHistory do
 
     its(:_open_timeout) { should eq(60) }
 
-    if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6.0')
+    if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("2.6.0")
       its(:_write_timeout) { should eq(60) }
     end
 
-    its(:datasource) { should eq('tranquility') }
+    its(:datasource) { should eq("tranquility") }
 
     its(:region_id) { should eq(10_000_002) }
 
     its(:type_id) { should eq(28_606) }
   end
 
-  describe '#history' do
-    context 'when @history set' do
+  describe "#history" do
+    context "when @history set" do
       let(:history) { [instance_double(EveOnline::ESI::Models::MarketHistory)] }
 
       before { subject.instance_variable_set(:@history, history) }
@@ -40,19 +40,19 @@ describe EveOnline::ESI::MarketHistory do
       specify { expect(subject.history).to eq(history) }
     end
 
-    context 'when @history not set' do
+    context "when @history not set" do
       let(:market_history) { instance_double(EveOnline::ESI::Models::MarketHistory) }
 
       let(:response) do
         [
           {
-            date: '2015-05-01',
+            date: "2015-05-01",
             order_count: 2267,
             volume: 16_276_782_035,
             highest: 5.27,
             average: 5.25,
-            lowest: 5.11
-          }
+            lowest: 5.11,
+          },
         ]
       end
 
@@ -76,29 +76,29 @@ describe EveOnline::ESI::MarketHistory do
     end
   end
 
-  describe '#scope' do
+  describe "#scope" do
     specify { expect(subject.scope).to eq(nil) }
   end
 
-  describe '#additional_query_params' do
+  describe "#additional_query_params" do
     specify { expect(subject.additional_query_params).to eq([:type_id]) }
   end
 
-  describe '#path' do
+  describe "#path" do
     specify do
-      expect(subject.path).to eq('/v1/markets/10000002/history/')
+      expect(subject.path).to eq("/v1/markets/10000002/history/")
     end
   end
 
-  describe '#query' do
+  describe "#query" do
     specify do
-      expect(subject.query).to eq(datasource: 'tranquility', type_id: 28_606)
+      expect(subject.query).to eq(datasource: "tranquility", type_id: 28_606)
     end
   end
 
-  describe '#url' do
+  describe "#url" do
     specify do
-      expect(subject.url).to eq('https://esi.evetech.net/v1/markets/10000002/history/?datasource=tranquility&type_id=28606')
+      expect(subject.url).to eq("https://esi.evetech.net/v1/markets/10000002/history/?datasource=tranquility&type_id=28606")
     end
   end
 end

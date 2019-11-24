@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
 describe EveOnline::ESI::Models::DogmaEffect do
   it { should be_a(EveOnline::ESI::Models::Base) }
@@ -9,11 +9,11 @@ describe EveOnline::ESI::Models::DogmaEffect do
 
   subject { described_class.new(options) }
 
-  describe '#initialize' do
+  describe "#initialize" do
     its(:options) { should eq(options) }
   end
 
-  describe '#as_json' do
+  describe "#as_json" do
     let(:dogma_effect) { described_class.new(options) }
 
     let(:disallow_auto_repeat) { double }
@@ -42,13 +42,13 @@ describe EveOnline::ESI::Models::DogmaEffect do
 
     let(:tracking_speed_attribute_id) { double }
 
-    before { expect(dogma_effect).to receive(:description).and_return('Automatically generated effect') }
+    before { expect(dogma_effect).to receive(:description).and_return("Automatically generated effect") }
 
     before { expect(dogma_effect).to receive(:disallow_auto_repeat).and_return(disallow_auto_repeat) }
 
     before { expect(dogma_effect).to receive(:discharge_attribute_id).and_return(discharge_attribute_id) }
 
-    before { expect(dogma_effect).to receive(:display_name).and_return('') }
+    before { expect(dogma_effect).to receive(:display_name).and_return("") }
 
     before { expect(dogma_effect).to receive(:duration_attribute_id).and_return(duration_attribute_id) }
 
@@ -68,7 +68,7 @@ describe EveOnline::ESI::Models::DogmaEffect do
 
     before { expect(dogma_effect).to receive(:is_warp_safe).and_return(is_warp_safe) }
 
-    before { expect(dogma_effect).to receive(:name).and_return('roleBonusIceOreMiningDurationCap') }
+    before { expect(dogma_effect).to receive(:name).and_return("roleBonusIceOreMiningDurationCap") }
 
     before { expect(dogma_effect).to receive(:post_expression).and_return(19_291) }
 
@@ -84,13 +84,13 @@ describe EveOnline::ESI::Models::DogmaEffect do
 
     subject { dogma_effect.as_json }
 
-    its([:description]) { should eq('Automatically generated effect') }
+    its([:description]) { should eq("Automatically generated effect") }
 
     its([:disallow_auto_repeat]) { should eq(disallow_auto_repeat) }
 
     its([:discharge_attribute_id]) { should eq(discharge_attribute_id) }
 
-    its([:display_name]) { should eq('') }
+    its([:display_name]) { should eq("") }
 
     its([:duration_attribute_id]) { should eq(duration_attribute_id) }
 
@@ -110,7 +110,7 @@ describe EveOnline::ESI::Models::DogmaEffect do
 
     its([:is_warp_safe]) { should eq(is_warp_safe) }
 
-    its([:name]) { should eq('roleBonusIceOreMiningDurationCap') }
+    its([:name]) { should eq("roleBonusIceOreMiningDurationCap") }
 
     its([:post_expression]) { should eq(19_291) }
 
@@ -125,134 +125,134 @@ describe EveOnline::ESI::Models::DogmaEffect do
     its([:tracking_speed_attribute_id]) { should eq(tracking_speed_attribute_id) }
   end
 
-  describe '#description' do
-    before { expect(options).to receive(:[]).with('description') }
+  describe "#description" do
+    before { expect(options).to receive(:[]).with("description") }
 
     specify { expect { subject.description }.not_to raise_error }
   end
 
-  describe '#disallow_auto_repeat' do
-    before { expect(options).to receive(:[]).with('disallow_auto_repeat') }
+  describe "#disallow_auto_repeat" do
+    before { expect(options).to receive(:[]).with("disallow_auto_repeat") }
 
     specify { expect { subject.disallow_auto_repeat }.not_to raise_error }
   end
 
-  describe '#discharge_attribute_id' do
-    before { expect(options).to receive(:[]).with('discharge_attribute_id') }
+  describe "#discharge_attribute_id" do
+    before { expect(options).to receive(:[]).with("discharge_attribute_id") }
 
     specify { expect { subject.discharge_attribute_id }.not_to raise_error }
   end
 
-  describe '#display_name' do
-    before { expect(options).to receive(:[]).with('display_name') }
+  describe "#display_name" do
+    before { expect(options).to receive(:[]).with("display_name") }
 
     specify { expect { subject.display_name }.not_to raise_error }
   end
 
-  describe '#duration_attribute_id' do
-    before { expect(options).to receive(:[]).with('duration_attribute_id') }
+  describe "#duration_attribute_id" do
+    before { expect(options).to receive(:[]).with("duration_attribute_id") }
 
     specify { expect { subject.duration_attribute_id }.not_to raise_error }
   end
 
-  describe '#effect_category' do
-    before { expect(options).to receive(:[]).with('effect_category') }
+  describe "#effect_category" do
+    before { expect(options).to receive(:[]).with("effect_category") }
 
     specify { expect { subject.effect_category }.not_to raise_error }
   end
 
-  describe '#effect_id' do
-    before { expect(options).to receive(:[]).with('effect_id') }
+  describe "#effect_id" do
+    before { expect(options).to receive(:[]).with("effect_id") }
 
     specify { expect { subject.effect_id }.not_to raise_error }
   end
 
-  describe '#electronic_chance' do
-    before { expect(options).to receive(:[]).with('electronic_chance') }
+  describe "#electronic_chance" do
+    before { expect(options).to receive(:[]).with("electronic_chance") }
 
     specify { expect { subject.electronic_chance }.not_to raise_error }
   end
 
-  describe '#falloff_attribute_id' do
-    before { expect(options).to receive(:[]).with('falloff_attribute_id') }
+  describe "#falloff_attribute_id" do
+    before { expect(options).to receive(:[]).with("falloff_attribute_id") }
 
     specify { expect { subject.falloff_attribute_id }.not_to raise_error }
   end
 
-  describe '#falloff_attribute_id' do
-    before { expect(options).to receive(:[]).with('falloff_attribute_id') }
+  describe "#falloff_attribute_id" do
+    before { expect(options).to receive(:[]).with("falloff_attribute_id") }
 
     specify { expect { subject.falloff_attribute_id }.not_to raise_error }
   end
 
-  describe '#icon_id' do
-    before { expect(options).to receive(:[]).with('icon_id') }
+  describe "#icon_id" do
+    before { expect(options).to receive(:[]).with("icon_id") }
 
     specify { expect { subject.icon_id }.not_to raise_error }
   end
 
-  describe '#is_assistance' do
-    before { expect(options).to receive(:[]).with('is_assistance') }
+  describe "#is_assistance" do
+    before { expect(options).to receive(:[]).with("is_assistance") }
 
     specify { expect { subject.is_assistance }.not_to raise_error }
   end
 
-  describe '#is_offensive' do
-    before { expect(options).to receive(:[]).with('is_offensive') }
+  describe "#is_offensive" do
+    before { expect(options).to receive(:[]).with("is_offensive") }
 
     specify { expect { subject.is_offensive }.not_to raise_error }
   end
 
-  describe '#is_warp_safe' do
-    before { expect(options).to receive(:[]).with('is_warp_safe') }
+  describe "#is_warp_safe" do
+    before { expect(options).to receive(:[]).with("is_warp_safe") }
 
     specify { expect { subject.is_warp_safe }.not_to raise_error }
   end
 
-  describe '#name' do
-    before { expect(options).to receive(:[]).with('name') }
+  describe "#name" do
+    before { expect(options).to receive(:[]).with("name") }
 
     specify { expect { subject.name }.not_to raise_error }
   end
 
-  describe '#post_expression' do
-    before { expect(options).to receive(:[]).with('post_expression') }
+  describe "#post_expression" do
+    before { expect(options).to receive(:[]).with("post_expression") }
 
     specify { expect { subject.post_expression }.not_to raise_error }
   end
 
-  describe '#pre_expression' do
-    before { expect(options).to receive(:[]).with('pre_expression') }
+  describe "#pre_expression" do
+    before { expect(options).to receive(:[]).with("pre_expression") }
 
     specify { expect { subject.pre_expression }.not_to raise_error }
   end
 
-  describe '#published' do
-    before { expect(options).to receive(:[]).with('published') }
+  describe "#published" do
+    before { expect(options).to receive(:[]).with("published") }
 
     specify { expect { subject.published }.not_to raise_error }
   end
 
-  describe '#range_attribute_id' do
-    before { expect(options).to receive(:[]).with('range_attribute_id') }
+  describe "#range_attribute_id" do
+    before { expect(options).to receive(:[]).with("range_attribute_id") }
 
     specify { expect { subject.range_attribute_id }.not_to raise_error }
   end
 
-  describe '#range_chance' do
-    before { expect(options).to receive(:[]).with('range_chance') }
+  describe "#range_chance" do
+    before { expect(options).to receive(:[]).with("range_chance") }
 
     specify { expect { subject.range_chance }.not_to raise_error }
   end
 
-  describe '#tracking_speed_attribute_id' do
-    before { expect(options).to receive(:[]).with('tracking_speed_attribute_id') }
+  describe "#tracking_speed_attribute_id" do
+    before { expect(options).to receive(:[]).with("tracking_speed_attribute_id") }
 
     specify { expect { subject.tracking_speed_attribute_id }.not_to raise_error }
   end
 
-  describe '#modifiers' do
-    context 'when @modifiers set' do
+  describe "#modifiers" do
+    context "when @modifiers set" do
       let(:modifiers) { double }
 
       before { subject.instance_variable_set(:@modifiers, modifiers) }
@@ -260,10 +260,10 @@ describe EveOnline::ESI::Models::DogmaEffect do
       specify { expect(subject.modifiers).to eq(modifiers) }
     end
 
-    context 'when @modifiers not set' do
+    context "when @modifiers not set" do
       let(:option) { double }
 
-      let(:options) { { 'modifiers' => option } }
+      let(:options) { {"modifiers" => option} }
 
       let(:dogma_effect_modifiers) { instance_double(EveOnline::ESI::Models::DogmaEffectModifiers) }
 

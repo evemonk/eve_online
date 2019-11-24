@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-require 'forwardable'
+require "forwardable"
 
 module EveOnline
   module ESI
     class UniverseGroup < Base
       extend Forwardable
 
-      API_PATH = '/v1/universe/groups/%<group_id>s/'
+      API_PATH = "/v1/universe/groups/%<group_id>s/"
 
       attr_reader :id
 
@@ -18,13 +18,14 @@ module EveOnline
       end
 
       def_delegators :model, :as_json, :category_id, :group_id, :name,
-                     :published, :type_ids
+        :published, :type_ids
 
       def model
         @model ||= Models::Group.new(response)
       end
 
-      def scope; end
+      def scope
+      end
 
       def additional_query_params
         [:language]

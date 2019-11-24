@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
-describe 'Get type information' do
-  context 'when etag not set' do
-    before { VCR.insert_cassette 'esi/universe/types/192' }
+describe "Get type information" do
+  context "when etag not set" do
+    before { VCR.insert_cassette "esi/universe/types/192" }
 
     after { VCR.eject_cassette }
 
-    let(:options) { { id: 192, language: 'en-us' } }
+    let(:options) { {id: 192, language: "en-us"} }
 
     subject { EveOnline::ESI::UniverseType.new(options) }
 
@@ -24,7 +24,7 @@ describe 'Get type information' do
                                     icon_id: 1297,
                                     market_group_id: 112,
                                     mass: 1.0,
-                                    name: 'Phased Plasma M',
+                                    name: "Phased Plasma M",
                                     packaged_volume: 0.0125,
                                     portion_size: 100,
                                     published: true,
@@ -41,19 +41,19 @@ describe 'Get type information' do
 
     specify { expect(subject.dogma_effects.first.as_json).to eq(effect_id: 596, is_default: false) }
 
-    specify { expect(subject.etag).to eq('37a39e7a5f5ecc07b19a3128c319f1198d035aee10052d0a21ccdd94') }
+    specify { expect(subject.etag).to eq("37a39e7a5f5ecc07b19a3128c319f1198d035aee10052d0a21ccdd94") }
   end
 
-  context 'when etag is set' do
+  context "when etag is set" do
     let(:options) do
       {
         id: 192,
-        language: 'en-us',
-        etag: '37a39e7a5f5ecc07b19a3128c319f1198d035aee10052d0a21ccdd94'
+        language: "en-us",
+        etag: "37a39e7a5f5ecc07b19a3128c319f1198d035aee10052d0a21ccdd94",
       }
     end
 
-    before { VCR.insert_cassette 'esi/universe/types/192_with_etag' }
+    before { VCR.insert_cassette "esi/universe/types/192_with_etag" }
 
     after { VCR.eject_cassette }
 
@@ -61,6 +61,6 @@ describe 'Get type information' do
 
     specify { expect(subject.not_modified?).to eq(true) }
 
-    specify { expect(subject.etag).to eq('37a39e7a5f5ecc07b19a3128c319f1198d035aee10052d0a21ccdd94') }
+    specify { expect(subject.etag).to eq("37a39e7a5f5ecc07b19a3128c319f1198d035aee10052d0a21ccdd94") }
   end
 end

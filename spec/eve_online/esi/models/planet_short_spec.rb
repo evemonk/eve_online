@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
 describe EveOnline::ESI::Models::PlanetShort do
   let(:options) { double }
@@ -9,11 +9,11 @@ describe EveOnline::ESI::Models::PlanetShort do
 
   it { should be_a(EveOnline::ESI::Models::Base) }
 
-  describe '#initialize' do
+  describe "#initialize" do
     its(:options) { should eq(options) }
   end
 
-  describe '#as_json' do
+  describe "#as_json" do
     let(:planet_short) { described_class.new(options) }
 
     before { expect(planet_short).to receive(:planet_id).and_return(40_000_002) }
@@ -23,20 +23,20 @@ describe EveOnline::ESI::Models::PlanetShort do
     its([:planet_id]) { should eq(40_000_002) }
   end
 
-  describe '#planet_id' do
-    before { expect(options).to receive(:[]).with('planet_id') }
+  describe "#planet_id" do
+    before { expect(options).to receive(:[]).with("planet_id") }
 
     specify { expect { subject.planet_id }.not_to raise_error }
   end
 
-  describe '#asteroid_belt_ids' do
-    before { expect(options).to receive(:fetch).with('asteroid_belts', []) }
+  describe "#asteroid_belt_ids" do
+    before { expect(options).to receive(:fetch).with("asteroid_belts", []) }
 
     specify { expect { subject.asteroid_belt_ids }.not_to raise_error }
   end
 
-  describe '#moon_ids' do
-    before { expect(options).to receive(:fetch).with('moons', []) }
+  describe "#moon_ids" do
+    before { expect(options).to receive(:fetch).with("moons", []) }
 
     specify { expect { subject.moon_ids }.not_to raise_error }
   end

@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class MarketHistory < Base
-      API_PATH = '/v1/markets/%<region_id>s/history/'
+      API_PATH = "/v1/markets/%<region_id>s/history/"
 
       attr_reader :region_id, :type_id
 
@@ -25,7 +25,8 @@ module EveOnline
           end
       end
 
-      def scope; end
+      def scope
+      end
 
       def additional_query_params
         [:type_id]

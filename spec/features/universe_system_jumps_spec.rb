@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
-describe 'Get system jumps' do
-  context 'when etag not set' do
-    before { VCR.insert_cassette 'esi/universe/system_jumps' }
+describe "Get system jumps" do
+  context "when etag not set" do
+    before { VCR.insert_cassette "esi/universe/system_jumps" }
 
     after { VCR.eject_cassette }
 
@@ -21,18 +21,18 @@ describe 'Get system jumps' do
                                                        system_id: 30_002_671)
     end
 
-    specify { expect(subject.etag).to eq('40d7cfcdb494669846bedf8adadc47002986d8f5529508e8d5f8f552') }
+    specify { expect(subject.etag).to eq("40d7cfcdb494669846bedf8adadc47002986d8f5529508e8d5f8f552") }
   end
 
-  context 'when etag is set' do
-    before { VCR.insert_cassette 'esi/universe/system_jumps_with_etag' }
+  context "when etag is set" do
+    before { VCR.insert_cassette "esi/universe/system_jumps_with_etag" }
 
     after { VCR.eject_cassette }
 
-    subject { EveOnline::ESI::UniverseSystemJumps.new(etag: '40d7cfcdb494669846bedf8adadc47002986d8f5529508e8d5f8f552') }
+    subject { EveOnline::ESI::UniverseSystemJumps.new(etag: "40d7cfcdb494669846bedf8adadc47002986d8f5529508e8d5f8f552") }
 
     specify { expect(subject.not_modified?).to eq(true) }
 
-    specify { expect(subject.etag).to eq('40d7cfcdb494669846bedf8adadc47002986d8f5529508e8d5f8f552') }
+    specify { expect(subject.etag).to eq("40d7cfcdb494669846bedf8adadc47002986d8f5529508e8d5f8f552") }
   end
 end

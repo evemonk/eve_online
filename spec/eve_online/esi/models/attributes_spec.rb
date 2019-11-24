@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
 describe EveOnline::ESI::Models::Attributes do
   it { should be_a(EveOnline::ESI::Models::Base) }
@@ -9,11 +9,11 @@ describe EveOnline::ESI::Models::Attributes do
 
   subject { described_class.new(options) }
 
-  describe '#initialize' do
+  describe "#initialize" do
     its(:options) { should eq(options) }
   end
 
-  describe '#as_json' do
+  describe "#as_json" do
     let(:attributes) { described_class.new(options) }
 
     let(:accrued_remap_cooldown_date) { double }
@@ -55,11 +55,11 @@ describe EveOnline::ESI::Models::Attributes do
     its([:willpower]) { should eq(22) }
   end
 
-  describe '#accrued_remap_cooldown_date' do
-    context 'when accrued_remap_cooldown_date is present' do
+  describe "#accrued_remap_cooldown_date" do
+    context "when accrued_remap_cooldown_date is present" do
       let(:accrued_remap_cooldown_date) { double }
 
-      before { expect(options).to receive(:[]).with('accrued_remap_cooldown_date').and_return(accrued_remap_cooldown_date) }
+      before { expect(options).to receive(:[]).with("accrued_remap_cooldown_date").and_return(accrued_remap_cooldown_date) }
 
       before do
         #
@@ -71,8 +71,8 @@ describe EveOnline::ESI::Models::Attributes do
       specify { expect { subject.accrued_remap_cooldown_date }.not_to raise_error }
     end
 
-    context 'when accrued_remap_cooldown_date not present' do
-      before { expect(options).to receive(:[]).with('accrued_remap_cooldown_date').and_return(nil) }
+    context "when accrued_remap_cooldown_date not present" do
+      before { expect(options).to receive(:[]).with("accrued_remap_cooldown_date").and_return(nil) }
 
       before { expect(subject).not_to receive(:parse_datetime_with_timezone) }
 
@@ -80,29 +80,29 @@ describe EveOnline::ESI::Models::Attributes do
     end
   end
 
-  describe '#bonus_remaps' do
-    before { expect(options).to receive(:[]).with('bonus_remaps') }
+  describe "#bonus_remaps" do
+    before { expect(options).to receive(:[]).with("bonus_remaps") }
 
     specify { expect { subject.bonus_remaps }.not_to raise_error }
   end
 
-  describe '#charisma' do
-    before { expect(options).to receive(:[]).with('charisma') }
+  describe "#charisma" do
+    before { expect(options).to receive(:[]).with("charisma") }
 
     specify { expect { subject.charisma }.not_to raise_error }
   end
 
-  describe '#intelligence' do
-    before { expect(options).to receive(:[]).with('intelligence') }
+  describe "#intelligence" do
+    before { expect(options).to receive(:[]).with("intelligence") }
 
     specify { expect { subject.intelligence }.not_to raise_error }
   end
 
-  describe '#last_remap_date' do
-    context 'when last_remap_date is present' do
+  describe "#last_remap_date" do
+    context "when last_remap_date is present" do
       let(:last_remap_date) { double }
 
-      before { expect(options).to receive(:[]).with('last_remap_date').and_return(last_remap_date) }
+      before { expect(options).to receive(:[]).with("last_remap_date").and_return(last_remap_date) }
 
       before do
         #
@@ -114,8 +114,8 @@ describe EveOnline::ESI::Models::Attributes do
       specify { expect { subject.last_remap_date }.not_to raise_error }
     end
 
-    context 'when last_remap_date not present' do
-      before { expect(options).to receive(:[]).with('last_remap_date').and_return(nil) }
+    context "when last_remap_date not present" do
+      before { expect(options).to receive(:[]).with("last_remap_date").and_return(nil) }
 
       before { expect(subject).not_to receive(:parse_datetime_with_timezone) }
 
@@ -123,20 +123,20 @@ describe EveOnline::ESI::Models::Attributes do
     end
   end
 
-  describe '#memory' do
-    before { expect(options).to receive(:[]).with('memory') }
+  describe "#memory" do
+    before { expect(options).to receive(:[]).with("memory") }
 
     specify { expect { subject.memory }.not_to raise_error }
   end
 
-  describe '#perception' do
-    before { expect(options).to receive(:[]).with('perception') }
+  describe "#perception" do
+    before { expect(options).to receive(:[]).with("perception") }
 
     specify { expect { subject.perception }.not_to raise_error }
   end
 
-  describe '#willpower' do
-    before { expect(options).to receive(:[]).with('willpower') }
+  describe "#willpower" do
+    before { expect(options).to receive(:[]).with("willpower") }
 
     specify { expect { subject.willpower }.not_to raise_error }
   end

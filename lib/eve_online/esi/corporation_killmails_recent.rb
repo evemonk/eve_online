@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class CorporationKillmailsRecent < Base
-      API_PATH = '/v1/corporations/%<corporation_id>s/killmails/recent/'
+      API_PATH = "/v1/corporations/%<corporation_id>s/killmails/recent/"
 
       attr_reader :corporation_id, :page
 
@@ -26,11 +26,11 @@ module EveOnline
       end
 
       def scope
-        'esi-killmails.read_corporation_killmails.v1'
+        "esi-killmails.read_corporation_killmails.v1"
       end
 
       def roles
-        ['Director']
+        ["Director"]
       end
 
       def additional_query_params

@@ -1,17 +1,17 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
 describe EveOnline::ESI::UniverseStation do
-  let(:options) { { id: 60_012_526 } }
+  let(:options) { {id: 60_012_526} }
 
   subject { described_class.new(options) }
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_PATH).to eq('/v2/universe/stations/%<station_id>s/') }
+  specify { expect(described_class::API_PATH).to eq("/v2/universe/stations/%<station_id>s/") }
 
-  describe '#initialize' do
+  describe "#initialize" do
     its(:token) { should eq(nil) }
 
     its(:parser) { should eq(JSON) }
@@ -20,17 +20,17 @@ describe EveOnline::ESI::UniverseStation do
 
     its(:_open_timeout) { should eq(60) }
 
-    if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6.0')
+    if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("2.6.0")
       its(:_write_timeout) { should eq(60) }
     end
 
-    its(:datasource) { should eq('tranquility') }
+    its(:datasource) { should eq("tranquility") }
 
     its(:id) { should eq(60_012_526) }
   end
 
-  describe '#model' do
-    context 'when @model set' do
+  describe "#model" do
+    context "when @model set" do
       let(:model) { instance_double(EveOnline::ESI::Models::Station) }
 
       before { subject.instance_variable_set(:@model, model) }
@@ -38,7 +38,7 @@ describe EveOnline::ESI::UniverseStation do
       specify { expect(subject.model).to eq(model) }
     end
 
-    context 'when @model not set' do
+    context "when @model not set" do
       let(:response) { double }
 
       before { expect(subject).to receive(:response).and_return(response) }
@@ -58,7 +58,7 @@ describe EveOnline::ESI::UniverseStation do
     end
   end
 
-  describe '#as_json' do
+  describe "#as_json" do
     let(:model) { instance_double(EveOnline::ESI::Models::Station) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -68,7 +68,7 @@ describe EveOnline::ESI::UniverseStation do
     specify { expect { subject.as_json }.not_to raise_error }
   end
 
-  describe '#max_dockable_ship_volume' do
+  describe "#max_dockable_ship_volume" do
     let(:model) { instance_double(EveOnline::ESI::Models::Station) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -78,7 +78,7 @@ describe EveOnline::ESI::UniverseStation do
     specify { expect { subject.max_dockable_ship_volume }.not_to raise_error }
   end
 
-  describe '#name' do
+  describe "#name" do
     let(:model) { instance_double(EveOnline::ESI::Models::Station) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -88,7 +88,7 @@ describe EveOnline::ESI::UniverseStation do
     specify { expect { subject.name }.not_to raise_error }
   end
 
-  describe '#office_rental_cost' do
+  describe "#office_rental_cost" do
     let(:model) { instance_double(EveOnline::ESI::Models::Station) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -98,7 +98,7 @@ describe EveOnline::ESI::UniverseStation do
     specify { expect { subject.office_rental_cost }.not_to raise_error }
   end
 
-  describe '#owner' do
+  describe "#owner" do
     let(:model) { instance_double(EveOnline::ESI::Models::Station) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -108,7 +108,7 @@ describe EveOnline::ESI::UniverseStation do
     specify { expect { subject.owner }.not_to raise_error }
   end
 
-  describe '#race_id' do
+  describe "#race_id" do
     let(:model) { instance_double(EveOnline::ESI::Models::Station) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -118,7 +118,7 @@ describe EveOnline::ESI::UniverseStation do
     specify { expect { subject.race_id }.not_to raise_error }
   end
 
-  describe '#reprocessing_efficiency' do
+  describe "#reprocessing_efficiency" do
     let(:model) { instance_double(EveOnline::ESI::Models::Station) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -128,7 +128,7 @@ describe EveOnline::ESI::UniverseStation do
     specify { expect { subject.reprocessing_efficiency }.not_to raise_error }
   end
 
-  describe '#reprocessing_stations_take' do
+  describe "#reprocessing_stations_take" do
     let(:model) { instance_double(EveOnline::ESI::Models::Station) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -138,7 +138,7 @@ describe EveOnline::ESI::UniverseStation do
     specify { expect { subject.reprocessing_stations_take }.not_to raise_error }
   end
 
-  describe '#services' do
+  describe "#services" do
     let(:model) { instance_double(EveOnline::ESI::Models::Station) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -148,7 +148,7 @@ describe EveOnline::ESI::UniverseStation do
     specify { expect { subject.services }.not_to raise_error }
   end
 
-  describe '#station_id' do
+  describe "#station_id" do
     let(:model) { instance_double(EveOnline::ESI::Models::Station) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -158,7 +158,7 @@ describe EveOnline::ESI::UniverseStation do
     specify { expect { subject.station_id }.not_to raise_error }
   end
 
-  describe '#system_id' do
+  describe "#system_id" do
     let(:model) { instance_double(EveOnline::ESI::Models::Station) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -168,7 +168,7 @@ describe EveOnline::ESI::UniverseStation do
     specify { expect { subject.system_id }.not_to raise_error }
   end
 
-  describe '#type_id' do
+  describe "#type_id" do
     let(:model) { instance_double(EveOnline::ESI::Models::Station) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -178,7 +178,7 @@ describe EveOnline::ESI::UniverseStation do
     specify { expect { subject.type_id }.not_to raise_error }
   end
 
-  describe '#position' do
+  describe "#position" do
     let(:model) { instance_double(EveOnline::ESI::Models::Station) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -188,25 +188,25 @@ describe EveOnline::ESI::UniverseStation do
     specify { expect { subject.position }.not_to raise_error }
   end
 
-  describe '#scope' do
+  describe "#scope" do
     specify { expect(subject.scope).to eq(nil) }
   end
 
-  describe '#path' do
+  describe "#path" do
     specify do
-      expect(subject.path).to eq('/v2/universe/stations/60012526/')
+      expect(subject.path).to eq("/v2/universe/stations/60012526/")
     end
   end
 
-  describe '#query' do
+  describe "#query" do
     specify do
-      expect(subject.query).to eq(datasource: 'tranquility')
+      expect(subject.query).to eq(datasource: "tranquility")
     end
   end
 
-  describe '#url' do
+  describe "#url" do
     specify do
-      expect(subject.url).to eq('https://esi.evetech.net/v2/universe/stations/60012526/?datasource=tranquility')
+      expect(subject.url).to eq("https://esi.evetech.net/v2/universe/stations/60012526/?datasource=tranquility")
     end
   end
 end

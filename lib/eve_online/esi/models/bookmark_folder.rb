@@ -7,16 +7,16 @@ module EveOnline
         def as_json
           {
             folder_id: folder_id,
-            name: name
+            name: name,
           }
         end
 
         def folder_id
-          options['folder_id']
+          options["folder_id"]
         end
 
         def name
-          options['name']
+          options["name"]
         end
       end
     end

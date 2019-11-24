@@ -11,34 +11,34 @@ module EveOnline
             highest: highest,
             lowest: lowest,
             order_count: order_count,
-            volume: volume
+            volume: volume,
           }
         end
 
         def average
-          options['average']
+          options["average"]
         end
 
         def date
-          date = options['date']
+          date = options["date"]
 
           parse_datetime_with_timezone(date) if date
         end
 
         def highest
-          options['highest']
+          options["highest"]
         end
 
         def lowest
-          options['lowest']
+          options["lowest"]
         end
 
         def order_count
-          options['order_count']
+          options["order_count"]
         end
 
         def volume
-          options['volume']
+          options["volume"]
         end
       end
     end

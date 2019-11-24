@@ -11,32 +11,32 @@ module EveOnline
             func: func,
             modified_attribute_id: modified_attribute_id,
             modifying_attribute_id: modifying_attribute_id,
-            operator: operator
+            operator: operator,
           }
         end
 
         def domain
-          options['domain']
+          options["domain"]
         end
 
         def effect_id
-          options['effect_id']
+          options["effect_id"]
         end
 
         def func
-          options['func']
+          options["func"]
         end
 
         def modified_attribute_id
-          options['modified_attribute_id']
+          options["modified_attribute_id"]
         end
 
         def modifying_attribute_id
-          options['modifying_attribute_id']
+          options["modifying_attribute_id"]
         end
 
         def operator
-          options['operator']
+          options["operator"]
         end
       end
     end

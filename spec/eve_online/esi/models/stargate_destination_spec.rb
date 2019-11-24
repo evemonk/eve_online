@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
 describe EveOnline::ESI::Models::StargateDestination do
   let(:options) { double }
@@ -9,11 +9,11 @@ describe EveOnline::ESI::Models::StargateDestination do
 
   it { should be_a(EveOnline::ESI::Models::Base) }
 
-  describe '#initialize' do
+  describe "#initialize" do
     its(:options) { should eq(options) }
   end
 
-  describe '#as_json' do
+  describe "#as_json" do
     let(:stargate_destination) { described_class.new(options) }
 
     before { expect(stargate_destination).to receive(:stargate_id).and_return(50_000_342) }
@@ -27,14 +27,14 @@ describe EveOnline::ESI::Models::StargateDestination do
     its([:system_id]) { should eq(30_000_003) }
   end
 
-  describe '#stargate_id' do
-    before { expect(options).to receive(:[]).with('stargate_id') }
+  describe "#stargate_id" do
+    before { expect(options).to receive(:[]).with("stargate_id") }
 
     specify { expect { subject.stargate_id }.not_to raise_error }
   end
 
-  describe '#system_id' do
-    before { expect(options).to receive(:[]).with('system_id') }
+  describe "#system_id" do
+    before { expect(options).to receive(:[]).with("system_id") }
 
     specify { expect { subject.system_id }.not_to raise_error }
   end

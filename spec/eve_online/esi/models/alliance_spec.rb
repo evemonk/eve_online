@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
 describe EveOnline::ESI::Models::Alliance do
   let(:options) { double }
@@ -9,11 +9,11 @@ describe EveOnline::ESI::Models::Alliance do
 
   it { should be_a(EveOnline::ESI::Models::Base) }
 
-  describe '#initialize' do
+  describe "#initialize" do
     its(:options) { should eq(options) }
   end
 
-  describe '#as_json' do
+  describe "#as_json" do
     let(:alliance) { described_class.new(options) }
 
     let(:date_founded) { double }
@@ -28,9 +28,9 @@ describe EveOnline::ESI::Models::Alliance do
 
     before { expect(alliance).to receive(:faction_id).and_return(500_001) }
 
-    before { expect(alliance).to receive(:name).and_return('Kids With Guns Alliance') }
+    before { expect(alliance).to receive(:name).and_return("Kids With Guns Alliance") }
 
-    before { expect(alliance).to receive(:ticker).and_return('-KWG-') }
+    before { expect(alliance).to receive(:ticker).and_return("-KWG-") }
 
     subject { alliance.as_json }
 
@@ -44,28 +44,28 @@ describe EveOnline::ESI::Models::Alliance do
 
     its([:faction_id]) { should eq(500_001) }
 
-    its([:name]) { should eq('Kids With Guns Alliance') }
+    its([:name]) { should eq("Kids With Guns Alliance") }
 
-    its([:ticker]) { should eq('-KWG-') }
+    its([:ticker]) { should eq("-KWG-") }
   end
 
-  describe '#creator_corporation_id' do
-    before { expect(options).to receive(:[]).with('creator_corporation_id') }
+  describe "#creator_corporation_id" do
+    before { expect(options).to receive(:[]).with("creator_corporation_id") }
 
     specify { expect { subject.creator_corporation_id }.not_to raise_error }
   end
 
-  describe '#creator_id' do
-    before { expect(options).to receive(:[]).with('creator_id') }
+  describe "#creator_id" do
+    before { expect(options).to receive(:[]).with("creator_id") }
 
     specify { expect { subject.creator_id }.not_to raise_error }
   end
 
-  describe '#date_founded' do
-    context 'when date_founded is present' do
+  describe "#date_founded" do
+    context "when date_founded is present" do
       let(:date_founded) { double }
 
-      before { expect(options).to receive(:[]).with('date_founded').and_return(date_founded) }
+      before { expect(options).to receive(:[]).with("date_founded").and_return(date_founded) }
 
       before do
         #
@@ -77,8 +77,8 @@ describe EveOnline::ESI::Models::Alliance do
       specify { expect { subject.date_founded }.not_to raise_error }
     end
 
-    context 'when date_founded not present' do
-      before { expect(options).to receive(:[]).with('date_founded').and_return(nil) }
+    context "when date_founded not present" do
+      before { expect(options).to receive(:[]).with("date_founded").and_return(nil) }
 
       before { expect(subject).not_to receive(:parse_datetime_with_timezone) }
 
@@ -86,26 +86,26 @@ describe EveOnline::ESI::Models::Alliance do
     end
   end
 
-  describe '#executor_corporation_id' do
-    before { expect(options).to receive(:[]).with('executor_corporation_id') }
+  describe "#executor_corporation_id" do
+    before { expect(options).to receive(:[]).with("executor_corporation_id") }
 
     specify { expect { subject.executor_corporation_id }.not_to raise_error }
   end
 
-  describe '#faction_id' do
-    before { expect(options).to receive(:[]).with('faction_id') }
+  describe "#faction_id" do
+    before { expect(options).to receive(:[]).with("faction_id") }
 
     specify { expect { subject.faction_id }.not_to raise_error }
   end
 
-  describe '#name' do
-    before { expect(options).to receive(:[]).with('name') }
+  describe "#name" do
+    before { expect(options).to receive(:[]).with("name") }
 
     specify { expect { subject.name }.not_to raise_error }
   end
 
-  describe '#ticker' do
-    before { expect(options).to receive(:[]).with('ticker') }
+  describe "#ticker" do
+    before { expect(options).to receive(:[]).with("ticker") }
 
     specify { expect { subject.ticker }.not_to raise_error }
   end

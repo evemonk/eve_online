@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
 describe EveOnline::ESI::Models::Planet do
   let(:options) { double }
@@ -9,14 +9,14 @@ describe EveOnline::ESI::Models::Planet do
 
   it { should be_a(EveOnline::ESI::Models::Base) }
 
-  describe '#initialize' do
+  describe "#initialize" do
     its(:options) { should eq(options) }
   end
 
-  describe '#as_json' do
+  describe "#as_json" do
     let(:planet) { described_class.new(options) }
 
-    before { expect(planet).to receive(:name).and_return('Tanoo I') }
+    before { expect(planet).to receive(:name).and_return("Tanoo I") }
 
     before { expect(planet).to receive(:planet_id).and_return(40_000_002) }
 
@@ -26,7 +26,7 @@ describe EveOnline::ESI::Models::Planet do
 
     subject { planet.as_json }
 
-    its([:name]) { should eq('Tanoo I') }
+    its([:name]) { should eq("Tanoo I") }
 
     its([:planet_id]) { should eq(40_000_002) }
 
@@ -35,32 +35,32 @@ describe EveOnline::ESI::Models::Planet do
     its([:type_id]) { should eq(11) }
   end
 
-  describe '#name' do
-    before { expect(options).to receive(:[]).with('name') }
+  describe "#name" do
+    before { expect(options).to receive(:[]).with("name") }
 
     specify { expect { subject.name }.not_to raise_error }
   end
 
-  describe '#planet_id' do
-    before { expect(options).to receive(:[]).with('planet_id') }
+  describe "#planet_id" do
+    before { expect(options).to receive(:[]).with("planet_id") }
 
     specify { expect { subject.planet_id }.not_to raise_error }
   end
 
-  describe '#system_id' do
-    before { expect(options).to receive(:[]).with('system_id') }
+  describe "#system_id" do
+    before { expect(options).to receive(:[]).with("system_id") }
 
     specify { expect { subject.system_id }.not_to raise_error }
   end
 
-  describe '#type_id' do
-    before { expect(options).to receive(:[]).with('type_id') }
+  describe "#type_id" do
+    before { expect(options).to receive(:[]).with("type_id") }
 
     specify { expect { subject.type_id }.not_to raise_error }
   end
 
-  describe '#position' do
-    context 'when @position set' do
+  describe "#position" do
+    context "when @position set" do
       let(:position) { double }
 
       before { subject.instance_variable_set(:@position, position) }
@@ -68,10 +68,10 @@ describe EveOnline::ESI::Models::Planet do
       specify { expect(subject.position).to eq(position) }
     end
 
-    context 'when @position not set' do
+    context "when @position not set" do
       let(:position) { double }
 
-      let(:options) { { 'position' => position } }
+      let(:options) { {"position" => position} }
 
       let(:model) { instance_double(EveOnline::ESI::Models::Position) }
 

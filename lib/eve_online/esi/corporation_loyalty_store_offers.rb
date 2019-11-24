@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class CorporationLoyaltyStoreOffers < Base
-      API_PATH = '/v1/loyalty/stores/%<corporation_id>s/offers/'
+      API_PATH = "/v1/loyalty/stores/%<corporation_id>s/offers/"
 
       attr_reader :corporation_id
 
@@ -24,7 +24,8 @@ module EveOnline
           end
       end
 
-      def scope; end
+      def scope
+      end
 
       def roles
         []

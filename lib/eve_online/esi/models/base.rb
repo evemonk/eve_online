@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'active_support/time'
+require "active_support/time"
 
 module EveOnline
   module ESI
@@ -15,7 +15,7 @@ module EveOnline
         private
 
         def parse_datetime_with_timezone(value)
-          ActiveSupport::TimeZone['UTC'].parse(value)
+          ActiveSupport::TimeZone["UTC"].parse(value)
         end
       end
     end

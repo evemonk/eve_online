@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
 describe EveOnline::ESI::Models::WalletJournalEntry do
   let(:options) { double }
@@ -9,11 +9,11 @@ describe EveOnline::ESI::Models::WalletJournalEntry do
 
   it { should be_a(EveOnline::ESI::Models::Base) }
 
-  describe '#initialize' do
+  describe "#initialize" do
     its(:options) { should eq(options) }
   end
 
-  describe '#as_json' do
+  describe "#as_json" do
     let(:wallet_journal_entry) { described_class.new(options) }
 
     let(:context_id) { double }
@@ -52,7 +52,7 @@ describe EveOnline::ESI::Models::WalletJournalEntry do
 
     before { expect(wallet_journal_entry).to receive(:reason).and_return(reason) }
 
-    before { expect(wallet_journal_entry).to receive(:ref_type).and_return('market_escrow') }
+    before { expect(wallet_journal_entry).to receive(:ref_type).and_return("market_escrow") }
 
     before { expect(wallet_journal_entry).to receive(:second_party_id).and_return(second_party_id) }
 
@@ -80,7 +80,7 @@ describe EveOnline::ESI::Models::WalletJournalEntry do
 
     its([:reason]) { should eq(reason) }
 
-    its([:ref_type]) { should eq('market_escrow') }
+    its([:ref_type]) { should eq("market_escrow") }
 
     its([:second_party_id]) { should eq(second_party_id) }
 
@@ -89,35 +89,35 @@ describe EveOnline::ESI::Models::WalletJournalEntry do
     its([:tax_receiver_id]) { should eq(tax_receiver_id) }
   end
 
-  describe '#amount' do
-    before { expect(options).to receive(:[]).with('amount') }
+  describe "#amount" do
+    before { expect(options).to receive(:[]).with("amount") }
 
     specify { expect { subject.amount }.not_to raise_error }
   end
 
-  describe '#balance' do
-    before { expect(options).to receive(:[]).with('balance') }
+  describe "#balance" do
+    before { expect(options).to receive(:[]).with("balance") }
 
     specify { expect { subject.balance }.not_to raise_error }
   end
 
-  describe '#context_id' do
-    before { expect(options).to receive(:[]).with('context_id') }
+  describe "#context_id" do
+    before { expect(options).to receive(:[]).with("context_id") }
 
     specify { expect { subject.context_id }.not_to raise_error }
   end
 
-  describe '#context_id_type' do
-    before { expect(options).to receive(:[]).with('context_id_type') }
+  describe "#context_id_type" do
+    before { expect(options).to receive(:[]).with("context_id_type") }
 
     specify { expect { subject.context_id_type }.not_to raise_error }
   end
 
-  describe '#date' do
-    context 'when date is present' do
+  describe "#date" do
+    context "when date is present" do
       let(:date) { double }
 
-      before { expect(options).to receive(:[]).with('date').and_return(date) }
+      before { expect(options).to receive(:[]).with("date").and_return(date) }
 
       before do
         #
@@ -129,8 +129,8 @@ describe EveOnline::ESI::Models::WalletJournalEntry do
       specify { expect { subject.date }.not_to raise_error }
     end
 
-    context 'when date not present' do
-      before { expect(options).to receive(:[]).with('date').and_return(nil) }
+    context "when date not present" do
+      before { expect(options).to receive(:[]).with("date").and_return(nil) }
 
       before { expect(subject).not_to receive(:parse_datetime_with_timezone) }
 
@@ -138,50 +138,50 @@ describe EveOnline::ESI::Models::WalletJournalEntry do
     end
   end
 
-  describe '#description' do
-    before { expect(options).to receive(:[]).with('description') }
+  describe "#description" do
+    before { expect(options).to receive(:[]).with("description") }
 
     specify { expect { subject.description }.not_to raise_error }
   end
 
-  describe '#first_party_id' do
-    before { expect(options).to receive(:[]).with('first_party_id') }
+  describe "#first_party_id" do
+    before { expect(options).to receive(:[]).with("first_party_id") }
 
     specify { expect { subject.first_party_id }.not_to raise_error }
   end
 
-  describe '#id' do
-    before { expect(options).to receive(:[]).with('id') }
+  describe "#id" do
+    before { expect(options).to receive(:[]).with("id") }
 
     specify { expect { subject.id }.not_to raise_error }
   end
 
-  describe '#reason' do
-    before { expect(options).to receive(:[]).with('reason') }
+  describe "#reason" do
+    before { expect(options).to receive(:[]).with("reason") }
 
     specify { expect { subject.reason }.not_to raise_error }
   end
 
-  describe '#ref_type' do
-    before { expect(options).to receive(:[]).with('ref_type') }
+  describe "#ref_type" do
+    before { expect(options).to receive(:[]).with("ref_type") }
 
     specify { expect { subject.ref_type }.not_to raise_error }
   end
 
-  describe '#second_party_id' do
-    before { expect(options).to receive(:[]).with('second_party_id') }
+  describe "#second_party_id" do
+    before { expect(options).to receive(:[]).with("second_party_id") }
 
     specify { expect { subject.second_party_id }.not_to raise_error }
   end
 
-  describe '#tax' do
-    before { expect(options).to receive(:[]).with('tax') }
+  describe "#tax" do
+    before { expect(options).to receive(:[]).with("tax") }
 
     specify { expect { subject.tax }.not_to raise_error }
   end
 
-  describe '#tax_receiver_id' do
-    before { expect(options).to receive(:[]).with('tax_receiver_id') }
+  describe "#tax_receiver_id" do
+    before { expect(options).to receive(:[]).with("tax_receiver_id") }
 
     specify { expect { subject.tax_receiver_id }.not_to raise_error }
   end

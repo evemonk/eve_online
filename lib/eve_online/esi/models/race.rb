@@ -9,24 +9,24 @@ module EveOnline
             alliance_id: alliance_id,
             description: description,
             name: name,
-            race_id: race_id
+            race_id: race_id,
           }
         end
 
         def alliance_id
-          options['alliance_id']
+          options["alliance_id"]
         end
 
         def description
-          options['description']
+          options["description"]
         end
 
         def name
-          options['name']
+          options["name"]
         end
 
         def race_id
-          options['race_id']
+          options["race_id"]
         end
       end
     end

@@ -8,24 +8,24 @@ module EveOnline
           {
             moon_id: moon_id,
             name: name,
-            system_id: system_id
+            system_id: system_id,
           }
         end
 
         def moon_id
-          options['moon_id']
+          options["moon_id"]
         end
 
         def name
-          options['name']
+          options["name"]
         end
 
         def system_id
-          options['system_id']
+          options["system_id"]
         end
 
         def position
-          @position ||= Position.new(options['position'])
+          @position ||= Position.new(options["position"])
         end
       end
     end

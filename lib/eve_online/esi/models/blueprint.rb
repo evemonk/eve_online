@@ -13,40 +13,40 @@ module EveOnline
             quantity: quantity,
             runs: runs,
             time_efficiency: time_efficiency,
-            type_id: type_id
+            type_id: type_id,
           }
         end
 
         def item_id
-          options['item_id']
+          options["item_id"]
         end
 
         def location_flag
-          options['location_flag']
+          options["location_flag"]
         end
 
         def location_id
-          options['location_id']
+          options["location_id"]
         end
 
         def material_efficiency
-          options['material_efficiency']
+          options["material_efficiency"]
         end
 
         def quantity
-          options['quantity']
+          options["quantity"]
         end
 
         def runs
-          options['runs']
+          options["runs"]
         end
 
         def time_efficiency
-          options['time_efficiency']
+          options["time_efficiency"]
         end
 
         def type_id
-          options['type_id']
+          options["type_id"]
         end
       end
     end

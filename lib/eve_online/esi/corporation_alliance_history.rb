@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class CorporationAllianceHistory < Base
-      API_PATH = '/v2/corporations/%<corporation_id>s/alliancehistory/'
+      API_PATH = "/v2/corporations/%<corporation_id>s/alliancehistory/"
 
       attr_reader :corporation_id
 
@@ -24,7 +24,8 @@ module EveOnline
           end
       end
 
-      def scope; end
+      def scope
+      end
 
       def roles
         []

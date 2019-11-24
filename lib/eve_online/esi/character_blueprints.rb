@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class CharacterBlueprints < Base
-      API_PATH = '/v2/characters/%<character_id>s/blueprints/'
+      API_PATH = "/v2/characters/%<character_id>s/blueprints/"
 
       attr_reader :character_id, :page
 
@@ -26,7 +26,7 @@ module EveOnline
       end
 
       def scope
-        'esi-characters.read_blueprints.v1'
+        "esi-characters.read_blueprints.v1"
       end
 
       def additional_query_params

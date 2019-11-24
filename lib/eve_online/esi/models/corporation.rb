@@ -19,66 +19,66 @@ module EveOnline
             tax_rate: tax_rate,
             ticker: ticker,
             corporation_url: corporation_url,
-            war_eligible: war_eligible
+            war_eligible: war_eligible,
           }
         end
 
         def alliance_id
-          options['alliance_id']
+          options["alliance_id"]
         end
 
         def ceo_id
-          options['ceo_id']
+          options["ceo_id"]
         end
 
         def creator_id
-          options['creator_id']
+          options["creator_id"]
         end
 
         def date_founded
-          date_founded = options['date_founded']
+          date_founded = options["date_founded"]
 
           parse_datetime_with_timezone(date_founded) if date_founded
         end
 
         def description
-          options['description']
+          options["description"]
         end
 
         def faction_id
-          options['faction_id']
+          options["faction_id"]
         end
 
         def home_station_id
-          options['home_station_id']
+          options["home_station_id"]
         end
 
         def member_count
-          options['member_count']
+          options["member_count"]
         end
 
         def name
-          options['name']
+          options["name"]
         end
 
         def shares
-          options['shares']
+          options["shares"]
         end
 
         def tax_rate
-          options['tax_rate']
+          options["tax_rate"]
         end
 
         def ticker
-          options['ticker']
+          options["ticker"]
         end
 
         def corporation_url
-          options['url']
+          options["url"]
         end
 
         def war_eligible
-          options['war_eligible']
+          options["war_eligible"]
         end
       end
     end

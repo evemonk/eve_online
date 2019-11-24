@@ -1,25 +1,25 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
 describe EveOnline::ESI::Base do
-  specify { expect(described_class::API_HOST).to eq('esi.evetech.net') }
+  specify { expect(described_class::API_HOST).to eq("esi.evetech.net") }
 
-  describe '#initialize' do
-    context 'with options' do
+  describe "#initialize" do
+    context "with options" do
       let(:parser) { double }
 
       let(:options) do
         {
-          token: 'token123',
+          token: "token123",
           parser: parser,
           read_timeout: 30,
           open_timeout: 45,
-          etag: '6f2d3caa79a79bc9e61aa058e18905faac5e293fa1729637648ce9a1',
-          datasource: 'singularity',
-          language: 'ru'
+          etag: "6f2d3caa79a79bc9e61aa058e18905faac5e293fa1729637648ce9a1",
+          datasource: "singularity",
+          language: "ru",
         }.tap do |hash|
-          if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6.0')
+          if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("2.6.0")
             hash[:write_timeout] = 50
           end
         end
@@ -27,7 +27,7 @@ describe EveOnline::ESI::Base do
 
       subject { described_class.new(options) }
 
-      its(:token) { should eq('token123') }
+      its(:token) { should eq("token123") }
 
       its(:parser) { should eq(parser) }
 
@@ -35,18 +35,18 @@ describe EveOnline::ESI::Base do
 
       its(:_open_timeout) { should eq(45) }
 
-      if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6.0')
+      if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("2.6.0")
         its(:_write_timeout) { should eq(50) }
       end
 
-      its(:_etag) { should eq('6f2d3caa79a79bc9e61aa058e18905faac5e293fa1729637648ce9a1') }
+      its(:_etag) { should eq("6f2d3caa79a79bc9e61aa058e18905faac5e293fa1729637648ce9a1") }
 
-      its(:datasource) { should eq('singularity') }
+      its(:datasource) { should eq("singularity") }
 
-      its(:language) { should eq('ru') }
+      its(:language) { should eq("ru") }
     end
 
-    context 'without options' do
+    context "without options" do
       its(:token) { should eq(nil) }
 
       its(:parser) { should eq(JSON) }
@@ -55,19 +55,19 @@ describe EveOnline::ESI::Base do
 
       its(:_open_timeout) { should eq(60) }
 
-      if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6.0')
+      if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("2.6.0")
         its(:_write_timeout) { should eq(60) }
       end
 
       its(:_etag) { should eq(nil) }
 
-      its(:datasource) { should eq('tranquility') }
+      its(:datasource) { should eq("tranquility") }
 
-      its(:language) { should eq('en-us') }
+      its(:language) { should eq("en-us") }
     end
   end
 
-  describe '#url' do
+  describe "#url" do
     before do
       #
       # subject.uri.to_s
@@ -82,19 +82,19 @@ describe EveOnline::ESI::Base do
     specify { expect { subject.url }.not_to raise_error }
   end
 
-  describe '#scope' do
+  describe "#scope" do
     specify { expect { subject.scope }.to raise_error(NotImplementedError) }
   end
 
-  describe '#user_agent' do
-    specify { expect(subject.user_agent).to eq("EveOnline API (https://github.com/evemonk/eve_online) v#{ EveOnline::VERSION }") }
+  describe "#user_agent" do
+    specify { expect(subject.user_agent).to eq("EveOnline API (https://github.com/evemonk/eve_online) v#{EveOnline::VERSION}") }
   end
 
-  describe '#http_method' do
-    specify { expect(subject.http_method).to eq('Get') }
+  describe "#http_method" do
+    specify { expect(subject.http_method).to eq("Get") }
   end
 
-  describe '#read_timeout' do
+  describe "#read_timeout" do
     before do
       #
       # subject.client.read_timeout
@@ -109,7 +109,7 @@ describe EveOnline::ESI::Base do
     specify { expect { subject.read_timeout }.not_to raise_error }
   end
 
-  describe '#read_timeout=' do
+  describe "#read_timeout=" do
     let(:value) { double }
 
     before do
@@ -126,7 +126,7 @@ describe EveOnline::ESI::Base do
     specify { expect { subject.send(:read_timeout=, value) }.not_to raise_error }
   end
 
-  describe '#open_timeout' do
+  describe "#open_timeout" do
     before do
       #
       # subject.client.open_timeout
@@ -141,7 +141,7 @@ describe EveOnline::ESI::Base do
     specify { expect { subject.open_timeout }.not_to raise_error }
   end
 
-  describe '#open_timeout=' do
+  describe "#open_timeout=" do
     let(:value) { double }
 
     before do
@@ -158,8 +158,8 @@ describe EveOnline::ESI::Base do
     specify { expect { subject.send(:open_timeout=, value) }.not_to raise_error }
   end
 
-  if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6.0')
-    describe '#write_timeout' do
+  if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("2.6.0")
+    describe "#write_timeout" do
       before do
         #
         # subject.client.write_timeout
@@ -174,7 +174,7 @@ describe EveOnline::ESI::Base do
       specify { expect { subject.write_timeout }.not_to raise_error }
     end
 
-    describe '#write_timeout=' do
+    describe "#write_timeout=" do
       let(:value) { double }
 
       before do
@@ -192,11 +192,11 @@ describe EveOnline::ESI::Base do
     end
   end
 
-  describe '#etag=' do
-    specify { expect { subject.etag = '123abc' }.to change { subject._etag }.from(nil).to('123abc') }
+  describe "#etag=" do
+    specify { expect { subject.etag = "123abc" }.to change { subject._etag }.from(nil).to("123abc") }
   end
 
-  describe '#etag' do
+  describe "#etag" do
     let(:resource) { double }
 
     let(:header) { double }
@@ -207,20 +207,20 @@ describe EveOnline::ESI::Base do
 
     before { expect(resource).to receive(:header).and_return(header) }
 
-    before { expect(header).to receive(:[]).with('Etag').and_return(etag) }
+    before { expect(header).to receive(:[]).with("Etag").and_return(etag) }
 
-    before { expect(etag).to receive(:gsub).with('W/', '').and_return(etag) }
+    before { expect(etag).to receive(:gsub).with("W/", "").and_return(etag) }
 
-    before { expect(etag).to receive(:gsub).with('"', '') }
+    before { expect(etag).to receive(:gsub).with('"', "") }
 
     specify { expect { subject.etag }.not_to raise_error }
   end
 
-  describe '#page' do
+  describe "#page" do
     specify { expect(subject.page).to eq(nil) }
   end
 
-  describe '#total_pages' do
+  describe "#total_pages" do
     let(:resource) { double }
 
     let(:header) { double }
@@ -231,15 +231,15 @@ describe EveOnline::ESI::Base do
 
     before { expect(resource).to receive(:header).and_return(header) }
 
-    before { expect(header).to receive(:[]).with('X-Pages').and_return(pages) }
+    before { expect(header).to receive(:[]).with("X-Pages").and_return(pages) }
 
     before { expect(pages).to receive(:to_i) }
 
     specify { expect { subject.total_pages }.not_to raise_error }
   end
 
-  describe '#client' do
-    context 'when @client set' do
+  describe "#client" do
+    context "when @client set" do
       let(:client) { double }
 
       before { subject.instance_variable_set(:@client, client) }
@@ -247,7 +247,7 @@ describe EveOnline::ESI::Base do
       specify { expect(subject.client).to eq(client) }
     end
 
-    context 'when @client not set' do
+    context "when @client not set" do
       let(:host) { double }
 
       let(:port) { double }
@@ -260,7 +260,7 @@ describe EveOnline::ESI::Base do
 
       let(:_open_timeout) { double }
 
-      if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6.0')
+      if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("2.6.0")
         let(:_write_timeout) { double }
       end
 
@@ -272,7 +272,7 @@ describe EveOnline::ESI::Base do
 
       before { expect(subject).to receive(:_open_timeout).and_return(_open_timeout) }
 
-      if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6.0')
+      if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("2.6.0")
         before { expect(subject).to receive(:_write_timeout).and_return(_write_timeout) }
       end
 
@@ -280,7 +280,7 @@ describe EveOnline::ESI::Base do
 
       before { expect(http).to receive(:open_timeout=).with(_open_timeout) }
 
-      if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6.0')
+      if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("2.6.0")
         before { expect(http).to receive(:write_timeout=).with(_write_timeout) }
       end
 
@@ -294,8 +294,8 @@ describe EveOnline::ESI::Base do
     end
   end
 
-  describe '#request' do
-    context 'when @request set' do
+  describe "#request" do
+    context "when @request set" do
       let(:request) { double }
 
       before { subject.instance_variable_set(:@request, request) }
@@ -303,7 +303,7 @@ describe EveOnline::ESI::Base do
       specify { expect(subject.request).to eq(request) }
     end
 
-    context 'when @request not set' do
+    context "when @request not set" do
       let(:request_uri) { double }
 
       let(:uri) { double(request_uri: request_uri) }
@@ -316,12 +316,12 @@ describe EveOnline::ESI::Base do
 
       before { expect(subject).to receive(:http_method).and_return(http_method).exactly(3).times }
 
-      before { expect(request).to receive(:[]=).with('User-Agent', user_agent).and_return(request) }
+      before { expect(request).to receive(:[]=).with("User-Agent", user_agent).and_return(request) }
 
-      before { expect(request).to receive(:[]=).with('Accept', 'application/json').and_return(request) }
+      before { expect(request).to receive(:[]=).with("Accept", "application/json").and_return(request) }
 
-      context 'when http method Get and without token and etag' do
-        let(:http_method) { 'Get' }
+      context "when http method Get and without token and etag" do
+        let(:http_method) { "Get" }
 
         let(:request) { instance_double(Net::HTTP::Get) }
 
@@ -336,32 +336,32 @@ describe EveOnline::ESI::Base do
         specify { expect { subject.request }.to change { subject.instance_variable_get(:@request) }.from(nil).to(request) }
       end
 
-      context 'when http method Get and with token and etag' do
-        let(:http_method) { 'Get' }
+      context "when http method Get and with token and etag" do
+        let(:http_method) { "Get" }
 
         let(:request) { instance_double(Net::HTTP::Get) }
 
         before { expect(Net::HTTP::Get).to receive(:new).with(request_uri).and_return(request) }
 
-        let(:token) { 'token123' }
+        let(:token) { "token123" }
 
-        let(:_etag) { 'etag' }
+        let(:_etag) { "etag" }
 
         before { expect(subject).to receive(:token).and_return(token).twice }
 
         before { expect(subject).to receive(:_etag).and_return(_etag).twice }
 
-        before { expect(request).to receive(:[]=).with('Authorization', 'Bearer token123').and_return(request) }
+        before { expect(request).to receive(:[]=).with("Authorization", "Bearer token123").and_return(request) }
 
-        before { expect(request).to receive(:[]=).with('If-None-Match', 'etag').and_return(request) }
+        before { expect(request).to receive(:[]=).with("If-None-Match", "etag").and_return(request) }
 
         specify { expect { subject.request }.not_to raise_error }
 
         specify { expect { subject.request }.to change { subject.instance_variable_get(:@request) }.from(nil).to(request) }
       end
 
-      context 'when http method Post' do
-        let(:http_method) { 'Post' }
+      context "when http method Post" do
+        let(:http_method) { "Post" }
 
         let(:request) { instance_double(Net::HTTP::Post) }
 
@@ -371,7 +371,7 @@ describe EveOnline::ESI::Base do
 
         before { expect(subject).to receive(:payload).and_return(payload) }
 
-        before { expect(request).to receive(:[]=).with('Content-Type', 'application/json').and_return(request) }
+        before { expect(request).to receive(:[]=).with("Content-Type", "application/json").and_return(request) }
 
         before { expect(request).to receive(:body=).with(payload) }
 
@@ -382,8 +382,8 @@ describe EveOnline::ESI::Base do
     end
   end
 
-  describe '#uri' do
-    context 'when @uri set' do
+  describe "#uri" do
+    context "when @uri set" do
       let(:uri) { double }
 
       before { subject.instance_variable_set(:@uri, uri) }
@@ -391,7 +391,7 @@ describe EveOnline::ESI::Base do
       specify { expect(subject.uri).to eq(uri) }
     end
 
-    context 'when @uri not set' do
+    context "when @uri not set" do
       let(:uri) { double }
 
       let(:path) { double }
@@ -428,21 +428,21 @@ describe EveOnline::ESI::Base do
     end
   end
 
-  describe '#additional_query_params' do
+  describe "#additional_query_params" do
     specify { expect(subject.additional_query_params).to eq([]) }
   end
 
-  describe '#base_query_params' do
+  describe "#base_query_params" do
     specify { expect(subject.base_query_params).to eq([:datasource]) }
   end
 
-  describe '#path' do
+  describe "#path" do
     specify { expect { subject.path }.to raise_error(NotImplementedError) }
   end
 
-  describe '#query' do
-    context 'when all params is blank' do
-      let(:options) { { datasource: nil, language: nil } }
+  describe "#query" do
+    context "when all params is blank" do
+      let(:options) { {datasource: nil, language: nil} }
 
       subject { described_class.new(options) }
 
@@ -451,19 +451,19 @@ describe EveOnline::ESI::Base do
       specify { expect(subject.query).to eq({}) }
     end
 
-    context 'when all params is present' do
-      let(:options) { { datasource: 'singularity', language: 'de' } }
+    context "when all params is present" do
+      let(:options) { {datasource: "singularity", language: "de"} }
 
       subject { described_class.new(options) }
 
       before { expect(subject).to receive(:additional_query_params).and_return([:language]) }
 
-      specify { expect(subject.query).to eq(datasource: 'singularity', language: 'de') }
+      specify { expect(subject.query).to eq(datasource: "singularity", language: "de") }
     end
   end
 
-  describe '#resource' do
-    context 'when @resource set' do
+  describe "#resource" do
+    context "when @resource set" do
       let(:resource) { double }
 
       before { subject.instance_variable_set(:@resource, resource) }
@@ -471,7 +471,7 @@ describe EveOnline::ESI::Base do
       specify { expect(subject.resource).to eq(resource) }
     end
 
-    context 'when @resource not set' do
+    context "when @resource not set" do
       let(:resource) { double }
 
       let(:client) { double }
@@ -489,26 +489,26 @@ describe EveOnline::ESI::Base do
       specify { expect { subject.resource }.to change { subject.instance_variable_get(:@resource) }.from(nil).to(resource) }
     end
 
-    context 'when Net::HTTP throw Net::OpenTimeout' do
+    context "when Net::HTTP throw Net::OpenTimeout" do
       before { expect(subject).to receive(:client).and_raise(Net::OpenTimeout) }
 
       specify { expect { subject.resource }.to raise_error(EveOnline::Exceptions::Timeout) }
     end
 
-    context 'when Net::HTTP throw Net::ReadTimeout' do
+    context "when Net::HTTP throw Net::ReadTimeout" do
       before { expect(subject).to receive(:client).and_raise(Net::ReadTimeout) }
 
       specify { expect { subject.resource }.to raise_error(EveOnline::Exceptions::Timeout) }
     end
 
-    context 'when Net::HTTP throw Net::WriteTimeout' do
+    context "when Net::HTTP throw Net::WriteTimeout" do
       before { expect(subject).to receive(:client).and_raise(Net::WriteTimeout) }
 
       specify { expect { subject.resource }.to raise_error(EveOnline::Exceptions::Timeout) }
     end
   end
 
-  describe '#not_modified?' do
+  describe "#not_modified?" do
     let(:resource) { double }
 
     before { expect(subject).to receive(:resource).and_return(resource) }
@@ -518,8 +518,8 @@ describe EveOnline::ESI::Base do
     specify { expect { subject.not_modified? }.not_to raise_error }
   end
 
-  describe '#content' do
-    context 'when resource is Net::HTTPOK' do
+  describe "#content" do
+    context "when resource is Net::HTTPOK" do
       let(:body) { double }
 
       let(:resource) { instance_double(Net::HTTPOK, body: body) }
@@ -533,7 +533,7 @@ describe EveOnline::ESI::Base do
       specify { expect { subject.content }.not_to raise_error }
     end
 
-    context 'when resource is Net::HTTPCreated' do
+    context "when resource is Net::HTTPCreated" do
       let(:resource) { instance_double(Net::HTTPCreated) }
 
       before { expect(subject).to receive(:resource).and_return(resource) }
@@ -543,7 +543,7 @@ describe EveOnline::ESI::Base do
       specify { expect { subject.content }.to raise_error(NotImplementedError) }
     end
 
-    context 'when resource is Net::HTTPNoContent' do
+    context "when resource is Net::HTTPNoContent" do
       let(:resource) { instance_double(Net::HTTPNoContent) }
 
       before { expect(subject).to receive(:resource).and_return(resource) }
@@ -553,7 +553,7 @@ describe EveOnline::ESI::Base do
       specify { expect { subject.content }.to raise_error(EveOnline::Exceptions::NoContent) }
     end
 
-    context 'when resource is Net::HTTPNotModified' do
+    context "when resource is Net::HTTPNotModified" do
       let(:resource) { instance_double(Net::HTTPNotModified) }
 
       before { expect(subject).to receive(:resource).and_return(resource) }
@@ -563,7 +563,7 @@ describe EveOnline::ESI::Base do
       specify { expect { subject.content }.to raise_error(EveOnline::Exceptions::NotModified) }
     end
 
-    context 'when resource is Net::HTTPBadRequest' do
+    context "when resource is Net::HTTPBadRequest" do
       let(:resource) { instance_double(Net::HTTPBadRequest) }
 
       before { expect(subject).to receive(:resource).and_return(resource) }
@@ -573,7 +573,7 @@ describe EveOnline::ESI::Base do
       specify { expect { subject.content }.to raise_error(EveOnline::Exceptions::BadRequest) }
     end
 
-    context 'when resource is Net::HTTPUnauthorized' do
+    context "when resource is Net::HTTPUnauthorized" do
       let(:resource) { instance_double(Net::HTTPUnauthorized) }
 
       before { expect(subject).to receive(:resource).and_return(resource) }
@@ -583,7 +583,7 @@ describe EveOnline::ESI::Base do
       specify { expect { subject.content }.to raise_error(EveOnline::Exceptions::Unauthorized) }
     end
 
-    context 'when resource is Net::HTTPForbidden' do
+    context "when resource is Net::HTTPForbidden" do
       let(:resource) { instance_double(Net::HTTPForbidden) }
 
       before { expect(subject).to receive(:resource).and_return(resource) }
@@ -593,7 +593,7 @@ describe EveOnline::ESI::Base do
       specify { expect { subject.content }.to raise_error(EveOnline::Exceptions::Forbidden) }
     end
 
-    context 'when resource is Net::HTTPNotFound' do
+    context "when resource is Net::HTTPNotFound" do
       let(:resource) { instance_double(Net::HTTPNotFound) }
 
       before { expect(subject).to receive(:resource).and_return(resource) }
@@ -603,7 +603,7 @@ describe EveOnline::ESI::Base do
       specify { expect { subject.content }.to raise_error(EveOnline::Exceptions::ResourceNotFound) }
     end
 
-    context 'when resource is Net::HTTPInternalServerError' do
+    context "when resource is Net::HTTPInternalServerError" do
       let(:resource) { instance_double(Net::HTTPInternalServerError) }
 
       before { expect(subject).to receive(:resource).and_return(resource) }
@@ -613,7 +613,7 @@ describe EveOnline::ESI::Base do
       specify { expect { subject.content }.to raise_error(EveOnline::Exceptions::InternalServerError) }
     end
 
-    context 'when resource is Net::HTTPBadGateway' do
+    context "when resource is Net::HTTPBadGateway" do
       let(:resource) { instance_double(Net::HTTPBadGateway) }
 
       before { expect(subject).to receive(:resource).and_return(resource) }
@@ -623,7 +623,7 @@ describe EveOnline::ESI::Base do
       specify { expect { subject.content }.to raise_error(EveOnline::Exceptions::BadGateway) }
     end
 
-    context 'when resource is Net::HTTPServiceUnavailable' do
+    context "when resource is Net::HTTPServiceUnavailable" do
       let(:resource) { instance_double(Net::HTTPServiceUnavailable) }
 
       before { expect(subject).to receive(:resource).and_return(resource) }
@@ -633,7 +633,7 @@ describe EveOnline::ESI::Base do
       specify { expect { subject.content }.to raise_error(EveOnline::Exceptions::ServiceUnavailable) }
     end
 
-    context 'when status not supported' do
+    context "when status not supported" do
       let(:resource) { double }
 
       before { expect(subject).to receive(:resource).and_return(resource) }
@@ -642,8 +642,8 @@ describe EveOnline::ESI::Base do
     end
   end
 
-  describe '#response' do
-    context 'when @response set' do
+  describe "#response" do
+    context "when @response set" do
       let(:response) { double }
 
       before { subject.instance_variable_set(:@response, response) }
@@ -651,10 +651,10 @@ describe EveOnline::ESI::Base do
       specify { expect(subject.response).to eq(response) }
     end
 
-    context 'when @response not set' do
+    context "when @response not set" do
       let(:parser) { double }
 
-      let(:content) { 'some content to parse' }
+      let(:content) { "some content to parse" }
 
       before { expect(subject).to receive(:content).and_return(content) }
 
@@ -668,14 +668,14 @@ describe EveOnline::ESI::Base do
 
   # private methods
 
-  describe '#parse_datetime_with_timezone' do
+  describe "#parse_datetime_with_timezone" do
     let(:value) { double }
 
     before do
       #
       # ActiveSupport::TimeZone['UTC'].parse(value)
       #
-      expect(ActiveSupport::TimeZone).to receive(:[]).with('UTC') do
+      expect(ActiveSupport::TimeZone).to receive(:[]).with("UTC") do
         double.tap do |a|
           expect(a).to receive(:parse).with(value)
         end

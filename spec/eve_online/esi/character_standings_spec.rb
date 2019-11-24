@@ -1,18 +1,18 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
 describe EveOnline::ESI::CharacterStandings do
-  let(:options) { { token: 'token123', character_id: 12_345_678 } }
+  let(:options) { {token: "token123", character_id: 12_345_678} }
 
   subject { described_class.new(options) }
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_PATH).to eq('/v1/characters/%<character_id>s/standings/') }
+  specify { expect(described_class::API_PATH).to eq("/v1/characters/%<character_id>s/standings/") }
 
-  describe '#initialize' do
-    its(:token) { should eq('token123') }
+  describe "#initialize" do
+    its(:token) { should eq("token123") }
 
     its(:parser) { should eq(JSON) }
 
@@ -20,17 +20,17 @@ describe EveOnline::ESI::CharacterStandings do
 
     its(:_open_timeout) { should eq(60) }
 
-    if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6.0')
+    if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("2.6.0")
       its(:_write_timeout) { should eq(60) }
     end
 
-    its(:datasource) { should eq('tranquility') }
+    its(:datasource) { should eq("tranquility") }
 
     its(:character_id) { should eq(12_345_678) }
   end
 
-  describe '#standings' do
-    context 'when @standings set' do
+  describe "#standings" do
+    context "when @standings set" do
       let(:standings) { [instance_double(EveOnline::ESI::Models::Standing)] }
 
       before { subject.instance_variable_set(:@standings, standings) }
@@ -38,16 +38,16 @@ describe EveOnline::ESI::CharacterStandings do
       specify { expect(subject.standings).to eq(standings) }
     end
 
-    context 'when @standings not set' do
+    context "when @standings not set" do
       let(:standing) { instance_double(EveOnline::ESI::Models::Standing) }
 
       let(:response) do
         [
           {
             from_id: 500_001,
-            from_type: 'faction',
-            standing: 0.3303719111639991
-          }
+            from_type: "faction",
+            standing: 0.3303719111639991,
+          },
         ]
       end
 
@@ -71,25 +71,25 @@ describe EveOnline::ESI::CharacterStandings do
     end
   end
 
-  describe '#scope' do
-    specify { expect(subject.scope).to eq('esi-characters.read_standings.v1') }
+  describe "#scope" do
+    specify { expect(subject.scope).to eq("esi-characters.read_standings.v1") }
   end
 
-  describe '#path' do
+  describe "#path" do
     specify do
-      expect(subject.path).to eq('/v1/characters/12345678/standings/')
+      expect(subject.path).to eq("/v1/characters/12345678/standings/")
     end
   end
 
-  describe '#query' do
+  describe "#query" do
     specify do
-      expect(subject.query).to eq(datasource: 'tranquility')
+      expect(subject.query).to eq(datasource: "tranquility")
     end
   end
 
-  describe '#url' do
+  describe "#url" do
     specify do
-      expect(subject.url).to eq('https://esi.evetech.net/v1/characters/12345678/standings/?datasource=tranquility')
+      expect(subject.url).to eq("https://esi.evetech.net/v1/characters/12345678/standings/?datasource=tranquility")
     end
   end
 end

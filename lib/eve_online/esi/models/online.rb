@@ -9,28 +9,28 @@ module EveOnline
             last_login: last_login,
             last_logout: last_logout,
             logins: logins,
-            online: online
+            online: online,
           }
         end
 
         def last_login
-          last_login = options['last_login']
+          last_login = options["last_login"]
 
           parse_datetime_with_timezone(last_login) if last_login
         end
 
         def last_logout
-          last_logout = options['last_logout']
+          last_logout = options["last_logout"]
 
           parse_datetime_with_timezone(last_logout) if last_logout
         end
 
         def logins
-          options['logins']
+          options["logins"]
         end
 
         def online
-          options['online']
+          options["online"]
         end
       end
     end

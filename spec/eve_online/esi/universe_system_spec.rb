@@ -1,17 +1,17 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
 describe EveOnline::ESI::UniverseSystem do
-  let(:options) { { id: 30_000_001 } }
+  let(:options) { {id: 30_000_001} }
 
   subject { described_class.new(options) }
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_PATH).to eq('/v4/universe/systems/%<system_id>s/') }
+  specify { expect(described_class::API_PATH).to eq("/v4/universe/systems/%<system_id>s/") }
 
-  describe '#initialize' do
+  describe "#initialize" do
     its(:token) { should eq(nil) }
 
     its(:parser) { should eq(JSON) }
@@ -20,17 +20,17 @@ describe EveOnline::ESI::UniverseSystem do
 
     its(:_open_timeout) { should eq(60) }
 
-    if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new('2.6.0')
+    if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("2.6.0")
       its(:_write_timeout) { should eq(60) }
     end
 
-    its(:datasource) { should eq('tranquility') }
+    its(:datasource) { should eq("tranquility") }
 
     its(:id) { should eq(30_000_001) }
   end
 
-  describe '#model' do
-    context 'when @model set' do
+  describe "#model" do
+    context "when @model set" do
       let(:model) { instance_double(EveOnline::ESI::Models::System) }
 
       before { subject.instance_variable_set(:@model, model) }
@@ -38,7 +38,7 @@ describe EveOnline::ESI::UniverseSystem do
       specify { expect(subject.model).to eq(model) }
     end
 
-    context 'when @model not set' do
+    context "when @model not set" do
       let(:response) { double }
 
       before { expect(subject).to receive(:response).and_return(response) }
@@ -58,7 +58,7 @@ describe EveOnline::ESI::UniverseSystem do
     end
   end
 
-  describe '#as_json' do
+  describe "#as_json" do
     let(:model) { instance_double(EveOnline::ESI::Models::System) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -68,7 +68,7 @@ describe EveOnline::ESI::UniverseSystem do
     specify { expect { subject.as_json }.not_to raise_error }
   end
 
-  describe '#constellation_id' do
+  describe "#constellation_id" do
     let(:model) { instance_double(EveOnline::ESI::Models::System) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -78,7 +78,7 @@ describe EveOnline::ESI::UniverseSystem do
     specify { expect { subject.constellation_id }.not_to raise_error }
   end
 
-  describe '#name' do
+  describe "#name" do
     let(:model) { instance_double(EveOnline::ESI::Models::System) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -88,7 +88,7 @@ describe EveOnline::ESI::UniverseSystem do
     specify { expect { subject.name }.not_to raise_error }
   end
 
-  describe '#security_class' do
+  describe "#security_class" do
     let(:model) { instance_double(EveOnline::ESI::Models::System) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -98,7 +98,7 @@ describe EveOnline::ESI::UniverseSystem do
     specify { expect { subject.security_class }.not_to raise_error }
   end
 
-  describe '#security_status' do
+  describe "#security_status" do
     let(:model) { instance_double(EveOnline::ESI::Models::System) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -108,7 +108,7 @@ describe EveOnline::ESI::UniverseSystem do
     specify { expect { subject.security_status }.not_to raise_error }
   end
 
-  describe '#star_id' do
+  describe "#star_id" do
     let(:model) { instance_double(EveOnline::ESI::Models::System) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -118,7 +118,7 @@ describe EveOnline::ESI::UniverseSystem do
     specify { expect { subject.star_id }.not_to raise_error }
   end
 
-  describe '#system_id' do
+  describe "#system_id" do
     let(:model) { instance_double(EveOnline::ESI::Models::System) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -128,7 +128,7 @@ describe EveOnline::ESI::UniverseSystem do
     specify { expect { subject.system_id }.not_to raise_error }
   end
 
-  describe '#position' do
+  describe "#position" do
     let(:model) { instance_double(EveOnline::ESI::Models::System) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -138,7 +138,7 @@ describe EveOnline::ESI::UniverseSystem do
     specify { expect { subject.position }.not_to raise_error }
   end
 
-  describe '#planets' do
+  describe "#planets" do
     let(:model) { instance_double(EveOnline::ESI::Models::System) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -148,7 +148,7 @@ describe EveOnline::ESI::UniverseSystem do
     specify { expect { subject.planets }.not_to raise_error }
   end
 
-  describe '#stargate_ids' do
+  describe "#stargate_ids" do
     let(:model) { instance_double(EveOnline::ESI::Models::System) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -158,7 +158,7 @@ describe EveOnline::ESI::UniverseSystem do
     specify { expect { subject.stargate_ids }.not_to raise_error }
   end
 
-  describe '#station_ids' do
+  describe "#station_ids" do
     let(:model) { instance_double(EveOnline::ESI::Models::System) }
 
     before { subject.instance_variable_set(:@model, model) }
@@ -168,29 +168,29 @@ describe EveOnline::ESI::UniverseSystem do
     specify { expect { subject.station_ids }.not_to raise_error }
   end
 
-  describe '#scope' do
+  describe "#scope" do
     specify { expect(subject.scope).to eq(nil) }
   end
 
-  describe '#additional_query_params' do
+  describe "#additional_query_params" do
     specify { expect(subject.additional_query_params).to eq([:language]) }
   end
 
-  describe '#path' do
+  describe "#path" do
     specify do
-      expect(subject.path).to eq('/v4/universe/systems/30000001/')
+      expect(subject.path).to eq("/v4/universe/systems/30000001/")
     end
   end
 
-  describe '#query' do
+  describe "#query" do
     specify do
-      expect(subject.query).to eq(datasource: 'tranquility', language: 'en-us')
+      expect(subject.query).to eq(datasource: "tranquility", language: "en-us")
     end
   end
 
-  describe '#url' do
+  describe "#url" do
     specify do
-      expect(subject.url).to eq('https://esi.evetech.net/v4/universe/systems/30000001/?datasource=tranquility&language=en-us')
+      expect(subject.url).to eq("https://esi.evetech.net/v4/universe/systems/30000001/?datasource=tranquility&language=en-us")
     end
   end
 end

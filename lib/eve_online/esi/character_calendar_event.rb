@@ -5,7 +5,7 @@ module EveOnline
     class CharacterCalendarEvent < Base
       extend Forwardable
 
-      API_PATH = '/v3/characters/%<character_id>s/calendar/%<event_id>s/'
+      API_PATH = "/v3/characters/%<character_id>s/calendar/%<event_id>s/"
 
       attr_reader :character_id, :event_id
 
@@ -17,15 +17,14 @@ module EveOnline
       end
 
       def_delegators :model, :as_json, :date, :duration, :importance,
-                     :owner_id, :owner_name, :owner_type, :event_response,
-                     :text, :title
+        :owner_id, :owner_name, :owner_type, :event_response, :text, :title
 
       def model
         @model ||= Models::EventDetails.new(response)
       end
 
       def scope
-        'esi-calendar.read_calendar_events.v1'
+        "esi-calendar.read_calendar_events.v1"
       end
 
       def path
