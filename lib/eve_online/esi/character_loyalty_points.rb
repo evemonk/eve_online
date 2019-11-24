@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class CharacterLoyaltyPoints < Base
-      API_PATH = '/v1/characters/%<character_id>s/loyalty/points/'
+      API_PATH = "/v1/characters/%<character_id>s/loyalty/points/"
 
       attr_reader :character_id
 
@@ -25,7 +25,7 @@ module EveOnline
       end
 
       def scope
-        'esi-characters.read_loyalty.v1'
+        "esi-characters.read_loyalty.v1"
       end
 
       def path

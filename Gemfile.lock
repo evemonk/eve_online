@@ -77,7 +77,7 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.9.0)
     rspec-support (3.9.0)
-    rubocop (0.76.0)
+    rubocop (0.75.1)
       jaro_winkler (~> 1.5.1)
       parallel (~> 1.10)
       parser (>= 2.6)
@@ -86,10 +86,6 @@ GEM
       unicode-display_width (>= 1.4.0, < 1.7)
     rubocop-performance (1.5.1)
       rubocop (>= 0.71.0)
-    rubocop-rspec (1.36.0)
-      rubocop (>= 0.68.1)
-    rubocop-thread_safety (0.3.4)
-      rubocop (>= 0.51.0)
     ruby-progressbar (1.10.1)
     ruby_parser (3.14.1)
       sexp_processor (~> 4.9)
@@ -100,6 +96,9 @@ GEM
       json (>= 1.8, < 3)
       simplecov-html (~> 0.10.0)
     simplecov-html (0.10.2)
+    standard (0.1.6)
+      rubocop (~> 0.75.0)
+      rubocop-performance (~> 1.5.0)
     thor (0.20.3)
     thread_safe (0.3.6)
     tomlrb (1.2.9)
@@ -128,11 +127,8 @@ DEPENDENCIES
   rake
   rspec
   rspec-its
-  rubocop
-  rubocop-performance
-  rubocop-rspec
-  rubocop-thread_safety
   simplecov
+  standard
   vcr
   webmock
 

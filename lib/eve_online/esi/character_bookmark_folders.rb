@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class CharacterBookmarkFolders < Base
-      API_PATH = '/v2/characters/%<character_id>s/bookmarks/folders/'
+      API_PATH = "/v2/characters/%<character_id>s/bookmarks/folders/"
 
       attr_reader :character_id, :page
 
@@ -26,7 +26,7 @@ module EveOnline
       end
 
       def scope
-        'esi-bookmarks.read_character_bookmarks.v1'
+        "esi-bookmarks.read_character_bookmarks.v1"
       end
 
       def additional_query_params

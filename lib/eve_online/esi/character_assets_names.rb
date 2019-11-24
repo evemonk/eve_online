@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class CharacterAssetsNames < Base
-      API_PATH = '/v1/characters/%<character_id>s/assets/names/'
+      API_PATH = "/v1/characters/%<character_id>s/assets/names/"
 
       attr_reader :character_id, :item_ids
 
@@ -26,7 +26,7 @@ module EveOnline
       end
 
       def http_method
-        'Post'
+        "Post"
       end
 
       def payload
@@ -34,7 +34,7 @@ module EveOnline
       end
 
       def scope
-        'esi-assets.read_assets.v1'
+        "esi-assets.read_assets.v1"
       end
 
       def etag

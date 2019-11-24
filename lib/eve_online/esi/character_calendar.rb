@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class CharacterCalendar < Base
-      API_PATH = '/v1/characters/%<character_id>s/calendar/'
+      API_PATH = "/v1/characters/%<character_id>s/calendar/"
 
       attr_reader :character_id, :from_event
 
@@ -26,7 +26,7 @@ module EveOnline
       end
 
       def scope
-        'esi-calendar.read_calendar_events.v1'
+        "esi-calendar.read_calendar_events.v1"
       end
 
       def additional_query_params
