@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
 describe EveOnline::ESI::Models::CharacterShip do
   it { should be_a(EveOnline::ESI::Models::Base) }
@@ -9,11 +9,11 @@ describe EveOnline::ESI::Models::CharacterShip do
 
   subject { described_class.new(options) }
 
-  describe '#initialize' do
+  describe "#initialize" do
     its(:options) { should eq(options) }
   end
 
-  describe '#as_json' do
+  describe "#as_json" do
     let(:model) { described_class.new(options) }
 
     before { expect(model).to receive(:ship_item_id).and_return(1_002_312_158_069) }
@@ -31,20 +31,20 @@ describe EveOnline::ESI::Models::CharacterShip do
     its([:ship_type_id]) { should eq(606) }
   end
 
-  describe '#ship_item_id' do
-    before { expect(options).to receive(:[]).with('ship_item_id') }
+  describe "#ship_item_id" do
+    before { expect(options).to receive(:[]).with("ship_item_id") }
 
     specify { expect { subject.ship_item_id }.not_to raise_error }
   end
 
-  describe '#ship_name' do
-    before { expect(options).to receive(:[]).with('ship_name') }
+  describe "#ship_name" do
+    before { expect(options).to receive(:[]).with("ship_name") }
 
     specify { expect { subject.ship_name }.not_to raise_error }
   end
 
-  describe '#ship_type_id' do
-    before { expect(options).to receive(:[]).with('ship_type_id') }
+  describe "#ship_type_id" do
+    before { expect(options).to receive(:[]).with("ship_type_id") }
 
     specify { expect { subject.ship_type_id }.not_to raise_error }
   end

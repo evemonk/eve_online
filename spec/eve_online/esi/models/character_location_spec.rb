@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
 describe EveOnline::ESI::Models::CharacterLocation do
   it { should be_a(EveOnline::ESI::Models::Base) }
@@ -9,11 +9,11 @@ describe EveOnline::ESI::Models::CharacterLocation do
 
   subject { described_class.new(options) }
 
-  describe '#initialize' do
+  describe "#initialize" do
     its(:options) { should eq(options) }
   end
 
-  describe '#as_json' do
+  describe "#as_json" do
     let(:model) { described_class.new(options) }
 
     let(:structure_id) { double }
@@ -33,20 +33,20 @@ describe EveOnline::ESI::Models::CharacterLocation do
     its([:structure_id]) { should eq(structure_id) }
   end
 
-  describe '#solar_system_id' do
-    before { expect(options).to receive(:[]).with('solar_system_id') }
+  describe "#solar_system_id" do
+    before { expect(options).to receive(:[]).with("solar_system_id") }
 
     specify { expect { subject.solar_system_id }.not_to raise_error }
   end
 
-  describe '#station_id' do
-    before { expect(options).to receive(:[]).with('station_id') }
+  describe "#station_id" do
+    before { expect(options).to receive(:[]).with("station_id") }
 
     specify { expect { subject.station_id }.not_to raise_error }
   end
 
-  describe '#structure_id' do
-    before { expect(options).to receive(:[]).with('structure_id') }
+  describe "#structure_id" do
+    before { expect(options).to receive(:[]).with("structure_id") }
 
     specify { expect { subject.structure_id }.not_to raise_error }
   end

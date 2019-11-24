@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
 describe EveOnline::ESI::Models::Bookmark do
   it { should be_a(EveOnline::ESI::Models::Base) }
@@ -9,11 +9,11 @@ describe EveOnline::ESI::Models::Bookmark do
 
   subject { described_class.new(options) }
 
-  describe '#initialize' do
+  describe "#initialize" do
     its(:options) { should eq(options) }
   end
 
-  describe '#as_json' do
+  describe "#as_json" do
     let(:bookmark) { described_class.new(options) }
 
     let(:created) { double }
@@ -34,11 +34,11 @@ describe EveOnline::ESI::Models::Bookmark do
 
     before { expect(bookmark).to receive(:item_type_id).and_return(item_type_id) }
 
-    before { expect(bookmark).to receive(:label).and_return('Random location') }
+    before { expect(bookmark).to receive(:label).and_return("Random location") }
 
     before { expect(bookmark).to receive(:location_id).and_return(30_003_430) }
 
-    before { expect(bookmark).to receive(:notes).and_return('This is a random location in space') }
+    before { expect(bookmark).to receive(:notes).and_return("This is a random location in space") }
 
     subject { bookmark.as_json }
 
@@ -54,24 +54,24 @@ describe EveOnline::ESI::Models::Bookmark do
 
     its([:item_type_id]) { should eq(item_type_id) }
 
-    its([:label]) { should eq('Random location') }
+    its([:label]) { should eq("Random location") }
 
     its([:location_id]) { should eq(30_003_430) }
 
-    its([:notes]) { should eq('This is a random location in space') }
+    its([:notes]) { should eq("This is a random location in space") }
   end
 
-  describe '#bookmark_id' do
-    before { expect(options).to receive(:[]).with('bookmark_id') }
+  describe "#bookmark_id" do
+    before { expect(options).to receive(:[]).with("bookmark_id") }
 
     specify { expect { subject.bookmark_id }.not_to raise_error }
   end
 
-  describe '#created' do
-    context 'when created is present' do
+  describe "#created" do
+    context "when created is present" do
       let(:created) { double }
 
-      before { expect(options).to receive(:[]).with('created').and_return(created) }
+      before { expect(options).to receive(:[]).with("created").and_return(created) }
 
       before do
         #
@@ -83,8 +83,8 @@ describe EveOnline::ESI::Models::Bookmark do
       specify { expect { subject.created }.not_to raise_error }
     end
 
-    context 'when created not present' do
-      before { expect(options).to receive(:[]).with('created').and_return(nil) }
+    context "when created not present" do
+      before { expect(options).to receive(:[]).with("created").and_return(nil) }
 
       before { expect(subject).not_to receive(:parse_datetime_with_timezone) }
 
@@ -92,84 +92,84 @@ describe EveOnline::ESI::Models::Bookmark do
     end
   end
 
-  describe '#creator_id' do
-    before { expect(options).to receive(:[]).with('creator_id') }
+  describe "#creator_id" do
+    before { expect(options).to receive(:[]).with("creator_id") }
 
     specify { expect { subject.creator_id }.not_to raise_error }
   end
 
-  describe '#folder_id' do
-    before { expect(options).to receive(:[]).with('folder_id') }
+  describe "#folder_id" do
+    before { expect(options).to receive(:[]).with("folder_id") }
 
     specify { expect { subject.folder_id }.not_to raise_error }
   end
 
-  describe '#item_id' do
-    context 'when item is present' do
+  describe "#item_id" do
+    context "when item is present" do
       let(:item) { double }
 
-      before { expect(options).to receive(:[]).with('item').and_return(item).twice }
+      before { expect(options).to receive(:[]).with("item").and_return(item).twice }
 
       before do
         #
         # options['item']['item_id']
         #
-        expect(item).to receive(:[]).with('item_id')
+        expect(item).to receive(:[]).with("item_id")
       end
 
       specify { expect { subject.item_id }.not_to raise_error }
     end
 
-    context 'when item not present' do
-      before { expect(options).to receive(:[]).with('item').and_return(nil) }
+    context "when item not present" do
+      before { expect(options).to receive(:[]).with("item").and_return(nil) }
 
       specify { expect { subject.item_id }.not_to raise_error }
     end
   end
 
-  describe '#item_type_id' do
-    context 'when item is present' do
+  describe "#item_type_id" do
+    context "when item is present" do
       let(:item) { double }
 
-      before { expect(options).to receive(:[]).with('item').and_return(item).twice }
+      before { expect(options).to receive(:[]).with("item").and_return(item).twice }
 
       before do
         #
         # options['item']['type_id']
         #
-        expect(item).to receive(:[]).with('type_id')
+        expect(item).to receive(:[]).with("type_id")
       end
 
       specify { expect { subject.item_type_id }.not_to raise_error }
     end
 
-    context 'when item not present' do
-      before { expect(options).to receive(:[]).with('item').and_return(nil) }
+    context "when item not present" do
+      before { expect(options).to receive(:[]).with("item").and_return(nil) }
 
       specify { expect { subject.item_type_id }.not_to raise_error }
     end
   end
 
-  describe '#label' do
-    before { expect(options).to receive(:[]).with('label') }
+  describe "#label" do
+    before { expect(options).to receive(:[]).with("label") }
 
     specify { expect { subject.label }.not_to raise_error }
   end
 
-  describe '#location_id' do
-    before { expect(options).to receive(:[]).with('location_id') }
+  describe "#location_id" do
+    before { expect(options).to receive(:[]).with("location_id") }
 
     specify { expect { subject.location_id }.not_to raise_error }
   end
 
-  describe '#notes' do
-    before { expect(options).to receive(:[]).with('notes') }
+  describe "#notes" do
+    before { expect(options).to receive(:[]).with("notes") }
 
     specify { expect { subject.notes }.not_to raise_error }
   end
 
-  describe '#coordinates' do
-    context 'when @coordinates set' do
+  describe "#coordinates" do
+    context "when @coordinates set" do
       let(:coordinates) { double }
 
       before { subject.instance_variable_set(:@coordinates, coordinates) }
@@ -177,10 +177,10 @@ describe EveOnline::ESI::Models::Bookmark do
       specify { expect(subject.coordinates).to eq(coordinates) }
     end
 
-    context 'when @coordinates not set' do
+    context "when @coordinates not set" do
       let(:coordinates) { double }
 
-      let(:options) { { 'coordinates' => coordinates } }
+      let(:options) { {"coordinates" => coordinates} }
 
       let(:model) { instance_double(EveOnline::ESI::Models::Coordinates) }
 
