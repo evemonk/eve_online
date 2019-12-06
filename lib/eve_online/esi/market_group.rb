@@ -27,6 +27,10 @@ module EveOnline
       def scope
       end
 
+      def additional_query_params
+        [:language]
+      end
+
       def path
         format(API_PATH, market_group_id: id)
       end
