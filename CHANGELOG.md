@@ -1,6 +1,6 @@
 # Changelog
 
-## master
+## v0.30.0
 
 * Add `EveOnline::ESI::Models::OfferRequiredItem`
 * Add `EveOnline::ESI::Models::OfferRequiredItems`
@@ -12,6 +12,9 @@
 * Add `EveOnline::ESI::Models::Defender`
 * Add `EveOnline::ESI::Models::Allies`
 * Add `EveOnline::ESI::Models::Ally`
+* Add `EveOnline::ESI::MarketGroups`
+* Add `EveOnline::ESI::MarketGroup`
+* Add `EveOnline::ESI::Models::MarketGroup`
 
 ## v0.29.0
 
