@@ -1619,6 +1619,30 @@ market_groups.etag # => "bf7832bfc20f5f9fdeddc9cb0360b941067310e7e3a2a80315b45a4
 
 #### Get item group information
 
+```ruby
+options = { id: 618, language: 'en-us' }
+
+market_group = EveOnline::ESI::MarketGroup.new(options)
+
+market_group.scope # => nil
+
+market_group.as_json # => {:description=>"Implants intended for Subcervical Processing Slot 1.",
+                     #     :market_group_id=>618,
+                     #     :name=>"Implant Slot 01",
+                     #     :parent_group_id=>532}
+
+market_group.description # => "Implants intended for Subcervical Processing Slot 1."
+market_group.market_group_id # => 618
+market_group.name # => "Implant Slot 01"
+market_group.parent_group_id # => 532
+
+market_group.type_ids.size # => 48
+
+market_group.type_ids.first # => 28802
+
+market_group.etag # => "bf7832bfc20f5f9fdeddc9cb0360b941067310e7e3a2a80315b45a43"
+```
+
 #### List market prices
 
 #### List orders in a structure
