@@ -1,0 +1,69 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://esi.evetech.net/v1/markets/groups/618/?datasource=tranquility&language=en-us
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/json
+      User-Agent:
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.30.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 06 Dec 2019 17:00:44 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '435'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,If-None-Match,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,HEAD,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,ETag,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Allow:
+      - GET,HEAD,OPTIONS
+      Cache-Control:
+      - public
+      Content-Language:
+      - en-us
+      Etag:
+      - W/"bf7832bfc20f5f9fdeddc9cb0360b941067310e7e3a2a80315b45a43"
+      Expires:
+      - Sat, 07 Dec 2019 11:05:00 GMT
+      Last-Modified:
+      - Thu, 05 Dec 2019 11:12:48 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept-Language
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '16'
+      X-Esi-Request-Id:
+      - dc527398-40c8-4672-9b31-9280c4a71247
+    body:
+      encoding: UTF-8
+      string: '{"description":"Implants intended for Subcervical Processing Slot 1.","market_group_id":618,"name":"Implant
+        Slot 01","parent_group_id":532,"types":[28802,33923,28808,33929,28814,33935,20498,20499,33941,20121,33947,33953,2082,33959,9899,33965,52785,33971,52917,52674,42145,19534,31954,19540,14295,33555,31962,22107,42204,31968,22113,42210,13283,32101,31974,22119,10216,10217,32107,33516,22125,32112,22760,22131,32117,28790,28796,33917]}'
+    http_version: 
+  recorded_at: Fri, 06 Dec 2019 17:00:44 GMT
+recorded_with: VCR 5.0.0
