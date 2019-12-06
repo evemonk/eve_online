@@ -72,6 +72,8 @@ require "eve_online/esi/corporation_loyalty_store_offers"
 require "eve_online/esi/character_orders"
 require "eve_online/esi/corporation_orders"
 require "eve_online/esi/market_history"
+require "eve_online/esi/market_groups"
+require "eve_online/esi/market_group"
 
 require "eve_online/esi/character_attributes"
 require "eve_online/esi/character_skill_queue"
