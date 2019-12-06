@@ -154,6 +154,7 @@ require "eve_online/esi/models/home_location"
 require "eve_online/esi/models/server_status"
 
 require "eve_online/esi/models/market_history"
+require "eve_online/esi/models/market_group"
 
 require "eve_online/esi/models/corporation"
 require "eve_online/esi/models/corporation_alliance_history"
