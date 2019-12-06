@@ -1605,6 +1605,18 @@ market_history.etag # => "01636947a53db63a0369aab78bbc98bae94a49cd6aa3950c29d588
 
 #### Get item groups
 
+```ruby
+market_groups = EveOnline::ESI::MarketGroups.new
+
+market_groups.scope # => nil
+
+market_groups.market_group_ids.size # => 1872
+
+market_groups.market_group_ids.first # => 2
+
+market_groups.etag # => "bf7832bfc20f5f9fdeddc9cb0360b941067310e7e3a2a80315b45a43"
+```
+
 #### Get item group information
 
 #### List market prices
