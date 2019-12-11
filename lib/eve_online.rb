@@ -69,6 +69,16 @@ require "eve_online/esi/character_ship"
 require "eve_online/esi/character_loyalty_points"
 require "eve_online/esi/corporation_loyalty_store_offers"
 
+require "eve_online/esi/character_mail_headers"
+require "eve_online/esi/character_new_mail"
+# require "eve_online/esi/character_delete_mail"
+# require "eve_online/esi/character_get_mail"
+# require "eve_online/esi/character_update_mail"
+# require "eve_online/esi/character_mail_labels"
+# require "eve_online/esi/character_new_mail_label"
+# require "eve_online/esi/character_delete_mail_label"
+# require "eve_online/esi/character_mail_lists"
+
 require "eve_online/esi/character_orders"
 require "eve_online/esi/corporation_orders"
 require "eve_online/esi/market_history"
@@ -165,6 +175,11 @@ require "eve_online/esi/models/alliance_icon"
 
 require "eve_online/esi/models/offer_required_item"
 require "eve_online/esi/models/offer_required_items"
+
+require "eve_online/esi/models/mail_header"
+require "eve_online/esi/models/mail_recipient"
+require "eve_online/esi/models/mail_recipients"
+require "eve_online/esi/models/mail"
 
 require "eve_online/esi/models/dogma_attribute"
 require "eve_online/esi/models/dogma_attributes"

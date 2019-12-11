@@ -8,7 +8,6 @@ module EveOnline
           {
             from_id: from_id,
             is_read: is_read,
-            label_ids: label_ids,
             mail_id: mail_id,
             subject: subject,
             timestamp: timestamp,
@@ -23,10 +22,6 @@ module EveOnline
           options["is_read"]
         end
 
-        def label_ids
-          options["labels"]
-        end
-
         def mail_id
           options["mail_id"]
         end
@@ -39,6 +34,10 @@ module EveOnline
           timestamp = options["timestamp"]
 
           parse_datetime_with_timezone(timestamp) if timestamp
+        end
+
+        def label_ids
+          options["labels"]
         end
 
         def recipients

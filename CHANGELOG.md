@@ -6,6 +6,7 @@
 * Add `EveOnline::ESI::Models::MailRecipient`
 * Add `EveOnline::ESI::Models::MailRecipients`
 * Add `EveOnline::ESI::CharacterMailHeaders`
+* Add `EveOnline::ESI::CharacterGetMail`
 
 ## v0.30.0
 
