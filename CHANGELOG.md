@@ -1,5 +1,12 @@
 # Changelog
 
+## master
+
+* Add `EveOnline::ESI::Models::MailHeader`
+* Add `EveOnline::ESI::Models::MailRecipient`
+* Add `EveOnline::ESI::Models::MailRecipients`
+* Add `EveOnline::ESI::CharacterMailHeaders`
+
 ## v0.30.0
 
 * Add `EveOnline::ESI::Models::OfferRequiredItem`
