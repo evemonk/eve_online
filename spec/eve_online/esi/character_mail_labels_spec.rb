@@ -30,7 +30,50 @@ describe EveOnline::ESI::CharacterMailLabels do
   end
 
   describe "#labels" do
-    # TODO: write this
+    context "when @labels set" do
+      let(:labels) { [instance_double(EveOnline::ESI::Models::MailLabel)] }
+
+      before { subject.instance_variable_set(:@labels, labels) }
+
+      specify { expect(subject.labels).to eq(labels) }
+    end
+
+    context "when @labels not set" do
+      let(:label) { instance_double(EveOnline::ESI::Models::MailLabel) }
+
+      let(:response) do
+        [
+          {
+            color: "#ffffff",
+            label_id: 8,
+            name: "[Alliance]",
+            unread_count: 0,
+          },
+        ]
+      end
+
+      before do
+        #
+        # subject.response.fetch('labels') # => [{"color"=>"#ffffff", "label_id"=>8, "name"=>"[Alliance]", "unread_count"=>0}]
+        #
+        expect(subject).to receive(:response) do
+          double.tap do |a|
+            expect(a).to receive(:fetch).with("labels").and_return(response)
+          end
+        end
+      end
+
+      before do
+        #
+        # EveOnline::ESI::Models::MailLabel.new(response.first) # => label
+        #
+        expect(EveOnline::ESI::Models::MailLabel).to receive(:new).with(response.first).and_return(label)
+      end
+
+      specify { expect(subject.labels).to eq([label]) }
+
+      specify { expect { subject.labels }.to change { subject.instance_variable_get(:@labels) }.from(nil).to([label]) }
+    end
   end
 
   describe "#total_unread_count" do
