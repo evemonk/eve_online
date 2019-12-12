@@ -1,0 +1,66 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://esi.evetech.net/v3/characters/90729314/mail/labels/?datasource=tranquility
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/json
+      User-Agent:
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.30.0
+      Authorization:
+      - Bearer token123
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 12 Dec 2019 10:42:17 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '283'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,If-None-Match,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,HEAD,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,ETag,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Allow:
+      - GET,HEAD,OPTIONS
+      Cache-Control:
+      - private
+      Etag:
+      - '"6aac63dafa81b592eba22fe0d7bf12a2c11bfd5b054aa78d3a3a5cde"'
+      Expires:
+      - Thu, 12 Dec 2019 10:42:47 GMT
+      Last-Modified:
+      - Thu, 12 Dec 2019 10:42:17 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '43'
+      X-Esi-Request-Id:
+      - d8476d2a-5cd8-4a65-9c1e-0aea6cf643bf
+    body:
+      encoding: UTF-8
+      string: '{"labels":[{"color":"#ffffff","label_id":1,"name":"Inbox","unread_count":1},{"color":"#ffffff","label_id":2,"name":"Sent"},{"color":"#ffffff","label_id":4,"name":"[Corp]","unread_count":0},{"color":"#ffffff","label_id":8,"name":"[Alliance]","unread_count":0}],"total_unread_count":1}'
+    http_version:
+  recorded_at: Thu, 12 Dec 2019 10:42:17 GMT
+recorded_with: VCR 5.0.0
