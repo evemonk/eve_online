@@ -3,16 +3,13 @@ version: 2
 jobs:
   ruby-2.4.9:
     docker:
-      - image: ruby:2.4.9
+      - image: circleci/ruby:2.4.9
     steps:
       - checkout
       - run: rm Gemfile.lock
       - run: rm .ruby-version
       - run: gem install bundler
-      - run: bundle -v
       - run: bundle install
-      - run: bundle update --bundler
-      - run: cat Gemfile.lock
       - run: bundle exec appraisal install || true
       - run: bundle exec appraisal activesupport_42 rake
       - run: bundle exec appraisal activesupport_50 rake
@@ -22,15 +19,13 @@ jobs:
       - run: bundle exec mdl README.md CHANGELOG.md TODO.md
   ruby-2.5.7:
     docker:
-      - image: ruby:2.5.7
+      - image: circleci/ruby:2.5.7
     steps:
       - checkout
       - run: rm Gemfile.lock
       - run: rm .ruby-version
       - run: gem install bundler
-      - run: bundle -v
       - run: bundle install
-      - run: bundle update --bundler
       - run: bundle exec appraisal install || true
       - run: bundle exec appraisal activesupport_50 rake
       - run: bundle exec appraisal activesupport_51 rake
@@ -41,15 +36,13 @@ jobs:
       - run: bundle exec mdl README.md CHANGELOG.md TODO.md
   ruby-2.6.5:
     docker:
-      - image: ruby:2.6.5
+      - image: circleci/ruby:2.6.5
     steps:
       - checkout
       - run: rm Gemfile.lock
       - run: rm .ruby-version
       - run: gem install bundler
-      - run: bundle -v
       - run: bundle install
-      - run: bundle update --bundler
       - run: bundle exec appraisal install || true
       - run: bundle exec appraisal activesupport_50 rake
       - run: bundle exec appraisal activesupport_51 rake
@@ -66,9 +59,7 @@ jobs:
       - run: rm Gemfile.lock
       - run: rm .ruby-version
       - run: gem install bundler
-      - run: bundle -v
       - run: bundle install
-      - run: bundle update --bundler
       - run: bundle exec appraisal install || true
       - run: bundle exec appraisal activesupport_50 rake
       - run: bundle exec appraisal activesupport_51 rake
@@ -86,8 +77,6 @@ jobs:
       - run: rm .ruby-version
       - run: gem install bundler
       - run: bundle install
-      - run: bundle -v
-      - run: bundle update --bundler
       - run: bundle exec appraisal install || true
       - run: bundle exec appraisal activesupport_42 rake JRUBY_OPTS="--debug"
       - run: bundle exec appraisal activesupport_50 rake JRUBY_OPTS="--debug"
