@@ -9,9 +9,9 @@ jobs:
       - run: rm Gemfile.lock
       - run: rm .ruby-version
       - run: gem install bundler
-      - run: bundle update --bundler
       - run: bundle -v
       - run: bundle install
+      - run: bundle update --bundler
       - run: cat Gemfile.lock
       - run: bundle exec appraisal install || true
       - run: bundle exec appraisal activesupport_42 rake
@@ -28,9 +28,9 @@ jobs:
       - run: rm Gemfile.lock
       - run: rm .ruby-version
       - run: gem install bundler
-      - run: bundle update --bundler
       - run: bundle -v
       - run: bundle install
+      - run: bundle update --bundler
       - run: bundle exec appraisal install || true
       - run: bundle exec appraisal activesupport_50 rake
       - run: bundle exec appraisal activesupport_51 rake
@@ -47,9 +47,9 @@ jobs:
       - run: rm Gemfile.lock
       - run: rm .ruby-version
       - run: gem install bundler
-      - run: bundle update --bundler
       - run: bundle -v
       - run: bundle install
+      - run: bundle update --bundler
       - run: bundle exec appraisal install || true
       - run: bundle exec appraisal activesupport_50 rake
       - run: bundle exec appraisal activesupport_51 rake
@@ -66,9 +66,9 @@ jobs:
       - run: rm Gemfile.lock
       - run: rm .ruby-version
       - run: gem install bundler
-      - run: bundle update --bundler
       - run: bundle -v
       - run: bundle install
+      - run: bundle update --bundler
       - run: bundle exec appraisal install || true
       - run: bundle exec appraisal activesupport_50 rake
       - run: bundle exec appraisal activesupport_51 rake
@@ -85,8 +85,9 @@ jobs:
       - run: rm Gemfile.lock
       - run: rm .ruby-version
       - run: gem install bundler
-      - run: bundle update --bundler
       - run: bundle install
+      - run: bundle -v
+      - run: bundle update --bundler
       - run: bundle exec appraisal install || true
       - run: bundle exec appraisal activesupport_42 rake JRUBY_OPTS="--debug"
       - run: bundle exec appraisal activesupport_50 rake JRUBY_OPTS="--debug"
