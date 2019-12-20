@@ -7,7 +7,7 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (6.0.1)
+    activesupport (6.0.2.1)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
@@ -99,7 +99,7 @@ GEM
     standard (0.1.7)
       rubocop (~> 0.77.0)
       rubocop-performance (~> 1.5.1)
-    thor (0.20.3)
+    thor (1.0.1)
     thread_safe (0.3.6)
     tomlrb (1.2.9)
     tzinfo (1.2.5)
@@ -133,4 +133,4 @@ DEPENDENCIES
   webmock
 
 BUNDLED WITH
-   2.1.0.pre.3
+   2.1.1
