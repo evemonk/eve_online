@@ -11,6 +11,7 @@ jobs:
       - run: gem install bundler
       - run: bundle -v
       - run: bundle install
+      - run: cat Gemfile.lock
       - run: bundle exec appraisal install || true
       - run: bundle exec appraisal activesupport_42 rake
       - run: bundle exec appraisal activesupport_50 rake
