@@ -9,6 +9,7 @@ jobs:
       - run: rm Gemfile.lock
       - run: rm .ruby-version
       - run: gem install bundler
+      - run: bundle -v
       - run: bundle install
       - run: bundle exec appraisal install || true
       - run: bundle exec appraisal activesupport_42 rake
@@ -25,6 +26,7 @@ jobs:
       - run: rm Gemfile.lock
       - run: rm .ruby-version
       - run: gem install bundler
+      - run: bundle -v
       - run: bundle install
       - run: bundle exec appraisal install || true
       - run: bundle exec appraisal activesupport_50 rake
@@ -42,6 +44,7 @@ jobs:
       - run: rm Gemfile.lock
       - run: rm .ruby-version
       - run: gem install bundler
+      - run: bundle -v
       - run: bundle install
       - run: bundle exec appraisal install || true
       - run: bundle exec appraisal activesupport_50 rake
@@ -59,6 +62,7 @@ jobs:
       - run: rm Gemfile.lock
       - run: rm .ruby-version
       - run: gem install bundler
+      - run: bundle -v
       - run: bundle install
       - run: bundle exec appraisal install || true
       - run: bundle exec appraisal activesupport_50 rake
