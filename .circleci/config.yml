@@ -51,9 +51,9 @@ jobs:
       - run: bundle exec appraisal activesupport_edge rake
       - run: bundle exec standardrb
       - run: bundle exec mdl README.md CHANGELOG.md TODO.md
-  ruby-2.7.0-preview1:
+  ruby-2.7.0-rc1:
     docker:
-      - image: circleci/ruby:2.7.0-preview1
+      - image: circleci/ruby:2.7.0-rc1
     steps:
       - checkout
       - run: rm Gemfile.lock
@@ -95,4 +95,4 @@ workflows:
       - ruby-2.4.9
       - ruby-2.5.7
       - ruby-2.6.5
-      - ruby-2.7.0-preview1
+      - ruby-2.7.0-rc1
