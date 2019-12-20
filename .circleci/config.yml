@@ -3,7 +3,7 @@ version: 2
 jobs:
   ruby-2.4.9:
     docker:
-      - image: circleci/ruby:2.4.9
+      - image: ruby:2.4.9
     steps:
       - checkout
       - run: rm Gemfile.lock
@@ -19,7 +19,7 @@ jobs:
       - run: bundle exec mdl README.md CHANGELOG.md TODO.md
   ruby-2.5.7:
     docker:
-      - image: circleci/ruby:2.5.7
+      - image: ruby:2.5.7
     steps:
       - checkout
       - run: rm Gemfile.lock
@@ -36,7 +36,7 @@ jobs:
       - run: bundle exec mdl README.md CHANGELOG.md TODO.md
   ruby-2.6.5:
     docker:
-      - image: circleci/ruby:2.6.5
+      - image: ruby:2.6.5
     steps:
       - checkout
       - run: rm Gemfile.lock
