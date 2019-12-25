@@ -10,6 +10,7 @@
 * Add `EveOnline::ESI::CharacterGetMail`
 * Add `EveOnline::ESI::Models::MailLabel`
 * Add `EveOnline::ESI::CharacterMailLabels`
+* Ruby 2.7.0
 
 ## v0.30.0
 
