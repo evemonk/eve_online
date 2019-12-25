@@ -117,7 +117,7 @@ GEM
     thor (1.0.1)
     thread_safe (0.3.6)
     tomlrb (1.2.9)
-    tzinfo (1.2.5)
+    tzinfo (1.2.6)
       thread_safe (~> 0.1)
     unparser (0.4.2)
       abstract_type (~> 0.0.7)
@@ -153,4 +153,4 @@ DEPENDENCIES
   webmock
 
 BUNDLED WITH
-   2.1.1
+   2.1.2
