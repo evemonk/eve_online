@@ -50,7 +50,7 @@ jobs:
       - run: bundle exec mdl README.md CHANGELOG.md TODO.md
   ruby-2.7.0:
     docker:
-      - image: circleci/ruby:2.7.0
+      - image: circleci/ruby:2.7.0-rc1
     steps:
       - checkout
       - run: rm Gemfile.lock
