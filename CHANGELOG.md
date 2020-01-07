@@ -11,6 +11,8 @@
 * Add `EveOnline::ESI::Models::MailLabel`
 * Add `EveOnline::ESI::CharacterMailLabels`
 * Ruby 2.7.0
+* Rename `EveOnline::ESI::UniverseRegion#constellations` to `#constellation_ids`
+* Remove `constellations` from `EveOnline::ESI::UniverseRegion#as_json`
 
 ## v0.30.0
 
