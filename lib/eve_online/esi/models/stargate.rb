@@ -10,6 +10,8 @@ module EveOnline
             stargate_id: stargate_id,
             system_id: system_id,
             type_id: type_id,
+            destination_stargate_id: destination_stargate_id,
+            destination_system_id: destination_system_id,
           }
         end
 
@@ -29,8 +31,12 @@ module EveOnline
           options["type_id"]
         end
 
-        def destination
-          @destination ||= StargateDestination.new(options["destination"])
+        def destination_stargate_id
+          options.dig("destination", "stargate_id")
+        end
+
+        def destination_system_id
+          options.dig("destination", "system_id")
         end
 
         def position

@@ -108,14 +108,24 @@ describe EveOnline::ESI::UniverseStargate do
     specify { expect { subject.type_id }.not_to raise_error }
   end
 
-  describe "#destination" do
+  describe "#destination_stargate_id" do
     let(:model) { instance_double(EveOnline::ESI::Models::Stargate) }
 
     before { subject.instance_variable_set(:@model, model) }
 
-    before { expect(model).to receive(:destination) }
+    before { expect(model).to receive(:destination_stargate_id) }
 
-    specify { expect { subject.destination }.not_to raise_error }
+    specify { expect { subject.destination_stargate_id }.not_to raise_error }
+  end
+
+  describe "#destination_system_id" do
+    let(:model) { instance_double(EveOnline::ESI::Models::Stargate) }
+
+    before { subject.instance_variable_set(:@model, model) }
+
+    before { expect(model).to receive(:destination_system_id) }
+
+    specify { expect { subject.destination_system_id }.not_to raise_error }
   end
 
   describe "#position" do
