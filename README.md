@@ -51,6 +51,7 @@ gem install eve_online
 * MRI 2.4
 * MRI 2.5
 * MRI 2.6
+* MRI 2.7
 * JRuby 9.2.9.0
 
 ## Supported rails versions
@@ -1466,21 +1467,56 @@ corporation_loyalty_store_offers.etag # => "89211f42fde090e4d22621e9b97d7604ab87
 
 #### Return mail headers
 
+```ruby
+```
+
 #### Send a new mail
+
+```ruby
+```
 
 #### Delete a mail
 
+```ruby
+```
+
 #### Return a mail
+
+```ruby
+options = { character_id: 1337512245, mail_id: 376045681, token: "token" }
+
+character_mail = EveOnline::ESI::CharacterGetMail.new(options)
+
+character_mail.scope # => "esi-mail.read_mail.v1"
+
+
+
+```
 
 #### Update metadata about a mail
 
+```ruby
+```
+
 #### Get mail labels and unread counts
+
+```ruby
+```
 
 #### Create a mail label
 
+```ruby
+```
+
 #### Delete a mail label
 
+```ruby
+```
+
 #### Return mailing list subscriptions
+
+```ruby
+```
 
 ### Market
 
@@ -2221,15 +2257,16 @@ region = EveOnline::ESI::UniverseRegion.new(options)
 
 region.scope # => nil
 
-region.as_json # => {:constellations=>[20000001,20000002,20000003,...,20000016],
-               #     :description=>"The Derelik region...",
+region.as_json # => {:description=>"The Derelik region...",
                #     :name=>"Derelik",
                #     :region_id=>10000001}
 
-region.constellations # => [20000001,20000002,20000003,...,20000016]
 region.description # => "The Derelik region..."
 region.name # => "Derelik"
 region.region_id # => 10000001
+
+region.constellation_ids.size # => 16
+region.constellation_ids.first # => 20000001
 
 region.etag # => "2c8392581d493e06c015ca3d48d4076079bf4c976b1f776742592260"
 ```
@@ -2237,7 +2274,7 @@ region.etag # => "2c8392581d493e06c015ca3d48d4076079bf4c976b1f776742592260"
 #### Get stargate information
 
 ```ruby
-options = { id: 50000056 }
+options = { id: 50_000_056 }
 
 stargate = EveOnline::ESI::UniverseStargate.new(options)
 
@@ -2246,18 +2283,16 @@ stargate.scope # => nil
 stargate.as_json # => {:name=>"Stargate (Akpivem)",
                  #     :stargate_id=>50000056,
                  #     :system_id=>30000001,
-                 #     :type_id=>29624}
+                 #     :type_id=>29624,
+                 #     :destination_stargate_id=>50000342,
+                 #     :destination_system_id=>30000003}
 
 stargate.name # => "Stargate (Akpivem)"
 stargate.stargate_id # => 50000056
 stargate.system_id # => 30000001
 stargate.type_id # => 29624
-
-stargate.destination.as_json # => {:stargate_id=>50000342,
-                             #     :system_id=>30000003}
-
-stargate.destination.stargate_id # => 50000342
-stargate.destination.system_id # => 30000003
+stargate.destination_stargate_id # => 50000342
+stargate.destination_system_id # => 30000003
 
 stargate.position.as_json # => {:x=>331516354560.0,
                           #     :y=>43597455360.0,
