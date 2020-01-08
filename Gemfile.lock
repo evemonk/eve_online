@@ -32,7 +32,7 @@ GEM
       colorize (~> 0.7)
       ruby_parser (>= 3.14.1)
     hashdiff (1.0.0)
-    i18n (1.7.0)
+    i18n (1.7.1)
       concurrent-ruby (~> 1.0)
     jaro_winkler (1.5.4)
     json (2.3.0)
