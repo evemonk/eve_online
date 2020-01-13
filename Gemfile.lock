@@ -32,7 +32,7 @@ GEM
       colorize (~> 0.7)
       ruby_parser (>= 3.14.1)
     hashdiff (1.0.0)
-    i18n (1.8.1)
+    i18n (1.8.2)
       concurrent-ruby (~> 1.0)
     jaro_winkler (1.5.4)
     json (2.3.0)
@@ -46,7 +46,7 @@ GEM
       mixlib-config (>= 2.2.1, < 4)
     method_source (0.9.2)
     mini_portile2 (2.4.0)
-    minitest (5.13.0)
+    minitest (5.14.0)
     mixlib-cli (2.1.5)
     mixlib-config (3.0.6)
       tomlrb
