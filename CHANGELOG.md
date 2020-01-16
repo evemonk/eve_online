@@ -20,6 +20,7 @@
 * Remove `EveOnline::ESI::UniverseStargate#destination`
 * Add `EveOnline::ESI::UniverseStargate#destination_stargate_id`
 * Add `EveOnline::ESI::UniverseStargate#destination_system_id`
+* Drop datasource support
 
 ## v0.30.0
 

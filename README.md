@@ -2888,16 +2888,6 @@ races.write_timeout = 120
 races.write_timeout # => 120
 ```
 
-## Datasource
-
-Default datasource is `tranquility`. If you want to change it, for e.g., to `singularity`, add `datasource: 'singularity'` to default hash with options:
-
-```ruby
-options = { datasource: 'singularity' }
-
-races = EveOnline::ESI::UniverseRaces.new(options)
-```
-
 ## Languages support
 
 Default language is `en-us`. Supported languages: `de`, `en-us`, `fr`, `ja`, `ru`, `zh`.
