@@ -1483,7 +1483,7 @@ corporation_loyalty_store_offers.etag # => "89211f42fde090e4d22621e9b97d7604ab87
 #### Return a mail
 
 ```ruby
-options = { character_id: 1337512245, mail_id: 376045681, token: "token" }
+options = { character_id: 1_337_512_245, mail_id: 376045681, token: "token" }
 
 character_mail = EveOnline::ESI::CharacterGetMail.new(options)
 
@@ -1501,6 +1501,29 @@ character_mail.scope # => "esi-mail.read_mail.v1"
 #### Get mail labels and unread counts
 
 ```ruby
+options = { character_id: 1_337_512_245, token: "token" }
+
+character_mail_labels = EveOnline::ESI::CharacterMailLabels.new(options)
+
+character_mail_labels.scope # => "esi-mail.read_mail.v1"
+
+character_mail_labels.total_unread_count # => 288
+
+character_mail_labels.labels.size # => 4
+
+label = character_mail_labels.labels.last
+
+label.as_json # => {:color=>"#ffffff",
+              #     :label_id=>8,
+              #     :name=>"[Alliance]",
+              #     :unread_count=>227}
+
+label.color # => "#ffffff"
+label.label_id # => 8
+label.name # => "[Alliance]"
+label.unread_count # => 227
+
+character_mail_labels.etag # => "265cfe7f2d7df2273342ed75c92b5047af6f76a3807dcc8353b5f379"
 ```
 
 #### Create a mail label
