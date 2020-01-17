@@ -117,7 +117,7 @@ describe EveOnline::ESI::CharacterIndustryJobs do
   describe "#query" do
     context "without include_completed" do
       specify do
-        expect(subject.query).to eq(datasource: "tranquility")
+        expect(subject.query).to eq({})
       end
     end
 

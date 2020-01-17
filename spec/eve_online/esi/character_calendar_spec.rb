@@ -106,7 +106,7 @@ describe EveOnline::ESI::CharacterCalendar do
   describe "#query" do
     context "without from_event" do
       specify do
-        expect(subject.query).to eq(datasource: "tranquility")
+        expect(subject.query).to eq({})
       end
     end
 
