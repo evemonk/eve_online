@@ -24,8 +24,6 @@ describe EveOnline::ESI::UniverseMoon do
       its(:_write_timeout) { should eq(60) }
     end
 
-    its(:datasource) { should eq("tranquility") }
-
     its(:id) { should eq(40_000_004) }
   end
 
@@ -120,13 +118,13 @@ describe EveOnline::ESI::UniverseMoon do
 
   describe "#query" do
     specify do
-      expect(subject.query).to eq(datasource: "tranquility")
+      expect(subject.query).to eq({})
     end
   end
 
   describe "#url" do
     specify do
-      expect(subject.url).to eq("https://esi.evetech.net/v1/universe/moons/40000004/?datasource=tranquility")
+      expect(subject.url).to eq("https://esi.evetech.net/v1/universe/moons/40000004/")
     end
   end
 end

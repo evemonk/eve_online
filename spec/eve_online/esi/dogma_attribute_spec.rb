@@ -24,8 +24,6 @@ describe EveOnline::ESI::DogmaAttribute do
       its(:_write_timeout) { should eq(60) }
     end
 
-    its(:datasource) { should eq("tranquility") }
-
     its(:id) { should eq(2) }
   end
 
@@ -180,13 +178,13 @@ describe EveOnline::ESI::DogmaAttribute do
 
   describe "#query" do
     specify do
-      expect(subject.query).to eq(datasource: "tranquility")
+      expect(subject.query).to eq({})
     end
   end
 
   describe "#url" do
     specify do
-      expect(subject.url).to eq("https://esi.evetech.net/v1/dogma/attributes/2/?datasource=tranquility")
+      expect(subject.url).to eq("https://esi.evetech.net/v1/dogma/attributes/2/")
     end
   end
 end

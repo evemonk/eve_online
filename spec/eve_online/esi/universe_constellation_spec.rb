@@ -24,8 +24,6 @@ describe EveOnline::ESI::UniverseConstellation do
       its(:_write_timeout) { should eq(60) }
     end
 
-    its(:datasource) { should eq("tranquility") }
-
     its(:id) { should eq(20_000_001) }
   end
 
@@ -134,13 +132,13 @@ describe EveOnline::ESI::UniverseConstellation do
 
   describe "#query" do
     specify do
-      expect(subject.query).to eq(datasource: "tranquility", language: "en-us")
+      expect(subject.query).to eq(language: "en-us")
     end
   end
 
   describe "#url" do
     specify do
-      expect(subject.url).to eq("https://esi.evetech.net/v1/universe/constellations/20000001/?datasource=tranquility&language=en-us")
+      expect(subject.url).to eq("https://esi.evetech.net/v1/universe/constellations/20000001/?language=en-us")
     end
   end
 end

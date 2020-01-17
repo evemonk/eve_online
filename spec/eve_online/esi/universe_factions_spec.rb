@@ -23,8 +23,6 @@ describe EveOnline::ESI::UniverseFactions do
     if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("2.6.0")
       its(:_write_timeout) { should eq(60) }
     end
-
-    its(:datasource) { should eq("tranquility") }
   end
 
   describe "#factions" do
@@ -92,13 +90,13 @@ describe EveOnline::ESI::UniverseFactions do
 
   describe "#query" do
     specify do
-      expect(subject.query).to eq(datasource: "tranquility", language: "en-us")
+      expect(subject.query).to eq(language: "en-us")
     end
   end
 
   describe "#url" do
     specify do
-      expect(subject.url).to eq("https://esi.evetech.net/v2/universe/factions/?datasource=tranquility&language=en-us")
+      expect(subject.url).to eq("https://esi.evetech.net/v2/universe/factions/?language=en-us")
     end
   end
 end

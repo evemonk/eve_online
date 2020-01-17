@@ -24,8 +24,6 @@ describe EveOnline::ESI::MarketHistory do
       its(:_write_timeout) { should eq(60) }
     end
 
-    its(:datasource) { should eq("tranquility") }
-
     its(:region_id) { should eq(10_000_002) }
 
     its(:type_id) { should eq(28_606) }
@@ -92,13 +90,13 @@ describe EveOnline::ESI::MarketHistory do
 
   describe "#query" do
     specify do
-      expect(subject.query).to eq(datasource: "tranquility", type_id: 28_606)
+      expect(subject.query).to eq(type_id: 28_606)
     end
   end
 
   describe "#url" do
     specify do
-      expect(subject.url).to eq("https://esi.evetech.net/v1/markets/10000002/history/?datasource=tranquility&type_id=28606")
+      expect(subject.url).to eq("https://esi.evetech.net/v1/markets/10000002/history/?type_id=28606")
     end
   end
 end

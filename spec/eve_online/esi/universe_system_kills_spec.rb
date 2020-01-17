@@ -19,8 +19,6 @@ describe EveOnline::ESI::UniverseSystemKills do
     if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("2.6.0")
       its(:_write_timeout) { should eq(60) }
     end
-
-    its(:datasource) { should eq("tranquility") }
   end
 
   describe "#system_kills" do
@@ -78,13 +76,13 @@ describe EveOnline::ESI::UniverseSystemKills do
 
   describe "#query" do
     specify do
-      expect(subject.query).to eq(datasource: "tranquility")
+      expect(subject.query).to eq({})
     end
   end
 
   describe "#url" do
     specify do
-      expect(subject.url).to eq("https://esi.evetech.net/v2/universe/system_kills/?datasource=tranquility")
+      expect(subject.url).to eq("https://esi.evetech.net/v2/universe/system_kills/")
     end
   end
 end

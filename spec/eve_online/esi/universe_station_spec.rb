@@ -24,8 +24,6 @@ describe EveOnline::ESI::UniverseStation do
       its(:_write_timeout) { should eq(60) }
     end
 
-    its(:datasource) { should eq("tranquility") }
-
     its(:id) { should eq(60_012_526) }
   end
 
@@ -200,13 +198,13 @@ describe EveOnline::ESI::UniverseStation do
 
   describe "#query" do
     specify do
-      expect(subject.query).to eq(datasource: "tranquility")
+      expect(subject.query).to eq({})
     end
   end
 
   describe "#url" do
     specify do
-      expect(subject.url).to eq("https://esi.evetech.net/v2/universe/stations/60012526/?datasource=tranquility")
+      expect(subject.url).to eq("https://esi.evetech.net/v2/universe/stations/60012526/")
     end
   end
 end

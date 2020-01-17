@@ -24,8 +24,6 @@ describe EveOnline::ESI::UniverseStargate do
       its(:_write_timeout) { should eq(60) }
     end
 
-    its(:datasource) { should eq("tranquility") }
-
     its(:id) { should eq(50_000_056) }
   end
 
@@ -150,13 +148,13 @@ describe EveOnline::ESI::UniverseStargate do
 
   describe "#query" do
     specify do
-      expect(subject.query).to eq(datasource: "tranquility")
+      expect(subject.query).to eq({})
     end
   end
 
   describe "#url" do
     specify do
-      expect(subject.url).to eq("https://esi.evetech.net/v1/universe/stargates/50000056/?datasource=tranquility")
+      expect(subject.url).to eq("https://esi.evetech.net/v1/universe/stargates/50000056/")
     end
   end
 end
