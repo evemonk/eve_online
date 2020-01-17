@@ -73,6 +73,7 @@ jobs:
       - run: rm .ruby-version
       - run: gem -v
       - run: bundle -v
+      - run: gem update --system
       - run: bundle install
       - run: bundle exec appraisal install || true
       - run: bundle exec appraisal activesupport_42 rake JRUBY_OPTS="--debug"
