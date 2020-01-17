@@ -25,8 +25,6 @@ describe EveOnline::ESI::CorporationBlueprints do
         its(:_write_timeout) { should eq(60) }
       end
 
-      its(:datasource) { should eq("tranquility") }
-
       its(:corporation_id) { should eq(12_345_678) }
 
       its(:page) { should eq(1) }
@@ -106,13 +104,13 @@ describe EveOnline::ESI::CorporationBlueprints do
 
   describe "#query" do
     specify do
-      expect(subject.query).to eq(datasource: "tranquility", page: 1)
+      expect(subject.query).to eq(page: 1)
     end
   end
 
   describe "#url" do
     specify do
-      expect(subject.url).to eq("https://esi.evetech.net/v2/corporations/12345678/blueprints/?datasource=tranquility&page=1")
+      expect(subject.url).to eq("https://esi.evetech.net/v2/corporations/12345678/blueprints/?page=1")
     end
   end
 end

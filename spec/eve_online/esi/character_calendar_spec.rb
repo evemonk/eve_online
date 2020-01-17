@@ -25,8 +25,6 @@ describe EveOnline::ESI::CharacterCalendar do
         its(:_write_timeout) { should eq(60) }
       end
 
-      its(:datasource) { should eq("tranquility") }
-
       its(:character_id) { should eq(12_345_678) }
 
       its(:from_event) { should eq(nil) }
@@ -124,14 +122,14 @@ describe EveOnline::ESI::CharacterCalendar do
       subject { described_class.new(options) }
 
       specify do
-        expect(subject.query).to eq(datasource: "tranquility", from_event: 123)
+        expect(subject.query).to eq(from_event: 123)
       end
     end
   end
 
   describe "#url" do
     specify do
-      expect(subject.url).to eq("https://esi.evetech.net/v1/characters/12345678/calendar/?datasource=tranquility")
+      expect(subject.url).to eq("https://esi.evetech.net/v1/characters/12345678/calendar/")
     end
   end
 end

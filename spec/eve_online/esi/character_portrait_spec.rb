@@ -24,8 +24,6 @@ describe EveOnline::ESI::CharacterPortrait do
       its(:_write_timeout) { should eq(60) }
     end
 
-    its(:datasource) { should eq("tranquility") }
-
     its(:character_id) { should eq(12_345_678) }
   end
 
@@ -120,13 +118,13 @@ describe EveOnline::ESI::CharacterPortrait do
 
   describe "#query" do
     specify do
-      expect(subject.query).to eq(datasource: "tranquility")
+      expect(subject.query).to eq({})
     end
   end
 
   describe "#url" do
     specify do
-      expect(subject.url).to eq("https://esi.evetech.net/v2/characters/12345678/portrait/?datasource=tranquility")
+      expect(subject.url).to eq("https://esi.evetech.net/v2/characters/12345678/portrait/")
     end
   end
 end
