@@ -71,6 +71,8 @@ jobs:
       - checkout
       - run: rm Gemfile.lock
       - run: rm .ruby-version
+      - run: gem -v
+      - run: bundle -v
       - run: bundle install
       - run: bundle exec appraisal install || true
       - run: bundle exec appraisal activesupport_42 rake JRUBY_OPTS="--debug"
