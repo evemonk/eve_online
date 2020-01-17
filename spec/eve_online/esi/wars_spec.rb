@@ -21,8 +21,6 @@ describe EveOnline::ESI::Wars do
         its(:_write_timeout) { should eq(60) }
       end
 
-      its(:datasource) { should eq("tranquility") }
-
       its(:max_war_id) { should eq(nil) }
     end
 
@@ -60,7 +58,7 @@ describe EveOnline::ESI::Wars do
   describe "#query" do
     context "without max_war_id" do
       specify do
-        expect(subject.query).to eq(datasource: "tranquility")
+        expect(subject.query).to eq({})
       end
     end
 
@@ -70,14 +68,14 @@ describe EveOnline::ESI::Wars do
       subject { described_class.new(options) }
 
       specify do
-        expect(subject.query).to eq(datasource: "tranquility", max_war_id: 123)
+        expect(subject.query).to eq(max_war_id: 123)
       end
     end
   end
 
   describe "#url" do
     specify do
-      expect(subject.url).to eq("https://esi.evetech.net/v1/wars/?datasource=tranquility")
+      expect(subject.url).to eq("https://esi.evetech.net/v1/wars/")
     end
   end
 end
