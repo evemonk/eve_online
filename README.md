@@ -1483,14 +1483,37 @@ corporation_loyalty_store_offers.etag # => "89211f42fde090e4d22621e9b97d7604ab87
 #### Return a mail
 
 ```ruby
-options = { character_id: 1_337_512_245, mail_id: 376045681, token: "token" }
+options = { character_id: 1_337_512_245, mail_id: 376_045_681, token: "token" }
 
 character_mail = EveOnline::ESI::CharacterGetMail.new(options)
 
 character_mail.scope # => "esi-mail.read_mail.v1"
 
+character_mail.as_json # => {:body=>"<font size=\"12\" color=\"#bfffffff\">moving</font>",
+                       #     :from_id=>1208274826,
+                       #     :read=>true,
+                       #     :subject=>"moving",
+                       #     :timestamp=>Mon, 10 Jun 2019 07:50:00 UTC +00:00}
 
+character_mail.body # => "<font size=\"12\" color=\"#bfffffff\">moving</font>"
+character_mail.from_id # => 1208274826
+character_mail.read # => true
+character_mail.subject # => "moving"
+character_mail.timestamp # => Mon, 10 Jun 2019 07:50:00 UTC +00:00
 
+character_mail.label_ids # => [4]
+
+character_mail.recipients.size # => 1
+
+recipient = character_mail.recipients.first
+
+recipient.as_json # => {:recipient_id=>98134807,
+                  #     :recipient_type=>"corporation"}
+
+recipient.recipient_id # => 98134807
+recipient.recipient_type # => "corporation"
+
+character_mail.etag # => "90dba7f7a6e60bfe8527b9f5112b9ca588c8f57d01415717be525a91"
 ```
 
 #### Update metadata about a mail
