@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://esi.evetech.net/v1/universe/bloodlines/?datasource=tranquility&language=en-us
+    uri: https://esi.evetech.net/v1/universe/bloodlines/?language=en-us
     body:
       encoding: US-ASCII
       string: ''
