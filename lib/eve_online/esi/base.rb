@@ -121,9 +121,11 @@ module EveOnline
       end
 
       def uri
-        params = {host: API_HOST, path: path}
-        params.merge!(query: query.to_query) if query.presence
-        @uri ||= URI::HTTPS.build(params)
+        @uri ||= begin
+          params = {host: API_HOST, path: path}
+          params.merge!(query: query.to_query) if query.presence
+          URI::HTTPS.build(params)
+        end
       end
 
       def additional_query_params

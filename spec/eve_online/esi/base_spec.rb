@@ -391,35 +391,49 @@ describe EveOnline::ESI::Base do
 
       let(:path) { double }
 
-      let(:to_query) { double }
-
       before { expect(subject).to receive(:path).and_return(path) }
 
-      before do
-        #
-        # subject.query.to_query # => to_query
-        #
-        expect(subject).to receive(:query) do
-          double.tap do |a|
-            expect(a).to receive(:to_query).and_return(to_query)
-          end
+      context "when query is presence" do
+        let(:query) { double }
+
+        let(:to_query) { double }
+
+        before { expect(subject).to receive(:query).and_return(query).twice }
+
+        before { expect(query).to receive(:to_query).and_return(to_query) }
+
+        before do
+          #
+          # URI::HTTPS.build(host: API_HOST,
+          #                  path: path,
+          #                  query: query.to_query) # => uri
+          #
+          expect(URI::HTTPS).to receive(:build).with(host: described_class::API_HOST,
+                                                     path: path,
+                                                     query: to_query).and_return(uri)
         end
+
+        specify { expect { subject.uri }.not_to raise_error }
+
+        specify { expect { subject.uri }.to change { subject.instance_variable_get(:@uri) }.from(nil).to(uri) }
       end
 
-      before do
-        #
-        # URI::HTTPS.build(host: API_HOST,
-        #                  path: path,
-        #                  query: query.to_query) # => uri
-        #
-        expect(URI::HTTPS).to receive(:build).with(host: described_class::API_HOST,
-                                                   path: path,
-                                                   query: to_query).and_return(uri)
+      context "when query is not presence" do
+        before { expect(subject).to receive(:query).and_return({}) }
+
+        before do
+          #
+          # URI::HTTPS.build(host: API_HOST,
+          #                  path: path) # => uri
+          #
+          expect(URI::HTTPS).to receive(:build).with(host: described_class::API_HOST,
+                                                     path: path).and_return(uri)
+        end
+
+        specify { expect { subject.uri }.not_to raise_error }
+
+        specify { expect { subject.uri }.to change { subject.instance_variable_get(:@uri) }.from(nil).to(uri) }
       end
-
-      specify { expect { subject.uri }.not_to raise_error }
-
-      specify { expect { subject.uri }.to change { subject.instance_variable_get(:@uri) }.from(nil).to(uri) }
     end
   end
 
