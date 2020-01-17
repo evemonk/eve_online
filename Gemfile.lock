@@ -104,7 +104,7 @@ GEM
     tomlrb (1.2.9)
     tzinfo (1.2.6)
       thread_safe (~> 0.1)
-    unicode-display_width (1.6.0)
+    unicode-display_width (1.6.1)
     vcr (5.0.0)
     webmock (3.8.0)
       addressable (>= 2.3.6)
