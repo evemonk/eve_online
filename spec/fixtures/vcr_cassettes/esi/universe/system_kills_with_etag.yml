@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://esi.evetech.net/v2/universe/system_kills/?datasource=tranquility
+    uri: https://esi.evetech.net/v2/universe/system_kills/
     body:
       encoding: US-ASCII
       string: ''

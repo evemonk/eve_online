@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://esi.evetech.net/v1/universe/regions/?datasource=tranquility
+    uri: https://esi.evetech.net/v1/universe/regions/
     body:
       encoding: US-ASCII
       string: ''

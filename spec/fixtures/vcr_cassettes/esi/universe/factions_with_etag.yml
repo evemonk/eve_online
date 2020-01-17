@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://esi.evetech.net/v2/universe/factions/?datasource=tranquility&language=en-us
+    uri: https://esi.evetech.net/v2/universe/factions/?language=en-us
     body:
       encoding: US-ASCII
       string: ''

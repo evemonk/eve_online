@@ -16,7 +16,6 @@ describe EveOnline::ESI::Base do
           read_timeout: 30,
           open_timeout: 45,
           etag: "6f2d3caa79a79bc9e61aa058e18905faac5e293fa1729637648ce9a1",
-          datasource: "singularity",
           language: "ru",
         }.tap do |hash|
           if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("2.6.0")
@@ -41,8 +40,6 @@ describe EveOnline::ESI::Base do
 
       its(:_etag) { should eq("6f2d3caa79a79bc9e61aa058e18905faac5e293fa1729637648ce9a1") }
 
-      its(:datasource) { should eq("singularity") }
-
       its(:language) { should eq("ru") }
     end
 
@@ -60,8 +57,6 @@ describe EveOnline::ESI::Base do
       end
 
       its(:_etag) { should eq(nil) }
-
-      its(:datasource) { should eq("tranquility") }
 
       its(:language) { should eq("en-us") }
     end
@@ -433,7 +428,7 @@ describe EveOnline::ESI::Base do
   end
 
   describe "#base_query_params" do
-    specify { expect(subject.base_query_params).to eq([:datasource]) }
+    specify { expect(subject.base_query_params).to eq([]) }
   end
 
   describe "#path" do
@@ -442,7 +437,7 @@ describe EveOnline::ESI::Base do
 
   describe "#query" do
     context "when all params is blank" do
-      let(:options) { {datasource: nil, language: nil} }
+      let(:options) { {language: nil} }
 
       subject { described_class.new(options) }
 
@@ -452,13 +447,13 @@ describe EveOnline::ESI::Base do
     end
 
     context "when all params is present" do
-      let(:options) { {datasource: "singularity", language: "de"} }
+      let(:options) { {language: "de"} }
 
       subject { described_class.new(options) }
 
       before { expect(subject).to receive(:additional_query_params).and_return([:language]) }
 
-      specify { expect(subject.query).to eq(datasource: "singularity", language: "de") }
+      specify { expect(subject.query).to eq(language: "de") }
     end
   end
 

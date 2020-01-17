@@ -24,8 +24,6 @@ describe EveOnline::ESI::Corporation do
       its(:_write_timeout) { should eq(60) }
     end
 
-    its(:datasource) { should eq("tranquility") }
-
     its(:corporation_id) { should eq(12_345_678) }
   end
 
@@ -220,13 +218,13 @@ describe EveOnline::ESI::Corporation do
 
   describe "#query" do
     specify do
-      expect(subject.query).to eq(datasource: "tranquility")
+      expect(subject.query).to eq({})
     end
   end
 
   describe "#url" do
     specify do
-      expect(subject.url).to eq("https://esi.evetech.net/v4/corporations/12345678/?datasource=tranquility")
+      expect(subject.url).to eq("https://esi.evetech.net/v4/corporations/12345678/")
     end
   end
 end
