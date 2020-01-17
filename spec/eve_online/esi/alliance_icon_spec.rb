@@ -24,8 +24,6 @@ describe EveOnline::ESI::AllianceIcon do
       its(:_write_timeout) { should eq(60) }
     end
 
-    its(:datasource) { should eq("tranquility") }
-
     its(:alliance_id) { should eq(99_005_443) }
   end
 
@@ -100,13 +98,13 @@ describe EveOnline::ESI::AllianceIcon do
 
   describe "#query" do
     specify do
-      expect(subject.query).to eq(datasource: "tranquility")
+      expect(subject.query).to eq({})
     end
   end
 
   describe "#url" do
     specify do
-      expect(subject.url).to eq("https://esi.evetech.net/v1/alliances/99005443/icons/?datasource=tranquility")
+      expect(subject.url).to eq("https://esi.evetech.net/v1/alliances/99005443/icons/")
     end
   end
 end
