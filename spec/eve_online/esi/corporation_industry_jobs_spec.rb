@@ -27,8 +27,6 @@ describe EveOnline::ESI::CorporationIndustryJobs do
         its(:_write_timeout) { should eq(60) }
       end
 
-      its(:datasource) { should eq("tranquility") }
-
       its(:corporation_id) { should eq(12_345_678) }
 
       its(:include_completed) { should eq(nil) }
@@ -131,7 +129,7 @@ describe EveOnline::ESI::CorporationIndustryJobs do
   describe "#query" do
     context "without include_completed" do
       specify do
-        expect(subject.query).to eq(datasource: "tranquility", page: 1)
+        expect(subject.query).to eq(page: 1)
       end
     end
 
@@ -147,14 +145,14 @@ describe EveOnline::ESI::CorporationIndustryJobs do
       subject { described_class.new(options) }
 
       specify do
-        expect(subject.query).to eq(datasource: "tranquility", page: 1, include_completed: true)
+        expect(subject.query).to eq(page: 1, include_completed: true)
       end
     end
   end
 
   describe "#url" do
     specify do
-      expect(subject.url).to eq("https://esi.evetech.net/v1/corporations/12345678/industry/jobs/?datasource=tranquility&page=1")
+      expect(subject.url).to eq("https://esi.evetech.net/v1/corporations/12345678/industry/jobs/?page=1")
     end
   end
 end

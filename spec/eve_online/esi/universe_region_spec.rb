@@ -24,8 +24,6 @@ describe EveOnline::ESI::UniverseRegion do
       its(:_write_timeout) { should eq(60) }
     end
 
-    its(:datasource) { should eq("tranquility") }
-
     its(:id) { should eq(10_000_001) }
   end
 
@@ -68,16 +66,6 @@ describe EveOnline::ESI::UniverseRegion do
     specify { expect { subject.as_json }.not_to raise_error }
   end
 
-  describe "#constellations" do
-    let(:model) { instance_double(EveOnline::ESI::Models::Region) }
-
-    before { subject.instance_variable_set(:@model, model) }
-
-    before { expect(model).to receive(:constellations) }
-
-    specify { expect { subject.constellations }.not_to raise_error }
-  end
-
   describe "#description" do
     let(:model) { instance_double(EveOnline::ESI::Models::Region) }
 
@@ -108,6 +96,16 @@ describe EveOnline::ESI::UniverseRegion do
     specify { expect { subject.region_id }.not_to raise_error }
   end
 
+  describe "#constellation_ids" do
+    let(:model) { instance_double(EveOnline::ESI::Models::Region) }
+
+    before { subject.instance_variable_set(:@model, model) }
+
+    before { expect(model).to receive(:constellation_ids) }
+
+    specify { expect { subject.constellation_ids }.not_to raise_error }
+  end
+
   describe "#scope" do
     specify { expect(subject.scope).to eq(nil) }
   end
@@ -124,13 +122,13 @@ describe EveOnline::ESI::UniverseRegion do
 
   describe "#query" do
     specify do
-      expect(subject.query).to eq(datasource: "tranquility", language: "en-us")
+      expect(subject.query).to eq(language: "en-us")
     end
   end
 
   describe "#url" do
     specify do
-      expect(subject.url).to eq("https://esi.evetech.net/v1/universe/regions/10000001/?datasource=tranquility&language=en-us")
+      expect(subject.url).to eq("https://esi.evetech.net/v1/universe/regions/10000001/?language=en-us")
     end
   end
 end

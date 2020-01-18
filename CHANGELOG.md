@@ -1,5 +1,25 @@
 # Changelog
 
+## v0.31.0
+
+* Add `EveOnline::ESI::Models::MailRecipient`
+* Add `EveOnline::ESI::Models::MailRecipients`
+* Add `EveOnline::ESI::Models::Mail`
+* Add `EveOnline::ESI::CharacterGetMail`
+* Add `EveOnline::ESI::Models::MailLabel`
+* Add `EveOnline::ESI::CharacterMailLabels`
+* Ruby 2.7.0
+* Rename `EveOnline::ESI::UniverseRegion#constellations` to `#constellation_ids`
+* Remove `constellations` from `EveOnline::ESI::UniverseRegion#as_json`
+* Add `EveOnline::ESI::Models::Stargate#destination_stargate_id`
+* Add `EveOnline::ESI::Models::Stargate#destination_system_id`
+* Add `destination_stargate_id` and `destination_system_id` to `EveOnline::ESI::Models::Stargate#as_json`
+* Remove `EveOnline::ESI::Models::StargateDestination`
+* Remove `EveOnline::ESI::UniverseStargate#destination`
+* Add `EveOnline::ESI::UniverseStargate#destination_stargate_id`
+* Add `EveOnline::ESI::UniverseStargate#destination_system_id`
+* Drop datasource support
+
 ## v0.30.0
 
 * Add `EveOnline::ESI::Models::OfferRequiredItem`

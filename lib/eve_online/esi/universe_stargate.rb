@@ -18,7 +18,7 @@ module EveOnline
       end
 
       def_delegators :model, :as_json, :name, :stargate_id, :system_id,
-        :type_id, :destination, :position
+        :type_id, :destination_stargate_id, :destination_system_id, :position
 
       def model
         @model ||= Models::Stargate.new(response)

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://esi.evetech.net/v1/alliances/99005443/corporations/?datasource=tranquility
+    uri: https://esi.evetech.net/v1/alliances/99005443/corporations/
     body:
       encoding: US-ASCII
       string: ''

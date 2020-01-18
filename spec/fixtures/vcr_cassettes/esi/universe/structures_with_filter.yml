@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://esi.evetech.net/v1/universe/structures/?datasource=tranquility&filter=market
+    uri: https://esi.evetech.net/v1/universe/structures/?filter=market
     body:
       encoding: US-ASCII
       string: ''

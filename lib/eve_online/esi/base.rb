@@ -11,7 +11,7 @@ module EveOnline
       API_HOST = "esi.evetech.net"
 
       attr_reader :token, :parser, :_read_timeout, :_open_timeout, :_etag,
-        :datasource, :language
+        :language
 
       if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("2.6.0")
         attr_reader :_write_timeout
@@ -26,7 +26,6 @@ module EveOnline
           @_write_timeout = options.fetch(:write_timeout, 60)
         end
         @_etag = options.fetch(:etag, nil)
-        @datasource = options.fetch(:datasource, "tranquility")
         @language = options.fetch(:language, "en-us")
       end
 
@@ -122,9 +121,11 @@ module EveOnline
       end
 
       def uri
-        @uri ||= URI::HTTPS.build(host: API_HOST,
-                                  path: path,
-                                  query: query.to_query)
+        @uri ||= begin
+          params = {host: API_HOST, path: path}
+          params[:query] = query.to_query if query.presence
+          URI::HTTPS.build(params)
+        end
       end
 
       def additional_query_params
@@ -132,7 +133,7 @@ module EveOnline
       end
 
       def base_query_params
-        [:datasource]
+        []
       end
 
       def path

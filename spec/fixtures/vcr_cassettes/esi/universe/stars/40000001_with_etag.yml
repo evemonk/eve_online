@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://esi.evetech.net/v1/universe/stars/40000001/?datasource=tranquility
+    uri: https://esi.evetech.net/v1/universe/stars/40000001/
     body:
       encoding: US-ASCII
       string: ''

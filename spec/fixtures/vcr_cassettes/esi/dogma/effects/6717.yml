@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://esi.evetech.net/v2/dogma/effects/6717/?datasource=tranquility
+    uri: https://esi.evetech.net/v2/dogma/effects/6717/
     body:
       encoding: US-ASCII
       string: ''

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://esi.evetech.net/v2/characters/90729314/online/?datasource=tranquility
+    uri: https://esi.evetech.net/v2/characters/90729314/online/
     body:
       encoding: US-ASCII
       string: ''

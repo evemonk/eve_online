@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://esi.evetech.net/v1/characters/90729314/corporationhistory/?datasource=tranquility
+    uri: https://esi.evetech.net/v1/characters/90729314/corporationhistory/
     body:
       encoding: US-ASCII
       string: ''

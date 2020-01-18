@@ -24,8 +24,6 @@ describe EveOnline::ESI::UniverseStargate do
       its(:_write_timeout) { should eq(60) }
     end
 
-    its(:datasource) { should eq("tranquility") }
-
     its(:id) { should eq(50_000_056) }
   end
 
@@ -108,14 +106,24 @@ describe EveOnline::ESI::UniverseStargate do
     specify { expect { subject.type_id }.not_to raise_error }
   end
 
-  describe "#destination" do
+  describe "#destination_stargate_id" do
     let(:model) { instance_double(EveOnline::ESI::Models::Stargate) }
 
     before { subject.instance_variable_set(:@model, model) }
 
-    before { expect(model).to receive(:destination) }
+    before { expect(model).to receive(:destination_stargate_id) }
 
-    specify { expect { subject.destination }.not_to raise_error }
+    specify { expect { subject.destination_stargate_id }.not_to raise_error }
+  end
+
+  describe "#destination_system_id" do
+    let(:model) { instance_double(EveOnline::ESI::Models::Stargate) }
+
+    before { subject.instance_variable_set(:@model, model) }
+
+    before { expect(model).to receive(:destination_system_id) }
+
+    specify { expect { subject.destination_system_id }.not_to raise_error }
   end
 
   describe "#position" do
@@ -140,13 +148,13 @@ describe EveOnline::ESI::UniverseStargate do
 
   describe "#query" do
     specify do
-      expect(subject.query).to eq(datasource: "tranquility")
+      expect(subject.query).to eq({})
     end
   end
 
   describe "#url" do
     specify do
-      expect(subject.url).to eq("https://esi.evetech.net/v1/universe/stargates/50000056/?datasource=tranquility")
+      expect(subject.url).to eq("https://esi.evetech.net/v1/universe/stargates/50000056/")
     end
   end
 end

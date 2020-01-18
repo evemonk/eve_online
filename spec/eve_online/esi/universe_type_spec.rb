@@ -24,8 +24,6 @@ describe EveOnline::ESI::UniverseType do
       its(:_write_timeout) { should eq(60) }
     end
 
-    its(:datasource) { should eq("tranquility") }
-
     its(:id) { should eq(192) }
   end
 
@@ -244,13 +242,13 @@ describe EveOnline::ESI::UniverseType do
 
   describe "#query" do
     specify do
-      expect(subject.query).to eq(datasource: "tranquility", language: "en-us")
+      expect(subject.query).to eq(language: "en-us")
     end
   end
 
   describe "#url" do
     specify do
-      expect(subject.url).to eq("https://esi.evetech.net/v3/universe/types/192/?datasource=tranquility&language=en-us")
+      expect(subject.url).to eq("https://esi.evetech.net/v3/universe/types/192/?language=en-us")
     end
   end
 end

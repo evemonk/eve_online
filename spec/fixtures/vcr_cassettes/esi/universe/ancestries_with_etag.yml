@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://esi.evetech.net/v1/universe/ancestries/?datasource=tranquility&language=en-us
+    uri: https://esi.evetech.net/v1/universe/ancestries/?language=en-us
     body:
       encoding: US-ASCII
       string: ''

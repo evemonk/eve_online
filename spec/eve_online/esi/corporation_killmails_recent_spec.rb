@@ -25,8 +25,6 @@ describe EveOnline::ESI::CorporationKillmailsRecent do
         its(:_write_timeout) { should eq(60) }
       end
 
-      its(:datasource) { should eq("tranquility") }
-
       its(:corporation_id) { should eq(12_345_678) }
 
       its(:page) { should eq(1) }
@@ -100,13 +98,13 @@ describe EveOnline::ESI::CorporationKillmailsRecent do
 
   describe "#query" do
     specify do
-      expect(subject.query).to eq(datasource: "tranquility", page: 1)
+      expect(subject.query).to eq(page: 1)
     end
   end
 
   describe "#url" do
     specify do
-      expect(subject.url).to eq("https://esi.evetech.net/v1/corporations/12345678/killmails/recent/?datasource=tranquility&page=1")
+      expect(subject.url).to eq("https://esi.evetech.net/v1/corporations/12345678/killmails/recent/?page=1")
     end
   end
 end

@@ -21,8 +21,6 @@ describe EveOnline::ESI::UniverseStructures do
         its(:_write_timeout) { should eq(60) }
       end
 
-      its(:datasource) { should eq("tranquility") }
-
       its(:filter) { should eq(nil) }
     end
 
@@ -60,7 +58,7 @@ describe EveOnline::ESI::UniverseStructures do
   describe "#query" do
     context "without filter" do
       specify do
-        expect(subject.query).to eq(datasource: "tranquility")
+        expect(subject.query).to eq({})
       end
     end
 
@@ -70,14 +68,14 @@ describe EveOnline::ESI::UniverseStructures do
       subject { described_class.new(options) }
 
       specify do
-        expect(subject.query).to eq(datasource: "tranquility", filter: "market")
+        expect(subject.query).to eq(filter: "market")
       end
     end
   end
 
   describe "#url" do
     specify do
-      expect(subject.url).to eq("https://esi.evetech.net/v1/universe/structures/?datasource=tranquility")
+      expect(subject.url).to eq("https://esi.evetech.net/v1/universe/structures/")
     end
   end
 end

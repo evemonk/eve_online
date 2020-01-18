@@ -24,6 +24,10 @@ describe EveOnline::ESI::Models::Stargate do
 
     before { expect(stargate).to receive(:type_id).and_return(29_624) }
 
+    before { expect(stargate).to receive(:destination_stargate_id).and_return(50_000_342) }
+
+    before { expect(stargate).to receive(:destination_system_id).and_return(30_000_003) }
+
     subject { stargate.as_json }
 
     its([:name]) { should eq("Stargate (Akpivem)") }
@@ -33,6 +37,10 @@ describe EveOnline::ESI::Models::Stargate do
     its([:system_id]) { should eq(30_000_001) }
 
     its([:type_id]) { should eq(29_624) }
+
+    its([:destination_stargate_id]) { should eq(50_000_342) }
+
+    its([:destination_system_id]) { should eq(30_000_003) }
   end
 
   describe "#name" do
@@ -59,28 +67,16 @@ describe EveOnline::ESI::Models::Stargate do
     specify { expect { subject.type_id }.not_to raise_error }
   end
 
-  describe "#destination" do
-    context "when @destination set" do
-      let(:destination) { instance_double(EveOnline::ESI::Models::StargateDestination) }
+  describe "#destination_stargate_id" do
+    before { expect(options).to receive(:dig).with("destination", "stargate_id") }
 
-      before { subject.instance_variable_set(:@destination, destination) }
+    specify { expect { subject.destination_stargate_id }.not_to raise_error }
+  end
 
-      specify { expect(subject.destination).to eq(destination) }
-    end
+  describe "#destination_system_id" do
+    before { expect(options).to receive(:dig).with("destination", "system_id") }
 
-    context "when @destination not set" do
-      let(:destination) { double }
-
-      let(:options) { {"destination" => destination} }
-
-      let(:model) { instance_double(EveOnline::ESI::Models::StargateDestination) }
-
-      before { expect(EveOnline::ESI::Models::StargateDestination).to receive(:new).with(destination).and_return(model) }
-
-      specify { expect { subject.destination }.not_to raise_error }
-
-      specify { expect { subject.destination }.to change { subject.instance_variable_get(:@destination) }.from(nil).to(model) }
-    end
+    specify { expect { subject.destination_system_id }.not_to raise_error }
   end
 
   describe "#position" do

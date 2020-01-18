@@ -14,6 +14,7 @@ describe EveOnline::ESI::Models::Planets do
   end
 
   describe "#planets" do
+    # TODO: one more spec for case when options is not array
     let(:planet_short) { instance_double(EveOnline::ESI::Models::PlanetShort) }
 
     let(:option) { double }

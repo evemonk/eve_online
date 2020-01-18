@@ -24,8 +24,6 @@ describe EveOnline::ESI::CharacterClones do
       its(:_write_timeout) { should eq(60) }
     end
 
-    its(:datasource) { should eq("tranquility") }
-
     its(:character_id) { should eq(12_345_678) }
   end
 
@@ -211,13 +209,13 @@ describe EveOnline::ESI::CharacterClones do
 
   describe "#query" do
     specify do
-      expect(subject.query).to eq(datasource: "tranquility")
+      expect(subject.query).to eq({})
     end
   end
 
   describe "#url" do
     specify do
-      expect(subject.url).to eq("https://esi.evetech.net/v3/characters/12345678/clones/?datasource=tranquility")
+      expect(subject.url).to eq("https://esi.evetech.net/v3/characters/12345678/clones/")
     end
   end
 end

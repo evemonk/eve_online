@@ -19,8 +19,6 @@ describe EveOnline::ESI::UniverseSystemJumps do
     if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("2.6.0")
       its(:_write_timeout) { should eq(60) }
     end
-
-    its(:datasource) { should eq("tranquility") }
   end
 
   describe "#system_jumps" do
@@ -76,13 +74,13 @@ describe EveOnline::ESI::UniverseSystemJumps do
 
   describe "#query" do
     specify do
-      expect(subject.query).to eq(datasource: "tranquility")
+      expect(subject.query).to eq({})
     end
   end
 
   describe "#url" do
     specify do
-      expect(subject.url).to eq("https://esi.evetech.net/v1/universe/system_jumps/?datasource=tranquility")
+      expect(subject.url).to eq("https://esi.evetech.net/v1/universe/system_jumps/")
     end
   end
 end

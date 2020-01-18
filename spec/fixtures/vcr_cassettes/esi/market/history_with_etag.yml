@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://esi.evetech.net/v1/markets/10000002/history/?datasource=tranquility&type_id=28606
+    uri: https://esi.evetech.net/v1/markets/10000002/history/?type_id=28606
     body:
       encoding: US-ASCII
       string: ''

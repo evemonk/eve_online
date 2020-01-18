@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://esi.evetech.net/v2/universe/stations/60012526/?datasource=tranquility
+    uri: https://esi.evetech.net/v2/universe/stations/60012526/
     body:
       encoding: US-ASCII
       string: ''

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://esi.evetech.net/v1/loyalty/stores/1000035/offers/?datasource=tranquility
+    uri: https://esi.evetech.net/v1/loyalty/stores/1000035/offers/
     body:
       encoding: US-ASCII
       string: ''

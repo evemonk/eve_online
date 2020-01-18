@@ -24,8 +24,6 @@ describe EveOnline::ESI::CharacterAssetsNames do
       its(:_write_timeout) { should eq(60) }
     end
 
-    its(:datasource) { should eq("tranquility") }
-
     its(:character_id) { should eq(12_345_678) }
 
     its(:item_ids) { should eq([1_001_215_602_246]) }
@@ -102,13 +100,13 @@ describe EveOnline::ESI::CharacterAssetsNames do
 
   describe "#query" do
     specify do
-      expect(subject.query).to eq(datasource: "tranquility")
+      expect(subject.query).to eq({})
     end
   end
 
   describe "#url" do
     specify do
-      expect(subject.url).to eq("https://esi.evetech.net/v1/characters/12345678/assets/names/?datasource=tranquility")
+      expect(subject.url).to eq("https://esi.evetech.net/v1/characters/12345678/assets/names/")
     end
   end
 end

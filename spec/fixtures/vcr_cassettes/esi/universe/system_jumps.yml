@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://esi.evetech.net/v1/universe/system_jumps/?datasource=tranquility
+    uri: https://esi.evetech.net/v1/universe/system_jumps/
     body:
       encoding: US-ASCII
       string: ''

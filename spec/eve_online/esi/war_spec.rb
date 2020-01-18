@@ -24,8 +24,6 @@ describe EveOnline::ESI::War do
       its(:_write_timeout) { should eq(60) }
     end
 
-    its(:datasource) { should eq("tranquility") }
-
     its(:id) { should eq(615_578) }
   end
 
@@ -180,13 +178,13 @@ describe EveOnline::ESI::War do
 
   describe "#query" do
     specify do
-      expect(subject.query).to eq(datasource: "tranquility")
+      expect(subject.query).to eq({})
     end
   end
 
   describe "#url" do
     specify do
-      expect(subject.url).to eq("https://esi.evetech.net/v1/wars/615578/?datasource=tranquility")
+      expect(subject.url).to eq("https://esi.evetech.net/v1/wars/615578/")
     end
   end
 end
