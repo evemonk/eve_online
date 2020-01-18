@@ -25,7 +25,7 @@ describe "Return a mail" do
                                     from_id: 1_208_274_826,
                                     read: true,
                                     subject: "moving",
-                                    timestamp: '2019-06-10 07:50:00.000000000 +0000')
+                                    timestamp: "2019-06-10 07:50:00.000000000 +0000")
     end
 
     specify { expect(subject.label_ids).to eq([4]) }
