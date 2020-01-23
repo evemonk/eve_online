@@ -9,7 +9,7 @@ describe EveOnline::ESI::CharacterAssets do
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_PATH).to eq("/v3/characters/%<character_id>s/assets/") }
+  specify { expect(described_class::API_PATH).to eq("/v4/characters/%<character_id>s/assets/") }
 
   describe "#initialize" do
     context "without options" do
@@ -93,7 +93,7 @@ describe EveOnline::ESI::CharacterAssets do
 
   describe "#path" do
     specify do
-      expect(subject.path).to eq("/v3/characters/12345678/assets/")
+      expect(subject.path).to eq("/v4/characters/12345678/assets/")
     end
   end
 
@@ -105,7 +105,7 @@ describe EveOnline::ESI::CharacterAssets do
 
   describe "#url" do
     specify do
-      expect(subject.url).to eq("https://esi.evetech.net/v3/characters/12345678/assets/?page=1")
+      expect(subject.url).to eq("https://esi.evetech.net/v4/characters/12345678/assets/?page=1")
     end
   end
 end

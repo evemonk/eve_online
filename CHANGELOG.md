@@ -2,6 +2,8 @@
 
 ## master
 
+* Sync with new ESI API
+
 ## v0.31.0
 
 * Add `EveOnline::ESI::Models::MailRecipient`
