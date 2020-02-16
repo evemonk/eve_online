@@ -1298,13 +1298,13 @@ character_killmails.killmails.size # => 1
 
 killmail = character_killmails.killmails.first
 
-killmail.as_json # => {:killmail_hash=>"07f7ef1d7f6090e78d8e85b4a98e680f67b5e9d5",
-                 #     :killmail_id=>72410059}
+killmail.as_json # => {:killmail_hash=>"8f1450fca8ce97be9b10e106a1257088407ef387",
+                 #     :killmail_id=>81_646_519}
 
-killmail.killmail_hash # => "07f7ef1d7f6090e78d8e85b4a98e680f67b5e9d5"
-killmail.killmail_id # => 72410059
+killmail.killmail_hash # => "8f1450fca8ce97be9b10e106a1257088407ef387"
+killmail.killmail_id # => 81646519
 
-# TODO: character_killmails.etag
+character_killmails.etag # => "ba5068bc1b07db98d9efce93437295fbdb9d29b14b4ffbcbfa91ac0d"
 ```
 
 #### Get a corporation's recent kills and losses
@@ -2690,7 +2690,7 @@ type.etag # => "e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b"
 #### Get a character's wallet balance
 
 ```ruby
-options = { token: 'token123', character_id: 90729314 }
+options = { token: 'token123', character_id: 90_729_314 }
 
 character_wallet = EveOnline::ESI::CharacterWallet.new(options)
 
@@ -2706,7 +2706,7 @@ character_wallet.wallet # => 409488252.49
 #### Get character wallet journal
 
 ```ruby
-options = { token: 'token123', character_id: 90729314, page: 1 }
+options = { token: 'token123', character_id: 90_729_314, page: 1 }
 
 character_wallet_journal = EveOnline::ESI::CharacterWalletJournal.new(options)
 
@@ -2743,11 +2743,23 @@ wallet_journal_entry.tax_receiver_id
 
 #### Get wallet transactions
 
+```ruby
+```
+
 #### Returns a corporation's wallet balance
+
+```ruby
+```
 
 #### Get corporation wallet journal
 
+```ruby
+```
+
 #### Get corporation wallet transactions
+
+```ruby
+```
 
 ### Wars
 
