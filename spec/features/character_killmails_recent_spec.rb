@@ -59,5 +59,9 @@ describe "Get a character's recent kills and losses" do
     specify { expect(subject.not_modified?).to eq(true) }
 
     specify { expect(subject.etag).to eq("ba5068bc1b07db98d9efce93437295fbdb9d29b14b4ffbcbfa91ac0d") }
+
+    specify { expect(subject.error_limit_remain).to eq(100) }
+
+    specify { expect(subject.error_limit_reset).to eq(29) }
   end
 end
