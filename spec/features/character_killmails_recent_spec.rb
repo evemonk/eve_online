@@ -34,6 +34,10 @@ describe "Get a character's recent kills and losses" do
     end
 
     specify { expect(subject.etag).to eq("ba5068bc1b07db98d9efce93437295fbdb9d29b14b4ffbcbfa91ac0d") }
+
+    specify { expect(subject.error_limit_remain).to eq(100) }
+
+    specify { expect(subject.error_limit_reset).to eq(40) }
   end
 
   context "when etag is set" do
