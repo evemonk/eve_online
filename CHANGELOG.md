@@ -3,6 +3,8 @@
 ## master
 
 * Sync with new ESI API
+* Add `EveOnline::ESI::CharacterContracts`
+* Add `EveOnline::ESI::Models::Contract`
 
 ## v0.31.0
 
