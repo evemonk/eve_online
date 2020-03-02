@@ -82,8 +82,8 @@ describe EveOnline::ESI::CharacterClones do
           {
             location_id: 61_000_032,
             location_type: "station",
-            implants: [22_118],
-          },
+            implants: [22_118]
+          }
         ]
       end
 

@@ -18,7 +18,7 @@ module EveOnline
             ref_type: ref_type,
             second_party_id: second_party_id,
             tax: tax,
-            tax_receiver_id: tax_receiver_id,
+            tax_receiver_id: tax_receiver_id
           }
         end
 

@@ -59,8 +59,8 @@ describe EveOnline::ESI::CharacterBlueprints do
             quantity: -2,
             time_efficiency: 0,
             material_efficiency: 10,
-            runs: 300,
-          },
+            runs: 300
+          }
         ]
       end
 

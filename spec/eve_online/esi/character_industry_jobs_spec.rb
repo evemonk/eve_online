@@ -75,8 +75,8 @@ describe EveOnline::ESI::CharacterIndustryJobs do
             status: "active",
             duration: 548,
             start_date: "2014-07-19T15:47:06Z",
-            end_date: "2014-07-19T15:56:14Z",
-          },
+            end_date: "2014-07-19T15:56:14Z"
+          }
         ]
       end
 
@@ -126,7 +126,7 @@ describe EveOnline::ESI::CharacterIndustryJobs do
         {
           token: "token123",
           character_id: 12_345_678,
-          include_completed: true,
+          include_completed: true
         }
       end
 

@@ -9,7 +9,7 @@ module EveOnline
             npc_kills: npc_kills,
             pod_kills: pod_kills,
             ship_kills: ship_kills,
-            system_id: system_id,
+            system_id: system_id
           }
         end
 

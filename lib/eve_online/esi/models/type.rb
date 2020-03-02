@@ -19,7 +19,7 @@ module EveOnline
             published: published,
             radius: radius,
             type_id: type_id,
-            volume: volume,
+            volume: volume
           }
         end
 

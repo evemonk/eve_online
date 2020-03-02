@@ -16,7 +16,7 @@ describe EveOnline::ESI::Base do
           read_timeout: 30,
           open_timeout: 45,
           etag: "6f2d3caa79a79bc9e61aa058e18905faac5e293fa1729637648ce9a1",
-          language: "ru",
+          language: "ru"
         }.tap do |hash|
           if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("2.6.0")
             hash[:write_timeout] = 50
