@@ -63,8 +63,8 @@ describe EveOnline::ESI::CharacterSkills do
             skill_id: 22_536,
             skillpoints_in_skill: 500,
             trained_skill_level: 1,
-            active_skill_level: 0,
-          },
+            active_skill_level: 0
+          }
         ]
       end
 

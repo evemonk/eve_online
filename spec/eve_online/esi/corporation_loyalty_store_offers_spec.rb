@@ -49,11 +49,11 @@ describe EveOnline::ESI::CorporationLoyaltyStoreOffers do
             required_items: [
               {
                 quantity: 5_000,
-                type_id: 234,
-              },
+                type_id: 234
+              }
             ],
-            type_id: 23_047,
-          },
+            type_id: 23_047
+          }
         ]
       end
 

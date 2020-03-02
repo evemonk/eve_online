@@ -45,8 +45,8 @@ describe EveOnline::ESI::CharacterMailLabels do
             color: "#ffffff",
             label_id: 8,
             name: "[Alliance]",
-            unread_count: 0,
-          },
+            unread_count: 0
+          }
         ]
       end
 

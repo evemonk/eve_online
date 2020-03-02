@@ -49,8 +49,8 @@ describe EveOnline::ESI::CharacterSkillQueue do
             start_date: "2017-01-15T11:38:25Z",
             training_start_sp: 7_263,
             level_end_sp: 40_000,
-            level_start_sp: 7_072,
-          },
+            level_start_sp: 7_072
+          }
         ]
       end
 

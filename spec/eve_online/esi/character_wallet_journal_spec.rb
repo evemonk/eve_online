@@ -58,8 +58,8 @@ describe EveOnline::ESI::CharacterWalletJournal do
             first_party_id: 90_729_314,
             first_party_type: "character",
             amount: -9.5,
-            balance: 4990.5,
-          },
+            balance: 4990.5
+          }
         ]
       end
 

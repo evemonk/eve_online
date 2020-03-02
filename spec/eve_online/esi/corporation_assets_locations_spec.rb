@@ -48,9 +48,9 @@ describe EveOnline::ESI::CorporationAssetsLocations do
             position: {
               x: -928_621_543_221.3319,
               y: 297_645_715_142.40234,
-              z: -971_212_198_300.4812,
-            },
-          },
+              z: -971_212_198_300.4812
+            }
+          }
         ]
       end
 

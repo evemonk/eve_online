@@ -58,8 +58,8 @@ describe EveOnline::ESI::CorporationAssets do
             item_id: 1_006_604_012_678,
             location_flag: "Hangar",
             is_singleton: false,
-            quantity: 16_156,
-          },
+            quantity: 16_156
+          }
         ]
       end
 

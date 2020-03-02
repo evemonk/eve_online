@@ -46,8 +46,8 @@ describe EveOnline::ESI::UniverseBloodlines do
             willpower: 7,
             charisma: 6,
             memory: 4,
-            intelligence: 4,
-          },
+            intelligence: 4
+          }
         ]
       end
 

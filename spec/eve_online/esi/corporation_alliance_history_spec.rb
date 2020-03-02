@@ -44,8 +44,8 @@ describe EveOnline::ESI::CorporationAllianceHistory do
           {
             alliance_id: 99_005_874,
             record_id: 1_254_640,
-            start_date: "2019-06-03T00:17:00Z",
-          },
+            start_date: "2019-06-03T00:17:00Z"
+          }
         ]
       end
 
