@@ -6,7 +6,7 @@ module EveOnline
       class AssetLocation < Base
         def as_json
           {
-            item_id: item_id,
+            item_id: item_id
           }
         end
 

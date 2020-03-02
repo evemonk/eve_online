@@ -16,7 +16,7 @@ module EveOnline
       def as_json
         {
           total_sp: total_sp,
-          unallocated_sp: unallocated_sp,
+          unallocated_sp: unallocated_sp
         }
       end
 

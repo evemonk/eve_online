@@ -27,7 +27,7 @@ module EveOnline
             status: status,
             title: title,
             type: type,
-            volume: volume,
+            volume: volume
           }
         end
 

@@ -13,7 +13,7 @@ module EveOnline
             location_id: location_id,
             location_type: location_type,
             quantity: quantity,
-            type_id: type_id,
+            type_id: type_id
           }
         end
 

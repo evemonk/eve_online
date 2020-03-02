@@ -15,7 +15,7 @@ module EveOnline
             name: name,
             published: published,
             stackable: stackable,
-            unit_id: unit_id,
+            unit_id: unit_id
           }
         end
 

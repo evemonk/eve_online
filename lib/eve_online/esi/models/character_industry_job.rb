@@ -27,7 +27,7 @@ module EveOnline
             start_date: start_date,
             station_id: station_id,
             status: status,
-            successful_runs: successful_runs,
+            successful_runs: successful_runs
           }
         end
 

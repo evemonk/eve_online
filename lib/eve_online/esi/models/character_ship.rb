@@ -8,7 +8,7 @@ module EveOnline
           {
             ship_item_id: ship_item_id,
             ship_name: ship_name,
-            ship_type_id: ship_type_id,
+            ship_type_id: ship_type_id
           }
         end
 

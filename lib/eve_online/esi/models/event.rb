@@ -10,7 +10,7 @@ module EveOnline
             event_id: event_id,
             event_response: event_response,
             importance: importance,
-            title: title,
+            title: title
           }
         end
 

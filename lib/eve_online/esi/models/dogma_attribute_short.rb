@@ -7,7 +7,7 @@ module EveOnline
         def as_json
           {
             attribute_id: attribute_id,
-            value: value,
+            value: value
           }
         end
 

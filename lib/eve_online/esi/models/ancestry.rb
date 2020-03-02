@@ -11,7 +11,7 @@ module EveOnline
             icon_id: icon_id,
             ancestry_id: ancestry_id,
             name: name,
-            short_description: short_description,
+            short_description: short_description
           }
         end
 

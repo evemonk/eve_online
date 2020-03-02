@@ -15,7 +15,7 @@ module EveOnline
 
       def as_json
         {
-          wallet: wallet,
+          wallet: wallet
         }
       end
 

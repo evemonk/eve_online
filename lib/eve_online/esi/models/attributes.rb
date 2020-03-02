@@ -13,7 +13,7 @@ module EveOnline
             last_remap_date: last_remap_date,
             memory: memory,
             perception: perception,
-            willpower: willpower,
+            willpower: willpower
           }
         end
 
