@@ -37,7 +37,7 @@ describe "Get character calendar event information" do
       {
         character_id: 91_473_836,
         event_id: 1_982_004,
-        etag: "551811618f893135bfda67bc87f2a2215a6d648b2374bac6194744e4",
+        etag: "551811618f893135bfda67bc87f2a2215a6d648b2374bac6194744e4"
       }
     end
 

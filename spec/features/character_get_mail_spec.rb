@@ -12,7 +12,7 @@ describe "Return a mail" do
       {
         character_id: 1_337_512_245,
         mail_id: 376_045_681,
-        token: "token123",
+        token: "token123"
       }
     end
 
@@ -50,7 +50,7 @@ describe "Return a mail" do
         character_id: 1_337_512_245,
         mail_id: 376_045_681,
         token: "token123",
-        etag: "90dba7f7a6e60bfe8527b9f5112b9ca588c8f57d01415717be525a91",
+        etag: "90dba7f7a6e60bfe8527b9f5112b9ca588c8f57d01415717be525a91"
       }
     end
 

@@ -38,7 +38,7 @@ describe "Get character's public information" do
     let(:options) do
       {
         character_id: 1_337_512_245,
-        etag: "22c39689783a86032b8d43fa0b2e8f4809c4f38a585e39471035aa8b",
+        etag: "22c39689783a86032b8d43fa0b2e8f4809c4f38a585e39471035aa8b"
       }
     end
 

@@ -8,7 +8,7 @@ describe "Get a character's recent kills and losses" do
       {
         character_id: 1_337_512_245,
         token: "token123",
-        page: 1,
+        page: 1
       }
     end
 
@@ -46,7 +46,7 @@ describe "Get a character's recent kills and losses" do
         character_id: 1_337_512_245,
         token: "token123",
         page: 1,
-        etag: "ba5068bc1b07db98d9efce93437295fbdb9d29b14b4ffbcbfa91ac0d",
+        etag: "ba5068bc1b07db98d9efce93437295fbdb9d29b14b4ffbcbfa91ac0d"
       }
     end
 

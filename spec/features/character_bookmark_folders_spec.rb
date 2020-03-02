@@ -8,7 +8,7 @@ describe "Get character bookmark folders" do
     {
       character_id: 1_337_512_245,
       token: "token123",
-      page: 1,
+      page: 1
     }
   end
 

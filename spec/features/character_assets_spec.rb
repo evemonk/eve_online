@@ -8,7 +8,7 @@ describe "Get character assets" do
       {
         character_id: 1_337_512_245,
         token: "token123",
-        page: 1,
+        page: 1
       }
     end
 
@@ -48,7 +48,7 @@ describe "Get character assets" do
         character_id: 1_337_512_245,
         token: "token123",
         page: 1,
-        etag: "29da11b30974e55cd440a879199a629a8492a4c0a49894a2cd22f90b",
+        etag: "29da11b30974e55cd440a879199a629a8492a4c0a49894a2cd22f90b"
       }
     end
 

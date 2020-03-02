@@ -11,7 +11,7 @@ describe "Get character online" do
     let(:options) do
       {
         character_id: 90_729_314,
-        token: "token123",
+        token: "token123"
       }
     end
 
@@ -40,7 +40,7 @@ describe "Get character online" do
       {
         character_id: 90_729_314,
         token: "token123",
-        etag: "43c82cdefedc4275da30d7731200df96b905dc94b8486d55bedb5fe6",
+        etag: "43c82cdefedc4275da30d7731200df96b905dc94b8486d55bedb5fe6"
       }
     end
 

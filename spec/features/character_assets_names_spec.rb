@@ -7,7 +7,7 @@ describe "Get character asset names" do
     {
       character_id: 1_337_512_245,
       item_ids: [1_001_215_602_246],
-      token: "token123",
+      token: "token123"
     }
   end
 

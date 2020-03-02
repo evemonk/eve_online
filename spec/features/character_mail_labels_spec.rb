@@ -11,7 +11,7 @@ describe "Get mail labels and unread counts" do
     let(:options) do
       {
         character_id: 90_729_314,
-        token: "token123",
+        token: "token123"
       }
     end
 
@@ -44,7 +44,7 @@ describe "Get mail labels and unread counts" do
       {
         character_id: 90_729_314,
         token: "token123",
-        etag: "6aac63dafa81b592eba22fe0d7bf12a2c11bfd5b054aa78d3a3a5cde",
+        etag: "6aac63dafa81b592eba22fe0d7bf12a2c11bfd5b054aa78d3a3a5cde"
       }
     end
 

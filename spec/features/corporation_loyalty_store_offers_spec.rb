@@ -43,7 +43,7 @@ describe "List loyalty store offers" do
     let(:options) do
       {
         corporation_id: 1_000_035,
-        etag: "89211f42fde090e4d22621e9b97d7604ab87af95b3b6ffed7fe81bc0",
+        etag: "89211f42fde090e4d22621e9b97d7604ab87af95b3b6ffed7fe81bc0"
       }
     end
 

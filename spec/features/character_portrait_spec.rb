@@ -6,7 +6,7 @@ describe "Get character portraits" do
   context "when etag not set" do
     let(:options) do
       {
-        character_id: 1_337_512_245,
+        character_id: 1_337_512_245
       }
     end
 
@@ -34,7 +34,7 @@ describe "Get character portraits" do
     let(:options) do
       {
         character_id: 1_337_512_245,
-        etag: "7c3e352530bd9a3e07ffaa978ad52dbb4609fa58f483a7eedea7a287",
+        etag: "7c3e352530bd9a3e07ffaa978ad52dbb4609fa58f483a7eedea7a287"
       }
     end
 

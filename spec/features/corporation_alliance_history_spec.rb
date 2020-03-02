@@ -32,7 +32,7 @@ describe "Get alliance history" do
     let(:options) do
       {
         corporation_id: 98_134_807,
-        etag: "9a949294cfa5fcef345ea8d89a574defa09be39845b9b97f1fdddd41",
+        etag: "9a949294cfa5fcef345ea8d89a574defa09be39845b9b97f1fdddd41"
       }
     end
 

@@ -32,7 +32,7 @@ describe "Get corporation history" do
     let(:options) do
       {
         character_id: 90_729_314,
-        etag: "f9497588fc2db18ca9a2ee06c48a16120e0c712fe9925bb29d7aaeeb",
+        etag: "f9497588fc2db18ca9a2ee06c48a16120e0c712fe9925bb29d7aaeeb"
       }
     end
 

@@ -28,7 +28,7 @@ describe "Get alliance icon" do
     let(:options) do
       {
         alliance_id: 99_005_443,
-        etag: "7aea53dbbfb800b38d580e75af5b5e00e1946f3c14780b052f3f5154",
+        etag: "7aea53dbbfb800b38d580e75af5b5e00e1946f3c14780b052f3f5154"
       }
     end
 
