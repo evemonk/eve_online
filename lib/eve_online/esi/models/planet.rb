@@ -9,7 +9,7 @@ module EveOnline
             name: name,
             planet_id: planet_id,
             system_id: system_id,
-            type_id: type_id,
+            type_id: type_id
           }
         end
 

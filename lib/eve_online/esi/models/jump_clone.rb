@@ -9,7 +9,7 @@ module EveOnline
             jump_clone_id: jump_clone_id,
             location_id: location_id,
             location_type: location_type,
-            name: name,
+            name: name
           }
         end
 

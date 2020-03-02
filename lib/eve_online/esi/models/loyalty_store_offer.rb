@@ -11,7 +11,7 @@ module EveOnline
             lp_cost: lp_cost,
             offer_id: offer_id,
             quantity: quantity,
-            type_id: type_id,
+            type_id: type_id
           }
         end
 

@@ -12,7 +12,7 @@ module EveOnline
             sender_type: sender_type,
             text: text,
             timestamp: timestamp,
-            type: type,
+            type: type
           }
         end
 

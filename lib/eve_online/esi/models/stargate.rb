@@ -11,7 +11,7 @@ module EveOnline
             system_id: system_id,
             type_id: type_id,
             destination_stargate_id: destination_stargate_id,
-            destination_system_id: destination_system_id,
+            destination_system_id: destination_system_id
           }
         end
 

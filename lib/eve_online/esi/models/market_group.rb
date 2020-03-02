@@ -9,7 +9,7 @@ module EveOnline
             description: description,
             market_group_id: market_group_id,
             name: name,
-            parent_group_id: parent_group_id,
+            parent_group_id: parent_group_id
           }
         end
 

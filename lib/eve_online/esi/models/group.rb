@@ -9,7 +9,7 @@ module EveOnline
             category_id: category_id,
             group_id: group_id,
             name: name,
-            published: published,
+            published: published
           }
         end
 

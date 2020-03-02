@@ -13,7 +13,7 @@ module EveOnline
             sof_dna: sof_dna,
             sof_fation_name: sof_fation_name,
             sof_hull_name: sof_hull_name,
-            sof_race_name: sof_race_name,
+            sof_race_name: sof_race_name
           }
         end
 

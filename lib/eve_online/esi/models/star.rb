@@ -13,7 +13,7 @@ module EveOnline
             solar_system_id: solar_system_id,
             spectral_class: spectral_class,
             temperature: temperature,
-            type_id: type_id,
+            type_id: type_id
           }
         end
 

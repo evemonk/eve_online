@@ -10,7 +10,7 @@ module EveOnline
             from_id: from_id,
             read: read,
             subject: subject,
-            timestamp: timestamp,
+            timestamp: timestamp
           }
         end
 

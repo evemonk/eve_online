@@ -7,7 +7,7 @@ module EveOnline
         def as_json
           {
             recipient_id: recipient_id,
-            recipient_type: recipient_type,
+            recipient_type: recipient_type
           }
         end
 
