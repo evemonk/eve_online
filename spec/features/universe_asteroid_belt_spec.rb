@@ -38,7 +38,7 @@ describe "Get asteroid belt information" do
     let(:options) do
       {
         id: 40_000_003,
-        etag: "5c9218218aca123ef8c106f6607bfe8e6e086d2fc2b972bbd8ff03d2",
+        etag: "5c9218218aca123ef8c106f6607bfe8e6e086d2fc2b972bbd8ff03d2"
       }
     end
 

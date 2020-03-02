@@ -38,7 +38,7 @@ describe "Get item group information" do
     let(:options) do
       {
         id: 618,
-        etag: "bf7832bfc20f5f9fdeddc9cb0360b941067310e7e3a2a80315b45a43",
+        etag: "bf7832bfc20f5f9fdeddc9cb0360b941067310e7e3a2a80315b45a43"
       }
     end
 

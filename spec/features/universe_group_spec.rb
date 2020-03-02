@@ -35,7 +35,7 @@ describe "Get item group information" do
       {
         id: 450,
         language: "en-us",
-        etag: "37a39e7a5f5ecc07b19a3128c319f1198d035aee10052d0a21ccdd94",
+        etag: "37a39e7a5f5ecc07b19a3128c319f1198d035aee10052d0a21ccdd94"
       }
     end
 

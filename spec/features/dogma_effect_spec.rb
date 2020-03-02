@@ -50,7 +50,7 @@ describe "Get effect information" do
     let(:options) do
       {
         id: 6717,
-        etag: "acc1e563574a55f79ebe4a2a99845dd6c28f4e412e11fd084b8485fd",
+        etag: "acc1e563574a55f79ebe4a2a99845dd6c28f4e412e11fd084b8485fd"
       }
     end
 

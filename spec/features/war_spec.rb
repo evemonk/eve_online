@@ -59,7 +59,7 @@ describe "Get war information" do
     let(:options) do
       {
         id: 654_019,
-        etag: "01fa26aad0ed536a053e1e53656f299b2c0f66a09bbccc2be37950e8",
+        etag: "01fa26aad0ed536a053e1e53656f299b2c0f66a09bbccc2be37950e8"
       }
     end
 

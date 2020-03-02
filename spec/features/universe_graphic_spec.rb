@@ -38,7 +38,7 @@ describe "Get graphic information" do
     let(:options) do
       {
         id: 20_481,
-        etag: "e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b",
+        etag: "e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b"
       }
     end
 

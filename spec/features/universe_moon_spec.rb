@@ -35,7 +35,7 @@ describe "Get moon information" do
     let(:options) do
       {
         id: 40_000_004,
-        etag: "e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b",
+        etag: "e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b"
       }
     end
 

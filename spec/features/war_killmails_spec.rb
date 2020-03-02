@@ -34,7 +34,7 @@ describe "List kills for a war" do
     let(:options) do
       {
         war_id: 615_578,
-        etag: "12ee36a10ee0dbfb7f6691e1b27c8400fdca645f15e70ebc0a94b7ae",
+        etag: "12ee36a10ee0dbfb7f6691e1b27c8400fdca645f15e70ebc0a94b7ae"
       }
     end
 

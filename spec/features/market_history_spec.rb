@@ -39,7 +39,7 @@ describe "List historical market statistics in a region" do
       {
         region_id: 10_000_002,
         type_id: 28_606,
-        etag: "01636947a53db63a0369aab78bbc98bae94a49cd6aa3950c29d588ae",
+        etag: "01636947a53db63a0369aab78bbc98bae94a49cd6aa3950c29d588ae"
       }
     end
 

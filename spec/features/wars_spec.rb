@@ -56,7 +56,7 @@ describe "List wars" do
       let(:options) do
         {
           max_war_id: 10,
-          etag: "f1c28227847464613c1cb82dfc8a8c859b7b6857fad2c2a54c562812",
+          etag: "f1c28227847464613c1cb82dfc8a8c859b7b6857fad2c2a54c562812"
         }
       end
 

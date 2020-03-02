@@ -40,7 +40,7 @@ describe "Get corporation information" do
     let(:options) do
       {
         corporation_id: 98_468_592,
-        etag: "046430260be73e5d7ad3a9251954310bd547498eeb38f99e8d305796",
+        etag: "046430260be73e5d7ad3a9251954310bd547498eeb38f99e8d305796"
       }
     end
 

@@ -56,7 +56,7 @@ describe "List all public structures" do
       let(:options) do
         {
           filter: "market",
-          etag: "2a825ab50413f1efe5f558b8d093e1299389b2f2ce3fa191907f7209",
+          etag: "2a825ab50413f1efe5f558b8d093e1299389b2f2ce3fa191907f7209"
         }
       end
 
