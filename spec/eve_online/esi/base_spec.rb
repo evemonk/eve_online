@@ -233,6 +233,42 @@ describe EveOnline::ESI::Base do
     specify { expect { subject.total_pages }.not_to raise_error }
   end
 
+  describe "#error_limit_remain" do
+    let(:resource) { double }
+
+    let(:header) { double }
+
+    let(:pages) { double }
+
+    before { expect(subject).to receive(:resource).and_return(resource) }
+
+    before { expect(resource).to receive(:header).and_return(header) }
+
+    before { expect(header).to receive(:[]).with("X-ESI-Error-Limit-Remain").and_return(pages) }
+
+    before { expect(pages).to receive(:to_i) }
+
+    specify { expect { subject.error_limit_remain }.not_to raise_error }
+  end
+
+  describe "#error_limit_reset" do
+    let(:resource) { double }
+
+    let(:header) { double }
+
+    let(:pages) { double }
+
+    before { expect(subject).to receive(:resource).and_return(resource) }
+
+    before { expect(resource).to receive(:header).and_return(header) }
+
+    before { expect(header).to receive(:[]).with("X-ESI-Error-Limit-Reset").and_return(pages) }
+
+    before { expect(pages).to receive(:to_i) }
+
+    specify { expect { subject.error_limit_reset }.not_to raise_error }
+  end
+
   describe "#client" do
     context "when @client set" do
       let(:client) { double }
