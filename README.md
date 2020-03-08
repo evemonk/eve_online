@@ -52,7 +52,7 @@ gem install eve_online
 * MRI 2.5
 * MRI 2.6
 * MRI 2.7
-* JRuby 9.2.9.0
+* JRuby 9.2.11.0
 
 ## Supported rails versions
 
@@ -1336,6 +1336,14 @@ corporation_killmails.roles # => ["Director"]
 ```
 
 #### Get a single killmail
+
+```ruby
+options = { killmail_id: 81_646_519, killmail_hash: "8f1450fca8ce97be9b10e106a1257088407ef387" }
+
+killmail = EveOnline::ESI::Killmail.new(options)
+
+# TODO: finish this
+```
 
 ### Location
 
@@ -2700,7 +2708,7 @@ character_wallet.as_json # => {:wallet=>409488252.49}
 
 character_wallet.wallet # => 409488252.49
 
-# TODO: character_wallet.etag
+character_wallet.etag # => "482786a491138fdf393f42c457424b0cd3f3c3c7c2c9afb3f55c618a"
 ```
 
 #### Get character wallet journal

@@ -7,6 +7,7 @@
 * Add `EveOnline::ESI::Models::Contract`
 * Add support `X-ESI-Error-Limit-Remain` header
 * Add support `X-ESI-Error-Limit-Reset` header
+* Add `EveOnline::ESI::Killmail`
 
 ## v0.31.0
 

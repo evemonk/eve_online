@@ -63,6 +63,7 @@ require "eve_online/esi/corporation_industry_jobs"
 
 require "eve_online/esi/character_killmails_recent"
 require "eve_online/esi/corporation_killmails_recent"
+require "eve_online/esi/killmail"
 
 require "eve_online/esi/character_location"
 require "eve_online/esi/character_online"
