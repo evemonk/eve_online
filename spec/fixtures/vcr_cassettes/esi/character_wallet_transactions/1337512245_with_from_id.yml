@@ -1,0 +1,66 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://esi.evetech.net/v1/characters/1337512245/wallet/transactions/?from_id=5278248796
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/json
+      User-Agent:
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.31.0
+      Authorization:
+      - Bearer token123
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 08 Mar 2020 22:51:53 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '218'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,If-None-Match,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,HEAD,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,ETag,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Allow:
+      - GET,HEAD,OPTIONS
+      Cache-Control:
+      - private
+      Etag:
+      - '"b92fae885ba527533c0696e80bc5283600c3cb004e88651f9afea02d"'
+      Expires:
+      - Sun, 08 Mar 2020 23:51:53 GMT
+      Last-Modified:
+      - Sun, 08 Mar 2020 22:51:53 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '7'
+      X-Esi-Request-Id:
+      - 995cdfb5-f384-4f3b-a4ae-3217d1bdc601
+    body:
+      encoding: UTF-8
+      string: '[{"client_id":994127115,"date":"2020-02-10T20:54:44Z","is_buy":true,"is_personal":true,"journal_ref_id":17642941256,"location_id":60014101,"quantity":10000,"transaction_id":5278248796,"type_id":181,"unit_price":11.94}]'
+    http_version: null
+  recorded_at: Sun, 08 Mar 2020 22:51:53 GMT
+recorded_with: VCR 5.1.0

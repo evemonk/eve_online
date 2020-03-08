@@ -10,6 +10,8 @@
 * Add `EveOnline::ESI::Killmail`
 * Add `EveOnline::ESI::MarketPrices`
 * Add `EveOnline::ESI::Models::MarketPrice`
+* Add `EveOnline::ESI::Models::WalletTransaction`
+* Add `EveOnline::ESI::CharacterWalletTransactions`
 
 ## v0.31.0
 
