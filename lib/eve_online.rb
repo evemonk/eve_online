@@ -87,6 +87,7 @@ require "eve_online/esi/corporation_orders"
 require "eve_online/esi/market_history"
 require "eve_online/esi/market_groups"
 require "eve_online/esi/market_group"
+require "eve_online/esi/market_prices"
 
 require "eve_online/esi/character_attributes"
 require "eve_online/esi/character_skill_queue"
@@ -169,6 +170,7 @@ require "eve_online/esi/models/server_status"
 
 require "eve_online/esi/models/market_history"
 require "eve_online/esi/models/market_group"
+require "eve_online/esi/models/market_price"
 
 require "eve_online/esi/models/corporation"
 require "eve_online/esi/models/corporation_alliance_history"

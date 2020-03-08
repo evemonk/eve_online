@@ -8,6 +8,8 @@
 * Add support `X-ESI-Error-Limit-Remain` header
 * Add support `X-ESI-Error-Limit-Reset` header
 * Add `EveOnline::ESI::Killmail`
+* Add `EveOnline::ESI::MarketPrices`
+* Add `EveOnline::ESI::Models::MarketPrice`
 
 ## v0.31.0
 
