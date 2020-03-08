@@ -2833,6 +2833,39 @@ wallet_journal_entry.tax_receiver_id
 #### Get wallet transactions
 
 ```ruby
+options = { token: "token123", character_id: 1_337_512_245 } # optional, add `from_id: 123` to skip records
+
+wallet_transactions = EveOnline::ESI::CharacterWalletTransactions.new(options)
+
+wallet_transactions.scope # => "esi-wallet.read_character_wallet.v1"
+
+wallet_transactions.wallet_transactions.size # => 47
+
+wallet_transaction = wallet_transactions.wallet_transactions.first
+
+wallet_transaction.as_json # => {:client_id=>2116253203,
+                           #     :date=>Sun, 08 Mar 2020 11:49:16 UTC +00:00,
+                           #     :is_buy=>true,
+                           #     :is_personal=>true,
+                           #     :journal_ref_id=>17740411474,
+                           #     :location_id=>60008494,
+                           #     :quantity=>1,
+                           #     :transaction_id=>5296927639,
+                           #     :type_id=>3538,
+                           #     :unit_price=>99887.79}
+
+wallet_transaction.client_id # => 2116253203
+wallet_transaction.date # => Sun, 08 Mar 2020 11:49:16 UTC +00:00
+wallet_transaction.is_buy # => true
+wallet_transaction.is_personal # => true
+wallet_transaction.journal_ref_id # => 17740411474
+wallet_transaction.location_id # => 60008494
+wallet_transaction.quantity # => 1
+wallet_transaction.transaction_id # => 5296927639
+wallet_transaction.type_id # => 3538
+wallet_transaction.unit_price # => 99887.79
+
+wallet_transactions.etag # => "55d0fbe8b408d6a76dab70c0a709d4e7c5dd58d4e0b7bd785549e268"
 ```
 
 #### Returns a corporation's wallet balance
