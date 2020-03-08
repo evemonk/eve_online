@@ -28,6 +28,10 @@ describe "List historical market statistics in a region" do
     end
 
     specify { expect(subject.etag).to eq("01636947a53db63a0369aab78bbc98bae94a49cd6aa3950c29d588ae") }
+
+    specify { expect(subject.error_limit_remain).to eq(100) }
+
+    specify { expect(subject.error_limit_reset).to eq(34) }
   end
 
   context "when etag is set" do
@@ -48,5 +52,9 @@ describe "List historical market statistics in a region" do
     specify { expect(subject.not_modified?).to eq(true) }
 
     specify { expect(subject.etag).to eq("01636947a53db63a0369aab78bbc98bae94a49cd6aa3950c29d588ae") }
+
+    specify { expect(subject.error_limit_remain).to eq(100) }
+
+    specify { expect(subject.error_limit_reset).to eq(26) }
   end
 end
