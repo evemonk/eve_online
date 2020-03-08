@@ -34,4 +34,8 @@ describe "Get character asset locations" do
   end
 
   specify { expect { subject.etag }.to raise_error(NotImplementedError) }
+
+  specify { expect(subject.error_limit_remain).to eq(100) }
+
+  specify { expect(subject.error_limit_reset).to eq(59) }
 end
