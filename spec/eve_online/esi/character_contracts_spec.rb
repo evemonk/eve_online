@@ -46,9 +46,56 @@ describe EveOnline::ESI::CharacterContracts do
       specify { expect(subject.contracts).to eq(contracts) }
     end
 
-    # context "when @contracts not set" do
-    #   let(:contract) { instance_double(EveOnline::ESI::Models::Contract) }
-    # end
+    context "when @contracts not set" do
+      let(:contract) { instance_double(EveOnline::ESI::Models::Contract) }
+
+      let(:response) do
+        [
+          {
+            acceptor_id: 2116199184,
+            assignee_id: 2116199184,
+            availability: "personal",
+            collateral: 0.0,
+            contract_id: 154837125,
+            date_accepted: "2020-03-06T21:09:32Z",
+            date_completed: "2020-03-06T21:09:32Z",
+            date_expired: "2020-03-07T21:09:11Z",
+            date_issued: "2020-03-06T21:09:11Z",
+            days_to_complete: 0,
+            end_location_id: 60008674,
+            for_corporation: false,
+            issuer_corporation_id: 98134807,
+            issuer_id: 1337512245,
+            price: 0.0,
+            reward: 0.0,
+            start_location_id: 60008674,
+            status: "finished",
+            title: "",
+            type: "item_exchange",
+            volume: 15000.0
+          }
+        ]
+      end
+
+      before do
+        #
+        # subject.response # => [{"acceptor_id":2116199184,"assignee_id":2116199184,"availability":"personal","collateral":0.0,"contract_id":154837125,"date_accepted":"2020-03-06T21:09:32Z","date_completed":"2020-03-06T21:09:32Z","date_expired":"2020-03-07T21:09:11Z","date_issued":"2020-03-06T21:09:11Z","days_to_complete":0,"end_location_id":60008674,"for_corporation":false,"issuer_corporation_id":98134807,"issuer_id":1337512245,"price":0.0,"reward":0.0,"start_location_id":60008674,"status":"finished","title":"","type":"item_exchange","volume":15000.0}]
+        #
+        expect(subject).to receive(:response).and_return(response)
+      end
+
+      before do
+        #
+        # EveOnline::ESI::Models::Contract.new(response.first) # => contract
+        #
+        expect(EveOnline::ESI::Models::Contract).to receive(:new).with(response.first).and_return(contract)
+      end
+
+      specify { expect(subject.contracts).to eq([contract]) }
+
+      specify { expect { subject.contracts }.to change { subject.instance_variable_get(:@contracts) }.from(nil).to([contract]) }
+
+    end
   end
 
   describe "#scope" do
