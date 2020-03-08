@@ -5,7 +5,7 @@ module EveOnline
     class CharacterContracts < Base
       API_PATH = "/v1/characters/%<character_id>s/contracts/"
 
-      attr_reader :character_id
+      attr_reader :character_id, :page
 
       def initialize(options)
         super
