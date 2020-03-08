@@ -5,6 +5,8 @@
 * Sync with new ESI API
 * Add `EveOnline::ESI::CharacterContracts`
 * Add `EveOnline::ESI::Models::Contract`
+* Add support `X-ESI-Error-Limit-Remain` header
+* Add support `X-ESI-Error-Limit-Reset` header
 
 ## v0.31.0
 
