@@ -28,6 +28,10 @@ describe "Get star information" do
     end
 
     specify { expect(subject.etag).to eq("2e28835f91024608719726b655591d531125a023e122859d174923d5") }
+
+    specify { expect(subject.error_limit_remain).to eq(100) }
+
+    specify { expect(subject.error_limit_reset).to eq(32) }
   end
 
   context "when etag present" do
@@ -42,5 +46,9 @@ describe "Get star information" do
     specify { expect(subject.not_modified?).to eq(true) }
 
     specify { expect(subject.etag).to eq("2e28835f91024608719726b655591d531125a023e122859d174923d5") }
+
+    specify { expect(subject.error_limit_remain).to eq(100) }
+
+    specify { expect(subject.error_limit_reset).to eq(32) }
   end
 end

@@ -20,6 +20,10 @@ describe "List all public structures" do
       specify { expect(subject.structure_ids.first).to eq(1_027_528_548_355) }
 
       specify { expect(subject.etag).to eq("1b64f9a8268bb3ba350acc7d7116bfd75dd9f88defb1bbc61771aec7") }
+
+      specify { expect(subject.error_limit_remain).to eq(100) }
+
+      specify { expect(subject.error_limit_reset).to eq(35) }
     end
 
     context "when etag is set" do
@@ -32,6 +36,10 @@ describe "List all public structures" do
       specify { expect(subject.not_modified?).to eq(true) }
 
       specify { expect(subject.etag).to eq("1b64f9a8268bb3ba350acc7d7116bfd75dd9f88defb1bbc61771aec7") }
+
+      specify { expect(subject.error_limit_remain).to eq(100) }
+
+      specify { expect(subject.error_limit_reset).to eq(18) }
     end
   end
 
@@ -50,6 +58,10 @@ describe "List all public structures" do
       specify { expect(subject.structure_ids.first).to eq(1_030_490_622_468) }
 
       specify { expect(subject.etag).to eq("2a825ab50413f1efe5f558b8d093e1299389b2f2ce3fa191907f7209") }
+
+      specify { expect(subject.error_limit_remain).to eq(100) }
+
+      specify { expect(subject.error_limit_reset).to eq(55) }
     end
 
     context "when etag is set" do
@@ -69,6 +81,10 @@ describe "List all public structures" do
       specify { expect(subject.not_modified?).to eq(true) }
 
       specify { expect(subject.etag).to eq("2a825ab50413f1efe5f558b8d093e1299389b2f2ce3fa191907f7209") }
+
+      specify { expect(subject.error_limit_remain).to eq(100) }
+
+      specify { expect(subject.error_limit_reset).to eq(1) }
     end
   end
 end

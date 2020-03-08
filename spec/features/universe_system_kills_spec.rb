@@ -24,6 +24,10 @@ describe "Get system kills" do
     end
 
     specify { expect(subject.etag).to eq("2075c203d2a11627ab68b039a61e1816b052e9c0016eca5f08b6a35e") }
+
+    specify { expect(subject.error_limit_remain).to eq(100) }
+
+    specify { expect(subject.error_limit_reset).to eq(32) }
   end
 
   context "when etag is set" do
@@ -36,5 +40,9 @@ describe "Get system kills" do
     specify { expect(subject.not_modified?).to eq(true) }
 
     specify { expect(subject.etag).to eq("2075c203d2a11627ab68b039a61e1816b052e9c0016eca5f08b6a35e") }
+
+    specify { expect(subject.error_limit_remain).to eq(100) }
+
+    specify { expect(subject.error_limit_reset).to eq(15) }
   end
 end

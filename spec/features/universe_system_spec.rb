@@ -40,6 +40,10 @@ describe "Get solar system information" do
     specify { expect(subject.station_ids).to eq([60_012_526, 60_014_437]) }
 
     specify { expect(subject.etag).to eq("37a39e7a5f5ecc07b19a3128c319f1198d035aee10052d0a21ccdd94") }
+
+    specify { expect(subject.error_limit_remain).to eq(100) }
+
+    specify { expect(subject.error_limit_reset).to eq(5) }
   end
 
   context "when etag is set" do
@@ -60,5 +64,9 @@ describe "Get solar system information" do
     specify { expect(subject.not_modified?).to eq(true) }
 
     specify { expect(subject.etag).to eq("37a39e7a5f5ecc07b19a3128c319f1198d035aee10052d0a21ccdd94") }
+
+    specify { expect(subject.error_limit_remain).to eq(100) }
+
+    specify { expect(subject.error_limit_reset).to eq(53) }
   end
 end

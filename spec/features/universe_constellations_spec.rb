@@ -19,6 +19,10 @@ describe "Get constellations" do
     specify { expect(subject.constellation_ids.first).to eq(20_000_001) }
 
     specify { expect(subject.etag).to eq("5c9218218aca123ef8c106f6607bfe8e6e086d2fc2b972bbd8ff03d2") }
+
+    specify { expect(subject.error_limit_remain).to eq(100) }
+
+    specify { expect(subject.error_limit_reset).to eq(34) }
   end
 
   context "when etag is set" do
@@ -31,5 +35,9 @@ describe "Get constellations" do
     specify { expect(subject.not_modified?).to eq(true) }
 
     specify { expect(subject.etag).to eq("5c9218218aca123ef8c106f6607bfe8e6e086d2fc2b972bbd8ff03d2") }
+
+    specify { expect(subject.error_limit_remain).to eq(100) }
+
+    specify { expect(subject.error_limit_reset).to eq(49) }
   end
 end
