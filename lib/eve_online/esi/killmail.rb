@@ -16,7 +16,7 @@ module EveOnline
 
       # TODO: implement
       def as_json
-        raise NotImplementedError
+        {}
       end
 
       def scope

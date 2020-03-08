@@ -35,7 +35,7 @@ describe EveOnline::ESI::Killmail do
   end
 
   describe "#as_json" do
-    specify { expect { subject.as_json }.to raise_error(NotImplementedError) }
+    specify { expect(subject.as_json).to eq({}) }
   end
 
   describe "#scope" do
