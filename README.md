@@ -767,6 +767,66 @@ character_implants.implant_ids # => [9899, 9941, 9942, 9943, 9956]
 
 #### Get contracts
 
+```ruby
+options = { token: 'token123', character_id: 1337512245, page: 1 }
+
+contracts = EveOnline::ESI::CharacterContracts.new(options)
+
+contracts.scope # => "esi-contracts.read_character_contracts.v1"
+
+contracts.contracts.size # => 3
+
+contract = contracts.contracts.first
+
+contract.as_json # => {:acceptor_id=>2116199184,
+                 #     :assignee_id=>2116199184,
+                 #     :availability=>"personal",
+                 #     :buyout=>nil,
+                 #     :collateral=>0.0,
+                 #     :contract_id=>154837125,
+                 #     :date_accepted=>Fri, 06 Mar 2020 21:09:32 UTC +00:00,
+                 #     :date_completed=>Fri, 06 Mar 2020 21:09:32 UTC +00:00,
+                 #     :date_expired=>Sat, 07 Mar 2020 21:09:11 UTC +00:00,
+                 #     :date_issued=>Fri, 06 Mar 2020 21:09:11 UTC +00:00,
+                 #     :days_to_complete=>0,
+                 #     :end_location_id=>60008674,
+                 #     :for_corporation=>false,
+                 #     :issuer_corporation_id=>98134807,
+                 #     :issuer_id=>1337512245,
+                 #     :price=>0.0,
+                 #     :reward=>0.0,
+                 #     :start_location_id=>60008674,
+                 #     :status=>"finished",
+                 #     :title=>"",
+                 #     :type=>"item_exchange",
+                 #     :volume=>15000.0}
+
+contract.acceptor_id # => 2116199184
+contract.assignee_id # => 2116199184
+contract.availability # => "personal"
+contract.buyout # => nil
+contract.collateral # => 0.0
+contract.contract_id # => 154837125
+contract.date_accepted # => Fri, 06 Mar 2020 21:09:32 UTC +00:00
+contract.date_completed # => Fri, 06 Mar 2020 21:09:32 UTC +00:00
+contract.date_expired # => Sat, 07 Mar 2020 21:09:11 UTC +00:00
+contract.date_issued # => Fri, 06 Mar 2020 21:09:11 UTC +00:00
+contract.days_to_complete # => 0
+contract.end_location_id # => 60008674
+contract.for_corporation # => false
+contract.issuer_corporation_id # => 98134807
+contract.issuer_id # => 1337512245
+contract.price # => 0.0
+contract.reward # => 0.0
+contract.start_location_id # => 60008674
+contract.status # => "finished"
+contract.title # => ""
+contract.type # => "item_exchange"
+contract.volume # => 15000.0
+
+contracts.etag # => "6e18566a8f786f08aba678262360d0c74a783f9923aa43f8043133e4"
+```
+
 #### Get contract bids
 
 #### Get contract items
