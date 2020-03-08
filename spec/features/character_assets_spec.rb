@@ -40,6 +40,10 @@ describe "Get character assets" do
     end
 
     specify { expect(subject.etag).to eq("29da11b30974e55cd440a879199a629a8492a4c0a49894a2cd22f90b") }
+
+    specify { expect(subject.error_limit_remain).to eq(100) }
+
+    specify { expect(subject.error_limit_reset).to eq(29) }
   end
 
   context "when etag is set" do
@@ -61,5 +65,9 @@ describe "Get character assets" do
     specify { expect(subject.not_modified?).to eq(true) }
 
     specify { expect(subject.etag).to eq("29da11b30974e55cd440a879199a629a8492a4c0a49894a2cd22f90b") }
+
+    specify { expect(subject.error_limit_remain).to eq(100) }
+
+    specify { expect(subject.error_limit_reset).to eq(29) }
   end
 end

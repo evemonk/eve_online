@@ -26,6 +26,10 @@ describe "Get alliance history" do
     end
 
     specify { expect(subject.etag).to eq("9a949294cfa5fcef345ea8d89a574defa09be39845b9b97f1fdddd41") }
+
+    specify { expect(subject.error_limit_remain).to eq(100) }
+
+    specify { expect(subject.error_limit_reset).to eq(35) }
   end
 
   context "when etag is set" do
@@ -45,5 +49,9 @@ describe "Get alliance history" do
     specify { expect(subject.not_modified?).to eq(true) }
 
     specify { expect(subject.etag).to eq("9a949294cfa5fcef345ea8d89a574defa09be39845b9b97f1fdddd41") }
+
+    specify { expect(subject.error_limit_remain).to eq(100) }
+
+    specify { expect(subject.error_limit_reset).to eq(20) }
   end
 end

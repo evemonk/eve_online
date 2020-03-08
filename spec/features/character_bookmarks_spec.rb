@@ -44,4 +44,8 @@ describe "Get character bookmarks" do
                                                               y: nil,
                                                               z: nil)
   end
+
+  specify { expect(subject.error_limit_remain).to eq(100) }
+
+  specify { expect(subject.error_limit_reset).to eq(8) }
 end

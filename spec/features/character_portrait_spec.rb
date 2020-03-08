@@ -28,6 +28,10 @@ describe "Get character portraits" do
     end
 
     specify { expect(subject.etag).to eq("b2caff1ff8ab0f8bdc8ce19423b24e7fc1b2a7b8829d64c0e4ec652f") }
+
+    specify { expect(subject.error_limit_remain).to eq(100) }
+
+    specify { expect(subject.error_limit_reset).to eq(34) }
   end
 
   context "when etag is set" do
@@ -47,5 +51,9 @@ describe "Get character portraits" do
     specify { expect(subject.not_modified?).to eq(true) }
 
     specify { expect(subject.etag).to eq("7c3e352530bd9a3e07ffaa978ad52dbb4609fa58f483a7eedea7a287") }
+
+    specify { expect(subject.error_limit_remain).to eq(100) }
+
+    specify { expect(subject.error_limit_reset).to eq(59) }
   end
 end

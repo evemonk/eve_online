@@ -40,6 +40,10 @@ describe "Get effect information" do
     end
 
     specify { expect(subject.etag).to eq("acc1e563574a55f79ebe4a2a99845dd6c28f4e412e11fd084b8485fd") }
+
+    specify { expect(subject.error_limit_remain).to eq(100) }
+
+    specify { expect(subject.error_limit_reset).to eq(28) }
   end
 
   context "when etag is set" do
@@ -59,5 +63,9 @@ describe "Get effect information" do
     specify { expect(subject.not_modified?).to eq(true) }
 
     specify { expect(subject.etag).to eq("acc1e563574a55f79ebe4a2a99845dd6c28f4e412e11fd084b8485fd") }
+
+    specify { expect(subject.error_limit_remain).to eq(100) }
+
+    specify { expect(subject.error_limit_reset).to eq(15) }
   end
 end

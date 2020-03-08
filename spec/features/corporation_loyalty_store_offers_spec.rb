@@ -37,6 +37,10 @@ describe "List loyalty store offers" do
     end
 
     specify { expect(subject.etag).to eq("89211f42fde090e4d22621e9b97d7604ab87af95b3b6ffed7fe81bc0") }
+
+    specify { expect(subject.error_limit_remain).to eq(100) }
+
+    specify { expect(subject.error_limit_reset).to eq(28) }
   end
 
   context "when etag is set" do
@@ -56,5 +60,9 @@ describe "List loyalty store offers" do
     specify { expect(subject.not_modified?).to eq(true) }
 
     specify { expect(subject.etag).to eq("89211f42fde090e4d22621e9b97d7604ab87af95b3b6ffed7fe81bc0") }
+
+    specify { expect(subject.error_limit_remain).to eq(100) }
+
+    specify { expect(subject.error_limit_reset).to eq(28) }
   end
 end

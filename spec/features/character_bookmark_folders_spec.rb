@@ -32,4 +32,8 @@ describe "Get character bookmark folders" do
   # specify do
   #   expect(subject.bookmark_folders.first.as_json).to eq('')
   # end
+  #
+  #   specify { expect(subject.error_limit_remain).to eq(100) }
+  #
+  #   specify { expect(subject.error_limit_reset).to eq(4) }
 end
