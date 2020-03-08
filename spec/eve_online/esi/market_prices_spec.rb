@@ -30,6 +30,37 @@ describe EveOnline::ESI::MarketPrices do
       specify { expect(subject.market_prices).to eq(market_prices) }
     end
 
+    context "when @market_prices not set" do
+      let(:market_price) { instance_double(EveOnline::ESI::Models::MarketPrice) }
+
+      let(:response) do
+        [
+          {
+            adjusted_price: 923296.88,
+            average_price: 1273871.6,
+            type_id: 32_772
+          }
+        ]
+      end
+
+      before do
+        #
+        # subject.response # => [{"adjusted_price"=>923296.88, "average_price"=>1273871.6, "type_id"=>32772}]
+        #
+        expect(subject).to receive(:response).and_return(response)
+      end
+
+      before do
+        #
+        # EveOnline::ESI::Models::MarketPrice.new(response.first) # => market_price
+        #
+        expect(EveOnline::ESI::Models::MarketPrice).to receive(:new).with(response.first).and_return(market_price)
+      end
+
+      specify { expect(subject.market_prices).to eq([market_price]) }
+
+      specify { expect { subject.market_prices }.to change { subject.instance_variable_get(:@market_prices) }.from(nil).to([market_price]) }
+    end
   end
 
   describe "#scope" do
