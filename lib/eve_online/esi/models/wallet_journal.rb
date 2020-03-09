@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     module Models
-      class WalletJournalEntry < Base
+      class WalletJournal < Base
         def as_json
           {
             amount: amount,

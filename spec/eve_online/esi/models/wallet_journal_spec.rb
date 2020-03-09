@@ -2,7 +2,7 @@
 
 require "spec_helper"
 
-describe EveOnline::ESI::Models::WalletJournalEntry do
+describe EveOnline::ESI::Models::WalletJournal do
   let(:options) { double }
 
   subject { described_class.new(options) }

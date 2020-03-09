@@ -39,7 +39,7 @@ describe EveOnline::ESI::CharacterWalletJournal do
 
   describe "#wallet_journal_entries" do
     context "when @wallet_journal_entries set" do
-      let(:wallet_journal_entries) { [instance_double(EveOnline::ESI::Models::WalletJournalEntry)] }
+      let(:wallet_journal_entries) { [instance_double(EveOnline::ESI::Models::WalletJournal)] }
 
       before { subject.instance_variable_set(:@wallet_journal_entries, wallet_journal_entries) }
 
@@ -47,7 +47,7 @@ describe EveOnline::ESI::CharacterWalletJournal do
     end
 
     context "when @wallet_journal_entries not set" do
-      let(:wallet_journal_entry) { instance_double(EveOnline::ESI::Models::WalletJournalEntry) }
+      let(:wallet_journal) { instance_double(EveOnline::ESI::Models::WalletJournal) }
 
       let(:response) do
         [
@@ -72,14 +72,14 @@ describe EveOnline::ESI::CharacterWalletJournal do
 
       before do
         #
-        # EveOnline::ESI::Models::WalletJournalEntry.new(response.first) # => wallet_journal_entry
+        # EveOnline::ESI::Models::WalletJournal.new(response.first) # => wallet_journal
         #
-        expect(EveOnline::ESI::Models::WalletJournalEntry).to receive(:new).with(response.first).and_return(wallet_journal_entry)
+        expect(EveOnline::ESI::Models::WalletJournal).to receive(:new).with(response.first).and_return(wallet_journal)
       end
 
-      specify { expect(subject.wallet_journal_entries).to eq([wallet_journal_entry]) }
+      specify { expect(subject.wallet_journal_entries).to eq([wallet_journal]) }
 
-      specify { expect { subject.wallet_journal_entries }.to change { subject.instance_variable_get(:@wallet_journal_entries) }.from(nil).to([wallet_journal_entry]) }
+      specify { expect { subject.wallet_journal_entries }.to change { subject.instance_variable_get(:@wallet_journal_entries) }.from(nil).to([wallet_journal]) }
     end
   end
 

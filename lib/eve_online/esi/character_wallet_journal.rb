@@ -18,8 +18,8 @@ module EveOnline
         @wallet_journal_entries ||=
           begin
             output = []
-            response.each do |wallet_journal_entry|
-              output << Models::WalletJournalEntry.new(wallet_journal_entry)
+            response.each do |wallet_journal|
+              output << Models::WalletJournal.new(wallet_journal)
             end
             output
           end
