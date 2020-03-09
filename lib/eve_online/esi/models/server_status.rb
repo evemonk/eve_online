@@ -9,7 +9,7 @@ module EveOnline
             players: players,
             server_version: server_version,
             start_time: start_time,
-            vip: vip,
+            vip: vip
           }
         end
 

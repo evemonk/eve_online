@@ -53,13 +53,17 @@ describe "Get war information" do
     end
 
     specify { expect(subject.etag).to eq("01fa26aad0ed536a053e1e53656f299b2c0f66a09bbccc2be37950e8") }
+
+    specify { expect(subject.error_limit_remain).to eq(100) }
+
+    specify { expect(subject.error_limit_reset).to eq(54) }
   end
 
   context "when etag is set" do
     let(:options) do
       {
         id: 654_019,
-        etag: "01fa26aad0ed536a053e1e53656f299b2c0f66a09bbccc2be37950e8",
+        etag: "01fa26aad0ed536a053e1e53656f299b2c0f66a09bbccc2be37950e8"
       }
     end
 
@@ -72,5 +76,9 @@ describe "Get war information" do
     specify { expect(subject.not_modified?).to eq(true) }
 
     specify { expect(subject.etag).to eq("01fa26aad0ed536a053e1e53656f299b2c0f66a09bbccc2be37950e8") }
+
+    specify { expect(subject.error_limit_remain).to eq(100) }
+
+    specify { expect(subject.error_limit_reset).to eq(22) }
   end
 end

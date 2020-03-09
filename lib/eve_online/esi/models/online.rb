@@ -9,7 +9,7 @@ module EveOnline
             last_login: last_login,
             last_logout: last_logout,
             logins: logins,
-            online: online,
+            online: online
           }
         end
 

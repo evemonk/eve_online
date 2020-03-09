@@ -49,8 +49,8 @@ describe EveOnline::ESI::UniverseFactions do
             is_unique: true,
             solar_system_id: 30_002_544,
             corporation_id: 1_000_051,
-            militia_corporation_id: 1_000_182,
-          },
+            militia_corporation_id: 1_000_182
+          }
         ]
       end
 

@@ -39,8 +39,8 @@ describe EveOnline::ESI::UniverseSystemKills do
             npc_kills: 231,
             pod_kills: 0,
             ship_kills: 0,
-            system_id: 30_001_746,
-          },
+            system_id: 30_001_746
+          }
         ]
       end
 

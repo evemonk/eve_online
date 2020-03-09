@@ -39,7 +39,7 @@ describe "Get station information" do
                                                "office-rental",
                                                "loyalty-point-store",
                                                "navy-offices",
-                                               "security-offices",],
+                                               "security-offices"],
                                     station_id: 60_012_526,
                                     system_id: 30_000_001,
                                     type_id: 2502)
@@ -52,6 +52,10 @@ describe "Get station information" do
     end
 
     specify { expect(subject.etag).to eq("e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b") }
+
+    specify { expect(subject.error_limit_remain).to eq(100) }
+
+    specify { expect(subject.error_limit_reset).to eq(36) }
   end
 
   context "when etag is set" do
@@ -62,7 +66,7 @@ describe "Get station information" do
     let(:options) do
       {
         id: 60_012_526,
-        etag: "e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b",
+        etag: "e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b"
       }
     end
 
@@ -71,5 +75,9 @@ describe "Get station information" do
     specify { expect(subject.not_modified?).to eq(true) }
 
     specify { expect(subject.etag).to eq("e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b") }
+
+    specify { expect(subject.error_limit_remain).to eq(100) }
+
+    specify { expect(subject.error_limit_reset).to eq(17) }
   end
 end

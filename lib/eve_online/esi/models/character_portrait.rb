@@ -9,7 +9,7 @@ module EveOnline
             medium: medium,
             large: large,
             huge: huge,
-            small: small,
+            small: small
           }
         end
 

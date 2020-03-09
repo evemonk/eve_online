@@ -11,7 +11,7 @@ module EveOnline
             highest: highest,
             lowest: lowest,
             order_count: order_count,
-            volume: volume,
+            volume: volume
           }
         end
 

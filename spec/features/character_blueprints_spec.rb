@@ -7,7 +7,7 @@ describe "Get character blueprints" do
     {
       character_id: 1_337_512_245,
       token: "token123",
-      page: 1,
+      page: 1
     }
   end
 
@@ -37,4 +37,8 @@ describe "Get character blueprints" do
                                                    time_efficiency: 0,
                                                    type_id: 1010)
   end
+
+  specify { expect(subject.error_limit_remain).to eq(100) }
+
+  specify { expect(subject.error_limit_reset).to eq(4) }
 end

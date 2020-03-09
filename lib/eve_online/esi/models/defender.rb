@@ -9,7 +9,7 @@ module EveOnline
             alliance_id: alliance_id,
             corporation_id: corporation_id,
             isk_destroyed: isk_destroyed,
-            ships_killed: ships_killed,
+            ships_killed: ships_killed
           }
         end
 

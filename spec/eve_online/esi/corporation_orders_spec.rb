@@ -66,8 +66,8 @@ describe EveOnline::ESI::CorporationOrders do
             min_volume: 1,
             wallet_division: 1,
             duration: 30,
-            escrow: 45.6,
-          },
+            escrow: 45.6
+          }
         ]
       end
 

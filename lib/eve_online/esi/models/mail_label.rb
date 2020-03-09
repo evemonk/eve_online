@@ -9,7 +9,7 @@ module EveOnline
             color: color,
             label_id: label_id,
             name: name,
-            unread_count: unread_count,
+            unread_count: unread_count
           }
         end
 

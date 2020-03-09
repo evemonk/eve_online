@@ -52,7 +52,7 @@ gem install eve_online
 * MRI 2.5
 * MRI 2.6
 * MRI 2.7
-* JRuby 9.2.9.0
+* JRuby 9.2.11.0
 
 ## Supported rails versions
 
@@ -767,6 +767,66 @@ character_implants.implant_ids # => [9899, 9941, 9942, 9943, 9956]
 
 #### Get contracts
 
+```ruby
+options = { token: 'token123', character_id: 1337512245, page: 1 }
+
+contracts = EveOnline::ESI::CharacterContracts.new(options)
+
+contracts.scope # => "esi-contracts.read_character_contracts.v1"
+
+contracts.contracts.size # => 3
+
+contract = contracts.contracts.first
+
+contract.as_json # => {:acceptor_id=>2116199184,
+                 #     :assignee_id=>2116199184,
+                 #     :availability=>"personal",
+                 #     :buyout=>nil,
+                 #     :collateral=>0.0,
+                 #     :contract_id=>154837125,
+                 #     :date_accepted=>Fri, 06 Mar 2020 21:09:32 UTC +00:00,
+                 #     :date_completed=>Fri, 06 Mar 2020 21:09:32 UTC +00:00,
+                 #     :date_expired=>Sat, 07 Mar 2020 21:09:11 UTC +00:00,
+                 #     :date_issued=>Fri, 06 Mar 2020 21:09:11 UTC +00:00,
+                 #     :days_to_complete=>0,
+                 #     :end_location_id=>60008674,
+                 #     :for_corporation=>false,
+                 #     :issuer_corporation_id=>98134807,
+                 #     :issuer_id=>1337512245,
+                 #     :price=>0.0,
+                 #     :reward=>0.0,
+                 #     :start_location_id=>60008674,
+                 #     :status=>"finished",
+                 #     :title=>"",
+                 #     :type=>"item_exchange",
+                 #     :volume=>15000.0}
+
+contract.acceptor_id # => 2116199184
+contract.assignee_id # => 2116199184
+contract.availability # => "personal"
+contract.buyout # => nil
+contract.collateral # => 0.0
+contract.contract_id # => 154837125
+contract.date_accepted # => Fri, 06 Mar 2020 21:09:32 UTC +00:00
+contract.date_completed # => Fri, 06 Mar 2020 21:09:32 UTC +00:00
+contract.date_expired # => Sat, 07 Mar 2020 21:09:11 UTC +00:00
+contract.date_issued # => Fri, 06 Mar 2020 21:09:11 UTC +00:00
+contract.days_to_complete # => 0
+contract.end_location_id # => 60008674
+contract.for_corporation # => false
+contract.issuer_corporation_id # => 98134807
+contract.issuer_id # => 1337512245
+contract.price # => 0.0
+contract.reward # => 0.0
+contract.start_location_id # => 60008674
+contract.status # => "finished"
+contract.title # => ""
+contract.type # => "item_exchange"
+contract.volume # => 15000.0
+
+contracts.etag # => "6e18566a8f786f08aba678262360d0c74a783f9923aa43f8043133e4"
+```
+
 #### Get contract bids
 
 #### Get contract items
@@ -1298,13 +1358,13 @@ character_killmails.killmails.size # => 1
 
 killmail = character_killmails.killmails.first
 
-killmail.as_json # => {:killmail_hash=>"07f7ef1d7f6090e78d8e85b4a98e680f67b5e9d5",
-                 #     :killmail_id=>72410059}
+killmail.as_json # => {:killmail_hash=>"8f1450fca8ce97be9b10e106a1257088407ef387",
+                 #     :killmail_id=>81_646_519}
 
-killmail.killmail_hash # => "07f7ef1d7f6090e78d8e85b4a98e680f67b5e9d5"
-killmail.killmail_id # => 72410059
+killmail.killmail_hash # => "8f1450fca8ce97be9b10e106a1257088407ef387"
+killmail.killmail_id # => 81646519
 
-# TODO: character_killmails.etag
+character_killmails.etag # => "ba5068bc1b07db98d9efce93437295fbdb9d29b14b4ffbcbfa91ac0d"
 ```
 
 #### Get a corporation's recent kills and losses
@@ -1336,6 +1396,14 @@ corporation_killmails.roles # => ["Director"]
 ```
 
 #### Get a single killmail
+
+```ruby
+options = { killmail_id: 81_646_519, killmail_hash: "8f1450fca8ce97be9b10e106a1257088407ef387" }
+
+killmail = EveOnline::ESI::Killmail.new(options)
+
+# TODO: finish this
+```
 
 ### Location
 
@@ -1726,6 +1794,27 @@ market_group.etag # => "bf7832bfc20f5f9fdeddc9cb0360b941067310e7e3a2a80315b45a43
 ```
 
 #### List market prices
+
+```ruby
+market_prices = EveOnline::ESI::MarketPrices.new
+
+market_prices.scope # => nil
+
+market_prices.market_prices.size # => 12565
+
+market_price = market_prices.market_prices.first
+
+
+market_price.as_json # => {:adjusted_price=>923296.88,
+                     #     :average_price=>1273871.6,
+                     #     :type_id=>32772}
+
+market_price.adjusted_price # => 923296.88
+market_price.average_price # => 1273871.6
+market_price.type_id # => 32772
+
+market_prices.etag # => "2d5acc3bd4555821bb91d787596f5ddad129f849739e83162e93c02f"
+```
 
 #### List orders in a structure
 
@@ -2690,7 +2779,7 @@ type.etag # => "e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b"
 #### Get a character's wallet balance
 
 ```ruby
-options = { token: 'token123', character_id: 90729314 }
+options = { token: 'token123', character_id: 90_729_314 }
 
 character_wallet = EveOnline::ESI::CharacterWallet.new(options)
 
@@ -2700,13 +2789,13 @@ character_wallet.as_json # => {:wallet=>409488252.49}
 
 character_wallet.wallet # => 409488252.49
 
-# TODO: character_wallet.etag
+character_wallet.etag # => "482786a491138fdf393f42c457424b0cd3f3c3c7c2c9afb3f55c618a"
 ```
 
 #### Get character wallet journal
 
 ```ruby
-options = { token: 'token123', character_id: 90729314, page: 1 }
+options = { token: 'token123', character_id: 90_729_314, page: 1 }
 
 character_wallet_journal = EveOnline::ESI::CharacterWalletJournal.new(options)
 
@@ -2743,11 +2832,56 @@ wallet_journal_entry.tax_receiver_id
 
 #### Get wallet transactions
 
+```ruby
+options = { token: "token123", character_id: 1_337_512_245 } # optional, add `from_id: 123` to skip records
+
+wallet_transactions = EveOnline::ESI::CharacterWalletTransactions.new(options)
+
+wallet_transactions.scope # => "esi-wallet.read_character_wallet.v1"
+
+wallet_transactions.wallet_transactions.size # => 47
+
+wallet_transaction = wallet_transactions.wallet_transactions.first
+
+wallet_transaction.as_json # => {:client_id=>2116253203,
+                           #     :date=>Sun, 08 Mar 2020 11:49:16 UTC +00:00,
+                           #     :is_buy=>true,
+                           #     :is_personal=>true,
+                           #     :journal_ref_id=>17740411474,
+                           #     :location_id=>60008494,
+                           #     :quantity=>1,
+                           #     :transaction_id=>5296927639,
+                           #     :type_id=>3538,
+                           #     :unit_price=>99887.79}
+
+wallet_transaction.client_id # => 2116253203
+wallet_transaction.date # => Sun, 08 Mar 2020 11:49:16 UTC +00:00
+wallet_transaction.is_buy # => true
+wallet_transaction.is_personal # => true
+wallet_transaction.journal_ref_id # => 17740411474
+wallet_transaction.location_id # => 60008494
+wallet_transaction.quantity # => 1
+wallet_transaction.transaction_id # => 5296927639
+wallet_transaction.type_id # => 3538
+wallet_transaction.unit_price # => 99887.79
+
+wallet_transactions.etag # => "55d0fbe8b408d6a76dab70c0a709d4e7c5dd58d4e0b7bd785549e268"
+```
+
 #### Returns a corporation's wallet balance
+
+```ruby
+```
 
 #### Get corporation wallet journal
 
+```ruby
+```
+
 #### Get corporation wallet transactions
+
+```ruby
+```
 
 ### Wars
 

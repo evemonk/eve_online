@@ -19,7 +19,7 @@ module EveOnline
             region_id: region_id,
             type_id: type_id,
             volume_remain: volume_remain,
-            volume_total: volume_total,
+            volume_total: volume_total
           }
         end
 

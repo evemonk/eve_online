@@ -8,7 +8,7 @@ module EveOnline
           {
             solar_system_id: solar_system_id,
             station_id: station_id,
-            structure_id: structure_id,
+            structure_id: structure_id
           }
         end
 

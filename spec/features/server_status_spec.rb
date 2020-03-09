@@ -15,6 +15,10 @@ describe "Get character's public information" do
     specify { expect(subject.not_modified?).to eq(false) }
 
     specify { expect(subject.etag).to eq("c2f41ae833fceb5533627552f494d071e34d4e4a2183589a6b9c85e1") }
+
+    specify { expect(subject.error_limit_remain).to eq(100) }
+
+    specify { expect(subject.error_limit_reset).to eq(2) }
   end
 
   context "when etag is set" do
@@ -27,5 +31,9 @@ describe "Get character's public information" do
     specify { expect(subject.not_modified?).to eq(true) }
 
     specify { expect(subject.etag).to eq("c2f41ae833fceb5533627552f494d071e34d4e4a2183589a6b9c85e1") }
+
+    specify { expect(subject.error_limit_remain).to eq(100) }
+
+    specify { expect(subject.error_limit_reset).to eq(2) }
   end
 end

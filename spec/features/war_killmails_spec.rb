@@ -28,13 +28,17 @@ describe "List kills for a war" do
     end
 
     specify { expect(subject.etag).to eq("12ee36a10ee0dbfb7f6691e1b27c8400fdca645f15e70ebc0a94b7ae") }
+
+    specify { expect(subject.error_limit_remain).to eq(100) }
+
+    specify { expect(subject.error_limit_reset).to eq(50) }
   end
 
   context "when etag is set" do
     let(:options) do
       {
         war_id: 615_578,
-        etag: "12ee36a10ee0dbfb7f6691e1b27c8400fdca645f15e70ebc0a94b7ae",
+        etag: "12ee36a10ee0dbfb7f6691e1b27c8400fdca645f15e70ebc0a94b7ae"
       }
     end
 
@@ -47,5 +51,9 @@ describe "List kills for a war" do
     specify { expect(subject.not_modified?).to eq(true) }
 
     specify { expect(subject.etag).to eq("12ee36a10ee0dbfb7f6691e1b27c8400fdca645f15e70ebc0a94b7ae") }
+
+    specify { expect(subject.error_limit_remain).to eq(100) }
+
+    specify { expect(subject.error_limit_reset).to eq(2) }
   end
 end

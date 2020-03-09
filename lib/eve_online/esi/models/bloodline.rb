@@ -16,7 +16,7 @@ module EveOnline
             perception: perception,
             race_id: race_id,
             ship_type_id: ship_type_id,
-            willpower: willpower,
+            willpower: willpower
           }
         end
 

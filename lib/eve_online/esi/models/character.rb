@@ -17,7 +17,7 @@ module EveOnline
             name: name,
             race_id: race_id,
             security_status: security_status,
-            title: title,
+            title: title
           }
         end
 

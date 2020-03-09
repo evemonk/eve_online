@@ -7,7 +7,7 @@ module EveOnline
         def as_json
           {
             ship_jumps: ship_jumps,
-            system_id: system_id,
+            system_id: system_id
           }
         end
 

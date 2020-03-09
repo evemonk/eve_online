@@ -7,7 +7,7 @@ module EveOnline
         def as_json
           {
             folder_id: folder_id,
-            name: name,
+            name: name
           }
         end
 

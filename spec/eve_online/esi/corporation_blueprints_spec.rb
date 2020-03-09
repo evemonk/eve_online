@@ -59,8 +59,8 @@ describe EveOnline::ESI::CorporationBlueprints do
             quantity: 1,
             time_efficiency: 0,
             material_efficiency: 0,
-            runs: -1,
-          },
+            runs: -1
+          }
         ]
       end
 

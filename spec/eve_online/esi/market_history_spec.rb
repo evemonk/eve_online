@@ -49,8 +49,8 @@ describe EveOnline::ESI::MarketHistory do
             volume: 16_276_782_035,
             highest: 5.27,
             average: 5.25,
-            lowest: 5.11,
-          },
+            lowest: 5.11
+          }
         ]
       end
 

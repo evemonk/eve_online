@@ -14,7 +14,7 @@ module EveOnline
             item_type_id: item_type_id,
             label: label,
             location_id: location_id,
-            notes: notes,
+            notes: notes
           }
         end
 

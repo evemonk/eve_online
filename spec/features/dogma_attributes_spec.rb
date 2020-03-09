@@ -19,6 +19,10 @@ describe "Get attributes" do
     specify { expect(subject.attribute_ids.first).to eq(2) }
 
     specify { expect(subject.etag).to eq("5c9218218aca123ef8c106f6607bfe8e6e086d2fc2b972bbd8ff03d2") }
+
+    specify { expect(subject.error_limit_remain).to eq(100) }
+
+    specify { expect(subject.error_limit_reset).to eq(37) }
   end
 
   context "when etag is set" do
@@ -31,5 +35,9 @@ describe "Get attributes" do
     specify { expect(subject.not_modified?).to eq(true) }
 
     specify { expect(subject.etag).to eq("5c9218218aca123ef8c106f6607bfe8e6e086d2fc2b972bbd8ff03d2") }
+
+    specify { expect(subject.error_limit_remain).to eq(100) }
+
+    specify { expect(subject.error_limit_reset).to eq(12) }
   end
 end

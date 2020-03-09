@@ -7,7 +7,7 @@ module EveOnline
         def as_json
           {
             effect_id: effect_id,
-            is_default: is_default,
+            is_default: is_default
           }
         end
 

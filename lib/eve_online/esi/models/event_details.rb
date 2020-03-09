@@ -15,7 +15,7 @@ module EveOnline
             owner_type: owner_type,
             event_response: event_response,
             text: text,
-            title: title,
+            title: title
           }
         end
 

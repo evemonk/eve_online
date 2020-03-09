@@ -11,7 +11,7 @@ describe "Get mail labels and unread counts" do
     let(:options) do
       {
         character_id: 90_729_314,
-        token: "token123",
+        token: "token123"
       }
     end
 
@@ -33,6 +33,10 @@ describe "Get mail labels and unread counts" do
     end
 
     specify { expect(subject.etag).to eq("6aac63dafa81b592eba22fe0d7bf12a2c11bfd5b054aa78d3a3a5cde") }
+
+    specify { expect(subject.error_limit_remain).to eq(100) }
+
+    specify { expect(subject.error_limit_reset).to eq(43) }
   end
 
   context "when etag is set" do
@@ -44,7 +48,7 @@ describe "Get mail labels and unread counts" do
       {
         character_id: 90_729_314,
         token: "token123",
-        etag: "6aac63dafa81b592eba22fe0d7bf12a2c11bfd5b054aa78d3a3a5cde",
+        etag: "6aac63dafa81b592eba22fe0d7bf12a2c11bfd5b054aa78d3a3a5cde"
       }
     end
 
@@ -53,5 +57,9 @@ describe "Get mail labels and unread counts" do
     specify { expect(subject.not_modified?).to eq(true) }
 
     specify { expect(subject.etag).to eq("6aac63dafa81b592eba22fe0d7bf12a2c11bfd5b054aa78d3a3a5cde") }
+
+    specify { expect(subject.error_limit_remain).to eq(100) }
+
+    specify { expect(subject.error_limit_reset).to eq(37) }
   end
 end

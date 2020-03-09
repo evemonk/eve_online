@@ -7,7 +7,7 @@ module EveOnline
         def as_json
           {
             location_id: location_id,
-            location_type: location_type,
+            location_type: location_type
           }
         end
 

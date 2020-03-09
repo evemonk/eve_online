@@ -13,7 +13,7 @@ module EveOnline
             queue_position: queue_position,
             skill_id: skill_id,
             start_date: start_date,
-            training_start_sp: training_start_sp,
+            training_start_sp: training_start_sp
           }
         end
 

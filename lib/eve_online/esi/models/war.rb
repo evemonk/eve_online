@@ -12,7 +12,7 @@ module EveOnline
             mutual: mutual,
             open_for_allies: open_for_allies,
             retracted: retracted,
-            started: started,
+            started: started
           }
         end
 

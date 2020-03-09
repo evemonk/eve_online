@@ -6,7 +6,7 @@ module EveOnline
       class PlanetShort < Base
         def as_json
           {
-            planet_id: planet_id,
+            planet_id: planet_id
           }
         end
 

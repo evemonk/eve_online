@@ -8,7 +8,7 @@ module EveOnline
           {
             jump_fatigue_expire_date: jump_fatigue_expire_date,
             last_jump_date: last_jump_date,
-            last_update_date: last_update_date,
+            last_update_date: last_update_date
           }
         end
 

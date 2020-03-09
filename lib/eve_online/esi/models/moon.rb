@@ -8,7 +8,7 @@ module EveOnline
           {
             moon_id: moon_id,
             name: name,
-            system_id: system_id,
+            system_id: system_id
           }
         end
 

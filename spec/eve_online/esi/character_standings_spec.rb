@@ -44,8 +44,8 @@ describe EveOnline::ESI::CharacterStandings do
           {
             from_id: 500_001,
             from_type: "faction",
-            standing: 0.3303719111639991,
-          },
+            standing: 0.3303719111639991
+          }
         ]
       end
 

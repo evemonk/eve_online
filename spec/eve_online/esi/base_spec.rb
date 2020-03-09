@@ -16,7 +16,7 @@ describe EveOnline::ESI::Base do
           read_timeout: 30,
           open_timeout: 45,
           etag: "6f2d3caa79a79bc9e61aa058e18905faac5e293fa1729637648ce9a1",
-          language: "ru",
+          language: "ru"
         }.tap do |hash|
           if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("2.6.0")
             hash[:write_timeout] = 50
@@ -231,6 +231,42 @@ describe EveOnline::ESI::Base do
     before { expect(pages).to receive(:to_i) }
 
     specify { expect { subject.total_pages }.not_to raise_error }
+  end
+
+  describe "#error_limit_remain" do
+    let(:resource) { double }
+
+    let(:header) { double }
+
+    let(:pages) { double }
+
+    before { expect(subject).to receive(:resource).and_return(resource) }
+
+    before { expect(resource).to receive(:header).and_return(header) }
+
+    before { expect(header).to receive(:[]).with("X-ESI-Error-Limit-Remain").and_return(pages) }
+
+    before { expect(pages).to receive(:to_i) }
+
+    specify { expect { subject.error_limit_remain }.not_to raise_error }
+  end
+
+  describe "#error_limit_reset" do
+    let(:resource) { double }
+
+    let(:header) { double }
+
+    let(:pages) { double }
+
+    before { expect(subject).to receive(:resource).and_return(resource) }
+
+    before { expect(resource).to receive(:header).and_return(header) }
+
+    before { expect(header).to receive(:[]).with("X-ESI-Error-Limit-Reset").and_return(pages) }
+
+    before { expect(pages).to receive(:to_i) }
+
+    specify { expect { subject.error_limit_reset }.not_to raise_error }
   end
 
   describe "#client" do

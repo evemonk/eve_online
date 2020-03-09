@@ -22,6 +22,10 @@ describe "Get system jumps" do
     end
 
     specify { expect(subject.etag).to eq("40d7cfcdb494669846bedf8adadc47002986d8f5529508e8d5f8f552") }
+
+    specify { expect(subject.error_limit_remain).to eq(100) }
+
+    specify { expect(subject.error_limit_reset).to eq(6) }
   end
 
   context "when etag is set" do
@@ -34,5 +38,9 @@ describe "Get system jumps" do
     specify { expect(subject.not_modified?).to eq(true) }
 
     specify { expect(subject.etag).to eq("40d7cfcdb494669846bedf8adadc47002986d8f5529508e8d5f8f552") }
+
+    specify { expect(subject.error_limit_remain).to eq(100) }
+
+    specify { expect(subject.error_limit_reset).to eq(6) }
   end
 end

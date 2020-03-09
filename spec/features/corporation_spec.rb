@@ -34,13 +34,17 @@ describe "Get corporation information" do
     end
 
     specify { expect(subject.etag).to eq("046430260be73e5d7ad3a9251954310bd547498eeb38f99e8d305796") }
+
+    specify { expect(subject.error_limit_remain).to eq(100) }
+
+    specify { expect(subject.error_limit_reset).to eq(57) }
   end
 
   context "when etag is set" do
     let(:options) do
       {
         corporation_id: 98_468_592,
-        etag: "046430260be73e5d7ad3a9251954310bd547498eeb38f99e8d305796",
+        etag: "046430260be73e5d7ad3a9251954310bd547498eeb38f99e8d305796"
       }
     end
 
@@ -53,5 +57,9 @@ describe "Get corporation information" do
     specify { expect(subject.not_modified?).to eq(true) }
 
     specify { expect(subject.etag).to eq("046430260be73e5d7ad3a9251954310bd547498eeb38f99e8d305796") }
+
+    specify { expect(subject.error_limit_remain).to eq(100) }
+
+    specify { expect(subject.error_limit_reset).to eq(3) }
   end
 end

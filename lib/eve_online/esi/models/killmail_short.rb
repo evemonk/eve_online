@@ -7,7 +7,7 @@ module EveOnline
         def as_json
           {
             killmail_hash: killmail_hash,
-            killmail_id: killmail_id,
+            killmail_id: killmail_id
           }
         end
 

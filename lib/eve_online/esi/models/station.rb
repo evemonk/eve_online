@@ -16,7 +16,7 @@ module EveOnline
             services: services,
             station_id: station_id,
             system_id: system_id,
-            type_id: type_id,
+            type_id: type_id
           }
         end
 

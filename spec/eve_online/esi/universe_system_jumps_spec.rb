@@ -37,8 +37,8 @@ describe EveOnline::ESI::UniverseSystemJumps do
         [
           {
             ship_jumps: 22,
-            system_id: 30_005_327,
-          },
+            system_id: 30_005_327
+          }
         ]
       end
 

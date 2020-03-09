@@ -8,7 +8,7 @@ module EveOnline
           {
             x: x,
             y: y,
-            z: z,
+            z: z
           }
         end
 

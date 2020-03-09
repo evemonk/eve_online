@@ -15,7 +15,7 @@ module EveOnline
             size_factor: size_factor,
             solar_system_id: solar_system_id,
             station_count: station_count,
-            station_system_count: station_system_count,
+            station_system_count: station_system_count
           }
         end
 

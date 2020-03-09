@@ -57,8 +57,8 @@ describe EveOnline::ESI::CharacterOrders do
             account_id: 1000,
             duration: 30,
             is_corp: false,
-            escrow: 45.6,
-          },
+            escrow: 45.6
+          }
         ]
       end
 

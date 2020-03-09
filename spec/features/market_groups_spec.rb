@@ -19,6 +19,10 @@ describe "Get item groups" do
     specify { expect(subject.market_group_ids.first).to eq(2) }
 
     specify { expect(subject.etag).to eq("bf7832bfc20f5f9fdeddc9cb0360b941067310e7e3a2a80315b45a43") }
+
+    specify { expect(subject.error_limit_remain).to eq(100) }
+
+    specify { expect(subject.error_limit_reset).to eq(49) }
   end
 
   context "when etag is set" do
@@ -31,5 +35,9 @@ describe "Get item groups" do
     specify { expect(subject.not_modified?).to eq(true) }
 
     specify { expect(subject.etag).to eq("bf7832bfc20f5f9fdeddc9cb0360b941067310e7e3a2a80315b45a43") }
+
+    specify { expect(subject.error_limit_remain).to eq(100) }
+
+    specify { expect(subject.error_limit_reset).to eq(5) }
   end
 end

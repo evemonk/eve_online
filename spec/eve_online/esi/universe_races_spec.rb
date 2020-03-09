@@ -39,8 +39,8 @@ describe EveOnline::ESI::UniverseRaces do
             race_id: 2,
             name: "Minmatar",
             description: "Once a thriving tribal civilization, the Minmatar...",
-            alliance_id: 500_002,
-          },
+            alliance_id: 500_002
+          }
         ]
       end
 

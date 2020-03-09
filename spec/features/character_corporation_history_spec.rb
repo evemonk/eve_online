@@ -26,13 +26,17 @@ describe "Get corporation history" do
     end
 
     specify { expect(subject.etag).to eq("f9497588fc2db18ca9a2ee06c48a16120e0c712fe9925bb29d7aaeeb") }
+
+    specify { expect(subject.error_limit_remain).to eq(100) }
+
+    specify { expect(subject.error_limit_reset).to eq(18) }
   end
 
   context "when etag is set" do
     let(:options) do
       {
         character_id: 90_729_314,
-        etag: "f9497588fc2db18ca9a2ee06c48a16120e0c712fe9925bb29d7aaeeb",
+        etag: "f9497588fc2db18ca9a2ee06c48a16120e0c712fe9925bb29d7aaeeb"
       }
     end
 
@@ -45,5 +49,9 @@ describe "Get corporation history" do
     specify { expect(subject.not_modified?).to eq(true) }
 
     specify { expect(subject.etag).to eq("f9497588fc2db18ca9a2ee06c48a16120e0c712fe9925bb29d7aaeeb") }
+
+    specify { expect(subject.error_limit_remain).to eq(100) }
+
+    specify { expect(subject.error_limit_reset).to eq(31) }
   end
 end

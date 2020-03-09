@@ -7,7 +7,7 @@ describe "Get character asset locations" do
     {
       character_id: 1_337_512_245,
       item_ids: [1_001_215_602_246],
-      token: "token123",
+      token: "token123"
     }
   end
 
@@ -34,4 +34,8 @@ describe "Get character asset locations" do
   end
 
   specify { expect { subject.etag }.to raise_error(NotImplementedError) }
+
+  specify { expect(subject.error_limit_remain).to eq(100) }
+
+  specify { expect(subject.error_limit_reset).to eq(59) }
 end

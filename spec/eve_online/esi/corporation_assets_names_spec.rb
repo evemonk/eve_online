@@ -45,8 +45,8 @@ describe EveOnline::ESI::CorporationAssetsNames do
         [
           {
             item_id: 1_001_215_602_246,
-            name: "HOLE",
-          },
+            name: "HOLE"
+          }
         ]
       end
 

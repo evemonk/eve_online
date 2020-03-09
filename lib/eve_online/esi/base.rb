@@ -86,6 +86,14 @@ module EveOnline
         resource.header["X-Pages"]&.to_i
       end
 
+      def error_limit_remain
+        resource.header["X-ESI-Error-Limit-Remain"]&.to_i
+      end
+
+      def error_limit_reset
+        resource.header["X-ESI-Error-Limit-Reset"]&.to_i
+      end
+
       def client
         @client ||= begin
           http = Net::HTTP.new(uri.host, uri.port)

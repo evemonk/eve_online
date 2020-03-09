@@ -45,8 +45,8 @@ describe EveOnline::ESI::CharacterCorporationHistory do
             corporation_id: 1_000_168,
             is_deleted: nil,
             record_id: 16_785_803,
-            start_date: "2011-05-10T10:23:00Z",
-          },
+            start_date: "2011-05-10T10:23:00Z"
+          }
         ]
       end
 

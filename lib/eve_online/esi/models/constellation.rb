@@ -8,7 +8,7 @@ module EveOnline
           {
             constellation_id: constellation_id,
             name: name,
-            region_id: region_id,
+            region_id: region_id
           }
         end
 

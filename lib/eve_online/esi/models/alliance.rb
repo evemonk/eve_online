@@ -12,7 +12,7 @@ module EveOnline
             executor_corporation_id: executor_corporation_id,
             faction_id: faction_id,
             name: name,
-            ticker: ticker,
+            ticker: ticker
           }
         end
 

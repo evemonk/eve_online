@@ -9,7 +9,7 @@ module EveOnline
             alliance_id: alliance_id,
             description: description,
             name: name,
-            race_id: race_id,
+            race_id: race_id
           }
         end
 

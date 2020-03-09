@@ -20,6 +20,10 @@ describe "List wars" do
       specify { expect(subject.war_ids.first).to eq(629_019) }
 
       specify { expect(subject.etag).to eq("1e90be747fd163e5d74ab7a949bf8ad3f1d6ecd365cac31c534ab046") }
+
+      specify { expect(subject.error_limit_remain).to eq(100) }
+
+      specify { expect(subject.error_limit_reset).to eq(14) }
     end
 
     context "when etag is set" do
@@ -32,6 +36,10 @@ describe "List wars" do
       specify { expect(subject.not_modified?).to eq(true) }
 
       specify { expect(subject.etag).to eq("1e90be747fd163e5d74ab7a949bf8ad3f1d6ecd365cac31c534ab046") }
+
+      specify { expect(subject.error_limit_remain).to eq(100) }
+
+      specify { expect(subject.error_limit_reset).to eq(51) }
     end
   end
 
@@ -50,13 +58,17 @@ describe "List wars" do
       specify { expect(subject.war_ids.first).to eq(9) }
 
       specify { expect(subject.etag).to eq("f1c28227847464613c1cb82dfc8a8c859b7b6857fad2c2a54c562812") }
+
+      specify { expect(subject.error_limit_remain).to eq(100) }
+
+      specify { expect(subject.error_limit_reset).to eq(56) }
     end
 
     context "when etag is set" do
       let(:options) do
         {
           max_war_id: 10,
-          etag: "f1c28227847464613c1cb82dfc8a8c859b7b6857fad2c2a54c562812",
+          etag: "f1c28227847464613c1cb82dfc8a8c859b7b6857fad2c2a54c562812"
         }
       end
 
@@ -69,6 +81,10 @@ describe "List wars" do
       specify { expect(subject.not_modified?).to eq(true) }
 
       specify { expect(subject.etag).to eq("f1c28227847464613c1cb82dfc8a8c859b7b6857fad2c2a54c562812") }
+
+      specify { expect(subject.error_limit_remain).to eq(100) }
+
+      specify { expect(subject.error_limit_reset).to eq(53) }
     end
   end
 end

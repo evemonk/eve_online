@@ -30,6 +30,10 @@ describe "Get character calendar event information" do
     end
 
     specify { expect(subject.etag).to eq("551811618f893135bfda67bc87f2a2215a6d648b2374bac6194744e4") }
+
+    specify { expect(subject.error_limit_remain).to eq(100) }
+
+    specify { expect(subject.error_limit_reset).to eq(15) }
   end
 
   context "when etag is set" do
@@ -37,7 +41,7 @@ describe "Get character calendar event information" do
       {
         character_id: 91_473_836,
         event_id: 1_982_004,
-        etag: "551811618f893135bfda67bc87f2a2215a6d648b2374bac6194744e4",
+        etag: "551811618f893135bfda67bc87f2a2215a6d648b2374bac6194744e4"
       }
     end
 
@@ -50,5 +54,9 @@ describe "Get character calendar event information" do
     specify { expect(subject.not_modified?).to eq(true) }
 
     specify { expect(subject.etag).to eq("551811618f893135bfda67bc87f2a2215a6d648b2374bac6194744e4") }
+
+    specify { expect(subject.error_limit_remain).to eq(100) }
+
+    specify { expect(subject.error_limit_reset).to eq(56) }
   end
 end

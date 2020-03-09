@@ -19,6 +19,10 @@ describe "Get graphics" do
     specify { expect(subject.graphic_ids.first).to eq(20_480) }
 
     specify { expect(subject.etag).to eq("e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b") }
+
+    specify { expect(subject.error_limit_remain).to eq(100) }
+
+    specify { expect(subject.error_limit_reset).to eq(15) }
   end
 
   context "when etag is set" do
@@ -31,5 +35,9 @@ describe "Get graphics" do
     specify { expect(subject.not_modified?).to eq(true) }
 
     specify { expect(subject.etag).to eq("e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b") }
+
+    specify { expect(subject.error_limit_remain).to eq(100) }
+
+    specify { expect(subject.error_limit_reset).to eq(50) }
   end
 end

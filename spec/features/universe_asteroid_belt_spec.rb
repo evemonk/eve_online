@@ -28,6 +28,10 @@ describe "Get asteroid belt information" do
     end
 
     specify { expect(subject.etag).to eq("5c9218218aca123ef8c106f6607bfe8e6e086d2fc2b972bbd8ff03d2") }
+
+    specify { expect(subject.error_limit_remain).to eq(100) }
+
+    specify { expect(subject.error_limit_reset).to eq(50) }
   end
 
   context "when etag is set" do
@@ -38,7 +42,7 @@ describe "Get asteroid belt information" do
     let(:options) do
       {
         id: 40_000_003,
-        etag: "5c9218218aca123ef8c106f6607bfe8e6e086d2fc2b972bbd8ff03d2",
+        etag: "5c9218218aca123ef8c106f6607bfe8e6e086d2fc2b972bbd8ff03d2"
       }
     end
 
@@ -47,5 +51,9 @@ describe "Get asteroid belt information" do
     specify { expect(subject.not_modified?).to eq(true) }
 
     specify { expect(subject.etag).to eq("5c9218218aca123ef8c106f6607bfe8e6e086d2fc2b972bbd8ff03d2") }
+
+    specify { expect(subject.error_limit_remain).to eq(100) }
+
+    specify { expect(subject.error_limit_reset).to eq(56) }
   end
 end

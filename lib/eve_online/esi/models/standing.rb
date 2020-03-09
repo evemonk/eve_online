@@ -8,7 +8,7 @@ module EveOnline
           {
             from_id: from_id,
             from_type: from_type,
-            standing: standing,
+            standing: standing
           }
         end
 

@@ -11,7 +11,7 @@ module EveOnline
             security_class: security_class,
             security_status: security_status,
             star_id: star_id,
-            system_id: system_id,
+            system_id: system_id
           }
         end
 

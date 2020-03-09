@@ -53,8 +53,8 @@ describe EveOnline::ESI::CharacterBookmarkFolders do
         [
           {
             folder_id: 5,
-            name: "Icecream",
-          },
+            name: "Icecream"
+          }
         ]
       end
 

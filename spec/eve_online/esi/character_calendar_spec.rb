@@ -35,7 +35,7 @@ describe EveOnline::ESI::CharacterCalendar do
         {
           token: "token123",
           character_id: 12_345_678,
-          from_event: 123,
+          from_event: 123
         }
       end
 
@@ -64,8 +64,8 @@ describe EveOnline::ESI::CharacterCalendar do
             event_date: "2018-03-05T15:00:59Z",
             title: "Moon extraction",
             importance: 0,
-            event_response: "not_responded",
-          },
+            event_response: "not_responded"
+          }
         ]
       end
 
@@ -115,7 +115,7 @@ describe EveOnline::ESI::CharacterCalendar do
         {
           token: "token123",
           character_id: 12_345_678,
-          from_event: 123,
+          from_event: 123
         }
       end
 

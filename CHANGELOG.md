@@ -1,5 +1,18 @@
 # Changelog
 
+## master
+
+* Sync with new ESI API
+* Add `EveOnline::ESI::CharacterContracts`
+* Add `EveOnline::ESI::Models::Contract`
+* Add support `X-ESI-Error-Limit-Remain` header
+* Add support `X-ESI-Error-Limit-Reset` header
+* Add `EveOnline::ESI::Killmail`
+* Add `EveOnline::ESI::MarketPrices`
+* Add `EveOnline::ESI::Models::MarketPrice`
+* Add `EveOnline::ESI::Models::WalletTransaction`
+* Add `EveOnline::ESI::CharacterWalletTransactions`
+
 ## v0.31.0
 
 * Add `EveOnline::ESI::Models::MailRecipient`

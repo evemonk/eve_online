@@ -20,7 +20,7 @@ module EveOnline
             type_id: type_id,
             volume_remain: volume_remain,
             volume_total: volume_total,
-            wallet_division: wallet_division,
+            wallet_division: wallet_division
           }
         end
 

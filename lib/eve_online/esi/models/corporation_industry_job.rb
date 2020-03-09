@@ -27,7 +27,7 @@ module EveOnline
             runs: runs,
             start_date: start_date,
             status: status,
-            successful_runs: successful_runs,
+            successful_runs: successful_runs
           }
         end
 

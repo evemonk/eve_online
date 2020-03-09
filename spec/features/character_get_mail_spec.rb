@@ -12,7 +12,7 @@ describe "Return a mail" do
       {
         character_id: 1_337_512_245,
         mail_id: 376_045_681,
-        token: "token123",
+        token: "token123"
       }
     end
 
@@ -38,6 +38,10 @@ describe "Return a mail" do
     end
 
     specify { expect(subject.etag).to eq("90dba7f7a6e60bfe8527b9f5112b9ca588c8f57d01415717be525a91") }
+
+    specify { expect(subject.error_limit_remain).to eq(100) }
+
+    specify { expect(subject.error_limit_reset).to eq(47) }
   end
 
   context "when etag is set" do
@@ -50,7 +54,7 @@ describe "Return a mail" do
         character_id: 1_337_512_245,
         mail_id: 376_045_681,
         token: "token123",
-        etag: "90dba7f7a6e60bfe8527b9f5112b9ca588c8f57d01415717be525a91",
+        etag: "90dba7f7a6e60bfe8527b9f5112b9ca588c8f57d01415717be525a91"
       }
     end
 
@@ -59,5 +63,9 @@ describe "Return a mail" do
     specify { expect(subject.not_modified?).to eq(true) }
 
     specify { expect(subject.etag).to eq("90dba7f7a6e60bfe8527b9f5112b9ca588c8f57d01415717be525a91") }
+
+    specify { expect(subject.error_limit_remain).to eq(100) }
+
+    specify { expect(subject.error_limit_reset).to eq(21) }
   end
 end

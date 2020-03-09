@@ -36,10 +36,14 @@ describe "Get constellation information" do
                                         30_000_005,
                                         30_000_006,
                                         30_000_007,
-                                        30_000_008,])
+                                        30_000_008])
     end
 
     specify { expect(subject.etag).to eq("37a39e7a5f5ecc07b19a3128c319f1198d035aee10052d0a21ccdd94") }
+
+    specify { expect(subject.error_limit_remain).to eq(100) }
+
+    specify { expect(subject.error_limit_reset).to eq(32) }
   end
 
   context "when etag is set" do
@@ -50,7 +54,7 @@ describe "Get constellation information" do
     let(:options) do
       {
         id: 20_000_001,
-        etag: "37a39e7a5f5ecc07b19a3128c319f1198d035aee10052d0a21ccdd94",
+        etag: "37a39e7a5f5ecc07b19a3128c319f1198d035aee10052d0a21ccdd94"
       }
     end
 
@@ -59,5 +63,9 @@ describe "Get constellation information" do
     specify { expect(subject.not_modified?).to eq(true) }
 
     specify { expect(subject.etag).to eq("37a39e7a5f5ecc07b19a3128c319f1198d035aee10052d0a21ccdd94") }
+
+    specify { expect(subject.error_limit_remain).to eq(100) }
+
+    specify { expect(subject.error_limit_reset).to eq(17) }
   end
 end

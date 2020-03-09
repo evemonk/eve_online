@@ -8,7 +8,7 @@ module EveOnline
           {
             category_id: category_id,
             name: name,
-            published: published,
+            published: published
           }
         end
 

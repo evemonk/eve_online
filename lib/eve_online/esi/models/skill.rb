@@ -9,7 +9,7 @@ module EveOnline
             active_skill_level: active_skill_level,
             skill_id: skill_id,
             skillpoints_in_skill: skillpoints_in_skill,
-            trained_skill_level: trained_skill_level,
+            trained_skill_level: trained_skill_level
           }
         end
 

@@ -13,7 +13,7 @@ module EveOnline
             quantity: quantity,
             runs: runs,
             time_efficiency: time_efficiency,
-            type_id: type_id,
+            type_id: type_id
           }
         end
 

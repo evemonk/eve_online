@@ -43,8 +43,8 @@ describe EveOnline::ESI::CharacterLoyaltyPoints do
         [
           {
             corporation_id: 1_000_035,
-            loyalty_points: 14_163,
-          },
+            loyalty_points: 14_163
+          }
         ]
       end
 

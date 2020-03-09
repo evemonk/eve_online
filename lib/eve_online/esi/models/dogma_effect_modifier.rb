@@ -11,7 +11,7 @@ module EveOnline
             func: func,
             modified_attribute_id: modified_attribute_id,
             modifying_attribute_id: modifying_attribute_id,
-            operator: operator,
+            operator: operator
           }
         end
 

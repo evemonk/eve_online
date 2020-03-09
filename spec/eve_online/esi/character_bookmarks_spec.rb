@@ -57,8 +57,8 @@ describe EveOnline::ESI::CharacterBookmarks do
             label: "Stargate",
             notes: "This is a stargate",
             location_id: 30_003_430,
-            creator_id: 2_112_625_428,
-          },
+            creator_id: 2_112_625_428
+          }
         ]
       end
 

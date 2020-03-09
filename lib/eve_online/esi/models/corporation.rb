@@ -19,7 +19,7 @@ module EveOnline
             tax_rate: tax_rate,
             ticker: ticker,
             corporation_url: corporation_url,
-            war_eligible: war_eligible,
+            war_eligible: war_eligible
           }
         end
 

@@ -22,13 +22,17 @@ describe "Get alliance icon" do
     end
 
     specify { expect(subject.etag).to eq("7aea53dbbfb800b38d580e75af5b5e00e1946f3c14780b052f3f5154") }
+
+    specify { expect(subject.error_limit_remain).to eq(100) }
+
+    specify { expect(subject.error_limit_reset).to eq(46) }
   end
 
   context "when etag is set" do
     let(:options) do
       {
         alliance_id: 99_005_443,
-        etag: "7aea53dbbfb800b38d580e75af5b5e00e1946f3c14780b052f3f5154",
+        etag: "7aea53dbbfb800b38d580e75af5b5e00e1946f3c14780b052f3f5154"
       }
     end
 
@@ -41,5 +45,9 @@ describe "Get alliance icon" do
     specify { expect(subject.not_modified?).to eq(true) }
 
     specify { expect(subject.etag).to eq("7aea53dbbfb800b38d580e75af5b5e00e1946f3c14780b052f3f5154") }
+
+    specify { expect(subject.error_limit_remain).to eq(100) }
+
+    specify { expect(subject.error_limit_reset).to eq(45) }
   end
 end
