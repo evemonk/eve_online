@@ -94,7 +94,6 @@ describe EveOnline::ESI::CharacterContracts do
       specify { expect(subject.contracts).to eq([contract]) }
 
       specify { expect { subject.contracts }.to change { subject.instance_variable_get(:@contracts) }.from(nil).to([contract]) }
-
     end
   end
 
