@@ -13,28 +13,57 @@ describe EveOnline::ESI::Models::WalletTransaction do
     its(:options) { should eq(options) }
   end
 
-  # describe "#as_json" do
-  #   let(:wallet_transaction) { described_class.new(options) }
-  #
-  #   before { expect(wallet_transaction).to receive(:client_id).and_return(-9.5) }
-  #
-  #   subject { wallet_transaction.as_json }
-  #
-  #   its([:client_id]) { should eq(-9.5) }
-  #
-  # end
+  describe "#as_json" do
+    let(:wallet_transaction) { described_class.new(options) }
 
-    # client_id: client_id,
-  #     date: date,
-  #     is_buy: is_buy,
-  #     is_personal: is_personal,
-  #     journal_ref_id: journal_ref_id,
-  #     location_id: location_id,
-  #     quantity: quantity,
-  #     transaction_id: transaction_id,
-  #     type_id: type_id,
-  #     unit_price: unit_price
+    let(:date) { double }
 
+    let(:is_buy) { double }
+
+    let(:is_personal) { double }
+
+    before { expect(wallet_transaction).to receive(:client_id).and_return(2116253203) }
+
+    before { expect(wallet_transaction).to receive(:date).and_return(date) }
+
+    before { expect(wallet_transaction).to receive(:is_buy).and_return(is_buy) }
+
+    before { expect(wallet_transaction).to receive(:is_personal).and_return(is_personal) }
+
+    before { expect(wallet_transaction).to receive(:journal_ref_id).and_return(17740411474) }
+
+    before { expect(wallet_transaction).to receive(:location_id).and_return(60008494) }
+
+    before { expect(wallet_transaction).to receive(:quantity).and_return(1) }
+
+    before { expect(wallet_transaction).to receive(:transaction_id).and_return(5296927639) }
+
+    before { expect(wallet_transaction).to receive(:type_id).and_return(3538) }
+
+    before { expect(wallet_transaction).to receive(:unit_price).and_return(99887.79) }
+
+    subject { wallet_transaction.as_json }
+
+    its([:client_id]) { should eq(2116253203) }
+
+    its([:date]) { should eq(date) }
+
+    its([:is_buy]) { should eq(is_buy) }
+
+    its([:is_personal]) { should eq(is_personal) }
+
+    its([:journal_ref_id]) { should eq(17740411474) }
+
+    its([:location_id]) { should eq(60008494) }
+
+    its([:quantity]) { should eq(1) }
+
+    its([:transaction_id]) { should eq(5296927639) }
+
+    its([:type_id]) { should eq(3538) }
+
+    its([:unit_price]) { should eq(99887.79) }
+  end
 
   describe "#client_id" do
     before { expect(options).to receive(:[]).with("client_id") }
