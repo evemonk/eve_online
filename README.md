@@ -2109,7 +2109,7 @@ category.published # => true
 category.group_ids.size # => 46
 category.group_ids.first # => 25
 
-# TODO: category.etag
+category.etag # => "37a39e7a5f5ecc07b19a3128c319f1198d035aee10052d0a21ccdd94"
 ```
 
 #### Get constellations
