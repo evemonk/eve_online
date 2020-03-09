@@ -2805,29 +2805,39 @@ character_wallet_journal.page # => 1
 
 character_wallet_journal.total_pages # => 1
 
-character_wallet_journal.wallet_journal_entries.size # => 1
+character_wallet_journal.wallet_journal_entries.size # => 220
 
 wallet_journal_entry = character_wallet_journal.wallet_journal_entries.first
 
-wallet_journal_entry.as_json
+wallet_journal_entry.as_json # => {:amount=>87375.0,
+                             #     :balance=>2405126.01,
+                             #     :context_id=>30003498,
+                             #     :context_id_type=>"system_id",
+                             #     :date=>Sun, 08 Mar 2020 12:08:25 UTC +00:00,
+                             #     :description=>"Johnn Dillinger got bounty prizes for killing pirates in Sharhelund",
+                             #     :first_party_id=>1000125,
+                             #     :id=>17740466914,
+                             #     :reason=>"3744: 2,3748: 2,18085: 2,18070: 1",
+                             #     :ref_type=>"bounty_prizes",
+                             #     :second_party_id=>1337512245,
+                             #     :tax=>nil,
+                             #     :tax_receiver_id=>nil}
 
-wallet_journal_entry.amount
-wallet_journal_entry.balance
-wallet_journal_entry.context_id
-wallet_journal_entry.context_id_type
-wallet_journal_entry.date
-wallet_journal_entry.description
-wallet_journal_entry.first_party_id
-wallet_journal_entry.id
-wallet_journal_entry.reason
-wallet_journal_entry.ref_type
-wallet_journal_entry.second_party_id
-wallet_journal_entry.tax
-wallet_journal_entry.tax_receiver_id
+wallet_journal_entry.amount # => 87375.0
+wallet_journal_entry.balance # => 2405126.01
+wallet_journal_entry.context_id # => 30003498
+wallet_journal_entry.context_id_type # => "system_id"
+wallet_journal_entry.date # => Sun, 08 Mar 2020 12:08:25 UTC +00:00
+wallet_journal_entry.description # => "Johnn Dillinger got bounty prizes for killing pirates in Sharhelund"
+wallet_journal_entry.first_party_id # => 1000125
+wallet_journal_entry.id # => 17740466914
+wallet_journal_entry.reason # => "3744: 2,3748: 2,18085: 2,18070: 1"
+wallet_journal_entry.ref_type # => "bounty_prizes"
+wallet_journal_entry.second_party_id # => 1337512245
+wallet_journal_entry.tax # => nil
+wallet_journal_entry.tax_receiver_id # => nil
 
-# TODO: update example
-
-# TODO: character_wallet_journal.etag
+character_wallet_journal.etag # => "b618a1a584f6aad53cb79c72d6de26d8c9210d0a18be1421d5355446"
 ```
 
 #### Get wallet transactions
