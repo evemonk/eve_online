@@ -12,6 +12,7 @@
 * Add `EveOnline::ESI::Models::MarketPrice`
 * Add `EveOnline::ESI::Models::WalletTransaction`
 * Add `EveOnline::ESI::CharacterWalletTransactions`
+* Rename `EveOnline::ESI::Models::WalletJournalEntry` to `EveOnline::ESI::Models::WalletJournal`
 
 ## v0.31.0
 
