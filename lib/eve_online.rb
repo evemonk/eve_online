@@ -226,6 +226,7 @@ require "eve_online/esi/models/ally"
 require "eve_online/esi/models/allies"
 require "eve_online/esi/models/defender"
 require "eve_online/esi/models/killmail_short"
+require "eve_online/esi/models/killmail"
 
 module EveOnline
 end

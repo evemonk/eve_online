@@ -13,6 +13,7 @@
 * Add `EveOnline::ESI::Models::WalletTransaction`
 * Add `EveOnline::ESI::CharacterWalletTransactions`
 * Rename `EveOnline::ESI::Models::WalletJournalEntry` to `EveOnline::ESI::Models::WalletJournal`
+* Add `EveOnline::ESI::Models::Killmail`
 
 ## v0.31.0
 
