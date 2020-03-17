@@ -48,7 +48,7 @@ describe EveOnline::ESI::Models::WalletJournal do
 
     before { expect(wallet_journal_entry).to receive(:first_party_id).and_return(90_729_314) }
 
-    before { expect(wallet_journal_entry).to receive(:id).and_return(wallet_journal_id) }
+    before { expect(wallet_journal_entry).to receive(:wallet_journal_id).and_return(wallet_journal_id) }
 
     before { expect(wallet_journal_entry).to receive(:reason).and_return(reason) }
 
