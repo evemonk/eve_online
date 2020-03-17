@@ -24,7 +24,7 @@ describe EveOnline::ESI::Models::WalletJournal do
 
     let(:description) { double }
 
-    let(:id) { double }
+    let(:wallet_journal_id) { double }
 
     let(:reason) { double }
 
@@ -48,7 +48,7 @@ describe EveOnline::ESI::Models::WalletJournal do
 
     before { expect(wallet_journal_entry).to receive(:first_party_id).and_return(90_729_314) }
 
-    before { expect(wallet_journal_entry).to receive(:id).and_return(id) }
+    before { expect(wallet_journal_entry).to receive(:id).and_return(wallet_journal_id) }
 
     before { expect(wallet_journal_entry).to receive(:reason).and_return(reason) }
 
@@ -76,7 +76,7 @@ describe EveOnline::ESI::Models::WalletJournal do
 
     its([:first_party_id]) { should eq(90_729_314) }
 
-    its([:id]) { should eq(id) }
+    its([:wallet_journal_id]) { should eq(wallet_journal_id) }
 
     its([:reason]) { should eq(reason) }
 
@@ -150,10 +150,10 @@ describe EveOnline::ESI::Models::WalletJournal do
     specify { expect { subject.first_party_id }.not_to raise_error }
   end
 
-  describe "#id" do
+  describe "#wallet_journal_id" do
     before { expect(options).to receive(:[]).with("id") }
 
-    specify { expect { subject.id }.not_to raise_error }
+    specify { expect { subject.wallet_journal_id }.not_to raise_error }
   end
 
   describe "#reason" do

@@ -13,7 +13,7 @@ module EveOnline
             date: date,
             description: description,
             first_party_id: first_party_id,
-            id: id,
+            wallet_journal_id: wallet_journal_id,
             reason: reason,
             ref_type: ref_type,
             second_party_id: second_party_id,
@@ -52,7 +52,7 @@ module EveOnline
           options["first_party_id"]
         end
 
-        def id
+        def wallet_journal_id
           options["id"]
         end
 

@@ -2816,7 +2816,7 @@ wallet_journal_entry.as_json # => {:amount=>87375.0,
                              #     :date=>Sun, 08 Mar 2020 12:08:25 UTC +00:00,
                              #     :description=>"Johnn Dillinger got bounty prizes for killing pirates in Sharhelund",
                              #     :first_party_id=>1000125,
-                             #     :id=>17740466914,
+                             #     :wallet_journal_id=>17740466914,
                              #     :reason=>"3744: 2,3748: 2,18085: 2,18070: 1",
                              #     :ref_type=>"bounty_prizes",
                              #     :second_party_id=>1337512245,
@@ -2830,7 +2830,7 @@ wallet_journal_entry.context_id_type # => "system_id"
 wallet_journal_entry.date # => Sun, 08 Mar 2020 12:08:25 UTC +00:00
 wallet_journal_entry.description # => "Johnn Dillinger got bounty prizes for killing pirates in Sharhelund"
 wallet_journal_entry.first_party_id # => 1000125
-wallet_journal_entry.id # => 17740466914
+wallet_journal_entry.wallet_journal_id # => 17740466914
 wallet_journal_entry.reason # => "3744: 2,3748: 2,18085: 2,18070: 1"
 wallet_journal_entry.ref_type # => "bounty_prizes"
 wallet_journal_entry.second_party_id # => 1337512245
