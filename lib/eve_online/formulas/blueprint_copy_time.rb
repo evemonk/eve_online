@@ -20,7 +20,7 @@ module EveOnline
       end
 
       def time
-        seconds * time_modifier * runs
+        (BigDecimal(seconds.to_s) * BigDecimal(time_modifier.to_s)).to_f * runs
       end
 
       def time_modifier

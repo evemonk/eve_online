@@ -50,10 +50,7 @@ describe EveOnline::Formulas::BlueprintCopyTime do
   end
 
   describe "#time" do
-    # TODO: check why?
-    specify { expect(subject.time.round(1)).to eq(174.6) }
-
-    specify { expect(subject.time).to eq(174.60000000000002) }
+    specify { expect(subject.time).to eq(174.6) }
   end
 
   describe "#time_modifier" do
