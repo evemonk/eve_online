@@ -15,6 +15,7 @@
 * Rename `EveOnline::ESI::Models::WalletJournalEntry` to `EveOnline::ESI::Models::WalletJournal`
 * Add `EveOnline::ESI::Models::Killmail`
 * Rename `EveOnline::ESI::Models::WalletJournal#id` to `#wallet_journal_id` and update `#as_json`
+* Add `EveOnline::Formulas::BlueprintCopyTime`
 
 ## v0.31.0
 
