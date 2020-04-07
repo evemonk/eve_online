@@ -46,7 +46,7 @@ GEM
     method_source (1.0.0)
     mini_portile2 (2.4.0)
     minitest (5.14.0)
-    mixlib-cli (2.1.5)
+    mixlib-cli (2.1.6)
     mixlib-config (3.0.6)
       tomlrb
     nokogiri (1.10.9)
