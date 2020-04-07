@@ -3100,6 +3100,26 @@ Oj.mimic_JSON()
 races = EveOnline::ESI::UniverseRaces.new
 ```
 
+## Formulas
+
+### Blueprint copy time
+
+```ruby
+seconds = 240 # 240 seconds it time to copy e.g. "Acolyte I Blueprint"
+science_level = 5 # character science level
+advanced_industry_level = 1 # character advanced industry level
+science_copy_speed_bonus_per_level = -5.00 # type dogma attribute copy speed bonus for science
+advanced_industry_skill_industry_job_time_bonus_per_level = -3.00 # type dogma attribute industry job time bonuse for advanced industry
+runs = 1 # number of copy, optional
+
+formula = EveOnline::Formulas::BlueprintCopyTime.new(seconds, science_level,
+  advanced_industry_level, science_copy_speed_bonus_per_level,
+  advanced_industry_skill_industry_job_time_bonus_per_level, runs)
+
+# time of copy in seconds
+formula.time # => 174.6
+```
+
 ## Useful links
 
 * [BREAKING CHANGES AND YOU - HOW TO USE ALT-ROUTES TO ENHANCE YOUR SANITY](https://developers.eveonline.com/blog/article/breaking-changes-and-you)
