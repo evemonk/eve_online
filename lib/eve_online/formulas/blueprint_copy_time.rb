@@ -8,9 +8,9 @@ module EveOnline
         :advanced_industry_skill_industry_job_time_bonus_per_level, :runs
 
       def initialize(seconds, science_level, advanced_industry_level,
-                     science_copy_speed_bonus_per_level,
-                     advanced_industry_skill_industry_job_time_bonus_per_level,
-                     runs = 1)
+        science_copy_speed_bonus_per_level,
+        advanced_industry_skill_industry_job_time_bonus_per_level,
+        runs = 1)
         @seconds = seconds
         @science_level = science_level
         @advanced_industry_level = advanced_industry_level

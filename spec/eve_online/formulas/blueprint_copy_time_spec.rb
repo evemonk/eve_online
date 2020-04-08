@@ -10,15 +10,15 @@ describe EveOnline::Formulas::BlueprintCopyTime do
 
   let(:advanced_industry_level) { 1 }
 
-  let(:science_copy_speed_bonus_per_level) { -5.00  }
+  let(:science_copy_speed_bonus_per_level) { -5.00 }
 
   let(:advanced_industry_skill_industry_job_time_bonus_per_level) { -3.00 }
 
   subject do
     described_class.new(seconds, science_level,
-                        advanced_industry_level,
-                        science_copy_speed_bonus_per_level,
-                        advanced_industry_skill_industry_job_time_bonus_per_level)
+      advanced_industry_level,
+      science_copy_speed_bonus_per_level,
+      advanced_industry_skill_industry_job_time_bonus_per_level)
   end
 
   describe "#initialize" do
@@ -39,10 +39,10 @@ describe EveOnline::Formulas::BlueprintCopyTime do
     context "with runs" do
       subject do
         described_class.new(seconds, science_level,
-                            advanced_industry_level,
-                            science_copy_speed_bonus_per_level,
-                            advanced_industry_skill_industry_job_time_bonus_per_level,
-                            5)
+          advanced_industry_level,
+          science_copy_speed_bonus_per_level,
+          advanced_industry_skill_industry_job_time_bonus_per_level,
+          5)
       end
 
       its(:runs) { should eq(5) }
