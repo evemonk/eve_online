@@ -5,7 +5,7 @@ require "spec_helper"
 describe EveOnline::ESI::Alliances do
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_PATH).to eq("/v1/alliances/") }
+  specify { expect(described_class::API_PATH).to eq("/v2/alliances/") }
 
   describe "#initialize" do
     its(:token) { should eq(nil) }
@@ -35,7 +35,7 @@ describe EveOnline::ESI::Alliances do
 
   describe "#path" do
     specify do
-      expect(subject.path).to eq("/v1/alliances/")
+      expect(subject.path).to eq("/v2/alliances/")
     end
   end
 
@@ -47,7 +47,7 @@ describe EveOnline::ESI::Alliances do
 
   describe "#url" do
     specify do
-      expect(subject.url).to eq("https://esi.evetech.net/v1/alliances/")
+      expect(subject.url).to eq("https://esi.evetech.net/v2/alliances/")
     end
   end
 end

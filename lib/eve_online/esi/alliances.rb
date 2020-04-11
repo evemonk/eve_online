@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class Alliances < Base
-      API_PATH = "/v1/alliances/"
+      API_PATH = "/v2/alliances/"
 
       def alliance_ids
         response
