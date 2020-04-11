@@ -331,73 +331,7 @@ corporation_assets_names.etag # => NotImplementedError
 
 #### List bookmarks
 
-```ruby
-options = { token: 'token123', character_id: 90_729_314, page: 1 }
-
-character_bookmarks = EveOnline::ESI::CharacterBookmarks.new(options)
-
-character_bookmarks.scope # => "esi-bookmarks.read_character_bookmarks.v1"
-
-character_bookmarks.page # => 1
-
-character_bookmarks.total_pages # => 1
-
-character_bookmarks.bookmarks.size # => 20
-
-bookmark = character_bookmarks.bookmarks.first
-
-bookmark.as_json # => {:bookmark_id=>4,
-                 #     :created=>Mon, 09 Jul 2012 22:38:31 UTC +00:00,
-                 #     :creator_id=>2112625428,
-                 #     :folder_id=>5,
-                 #     :item_id=>30003496,
-                 #     :item_type_id=>5,
-                 #     :label=>"Stargate",
-                 #     :location_id=>30003430,
-                 #     :notes=>"This is a stargate"}
-
-bookmark.bookmark_id # => 4
-bookmark.created # => Mon, 09 Jul 2012 22:38:31 UTC +00:00
-bookmark.creator_id # => 2112625428
-bookmark.folder_id # => 5
-bookmark.item_id # => 30003496
-bookmark.item_type_id # => 5
-bookmark.label # => "Stargate"
-bookmark.location_id # => 30003430
-bookmark.notes # => "This is a stargate"
-
-bookmark.coordinates.as_json # => {:x=>-144951231521.81625,
-                             #     :y=>164030047870.25558,
-                             #     :z=>211467631848.1311}
-
-# TODO: character_bookmarks.etag
-```
-
 #### List bookmark folders
-
-```ruby
-options = { token: 'token123', character_id: 90_729_314, page: 1 }
-
-character_bookmark_folders = EveOnline::ESI::CharacterBookmarkFolders.new(options)
-
-character_bookmark_folders.scope # => "esi-bookmarks.read_character_bookmarks.v1"
-
-character_bookmark_folders.page # => 1
-
-character_bookmark_folders.total_pages # => 1
-
-character_bookmark_folders.bookmark_folders.size # => 1
-
-bookmark_folder = character_bookmark_folders.bookmark_folders.first
-
-bookmark_folder.as_json # => {:folder_id=>5,
-                        #     :name=>"Icecream"}
-
-bookmark_folder.folder_id # => 5
-bookmark_folder.name # => "Icecream"
-
-# TODO: character_bookmark_folders.etag
-```
 
 #### List corporation bookmarks
 
