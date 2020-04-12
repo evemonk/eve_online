@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class AllianceCorporations < Base
-      API_PATH = "/v1/alliances/%<alliance_id>s/corporations/"
+      API_PATH = "/v2/alliances/%<alliance_id>s/corporations/"
 
       attr_reader :alliance_id
 

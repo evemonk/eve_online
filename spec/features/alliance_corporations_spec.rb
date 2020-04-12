@@ -16,22 +16,22 @@ describe "List alliance's corporations" do
 
     specify { expect(subject.not_modified?).to eq(false) }
 
-    specify { expect(subject.corporation_ids.size).to eq(70) }
+    specify { expect(subject.corporation_ids.size).to eq(21) }
 
-    specify { expect(subject.corporation_ids.first).to eq(98_091_533) }
+    specify { expect(subject.corporation_ids.first).to eq(98_192_510) }
 
-    specify { expect(subject.etag).to eq("9b6810d8ddbd9a13bb4ad09cf4bfefd9f29974bffd543eb30ce25132") }
+    specify { expect(subject.etag).to eq("73da1d3efe2beb32798b8cc6a828ada6cd620fca85f78583a1eb509d") }
 
     specify { expect(subject.error_limit_remain).to eq(100) }
 
-    specify { expect(subject.error_limit_reset).to eq(3) }
+    specify { expect(subject.error_limit_reset).to eq(60) }
   end
 
   context "when etag is set" do
     let(:options) do
       {
         alliance_id: 99_005_443,
-        etag: "9b6810d8ddbd9a13bb4ad09cf4bfefd9f29974bffd543eb30ce25132"
+        etag: "73da1d3efe2beb32798b8cc6a828ada6cd620fca85f78583a1eb509d"
       }
     end
 
@@ -43,10 +43,10 @@ describe "List alliance's corporations" do
 
     specify { expect(subject.not_modified?).to eq(true) }
 
-    specify { expect(subject.etag).to eq("9b6810d8ddbd9a13bb4ad09cf4bfefd9f29974bffd543eb30ce25132") }
+    specify { expect(subject.etag).to eq("73da1d3efe2beb32798b8cc6a828ada6cd620fca85f78583a1eb509d") }
 
     specify { expect(subject.error_limit_remain).to eq(100) }
 
-    specify { expect(subject.error_limit_reset).to eq(3) }
+    specify { expect(subject.error_limit_reset).to eq(20) }
   end
 end
