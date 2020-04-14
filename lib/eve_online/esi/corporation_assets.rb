@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class CorporationAssets < Base
-      API_PATH = "/v4/corporations/%<corporation_id>s/assets/"
+      API_PATH = "/v5/corporations/%<corporation_id>s/assets/"
 
       attr_reader :corporation_id, :page
 
