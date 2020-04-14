@@ -30,20 +30,20 @@ describe "Get character assets" do
 
     specify do
       expect(subject.assets.first.as_json).to eq(is_blueprint_copy: nil,
-                                                 is_singleton: false,
-                                                 item_id: 1_032_486_414_352,
-                                                 location_flag: "Hangar",
-                                                 location_id: 60_008_674,
-                                                 location_type: "station",
-                                                 quantity: 300,
-                                                 type_id: 213)
+                                                 is_singleton: true,
+                                                 item_id: 1_007_277_900_730,
+                                                 location_flag: "RigSlot1",
+                                                 location_id: 1_007_277_753_840,
+                                                 location_type: "item",
+                                                 quantity: 1,
+                                                 type_id: 31800)
     end
 
-    specify { expect(subject.etag).to eq("863823ab27587127fd6e71b394399350577a52f4a5e269e32964018e") }
+    specify { expect(subject.etag).to eq("842970bfbe876f586d5e1d05fb5bebef9cb8052371633c0b88884bf7") }
 
     specify { expect(subject.error_limit_remain).to eq(100) }
 
-    specify { expect(subject.error_limit_reset).to eq(29) }
+    specify { expect(subject.error_limit_reset).to eq(48) }
   end
 
   context "when etag is set" do
@@ -52,7 +52,7 @@ describe "Get character assets" do
         character_id: 1_337_512_245,
         token: "token123",
         page: 1,
-        etag: "863823ab27587127fd6e71b394399350577a52f4a5e269e32964018e"
+        etag: "842970bfbe876f586d5e1d05fb5bebef9cb8052371633c0b88884bf7"
       }
     end
 
@@ -64,10 +64,10 @@ describe "Get character assets" do
 
     specify { expect(subject.not_modified?).to eq(true) }
 
-    specify { expect(subject.etag).to eq("863823ab27587127fd6e71b394399350577a52f4a5e269e32964018e") }
+    specify { expect(subject.etag).to eq("842970bfbe876f586d5e1d05fb5bebef9cb8052371633c0b88884bf7") }
 
     specify { expect(subject.error_limit_remain).to eq(100) }
 
-    specify { expect(subject.error_limit_reset).to eq(43) }
+    specify { expect(subject.error_limit_reset).to eq(54) }
   end
 end

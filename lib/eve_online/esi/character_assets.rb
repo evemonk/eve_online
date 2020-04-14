@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class CharacterAssets < Base
-      API_PATH = "/v4/characters/%<character_id>s/assets/"
+      API_PATH = "/v5/characters/%<character_id>s/assets/"
 
       attr_reader :character_id, :page
 
