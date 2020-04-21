@@ -20,6 +20,7 @@
 * Drop `EveOnline::ESI::CharacterBookmarks`
 * Drop `EveOnline::ESI::Models::Bookmark`
 * Drop `EveOnline::ESI::Models::BookmarkFolder`
+* Add `EveOnline::ESI::CorporationNPC`
 
 ## v0.31.0
 
