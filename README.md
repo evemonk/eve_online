@@ -575,15 +575,15 @@ character_portrait = EveOnline::ESI::CharacterPortrait.new(options)
 
 character_portrait.scope # => nil
 
-character_portrait.as_json # => {:medium=>"http://imageserver.eveonline.com/Character/90729314_128.jpg",
-                           #     :large=>"http://imageserver.eveonline.com/Character/90729314_256.jpg",
-                           #     :huge=>"http://imageserver.eveonline.com/Character/90729314_512.jpg",
-                           #     :small=>"http://imageserver.eveonline.com/Character/90729314_64.jpg"}
+character_portrait.as_json # => {:medium=>"https://images.evetech.net/Character/1337512245_128.jpg",
+                           #     :large=>"https://images.evetech.net/Character/1337512245_256.jpg",
+                           #     :huge=>"https://images.evetech.net/Character/1337512245_512.jpg",
+                           #     :small=>"https://images.evetech.net/Character/1337512245_64.jpg"}
 
-character_portrait.medium # => "http://imageserver.eveonline.com/Character/90729314_128.jpg"
-character_portrait.large # => "http://imageserver.eveonline.com/Character/90729314_256.jpg"
-character_portrait.huge # => "http://imageserver.eveonline.com/Character/90729314_512.jpg"
-character_portrait.small # => "http://imageserver.eveonline.com/Character/90729314_64.jpg"
+character_portrait.medium # => "https://images.evetech.net/Character/1337512245_128.jpg"
+character_portrait.large # => "https://images.evetech.net/Character/1337512245_256.jpg"
+character_portrait.huge # => "https://images.evetech.net/Character/1337512245_512.jpg"
+character_portrait.small # => "https://images.evetech.net/Character/1337512245_64.jpg"
 
 character_portrait.etag # => "2c8392581d493e06c015ca3d48d4076079bf4c976b1f776742592260"
 ```
@@ -922,6 +922,18 @@ corporation_blueprints.roles # => ["Director"]
 #### Get corporation titles
 
 #### Get npc corporations
+
+```ruby
+corporation_npcs = EveOnline::ESI::CorporationNPC.new
+
+corporation_npcs.scope # => nil
+
+corporation_npcs.corporation_npc_ids.size # => 262
+
+corporation_npcs.corporation_npc_ids.first # => 1000001
+
+corporation_npcs.etag # => "085946820256a4f7be2e9926e9d1de9e420cca53ffb31f7547740a05"
+```
 
 ### Dogma
 
