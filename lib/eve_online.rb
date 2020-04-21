@@ -49,6 +49,7 @@ require "eve_online/esi/character_contracts"
 require "eve_online/esi/corporation"
 require "eve_online/esi/corporation_alliance_history"
 require "eve_online/esi/corporation_blueprints"
+require "eve_online/esi/corporation_npc"
 
 require "eve_online/esi/dogma_attributes"
 require "eve_online/esi/dogma_attribute"
