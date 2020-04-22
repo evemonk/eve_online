@@ -228,9 +228,3 @@ require "eve_online/formulas/blueprint_copy_time"
 
 module EveOnline
 end
-
-# class Net::HTTPErrorLimited < Net::HTTPClientError # 420
-#   HAS_BODY = false
-# end
-#
-# Net::HTTPResponse::CODE_TO_OBJ.merge!("420"=>Net::HTTPErrorLimited)
