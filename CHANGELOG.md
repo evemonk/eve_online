@@ -1,6 +1,6 @@
 # Changelog
 
-## master
+## v0.32.0
 
 * Sync with new ESI API
 * Add `EveOnline::ESI::CharacterContracts`
@@ -13,6 +13,14 @@
 * Add `EveOnline::ESI::Models::WalletTransaction`
 * Add `EveOnline::ESI::CharacterWalletTransactions`
 * Rename `EveOnline::ESI::Models::WalletJournalEntry` to `EveOnline::ESI::Models::WalletJournal`
+* Add `EveOnline::ESI::Models::Killmail`
+* Rename `EveOnline::ESI::Models::WalletJournal#id` to `#wallet_journal_id` and update `#as_json`
+* Add `EveOnline::Formulas::BlueprintCopyTime`
+* Drop `EveOnline::ESI::CharacterBookmarkFolders`
+* Drop `EveOnline::ESI::CharacterBookmarks`
+* Drop `EveOnline::ESI::Models::Bookmark`
+* Drop `EveOnline::ESI::Models::BookmarkFolder`
+* Add `EveOnline::ESI::CorporationNPC`
 
 ## v0.31.0
 

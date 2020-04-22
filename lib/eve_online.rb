@@ -30,9 +30,6 @@ require "eve_online/esi/corporation_assets"
 require "eve_online/esi/corporation_assets_locations"
 require "eve_online/esi/corporation_assets_names"
 
-require "eve_online/esi/character_bookmarks"
-require "eve_online/esi/character_bookmark_folders"
-
 require "eve_online/esi/character_calendar"
 require "eve_online/esi/character_calendar_event"
 
@@ -52,6 +49,7 @@ require "eve_online/esi/character_contracts"
 require "eve_online/esi/corporation"
 require "eve_online/esi/corporation_alliance_history"
 require "eve_online/esi/corporation_blueprints"
+require "eve_online/esi/corporation_npc"
 
 require "eve_online/esi/dogma_attributes"
 require "eve_online/esi/dogma_attribute"
@@ -154,8 +152,6 @@ require "eve_online/esi/models/character_order"
 require "eve_online/esi/models/character_location"
 require "eve_online/esi/models/character_ship"
 require "eve_online/esi/models/blueprint"
-require "eve_online/esi/models/bookmark"
-require "eve_online/esi/models/bookmark_folder"
 require "eve_online/esi/models/standing"
 require "eve_online/esi/models/contract"
 require "eve_online/esi/models/fatigue"
@@ -226,6 +222,9 @@ require "eve_online/esi/models/ally"
 require "eve_online/esi/models/allies"
 require "eve_online/esi/models/defender"
 require "eve_online/esi/models/killmail_short"
+require "eve_online/esi/models/killmail"
+
+require "eve_online/formulas/blueprint_copy_time"
 
 module EveOnline
 end

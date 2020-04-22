@@ -2,30 +2,26 @@
 http_interactions:
 - request:
     method: get
-    uri: https://esi.evetech.net/v2/characters/1337512245/bookmarks/folders/?page=1
+    uri: https://esi.evetech.net/v1/corporations/npccorps/
     body:
       encoding: US-ASCII
       string: ''
     headers:
-      User-Agent:
-      - EveOnline API (https://github.com/biow0lf/eve_online) v0.17.0
-      Authorization:
-      - Bearer token123
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
-      - "*/*"
+      - application/json
+      User-Agent:
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.31.0
+      If-None-Match:
+      - '085946820256a4f7be2e9926e9d1de9e420cca53ffb31f7547740a05'
   response:
     status:
-      code: 200
-      message: OK
+      code: 304
+      message: Not Modified
     headers:
       Date:
-      - Tue, 11 Sep 2018 15:06:53 GMT
-      Content-Type:
-      - application/json; charset=UTF-8
-      Content-Length:
-      - '2'
+      - Tue, 21 Apr 2020 22:28:23 GMT
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -43,26 +39,24 @@ http_interactions:
       Allow:
       - GET,HEAD,OPTIONS
       Cache-Control:
-      - private
+      - public
       Etag:
-      - '"ed2e5773d709f4a0654d954884b08db4e152aeb8a70cb70b54e01bc4"'
+      - W/"085946820256a4f7be2e9926e9d1de9e420cca53ffb31f7547740a05"
       Expires:
-      - Tue, 11 Sep 2018 16:05:36 GMT
+      - Wed, 22 Apr 2020 11:05:00 GMT
       Last-Modified:
-      - Tue, 11 Sep 2018 15:05:36 GMT
+      - Tue, 21 Apr 2020 11:03:41 GMT
       Strict-Transport-Security:
       - max-age=31536000
       X-Esi-Error-Limit-Remain:
       - '100'
       X-Esi-Error-Limit-Reset:
-      - '7'
+      - '37'
       X-Esi-Request-Id:
-      - 156b7190-cb69-416d-9e9a-3e137343de31
-      X-Pages:
-      - '1'
+      - 6ff090f8-8673-488a-8ec0-3dfb30ae456b
     body:
       encoding: UTF-8
-      string: "[]"
-    http_version:
-  recorded_at: Tue, 11 Sep 2018 15:06:53 GMT
-recorded_with: VCR 4.0.0
+      string: ''
+    http_version: null
+  recorded_at: Tue, 21 Apr 2020 22:28:23 GMT
+recorded_with: VCR 5.1.0

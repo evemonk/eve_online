@@ -2,10 +2,10 @@
 
 module EveOnline
   module ESI
-    class Alliances < Base
-      API_PATH = "/v2/alliances/"
+    class CorporationNPC < Base
+      API_PATH = "/v1/corporations/npccorps/"
 
-      def alliance_ids
+      def corporation_npc_ids
         response
       end
 

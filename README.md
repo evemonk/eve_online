@@ -48,17 +48,13 @@ gem install eve_online
 
 ## Supported ruby versions
 
-* MRI 2.4
 * MRI 2.5
 * MRI 2.6
 * MRI 2.7
-* JRuby 9.2.11.0
+* JRuby 9.2.11.1
 
 ## Supported rails versions
 
-* 4.2
-* 5.0
-* 5.1
 * 5.2
 * 6.0
 * Edge
@@ -331,73 +327,7 @@ corporation_assets_names.etag # => NotImplementedError
 
 #### List bookmarks
 
-```ruby
-options = { token: 'token123', character_id: 90_729_314, page: 1 }
-
-character_bookmarks = EveOnline::ESI::CharacterBookmarks.new(options)
-
-character_bookmarks.scope # => "esi-bookmarks.read_character_bookmarks.v1"
-
-character_bookmarks.page # => 1
-
-character_bookmarks.total_pages # => 1
-
-character_bookmarks.bookmarks.size # => 20
-
-bookmark = character_bookmarks.bookmarks.first
-
-bookmark.as_json # => {:bookmark_id=>4,
-                 #     :created=>Mon, 09 Jul 2012 22:38:31 UTC +00:00,
-                 #     :creator_id=>2112625428,
-                 #     :folder_id=>5,
-                 #     :item_id=>30003496,
-                 #     :item_type_id=>5,
-                 #     :label=>"Stargate",
-                 #     :location_id=>30003430,
-                 #     :notes=>"This is a stargate"}
-
-bookmark.bookmark_id # => 4
-bookmark.created # => Mon, 09 Jul 2012 22:38:31 UTC +00:00
-bookmark.creator_id # => 2112625428
-bookmark.folder_id # => 5
-bookmark.item_id # => 30003496
-bookmark.item_type_id # => 5
-bookmark.label # => "Stargate"
-bookmark.location_id # => 30003430
-bookmark.notes # => "This is a stargate"
-
-bookmark.coordinates.as_json # => {:x=>-144951231521.81625,
-                             #     :y=>164030047870.25558,
-                             #     :z=>211467631848.1311}
-
-# TODO: character_bookmarks.etag
-```
-
 #### List bookmark folders
-
-```ruby
-options = { token: 'token123', character_id: 90_729_314, page: 1 }
-
-character_bookmark_folders = EveOnline::ESI::CharacterBookmarkFolders.new(options)
-
-character_bookmark_folders.scope # => "esi-bookmarks.read_character_bookmarks.v1"
-
-character_bookmark_folders.page # => 1
-
-character_bookmark_folders.total_pages # => 1
-
-character_bookmark_folders.bookmark_folders.size # => 1
-
-bookmark_folder = character_bookmark_folders.bookmark_folders.first
-
-bookmark_folder.as_json # => {:folder_id=>5,
-                        #     :name=>"Icecream"}
-
-bookmark_folder.folder_id # => 5
-bookmark_folder.name # => "Icecream"
-
-# TODO: character_bookmark_folders.etag
-```
 
 #### List corporation bookmarks
 
@@ -645,15 +575,15 @@ character_portrait = EveOnline::ESI::CharacterPortrait.new(options)
 
 character_portrait.scope # => nil
 
-character_portrait.as_json # => {:medium=>"http://imageserver.eveonline.com/Character/90729314_128.jpg",
-                           #     :large=>"http://imageserver.eveonline.com/Character/90729314_256.jpg",
-                           #     :huge=>"http://imageserver.eveonline.com/Character/90729314_512.jpg",
-                           #     :small=>"http://imageserver.eveonline.com/Character/90729314_64.jpg"}
+character_portrait.as_json # => {:medium=>"https://images.evetech.net/Character/1337512245_128.jpg",
+                           #     :large=>"https://images.evetech.net/Character/1337512245_256.jpg",
+                           #     :huge=>"https://images.evetech.net/Character/1337512245_512.jpg",
+                           #     :small=>"https://images.evetech.net/Character/1337512245_64.jpg"}
 
-character_portrait.medium # => "http://imageserver.eveonline.com/Character/90729314_128.jpg"
-character_portrait.large # => "http://imageserver.eveonline.com/Character/90729314_256.jpg"
-character_portrait.huge # => "http://imageserver.eveonline.com/Character/90729314_512.jpg"
-character_portrait.small # => "http://imageserver.eveonline.com/Character/90729314_64.jpg"
+character_portrait.medium # => "https://images.evetech.net/Character/1337512245_128.jpg"
+character_portrait.large # => "https://images.evetech.net/Character/1337512245_256.jpg"
+character_portrait.huge # => "https://images.evetech.net/Character/1337512245_512.jpg"
+character_portrait.small # => "https://images.evetech.net/Character/1337512245_64.jpg"
 
 character_portrait.etag # => "2c8392581d493e06c015ca3d48d4076079bf4c976b1f776742592260"
 ```
@@ -992,6 +922,18 @@ corporation_blueprints.roles # => ["Director"]
 #### Get corporation titles
 
 #### Get npc corporations
+
+```ruby
+corporation_npcs = EveOnline::ESI::CorporationNPC.new
+
+corporation_npcs.scope # => nil
+
+corporation_npcs.corporation_npc_ids.size # => 262
+
+corporation_npcs.corporation_npc_ids.first # => 1000001
+
+corporation_npcs.etag # => "085946820256a4f7be2e9926e9d1de9e420cca53ffb31f7547740a05"
+```
 
 ### Dogma
 
@@ -2109,7 +2051,7 @@ category.published # => true
 category.group_ids.size # => 46
 category.group_ids.first # => 25
 
-# TODO: category.etag
+category.etag # => "37a39e7a5f5ecc07b19a3128c319f1198d035aee10052d0a21ccdd94"
 ```
 
 #### Get constellations
@@ -2816,7 +2758,7 @@ wallet_journal_entry.as_json # => {:amount=>87375.0,
                              #     :date=>Sun, 08 Mar 2020 12:08:25 UTC +00:00,
                              #     :description=>"Johnn Dillinger got bounty prizes for killing pirates in Sharhelund",
                              #     :first_party_id=>1000125,
-                             #     :id=>17740466914,
+                             #     :wallet_journal_id=>17740466914,
                              #     :reason=>"3744: 2,3748: 2,18085: 2,18070: 1",
                              #     :ref_type=>"bounty_prizes",
                              #     :second_party_id=>1337512245,
@@ -2830,7 +2772,7 @@ wallet_journal_entry.context_id_type # => "system_id"
 wallet_journal_entry.date # => Sun, 08 Mar 2020 12:08:25 UTC +00:00
 wallet_journal_entry.description # => "Johnn Dillinger got bounty prizes for killing pirates in Sharhelund"
 wallet_journal_entry.first_party_id # => 1000125
-wallet_journal_entry.id # => 17740466914
+wallet_journal_entry.wallet_journal_id # => 17740466914
 wallet_journal_entry.reason # => "3744: 2,3748: 2,18085: 2,18070: 1"
 wallet_journal_entry.ref_type # => "bounty_prizes"
 wallet_journal_entry.second_party_id # => 1337512245
@@ -3098,6 +3040,26 @@ require 'oj'
 Oj.mimic_JSON()
 
 races = EveOnline::ESI::UniverseRaces.new
+```
+
+## Formulas
+
+### Blueprint copy time
+
+```ruby
+seconds = 240 # 240 seconds it time to copy e.g. "Acolyte I Blueprint"
+science_level = 5 # character science level
+advanced_industry_level = 1 # character advanced industry level
+science_copy_speed_bonus_per_level = -5.00 # type dogma attribute copy speed bonus for science
+advanced_industry_skill_industry_job_time_bonus_per_level = -3.00 # type dogma attribute industry job time bonuse for advanced industry
+runs = 1 # number of copy, optional. default: 1
+
+formula = EveOnline::Formulas::BlueprintCopyTime.new(seconds, science_level,
+  advanced_industry_level, science_copy_speed_bonus_per_level,
+  advanced_industry_skill_industry_job_time_bonus_per_level, runs)
+
+# time of copy in seconds
+formula.time # => 174.6
 ```
 
 ## Useful links

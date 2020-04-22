@@ -30,7 +30,7 @@ describe "Get alliance information" do
 
     specify { expect(subject.error_limit_remain).to eq(100) }
 
-    specify { expect(subject.error_limit_reset).to eq(4) }
+    specify { expect(subject.error_limit_reset).to eq(44) }
   end
 
   context "when etag is set" do
@@ -53,6 +53,6 @@ describe "Get alliance information" do
 
     specify { expect(subject.error_limit_remain).to eq(100) }
 
-    specify { expect(subject.error_limit_reset).to eq(41) }
+    specify { expect(subject.error_limit_reset).to eq(39) }
   end
 end

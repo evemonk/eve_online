@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://esi.evetech.net/v1/alliances/99005443/corporations/
+    uri: https://esi.evetech.net/v2/alliances/99005443/corporations/
     body:
       encoding: US-ASCII
       string: ''
@@ -12,18 +12,16 @@ http_interactions:
       Accept:
       - application/json
       User-Agent:
-      - EveOnline API (https://github.com/evemonk/eve_online) v0.21.0
-      Accept-Language:
-      - en-us
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.31.0
       If-None-Match:
-      - 9b6810d8ddbd9a13bb4ad09cf4bfefd9f29974bffd543eb30ce25132
+      - 73da1d3efe2beb32798b8cc6a828ada6cd620fca85f78583a1eb509d
   response:
     status:
       code: 304
       message: Not Modified
     headers:
       Date:
-      - Tue, 25 Dec 2018 19:15:57 GMT
+      - Sun, 12 Apr 2020 13:09:40 GMT
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -43,22 +41,22 @@ http_interactions:
       Cache-Control:
       - public
       Etag:
-      - '"9b6810d8ddbd9a13bb4ad09cf4bfefd9f29974bffd543eb30ce25132"'
+      - '"73da1d3efe2beb32798b8cc6a828ada6cd620fca85f78583a1eb509d"'
       Expires:
-      - Tue, 25 Dec 2018 19:39:27 GMT
+      - Sun, 12 Apr 2020 14:09:40 GMT
       Last-Modified:
-      - Tue, 25 Dec 2018 18:39:27 GMT
+      - Sun, 12 Apr 2020 13:09:40 GMT
       Strict-Transport-Security:
       - max-age=31536000
       X-Esi-Error-Limit-Remain:
       - '100'
       X-Esi-Error-Limit-Reset:
-      - '3'
+      - '20'
       X-Esi-Request-Id:
-      - 24563c81-5c8f-4405-860d-1dd40cd3055e
+      - 01d48e0d-f301-44d8-b7a0-276148fb9892
     body:
       encoding: UTF-8
       string: ''
-    http_version: 
-  recorded_at: Tue, 25 Dec 2018 19:15:56 GMT
-recorded_with: VCR 4.0.0
+    http_version: null
+  recorded_at: Sun, 12 Apr 2020 13:09:40 GMT
+recorded_with: VCR 5.1.0

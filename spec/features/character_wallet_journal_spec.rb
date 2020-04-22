@@ -36,7 +36,7 @@ describe "Get character wallet journal" do
                                                                  date: "2020-03-08T12:08:25Z",
                                                                  description: "Johnn Dillinger got bounty prizes for killing pirates in Sharhelund",
                                                                  first_party_id: 1000125,
-                                                                 id: 17740466914,
+                                                                 wallet_journal_id: 17740466914,
                                                                  reason: "3744: 2,3748: 2,18085: 2,18070: 1",
                                                                  ref_type: "bounty_prizes",
                                                                  second_party_id: 1337512245,

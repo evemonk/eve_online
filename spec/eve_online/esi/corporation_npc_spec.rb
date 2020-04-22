@@ -2,10 +2,10 @@
 
 require "spec_helper"
 
-describe EveOnline::ESI::Alliances do
+describe EveOnline::ESI::CorporationNPC do
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_PATH).to eq("/v2/alliances/") }
+  specify { expect(described_class::API_PATH).to eq("/v1/corporations/npccorps/") }
 
   describe "#initialize" do
     its(:token) { should eq(nil) }
@@ -21,12 +21,12 @@ describe EveOnline::ESI::Alliances do
     end
   end
 
-  describe "#alliance_ids" do
+  describe "#corporation_npc_ids" do
     let(:response) { double }
 
     before { expect(subject).to receive(:response).and_return(response) }
 
-    specify { expect(subject.alliance_ids).to eq(response) }
+    specify { expect(subject.corporation_npc_ids).to eq(response) }
   end
 
   describe "#scope" do
@@ -35,7 +35,7 @@ describe EveOnline::ESI::Alliances do
 
   describe "#path" do
     specify do
-      expect(subject.path).to eq("/v2/alliances/")
+      expect(subject.path).to eq("/v1/corporations/npccorps/")
     end
   end
 
@@ -47,7 +47,7 @@ describe EveOnline::ESI::Alliances do
 
   describe "#url" do
     specify do
-      expect(subject.url).to eq("https://esi.evetech.net/v2/alliances/")
+      expect(subject.url).to eq("https://esi.evetech.net/v1/corporations/npccorps/")
     end
   end
 end

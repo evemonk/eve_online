@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://esi.evetech.net/v4/characters/1337512245/assets/?page=1
+    uri: https://esi.evetech.net/v5/characters/1337512245/assets/?page=1
     body:
       encoding: US-ASCII
       string: ''
@@ -16,14 +16,14 @@ http_interactions:
       Authorization:
       - Bearer token123
       If-None-Match:
-      - 863823ab27587127fd6e71b394399350577a52f4a5e269e32964018e
+      - 842970bfbe876f586d5e1d05fb5bebef9cb8052371633c0b88884bf7
   response:
     status:
       code: 304
       message: Not Modified
     headers:
       Date:
-      - Sun, 08 Mar 2020 18:29:17 GMT
+      - Tue, 14 Apr 2020 14:34:06 GMT
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -43,24 +43,24 @@ http_interactions:
       Cache-Control:
       - private
       Etag:
-      - '"863823ab27587127fd6e71b394399350577a52f4a5e269e32964018e"'
+      - '"842970bfbe876f586d5e1d05fb5bebef9cb8052371633c0b88884bf7"'
       Expires:
-      - Sun, 08 Mar 2020 19:03:49 GMT
+      - Tue, 14 Apr 2020 15:26:59 GMT
       Last-Modified:
-      - Sun, 08 Mar 2020 18:03:49 GMT
+      - Tue, 14 Apr 2020 14:26:59 GMT
       Strict-Transport-Security:
       - max-age=31536000
       X-Esi-Error-Limit-Remain:
       - '100'
       X-Esi-Error-Limit-Reset:
-      - '43'
+      - '54'
       X-Esi-Request-Id:
-      - 4e54592e-18e5-4e14-a466-62cfd9e0f06c
+      - a0eb9607-c447-42ca-8e65-113a78c5b35e
       X-Pages:
       - '2'
     body:
       encoding: UTF-8
       string: ''
     http_version: null
-  recorded_at: Sun, 08 Mar 2020 18:29:17 GMT
+  recorded_at: Tue, 14 Apr 2020 14:34:06 GMT
 recorded_with: VCR 5.1.0
