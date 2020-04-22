@@ -14,6 +14,7 @@ require "eve_online/exceptions/bad_gateway"
 require "eve_online/exceptions/service_unavailable"
 require "eve_online/exceptions/no_content"
 require "eve_online/exceptions/not_modified"
+require "eve_online/exceptions/error_limited"
 
 # ESI API
 require "eve_online/esi/base"
@@ -228,3 +229,9 @@ require "eve_online/formulas/blueprint_copy_time"
 
 module EveOnline
 end
+
+# class Net::HTTPErrorLimited < Net::HTTPClientError # 420
+#   HAS_BODY = false
+# end
+#
+# Net::HTTPResponse::CODE_TO_OBJ.merge!("420"=>Net::HTTPErrorLimited)
