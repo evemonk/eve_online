@@ -1,6 +1,6 @@
 # Changelog
 
-## master
+## v0.32.0
 
 * Sync with new ESI API
 * Add `EveOnline::ESI::CharacterContracts`
