@@ -9,7 +9,7 @@ describe EveOnline::ESI::CharacterLocation do
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_PATH).to eq("/v1/characters/%<character_id>s/location/") }
+  specify { expect(described_class::API_PATH).to eq("/v2/characters/%<character_id>s/location/") }
 
   describe "#initialize" do
     its(:token) { should eq(nil) }
@@ -102,7 +102,7 @@ describe EveOnline::ESI::CharacterLocation do
 
   describe "#path" do
     specify do
-      expect(subject.path).to eq("/v1/characters/12345678/location/")
+      expect(subject.path).to eq("/v2/characters/12345678/location/")
     end
   end
 
@@ -114,7 +114,7 @@ describe EveOnline::ESI::CharacterLocation do
 
   describe "#url" do
     specify do
-      expect(subject.url).to eq("https://esi.evetech.net/v1/characters/12345678/location/")
+      expect(subject.url).to eq("https://esi.evetech.net/v2/characters/12345678/location/")
     end
   end
 end
