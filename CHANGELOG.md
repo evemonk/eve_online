@@ -1,6 +1,6 @@
 # Changelog
 
-## master
+## v0.33.0
 
 * Sync with new ESI API
 * Add `EveOnline::Exceptions::ErrorLimited`
