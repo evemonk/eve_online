@@ -9,7 +9,7 @@ describe EveOnline::ESI::CharacterCalendarEvent do
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_PATH).to eq("/v3/characters/%<character_id>s/calendar/%<event_id>s/") }
+  specify { expect(described_class::API_PATH).to eq("/v4/characters/%<character_id>s/calendar/%<event_id>s/") }
 
   describe "#initialize" do
     its(:token) { should eq("token123") }
@@ -164,7 +164,7 @@ describe EveOnline::ESI::CharacterCalendarEvent do
 
   describe "#path" do
     specify do
-      expect(subject.path).to eq("/v3/characters/91473836/calendar/1982004/")
+      expect(subject.path).to eq("/v4/characters/91473836/calendar/1982004/")
     end
   end
 
@@ -176,7 +176,7 @@ describe EveOnline::ESI::CharacterCalendarEvent do
 
   describe "#url" do
     specify do
-      expect(subject.url).to eq("https://esi.evetech.net/v3/characters/91473836/calendar/1982004/")
+      expect(subject.url).to eq("https://esi.evetech.net/v4/characters/91473836/calendar/1982004/")
     end
   end
 end
