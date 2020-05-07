@@ -9,7 +9,7 @@ describe EveOnline::ESI::CharacterCalendar do
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_PATH).to eq("/v1/characters/%<character_id>s/calendar/") }
+  specify { expect(described_class::API_PATH).to eq("/v2/characters/%<character_id>s/calendar/") }
 
   describe "#initialize" do
     context "without options" do
@@ -99,7 +99,7 @@ describe EveOnline::ESI::CharacterCalendar do
 
   describe "#path" do
     specify do
-      expect(subject.path).to eq("/v1/characters/12345678/calendar/")
+      expect(subject.path).to eq("/v2/characters/12345678/calendar/")
     end
   end
 
@@ -129,7 +129,7 @@ describe EveOnline::ESI::CharacterCalendar do
 
   describe "#url" do
     specify do
-      expect(subject.url).to eq("https://esi.evetech.net/v1/characters/12345678/calendar/")
+      expect(subject.url).to eq("https://esi.evetech.net/v2/characters/12345678/calendar/")
     end
   end
 end
