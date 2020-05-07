@@ -9,7 +9,7 @@ describe EveOnline::ESI::CharacterOnline do
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_PATH).to eq("/v2/characters/%<character_id>s/online/") }
+  specify { expect(described_class::API_PATH).to eq("/v3/characters/%<character_id>s/online/") }
 
   describe "#initialize" do
     its(:token) { should eq("token123") }
@@ -113,7 +113,7 @@ describe EveOnline::ESI::CharacterOnline do
 
   describe "#path" do
     specify do
-      expect(subject.path).to eq("/v2/characters/12345678/online/")
+      expect(subject.path).to eq("/v3/characters/12345678/online/")
     end
   end
 
@@ -125,7 +125,7 @@ describe EveOnline::ESI::CharacterOnline do
 
   describe "#url" do
     specify do
-      expect(subject.url).to eq("https://esi.evetech.net/v2/characters/12345678/online/")
+      expect(subject.url).to eq("https://esi.evetech.net/v3/characters/12345678/online/")
     end
   end
 end
