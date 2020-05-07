@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     eve_online (0.33.0)
-      activesupport (>= 4.2.0)
+      activesupport (>= 5.2.0)
 
 GEM
   remote: https://rubygems.org/
