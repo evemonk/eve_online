@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://esi.evetech.net/v3/characters/91473836/calendar/1982004/
+    uri: https://esi.evetech.net/v4/characters/91473836/calendar/1982004/
     body:
       encoding: US-ASCII
       string: ''
@@ -16,7 +16,7 @@ http_interactions:
       Accept-Language:
       - en-us
       Authorization:
-      - Bearer 53TX0LCawhaD5IzPDjoNJPY1p4xP8FArUxdjJcmIy_8iepRrrpFi-IEMVRTgyv1dfSFby3ZSaVUdE1fgX_rD2A
+      - Bearer token123
       If-None-Match:
       - 551811618f893135bfda67bc87f2a2215a6d648b2374bac6194744e4
   response:
@@ -61,6 +61,6 @@ http_interactions:
     body:
       encoding: UTF-8
       string: ''
-    http_version: 
+    http_version:
   recorded_at: Sat, 15 Jun 2019 11:06:04 GMT
 recorded_with: VCR 5.0.0

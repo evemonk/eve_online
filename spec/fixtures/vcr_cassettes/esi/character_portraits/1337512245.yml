@@ -12,14 +12,14 @@ http_interactions:
       Accept:
       - application/json
       User-Agent:
-      - EveOnline API (https://github.com/evemonk/eve_online) v0.29.0
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.32.0
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Sun, 24 Nov 2019 17:38:26 GMT
+      - Thu, 07 May 2020 00:42:46 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
@@ -43,22 +43,22 @@ http_interactions:
       Cache-Control:
       - public
       Etag:
-      - '"b2caff1ff8ab0f8bdc8ce19423b24e7fc1b2a7b8829d64c0e4ec652f"'
+      - '"c9ee2790a39f260df1d2bc8f63e0794abc6d22dfd725682f3d48ca54"'
       Expires:
-      - Mon, 25 Nov 2019 11:05:00 GMT
+      - Thu, 07 May 2020 11:05:00 GMT
       Last-Modified:
-      - Sun, 24 Nov 2019 11:02:28 GMT
+      - Tue, 05 May 2020 11:08:01 GMT
       Strict-Transport-Security:
       - max-age=31536000
       X-Esi-Error-Limit-Remain:
       - '100'
       X-Esi-Error-Limit-Reset:
-      - '34'
+      - '14'
       X-Esi-Request-Id:
-      - bae30157-4da0-41db-8e10-099a386be724
+      - 18dc2213-1ab8-4c08-a37e-9b7493c1b910
     body:
       encoding: UTF-8
       string: '{"px128x128":"https:\/\/images.evetech.net\/Character\/1337512245_128.jpg","px256x256":"https:\/\/images.evetech.net\/Character\/1337512245_256.jpg","px512x512":"https:\/\/images.evetech.net\/Character\/1337512245_512.jpg","px64x64":"https:\/\/images.evetech.net\/Character\/1337512245_64.jpg"}'
-    http_version:
-  recorded_at: Sun, 24 Nov 2019 17:38:26 GMT
-recorded_with: VCR 5.0.0
+    http_version: null
+  recorded_at: Thu, 07 May 2020 00:42:46 GMT
+recorded_with: VCR 5.1.0

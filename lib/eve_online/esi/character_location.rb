@@ -7,7 +7,7 @@ module EveOnline
     class CharacterLocation < Base
       extend Forwardable
 
-      API_PATH = "/v1/characters/%<character_id>s/location/"
+      API_PATH = "/v2/characters/%<character_id>s/location/"
 
       attr_reader :character_id
 

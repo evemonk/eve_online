@@ -27,18 +27,18 @@ describe "Get character portraits" do
                                     small: "https://images.evetech.net/Character/1337512245_64.jpg")
     end
 
-    specify { expect(subject.etag).to eq("b2caff1ff8ab0f8bdc8ce19423b24e7fc1b2a7b8829d64c0e4ec652f") }
+    specify { expect(subject.etag).to eq("c9ee2790a39f260df1d2bc8f63e0794abc6d22dfd725682f3d48ca54") }
 
     specify { expect(subject.error_limit_remain).to eq(100) }
 
-    specify { expect(subject.error_limit_reset).to eq(34) }
+    specify { expect(subject.error_limit_reset).to eq(14) }
   end
 
   context "when etag is set" do
     let(:options) do
       {
         character_id: 1_337_512_245,
-        etag: "7c3e352530bd9a3e07ffaa978ad52dbb4609fa58f483a7eedea7a287"
+        etag: "c9ee2790a39f260df1d2bc8f63e0794abc6d22dfd725682f3d48ca54"
       }
     end
 
@@ -50,10 +50,10 @@ describe "Get character portraits" do
 
     specify { expect(subject.not_modified?).to eq(true) }
 
-    specify { expect(subject.etag).to eq("7c3e352530bd9a3e07ffaa978ad52dbb4609fa58f483a7eedea7a287") }
+    specify { expect(subject.etag).to eq("c9ee2790a39f260df1d2bc8f63e0794abc6d22dfd725682f3d48ca54") }
 
     specify { expect(subject.error_limit_remain).to eq(100) }
 
-    specify { expect(subject.error_limit_reset).to eq(59) }
+    specify { expect(subject.error_limit_reset).to eq(31) }
   end
 end

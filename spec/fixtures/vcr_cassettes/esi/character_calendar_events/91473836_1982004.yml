@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://esi.evetech.net/v3/characters/91473836/calendar/1982004/
+    uri: https://esi.evetech.net/v4/characters/91473836/calendar/1982004/
     body:
       encoding: US-ASCII
       string: ''
@@ -16,7 +16,7 @@ http_interactions:
       Accept-Language:
       - en-us
       Authorization:
-      - Bearer l4xCuAQVZr78XJ_xUUqH1soBerDnlXlq00ju1PZKrg6cSjrhmzy9aHOPEshSr3mQXlzj5nRErHm2tKIAZsv1UQ
+      - Bearer token123
   response:
     status:
       code: 200
@@ -64,6 +64,6 @@ http_interactions:
       encoding: UTF-8
       string: '{"date":"2019-08-08T05:00:00Z","duration":0,"event_id":1982004,"importance":1,"owner_id":91473836,"owner_name":"Devas Weddo","owner_type":"character","response":"not_responded","text":"X marks the spot","title":"Important
         personal event"}'
-    http_version: 
+    http_version:
   recorded_at: Sat, 15 Jun 2019 10:40:45 GMT
 recorded_with: VCR 5.0.0

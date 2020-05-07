@@ -5,7 +5,7 @@ module EveOnline
     class CharacterCalendarEvent < Base
       extend Forwardable
 
-      API_PATH = "/v3/characters/%<character_id>s/calendar/%<event_id>s/"
+      API_PATH = "/v4/characters/%<character_id>s/calendar/%<event_id>s/"
 
       attr_reader :character_id, :event_id
 
