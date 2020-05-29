@@ -126,7 +126,7 @@ GEM
       procto (~> 0.0.2)
     variable (0.0.1)
       equalizer (~> 0.0.11)
-    vcr (5.1.0)
+    vcr (6.0.0)
     webmock (3.8.3)
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
