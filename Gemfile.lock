@@ -21,7 +21,7 @@ GEM
       thor (>= 0.14.0)
     ast (2.4.0)
     awesome_print (1.8.0)
-    coderay (1.1.2)
+    coderay (1.1.3)
     colorize (0.8.1)
     concurrent-ruby (1.1.6)
     crack (0.4.3)
