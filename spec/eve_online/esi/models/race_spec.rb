@@ -16,7 +16,7 @@ describe EveOnline::ESI::Models::Race do
   describe "#as_json" do
     let(:races) { described_class.new(options) }
 
-    before { expect(races).to receive(:alliance_id).and_return(500_002) }
+    before { expect(races).to receive(:faction_id).and_return(500_002) }
 
     before { expect(races).to receive(:description).and_return("Once a thriving tribal civilization, the Minmatar...") }
 
@@ -26,7 +26,7 @@ describe EveOnline::ESI::Models::Race do
 
     subject { races.as_json }
 
-    its([:alliance_id]) { should eq(500_002) }
+    its([:faction_id]) { should eq(500_002) }
 
     its([:description]) { should eq("Once a thriving tribal civilization, the Minmatar...") }
 
@@ -35,10 +35,10 @@ describe EveOnline::ESI::Models::Race do
     its([:race_id]) { should eq(2) }
   end
 
-  describe "#alliance_id" do
+  describe "#faction_id" do
     before { expect(options).to receive(:[]).with("alliance_id") }
 
-    specify { expect { subject.alliance_id }.not_to raise_error }
+    specify { expect { subject.faction_id }.not_to raise_error }
   end
 
   describe "#description" do

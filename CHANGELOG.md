@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.34.0
+
+* Rename `EveOnline::ESI::Models::Race#alliance_id` to `#faction_id`. [Fix esi issue 812](https://github.com/esi/esi-issues/issues/812).
+
 ## v0.33.0
 
 * Sync with new ESI API
