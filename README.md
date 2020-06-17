@@ -764,6 +764,58 @@ contracts.etag # => "6e18566a8f786f08aba678262360d0c74a783f9923aa43f8043133e4"
 
 #### Get public contracts
 
+```ruby
+options = { region_id: 10_000_043, page: 1 }
+
+contracts = EveOnline::ESI::PublicContracts.new(options)
+
+contracts.scope # => nil
+
+contracts.page # => 1
+
+contracts.total_pages # => 4
+
+contracts.contracts.size # => 1000
+
+contract = contracts.contracts.first
+
+contract.as_json # => {:buyout=>nil,
+                 #     :collateral=>0.0,
+                 #     :contract_id=>157834735,
+                 #     :date_expired=>Wed, 17 Jun 2020 21:36:41 UTC +00:00,
+                 #     :date_issued=>Wed, 20 May 2020 21:36:41 UTC +00:00,
+                 #     :days_to_complete=>0,
+                 #     :end_location_id=>60008494,
+                 #     :for_corporation=>true,
+                 #     :issuer_corporation_id=>897372069,
+                 #     :issuer_id=>1314102096,
+                 #     :price=>1250000000.0,
+                 #     :reward=>0.0,
+                 #     :start_location_id=>60008494,
+                 #     :title=>"Apostle Me10/Te16 Complete Bpc 10 Pack",
+                 #     :type=>"item_exchange",
+                 #     :volume=>100.0}
+
+contract.buyout # => nil
+contract.collateral # => 0.0
+contract.contract_id # => 157834735
+contract.date_expired # => Wed, 17 Jun 2020 21:36:41 UTC +00:00
+contract.date_issued # => Wed, 20 May 2020 21:36:41 UTC +00:00
+contract.days_to_complete # => 0
+contract.end_location_id # => 60008494
+contract.for_corporation # => true
+contract.issuer_corporation_id # => 897372069
+contract.issuer_id # => 1314102096
+contract.price # => 1250000000.0
+contract.reward # => 0.0
+contract.start_location_id # => 60008494
+contract.title # => "Apostle Me10/Te16 Complete Bpc 10 Pack"
+contract.type # => "item_exchange"
+contract.volume # => 100.0
+
+contracts.etag # => "3f7fdf9a69e35bb35d619b6cb5043a2766d11ca6306a8b5af369ce6e"
+```
+
 #### Get public contract bids
 
 #### Get public contract items
