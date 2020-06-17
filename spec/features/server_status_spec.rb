@@ -15,7 +15,7 @@ describe "Retrieve the uptime and player counts" do
     specify { expect(subject.not_modified?).to eq(false) }
 
     specify do
-      expect(subject.as_json).to eq(players: 20450,
+      expect(subject.as_json).to eq(players: 20_450,
                                     server_version: "1446360",
                                     start_time: "2019-01-17T11:05:44Z",
                                     vip: nil)
