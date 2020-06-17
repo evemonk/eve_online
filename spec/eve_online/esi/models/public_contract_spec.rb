@@ -14,6 +14,83 @@ describe EveOnline::ESI::Models::PublicContract do
   end
 
   describe "#as_json" do
+    let(:contract) { described_class.new(options) }
+
+    let(:buyout) { double }
+
+    let(:date_expired) { double }
+
+    let(:date_issued) { double }
+
+    let(:for_corporation) { double }
+
+    let(:title) { double }
+
+    before { expect(contract).to receive(:buyout).and_return(buyout) }
+
+    before { expect(contract).to receive(:collateral).and_return(0.0) }
+
+    before { expect(contract).to receive(:contract_id).and_return(154837125) }
+
+    before { expect(contract).to receive(:date_expired).and_return(date_expired) }
+
+    before { expect(contract).to receive(:date_issued).and_return(date_issued) }
+
+    before { expect(contract).to receive(:days_to_complete).and_return(0) }
+
+    before { expect(contract).to receive(:end_location_id).and_return(60008674) }
+
+    before { expect(contract).to receive(:for_corporation).and_return(for_corporation) }
+
+    before { expect(contract).to receive(:issuer_corporation_id).and_return(98134807) }
+
+    before { expect(contract).to receive(:issuer_id).and_return(1337512245) }
+
+    before { expect(contract).to receive(:price).and_return(0.0) }
+
+    before { expect(contract).to receive(:reward).and_return(0.0) }
+
+    before { expect(contract).to receive(:start_location_id).and_return(60008674) }
+
+    before { expect(contract).to receive(:title).and_return(title) }
+
+    before { expect(contract).to receive(:type).and_return("item_exchange") }
+
+    before { expect(contract).to receive(:volume).and_return(15000.0) }
+
+    subject { contract.as_json }
+
+    its([:buyout]) { should eq(buyout) }
+
+    its([:collateral]) { should eq(0.0) }
+
+    its([:contract_id]) { should eq(154837125) }
+
+    its([:date_expired]) { should eq(date_expired) }
+
+    its([:date_issued]) { should eq(date_issued) }
+
+    its([:days_to_complete]) { should eq(0) }
+
+    its([:end_location_id]) { should eq(60008674) }
+
+    its([:for_corporation]) { should eq(for_corporation) }
+
+    its([:issuer_corporation_id]) { should eq(98134807) }
+
+    its([:issuer_id]) { should eq(1337512245) }
+
+    its([:price]) { should eq(0.0) }
+
+    its([:reward]) { should eq(0.0) }
+
+    its([:start_location_id]) { should eq(60008674) }
+
+    its([:title]) { should eq(title) }
+
+    its([:type]) { should eq("item_exchange") }
+
+    its([:volume]) { should eq(15000.0) }
   end
 
   describe "#buyout" do
