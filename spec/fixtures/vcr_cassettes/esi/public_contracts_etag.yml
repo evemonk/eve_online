@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://esi.evetech.net/v1/contracts/public/10000043/
+    uri: https://esi.evetech.net/v1/contracts/public/10000043/?page=1
     body:
       encoding: US-ASCII
       string: ''
