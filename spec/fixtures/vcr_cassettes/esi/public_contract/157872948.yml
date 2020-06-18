@@ -1,0 +1,65 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://esi.evetech.net/v1/contracts/public/items/157872948/?page=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/json
+      User-Agent:
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.34.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 18 Jun 2020 20:46:09 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '180'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,If-None-Match,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,HEAD,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,ETag,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Allow:
+      - GET,HEAD,OPTIONS
+      Cache-Control:
+      - public
+      Etag:
+      - '"d458c3f56c114882a9ecfe1aaf173837310b15b6e7cef86a019e700f"'
+      Expires:
+      - Thu, 18 Jun 2020 21:00:30 GMT
+      Last-Modified:
+      - Thu, 18 Jun 2020 20:00:30 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '51'
+      X-Esi-Request-Id:
+      - 21d15a53-8a15-45e7-9f55-906a5bf8ecfb
+      X-Pages:
+      - '1'
+    body:
+      encoding: UTF-8
+      string: '[{"is_blueprint_copy":true,"is_included":true,"item_id":1029552558074,"material_efficiency":10,"quantity":1,"record_id":3210378611,"runs":400,"time_efficiency":20,"type_id":29040}]'
+  recorded_at: Thu, 18 Jun 2020 20:46:09 GMT
+recorded_with: VCR 6.0.0

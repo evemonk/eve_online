@@ -37,18 +37,6 @@ jobs:
       - run: bundle exec appraisal rake
       - run: bundle exec standardrb
       - run: bundle exec mdl README.md CHANGELOG.md TODO.md
-  ruby-2.7.1-test:
-    docker:
-      - image: ruby:2.7.1-slim
-    steps:
-      - checkout
-      - run: rm Gemfile.lock
-      - run: rm .ruby-version
-      - run: bundle install
-      - run: bundle exec appraisal install || true
-      - run: bundle exec appraisal rake
-      - run: bundle exec standardrb
-      - run: bundle exec mdl README.md CHANGELOG.md TODO.md
   jruby-9.2.11.1:
     docker:
       - image: circleci/jruby:9.2.11.1
@@ -72,4 +60,3 @@ workflows:
       - ruby-2.5.8
       - ruby-2.6.6
       - ruby-2.7.1
-      - ruby-2.7.1-test

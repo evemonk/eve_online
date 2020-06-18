@@ -1,9 +1,11 @@
 # Changelog
 
-## master
+## v0.35.0
 
 * Add `EveOnline::ESI::PublicContracts`
 * Add `EveOnline::ESI::Models::PublicContract`
+* Add `EveOnline::ESI::Models::PublicContractItem`
+* Add `EveOnline::ESI::PublicContract`
 
 ## v0.34.0
 
