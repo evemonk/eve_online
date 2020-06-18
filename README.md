@@ -818,6 +818,44 @@ contracts.etag # => "3f7fdf9a69e35bb35d619b6cb5043a2766d11ca6306a8b5af369ce6e"
 
 #### Get public contract bids
 
+```ruby
+options = { contract_id: 157_872_948, page: 1 }
+
+contract = EveOnline::ESI::PublicContract.new(options)
+
+contract.scope # => nil
+
+contract.page # => 1
+
+contract.total_pages # => 1
+
+contract.items.size # => 1
+
+item = contract.items.first
+
+item.as_json # => {:is_blueprint_copy=>true,
+             #     :is_included=>true,
+             #     :item_id=>1029552558074,
+             #     :material_efficiency=>10,
+             #     :quantity=>1,
+             #     :record_id=>3210378611,
+             #     :runs=>400,
+             #     :time_efficiency=>20,
+             #     :type_id=>29040}
+
+item.is_blueprint_copy # => true
+item.is_included # => true
+item.item_id # => 1029552558074
+item.material_efficiency # => 10
+item.quantity # => 1
+item.record_id # => 3210378611
+item.runs # => 400
+item.time_efficiency # => 20
+item.type_id # => 29040
+
+contract.etag # => "d458c3f56c114882a9ecfe1aaf173837310b15b6e7cef86a019e700f"
+```
+
 #### Get public contract items
 
 #### Get corporation contracts
