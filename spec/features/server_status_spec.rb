@@ -2,7 +2,7 @@
 
 require "spec_helper"
 
-describe "Get character's public information" do
+describe "Retrieve the uptime and player counts" do
   context "when etag not set" do
     before { VCR.insert_cassette "esi/server_status" }
 
@@ -13,6 +13,13 @@ describe "Get character's public information" do
     specify { expect(subject.scope).to eq(nil) }
 
     specify { expect(subject.not_modified?).to eq(false) }
+
+    specify do
+      expect(subject.as_json).to eq(players: 20_450,
+                                    server_version: "1446360",
+                                    start_time: "2019-01-17T11:05:44Z",
+                                    vip: nil)
+    end
 
     specify { expect(subject.etag).to eq("c2f41ae833fceb5533627552f494d071e34d4e4a2183589a6b9c85e1") }
 
