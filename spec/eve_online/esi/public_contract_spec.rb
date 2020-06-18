@@ -47,7 +47,41 @@ describe EveOnline::ESI::PublicContract do
     end
 
     context "when @items not set" do
+      let(:contract_item) { instance_double(EveOnline::ESI::Models::PublicContractItem) }
 
+      let(:response) do
+        [
+          {
+            is_blueprint_copy: true,
+            is_included: true,
+            item_id: 1_029_552_558_074,
+            material_efficiency: 10,
+            quantity: 1,
+            record_id: 3_210_378_611,
+            runs: 400,
+            time_efficiency: 20,
+            type_id: 29_040
+          }
+        ]
+      end
+
+      before do
+        #
+        # subject.response # => [{"is_blueprint_copy"=>true, "is_included"=>true, "item_id"=>1029552558074, "material_efficiency"=>10, "quantity"=>1, "record_id"=>3210378611, "runs"=>400, "time_efficiency"=>20,"type_id"=>29040}]
+        #
+        expect(subject).to receive(:response).and_return(response)
+      end
+
+      before do
+        #
+        # EveOnline::ESI::Models::PublicContractItem.new(response.first) # => contract_item
+        #
+        expect(EveOnline::ESI::Models::PublicContractItem).to receive(:new).with(response.first).and_return(contract_item)
+      end
+
+      specify { expect(subject.items).to eq([contract_item]) }
+
+      specify { expect { subject.items }.to change { subject.instance_variable_get(:@items) }.from(nil).to([contract_item]) }
     end
   end
 
