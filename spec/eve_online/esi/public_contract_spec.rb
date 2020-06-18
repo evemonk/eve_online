@@ -38,7 +38,17 @@ describe EveOnline::ESI::PublicContract do
   end
 
   describe "#items" do
-    # TODO: write
+    context "when @items set" do
+      let(:items) { [instance_double(EveOnline::ESI::Models::PublicContractItem)] }
+
+      before { subject.instance_variable_set(:@items, items) }
+
+      specify { expect(subject.items).to eq(items) }
+    end
+
+    context "when @items not set" do
+
+    end
   end
 
   describe "#scope" do
