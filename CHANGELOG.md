@@ -1,6 +1,6 @@
 # Changelog
 
-## master
+## v0.35.0
 
 * Add `EveOnline::ESI::PublicContracts`
 * Add `EveOnline::ESI::Models::PublicContract`
