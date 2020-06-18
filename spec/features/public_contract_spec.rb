@@ -39,7 +39,6 @@ describe "Get public contract items" do
     specify { expect(subject.error_limit_remain).to eq(100) }
 
     specify { expect(subject.error_limit_reset).to eq(51) }
-
   end
 
   context "when etag is set" do
