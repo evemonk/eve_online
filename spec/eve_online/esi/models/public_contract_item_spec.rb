@@ -16,7 +16,47 @@ describe EveOnline::ESI::Models::PublicContractItem do
   describe "#as_json" do
     let(:contract_item) { described_class.new(options) }
 
-    # TODO: write
+    let(:is_blueprint_copy) { double }
+
+    let(:is_included) { double }
+
+    before { expect(contract_item).to receive(:is_blueprint_copy).and_return(is_blueprint_copy) }
+
+    before { expect(contract_item).to receive(:is_included).and_return(is_included) }
+
+    before { expect(contract_item).to receive(:item_id).and_return(1_029_552_558_074) }
+
+    before { expect(contract_item).to receive(:material_efficiency).and_return(10) }
+
+    before { expect(contract_item).to receive(:quantity).and_return(1) }
+
+    before { expect(contract_item).to receive(:record_id).and_return(3_210_378_611) }
+
+    before { expect(contract_item).to receive(:runs).and_return(400) }
+
+    before { expect(contract_item).to receive(:time_efficiency).and_return(20) }
+
+    before { expect(contract_item).to receive(:type_id).and_return(29_040) }
+
+    subject { contract_item.as_json }
+
+    its([:is_blueprint_copy]) { should eq(is_blueprint_copy) }
+
+    its([:is_included]) { should eq(is_included) }
+
+    its([:item_id]) { should eq(1_029_552_558_074) }
+
+    its([:material_efficiency]) { should eq(10) }
+
+    its([:quantity]) { should eq(1) }
+
+    its([:record_id]) { should eq(3_210_378_611) }
+
+    its([:runs]) { should eq(400) }
+
+    its([:time_efficiency]) { should eq(20) }
+
+    its([:type_id]) { should eq(29_040) }
   end
 
   describe "#is_blueprint_copy" do
