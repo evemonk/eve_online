@@ -793,7 +793,7 @@ contract.as_json # => {:buyout=>nil,
                  #     :reward=>0.0,
                  #     :start_location_id=>60008494,
                  #     :title=>"Apostle Me10/Te16 Complete Bpc 10 Pack",
-                 #     :type=>"item_exchange",
+                 #     :kind=>"item_exchange",
                  #     :volume=>100.0}
 
 contract.buyout # => nil
@@ -810,7 +810,7 @@ contract.price # => 1250000000.0
 contract.reward # => 0.0
 contract.start_location_id # => 60008494
 contract.title # => "Apostle Me10/Te16 Complete Bpc 10 Pack"
-contract.type # => "item_exchange"
+contract.kind # => "item_exchange"
 contract.volume # => 100.0
 
 contracts.etag # => "3f7fdf9a69e35bb35d619b6cb5043a2766d11ca6306a8b5af369ce6e"

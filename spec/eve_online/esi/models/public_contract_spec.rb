@@ -54,7 +54,7 @@ describe EveOnline::ESI::Models::PublicContract do
 
     before { expect(contract).to receive(:title).and_return(title) }
 
-    before { expect(contract).to receive(:type).and_return("item_exchange") }
+    before { expect(contract).to receive(:kind).and_return("item_exchange") }
 
     before { expect(contract).to receive(:volume).and_return(15000.0) }
 
@@ -88,7 +88,7 @@ describe EveOnline::ESI::Models::PublicContract do
 
     its([:title]) { should eq(title) }
 
-    its([:type]) { should eq("item_exchange") }
+    its([:kind]) { should eq("item_exchange") }
 
     its([:volume]) { should eq(15000.0) }
   end
@@ -215,10 +215,10 @@ describe EveOnline::ESI::Models::PublicContract do
     specify { expect { subject.title }.not_to raise_error }
   end
 
-  describe "#type" do
+  describe "#kind" do
     before { expect(options).to receive(:[]).with("type") }
 
-    specify { expect { subject.type }.not_to raise_error }
+    specify { expect { subject.kind }.not_to raise_error }
   end
 
   describe "#volume" do
