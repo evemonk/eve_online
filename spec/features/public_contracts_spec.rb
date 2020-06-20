@@ -37,7 +37,7 @@ describe "Get public contracts" do
                                                     reward: 0.0,
                                                     start_location_id: 60_008_494,
                                                     title: "Apostle Me10/Te16 Complete Bpc 10 Pack",
-                                                    type: "item_exchange",
+                                                    kind: "item_exchange",
                                                     volume: 100.0)
     end
 

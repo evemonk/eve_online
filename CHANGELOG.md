@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.35.1
+
+* Rename `EveOnline::ESI::Models::PublicContract#type` to `#kind`. Fix Rails STI.
+
 ## v0.35.0
 
 * Add `EveOnline::ESI::PublicContracts`

@@ -20,7 +20,7 @@ module EveOnline
             reward: reward,
             start_location_id: start_location_id,
             title: title,
-            type: type,
+            kind: kind,
             volume: volume
           }
         end
@@ -85,7 +85,7 @@ module EveOnline
           options["title"]
         end
 
-        def type
+        def kind
           options["type"]
         end
 
