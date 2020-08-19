@@ -1,5 +1,9 @@
 # Changelog
 
+## master
+
+* Drop JRuby support
+
 ## v0.35.1
 
 * Rename `EveOnline::ESI::Models::PublicContract#type` to `#kind`. Fix Rails STI.
