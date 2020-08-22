@@ -989,6 +989,20 @@ corporation_blueprints.roles # => ["Director"]
 
 #### Get corporation members
 
+```ruby
+options = { token: 'token123', corporation_id: 98565696 }
+
+corporation_members = EveOnline::ESI::CorporationMembers.new(options)
+
+corporation_members.scope # => "esi-corporations.read_corporation_membership.v1"
+
+corporation_members.character_ids.size # => 118
+
+corporation_members.character_ids.first # => 2114220544
+
+corporation_members.etag # => "6094aeb7f2c2754a7d1f210eed73f1f858042330852fac847a477a59"
+```
+
 #### Get corporation member limit
 
 #### Get corporation's members' titles
