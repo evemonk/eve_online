@@ -52,6 +52,7 @@ require "eve_online/esi/public_contract"
 require "eve_online/esi/corporation"
 require "eve_online/esi/corporation_alliance_history"
 require "eve_online/esi/corporation_blueprints"
+require "eve_online/esi/corporation_members"
 require "eve_online/esi/corporation_npc"
 
 require "eve_online/esi/dogma_attributes"

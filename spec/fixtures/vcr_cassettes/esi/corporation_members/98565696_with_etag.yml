@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://esi.evetech.net/v3/corporations/98565696/members/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/json
+      User-Agent:
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.35.1
+      Authorization:
+      - Bearer token123
+      If-None-Match:
+      - 6094aeb7f2c2754a7d1f210eed73f1f858042330852fac847a477a59
+  response:
+    status:
+      code: 304
+      message: Not Modified
+    headers:
+      Date:
+      - Sat, 22 Aug 2020 16:29:52 GMT
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,If-None-Match,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,HEAD,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,ETag,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Allow:
+      - GET,HEAD,OPTIONS
+      Cache-Control:
+      - private
+      Etag:
+      - '"6094aeb7f2c2754a7d1f210eed73f1f858042330852fac847a477a59"'
+      Expires:
+      - Sat, 22 Aug 2020 17:26:54 GMT
+      Last-Modified:
+      - Sat, 22 Aug 2020 16:26:54 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '8'
+      X-Esi-Request-Id:
+      - 7a8fe830-1eaa-4257-a05c-6f83cd7fe092
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Sat, 22 Aug 2020 16:29:52 GMT
+recorded_with: VCR 6.0.0

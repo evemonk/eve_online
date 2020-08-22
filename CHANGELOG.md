@@ -3,6 +3,7 @@
 ## master
 
 * Drop JRuby support
+* Add `EveOnline::ESI::CorporationMembers`
 
 ## v0.35.1
 

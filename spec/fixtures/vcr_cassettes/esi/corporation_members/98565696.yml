@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://esi.evetech.net/v3/corporations/98565696/members/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/json
+      User-Agent:
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.35.1
+      Authorization:
+      - Bearer token123
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 22 Aug 2020 16:29:10 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '1214'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,If-None-Match,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,HEAD,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,ETag,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Allow:
+      - GET,HEAD,OPTIONS
+      Cache-Control:
+      - private
+      Etag:
+      - '"6094aeb7f2c2754a7d1f210eed73f1f858042330852fac847a477a59"'
+      Expires:
+      - Sat, 22 Aug 2020 17:26:54 GMT
+      Last-Modified:
+      - Sat, 22 Aug 2020 16:26:54 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept-Encoding
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '50'
+      X-Esi-Request-Id:
+      - 858c4685-2d3c-4364-8b19-730599882121
+    body:
+      encoding: UTF-8
+      string: "[2114220544,2115111938,2114524676,90232662,94515723,2116714513,2115704339,2114839061,97266948,2112340506,918396338,2115160627,2112673846,2115249212,397399104,188836811,1056775238,2114170965,90564700,2115783774,95686242,96689251,2115327084,2114671725,2113452153,91153018,2113234045,2114292864,1000066695,477042635,2114857103,90775697,2113370258,2115302339,722080916,975996058,90836635,2115201698,2115144867,96797861,2114077350,2116801191,2114057909,94291638,2117235383,864764600,2077125305,2114962108,2115022283,593042132,96533207,2114942683,94447326,2114847455,96767206,319898237,2116667643,95312637,2114603263,2113413891,483284740,93873930,2114273554,2114482990,90000150,2114996503,2113353502,2114854176,2114281761,2115173166,1337512245,2114942175,2115051327,2117279552,2114929475,95648072,95698763,2115390797,1699838798,93930834,96066390,93293916,2116821853,1980401502,2113531747,2113333094,96693099,95255920,91620729,2114422146,2115113870,2114743183,2114270621,2114953124,96187813,90689964,2115075502,91335069,93398450,2117220791,2114853822,91620287,2114919360,2114504131,2115306951,93983176,2112594378,92170699,94734799,92040144,2117218263,764270047,2113553376,94549301,95344615,2114295784,96801774,2114388982]"
+  recorded_at: Sat, 22 Aug 2020 16:29:10 GMT
+recorded_with: VCR 6.0.0
