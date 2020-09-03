@@ -55,7 +55,7 @@ GEM
     memoizable (0.4.2)
       thread_safe (~> 0.3, >= 0.3.1)
     mini_portile2 (2.4.0)
-    minitest (5.14.1)
+    minitest (5.14.2)
     mixlib-cli (2.1.8)
     mixlib-config (3.0.9)
       tomlrb
@@ -91,7 +91,7 @@ GEM
     parser (2.7.1.4)
       ast (~> 2.4.1)
     procto (0.0.3)
-    public_suffix (4.0.5)
+    public_suffix (4.0.6)
     rake (13.0.1)
     rexml (3.2.4)
     rspec (3.9.0)
