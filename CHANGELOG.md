@@ -1,5 +1,9 @@
 # Changelog
 
+## master
+
+* Use autoload for class loading
+
 ## v0.36.0
 
 * Drop JRuby support
