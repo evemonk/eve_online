@@ -11,7 +11,7 @@ module EveOnline
       API_HOST = "esi.evetech.net"
 
       attr_reader :token, :parser, :_read_timeout, :_open_timeout, :_etag,
-        :language
+        :language, :_before_middlewares, :_after_middlewares
 
       if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("2.6.0")
         attr_reader :_write_timeout
@@ -27,6 +27,8 @@ module EveOnline
         end
         @_etag = options.fetch(:etag, nil)
         @language = options.fetch(:language, "en-us")
+        @_before_middlewares = []
+        @_after_middlewares = []
       end
 
       def url
@@ -159,7 +161,15 @@ module EveOnline
       end
 
       def resource
-        @resource ||= client.request(request)
+        return @resource if @resource
+
+        before_middlewares
+
+        @resource = client.request(request)
+
+        after_middlewares
+
+        @resource
       rescue Net::OpenTimeout, Net::ReadTimeout, Net::WriteTimeout
         raise EveOnline::Exceptions::Timeout
       end
@@ -202,6 +212,22 @@ module EveOnline
 
       def response
         @response ||= parser.parse(content)
+      end
+
+      def add_before_middleware(middleware)
+        @_before_middlewares << middleware
+      end
+
+      def add_after_middleware(middleware)
+        @_after_middlewares << middleware
+      end
+
+      def before_middlewares
+        @_before_middlewares.map(&:call)
+      end
+
+      def after_middlewares
+        @_after_middlewares.map(&:call)
       end
 
       private
