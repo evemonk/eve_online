@@ -14,15 +14,11 @@ describe EveOnline::ESI::CharacterAssetsLocations do
   describe "#initialize" do
     its(:token) { should eq("token123") }
 
-    its(:parser) { should eq(JSON) }
-
     its(:_read_timeout) { should eq(60) }
 
     its(:_open_timeout) { should eq(60) }
 
-    if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("2.6.0")
-      its(:_write_timeout) { should eq(60) }
-    end
+    its(:_write_timeout) { should eq(60) }
 
     its(:character_id) { should eq(12_345_678) }
 
@@ -75,7 +71,7 @@ describe EveOnline::ESI::CharacterAssetsLocations do
   end
 
   describe "#http_method" do
-    specify { expect(subject.http_method).to eq("Post") }
+    specify { expect(subject.http_method).to eq(:post) }
   end
 
   describe "#payload" do

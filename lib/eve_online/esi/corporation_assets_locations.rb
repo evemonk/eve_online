@@ -26,7 +26,7 @@ module EveOnline
       end
 
       def http_method
-        "Post"
+        :post
       end
 
       def payload

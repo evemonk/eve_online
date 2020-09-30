@@ -10,15 +10,11 @@ describe EveOnline::ESI::UniverseSystemKills do
   describe "#initialize" do
     its(:token) { should eq(nil) }
 
-    its(:parser) { should eq(JSON) }
-
     its(:_read_timeout) { should eq(60) }
 
     its(:_open_timeout) { should eq(60) }
 
-    if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("2.6.0")
-      its(:_write_timeout) { should eq(60) }
-    end
+    its(:_write_timeout) { should eq(60) }
   end
 
   describe "#system_kills" do
