@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 
-require "net/http"
-require "openssl"
-require "json"
+require "faraday"
+require "faraday_middleware"
 require "active_support/time"
 
 module EveOnline
@@ -10,23 +9,20 @@ module EveOnline
     class Base
       API_HOST = "esi.evetech.net"
 
-      attr_reader :token, :parser, :_read_timeout, :_open_timeout, :_etag,
-        :language
+      attr_reader :token, :_read_timeout, :_open_timeout, :_write_timeout,
+        :_etag, :language, :adapter, :middlewares
 
-      if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("2.6.0")
-        attr_reader :_write_timeout
-      end
+      attr_writer :token
 
       def initialize(options = {})
         @token = options.fetch(:token, nil)
-        @parser = options.fetch(:parser, JSON)
         @_read_timeout = options.fetch(:read_timeout, 60)
         @_open_timeout = options.fetch(:open_timeout, 60)
-        if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("2.6.0")
-          @_write_timeout = options.fetch(:write_timeout, 60)
-        end
+        @_write_timeout = options.fetch(:write_timeout, 60)
         @_etag = options.fetch(:etag, nil)
         @language = options.fetch(:language, "en-us")
+        @adapter = options.fetch(:adapter, Faraday.default_adapter)
+        @middlewares = options.fetch(:middlewares, [])
       end
 
       def url
@@ -42,33 +38,31 @@ module EveOnline
       end
 
       def http_method
-        "Get"
+        :get
       end
 
       def read_timeout
-        client.read_timeout
+        connection.options.read_timeout
       end
 
       def read_timeout=(value)
-        client.read_timeout = value
+        connection.options.read_timeout = value
       end
 
       def open_timeout
-        client.open_timeout
+        connection.options.open_timeout
       end
 
       def open_timeout=(value)
-        client.open_timeout = value
+        connection.options.open_timeout = value
       end
 
-      if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("2.6.0")
-        def write_timeout
-          client.write_timeout
-        end
+      def write_timeout
+        connection.options.write_timeout
+      end
 
-        def write_timeout=(value)
-          client.write_timeout = value
-        end
+      def write_timeout=(value)
+        connection.options.write_timeout = value
       end
 
       def etag=(value)
@@ -76,57 +70,66 @@ module EveOnline
       end
 
       def etag
-        resource.header["Etag"]&.gsub("W/", "")&.gsub('"', "")
+        resource.headers["etag"]&.gsub("W/", "")&.gsub('"', "")
       end
 
       def page
       end
 
       def total_pages
-        resource.header["X-Pages"]&.to_i
+        resource.headers["x-pages"]&.to_i
       end
 
       def error_limit_remain
-        resource.header["X-ESI-Error-Limit-Remain"]&.to_i
+        resource.headers["x-esi-error-limit-remain"]&.to_i
       end
 
       def error_limit_reset
-        resource.header["X-ESI-Error-Limit-Reset"]&.to_i
+        resource.headers["x-esi-error-limit-reset"]&.to_i
       end
 
-      def client
-        @client ||= begin
-          http = Net::HTTP.new(uri.host, uri.port)
-          http.read_timeout = _read_timeout
-          http.open_timeout = _open_timeout
-          if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("2.6.0")
-            http.write_timeout = _write_timeout
+      def request_id
+        resource.headers["x-esi-request-id"]
+      end
+
+      def add_middleware(middleware)
+        @middlewares << middleware
+      end
+
+      def connection
+        @connection ||= Faraday.new do |f|
+          f.headers["User-Agent"] = user_agent
+          f.headers["If-None-Match"] = _etag if _etag
+          f.authorization :Bearer, token if token
+          f.options.read_timeout = _read_timeout
+          f.options.open_timeout = _open_timeout
+          f.options.write_timeout = _write_timeout
+          f.use FaradayMiddlewares::RaiseErrors
+          middlewares.each do |middleware|
+            if middleware[:esi].present?
+              f.use middleware[:class], esi: middleware[:esi]
+            else
+              f.use middleware[:class]
+            end
           end
-          http.use_ssl = true
-          http.verify_mode = OpenSSL::SSL::VERIFY_PEER
-          # http.set_debug_output($stdout)
-          http
+          # f.use Faraday::Response::Logger
+          # f.use FaradayMiddleware::FollowRedirects, limit: 5
+          f.response :json, content_type: "application/json"
+          f.adapter adapter
         end
       end
 
-      def request
-        @request ||= begin
-          request = "Net::HTTP::#{http_method}".constantize.new(uri.request_uri)
-
-          request["User-Agent"] = user_agent
-          request["Accept"] = "application/json"
-          request["Authorization"] = "Bearer #{token}" if token
-          request["If-None-Match"] = _etag if _etag
-          request["Content-Type"] = "application/json" if http_method == "Post"
-          request.body = payload if http_method == "Post"
-
-          request
-        end
-      end
-
-      if Gem::Version.new(RUBY_VERSION) < Gem::Version.new("2.6.0")
-        class Net::WriteTimeout < StandardError; end
-      end
+      # def request
+      #   @request ||= begin
+      #     request = "Net::HTTP::#{http_method}".constantize.new(uri.request_uri)
+      #
+      #     request["Accept"] = "application/json"
+      #     request["Content-Type"] = "application/json" if http_method == "Post"
+      #     request.body = payload if http_method == "Post"
+      #
+      #     request
+      #   end
+      # end
 
       def uri
         @uri ||= begin
@@ -159,49 +162,25 @@ module EveOnline
       end
 
       def resource
-        @resource ||= client.request(request)
-      rescue Net::OpenTimeout, Net::ReadTimeout, Net::WriteTimeout
+        @resource ||= connection.public_send(http_method, uri)
+      rescue Faraday::ConnectionFailed, Faraday::TimeoutError
         raise EveOnline::Exceptions::Timeout
       end
 
       def not_modified?
-        resource.is_a?(Net::HTTPNotModified)
+        resource.status == 304
       end
 
       def content
-        case resource
-        when Net::HTTPOK
-          # TODO: memoize resource.body as @content
-          resource.body
-        when Net::HTTPCreated
-          # TODO: write
-          raise NotImplementedError
-        when Net::HTTPNoContent
-          raise EveOnline::Exceptions::NoContent
-        when Net::HTTPNotModified
+        if not_modified?
           raise EveOnline::Exceptions::NotModified
-        when Net::HTTPBadRequest
-          raise EveOnline::Exceptions::BadRequest
-        when Net::HTTPUnauthorized
-          raise EveOnline::Exceptions::Unauthorized
-        when Net::HTTPForbidden
-          raise EveOnline::Exceptions::Forbidden
-        when Net::HTTPNotFound
-          raise EveOnline::Exceptions::ResourceNotFound
-        when Net::HTTPInternalServerError
-          raise EveOnline::Exceptions::InternalServerError
-        when Net::HTTPBadGateway
-          raise EveOnline::Exceptions::BadGateway
-        when Net::HTTPServiceUnavailable
-          raise EveOnline::Exceptions::ServiceUnavailable
         else
-          # raise EveOnline::Exceptions::UnknownStatus
-          raise NotImplementedError
+          resource.body
         end
       end
 
       def response
-        @response ||= parser.parse(content)
+        @response ||= content
       end
 
       private

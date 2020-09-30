@@ -134,6 +134,10 @@ module EveOnline
     autoload :War, "eve_online/esi/war"
     autoload :WarKillmails, "eve_online/esi/war_killmails"
 
+    module FaradayMiddlewares
+      autoload :RaiseErrors, "eve_online/esi/faraday_middlewares/raise_errors"
+    end
+
     module Models
       autoload :Base, "eve_online/esi/models/base"
 
@@ -237,9 +241,3 @@ module EveOnline
     autoload :BlueprintCopyTime, "eve_online/formulas/blueprint_copy_time"
   end
 end
-
-# class Net::HTTPErrorLimited < Net::HTTPClientError # 420
-#   HAS_BODY = false
-# end
-#
-# Net::HTTPResponse::CODE_TO_OBJ.merge!("420"=>Net::HTTPErrorLimited)

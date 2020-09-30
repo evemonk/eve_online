@@ -2,6 +2,8 @@
 
 ## master
 
+* Replace `net/http` with `faraday`
+
 ## v0.37.0
 
 * Use autoload for class loading
