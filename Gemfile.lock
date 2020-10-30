@@ -50,7 +50,7 @@ GEM
     mixlib-cli (2.1.8)
     mixlib-config (3.0.9)
       tomlrb
-    mixlib-shellout (3.1.6)
+    mixlib-shellout (3.1.7)
       chef-utils
     nokogiri (1.10.10)
       mini_portile2 (~> 2.4.0)
