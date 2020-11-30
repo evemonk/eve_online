@@ -25,7 +25,7 @@ jobs:
       - run: bundle exec appraisal rake
       - run: bundle exec standardrb
       - run: bundle exec mdl README.md CHANGELOG.md TODO.md
-  ruby-2.7.1:
+  ruby-2.7.2:
     docker:
       - image: circleci/ruby:2.7.2
     steps:
