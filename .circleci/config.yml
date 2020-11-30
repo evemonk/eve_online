@@ -27,7 +27,7 @@ jobs:
       - run: bundle exec mdl README.md CHANGELOG.md TODO.md
   ruby-2.7.1:
     docker:
-      - image: circleci/ruby:2.7.1
+      - image: circleci/ruby:2.7.2
     steps:
       - checkout
       - run: rm Gemfile.lock
@@ -44,4 +44,4 @@ workflows:
     jobs:
       - ruby-2.5.8
       - ruby-2.6.6
-      - ruby-2.7.1
+      - ruby-2.7.2
