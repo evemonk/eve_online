@@ -6,6 +6,7 @@
 [![Known Vulnerabilities](https://snyk.io/test/github/evemonk/eve_online/badge.svg)](https://snyk.io/test/github/evemonk/eve_online)
 [![security](https://hakiri.io/github/evemonk/eve_online/master.svg)](https://hakiri.io/github/evemonk/eve_online/master)
 [![DeepSource](https://static.deepsource.io/deepsource-badge-light-mini.svg)](https://deepsource.io/gh/evemonk/eve_online/?ref=repository-badge)
+[![Ruby Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://github.com/testdouble/standard)
 
 This gem implement Ruby API for EveOnline MMORPG (ESI).
 
