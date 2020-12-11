@@ -3,6 +3,7 @@
 ## master
 
 * Use autoload for class loading
+* Rails 6.1
 
 ## v0.36.0
 
