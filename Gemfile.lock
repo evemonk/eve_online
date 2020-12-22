@@ -29,9 +29,9 @@ GEM
       rexml
     diff-lcs (1.4.4)
     docile (1.3.4)
-    fasterer (0.8.3)
+    fasterer (0.7.1)
       colorize (~> 0.7)
-      ruby_parser (>= 3.14.1)
+      ruby_parser (>= 3.13.0)
     hashdiff (1.0.1)
     i18n (1.8.5)
       concurrent-ruby (~> 1.0)
@@ -123,6 +123,7 @@ GEM
 
 PLATFORMS
   ruby
+  x86_64-darwin-19
 
 DEPENDENCIES
   appraisal
@@ -142,4 +143,4 @@ DEPENDENCIES
   webmock
 
 BUNDLED WITH
-   2.1.4
+   2.2.2
