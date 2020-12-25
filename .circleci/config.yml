@@ -11,8 +11,8 @@ jobs:
       - run: bundle install
       - run: bundle exec appraisal install || true
       - run: bundle exec appraisal rake
-      - run: bundle exec standardrb
-      - run: bundle exec fasterer
+#      - run: bundle exec standardrb
+#      - run: bundle exec fasterer
       - run: bundle exec mdl README.md CHANGELOG.md TODO.md
   ruby-2.6.6:
     docker:
@@ -24,8 +24,8 @@ jobs:
       - run: bundle install
       - run: bundle exec appraisal install || true
       - run: bundle exec appraisal rake
-      - run: bundle exec standardrb
-      - run: bundle exec fasterer
+#      - run: bundle exec standardrb
+#      - run: bundle exec fasterer
       - run: bundle exec mdl README.md CHANGELOG.md TODO.md
   ruby-2.7.2:
     docker:
@@ -37,12 +37,12 @@ jobs:
       - run: bundle install
       - run: bundle exec appraisal install || true
       - run: bundle exec appraisal rake
-      - run: bundle exec standardrb
-      - run: bundle exec fasterer
+#      - run: bundle exec standardrb
+#      - run: bundle exec fasterer
       - run: bundle exec mdl README.md CHANGELOG.md TODO.md
-  ruby-3.0.0-rc1:
+  ruby-3.0.0:
     docker:
-      - image: circleci/ruby:3.0.0-rc1
+      - image: circleci/ruby:3.0.0
     steps:
       - checkout
       - run: rm Gemfile.lock
@@ -51,7 +51,7 @@ jobs:
       - run: bundle exec appraisal install || true
       - run: bundle exec appraisal rake
       - run: bundle exec standardrb
-      - run: bundle exec fasterer
+#      - run: bundle exec fasterer
       - run: bundle exec mdl README.md CHANGELOG.md TODO.md
 
 workflows:
@@ -61,4 +61,4 @@ workflows:
       - ruby-2.5.8
       - ruby-2.6.6
       - ruby-2.7.2
-      - ruby-3.0.0-rc1
+      - ruby-3.0.0
