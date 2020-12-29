@@ -5,6 +5,7 @@
 * Use autoload for class loading
 * Rails 6.1
 * Ruby 3.0
+* Remove `mutant` stuff
 
 ## v0.36.0
 
