@@ -4,6 +4,7 @@
 
 * Use autoload for class loading
 * Rails 6.1
+* Ruby 3.0
 
 ## v0.36.0
 
