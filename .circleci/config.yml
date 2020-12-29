@@ -11,7 +11,7 @@ jobs:
       - run: bundle install
       - run: bundle exec appraisal install || true
       - run: bundle exec appraisal rake
-      # - run: bundle exec standardrb
+      - run: bundle exec standardrb
       # - run: bundle exec fasterer
       - run: bundle exec mdl README.md CHANGELOG.md TODO.md
   ruby-2.6.6:
@@ -24,7 +24,7 @@ jobs:
       - run: bundle install
       - run: bundle exec appraisal install || true
       - run: bundle exec appraisal rake
-      # - run: bundle exec standardrb
+      - run: bundle exec standardrb
       # - run: bundle exec fasterer
       - run: bundle exec mdl README.md CHANGELOG.md TODO.md
   ruby-2.7.2:
@@ -37,7 +37,7 @@ jobs:
       - run: bundle install
       - run: bundle exec appraisal install || true
       - run: bundle exec appraisal rake
-      # - run: bundle exec standardrb
+      - run: bundle exec standardrb
       # - run: bundle exec fasterer
       - run: bundle exec mdl README.md CHANGELOG.md TODO.md
   ruby-3.0.0:
