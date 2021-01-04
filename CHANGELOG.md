@@ -1,6 +1,6 @@
 # Changelog
 
-## master
+## v0.37.0
 
 * Use autoload for class loading
 * Rails 6.1
