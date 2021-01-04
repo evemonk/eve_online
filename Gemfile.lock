@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    eve_online (0.36.0)
+    eve_online (0.37.0)
       activesupport (>= 5.2.0)
 
 GEM
