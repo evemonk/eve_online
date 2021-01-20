@@ -11,5 +11,5 @@ appraise "activesupport_61" do
 end
 
 appraise "activesupport_edge" do
-  gem "activesupport", git: "https://github.com/rails/rails", require: "activesupport"
+  gem "activesupport", git: "https://github.com/rails/rails", require: "activesupport", branch: "main"
 end
