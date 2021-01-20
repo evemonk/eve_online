@@ -106,7 +106,7 @@ GEM
     standard (0.11.0)
       rubocop (= 1.7.0)
       rubocop-performance (= 1.9.2)
-    thor (1.0.1)
+    thor (1.1.0)
     tomlrb (2.0.1)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
