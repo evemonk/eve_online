@@ -321,7 +321,25 @@ describe EveOnline::ESI::Base do
     end
 
     context "when @connection not set" do
+      let(:user_agent) { double }
 
+      before { expect(subject).to receive(:user_agent).and_return(user_agent) }
+
+      specify { expect(subject.connection.headers["User-Agent"]).to eq(user_agent) }
+
+      context "when _etag is present" do
+        let(:_etag) { double }
+
+        before { expect(subject).to receive(:_etag).and_return(_etag).twice }
+
+        specify { expect(subject.connection.headers["If-None-Match"]).to eq(_etag) }
+      end
+
+      context "when _etag is empty" do
+        before { expect(subject).to receive(:_etag).and_return(nil) }
+
+        specify { expect(subject.connection.headers["If-None-Match"]).to eq(nil) }
+      end
     end
   end
 
