@@ -7,6 +7,10 @@ describe EveOnline::ESI::Base do
 
   describe "#initialize" do
     context "with options" do
+      let(:adapter) { double }
+
+      let(:middlewares) { double }
+
       let(:options) do
         {
           token: "token123",
@@ -14,7 +18,9 @@ describe EveOnline::ESI::Base do
           open_timeout: 45,
           write_timeout: 50,
           etag: "6f2d3caa79a79bc9e61aa058e18905faac5e293fa1729637648ce9a1",
-          language: "ru"
+          language: "ru",
+          adapter: adapter,
+          middlewares: middlewares
         }
       end
 
@@ -31,6 +37,10 @@ describe EveOnline::ESI::Base do
       its(:_etag) { should eq("6f2d3caa79a79bc9e61aa058e18905faac5e293fa1729637648ce9a1") }
 
       its(:language) { should eq("ru") }
+
+      its(:adapter) { should eq(adapter) }
+
+      its(:middlewares) { should eq(middlewares) }
     end
 
     context "without options" do
@@ -45,6 +55,10 @@ describe EveOnline::ESI::Base do
       its(:_etag) { should eq(nil) }
 
       its(:language) { should eq("en-us") }
+
+      its(:adapter) { should eq(Faraday.default_adapter) }
+
+      its(:middlewares) { should eq([]) }
     end
   end
 
