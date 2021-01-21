@@ -114,7 +114,7 @@ module EveOnline
           # end
           # # f.use Faraday::Response::Logger
           # # f.use FaradayMiddleware::FollowRedirects, limit: 5
-          # f.response :json, content_type: "application/json"
+          f.response :json, content_type: "application/json"
           f.adapter adapter
         end
       end
