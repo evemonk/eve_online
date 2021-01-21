@@ -182,12 +182,12 @@ module EveOnline
       # def response
       #   @response ||= content
       # end
-      #
-      # private
-      #
-      # def parse_datetime_with_timezone(value)
-      #   ActiveSupport::TimeZone["UTC"].parse(value)
-      # end
+
+      private
+
+      def parse_datetime_with_timezone(value)
+        ActiveSupport::TimeZone["UTC"].parse(value)
+      end
     end
   end
 end

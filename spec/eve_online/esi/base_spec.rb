@@ -743,23 +743,23 @@ describe EveOnline::ESI::Base do
   #     specify { expect { subject.response }.not_to raise_error }
   #   end
   # end
-  #
-  # # private methods
-  #
-  # describe "#parse_datetime_with_timezone" do
-  #   let(:value) { double }
-  #
-  #   before do
-  #     #
-  #     # ActiveSupport::TimeZone["UTC"].parse(value)
-  #     #
-  #     expect(ActiveSupport::TimeZone).to receive(:[]).with("UTC") do
-  #       double.tap do |a|
-  #         expect(a).to receive(:parse).with(value)
-  #       end
-  #     end
-  #   end
-  #
-  #   specify { expect { subject.send(:parse_datetime_with_timezone, value) }.not_to raise_error }
-  # end
+
+  # private methods
+
+  describe "#parse_datetime_with_timezone" do
+    let(:value) { double }
+
+    before do
+      #
+      # ActiveSupport::TimeZone["UTC"].parse(value)
+      #
+      expect(ActiveSupport::TimeZone).to receive(:[]).with("UTC") do
+        double.tap do |a|
+          expect(a).to receive(:parse).with(value)
+        end
+      end
+    end
+
+    specify { expect { subject.send(:parse_datetime_with_timezone, value) }.not_to raise_error }
+  end
 end
