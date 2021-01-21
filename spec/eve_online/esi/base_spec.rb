@@ -330,9 +330,27 @@ describe EveOnline::ESI::Base do
       context "when _etag is present" do
         let(:_etag) { double }
 
+        let(:_read_timeout) { double }
+
+        let(:_open_timeout) { double }
+
+        let(:_write_timeout) { double }
+
         before { expect(subject).to receive(:_etag).and_return(_etag).twice }
 
+        before { expect(subject).to receive(:_read_timeout).and_return(_read_timeout) }
+
+        before { expect(subject).to receive(:_open_timeout).and_return(_open_timeout) }
+
+        before { expect(subject).to receive(:_write_timeout).and_return(_write_timeout) }
+
         specify { expect(subject.connection.headers["If-None-Match"]).to eq(_etag) }
+
+        specify { expect(subject.connection.options.read_timeout).to eq(_read_timeout) }
+
+        specify { expect(subject.connection.options.open_timeout).to eq(_open_timeout) }
+
+        specify { expect(subject.connection.options.write_timeout).to eq(_write_timeout) }
       end
 
       context "when _etag is empty" do

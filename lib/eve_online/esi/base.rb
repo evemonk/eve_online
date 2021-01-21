@@ -101,9 +101,9 @@ module EveOnline
           f.headers["User-Agent"] = user_agent
           f.headers["If-None-Match"] = _etag if _etag
           f.authorization :Bearer, token if token
-          # f.options.read_timeout = _read_timeout
-          # f.options.open_timeout = _open_timeout
-          # f.options.write_timeout = _write_timeout
+          f.options.read_timeout = _read_timeout
+          f.options.open_timeout = _open_timeout
+          f.options.write_timeout = _write_timeout
           # f.use FaradayMiddlewares::RaiseErrors
           # middlewares.each do |middleware|
           #   if middleware[:esi].present?
