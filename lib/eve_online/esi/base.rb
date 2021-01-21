@@ -139,28 +139,28 @@ module EveOnline
         end
       end
 
-      # def additional_query_params
-      #   []
-      # end
-      #
-      # def base_query_params
-      #   []
-      # end
-      #
-      # def path
-      #   raise NotImplementedError
-      # end
-      #
-      # def query
-      #   hash = {}
-      #
-      #   (base_query_params + additional_query_params).each do |param|
-      #     hash[param] = public_send(param)
-      #   end
-      #
-      #   hash.reject { |_, v| v.blank? }
-      # end
-      #
+      def additional_query_params
+        []
+      end
+
+      def base_query_params
+        []
+      end
+
+      def path
+        raise NotImplementedError
+      end
+
+      def query
+        hash = {}
+
+        (base_query_params + additional_query_params).each do |param|
+          hash[param] = public_send(param)
+        end
+
+        hash.reject { |_, v| v.blank? }
+      end
+
       # def resource
       #   @resource ||= connection.public_send(http_method, uri)
       # rescue Faraday::ConnectionFailed, Faraday::TimeoutError

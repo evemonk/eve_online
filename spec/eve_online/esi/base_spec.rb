@@ -452,100 +452,100 @@ describe EveOnline::ESI::Base do
   # #     end
   # #   end
   # # end
-  #
-  # describe "#uri" do
-  #   context "when @uri set" do
-  #     let(:uri) { double }
-  #
-  #     before { subject.instance_variable_set(:@uri, uri) }
-  #
-  #     specify { expect(subject.uri).to eq(uri) }
-  #   end
-  #
-  #   context "when @uri not set" do
-  #     let(:uri) { double }
-  #
-  #     let(:path) { double }
-  #
-  #     before { expect(subject).to receive(:path).and_return(path) }
-  #
-  #     context "when query is presence" do
-  #       let(:query) { double }
-  #
-  #       let(:to_query) { double }
-  #
-  #       before { expect(subject).to receive(:query).and_return(query).twice }
-  #
-  #       before { expect(query).to receive(:to_query).and_return(to_query) }
-  #
-  #       before do
-  #         #
-  #         # URI::HTTPS.build(host: API_HOST,
-  #         #                  path: path,
-  #         #                  query: query.to_query) # => uri
-  #         #
-  #         expect(URI::HTTPS).to receive(:build).with(host: described_class::API_HOST,
-  #                                                    path: path,
-  #                                                    query: to_query).and_return(uri)
-  #       end
-  #
-  #       specify { expect { subject.uri }.not_to raise_error }
-  #
-  #       specify { expect { subject.uri }.to change { subject.instance_variable_get(:@uri) }.from(nil).to(uri) }
-  #     end
-  #
-  #     context "when query is not presence" do
-  #       before { expect(subject).to receive(:query).and_return({}) }
-  #
-  #       before do
-  #         #
-  #         # URI::HTTPS.build(host: API_HOST, path: path) # => uri
-  #         #
-  #         expect(URI::HTTPS).to receive(:build).with(host: described_class::API_HOST,
-  #                                                    path: path).and_return(uri)
-  #       end
-  #
-  #       specify { expect { subject.uri }.not_to raise_error }
-  #
-  #       specify { expect { subject.uri }.to change { subject.instance_variable_get(:@uri) }.from(nil).to(uri) }
-  #     end
-  #   end
-  # end
-  #
-  # describe "#additional_query_params" do
-  #   specify { expect(subject.additional_query_params).to eq([]) }
-  # end
-  #
-  # describe "#base_query_params" do
-  #   specify { expect(subject.base_query_params).to eq([]) }
-  # end
-  #
-  # describe "#path" do
-  #   specify { expect { subject.path }.to raise_error(NotImplementedError) }
-  # end
-  #
-  # describe "#query" do
-  #   context "when all params is blank" do
-  #     let(:options) { {language: nil} }
-  #
-  #     subject { described_class.new(options) }
-  #
-  #     before { expect(subject).to receive(:additional_query_params).and_return([:language]) }
-  #
-  #     specify { expect(subject.query).to eq({}) }
-  #   end
-  #
-  #   context "when all params is present" do
-  #     let(:options) { {language: "de"} }
-  #
-  #     subject { described_class.new(options) }
-  #
-  #     before { expect(subject).to receive(:additional_query_params).and_return([:language]) }
-  #
-  #     specify { expect(subject.query).to eq(language: "de") }
-  #   end
-  # end
-  #
+
+  describe "#uri" do
+    context "when @uri set" do
+      let(:uri) { double }
+
+      before { subject.instance_variable_set(:@uri, uri) }
+
+      specify { expect(subject.uri).to eq(uri) }
+    end
+
+    context "when @uri not set" do
+      let(:uri) { double }
+
+      let(:path) { double }
+
+      before { expect(subject).to receive(:path).and_return(path) }
+
+      context "when query is presence" do
+        let(:query) { double }
+
+        let(:to_query) { double }
+
+        before { expect(subject).to receive(:query).and_return(query).twice }
+
+        before { expect(query).to receive(:to_query).and_return(to_query) }
+
+        before do
+          #
+          # URI::HTTPS.build(host: API_HOST,
+          #                  path: path,
+          #                  query: query.to_query) # => uri
+          #
+          expect(URI::HTTPS).to receive(:build).with(host: described_class::API_HOST,
+                                                     path: path,
+                                                     query: to_query).and_return(uri)
+        end
+
+        specify { expect { subject.uri }.not_to raise_error }
+
+        specify { expect { subject.uri }.to change { subject.instance_variable_get(:@uri) }.from(nil).to(uri) }
+      end
+
+      context "when query is not presence" do
+        before { expect(subject).to receive(:query).and_return({}) }
+
+        before do
+          #
+          # URI::HTTPS.build(host: API_HOST, path: path) # => uri
+          #
+          expect(URI::HTTPS).to receive(:build).with(host: described_class::API_HOST,
+                                                     path: path).and_return(uri)
+        end
+
+        specify { expect { subject.uri }.not_to raise_error }
+
+        specify { expect { subject.uri }.to change { subject.instance_variable_get(:@uri) }.from(nil).to(uri) }
+      end
+    end
+  end
+
+  describe "#additional_query_params" do
+    specify { expect(subject.additional_query_params).to eq([]) }
+  end
+
+  describe "#base_query_params" do
+    specify { expect(subject.base_query_params).to eq([]) }
+  end
+
+  describe "#path" do
+    specify { expect { subject.path }.to raise_error(NotImplementedError) }
+  end
+
+  describe "#query" do
+    context "when all params is blank" do
+      let(:options) { {language: nil} }
+
+      subject { described_class.new(options) }
+
+      before { expect(subject).to receive(:additional_query_params).and_return([:language]) }
+
+      specify { expect(subject.query).to eq({}) }
+    end
+
+    context "when all params is present" do
+      let(:options) { {language: "de"} }
+
+      subject { described_class.new(options) }
+
+      before { expect(subject).to receive(:additional_query_params).and_return([:language]) }
+
+      specify { expect(subject.query).to eq(language: "de") }
+    end
+  end
+
   # describe "#resource" do
   #   context "when @resource set" do
   #     let(:resource) { double }
