@@ -96,40 +96,40 @@ module EveOnline
         @middlewares << middleware
       end
 
-      def connection
-        @connection ||= Faraday.new do |f|
-          f.headers["User-Agent"] = user_agent
-          f.headers["If-None-Match"] = _etag if _etag
-          f.authorization :Bearer, token if token
-          f.options.read_timeout = _read_timeout
-          f.options.open_timeout = _open_timeout
-          f.options.write_timeout = _write_timeout
-          f.use FaradayMiddlewares::RaiseErrors
-          middlewares.each do |middleware|
-            if middleware[:esi].present?
-              f.use middleware[:class], esi: middleware[:esi]
-            else
-              f.use middleware[:class]
-            end
-          end
-          # f.use Faraday::Response::Logger
-          # f.use FaradayMiddleware::FollowRedirects, limit: 5
-          f.response :json, content_type: "application/json"
-          f.adapter adapter
-        end
-      end
-
-      # def request
-      #   @request ||= begin
-      #     request = "Net::HTTP::#{http_method}".constantize.new(uri.request_uri)
-      #
-      #     request["Accept"] = "application/json"
-      #     request["Content-Type"] = "application/json" if http_method == "Post"
-      #     request.body = payload if http_method == "Post"
-      #
-      #     request
+      # def connection
+      #   @connection ||= Faraday.new do |f|
+      #     f.headers["User-Agent"] = user_agent
+      #     f.headers["If-None-Match"] = _etag if _etag
+      #     f.authorization :Bearer, token if token
+      #     f.options.read_timeout = _read_timeout
+      #     f.options.open_timeout = _open_timeout
+      #     f.options.write_timeout = _write_timeout
+      #     f.use FaradayMiddlewares::RaiseErrors
+      #     middlewares.each do |middleware|
+      #       if middleware[:esi].present?
+      #         f.use middleware[:class], esi: middleware[:esi]
+      #       else
+      #         f.use middleware[:class]
+      #       end
+      #     end
+      #     # f.use Faraday::Response::Logger
+      #     # f.use FaradayMiddleware::FollowRedirects, limit: 5
+      #     f.response :json, content_type: "application/json"
+      #     f.adapter adapter
       #   end
       # end
+      #
+      # # def request
+      # #   @request ||= begin
+      # #     request = "Net::HTTP::#{http_method}".constantize.new(uri.request_uri)
+      # #
+      # #     request["Accept"] = "application/json"
+      # #     request["Content-Type"] = "application/json" if http_method == "Post"
+      # #     request.body = payload if http_method == "Post"
+      # #
+      # #     request
+      # #   end
+      # # end
 
       def uri
         @uri ||= begin
@@ -139,55 +139,55 @@ module EveOnline
         end
       end
 
-      def additional_query_params
-        []
-      end
-
-      def base_query_params
-        []
-      end
-
-      def path
-        raise NotImplementedError
-      end
-
-      def query
-        hash = {}
-
-        (base_query_params + additional_query_params).each do |param|
-          hash[param] = public_send(param)
-        end
-
-        hash.reject { |_, v| v.blank? }
-      end
-
-      def resource
-        @resource ||= connection.public_send(http_method, uri)
-      rescue Faraday::ConnectionFailed, Faraday::TimeoutError
-        raise EveOnline::Exceptions::Timeout
-      end
-
-      def not_modified?
-        resource.status == 304
-      end
-
-      def content
-        if not_modified?
-          raise EveOnline::Exceptions::NotModified
-        else
-          resource.body
-        end
-      end
-
-      def response
-        @response ||= content
-      end
-
-      private
-
-      def parse_datetime_with_timezone(value)
-        ActiveSupport::TimeZone["UTC"].parse(value)
-      end
+      # def additional_query_params
+      #   []
+      # end
+      #
+      # def base_query_params
+      #   []
+      # end
+      #
+      # def path
+      #   raise NotImplementedError
+      # end
+      #
+      # def query
+      #   hash = {}
+      #
+      #   (base_query_params + additional_query_params).each do |param|
+      #     hash[param] = public_send(param)
+      #   end
+      #
+      #   hash.reject { |_, v| v.blank? }
+      # end
+      #
+      # def resource
+      #   @resource ||= connection.public_send(http_method, uri)
+      # rescue Faraday::ConnectionFailed, Faraday::TimeoutError
+      #   raise EveOnline::Exceptions::Timeout
+      # end
+      #
+      # def not_modified?
+      #   resource.status == 304
+      # end
+      #
+      # def content
+      #   if not_modified?
+      #     raise EveOnline::Exceptions::NotModified
+      #   else
+      #     resource.body
+      #   end
+      # end
+      #
+      # def response
+      #   @response ||= content
+      # end
+      #
+      # private
+      #
+      # def parse_datetime_with_timezone(value)
+      #   ActiveSupport::TimeZone["UTC"].parse(value)
+      # end
     end
   end
 end
