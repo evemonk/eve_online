@@ -311,10 +311,20 @@ describe EveOnline::ESI::Base do
     specify { expect { subject.add_middleware(middleware) }.to change { subject.middlewares }.from([]).to([middleware]) }
   end
 
-  # describe "#connection" do
-  #   # TODO: write
-  # end
-  #
+  describe "#connection" do
+    context "when @connection set" do
+      let(:connection) { double }
+
+      before { subject.instance_variable_set(:@connection, connection) }
+
+      specify { expect(subject.connection).to eq(connection) }
+    end
+
+    context "when @connection not set" do
+
+    end
+  end
+
   # describe "#client" do
   #   # context "when @client set" do
   #   #   let(:client) { double }
