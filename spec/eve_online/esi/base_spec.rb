@@ -329,6 +329,8 @@ describe EveOnline::ESI::Base do
 
       let(:_write_timeout) { double }
 
+      let(:adapter) { double }
+
       before { expect(subject).to receive(:user_agent).and_return(user_agent) }
 
       before { expect(subject).to receive(:_read_timeout).and_return(_read_timeout) }
@@ -336,6 +338,8 @@ describe EveOnline::ESI::Base do
       before { expect(subject).to receive(:_open_timeout).and_return(_open_timeout) }
 
       before { expect(subject).to receive(:_write_timeout).and_return(_write_timeout) }
+
+      before { expect(subject).to receive(:adapter).and_return(adapter) }
 
       specify { expect(subject.connection.headers["User-Agent"]).to eq(user_agent) }
 
@@ -346,6 +350,8 @@ describe EveOnline::ESI::Base do
       specify { expect(subject.connection.options.write_timeout).to eq(_write_timeout) }
 
       specify { expect(subject.connection.builder.handlers).to eq([EveOnline::ESI::FaradayMiddlewares::RaiseErrors]) }
+
+      specify { expect(subject.connection.adapter).to eq(adapter) }
 
       context "when _etag is present" do
         let(:_etag) { double }
