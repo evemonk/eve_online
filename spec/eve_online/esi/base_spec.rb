@@ -351,6 +351,8 @@ describe EveOnline::ESI::Base do
         specify { expect(subject.connection.options.open_timeout).to eq(_open_timeout) }
 
         specify { expect(subject.connection.options.write_timeout).to eq(_write_timeout) }
+
+        specify { expect(subject.connection.builder.handlers).to eq([EveOnline::ESI::FaradayMiddlewares::RaiseErrors]) }
       end
 
       context "when _etag is empty" do

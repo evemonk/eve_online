@@ -104,7 +104,7 @@ module EveOnline
           f.options.read_timeout = _read_timeout
           f.options.open_timeout = _open_timeout
           f.options.write_timeout = _write_timeout
-          # f.use FaradayMiddlewares::RaiseErrors
+          f.use FaradayMiddlewares::RaiseErrors
           # middlewares.each do |middleware|
           #   if middleware[:esi].present?
           #     f.use middleware[:class], esi: middleware[:esi]
