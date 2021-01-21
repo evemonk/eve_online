@@ -340,6 +340,20 @@ describe EveOnline::ESI::Base do
 
         specify { expect(subject.connection.headers["If-None-Match"]).to eq(nil) }
       end
+
+      context "when token is present" do
+        let(:token) { "token123" }
+
+        before { expect(subject).to receive(:token).and_return(token).twice }
+
+        specify { expect(subject.connection.headers["Authorization"]).to eq("Bearer #{token}") }
+      end
+
+      context "when token is empty" do
+        before { expect(subject).to receive(:token).and_return(nil) }
+
+        specify { expect(subject.connection.headers["Authorization"]).to eq(nil) }
+      end
     end
   end
 
