@@ -351,6 +351,8 @@ describe EveOnline::ESI::Base do
 
       specify { expect(subject.connection.builder.handlers).to include(EveOnline::ESI::FaradayMiddlewares::RaiseErrors) }
 
+      # Middlewares
+
       specify { expect(subject.connection.builder.handlers).to include(FaradayMiddleware::ParseJson) }
 
       specify { expect(subject.connection.adapter).to eq(adapter) }
@@ -384,144 +386,6 @@ describe EveOnline::ESI::Base do
       end
     end
   end
-
-  # describe "#client" do
-  #   # context "when @client set" do
-  #   #   let(:client) { double }
-  #   #
-  #   #   before { subject.instance_variable_set(:@client, client) }
-  #   #
-  #   #   specify { expect(subject.client).to eq(client) }
-  #   # end
-  #
-  #   # context "when @client not set" do
-  #   #   let(:host) { double }
-  #   #
-  #   #   let(:port) { double }
-  #   #
-  #   #   let(:uri) { double(host: host, port: port) }
-  #   #
-  #   #   let(:http) { instance_double(Net::HTTP) }
-  #   #
-  #   #   let(:_read_timeout) { double }
-  #   #
-  #   #   let(:_open_timeout) { double }
-  #   #
-  #   #   let(:_write_timeout) { double }
-  #   #
-  #   #   before { expect(subject).to receive(:uri).and_return(uri).twice }
-  #   #
-  #   #   before { expect(Net::HTTP).to receive(:new).with(host, port).and_return(http) }
-  #   #
-  #   #   before { expect(subject).to receive(:_read_timeout).and_return(_read_timeout) }
-  #   #
-  #   #   before { expect(subject).to receive(:_open_timeout).and_return(_open_timeout) }
-  #   #
-  #   #   before { expect(subject).to receive(:_write_timeout).and_return(_write_timeout) }
-  #   #
-  #   #   before { expect(http).to receive(:read_timeout=).with(_read_timeout) }
-  #   #
-  #   #   before { expect(http).to receive(:open_timeout=).with(_open_timeout) }
-  #   #
-  #   #   before { expect(http).to receive(:write_timeout=).with(_write_timeout) }
-  #   #
-  #   #   before { expect(http).to receive(:use_ssl=).with(true) }
-  #   #
-  #   #   before { expect(http).to receive(:verify_mode=).with(OpenSSL::SSL::VERIFY_PEER) }
-  #   #
-  #   #   specify { expect { subject.client }.not_to raise_error }
-  #   #
-  #   #   specify { expect { subject.client }.to change { subject.instance_variable_get(:@client) }.from(nil).to(http) }
-  #   # end
-  # end
-  #
-  # # describe "#request" do
-  # #   context "when @request set" do
-  # #     let(:request) { double }
-  # #
-  # #     before { subject.instance_variable_set(:@request, request) }
-  # #
-  # #     specify { expect(subject.request).to eq(request) }
-  # #   end
-  # #
-  # #   context "when @request not set" do
-  # #     let(:request_uri) { double }
-  # #
-  # #     let(:uri) { double(request_uri: request_uri) }
-  # #
-  # #     let(:user_agent) { double }
-  # #
-  # #     before { expect(subject).to receive(:uri).and_return(uri) }
-  # #
-  # #     before { expect(subject).to receive(:user_agent).and_return(user_agent) }
-  # #
-  # #     before { expect(subject).to receive(:http_method).and_return(http_method).exactly(3).times }
-  # #
-  # #     before { expect(request).to receive(:[]=).with("User-Agent", user_agent).and_return(request) }
-  # #
-  # #     before { expect(request).to receive(:[]=).with("Accept", "application/json").and_return(request) }
-  # #
-  # #     context "when http method Get and without token and etag" do
-  # #       let(:http_method) { "Get" }
-  # #
-  # #       let(:request) { instance_double(Net::HTTP::Get) }
-  # #
-  # #       before { expect(Net::HTTP::Get).to receive(:new).with(request_uri).and_return(request) }
-  # #
-  # #       before { expect(subject).to receive(:token).and_return(nil) }
-  # #
-  # #       before { expect(subject).to receive(:_etag).and_return(nil) }
-  # #
-  # #       specify { expect { subject.request }.not_to raise_error }
-  # #
-  # #       specify { expect { subject.request }.to change { subject.instance_variable_get(:@request) }.from(nil).to(request) }
-  # #     end
-  # #
-  # #     context "when http method Get and with token and etag" do
-  # #       let(:http_method) { "Get" }
-  # #
-  # #       let(:request) { instance_double(Net::HTTP::Get) }
-  # #
-  # #       before { expect(Net::HTTP::Get).to receive(:new).with(request_uri).and_return(request) }
-  # #
-  # #       let(:token) { "token123" }
-  # #
-  # #       let(:_etag) { "etag" }
-  # #
-  # #       before { expect(subject).to receive(:token).and_return(token).twice }
-  # #
-  # #       before { expect(subject).to receive(:_etag).and_return(_etag).twice }
-  # #
-  # #       before { expect(request).to receive(:[]=).with("Authorization", "Bearer token123").and_return(request) }
-  # #
-  # #       before { expect(request).to receive(:[]=).with("If-None-Match", "etag").and_return(request) }
-  # #
-  # #       specify { expect { subject.request }.not_to raise_error }
-  # #
-  # #       specify { expect { subject.request }.to change { subject.instance_variable_get(:@request) }.from(nil).to(request) }
-  # #     end
-  # #
-  # #     context "when http method Post" do
-  # #       let(:http_method) { "Post" }
-  # #
-  # #       let(:request) { instance_double(Net::HTTP::Post) }
-  # #
-  # #       before { expect(Net::HTTP::Post).to receive(:new).with(request_uri).and_return(request) }
-  # #
-  # #       let(:payload) { double }
-  # #
-  # #       before { expect(subject).to receive(:payload).and_return(payload) }
-  # #
-  # #       before { expect(request).to receive(:[]=).with("Content-Type", "application/json").and_return(request) }
-  # #
-  # #       before { expect(request).to receive(:body=).with(payload) }
-  # #
-  # #       specify { expect { subject.request }.not_to raise_error }
-  # #
-  # #       specify { expect { subject.request }.to change { subject.instance_variable_get(:@request) }.from(nil).to(request) }
-  # #     end
-  # #   end
-  # # end
 
   describe "#uri" do
     context "when @uri set" do

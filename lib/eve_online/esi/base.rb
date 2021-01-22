@@ -105,31 +105,19 @@ module EveOnline
           f.options.open_timeout = _open_timeout
           f.options.write_timeout = _write_timeout
           f.use FaradayMiddlewares::RaiseErrors
-          # middlewares.each do |middleware|
+          middlewares.each do |middleware|
           #   if middleware[:esi].present?
           #     f.use middleware[:class], esi: middleware[:esi]
           #   else
           #     f.use middleware[:class]
           #   end
-          # end
-          # # f.use Faraday::Response::Logger
-          # # f.use FaradayMiddleware::FollowRedirects, limit: 5
+          end
+          # f.use Faraday::Response::Logger
+          # f.use FaradayMiddleware::FollowRedirects, limit: 5
           f.response :json, content_type: "application/json"
           f.adapter adapter
         end
       end
-
-      # # def request
-      # #   @request ||= begin
-      # #     request = "Net::HTTP::#{http_method}".constantize.new(uri.request_uri)
-      # #
-      # #     request["Accept"] = "application/json"
-      # #     request["Content-Type"] = "application/json" if http_method == "Post"
-      # #     request.body = payload if http_method == "Post"
-      # #
-      # #     request
-      # #   end
-      # # end
 
       def uri
         @uri ||= begin
