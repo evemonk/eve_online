@@ -149,12 +149,12 @@ module EveOnline
         hash.reject { |_, v| v.blank? }
       end
 
-      # def resource
-      #   @resource ||= connection.public_send(http_method, uri)
+      def resource
+        @resource ||= connection.public_send(http_method, uri)
       # rescue Faraday::ConnectionFailed, Faraday::TimeoutError
       #   raise EveOnline::Exceptions::Timeout
-      # end
-      #
+      end
+
       # def not_modified?
       #   resource.status == 304
       # end

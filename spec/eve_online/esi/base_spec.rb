@@ -480,6 +480,16 @@ describe EveOnline::ESI::Base do
     end
   end
 
+  describe "#resource" do
+    context "when @resource set" do
+      let(:resource) { double }
+
+      before { subject.instance_variable_set(:@resource, resource) }
+
+      specify { expect(subject.resource).to eq(resource) }
+    end
+  end
+
   # describe "#resource" do
   #   context "when @resource set" do
   #     let(:resource) { double }
