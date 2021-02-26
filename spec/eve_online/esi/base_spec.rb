@@ -548,6 +548,22 @@ describe EveOnline::ESI::Base do
     end
   end
 
+  describe "#not_modified?" do
+    before { expect(subject).to receive(:resource).and_return(resource) }
+
+    context "when not modified" do
+      let(:resource) { double(status: 304) }
+
+      specify { expect(subject.not_modified?).to eq(true) }
+    end
+
+    context "when modified" do
+      let(:resource) { double(status: 200) }
+
+      specify { expect(subject.not_modified?).to eq(false) }
+    end
+  end
+
   # describe "#not_modified?" do
   #   let(:resource) { double }
   #
