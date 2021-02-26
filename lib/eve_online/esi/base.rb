@@ -151,8 +151,8 @@ module EveOnline
 
       def resource
         @resource ||= connection.public_send(http_method, uri)
-      # rescue Faraday::ConnectionFailed, Faraday::TimeoutError
-      #   raise EveOnline::Exceptions::Timeout
+      rescue Faraday::ConnectionFailed, Faraday::TimeoutError
+        raise EveOnline::Exceptions::Timeout
       end
 
       # def not_modified?
