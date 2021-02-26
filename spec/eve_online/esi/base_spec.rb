@@ -564,16 +564,6 @@ describe EveOnline::ESI::Base do
     end
   end
 
-  # describe "#not_modified?" do
-  #   let(:resource) { double }
-  #
-  #   before { expect(subject).to receive(:resource).and_return(resource) }
-  #
-  #   before { expect(resource).to receive(:is_a?).with(Net::HTTPNotModified) }
-  #
-  #   specify { expect { subject.not_modified? }.not_to raise_error }
-  # end
-  #
   # describe "#content" do
   #   context "when resource is Net::HTTPOK" do
   #     let(:body) { double }
