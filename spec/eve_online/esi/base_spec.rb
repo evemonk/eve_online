@@ -511,33 +511,41 @@ describe EveOnline::ESI::Base do
       specify { expect { subject.resource }.to change { subject.instance_variable_get(:@resource) }.from(nil).to(resource) }
     end
 
-    # context "when throw Faraday::ConnectionFailed" do
-    #   let(:http_method) { double }
-    #
-    #   let(:uri) { double }
-    #
-    #   before { expect(subject).to receive(:http_method).and_return(http_method) }
-    #
-    #   before { expect(subject).to receive(:uri).and_return(uri) }
-    #
-    #   before { expect(subject).to receive(:connection).and_raise(Faraday::ConnectionFailed) }
-    #
-    #   specify { expect { subject.resource }.to raise_error(EveOnline::Exceptions::Timeout) }
-    # end
+    context "when throw Faraday::ConnectionFailed" do
+      let(:http_method) { double }
 
-    # context "when Faraday::TimeoutError" do
-    #   let(:http_method) { double }
-    #
-    #   let(:uri) { double }
-    #
-    #   before { expect(subject).to receive(:http_method).and_return(http_method) }
-    #
-    #   before { expect(subject).to receive(:uri).and_return(uri) }
-    #
-    #   before { expect(subject).to receive(:connection).with(http_method, uri).and_raise(Faraday::TimeoutError) }
-    #
-    #   specify { expect { subject.resource }.to raise_error(EveOnline::Exceptions::Timeout) }
-    # end
+      let(:uri) { double }
+
+      let(:connection) { double }
+
+      before { expect(subject).to receive(:http_method).and_return(http_method) }
+
+      before { expect(subject).to receive(:uri).and_return(uri) }
+
+      before { expect(subject).to receive(:connection).and_return(connection) }
+
+      before { expect(connection).to receive(:public_send).with(http_method, uri).and_raise(Faraday::ConnectionFailed, nil) }
+
+      specify { expect { subject.resource }.to raise_error(EveOnline::Exceptions::Timeout) }
+    end
+
+    context "when throw Faraday::TimeoutError" do
+      let(:http_method) { double }
+
+      let(:uri) { double }
+
+      let(:connection) { double }
+
+      before { expect(subject).to receive(:http_method).and_return(http_method) }
+
+      before { expect(subject).to receive(:uri).and_return(uri) }
+
+      before { expect(subject).to receive(:connection).and_return(connection) }
+
+      before { expect(connection).to receive(:public_send).with(http_method, uri).and_raise(Faraday::TimeoutError, nil) }
+
+      specify { expect { subject.resource }.to raise_error(EveOnline::Exceptions::Timeout) }
+    end
   end
 
   # describe "#resource" do
