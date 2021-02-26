@@ -548,52 +548,6 @@ describe EveOnline::ESI::Base do
     end
   end
 
-  # describe "#resource" do
-  #   context "when @resource set" do
-  #     let(:resource) { double }
-  #
-  #     before { subject.instance_variable_set(:@resource, resource) }
-  #
-  #     specify { expect(subject.resource).to eq(resource) }
-  #   end
-  #
-  #   # context "when @resource not set" do
-  #   #   let(:resource) { double }
-  #   #
-  #   #   let(:client) { double }
-  #   #
-  #   #   let(:request) { double }
-  #   #
-  #   #   before { expect(subject).to receive(:request).and_return(request) }
-  #   #
-  #   #   before { expect(subject).to receive(:client).and_return(client) }
-  #   #
-  #   #   before { expect(client).to receive(:request).with(request).and_return(resource) }
-  #   #
-  #   #   specify { expect { subject.resource }.not_to raise_error }
-  #   #
-  #   #   specify { expect { subject.resource }.to change { subject.instance_variable_get(:@resource) }.from(nil).to(resource) }
-  #   # end
-  #
-  #   context "when throw Faraday::ConnectionFailed" do
-  #     before { expect(subject).to receive(:connection).and_raise(Faraday::ConnectionFailed) }
-  #
-  #     specify { expect { subject.resource }.to raise_error(EveOnline::Exceptions::Timeout) }
-  #   end
-  #
-  #   context "when Faraday::TimeoutError" do
-  #     before { expect(subject).to receive(:connection).and_raise(Faraday::TimeoutError) }
-  #
-  #     specify { expect { subject.resource }.to raise_error(EveOnline::Exceptions::Timeout) }
-  #   end
-  #
-  #   # context "when Net::HTTP throw Net::WriteTimeout" do
-  #   #   before { expect(subject).to receive(:client).and_raise(Net::WriteTimeout) }
-  #   #
-  #   #   specify { expect { subject.resource }.to raise_error(EveOnline::Exceptions::Timeout) }
-  #   # end
-  # end
-  #
   # describe "#not_modified?" do
   #   let(:resource) { double }
   #
