@@ -10,6 +10,8 @@ appraise "activesupport_61" do
   gem "activesupport", "~> 6.1.0"
 end
 
-appraise "activesupport_edge" do
-  gem "activesupport", git: "https://github.com/rails/rails", require: "activesupport", branch: "main"
+if Gem::Version.new(RUBY_VERSION) > Gem::Version.new("2.7.0")
+  appraise "activesupport_edge" do
+    gem "activesupport", git: "https://github.com/rails/rails", require: "activesupport", branch: "main"
+  end
 end

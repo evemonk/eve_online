@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.authors = ["Igor Zubkov"]
   spec.email = ["igor.zubkov@gmail.com"]
 
-  spec.summary = "EveOnline ESI API."
+  spec.summary = "EveOnline ESI API"
   spec.description = "EveOnline ESI API."
   spec.homepage = "https://github.com/evemonk/eve_online"
   spec.license = "MIT"
@@ -38,5 +38,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "mdl"
   spec.add_development_dependency "appraisal"
 
+  spec.add_runtime_dependency "faraday"
+  spec.add_runtime_dependency "faraday_middleware"
   spec.add_runtime_dependency "activesupport", ">= 5.2.0"
 end

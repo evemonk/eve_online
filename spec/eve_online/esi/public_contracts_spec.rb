@@ -15,15 +15,11 @@ describe EveOnline::ESI::PublicContracts do
     context "without options" do
       its(:token) { should eq(nil) }
 
-      its(:parser) { should eq(JSON) }
-
       its(:_read_timeout) { should eq(60) }
 
       its(:_open_timeout) { should eq(60) }
 
-      if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("2.6.0")
-        its(:_write_timeout) { should eq(60) }
-      end
+      its(:_write_timeout) { should eq(60) }
 
       its(:region_id) { should eq(10_000_043) }
 
