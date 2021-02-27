@@ -1,6 +1,6 @@
 # Changelog
 
-## main
+## 0.38.0
 
 * Replace `net/http` with `faraday`
 * Drop Ruby 2.5 support
