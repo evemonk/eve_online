@@ -97,7 +97,7 @@ module EveOnline
       end
 
       def connection
-        @connection ||= Faraday.new do |f|
+        @connection ||= Faraday.new { |f|
           f.headers["User-Agent"] = user_agent
           f.headers["If-None-Match"] = _etag if _etag
           f.authorization :Bearer, token if token
@@ -106,17 +106,17 @@ module EveOnline
           f.options.write_timeout = _write_timeout
           f.use FaradayMiddlewares::RaiseErrors
           middlewares.each do |middleware|
-          #   if middleware[:esi].present?
-          #     f.use middleware[:class], esi: middleware[:esi]
-          #   else
-          #     f.use middleware[:class]
-          #   end
+            #   if middleware[:esi].present?
+            #     f.use middleware[:class], esi: middleware[:esi]
+            #   else
+            #     f.use middleware[:class]
+            #   end
           end
           # f.use Faraday::Response::Logger
           # f.use FaradayMiddleware::FollowRedirects, limit: 5
           f.response :json, content_type: "application/json"
           f.adapter adapter
-        end
+        }
       end
 
       def uri
