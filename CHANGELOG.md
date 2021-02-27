@@ -1,8 +1,9 @@
 # Changelog
 
-## master
+## main
 
 * Replace `net/http` with `faraday`
+* Drop Ruby 2.5 support
 
 ## v0.37.0
 
