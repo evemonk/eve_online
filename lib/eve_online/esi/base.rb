@@ -167,9 +167,9 @@ module EveOnline
         end
       end
 
-      # def response
-      #   @response ||= content
-      # end
+      def response
+        @response ||= content
+      end
 
       private
 

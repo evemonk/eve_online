@@ -584,23 +584,25 @@ describe EveOnline::ESI::Base do
     end
   end
 
-  # describe "#response" do
-  #   context "when @response set" do
-  #     let(:response) { double }
-  #
-  #     before { subject.instance_variable_set(:@response, response) }
-  #
-  #     specify { expect(subject.response).to eq(response) }
-  #   end
-  #
-  #   context "when @response not set" do
-  #     let(:content) { "some content to parse" }
-  #
-  #     before { expect(subject).to receive(:content).and_return(content) }
-  #
-  #     specify { expect { subject.response }.not_to raise_error }
-  #   end
-  # end
+  describe "#response" do
+    context "when @response set" do
+      let(:response) { double }
+
+      before { subject.instance_variable_set(:@response, response) }
+
+      specify { expect(subject.response).to eq(response) }
+    end
+
+    context "when @response not set" do
+      let(:content) { double }
+
+      before { expect(subject).to receive(:content).and_return(content) }
+
+      specify { expect { subject.response }.not_to raise_error }
+
+      specify { expect { subject.response }.to change { subject.instance_variable_get(:@response) }.from(nil).to(content) }
+    end
+  end
 
   # private methods
 
