@@ -159,14 +159,14 @@ module EveOnline
         resource.status == 304
       end
 
-      # def content
-      #   if not_modified?
-      #     raise EveOnline::Exceptions::NotModified
-      #   else
-      #     resource.body
-      #   end
-      # end
-      #
+      def content
+        if not_modified?
+          raise EveOnline::Exceptions::NotModified
+        else
+          resource.body
+        end
+      end
+
       # def response
       #   @response ||= content
       # end

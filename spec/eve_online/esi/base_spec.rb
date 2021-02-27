@@ -564,6 +564,26 @@ describe EveOnline::ESI::Base do
     end
   end
 
+  describe "#content" do
+    context "when not modified" do
+      before { expect(subject).to receive(:not_modified?).and_return(true) }
+
+      specify { expect { subject.content }.to raise_error(EveOnline::Exceptions::NotModified) }
+    end
+
+    context "when modified" do
+      before { expect(subject).to receive(:not_modified?).and_return(false) }
+
+      let(:body) { double }
+
+      let(:resource) { double(body: body) }
+
+      before { expect(subject).to receive(:resource).and_return(resource) }
+
+      specify { expect(subject.content).to eq(body) }
+    end
+  end
+
   # describe "#content" do
   #   context "when resource is Net::HTTPOK" do
   #     let(:body) { double }
