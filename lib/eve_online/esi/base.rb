@@ -106,11 +106,11 @@ module EveOnline
           f.options.write_timeout = _write_timeout
           f.use FaradayMiddlewares::RaiseErrors
           middlewares.each do |middleware|
-            #   if middleware[:esi].present?
-            #     f.use middleware[:class], esi: middleware[:esi]
-            #   else
-            #     f.use middleware[:class]
-            #   end
+            # if middleware[:esi].present?
+            #   f.use middleware[:class], esi: middleware[:esi]
+            # else
+            #   f.use middleware[:class]
+            # end
           end
           # f.use Faraday::Response::Logger
           # f.use FaradayMiddleware::FollowRedirects, limit: 5
