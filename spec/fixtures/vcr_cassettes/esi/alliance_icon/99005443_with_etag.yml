@@ -11,17 +11,17 @@ http_interactions:
       - EveOnline API (https://github.com/evemonk/eve_online) v0.38.0
       If-None-Match:
       - d067edb53a9019e0e05d99a2b1e7c7745433a982dda16667a14bff49
+      Accept:
+      - application/json
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
   response:
     status:
       code: 304
       message: Not Modified
     headers:
       Date:
-      - Sun, 28 Feb 2021 13:12:05 GMT
+      - Sun, 28 Feb 2021 13:25:31 GMT
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -51,11 +51,11 @@ http_interactions:
       X-Esi-Error-Limit-Remain:
       - '100'
       X-Esi-Error-Limit-Reset:
-      - '55'
+      - '29'
       X-Esi-Request-Id:
-      - 6437f0ab-b33b-48a6-a74d-f169cf6dd66d
+      - 95d83a63-57de-43dd-a617-3abed7510649
     body:
       encoding: UTF-8
       string: ''
-  recorded_at: Sun, 28 Feb 2021 13:12:05 GMT
+  recorded_at: Sun, 28 Feb 2021 13:25:31 GMT
 recorded_with: VCR 6.0.0
