@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class CharacterCorporationHistory < Base
-      API_PATH = "/v1/characters/%<character_id>s/corporationhistory/"
+      API_PATH = "/v2/characters/%<character_id>s/corporationhistory/"
 
       attr_reader :character_id
 

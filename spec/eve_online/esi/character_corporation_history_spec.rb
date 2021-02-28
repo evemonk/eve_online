@@ -9,7 +9,7 @@ describe EveOnline::ESI::CharacterCorporationHistory do
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_PATH).to eq("/v1/characters/%<character_id>s/corporationhistory/") }
+  specify { expect(described_class::API_PATH).to eq("/v2/characters/%<character_id>s/corporationhistory/") }
 
   describe "#initialize" do
     its(:token) { should eq(nil) }
@@ -72,7 +72,7 @@ describe EveOnline::ESI::CharacterCorporationHistory do
 
   describe "#path" do
     specify do
-      expect(subject.path).to eq("/v1/characters/12345678/corporationhistory/")
+      expect(subject.path).to eq("/v2/characters/12345678/corporationhistory/")
     end
   end
 
@@ -84,7 +84,7 @@ describe EveOnline::ESI::CharacterCorporationHistory do
 
   describe "#url" do
     specify do
-      expect(subject.url).to eq("https://esi.evetech.net/v1/characters/12345678/corporationhistory/")
+      expect(subject.url).to eq("https://esi.evetech.net/v2/characters/12345678/corporationhistory/")
     end
   end
 end
