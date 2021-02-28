@@ -343,6 +343,8 @@ describe EveOnline::ESI::Base do
 
       specify { expect(subject.connection.headers["User-Agent"]).to eq(user_agent) }
 
+      specify { expect(subject.connection.headers["Accept"]).to eq("application/json") }
+
       specify { expect(subject.connection.options.read_timeout).to eq(_read_timeout) }
 
       specify { expect(subject.connection.options.open_timeout).to eq(_open_timeout) }

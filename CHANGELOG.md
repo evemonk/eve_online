@@ -3,6 +3,7 @@
 ## main
 
 * Sync with new ESI
+* Add "Accept" header back
 
 ## 0.38.0
 
