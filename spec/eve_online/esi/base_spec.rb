@@ -351,8 +351,6 @@ describe EveOnline::ESI::Base do
 
       specify { expect(subject.connection.builder.handlers).to include(EveOnline::ESI::FaradayMiddlewares::RaiseErrors) }
 
-      # Middlewares
-
       specify { expect(subject.connection.builder.handlers).to include(FaradayMiddleware::ParseJson) }
 
       specify { expect(subject.connection.adapter).to eq(adapter) }
@@ -383,6 +381,26 @@ describe EveOnline::ESI::Base do
         before { expect(subject).to receive(:token).and_return(nil) }
 
         specify { expect(subject.connection.headers["Authorization"]).to eq(nil) }
+      end
+
+      context "when custom middlewares without esi presence" do
+        let(:klass) { Class.new }
+
+        let(:middleware) { { class: klass } }
+
+        before { subject.add_middleware(middleware) }
+
+        specify { expect(subject.connection.builder.handlers).to include(klass) }
+      end
+
+      context "when custom middlewares with esi presence" do
+        let(:klass) { Class.new }
+
+        let(:middleware) { { class: klass, esi: subject } }
+
+        before { subject.add_middleware(middleware) }
+
+        specify { expect(subject.connection.builder.handlers).to include(klass) }
       end
     end
   end
