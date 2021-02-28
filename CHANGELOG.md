@@ -1,5 +1,9 @@
 # Changelog
 
+## main
+
+* Sync with new ESI
+
 ## 0.38.0
 
 * Replace `net/http` with `faraday`
