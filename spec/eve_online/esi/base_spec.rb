@@ -386,7 +386,7 @@ describe EveOnline::ESI::Base do
       context "when custom middlewares without esi presence" do
         let(:klass) { Class.new }
 
-        let(:middleware) { { class: klass } }
+        let(:middleware) { {class: klass} }
 
         before { subject.add_middleware(middleware) }
 
@@ -396,7 +396,7 @@ describe EveOnline::ESI::Base do
       context "when custom middlewares with esi presence" do
         let(:klass) { Class.new }
 
-        let(:middleware) { { class: klass, esi: subject } }
+        let(:middleware) { {class: klass, esi: subject} }
 
         before { subject.add_middleware(middleware) }
 
