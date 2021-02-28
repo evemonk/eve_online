@@ -23,7 +23,7 @@ Gem::Specification.new do |spec|
     "source_code_uri" => "https://github.com/evemonk/eve_online"
   }
 
-  spec.files = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features|bin)/}) }
+  spec.files = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features|bin|swagger)/}) }
   spec.require_paths = ["lib"]
 
   spec.required_ruby_version = ">= 2.6"
