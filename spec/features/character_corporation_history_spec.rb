@@ -29,7 +29,7 @@ describe "Get corporation history" do
 
     specify { expect(subject.error_limit_remain).to eq(100) }
 
-    specify { expect(subject.error_limit_reset).to eq(18) }
+    specify { expect(subject.error_limit_reset).to eq(17) }
   end
 
   context "when etag is set" do
@@ -52,6 +52,6 @@ describe "Get corporation history" do
 
     specify { expect(subject.error_limit_remain).to eq(100) }
 
-    specify { expect(subject.error_limit_reset).to eq(31) }
+    specify { expect(subject.error_limit_reset).to eq(34) }
   end
 end
