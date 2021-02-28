@@ -25,7 +25,7 @@ describe "Get alliance icon" do
 
     specify { expect(subject.error_limit_remain).to eq(100) }
 
-    specify { expect(subject.error_limit_reset).to eq(15) }
+    specify { expect(subject.error_limit_reset).to eq(30) }
   end
 
   context "when etag is set" do
@@ -48,6 +48,6 @@ describe "Get alliance icon" do
 
     specify { expect(subject.error_limit_remain).to eq(100) }
 
-    specify { expect(subject.error_limit_reset).to eq(55) }
+    specify { expect(subject.error_limit_reset).to eq(29) }
   end
 end
