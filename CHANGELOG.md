@@ -1,6 +1,6 @@
 # Changelog
 
-## main
+## v0.39.0
 
 * Sync with new ESI
 * Add "Accept" header back
