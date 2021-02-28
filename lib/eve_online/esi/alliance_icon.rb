@@ -7,7 +7,7 @@ module EveOnline
     class AllianceIcon < Base
       extend Forwardable
 
-      API_PATH = "/v1/alliances/%<alliance_id>s/icons/"
+      API_PATH = "/v2/alliances/%<alliance_id>s/icons/"
 
       attr_reader :alliance_id
 
