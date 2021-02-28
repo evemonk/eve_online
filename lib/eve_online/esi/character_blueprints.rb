@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     class CharacterBlueprints < Base
-      API_PATH = "/v3/characters/%<character_id>s/blueprints/"
+      API_PATH = "/v2/characters/%<character_id>s/blueprints/"
 
       attr_reader :character_id, :page
 
