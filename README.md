@@ -132,13 +132,13 @@ alliance_icon = EveOnline::ESI::AllianceIcon.new(options)
 
 alliance_icon.scope # => nil
 
-alliance_icon.as_json # => {:icon_medium=>"http://image.eveonline.com/Alliance/99005443_128.png",
-                      #     :icon_small=>"http://image.eveonline.com/Alliance/99005443_64.png"}
+alliance_icon.as_json # => {:icon_medium=>"https://images.evetech.net/alliances/99005443/logo?tenant=tranquility&size=128",
+                      #     :icon_small=>"https://images.evetech.net/alliances/99005443/logo?tenant=tranquility&size=64"}
 
-alliance_icon.icon_medium # => "http://image.eveonline.com/Alliance/99005443_128.png"
-alliance_icon.icon_small # => "http://image.eveonline.com/Alliance/99005443_64.png"
+alliance_icon.icon_medium # => "https://images.evetech.net/alliances/99005443/logo?tenant=tranquility&size=128"
+alliance_icon.icon_small # => "https://images.evetech.net/alliances/99005443/logo?tenant=tranquility&size=64"
 
-alliance_icon.etag # => "e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b"
+alliance_icon.etag # => "d067edb53a9019e0e05d99a2b1e7c7745433a982dda16667a14bff49"
 ```
 
 ### Assets

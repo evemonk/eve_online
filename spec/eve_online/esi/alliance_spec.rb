@@ -9,7 +9,7 @@ describe EveOnline::ESI::Alliance do
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_PATH).to eq("/v3/alliances/%<alliance_id>s/") }
+  specify { expect(described_class::API_PATH).to eq("/v4/alliances/%<alliance_id>s/") }
 
   describe "#initialize" do
     its(:token) { should eq(nil) }
@@ -138,7 +138,7 @@ describe EveOnline::ESI::Alliance do
 
   describe "#path" do
     specify do
-      expect(subject.path).to eq("/v3/alliances/99005443/")
+      expect(subject.path).to eq("/v4/alliances/99005443/")
     end
   end
 
@@ -150,7 +150,7 @@ describe EveOnline::ESI::Alliance do
 
   describe "#url" do
     specify do
-      expect(subject.url).to eq("https://esi.evetech.net/v3/alliances/99005443/")
+      expect(subject.url).to eq("https://esi.evetech.net/v4/alliances/99005443/")
     end
   end
 end

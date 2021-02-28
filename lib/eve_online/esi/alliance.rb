@@ -7,7 +7,7 @@ module EveOnline
     class Alliance < Base
       extend Forwardable
 
-      API_PATH = "/v3/alliances/%<alliance_id>s/"
+      API_PATH = "/v4/alliances/%<alliance_id>s/"
 
       attr_reader :alliance_id
 
