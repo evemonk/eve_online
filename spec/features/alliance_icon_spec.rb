@@ -17,22 +17,22 @@ describe "Get alliance icon" do
     specify { expect(subject.not_modified?).to eq(false) }
 
     specify do
-      expect(subject.as_json).to eq(icon_medium: "https://images.evetech.net/Alliance/99005443_128.png",
-                                    icon_small: "https://images.evetech.net/Alliance/99005443_64.png")
+      expect(subject.as_json).to eq(icon_medium: "https://images.evetech.net/alliances/99005443/logo?tenant=tranquility&size=128",
+                                    icon_small: "https://images.evetech.net/alliances/99005443/logo?tenant=tranquility&size=64")
     end
 
-    specify { expect(subject.etag).to eq("b8058de2d9f6c57c6b6d88321742e9676a6f63b96b89238997d37900") }
+    specify { expect(subject.etag).to eq("d067edb53a9019e0e05d99a2b1e7c7745433a982dda16667a14bff49") }
 
     specify { expect(subject.error_limit_remain).to eq(100) }
 
-    specify { expect(subject.error_limit_reset).to eq(11) }
+    specify { expect(subject.error_limit_reset).to eq(15) }
   end
 
   context "when etag is set" do
     let(:options) do
       {
         alliance_id: 99_005_443,
-        etag: "b8058de2d9f6c57c6b6d88321742e9676a6f63b96b89238997d37900"
+        etag: "d067edb53a9019e0e05d99a2b1e7c7745433a982dda16667a14bff49"
       }
     end
 
@@ -44,10 +44,10 @@ describe "Get alliance icon" do
 
     specify { expect(subject.not_modified?).to eq(true) }
 
-    specify { expect(subject.etag).to eq("b8058de2d9f6c57c6b6d88321742e9676a6f63b96b89238997d37900") }
+    specify { expect(subject.etag).to eq("d067edb53a9019e0e05d99a2b1e7c7745433a982dda16667a14bff49") }
 
     specify { expect(subject.error_limit_remain).to eq(100) }
 
-    specify { expect(subject.error_limit_reset).to eq(4) }
+    specify { expect(subject.error_limit_reset).to eq(55) }
   end
 end
