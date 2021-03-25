@@ -3098,7 +3098,7 @@ Faraday.new do |f|
 end
 ```
 
-You can configure default timeouts with adding `read_timeout:`, `open_timeout:` and `write_timeout` to default hash with options:
+You can configure default timeouts with adding `read_timeout:`, `open_timeout:` and `write_timeout:` to default hash with options:
 
 ```ruby
 options = { read_timeout: 120, open_timeout: 120, write_timeout: 120 } # 120 seconds
