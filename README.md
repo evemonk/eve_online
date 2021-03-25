@@ -3088,18 +3088,17 @@ List of exceptions:
 
 ## Timeouts
 
-`eve_online` gem uses `net/http` for network request. `net/http` configured with:
+`eve_online` gem uses `faraday` for network request. `faraday` configured with:
 
 ```ruby
-http = Net::HTTP.new
-
-http.read_timeout = 60
-http.open_timeout = 60
-# if ruby >= 2.6.0
-http.write_timeout = 60
+Faraday.new do |f|
+  f.options.read_timeout = 60
+  f.options.open_timeout = 60
+  f.options.write_timeout = 60
+end
 ```
 
-You can configure default timeouts with adding `read_timeout:` and `open_timeout:` (and `write_timeout` for ruby >= 2.6.0) to default hash with options:
+You can configure default timeouts with adding `read_timeout:`, `open_timeout:` and `write_timeout:` to default hash with options:
 
 ```ruby
 options = { read_timeout: 120, open_timeout: 120, write_timeout: 120 } # 120 seconds
@@ -3120,7 +3119,6 @@ races.read_timeout # => 60
 races.read_timeout = 120
 races.read_timeout # => 120
 
-# if ruby >= 2.6.0
 races.write_timeout # => 60
 races.write_timeout = 120
 races.write_timeout # => 120

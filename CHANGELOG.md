@@ -1,6 +1,6 @@
 # Changelog
 
-## main
+## v0.40.0
 
 * Add `EveOnline::Formulas::TrainingRate`
 
