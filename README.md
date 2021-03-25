@@ -3120,7 +3120,6 @@ races.read_timeout # => 60
 races.read_timeout = 120
 races.read_timeout # => 120
 
-# if ruby >= 2.6.0
 races.write_timeout # => 60
 races.write_timeout = 120
 races.write_timeout # => 120
