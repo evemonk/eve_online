@@ -97,7 +97,7 @@ module EveOnline
       end
 
       def connection
-        @connection ||= Faraday.new { |f|
+        @connection ||= Faraday.new do |f|
           f.headers["User-Agent"] = user_agent
           f.headers["If-None-Match"] = _etag if _etag
           f.headers["Accept"] = "application/json"
@@ -117,7 +117,7 @@ module EveOnline
           # f.use FaradayMiddleware::FollowRedirects, limit: 5
           f.response :json, content_type: "application/json"
           f.adapter adapter
-        }
+        end
       end
 
       def uri
