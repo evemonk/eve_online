@@ -3168,6 +3168,20 @@ formula = EveOnline::Formulas::BlueprintCopyTime.new(seconds, science_level,
 formula.time # => 174.6
 ```
 
+### Training rate
+
+```ruby
+# Memory: 24
+primary = 24
+# Charisma: 20
+secondary = 20
+
+training_rate = EveOnline::Formulas::TrainingRate.new(primary, secondary)
+
+# skill points per minute
+training_rate.rate # => 34.0
+```
+
 ## Useful links
 
 * [BREAKING CHANGES AND YOU - HOW TO USE ALT-ROUTES TO ENHANCE YOUR SANITY](https://developers.eveonline.com/blog/article/breaking-changes-and-you)

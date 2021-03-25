@@ -1,5 +1,9 @@
 # Changelog
 
+## main
+
+* Add `EveOnline::Formulas::TrainingRate`
+
 ## v0.39.0
 
 * Sync with new ESI
