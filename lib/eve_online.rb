@@ -239,5 +239,6 @@ module EveOnline
 
   module Formulas
     autoload :BlueprintCopyTime, "eve_online/formulas/blueprint_copy_time"
+    autoload :TrainingRate, "eve_online/formulas/training_rate"
   end
 end
