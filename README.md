@@ -3091,11 +3091,11 @@ List of exceptions:
 `eve_online` gem uses `faraday` for network request. `faraday` configured with:
 
 ```ruby
-http = Net::HTTP.new
-
-http.read_timeout = 60
-http.open_timeout = 60
-http.write_timeout = 60
+Faraday.new do |f|
+  f.options.read_timeout = 60
+  f.options.open_timeout = 60
+  f.options.write_timeout = 60
+end
 ```
 
 You can configure default timeouts with adding `read_timeout:`, `open_timeout:` and `write_timeout` to default hash with options:
