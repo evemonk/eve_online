@@ -22,6 +22,28 @@ This gem was extracted from [EveMonk](https://evemonk.com). Source code of EveMo
 * [Supported ruby versions](#supported-ruby-versions)
 * [Supported rails versions](#supported-rails-versions)
 * [Usage examples](#usage-examples)
+  * [Alliance](#alliance)
+    * [List all alliances](#list-all-alliances)
+    * [Get alliance information](#get-alliance-information)
+    * [List alliance's corporations](#list-alliances-corporations)
+    * [Get alliance icon](#get-alliance-icon)
+  * [Assets](#assets)
+    * [Get character assets](#get-character-assets)
+    * [Get character asset locations](#get-character-asset-locations)
+    * [Get character asset names](#get-character-asset-names)
+    * [Get corporation assets](#get-corporation-assets)
+    * [Get corporation asset locations](#get-corporation-asset-locations)
+    * [Get corporation asset names](#get-corporation-asset-names)
+  * [Bookmarks](#bookmarks)
+    * [List bookmarks](#list-bookmarks)
+    * [List bookmark folders](#list-bookmark-folders)
+    * [List corporation bookmarks](#list-corporation-bookmarks)
+    * [List corporation bookmark folders](#list-corporation-bookmark-folders)
+  * [Calendar](#calendar)
+    * [List calendar event summaries](#list-calendar-event-summaries)
+    * [Get an event](#get-an-event)
+    * [Respond to an event](#respond-to-an-event)
+    * [Get attendees](#get-attendees)
 * [Useful links](#useful-links)
 * [Development](#development)
 * [Contributing](#contributing)
@@ -30,8 +52,6 @@ This gem was extracted from [EveMonk](https://evemonk.com). Source code of EveMo
 * [License](#license)
 
 ## Installation
-
-<a name="installation"/>
 
 Add this line to your application's Gemfile:
 
@@ -53,15 +73,11 @@ gem install eve_online
 
 ## Supported ruby versions
 
-<a name="supported-ruby-versions"/>
-
 * MRI 2.6
 * MRI 2.7
 * MRI 3.0
 
 ## Supported rails versions
-
-<a name="supported-rails-versions"/>
 
 * 5.2
 * 6.0
@@ -69,8 +85,6 @@ gem install eve_online
 * Edge
 
 ## Usage examples
-
-<a name="usage-examples"/>
 
 ### Alliance
 
