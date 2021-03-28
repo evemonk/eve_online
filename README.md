@@ -44,6 +44,270 @@ This gem was extracted from [EveMonk](https://evemonk.com). Source code of EveMo
     * [Get an event](#get-an-event)
     * [Respond to an event](#respond-to-an-event)
     * [Get attendees](#get-attendees)
+  * [Character](#character)
+    * [Get character's public information](#get-characters-public-information)
+    * [Get agents research](#get-agents-research)
+    * [Get blueprints](#get-blueprints)
+    * [Get corporation history](#get-corporation-history)
+    * [Calculate a CSPA charge cost](#calculate-a-cspa-charge-cost)
+    * [Get jump fatigue](#get-jump-fatigue)
+    * [Get medals](#get-medals)
+    * [Get character notifications](#get-character-notifications)
+    * [Get new contact notifications](#get-new-contact-notifications)
+    * [Get character portraits](#get-character-portraits)
+    * [Get character corporation roles](#get-character-corporation-roles)
+    * [Get standings](#get-standings)
+    * [Yearly aggregate stats](#yearly-aggregate-stats)
+    * [Get character corporation titles](#get-character-corporation-titles)
+    * [Character affiliation](#character-affiliation)
+  * [Clones](#clones)
+    * [Get clones](#get-clones)
+    * [Get active implants](#get-active-implants)
+  * [Contacts](#contacts)
+    * [Get alliance contacts](#get-alliance-contacts)
+    * [Get alliance contact labels](#get-alliance-contact-labels)
+    * [Delete contacts](#delete-contacts)
+    * [Get contacts](#get-contacts)
+    * [Add contacts](#add-contacts)
+    * [Edit contacts](#edit-contacts)
+    * [Get contact labels](#get-contact-labels)
+    * [Get corporation contacts](#get-corporation-contacts)
+    * [Get corporation contact labels](#get-corporation-contact-labels)
+  * [Contracts](#contracts)
+    * [Get contracts](#get-contracts)
+    * [Get contract bids](#get-contract-bids)
+    * [Get contract items](#get-contract-items)
+    * [Get public contracts](#get-public-contracts)
+    * [Get public contract bids](#get-public-contract-bids)
+    * [Get public contract items](#get-public-contract-items)
+    * [Get corporation contracts](#get-corporation-contracts)
+    * [Get corporation contract bids](#get-corporation-contract-bids)
+    * [Get corporation contract items](#get-corporation-contract-items)
+  * [Corporation](#corporation)
+    * [Get corporation information](#get-corporation-information)
+    * [Get alliance history](#get-alliance-history)
+    * [Get corporation blueprints](#get-corporation-blueprints)
+    * [Get all corporation ALSC logs](#get-all-corporation-alsc-logs)
+    * [Get corporation divisions](#get-corporation-divisions)
+    * [Get corporation facilities](#get-corporation-facilities)
+    * [Get corporation icon](#get-corporation-icon)
+    * [Get corporation medals](#get-corporation-medals)
+    * [Get corporation issued medals](#get-corporation-issued-medals)
+    * [Get corporation members](#get-corporation-members)
+    * [Get corporation member limit](#get-corporation-member-limit)
+    * [Get corporation's members' titles](#get-corporations-members-titles)
+    * [Track corporation members](#track-corporation-members)
+    * [Get corporation member roles](#get-corporation-member-roles)
+    * [Get corporation member roles history](#get-corporation-member-roles-history)
+    * [Get corporation shareholders](#get-corporation-shareholders)
+    * [Get corporation standings](#get-corporation-standings)
+    * [Get corporation starbases (POSes)](#get-corporation-starbases-poses)
+    * [Get starbase (POS) detail](#get-starbase-pos-detail)
+    * [Get corporation structures](#get-corporation-structures)
+    * [Get corporation titles](#get-corporation-titles)
+    * [Get npc corporations](#get-npc-corporations)
+  * [Dogma](#dogma)
+    * [Get attributes](#get-attributes)
+    * [Get attribute information](#get-attribute-information)
+    * [Get dynamic item information](#get-dynamic-item-information)
+    * [Get effects](#get-effects)
+    * [Get effect information](#get-effect-information)
+  * [Faction Warfare](#faction-warfare)
+    * [Overview of a character involved in faction warfare](#overview-of-a-character-involved-in-faction-warfare)
+    * [Overview of a corporation involved in faction warfare](#overview-of-a-corporation-involved-in-faction-warfare)
+    * [List of the top factions in faction warfare](#list-of-the-top-factions-in-faction-warfare)
+    * [List of the top pilots in faction warfare](#list-of-the-top-pilots-in-faction-warfare)
+    * [List of the top corporations in faction warfare](#list-of-the-top-corporations-in-faction-warfare)
+    * [An overview of statistics about factions involved in faction warfare](#an-overview-of-statistics-about-factions-involved-in-faction-warfare)
+    * [Ownership of faction warfare systems](#ownership-of-faction-warfare-systems)
+    * [Data about which NPC factions are at war](#data-about-which-npc-factions-are-at-war)
+  * [Fittings](#fittings)
+    * [Get fitting](#get-fitting)
+    * [Create fitting](#create-fitting)
+    * [Delete fitting](#delete-fitting)
+  * [Fleets](#fleets)
+    * [Get character fleet info](#get-character-fleet-info)
+    * [Get fleet information](#get-fleet-information)
+    * [Update fleet](#update-fleet)
+    * [Get fleet members](#get-fleet-members)
+    * [Create fleet invitation](#create-fleet-invitation)
+    * [Kick fleet member](#kick-fleet-member)
+    * [Move fleet member](#move-fleet-member)
+    * [Delete fleet squad](#delete-fleet-squad)
+    * [Rename fleet squad](#rename-fleet-squad)
+    * [Get fleet wings](#get-fleet-wings)
+    * [Create fleet wing](#create-fleet-wing)
+    * [Delete fleet wing](#delete-fleet-wing)
+    * [Rename fleet wing](#rename-fleet-wing)
+    * [Create fleet squad](#create-fleet-squad)
+  * [Incursions](#incursions)
+    * [List incursions](#list-incursions)
+  * [Industry](#industry)
+    * [List character industry jobs](#list-character-industry-jobs)
+    * [Character mining ledger](#character-mining-ledger)
+    * [Moon extraction timers](#moon-extraction-timers)
+    * [Corporation mining observers](#corporation-mining-observers)
+    * [Observed corporation mining](#observed-corporation-mining)
+    * [List corporation industry jobs](#list-corporation-industry-jobs)
+    * [List industry facilities](#list-industry-facilities)
+    * [List solar system cost indices](#list-solar-system-cost-indices)
+  * [Insurance](#insurance)
+    * [List insurance levels](#list-insurance-levels)
+  * [Killmails](#killmails)
+    * [Get a character's recent kills and losses](#get-a-characters-recent-kills-and-losses)
+    * [Get a corporation's recent kills and losses](#get-a-corporations-recent-kills-and-losses)
+    * [Get a single killmail](#get-a-single-killmail)
+  * [Location](#location)
+    * [Get character location](#get-character-location)
+    * [Get character online](#get-character-online)
+    * [Get current ship](#get-current-ship)
+
+### Loyalty
+
+#### Get loyalty points
+#### List loyalty store offers
+
+### Mail
+
+#### Return mail headers
+#### Send a new mail
+#### Delete a mail
+#### Return a mail
+#### Update metadata about a mail
+#### Get mail labels and unread counts
+#### Create a mail label
+#### Delete a mail label
+#### Return mailing list subscriptions
+
+### Market
+
+#### List open orders from a character
+#### List historical orders by a character
+#### List open orders from a corporation
+#### List historical orders from a corporation
+#### List historical market statistics in a region
+#### List orders in a region
+#### List type IDs relevant to a market
+#### Get item groups
+#### Get item group information
+#### List market prices
+#### List orders in a structure
+
+### Opportunities
+
+#### Get a character's completed task
+#### Get opportunities groups
+#### Get opportunities group
+#### Get opportunities tasks
+#### Get opportunities task
+
+### Planetary Interaction
+
+#### Get colonies
+#### Get colony layout
+#### List corporation customs offices
+#### Get schematic information
+
+### Routes
+
+#### Get route
+
+### Search
+
+#### Search on a string (search for something in character stuff)
+#### Search on a string
+
+### Skills
+
+#### Get character attributes
+#### Get character's skill queue
+#### Get character skills
+
+### Sovereignty
+
+#### List sovereignty campaigns
+#### List sovereignty of systems
+#### List sovereignty structures
+
+### Status
+
+#### Retrieve the uptime and player counts
+
+### Universe
+
+#### Get ancestries
+#### Get asteroid belt information
+#### Get bloodlines
+#### Get item categories
+#### Get item category information
+#### Get constellations
+#### Get constellation information
+#### Get factions
+#### Get graphics
+#### Get graphic information
+#### Get item groups
+#### Get item group information
+#### Bulk names to IDs
+#### Get moon information
+#### Get names and categories for a set of ID's
+#### Get planet information
+#### Get character races
+#### Get regions
+#### Get region information
+#### Get stargate information
+#### Get star information
+#### Get station information
+#### List all public structures
+#### Get structure information
+#### Get system jumps
+#### Get system kills
+#### Get solar systems
+#### Get solar system information
+#### Get types
+#### Get type information
+
+### User Interface
+
+#### Set Autopilot Waypoint
+#### Open Contract Window
+#### Open Information Window
+#### Open Market Details
+#### Open New Mail Window
+
+### Wallet
+
+#### Get a character's wallet balance
+#### Get character wallet journal
+#### Get wallet transactions
+#### Returns a corporation's wallet balance
+#### Get corporation wallet journal
+#### Get corporation wallet transactions
+
+### Wars
+
+#### List wars
+#### Get war information
+#### List kills for a war
+
+
+
+
+
+## Exceptions
+
+## Timeouts
+
+## Languages support
+
+FIXME
+
+## Oj as JSON Parser
+
+## Formulas
+
+### Blueprint copy time
+### Training rate
+
 * [Useful links](#useful-links)
 * [Development](#development)
 * [Contributing](#contributing)
