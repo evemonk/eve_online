@@ -20,7 +20,8 @@ This gem was extracted from [EveMonk](https://evemonk.com). Source code of EveMo
 
 * [Installation](#installation)
 * [Supported ruby versions](#supported-ruby-versions)
-* [Usage](#usage)
+* [Supported rails versions](#supported-rails-versions)
+* [Usage examples](#usage-examples)
 * [Useful links](#useful-links)
 * [Development](#development)
 * [Contributing](#contributing)
@@ -29,6 +30,8 @@ This gem was extracted from [EveMonk](https://evemonk.com). Source code of EveMo
 * [License](#license)
 
 ## Installation
+
+<a name="installation"/>
 
 Add this line to your application's Gemfile:
 
@@ -50,11 +53,15 @@ gem install eve_online
 
 ## Supported ruby versions
 
+<a name="supported-ruby-versions"/>
+
 * MRI 2.6
 * MRI 2.7
 * MRI 3.0
 
 ## Supported rails versions
+
+<a name="supported-rails-versions"/>
 
 * 5.2
 * 6.0
@@ -62,6 +69,8 @@ gem install eve_online
 * Edge
 
 ## Usage examples
+
+<a name="usage-examples"/>
 
 ### Alliance
 
