@@ -260,14 +260,8 @@ This gem was extracted from [EveMonk](https://evemonk.com). Source code of EveMo
     * [List wars]()
     * [Get war information]()
     * [List kills for a war]()
-
-
-
-
-
-## Exceptions
-
-## Timeouts
+* [Exceptions](#exceptions)
+* [Timeouts](#timeouts)
 
 ## Languages support
 
