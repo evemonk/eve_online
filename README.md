@@ -262,18 +262,11 @@ This gem was extracted from [EveMonk](https://evemonk.com). Source code of EveMo
     * [List kills for a war]()
 * [Exceptions](#exceptions)
 * [Timeouts](#timeouts)
-
-## Languages support
-
-FIXME
-
-## Oj as JSON Parser
-
-## Formulas
-
-### Blueprint copy time
-### Training rate
-
+* [Languages support](#languages-support)
+* [Oj as JSON Parser](#oj-as-json-parser)
+* [Formulas](#formulas)
+  * [Blueprint copy time](#blueprint-copy-time)
+  * [Training rate](#training-rate)
 * [Useful links](#useful-links)
 * [Development](#development)
 * [Contributing](#contributing)
