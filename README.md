@@ -161,133 +161,105 @@ This gem was extracted from [EveMonk](https://evemonk.com). Source code of EveMo
     * [Get character location](#get-character-location)
     * [Get character online](#get-character-online)
     * [Get current ship](#get-current-ship)
-
-### Loyalty
-
-#### Get loyalty points
-#### List loyalty store offers
-
-### Mail
-
-#### Return mail headers
-#### Send a new mail
-#### Delete a mail
-#### Return a mail
-#### Update metadata about a mail
-#### Get mail labels and unread counts
-#### Create a mail label
-#### Delete a mail label
-#### Return mailing list subscriptions
-
-### Market
-
-#### List open orders from a character
-#### List historical orders by a character
-#### List open orders from a corporation
-#### List historical orders from a corporation
-#### List historical market statistics in a region
-#### List orders in a region
-#### List type IDs relevant to a market
-#### Get item groups
-#### Get item group information
-#### List market prices
-#### List orders in a structure
-
-### Opportunities
-
-#### Get a character's completed task
-#### Get opportunities groups
-#### Get opportunities group
-#### Get opportunities tasks
-#### Get opportunities task
-
-### Planetary Interaction
-
-#### Get colonies
-#### Get colony layout
-#### List corporation customs offices
-#### Get schematic information
-
-### Routes
-
-#### Get route
-
-### Search
-
-#### Search on a string (search for something in character stuff)
-#### Search on a string
-
-### Skills
-
-#### Get character attributes
-#### Get character's skill queue
-#### Get character skills
-
-### Sovereignty
-
-#### List sovereignty campaigns
-#### List sovereignty of systems
-#### List sovereignty structures
-
-### Status
-
-#### Retrieve the uptime and player counts
-
-### Universe
-
-#### Get ancestries
-#### Get asteroid belt information
-#### Get bloodlines
-#### Get item categories
-#### Get item category information
-#### Get constellations
-#### Get constellation information
-#### Get factions
-#### Get graphics
-#### Get graphic information
-#### Get item groups
-#### Get item group information
-#### Bulk names to IDs
-#### Get moon information
-#### Get names and categories for a set of ID's
-#### Get planet information
-#### Get character races
-#### Get regions
-#### Get region information
-#### Get stargate information
-#### Get star information
-#### Get station information
-#### List all public structures
-#### Get structure information
-#### Get system jumps
-#### Get system kills
-#### Get solar systems
-#### Get solar system information
-#### Get types
-#### Get type information
-
-### User Interface
-
-#### Set Autopilot Waypoint
-#### Open Contract Window
-#### Open Information Window
-#### Open Market Details
-#### Open New Mail Window
-
-### Wallet
-
-#### Get a character's wallet balance
-#### Get character wallet journal
-#### Get wallet transactions
-#### Returns a corporation's wallet balance
-#### Get corporation wallet journal
-#### Get corporation wallet transactions
-
-### Wars
-
-#### List wars
-#### Get war information
-#### List kills for a war
+  * [Loyalty](#loyalty)
+    * [Get loyalty points](#get-loyalty-points)
+    * [List loyalty store offers](#list-loyalty-store-offers)
+  * [Mail](#mail)
+    * [Return mail headers](#return-mail-headers)
+    * [Send a new mail](#send-a-new-mail)
+    * [Delete a mail](#delete-a-mail)
+    * [Return a mail](#return-a-mail)
+    * [Update metadata about a mail](#update-metadata-about-a-mail)
+    * [Get mail labels and unread counts](#get-mail-labels-and-unread-counts)
+    * [Create a mail label](#create-a-mail-label)
+    * [Delete a mail label](#delete-a-mail-label)
+    * [Return mailing list subscriptions](#return-mailing-list-subscriptions)
+  * [Market](#market)
+    * [List open orders from a character](#list-open-orders-from-a-character)
+    * [List historical orders by a character](#list-historical-orders-by-a-character)
+    * [List open orders from a corporation](#list-open-orders-from-a-corporation)
+    * [List historical orders from a corporation]()
+    * [List historical market statistics in a region]()
+    * [List orders in a region]()
+    * [List type IDs relevant to a market]()
+    * [Get item groups]()
+    * [Get item group information]()
+    * [List market prices]()
+    * [List orders in a structure]()
+  * [Opportunities]()
+    * [Get a character's completed task]()
+    * [Get opportunities groups]()
+    * [Get opportunities group]()
+    * [Get opportunities tasks]()
+    * [Get opportunities task]()
+  * [Planetary Interaction]()
+    * [Get colonies]()
+    * [Get colony layout]()
+    * [List corporation customs offices]()
+    * [Get schematic information]()
+  * [Routes]()
+    * [Get route]()
+  * [Search]()
+    * [Search on a string (search for something in character stuff)]()
+    * [Search on a string]()
+  * [Skills]()
+    * [Get character attributes]()
+    * [Get character's skill queue]()
+    * [Get character skills]()
+  * [Sovereignty]()
+    * [List sovereignty campaigns]()
+    * [List sovereignty of systems]()
+    * [List sovereignty structures]()
+  * [Status]()
+    * [Retrieve the uptime and player counts]()
+  * [Universe]()
+    * [Get ancestries]()
+    * [Get asteroid belt information]()
+    * [Get bloodlines]()
+    * [Get item categories]()
+    * [Get item category information]()
+    * [Get constellations]()
+    * [Get constellation information]()
+    * [Get factions]()
+    * [Get graphics]()
+    * [Get graphic information]()
+    * [Get item groups]()
+    * [Get item group information]()
+    * [Bulk names to IDs]()
+    * [Get moon information]()
+    * [Get names and categories for a set of ID's]()
+    * [Get planet information]()
+    * [Get character races]()
+    * [Get regions]()
+    * [Get region information]()
+    * [Get stargate information]()
+    * [Get star information]()
+    * [Get station information]()
+    * [List all public structures]()
+    * [Get structure information]()
+    * [Get system jumps]()
+    * [Get system kills]()
+    * [Get solar systems]()
+    * [Get solar system information]()
+    * [Get types]()
+    * [Get type information]()
+  * [User Interface]()
+    * [Set Autopilot Waypoint]()
+    * [Open Contract Window]()
+    * [Open Information Window]()
+    * [Open Market Details]()
+    * [Open New Mail Window]()
+  * [Wallet]()
+    * [Get a character's wallet balance]()
+    * [Get character wallet journal]()
+    * [Get wallet transactions]()
+    * [Returns a corporation's wallet balance]()
+    * [Get corporation wallet journal]()
+    * [Get corporation wallet transactions]()
+  * [Wars]()
+    * [List wars]()
+    * [Get war information]()
+    * [List kills for a war]()
 
 
 
