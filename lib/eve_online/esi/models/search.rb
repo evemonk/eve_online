@@ -10,7 +10,7 @@ module EveOnline
             alliance: alliance,
             character: character,
             constellation: constellation,
-            corporation: corporatoin,
+            corporation: corporation,
             faction: faction,
             inventory_type: inventory_type,
             region: region,
