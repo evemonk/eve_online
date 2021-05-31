@@ -60,7 +60,8 @@ GEM
       mixlib-config (>= 2.2.1, < 4)
       mixlib-shellout
     method_source (1.0.0)
-    mini_portile2 (2.5.1)
+    mini_portile2 (2.5.2)
+      net-ftp (~> 0.1)
     minitest (5.14.4)
     mixlib-cli (2.1.8)
     mixlib-config (3.0.9)
@@ -68,6 +69,10 @@ GEM
     mixlib-shellout (3.2.5)
       chef-utils
     multipart-post (2.1.1)
+    net-ftp (0.1.2)
+      net-protocol
+      time
+    net-protocol (0.1.0)
     nokogiri (1.11.3)
       mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
@@ -130,6 +135,7 @@ GEM
       rubocop (= 1.12.1)
       rubocop-performance (= 1.10.1)
     thor (1.1.0)
+    time (0.1.0)
     tomlrb (2.0.1)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
