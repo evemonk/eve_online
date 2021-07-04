@@ -6,57 +6,57 @@ module EveOnline
       class Search < Base
         def as_json
           {
-            agent: agent,
-            alliance: alliance,
-            character: character,
-            constellation: constellation,
-            corporation: corporation,
-            faction: faction,
-            inventory_type: inventory_type,
-            region: region,
-            solar_system: solar_system,
-            station: station
-          }.reject{ |_,v| v.blank? }
+            agent_ids: agent_ids,
+            alliance_ids: alliance_ids,
+            character_ids: character_ids,
+            constellation_ids: constellation_ids,
+            corporation_ids: corporation_ids,
+            faction_ids: faction_ids,
+            inventory_type_ids: inventory_type_ids,
+            region_ids: region_ids,
+            solar_system_ids: solar_system_ids,
+            station_ids: station_ids
+          }
         end
 
-        def agent
-          options["agent"]
+        def agent_ids
+          options.fetch("agent", [])
         end
 
-        def alliance
-          options["alliance"]
+        def alliance_ids
+          options.fetch("alliance", [])
         end
 
-        def character
-          options["character"]
+        def character_ids
+          options.fetch("character", [])
         end
 
-        def constellation
-          options["constellation"]
+        def constellation_ids
+          options.fetch("constellation", [])
         end
 
-        def corporation
-          options["corporation"]
+        def corporation_ids
+          options.fetch("corporation", [])
         end
 
-        def faction
-          options["faction"]
+        def faction_ids
+          options.fetch("faction", [])
         end
 
-        def inventory_type
-          options["inventory_type"]
+        def inventory_type_ids
+          options.fetch("inventory_type", [])
         end
 
-        def region
-          options["region"]
+        def region_ids
+          options.fetch("region", [])
         end
 
-        def solar_system
-          options["solar_system"]
+        def solar_system_ids
+          options.fetch("solar_system", [])
         end
 
-        def station
-          options["stations"]
+        def station_ids
+          options.fetch("stations", [])
         end
       end
     end
