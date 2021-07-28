@@ -17,7 +17,7 @@ GEM
       zeitwerk (~> 2.3)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
-    appraisal (2.4.0)
+    appraisal (2.4.1)
       bundler
       rake
       thor (>= 0.14.0)
