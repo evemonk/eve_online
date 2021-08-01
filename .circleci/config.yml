@@ -27,7 +27,7 @@ jobs:
       - run: bundle exec standardrb
       - run: bundle exec fasterer
       - run: bundle exec mdl README.md CHANGELOG.md
-  ruby-3.0.0:
+  ruby-3.0.2:
     docker:
       - image: circleci/ruby:3.0.2
     steps:
