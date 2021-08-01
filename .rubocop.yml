@@ -1,0 +1,11 @@
+AllCops:
+  NewCops: enable
+  SuggestExtensions: false
+
+Style/WordArray:
+  Enabled: true
+  EnforcedStyle: brackets
+
+Style/StringLiterals:
+  Enabled: true
+  EnforcedStyle: double_quotes

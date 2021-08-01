@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 appraise "activesupport_52" do
   gem "activesupport", "~> 5.2.0"
 end
