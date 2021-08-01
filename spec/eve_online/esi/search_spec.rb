@@ -80,103 +80,103 @@ describe EveOnline::ESI::Search do
     specify { expect { subject.as_json }.not_to raise_error }
   end
 
-  describe "#agent" do
+  describe "#agent_ids" do
     let(:model) { instance_double(EveOnline::ESI::Models::Search) }
 
     before { subject.instance_variable_set(:@model, model) }
 
-    before { expect(model).to receive(:agent) }
+    before { expect(model).to receive(:agent_ids) }
 
-    specify { expect { subject.agent }.not_to raise_error }
+    specify { expect { subject.agent_ids }.not_to raise_error }
   end
 
-  describe "#alliance" do
+  describe "#alliance_ids" do
     let(:model) { instance_double(EveOnline::ESI::Models::Search) }
 
     before { subject.instance_variable_set(:@model, model) }
 
-    before { expect(model).to receive(:alliance) }
+    before { expect(model).to receive(:alliance_ids) }
 
-    specify { expect { subject.alliance }.not_to raise_error }
+    specify { expect { subject.alliance_ids }.not_to raise_error }
   end
 
-  describe "#character" do
+  describe "#character_ids" do
     let(:model) { instance_double(EveOnline::ESI::Models::Search) }
 
     before { subject.instance_variable_set(:@model, model) }
 
-    before { expect(model).to receive(:character) }
+    before { expect(model).to receive(:character_ids) }
 
-    specify { expect { subject.character }.not_to raise_error }
+    specify { expect { subject.character_ids }.not_to raise_error }
   end
 
-  describe "#constellation" do
+  describe "#constellation_ids" do
     let(:model) { instance_double(EveOnline::ESI::Models::Search) }
 
     before { subject.instance_variable_set(:@model, model) }
 
-    before { expect(model).to receive(:constellation) }
+    before { expect(model).to receive(:constellation_ids) }
 
-    specify { expect { subject.constellation }.not_to raise_error }
+    specify { expect { subject.constellation_ids }.not_to raise_error }
   end
 
-  describe "#corporation" do
+  describe "#corporation_ids" do
     let(:model) { instance_double(EveOnline::ESI::Models::Search) }
 
     before { subject.instance_variable_set(:@model, model) }
 
-    before { expect(model).to receive(:corporation) }
+    before { expect(model).to receive(:corporation_ids) }
 
-    specify { expect { subject.corporation }.not_to raise_error }
+    specify { expect { subject.corporation_ids }.not_to raise_error }
   end
 
-  describe "#faction" do
+  describe "#faction_ids" do
     let(:model) { instance_double(EveOnline::ESI::Models::Search) }
 
     before { subject.instance_variable_set(:@model, model) }
 
-    before { expect(model).to receive(:faction) }
+    before { expect(model).to receive(:faction_ids) }
 
-    specify { expect { subject.faction }.not_to raise_error }
+    specify { expect { subject.faction_ids }.not_to raise_error }
   end
 
-  describe "#inventory_type" do
+  describe "#inventory_type_ids" do
     let(:model) { instance_double(EveOnline::ESI::Models::Search) }
 
     before { subject.instance_variable_set(:@model, model) }
 
-    before { expect(model).to receive(:inventory_type) }
+    before { expect(model).to receive(:inventory_type_ids) }
 
-    specify { expect { subject.inventory_type }.not_to raise_error }
+    specify { expect { subject.inventory_type_ids }.not_to raise_error }
   end
 
-  describe "#region" do
+  describe "#region_ids" do
     let(:model) { instance_double(EveOnline::ESI::Models::Search) }
 
     before { subject.instance_variable_set(:@model, model) }
 
-    before { expect(model).to receive(:region) }
+    before { expect(model).to receive(:region_ids) }
 
-    specify { expect { subject.region }.not_to raise_error }
+    specify { expect { subject.region_ids }.not_to raise_error }
   end
 
-  describe "#solar_system" do
+  describe "#solar_system_ids" do
     let(:model) { instance_double(EveOnline::ESI::Models::Search) }
 
     before { subject.instance_variable_set(:@model, model) }
 
-    before { expect(model).to receive(:solar_system) }
+    before { expect(model).to receive(:solar_system_ids) }
 
-    specify { expect { subject.solar_system }.not_to raise_error }
+    specify { expect { subject.solar_system_ids }.not_to raise_error }
   end
 
-  describe "#station" do
+  describe "#station_ids" do
     let(:model) { instance_double(EveOnline::ESI::Models::Search) }
 
     before { subject.instance_variable_set(:@model, model) }
 
-    before { expect(model).to receive(:station) }
+    before { expect(model).to receive(:station_ids) }
 
-    specify { expect { subject.station }.not_to raise_error }
+    specify { expect { subject.station_ids }.not_to raise_error }
   end
 end
