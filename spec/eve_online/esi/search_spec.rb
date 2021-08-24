@@ -56,35 +56,35 @@ describe EveOnline::ESI::Search do
     end
   end
 
-  # describe "#model" do
-  #   context "when @model set" do
-  #     let(:model) { instance_double(EveOnline::ESI::Models::Search) }
-  #
-  #     before { subject.instance_variable_set(:@model, model) }
-  #
-  #     specify { expect(subject.model).to eq(model) }
-  #   end
-  #
-  #   context "when @model not set" do
-  #     let(:response) { double }
-  #
-  #     before { expect(subject).to receive(:response).and_return(response) }
-  #
-  #     let(:model) { instance_double(EveOnline::ESI::Models::Search) }
-  #
-  #     before do
-  #       #
-  #       # EveOnline::ESI::Models::Search.new(response) # => model
-  #       #
-  #       expect(EveOnline::ESI::Models::Search).to receive(:new).with(response).and_return(model)
-  #     end
-  #
-  #     specify { expect { subject.model }.not_to raise_error }
-  #
-  #     specify { expect { subject.model }.to change { subject.instance_variable_get(:@model) }.from(nil).to(model) }
-  #   end
-  # end
-  #
+  describe "#model" do
+    context "when @model set" do
+      let(:model) { instance_double(EveOnline::ESI::Models::Search) }
+
+      before { subject.instance_variable_set(:@model, model) }
+
+      specify { expect(subject.model).to eq(model) }
+    end
+
+    context "when @model not set" do
+      let(:response) { double }
+
+      before { expect(subject).to receive(:response).and_return(response) }
+
+      let(:model) { instance_double(EveOnline::ESI::Models::Search) }
+
+      before do
+        #
+        # EveOnline::ESI::Models::Search.new(response) # => model
+        #
+        expect(EveOnline::ESI::Models::Search).to receive(:new).with(response).and_return(model)
+      end
+
+      specify { expect { subject.model }.not_to raise_error }
+
+      specify { expect { subject.model }.to change { subject.instance_variable_get(:@model) }.from(nil).to(model) }
+    end
+  end
+
   # describe "#as_json" do
   #   let(:model) { instance_double(EveOnline::ESI::Models::Search) }
   #
@@ -194,4 +194,8 @@ describe EveOnline::ESI::Search do
   #
   #   specify { expect { subject.station_ids }.not_to raise_error }
   # end
+
+  describe "#scope" do
+    specify { expect(subject.scope).to eq(nil) }
+  end
 end

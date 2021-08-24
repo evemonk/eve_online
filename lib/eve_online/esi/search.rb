@@ -35,14 +35,14 @@ module EveOnline
       # def_delegators :model, :as_json, :agent_ids, :alliance_ids,
       #   :character_ids, :constellation_ids, :corporation_ids, :faction_ids,
       #   :inventory_type_ids, :region_ids, :solar_system_ids, :station_ids
-      #
-      # def model
-      #   @model ||= Models::Search.new(response)
-      # end
-      #
-      # def scope
-      # end
-      #
+
+      def model
+        @model ||= Models::Search.new(response)
+      end
+
+      def scope
+      end
+
       # def additional_query_params
       #   [:search, :categories, :strict]
       # end
