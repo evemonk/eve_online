@@ -3,7 +3,7 @@
 require "spec_helper"
 
 describe EveOnline::ESI::Search do
-  let(:options) { {search: "Jita"} }
+  let(:options) { {search: "Jita", strict: false} }
 
   subject { described_class.new(options) }
 
@@ -40,7 +40,9 @@ describe EveOnline::ESI::Search do
 
       its(:search) { should eq("Jita") }
 
-      its(:categories) { should eq(described_class::DEFAULT_CATEGORIES) }
+      its(:raw_categories) { should eq(described_class::DEFAULT_CATEGORIES) }
+
+      its(:categories) { should eq("agent,alliance,character,constellation,corporation,faction,inventory_type,region,solar_system,station") }
     end
 
     context "with options" do
@@ -52,7 +54,15 @@ describe EveOnline::ESI::Search do
 
       its(:search) { should eq("Jita") }
 
-      its(:categories) { should eq(["solar_system", "station"]) }
+      its(:raw_categories) { should eq(["solar_system", "station"]) }
+
+      its(:categories) { should eq("solar_system,station") }
+    end
+
+    context "with wrong category" do
+      let(:options) { {search: "Jita", categories: ["anything"]} }
+
+      specify { expect { subject }.to raise_error(ArgumentError) }
     end
   end
 
@@ -198,4 +208,30 @@ describe EveOnline::ESI::Search do
   describe "#scope" do
     specify { expect(subject.scope).to eq(nil) }
   end
+
+  # describe "#additional_query_params" do
+  #   specify { expect(subject.additional_query_params).to eq([:search, :categories, :strict]) }
+  # end
+  #
+  # describe "#path" do
+  #   specify do
+  #     expect(subject.path).to eq("v2/search/?categories=agent,alliance&categories%5B%5D...ory_type&categories%5B%5D=region&categories%5B%5D=solar_system&categories%5B%5D=station&search=Jita")
+  #   end
+  # end
+  #
+  # describe "#query" do
+  #   specify do
+  #     expect(subject.query).to eq(
+  #       search: "Jita",
+  #       categories: ["agent", "alliance", "character", "constellation", "corporation", "faction", "inventory_type", "region", "solar_system", "station"],
+  #       strict: false
+  #     )
+  #   end
+  # end
+  #
+  # describe "#url" do
+  #   specify do
+  #     expect(subject.url).to eq("https://esi.evetech.net/v1/contracts/public/10000043/?page=1")
+  #   end
+  # end
 end
