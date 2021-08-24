@@ -92,11 +92,11 @@ module EveOnline
     autoload :MarketGroup, "eve_online/esi/market_group"
     autoload :MarketPrices, "eve_online/esi/market_prices"
 
+    autoload :Search, "eve_online/esi/search"
+
     autoload :CharacterAttributes, "eve_online/esi/character_attributes"
     autoload :CharacterSkillQueue, "eve_online/esi/character_skill_queue"
     autoload :CharacterSkills, "eve_online/esi/character_skills"
-
-    autoload :Search, "eve_online/esi/search"
 
     autoload :ServerStatus, "eve_online/esi/server_status"
 
