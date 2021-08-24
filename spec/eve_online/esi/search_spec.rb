@@ -209,10 +209,10 @@ describe EveOnline::ESI::Search do
     specify { expect(subject.scope).to eq(nil) }
   end
 
-  # describe "#additional_query_params" do
-  #   specify { expect(subject.additional_query_params).to eq([:search, :categories, :strict]) }
-  # end
-  #
+  describe "#additional_query_params" do
+    specify { expect(subject.additional_query_params).to eq([:search, :categories, :strict]) }
+  end
+
   # describe "#path" do
   #   specify do
   #     expect(subject.path).to eq("v2/search/?categories=agent,alliance&categories%5B%5D...ory_type&categories%5B%5D=region&categories%5B%5D=solar_system&categories%5B%5D=station&search=Jita")

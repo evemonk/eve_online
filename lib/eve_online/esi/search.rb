@@ -49,10 +49,10 @@ module EveOnline
       def scope
       end
 
-      # def additional_query_params
-      #   [:search, :categories, :strict]
-      # end
-      #
+      def additional_query_params
+        [:search, :categories, :strict]
+      end
+
       # def path
       #   format(API_PATH, search: search, categories: categories, strict: strict)
       # end
