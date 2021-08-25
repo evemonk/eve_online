@@ -22,10 +22,10 @@ describe "Return a mail" do
 
     specify do
       expect(subject.as_json).to eq(body: "<font size=\"12\" color=\"#bfffffff\">moving</font>",
-                                    from_id: 1_208_274_826,
-                                    read: true,
-                                    subject: "moving",
-                                    timestamp: "2019-06-10 07:50:00.000000000 +0000")
+        from_id: 1_208_274_826,
+        read: true,
+        subject: "moving",
+        timestamp: "2019-06-10 07:50:00.000000000 +0000")
     end
 
     specify { expect(subject.label_ids).to eq([4]) }
@@ -34,7 +34,7 @@ describe "Return a mail" do
 
     specify do
       expect(subject.recipients.first.as_json).to eq(recipient_id: 98_134_807,
-                                                     recipient_type: "corporation")
+        recipient_type: "corporation")
     end
 
     specify { expect(subject.etag).to eq("90dba7f7a6e60bfe8527b9f5112b9ca588c8f57d01415717be525a91") }

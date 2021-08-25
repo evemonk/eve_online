@@ -18,7 +18,7 @@ describe "Get system jumps" do
 
     specify do
       expect(subject.system_jumps.first.as_json).to eq(ship_jumps: 65,
-                                                       system_id: 30_002_671)
+        system_id: 30_002_671)
     end
 
     specify { expect(subject.etag).to eq("40d7cfcdb494669846bedf8adadc47002986d8f5529508e8d5f8f552") }

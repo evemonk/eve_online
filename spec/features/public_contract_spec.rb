@@ -24,14 +24,14 @@ describe "Get public contract items" do
 
     specify do
       expect(subject.items.first.as_json).to eq(is_blueprint_copy: true,
-                                                is_included: true,
-                                                item_id: 1_029_552_558_074,
-                                                material_efficiency: 10,
-                                                quantity: 1,
-                                                record_id: 3_210_378_611,
-                                                runs: 400,
-                                                time_efficiency: 20,
-                                                type_id: 29_040)
+        is_included: true,
+        item_id: 1_029_552_558_074,
+        material_efficiency: 10,
+        quantity: 1,
+        record_id: 3_210_378_611,
+        runs: 400,
+        time_efficiency: 20,
+        type_id: 29_040)
     end
 
     specify { expect(subject.etag).to eq("d458c3f56c114882a9ecfe1aaf173837310b15b6e7cef86a019e700f") }

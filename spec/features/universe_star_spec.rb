@@ -18,13 +18,13 @@ describe "Get star information" do
 
     specify do
       expect(subject.as_json).to eq(age: 14_262_808_228,
-                                    luminosity: 0.01575000025331974,
-                                    name: "Tanoo - Star",
-                                    radius: 126_700_000,
-                                    solar_system_id: 30_000_001,
-                                    spectral_class: "K2 V",
-                                    temperature: 4567,
-                                    type_id: 45_041)
+        luminosity: 0.01575000025331974,
+        name: "Tanoo - Star",
+        radius: 126_700_000,
+        solar_system_id: 30_000_001,
+        spectral_class: "K2 V",
+        temperature: 4567,
+        type_id: 45_041)
     end
 
     specify { expect(subject.etag).to eq("2e28835f91024608719726b655591d531125a023e122859d174923d5") }

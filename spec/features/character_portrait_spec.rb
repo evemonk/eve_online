@@ -22,9 +22,9 @@ describe "Get character portraits" do
 
     specify do
       expect(subject.as_json).to eq(huge: "https://images.evetech.net/Character/1337512245_512.jpg",
-                                    large: "https://images.evetech.net/Character/1337512245_256.jpg",
-                                    medium: "https://images.evetech.net/Character/1337512245_128.jpg",
-                                    small: "https://images.evetech.net/Character/1337512245_64.jpg")
+        large: "https://images.evetech.net/Character/1337512245_256.jpg",
+        medium: "https://images.evetech.net/Character/1337512245_128.jpg",
+        small: "https://images.evetech.net/Character/1337512245_64.jpg")
     end
 
     specify { expect(subject.etag).to eq("c9ee2790a39f260df1d2bc8f63e0794abc6d22dfd725682f3d48ca54") }

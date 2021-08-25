@@ -24,7 +24,7 @@ describe "List kills for a war" do
 
     specify do
       expect(subject.killmails.first.as_json).to eq(killmail_hash: "07f7ef1d7f6090e78d8e85b4a98e680f67b5e9d5",
-                                                    killmail_id: 72_410_059)
+        killmail_id: 72_410_059)
     end
 
     specify { expect(subject.etag).to eq("12ee36a10ee0dbfb7f6691e1b27c8400fdca645f15e70ebc0a94b7ae") }

@@ -18,9 +18,9 @@ describe "Get item group information" do
 
     specify do
       expect(subject.as_json).to eq(description: "Implants intended for Subcervical Processing Slot 1.",
-                                    market_group_id: 618,
-                                    name: "Implant Slot 01",
-                                    parent_group_id: 532)
+        market_group_id: 618,
+        name: "Implant Slot 01",
+        parent_group_id: 532)
     end
 
     specify { expect(subject.type_ids.size).to eq(48) }

@@ -22,18 +22,18 @@ describe "List loyalty store offers" do
 
     specify do
       expect(subject.offers.first.as_json).to eq(ak_cost: nil,
-                                                 isk_cost: 2_400_000,
-                                                 lp_cost: 2_400,
-                                                 offer_id: 3_584,
-                                                 quantity: 5_000,
-                                                 type_id: 23_047)
+        isk_cost: 2_400_000,
+        lp_cost: 2_400,
+        offer_id: 3_584,
+        quantity: 5_000,
+        type_id: 23_047)
     end
 
     specify { expect(subject.offers.first.offer_required_items.size).to eq(1) }
 
     specify do
       expect(subject.offers.first.offer_required_items.first.as_json).to eq(quantity: 5_000,
-                                                                            type_id: 234)
+        type_id: 234)
     end
 
     specify { expect(subject.etag).to eq("89211f42fde090e4d22621e9b97d7604ab87af95b3b6ffed7fe81bc0") }

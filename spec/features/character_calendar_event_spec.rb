@@ -18,15 +18,15 @@ describe "Get character calendar event information" do
 
     specify do
       expect(subject.as_json).to eq(date: "2019-08-08T05:00:00Z",
-                                    duration: 0,
-                                    event_id: 1_982_004,
-                                    importance: 1,
-                                    owner_id: 91_473_836,
-                                    owner_name: "Devas Weddo",
-                                    owner_type: "character",
-                                    event_response: "not_responded",
-                                    text: "X marks the spot",
-                                    title: "Important personal event")
+        duration: 0,
+        event_id: 1_982_004,
+        importance: 1,
+        owner_id: 91_473_836,
+        owner_name: "Devas Weddo",
+        owner_type: "character",
+        event_response: "not_responded",
+        text: "X marks the spot",
+        title: "Important personal event")
     end
 
     specify { expect(subject.etag).to eq("551811618f893135bfda67bc87f2a2215a6d648b2374bac6194744e4") }

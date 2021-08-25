@@ -18,9 +18,9 @@ describe "Get item group information" do
 
     specify do
       expect(subject.as_json).to eq(category_id: 25,
-                                    group_id: 450,
-                                    name: "Arkonor",
-                                    published: true)
+        group_id: 450,
+        name: "Arkonor",
+        published: true)
     end
 
     specify { expect(subject.type_ids.size).to eq(10) }

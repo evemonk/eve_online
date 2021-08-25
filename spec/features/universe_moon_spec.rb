@@ -18,14 +18,14 @@ describe "Get moon information" do
 
     specify do
       expect(subject.as_json).to eq(moon_id: 40_000_004,
-                                    name: "Tanoo I - Moon 1",
-                                    system_id: 30_000_001)
+        name: "Tanoo I - Moon 1",
+        system_id: 30_000_001)
     end
 
     specify do
       expect(subject.position.as_json).to eq(x: 162_088_094_286.0,
-                                             y: 21_314_854_783.0,
-                                             z: -73_598_621_491.0)
+        y: 21_314_854_783.0,
+        z: -73_598_621_491.0)
     end
 
     specify { expect(subject.etag).to eq("e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b") }

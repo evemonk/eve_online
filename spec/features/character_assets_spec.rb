@@ -30,13 +30,13 @@ describe "Get character assets" do
 
     specify do
       expect(subject.assets.first.as_json).to eq(is_blueprint_copy: nil,
-                                                 is_singleton: true,
-                                                 item_id: 1_007_277_900_730,
-                                                 location_flag: "RigSlot1",
-                                                 location_id: 1_007_277_753_840,
-                                                 location_type: "item",
-                                                 quantity: 1,
-                                                 type_id: 31800)
+        is_singleton: true,
+        item_id: 1_007_277_900_730,
+        location_flag: "RigSlot1",
+        location_id: 1_007_277_753_840,
+        location_type: "item",
+        quantity: 1,
+        type_id: 31800)
     end
 
     specify { expect(subject.etag).to eq("842970bfbe876f586d5e1d05fb5bebef9cb8052371633c0b88884bf7") }

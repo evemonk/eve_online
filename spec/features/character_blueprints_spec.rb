@@ -29,13 +29,13 @@ describe "Get character blueprints" do
 
   specify do
     expect(subject.blueprints.first.as_json).to eq(item_id: 716_338_097,
-                                                   location_flag: "Hangar",
-                                                   location_id: 1_027_847_409_779,
-                                                   material_efficiency: 10,
-                                                   quantity: -2,
-                                                   runs: 300,
-                                                   time_efficiency: 0,
-                                                   type_id: 1010)
+      location_flag: "Hangar",
+      location_id: 1_027_847_409_779,
+      material_efficiency: 10,
+      quantity: -2,
+      runs: 300,
+      time_efficiency: 0,
+      type_id: 1010)
   end
 
   specify { expect(subject.error_limit_remain).to eq(100) }

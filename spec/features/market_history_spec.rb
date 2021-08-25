@@ -20,11 +20,11 @@ describe "List historical market statistics in a region" do
 
     specify do
       expect(subject.history.first.as_json).to eq(average: 745_052_179.61,
-                                                  date: "2017-12-01",
-                                                  highest: 758_999_988.59,
-                                                  lowest: 710_123_189.93,
-                                                  order_count: 37,
-                                                  volume: 37)
+        date: "2017-12-01",
+        highest: 758_999_988.59,
+        lowest: 710_123_189.93,
+        order_count: 37,
+        volume: 37)
     end
 
     specify { expect(subject.etag).to eq("01636947a53db63a0369aab78bbc98bae94a49cd6aa3950c29d588ae") }

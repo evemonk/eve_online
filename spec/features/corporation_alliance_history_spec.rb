@@ -20,9 +20,9 @@ describe "Get alliance history" do
 
     specify do
       expect(subject.entries.first.as_json).to eq(alliance_id: 99_005_874,
-                                                  is_deleted: nil,
-                                                  record_id: 1_254_640,
-                                                  start_date: "2019-06-03T00:17:00Z")
+        is_deleted: nil,
+        record_id: 1_254_640,
+        start_date: "2019-06-03T00:17:00Z")
     end
 
     specify { expect(subject.etag).to eq("9a949294cfa5fcef345ea8d89a574defa09be39845b9b97f1fdddd41") }

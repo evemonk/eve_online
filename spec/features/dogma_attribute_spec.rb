@@ -18,15 +18,15 @@ describe "Get attribute information" do
 
     specify do
       expect(subject.as_json).to eq(attribute_id: 2,
-                                    default_value: 0.0,
-                                    description: "Boolean to store status of online effect",
-                                    display_name: "",
-                                    high_is_good: true,
-                                    icon_id: nil,
-                                    name: "isOnline",
-                                    published: nil,
-                                    stackable: true,
-                                    unit_id: nil)
+        default_value: 0.0,
+        description: "Boolean to store status of online effect",
+        display_name: "",
+        high_is_good: true,
+        icon_id: nil,
+        name: "isOnline",
+        published: nil,
+        stackable: true,
+        unit_id: nil)
     end
 
     specify { expect(subject.etag).to eq("acc1e563574a55f79ebe4a2a99845dd6c28f4e412e11fd084b8485fd") }

@@ -18,19 +18,19 @@ describe "Get corporation information" do
 
     specify do
       expect(subject.as_json).to eq(alliance_id: 99_007_916,
-                                    ceo_id: 1_721_864_142,
-                                    corporation_url: "http://",
-                                    creator_id: 1_721_864_142,
-                                    date_founded: "2016-07-11 14:22:17.000000000 +0000",
-                                    description: "",
-                                    faction_id: nil,
-                                    home_station_id: 60_011_893,
-                                    member_count: 166,
-                                    name: "Bullshit Bingo Club",
-                                    shares: 1000,
-                                    tax_rate: 0.1,
-                                    ticker: "BUBIC",
-                                    war_eligible: true)
+        ceo_id: 1_721_864_142,
+        corporation_url: "http://",
+        creator_id: 1_721_864_142,
+        date_founded: "2016-07-11 14:22:17.000000000 +0000",
+        description: "",
+        faction_id: nil,
+        home_station_id: 60_011_893,
+        member_count: 166,
+        name: "Bullshit Bingo Club",
+        shares: 1000,
+        tax_rate: 0.1,
+        ticker: "BUBIC",
+        war_eligible: true)
     end
 
     specify { expect(subject.etag).to eq("046430260be73e5d7ad3a9251954310bd547498eeb38f99e8d305796") }
