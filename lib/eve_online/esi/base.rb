@@ -145,7 +145,7 @@ module EveOnline
           hash[param] = public_send(param)
         end
 
-        hash.reject { |_, v| v.blank? }
+        hash.reject { |_, v| v.nil? || v == "" }
       end
 
       def resource
