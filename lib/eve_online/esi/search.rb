@@ -5,7 +5,7 @@ require "forwardable"
 module EveOnline
   module ESI
     class Search < Base
-      # extend Forwardable
+      extend Forwardable
 
       API_PATH = "/v2/search/"
 
@@ -38,9 +38,9 @@ module EveOnline
         @categories = @raw_categories.join(",")
       end
 
-      # def_delegators :model, :as_json, :agent_ids, :alliance_ids,
-      #   :character_ids, :constellation_ids, :corporation_ids, :faction_ids,
-      #   :inventory_type_ids, :region_ids, :solar_system_ids, :station_ids
+      def_delegators :model, :as_json, :agent_ids, :alliance_ids,
+        :character_ids, :constellation_ids, :corporation_ids, :faction_ids,
+        :inventory_type_ids, :region_ids, :solar_system_ids, :station_ids
 
       def model
         @model ||= Models::Search.new(response)
@@ -53,9 +53,9 @@ module EveOnline
         [:search, :categories, :strict]
       end
 
-      # def path
-      #   format(API_PATH, search: search, categories: categories, strict: strict)
-      # end
+      def path
+        format(API_PATH, search: search, categories: categories, strict: strict)
+      end
     end
   end
 end

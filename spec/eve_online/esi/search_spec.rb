@@ -95,115 +95,115 @@ describe EveOnline::ESI::Search do
     end
   end
 
-  # describe "#as_json" do
-  #   let(:model) { instance_double(EveOnline::ESI::Models::Search) }
-  #
-  #   before { subject.instance_variable_set(:@model, model) }
-  #
-  #   before { expect(model).to receive(:as_json) }
-  #
-  #   specify { expect { subject.as_json }.not_to raise_error }
-  # end
-  #
-  # describe "#agent_ids" do
-  #   let(:model) { instance_double(EveOnline::ESI::Models::Search) }
-  #
-  #   before { subject.instance_variable_set(:@model, model) }
-  #
-  #   before { expect(model).to receive(:agent_ids) }
-  #
-  #   specify { expect { subject.agent_ids }.not_to raise_error }
-  # end
-  #
-  # describe "#alliance_ids" do
-  #   let(:model) { instance_double(EveOnline::ESI::Models::Search) }
-  #
-  #   before { subject.instance_variable_set(:@model, model) }
-  #
-  #   before { expect(model).to receive(:alliance_ids) }
-  #
-  #   specify { expect { subject.alliance_ids }.not_to raise_error }
-  # end
-  #
-  # describe "#character_ids" do
-  #   let(:model) { instance_double(EveOnline::ESI::Models::Search) }
-  #
-  #   before { subject.instance_variable_set(:@model, model) }
-  #
-  #   before { expect(model).to receive(:character_ids) }
-  #
-  #   specify { expect { subject.character_ids }.not_to raise_error }
-  # end
-  #
-  # describe "#constellation_ids" do
-  #   let(:model) { instance_double(EveOnline::ESI::Models::Search) }
-  #
-  #   before { subject.instance_variable_set(:@model, model) }
-  #
-  #   before { expect(model).to receive(:constellation_ids) }
-  #
-  #   specify { expect { subject.constellation_ids }.not_to raise_error }
-  # end
-  #
-  # describe "#corporation_ids" do
-  #   let(:model) { instance_double(EveOnline::ESI::Models::Search) }
-  #
-  #   before { subject.instance_variable_set(:@model, model) }
-  #
-  #   before { expect(model).to receive(:corporation_ids) }
-  #
-  #   specify { expect { subject.corporation_ids }.not_to raise_error }
-  # end
-  #
-  # describe "#faction_ids" do
-  #   let(:model) { instance_double(EveOnline::ESI::Models::Search) }
-  #
-  #   before { subject.instance_variable_set(:@model, model) }
-  #
-  #   before { expect(model).to receive(:faction_ids) }
-  #
-  #   specify { expect { subject.faction_ids }.not_to raise_error }
-  # end
-  #
-  # describe "#inventory_type_ids" do
-  #   let(:model) { instance_double(EveOnline::ESI::Models::Search) }
-  #
-  #   before { subject.instance_variable_set(:@model, model) }
-  #
-  #   before { expect(model).to receive(:inventory_type_ids) }
-  #
-  #   specify { expect { subject.inventory_type_ids }.not_to raise_error }
-  # end
-  #
-  # describe "#region_ids" do
-  #   let(:model) { instance_double(EveOnline::ESI::Models::Search) }
-  #
-  #   before { subject.instance_variable_set(:@model, model) }
-  #
-  #   before { expect(model).to receive(:region_ids) }
-  #
-  #   specify { expect { subject.region_ids }.not_to raise_error }
-  # end
-  #
-  # describe "#solar_system_ids" do
-  #   let(:model) { instance_double(EveOnline::ESI::Models::Search) }
-  #
-  #   before { subject.instance_variable_set(:@model, model) }
-  #
-  #   before { expect(model).to receive(:solar_system_ids) }
-  #
-  #   specify { expect { subject.solar_system_ids }.not_to raise_error }
-  # end
-  #
-  # describe "#station_ids" do
-  #   let(:model) { instance_double(EveOnline::ESI::Models::Search) }
-  #
-  #   before { subject.instance_variable_set(:@model, model) }
-  #
-  #   before { expect(model).to receive(:station_ids) }
-  #
-  #   specify { expect { subject.station_ids }.not_to raise_error }
-  # end
+  describe "#as_json" do
+    let(:model) { instance_double(EveOnline::ESI::Models::Search) }
+
+    before { subject.instance_variable_set(:@model, model) }
+
+    before { expect(model).to receive(:as_json) }
+
+    specify { expect { subject.as_json }.not_to raise_error }
+  end
+
+  describe "#agent_ids" do
+    let(:model) { instance_double(EveOnline::ESI::Models::Search) }
+
+    before { subject.instance_variable_set(:@model, model) }
+
+    before { expect(model).to receive(:agent_ids) }
+
+    specify { expect { subject.agent_ids }.not_to raise_error }
+  end
+
+  describe "#alliance_ids" do
+    let(:model) { instance_double(EveOnline::ESI::Models::Search) }
+
+    before { subject.instance_variable_set(:@model, model) }
+
+    before { expect(model).to receive(:alliance_ids) }
+
+    specify { expect { subject.alliance_ids }.not_to raise_error }
+  end
+
+  describe "#character_ids" do
+    let(:model) { instance_double(EveOnline::ESI::Models::Search) }
+
+    before { subject.instance_variable_set(:@model, model) }
+
+    before { expect(model).to receive(:character_ids) }
+
+    specify { expect { subject.character_ids }.not_to raise_error }
+  end
+
+  describe "#constellation_ids" do
+    let(:model) { instance_double(EveOnline::ESI::Models::Search) }
+
+    before { subject.instance_variable_set(:@model, model) }
+
+    before { expect(model).to receive(:constellation_ids) }
+
+    specify { expect { subject.constellation_ids }.not_to raise_error }
+  end
+
+  describe "#corporation_ids" do
+    let(:model) { instance_double(EveOnline::ESI::Models::Search) }
+
+    before { subject.instance_variable_set(:@model, model) }
+
+    before { expect(model).to receive(:corporation_ids) }
+
+    specify { expect { subject.corporation_ids }.not_to raise_error }
+  end
+
+  describe "#faction_ids" do
+    let(:model) { instance_double(EveOnline::ESI::Models::Search) }
+
+    before { subject.instance_variable_set(:@model, model) }
+
+    before { expect(model).to receive(:faction_ids) }
+
+    specify { expect { subject.faction_ids }.not_to raise_error }
+  end
+
+  describe "#inventory_type_ids" do
+    let(:model) { instance_double(EveOnline::ESI::Models::Search) }
+
+    before { subject.instance_variable_set(:@model, model) }
+
+    before { expect(model).to receive(:inventory_type_ids) }
+
+    specify { expect { subject.inventory_type_ids }.not_to raise_error }
+  end
+
+  describe "#region_ids" do
+    let(:model) { instance_double(EveOnline::ESI::Models::Search) }
+
+    before { subject.instance_variable_set(:@model, model) }
+
+    before { expect(model).to receive(:region_ids) }
+
+    specify { expect { subject.region_ids }.not_to raise_error }
+  end
+
+  describe "#solar_system_ids" do
+    let(:model) { instance_double(EveOnline::ESI::Models::Search) }
+
+    before { subject.instance_variable_set(:@model, model) }
+
+    before { expect(model).to receive(:solar_system_ids) }
+
+    specify { expect { subject.solar_system_ids }.not_to raise_error }
+  end
+
+  describe "#station_ids" do
+    let(:model) { instance_double(EveOnline::ESI::Models::Search) }
+
+    before { subject.instance_variable_set(:@model, model) }
+
+    before { expect(model).to receive(:station_ids) }
+
+    specify { expect { subject.station_ids }.not_to raise_error }
+  end
 
   describe "#scope" do
     specify { expect(subject.scope).to eq(nil) }
@@ -213,25 +213,25 @@ describe EveOnline::ESI::Search do
     specify { expect(subject.additional_query_params).to eq([:search, :categories, :strict]) }
   end
 
-  # describe "#path" do
-  #   specify do
-  #     expect(subject.path).to eq("v2/search/?categories=agent,alliance&categories%5B%5D...ory_type&categories%5B%5D=region&categories%5B%5D=solar_system&categories%5B%5D=station&search=Jita")
-  #   end
-  # end
-  #
-  # describe "#query" do
-  #   specify do
-  #     expect(subject.query).to eq(
-  #       search: "Jita",
-  #       categories: ["agent", "alliance", "character", "constellation", "corporation", "faction", "inventory_type", "region", "solar_system", "station"],
-  #       strict: false
-  #     )
-  #   end
-  # end
-  #
-  # describe "#url" do
-  #   specify do
-  #     expect(subject.url).to eq("https://esi.evetech.net/v1/contracts/public/10000043/?page=1")
-  #   end
-  # end
+  describe "#path" do
+    specify do
+      expect(subject.path).to eq("/v2/search/")
+    end
+  end
+
+  describe "#query" do
+    specify do
+      expect(subject.query).to eq(
+        search: "Jita",
+        categories: "agent,alliance,character,constellation,corporation,faction,inventory_type,region,solar_system,station",
+        strict: false
+      )
+    end
+  end
+
+  describe "#url" do
+    specify do
+      expect(subject.url).to eq("https://esi.evetech.net/v2/search/?categories=agent%2Calliance%2Ccharacter%2Cconstellation%2Ccorporation%2Cfaction%2Cinventory_type%2Cregion%2Csolar_system%2Cstation&search=Jita&strict=false")
+    end
+  end
 end
