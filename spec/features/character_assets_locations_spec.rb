@@ -29,8 +29,8 @@ describe "Get character asset locations" do
 
   specify do
     expect(subject.assets_locations.first.position.as_json).to eq(x: -928_621_543_221.3319,
-                                                                  y: 297_645_715_142.40234,
-                                                                  z: -971_212_198_300.4812)
+      y: 297_645_715_142.40234,
+      z: -971_212_198_300.4812)
   end
 
   specify { expect { subject.etag }.to raise_error(NotImplementedError) }

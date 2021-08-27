@@ -113,8 +113,6 @@ module EveOnline
               f.use middleware[:class]
             end
           end
-          # f.use Faraday::Response::Logger
-          # f.use FaradayMiddleware::FollowRedirects, limit: 5
           f.response :json, content_type: "application/json"
           f.adapter adapter
         end
@@ -147,7 +145,7 @@ module EveOnline
           hash[param] = public_send(param)
         end
 
-        hash.reject { |_, v| v.blank? }
+        hash.reject { |_, v| v.nil? || v == "" }
       end
 
       def resource

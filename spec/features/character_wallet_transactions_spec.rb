@@ -26,15 +26,15 @@ describe "Get wallet transactions" do
 
       specify do
         expect(subject.wallet_transactions.first.as_json).to eq(client_id: 2116253203,
-                                                                date: "2020-03-08T11:49:16Z",
-                                                                is_buy: true,
-                                                                is_personal: true,
-                                                                journal_ref_id: 17740411474,
-                                                                location_id: 60008494,
-                                                                quantity: 1,
-                                                                transaction_id: 5296927639,
-                                                                type_id: 3538,
-                                                                unit_price: 99887.79)
+          date: "2020-03-08T11:49:16Z",
+          is_buy: true,
+          is_personal: true,
+          journal_ref_id: 17740411474,
+          location_id: 60008494,
+          quantity: 1,
+          transaction_id: 5296927639,
+          type_id: 3538,
+          unit_price: 99887.79)
       end
 
       specify { expect(subject.etag).to eq("55d0fbe8b408d6a76dab70c0a709d4e7c5dd58d4e0b7bd785549e268") }

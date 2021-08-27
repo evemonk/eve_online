@@ -4,7 +4,7 @@
 [![Gem Version](https://badge.fury.io/rb/eve_online.svg)](https://badge.fury.io/rb/eve_online)
 [![Gem Downloads](https://img.shields.io/gem/dt/eve_online.svg)](https://rubygems.org/gems/eve_online)
 [![Known Vulnerabilities](https://snyk.io/test/github/evemonk/eve_online/badge.svg)](https://snyk.io/test/github/evemonk/eve_online)
-[![security](https://hakiri.io/github/evemonk/eve_online/master.svg)](https://hakiri.io/github/evemonk/eve_online/master)
+[![security](https://hakiri.io/github/evemonk/eve_online/main.svg)](https://hakiri.io/github/evemonk/eve_online/main)
 [![DeepSource](https://static.deepsource.io/deepsource-badge-light-mini.svg)](https://deepsource.io/gh/evemonk/eve_online/?ref=repository-badge)
 [![Ruby Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://github.com/testdouble/standard)
 
@@ -1898,6 +1898,81 @@ market_prices.etag # => "2d5acc3bd4555821bb91d787596f5ddad129f849739e83162e93c02
 
 #### Search on a string
 
+```ruby
+# simple search
+
+options = { search: "Jita" }
+
+search = EveOnline::ESI::Search.new(options)
+
+search.as_json # => {:agent_ids=>[3018357],
+               #     :alliance_ids=>[99011026, 99005382, 99010662, 99010663, 99010665, 99010666],
+               #     :character_ids=>[2118081143, ... 2114943117],
+               #     :constellation_ids=>[],
+               #     :corporation_ids=>[],
+               #     :faction_ids=>[],
+               #     :inventory_type_ids=>[56844, 56847, 56846, 56853, 56849, 56852, 56850, 52275, 56848, 56851, 56845],
+               #     :region_ids=>[],
+               #     :solar_system_ids=>[30000142],
+               #     :station_ids=>[]}
+
+search.agent_ids # => [3018357]
+search.alliance_ids # => [99011026, 99005382, 99010662, 99010663, 99010665, 99010666]
+search.character_ids.size # => 467
+search.character_ids.first # => 2118081143
+search.constellation_ids # => []
+search.corporation_ids # => []
+search.faction_ids  # => []
+search.inventory_type_ids # => [56844, 56847, 56846, 56853, 56849, 56852, 56850, 52275, 56848, 56851, 56845]
+search.region_ids # => []
+search.solar_system_ids # => [30000142]
+search.station_ids # => []
+
+search.etag # => "b6602e595e8d8df37b5191b82e75faba91284281b6fe71965d09e2f1"
+
+# strict search
+
+options = { search: "Jita", strict: true }
+
+search = EveOnline::ESI::Search.new(options)
+
+search.as_json # => {:agent_ids=>[],
+               #     :alliance_ids=>[99005382],
+               #     :character_ids=>[1392050776],
+               #     :constellation_ids=>[],
+               #     :corporation_ids=>[98004200, 98049474, 383768304, 98358437],
+               #     :faction_ids=>[],
+               #     :inventory_type_ids=>[],
+               #     :region_ids=>[],
+               #     :solar_system_ids=>[30000142],
+               #     :station_ids=>[]}
+
+# strict search with filter by categories
+
+# List of default categories (used when categories is empty):
+# ["agent", "alliance", "character", "constellation", "corporation", "faction",
+# "inventory_type", "region", "solar_system", "station"]
+
+# So, add `categories: ['solar_system']` and see:
+
+options = { search: "Jita", categories: ["solar_system"], strict: true }
+
+search = EveOnline::ESI::Search.new(options)
+
+search.as_json # => {:agent_ids=>[],
+               #    :alliance_ids=>[],
+               #    :character_ids=>[],
+               #    :constellation_ids=>[],
+               #    :corporation_ids=>[],
+               #    :faction_ids=>[],
+               #    :inventory_type_ids=>[],
+               #    :region_ids=>[],
+               #    :solar_system_ids=>[30000142],
+               #    :station_ids=>[]}
+
+search.solar_system_ids # => [30000142]
+```
+
 ### Skills
 
 #### Get character attributes
@@ -3210,6 +3285,7 @@ Thank you everyone!
 * Ian Flynn (@monban)
 * Mekaret Eriker (@Mekaret)
 * Y. (@lunohodov)
+* Trevor Copeland (@sicks)
 
 ## License
 

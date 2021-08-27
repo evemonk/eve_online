@@ -18,11 +18,11 @@ describe "Get ancestries" do
 
     specify do
       expect(subject.ancestries.first.as_json).to eq(ancestry_id: 1,
-                                                     bloodline_id: 5,
-                                                     description: "Holders, the major landholding class in Amarr society, are generally conservative traditionalists. A few, however, have elected to break ranks with their hidebound and power-hungry peers, instead supporting the modernization of their society's religion and substantial economic reform. Their champion is Catiz Tash-Murkon, the Udorian Royal Heir.",
-                                                     icon_id: 1641,
-                                                     name: "Liberal Holders",
-                                                     short_description: "Progressive members of the upper class who have rejected their traditional ways.")
+        bloodline_id: 5,
+        description: "Holders, the major landholding class in Amarr society, are generally conservative traditionalists. A few, however, have elected to break ranks with their hidebound and power-hungry peers, instead supporting the modernization of their society's religion and substantial economic reform. Their champion is Catiz Tash-Murkon, the Udorian Royal Heir.",
+        icon_id: 1641,
+        name: "Liberal Holders",
+        short_description: "Progressive members of the upper class who have rejected their traditional ways.")
     end
 
     specify { expect(subject.etag).to eq("37a39e7a5f5ecc07b19a3128c319f1198d035aee10052d0a21ccdd94") }

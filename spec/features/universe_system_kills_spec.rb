@@ -18,9 +18,9 @@ describe "Get system kills" do
 
     specify do
       expect(subject.system_kills.first.as_json).to eq(npc_kills: 89,
-                                                       pod_kills: 0,
-                                                       ship_kills: 5,
-                                                       system_id: 30_005_327)
+        pod_kills: 0,
+        ship_kills: 5,
+        system_id: 30_005_327)
     end
 
     specify { expect(subject.etag).to eq("2075c203d2a11627ab68b039a61e1816b052e9c0016eca5f08b6a35e") }

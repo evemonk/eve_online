@@ -27,9 +27,9 @@ describe "Get mail labels and unread counts" do
 
     specify do
       expect(subject.labels.last.as_json).to eq(color: "#ffffff",
-                                                label_id: 8,
-                                                name: "[Alliance]",
-                                                unread_count: 0)
+        label_id: 8,
+        name: "[Alliance]",
+        unread_count: 0)
     end
 
     specify { expect(subject.etag).to eq("6aac63dafa81b592eba22fe0d7bf12a2c11bfd5b054aa78d3a3a5cde") }

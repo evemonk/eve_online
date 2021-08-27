@@ -18,13 +18,13 @@ describe "Get asteroid belt information" do
 
     specify do
       expect(subject.as_json).to eq(name: "Tanoo I - Asteroid Belt 1",
-                                    system_id: 30_000_001)
+        system_id: 30_000_001)
     end
 
     specify do
       expect(subject.position.as_json).to eq(x: 161_967_513_600.0,
-                                             y: 21_288_837_120.0,
-                                             z: -73_505_464_320.0)
+        y: 21_288_837_120.0,
+        z: -73_505_464_320.0)
     end
 
     specify { expect(subject.etag).to eq("5c9218218aca123ef8c106f6607bfe8e6e086d2fc2b972bbd8ff03d2") }

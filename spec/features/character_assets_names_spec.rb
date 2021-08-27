@@ -25,7 +25,7 @@ describe "Get character asset names" do
 
   specify do
     expect(subject.assets_names.first.as_json).to eq(item_id: 1_001_215_602_246,
-                                                     name: "HOLE")
+      name: "HOLE")
   end
 
   specify { expect { subject.etag }.to raise_error(NotImplementedError) }

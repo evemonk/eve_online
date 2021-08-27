@@ -18,14 +18,14 @@ describe "Get constellation information" do
 
     specify do
       expect(subject.as_json).to eq(constellation_id: 20_000_001,
-                                    name: "San Matar",
-                                    region_id: 10_000_001)
+        name: "San Matar",
+        region_id: 10_000_001)
     end
 
     specify do
       expect(subject.position.as_json).to eq(x: -94_046_559_700_991_340.0,
-                                             y: 49_520_153_153_798_850.0,
-                                             z: -42_738_731_818_401_970.0)
+        y: 49_520_153_153_798_850.0,
+        z: -42_738_731_818_401_970.0)
     end
 
     specify do

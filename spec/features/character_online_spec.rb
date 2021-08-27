@@ -23,9 +23,9 @@ describe "Get character online" do
 
     specify do
       expect(subject.as_json).to eq(last_login: "2017-01-15 11:39:24",
-                                    last_logout: "2017-01-15 11:31:22",
-                                    logins: 370,
-                                    online: false)
+        last_logout: "2017-01-15 11:31:22",
+        logins: 370,
+        online: false)
     end
 
     specify { expect(subject.etag).to eq("43c82cdefedc4275da30d7731200df96b905dc94b8486d55bedb5fe6") }

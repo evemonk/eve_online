@@ -439,8 +439,8 @@ describe EveOnline::ESI::Base do
           #                  query: query.to_query) # => uri
           #
           expect(URI::HTTPS).to receive(:build).with(host: described_class::API_HOST,
-                                                     path: path,
-                                                     query: to_query).and_return(uri)
+            path: path,
+            query: to_query).and_return(uri)
         end
 
         specify { expect { subject.uri }.not_to raise_error }
@@ -456,7 +456,7 @@ describe EveOnline::ESI::Base do
           # URI::HTTPS.build(host: API_HOST, path: path) # => uri
           #
           expect(URI::HTTPS).to receive(:build).with(host: described_class::API_HOST,
-                                                     path: path).and_return(uri)
+            path: path).and_return(uri)
         end
 
         specify { expect { subject.uri }.not_to raise_error }

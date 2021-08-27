@@ -20,9 +20,9 @@ describe "Get corporation history" do
 
     specify do
       expect(subject.entries.first.as_json).to eq(corporation_id: 1_000_168,
-                                                  is_deleted: nil,
-                                                  record_id: 16_785_803,
-                                                  start_date: "2011-05-10T10:23:00Z")
+        is_deleted: nil,
+        record_id: 16_785_803,
+        start_date: "2011-05-10T10:23:00Z")
     end
 
     specify { expect(subject.etag).to eq("f9497588fc2db18ca9a2ee06c48a16120e0c712fe9925bb29d7aaeeb") }

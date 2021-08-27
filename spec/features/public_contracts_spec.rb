@@ -24,21 +24,21 @@ describe "Get public contracts" do
 
     specify do
       expect(subject.contracts.first.as_json).to eq(buyout: nil,
-                                                    collateral: 0.0,
-                                                    contract_id: 157_834_735,
-                                                    date_expired: "2020-06-17T21:36:41Z",
-                                                    date_issued: "2020-05-20T21:36:41Z",
-                                                    days_to_complete: 0,
-                                                    end_location_id: 60_008_494,
-                                                    for_corporation: true,
-                                                    issuer_corporation_id: 897_372_069,
-                                                    issuer_id: 1_314_102_096,
-                                                    price: 1_250_000_000.0,
-                                                    reward: 0.0,
-                                                    start_location_id: 60_008_494,
-                                                    title: "Apostle Me10/Te16 Complete Bpc 10 Pack",
-                                                    kind: "item_exchange",
-                                                    volume: 100.0)
+        collateral: 0.0,
+        contract_id: 157_834_735,
+        date_expired: "2020-06-17T21:36:41Z",
+        date_issued: "2020-05-20T21:36:41Z",
+        days_to_complete: 0,
+        end_location_id: 60_008_494,
+        for_corporation: true,
+        issuer_corporation_id: 897_372_069,
+        issuer_id: 1_314_102_096,
+        price: 1_250_000_000.0,
+        reward: 0.0,
+        start_location_id: 60_008_494,
+        title: "Apostle Me10/Te16 Complete Bpc 10 Pack",
+        kind: "item_exchange",
+        volume: 100.0)
     end
 
     specify { expect(subject.etag).to eq("3f7fdf9a69e35bb35d619b6cb5043a2766d11ca6306a8b5af369ce6e") }
