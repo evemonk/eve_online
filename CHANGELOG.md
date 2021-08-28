@@ -1,6 +1,6 @@
 # Changelog
 
-## main
+## v0.42.0
 
 * Sync with new ESI
 * Remove `EveOnline::ESI::Models::Character#ancestry_id`
