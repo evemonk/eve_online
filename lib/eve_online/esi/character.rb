@@ -7,7 +7,7 @@ module EveOnline
     class Character < Base
       extend Forwardable
 
-      API_PATH = "/v4/characters/%<character_id>s/"
+      API_PATH = "/v5/characters/%<character_id>s/"
 
       attr_reader :character_id
 
@@ -17,9 +17,9 @@ module EveOnline
         @character_id = options.fetch(:character_id)
       end
 
-      def_delegators :model, :as_json, :alliance_id, :ancestry_id, :birthday,
-        :bloodline_id, :corporation_id, :description, :faction_id, :gender,
-        :name, :race_id, :security_status, :title
+      def_delegators :model, :as_json, :alliance_id, :birthday, :bloodline_id,
+        :corporation_id, :description, :faction_id, :gender, :name, :race_id,
+        :security_status, :title
 
       def model
         @model ||= Models::Character.new(response)

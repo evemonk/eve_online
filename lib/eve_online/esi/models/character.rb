@@ -7,7 +7,6 @@ module EveOnline
         def as_json
           {
             alliance_id: alliance_id,
-            ancestry_id: ancestry_id,
             birthday: birthday,
             bloodline_id: bloodline_id,
             corporation_id: corporation_id,
@@ -23,10 +22,6 @@ module EveOnline
 
         def alliance_id
           options["alliance_id"]
-        end
-
-        def ancestry_id
-          options["ancestry_id"]
         end
 
         def birthday

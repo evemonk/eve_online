@@ -2,15 +2,15 @@
 http_interactions:
 - request:
     method: get
-    uri: https://esi.evetech.net/v2/alliances/99005443/icons/
+    uri: https://esi.evetech.net/v2/alliances/99008595/icons/
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - EveOnline API (https://github.com/evemonk/eve_online) v0.38.0
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.41.0
       If-None-Match:
-      - d067edb53a9019e0e05d99a2b1e7c7745433a982dda16667a14bff49
+      - 1e9455f8ecc240e342f79e9225582c582205c50995d5d4d696b87601
       Accept:
       - application/json
       Accept-Encoding:
@@ -21,7 +21,7 @@ http_interactions:
       message: Not Modified
     headers:
       Date:
-      - Sun, 28 Feb 2021 13:25:31 GMT
+      - Sat, 28 Aug 2021 20:33:31 GMT
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -41,11 +41,11 @@ http_interactions:
       Cache-Control:
       - public
       Etag:
-      - W/"d067edb53a9019e0e05d99a2b1e7c7745433a982dda16667a14bff49"
+      - W/"1e9455f8ecc240e342f79e9225582c582205c50995d5d4d696b87601"
       Expires:
-      - Mon, 01 Mar 2021 11:05:00 GMT
+      - Sun, 29 Aug 2021 11:05:00 GMT
       Last-Modified:
-      - Sun, 28 Feb 2021 11:02:20 GMT
+      - Sat, 28 Aug 2021 11:02:29 GMT
       Strict-Transport-Security:
       - max-age=31536000
       X-Esi-Error-Limit-Remain:
@@ -53,9 +53,9 @@ http_interactions:
       X-Esi-Error-Limit-Reset:
       - '29'
       X-Esi-Request-Id:
-      - 95d83a63-57de-43dd-a617-3abed7510649
+      - 28903f62-9f56-4a94-a835-5455c46ed2a8
     body:
       encoding: UTF-8
       string: ''
-  recorded_at: Sun, 28 Feb 2021 13:25:31 GMT
+  recorded_at: Sat, 28 Aug 2021 20:33:30 GMT
 recorded_with: VCR 6.0.0

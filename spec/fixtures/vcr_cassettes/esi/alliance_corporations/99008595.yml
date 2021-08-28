@@ -2,28 +2,28 @@
 http_interactions:
 - request:
     method: get
-    uri: https://esi.evetech.net/v2/alliances/99005443/corporations/
+    uri: https://esi.evetech.net/v2/alliances/99008595/corporations/
     body:
       encoding: US-ASCII
       string: ''
     headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.41.0
       Accept:
       - application/json
-      User-Agent:
-      - EveOnline API (https://github.com/evemonk/eve_online) v0.31.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Sun, 12 Apr 2020 13:08:00 GMT
+      - Sat, 28 Aug 2021 20:28:11 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
-      - '192'
+      - '46'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -43,22 +43,21 @@ http_interactions:
       Cache-Control:
       - public
       Etag:
-      - '"73da1d3efe2beb32798b8cc6a828ada6cd620fca85f78583a1eb509d"'
+      - '"c8f68430d2ee6e7c342e9730d3ee4bd0aa2d9eb07c6c493c02cdf3b6"'
       Expires:
-      - Sun, 12 Apr 2020 13:08:47 GMT
+      - Sat, 28 Aug 2021 21:28:11 GMT
       Last-Modified:
-      - Sun, 12 Apr 2020 12:08:47 GMT
+      - Sat, 28 Aug 2021 20:28:11 GMT
       Strict-Transport-Security:
       - max-age=31536000
       X-Esi-Error-Limit-Remain:
       - '100'
       X-Esi-Error-Limit-Reset:
-      - '60'
+      - '49'
       X-Esi-Request-Id:
-      - 50bf5fbf-748d-4779-ab33-1610eea78719
+      - 78fc2aa8-d86d-401d-8099-544f36114429
     body:
       encoding: UTF-8
-      string: "[98192510,98265089,98291362,98300293,98306624,98313804,98335007,98368240,98395849,98447309,98516016,98525247,98541615,98543446,98545268,98558175,98558946,98571126,98585556,98589196,1823259471]"
-    http_version: null
-  recorded_at: Sun, 12 Apr 2020 13:08:00 GMT
-recorded_with: VCR 5.1.0
+      string: "[98250226,98565696,98595819,98608556,98608583]"
+  recorded_at: Sat, 28 Aug 2021 20:28:11 GMT
+recorded_with: VCR 6.0.0
