@@ -22,8 +22,6 @@ describe EveOnline::ESI::Models::Character do
 
     before { expect(character).to receive(:alliance_id).and_return(98_765_432) }
 
-    before { expect(character).to receive(:ancestry_id).and_return(24) }
-
     before { expect(character).to receive(:birthday).and_return(birthday) }
 
     before { expect(character).to receive(:bloodline_id).and_return(4) }
@@ -47,8 +45,6 @@ describe EveOnline::ESI::Models::Character do
     subject { character.as_json }
 
     its([:alliance_id]) { should eq(98_765_432) }
-
-    its([:ancestry_id]) { should eq(24) }
 
     its([:birthday]) { should eq(birthday) }
 
@@ -75,12 +71,6 @@ describe EveOnline::ESI::Models::Character do
     before { expect(options).to receive(:[]).with("alliance_id") }
 
     specify { expect { subject.alliance_id }.not_to raise_error }
-  end
-
-  describe "#ancestry_id" do
-    before { expect(options).to receive(:[]).with("ancestry_id") }
-
-    specify { expect { subject.ancestry_id }.not_to raise_error }
   end
 
   describe "#birthday" do

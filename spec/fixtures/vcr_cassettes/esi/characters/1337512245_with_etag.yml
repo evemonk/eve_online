@@ -2,28 +2,26 @@
 http_interactions:
 - request:
     method: get
-    uri: https://esi.evetech.net/v4/characters/1337512245/
+    uri: https://esi.evetech.net/v5/characters/1337512245/
     body:
       encoding: US-ASCII
       string: ''
     headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.41.0
+      If-None-Match:
+      - 5e57d726eda270ba0e8542bdfbca874c844e5cdbf4b5599eeca79d1f
       Accept:
       - application/json
-      User-Agent:
-      - EveOnline API (https://github.com/evemonk/eve_online) v0.21.0
-      Accept-Language:
-      - en-us
-      If-None-Match:
-      - 22c39689783a86032b8d43fa0b2e8f4809c4f38a585e39471035aa8b
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
     status:
       code: 304
       message: Not Modified
     headers:
       Date:
-      - Mon, 31 Dec 2018 22:33:32 GMT
+      - Sat, 28 Aug 2021 20:39:53 GMT
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -43,22 +41,21 @@ http_interactions:
       Cache-Control:
       - public
       Etag:
-      - '"22c39689783a86032b8d43fa0b2e8f4809c4f38a585e39471035aa8b"'
+      - '"5e57d726eda270ba0e8542bdfbca874c844e5cdbf4b5599eeca79d1f"'
       Expires:
-      - Mon, 31 Dec 2018 23:32:26 GMT
+      - Sun, 29 Aug 2021 20:38:25 GMT
       Last-Modified:
-      - Mon, 31 Dec 2018 22:32:26 GMT
+      - Sat, 28 Aug 2021 20:38:25 GMT
       Strict-Transport-Security:
       - max-age=31536000
       X-Esi-Error-Limit-Remain:
       - '100'
       X-Esi-Error-Limit-Reset:
-      - '28'
+      - '7'
       X-Esi-Request-Id:
-      - 5316171e-a55f-4090-82ca-9c457dc1dee4
+      - a94207ee-d4b2-4757-92ac-d9c1957dc5da
     body:
       encoding: UTF-8
       string: ''
-    http_version: 
-  recorded_at: Mon, 31 Dec 2018 22:33:32 GMT
-recorded_with: VCR 4.0.0
+  recorded_at: Sat, 28 Aug 2021 20:39:53 GMT
+recorded_with: VCR 6.0.0

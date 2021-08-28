@@ -9,7 +9,7 @@ describe EveOnline::ESI::Character do
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_PATH).to eq("/v4/characters/%<character_id>s/") }
+  specify { expect(described_class::API_PATH).to eq("/v5/characters/%<character_id>s/") }
 
   describe "#initialize" do
     its(:token) { should eq(nil) }
@@ -70,16 +70,6 @@ describe EveOnline::ESI::Character do
     before { expect(model).to receive(:alliance_id) }
 
     specify { expect { subject.alliance_id }.not_to raise_error }
-  end
-
-  describe "#ancestry_id" do
-    let(:model) { instance_double(EveOnline::ESI::Models::Character) }
-
-    before { subject.instance_variable_set(:@model, model) }
-
-    before { expect(model).to receive(:ancestry_id) }
-
-    specify { expect { subject.ancestry_id }.not_to raise_error }
   end
 
   describe "#birthday" do
@@ -188,7 +178,7 @@ describe EveOnline::ESI::Character do
 
   describe "#path" do
     specify do
-      expect(subject.path).to eq("/v4/characters/12345678/")
+      expect(subject.path).to eq("/v5/characters/12345678/")
     end
   end
 
@@ -200,7 +190,7 @@ describe EveOnline::ESI::Character do
 
   describe "#url" do
     specify do
-      expect(subject.url).to eq("https://esi.evetech.net/v4/characters/12345678/")
+      expect(subject.url).to eq("https://esi.evetech.net/v5/characters/12345678/")
     end
   end
 end

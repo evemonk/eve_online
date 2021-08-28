@@ -1,5 +1,12 @@
 # Changelog
 
+## main
+
+* Sync with new ESI
+* Remove `EveOnline::ESI::Models::Character#ancestry_id`
+* Remove `ancestry_id` from `EveOnline::ESI::Models::Character#as_json`
+* Remove `EveOnline::ESI::Character#ancestry_id`
+
 ## v0.41.0
 
 * Add `EveOnline::ESI::Search`
