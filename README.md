@@ -414,7 +414,6 @@ character = EveOnline::ESI::Character.new(options)
 character.scope # => nil
 
 character.as_json # => {:alliance_id=>12345678,
-                  #     :ancestry_id=>24,
                   #     :birthday=>Fri, 15 Jan 2010 15:26:00 UTC +00:00,
                   #     :bloodline_id=>4,
                   #     :corporation_id=>1000168,
@@ -427,7 +426,6 @@ character.as_json # => {:alliance_id=>12345678,
                   #     :title=>nil}
 
 character.alliance_id # => 12345678
-character.ancestry_id # => 24
 character.birthday # => Fri, 15 Jan 2010 15:26:00 UTC +00:00
 character.bloodline_id # => 4
 character.corporation_id # => 1000168
