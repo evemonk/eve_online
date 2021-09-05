@@ -70,17 +70,15 @@ describe EveOnline::ESI::CharacterSendEmail do
     specify { expect(subject.scope).to eq("esi-mail.send_mail.v1") }
   end
 
+  describe "#etag" do
+    specify { expect { subject.etag }.to raise_error(NotImplementedError) }
+  end
+
   describe "#path" do
     specify do
       expect(subject.path).to eq("/v1/characters/12345678/mail/")
     end
   end
-
-  # describe "#query" do
-  #   specify do
-  #     expect(subject.query).to eq({})
-  #   end
-  # end
 
   describe "#url" do
     specify do
