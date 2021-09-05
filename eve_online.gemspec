@@ -17,8 +17,8 @@ Gem::Specification.new do |spec|
 
   spec.metadata = {
     "bug_tracker_uri" => "https://github.com/evemonk/eve_online/issues",
-    "changelog_uri" => "https://github.com/evemonk/eve_online/blob/master/CHANGELOG.md",
-    "documentation_uri" => "https://github.com/evemonk/eve_online/blob/master/README.md",
+    "changelog_uri" => "https://github.com/evemonk/eve_online/blob/main/CHANGELOG.md",
+    "documentation_uri" => "https://github.com/evemonk/eve_online/blob/main/README.md",
     "homepage_uri" => "https://github.com/evemonk/eve_online",
     "source_code_uri" => "https://github.com/evemonk/eve_online"
   }
@@ -38,7 +38,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "mdl"
   spec.add_development_dependency "appraisal"
 
-  spec.add_runtime_dependency "faraday"
+  spec.add_runtime_dependency "faraday", ">= 1.7.1"
   spec.add_runtime_dependency "faraday_middleware"
   spec.add_runtime_dependency "activesupport", ">= 5.2.0"
 end
