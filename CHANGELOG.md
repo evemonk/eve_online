@@ -1,5 +1,10 @@
 # Changelog
 
+## main
+
+* Fix faraday deprecation warning
+* Add `EveOnline::ESI::CharacterSendEmail`
+
 ## v0.42.0
 
 * Sync with new ESI
