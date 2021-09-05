@@ -17,6 +17,19 @@ module EveOnline
         @approved_cost = options.fetch(:approved_cost, 0)
       end
 
+      def http_method
+        :post
+      end
+
+      def payload
+        {
+          approved_cost: approved_cost,
+          body: body,
+          recipients: recipients,
+          subject: subject
+        }.to_json
+      end
+
       def scope
         "esi-mail.send_mail.v1"
       end

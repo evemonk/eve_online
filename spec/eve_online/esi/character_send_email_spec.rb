@@ -9,7 +9,12 @@ describe EveOnline::ESI::CharacterSendEmail do
       character_id: 12_345_678,
       subject: "Test subject",
       body: "Test body",
-      recipients: []
+      recipients: [
+        {
+          recipient_id: 12_345_679,
+          recipient_type: "character"
+        }
+      ]
     }
   end
 
@@ -64,6 +69,28 @@ describe EveOnline::ESI::CharacterSendEmail do
 
       its(:approved_cost) { should eq(100) }
     end
+  end
+
+  describe "#http_method" do
+    specify { expect(subject.http_method).to eq(:post) }
+  end
+
+  describe "#payload" do
+    let(:payload) do
+      {
+        approved_cost: 0,
+        body: "Test body",
+        recipients: [
+          {
+            recipient_id: 12_345_679,
+            recipient_type: "character"
+          }
+        ],
+        subject: "Test subject"
+      }.to_json
+    end
+
+    specify { expect(subject.payload).to eq(payload) }
   end
 
   describe "#scope" do
