@@ -329,7 +329,7 @@ describe EveOnline::ESI::Base do
 
       let(:_write_timeout) { double }
 
-      let(:adapter) { double }
+      let(:adapter) { Faraday.default_adapter }
 
       before { expect(subject).to receive(:user_agent).and_return(user_agent) }
 
@@ -355,7 +355,7 @@ describe EveOnline::ESI::Base do
 
       specify { expect(subject.connection.builder.handlers).to include(FaradayMiddleware::ParseJson) }
 
-      specify { expect(subject.connection.adapter).to eq(adapter) }
+      specify { expect(subject.connection.adapter).to eq(Faraday::Adapter::NetHttp) }
 
       context "when _etag is present" do
         let(:_etag) { double }
@@ -376,13 +376,13 @@ describe EveOnline::ESI::Base do
 
         before { expect(subject).to receive(:token).and_return(token).twice }
 
-        specify { expect(subject.connection.headers["Authorization"]).to eq("Bearer #{token}") }
+        specify { expect(subject.connection.builder.app.instance_variable_get(:@header_value)).to eq("Bearer #{token}") }
       end
 
       context "when token is empty" do
         before { expect(subject).to receive(:token).and_return(nil) }
 
-        specify { expect(subject.connection.headers["Authorization"]).to eq(nil) }
+        specify { expect(subject.connection.builder.app.instance_variable_get(:@header_value)).to eq(nil) }
       end
 
       context "when custom middlewares without esi presence" do
