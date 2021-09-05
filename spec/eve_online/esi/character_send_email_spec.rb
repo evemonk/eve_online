@@ -32,7 +32,12 @@ describe EveOnline::ESI::CharacterSendEmail do
           character_id: 12_345_678,
           subject: "Test subject",
           body: "Test body",
-          recipients: []
+          recipients: [
+            {
+              recipient_id: 12_345_679,
+              recipient_type: "character"
+            }
+          ]
         }
       end
 
@@ -50,7 +55,7 @@ describe EveOnline::ESI::CharacterSendEmail do
 
       its(:body) { should eq("Test body") }
 
-      its(:recipients) { should eq([]) }
+      its(:recipients) { should eq([{recipient_id: 12_345_679, recipient_type: "character"}]) }
 
       its(:approved_cost) { should eq(0) }
     end
