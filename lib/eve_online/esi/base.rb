@@ -148,8 +148,19 @@ module EveOnline
         hash.reject { |_, v| v.nil? || v == "" }
       end
 
+      def payload
+        {}.to_json
+      end
+
       def resource
-        @resource ||= connection.public_send(http_method, uri)
+        return @resource if @resource
+
+        case http_method
+        when :get
+          @resource = connection.public_send(http_method, uri)
+        when :post
+          @resource = connection.public_send(http_method, uri, payload)
+        end
       rescue Faraday::ConnectionFailed, Faraday::TimeoutError
         raise EveOnline::Exceptions::Timeout
       end
