@@ -76,6 +76,14 @@ describe EveOnline::ESI::CharacterSendEmail do
     end
   end
 
+  describe "#send_email" do
+    let(:response) { double }
+
+    before { expect(subject).to receive(:response).and_return(response) }
+
+    specify { expect(subject.send_email).to eq(response) }
+  end
+
   describe "#http_method" do
     specify { expect(subject.http_method).to eq(:post) }
   end

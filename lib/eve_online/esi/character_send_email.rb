@@ -17,6 +17,10 @@ module EveOnline
         @approved_cost = options.fetch(:approved_cost, 0)
       end
 
+      def send_email
+        response
+      end
+
       def http_method
         :post
       end
