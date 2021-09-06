@@ -4,6 +4,7 @@
 
 * Fix faraday deprecation warning
 * Add `EveOnline::ESI::CharacterSendEmail`
+* Fix POST requests
 
 ## v0.42.0
 
