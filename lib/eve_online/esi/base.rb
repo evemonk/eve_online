@@ -101,7 +101,7 @@ module EveOnline
           f.headers["User-Agent"] = user_agent
           f.headers["If-None-Match"] = _etag if _etag
           f.headers["Accept"] = "application/json"
-          f.authorization :Bearer, token if token
+          f.request :authorization, "Bearer", token if token
           f.options.read_timeout = _read_timeout
           f.options.open_timeout = _open_timeout
           f.options.write_timeout = _write_timeout
@@ -148,8 +148,19 @@ module EveOnline
         hash.reject { |_, v| v.nil? || v == "" }
       end
 
+      def payload
+        {}.to_json
+      end
+
       def resource
-        @resource ||= connection.public_send(http_method, uri)
+        return @resource if @resource
+
+        case http_method
+        when :get
+          @resource = connection.public_send(http_method, uri)
+        when :post
+          @resource = connection.public_send(http_method, uri, payload)
+        end
       rescue Faraday::ConnectionFailed, Faraday::TimeoutError
         raise EveOnline::Exceptions::Timeout
       end

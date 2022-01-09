@@ -76,7 +76,7 @@ module EveOnline
     autoload :CorporationLoyaltyStoreOffers, "eve_online/esi/corporation_loyalty_store_offers"
 
     # require "eve_online/esi/character_mail_headers"
-    # require "eve_online/esi/character_new_mail"
+    autoload :CharacterSendEmail, "eve_online/esi/character_send_email"
     # require "eve_online/esi/character_delete_mail"
     autoload :CharacterGetMail, "eve_online/esi/character_get_mail"
     # require "eve_online/esi/character_update_mail"

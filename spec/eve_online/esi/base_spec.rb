@@ -329,7 +329,7 @@ describe EveOnline::ESI::Base do
 
       let(:_write_timeout) { double }
 
-      let(:adapter) { double }
+      let(:adapter) { Faraday.default_adapter }
 
       before { expect(subject).to receive(:user_agent).and_return(user_agent) }
 
@@ -355,7 +355,7 @@ describe EveOnline::ESI::Base do
 
       specify { expect(subject.connection.builder.handlers).to include(FaradayMiddleware::ParseJson) }
 
-      specify { expect(subject.connection.adapter).to eq(adapter) }
+      specify { expect(subject.connection.adapter).to eq(Faraday::Adapter::NetHttp) }
 
       context "when _etag is present" do
         let(:_etag) { double }
@@ -376,13 +376,13 @@ describe EveOnline::ESI::Base do
 
         before { expect(subject).to receive(:token).and_return(token).twice }
 
-        specify { expect(subject.connection.headers["Authorization"]).to eq("Bearer #{token}") }
+        specify { expect(subject.connection.builder.app.instance_variable_get(:@header_value)).to eq("Bearer #{token}") }
       end
 
       context "when token is empty" do
         before { expect(subject).to receive(:token).and_return(nil) }
 
-        specify { expect(subject.connection.headers["Authorization"]).to eq(nil) }
+        specify { expect(subject.connection.builder.app.instance_variable_get(:@header_value)).to eq(nil) }
       end
 
       context "when custom middlewares without esi presence" do
@@ -500,6 +500,10 @@ describe EveOnline::ESI::Base do
     end
   end
 
+  describe "#payload" do
+    specify { expect(subject.payload).to eq({}.to_json) }
+  end
+
   describe "#resource" do
     context "when @resource set" do
       let(:resource) { double }
@@ -512,33 +516,49 @@ describe EveOnline::ESI::Base do
     context "when @resource not set" do
       let(:resource) { double }
 
-      let(:http_method) { double }
-
       let(:uri) { double }
 
       let(:connection) { double }
 
-      before { expect(subject).to receive(:http_method).and_return(http_method) }
+      before { expect(subject).to receive(:http_method).and_return(http_method).twice }
 
       before { expect(subject).to receive(:uri).and_return(uri) }
 
       before { expect(subject).to receive(:connection).and_return(connection) }
 
-      before { expect(connection).to receive(:public_send).with(http_method, uri).and_return(resource) }
+      context "when http method is get" do
+        let(:http_method) { :get }
 
-      specify { expect(subject.resource).to eq(resource) }
+        before { expect(connection).to receive(:public_send).with(http_method, uri).and_return(resource) }
 
-      specify { expect { subject.resource }.to change { subject.instance_variable_get(:@resource) }.from(nil).to(resource) }
+        specify { expect(subject.resource).to eq(resource) }
+
+        specify { expect { subject.resource }.to change { subject.instance_variable_get(:@resource) }.from(nil).to(resource) }
+      end
+
+      context "when http method is post" do
+        let(:http_method) { :post }
+
+        let(:payload) { {}.to_json }
+
+        before { expect(subject).to receive(:payload).and_return(payload) }
+
+        before { expect(connection).to receive(:public_send).with(http_method, uri, payload).and_return(resource) }
+
+        specify { expect(subject.resource).to eq(resource) }
+
+        specify { expect { subject.resource }.to change { subject.instance_variable_get(:@resource) }.from(nil).to(resource) }
+      end
     end
 
     context "when throw Faraday::ConnectionFailed" do
-      let(:http_method) { double }
+      let(:http_method) { :get }
 
       let(:uri) { double }
 
       let(:connection) { double }
 
-      before { expect(subject).to receive(:http_method).and_return(http_method) }
+      before { expect(subject).to receive(:http_method).and_return(http_method).twice }
 
       before { expect(subject).to receive(:uri).and_return(uri) }
 
@@ -550,13 +570,13 @@ describe EveOnline::ESI::Base do
     end
 
     context "when throw Faraday::TimeoutError" do
-      let(:http_method) { double }
+      let(:http_method) { :get }
 
       let(:uri) { double }
 
       let(:connection) { double }
 
-      before { expect(subject).to receive(:http_method).and_return(http_method) }
+      before { expect(subject).to receive(:http_method).and_return(http_method).twice }
 
       before { expect(subject).to receive(:uri).and_return(uri) }
 
