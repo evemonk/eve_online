@@ -17,8 +17,8 @@ Gem::Specification.new do |spec|
 
   spec.metadata = {
     "bug_tracker_uri" => "https://github.com/evemonk/eve_online/issues",
-    "changelog_uri" => "https://github.com/evemonk/eve_online/blob/master/CHANGELOG.md",
-    "documentation_uri" => "https://github.com/evemonk/eve_online/blob/master/README.md",
+    "changelog_uri" => "https://github.com/evemonk/eve_online/blob/main/CHANGELOG.md",
+    "documentation_uri" => "https://github.com/evemonk/eve_online/blob/main/README.md",
     "homepage_uri" => "https://github.com/evemonk/eve_online",
     "source_code_uri" => "https://github.com/evemonk/eve_online"
   }
