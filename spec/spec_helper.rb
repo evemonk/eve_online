@@ -9,6 +9,7 @@ require "eve_online"
 # rspec-its
 require "rspec/its"
 
+require "active_support"
 require "active_support/time"
 Time.zone = "UTC"
 

@@ -1,0 +1,19 @@
+name: mdl
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  schedule:
+    - cron: "0 21 * * 6"
+
+jobs:
+  mdl:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actionshub/markdownlint@main

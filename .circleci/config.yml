@@ -1,9 +1,9 @@
 version: 2
 
 jobs:
-  ruby-2.6.8:
+  ruby-2.6.9:
     docker:
-      - image: circleci/ruby:2.6.8
+      - image: circleci/ruby:2.6.9
     steps:
       - checkout
       - run: rm Gemfile.lock
@@ -13,10 +13,9 @@ jobs:
       - run: bundle exec appraisal rake
       - run: bundle exec standardrb
       - run: bundle exec fasterer
-      - run: bundle exec mdl README.md CHANGELOG.md
-  ruby-2.7.4:
+  ruby-2.7.5:
     docker:
-      - image: circleci/ruby:2.7.4
+      - image: circleci/ruby:2.7.5
     steps:
       - checkout
       - run: rm Gemfile.lock
@@ -26,10 +25,9 @@ jobs:
       - run: bundle exec appraisal rake
       - run: bundle exec standardrb
       - run: bundle exec fasterer
-      - run: bundle exec mdl README.md CHANGELOG.md
-  ruby-3.0.2:
+  ruby-3.0.3:
     docker:
-      - image: circleci/ruby:3.0.2
+      - image: circleci/ruby:3.0.3
     steps:
       - checkout
       - run: rm Gemfile.lock
@@ -39,12 +37,11 @@ jobs:
       - run: bundle exec appraisal rake
       - run: bundle exec standardrb
       - run: bundle exec fasterer
-      - run: bundle exec mdl README.md CHANGELOG.md
 
 workflows:
   version: 2
   tests:
     jobs:
-      - ruby-2.6.8
-      - ruby-2.7.4
-      - ruby-3.0.2
+      - ruby-2.6.9
+      - ruby-2.7.5
+      - ruby-3.0.3
