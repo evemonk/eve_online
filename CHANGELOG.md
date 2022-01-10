@@ -1,5 +1,9 @@
 # Changelog
 
+## main
+
+* Ruby 3.1.0
+
 ## v0.42.0
 
 * Sync with new ESI
