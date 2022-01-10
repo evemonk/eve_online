@@ -33,3 +33,5 @@ jobs:
       - run: bundle install --jobs 4 --retry 3
       - run: bundle exec appraisal install || true
       - run: bundle exec appraisal rake
+      - run: bundle exec standardrb
+      - run: bundle exec fasterer
