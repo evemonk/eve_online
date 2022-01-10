@@ -1,6 +1,5 @@
 # EveOnline ESI API
 
-[![CircleCI](https://circleci.com/gh/evemonk/eve_online.svg?style=svg)](https://circleci.com/gh/evemonk/eve_online)
 [![Gem Version](https://badge.fury.io/rb/eve_online.svg)](https://badge.fury.io/rb/eve_online)
 [![Gem Downloads](https://img.shields.io/gem/dt/eve_online.svg)](https://rubygems.org/gems/eve_online)
 [![Known Vulnerabilities](https://snyk.io/test/github/evemonk/eve_online/badge.svg)](https://snyk.io/test/github/evemonk/eve_online)
