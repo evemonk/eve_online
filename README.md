@@ -1,6 +1,5 @@
 # EveOnline ESI API
 
-[![CircleCI](https://circleci.com/gh/evemonk/eve_online.svg?style=svg)](https://circleci.com/gh/evemonk/eve_online)
 [![Gem Version](https://badge.fury.io/rb/eve_online.svg)](https://badge.fury.io/rb/eve_online)
 [![Gem Downloads](https://img.shields.io/gem/dt/eve_online.svg)](https://rubygems.org/gems/eve_online)
 [![Known Vulnerabilities](https://snyk.io/test/github/evemonk/eve_online/badge.svg)](https://snyk.io/test/github/evemonk/eve_online)
@@ -53,12 +52,14 @@ gem install eve_online
 * MRI 2.6
 * MRI 2.7
 * MRI 3.0
+* MRI 3.1
 
 ## Supported rails versions
 
 * 5.2
 * 6.0
 * 6.1
+* 7.0
 * Edge
 
 ## Usage examples
