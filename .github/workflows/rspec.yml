@@ -30,5 +30,6 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: ${{ matrix.ruby }}
+      - run: bundle install
       - run: bundle exec appraisal install || true
       - run: bundle exec appraisal rake
