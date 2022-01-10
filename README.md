@@ -53,12 +53,14 @@ gem install eve_online
 * MRI 2.6
 * MRI 2.7
 * MRI 3.0
+* MRI 3.1
 
 ## Supported rails versions
 
 * 5.2
 * 6.0
 * 6.1
+* 7.0
 * Edge
 
 ## Usage examples
