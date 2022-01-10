@@ -3,6 +3,9 @@
 ## main
 
 * Ruby 3.1.0
+* Rails 7.0
+* Drop Circle CI as CI
+* Use GitHub Actions as CI
 
 ## v0.42.0
 
