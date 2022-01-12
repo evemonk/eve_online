@@ -14,6 +14,7 @@ Gem::Specification.new do |spec|
   spec.license = "MIT"
 
   spec.metadata = {
+    "rubygems_mfa_required" => "true",
     "bug_tracker_uri" => "https://github.com/evemonk/eve_online/issues",
     "changelog_uri" => "https://github.com/evemonk/eve_online/blob/main/CHANGELOG.md",
     "documentation_uri" => "https://github.com/evemonk/eve_online/blob/main/README.md",
