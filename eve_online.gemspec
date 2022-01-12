@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
-lib = File.expand_path("../lib", __FILE__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "eve_online/version"
+require_relative "lib/eve_online/version"
 
 Gem::Specification.new do |spec|
   spec.name = "eve_online"
