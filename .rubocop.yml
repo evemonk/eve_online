@@ -1,6 +1,7 @@
 AllCops:
   NewCops: enable
   SuggestExtensions: false
+  TargetRubyVersion: 2.6
 
 Style/WordArray:
   Enabled: true
@@ -9,3 +10,12 @@ Style/WordArray:
 Style/StringLiterals:
   Enabled: true
   EnforcedStyle: double_quotes
+
+Style/Documentation:
+  Enabled: false
+
+Gemspec/OrderedDependencies:
+  Enabled: false
+
+Bundler/OrderedGems:
+  Enabled: false
