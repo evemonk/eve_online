@@ -54,7 +54,7 @@ GEM
       colorize (~> 0.7)
       ruby_parser (>= 3.14.1)
     hashdiff (1.0.1)
-    i18n (1.8.11)
+    i18n (1.9.0)
       concurrent-ruby (~> 1.0)
     method_source (1.0.0)
     mini_portile2 (2.7.1)
