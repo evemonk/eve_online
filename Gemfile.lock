@@ -109,7 +109,7 @@ GEM
       rubocop-ast (>= 0.4.0)
     ruby-progressbar (1.11.0)
     ruby2_keywords (0.0.5)
-    ruby_parser (3.18.1)
+    ruby_parser (3.19.1)
       sexp_processor (~> 4.16)
     sexp_processor (4.16.0)
     simplecov (0.21.2)
