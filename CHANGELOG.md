@@ -2,10 +2,11 @@
 
 ## main
 
-* Ruby 3.1.0
+* Ruby 3.1.2
 * Rails 7.0
 * Drop Circle CI as CI
 * Use GitHub Actions as CI
+* Ruby 2.6 EOL
 
 ## v0.42.0
 
