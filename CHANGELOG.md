@@ -1,6 +1,6 @@
 # Changelog
 
-## main
+## v0.43.0
 
 * Ruby 3.1.2
 * Rails 7.0
