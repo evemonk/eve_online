@@ -3,6 +3,7 @@
 require "faraday"
 require "faraday_middleware"
 require "active_support/time"
+require "active_support/core_ext/object/blank"
 
 module EveOnline
   module ESI
