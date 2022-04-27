@@ -438,12 +438,14 @@ describe EveOnline::ESI::Base do
           #                  path: path,
           #                  query: query.to_query) # => uri
           #
-          expect(URI::HTTPS).to receive(:build).with(host: described_class::API_HOST,
-            path: path,
-            query: to_query).and_return(uri)
+          expect(URI::HTTPS).to receive(:build)
+            .with({
+              host: described_class::API_HOST,
+              path: path,
+              query: to_query
+            })
+            .and_return(uri)
         end
-
-        specify { expect { subject.uri }.not_to raise_error }
 
         specify { expect { subject.uri }.to change { subject.instance_variable_get(:@uri) }.from(nil).to(uri) }
       end
@@ -455,11 +457,13 @@ describe EveOnline::ESI::Base do
           #
           # URI::HTTPS.build(host: API_HOST, path: path) # => uri
           #
-          expect(URI::HTTPS).to receive(:build).with(host: described_class::API_HOST,
-            path: path).and_return(uri)
+          expect(URI::HTTPS).to receive(:build)
+            .with({
+              host: described_class::API_HOST,
+              path: path
+            })
+            .and_return(uri)
         end
-
-        specify { expect { subject.uri }.not_to raise_error }
 
         specify { expect { subject.uri }.to change { subject.instance_variable_get(:@uri) }.from(nil).to(uri) }
       end
