@@ -2,7 +2,6 @@
 
 [![Gem Version](https://badge.fury.io/rb/eve_online.svg)](https://badge.fury.io/rb/eve_online)
 [![Gem Downloads](https://img.shields.io/gem/dt/eve_online.svg)](https://rubygems.org/gems/eve_online)
-[![Known Vulnerabilities](https://snyk.io/test/github/evemonk/eve_online/badge.svg)](https://snyk.io/test/github/evemonk/eve_online)
 [![security](https://hakiri.io/github/evemonk/eve_online/main.svg)](https://hakiri.io/github/evemonk/eve_online/main)
 [![DeepSource](https://static.deepsource.io/deepsource-badge-light-mini.svg)](https://deepsource.io/gh/evemonk/eve_online/?ref=repository-badge)
 [![Ruby Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://github.com/testdouble/standard)
