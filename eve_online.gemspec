@@ -36,6 +36,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "vcr"
   spec.add_development_dependency "appraisal"
 
-  spec.add_runtime_dependency "faraday", ">= 2.0.0"
+  spec.add_runtime_dependency "faraday", ">= 2.3.0"
   spec.add_runtime_dependency "activesupport", ">= 5.2.0"
 end

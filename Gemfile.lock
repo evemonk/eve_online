@@ -3,7 +3,7 @@ PATH
   specs:
     eve_online (0.43.0)
       activesupport (>= 5.2.0)
-      faraday (>= 2.0.0)
+      faraday (>= 2.3.0)
 
 GEM
   remote: https://rubygems.org/
