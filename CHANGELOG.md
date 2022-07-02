@@ -1,5 +1,9 @@
 # Changelog
 
+## main
+
+* Update `faraday` to `>= 2.3.0`
+
 ## v0.43.0
 
 * Ruby 3.1.2
