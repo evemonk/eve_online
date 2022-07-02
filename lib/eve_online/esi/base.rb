@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require "faraday"
-require "faraday_middleware"
 require "active_support/time"
 require "active_support/core_ext/object/blank"
 
@@ -102,7 +101,7 @@ module EveOnline
           f.headers["User-Agent"] = user_agent
           f.headers["If-None-Match"] = _etag if _etag
           f.headers["Accept"] = "application/json"
-          f.authorization :Bearer, token if token
+          f.request :authorization, "Bearer", token if token
           f.options.read_timeout = _read_timeout
           f.options.open_timeout = _open_timeout
           f.options.write_timeout = _write_timeout
