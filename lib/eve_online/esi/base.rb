@@ -107,11 +107,7 @@ module EveOnline
           f.options.write_timeout = _write_timeout
           f.use FaradayMiddlewares::RaiseErrors
           middlewares.each do |middleware|
-            if middleware[:esi].present?
-              f.use middleware[:class], esi: middleware[:esi]
-            else
-              f.use middleware[:class]
-            end
+            f.use middleware[:class], esi: self
           end
           f.response :json, content_type: "application/json"
           f.adapter adapter
