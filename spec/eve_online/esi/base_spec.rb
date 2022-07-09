@@ -387,20 +387,10 @@ describe EveOnline::ESI::Base do
         specify { expect(subject.connection.builder.app.instance_variable_get(:@type)).to eq(nil) }
       end
 
-      context "when custom middlewares without esi presence" do
+      context "with middlewares" do
         let(:klass) { Class.new }
 
         let(:middleware) { {class: klass} }
-
-        before { subject.add_middleware(middleware) }
-
-        specify { expect(subject.connection.builder.handlers).to include(klass) }
-      end
-
-      context "when custom middlewares with esi presence" do
-        let(:klass) { Class.new }
-
-        let(:middleware) { {class: klass, esi: subject} }
 
         before { subject.add_middleware(middleware) }
 

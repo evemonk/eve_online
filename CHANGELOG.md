@@ -3,6 +3,7 @@
 ## main
 
 * Update `faraday` to `>= 2.3.0`
+* BREAKING: Always pass esi to middleware. To migrate, remove any esi passing.
 
 ## v0.43.0
 
