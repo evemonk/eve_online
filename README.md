@@ -30,7 +30,7 @@ This gem was extracted from [EveMonk](https://evemonk.com). Source code of EveMo
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'eve_online'
+gem "eve_online"
 ```
 
 And then execute:
