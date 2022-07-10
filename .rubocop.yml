@@ -56,3 +56,7 @@ Style/EmptyMethod:
 # controller by standard
 Style/SymbolArray:
   Enabled: false
+
+# controller by standard
+Layout/FirstHashElementIndentation:
+  Enabled: false
