@@ -3,19 +3,34 @@ AllCops:
   SuggestExtensions: false
   TargetRubyVersion: 2.7
 
+# controller by standard
 Style/WordArray:
-  Enabled: true
-  EnforcedStyle: brackets
+  Enabled: false
 
+# controller by standard
 Style/StringLiterals:
-  Enabled: true
-  EnforcedStyle: double_quotes
+  Enabled: false
 
+# controller by standard
 Style/Documentation:
   Enabled: false
 
+# controller by standard
 Gemspec/OrderedDependencies:
   Enabled: false
 
+# controller by standard
 Bundler/OrderedGems:
+  Enabled: false
+
+# controller by standard
+Layout/SpaceInsideHashLiteralBraces:
+  Enabled: false
+
+# controller by standard
+Layout/HashAlignment:
+  Enabled: false
+
+# controller by standard
+Layout/ArgumentAlignment:
   Enabled: false
