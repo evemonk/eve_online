@@ -5,6 +5,8 @@ module EveOnline
     class CharacterSendEmail < Base
       API_PATH = "/v1/characters/%<character_id>s/mail/"
 
+      attr_reader :character_id
+
       def initialize(options)
         super
 
@@ -12,6 +14,7 @@ module EveOnline
       end
 
       def send_email
+        # TODO: implement
       end
 
       def http_method
@@ -19,6 +22,7 @@ module EveOnline
       end
 
       def payload
+        # TODO: implement
       end
 
       def scope
