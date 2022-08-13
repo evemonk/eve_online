@@ -2,20 +2,61 @@ AllCops:
   NewCops: enable
   SuggestExtensions: false
   TargetRubyVersion: 2.7
+  Exclude:
+    - "gemfiles/*.gemfile"
 
+# controller by standard
 Style/WordArray:
-  Enabled: true
-  EnforcedStyle: brackets
+  Enabled: false
 
+# controller by standard
 Style/StringLiterals:
-  Enabled: true
-  EnforcedStyle: double_quotes
+  Enabled: false
 
+# controller by standard
 Style/Documentation:
   Enabled: false
 
+# controller by standard
 Gemspec/OrderedDependencies:
   Enabled: false
 
+# controller by standard
 Bundler/OrderedGems:
+  Enabled: false
+
+# controller by standard
+Layout/SpaceInsideHashLiteralBraces:
+  Enabled: false
+
+# controller by standard
+Layout/HashAlignment:
+  Enabled: false
+
+# controller by standard
+Layout/ArgumentAlignment:
+  Enabled: false
+
+# controller by standard
+Layout/ArrayAlignment:
+  Enabled: false
+
+# controller by standard
+Layout/LineLength:
+  Enabled: false
+
+# controller by standard
+Metrics/BlockLength:
+  Enabled: false
+
+# controller by standard
+Style/EmptyMethod:
+  Enabled: false
+
+# controller by standard
+Style/SymbolArray:
+  Enabled: false
+
+# controller by standard
+Layout/FirstHashElementIndentation:
   Enabled: false

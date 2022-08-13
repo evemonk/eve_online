@@ -155,11 +155,9 @@ module EveOnline
       end
 
       def content
-        if not_modified?
-          raise EveOnline::Exceptions::NotModified
-        else
-          resource.body
-        end
+        raise EveOnline::Exceptions::NotModified if not_modified?
+
+        resource.body
       end
 
       def response
