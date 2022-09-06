@@ -14,7 +14,7 @@ module EveOnline
             reprocessing_efficiency: reprocessing_efficiency,
             reprocessing_stations_take: reprocessing_stations_take,
             services: services,
-            station_id: station_id,
+            id: id,
             system_id: system_id,
             type_id: type_id
           }
@@ -52,7 +52,7 @@ module EveOnline
           options["services"]
         end
 
-        def station_id
+        def id
           options["station_id"]
         end
 
