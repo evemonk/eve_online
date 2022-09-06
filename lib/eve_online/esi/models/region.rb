@@ -8,7 +8,7 @@ module EveOnline
           {
             description: description,
             name: name,
-            region_id: region_id
+            id: id
           }
         end
 
@@ -20,7 +20,7 @@ module EveOnline
           options["name"]
         end
 
-        def region_id
+        def id
           options["region_id"]
         end
 

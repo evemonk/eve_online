@@ -9,16 +9,16 @@ module EveOnline
 
       API_PATH = "/v1/universe/regions/%<region_id>s/"
 
-      attr_reader :id
+      attr_reader :region_id
 
       def initialize(options)
         super
 
-        @id = options.fetch(:id)
+        @region_id = options.fetch(:region_id)
       end
 
-      def_delegators :model, :as_json, :description, :name,
-        :region_id, :constellation_ids
+      def_delegators :model, :as_json, :description, :name, :id,
+        :constellation_ids
 
       def model
         @model ||= Models::Region.new(response)
@@ -32,7 +32,7 @@ module EveOnline
       end
 
       def path
-        format(API_PATH, region_id: id)
+        format(API_PATH, region_id: region_id)
       end
     end
   end

@@ -2505,7 +2505,7 @@ regions.etag # => "2c8392581d493e06c015ca3d48d4076079bf4c976b1f776742592260"
 #### Get region information
 
 ```ruby
-options = { id: 10_000_001, language: 'en-us' }
+options = { region_id: 10_000_001, language: 'en-us' }
 
 region = EveOnline::ESI::UniverseRegion.new(options)
 
@@ -2513,11 +2513,11 @@ region.scope # => nil
 
 region.as_json # => {:description=>"The Derelik region...",
                #     :name=>"Derelik",
-               #     :region_id=>10000001}
+               #     :id=>10000001}
 
 region.description # => "The Derelik region..."
 region.name # => "Derelik"
-region.region_id # => 10000001
+region.id # => 10000001
 
 region.constellation_ids.size # => 16
 region.constellation_ids.first # => 20000001

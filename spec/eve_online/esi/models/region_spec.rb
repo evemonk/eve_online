@@ -20,7 +20,7 @@ describe EveOnline::ESI::Models::Region do
 
     before { expect(region).to receive(:name).and_return("Derelik") }
 
-    before { expect(region).to receive(:region_id).and_return(10_000_001) }
+    before { expect(region).to receive(:id).and_return(10_000_001) }
 
     subject { region.as_json }
 
@@ -28,7 +28,7 @@ describe EveOnline::ESI::Models::Region do
 
     its([:name]) { should eq("Derelik") }
 
-    its([:region_id]) { should eq(10_000_001) }
+    its([:id]) { should eq(10_000_001) }
   end
 
   describe "#description" do
@@ -43,10 +43,10 @@ describe EveOnline::ESI::Models::Region do
     specify { expect { subject.name }.not_to raise_error }
   end
 
-  describe "#region_id" do
+  describe "#id" do
     before { expect(options).to receive(:[]).with("region_id") }
 
-    specify { expect { subject.region_id }.not_to raise_error }
+    specify { expect { subject.id }.not_to raise_error }
   end
 
   describe "#constellation_ids" do

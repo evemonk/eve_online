@@ -3,7 +3,7 @@
 require "spec_helper"
 
 describe EveOnline::ESI::UniverseRegion do
-  let(:options) { {id: 10_000_001} }
+  let(:options) { {region_id: 10_000_001} }
 
   subject { described_class.new(options) }
 
@@ -20,7 +20,7 @@ describe EveOnline::ESI::UniverseRegion do
 
     its(:_write_timeout) { should eq(60) }
 
-    its(:id) { should eq(10_000_001) }
+    its(:region_id) { should eq(10_000_001) }
   end
 
   describe "#model" do
@@ -82,14 +82,14 @@ describe EveOnline::ESI::UniverseRegion do
     specify { expect { subject.name }.not_to raise_error }
   end
 
-  describe "#region_id" do
+  describe "#id" do
     let(:model) { instance_double(EveOnline::ESI::Models::Region) }
 
     before { subject.instance_variable_set(:@model, model) }
 
-    before { expect(model).to receive(:region_id) }
+    before { expect(model).to receive(:id) }
 
-    specify { expect { subject.region_id }.not_to raise_error }
+    specify { expect { subject.id }.not_to raise_error }
   end
 
   describe "#constellation_ids" do
