@@ -2114,14 +2114,14 @@ ancestry = ancestries.ancestries.first
 ancestry.as_json # => {:bloodline_id=>4,
                  #     :description=>"Millions of slaves within the Amarr Empire dream of escape...",
                  #     :icon_id=>1664,
-                 #     :ancestry_id=>24,
+                 #     :id=>24,
                  #     :name=>"Slave Child",
                  #     :short_description=>"Torn from the cold and brought to the warmth of a new life."}
 
 ancestry.bloodline_id # => 4
 ancestry.description # => "Millions of slaves within the Amarr Empire dream of escape..."
 ancestry.icon_id # => 1664
-ancestry.ancestry_id # => 24
+ancestry.id # => 24
 ancestry.name # => "Slave Child"
 ancestry.short_description # => "Torn from the cold and brought to the warmth of a new life."
 
