@@ -2167,7 +2167,7 @@ bloodlines.bloodlines.size # => 15
 
 bloodline = bloodlines.bloodlines.first
 
-bloodline.as_json # => {:bloodline_id=>4,
+bloodline.as_json # => {:id=>4,
                   #     :charisma=>6,
                   #     :corporation_id=>1000049,
                   #     :description=>"A martial, strong-willed people, the Brutor...",
@@ -2179,7 +2179,7 @@ bloodline.as_json # => {:bloodline_id=>4,
                   #     :ship_type_id=>588,
                   #     :willpower=>7}
 
-bloodline.bloodline_id # => 4
+bloodline.id # => 4
 bloodline.charisma # => 6
 bloodline.corporation_id # => 1000049
 bloodline.description # => "A martial, strong-willed people, the Brutor..."

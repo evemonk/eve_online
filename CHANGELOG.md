@@ -7,8 +7,11 @@
 * BREAKING: Rename method `EveOnline::ESI::Models::Ancestry#ancestry_id` to `id`
 * BREAKING: In `EveOnline::ESI::Models::Ancestry#as_json` rename field from `ancestry_id` to `id`
 * BREAKING: Rename input `id:` to `station_id:` in `EveOnline::ESI::UniverseStation#new(options)`
+* BREAKING: Rename `EveOnline::ESI::UniverseStation#station_id` to `id`
 * BREAKING: In `EveOnline::ESI::Models::Station#as_json` rename field from `station_id` to `id`
 * BREAKING: Rename method `EveOnline::ESI::Models::Station#station_id` to `id`
+* BREAKING: In `EveOnline::ESI::Models::Bloodline#as_json` rename field from `bloodline_id` to `id`
+* BREAKING: Rename method `EveOnline::ESI::Models::Bloodline#bloodline_id` to `id`
 
 ## v0.43.0
 
