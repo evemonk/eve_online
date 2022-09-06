@@ -27,6 +27,8 @@
 * BREAKING: Rename `EveOnline::ESI::UniverseGroup#group_id` to `id`
 * BREAKING: Rename `EveOnline::ESI::UniverseGroup#id` to `group_id`
 * BREAKING: Rename input `id:` to `group_id:` in `EveOnline::ESI::UniverseGroup#initialize(options)`
+* BREAKING: In `EveOnline::ESI::Models::Race#as_json` rename field from `race_id` to `id`
+* BREAKING: Rename method `EveOnline::ESI::Models::Race#race_id` to `id`
 
 ## v0.43.0
 
