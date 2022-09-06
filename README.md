@@ -2380,19 +2380,19 @@ groups.etag # => "e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b"
 #### Get item group information
 
 ```ruby
-options = { id: 450, language: 'en-us' }
+options = { group_id: 450, language: 'en-us' }
 
 group = EveOnline::ESI::UniverseGroup.new(options)
 
 group.scope # => nil
 
 group.as_json # => {:category_id=>25,
-              #     :group_id=>450,
+              #     :id=>450,
               #     :name=>"Arkonor",
               #     :published=>true}
 
 group.category_id # => 25
-group.group_id # => 450
+group.id # => 450
 group.name # => "Arkonor"
 group.published # => true
 group.type_ids # => [22, 17425, 17426, 26852, 28367, 28385, 28387, 28625, 46678, 46691]

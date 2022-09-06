@@ -3,7 +3,7 @@
 require "spec_helper"
 
 describe EveOnline::ESI::UniverseGroup do
-  let(:options) { {id: 450} }
+  let(:options) { {group_id: 450} }
 
   subject { described_class.new(options) }
 
@@ -20,7 +20,7 @@ describe EveOnline::ESI::UniverseGroup do
 
     its(:_write_timeout) { should eq(60) }
 
-    its(:id) { should eq(450) }
+    its(:group_id) { should eq(450) }
   end
 
   describe "#model" do
@@ -72,14 +72,14 @@ describe EveOnline::ESI::UniverseGroup do
     specify { expect { subject.category_id }.not_to raise_error }
   end
 
-  describe "#group_id" do
+  describe "#id" do
     let(:model) { instance_double(EveOnline::ESI::Models::Group) }
 
     before { subject.instance_variable_set(:@model, model) }
 
-    before { expect(model).to receive(:group_id) }
+    before { expect(model).to receive(:id) }
 
-    specify { expect { subject.group_id }.not_to raise_error }
+    specify { expect { subject.id }.not_to raise_error }
   end
 
   describe "#name" do

@@ -8,7 +8,7 @@ describe "Get item group information" do
 
     after { VCR.eject_cassette }
 
-    let(:options) { {id: 450, language: "en-us"} }
+    let(:options) { {group_id: 450, language: "en-us"} }
 
     subject { EveOnline::ESI::UniverseGroup.new(options) }
 
@@ -18,7 +18,7 @@ describe "Get item group information" do
 
     specify do
       expect(subject.as_json).to eq(category_id: 25,
-        group_id: 450,
+        id: 450,
         name: "Arkonor",
         published: true)
     end
@@ -37,7 +37,7 @@ describe "Get item group information" do
   context "when etag is set" do
     let(:options) do
       {
-        id: 450,
+        group_id: 450,
         language: "en-us",
         etag: "37a39e7a5f5ecc07b19a3128c319f1198d035aee10052d0a21ccdd94"
       }

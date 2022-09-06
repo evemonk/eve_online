@@ -22,6 +22,11 @@
 * BREAKING: Rename method `EveOnline::ESI::Models::Region#region_id` to `id`
 * BREAKING: Rename `EveOnline::ESI::UniverseRegion#region_id` to `id`
 * BREAKING: Rename `EveOnline::ESI::UniverseRegion#id` to `region_id`
+* BREAKING: In `EveOnline::ESI::Models::Group#as_json` rename field from `group_id` to `id`
+* BREAKING: Rename method `EveOnline::ESI::Models::Group#group_id` to `id`
+* BREAKING: Rename `EveOnline::ESI::UniverseGroup#group_id` to `id`
+* BREAKING: Rename `EveOnline::ESI::UniverseGroup#id` to `group_id`
+* BREAKING: Rename input `id:` to `group_id:` in `EveOnline::ESI::UniverseGroup#initialize(options)`
 
 ## v0.43.0
 
