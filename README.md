@@ -2592,7 +2592,7 @@ star.etag # => "2e28835f91024608719726b655591d531125a023e122859d174923d5"
 #### Get station information
 
 ```ruby
-options = { id: 60012526 }
+options = { station_id: 60012526 }
 
 station = EveOnline::ESI::UniverseStation.new(options)
 
@@ -2622,7 +2622,7 @@ station.as_json # => {:max_dockable_ship_volume=>50000000.0,
                 #       "loyalty-point-store",
                 #       "navy-offices",
                 #       "security-offices"],
-                #     :station_id=>60012526,
+                #     :id=>60012526,
                 #     :system_id=>30000001,
                 #     :type_id=>2502}
 
@@ -2649,7 +2649,7 @@ station.services # => ["bounty-missions",
                  #     "loyalty-point-store",
                  #     "navy-offices",
                  #     "security-offices"]
-station.station_id # => 60012526
+station.id # => 60012526
 station.system_id # => 30000001
 station.type_id # => 2502
 
