@@ -2211,17 +2211,17 @@ categories.etag # => "2c8392581d493e06c015ca3d48d4076079bf4c976b1f776742592260"
 #### Get item category information
 
 ```ruby
-options = { id: 6, language: 'en-us' }
+options = { category_id: 6, language: 'en-us' }
 
 category = EveOnline::ESI::UniverseCategory.new(options)
 
 category.scope # => nil
 
-category.as_json # => {:category_id=>6,
+category.as_json # => {:id=>6,
                  #     :name=>"Ship",
                  #     :published=>true}
 
-category.category_id # => 6
+category.id # => 6
 category.name # => "Ship"
 category.published # => true
 
