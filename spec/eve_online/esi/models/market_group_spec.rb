@@ -20,7 +20,7 @@ describe EveOnline::ESI::Models::MarketGroup do
 
     before { expect(market_group).to receive(:description).and_return("Implants intended for Subcervical Processing Slot 1.") }
 
-    before { expect(market_group).to receive(:market_group_id).and_return(618) }
+    before { expect(market_group).to receive(:id).and_return(618) }
 
     before { expect(market_group).to receive(:name).and_return("Implant Slot 01") }
 
@@ -30,7 +30,7 @@ describe EveOnline::ESI::Models::MarketGroup do
 
     its([:description]) { should eq("Implants intended for Subcervical Processing Slot 1.") }
 
-    its([:market_group_id]) { should eq(618) }
+    its([:id]) { should eq(618) }
 
     its([:name]) { should eq("Implant Slot 01") }
 
@@ -43,10 +43,10 @@ describe EveOnline::ESI::Models::MarketGroup do
     specify { expect { subject.description }.not_to raise_error }
   end
 
-  describe "#market_group_id" do
+  describe "#id" do
     before { expect(options).to receive(:[]).with("market_group_id") }
 
-    specify { expect { subject.market_group_id }.not_to raise_error }
+    specify { expect { subject.id }.not_to raise_error }
   end
 
   describe "#name" do

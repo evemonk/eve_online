@@ -8,7 +8,7 @@ describe "Get item group information" do
 
     after { VCR.eject_cassette }
 
-    let(:options) { {id: 618} }
+    let(:options) { {market_group_id: 618} }
 
     subject { EveOnline::ESI::MarketGroup.new(options) }
 
@@ -18,7 +18,7 @@ describe "Get item group information" do
 
     specify do
       expect(subject.as_json).to eq(description: "Implants intended for Subcervical Processing Slot 1.",
-        market_group_id: 618,
+        id: 618,
         name: "Implant Slot 01",
         parent_group_id: 532)
     end
@@ -41,7 +41,7 @@ describe "Get item group information" do
 
     let(:options) do
       {
-        id: 618,
+        market_group_id: 618,
         etag: "bf7832bfc20f5f9fdeddc9cb0360b941067310e7e3a2a80315b45a43"
       }
     end

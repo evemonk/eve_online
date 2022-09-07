@@ -29,6 +29,11 @@
 * BREAKING: Rename input `id:` to `group_id:` in `EveOnline::ESI::UniverseGroup#initialize(options)`
 * BREAKING: In `EveOnline::ESI::Models::Race#as_json` rename field from `race_id` to `id`
 * BREAKING: Rename method `EveOnline::ESI::Models::Race#race_id` to `id`
+* BREAKING: In `EveOnline::ESI::Models::MarketGroup#as_json` rename field from `market_group_id` to `id`
+* BREAKING: Rename method `EveOnline::ESI::Models::MarketGroup#market_group_id` to `id`
+* BREAKING: Rename input `id:` to `market_group_id:` in `EveOnline::ESI::MarketGroup#initialize(options)`
+* BREAKING: Rename `EveOnline::ESI::MarketGroup#market_group_id` to `id`
+* BREAKING: Rename `EveOnline::ESI::MarketGroup#id` to `market_group_id`
 
 ## v0.43.0
 

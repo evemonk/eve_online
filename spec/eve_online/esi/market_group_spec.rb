@@ -3,7 +3,7 @@
 require "spec_helper"
 
 describe EveOnline::ESI::MarketGroup do
-  let(:options) { {id: 618} }
+  let(:options) { {market_group_id: 618} }
 
   subject { described_class.new(options) }
 
@@ -20,7 +20,7 @@ describe EveOnline::ESI::MarketGroup do
 
     its(:_write_timeout) { should eq(60) }
 
-    its(:id) { should eq(618) }
+    its(:market_group_id) { should eq(618) }
   end
 
   describe "#model" do
@@ -72,14 +72,14 @@ describe EveOnline::ESI::MarketGroup do
     specify { expect { subject.description }.not_to raise_error }
   end
 
-  describe "#market_group_id" do
+  describe "#id" do
     let(:model) { instance_double(EveOnline::ESI::Models::MarketGroup) }
 
     before { subject.instance_variable_set(:@model, model) }
 
-    before { expect(model).to receive(:market_group_id) }
+    before { expect(model).to receive(:id) }
 
-    specify { expect { subject.market_group_id }.not_to raise_error }
+    specify { expect { subject.id }.not_to raise_error }
   end
 
   describe "#name" do

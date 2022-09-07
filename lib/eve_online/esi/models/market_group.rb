@@ -7,7 +7,7 @@ module EveOnline
         def as_json
           {
             description: description,
-            market_group_id: market_group_id,
+            id: id,
             name: name,
             parent_group_id: parent_group_id
           }
@@ -17,7 +17,7 @@ module EveOnline
           options["description"]
         end
 
-        def market_group_id
+        def id
           options["market_group_id"]
         end
 
