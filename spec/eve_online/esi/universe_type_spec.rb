@@ -3,7 +3,7 @@
 require "spec_helper"
 
 describe EveOnline::ESI::UniverseType do
-  let(:options) { {id: 192} }
+  let(:options) { {type_id: 192} }
 
   subject { described_class.new(options) }
 
@@ -20,7 +20,7 @@ describe EveOnline::ESI::UniverseType do
 
     its(:_write_timeout) { should eq(60) }
 
-    its(:id) { should eq(192) }
+    its(:type_id) { should eq(192) }
   end
 
   describe "#model" do
@@ -182,14 +182,14 @@ describe EveOnline::ESI::UniverseType do
     specify { expect { subject.radius }.not_to raise_error }
   end
 
-  describe "#type_id" do
+  describe "#id" do
     let(:model) { instance_double(EveOnline::ESI::Models::Type) }
 
     before { subject.instance_variable_set(:@model, model) }
 
-    before { expect(model).to receive(:type_id) }
+    before { expect(model).to receive(:id) }
 
-    specify { expect { subject.type_id }.not_to raise_error }
+    specify { expect { subject.id }.not_to raise_error }
   end
 
   describe "#volume" do

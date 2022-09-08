@@ -2822,7 +2822,7 @@ types.etag # => "e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b"
 #### Get type information
 
 ```ruby
-options = { id: 192, language: 'en-us' }
+options = { type_id: 192, language: 'en-us' }
 
 type = EveOnline::ESI::UniverseType.new(options)
 
@@ -2840,7 +2840,7 @@ type.as_json # => {:capacity=>0.0,
              #     :portion_size=>100,
              #     :published=>true,
              #     :radius=>1.0,
-             #     :type_id=>192,
+             #     :id=>192,
              #     :volume=>0.0125}
 
 type.capacity # => 0.0
@@ -2855,7 +2855,7 @@ type.packaged_volume # => 0.0125
 type.portion_size # => 100
 type.published # => true
 type.radius # => 1.0
-type.type_id # => 192
+type.id # => 192
 type.volume # => 0.0125
 
 type.dogma_attributes.size # => 17

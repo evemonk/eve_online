@@ -18,7 +18,7 @@ module EveOnline
             portion_size: portion_size,
             published: published,
             radius: radius,
-            type_id: type_id,
+            id: id,
             volume: volume
           }
         end
@@ -71,7 +71,7 @@ module EveOnline
           options["radius"]
         end
 
-        def type_id
+        def id
           options["type_id"]
         end
 
