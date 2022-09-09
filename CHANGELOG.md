@@ -38,6 +38,8 @@
 * BREAKING: Rename method `EveOnline::ESI::Models::Type#type_id` to `id`
 * BREAKING: Rename input `id:` to `type_id:` in `EveOnline::ESI::UniverseType#initialize(options)`
 * BREAKING: Rename `EveOnline::ESI::UniverseType#type_id` to `id`
+* BREAKING: In `EveOnline::ESI::Models::Faction#as_json` rename field from `faction_id` to `id`
+* BREAKING: Rename method `EveOnline::ESI::Models::Faction#faction_id` to `id`
 
 ## v0.43.0
 

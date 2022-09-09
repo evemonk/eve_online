@@ -2290,7 +2290,7 @@ faction = factions.factions.first
 
 faction.as_json # => {:corporation_id=>1000051,
                 #     :description=>"The Minmatar Republic was formed over a century ago when the Minmatar threw...",
-                #     :faction_id=>500002,
+                #     :id=>500002,
                 #     :is_unique=>true,
                 #     :militia_corporation_id=>1000182,
                 #     :name=>"Minmatar Republic",
@@ -2301,7 +2301,7 @@ faction.as_json # => {:corporation_id=>1000051,
 
 faction.corporation_id # => 1000051
 faction.description # => "The Minmatar Republic was formed over a century ago when the Minmatar threw..."
-faction.faction_id # => 500002
+faction.id # => 500002
 faction.is_unique # => true
 faction.militia_corporation_id # => 1000182
 faction.name # => "Minmatar Republic"

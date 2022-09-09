@@ -20,7 +20,7 @@ describe EveOnline::ESI::Models::Faction do
 
     before { expect(faction).to receive(:description).and_return("The Minmatar Republic was formed over a century ago when the Minmatar threw...") }
 
-    before { expect(faction).to receive(:faction_id).and_return(500_002) }
+    before { expect(faction).to receive(:id).and_return(500_002) }
 
     before { expect(faction).to receive(:is_unique).and_return(true) }
 
@@ -42,7 +42,7 @@ describe EveOnline::ESI::Models::Faction do
 
     its([:description]) { should eq("The Minmatar Republic was formed over a century ago when the Minmatar threw...") }
 
-    its([:faction_id]) { should eq(500_002) }
+    its([:id]) { should eq(500_002) }
 
     its([:is_unique]) { should eq(true) }
 
@@ -71,10 +71,10 @@ describe EveOnline::ESI::Models::Faction do
     specify { expect { subject.description }.not_to raise_error }
   end
 
-  describe "#faction_id" do
+  describe "#id" do
     before { expect(options).to receive(:[]).with("faction_id") }
 
-    specify { expect { subject.faction_id }.not_to raise_error }
+    specify { expect { subject.id }.not_to raise_error }
   end
 
   describe "#is_unique" do
