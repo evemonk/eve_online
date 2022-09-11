@@ -48,6 +48,10 @@
 * BREAKING: Rename `EveOnline::ESI::Models::Moon#moon_id` to `id`
 * BREAKING: Rename input `id:` to `moon_id:` in `EveOnline::ESI::UniverseMoon#initialize(options)`
 * BREAKING: Rename `EveOnline::ESI::UniverseMoon#moon_id` to `id`
+* BREAKING: In `EveOnline::ESI::Models::Planet#as_json` rename field from `planet_id` to `id`
+* BREAKING: Rename `EveOnline::ESI::Models::Planet#planet_id` to `id`
+* BREAKING: Rename input `id:` to `planet_id:` in `EveOnline::ESI::UniversePlanet#initialize(options)`
+* BREAKING: Rename `EveOnline::ESI::UniversePlanet#planet_id` to `id`
 
 ## v0.43.0
 

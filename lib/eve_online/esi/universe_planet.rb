@@ -9,16 +9,16 @@ module EveOnline
 
       API_PATH = "/v1/universe/planets/%<planet_id>s/"
 
-      attr_reader :id
+      attr_reader :planet_id
 
       def initialize(options = {})
         super
 
-        @id = options.fetch(:id)
+        @planet_id = options.fetch(:planet_id)
       end
 
-      def_delegators :model, :as_json, :name, :planet_id, :system_id,
-        :type_id, :position
+      def_delegators :model, :as_json, :name, :id, :system_id, :type_id,
+        :position
 
       def model
         @model ||= Models::Planet.new(response)
@@ -28,7 +28,7 @@ module EveOnline
       end
 
       def path
-        format(API_PATH, planet_id: id)
+        format(API_PATH, planet_id: planet_id)
       end
     end
   end

@@ -2435,19 +2435,19 @@ moon.etag # => "e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b"
 #### Get planet information
 
 ```ruby
-options = { id: 40000002 }
+options = { planet_id: 40000002 }
 
 planet = EveOnline::ESI::UniversePlanet.new(options)
 
 planet.scope # => nil
 
 planet.as_json # => {:name=>"Tanoo I",
-               #     :planet_id=>40000002,
+               #     :id=>40000002,
                #     :system_id=>30000001,
                #     :type_id=>11}
 
 planet.name # => "Tanoo I"
-planet.planet_id # => 40000002
+planet.id # => 40000002
 planet.system_id # => 30000001
 planet.type_id # => 11
 
