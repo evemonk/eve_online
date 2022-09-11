@@ -2405,17 +2405,17 @@ group.etag # => "e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b"
 #### Get moon information
 
 ```ruby
-options = { id: 40000004 }
+options = { moon_id: 40000004 }
 
 moon = EveOnline::ESI::UniverseMoon.new(options)
 
 moon.scope # => nil
 
-moon.as_json # => {:moon_id=>40000004,
+moon.as_json # => {:id=>40000004,
              #     :name=>"Tanoo I - Moon 1",
              #     :system_id=>30000001}
 
-moon.moon_id # => 40000004
+moon.id # => 40000004
 moon.name # => "Tanoo I - Moon 1"
 moon.system_id # => 30000001
 

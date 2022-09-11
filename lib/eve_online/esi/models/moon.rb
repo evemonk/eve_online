@@ -6,13 +6,13 @@ module EveOnline
       class Moon < Base
         def as_json
           {
-            moon_id: moon_id,
+            id: id,
             name: name,
             system_id: system_id
           }
         end
 
-        def moon_id
+        def id
           options["moon_id"]
         end
 

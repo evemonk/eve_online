@@ -44,6 +44,10 @@
 * BREAKING: Rename `EveOnline::ESI::Models::Stargate#stargate_id` to `id`
 * BREAKING: Rename input `id:` to `stargate_id:` in `EveOnline::ESI::UniverseStargate#initialize(options)`
 * BREAKING: Rename `EveOnline::ESI::UniverseStargate#stargate_id` to `id`
+* BREAKING: In `EveOnline::ESI::Models::Moon#as_json` rename field from `moon_id` to `id`
+* BREAKING: Rename `EveOnline::ESI::Models::Moon#moon_id` to `id`
+* BREAKING: Rename input `id:` to `moon_id:` in `EveOnline::ESI::UniverseMoon#initialize(options)`
+* BREAKING: Rename `EveOnline::ESI::UniverseMoon#moon_id` to `id`
 
 ## v0.43.0
 

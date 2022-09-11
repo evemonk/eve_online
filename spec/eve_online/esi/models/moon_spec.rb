@@ -16,7 +16,7 @@ describe EveOnline::ESI::Models::Moon do
   describe "#as_json" do
     let(:moon) { described_class.new(options) }
 
-    before { expect(moon).to receive(:moon_id).and_return(40_000_004) }
+    before { expect(moon).to receive(:id).and_return(40_000_004) }
 
     before { expect(moon).to receive(:name).and_return("Tanoo I - Moon 1") }
 
@@ -24,17 +24,17 @@ describe EveOnline::ESI::Models::Moon do
 
     subject { moon.as_json }
 
-    its([:moon_id]) { should eq(40_000_004) }
+    its([:id]) { should eq(40_000_004) }
 
     its([:name]) { should eq("Tanoo I - Moon 1") }
 
     its([:system_id]) { should eq(30_000_001) }
   end
 
-  describe "#moon_id" do
+  describe "#id" do
     before { expect(options).to receive(:[]).with("moon_id") }
 
-    specify { expect { subject.moon_id }.not_to raise_error }
+    specify { expect { subject.id }.not_to raise_error }
   end
 
   describe "#name" do

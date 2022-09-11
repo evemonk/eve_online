@@ -3,7 +3,7 @@
 require "spec_helper"
 
 describe EveOnline::ESI::UniverseMoon do
-  let(:options) { {id: 40_000_004} }
+  let(:options) { {moon_id: 40_000_004} }
 
   subject { described_class.new(options) }
 
@@ -20,7 +20,7 @@ describe EveOnline::ESI::UniverseMoon do
 
     its(:_write_timeout) { should eq(60) }
 
-    its(:id) { should eq(40_000_004) }
+    its(:moon_id) { should eq(40_000_004) }
   end
 
   describe "#model" do
@@ -62,14 +62,14 @@ describe EveOnline::ESI::UniverseMoon do
     specify { expect { subject.as_json }.not_to raise_error }
   end
 
-  describe "#moon_id" do
+  describe "#id" do
     let(:model) { instance_double(EveOnline::ESI::Models::Moon) }
 
     before { subject.instance_variable_set(:@model, model) }
 
-    before { expect(model).to receive(:moon_id) }
+    before { expect(model).to receive(:id) }
 
-    specify { expect { subject.moon_id }.not_to raise_error }
+    specify { expect { subject.id }.not_to raise_error }
   end
 
   describe "#name" do
