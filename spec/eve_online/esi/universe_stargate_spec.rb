@@ -3,7 +3,7 @@
 require "spec_helper"
 
 describe EveOnline::ESI::UniverseStargate do
-  let(:options) { {id: 50_000_056} }
+  let(:options) { {stargate_id: 50_000_056} }
 
   subject { described_class.new(options) }
 
@@ -20,7 +20,7 @@ describe EveOnline::ESI::UniverseStargate do
 
     its(:_write_timeout) { should eq(60) }
 
-    its(:id) { should eq(50_000_056) }
+    its(:stargate_id) { should eq(50_000_056) }
   end
 
   describe "#model" do
@@ -72,14 +72,14 @@ describe EveOnline::ESI::UniverseStargate do
     specify { expect { subject.name }.not_to raise_error }
   end
 
-  describe "#stargate_id" do
+  describe "#id" do
     let(:model) { instance_double(EveOnline::ESI::Models::Stargate) }
 
     before { subject.instance_variable_set(:@model, model) }
 
-    before { expect(model).to receive(:stargate_id) }
+    before { expect(model).to receive(:id) }
 
-    specify { expect { subject.stargate_id }.not_to raise_error }
+    specify { expect { subject.id }.not_to raise_error }
   end
 
   describe "#system_id" do

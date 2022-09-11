@@ -18,7 +18,7 @@ describe EveOnline::ESI::Models::Stargate do
 
     before { expect(stargate).to receive(:name).and_return("Stargate (Akpivem)") }
 
-    before { expect(stargate).to receive(:stargate_id).and_return(50_000_056) }
+    before { expect(stargate).to receive(:id).and_return(50_000_056) }
 
     before { expect(stargate).to receive(:system_id).and_return(30_000_001) }
 
@@ -32,7 +32,7 @@ describe EveOnline::ESI::Models::Stargate do
 
     its([:name]) { should eq("Stargate (Akpivem)") }
 
-    its([:stargate_id]) { should eq(50_000_056) }
+    its([:id]) { should eq(50_000_056) }
 
     its([:system_id]) { should eq(30_000_001) }
 
@@ -49,10 +49,10 @@ describe EveOnline::ESI::Models::Stargate do
     specify { expect { subject.name }.not_to raise_error }
   end
 
-  describe "#stargate_id" do
+  describe "#id" do
     before { expect(options).to receive(:[]).with("stargate_id") }
 
-    specify { expect { subject.stargate_id }.not_to raise_error }
+    specify { expect { subject.id }.not_to raise_error }
   end
 
   describe "#system_id" do

@@ -40,6 +40,10 @@
 * BREAKING: Rename `EveOnline::ESI::UniverseType#type_id` to `id`
 * BREAKING: In `EveOnline::ESI::Models::Faction#as_json` rename field from `faction_id` to `id`
 * BREAKING: Rename method `EveOnline::ESI::Models::Faction#faction_id` to `id`
+* BREAKING: In `EveOnline::ESI::Models::Stargate#as_json` rename field from `stargate_id` to `id`
+* BREAKING: Rename `EveOnline::ESI::Models::Stargate#stargate_id` to `id`
+* BREAKING: Rename input `id:` to `stargate_id:` in `EveOnline::ESI::UniverseStargate#initialize(options)`
+* BREAKING: Rename `EveOnline::ESI::UniverseStargate#stargate_id` to `id`
 
 ## v0.43.0
 

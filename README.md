@@ -2528,21 +2528,21 @@ region.etag # => "2c8392581d493e06c015ca3d48d4076079bf4c976b1f776742592260"
 #### Get stargate information
 
 ```ruby
-options = { id: 50_000_056 }
+options = { stargate_id: 50_000_056 }
 
 stargate = EveOnline::ESI::UniverseStargate.new(options)
 
 stargate.scope # => nil
 
 stargate.as_json # => {:name=>"Stargate (Akpivem)",
-                 #     :stargate_id=>50000056,
+                 #     :id=>50000056,
                  #     :system_id=>30000001,
                  #     :type_id=>29624,
                  #     :destination_stargate_id=>50000342,
                  #     :destination_system_id=>30000003}
 
 stargate.name # => "Stargate (Akpivem)"
-stargate.stargate_id # => 50000056
+stargate.id # => 50000056
 stargate.system_id # => 30000001
 stargate.type_id # => 29624
 stargate.destination_stargate_id # => 50000342
