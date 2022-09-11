@@ -8,7 +8,7 @@ describe "Get solar system information" do
 
     after { VCR.eject_cassette }
 
-    let(:options) { {id: 30_000_001, language: "en-us"} }
+    let(:options) { {system_id: 30_000_001, language: "en-us"} }
 
     subject { EveOnline::ESI::UniverseSystem.new(options) }
 
@@ -22,7 +22,7 @@ describe "Get solar system information" do
         security_class: "B",
         security_status: 0.8583240509033203,
         star_id: 40_000_001,
-        system_id: 30_000_001)
+        id: 30_000_001)
     end
 
     specify do
@@ -49,7 +49,7 @@ describe "Get solar system information" do
   context "when etag is set" do
     let(:options) do
       {
-        id: 30_000_001,
+        system_id: 30_000_001,
         language: "en-us",
         etag: "37a39e7a5f5ecc07b19a3128c319f1198d035aee10052d0a21ccdd94"
       }

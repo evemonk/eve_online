@@ -52,6 +52,10 @@
 * BREAKING: Rename `EveOnline::ESI::Models::Planet#planet_id` to `id`
 * BREAKING: Rename input `id:` to `planet_id:` in `EveOnline::ESI::UniversePlanet#initialize(options)`
 * BREAKING: Rename `EveOnline::ESI::UniversePlanet#planet_id` to `id`
+* BREAKING: In `EveOnline::ESI::Models::System#as_json` rename field from `system_id` to `id`
+* BREAKING: Rename `EveOnline::ESI::Models::System#system_id` to `id`
+* BREAKING: Rename input `id:` to `system_id:` in `EveOnline::ESI::UniverseSystem#initialize(options)`
+* BREAKING: Rename `EveOnline::ESI::UniverseSystem#system_id` to `id`
 
 ## v0.43.0
 

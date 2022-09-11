@@ -2752,7 +2752,7 @@ systems.etag # => "e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b"
 #### Get solar system information
 
 ```ruby
-options = { id: 30000001, language: 'en-us' }
+options = { system_id: 30000001, language: 'en-us' }
 
 system = EveOnline::ESI::UniverseSystem.new(options)
 
@@ -2763,14 +2763,14 @@ system.as_json # => {:constellation_id=>20000001,
                #     :security_class=>"B",
                #     :security_status=>0.8583240509033203,
                #     :star_id=>40000001,
-               #     :system_id=>30000001}
+               #     :id=>30000001}
 
 system.constellation_id # => 20000001
 system.name # => "Tanoo"
 system.security_class # => "B"
 system.security_status # => 0.8583240509033203
 system.star_id # => 40000001
-system.system_id # => 30000001
+system.id # => 30000001
 
 system.position.as_json # => {:x=>-8.851079259998058e+16,
                         #     :y=>4.236944396687888e+16,
