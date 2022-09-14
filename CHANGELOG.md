@@ -3,6 +3,7 @@
 ## main
 
 * Update `faraday` to `>= 2.3.0`
+* Raise exception `EveOnline::Exceptions::Timeout` for 503 status
 * BREAKING: Always pass esi to middleware. To migrate, remove any esi passing.
 * BREAKING: Rename method `EveOnline::ESI::Models::Ancestry#ancestry_id` to `id`
 * BREAKING: In `EveOnline::ESI::Models::Ancestry#as_json` rename field from `ancestry_id` to `id`

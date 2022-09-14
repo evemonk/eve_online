@@ -3155,7 +3155,8 @@ List of exceptions:
 * `EveOnline::Exceptions::InternalServerError` when response returns status 500.
 * `EveOnline::Exceptions::BadGateway` when response returns status 502.
 * `EveOnline::Exceptions::ServiceUnavailable` when response returns status 503.
-* `EveOnline::Exceptions::Timeout` when timeout.
+* `EveOnline::Exceptions::Timeout` when response returns status 504.
+* `EveOnline::Exceptions::Timeout` when timeout (faraday raise any timeouts errors).
 
 ## Timeouts
 
