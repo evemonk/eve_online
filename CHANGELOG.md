@@ -57,6 +57,10 @@
 * BREAKING: Rename `EveOnline::ESI::Models::System#system_id` to `id`
 * BREAKING: Rename input `id:` to `system_id:` in `EveOnline::ESI::UniverseSystem#initialize(options)`
 * BREAKING: Rename `EveOnline::ESI::UniverseSystem#system_id` to `id`
+* BREAKING: In `EveOnline::ESI::Models::Constellation#as_json` rename field from `constellation_id` to `id`
+* BREAKING: Rename `EveOnline::ESI::Models::Constellation#constellation_id` to `id`
+* BREAKING: Rename input `id:` to `constellation_id:` in `EveOnline::ESI::UniverseConstellation#initialize(options)`
+* BREAKING: Rename `EveOnline::ESI::UniverseConstellation#constellation_id` to `id`
 
 ## v0.43.0
 

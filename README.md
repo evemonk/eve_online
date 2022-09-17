@@ -2248,17 +2248,17 @@ constellations.etag # => "2c8392581d493e06c015ca3d48d4076079bf4c976b1f7767425922
 #### Get constellation information
 
 ```ruby
-options = { id: 20_000_001, language: 'en-us' }
+options = { constellation_id: 20_000_001, language: 'en-us' }
 
 constellation = EveOnline::ESI::UniverseConstellation.new(options)
 
 constellation.scope # => nil
 
-constellation.as_json # => {:constellation_id=>20000001,
+constellation.as_json # => {:id=>20000001,
                       #     :name=>"San Matar",
                       #     :region_id=>10000001}
 
-constellation.constellation_id # => 20000001
+constellation.id # => 20000001
 constellation.name # => "San Matar"
 constellation.region_id # => 10000001
 

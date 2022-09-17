@@ -6,13 +6,13 @@ module EveOnline
       class Constellation < Base
         def as_json
           {
-            constellation_id: constellation_id,
+            id: id,
             name: name,
             region_id: region_id
           }
         end
 
-        def constellation_id
+        def id
           options["constellation_id"]
         end
 
