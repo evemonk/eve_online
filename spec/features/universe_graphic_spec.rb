@@ -8,7 +8,7 @@ describe "Get graphic information" do
 
     after { VCR.eject_cassette }
 
-    let(:options) { {id: 20_481} }
+    let(:options) { {graphic_id: 20_481} }
 
     subject { EveOnline::ESI::UniverseGraphic.new(options) }
 
@@ -19,7 +19,7 @@ describe "Get graphic information" do
     specify do
       expect(subject.as_json).to eq(collision_file: nil,
         graphic_file: nil,
-        graphic_id: 20_481,
+        id: 20_481,
         icon_folder: nil,
         sof_dna: "ai1_t1:tash-murkon:amarr",
         sof_fation_name: "tash-murkon",
@@ -41,7 +41,7 @@ describe "Get graphic information" do
 
     let(:options) do
       {
-        id: 20_481,
+        graphic_id: 20_481,
         etag: "e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b"
       }
     end

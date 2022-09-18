@@ -2330,7 +2330,7 @@ graphics.etag # => "e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b"
 #### Get graphic information
 
 ```ruby
-options = { id: 20481 }
+options = { graphic_id: 20481 }
 
 graphic = EveOnline::ESI::UniverseGraphic.new(options)
 
@@ -2338,7 +2338,7 @@ graphic.scope # => nil
 
 graphic.as_json # => {:collision_file=>nil,
                 #     :graphic_file=>nil,
-                #     :graphic_id=>20481,
+                #     :id=>20481,
                 #     :icon_folder=>nil,
                 #     :sof_dna=>"ai1_t1:tash-murkon:amarr",
                 #     :sof_fation_name=>"tash-murkon",
@@ -2347,7 +2347,7 @@ graphic.as_json # => {:collision_file=>nil,
 
 graphic.collision_file # => nil
 graphic.graphic_file # => nil
-graphic.graphic_id # => 20481
+graphic.id # => 20481
 graphic.icon_folder # => nil
 graphic.sof_dna # => "ai1_t1:tash-murkon:amarr"
 graphic.sof_fation_name # => "tash-murkon"

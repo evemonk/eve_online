@@ -20,7 +20,7 @@ describe EveOnline::ESI::Models::Graphic do
 
     let(:graphic_file) { double }
 
-    let(:graphic_id) { double }
+    let(:id) { double }
 
     let(:icon_folder) { double }
 
@@ -36,7 +36,7 @@ describe EveOnline::ESI::Models::Graphic do
 
     before { expect(graphic).to receive(:graphic_file).and_return(graphic_file) }
 
-    before { expect(graphic).to receive(:graphic_id).and_return(graphic_id) }
+    before { expect(graphic).to receive(:id).and_return(id) }
 
     before { expect(graphic).to receive(:icon_folder).and_return(icon_folder) }
 
@@ -54,7 +54,7 @@ describe EveOnline::ESI::Models::Graphic do
 
     its([:graphic_file]) { should eq(graphic_file) }
 
-    its([:graphic_id]) { should eq(graphic_id) }
+    its([:id]) { should eq(id) }
 
     its([:icon_folder]) { should eq(icon_folder) }
 
@@ -79,10 +79,10 @@ describe EveOnline::ESI::Models::Graphic do
     specify { expect { subject.graphic_file }.not_to raise_error }
   end
 
-  describe "#graphic_id" do
+  describe "#id" do
     before { expect(options).to receive(:[]).with("graphic_id") }
 
-    specify { expect { subject.graphic_id }.not_to raise_error }
+    specify { expect { subject.id }.not_to raise_error }
   end
 
   describe "#icon_folder" do

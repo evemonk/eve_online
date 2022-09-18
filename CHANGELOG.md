@@ -61,6 +61,10 @@
 * BREAKING: Rename `EveOnline::ESI::Models::Constellation#constellation_id` to `id`
 * BREAKING: Rename input `id:` to `constellation_id:` in `EveOnline::ESI::UniverseConstellation#initialize(options)`
 * BREAKING: Rename `EveOnline::ESI::UniverseConstellation#constellation_id` to `id`
+* BREAKING: In `EveOnline::ESI::Models::Graphic#as_json` rename field from `graphic_id` to `id`
+* BREAKING: Rename `EveOnline::ESI::Models::Graphic#graphic_id` to `id`
+* BREAKING: Rename input `id:` to `graphic_id:` in `EveOnline::ESI::UniverseGraphic#initialize(options)`
+* BREAKING: Rename `EveOnline::ESI::UniverseGraphic#graphic_id` to `id`
 
 ## v0.43.0
 

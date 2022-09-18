@@ -8,7 +8,7 @@ module EveOnline
           {
             collision_file: collision_file,
             graphic_file: graphic_file,
-            graphic_id: graphic_id,
+            id: id,
             icon_folder: icon_folder,
             sof_dna: sof_dna,
             sof_fation_name: sof_fation_name,
@@ -25,7 +25,7 @@ module EveOnline
           options["graphic_file"]
         end
 
-        def graphic_id
+        def id
           options["graphic_id"]
         end
 
