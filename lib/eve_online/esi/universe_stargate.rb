@@ -9,16 +9,16 @@ module EveOnline
 
       API_PATH = "/v1/universe/stargates/%<stargate_id>s/"
 
-      attr_reader :id
+      attr_reader :stargate_id
 
       def initialize(options)
         super
 
-        @id = options.fetch(:id)
+        @stargate_id = options.fetch(:stargate_id)
       end
 
-      def_delegators :model, :as_json, :name, :stargate_id, :system_id,
-        :type_id, :destination_stargate_id, :destination_system_id, :position
+      def_delegators :model, :as_json, :name, :id, :system_id, :type_id,
+        :destination_stargate_id, :destination_system_id, :position
 
       def model
         @model ||= Models::Stargate.new(response)
@@ -28,7 +28,7 @@ module EveOnline
       end
 
       def path
-        format(API_PATH, stargate_id: id)
+        format(API_PATH, stargate_id: stargate_id)
       end
     end
   end

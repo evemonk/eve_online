@@ -9,16 +9,16 @@ module EveOnline
 
       API_PATH = "/v1/universe/constellations/%<constellation_id>s/"
 
-      attr_reader :id
+      attr_reader :constellation_id
 
       def initialize(options)
         super
 
-        @id = options.fetch(:id)
+        @constellation_id = options.fetch(:constellation_id)
       end
 
-      def_delegators :model, :as_json, :constellation_id, :name, :region_id,
-        :system_ids, :position
+      def_delegators :model, :as_json, :id, :name, :region_id, :system_ids,
+        :position
 
       def model
         @model ||= Models::Constellation.new(response)
@@ -32,7 +32,7 @@ module EveOnline
       end
 
       def path
-        format(API_PATH, constellation_id: id)
+        format(API_PATH, constellation_id: constellation_id)
       end
     end
   end

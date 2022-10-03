@@ -17,7 +17,7 @@ describe "Get ancestries" do
     specify { expect(subject.ancestries.size).to eq(42) }
 
     specify do
-      expect(subject.ancestries.first.as_json).to eq(ancestry_id: 1,
+      expect(subject.ancestries.first.as_json).to eq(id: 1,
         bloodline_id: 5,
         description: "Holders, the major landholding class in Amarr society, are generally conservative traditionalists. A few, however, have elected to break ranks with their hidebound and power-hungry peers, instead supporting the modernization of their society's religion and substantial economic reform. Their champion is Catiz Tash-Murkon, the Udorian Royal Heir.",
         icon_id: 1641,

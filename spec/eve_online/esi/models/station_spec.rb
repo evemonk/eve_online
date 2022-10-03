@@ -32,7 +32,7 @@ describe EveOnline::ESI::Models::Station do
 
     before { expect(station).to receive(:services).and_return(["bounty-missions", "courier-missions", "interbus", "reprocessing-plant", "market", "stock-exchange", "cloning", "repair-facilities", "fitting", "news", "insurance", "docking", "office-rental", "loyalty-point-store", "navy-offices", "security-offices"]) }
 
-    before { expect(station).to receive(:station_id).and_return(60_012_526) }
+    before { expect(station).to receive(:id).and_return(60_012_526) }
 
     before { expect(station).to receive(:system_id).and_return(30_000_001) }
 
@@ -56,7 +56,7 @@ describe EveOnline::ESI::Models::Station do
 
     its([:services]) { should eq(["bounty-missions", "courier-missions", "interbus", "reprocessing-plant", "market", "stock-exchange", "cloning", "repair-facilities", "fitting", "news", "insurance", "docking", "office-rental", "loyalty-point-store", "navy-offices", "security-offices"]) }
 
-    its([:station_id]) { should eq(60_012_526) }
+    its([:id]) { should eq(60_012_526) }
 
     its([:system_id]) { should eq(30_000_001) }
 
@@ -111,10 +111,10 @@ describe EveOnline::ESI::Models::Station do
     specify { expect { subject.services }.not_to raise_error }
   end
 
-  describe "#station_id" do
+  describe "#id" do
     before { expect(options).to receive(:[]).with("station_id") }
 
-    specify { expect { subject.station_id }.not_to raise_error }
+    specify { expect { subject.id }.not_to raise_error }
   end
 
   describe "#system_id" do

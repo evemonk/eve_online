@@ -3,7 +3,7 @@
 require "spec_helper"
 
 describe EveOnline::ESI::UniverseSystem do
-  let(:options) { {id: 30_000_001} }
+  let(:options) { {system_id: 30_000_001} }
 
   subject { described_class.new(options) }
 
@@ -20,7 +20,7 @@ describe EveOnline::ESI::UniverseSystem do
 
     its(:_write_timeout) { should eq(60) }
 
-    its(:id) { should eq(30_000_001) }
+    its(:system_id) { should eq(30_000_001) }
   end
 
   describe "#model" do
@@ -112,14 +112,14 @@ describe EveOnline::ESI::UniverseSystem do
     specify { expect { subject.star_id }.not_to raise_error }
   end
 
-  describe "#system_id" do
+  describe "#id" do
     let(:model) { instance_double(EveOnline::ESI::Models::System) }
 
     before { subject.instance_variable_set(:@model, model) }
 
-    before { expect(model).to receive(:system_id) }
+    before { expect(model).to receive(:id) }
 
-    specify { expect { subject.system_id }.not_to raise_error }
+    specify { expect { subject.id }.not_to raise_error }
   end
 
   describe "#position" do

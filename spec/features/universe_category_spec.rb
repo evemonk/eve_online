@@ -8,7 +8,7 @@ describe "Get item category information" do
 
     after { VCR.eject_cassette }
 
-    let(:options) { {id: 6} }
+    let(:options) { {category_id: 6} }
 
     subject { EveOnline::ESI::UniverseCategory.new(options) }
 
@@ -17,7 +17,7 @@ describe "Get item category information" do
     specify { expect(subject.not_modified?).to eq(false) }
 
     specify do
-      expect(subject.as_json).to eq(category_id: 6,
+      expect(subject.as_json).to eq(id: 6,
         name: "Ship",
         published: true)
     end
@@ -40,7 +40,7 @@ describe "Get item category information" do
 
     let(:options) do
       {
-        id: 6,
+        category_id: 6,
         etag: "37a39e7a5f5ecc07b19a3128c319f1198d035aee10052d0a21ccdd94"
       }
     end

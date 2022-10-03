@@ -17,7 +17,7 @@ describe "Get bloodlines" do
     specify { expect(subject.bloodlines.size).to eq(18) }
 
     specify do
-      expect(subject.bloodlines.first.as_json).to eq(bloodline_id: 1,
+      expect(subject.bloodlines.first.as_json).to eq(id: 1,
         charisma: 6,
         corporation_id: 1_000_006,
         description: "The Deteis are regarded as the face of leadership in Caldari society. Commonly possessed of sharp, ordered minds and articulate tongues, they are mostly found in positions of authority within military and political spheres. Driven by the cultural premise that the good of the whole must come before the needs of the individual, they have made the responsibility of upholding the integrity of the entire Caldari State their own.",

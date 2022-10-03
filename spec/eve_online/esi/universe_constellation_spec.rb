@@ -3,7 +3,7 @@
 require "spec_helper"
 
 describe EveOnline::ESI::UniverseConstellation do
-  let(:options) { {id: 20_000_001} }
+  let(:options) { {constellation_id: 20_000_001} }
 
   subject { described_class.new(options) }
 
@@ -20,7 +20,7 @@ describe EveOnline::ESI::UniverseConstellation do
 
     its(:_write_timeout) { should eq(60) }
 
-    its(:id) { should eq(20_000_001) }
+    its(:constellation_id) { should eq(20_000_001) }
   end
 
   describe "#model" do
@@ -62,14 +62,14 @@ describe EveOnline::ESI::UniverseConstellation do
     specify { expect { subject.as_json }.not_to raise_error }
   end
 
-  describe "#constellation_id" do
+  describe "#id" do
     let(:model) { instance_double(EveOnline::ESI::Models::Constellation) }
 
     before { subject.instance_variable_set(:@model, model) }
 
-    before { expect(model).to receive(:constellation_id) }
+    before { expect(model).to receive(:id) }
 
-    specify { expect { subject.constellation_id }.not_to raise_error }
+    specify { expect { subject.id }.not_to raise_error }
   end
 
   describe "#name" do

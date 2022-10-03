@@ -18,7 +18,7 @@ describe EveOnline::ESI::Models::Planet do
 
     before { expect(planet).to receive(:name).and_return("Tanoo I") }
 
-    before { expect(planet).to receive(:planet_id).and_return(40_000_002) }
+    before { expect(planet).to receive(:id).and_return(40_000_002) }
 
     before { expect(planet).to receive(:system_id).and_return(30_000_001) }
 
@@ -28,7 +28,7 @@ describe EveOnline::ESI::Models::Planet do
 
     its([:name]) { should eq("Tanoo I") }
 
-    its([:planet_id]) { should eq(40_000_002) }
+    its([:id]) { should eq(40_000_002) }
 
     its([:system_id]) { should eq(30_000_001) }
 
@@ -41,10 +41,10 @@ describe EveOnline::ESI::Models::Planet do
     specify { expect { subject.name }.not_to raise_error }
   end
 
-  describe "#planet_id" do
+  describe "#id" do
     before { expect(options).to receive(:[]).with("planet_id") }
 
-    specify { expect { subject.planet_id }.not_to raise_error }
+    specify { expect { subject.id }.not_to raise_error }
   end
 
   describe "#system_id" do

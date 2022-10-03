@@ -8,7 +8,7 @@ describe "Get stargate information" do
 
     after { VCR.eject_cassette }
 
-    let(:options) { {id: 50_000_056} }
+    let(:options) { {stargate_id: 50_000_056} }
 
     subject { EveOnline::ESI::UniverseStargate.new(options) }
 
@@ -18,7 +18,7 @@ describe "Get stargate information" do
 
     specify do
       expect(subject.as_json).to eq(name: "Stargate (Akpivem)",
-        stargate_id: 50_000_056,
+        id: 50_000_056,
         system_id: 30_000_001,
         type_id: 29_624,
         destination_stargate_id: 50_000_342,
@@ -43,7 +43,7 @@ describe "Get stargate information" do
 
     after { VCR.eject_cassette }
 
-    let(:options) { {id: 50_000_056, etag: "2e28835f91024608719726b655591d531125a023e122859d174923d5"} }
+    let(:options) { {stargate_id: 50_000_056, etag: "2e28835f91024608719726b655591d531125a023e122859d174923d5"} }
 
     subject { EveOnline::ESI::UniverseStargate.new(options) }
 

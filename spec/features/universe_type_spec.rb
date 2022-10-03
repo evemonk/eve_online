@@ -8,7 +8,7 @@ describe "Get type information" do
 
     after { VCR.eject_cassette }
 
-    let(:options) { {id: 192, language: "en-us"} }
+    let(:options) { {type_id: 192, language: "en-us"} }
 
     subject { EveOnline::ESI::UniverseType.new(options) }
 
@@ -29,7 +29,7 @@ describe "Get type information" do
         portion_size: 100,
         published: true,
         radius: 1.0,
-        type_id: 192,
+        id: 192,
         volume: 0.0125)
     end
 
@@ -51,7 +51,7 @@ describe "Get type information" do
   context "when etag is set" do
     let(:options) do
       {
-        id: 192,
+        type_id: 192,
         language: "en-us",
         etag: "37a39e7a5f5ecc07b19a3128c319f1198d035aee10052d0a21ccdd94"
       }

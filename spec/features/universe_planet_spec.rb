@@ -8,7 +8,7 @@ describe "Get planet information" do
 
     after { VCR.eject_cassette }
 
-    let(:options) { {id: 40_000_002} }
+    let(:options) { {planet_id: 40_000_002} }
 
     subject { EveOnline::ESI::UniversePlanet.new(options) }
 
@@ -18,7 +18,7 @@ describe "Get planet information" do
 
     specify do
       expect(subject.as_json).to eq(name: "Tanoo I",
-        planet_id: 40_000_002,
+        id: 40_000_002,
         system_id: 30_000_001,
         type_id: 11)
     end
@@ -39,7 +39,7 @@ describe "Get planet information" do
   context "when etag is set" do
     let(:options) do
       {
-        id: 40_000_002,
+        planet_id: 40_000_002,
         etag: "e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b"
       }
     end

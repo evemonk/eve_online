@@ -3,7 +3,7 @@
 require "spec_helper"
 
 describe EveOnline::ESI::UniverseGraphic do
-  let(:options) { {id: 20_481} }
+  let(:options) { {graphic_id: 20_481} }
 
   subject { described_class.new(options) }
 
@@ -20,7 +20,7 @@ describe EveOnline::ESI::UniverseGraphic do
 
     its(:_write_timeout) { should eq(60) }
 
-    its(:id) { should eq(20_481) }
+    its(:graphic_id) { should eq(20_481) }
   end
 
   describe "#model" do
@@ -82,14 +82,14 @@ describe EveOnline::ESI::UniverseGraphic do
     specify { expect { subject.graphic_file }.not_to raise_error }
   end
 
-  describe "#graphic_id" do
+  describe "#id" do
     let(:model) { instance_double(EveOnline::ESI::Models::Graphic) }
 
     before { subject.instance_variable_set(:@model, model) }
 
-    before { expect(model).to receive(:graphic_id) }
+    before { expect(model).to receive(:id) }
 
-    specify { expect { subject.graphic_id }.not_to raise_error }
+    specify { expect { subject.id }.not_to raise_error }
   end
 
   describe "#icon_folder" do

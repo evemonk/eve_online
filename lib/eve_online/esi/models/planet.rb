@@ -7,7 +7,7 @@ module EveOnline
         def as_json
           {
             name: name,
-            planet_id: planet_id,
+            id: id,
             system_id: system_id,
             type_id: type_id
           }
@@ -17,7 +17,7 @@ module EveOnline
           options["name"]
         end
 
-        def planet_id
+        def id
           options["planet_id"]
         end
 

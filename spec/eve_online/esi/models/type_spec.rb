@@ -40,7 +40,7 @@ describe EveOnline::ESI::Models::Type do
 
     before { expect(type).to receive(:radius).and_return(1) }
 
-    before { expect(type).to receive(:type_id).and_return(192) }
+    before { expect(type).to receive(:id).and_return(192) }
 
     before { expect(type).to receive(:volume).and_return(0.0125) }
 
@@ -70,7 +70,7 @@ describe EveOnline::ESI::Models::Type do
 
     its([:radius]) { should eq(1) }
 
-    its([:type_id]) { should eq(192) }
+    its([:id]) { should eq(192) }
 
     its([:volume]) { should eq(0.0125) }
   end
@@ -147,10 +147,10 @@ describe EveOnline::ESI::Models::Type do
     specify { expect { subject.radius }.not_to raise_error }
   end
 
-  describe "#type_id" do
+  describe "#id" do
     before { expect(options).to receive(:[]).with("type_id") }
 
-    specify { expect { subject.type_id }.not_to raise_error }
+    specify { expect { subject.id }.not_to raise_error }
   end
 
   describe "#volume" do

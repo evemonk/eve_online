@@ -3,7 +3,7 @@
 require "spec_helper"
 
 describe EveOnline::ESI::UniversePlanet do
-  let(:options) { {id: 40_000_002} }
+  let(:options) { {planet_id: 40_000_002} }
 
   subject { described_class.new(options) }
 
@@ -20,7 +20,7 @@ describe EveOnline::ESI::UniversePlanet do
 
     its(:_write_timeout) { should eq(60) }
 
-    its(:id) { should eq(40_000_002) }
+    its(:planet_id) { should eq(40_000_002) }
   end
 
   describe "#model" do
@@ -72,14 +72,14 @@ describe EveOnline::ESI::UniversePlanet do
     specify { expect { subject.name }.not_to raise_error }
   end
 
-  describe "#planet_id" do
+  describe "#id" do
     let(:model) { instance_double(EveOnline::ESI::Models::Planet) }
 
     before { subject.instance_variable_set(:@model, model) }
 
-    before { expect(model).to receive(:planet_id) }
+    before { expect(model).to receive(:id) }
 
-    specify { expect { subject.planet_id }.not_to raise_error }
+    specify { expect { subject.id }.not_to raise_error }
   end
 
   describe "#system_id" do

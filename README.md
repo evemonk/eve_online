@@ -1814,19 +1814,19 @@ market_groups.etag # => "bf7832bfc20f5f9fdeddc9cb0360b941067310e7e3a2a80315b45a4
 #### Get item group information
 
 ```ruby
-options = { id: 618, language: 'en-us' }
+options = { market_group_id: 618, language: 'en-us' }
 
 market_group = EveOnline::ESI::MarketGroup.new(options)
 
 market_group.scope # => nil
 
 market_group.as_json # => {:description=>"Implants intended for Subcervical Processing Slot 1.",
-                     #     :market_group_id=>618,
+                     #     :id=>618,
                      #     :name=>"Implant Slot 01",
                      #     :parent_group_id=>532}
 
 market_group.description # => "Implants intended for Subcervical Processing Slot 1."
-market_group.market_group_id # => 618
+market_group.id # => 618
 market_group.name # => "Implant Slot 01"
 market_group.parent_group_id # => 532
 
@@ -1851,11 +1851,11 @@ market_price = market_prices.market_prices.first
 
 market_price.as_json # => {:adjusted_price=>923296.88,
                      #     :average_price=>1273871.6,
-                     #     :type_id=>32772}
+                     #     :id=>32772}
 
 market_price.adjusted_price # => 923296.88
 market_price.average_price # => 1273871.6
-market_price.type_id # => 32772
+market_price.id # => 32772
 
 market_prices.etag # => "2d5acc3bd4555821bb91d787596f5ddad129f849739e83162e93c02f"
 ```
@@ -2114,14 +2114,14 @@ ancestry = ancestries.ancestries.first
 ancestry.as_json # => {:bloodline_id=>4,
                  #     :description=>"Millions of slaves within the Amarr Empire dream of escape...",
                  #     :icon_id=>1664,
-                 #     :ancestry_id=>24,
+                 #     :id=>24,
                  #     :name=>"Slave Child",
                  #     :short_description=>"Torn from the cold and brought to the warmth of a new life."}
 
 ancestry.bloodline_id # => 4
 ancestry.description # => "Millions of slaves within the Amarr Empire dream of escape..."
 ancestry.icon_id # => 1664
-ancestry.ancestry_id # => 24
+ancestry.id # => 24
 ancestry.name # => "Slave Child"
 ancestry.short_description # => "Torn from the cold and brought to the warmth of a new life."
 
@@ -2167,7 +2167,7 @@ bloodlines.bloodlines.size # => 15
 
 bloodline = bloodlines.bloodlines.first
 
-bloodline.as_json # => {:bloodline_id=>4,
+bloodline.as_json # => {:id=>4,
                   #     :charisma=>6,
                   #     :corporation_id=>1000049,
                   #     :description=>"A martial, strong-willed people, the Brutor...",
@@ -2179,7 +2179,7 @@ bloodline.as_json # => {:bloodline_id=>4,
                   #     :ship_type_id=>588,
                   #     :willpower=>7}
 
-bloodline.bloodline_id # => 4
+bloodline.id # => 4
 bloodline.charisma # => 6
 bloodline.corporation_id # => 1000049
 bloodline.description # => "A martial, strong-willed people, the Brutor..."
@@ -2211,17 +2211,17 @@ categories.etag # => "2c8392581d493e06c015ca3d48d4076079bf4c976b1f776742592260"
 #### Get item category information
 
 ```ruby
-options = { id: 6, language: 'en-us' }
+options = { category_id: 6, language: 'en-us' }
 
 category = EveOnline::ESI::UniverseCategory.new(options)
 
 category.scope # => nil
 
-category.as_json # => {:category_id=>6,
+category.as_json # => {:id=>6,
                  #     :name=>"Ship",
                  #     :published=>true}
 
-category.category_id # => 6
+category.id # => 6
 category.name # => "Ship"
 category.published # => true
 
@@ -2248,17 +2248,17 @@ constellations.etag # => "2c8392581d493e06c015ca3d48d4076079bf4c976b1f7767425922
 #### Get constellation information
 
 ```ruby
-options = { id: 20_000_001, language: 'en-us' }
+options = { constellation_id: 20_000_001, language: 'en-us' }
 
 constellation = EveOnline::ESI::UniverseConstellation.new(options)
 
 constellation.scope # => nil
 
-constellation.as_json # => {:constellation_id=>20000001,
+constellation.as_json # => {:id=>20000001,
                       #     :name=>"San Matar",
                       #     :region_id=>10000001}
 
-constellation.constellation_id # => 20000001
+constellation.id # => 20000001
 constellation.name # => "San Matar"
 constellation.region_id # => 10000001
 
@@ -2290,7 +2290,7 @@ faction = factions.factions.first
 
 faction.as_json # => {:corporation_id=>1000051,
                 #     :description=>"The Minmatar Republic was formed over a century ago when the Minmatar threw...",
-                #     :faction_id=>500002,
+                #     :id=>500002,
                 #     :is_unique=>true,
                 #     :militia_corporation_id=>1000182,
                 #     :name=>"Minmatar Republic",
@@ -2301,7 +2301,7 @@ faction.as_json # => {:corporation_id=>1000051,
 
 faction.corporation_id # => 1000051
 faction.description # => "The Minmatar Republic was formed over a century ago when the Minmatar threw..."
-faction.faction_id # => 500002
+faction.id # => 500002
 faction.is_unique # => true
 faction.militia_corporation_id # => 1000182
 faction.name # => "Minmatar Republic"
@@ -2330,7 +2330,7 @@ graphics.etag # => "e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b"
 #### Get graphic information
 
 ```ruby
-options = { id: 20481 }
+options = { graphic_id: 20481 }
 
 graphic = EveOnline::ESI::UniverseGraphic.new(options)
 
@@ -2338,7 +2338,7 @@ graphic.scope # => nil
 
 graphic.as_json # => {:collision_file=>nil,
                 #     :graphic_file=>nil,
-                #     :graphic_id=>20481,
+                #     :id=>20481,
                 #     :icon_folder=>nil,
                 #     :sof_dna=>"ai1_t1:tash-murkon:amarr",
                 #     :sof_fation_name=>"tash-murkon",
@@ -2347,7 +2347,7 @@ graphic.as_json # => {:collision_file=>nil,
 
 graphic.collision_file # => nil
 graphic.graphic_file # => nil
-graphic.graphic_id # => 20481
+graphic.id # => 20481
 graphic.icon_folder # => nil
 graphic.sof_dna # => "ai1_t1:tash-murkon:amarr"
 graphic.sof_fation_name # => "tash-murkon"
@@ -2380,19 +2380,19 @@ groups.etag # => "e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b"
 #### Get item group information
 
 ```ruby
-options = { id: 450, language: 'en-us' }
+options = { group_id: 450, language: 'en-us' }
 
 group = EveOnline::ESI::UniverseGroup.new(options)
 
 group.scope # => nil
 
 group.as_json # => {:category_id=>25,
-              #     :group_id=>450,
+              #     :id=>450,
               #     :name=>"Arkonor",
               #     :published=>true}
 
 group.category_id # => 25
-group.group_id # => 450
+group.id # => 450
 group.name # => "Arkonor"
 group.published # => true
 group.type_ids # => [22, 17425, 17426, 26852, 28367, 28385, 28387, 28625, 46678, 46691]
@@ -2405,17 +2405,17 @@ group.etag # => "e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b"
 #### Get moon information
 
 ```ruby
-options = { id: 40000004 }
+options = { moon_id: 40000004 }
 
 moon = EveOnline::ESI::UniverseMoon.new(options)
 
 moon.scope # => nil
 
-moon.as_json # => {:moon_id=>40000004,
+moon.as_json # => {:id=>40000004,
              #     :name=>"Tanoo I - Moon 1",
              #     :system_id=>30000001}
 
-moon.moon_id # => 40000004
+moon.id # => 40000004
 moon.name # => "Tanoo I - Moon 1"
 moon.system_id # => 30000001
 
@@ -2435,19 +2435,19 @@ moon.etag # => "e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b"
 #### Get planet information
 
 ```ruby
-options = { id: 40000002 }
+options = { planet_id: 40000002 }
 
 planet = EveOnline::ESI::UniversePlanet.new(options)
 
 planet.scope # => nil
 
 planet.as_json # => {:name=>"Tanoo I",
-               #     :planet_id=>40000002,
+               #     :id=>40000002,
                #     :system_id=>30000001,
                #     :type_id=>11}
 
 planet.name # => "Tanoo I"
-planet.planet_id # => 40000002
+planet.id # => 40000002
 planet.system_id # => 30000001
 planet.type_id # => 11
 
@@ -2478,12 +2478,12 @@ race = races.races.first
 race.as_json # => {:faction_id=>500002,
              #     :description=>"Once a thriving tribal civilization, the Minmatar...",
              #     :name=>"Minmatar",
-             #     :race_id=>2}
+             #     :id=>2}
 
 race.faction_id # => 500002
 race.description # => "Once a thriving tribal civilization, the Minmatar..."
 race.name # => "Minmatar"
-race.race_id # => 2
+race.id # => 2
 
 races.etag # => "e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b"
 ```
@@ -2505,7 +2505,7 @@ regions.etag # => "2c8392581d493e06c015ca3d48d4076079bf4c976b1f776742592260"
 #### Get region information
 
 ```ruby
-options = { id: 10_000_001, language: 'en-us' }
+options = { region_id: 10_000_001, language: 'en-us' }
 
 region = EveOnline::ESI::UniverseRegion.new(options)
 
@@ -2513,11 +2513,11 @@ region.scope # => nil
 
 region.as_json # => {:description=>"The Derelik region...",
                #     :name=>"Derelik",
-               #     :region_id=>10000001}
+               #     :id=>10000001}
 
 region.description # => "The Derelik region..."
 region.name # => "Derelik"
-region.region_id # => 10000001
+region.id # => 10000001
 
 region.constellation_ids.size # => 16
 region.constellation_ids.first # => 20000001
@@ -2528,21 +2528,21 @@ region.etag # => "2c8392581d493e06c015ca3d48d4076079bf4c976b1f776742592260"
 #### Get stargate information
 
 ```ruby
-options = { id: 50_000_056 }
+options = { stargate_id: 50_000_056 }
 
 stargate = EveOnline::ESI::UniverseStargate.new(options)
 
 stargate.scope # => nil
 
 stargate.as_json # => {:name=>"Stargate (Akpivem)",
-                 #     :stargate_id=>50000056,
+                 #     :id=>50000056,
                  #     :system_id=>30000001,
                  #     :type_id=>29624,
                  #     :destination_stargate_id=>50000342,
                  #     :destination_system_id=>30000003}
 
 stargate.name # => "Stargate (Akpivem)"
-stargate.stargate_id # => 50000056
+stargate.id # => 50000056
 stargate.system_id # => 30000001
 stargate.type_id # => 29624
 stargate.destination_stargate_id # => 50000342
@@ -2592,7 +2592,7 @@ star.etag # => "2e28835f91024608719726b655591d531125a023e122859d174923d5"
 #### Get station information
 
 ```ruby
-options = { id: 60012526 }
+options = { station_id: 60012526 }
 
 station = EveOnline::ESI::UniverseStation.new(options)
 
@@ -2622,7 +2622,7 @@ station.as_json # => {:max_dockable_ship_volume=>50000000.0,
                 #       "loyalty-point-store",
                 #       "navy-offices",
                 #       "security-offices"],
-                #     :station_id=>60012526,
+                #     :id=>60012526,
                 #     :system_id=>30000001,
                 #     :type_id=>2502}
 
@@ -2649,7 +2649,7 @@ station.services # => ["bounty-missions",
                  #     "loyalty-point-store",
                  #     "navy-offices",
                  #     "security-offices"]
-station.station_id # => 60012526
+station.id # => 60012526
 station.system_id # => 30000001
 station.type_id # => 2502
 
@@ -2752,7 +2752,7 @@ systems.etag # => "e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b"
 #### Get solar system information
 
 ```ruby
-options = { id: 30000001, language: 'en-us' }
+options = { system_id: 30000001, language: 'en-us' }
 
 system = EveOnline::ESI::UniverseSystem.new(options)
 
@@ -2763,14 +2763,14 @@ system.as_json # => {:constellation_id=>20000001,
                #     :security_class=>"B",
                #     :security_status=>0.8583240509033203,
                #     :star_id=>40000001,
-               #     :system_id=>30000001}
+               #     :id=>30000001}
 
 system.constellation_id # => 20000001
 system.name # => "Tanoo"
 system.security_class # => "B"
 system.security_status # => 0.8583240509033203
 system.star_id # => 40000001
-system.system_id # => 30000001
+system.id # => 30000001
 
 system.position.as_json # => {:x=>-8.851079259998058e+16,
                         #     :y=>4.236944396687888e+16,
@@ -2822,7 +2822,7 @@ types.etag # => "e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b"
 #### Get type information
 
 ```ruby
-options = { id: 192, language: 'en-us' }
+options = { type_id: 192, language: 'en-us' }
 
 type = EveOnline::ESI::UniverseType.new(options)
 
@@ -2840,7 +2840,7 @@ type.as_json # => {:capacity=>0.0,
              #     :portion_size=>100,
              #     :published=>true,
              #     :radius=>1.0,
-             #     :type_id=>192,
+             #     :id=>192,
              #     :volume=>0.0125}
 
 type.capacity # => 0.0
@@ -2855,7 +2855,7 @@ type.packaged_volume # => 0.0125
 type.portion_size # => 100
 type.published # => true
 type.radius # => 1.0
-type.type_id # => 192
+type.id # => 192
 type.volume # => 0.0125
 
 type.dogma_attributes.size # => 17
@@ -3155,7 +3155,8 @@ List of exceptions:
 * `EveOnline::Exceptions::InternalServerError` when response returns status 500.
 * `EveOnline::Exceptions::BadGateway` when response returns status 502.
 * `EveOnline::Exceptions::ServiceUnavailable` when response returns status 503.
-* `EveOnline::Exceptions::Timeout` when timeout.
+* `EveOnline::Exceptions::Timeout` when response returns status 504.
+* `EveOnline::Exceptions::Timeout` when timeout (faraday raise any timeouts errors).
 
 ## Timeouts
 

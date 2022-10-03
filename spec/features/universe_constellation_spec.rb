@@ -8,7 +8,7 @@ describe "Get constellation information" do
 
     after { VCR.eject_cassette }
 
-    let(:options) { {id: 20_000_001} }
+    let(:options) { {constellation_id: 20_000_001} }
 
     subject { EveOnline::ESI::UniverseConstellation.new(options) }
 
@@ -17,7 +17,7 @@ describe "Get constellation information" do
     specify { expect(subject.not_modified?).to eq(false) }
 
     specify do
-      expect(subject.as_json).to eq(constellation_id: 20_000_001,
+      expect(subject.as_json).to eq(id: 20_000_001,
         name: "San Matar",
         region_id: 10_000_001)
     end
@@ -53,7 +53,7 @@ describe "Get constellation information" do
 
     let(:options) do
       {
-        id: 20_000_001,
+        constellation_id: 20_000_001,
         etag: "37a39e7a5f5ecc07b19a3128c319f1198d035aee10052d0a21ccdd94"
       }
     end

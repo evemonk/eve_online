@@ -9,16 +9,16 @@ module EveOnline
 
       API_PATH = "/v1/universe/graphics/%<graphic_id>s/"
 
-      attr_reader :id
+      attr_reader :graphic_id
 
       def initialize(options)
         super
 
-        @id = options.fetch(:id)
+        @graphic_id = options.fetch(:graphic_id)
       end
 
       def_delegators :model, :as_json, :collision_file, :graphic_file,
-        :graphic_id, :icon_folder, :sof_dna, :sof_fation_name, :sof_hull_name,
+        :id, :icon_folder, :sof_dna, :sof_fation_name, :sof_hull_name,
         :sof_race_name
 
       def model
@@ -29,7 +29,7 @@ module EveOnline
       end
 
       def path
-        format(API_PATH, graphic_id: id)
+        format(API_PATH, graphic_id: graphic_id)
       end
     end
   end

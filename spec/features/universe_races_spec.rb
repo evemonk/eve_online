@@ -20,7 +20,7 @@ describe "Get character races" do
       expect(subject.races.first.as_json).to eq(faction_id: 500_001,
         description: "Founded on the tenets of patriotism and hard work that carried its ancestors through hardships on an inhospitable homeworld, the Caldari State is today a corporate dictatorship, led by rulers who are determined to see it return to the meritocratic ideals of old. Ruthless and efficient in the boardroom as well as on the battlefield, the Caldari are living emblems of strength, persistence, and dignity.",
         name: "Caldari",
-        race_id: 1)
+        id: 1)
     end
 
     specify { expect(subject.etag).to eq("37a39e7a5f5ecc07b19a3128c319f1198d035aee10052d0a21ccdd94") }

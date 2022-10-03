@@ -3,7 +3,70 @@
 ## main
 
 * Update `faraday` to `>= 2.3.0`
+* Raise exception `EveOnline::Exceptions::Timeout` for 503 status
 * BREAKING: Always pass esi to middleware. To migrate, remove any esi passing.
+* BREAKING: Rename method `EveOnline::ESI::Models::Ancestry#ancestry_id` to `id`
+* BREAKING: In `EveOnline::ESI::Models::Ancestry#as_json` rename field from `ancestry_id` to `id`
+* BREAKING: Rename input `id:` to `station_id:` in `EveOnline::ESI::UniverseStation#initialize(options)`
+* BREAKING: Rename `EveOnline::ESI::UniverseStation#station_id` to `id`
+* BREAKING: Rename `EveOnline::ESI::UniverseStation#id` to `station_id`
+* BREAKING: In `EveOnline::ESI::Models::Station#as_json` rename field from `station_id` to `id`
+* BREAKING: Rename method `EveOnline::ESI::Models::Station#station_id` to `id`
+* BREAKING: In `EveOnline::ESI::Models::Bloodline#as_json` rename field from `bloodline_id` to `id`
+* BREAKING: Rename method `EveOnline::ESI::Models::Bloodline#bloodline_id` to `id`
+* BREAKING: In `EveOnline::ESI::Models::Category#as_json` rename field from `category_id` to `id`
+* BREAKING: Rename method `EveOnline::ESI::Models::Category#category_id` to `id`
+* BREAKING: Rename input `id:` to `category_id:` in `EveOnline::ESI::UniverseCategory#initialize(options)`
+* BREAKING: Rename `EveOnline::ESI::UniverseCategory#category_id` to `id`
+* BREAKING: Rename `EveOnline::ESI::UniverseCategory#id` to `category_id`
+* BREAKING: In `EveOnline::ESI::Models::Region#as_json` rename field from `region_id` to `id`
+* BREAKING: Rename method `EveOnline::ESI::Models::Region#region_id` to `id`
+* BREAKING: Rename `EveOnline::ESI::UniverseRegion#region_id` to `id`
+* BREAKING: Rename `EveOnline::ESI::UniverseRegion#id` to `region_id`
+* BREAKING: In `EveOnline::ESI::Models::Group#as_json` rename field from `group_id` to `id`
+* BREAKING: Rename method `EveOnline::ESI::Models::Group#group_id` to `id`
+* BREAKING: Rename `EveOnline::ESI::UniverseGroup#group_id` to `id`
+* BREAKING: Rename `EveOnline::ESI::UniverseGroup#id` to `group_id`
+* BREAKING: Rename input `id:` to `group_id:` in `EveOnline::ESI::UniverseGroup#initialize(options)`
+* BREAKING: In `EveOnline::ESI::Models::Race#as_json` rename field from `race_id` to `id`
+* BREAKING: Rename method `EveOnline::ESI::Models::Race#race_id` to `id`
+* BREAKING: In `EveOnline::ESI::Models::MarketGroup#as_json` rename field from `market_group_id` to `id`
+* BREAKING: Rename method `EveOnline::ESI::Models::MarketGroup#market_group_id` to `id`
+* BREAKING: Rename input `id:` to `market_group_id:` in `EveOnline::ESI::MarketGroup#initialize(options)`
+* BREAKING: Rename `EveOnline::ESI::MarketGroup#market_group_id` to `id`
+* BREAKING: Rename `EveOnline::ESI::MarketGroup#id` to `market_group_id`
+* BREAKING: In `EveOnline::ESI::Models::Type#as_json` rename field from `type_id` to `id`
+* BREAKING: Rename method `EveOnline::ESI::Models::Type#type_id` to `id`
+* BREAKING: Rename input `id:` to `type_id:` in `EveOnline::ESI::UniverseType#initialize(options)`
+* BREAKING: Rename `EveOnline::ESI::UniverseType#type_id` to `id`
+* BREAKING: In `EveOnline::ESI::Models::Faction#as_json` rename field from `faction_id` to `id`
+* BREAKING: Rename method `EveOnline::ESI::Models::Faction#faction_id` to `id`
+* BREAKING: In `EveOnline::ESI::Models::Stargate#as_json` rename field from `stargate_id` to `id`
+* BREAKING: Rename `EveOnline::ESI::Models::Stargate#stargate_id` to `id`
+* BREAKING: Rename input `id:` to `stargate_id:` in `EveOnline::ESI::UniverseStargate#initialize(options)`
+* BREAKING: Rename `EveOnline::ESI::UniverseStargate#stargate_id` to `id`
+* BREAKING: In `EveOnline::ESI::Models::Moon#as_json` rename field from `moon_id` to `id`
+* BREAKING: Rename `EveOnline::ESI::Models::Moon#moon_id` to `id`
+* BREAKING: Rename input `id:` to `moon_id:` in `EveOnline::ESI::UniverseMoon#initialize(options)`
+* BREAKING: Rename `EveOnline::ESI::UniverseMoon#moon_id` to `id`
+* BREAKING: In `EveOnline::ESI::Models::Planet#as_json` rename field from `planet_id` to `id`
+* BREAKING: Rename `EveOnline::ESI::Models::Planet#planet_id` to `id`
+* BREAKING: Rename input `id:` to `planet_id:` in `EveOnline::ESI::UniversePlanet#initialize(options)`
+* BREAKING: Rename `EveOnline::ESI::UniversePlanet#planet_id` to `id`
+* BREAKING: In `EveOnline::ESI::Models::System#as_json` rename field from `system_id` to `id`
+* BREAKING: Rename `EveOnline::ESI::Models::System#system_id` to `id`
+* BREAKING: Rename input `id:` to `system_id:` in `EveOnline::ESI::UniverseSystem#initialize(options)`
+* BREAKING: Rename `EveOnline::ESI::UniverseSystem#system_id` to `id`
+* BREAKING: In `EveOnline::ESI::Models::Constellation#as_json` rename field from `constellation_id` to `id`
+* BREAKING: Rename `EveOnline::ESI::Models::Constellation#constellation_id` to `id`
+* BREAKING: Rename input `id:` to `constellation_id:` in `EveOnline::ESI::UniverseConstellation#initialize(options)`
+* BREAKING: Rename `EveOnline::ESI::UniverseConstellation#constellation_id` to `id`
+* BREAKING: In `EveOnline::ESI::Models::Graphic#as_json` rename field from `graphic_id` to `id`
+* BREAKING: Rename `EveOnline::ESI::Models::Graphic#graphic_id` to `id`
+* BREAKING: Rename input `id:` to `graphic_id:` in `EveOnline::ESI::UniverseGraphic#initialize(options)`
+* BREAKING: Rename `EveOnline::ESI::UniverseGraphic#graphic_id` to `id`
+* BREAKING: In `EveOnline::ESI::Models::MarketPrice#as_json` rename field from `type_id` to `id`
+* BREAKING: Rename `EveOnline::ESI::Models::MarketPrice#type_id` to `id`
 
 ## v0.43.0
 

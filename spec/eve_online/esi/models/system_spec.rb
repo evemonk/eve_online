@@ -26,7 +26,7 @@ describe EveOnline::ESI::Models::System do
 
     before { expect(system).to receive(:star_id).and_return(40_000_001) }
 
-    before { expect(system).to receive(:system_id).and_return(30_000_001) }
+    before { expect(system).to receive(:id).and_return(30_000_001) }
 
     subject { system.as_json }
 
@@ -40,7 +40,7 @@ describe EveOnline::ESI::Models::System do
 
     its([:star_id]) { should eq(40_000_001) }
 
-    its([:system_id]) { should eq(30_000_001) }
+    its([:id]) { should eq(30_000_001) }
   end
 
   describe "#constellation_id" do
@@ -73,10 +73,10 @@ describe EveOnline::ESI::Models::System do
     specify { expect { subject.star_id }.not_to raise_error }
   end
 
-  describe "#system_id" do
+  describe "#id" do
     before { expect(options).to receive(:[]).with("system_id") }
 
-    specify { expect { subject.system_id }.not_to raise_error }
+    specify { expect { subject.id }.not_to raise_error }
   end
 
   describe "#position" do

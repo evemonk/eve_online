@@ -9,17 +9,17 @@ module EveOnline
 
       API_PATH = "/v3/universe/types/%<type_id>s/"
 
-      attr_reader :id
+      attr_reader :type_id
 
       def initialize(options)
         super
 
-        @id = options.fetch(:id)
+        @type_id = options.fetch(:type_id)
       end
 
       def_delegators :model, :as_json, :capacity, :description, :graphic_id,
         :group_id, :icon_id, :market_group_id, :mass, :name, :packaged_volume,
-        :portion_size, :published, :radius, :type_id, :volume,
+        :portion_size, :published, :radius, :id, :volume,
         :dogma_attributes, :dogma_effects
 
       def model
@@ -34,7 +34,7 @@ module EveOnline
       end
 
       def path
-        format(API_PATH, type_id: id)
+        format(API_PATH, type_id: type_id)
       end
     end
   end

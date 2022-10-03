@@ -8,7 +8,7 @@ describe "Get moon information" do
 
     after { VCR.eject_cassette }
 
-    let(:options) { {id: 40_000_004} }
+    let(:options) { {moon_id: 40_000_004} }
 
     subject { EveOnline::ESI::UniverseMoon.new(options) }
 
@@ -17,7 +17,7 @@ describe "Get moon information" do
     specify { expect(subject.not_modified?).to eq(false) }
 
     specify do
-      expect(subject.as_json).to eq(moon_id: 40_000_004,
+      expect(subject.as_json).to eq(id: 40_000_004,
         name: "Tanoo I - Moon 1",
         system_id: 30_000_001)
     end
@@ -38,7 +38,7 @@ describe "Get moon information" do
   context "when etag is set" do
     let(:options) do
       {
-        id: 40_000_004,
+        moon_id: 40_000_004,
         etag: "e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b"
       }
     end

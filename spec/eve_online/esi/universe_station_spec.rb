@@ -3,7 +3,7 @@
 require "spec_helper"
 
 describe EveOnline::ESI::UniverseStation do
-  let(:options) { {id: 60_012_526} }
+  let(:options) { {station_id: 60_012_526} }
 
   subject { described_class.new(options) }
 
@@ -20,7 +20,7 @@ describe EveOnline::ESI::UniverseStation do
 
     its(:_write_timeout) { should eq(60) }
 
-    its(:id) { should eq(60_012_526) }
+    its(:station_id) { should eq(60_012_526) }
   end
 
   describe "#model" do
@@ -142,14 +142,14 @@ describe EveOnline::ESI::UniverseStation do
     specify { expect { subject.services }.not_to raise_error }
   end
 
-  describe "#station_id" do
+  describe "#id" do
     let(:model) { instance_double(EveOnline::ESI::Models::Station) }
 
     before { subject.instance_variable_set(:@model, model) }
 
-    before { expect(model).to receive(:station_id) }
+    before { expect(model).to receive(:id) }
 
-    specify { expect { subject.station_id }.not_to raise_error }
+    specify { expect { subject.id }.not_to raise_error }
   end
 
   describe "#system_id" do

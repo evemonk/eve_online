@@ -16,7 +16,7 @@ describe EveOnline::ESI::Models::Constellation do
   describe "#as_json" do
     let(:constellation) { described_class.new(options) }
 
-    before { expect(constellation).to receive(:constellation_id).and_return(20_000_001) }
+    before { expect(constellation).to receive(:id).and_return(20_000_001) }
 
     before { expect(constellation).to receive(:name).and_return("San Matar") }
 
@@ -24,17 +24,17 @@ describe EveOnline::ESI::Models::Constellation do
 
     subject { constellation.as_json }
 
-    its([:constellation_id]) { should eq(20_000_001) }
+    its([:id]) { should eq(20_000_001) }
 
     its([:name]) { should eq("San Matar") }
 
     its([:region_id]) { should eq(10_000_001) }
   end
 
-  describe "#constellation_id" do
+  describe "#id" do
     before { expect(options).to receive(:[]).with("constellation_id") }
 
-    specify { expect { subject.constellation_id }.not_to raise_error }
+    specify { expect { subject.id }.not_to raise_error }
   end
 
   describe "#name" do

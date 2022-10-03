@@ -7,7 +7,7 @@ module EveOnline
         def as_json
           {
             name: name,
-            stargate_id: stargate_id,
+            id: id,
             system_id: system_id,
             type_id: type_id,
             destination_stargate_id: destination_stargate_id,
@@ -19,7 +19,7 @@ module EveOnline
           options["name"]
         end
 
-        def stargate_id
+        def id
           options["stargate_id"]
         end
 
