@@ -1851,11 +1851,11 @@ market_price = market_prices.market_prices.first
 
 market_price.as_json # => {:adjusted_price=>923296.88,
                      #     :average_price=>1273871.6,
-                     #     :type_id=>32772}
+                     #     :id=>32772}
 
 market_price.adjusted_price # => 923296.88
 market_price.average_price # => 1273871.6
-market_price.type_id # => 32772
+market_price.id # => 32772
 
 market_prices.etag # => "2d5acc3bd4555821bb91d787596f5ddad129f849739e83162e93c02f"
 ```

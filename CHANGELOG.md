@@ -65,6 +65,8 @@
 * BREAKING: Rename `EveOnline::ESI::Models::Graphic#graphic_id` to `id`
 * BREAKING: Rename input `id:` to `graphic_id:` in `EveOnline::ESI::UniverseGraphic#initialize(options)`
 * BREAKING: Rename `EveOnline::ESI::UniverseGraphic#graphic_id` to `id`
+* BREAKING: In `EveOnline::ESI::Models::MarketPrice#as_json` rename field from `type_id` to `id`
+* BREAKING: Rename `EveOnline::ESI::Models::MarketPrice#type_id` to `id`
 
 ## v0.43.0
 

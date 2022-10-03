@@ -8,7 +8,7 @@ module EveOnline
           {
             adjusted_price: adjusted_price,
             average_price: average_price,
-            type_id: type_id
+            id: id
           }
         end
 
@@ -20,7 +20,7 @@ module EveOnline
           options["average_price"]
         end
 
-        def type_id
+        def id
           options["type_id"]
         end
       end

@@ -20,7 +20,7 @@ describe EveOnline::ESI::Models::MarketPrice do
 
     before { expect(market_price).to receive(:average_price).and_return(1_273_871.6) }
 
-    before { expect(market_price).to receive(:type_id).and_return(32_772) }
+    before { expect(market_price).to receive(:id).and_return(32_772) }
 
     subject { market_price.as_json }
 
@@ -28,7 +28,7 @@ describe EveOnline::ESI::Models::MarketPrice do
 
     its([:average_price]) { should eq(1_273_871.6) }
 
-    its([:type_id]) { should eq(32_772) }
+    its([:id]) { should eq(32_772) }
   end
 
   describe "#adjusted_price" do
@@ -43,9 +43,9 @@ describe EveOnline::ESI::Models::MarketPrice do
     specify { expect { subject.average_price }.not_to raise_error }
   end
 
-  describe "#type_id" do
+  describe "#id" do
     before { expect(options).to receive(:[]).with("type_id") }
 
-    specify { expect { subject.type_id }.not_to raise_error }
+    specify { expect { subject.id }.not_to raise_error }
   end
 end

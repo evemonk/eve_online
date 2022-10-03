@@ -19,7 +19,7 @@ describe "List market prices" do
     specify do
       expect(subject.market_prices.first.as_json).to eq(adjusted_price: 923_296.88,
         average_price: 1_273_871.6,
-        type_id: 32_772)
+        id: 32_772)
     end
 
     specify { expect(subject.etag).to eq("2d5acc3bd4555821bb91d787596f5ddad129f849739e83162e93c02f") }
