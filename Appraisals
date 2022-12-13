@@ -1,9 +1,7 @@
 # frozen_string_literal: true
 
-if Gem::Version.new(RUBY_VERSION) < Gem::Version.new("3.2.0")
-  appraise "activesupport_52" do
-    gem "activesupport", "~> 5.2.0"
-  end
+appraise "activesupport_52" do
+  gem "activesupport", "~> 5.2.0"
 end
 
 appraise "activesupport_60" do
