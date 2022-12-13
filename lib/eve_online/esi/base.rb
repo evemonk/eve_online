@@ -90,7 +90,6 @@ module EveOnline
       def connection
         @connection ||= Faraday.new do |f|
           f.headers["User-Agent"] = user_agent
-          f.headers["If-None-Match"] = _etag if _etag
           f.headers["Accept"] = "application/json"
           f.request :authorization, "Bearer", token if token
           f.options.read_timeout = _read_timeout

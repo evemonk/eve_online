@@ -326,20 +326,6 @@ describe EveOnline::ESI::Base do
 
       specify { expect(subject.connection.adapter).to eq(Faraday::Adapter::NetHttp) }
 
-      context "when _etag is present" do
-        let(:_etag) { double }
-
-        before { expect(subject).to receive(:_etag).and_return(_etag).twice }
-
-        specify { expect(subject.connection.headers["If-None-Match"]).to eq(_etag) }
-      end
-
-      context "when _etag is empty" do
-        before { expect(subject).to receive(:_etag).and_return(nil) }
-
-        specify { expect(subject.connection.headers["If-None-Match"]).to eq(nil) }
-      end
-
       context "when token is present" do
         let(:token) { "token123" }
 
