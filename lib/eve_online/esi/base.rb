@@ -140,16 +140,8 @@ module EveOnline
         raise EveOnline::Exceptions::Timeout
       end
 
-      def content
-        if not_modified?
-          raise EveOnline::Exceptions::NotModified
-        else
-          resource.body
-        end
-      end
-
       def response
-        @response ||= content
+        @response ||= resource.body
       end
 
       private

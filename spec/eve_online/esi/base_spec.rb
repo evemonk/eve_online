@@ -521,26 +521,6 @@ describe EveOnline::ESI::Base do
     end
   end
 
-  describe "#content" do
-    context "when not modified" do
-      before { expect(subject).to receive(:not_modified?).and_return(true) }
-
-      specify { expect { subject.content }.to raise_error(EveOnline::Exceptions::NotModified) }
-    end
-
-    context "when modified" do
-      before { expect(subject).to receive(:not_modified?).and_return(false) }
-
-      let(:body) { double }
-
-      let(:resource) { double(body: body) }
-
-      before { expect(subject).to receive(:resource).and_return(resource) }
-
-      specify { expect(subject.content).to eq(body) }
-    end
-  end
-
   describe "#response" do
     context "when @response set" do
       let(:response) { double }
@@ -551,13 +531,15 @@ describe EveOnline::ESI::Base do
     end
 
     context "when @response not set" do
-      let(:content) { double }
+      let(:body) { double }
 
-      before { expect(subject).to receive(:content).and_return(content) }
+      let(:resource) { double(body: body) }
+
+      before { expect(subject).to receive(:resource).and_return(resource) }
 
       specify { expect { subject.response }.not_to raise_error }
 
-      specify { expect { subject.response }.to change { subject.instance_variable_get(:@response) }.from(nil).to(content) }
+      specify { expect { subject.response }.to change { subject.instance_variable_get(:@response) }.from(nil).to(body) }
     end
   end
 
