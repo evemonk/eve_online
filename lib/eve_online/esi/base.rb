@@ -10,7 +10,7 @@ module EveOnline
       API_HOST = "esi.evetech.net"
 
       attr_reader :token, :_read_timeout, :_open_timeout, :_write_timeout,
-        :_etag, :language, :adapter, :middlewares
+        :language, :adapter, :middlewares
 
       attr_writer :token
 
@@ -19,7 +19,6 @@ module EveOnline
         @_read_timeout = options.fetch(:read_timeout, 60)
         @_open_timeout = options.fetch(:open_timeout, 60)
         @_write_timeout = options.fetch(:write_timeout, 60)
-        @_etag = options.fetch(:etag, nil)
         @language = options.fetch(:language, "en-us")
         @adapter = options.fetch(:adapter, Faraday.default_adapter)
         @middlewares = options.fetch(:middlewares, [])
@@ -63,14 +62,6 @@ module EveOnline
 
       def write_timeout=(value)
         connection.options.write_timeout = value
-      end
-
-      def etag=(value)
-        @_etag = value
-      end
-
-      def etag
-        resource.headers["etag"]&.gsub("W/", "")&.gsub('"', "")
       end
 
       def page
