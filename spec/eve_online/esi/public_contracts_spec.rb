@@ -48,28 +48,27 @@ describe EveOnline::ESI::PublicContracts do
       let(:response) do
         [
           {
-            collateral: 0.0,
-            contract_id: 157_834_735,
-            date_expired: "2020-06-17T21:36:41Z",
-            date_issued: "2020-05-20T21:36:41Z",
+            collateral: 0,
+            contract_id: 186_482_104,
+            date_expired: "2022-12-13T14:23:13Z",
+            date_issued: "2022-11-15T14:23:13Z",
             days_to_complete: 0,
-            end_location_id: 60008494,
-            for_corporation: true,
-            issuer_corporation_id: 897372069,
-            issuer_id: 1314102096,
-            price: 1250000000.0,
-            reward: 0.0,
-            start_location_id: 60008494,
-            title: "ApostleMe10\/Te16 Complete Bpc 10 Pack",
+            end_location_id: 60_008_494,
+            issuer_corporation_id: 98_553_759,
+            issuer_id: 2_113_785_179,
+            price: 1_999_000_000,
+            reward: 0,
+            start_location_id: 60_008_494,
+            title: "Abyssal Deadspace Repairer",
             type: "item_exchange",
-            volume: 100.0
+            volume: 50
           }
         ]
       end
 
       before do
         #
-        # subject.response # => [{"collateral"=>0.0, "contract_id"=>157834735, "date_expired"=>"2020-06-17T21:36:41Z", "date_issued"=>"2020-05-20T21:36:41Z", "days_to_complete"=>0, "end_location_id"=>60008494, "for_corporation"=>true, "issuer_corporation_id"=>897372069, "issuer_id"=>1314102096, "price"=>1250000000.0, "reward"=>0.0, "start_location_id"=>60008494, "title"=>"ApostleMe10\/Te16 Complete Bpc 10 Pack", "type"=>"item_exchange", "volume"=>100.0}]
+        # subject.response # => [{"collateral"=>0, "contract_id"=>186482104, "date_expired"=>"2022-12-13T14:23:13Z", "date_issued"=>"2022-11-15T14:23:13Z", "days_to_complete"=>0, "end_location_id"=>60008494, "issuer_corporation_id"=>98553759, "issuer_id"=>2113785179, "price"=>1999000000, "reward"=>0, "start_location_id"=>60008494, "title"=>"Abyssal Deadspace Repairer", "type"=>"item_exchange", "volume"=>50}]
         #
         expect(subject).to receive(:response).and_return(response)
       end
