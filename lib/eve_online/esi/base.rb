@@ -140,10 +140,6 @@ module EveOnline
         raise EveOnline::Exceptions::Timeout
       end
 
-      def not_modified?
-        resource.status == 304
-      end
-
       def content
         if not_modified?
           raise EveOnline::Exceptions::NotModified
