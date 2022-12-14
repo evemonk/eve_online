@@ -2924,8 +2924,6 @@ defender.alliance_id # => 99008228
 defender.corporation_id # => nil
 defender.isk_destroyed # => 0.0
 defender.ships_killed # => 0
-
-war.etag # => "3933b0baeaac259101f55fdad865c5590deeb9e1613fb2344b3db293"
 ```
 
 #### List kills for a war
@@ -2950,8 +2948,6 @@ killmail.as_json # => {:killmail_hash=>"07f7ef1d7f6090e78d8e85b4a98e680f67b5e9d5
 
 killmail.killmail_hash # => "07f7ef1d7f6090e78d8e85b4a98e680f67b5e9d5"
 killmail.killmail_id # => 72410059
-
-war_killmails.etag # => "12ee36a10ee0dbfb7f6691e1b27c8400fdca645f15e70ebc0a94b7ae"
 ```
 
 ## Exceptions
@@ -2973,7 +2969,6 @@ end
 List of exceptions:
 
 * `EveOnline::Exceptions::NoContent` when response returns status 204 without body.
-* `EveOnline::Exceptions::NotModified` when response returns status 304 without body.
 * `EveOnline::Exceptions::BadRequest` when response returns status 400.
 * `EveOnline::Exceptions::Unauthorized` when response returns status 401.
 * `EveOnline::Exceptions::Forbidden` when response returns status 403.
