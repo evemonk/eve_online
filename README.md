@@ -73,8 +73,6 @@ alliances.scope # => nil
 alliances.alliance_ids.size # => 3028
 
 alliances.alliance_ids.first # => 1354830081
-
-alliances.etag # => "97f0c48679f2b200043cdbc3406291fc945bcd652ddc7fc11ccdc37a"
 ```
 
 #### Get alliance information
@@ -101,8 +99,6 @@ alliance.executor_corporation_id # => 98306624
 alliance.faction_id # => nil
 alliance.name # => "Kids With Guns Alliance"
 alliance.ticker # => "-KWG-"
-
-alliance.etag # => "6780e53a01c7d9715b5f445126c4f2c137da4be79e4debe541ce3ab2"
 ```
 
 #### List alliance's corporations
@@ -117,8 +113,6 @@ alliance_corporations.scope # => nil
 alliance_corporations.corporation_ids.size # => 70
 
 alliance_corporations.corporation_ids.first # => 98091533
-
-alliance_corporations.etag # => "9b6810d8ddbd9a13bb4ad09cf4bfefd9f29974bffd543eb30ce25132"
 ```
 
 #### Get alliance icon
@@ -135,8 +129,6 @@ alliance_icon.as_json # => {:icon_medium=>"https://images.evetech.net/alliances/
 
 alliance_icon.icon_medium # => "https://images.evetech.net/alliances/99005443/logo?tenant=tranquility&size=128"
 alliance_icon.icon_small # => "https://images.evetech.net/alliances/99005443/logo?tenant=tranquility&size=64"
-
-alliance_icon.etag # => "d067edb53a9019e0e05d99a2b1e7c7745433a982dda16667a14bff49"
 ```
 
 ### Assets
@@ -175,8 +167,6 @@ asset.location_id # => 1027847409779
 asset.location_type # => "other"
 asset.quantity # => 1
 asset.type_id # => 1010
-
-character_assets.etag # => "29da11b30974e55cd440a879199a629a8492a4c0a49894a2cd22f90b"
 ```
 
 #### Get character asset locations
@@ -203,8 +193,6 @@ asset_location.position.as_json # => {:x=>-928621543221.3319,
 asset_location.position.x # => -928621543221.3319
 asset_location.position.y # => 297645715142.40234
 asset_location.position.z # => -971212198300.4812
-
-character_assets_locations.etag # => NotImplementedError
 ```
 
 #### Get character asset names
@@ -225,8 +213,6 @@ asset_name.as_json # => {:item_id=>1001215602246,
 
 asset_name.item_id # => 1001215602246
 asset_name.name # => "HOLE"
-
-character_assets_names.etag # => NotImplementedError
 ```
 
 #### Get corporation assets
@@ -265,8 +251,6 @@ asset.location_id # => 1027847409779
 asset.location_type # => "other"
 asset.quantity # => 1
 asset.type_id # => 1010
-
-# TODO: corporation_assets.etag
 ```
 
 #### Get corporation asset locations
@@ -295,8 +279,6 @@ asset_location.position.as_json # => {:x=>-928621543221.3319,
 asset_location.position.x # => -928621543221.3319
 asset_location.position.y # => 297645715142.40234
 asset_location.position.z # => -971212198300.4812
-
-corporation_assets_locations.etag # => NotImplementedError
 ```
 
 #### Get corporation asset names
@@ -319,8 +301,6 @@ asset_name.as_json # => {:item_id=>1001215602246,
 
 asset_name.item_id # => 1001215602246
 asset_name.name # => "HOLE"
-
-corporation_assets_names.etag # => NotImplementedError
 ```
 
 ### Bookmarks
@@ -360,8 +340,6 @@ event.event_id # => 1635240
 event.event_response # => "not_responded"
 event.importance # => 0
 event.title # => "Moon extraction for 66-PMM - GoldMine-5-"
-
-# TODO: character_calendar.etag
 ```
 
 #### Get an event
@@ -434,8 +412,6 @@ character.name # => "Green Black"
 character.race_id # => 2
 character.security_status # => 1.8694881661345457
 character.title # => nil
-
-character.etag # => "22c39689783a86032b8d43fa0b2e8f4809c4f38a585e39471035aa8b"
 ```
 
 #### Get agents research
@@ -474,8 +450,6 @@ blueprint.quantity # => -2
 blueprint.runs # => 300
 blueprint.time_efficiency # => 0
 blueprint.type_id # => 1010
-
-# TODO: character_blueprints.etag
 ```
 
 #### Get corporation history
@@ -500,8 +474,6 @@ entry.corporation_id # => 1000168
 entry.is_deleted # => nil
 entry.record_id # => 16785803
 entry.start_date # => Tue, 10 May 2011 10:23:00 UTC +00:00
-
-character_corporation_history.etag # => "f9497588fc2db18ca9a2ee06c48a16120e0c712fe9925bb29d7aaeeb"
 ```
 
 #### Calculate a CSPA charge cost
@@ -524,8 +496,6 @@ character_fatigue.last_jump_date # => nil
 character_fatigue.last_update_date # => nil
 
 # TODO: add real data here
-
-# TODO: character_fatigue.etag
 ```
 
 #### Get medals
@@ -558,8 +528,6 @@ notification.sender_type # => "corporation"
 notification.text # => "againstID: 99005443\ncost: 0\ndeclaredByID: 98442842\ndelayHours: 24\nhostileState: 0\n"
 notification.timestamp # => Thu, 01 Mar 2018 13:48:00 UTC +00:00
 notification.type # => "AllWarDeclaredMsg"
-
-# TODO: character_notifications.etag
 ```
 
 #### Get new contact notifications
@@ -582,8 +550,6 @@ character_portrait.medium # => "https://images.evetech.net/Character/1337512245_
 character_portrait.large # => "https://images.evetech.net/Character/1337512245_256.jpg"
 character_portrait.huge # => "https://images.evetech.net/Character/1337512245_512.jpg"
 character_portrait.small # => "https://images.evetech.net/Character/1337512245_64.jpg"
-
-character_portrait.etag # => "2c8392581d493e06c015ca3d48d4076079bf4c976b1f776742592260"
 ```
 
 #### Get character corporation roles
@@ -608,8 +574,6 @@ standing.as_json # => {:from_id=>500001,
 standing.from_id # => 500001
 standing.from_type # => "faction"
 standing.standing # => 0.3303719111639991
-
-# TODO: character_standing.etag
 ```
 
 #### Yearly aggregate stats
@@ -651,8 +615,6 @@ jump_clone.implant_ids # => [22118]
 character_clones.last_clone_jump_date # => Fri, 27 Jul 2012 14:50:11 UTC +00:00
 
 character_clones.last_station_change_date # => Tue, 30 Jun 2015 21:51:13 UTC +00:00
-
-# TODO: character_clones.etag
 ```
 
 #### Get active implants
@@ -667,8 +629,6 @@ character_implants.scope # => "esi-clones.read_implants.v1"
 character_implants.implant_ids.size # => 5
 
 character_implants.implant_ids # => [9899, 9941, 9942, 9943, 9956]
-
-# TODO: character_implants.etag
 ```
 
 ### Contacts
@@ -751,8 +711,6 @@ contract.status # => "finished"
 contract.title # => ""
 contract.type # => "item_exchange"
 contract.volume # => 15000.0
-
-contracts.etag # => "6e18566a8f786f08aba678262360d0c74a783f9923aa43f8043133e4"
 ```
 
 #### Get contract bids
@@ -809,8 +767,6 @@ contract.start_location_id # => 60008494
 contract.title # => "Apostle Me10/Te16 Complete Bpc 10 Pack"
 contract.kind # => "item_exchange"
 contract.volume # => 100.0
-
-contracts.etag # => "3f7fdf9a69e35bb35d619b6cb5043a2766d11ca6306a8b5af369ce6e"
 ```
 
 #### Get public contract bids
@@ -849,8 +805,6 @@ item.record_id # => 3210378611
 item.runs # => 400
 item.time_efficiency # => 20
 item.type_id # => 29040
-
-contract.etag # => "d458c3f56c114882a9ecfe1aaf173837310b15b6e7cef86a019e700f"
 ```
 
 #### Get public contract items
@@ -901,8 +855,6 @@ corporation.tax_rate # => 0.1
 corporation.ticker # => "BUBIC"
 corporation.corporation_url # => "http://"
 corporation.war_eligible # => true
-
-corporation.etag # => "046430260be73e5d7ad3a9251954310bd547498eeb38f99e8d305796"
 ```
 
 #### Get alliance history
@@ -929,8 +881,6 @@ entry.alliance_id # => 99005874
 entry.is_deleted # => nil
 entry.record_id # => 1254640
 entry.start_date # => Mon, 03 Jun 2019 00:17:00 UTC +00:00
-
-corporation_alliance_history.etag # => "9a949294cfa5fcef345ea8d89a574defa09be39845b9b97f1fdddd41"
 ```
 
 #### Get corporation blueprints
@@ -969,8 +919,6 @@ blueprint.time_efficiency # => 20
 blueprint.type_id # => 31803
 
 corporation_blueprints.roles # => ["Director"]
-
-# TODO: corporation_blueprints.etag
 ```
 
 #### Get all corporation ALSC logs
@@ -997,8 +945,6 @@ corporation_members.scope # => "esi-corporations.read_corporation_membership.v1"
 corporation_members.character_ids.size # => 118
 
 corporation_members.character_ids.first # => 2114220544
-
-corporation_members.etag # => "6094aeb7f2c2754a7d1f210eed73f1f858042330852fac847a477a59"
 ```
 
 #### Get corporation member limit
@@ -1033,8 +979,6 @@ corporation_npcs.scope # => nil
 corporation_npcs.corporation_npc_ids.size # => 262
 
 corporation_npcs.corporation_npc_ids.first # => 1000001
-
-corporation_npcs.etag # => "085946820256a4f7be2e9926e9d1de9e420cca53ffb31f7547740a05"
 ```
 
 ### Dogma
