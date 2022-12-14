@@ -19,16 +19,12 @@ describe "Get character asset names" do
 
   specify { expect(subject.scope).to eq("esi-assets.read_assets.v1") }
 
-  specify { expect(subject.not_modified?).to eq(false) }
-
   specify { expect(subject.assets_names.size).to eq(1) }
 
   specify do
     expect(subject.assets_names.first.as_json).to eq(item_id: 1_001_215_602_246,
       name: "HOLE")
   end
-
-  specify { expect { subject.etag }.to raise_error(NotImplementedError) }
 
   specify { expect(subject.error_limit_remain).to eq(100) }
 

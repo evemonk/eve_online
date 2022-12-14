@@ -19,8 +19,6 @@ describe "Get character asset locations" do
 
   specify { expect(subject.scope).to eq("esi-assets.read_assets.v1") }
 
-  specify { expect(subject.not_modified?).to eq(false) }
-
   specify { expect(subject.assets_locations.size).to eq(1) }
 
   specify do
@@ -32,8 +30,6 @@ describe "Get character asset locations" do
       y: 297_645_715_142.40234,
       z: -971_212_198_300.4812)
   end
-
-  specify { expect { subject.etag }.to raise_error(NotImplementedError) }
 
   specify { expect(subject.error_limit_remain).to eq(100) }
 
