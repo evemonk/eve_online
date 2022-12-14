@@ -41,10 +41,6 @@ module EveOnline
         ["Director"]
       end
 
-      def etag
-        raise NotImplementedError
-      end
-
       def path
         format(API_PATH, corporation_id: corporation_id)
       end
