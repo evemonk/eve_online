@@ -993,8 +993,6 @@ dogma_attributes.scope # => nil
 dogma_attributes.attribute_ids.size # => 2469
 
 dogma_attributes.attribute_ids.first # => 2
-
-dogma_attributes.etag # => "2c8392581d493e06c015ca3d48d4076079bf4c976b1f776742592260"
 ```
 
 #### Get attribute information
@@ -1027,8 +1025,6 @@ dogma_attribute.name # => "isOnline"
 dogma_attribute.published # => nil
 dogma_attribute.stackable # => true
 dogma_attribute.unit_id # => nil
-
-dogma_attribute.etag # => "acc1e563574a55f79ebe4a2a99845dd6c28f4e412e11fd084b8485fd"
 ```
 
 #### Get dynamic item information
@@ -1043,8 +1039,6 @@ dogma_effects.scope # => nil
 dogma_effects.effect_ids.size # => 4166
 
 dogma_effects.effect_ids.first # => 4
-
-dogma_effects.etag # => "5c9218218aca123ef8c106f6607bfe8e6e086d2fc2b972bbd8ff03d2"
 ```
 
 #### Get effect information
@@ -1115,8 +1109,6 @@ modifier.func # => "LocationRequiredSkillModifier"
 modifier.modified_attribute_id # => 73
 modifier.modifying_attribute_id # => 2458
 modifier.operator # => 6
-
-dogma_effect.etag # => "acc1e563574a55f79ebe4a2a99845dd6c28f4e412e11fd084b8485fd"
 ```
 
 ### Faction Warfare
@@ -1239,8 +1231,6 @@ job.start_date # => Sat, 18 Nov 2017 10:16:14 UTC +00:00
 job.station_id # => 1023579231924
 job.status # => "active"
 job.successful_runs # => nil
-
-# TODO: character_jobs.etag
 ```
 
 #### Character mining ledger
@@ -1315,8 +1305,6 @@ job.status # => "active"
 job.successful_runs # => nil
 
 corporation_jobs.roles # => ["Factory_Manager"]
-
-# TODO: corporation_jobs.etag
 ```
 
 #### List industry facilities
@@ -1351,8 +1339,6 @@ killmail.as_json # => {:killmail_hash=>"8f1450fca8ce97be9b10e106a1257088407ef387
 
 killmail.killmail_hash # => "8f1450fca8ce97be9b10e106a1257088407ef387"
 killmail.killmail_id # => 81646519
-
-character_killmails.etag # => "ba5068bc1b07db98d9efce93437295fbdb9d29b14b4ffbcbfa91ac0d"
 ```
 
 #### Get a corporation's recent kills and losses
@@ -1379,8 +1365,6 @@ killmail.killmail_hash # => "07f7ef1d7f6090e78d8e85b4a98e680f67b5e9d5"
 killmail.killmail_id # => 72410059
 
 corporation_killmails.roles # => ["Director"]
-
-# TODO: corporation_killmails.etag
 ```
 
 #### Get a single killmail
@@ -1411,8 +1395,6 @@ character_location.as_json # => {:solar_system_id=>30004971,
 character_location.solar_system_id # => 30004971
 character_location.station_id # => 60014689
 character_location.structure_id # => nil
-
-# TODO: character_location.etag
 ```
 
 #### Get character online
@@ -1433,8 +1415,6 @@ character_online.last_login # => Sun, 15 Jan 2017 11:39:24 UTC +00:00
 character_online.last_logout # => Sun, 15 Jan 2017 11:31:22 UTC +00:00
 character_online.logins # => 370
 character_online.online # => false
-
-character_online.etag # => "43c82cdefedc4275da30d7731200df96b905dc94b8486d55bedb5fe6"
 ```
 
 #### Get current ship
@@ -1453,8 +1433,6 @@ character_ship.as_json # => {:ship_item_id=>1002312158069,
 character_ship.ship_item_id # => 1002312158069
 character_ship.ship_name # => "Green Black's Velator"
 character_ship.ship_type_id # => 606
-
-# TODO: character_ship.etag
 ```
 
 ### Loyalty
@@ -1476,8 +1454,6 @@ loyalty_point.as_json # => {:corporation_id=>1000035, :loyalty_points=>14163}
 
 loyalty_point.corporation_id # => 1000035
 loyalty_point.loyalty_points # => 14163
-
-character_loyalty_points.etag # => "b6f4d03c84350052a2e95e3b098c41b1c50f938ffe3f6da7fc1c1698"
 ```
 
 #### List loyalty store offers
@@ -1515,8 +1491,6 @@ offer_required_item = offer.offer_required_items.first
 
 offer_required_item.quantity # => 5000
 offer_required_item.type_id # => 234
-
-corporation_loyalty_store_offers.etag # => "89211f42fde090e4d22621e9b97d7604ab87af95b3b6ffed7fe81bc0"
 ```
 
 ### Mail
@@ -1568,8 +1542,6 @@ recipient.as_json # => {:recipient_id=>98134807,
 
 recipient.recipient_id # => 98134807
 recipient.recipient_type # => "corporation"
-
-character_mail.etag # => "90dba7f7a6e60bfe8527b9f5112b9ca588c8f57d01415717be525a91"
 ```
 
 #### Update metadata about a mail
@@ -1601,8 +1573,6 @@ label.color # => "#ffffff"
 label.label_id # => 8
 label.name # => "[Alliance]"
 label.unread_count # => 227
-
-character_mail_labels.etag # => "265cfe7f2d7df2273342ed75c92b5047af6f76a3807dcc8353b5f379"
 ```
 
 #### Create a mail label
@@ -1653,8 +1623,6 @@ order.volume_remain
 order.volume_total
 
 # TODO: update example
-
-# TODO: character_orders.etag
 ```
 
 #### List historical orders by a character
@@ -1699,8 +1667,6 @@ order.wallet_division
 # TODO: update
 
 corporation_orders.roles # => ["Accountant", "Trader"]
-
-# TODO: corporation_orders.etag
 ```
 
 #### List historical orders from a corporation
@@ -1733,8 +1699,6 @@ stats_today.highest # => 620169950.0
 stats_today.lowest # => 579060022.71
 stats_today.order_count # => 44
 stats_today.volume # => 44
-
-market_history.etag # => "01636947a53db63a0369aab78bbc98bae94a49cd6aa3950c29d588ae"
 ```
 
 #### List orders in a region
@@ -1751,8 +1715,6 @@ market_groups.scope # => nil
 market_groups.market_group_ids.size # => 1872
 
 market_groups.market_group_ids.first # => 2
-
-market_groups.etag # => "bf7832bfc20f5f9fdeddc9cb0360b941067310e7e3a2a80315b45a43"
 ```
 
 #### Get item group information
@@ -1777,8 +1739,6 @@ market_group.parent_group_id # => 532
 market_group.type_ids.size # => 48
 
 market_group.type_ids.first # => 28802
-
-market_group.etag # => "bf7832bfc20f5f9fdeddc9cb0360b941067310e7e3a2a80315b45a43"
 ```
 
 #### List market prices
@@ -1800,8 +1760,6 @@ market_price.as_json # => {:adjusted_price=>923296.88,
 market_price.adjusted_price # => 923296.88
 market_price.average_price # => 1273871.6
 market_price.type_id # => 32772
-
-market_prices.etag # => "2d5acc3bd4555821bb91d787596f5ddad129f849739e83162e93c02f"
 ```
 
 #### List orders in a structure
@@ -1867,8 +1825,6 @@ search.inventory_type_ids # => [56844, 56847, 56846, 56853, 56849, 56852, 56850,
 search.region_ids # => []
 search.solar_system_ids # => [30000142]
 search.station_ids # => []
-
-search.etag # => "b6602e595e8d8df37b5191b82e75faba91284281b6fe71965d09e2f1"
 
 # strict search
 
@@ -1941,8 +1897,6 @@ character_attributes.last_remap_date # => Sat, 07 May 2011 12:58:06 UTC +00:00
 character_attributes.memory # => 24
 character_attributes.perception # => 23
 character_attributes.willpower # => 23
-
-# TODO: character_attributes.etag
 ```
 
 #### Get character's skill queue
@@ -1975,8 +1929,6 @@ skill_queue_entry.queue_position # => 0
 skill_queue_entry.skill_id # => 12487
 skill_queue_entry.start_date # => Sun, 15 Jan 2017 11:38:25 UTC +00:00
 skill_queue_entry.training_start_sp # => 7263
-
-# TODO: character_skill_queue.etag
 ```
 
 #### Get character skills
@@ -2006,8 +1958,6 @@ skill.trained_skill_level # => 1
 
 character_skills.total_sp # => 50362576
 character_skills.unallocated_sp # => 656000
-
-# TODO: character_skills.etag
 ```
 
 ### Sovereignty
@@ -2036,8 +1986,6 @@ server_status.players # => 34545
 server_status.server_version # => "1135520"
 server_status.start_time # => Tue, 11 Apr 2017 11:05:35 UTC +00:00
 server_status.vip # => nil
-
-server_status.etag # => "005dd5b02fc9e032466c49b28ff7fcb4fa37c56e5c361a1e25ec6cfd"
 ```
 
 ### Universe
@@ -2068,8 +2016,6 @@ ancestry.icon_id # => 1664
 ancestry.ancestry_id # => 24
 ancestry.name # => "Slave Child"
 ancestry.short_description # => "Torn from the cold and brought to the warmth of a new life."
-
-ancestries.etag # => "e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b"
 ```
 
 #### Get asteroid belt information
@@ -2094,8 +2040,6 @@ asteroid_belt.position.as_json # => {:x=>161967513600.0,
 asteroid_belt.position.x # => 161967513600.0
 asteroid_belt.position.y # => 21288837120.0
 asteroid_belt.position.z # => -73505464320.0
-
-asteroid_belt.etag # => "2c8392581d493e06c015ca3d48d4076079bf4c976b1f776742592260"
 ```
 
 #### Get bloodlines
@@ -2134,8 +2078,6 @@ bloodline.perception # => 9
 bloodline.race_id # => 2
 bloodline.ship_type_id # => 588
 bloodline.willpower # => 7
-
-bloodlines.etag # => "e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b"
 ```
 
 #### Get item categories
@@ -2148,8 +2090,6 @@ categories.scope # => nil
 categories.category_ids.size # => 43
 
 categories.category_ids.first # => 0
-
-categories.etag # => "2c8392581d493e06c015ca3d48d4076079bf4c976b1f776742592260"
 ```
 
 #### Get item category information
@@ -2171,8 +2111,6 @@ category.published # => true
 
 category.group_ids.size # => 46
 category.group_ids.first # => 25
-
-category.etag # => "37a39e7a5f5ecc07b19a3128c319f1198d035aee10052d0a21ccdd94"
 ```
 
 #### Get constellations
@@ -2185,8 +2123,6 @@ constellations.scope # => nil
 constellations.constellation_ids.size # => 1146
 
 constellations.constellation_ids.first # => 20000001
-
-constellations.etag # => "2c8392581d493e06c015ca3d48d4076079bf4c976b1f776742592260"
 ```
 
 #### Get constellation information
@@ -2215,8 +2151,6 @@ constellation.position.as_json # => {:x=>-9.404655970099134e+16,
 constellation.position.x # => -9.404655970099134e+16
 constellation.position.y # => 4.952015315379885e+16
 constellation.position.z # => -4.273873181840197e+16
-
-constellation.etag # => "2c8392581d493e06c015ca3d48d4076079bf4c976b1f776742592260"
 ```
 
 #### Get factions
