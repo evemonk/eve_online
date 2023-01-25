@@ -1,7 +1,12 @@
 # frozen_string_literal: true
 
 require "simplecov"
-SimpleCov.start
+SimpleCov.start do
+  enable_coverage :branch
+  if Gem::Version.new(RUBY_VERSION) > Gem::Version.new("3.2.0")
+    enable_coverage_for_eval
+  end
+end
 
 $LOAD_PATH.unshift File.expand_path("../../lib", __FILE__)
 require "eve_online"
