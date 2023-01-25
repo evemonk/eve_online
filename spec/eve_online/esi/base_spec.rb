@@ -17,7 +17,6 @@ describe EveOnline::ESI::Base do
           read_timeout: 30,
           open_timeout: 45,
           write_timeout: 50,
-          etag: "6f2d3caa79a79bc9e61aa058e18905faac5e293fa1729637648ce9a1",
           language: "ru",
           adapter: adapter,
           middlewares: middlewares
@@ -34,8 +33,6 @@ describe EveOnline::ESI::Base do
 
       its(:_write_timeout) { should eq(50) }
 
-      its(:_etag) { should eq("6f2d3caa79a79bc9e61aa058e18905faac5e293fa1729637648ce9a1") }
-
       its(:language) { should eq("ru") }
 
       its(:adapter) { should eq(adapter) }
@@ -51,8 +48,6 @@ describe EveOnline::ESI::Base do
       its(:_open_timeout) { should eq(60) }
 
       its(:_write_timeout) { should eq(60) }
-
-      its(:_etag) { should eq(nil) }
 
       its(:language) { should eq("en-us") }
 
@@ -209,30 +204,6 @@ describe EveOnline::ESI::Base do
     specify { expect { subject.send(:write_timeout=, value) }.not_to raise_error }
   end
 
-  describe "#etag=" do
-    specify { expect { subject.etag = "123abc" }.to change { subject._etag }.from(nil).to("123abc") }
-  end
-
-  describe "#etag" do
-    let(:resource) { double }
-
-    let(:headers) { double }
-
-    let(:etag) { double }
-
-    before { expect(subject).to receive(:resource).and_return(resource) }
-
-    before { expect(resource).to receive(:headers).and_return(headers) }
-
-    before { expect(headers).to receive(:[]).with("etag").and_return(etag) }
-
-    before { expect(etag).to receive(:gsub).with("W/", "").and_return(etag) }
-
-    before { expect(etag).to receive(:gsub).with('"', "") }
-
-    specify { expect { subject.etag }.not_to raise_error }
-  end
-
   describe "#page" do
     specify { expect(subject.page).to eq(nil) }
   end
@@ -354,20 +325,6 @@ describe EveOnline::ESI::Base do
       specify { expect(subject.connection.builder.handlers).to include(EveOnline::ESI::FaradayMiddlewares::RaiseErrors) }
 
       specify { expect(subject.connection.adapter).to eq(Faraday::Adapter::NetHttp) }
-
-      context "when _etag is present" do
-        let(:_etag) { double }
-
-        before { expect(subject).to receive(:_etag).and_return(_etag).twice }
-
-        specify { expect(subject.connection.headers["If-None-Match"]).to eq(_etag) }
-      end
-
-      context "when _etag is empty" do
-        before { expect(subject).to receive(:_etag).and_return(nil) }
-
-        specify { expect(subject.connection.headers["If-None-Match"]).to eq(nil) }
-      end
 
       context "when token is present" do
         let(:token) { "token123" }
@@ -564,42 +521,6 @@ describe EveOnline::ESI::Base do
     end
   end
 
-  describe "#not_modified?" do
-    before { expect(subject).to receive(:resource).and_return(resource) }
-
-    context "when not modified" do
-      let(:resource) { double(status: 304) }
-
-      specify { expect(subject.not_modified?).to eq(true) }
-    end
-
-    context "when modified" do
-      let(:resource) { double(status: 200) }
-
-      specify { expect(subject.not_modified?).to eq(false) }
-    end
-  end
-
-  describe "#content" do
-    context "when not modified" do
-      before { expect(subject).to receive(:not_modified?).and_return(true) }
-
-      specify { expect { subject.content }.to raise_error(EveOnline::Exceptions::NotModified) }
-    end
-
-    context "when modified" do
-      before { expect(subject).to receive(:not_modified?).and_return(false) }
-
-      let(:body) { double }
-
-      let(:resource) { double(body: body) }
-
-      before { expect(subject).to receive(:resource).and_return(resource) }
-
-      specify { expect(subject.content).to eq(body) }
-    end
-  end
-
   describe "#response" do
     context "when @response set" do
       let(:response) { double }
@@ -610,13 +531,15 @@ describe EveOnline::ESI::Base do
     end
 
     context "when @response not set" do
-      let(:content) { double }
+      let(:body) { double }
 
-      before { expect(subject).to receive(:content).and_return(content) }
+      let(:resource) { double(body: body) }
+
+      before { expect(subject).to receive(:resource).and_return(resource) }
 
       specify { expect { subject.response }.not_to raise_error }
 
-      specify { expect { subject.response }.to change { subject.instance_variable_get(:@response) }.from(nil).to(content) }
+      specify { expect { subject.response }.to change { subject.instance_variable_get(:@response) }.from(nil).to(body) }
     end
   end
 

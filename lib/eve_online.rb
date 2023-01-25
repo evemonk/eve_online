@@ -13,7 +13,6 @@ require "eve_online/exceptions/internal_server_error"
 require "eve_online/exceptions/bad_gateway"
 require "eve_online/exceptions/service_unavailable"
 require "eve_online/exceptions/no_content"
-require "eve_online/exceptions/not_modified"
 require "eve_online/exceptions/error_limited"
 
 module EveOnline

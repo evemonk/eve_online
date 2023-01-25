@@ -3,55 +3,26 @@
 require "spec_helper"
 
 describe "Get alliance history" do
-  context "when etag not set" do
-    let(:options) { {corporation_id: 98_134_807} }
+  let(:options) { {corporation_id: 98_134_807} }
 
-    before { VCR.insert_cassette "esi/corporation_alliance_history/98134807" }
+  before { VCR.insert_cassette "esi/corporation_alliance_history/98134807" }
 
-    after { VCR.eject_cassette }
+  after { VCR.eject_cassette }
 
-    subject { EveOnline::ESI::CorporationAllianceHistory.new(options) }
+  subject { EveOnline::ESI::CorporationAllianceHistory.new(options) }
 
-    specify { expect(subject.not_modified?).to eq(false) }
+  specify { expect(subject.scope).to eq(nil) }
 
-    specify { expect(subject.scope).to eq(nil) }
+  specify { expect(subject.entries.size).to eq(12) }
 
-    specify { expect(subject.entries.size).to eq(12) }
-
-    specify do
-      expect(subject.entries.first.as_json).to eq(alliance_id: 99_005_874,
-        is_deleted: nil,
-        record_id: 1_254_640,
-        start_date: "2019-06-03T00:17:00Z")
-    end
-
-    specify { expect(subject.etag).to eq("9a949294cfa5fcef345ea8d89a574defa09be39845b9b97f1fdddd41") }
-
-    specify { expect(subject.error_limit_remain).to eq(100) }
-
-    specify { expect(subject.error_limit_reset).to eq(35) }
+  specify do
+    expect(subject.entries.first.as_json).to eq(alliance_id: 99_005_874,
+      is_deleted: nil,
+      record_id: 1_254_640,
+      start_date: "2019-06-03T00:17:00Z")
   end
 
-  context "when etag is set" do
-    let(:options) do
-      {
-        corporation_id: 98_134_807,
-        etag: "9a949294cfa5fcef345ea8d89a574defa09be39845b9b97f1fdddd41"
-      }
-    end
+  specify { expect(subject.error_limit_remain).to eq(100) }
 
-    before { VCR.insert_cassette "esi/corporation_alliance_history/98134807_with_etag" }
-
-    after { VCR.eject_cassette }
-
-    subject { EveOnline::ESI::CorporationAllianceHistory.new(options) }
-
-    specify { expect(subject.not_modified?).to eq(true) }
-
-    specify { expect(subject.etag).to eq("9a949294cfa5fcef345ea8d89a574defa09be39845b9b97f1fdddd41") }
-
-    specify { expect(subject.error_limit_remain).to eq(100) }
-
-    specify { expect(subject.error_limit_reset).to eq(20) }
-  end
+  specify { expect(subject.error_limit_reset).to eq(35) }
 end

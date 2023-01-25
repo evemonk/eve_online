@@ -92,10 +92,6 @@ describe EveOnline::ESI::CorporationAssetsLocations do
     specify { expect(subject.roles).to eq(["Director"]) }
   end
 
-  describe "#etag" do
-    specify { expect { subject.etag }.to raise_error(NotImplementedError) }
-  end
-
   describe "#path" do
     specify do
       expect(subject.path).to eq("/v2/corporations/12345678/assets/locations/")

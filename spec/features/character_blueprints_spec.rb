@@ -19,8 +19,6 @@ describe "Get character blueprints" do
 
   specify { expect(subject.scope).to eq("esi-characters.read_blueprints.v1") }
 
-  specify { expect(subject.not_modified?).to eq(false) }
-
   specify { expect(subject.page).to eq(1) }
 
   specify { expect(subject.total_pages).to eq(1) }
