@@ -4,6 +4,14 @@
 
 * Update `faraday` to `>= 2.3.0`
 * BREAKING: Always pass esi to middleware. To migrate, remove any esi passing.
+* Ruby 3.2
+* Bump activesupport requirements to 6.1 or later
+* Remove etag support. Use `faraday-http-cache` instead.
+* Remove `EveOnline::Exceptions::NotModified`
+* Remove `EveOnline::ESI::Base#etag=`
+* Remove `EveOnline::ESI::Base#etag`
+* Remove `EveOnline::ESI::Base#not_modified?`
+* Remove `EveOnline::ESI::Base#content`
 
 ## v0.43.0
 
