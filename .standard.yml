@@ -1,4 +1,4 @@
-ruby_version: 2.7.6
+ruby_version: 2.7.7
 
 ignore:
   - 'lib/eve_online/esi/base.rb':
