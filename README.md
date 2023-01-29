@@ -31,7 +31,7 @@ This gem was extracted from [EveMonk](https://evemonk.com). Source code of EveMo
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'eve_online'
+gem "eve_online"
 ```
 
 And then execute:
@@ -3089,7 +3089,29 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Caching
 
-TODO
+If you want to cache API calls (and this is highly recommended by CCP), you
+can use [Faraday Http Cache](https://github.com/sourcelevel/faraday-http-cache).
+
+Add the gem to your Gemfile
+
+```ruby
+gem "faraday-http-cache"
+```
+
+Next, construct your own Faraday middleware:
+
+```ruby
+stack = Faraday::RackBuilder.new do |builder|
+  builder.use Faraday::HttpCache, serializer: Marshal, shared_cache: false
+  builder.use Octokit::Response::RaiseError
+  builder.adapter Faraday.default_adapter
+end
+EveOnline::ESI.middleware = stack
+```
+
+Once configured, the middleware will store responses in cache based on ETag
+fingerprint and serve those back up for future `304` responses for the same
+resource. See the [project README](https://github.com/sourcelevel/faraday-http-cache) for advanced usage.
 
 ## Contributing
 
