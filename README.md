@@ -136,7 +136,7 @@ alliance_icon.icon_small # => "https://images.evetech.net/alliances/99005443/log
 #### Get character assets
 
 ```ruby
-options = { token: 'token123', character_id: 90_729_314, page: 1 }
+options = { token: "token123", character_id: 90_729_314, page: 1 }
 
 character_assets = EveOnline::ESI::CharacterAssets.new(options)
 
@@ -172,7 +172,7 @@ asset.type_id # => 1010
 #### Get character asset locations
 
 ```ruby
-options = { token: 'token123', character_id: 1_337_512_245, item_ids: [1_001_215_602_246] }
+options = { token: "token123", character_id: 1_337_512_245, item_ids: [1_001_215_602_246] }
 
 character_assets_locations = EveOnline::ESI::CharacterAssetsLocations.new(options)
 
@@ -198,7 +198,7 @@ asset_location.position.z # => -971212198300.4812
 #### Get character asset names
 
 ```ruby
-options = { token: 'token123', character_id: 1_337_512_245, item_ids: [1_001_215_602_246] }
+options = { token: "token123", character_id: 1_337_512_245, item_ids: [1_001_215_602_246] }
 
 character_assets_names = EveOnline::ESI::CharacterAssetsNames.new(options)
 
@@ -218,7 +218,7 @@ asset_name.name # => "HOLE"
 #### Get corporation assets
 
 ```ruby
-options = { token: 'token123', corporation_id: 98_134_807, page: 1 }
+options = { token: "token123", corporation_id: 98_134_807, page: 1 }
 
 corporation_assets = EveOnline::ESI::CorporationAssets.new(options)
 
@@ -256,7 +256,7 @@ asset.type_id # => 1010
 #### Get corporation asset locations
 
 ```ruby
-options = { token: 'token123', corporation_id: 98_134_807, item_ids: [1_001_215_602_246] }
+options = { token: "token123", corporation_id: 98_134_807, item_ids: [1_001_215_602_246] }
 
 corporation_assets_locations = EveOnline::ESI::CorporationAssetsLocations.new(options)
 
@@ -284,7 +284,7 @@ asset_location.position.z # => -971212198300.4812
 #### Get corporation asset names
 
 ```ruby
-options = { token: 'token123', corporation_id: 98_134_807, item_ids: [1_001_215_602_246] }
+options = { token: "token123", corporation_id: 98_134_807, item_ids: [1_001_215_602_246] }
 
 corporation_assets_names = EveOnline::ESI::CorporationAssetsNames.new(options)
 
@@ -319,7 +319,7 @@ asset_name.name # => "HOLE"
 
 ```ruby
 # Add `from_event` if you want skip records
-options = { token: 'token123', character_id: 90_729_314 }
+options = { token: "token123", character_id: 90_729_314 }
 
 character_calendar = EveOnline::ESI::CharacterCalendar.new(options)
 
@@ -345,7 +345,7 @@ event.title # => "Moon extraction for 66-PMM - GoldMine-5-"
 #### Get an event
 
 ```ruby
-options = { token: 'token123', character_id: 90_729_314, event_id: 1_635_240 }
+options = { token: "token123", character_id: 90_729_314, event_id: 1_635_240 }
 
 calendar_event = EveOnline::ESI::CharacterCalendarEvent.new(options)
 
@@ -419,7 +419,7 @@ character.title # => nil
 #### Get blueprints
 
 ```ruby
-options = { token: 'token123', character_id: 90729314, page: 1 }
+options = { token: "token123", character_id: 90729314, page: 1 }
 
 character_blueprints = EveOnline::ESI::CharacterBlueprints.new(options)
 
@@ -481,7 +481,7 @@ entry.start_date # => Tue, 10 May 2011 10:23:00 UTC +00:00
 #### Get jump fatigue
 
 ```ruby
-options = { token: 'token123', character_id: 90729314 }
+options = { token: "token123", character_id: 90729314 }
 
 character_fatigue = EveOnline::ESI::CharacterFatigue.new(options)
 
@@ -503,7 +503,7 @@ character_fatigue.last_update_date # => nil
 #### Get character notifications
 
 ```ruby
-options = { token: 'token123', character_id: 90729314 }
+options = { token: "token123", character_id: 90729314 }
 
 character_notifications = EveOnline::ESI::CharacterNotifications.new(options)
 
@@ -557,7 +557,7 @@ character_portrait.small # => "https://images.evetech.net/Character/1337512245_6
 #### Get standings
 
 ```ruby
-options = { token: 'token123', character_id: 90729314 }
+options = { token: "token123", character_id: 90729314 }
 
 character_standing = EveOnline::ESI::CharacterStandings.new(options)
 
@@ -587,7 +587,7 @@ standing.standing # => 0.3303719111639991
 #### Get clones
 
 ```ruby
-options = { token: 'token123', character_id: 90729314 }
+options = { token: "token123", character_id: 90729314 }
 
 character_clones = EveOnline::ESI::CharacterClones.new(options)
 
@@ -620,7 +620,7 @@ character_clones.last_station_change_date # => Tue, 30 Jun 2015 21:51:13 UTC +00
 #### Get active implants
 
 ```ruby
-options = { token: 'token123', character_id: 90729314 }
+options = { token: "token123", character_id: 90729314 }
 
 character_implants = EveOnline::ESI::CharacterImplants.new(options)
 
@@ -656,7 +656,7 @@ character_implants.implant_ids # => [9899, 9941, 9942, 9943, 9956]
 #### Get contracts
 
 ```ruby
-options = { token: 'token123', character_id: 1337512245, page: 1 }
+options = { token: "token123", character_id: 1337512245, page: 1 }
 
 contracts = EveOnline::ESI::CharacterContracts.new(options)
 
@@ -886,7 +886,7 @@ entry.start_date # => Mon, 03 Jun 2019 00:17:00 UTC +00:00
 #### Get corporation blueprints
 
 ```ruby
-options = { token: 'token123', corporation_id: 98260237, page: 1 }
+options = { token: "token123", corporation_id: 98260237, page: 1 }
 
 corporation_blueprints = EveOnline::ESI::CorporationBlueprints.new(options)
 
@@ -936,7 +936,7 @@ corporation_blueprints.roles # => ["Director"]
 #### Get corporation members
 
 ```ruby
-options = { token: 'token123', corporation_id: 98565696 }
+options = { token: "token123", corporation_id: 98565696 }
 
 corporation_members = EveOnline::ESI::CorporationMembers.new(options)
 
@@ -1176,7 +1176,7 @@ modifier.operator # => 6
 #### List character industry jobs
 
 ```ruby
-options = { token: 'token123', character_id: 90729314 }
+options = { token: "token123", character_id: 90729314 }
 
 character_jobs = EveOnline::ESI::CharacterIndustryJobs.new(options)
 
@@ -1244,7 +1244,7 @@ job.successful_runs # => nil
 #### List corporation industry jobs
 
 ```ruby
-options = { token: 'token123', corporation_id: 98_146_630 }
+options = { token: "token123", corporation_id: 98_146_630 }
 
 corporation_jobs = EveOnline::ESI::CorporationIndustryJobs.new(options)
 
@@ -1320,7 +1320,7 @@ corporation_jobs.roles # => ["Factory_Manager"]
 #### Get a character's recent kills and losses
 
 ```ruby
-options = { token: 'token123', character_id: 90_729_314 }
+options = { token: "token123", character_id: 90_729_314 }
 
 character_killmails = EveOnline::ESI::CharacterKillmailsRecent.new(options)
 
@@ -1344,7 +1344,7 @@ killmail.killmail_id # => 81646519
 #### Get a corporation's recent kills and losses
 
 ```ruby
-options = { token: 'token123', corporation_id: 98_146_630 }
+options = { token: "token123", corporation_id: 98_146_630 }
 
 corporation_killmails = EveOnline::ESI::CorporationKillmailsRecent.new(options)
 
@@ -1382,7 +1382,7 @@ killmail = EveOnline::ESI::Killmail.new(options)
 #### Get character location
 
 ```ruby
-options = { token: 'token123', character_id: 90729314 }
+options = { token: "token123", character_id: 90729314 }
 
 character_location = EveOnline::ESI::CharacterLocation.new(options)
 
@@ -1400,7 +1400,7 @@ character_location.structure_id # => nil
 #### Get character online
 
 ```ruby
-options = { token: 'token123', character_id: 90729314 }
+options = { token: "token123", character_id: 90729314 }
 
 character_online = EveOnline::ESI::CharacterOnline.new(options)
 
@@ -1420,7 +1420,7 @@ character_online.online # => false
 #### Get current ship
 
 ```ruby
-options = { token: 'token123', character_id: 90729314 }
+options = { token: "token123", character_id: 90729314 }
 
 character_ship = EveOnline::ESI::CharacterShip.new(options)
 
@@ -1440,7 +1440,7 @@ character_ship.ship_type_id # => 606
 #### Get loyalty points
 
 ```ruby
-options = { token: 'token123', character_id: 90729314 }
+options = { token: "token123", character_id: 90729314 }
 
 character_loyalty_points = EveOnline::ESI::CharacterLoyaltyPoints.new(options)
 
@@ -1595,7 +1595,7 @@ label.unread_count # => 227
 #### List open orders from a character
 
 ```ruby
-options = { token: 'token123', character_id: 90729314 }
+options = { token: "token123", character_id: 90729314 }
 
 character_orders = EveOnline::ESI::CharacterOrders.new(options)
 
@@ -1630,7 +1630,7 @@ order.volume_total
 #### List open orders from a corporation
 
 ```ruby
-options = { token: 'token123', corporation_id: 1_000_168, page: 1 }
+options = { token: "token123", corporation_id: 1_000_168, page: 1 }
 
 corporation_orders = EveOnline::ESI::CorporationOrders.new(options)
 
@@ -1874,7 +1874,7 @@ search.solar_system_ids # => [30000142]
 #### Get character attributes
 
 ```ruby
-options = { token: 'token123', character_id: 90729314 }
+options = { token: "token123", character_id: 90729314 }
 
 character_attributes = EveOnline::ESI::CharacterAttributes.new(options)
 
@@ -1902,7 +1902,7 @@ character_attributes.willpower # => 23
 #### Get character's skill queue
 
 ```ruby
-options = { token: 'token123', character_id: 90729314 }
+options = { token: "token123", character_id: 90729314 }
 
 character_skill_queue = EveOnline::ESI::CharacterSkillQueue.new(options)
 
@@ -1934,7 +1934,7 @@ skill_queue_entry.training_start_sp # => 7263
 #### Get character skills
 
 ```ruby
-options = { token: 'token123', character_id: 90729314 }
+options = { token: "token123", character_id: 90729314 }
 
 character_skills = EveOnline::ESI::CharacterSkills.new(options)
 
@@ -2734,7 +2734,7 @@ type_dogma_effect.is_default # => false
 #### Get a character's wallet balance
 
 ```ruby
-options = { token: 'token123', character_id: 90_729_314 }
+options = { token: "token123", character_id: 90_729_314 }
 
 character_wallet = EveOnline::ESI::CharacterWallet.new(options)
 
@@ -2748,7 +2748,7 @@ character_wallet.wallet # => 409488252.49
 #### Get character wallet journal
 
 ```ruby
-options = { token: 'token123', character_id: 90_729_314, page: 1 }
+options = { token: "token123", character_id: 90_729_314, page: 1 }
 
 character_wallet_journal = EveOnline::ESI::CharacterWalletJournal.new(options)
 
