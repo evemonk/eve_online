@@ -1,4 +1,4 @@
-name: mdl
+name: "Markdown Lint"
 
 on:
   push:
@@ -16,4 +16,4 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - uses: actionshub/markdownlint@main
+      - uses: bewuethr/mdl-action@v1.1.1
