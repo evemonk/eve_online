@@ -1,10 +1,18 @@
 version: 2
 updates:
-- package-ecosystem: bundler
-  directory: "/"
-  schedule:
-    interval: daily
-  open-pull-requests-limit: 99
-  allow:
-  - dependency-type: direct
-  - dependency-type: indirect
+  - package-ecosystem: "bundler"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    open-pull-requests-limit: 99
+    allow:
+      - dependency-type: "direct"
+      - dependency-type: "indirect"
+    assignees:
+      - "biow0lf"
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    assignees:
+      - "biow0lf"
