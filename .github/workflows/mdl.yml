@@ -16,4 +16,4 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - uses: bewuethr/mdl-action@v1.1.1
+      - uses: bewuethr/mdl-action@v1.1.2
