@@ -48,7 +48,7 @@ GEM
     nokogiri (1.14.3-x86_64-darwin)
       racc (~> 1.4)
     parallel (1.23.0)
-    parser (3.2.2.0)
+    parser (3.2.2.1)
       ast (~> 2.4.1)
     pry (0.14.2)
       coderay (~> 1.1)
