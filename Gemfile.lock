@@ -107,7 +107,7 @@ GEM
       rubocop (~> 1.52.0)
       standard-custom (~> 1.0.0)
       standard-performance (~> 1.1.0)
-    standard-custom (1.0.0)
+    standard-custom (1.0.1)
       lint_roller (~> 1.0)
     standard-performance (1.1.0)
       lint_roller (~> 1.0)
