@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    eve_online (0.43.0)
+    eve_online (0.44.0)
       activesupport (>= 6.1.0)
       faraday (>= 2.3.0)
 
@@ -145,4 +145,4 @@ DEPENDENCIES
   webmock
 
 BUNDLED WITH
-   2.4.5
+   2.4.14

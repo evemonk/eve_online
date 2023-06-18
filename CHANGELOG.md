@@ -1,6 +1,6 @@
 # Changelog
 
-## main
+## v0.44.0
 
 * Update `faraday` to `>= 2.3.0`
 * BREAKING: Always pass esi to middleware. To migrate, remove any esi passing.
