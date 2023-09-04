@@ -23,7 +23,7 @@ jobs:
 
     name: Ruby ${{ matrix.ruby }} and ActiveSupport ${{ matrix.activesupport }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - run: rm Gemfile.lock
       - run: rm .ruby-version
       - name: Set up Ruby
