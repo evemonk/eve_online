@@ -1,5 +1,9 @@
 # Changelog
 
+## main
+
+* Rails 7.1
+
 ## v0.44.0
 
 * Update `faraday` to `>= 2.3.0`
