@@ -55,6 +55,7 @@ gem install eve_online
 
 * 6.1
 * 7.0
+* 7.1
 * main
 
 ## Usage examples

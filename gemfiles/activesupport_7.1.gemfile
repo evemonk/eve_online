@@ -7,6 +7,6 @@ gem "awesome_print", require: "ap"
 gem "pry"
 gem "standard", require: false
 gem "fasterer", require: false
-gem "activesupport", "~> 7.0.0"
+gem "activesupport", "~> 7.1.0"
 
 gemspec path: "../"
