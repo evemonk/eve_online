@@ -5,7 +5,7 @@ require_relative "lib/eve_online/version"
 Gem::Specification.new do |spec|
   spec.name = "eve_online"
   spec.version = EveOnline::VERSION
-  spec.authors = ["Igor Zubkov"]
+  spec.authors = ["Ihor Zubkov"]
   spec.email = ["igor.zubkov@gmail.com"]
 
   spec.summary = "EveOnline ESI API"
