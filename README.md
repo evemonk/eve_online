@@ -3092,7 +3092,7 @@ Issue reports and pull requests are welcome on GitHub at <https://github.com/eve
 
 ## Author
 
-* Igor Zubkov (@biow0lf)
+* Ihor Zubkov (@biow0lf)
 
 ## Contributors
 
