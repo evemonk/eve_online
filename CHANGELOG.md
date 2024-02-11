@@ -4,6 +4,8 @@
 
 * Rails 7.1
 * Ruby 3.3.0
+* Drop Ruby 3.0
+* Add `base64` gem requirement
 
 ## v0.44.0
 
