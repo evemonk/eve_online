@@ -35,6 +35,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "webmock"
   spec.add_development_dependency "vcr"
 
+  spec.add_runtime_dependency "base64"
   spec.add_runtime_dependency "faraday", ">= 2.3.0"
   spec.add_runtime_dependency "activesupport", ">= 6.1.0"
 end
