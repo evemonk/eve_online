@@ -25,7 +25,7 @@ Gem::Specification.new do |spec|
   spec.files = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features|bin|swagger)/}) }
   spec.require_paths = ["lib"]
 
-  spec.required_ruby_version = ">= 3.0"
+  spec.required_ruby_version = ">= 3.1"
 
   spec.add_development_dependency "bundler"
   spec.add_development_dependency "rake"
@@ -35,6 +35,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "webmock"
   spec.add_development_dependency "vcr"
 
+  spec.add_runtime_dependency "base64"
   spec.add_runtime_dependency "faraday", ">= 2.3.0"
   spec.add_runtime_dependency "activesupport", ">= 6.1.0"
 end
