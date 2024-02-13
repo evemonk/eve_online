@@ -35,11 +35,10 @@ GEM
     docile (1.4.0)
     drb (2.2.0)
       ruby2_keywords
-    faraday (2.8.1)
-      base64
-      faraday-net_http (>= 2.0, < 3.1)
-      ruby2_keywords (>= 0.0.4)
-    faraday-net_http (3.0.2)
+    faraday (2.9.0)
+      faraday-net_http (>= 2.0, < 3.2)
+    faraday-net_http (3.1.0)
+      net-http
     fasterer (0.11.0)
       ruby_parser (>= 3.19.1)
     hashdiff (1.1.0)
@@ -52,6 +51,8 @@ GEM
     mini_portile2 (2.8.5)
     minitest (5.22.2)
     mutex_m (0.2.0)
+    net-http (0.4.1)
+      uri
     nokogiri (1.16.2)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
@@ -131,6 +132,7 @@ GEM
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.5.0)
+    uri (0.13.0)
     vcr (6.2.0)
     webmock (3.20.0)
       addressable (>= 2.8.0)
