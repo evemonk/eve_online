@@ -3,7 +3,7 @@
 ## main
 
 * Rails 7.1
-* Ruby 3.3.0
+* Ruby 3.3
 * Drop Ruby 3.0
 * Add `base64` gem requirement
 
