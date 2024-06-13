@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     eve_online (0.44.0)
-      activesupport (>= 7.0.0)
+      activesupport (>= 7.1.0)
       faraday (>= 2.3.0)
 
 GEM
