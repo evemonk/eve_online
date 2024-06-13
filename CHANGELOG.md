@@ -6,6 +6,7 @@
 * Ruby 3.3
 * Drop Ruby 3.0
 * Drop Rails 6.1
+* Drop Rails 7.0
 
 ## v0.44.0
 
