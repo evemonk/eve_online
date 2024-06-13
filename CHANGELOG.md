@@ -2,7 +2,7 @@
 
 ## main
 
-* Rails 7.1
+* Rails 7.1 and 7.2
 * Ruby 3.3
 * Drop Ruby 3.0
 * Drop Rails 6.1
