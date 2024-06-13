@@ -3,7 +3,6 @@ PATH
   specs:
     eve_online (0.44.0)
       activesupport (>= 7.0.0)
-      base64
       faraday (>= 2.3.0)
 
 GEM
