@@ -2,10 +2,11 @@
 
 ## main
 
-* Rails 7.1
+* Rails 7.1 and 7.2
 * Ruby 3.3
 * Drop Ruby 3.0
-* Add `base64` gem requirement
+* Drop Rails 6.1
+* Drop Rails 7.0
 
 ## v0.44.0
 

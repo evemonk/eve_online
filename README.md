@@ -53,9 +53,8 @@ gem install eve_online
 
 ## Supported rails versions
 
-* 6.1
-* 7.0
 * 7.1
+* 7.2
 * main
 
 ## Usage examples
