@@ -55,9 +55,13 @@ GEM
     nokogiri (1.16.6)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
+    nokogiri (1.16.6-aarch64-linux)
+      racc (~> 1.4)
     nokogiri (1.16.6-arm64-darwin)
       racc (~> 1.4)
     nokogiri (1.16.6-x86_64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.16.6-x86_64-linux)
       racc (~> 1.4)
     parallel (1.25.1)
     parser (3.3.3.0)
@@ -140,11 +144,15 @@ GEM
       hashdiff (>= 0.4.0, < 2.0.0)
 
 PLATFORMS
+  aarch64-linux
+  arm64-darwin
   arm64-darwin-21
   ruby
+  x86_64-darwin
   x86_64-darwin-19
   x86_64-darwin-20
   x86_64-darwin-21
+  x86_64-linux
 
 DEPENDENCIES
   awesome_print
