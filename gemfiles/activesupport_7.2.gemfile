@@ -7,6 +7,6 @@ gem "awesome_print", require: "ap"
 gem "pry"
 gem "standard", require: false
 gem "fasterer", require: false
-gem "activesupport", git: "https://github.com/rails/rails", require: "activesupport", branch: "7-2-stable"
+gem "activesupport", "~> 7.2.0"
 
 gemspec path: "../"
