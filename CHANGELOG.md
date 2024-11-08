@@ -1,5 +1,9 @@
 # Changelog
 
+## main
+
+* Rails 8.0
+
 ## v0.45.0
 
 * Rails 7.1 and 7.2
