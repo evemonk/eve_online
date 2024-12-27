@@ -49,6 +49,7 @@ gem install eve_online
 
 * MRI 3.2
 * MRI 3.3
+* MRI 3.4
 
 ## Supported rails versions
 
