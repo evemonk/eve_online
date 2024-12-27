@@ -15,11 +15,11 @@ permissions:
 
 jobs:
   rspec:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     strategy:
       fail-fast: false
       matrix:
-        ruby: ["3.2", "3.3", "head"]
+        ruby: ["3.2", "3.3", "3.4", "head"]
         activesupport: ["7.1", "7.2", "8.0", "main"]
     env:
       BUNDLE_GEMFILE: ${{ github.workspace }}/gemfiles/activesupport_${{ matrix.activesupport }}.gemfile

@@ -1,5 +1,9 @@
 # Changelog
 
+## main
+
+* Ruby 3.4
+
 ## v0.46.0
 
 * Rails 8.0
