@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://esi.evetech.net/v2/characters/1337512245/corporationhistory/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.46.0
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 02 Jan 2025 13:31:19 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '848'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,If-None-Match,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,HEAD,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,ETag,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Allow:
+      - GET,HEAD,OPTIONS
+      Cache-Control:
+      - public
+      Etag:
+      - '"3729fd5e3a700f98c7f8318099c5aefe076c991cce4fd7a657f4902b"'
+      Expires:
+      - Fri, 03 Jan 2025 13:31:19 GMT
+      Last-Modified:
+      - Thu, 02 Jan 2025 13:31:19 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '41'
+      X-Esi-Request-Id:
+      - 2e6c72d2-1ebd-4522-a857-5b12a76ffb41
+    body:
+      encoding: UTF-8
+      string: '[{"corporation_id":98565696,"record_id":52535738,"start_date":"2020-04-24T17:23:00Z"},{"corporation_id":1000049,"record_id":52481119,"start_date":"2020-04-19T20:22:00Z"},{"corporation_id":98134807,"record_id":38567616,"start_date":"2015-06-30T21:15:00Z"},{"corporation_id":98003346,"record_id":27415268,"start_date":"2013-08-05T21:05:00Z"},{"corporation_id":1000049,"record_id":26736030,"start_date":"2013-07-08T09:57:00Z"},{"corporation_id":98003346,"record_id":20109148,"start_date":"2012-06-27T21:59:00Z"},{"corporation_id":1000049,"record_id":17822677,"start_date":"2011-09-08T20:47:00Z"},{"corporation_id":98003346,"record_id":16566992,"start_date":"2011-04-12T18:35:00Z"},{"corporation_id":696940850,"record_id":12867184,"start_date":"2010-02-04T17:55:00Z"},{"corporation_id":1000171,"record_id":12668668,"start_date":"2010-01-15T15:26:00Z"}]'
+  recorded_at: Thu, 02 Jan 2025 13:31:19 GMT
+recorded_with: VCR 6.3.1
