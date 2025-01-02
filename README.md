@@ -2328,25 +2328,25 @@ planet.position.z # => -73529712226.0
 #### Get character races
 
 ```ruby
-options = { language: 'en-us' }
+options = {language: "en-us"}
 
 races = EveOnline::ESI::UniverseRaces.new(options)
 
 races.scope # => nil
 
-races.races.size # => 4
+races.races.size # => 6
 
 race = races.races.first
 
-race.as_json # => {:faction_id=>500002,
-             #     :description=>"Once a thriving tribal civilization, the Minmatar...",
-             #     :name=>"Minmatar",
-             #     :race_id=>2}
+race.as_json # => {faction_id: 500001,
+             #     description: "Founded on the tenets of patriotism and hard work...",
+             #     name: "Caldari",
+             #     id: 1}
 
-race.faction_id # => 500002
-race.description # => "Once a thriving tribal civilization, the Minmatar..."
-race.name # => "Minmatar"
-race.race_id # => 2
+race.faction_id # => 500001
+race.description # => "Founded on the tenets of patriotism and hard work..."
+race.name # => "Caldari"
+race.id # => 1
 ```
 
 #### Get regions
