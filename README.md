@@ -3017,7 +3017,7 @@ races.write_timeout # => 120
 
 ## Languages support
 
-Default language is `en-us`. Supported languages: `de`, `en-us`, `fr`, `ja`, `ru`, `zh`, `ko`.
+Default language is `en-us`. Supported languages: `en`, `en-us`, `de`, `fr`, `ja`, `zh`, `ko`, `es`.
 
 If you want change it, for e.g., to `de`, add `language: 'de'` to default hash with options:
 
