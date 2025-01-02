@@ -6,13 +6,13 @@ module EveOnline
       class Category < Base
         def as_json
           {
-            category_id: category_id,
+            id: id,
             name: name,
             published: published
           }
         end
 
-        def category_id
+        def id
           options["category_id"]
         end
 
