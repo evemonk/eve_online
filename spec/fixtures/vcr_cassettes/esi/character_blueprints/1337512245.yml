@@ -8,24 +8,24 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - EveOnline API (https://github.com/biow0lf/eve_online) v0.17.0
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.46.0
+      Accept:
+      - application/json
       Authorization:
       - Bearer token123
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Tue, 11 Sep 2018 19:45:56 GMT
+      - Thu, 02 Jan 2025 13:03:20 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
-      - '652'
+      - '8998'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -45,24 +45,27 @@ http_interactions:
       Cache-Control:
       - private
       Etag:
-      - '"74531321b3771e91c010ab02a13d94cc64abb47bd6915c2610edbe32"'
+      - '"3f84113dc7741c0e76e75720ce89f6163e5a9712e13e46c8e46affa5"'
       Expires:
-      - Tue, 11 Sep 2018 20:45:02 GMT
+      - Thu, 02 Jan 2025 14:02:29 GMT
       Last-Modified:
-      - Tue, 11 Sep 2018 19:45:02 GMT
+      - Thu, 02 Jan 2025 13:02:29 GMT
       Strict-Transport-Security:
       - max-age=31536000
+      Vary:
+      - Accept-Encoding
+      Warning:
+      - 299 - This route is deprecated
       X-Esi-Error-Limit-Remain:
       - '100'
       X-Esi-Error-Limit-Reset:
-      - '4'
+      - '40'
       X-Esi-Request-Id:
-      - 85c9c81f-52b0-4f62-93bd-4b42e8e22185
+      - a02b0bf9-6fa6-4111-b783-a052f2e33844
       X-Pages:
       - '1'
     body:
       encoding: UTF-8
-      string: '[{"item_id":716338097,"location_flag":"Hangar","location_id":1027847409779,"material_efficiency":10,"quantity":-2,"runs":300,"time_efficiency":0,"type_id":1010},{"item_id":1567646211,"location_flag":"Hangar","location_id":1027847409779,"material_efficiency":10,"quantity":-2,"runs":300,"time_efficiency":20,"type_id":12275},{"item_id":1003026148920,"location_flag":"Hangar","location_id":1027847409779,"material_efficiency":10,"quantity":-1,"runs":-1,"time_efficiency":20,"type_id":1152},{"item_id":1012854613186,"location_flag":"Hangar","location_id":1027847409779,"material_efficiency":10,"quantity":-1,"runs":-1,"time_efficiency":20,"type_id":3994}]'
-    http_version:
-  recorded_at: Tue, 11 Sep 2018 19:45:56 GMT
-recorded_with: VCR 4.0.0
+      string: '[{"item_id":716338097,"location_flag":"AssetSafety","location_id":60013867,"material_efficiency":10,"quantity":-2,"runs":300,"time_efficiency":0,"type_id":1010},{"item_id":1567646211,"location_flag":"AssetSafety","location_id":60013867,"material_efficiency":10,"quantity":-2,"runs":300,"time_efficiency":20,"type_id":12275},{"item_id":1003026148920,"location_flag":"AssetSafety","location_id":60013867,"material_efficiency":10,"quantity":-1,"runs":-1,"time_efficiency":20,"type_id":1152},{"item_id":1012854613186,"location_flag":"AssetSafety","location_id":60013867,"material_efficiency":10,"quantity":-1,"runs":-1,"time_efficiency":20,"type_id":3994},{"item_id":1032671938930,"location_flag":"Hangar","location_id":60002173,"material_efficiency":10,"quantity":-1,"runs":-1,"time_efficiency":20,"type_id":806},{"item_id":1032674962321,"location_flag":"Hangar","location_id":60002173,"material_efficiency":10,"quantity":-1,"runs":-1,"time_efficiency":20,"type_id":805},{"item_id":1032699156394,"location_flag":"Hangar","location_id":60002173,"material_efficiency":10,"quantity":-1,"runs":-1,"time_efficiency":20,"type_id":804},{"item_id":1032705454532,"location_flag":"Hangar","location_id":60002173,"material_efficiency":0,"quantity":-2,"runs":1,"time_efficiency":0,"type_id":974},{"item_id":1032818878332,"location_flag":"Hangar","location_id":60002173,"material_efficiency":10,"quantity":-1,"runs":-1,"time_efficiency":20,"type_id":2487},{"item_id":1032850257602,"location_flag":"Hangar","location_id":60002173,"material_efficiency":10,"quantity":-1,"runs":-1,"time_efficiency":20,"type_id":2204},{"item_id":1032875489350,"location_flag":"Hangar","location_id":60002173,"material_efficiency":10,"quantity":-2,"runs":9,"time_efficiency":20,"type_id":688},{"item_id":1032933533078,"location_flag":"Hangar","location_id":60002173,"material_efficiency":10,"quantity":-1,"runs":-1,"time_efficiency":20,"type_id":11872},{"item_id":1032933537654,"location_flag":"Hangar","location_id":60002173,"material_efficiency":10,"quantity":-1,"runs":-1,"time_efficiency":20,"type_id":17332},{"item_id":1032964663002,"location_flag":"Hangar","location_id":60002173,"material_efficiency":10,"quantity":-2,"runs":9,"time_efficiency":20,"type_id":2487},{"item_id":1032999351851,"location_flag":"Hangar","location_id":60002173,"material_efficiency":0,"quantity":-2,"runs":80,"time_efficiency":0,"type_id":2204},{"item_id":1033000927476,"location_flag":"Hangar","location_id":60002173,"material_efficiency":10,"quantity":-1,"runs":-1,"time_efficiency":20,"type_id":803},{"item_id":1033004902366,"location_flag":"Hangar","location_id":60002173,"material_efficiency":10,"quantity":-1,"runs":-1,"time_efficiency":20,"type_id":11887},{"item_id":1033007387225,"location_flag":"Hangar","location_id":60002173,"material_efficiency":4,"quantity":-2,"runs":11,"time_efficiency":14,"type_id":2622},{"item_id":1033011585180,"location_flag":"Hangar","location_id":60002173,"material_efficiency":4,"quantity":-2,"runs":11,"time_efficiency":14,"type_id":24532},{"item_id":1033016051456,"location_flag":"Hangar","location_id":60002173,"material_efficiency":4,"quantity":-2,"runs":11,"time_efficiency":14,"type_id":2638},{"item_id":1033017077619,"location_flag":"Hangar","location_id":60002173,"material_efficiency":0,"quantity":-2,"runs":1,"time_efficiency":0,"type_id":949},{"item_id":1033017085582,"location_flag":"Hangar","location_id":60002173,"material_efficiency":4,"quantity":-2,"runs":11,"time_efficiency":14,"type_id":2489},{"item_id":1033017086764,"location_flag":"Hangar","location_id":60002173,"material_efficiency":4,"quantity":-2,"runs":11,"time_efficiency":14,"type_id":24542},{"item_id":1033018137672,"location_flag":"Hangar","location_id":60002173,"material_efficiency":4,"quantity":-2,"runs":11,"time_efficiency":14,"type_id":24538},{"item_id":1033040248585,"location_flag":"Hangar","location_id":60002173,"material_efficiency":0,"quantity":-2,"runs":1,"time_efficiency":0,"type_id":834},{"item_id":1033041705547,"location_flag":"Hangar","location_id":60002173,"material_efficiency":10,"quantity":-1,"runs":-1,"time_efficiency":20,"type_id":809},{"item_id":1033041707134,"location_flag":"Hangar","location_id":60002173,"material_efficiency":10,"quantity":-1,"runs":-1,"time_efficiency":20,"type_id":808},{"item_id":1033043046851,"location_flag":"Hangar","location_id":60002173,"material_efficiency":0,"quantity":-2,"runs":10,"time_efficiency":0,"type_id":809},{"item_id":1033043046951,"location_flag":"Hangar","location_id":60002173,"material_efficiency":0,"quantity":-2,"runs":6,"time_efficiency":0,"type_id":808},{"item_id":1033056776944,"location_flag":"Hangar","location_id":60002173,"material_efficiency":0,"quantity":-2,"runs":2,"time_efficiency":0,"type_id":835},{"item_id":1033058321712,"location_flag":"Hangar","location_id":60002173,"material_efficiency":10,"quantity":-1,"runs":-1,"time_efficiency":20,"type_id":2047},{"item_id":1033455551128,"location_flag":"Hangar","location_id":60002173,"material_efficiency":0,"quantity":-2,"runs":1,"time_efficiency":0,"type_id":955},{"item_id":1033455553230,"location_flag":"Hangar","location_id":60002173,"material_efficiency":0,"quantity":-2,"runs":1,"time_efficiency":0,"type_id":936},{"item_id":1033455555812,"location_flag":"Hangar","location_id":60002173,"material_efficiency":0,"quantity":-2,"runs":1,"time_efficiency":0,"type_id":32875},{"item_id":1033457090660,"location_flag":"Hangar","location_id":60002173,"material_efficiency":4,"quantity":-2,"runs":11,"time_efficiency":14,"type_id":2206},{"item_id":1033460496467,"location_flag":"Hangar","location_id":60002173,"material_efficiency":0,"quantity":-2,"runs":50,"time_efficiency":0,"type_id":2047},{"item_id":1033464734651,"location_flag":"Hangar","location_id":60002173,"material_efficiency":4,"quantity":-2,"runs":11,"time_efficiency":14,"type_id":24534},{"item_id":1033474546995,"location_flag":"Hangar","location_id":60002173,"material_efficiency":10,"quantity":-1,"runs":-1,"time_efficiency":20,"type_id":2455},{"item_id":1033474549384,"location_flag":"Hangar","location_id":60002173,"material_efficiency":10,"quantity":-1,"runs":-1,"time_efficiency":20,"type_id":2465},{"item_id":1033480818365,"location_flag":"Hangar","location_id":60002173,"material_efficiency":4,"quantity":-2,"runs":11,"time_efficiency":14,"type_id":24510},{"item_id":1033486874338,"location_flag":"Hangar","location_id":60002173,"material_efficiency":0,"quantity":-2,"runs":4,"time_efficiency":0,"type_id":10630},{"item_id":1033486879402,"location_flag":"Hangar","location_id":60002173,"material_efficiency":4,"quantity":-2,"runs":11,"time_efficiency":14,"type_id":24518},{"item_id":1033486879591,"location_flag":"Hangar","location_id":60002173,"material_efficiency":4,"quantity":-2,"runs":11,"time_efficiency":14,"type_id":24540},{"item_id":1033542392958,"location_flag":"Hangar","location_id":60002173,"material_efficiency":0,"quantity":-2,"runs":1,"time_efficiency":0,"type_id":16241},{"item_id":1033603824790,"location_flag":"Hangar","location_id":60002173,"material_efficiency":0,"quantity":-2,"runs":1,"time_efficiency":0,"type_id":945},{"item_id":1033660103343,"location_flag":"Hangar","location_id":60002173,"material_efficiency":0,"quantity":-2,"runs":2,"time_efficiency":0,"type_id":821},{"item_id":1033660107682,"location_flag":"Hangar","location_id":60002173,"material_efficiency":0,"quantity":-2,"runs":4,"time_efficiency":0,"type_id":786},{"item_id":1033791924954,"location_flag":"Hangar","location_id":60002173,"material_efficiency":0,"quantity":-2,"runs":1,"time_efficiency":0,"type_id":689},{"item_id":1033791925626,"location_flag":"Hangar","location_id":60002173,"material_efficiency":0,"quantity":-2,"runs":1,"time_efficiency":0,"type_id":16237},{"item_id":1033791926147,"location_flag":"Hangar","location_id":60002173,"material_efficiency":0,"quantity":-2,"runs":2,"time_efficiency":0,"type_id":820},{"item_id":1033869509362,"location_flag":"Hangar","location_id":60002173,"material_efficiency":0,"quantity":-2,"runs":1,"time_efficiency":0,"type_id":949},{"item_id":1033937385746,"location_flag":"Hangar","location_id":60002173,"material_efficiency":0,"quantity":-2,"runs":2,"time_efficiency":0,"type_id":10679},{"item_id":1033969261906,"location_flag":"Hangar","location_id":60002173,"material_efficiency":0,"quantity":-2,"runs":1,"time_efficiency":0,"type_id":32879},{"item_id":1034241263998,"location_flag":"Hangar","location_id":60002173,"material_efficiency":0,"quantity":5,"runs":1,"time_efficiency":0,"type_id":30754},{"item_id":1035673133144,"location_flag":"Cargo","location_id":1032641106218,"material_efficiency":0,"quantity":-2,"runs":2,"time_efficiency":0,"type_id":1113},{"item_id":1036421862388,"location_flag":"Cargo","location_id":1032641106218,"material_efficiency":0,"quantity":-2,"runs":4,"time_efficiency":0,"type_id":10630},{"item_id":1037117742705,"location_flag":"Cargo","location_id":1032641106218,"material_efficiency":0,"quantity":-2,"runs":2,"time_efficiency":0,"type_id":820}]'
+  recorded_at: Thu, 02 Jan 2025 13:03:20 GMT
+recorded_with: VCR 6.3.1
