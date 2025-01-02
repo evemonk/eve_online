@@ -5,6 +5,7 @@
 * Ruby 3.4
 * Drop Rails 7.1
 * Fix POST requests
+* Upgrade "/v2/characters/{character_id}/blueprints/" to "/v3/characters/{character_id}/blueprints/"
 
 ## v0.46.0
 
