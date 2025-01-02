@@ -9,7 +9,7 @@ module EveOnline
             faction_id: faction_id,
             description: description,
             name: name,
-            race_id: race_id
+            id: id
           }
         end
 
@@ -25,7 +25,7 @@ module EveOnline
           options["name"]
         end
 
-        def race_id
+        def id
           options["race_id"]
         end
       end
