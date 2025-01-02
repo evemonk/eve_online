@@ -491,33 +491,33 @@ describe EveOnline::ESI::Base do
 
       let(:connection) { double }
 
-      before { expect(subject).to receive(:http_method).and_return(http_method).twice }
+      before { expect(subject).to receive(:http_method).and_return(http_method) }
 
       before { expect(subject).to receive(:uri).and_return(uri) }
 
       before { expect(subject).to receive(:connection).and_return(connection) }
 
-      before { expect(connection).to receive(:public_send).with(http_method, uri).and_raise(Faraday::ConnectionFailed, nil) }
+      before { expect(connection).to receive(:get).with(uri).and_raise(Faraday::ConnectionFailed, nil) }
 
       specify { expect { subject.resource }.to raise_error(EveOnline::Exceptions::Timeout) }
     end
 
     context "when throw Faraday::TimeoutError" do
-      # let(:http_method) { double }
-      #
-      # let(:uri) { double }
-      #
-      # let(:connection) { double }
-      #
-      # before { expect(subject).to receive(:http_method).and_return(http_method) }
-      #
-      # before { expect(subject).to receive(:uri).and_return(uri) }
-      #
-      # before { expect(subject).to receive(:connection).and_return(connection) }
-      #
-      # before { expect(connection).to receive(:public_send).with(http_method, uri).and_raise(Faraday::TimeoutError, nil) }
-      #
-      # specify { expect { subject.resource }.to raise_error(EveOnline::Exceptions::Timeout) }
+      let(:http_method) { :get }
+
+      let(:uri) { double }
+
+      let(:connection) { double }
+
+      before { expect(subject).to receive(:http_method).and_return(http_method) }
+
+      before { expect(subject).to receive(:uri).and_return(uri) }
+
+      before { expect(subject).to receive(:connection).and_return(connection) }
+
+      before { expect(connection).to receive(:get).with(uri).and_raise(Faraday::TimeoutError, nil) }
+
+      specify { expect { subject.resource }.to raise_error(EveOnline::Exceptions::Timeout) }
     end
   end
 

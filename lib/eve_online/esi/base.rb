@@ -137,7 +137,7 @@ module EveOnline
       def resource
         @resource ||=
           if http_method == :get
-            connection.public_send(http_method, uri)
+            connection.get(uri)
           elsif http_method == :post
             connection.public_send(http_method, uri, payload)
           end
