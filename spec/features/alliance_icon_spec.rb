@@ -20,5 +20,5 @@ describe "Get alliance icon" do
 
   specify { expect(subject.error_limit_remain).to eq(100) }
 
-  specify { expect(subject.error_limit_reset).to eq(10) }
+  specify { expect(subject.error_limit_reset).to eq(7) }
 end
