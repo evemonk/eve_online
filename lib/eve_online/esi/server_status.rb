@@ -7,7 +7,7 @@ module EveOnline
     class ServerStatus < Base
       extend Forwardable
 
-      API_PATH = "/v1/status/"
+      API_PATH = "/v2/status/"
 
       def_delegators :model, :as_json, :players, :server_version, :start_time, :vip
 

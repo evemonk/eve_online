@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://esi.evetech.net/v1/status/
+    uri: https://esi.evetech.net/v2/status/
     body:
       encoding: US-ASCII
       string: ''
@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 02 Jan 2025 19:29:24 GMT
+      - Thu, 02 Jan 2025 19:31:31 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
@@ -43,21 +43,21 @@ http_interactions:
       Cache-Control:
       - public
       Etag:
-      - '"8e579806b24227b082e3823aa86d26af9c5588be4ff086dc0547771a"'
+      - '"0d9288e6177ccd6dacab47ca3f59f0f213c28fc73ed61ec7c0c0d2de"'
       Expires:
-      - Thu, 02 Jan 2025 19:29:47 GMT
+      - Thu, 02 Jan 2025 19:31:48 GMT
       Last-Modified:
-      - Thu, 02 Jan 2025 19:29:17 GMT
+      - Thu, 02 Jan 2025 19:31:18 GMT
       Strict-Transport-Security:
       - max-age=31536000
       X-Esi-Error-Limit-Remain:
       - '100'
       X-Esi-Error-Limit-Reset:
-      - '36'
+      - '29'
       X-Esi-Request-Id:
-      - 8f90e241-9321-427b-b1df-7c31e48df964
+      - 3e85577c-b927-47dd-83a2-d275ce1ef3e1
     body:
       encoding: UTF-8
-      string: '{"players":29653,"server_version":"2776971","start_time":"2025-01-02T11:01:17Z"}'
-  recorded_at: Thu, 02 Jan 2025 19:29:24 GMT
+      string: '{"players":29717,"server_version":"2776971","start_time":"2025-01-02T11:01:17Z"}'
+  recorded_at: Thu, 02 Jan 2025 19:31:31 GMT
 recorded_with: VCR 6.3.1
