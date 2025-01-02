@@ -14,20 +14,20 @@ describe "Get bloodlines" do
   specify { expect(subject.bloodlines.size).to eq(18) }
 
   specify do
-    expect(subject.bloodlines.first.as_json).to eq(bloodline_id: 1,
-      charisma: 6,
-      corporation_id: 1_000_006,
-      description: "The Deteis are regarded as the face of leadership in Caldari society. Commonly possessed of sharp, ordered minds and articulate tongues, they are mostly found in positions of authority within military and political spheres. Driven by the cultural premise that the good of the whole must come before the needs of the individual, they have made the responsibility of upholding the integrity of the entire Caldari State their own.",
+    expect(subject.bloodlines.first.as_json).to eq(id: 5,
+      charisma: 3,
+      corporation_id: 1_000_066,
+      description: "True Amarrians are proud and supercilious, with a great sense of tradition and ancestry. They are considered arrogant and tyrannical by most others. The Empire's defeat at the hands of the mysterious Jovians, and the Minmatar uprising that followed, left an indelible mark on Amarrian culture. This double failure, a turning point in their history, has shaped an entire generation of policy and philosophy among the imperial elite.",
       intelligence: 7,
-      memory: 7,
-      name: "Deteis",
-      perception: 5,
-      race_id: 1,
-      ship_type_id: 601,
-      willpower: 5)
+      memory: 6,
+      name: "Amarr",
+      perception: 4,
+      race_id: 4,
+      ship_type_id: 596,
+      willpower: 10)
   end
 
   specify { expect(subject.error_limit_remain).to eq(100) }
 
-  specify { expect(subject.error_limit_reset).to eq(44) }
+  specify { expect(subject.error_limit_reset).to eq(16) }
 end
