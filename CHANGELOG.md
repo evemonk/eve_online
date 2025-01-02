@@ -5,12 +5,12 @@
 * Ruby 3.4
 * Drop Rails 7.1
 * Fix POST requests
-* Upgrade "/v2/characters/{character_id}/blueprints/" to "/v3/characters/{character_id}/blueprints/"
+* Upgrade `/v2/characters/{character_id}/blueprints/` to `/v3/characters/{character_id}/blueprints/`
 * Rename `EveOnline::ESI::Models::Ancestry#ancestry_id` to `#id`
 * Rename `EveOnline::ESI::Models::Bloodline#bloodline_id` to `#id`
 * Rename `EveOnline::ESI::Models::Race#race_id` to `#id`
-* Upgrade "/v5/characters/%<character_id>s/notifications/" to "/v6/characters/%<character_id>s/notifications/"
-* Upgrade "/v1/status/" to "/v2/status/"
+* Upgrade `/v5/characters/%<character_id>s/notifications/` to `/v6/characters/%<character_id>s/notifications/`
+* Upgrade `/v1/status/` to `/v2/status/`
 
 ## v0.46.0
 
