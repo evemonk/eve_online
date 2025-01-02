@@ -2005,14 +2005,14 @@ ancestry = ancestries.ancestries.first
 ancestry.as_json # => {:bloodline_id=>4,
                  #     :description=>"Millions of slaves within the Amarr Empire dream of escape...",
                  #     :icon_id=>1664,
-                 #     :ancestry_id=>24,
+                 #     :id=>24,
                  #     :name=>"Slave Child",
                  #     :short_description=>"Torn from the cold and brought to the warmth of a new life."}
 
 ancestry.bloodline_id # => 4
 ancestry.description # => "Millions of slaves within the Amarr Empire dream of escape..."
 ancestry.icon_id # => 1664
-ancestry.ancestry_id # => 24
+ancestry.id # => 24
 ancestry.name # => "Slave Child"
 ancestry.short_description # => "Torn from the cold and brought to the warmth of a new life."
 ```
@@ -2044,39 +2044,39 @@ asteroid_belt.position.z # => -73505464320.0
 #### Get bloodlines
 
 ```ruby
-options = { language: 'en-us' }
+options = {language: "en-us"}
 
 bloodlines = EveOnline::ESI::UniverseBloodlines.new(options)
 
 bloodlines.scope # => nil
 
-bloodlines.bloodlines.size # => 15
+bloodlines.bloodlines.size # => 18
 
 bloodline = bloodlines.bloodlines.first
 
-bloodline.as_json # => {:bloodline_id=>4,
-                  #     :charisma=>6,
-                  #     :corporation_id=>1000049,
-                  #     :description=>"A martial, strong-willed people, the Brutor...",
-                  #     :intelligence=>4,
-                  #     :memory=>4,
-                  #     :name=>"Brutor",
-                  #     :perception=>9,
-                  #     :race_id=>2,
-                  #     :ship_type_id=>588,
-                  #     :willpower=>7}
+bloodline.as_json # => {id: 5,
+                  #     charisma: 3,
+                  #     corporation_id: 1000066,
+                  #     description: "True Amarrians are proud and supercilious, with a great sense of tradition and ancestry...",
+                  #     intelligence: 7,
+                  #     memory: 6,
+                  #     name: "Amarr",
+                  #     perception: 4,
+                  #     race_id: 4,
+                  #     ship_type_id: 596,
+                  #     willpower: 10}
 
-bloodline.bloodline_id # => 4
-bloodline.charisma # => 6
-bloodline.corporation_id # => 1000049
-bloodline.description # => "A martial, strong-willed people, the Brutor..."
-bloodline.intelligence # => 4
-bloodline.memory # => 4
-bloodline.name # => "Brutor"
-bloodline.perception # => 9
-bloodline.race_id # => 2
-bloodline.ship_type_id # => 588
-bloodline.willpower # => 7
+bloodline.id # => 5
+bloodline.charisma # => 3
+bloodline.corporation_id # => 1000066
+bloodline.description # => "True Amarrians are proud and supercilious, with a great sense of tradition and ancestry..."
+bloodline.intelligence # => 7
+bloodline.memory # => 6
+bloodline.name # => "Amarr"
+bloodline.perception # => 4
+bloodline.race_id # => 4
+bloodline.ship_type_id # => 596
+bloodline.willpower # => 10
 ```
 
 #### Get item categories
