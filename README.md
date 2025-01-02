@@ -3027,16 +3027,6 @@ options = { language: 'de' }
 races = EveOnline::ESI::UniverseRaces.new(options)
 ```
 
-## Oj as JSON Parser
-
-```ruby
-require 'oj'
-
-Oj.mimic_JSON()
-
-races = EveOnline::ESI::UniverseRaces.new
-```
-
 ## Formulas
 
 ### Blueprint copy time
