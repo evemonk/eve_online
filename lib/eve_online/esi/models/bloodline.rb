@@ -6,7 +6,7 @@ module EveOnline
       class Bloodline < Base
         def as_json
           {
-            bloodline_id: bloodline_id,
+            id: id,
             charisma: charisma,
             corporation_id: corporation_id,
             description: description,
@@ -20,7 +20,7 @@ module EveOnline
           }
         end
 
-        def bloodline_id
+        def id
           options["bloodline_id"]
         end
 
