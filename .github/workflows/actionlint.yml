@@ -1,0 +1,44 @@
+name: Action Lint
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  schedule:
+    - cron: "0 21 * * 6"
+
+permissions:
+  contents: read
+
+jobs:
+  actionlint:
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@0080882f6c36860b6ba35c610c98ce87d4e2f26f # v2.10.2
+        with:
+          egress-policy: audit
+
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - uses: raven-actions/actionlint@01fce4f43a270a612932cb1c64d40505a029f821 # v2.0.0
+        id: actionlint
+        with:
+          pyflakes: false
+
+      - name: actionlint Summary
+        if: ${{ steps.actionlint.outputs.exit-code != 0 }}
+        run: |
+          echo "Used actionlint version ${{ steps.actionlint.outputs.version-semver }}"
+          echo "Used actionlint release ${{ steps.actionlint.outputs.version-tag }}"
+          echo "actionlint ended with ${{ steps.actionlint.outputs.exit-code }} exit code"
+          echo "actionlint ended because '${{ steps.actionlint.outputs.exit-message }}'"
+          echo "actionlint found ${{ steps.actionlint.outputs.total-errors }} errors"
+          echo "actionlint checked ${{ steps.actionlint.outputs.total-files }} files"
+          echo "actionlint cache used: ${{ steps.actionlint.outputs.cache-hit }}"
+          # shellcheck disable=SC2242
+          exit ${{ steps.actionlint.outputs.exit-code }}
