@@ -23,12 +23,12 @@ describe "Get character blueprints" do
 
   specify { expect(subject.total_pages).to eq(1) }
 
-  specify { expect(subject.blueprints.size).to eq(4) }
+  specify { expect(subject.blueprints.size).to eq(57) }
 
   specify do
     expect(subject.blueprints.first.as_json).to eq(item_id: 716_338_097,
-      location_flag: "Hangar",
-      location_id: 1_027_847_409_779,
+      location_flag: "AssetSafety",
+      location_id: 60_013_867,
       material_efficiency: 10,
       quantity: -2,
       runs: 300,
@@ -38,5 +38,5 @@ describe "Get character blueprints" do
 
   specify { expect(subject.error_limit_remain).to eq(100) }
 
-  specify { expect(subject.error_limit_reset).to eq(4) }
+  specify { expect(subject.error_limit_reset).to eq(40) }
 end
