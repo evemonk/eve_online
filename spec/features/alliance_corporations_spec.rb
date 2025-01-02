@@ -15,9 +15,9 @@ describe "List alliance's corporations" do
 
   specify { expect(subject.corporation_ids.size).to eq(5) }
 
-  specify { expect(subject.corporation_ids.first).to eq(98_250_226) }
+  specify { expect(subject.corporation_ids.first).to eq(98_565_696) }
 
   specify { expect(subject.error_limit_remain).to eq(100) }
 
-  specify { expect(subject.error_limit_reset).to eq(49) }
+  specify { expect(subject.error_limit_reset).to eq(3) }
 end
