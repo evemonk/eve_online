@@ -4,6 +4,7 @@
 
 * Ruby 3.4
 * Drop Rails 7.1
+* Fix POST requests
 
 ## v0.46.0
 

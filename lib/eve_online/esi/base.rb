@@ -135,7 +135,12 @@ module EveOnline
       end
 
       def resource
-        @resource ||= connection.public_send(http_method, uri)
+        @resource ||=
+          if http_method == :get
+            connection.public_send(http_method, uri)
+          elsif http_method == :post
+            connection.public_send(http_method, uri, payload)
+          end
       rescue Faraday::ConnectionFailed, Faraday::TimeoutError
         raise EveOnline::Exceptions::Timeout
       end
