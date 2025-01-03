@@ -10,6 +10,7 @@
 * Rename `EveOnline::ESI::Models::Bloodline#bloodline_id` to `#id`
 * Rename `EveOnline::ESI::Models::Race#race_id` to `#id`
 * Rename `EveOnline::ESI::Models::Category#category_id` to `#id`
+* Rename `EveOnline::ESI::Models::Faction#faction_id` to `#id`
 * Upgrade `/v5/characters/%<character_id>s/notifications/` to `/v6/characters/%<character_id>s/notifications/`
 * Upgrade `/v1/status/` to `/v2/status/`
 
