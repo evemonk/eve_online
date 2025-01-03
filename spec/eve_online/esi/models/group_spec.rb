@@ -18,7 +18,7 @@ describe EveOnline::ESI::Models::Group do
 
     before { expect(group).to receive(:category_id).and_return(25) }
 
-    before { expect(group).to receive(:group_id).and_return(450) }
+    before { expect(group).to receive(:id).and_return(450) }
 
     before { expect(group).to receive(:name).and_return("Arkonor") }
 
@@ -28,7 +28,7 @@ describe EveOnline::ESI::Models::Group do
 
     its([:category_id]) { should eq(25) }
 
-    its([:group_id]) { should eq(450) }
+    its([:id]) { should eq(450) }
 
     its([:name]) { should eq("Arkonor") }
 
@@ -41,10 +41,10 @@ describe EveOnline::ESI::Models::Group do
     specify { expect { subject.category_id }.not_to raise_error }
   end
 
-  describe "#group_id" do
+  describe "#id" do
     before { expect(options).to receive(:[]).with("group_id") }
 
-    specify { expect { subject.group_id }.not_to raise_error }
+    specify { expect { subject.id }.not_to raise_error }
   end
 
   describe "#name" do
