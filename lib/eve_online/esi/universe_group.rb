@@ -9,15 +9,15 @@ module EveOnline
 
       API_PATH = "/v1/universe/groups/%<group_id>s/"
 
-      attr_reader :id
+      attr_reader :group_id
 
       def initialize(options = {})
         super
 
-        @id = options.fetch(:id)
+        @group_id = options.fetch(:group_id)
       end
 
-      def_delegators :model, :as_json, :category_id, :group_id, :name,
+      def_delegators :model, :as_json, :category_id, :id, :name,
         :published, :type_ids
 
       def model
@@ -32,7 +32,7 @@ module EveOnline
       end
 
       def path
-        format(API_PATH, group_id: id)
+        format(API_PATH, group_id: group_id)
       end
     end
   end
