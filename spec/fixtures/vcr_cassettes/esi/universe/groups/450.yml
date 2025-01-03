@@ -7,23 +7,23 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.46.0
       Accept:
       - application/json
-      User-Agent:
-      - EveOnline API (https://github.com/evemonk/eve_online) v0.27.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Tue, 02 Jul 2019 17:32:34 GMT
+      - Thu, 02 Jan 2025 14:07:49 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
-      - '134'
+      - '158'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -45,11 +45,11 @@ http_interactions:
       Content-Language:
       - en-us
       Etag:
-      - W/"37a39e7a5f5ecc07b19a3128c319f1198d035aee10052d0a21ccdd94"
+      - '"71e655c22da484d5e6466ec84d40e14997b5b24b94901ab8c31b0781"'
       Expires:
-      - Wed, 03 Jul 2019 11:05:00 GMT
+      - Fri, 03 Jan 2025 11:05:00 GMT
       Last-Modified:
-      - Mon, 01 Jul 2019 11:09:31 GMT
+      - Thu, 02 Jan 2025 11:01:17 GMT
       Strict-Transport-Security:
       - max-age=31536000
       Vary:
@@ -57,12 +57,11 @@ http_interactions:
       X-Esi-Error-Limit-Remain:
       - '100'
       X-Esi-Error-Limit-Reset:
-      - '26'
+      - '11'
       X-Esi-Request-Id:
-      - 811ddd48-fe50-496c-ad97-810d9ab1a75b
+      - 6241edee-6acd-4baa-98df-222f47716221
     body:
       encoding: UTF-8
-      string: '{"category_id":25,"group_id":450,"name":"Arkonor","published":true,"types":[22,17425,17426,26852,28367,28385,28387,28625,46678,46691]}'
-    http_version: 
-  recorded_at: Tue, 02 Jul 2019 17:32:34 GMT
-recorded_with: VCR 5.0.0
+      string: '{"category_id":25,"group_id":450,"name":"Arkonor","published":true,"types":[22,17425,17426,26852,28367,28385,28387,28625,46678,46691,62568,62569,62570,62571]}'
+  recorded_at: Thu, 02 Jan 2025 14:07:49 GMT
+recorded_with: VCR 6.3.1
