@@ -11,11 +11,11 @@ describe "List all alliances" do
 
   specify { expect(subject.scope).to eq(nil) }
 
-  specify { expect(subject.alliance_ids.size).to eq(3132) }
+  specify { expect(subject.alliance_ids.size).to eq(3439) }
 
   specify { expect(subject.alliance_ids.first).to eq(99_000_006) }
 
   specify { expect(subject.error_limit_remain).to eq(100) }
 
-  specify { expect(subject.error_limit_reset).to eq(1) }
+  specify { expect(subject.error_limit_reset).to eq(2) }
 end

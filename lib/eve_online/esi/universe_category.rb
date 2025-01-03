@@ -9,16 +9,15 @@ module EveOnline
 
       API_PATH = "/v1/universe/categories/%<category_id>s/"
 
-      attr_reader :id
+      attr_reader :category_id
 
       def initialize(options)
         super
 
-        @id = options.fetch(:id)
+        @category_id = options.fetch(:category_id)
       end
 
-      def_delegators :model, :as_json, :category_id, :name, :published,
-        :group_ids
+      def_delegators :model, :as_json, :id, :name, :published, :group_ids
 
       def model
         @model ||= Models::Category.new(response)
@@ -32,7 +31,7 @@ module EveOnline
       end
 
       def path
-        format(API_PATH, category_id: id)
+        format(API_PATH, category_id: category_id)
       end
     end
   end

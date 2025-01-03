@@ -16,7 +16,7 @@ describe EveOnline::ESI::Models::Category do
   describe "#as_json" do
     let(:category) { described_class.new(options) }
 
-    before { expect(category).to receive(:category_id).and_return(6) }
+    before { expect(category).to receive(:id).and_return(6) }
 
     before { expect(category).to receive(:name).and_return("Ship") }
 
@@ -24,17 +24,17 @@ describe EveOnline::ESI::Models::Category do
 
     subject { category.as_json }
 
-    its([:category_id]) { should eq(6) }
+    its([:id]) { should eq(6) }
 
     its([:name]) { should eq("Ship") }
 
     its([:published]) { should eq(true) }
   end
 
-  describe "#category_id" do
+  describe "#id" do
     before { expect(options).to receive(:[]).with("category_id") }
 
-    specify { expect { subject.category_id }.not_to raise_error }
+    specify { expect { subject.id }.not_to raise_error }
   end
 
   describe "#name" do

@@ -26,5 +26,5 @@ describe "Get asteroid belt information" do
 
   specify { expect(subject.error_limit_remain).to eq(100) }
 
-  specify { expect(subject.error_limit_reset).to eq(50) }
+  specify { expect(subject.error_limit_reset).to eq(16) }
 end

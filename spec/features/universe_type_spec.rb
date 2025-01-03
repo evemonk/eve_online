@@ -40,5 +40,5 @@ describe "Get type information" do
 
   specify { expect(subject.error_limit_remain).to eq(100) }
 
-  specify { expect(subject.error_limit_reset).to eq(30) }
+  specify { expect(subject.error_limit_reset).to eq(4) }
 end

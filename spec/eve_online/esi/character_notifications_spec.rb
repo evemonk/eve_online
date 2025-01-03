@@ -9,7 +9,7 @@ describe EveOnline::ESI::CharacterNotifications do
 
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_PATH).to eq("/v5/characters/%<character_id>s/notifications/") }
+  specify { expect(described_class::API_PATH).to eq("/v6/characters/%<character_id>s/notifications/") }
 
   describe "#initialize" do
     its(:token) { should eq("token123") }
@@ -74,7 +74,7 @@ describe EveOnline::ESI::CharacterNotifications do
 
   describe "#path" do
     specify do
-      expect(subject.path).to eq("/v5/characters/12345678/notifications/")
+      expect(subject.path).to eq("/v6/characters/12345678/notifications/")
     end
   end
 
@@ -86,7 +86,7 @@ describe EveOnline::ESI::CharacterNotifications do
 
   describe "#url" do
     specify do
-      expect(subject.url).to eq("https://esi.evetech.net/v5/characters/12345678/notifications/")
+      expect(subject.url).to eq("https://esi.evetech.net/v6/characters/12345678/notifications/")
     end
   end
 end

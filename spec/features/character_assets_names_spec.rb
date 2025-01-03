@@ -28,5 +28,5 @@ describe "Get character asset names" do
 
   specify { expect(subject.error_limit_remain).to eq(100) }
 
-  specify { expect(subject.error_limit_reset).to eq(29) }
+  specify { expect(subject.error_limit_reset).to eq(38) }
 end

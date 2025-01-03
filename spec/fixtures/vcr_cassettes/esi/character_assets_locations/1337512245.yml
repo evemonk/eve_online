@@ -7,25 +7,21 @@ http_interactions:
       encoding: UTF-8
       string: "[1001215602246]"
     headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.46.0
       Accept:
       - application/json
-      User-Agent:
-      - EveOnline API (https://github.com/evemonk/eve_online) v0.24.0
-      Accept-Language:
-      - en-us
       Authorization:
       - Bearer token123
-      Content-Type:
-      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Sun, 17 Feb 2019 13:00:01 GMT
+      - Thu, 02 Jan 2025 11:08:01 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
@@ -53,10 +49,9 @@ http_interactions:
       X-Esi-Error-Limit-Reset:
       - '59'
       X-Esi-Request-Id:
-      - 348af090-94d9-4642-b6c5-e44bf7c3b3ce
+      - c9263cd4-91a2-4e0e-9405-6181e42ecabd
     body:
       encoding: UTF-8
       string: '[{"item_id":1001215602246,"position":{"x":-928621543221.3319,"y":297645715142.40234,"z":-971212198300.4812}}]'
-    http_version:
-  recorded_at: Sun, 17 Feb 2019 13:00:01 GMT
-recorded_with: VCR 4.0.0
+  recorded_at: Thu, 02 Jan 2025 11:08:01 GMT
+recorded_with: VCR 6.3.1

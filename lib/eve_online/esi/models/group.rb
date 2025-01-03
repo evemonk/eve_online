@@ -7,7 +7,7 @@ module EveOnline
         def as_json
           {
             category_id: category_id,
-            group_id: group_id,
+            id: id,
             name: name,
             published: published
           }
@@ -17,7 +17,7 @@ module EveOnline
           options["category_id"]
         end
 
-        def group_id
+        def id
           options["group_id"]
         end
 

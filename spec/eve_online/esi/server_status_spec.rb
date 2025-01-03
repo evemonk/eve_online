@@ -5,7 +5,7 @@ require "spec_helper"
 describe EveOnline::ESI::ServerStatus do
   specify { expect(subject).to be_a(EveOnline::ESI::Base) }
 
-  specify { expect(described_class::API_PATH).to eq("/v1/status/") }
+  specify { expect(described_class::API_PATH).to eq("/v2/status/") }
 
   describe "#initialize" do
     its(:token) { should eq(nil) }
@@ -102,7 +102,7 @@ describe EveOnline::ESI::ServerStatus do
 
   describe "#path" do
     specify do
-      expect(subject.path).to eq("/v1/status/")
+      expect(subject.path).to eq("/v2/status/")
     end
   end
 
@@ -114,7 +114,7 @@ describe EveOnline::ESI::ServerStatus do
 
   describe "#url" do
     specify do
-      expect(subject.url).to eq("https://esi.evetech.net/v1/status/")
+      expect(subject.url).to eq("https://esi.evetech.net/v2/status/")
     end
   end
 end

@@ -16,7 +16,7 @@ describe EveOnline::ESI::Models::Bloodline do
   describe "#as_json" do
     let(:bloodline) { described_class.new(options) }
 
-    before { expect(bloodline).to receive(:bloodline_id).and_return(4) }
+    before { expect(bloodline).to receive(:id).and_return(4) }
 
     before { expect(bloodline).to receive(:charisma).and_return(6) }
 
@@ -40,7 +40,7 @@ describe EveOnline::ESI::Models::Bloodline do
 
     subject { bloodline.as_json }
 
-    its([:bloodline_id]) { should eq(4) }
+    its([:id]) { should eq(4) }
 
     its([:charisma]) { should eq(6) }
 
@@ -63,10 +63,10 @@ describe EveOnline::ESI::Models::Bloodline do
     its([:willpower]) { should eq(7) }
   end
 
-  describe "#bloodline_id" do
+  describe "#id" do
     before { expect(options).to receive(:[]).with("bloodline_id") }
 
-    specify { expect { subject.bloodline_id }.not_to raise_error }
+    specify { expect { subject.id }.not_to raise_error }
   end
 
   describe "#charisma" do

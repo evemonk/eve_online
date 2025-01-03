@@ -12,13 +12,13 @@ describe "Retrieve the uptime and player counts" do
   specify { expect(subject.scope).to eq(nil) }
 
   specify do
-    expect(subject.as_json).to eq(players: 20_450,
-      server_version: "1446360",
-      start_time: "2019-01-17T11:05:44Z",
+    expect(subject.as_json).to eq(players: 29_717,
+      server_version: "2776971",
+      start_time: "2025-01-02T11:01:17Z",
       vip: nil)
   end
 
   specify { expect(subject.error_limit_remain).to eq(100) }
 
-  specify { expect(subject.error_limit_reset).to eq(2) }
+  specify { expect(subject.error_limit_reset).to eq(29) }
 end

@@ -9,7 +9,7 @@ module EveOnline
             bloodline_id: bloodline_id,
             description: description,
             icon_id: icon_id,
-            ancestry_id: ancestry_id,
+            id: id,
             name: name,
             short_description: short_description
           }
@@ -27,7 +27,7 @@ module EveOnline
           options["icon_id"]
         end
 
-        def ancestry_id
+        def id
           options["id"]
         end
 

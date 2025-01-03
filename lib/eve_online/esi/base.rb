@@ -135,7 +135,15 @@ module EveOnline
       end
 
       def resource
-        @resource ||= connection.public_send(http_method, uri)
+        @resource ||=
+          case http_method
+          when :get
+            connection.get(uri)
+          when :post
+            connection.post(uri, payload)
+          else
+            raise NotImplementedError, "Unsupported HTTP Method #{http_method}"
+          end
       rescue Faraday::ConnectionFailed, Faraday::TimeoutError
         raise EveOnline::Exceptions::Timeout
       end

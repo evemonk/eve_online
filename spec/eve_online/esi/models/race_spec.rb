@@ -22,7 +22,7 @@ describe EveOnline::ESI::Models::Race do
 
     before { expect(races).to receive(:name).and_return("Minmatar") }
 
-    before { expect(races).to receive(:race_id).and_return(2) }
+    before { expect(races).to receive(:id).and_return(2) }
 
     subject { races.as_json }
 
@@ -32,7 +32,7 @@ describe EveOnline::ESI::Models::Race do
 
     its([:name]) { should eq("Minmatar") }
 
-    its([:race_id]) { should eq(2) }
+    its([:id]) { should eq(2) }
   end
 
   describe "#faction_id" do
@@ -53,9 +53,9 @@ describe EveOnline::ESI::Models::Race do
     specify { expect { subject.name }.not_to raise_error }
   end
 
-  describe "#race_id" do
+  describe "#id" do
     before { expect(options).to receive(:[]).with("race_id") }
 
-    specify { expect { subject.race_id }.not_to raise_error }
+    specify { expect { subject.id }.not_to raise_error }
   end
 end

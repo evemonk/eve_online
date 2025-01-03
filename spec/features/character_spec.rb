@@ -29,5 +29,5 @@ describe "Get character's public information" do
 
   specify { expect(subject.error_limit_remain).to eq(100) }
 
-  specify { expect(subject.error_limit_reset).to eq(47) }
+  specify { expect(subject.error_limit_reset).to eq(46) }
 end
