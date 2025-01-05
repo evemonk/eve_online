@@ -117,7 +117,7 @@ GEM
       unicode-display_width (>= 2.4.0, < 4.0)
     rubocop-ast (1.37.0)
       parser (>= 3.3.1.0)
-    rubocop-performance (1.23.0)
+    rubocop-performance (1.23.1)
       rubocop (>= 1.48.1, < 2.0)
       rubocop-ast (>= 1.31.1, < 2.0)
     ruby-progressbar (1.13.0)
@@ -240,7 +240,7 @@ CHECKSUMS
   rspec-support (3.13.2) sha256=cea3a2463fd9b84b9dcc9685efd80ea701aa8f7b3decb3b3ce795ed67737dbec
   rubocop (1.69.2) sha256=762fb0f30a379bf6054588d39f1815a2a1df8f067bc0337d3fe500e346924bb8
   rubocop-ast (1.37.0) sha256=9513ac88aaf113d04b52912533ffe46475de1362d4aa41141b51b2455827c080
-  rubocop-performance (1.23.0) sha256=34ae78cb1bc5f1a0b34a34a1f9f6eec2cb8b8b9cafa2ce37982021e86fa49171
+  rubocop-performance (1.23.1) sha256=f22f86a795f5e6a6180aac2c6fc172534b173a068d6ed3396d6460523e051b82
   ruby-progressbar (1.13.0) sha256=80fc9c47a9b640d6834e0dc7b3c94c9df37f08cb072b7761e4a71e22cff29b33
   ruby_parser (3.21.1) sha256=9d931abe5aec287d65280f811d3cf672564956ef1bd49f528ca48479984d6fec
   securerandom (0.4.1) sha256=cc5193d414a4341b6e225f0cb4446aceca8e50d5e1888743fac16987638ea0b1
