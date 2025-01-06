@@ -11,6 +11,8 @@ describe EveOnline::ESI::Base do
 
       let(:middlewares) { double }
 
+      let(:cache) { double }
+
       let(:options) do
         {
           token: "token123",
@@ -19,7 +21,8 @@ describe EveOnline::ESI::Base do
           write_timeout: 50,
           language: "ru",
           adapter: adapter,
-          middlewares: middlewares
+          middlewares: middlewares,
+          cache: cache
         }
       end
 
@@ -38,6 +41,8 @@ describe EveOnline::ESI::Base do
       its(:adapter) { should eq(adapter) }
 
       its(:middlewares) { should eq(middlewares) }
+
+      its(:cache) { should eq(cache) }
     end
 
     context "without options" do
@@ -54,6 +59,8 @@ describe EveOnline::ESI::Base do
       its(:adapter) { should eq(Faraday.default_adapter) }
 
       its(:middlewares) { should eq([]) }
+
+      its(:cache) { should eq(nil) }
     end
   end
 
