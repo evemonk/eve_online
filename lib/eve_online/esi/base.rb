@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require "faraday"
+require "faraday-http-cache"
 require "active_support/time"
 require "active_support/core_ext/object/blank"
 
@@ -10,7 +11,7 @@ module EveOnline
       API_HOST = "esi.evetech.net"
 
       attr_reader :token, :_read_timeout, :_open_timeout, :_write_timeout,
-        :language, :adapter, :middlewares
+        :language, :adapter, :middlewares, :cache
 
       attr_writer :token
 
@@ -19,9 +20,10 @@ module EveOnline
         @_read_timeout = options.fetch(:read_timeout, 60)
         @_open_timeout = options.fetch(:open_timeout, 60)
         @_write_timeout = options.fetch(:write_timeout, 60)
-        @language = options.fetch(:language, "en-us")
+        @language = options.fetch(:language, "en-us") # TODO: check
         @adapter = options.fetch(:adapter, Faraday.default_adapter)
         @middlewares = options.fetch(:middlewares, [])
+        @cache = options.fetch(:cache, nil)
       end
 
       def url
@@ -95,6 +97,7 @@ module EveOnline
           f.options.read_timeout = _read_timeout
           f.options.open_timeout = _open_timeout
           f.options.write_timeout = _write_timeout
+          f.use Faraday::HttpCache, store: cache if cache
           f.use FaradayMiddlewares::RaiseErrors
           middlewares.each do |middleware|
             f.use middleware[:class], esi: self
@@ -135,7 +138,15 @@ module EveOnline
       end
 
       def resource
-        @resource ||= connection.public_send(http_method, uri)
+        @resource ||=
+          case http_method
+          when :get
+            connection.get(uri)
+          when :post
+            connection.post(uri, payload)
+          else
+            raise NotImplementedError, "Unsupported HTTP Method #{http_method}"
+          end
       rescue Faraday::ConnectionFailed, Faraday::TimeoutError
         raise EveOnline::Exceptions::Timeout
       end

@@ -3,6 +3,18 @@
 ## main
 
 * Ruby 3.4
+* Drop Rails 7.1
+* Fix POST requests
+* Add `faraday-http-cache` gem as dependency
+* Upgrade `/v2/characters/{character_id}/blueprints/` to `/v3/characters/{character_id}/blueprints/`
+* Rename `EveOnline::ESI::Models::Ancestry#ancestry_id` to `#id`
+* Rename `EveOnline::ESI::Models::Bloodline#bloodline_id` to `#id`
+* Rename `EveOnline::ESI::Models::Race#race_id` to `#id`
+* Rename `EveOnline::ESI::Models::Category#category_id` to `#id`
+* Rename `EveOnline::ESI::Models::Faction#faction_id` to `#id`
+* Rename `EveOnline::ESI::Models::Group#group_id` to `#id`
+* Upgrade `/v5/characters/%<character_id>s/notifications/` to `/v6/characters/%<character_id>s/notifications/`
+* Upgrade `/v1/status/` to `/v2/status/`
 
 ## v0.46.0
 

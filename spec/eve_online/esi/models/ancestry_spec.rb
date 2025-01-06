@@ -22,7 +22,7 @@ describe EveOnline::ESI::Models::Ancestry do
 
     before { expect(ancestry).to receive(:icon_id).and_return(1664) }
 
-    before { expect(ancestry).to receive(:ancestry_id).and_return(24) }
+    before { expect(ancestry).to receive(:id).and_return(24) }
 
     before { expect(ancestry).to receive(:name).and_return("Slave Child") }
 
@@ -36,7 +36,7 @@ describe EveOnline::ESI::Models::Ancestry do
 
     its([:icon_id]) { should eq(1664) }
 
-    its([:ancestry_id]) { should eq(24) }
+    its([:id]) { should eq(24) }
 
     its([:name]) { should eq("Slave Child") }
 
@@ -61,10 +61,10 @@ describe EveOnline::ESI::Models::Ancestry do
     specify { expect { subject.icon_id }.not_to raise_error }
   end
 
-  describe "#ancestry_id" do
+  describe "#id" do
     before { expect(options).to receive(:[]).with("id") }
 
-    specify { expect { subject.ancestry_id }.not_to raise_error }
+    specify { expect { subject.id }.not_to raise_error }
   end
 
   describe "#name" do

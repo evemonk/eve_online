@@ -13,7 +13,7 @@ describe "Get types" do
 
   specify { expect(subject.page).to eq(1) }
 
-  specify { expect(subject.total_pages).to eq(36) }
+  specify { expect(subject.total_pages).to eq(50) }
 
   specify { expect(subject.universe_type_ids.size).to eq(1000) }
 
@@ -21,5 +21,5 @@ describe "Get types" do
 
   specify { expect(subject.error_limit_remain).to eq(100) }
 
-  specify { expect(subject.error_limit_reset).to eq(45) }
+  specify { expect(subject.error_limit_reset).to eq(3) }
 end

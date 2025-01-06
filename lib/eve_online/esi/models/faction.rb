@@ -8,7 +8,7 @@ module EveOnline
           {
             corporation_id: corporation_id,
             description: description,
-            faction_id: faction_id,
+            id: id,
             is_unique: is_unique,
             militia_corporation_id: militia_corporation_id,
             name: name,
@@ -27,7 +27,7 @@ module EveOnline
           options["description"]
         end
 
-        def faction_id
+        def id
           options["faction_id"]
         end
 

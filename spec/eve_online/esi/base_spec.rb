@@ -11,6 +11,8 @@ describe EveOnline::ESI::Base do
 
       let(:middlewares) { double }
 
+      let(:cache) { double }
+
       let(:options) do
         {
           token: "token123",
@@ -19,7 +21,8 @@ describe EveOnline::ESI::Base do
           write_timeout: 50,
           language: "ru",
           adapter: adapter,
-          middlewares: middlewares
+          middlewares: middlewares,
+          cache: cache
         }
       end
 
@@ -38,6 +41,8 @@ describe EveOnline::ESI::Base do
       its(:adapter) { should eq(adapter) }
 
       its(:middlewares) { should eq(middlewares) }
+
+      its(:cache) { should eq(cache) }
     end
 
     context "without options" do
@@ -54,6 +59,8 @@ describe EveOnline::ESI::Base do
       its(:adapter) { should eq(Faraday.default_adapter) }
 
       its(:middlewares) { should eq([]) }
+
+      its(:cache) { should eq(nil) }
     end
   end
 
@@ -344,6 +351,22 @@ describe EveOnline::ESI::Base do
         specify { expect(subject.connection.builder.app.instance_variable_get(:@type)).to eq(nil) }
       end
 
+      context "when cache is present" do
+        let(:cache) { double }
+
+        before { expect(subject).to receive(:cache).and_return(cache).twice }
+
+        specify { expect(subject.connection.builder.handlers).to include(Faraday::HttpCache) }
+      end
+
+      context "when cache is not present" do
+        let(:cache) { nil }
+
+        before { expect(subject).to receive(:cache).and_return(cache) }
+
+        specify { expect(subject.connection.builder.handlers).not_to include(Faraday::HttpCache) }
+      end
+
       context "with middlewares" do
         let(:klass) { Class.new }
 
@@ -465,27 +488,57 @@ describe EveOnline::ESI::Base do
     context "when @resource not set" do
       let(:resource) { double }
 
-      let(:http_method) { double }
-
       let(:uri) { double }
 
       let(:connection) { double }
 
-      before { expect(subject).to receive(:http_method).and_return(http_method) }
+      context "when http_method is :get" do
+        let(:http_method) { :get }
 
-      before { expect(subject).to receive(:uri).and_return(uri) }
+        before { expect(subject).to receive(:http_method).and_return(http_method) }
 
-      before { expect(subject).to receive(:connection).and_return(connection) }
+        before { expect(subject).to receive(:uri).and_return(uri) }
 
-      before { expect(connection).to receive(:public_send).with(http_method, uri).and_return(resource) }
+        before { expect(subject).to receive(:connection).and_return(connection) }
 
-      specify { expect(subject.resource).to eq(resource) }
+        before { expect(connection).to receive(:get).with(uri).and_return(resource) }
 
-      specify { expect { subject.resource }.to change { subject.instance_variable_get(:@resource) }.from(nil).to(resource) }
+        specify { expect(subject.resource).to eq(resource) }
+
+        specify { expect { subject.resource }.to change { subject.instance_variable_get(:@resource) }.from(nil).to(resource) }
+      end
+
+      context "when http_method is :post" do
+        let(:http_method) { :post }
+
+        let(:payload) { double }
+
+        before { expect(subject).to receive(:http_method).and_return(http_method) }
+
+        before { expect(subject).to receive(:uri).and_return(uri) }
+
+        before { expect(subject).to receive(:connection).and_return(connection) }
+
+        before { expect(subject).to receive(:payload).and_return(payload) }
+
+        before { expect(connection).to receive(:post).with(uri, payload).and_return(resource) }
+
+        specify { expect(subject.resource).to eq(resource) }
+
+        specify { expect { subject.resource }.to change { subject.instance_variable_get(:@resource) }.from(nil).to(resource) }
+      end
+
+      context "when http_method is not supported" do
+        let(:http_method) { :unsupported }
+
+        before { expect(subject).to receive(:http_method).and_return(http_method).twice }
+
+        specify { expect { subject.resource }.to raise_error(NotImplementedError, "Unsupported HTTP Method unsupported") }
+      end
     end
 
     context "when throw Faraday::ConnectionFailed" do
-      let(:http_method) { double }
+      let(:http_method) { :get }
 
       let(:uri) { double }
 
@@ -497,13 +550,13 @@ describe EveOnline::ESI::Base do
 
       before { expect(subject).to receive(:connection).and_return(connection) }
 
-      before { expect(connection).to receive(:public_send).with(http_method, uri).and_raise(Faraday::ConnectionFailed, nil) }
+      before { expect(connection).to receive(:get).with(uri).and_raise(Faraday::ConnectionFailed, nil) }
 
       specify { expect { subject.resource }.to raise_error(EveOnline::Exceptions::Timeout) }
     end
 
     context "when throw Faraday::TimeoutError" do
-      let(:http_method) { double }
+      let(:http_method) { :get }
 
       let(:uri) { double }
 
@@ -515,7 +568,7 @@ describe EveOnline::ESI::Base do
 
       before { expect(subject).to receive(:connection).and_return(connection) }
 
-      before { expect(connection).to receive(:public_send).with(http_method, uri).and_raise(Faraday::TimeoutError, nil) }
+      before { expect(connection).to receive(:get).with(uri).and_raise(Faraday::TimeoutError, nil) }
 
       specify { expect { subject.resource }.to raise_error(EveOnline::Exceptions::Timeout) }
     end

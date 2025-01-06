@@ -2,8 +2,9 @@ PATH
   remote: .
   specs:
     eve_online (0.46.0)
-      activesupport (>= 7.1.0)
+      activesupport (>= 7.2.0)
       faraday (>= 2.3.0)
+      faraday-http-cache
 
 GEM
   remote: https://rubygems.org/
@@ -41,13 +42,19 @@ GEM
       faraday-net_http (>= 2.0, < 3.5)
       json
       logger
+    faraday-http-cache (2.5.1)
+      faraday (>= 0.8)
     faraday-net_http (3.4.0)
       net-http (>= 0.5.0)
     fasterer (0.11.0)
       ruby_parser (>= 3.19.1)
     hashdiff (1.1.2)
+    httplog (1.7.0)
+      rack (>= 2.0)
+      rainbow (>= 2.0.0)
     i18n (1.14.6)
       concurrent-ruby (~> 1.0)
+    io-console (0.8.0)
     json (2.9.1)
     language_server-protocol (3.17.0.3)
     lint_roller (1.1.0)
@@ -85,9 +92,12 @@ GEM
       method_source (~> 1.0)
     public_suffix (6.0.1)
     racc (1.8.1)
+    rack (3.1.8)
     rainbow (3.1.1)
     rake (13.2.1)
     regexp_parser (2.10.0)
+    reline (0.6.0)
+      io-console (~> 0.5)
     rexml (3.4.0)
     rspec (3.13.0)
       rspec-core (~> 3.13.0)
@@ -175,9 +185,11 @@ DEPENDENCIES
   bundler
   eve_online!
   fasterer
+  httplog
   nokogiri
   pry
   rake
+  reline
   rspec
   rspec-its
   simplecov
@@ -202,10 +214,13 @@ CHECKSUMS
   drb (2.2.1) sha256=e9d472bf785f558b96b25358bae115646da0dbfd45107ad858b0bc0d935cb340
   eve_online (0.46.0)
   faraday (2.12.2) sha256=157339c25c7b8bcb739f5cf1207cb0cefe8fa1c65027266bcbc34c90c84b9ad6
+  faraday-http-cache (2.5.1) sha256=cbfc129a85e1ad8580130189832cf59e7e117d94fe277547d61fc531f7689483
   faraday-net_http (3.4.0) sha256=a1f1e4cd6a2cf21599c8221595e27582d9936819977bbd4089a601f24c64e54a
   fasterer (0.11.0) sha256=9c38b77583584f3339a729eb077fd8f2856a317abe747528f6563d7c23e9dda8
   hashdiff (1.1.2) sha256=2c30eeded6ed3dce8401d2b5b99e6963fe5f14ed85e60dd9e33c545a44b71a77
+  httplog (1.7.0) sha256=892c959888961cb1e163f03f09e34b912efafa3c018ae262aaabf9585d231625
   i18n (1.14.6) sha256=dc229a74f5d181f09942dd60ab5d6e667f7392c4ee826f35096db36d1fe3614c
+  io-console (0.8.0) sha256=cd6a9facbc69871d69b2cb8b926fc6ea7ef06f06e505e81a64f14a470fddefa2
   json (2.9.1) sha256=d2bdef4644052fad91c1785d48263756fe32fcac08b96a20bb15840e96550d11
   language_server-protocol (3.17.0.3) sha256=3d5c58c02f44a20d972957a9febe386d7e7468ab3900ce6bd2b563dd910c6b3f
   lint_roller (1.1.0) sha256=2c0c845b632a7d172cb849cc90c1bce937a28c5c8ccccb50dfd46a485003cc87
@@ -228,9 +243,11 @@ CHECKSUMS
   pry (0.15.2) sha256=12d54b8640d3fa29c9211dd4ffb08f3fd8bf7a4fd9b5a73ce5b59c8709385b6b
   public_suffix (6.0.1) sha256=61d44e1cab5cbbbe5b31068481cf16976dd0dc1b6b07bd95617ef8c5e3e00c6f
   racc (1.8.1) sha256=4a7f6929691dbec8b5209a0b373bc2614882b55fc5d2e447a21aaa691303d62f
+  rack (3.1.8) sha256=d3fbcbca43dc2b43c9c6d7dfbac01667ae58643c42cea10013d0da970218a1b1
   rainbow (3.1.1) sha256=039491aa3a89f42efa1d6dec2fc4e62ede96eb6acd95e52f1ad581182b79bc6a
   rake (13.2.1) sha256=46cb38dae65d7d74b6020a4ac9d48afed8eb8149c040eccf0523bec91907059d
   regexp_parser (2.10.0) sha256=cb6f0ddde88772cd64bff1dbbf68df66d376043fe2e66a9ef77fcb1b0c548c61
+  reline (0.6.0) sha256=57620375dcbe56ec09bac7192bfb7460c716bbf0054dc94345ecaa5438e539d2
   rexml (3.4.0) sha256=efbea1efba7fa151158e0ee1e643525834da2d8eb4cf744aa68f6480bc9804b2
   rspec (3.13.0) sha256=d490914ac1d5a5a64a0e1400c1d54ddd2a501324d703b8cfe83f458337bab993
   rspec-core (3.13.2) sha256=94fbda6e4738e478f1c7532b7cc241272fcdc8b9eac03a97338b1122e4573300

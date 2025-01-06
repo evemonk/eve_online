@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - EveOnline API (https://github.com/evemonk/eve_online) v0.41.0
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.46.0
       Accept:
       - application/json
       Accept-Encoding:
@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 28 Aug 2021 20:39:13 GMT
+      - Thu, 02 Jan 2025 12:58:14 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
@@ -45,20 +45,20 @@ http_interactions:
       Etag:
       - '"5e57d726eda270ba0e8542bdfbca874c844e5cdbf4b5599eeca79d1f"'
       Expires:
-      - Sun, 29 Aug 2021 20:38:25 GMT
+      - Thu, 09 Jan 2025 12:57:43 GMT
       Last-Modified:
-      - Sat, 28 Aug 2021 20:38:25 GMT
+      - Thu, 02 Jan 2025 12:57:43 GMT
       Strict-Transport-Security:
       - max-age=31536000
       X-Esi-Error-Limit-Remain:
       - '100'
       X-Esi-Error-Limit-Reset:
-      - '47'
+      - '46'
       X-Esi-Request-Id:
-      - d13c84b2-828a-4e5a-b84e-1635a3b023d5
+      - 7dcb323b-57ad-4c3c-adb8-fae22a8b3215
     body:
       encoding: UTF-8
       string: '{"alliance_id":99008595,"birthday":"2010-01-15T15:26:00Z","bloodline_id":4,"corporation_id":98565696,"description":"","gender":"male","name":"Johnn
         Dillinger","race_id":2,"security_status":3.83155339}'
-  recorded_at: Sat, 28 Aug 2021 20:39:13 GMT
-recorded_with: VCR 6.0.0
+  recorded_at: Thu, 02 Jan 2025 12:58:14 GMT
+recorded_with: VCR 6.3.1

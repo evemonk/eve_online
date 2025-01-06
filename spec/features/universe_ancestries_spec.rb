@@ -11,18 +11,18 @@ describe "Get ancestries" do
 
   specify { expect(subject.scope).to eq(nil) }
 
-  specify { expect(subject.ancestries.size).to eq(42) }
+  specify { expect(subject.ancestries.size).to eq(43) }
 
   specify do
-    expect(subject.ancestries.first.as_json).to eq(ancestry_id: 1,
-      bloodline_id: 5,
-      description: "Holders, the major landholding class in Amarr society, are generally conservative traditionalists. A few, however, have elected to break ranks with their hidebound and power-hungry peers, instead supporting the modernization of their society's religion and substantial economic reform. Their champion is Catiz Tash-Murkon, the Udorian Royal Heir.",
-      icon_id: 1641,
-      name: "Liberal Holders",
-      short_description: "Progressive members of the upper class who have rejected their traditional ways.")
+    expect(subject.ancestries.first.as_json).to eq(id: 13,
+      bloodline_id: 7,
+      description: "The Gallente prize political activism more so than other Empires. Many devote their efforts towards one or more causes that suit their ambitions. Activists understand that things will never change for the better unless someone has the courage to fight the good fight.",
+      icon_id: 1_653,
+      name: "Activists",
+      short_description: "Making the universe a better place, one fight at a time.")
   end
 
   specify { expect(subject.error_limit_remain).to eq(100) }
 
-  specify { expect(subject.error_limit_reset).to eq(7) }
+  specify { expect(subject.error_limit_reset).to eq(17) }
 end
