@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require "faraday"
+require "faraday-http-cache"
 require "active_support/time"
 require "active_support/core_ext/object/blank"
 
@@ -96,6 +97,7 @@ module EveOnline
           f.options.read_timeout = _read_timeout
           f.options.open_timeout = _open_timeout
           f.options.write_timeout = _write_timeout
+          f.use Faraday::HttpCache, store: cache if cache
           f.use FaradayMiddlewares::RaiseErrors
           middlewares.each do |middleware|
             f.use middleware[:class], esi: self

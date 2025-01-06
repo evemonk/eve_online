@@ -351,6 +351,22 @@ describe EveOnline::ESI::Base do
         specify { expect(subject.connection.builder.app.instance_variable_get(:@type)).to eq(nil) }
       end
 
+      context "when cache is present" do
+        let(:cache) { double }
+
+        before { expect(subject).to receive(:cache).and_return(cache).twice }
+
+        specify { expect(subject.connection.builder.instance_variable_get(:@handlers)).to include(Faraday::HttpCache) }
+      end
+
+      context "when cache is not present" do
+        let(:cache) { nil }
+
+        before { expect(subject).to receive(:cache).and_return(cache) }
+
+        specify { expect(subject.connection.builder.instance_variable_get(:@handlers)).not_to include(Faraday::HttpCache) }
+      end
+
       context "with middlewares" do
         let(:klass) { Class.new }
 
