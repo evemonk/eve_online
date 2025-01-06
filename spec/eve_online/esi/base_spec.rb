@@ -356,7 +356,7 @@ describe EveOnline::ESI::Base do
 
         before { expect(subject).to receive(:cache).and_return(cache).twice }
 
-        specify { expect(subject.connection.builder.instance_variable_get(:@handlers)).to include(Faraday::HttpCache) }
+        specify { expect(subject.connection.builder.handlers).to include(Faraday::HttpCache) }
       end
 
       context "when cache is not present" do
@@ -364,7 +364,7 @@ describe EveOnline::ESI::Base do
 
         before { expect(subject).to receive(:cache).and_return(cache) }
 
-        specify { expect(subject.connection.builder.instance_variable_get(:@handlers)).not_to include(Faraday::HttpCache) }
+        specify { expect(subject.connection.builder.handlers).not_to include(Faraday::HttpCache) }
       end
 
       context "with middlewares" do
