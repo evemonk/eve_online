@@ -35,7 +35,7 @@ jobs:
       - run: rm Gemfile.lock
       - run: rm .ruby-version
       - name: Set up Ruby
-        uses: ruby/setup-ruby@4a9ddd6f338a97768b8006bf671dfbad383215f4 # v1.207.0
+        uses: ruby/setup-ruby@fb404b9557c186e349162b0d8efb06e2bc36edea # v1.232.0
         with:
           ruby-version: ${{ matrix.ruby }}
           rubygems: latest
