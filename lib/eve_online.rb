@@ -91,6 +91,8 @@ module EveOnline
     autoload :MarketGroup, "eve_online/esi/market_group"
     autoload :MarketPrices, "eve_online/esi/market_prices"
 
+    autoload :Route, "eve_online/esi/route"
+
     autoload :Search, "eve_online/esi/search"
 
     autoload :CharacterAttributes, "eve_online/esi/character_attributes"
