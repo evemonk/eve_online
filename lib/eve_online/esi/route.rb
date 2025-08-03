@@ -11,6 +11,9 @@ module EveOnline
 
       ALLOWED_FLAGS = %w[ shortest secure insecure ]
 
+      CONNECTIONS_ERR_MSG = "connections must be an array, each connection pair must be an array of length 2"
+      FLAG_ERR_MSG = "flag must be one of #{ALLOWED_FLAGS.join(", ")}"
+
       attr_reader :route, :origin, :destination, :avoid, :connections, :flag
 
       def initialize(options)
@@ -18,10 +21,18 @@ module EveOnline
 
         @destination = options.fetch(:destination)
         @origin = options.fetch(:origin)
-        @avoid = options.fetch(:avoid, []).join(",")
-        @connections = options.fetch(:connections, []).join(",")
+
         @flag = options.fetch(:flag, nil)
-        raise(ArgumentError) unless @flag.nil? || ALLOWED_FLAGS.include?(@flag)
+        raise(ArgumentError, FLAG_ERR_MSG) unless @flag.nil? || ALLOWED_FLAGS.include?(@flag)
+
+        @avoid = options.fetch(:avoid, [])&.join(",")
+
+        connections = []
+        options.fetch(:connections, [])&.each do |conn|
+          raise(ArgumentError, CONNECTIONS_ERR_MSG) unless conn.is_a?(Array) && conn.length == 2
+          connections << conn.join("|")
+        end
+        @connections = connections.join(",")
       end
 
       def route

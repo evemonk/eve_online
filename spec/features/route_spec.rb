@@ -8,8 +8,11 @@ describe "Get a route between systems" do
   after { VCR.eject_cassette }
 
   let(:options) do
-    { origin: 30000142, destination: 30002187 }
+    { origin: 30000142, destination: 30002187, flag:, avoid:, connections: }
   end
+  let(:flag) { nil }
+  let(:avoid) { nil }
+  let(:connections) { nil }
 
   let(:jita_to_amarr) do
     [
@@ -29,9 +32,7 @@ describe "Get a route between systems" do
   specify { expect(subject.error_limit_reset).to eq(38) }
 
   context "with flag" do
-    let(:options) do
-      { origin: 30000142, destination: 30002187, flag: "secure" }
-    end
+    let(:flag) { "secure" }
 
     let(:jita_to_amarr) do
       [
@@ -44,12 +45,16 @@ describe "Get a route between systems" do
     end
 
     specify { expect(subject.route).to eq(jita_to_amarr) }
+
+    context "with bad flag" do
+      let(:flag) { "safer" }
+
+      specify { expect { subject }.to raise_error ArgumentError }
+    end
   end
 
   context "with avoid" do
-    let(:options) do
-      { origin: 30000142, destination: 30002187, avoid: [30005196] }
-    end
+    let(:avoid) { [30005196] }
 
     let(:jita_to_amarr) do
       [
@@ -63,9 +68,7 @@ describe "Get a route between systems" do
   end
 
   context "with connections" do
-    let(:options) do
-      { origin: 30000142, destination: 30002187, connections: ["30000142|30002187"] }
-    end
+    let(:connections) { [[30000142,30002187]] }
 
     let(:jita_to_amarr) do
       [
@@ -74,5 +77,11 @@ describe "Get a route between systems" do
     end
 
     specify { expect(subject.route).to eq(jita_to_amarr) }
+
+    context "with bad connections" do
+      let(:connections) { [[1234, 5678, 4321]] }
+
+      specify { expect { subject }.to raise_error ArgumentError }
+    end
   end
 end
