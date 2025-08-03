@@ -3,9 +3,8 @@
 require "spec_helper"
 
 describe EveOnline::ESI::Route do
-
   let(:options) do
-    { origin: 30000142, destination: 30002187 }
+    {origin: 30000142, destination: 30002187}
   end
 
   subject { described_class.new(options) }

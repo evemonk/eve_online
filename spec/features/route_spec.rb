@@ -8,7 +8,7 @@ describe "Get a route between systems" do
   after { VCR.eject_cassette }
 
   let(:options) do
-    { origin: 30000142, destination: 30002187, flag:, avoid:, connections: }
+    {origin: 30000142, destination: 30002187, flag:, avoid:, connections:}
   end
   let(:flag) { nil }
   let(:avoid) { nil }
@@ -68,7 +68,7 @@ describe "Get a route between systems" do
   end
 
   context "with connections" do
-    let(:connections) { [[30000142,30002187]] }
+    let(:connections) { [[30000142, 30002187]] }
 
     let(:jita_to_amarr) do
       [

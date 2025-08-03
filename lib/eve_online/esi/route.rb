@@ -9,12 +9,12 @@ module EveOnline
 
       API_PATH = "/v2/route/%<origin>s/%<destination>s"
 
-      ALLOWED_FLAGS = %w[ shortest secure insecure ]
+      ALLOWED_FLAGS = %w[shortest secure insecure]
 
       CONNECTIONS_ERR_MSG = "connections must be an array, each connection pair must be an array of length 2"
       FLAG_ERR_MSG = "flag must be one of #{ALLOWED_FLAGS.join(", ")}"
 
-      attr_reader :route, :origin, :destination, :avoid, :connections, :flag
+      attr_reader :origin, :destination, :avoid, :connections, :flag
 
       def initialize(options)
         super
