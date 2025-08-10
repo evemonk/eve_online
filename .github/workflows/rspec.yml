@@ -19,7 +19,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        ruby: ["3.2", "3.3", "3.4", "head"]
+        # ruby: ["3.2", "3.3", "3.4", "3.5.0-preview1", "head"]
+        ruby: ["3.2", "3.3", "3.4", "3.5.0-preview1"] # TODO: enable "head" back after vcr fix https://github.com/vcr/vcr/issues/1057
         activesupport: ["7.1", "7.2", "8.0", "main"]
     env:
       BUNDLE_GEMFILE: ${{ github.workspace }}/gemfiles/activesupport_${{ matrix.activesupport }}.gemfile
@@ -27,7 +28,7 @@ jobs:
     name: Ruby ${{ matrix.ruby }} and ActiveSupport ${{ matrix.activesupport }}
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@0080882f6c36860b6ba35c610c98ce87d4e2f26f # v2.10.2
+        uses: step-security/harden-runner@ec9f2d5744a09debf3a187a3f4f675c53b671911 # v2.13.0
         with:
           egress-policy: audit
 
@@ -35,7 +36,7 @@ jobs:
       - run: rm Gemfile.lock
       - run: rm .ruby-version
       - name: Set up Ruby
-        uses: ruby/setup-ruby@4a9ddd6f338a97768b8006bf671dfbad383215f4 # v1.207.0
+        uses: ruby/setup-ruby@2a7b30092b0caf9c046252510f9273b4875f3db9 # v1.254.0
         with:
           ruby-version: ${{ matrix.ruby }}
           rubygems: latest
