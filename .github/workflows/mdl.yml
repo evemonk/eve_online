@@ -21,4 +21,4 @@ jobs:
           egress-policy: audit
 
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
-      - uses: bewuethr/mdl-action@873ce74f9649c6b68918743507c9b0be2df5723b # v1.2.1
+      - uses: bewuethr/mdl-action@b874446b4a57863b5cfa684d6012817998b277ef # v1.2.2
