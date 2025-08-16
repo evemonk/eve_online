@@ -1789,6 +1789,22 @@ market_price.type_id # => 32772
 
 #### Get route
 
+```ruby
+# jita to amarr
+
+options = {
+    origin: 30000142,                     # required system_id
+    destination: 30002187,                # required system_id
+    flag: "secure",                       # optional string: can be 'shortest', 'secure', 'insecure'
+    avoid: [30005196],                    # optional array of system_ids to avoid
+    connections: [ [30000142, 30002187] ] # optional array of system_id pairs (an array of arrays)
+}
+
+route = EveOnline::ESI::Route.new(options)
+
+route.route # => [ 30000142, ..., 30002187 ]
+```
+
 ### Search
 
 #### Search on a string (search for something in character stuff)
