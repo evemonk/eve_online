@@ -155,7 +155,7 @@ GEM
     uri (1.0.4)
     vcr (6.3.1)
       base64
-    webmock (3.25.2)
+    webmock (3.26.0)
       addressable (>= 2.8.0)
       crack (>= 0.3.2)
       hashdiff (>= 0.4.0, < 2.0.0)
@@ -259,7 +259,7 @@ CHECKSUMS
   unicode-emoji (4.1.0) sha256=4997d2d5df1ed4252f4830a9b6e86f932e2013fbff2182a9ce9ccabda4f325a5
   uri (1.0.4) sha256=34485d137c079f8753a0ca1d883841a7ba2e5fae556e3c30c2aab0dde616344b
   vcr (6.3.1) sha256=37b56e157e720446a3f4d2d39919cabef8cb7b6c45936acffd2ef8229fec03ed
-  webmock (3.25.2) sha256=b18a5fe3b292cf116cb9b7c653eabb5995af5237cc565b4963168f82b9ad6468
+  webmock (3.26.0) sha256=cd28cdbc0d5d65e9d011a5c0e98373df5898565038f589060971cfb9c60c3d70
 
 BUNDLED WITH
    2.7.1
