@@ -3,6 +3,8 @@
 ## main
 
 * Ruby 3.4
+* Ruby 4.0
+* Rails 8.1
 
 ## v0.46.0
 
