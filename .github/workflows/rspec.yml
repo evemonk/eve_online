@@ -19,9 +19,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        # ruby: ["3.2", "3.3", "3.4", "3.5.0-preview1", "head"]
-        ruby: ["3.2", "3.3", "3.4", "3.5.0-preview1"] # TODO: enable "head" back after vcr fix https://github.com/vcr/vcr/issues/1057
-        activesupport: ["7.1", "7.2", "8.0", "main"]
+        ruby: ["3.2", "3.3", "3.4", "4.0.0-preview2", "head"]
+        activesupport: ["7.1", "7.2", "8.0", "8.1", "main"]
     env:
       BUNDLE_GEMFILE: ${{ github.workspace }}/gemfiles/activesupport_${{ matrix.activesupport }}.gemfile
 
