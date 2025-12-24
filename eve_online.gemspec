@@ -33,9 +33,8 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rspec-its"
   spec.add_development_dependency "simplecov"
   spec.add_development_dependency "webmock"
-  spec.add_development_dependency "cgi" # TODO: remove after vcr gem update. https://github.com/vcr/vcr/issues/1057
   spec.add_development_dependency "vcr"
 
   spec.add_runtime_dependency "faraday", ">= 2.3.0"
-  spec.add_runtime_dependency "activesupport", ">= 7.1.0"
+  spec.add_runtime_dependency "activesupport", ">= 7.2.0"
 end
