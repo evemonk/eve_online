@@ -54,7 +54,6 @@ gem install eve_online
 
 ## Supported rails versions
 
-* 7.1
 * 7.2
 * 8.0
 * 8.1
