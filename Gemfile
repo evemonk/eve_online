@@ -9,4 +9,3 @@ gem "nokogiri"
 gem "awesome_print", require: "ap"
 gem "pry"
 gem "standard", require: false
-gem "fasterer", require: false

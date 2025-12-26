@@ -1,5 +1,0 @@
-speedups:
-  fetch_with_argument_vs_block: false
-
-exclude_paths:
-  - "vendor/**/*"
