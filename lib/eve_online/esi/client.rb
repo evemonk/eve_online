@@ -15,6 +15,10 @@ module EveOnline
         @adapter = adapter
       end
 
+      def server_status
+        Models::ServerStatusResource.new(self)
+      end
+
       def connection
         @connection ||= Faraday.new do |c|
           c.url_prefix = BASE_URL

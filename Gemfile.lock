@@ -3,7 +3,8 @@ PATH
   specs:
     eve_online (0.46.0)
       activesupport (>= 7.2.0)
-      faraday (>= 2.3.0)
+      faraday (>= 2.0.0)
+      ostruct
 
 GEM
   remote: https://rubygems.org/
@@ -86,7 +87,6 @@ GEM
     public_suffix (7.0.0)
     racc (1.8.1)
     rainbow (3.1.1)
-    rake (13.3.1)
     rb-readline (0.5.5)
     regexp_parser (2.11.3)
     rexml (3.4.4)
@@ -171,12 +171,10 @@ PLATFORMS
 
 DEPENDENCIES
   awesome_print
-  bundler
   eve_online!
   nokogiri
   ostruct
   pry
-  rake
   rb-readline
   rspec
   rspec-its
@@ -229,7 +227,6 @@ CHECKSUMS
   public_suffix (7.0.0) sha256=f7090b5beb0e56f9f10d79eed4d5fbe551b3b425da65877e075dad47a6a1b095
   racc (1.8.1) sha256=4a7f6929691dbec8b5209a0b373bc2614882b55fc5d2e447a21aaa691303d62f
   rainbow (3.1.1) sha256=039491aa3a89f42efa1d6dec2fc4e62ede96eb6acd95e52f1ad581182b79bc6a
-  rake (13.3.1) sha256=8c9e89d09f66a26a01264e7e3480ec0607f0c497a861ef16063604b1b08eb19c
   rb-readline (0.5.5) sha256=9e9bd7e198bdef0822c46902f6c592b882c1f9777894a4c3dcf5b320824a8793
   regexp_parser (2.11.3) sha256=ca13f381a173b7a93450e53459075c9b76a10433caadcb2f1180f2c741fc55a4
   rexml (3.4.4) sha256=19e0a2c3425dfbf2d4fc1189747bdb2f849b6c5e74180401b15734bc97b5d142

@@ -3,17 +3,7 @@
 require "eve_online/version"
 
 # Exceptions
-require "eve_online/exceptions/base"
-require "eve_online/exceptions/timeout"
-require "eve_online/exceptions/unauthorized"
-require "eve_online/exceptions/resource_not_found"
-require "eve_online/exceptions/bad_request"
-require "eve_online/exceptions/forbidden"
-require "eve_online/exceptions/internal_server_error"
-require "eve_online/exceptions/bad_gateway"
-require "eve_online/exceptions/service_unavailable"
-require "eve_online/exceptions/no_content"
-require "eve_online/exceptions/error_limited"
+require "eve_online/exceptions"
 
 module EveOnline
   module ESI
@@ -21,6 +11,17 @@ module EveOnline
 
     autoload :Client, "eve_online/esi/client"
     autoload :Object, "eve_online/esi/object"
+
+    module Resources
+      autoload :Resource, "eve_online/esi/resources/resource"
+      autoload :ServerStatusResource, "eve_online/esi/resources/server_status"
+    end
+
+    module Models
+      autoload :ServerStatus, "eve_online/esi/models/server_status"
+    end
+
+    # class ServerStatus < Object; end
 
     # autoload :Alliances, "eve_online/esi/alliances"
     # autoload :Alliance, "eve_online/esi/alliance"
@@ -143,6 +144,8 @@ module EveOnline
     end
 
     module Models
+      autoload :ServerStatusResource, "eve_online/esi/resources/server_status"
+
       # autoload :Base, "eve_online/esi/models/base"
       #
       # autoload :Position, "eve_online/esi/models/position"
@@ -180,8 +183,7 @@ module EveOnline
       # autoload :CorporationOrder, "eve_online/esi/models/corporation_order"
       # autoload :HomeLocation, "eve_online/esi/models/home_location"
       # autoload :Search, "eve_online/esi/models/search"
-      # autoload :ServerStatus, "eve_online/esi/models/server_status"
-      #
+
       # autoload :MarketHistory, "eve_online/esi/models/market_history"
       # autoload :MarketGroup, "eve_online/esi/models/market_group"
       # autoload :MarketPrice, "eve_online/esi/models/market_price"
