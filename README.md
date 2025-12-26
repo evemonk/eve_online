@@ -61,6 +61,22 @@ gem install eve_online
 
 ## Usage examples
 
+```ruby
+client = EveOnline::ESI::Client.new()
+
+client.connection.get("status")
+
+body = client.connection.get("status", {}, { Authorization: "Bearer #{token}" })
+
+client.character.assets()
+
+alliance = client.alliance.retreive()
+
+alliance.name
+```
+
+
+
 ### Alliance
 
 #### List all alliances

@@ -7,5 +7,7 @@ gemspec
 
 gem "nokogiri"
 gem "awesome_print", require: "ap"
+gem "ostruct"
+gem "rb-readline"
 gem "pry"
 gem "standard", require: false
