@@ -9,6 +9,9 @@ module EveOnline
 
       attr_reader :language, :tenant, :adapter
 
+      # @param language [String] The language to use for the response. One of: "en", "de", "fr", "ja", "zh", "ko", "es". Default: "en".
+      # @param tenant [String] The tenant ID for the request. Default: "tranquility".
+      # @param adapter [Symbol] Default: Faraday.default_adapter
       def initialize(language: "en", tenant: "tranquility", adapter: Faraday.default_adapter)
         @language = language
         @tenant = tenant
@@ -20,8 +23,7 @@ module EveOnline
       end
 
       def connection
-        @connection ||= Faraday.new do |c|
-          c.url_prefix = BASE_URL
+        @connection ||= Faraday.new(BASE_URL) do |c|
           c.request :json
           c.response :json, content_type: "application/json"
           c.adapter adapter

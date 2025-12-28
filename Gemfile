@@ -7,6 +7,8 @@ gemspec
 
 gem "nokogiri"
 gem "awesome_print", require: "ap"
+gem "benchmark"
+gem "httplog"
 gem "ostruct"
 gem "rb-readline"
 gem "pry"

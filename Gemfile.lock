@@ -27,6 +27,7 @@ GEM
     ast (2.4.3)
     awesome_print (1.9.2)
     base64 (0.3.0)
+    benchmark (0.5.0)
     bigdecimal (4.0.1)
     coderay (1.1.3)
     concurrent-ruby (1.3.6)
@@ -44,6 +45,9 @@ GEM
     faraday-net_http (3.4.2)
       net-http (~> 0.5)
     hashdiff (1.2.1)
+    httplog (1.7.3)
+      rack (>= 2.0)
+      rainbow (>= 2.0.0)
     i18n (1.14.8)
       concurrent-ruby (~> 1.0)
     io-console (0.8.2)
@@ -88,6 +92,7 @@ GEM
       reline (>= 0.6.0)
     public_suffix (7.0.0)
     racc (1.8.1)
+    rack (3.2.4)
     rainbow (3.1.1)
     rb-readline (0.5.5)
     regexp_parser (2.11.3)
@@ -175,7 +180,9 @@ PLATFORMS
 
 DEPENDENCIES
   awesome_print
+  benchmark
   eve_online!
+  httplog
   nokogiri
   ostruct
   pry
@@ -193,6 +200,7 @@ CHECKSUMS
   ast (2.4.3) sha256=954615157c1d6a382bc27d690d973195e79db7f55e9765ac7c481c60bdb4d383
   awesome_print (1.9.2) sha256=e99b32b704acff16d768b3468680793ced40bfdc4537eb07e06a4be11133786e
   base64 (0.3.0) sha256=27337aeabad6ffae05c265c450490628ef3ebd4b67be58257393227588f5a97b
+  benchmark (0.5.0) sha256=465df122341aedcb81a2a24b4d3bd19b6c67c1530713fd533f3ff034e419236c
   bigdecimal (4.0.1) sha256=8b07d3d065a9f921c80ceaea7c9d4ae596697295b584c296fe599dd0ad01c4a7
   coderay (1.1.3) sha256=dc530018a4684512f8f38143cd2a096c9f02a1fc2459edcfe534787a7fc77d4b
   concurrent-ruby (1.3.6) sha256=6b56837e1e7e5292f9864f34b69c5a2cbc75c0cf5338f1ce9903d10fa762d5ab
@@ -205,6 +213,7 @@ CHECKSUMS
   faraday (2.14.0) sha256=8699cfe5d97e55268f2596f9a9d5a43736808a943714e3d9a53e6110593941cd
   faraday-net_http (3.4.2) sha256=f147758260d3526939bf57ecf911682f94926a3666502e24c69992765875906c
   hashdiff (1.2.1) sha256=9c079dbc513dfc8833ab59c0c2d8f230fa28499cc5efb4b8dd276cf931457cd1
+  httplog (1.7.3) sha256=eb0da701d40ce45c18676f6266e01ef4693d66350c59607fc86ef90f5b2ca711
   i18n (1.14.8) sha256=285778639134865c5e0f6269e0b818256017e8cde89993fdfcbfb64d088824a5
   io-console (0.8.2) sha256=d6e3ae7a7cc7574f4b8893b4fca2162e57a825b223a177b7afa236c5ef9814cc
   json (2.18.0) sha256=b10506aee4183f5cf49e0efc48073d7b75843ce3782c68dbeb763351c08fd505
@@ -231,6 +240,7 @@ CHECKSUMS
   pry (0.16.0) sha256=d76c69065698ed1f85e717bd33d7942c38a50868f6b0673c636192b3d1b6054e
   public_suffix (7.0.0) sha256=f7090b5beb0e56f9f10d79eed4d5fbe551b3b425da65877e075dad47a6a1b095
   racc (1.8.1) sha256=4a7f6929691dbec8b5209a0b373bc2614882b55fc5d2e447a21aaa691303d62f
+  rack (3.2.4) sha256=5d74b6f75082a643f43c1e76b419c40f0e5527fcfee1e669ac1e6b73c0ccb6f6
   rainbow (3.1.1) sha256=039491aa3a89f42efa1d6dec2fc4e62ede96eb6acd95e52f1ad581182b79bc6a
   rb-readline (0.5.5) sha256=9e9bd7e198bdef0822c46902f6c592b882c1f9777894a4c3dcf5b320824a8793
   regexp_parser (2.11.3) sha256=ca13f381a173b7a93450e53459075c9b76a10433caadcb2f1180f2c741fc55a4
