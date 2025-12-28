@@ -18,6 +18,10 @@ module EveOnline
         @adapter = adapter
       end
 
+      def alliances
+        Resources::AlliancesResource.new(self)
+      end
+
       def server_status
         Resources::ServerStatusResource.new(self)
       end

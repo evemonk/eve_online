@@ -6,6 +6,7 @@
 * Ruby 4.0
 * Rails 8.1
 * Drop support for Rails 7.1
+* Re-write API
 
 ## v0.46.0
 

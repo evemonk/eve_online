@@ -62,7 +62,7 @@ gem install eve_online
 ## Usage examples
 
 ```ruby
-client = EveOnline::ESI::Client.new()
+client = EveOnline::ESI::Client.new
 
 client.connection.get("status")
 
