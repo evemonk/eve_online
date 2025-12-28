@@ -1989,18 +1989,16 @@ character_skills.unallocated_sp # => 656000
 #### Retrieve the uptime and player counts
 
 ```ruby
-server_status = EveOnline::ESI::ServerStatus.new
+server_status = client.server_status.info
 
-server_status.scope # => nil
-
-server_status.as_json # => {:players=>34545,
-                      #     :server_version=>"1135520",
-                      #     :start_time=>Tue, 11 Apr 2017 11:05:35 UTC +00:00,
+server_status.as_json # => {:players=>36703,
+                      #     :server_version=>"3145366",
+                      #     :start_time=>"2025-12-28T11:01:58Z",
                       #     :vip=>nil}
 
-server_status.players # => 34545
-server_status.server_version # => "1135520"
-server_status.start_time # => Tue, 11 Apr 2017 11:05:35 UTC +00:00
+server_status.players # => 36703
+server_status.server_version # => "3145366"
+server_status.start_time # => "2025-12-28T11:01:58Z"
 server_status.vip # => nil
 ```
 
