@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 require "eve_online/version"
-
-# Exceptions
 require "eve_online/exceptions"
 
 module EveOnline
@@ -20,8 +18,6 @@ module EveOnline
     module Models
       autoload :ServerStatus, "eve_online/esi/models/server_status"
     end
-
-    # class ServerStatus < Object; end
 
     # autoload :Alliances, "eve_online/esi/alliances"
     # autoload :Alliance, "eve_online/esi/alliance"
@@ -101,7 +97,7 @@ module EveOnline
     # autoload :CharacterSkillQueue, "eve_online/esi/character_skill_queue"
     # autoload :CharacterSkills, "eve_online/esi/character_skills"
 
-    autoload :ServerStatus, "eve_online/esi/server_status"
+    # autoload :ServerStatus, "eve_online/esi/server_status"
 
     # autoload :UniverseAncestries, "eve_online/esi/universe_ancestries"
     # autoload :UniverseAsteroidBelt, "eve_online/esi/universe_asteroid_belt"
@@ -143,8 +139,8 @@ module EveOnline
       autoload :RaiseErrors, "eve_online/esi/faraday_middlewares/raise_errors"
     end
 
-    module Models
-      autoload :ServerStatusResource, "eve_online/esi/resources/server_status"
+    # module Models
+      # autoload :ServerStatusResource, "eve_online/esi/resources/server_status"
 
       # autoload :Base, "eve_online/esi/models/base"
       #
@@ -241,7 +237,7 @@ module EveOnline
       # autoload :Defender, "eve_online/esi/models/defender"
       # autoload :KillmailShort, "eve_online/esi/models/killmail_short"
       # autoload :Killmail, "eve_online/esi/models/killmail"
-    end
+    # end
   end
 
   module Formulas
