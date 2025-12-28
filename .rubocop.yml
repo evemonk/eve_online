@@ -14,8 +14,19 @@ Style/StringLiterals:
 Style/Documentation:
   Enabled: false
 
+Style/ArgumentsForwarding:
+  Enabled: true
+  UseAnonymousForwarding: false
+
+Style/OpenStructUse:
+  Enabled: false
+
 Gemspec/OrderedDependencies:
   Enabled: false
 
 Bundler/OrderedGems:
   Enabled: false
+
+Naming/BlockForwarding:
+  Enabled: true
+  EnforcedStyle: explicit
