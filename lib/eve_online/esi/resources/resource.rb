@@ -22,13 +22,12 @@ module EveOnline
           h.merge!("Accept" => "application/json")
           h.merge!("Accept-Language": client.language)
           h.merge!("X-Tenant" => client.tenant)
-          h.merge!("X-Compatibility-Date" => compatibility_date)
+          h.merge!("X-Compatibility-Date" => compatibility_date) if compatibility_date
 
           h
         end
 
         def compatibility_date
-          raise "NotImp"
         end
 
         def user_agent
