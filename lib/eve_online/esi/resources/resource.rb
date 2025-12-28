@@ -6,10 +6,14 @@ module EveOnline
       class Resource
         attr_reader :client
 
+        # @param client [EveOnline::ESI::Client]
         def initialize(client)
           @client = client
         end
 
+        # @param url [String] URL to get
+        # @param params [Hash]
+        # @param headers [Hash]
         def get_request(url, params: {}, headers: {})
           client.connection.get(url, params, default_headers.merge(headers)).body
         end
