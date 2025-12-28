@@ -16,7 +16,7 @@ module EveOnline
       end
 
       def server_status
-        Models::ServerStatusResource.new(self)
+        Resources::ServerStatusResource.new(self)
       end
 
       def connection
