@@ -13,7 +13,7 @@ module EveOnline
     module Resources
       autoload :Resource, "eve_online/esi/resources/resource"
       autoload :ServerStatusResource, "eve_online/esi/resources/server_status_resource"
-      autoload :AllianceResource, "eve_online/esi/resources/alliance_resource"
+      autoload :AlliancesResource, "eve_online/esi/resources/alliances_resource"
     end
 
     module Models

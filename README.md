@@ -94,11 +94,16 @@ alliances.alliance_ids.first # => 1354830081
 #### Get alliance information
 
 ```ruby
-options = { alliance_id: 99_005_443 }
+client = EveOnline::ESI::Client.new
 
-alliance = EveOnline::ESI::Alliance.new(options)
+alliance = client.alliances.retrieve(id: 99_005_443)
 
-alliance.scope # => nil
+
+# options = { alliance_id: 99_005_443 }
+#
+# alliance = EveOnline::ESI::Alliance.new(options)
+#
+# alliance.scope # => nil
 
 alliance.as_json # => {:creator_corporation_id=>98306624,
                  #     :creator_id=>94195096,
@@ -1989,6 +1994,8 @@ character_skills.unallocated_sp # => 656000
 #### Retrieve the uptime and player counts
 
 ```ruby
+client = EveOnline::ESI::Client.new
+
 server_status = client.server_status.info
 
 server_status.as_json # => {:players=>36703,
