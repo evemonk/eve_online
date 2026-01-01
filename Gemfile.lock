@@ -4,6 +4,7 @@ PATH
     eve_online (0.46.0)
       activesupport (>= 7.2.0)
       faraday (>= 2.0.0)
+      faraday-http-cache
       ostruct
 
 GEM
@@ -42,6 +43,8 @@ GEM
       faraday-net_http (>= 2.0, < 3.5)
       json
       logger
+    faraday-http-cache (2.5.1)
+      faraday (>= 0.8)
     faraday-net_http (3.4.2)
       net-http (~> 0.5)
     hashdiff (1.2.1)
@@ -211,6 +214,7 @@ CHECKSUMS
   drb (2.2.3) sha256=0b00d6fdb50995fe4a45dea13663493c841112e4068656854646f418fda13373
   eve_online (0.46.0)
   faraday (2.14.0) sha256=8699cfe5d97e55268f2596f9a9d5a43736808a943714e3d9a53e6110593941cd
+  faraday-http-cache (2.5.1) sha256=cbfc129a85e1ad8580130189832cf59e7e117d94fe277547d61fc531f7689483
   faraday-net_http (3.4.2) sha256=f147758260d3526939bf57ecf911682f94926a3666502e24c69992765875906c
   hashdiff (1.2.1) sha256=9c079dbc513dfc8833ab59c0c2d8f230fa28499cc5efb4b8dd276cf931457cd1
   httplog (1.7.3) sha256=eb0da701d40ce45c18676f6266e01ef4693d66350c59607fc86ef90f5b2ca711

@@ -1,21 +1,26 @@
 # frozen_string_literal: true
 
 require "faraday"
+require "faraday-http-cache"
 
 module EveOnline
   module ESI
     class Client
       BASE_URL = "https://esi.evetech.net/"
 
-      attr_reader :language, :tenant, :adapter
+      attr_reader :language, :tenant, :adapter, :cache, :cache_store
 
       # @param language [String] The language to use for the response. One of: "en", "de", "fr", "ja", "zh", "ko", "es". Default: "en".
       # @param tenant [String] The tenant ID for the request. Default: "tranquility".
-      # @param adapter [Symbol] Default: Faraday.default_adapter
-      def initialize(language: "en", tenant: "tranquility", adapter: Faraday.default_adapter)
+      # @param adapter [Symbol] Default: `Faraday.default_adapter`
+      # @param cache [Boolean] Use `faraday-http-cache` for cache? Default: `false`.
+      # @param cache_store [ActiveSupport::Cache] Rails.cache store. Default: `nil`.
+      def initialize(language: "en", tenant: "tranquility", adapter: Faraday.default_adapter, cache: false, cache_store: nil)
         @language = language
         @tenant = tenant
         @adapter = adapter
+        @cache = cache
+        @cache_store = cache_store
       end
 
       # Sorted as APIs in openapi docs
@@ -30,6 +35,13 @@ module EveOnline
 
       def connection
         @connection ||= Faraday.new(BASE_URL) do |c|
+          if cache
+            c.use :http_cache,
+              store: cache_store,
+              strategy: Faraday::HttpCache::Strategies::ByUrl,
+              serializer: Marshal
+          end
+
           c.request :json
 
           c.response :esi_middleware

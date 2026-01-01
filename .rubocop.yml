@@ -24,6 +24,9 @@ Style/OpenStructUse:
 Style/EmptyMethod:
   Enabled: false
 
+Style/IfUnlessModifier:
+  Enabled: false
+
 Gemspec/OrderedDependencies:
   Enabled: false
 
