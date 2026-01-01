@@ -33,7 +33,7 @@ module EveOnline
         Resources::ServerStatusResource.new(self)
       end
 
-      def connection
+      def connection # rubocop:disable Metrics/MethodLength
         @connection ||= Faraday.new(BASE_URL) do |c|
           if cache
             c.use :http_cache,
