@@ -25,12 +25,19 @@ module EveOnline
 
       # Sorted as APIs in openapi docs
 
+      # Alliance APIs
       def alliances
         Resources::AlliancesResource.new(self)
       end
 
+      # Status API
       def server_status
         Resources::ServerStatusResource.new(self)
+      end
+
+      # Universe
+      def universe
+        Resources::UniverseResource.new(self)
       end
 
       def add_middleware(_middleware)

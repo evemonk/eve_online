@@ -3,30 +3,22 @@
 module EveOnline
   module ESI
     module Models
-      class Race < Base
+      class Race < Object
         def as_json
           {
             faction_id: faction_id,
-            description: description,
-            name: name,
-            race_id: race_id
+            description: attributes.description,
+            name: attributes.name,
+            id: id
           }
         end
 
+        def id
+          attributes.race_id
+        end
+
         def faction_id
-          options["alliance_id"]
-        end
-
-        def description
-          options["description"]
-        end
-
-        def name
-          options["name"]
-        end
-
-        def race_id
-          options["race_id"]
+          attributes.alliance_id
         end
       end
     end
