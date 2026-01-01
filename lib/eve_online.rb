@@ -11,6 +11,7 @@ module EveOnline
     autoload :Object, "eve_online/esi/object"
     autoload :Collection, "eve_online/esi/collection"
     autoload :Middleware, "eve_online/esi/middleware"
+    autoload :ParsedHeaders, "eve_online/esi/parsed_headers"
 
     module Resources
       autoload :Resource, "eve_online/esi/resources/resource"
