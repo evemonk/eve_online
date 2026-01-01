@@ -39,3 +39,6 @@ Layout/LineLength:
 
 Layout/ArgumentAlignment:
   Enabled: false
+
+Layout/HashAlignment:
+  Enabled: false

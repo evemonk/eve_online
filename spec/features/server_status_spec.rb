@@ -12,9 +12,9 @@ describe "Retrieve the uptime and player counts" do
   subject { client.server_status.info }
 
   specify do
-    expect(subject.as_json).to eq(players: 20_450,
-      server_version: "1446360",
-      start_time: "2019-01-17T11:05:44Z",
+    expect(subject.as_json).to eq(players: 32_697,
+      server_version: "3145366",
+      start_time: Time.utc(2025, 12, 30, 11, 1, 58),
       vip: nil)
   end
 
