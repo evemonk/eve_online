@@ -23,7 +23,7 @@ module EveOnline
         attribute.is_a?(Hash) ? Object.new(attribute) : attribute
       end
 
-      def respond_to_missing?(_method, _include_private = false)
+      def respond_to_missing?(_, _ = false)
         true
       end
     end
