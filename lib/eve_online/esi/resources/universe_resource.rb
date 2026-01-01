@@ -5,13 +5,15 @@ module EveOnline
     module Resources
       class UniverseResource < Resource
         def ancestries
+          response = get_request("universe/ancestries")
 
+          Collection.from_response(response, type: Models::Ancestry)
         end
 
         def races
           response = get_request("universe/races")
 
-          Collection.from_response(response, type: EveOnline::ESI::Models::Race)
+          Collection.from_response(response, type: Models::Race)
         end
 
         private
