@@ -16,7 +16,7 @@ describe "Get alliance information" do
       creator_id: 95_078_959,
       creator_corporation_id: 98_573_850,
       ticker: "TDP",
-      date_founded: "2018-09-11T19:55:16Z",
+      date_founded: Time.utc(2018, 9, 11, 19, 55, 16),
       executor_corporation_id: 98_565_696,
       faction_id: nil)
   end
