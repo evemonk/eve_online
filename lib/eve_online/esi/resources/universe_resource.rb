@@ -10,6 +10,12 @@ module EveOnline
           Collection.from_response(response, type: Models::Ancestry)
         end
 
+        def bloodlines
+          response = get_request("universe/bloodlines")
+
+          Collection.from_response(response, type: Models::Bloodline)
+        end
+
         def factions
           response = get_request("universe/factions")
 
