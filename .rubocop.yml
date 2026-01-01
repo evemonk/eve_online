@@ -36,3 +36,6 @@ Naming/BlockForwarding:
 
 Layout/LineLength:
   Enabled: false
+
+Layout/ArgumentAlignment:
+  Enabled: false

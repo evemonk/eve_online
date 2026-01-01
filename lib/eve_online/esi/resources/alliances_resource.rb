@@ -5,6 +5,9 @@ module EveOnline
     module Resources
       class AlliancesResource < Resource
         def list
+          response = get_request("alliances")
+
+          Models::Alliances.new(body: response.body, headers: response.headers)
         end
 
         # @param id [Integer] The ID of the alliance

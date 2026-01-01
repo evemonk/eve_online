@@ -5,11 +5,14 @@ require "ostruct"
 module EveOnline
   module ESI
     class Object
-      attr_reader :attributes, :headers
+      attr_reader :attributes, :body, :headers
 
-      # @param attributes [Hash]
-      def initialize(attributes:, headers:)
+      # @param attributes [Hash | NilClass]
+      # @param body [Array<Integer> | NilClass]
+      # @param headers [Hash | NilClass]
+      def initialize(attributes: nil, body: nil, headers: nil)
         @attributes = OpenStruct.new(attributes)
+        @body = body
         @headers = headers
       end
 
