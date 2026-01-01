@@ -8,7 +8,7 @@ module EveOnline
           {
             corporation_id: attributes.corporation_id,
             description: attributes.description,
-            faction_id: attributes.faction_id,
+            id: id,
             is_unique: attributes.is_unique,
             militia_corporation_id: attributes.militia_corporation_id,
             name: attributes.name,
@@ -17,6 +17,10 @@ module EveOnline
             station_count: attributes.station_count,
             station_system_count: attributes.station_system_count
           }
+        end
+
+        def id
+          attributes.faction_id
         end
       end
     end
