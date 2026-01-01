@@ -20,7 +20,11 @@ module EveOnline
       def each(&block)
         return enum_for(:each) unless block_given?
 
-        @data.each(&block)
+        data.each(&block)
+      end
+
+      def size
+        data.size
       end
     end
   end
