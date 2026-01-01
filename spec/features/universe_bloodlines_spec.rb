@@ -31,7 +31,7 @@ describe "Get bloodlines" do
 
   specify { expect(subject.cache_status).to eq("HIT") }
 
-  specify { expect(subject.request_id).to eq("4cd7fc66-7920-414a-a2fe-a503582ad0d8") }
+  specify { expect(subject.request_id).to eq("939e18dd-42b6-4537-b94a-3b18fb5e51fe") }
 
   specify { expect(subject.ratelimit_group).to eq(nil) }
 
@@ -43,5 +43,5 @@ describe "Get bloodlines" do
 
   specify { expect(subject.error_limit_remain).to eq(100) }
 
-  specify { expect(subject.error_limit_reset).to eq(44) }
+  specify { expect(subject.error_limit_reset).to eq(49) }
 end
