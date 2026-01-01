@@ -30,7 +30,7 @@ This gem was extracted from [EveMonk](https://evemonk.com). Source code of EveMo
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'eve_online'
+gem "eve_online"
 ```
 
 And then execute:
@@ -84,28 +84,19 @@ alliances.alliance_ids.first # => 99000006
 #### Get alliance information
 
 ```ruby
-client = EveOnline::ESI::Client.new
-
 alliance = client.alliances.retrieve(id: 99_005_443)
 
-
-# options = { alliance_id: 99_005_443 }
-#
-# alliance = EveOnline::ESI::Alliance.new(options)
-#
-# alliance.scope # => nil
-
-alliance.as_json # => {:creator_corporation_id=>98306624,
-                 #     :creator_id=>94195096,
-                 #     :date_founded=>Sun, 03 May 2015 19:45:17 UTC +00:00,
-                 #     :executor_corporation_id=>98306624,
-                 #     :faction_id=>nil,
-                 #     :name=>"Kids With Guns Alliance",
-                 #     :ticker=>"-KWG-"}
+alliance.as_json # => {creator_corporation_id: 98306624,
+                 #     creator_id: 94195096,
+                 #     date_founded: 2015-05-03 19:45:17.000000000 UTC +00:00,
+                 #     executor_corporation_id: 98306624,
+                 #     faction_id: nil,
+                 #     name: "Kids With Guns Alliance",
+                 #     ticker: "-KWG-"}
 
 alliance.creator_corporation_id # => 98306624
 alliance.creator_id # => 94195096
-alliance.date_founded # => Sun, 03 May 2015 19:45:17 UTC +00:00
+alliance.date_founded # => 2015-05-03 19:45:17.000000000 UTC +00:00
 alliance.executor_corporation_id # => 98306624
 alliance.faction_id # => nil
 alliance.name # => "Kids With Guns Alliance"
@@ -1984,18 +1975,16 @@ character_skills.unallocated_sp # => 656000
 #### Retrieve the uptime and player counts
 
 ```ruby
-client = EveOnline::ESI::Client.new
-
 server_status = client.server_status.info
 
-server_status.as_json # => {:players=>36703,
-                      #     :server_version=>"3145366",
-                      #     :start_time=>"2025-12-28T11:01:58Z",
-                      #     :vip=>nil}
+server_status.as_json # => {players: 33675,
+                      #     server_version: "3145366",
+                      #     start_time: 2026-01-01 11:01:47.000000000 UTC +00:00,
+                      #     vip: nil}
 
-server_status.players # => 36703
+server_status.players # => 33675
 server_status.server_version # => "3145366"
-server_status.start_time # => "2025-12-28T11:01:58Z"
+server_status.start_time # => 2026-01-01 11:01:47.000000000 UTC +00:00
 server_status.vip # => nil
 ```
 
