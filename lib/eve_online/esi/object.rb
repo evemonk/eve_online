@@ -5,10 +5,24 @@ require "ostruct"
 module EveOnline
   module ESI
     class Object
-      attr_reader :attributes
+      attr_reader :attributes, :headers
 
-      def initialize(attributes)
+      # @param attributes [Hash]
+      def initialize(attributes:, headers:)
         @attributes = OpenStruct.new(attributes)
+        @headers = headers
+      end
+
+      def request_id
+        headers["x-esi-request-id"]
+      end
+
+      def ratelimit_remaining
+        headers["x-ratelimit-remaining"]&.to_i
+      end
+
+      def ratelimit_used
+        headers["x-ratelimit-used"]&.to_i
       end
 
       def method_missing(method, *args, &block)

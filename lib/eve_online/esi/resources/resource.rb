@@ -9,13 +9,16 @@ module EveOnline
         # @param client [EveOnline::ESI::Client]
         def initialize(client)
           @client = client
+          @response = nil
         end
 
         # @param url [String] URL to get
         # @param params [Hash]
         # @param headers [Hash]
         def get_request(url, params: {}, headers: {})
-          client.connection.get(url, params, default_headers.merge(headers)).body
+          # client.connection.get(url, params, default_headers.merge(headers)).body
+
+          client.connection.get(url, params, default_headers.merge(headers))
         end
 
         def default_headers

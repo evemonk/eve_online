@@ -5,7 +5,9 @@ module EveOnline
     module Resources
       class ServerStatusResource < Resource
         def info
-          Models::ServerStatus.new(get_request("status"))
+          response = get_request("status")
+
+          Models::ServerStatus.new(attributes: response.body, headers: response.headers)
         end
 
         def compatibility_date

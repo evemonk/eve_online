@@ -18,6 +18,8 @@ module EveOnline
         @adapter = adapter
       end
 
+      # Sorted as APIs in openapi docs
+
       def alliances
         Resources::AlliancesResource.new(self)
       end

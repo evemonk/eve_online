@@ -21,6 +21,9 @@ Style/ArgumentsForwarding:
 Style/OpenStructUse:
   Enabled: false
 
+Style/EmptyMethod:
+  Enabled: false
+
 Gemspec/OrderedDependencies:
   Enabled: false
 
@@ -30,3 +33,6 @@ Bundler/OrderedGems:
 Naming/BlockForwarding:
   Enabled: true
   EnforcedStyle: explicit
+
+Layout/LineLength:
+  Enabled: false

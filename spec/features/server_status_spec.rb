@@ -3,13 +3,13 @@
 require "spec_helper"
 
 describe "Retrieve the uptime and player counts" do
-  before { VCR.insert_cassette "esi/server_status" }
+  before { VCR.insert_cassette "esi/server_status/info" }
 
   after { VCR.eject_cassette }
 
-  subject { EveOnline::ESI::ServerStatus.new }
+  let(:client) { EveOnline::ESI::Client.new }
 
-  specify { expect(subject.scope).to eq(nil) }
+  subject { client.server_status.info }
 
   specify do
     expect(subject.as_json).to eq(players: 20_450,
@@ -18,7 +18,9 @@ describe "Retrieve the uptime and player counts" do
       vip: nil)
   end
 
-  specify { expect(subject.error_limit_remain).to eq(100) }
+  specify { expect(subject.request_id).to eq("aaedbec2-945b-4141-8a39-245b84a8a841") }
 
-  specify { expect(subject.error_limit_reset).to eq(2) }
+  specify { expect(subject.ratelimit_remaining).to eq(598) }
+
+  specify { expect(subject.ratelimit_used).to eq(2) }
 end
