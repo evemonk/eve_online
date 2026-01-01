@@ -10,6 +10,12 @@ module EveOnline
           Collection.from_response(response, type: Models::Ancestry)
         end
 
+        def factions
+          response = get_request("universe/factions")
+
+          Collection.from_response(response, type: Models::Faction)
+        end
+
         def races
           response = get_request("universe/races")
 

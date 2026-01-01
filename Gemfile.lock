@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    eve_online (0.46.0)
+    eve_online (0.47.0)
       activesupport (>= 7.2.0)
       faraday (>= 2.0.0)
       faraday-http-cache
@@ -212,7 +212,7 @@ CHECKSUMS
   diff-lcs (1.6.2) sha256=9ae0d2cba7d4df3075fe8cd8602a8604993efc0dfa934cff568969efb1909962
   docile (1.4.1) sha256=96159be799bfa73cdb721b840e9802126e4e03dfc26863db73647204c727f21e
   drb (2.2.3) sha256=0b00d6fdb50995fe4a45dea13663493c841112e4068656854646f418fda13373
-  eve_online (0.46.0)
+  eve_online (0.47.0)
   faraday (2.14.0) sha256=8699cfe5d97e55268f2596f9a9d5a43736808a943714e3d9a53e6110593941cd
   faraday-http-cache (2.5.1) sha256=cbfc129a85e1ad8580130189832cf59e7e117d94fe277547d61fc531f7689483
   faraday-net_http (3.4.2) sha256=f147758260d3526939bf57ecf911682f94926a3666502e24c69992765875906c
