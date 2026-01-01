@@ -3,7 +3,7 @@
 require "spec_helper"
 
 describe "Get factions" do
-  before { VCR.insert_cassette "esi/universe/factions_new" }
+  before { VCR.insert_cassette "esi/universe/factions" }
 
   after { VCR.eject_cassette }
 
