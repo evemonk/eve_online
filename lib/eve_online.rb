@@ -16,19 +16,18 @@ module EveOnline
     module Resources
       autoload :Resource, "eve_online/esi/resources/resource"
 
+      # Sort alphabetically
       autoload :AlliancesResource, "eve_online/esi/resources/alliances_resource"
-
       autoload :UniverseResource, "eve_online/esi/resources/universe_resource"
-
       autoload :ServerStatusResource, "eve_online/esi/resources/server_status_resource"
     end
 
     module Models
+      # Sort alphabetically
       autoload :Alliance, "eve_online/esi/models/alliance"
       autoload :Alliances, "eve_online/esi/models/alliances"
-
+      autoload :Ancestry, "eve_online/esi/models/ancestry"
       autoload :Race, "eve_online/esi/models/race"
-
       autoload :ServerStatus, "eve_online/esi/models/server_status"
     end
 
