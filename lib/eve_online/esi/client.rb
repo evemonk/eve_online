@@ -33,6 +33,10 @@ module EveOnline
         Resources::ServerStatusResource.new(self)
       end
 
+      def add_middleware(_middleware)
+        # pass
+      end
+
       def connection # rubocop:disable Metrics/MethodLength
         @connection ||= Faraday.new(BASE_URL) do |c|
           if cache
