@@ -23,4 +23,8 @@ describe "Retrieve the uptime and player counts" do
   specify { expect(subject.ratelimit_remaining).to eq(598) }
 
   specify { expect(subject.ratelimit_used).to eq(2) }
+
+  specify { expect(subject.error_limit_remain).to eq(nil) }
+
+  specify { expect(subject.error_limit_reset).to eq(nil) }
 end

@@ -13,6 +13,10 @@ module EveOnline
         @headers = headers
       end
 
+      def etag
+        headers["etag"]
+      end
+
       def request_id
         headers["x-esi-request-id"]
       end
@@ -23,6 +27,14 @@ module EveOnline
 
       def ratelimit_used
         headers["x-ratelimit-used"]&.to_i
+      end
+
+      def error_limit_remain
+        headers["x-esi-error-limit-remain"]&.to_i
+      end
+
+      def error_limit_reset
+        headers["x-esi-error-limit-reset"]&.to_i
       end
 
       def method_missing(method, *args, &block)

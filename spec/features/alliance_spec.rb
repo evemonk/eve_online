@@ -3,15 +3,13 @@
 require "spec_helper"
 
 describe "Get alliance information" do
-  let(:options) { {alliance_id: 99_008_595} }
-
-  before { VCR.insert_cassette "esi/alliances/99008595" }
+  before { VCR.insert_cassette "esi/alliances/99008595_new" }
 
   after { VCR.eject_cassette }
 
-  subject { EveOnline::ESI::Alliance.new(options) }
+  let(:client) { EveOnline::ESI::Client.new }
 
-  specify { expect(subject.scope).to eq(nil) }
+  subject { client.alliances.retrieve(id: 99_008_595) }
 
   specify do
     expect(subject.as_json).to eq(name: "The Dead Parrots",
@@ -23,7 +21,13 @@ describe "Get alliance information" do
       faction_id: nil)
   end
 
+  specify { expect(subject.request_id).to eq("ab376bd9-2f4f-4a7f-809b-7de40de4ef26") }
+
+  specify { expect(subject.ratelimit_remaining).to eq(nil) }
+
+  specify { expect(subject.ratelimit_used).to eq(nil) }
+
   specify { expect(subject.error_limit_remain).to eq(100) }
 
-  specify { expect(subject.error_limit_reset).to eq(1) }
+  specify { expect(subject.error_limit_reset).to eq(20) }
 end
