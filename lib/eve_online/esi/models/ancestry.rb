@@ -9,14 +9,10 @@ module EveOnline
             bloodline_id: attributes.bloodline_id,
             description: attributes.description,
             icon_id: attributes.icon_id,
-            id: id,
+            id: attributes.id,
             name: attributes.name,
             short_description: attributes.short_description
           }
-        end
-
-        def id
-          attributes.ancestry_id
         end
       end
     end
