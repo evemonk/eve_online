@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require "faraday"
+
 require "eve_online/version"
 require "eve_online/exceptions"
 
@@ -9,6 +11,7 @@ module EveOnline
 
     autoload :Client, "eve_online/esi/client"
     autoload :Object, "eve_online/esi/object"
+    autoload :Middleware, "eve_online/esi/middleware"
 
     module Resources
       autoload :Resource, "eve_online/esi/resources/resource"
@@ -244,6 +247,8 @@ module EveOnline
       # autoload :KillmailShort, "eve_online/esi/models/killmail_short"
       # autoload :Killmail, "eve_online/esi/models/killmail"
     # end
+
+    Faraday::Response.register_middleware esi_middleware: Middleware
   end
 
   module Formulas

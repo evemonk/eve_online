@@ -31,7 +31,10 @@ module EveOnline
       def connection
         @connection ||= Faraday.new(BASE_URL) do |c|
           c.request :json
+
+          c.response :esi_middleware
           c.response :json, content_type: "application/json"
+
           c.adapter adapter
         end
       end
