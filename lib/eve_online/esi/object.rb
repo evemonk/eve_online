@@ -21,6 +21,10 @@ module EveOnline
         headers["x-esi-request-id"]
       end
 
+      def cache_status
+        headers["x-esi-cache-status"]
+      end
+
       def ratelimit_remaining
         headers["x-ratelimit-remaining"]&.to_i
       end

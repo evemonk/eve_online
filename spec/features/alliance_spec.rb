@@ -23,6 +23,8 @@ describe "Get alliance information" do
 
   specify { expect(subject.etag).to eq('"5eedb79d062aad2bed4e103e149ebf728be9f2d69b63ecf186f45c1d"') }
 
+  specify { expect(subject.cache_status).to eq("HIT") }
+
   specify { expect(subject.request_id).to eq("ab376bd9-2f4f-4a7f-809b-7de40de4ef26") }
 
   specify { expect(subject.ratelimit_remaining).to eq(nil) }
