@@ -3,7 +3,7 @@
 require "spec_helper"
 
 describe "Get character races" do
-  before { VCR.insert_cassette "esi/universe/races_new" }
+  before { VCR.insert_cassette "esi/universe/races" }
 
   after { VCR.eject_cassette }
 
