@@ -2,146 +2,160 @@
 http_interactions:
 - request:
     method: get
-    uri: https://esi.evetech.net/v1/universe/bloodlines/?language=en-us
+    uri: https://esi.evetech.net/universe/bloodlines
     body:
       encoding: US-ASCII
       string: ''
     headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.47.0
       Accept:
       - application/json
-      User-Agent:
-      - EveOnline API (https://github.com/evemonk/eve_online) v0.27.0
+      Accept-Language:
+      - en
+      X-Tenant:
+      - tranquility
+      X-Compatibility-Date:
+      - '2025-12-16'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Tue, 02 Jul 2019 13:54:16 GMT
+      - Thu, 01 Jan 2026 19:33:11 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
-      - '10314'
+      - '10312'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
       - 'true'
-      Access-Control-Allow-Headers:
-      - Content-Type,Authorization,If-None-Match,X-User-Agent
-      Access-Control-Allow-Methods:
-      - GET,HEAD,OPTIONS
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Expose-Headers:
-      - Content-Type,Warning,ETag,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
-      Access-Control-Max-Age:
-      - '600'
-      Allow:
-      - GET,HEAD,OPTIONS
+      - Etag, Retry-After, X-Compatibility-Date, X-Esi-Error-Limit-Remain, X-Esi-Error-Limit-Reset,
+        X-Pages, X-Ratelimit-Group, X-Ratelimit-Limit, X-Ratelimit-Remaining, X-Ratelimit-Used
       Cache-Control:
       - public
       Content-Language:
-      - en-us
+      - en
       Etag:
-      - W/"37a39e7a5f5ecc07b19a3128c319f1198d035aee10052d0a21ccdd94"
+      - W/"d53e06315fe6f15f4dd47da86f16b3cb51977abc22701227d931f03b"
       Expires:
-      - Wed, 03 Jul 2019 11:05:00 GMT
+      - Fri, 02 Jan 2026 11:05:00 GMT
       Last-Modified:
-      - Mon, 01 Jul 2019 11:09:31 GMT
+      - Thu, 01 Jan 2026 11:01:47 GMT
       Strict-Transport-Security:
       - max-age=31536000
       Vary:
-      - Accept-Encoding,Accept-Language
+      - Accept-Language
+      - Accept-Language
+      - X-Compatibility-Date
+      X-Compatibility-Date:
+      - '2020-01-01'
+      X-Esi-Cache-Status:
+      - HIT
       X-Esi-Error-Limit-Remain:
       - '100'
       X-Esi-Error-Limit-Reset:
-      - '44'
+      - '49'
       X-Esi-Request-Id:
-      - 52dec1cc-1d2e-44a5-bcf9-60107cc5fb49
+      - 939e18dd-42b6-4537-b94a-3b18fb5e51fe
     body:
       encoding: UTF-8
-      string: '[{"bloodline_id":1,"charisma":6,"corporation_id":1000006,"description":"The
-        Deteis are regarded as the face of leadership in Caldari society. Commonly
-        possessed of sharp, ordered minds and articulate tongues, they are mostly
-        found in positions of authority within military and political spheres. Driven
-        by the cultural premise that the good of the whole must come before the needs
-        of the individual, they have made the responsibility of upholding the integrity
-        of the entire Caldari State their own.","intelligence":7,"memory":7,"name":"Deteis","perception":5,"race_id":1,"ship_type_id":601,"willpower":5},{"bloodline_id":2,"charisma":6,"corporation_id":1000009,"description":"Whether
-        engaged in trade or combat, the Civire are absolute masters of focused aggression.
-        Highly competitive individuals, they thrive under chaotic circumstances and
-        frenetic activity. They are often employed in highly stressful industrial
-        and military professions due to an innate ability to think quickly on their
-        feet and remain composed under pressure.","intelligence":5,"memory":4,"name":"Civire","perception":9,"race_id":1,"ship_type_id":601,"willpower":6},{"bloodline_id":3,"charisma":6,"corporation_id":1000046,"description":"Widely
-        respected as some of the cluster''s most innovative thinkers, the Sebiestor
-        are an ingenious people with a natural fondness for engineering. For the last
-        millennium they have pioneered advances in applied sciences, despite laboring
-        under chronic material shortages. Masters of deriving solutions from impossible
-        circumstances, Sebiestor engineers believe they can build anything, with anything,
-        out of anything.","intelligence":7,"memory":6,"name":"Sebiestor","perception":5,"race_id":2,"ship_type_id":588,"willpower":6},{"bloodline_id":4,"charisma":6,"corporation_id":1000049,"description":"A
-        martial, strong-willed people, the Brutor hold their tribal heritage close
-        to their hearts, and are renowned for living regimented, disciplined lives.
-        Despite presenting a tough, no-nonsense exterior, they are deeply introspective,
-        aware of even the smallest detail at all times. Immersed in ancient martial
-        traditions that begin at childhood, they are physically robust individuals
-        and intimidating to face in the flesh.","intelligence":4,"memory":4,"name":"Brutor","perception":9,"race_id":2,"ship_type_id":588,"willpower":7},{"bloodline_id":5,"charisma":3,"corporation_id":1000066,"description":"True
+      string: '[{"bloodline_id":5,"charisma":3,"corporation_id":1000066,"description":"True
         Amarrians are proud and supercilious, with a great sense of tradition and
         ancestry. They are considered arrogant and tyrannical by most others. The
         Empire''s defeat at the hands of the mysterious Jovians, and the Minmatar
         uprising that followed, left an indelible mark on Amarrian culture. This double
         failure, a turning point in their history, has shaped an entire generation
-        of policy and philosophy among the imperial elite.","intelligence":7,"memory":6,"name":"Amarr","perception":4,"race_id":4,"ship_type_id":596,"willpower":10},{"bloodline_id":6,"charisma":8,"corporation_id":1000072,"description":"With
-        the exception of the Khanid, the Ni-Kunni were assimilated into Amarr society
-        far more easily than the majority of Amarrian conquests. Conquered more than
-        1000 years ago by the Amarr Empire, they are not generally considered \u201censlaved\u201d
-        anymore. Most Ni-Kunni are tradesmen and artisans - occupations traditionally
-        eschewed by true Amarrians, but still considered a vital part of their society.","intelligence":5,"memory":6,"name":"Ni-Kunni","perception":7,"race_id":4,"ship_type_id":596,"willpower":4},{"bloodline_id":7,"charisma":8,"corporation_id":1000107,"description":"The
-        Gallente value freedom and individual liberty above all else. Founders of
-        the only true democracy of New Eden, they have created an ethnically diverse,
-        culturally rich, progressive society that encourages enterprise and initiative
-        in its citizens. While slow to anger and occasionally indecisive, they are
-        also capable of harnessing enormous military and economic resolve when truly
-        tested.","intelligence":6,"memory":4,"name":"Gallente","perception":8,"race_id":8,"ship_type_id":606,"willpower":4},{"bloodline_id":8,"charisma":6,"corporation_id":1000111,"description":"The
-        Intaki are one of the largest ethnicities of the Federation. Exceedingly gifted
-        communicators, they are prominent among the Federal bureaucracy. Though mostly
-        assimilated into Gallente culture, they still cling to their own identities
-        and beliefs, most notably their unusual theories regarding death and rebirth.
-        These theories give them a unique outlook on life and the living, and many
-        attribute the Intaki''s stoic nature to this philosophy.","intelligence":8,"memory":7,"name":"Intaki","perception":3,"race_id":8,"ship_type_id":606,"willpower":6},{"bloodline_id":9,"charisma":5,"corporation_id":1000177,"description":"The
-        different branches of Jovians that exist are not the result of variations
-        in geographical or climatic differences, but rather that of genetic engineering
-        through the centuries. The Statics are one of the two main branches. Statics
-        are generally introvert and prefer status quo, both socially and biologically.
-        The Statics regard themselves as observers that should interfere as little
-        as possible with the world. They believe that they are as genetically evolved
-        as can be and generally frown upon large-scale genetic engineering programs.","intelligence":10,"memory":10,"name":"Static","perception":7,"race_id":16,"ship_type_id":670,"willpower":8},{"bloodline_id":10,"charisma":7,"corporation_id":1000178,"description":"The
+        of policy and philosophy among the imperial elite.","intelligence":7,"memory":6,"name":"Amarr","perception":4,"race_id":4,"ship_type_id":596,"willpower":10},{"bloodline_id":10,"charisma":7,"corporation_id":1000178,"description":"The
         different branches of Jovians that exist are not the result of variations
         in geographical or climatic differences, but rather that of genetic engineering
         through the centuries. The Modifiers are the enthusiasts of the Jovian family.
         They are curious and constantly willing to try or experience something new
         and fresh. Modifiers have lower life expectancy that other Jovians and are
         more susceptible to the dreaded Jovian Disease. It seems that by constantly
-        living on the edge makes them burn out faster.","intelligence":7,"memory":7,"name":"Modifier","perception":10,"race_id":16,"ship_type_id":670,"willpower":9},{"bloodline_id":11,"charisma":3,"corporation_id":1000014,"description":"Achura
+        living on the edge makes them burn out faster.","intelligence":7,"memory":7,"name":"Modifier","perception":10,"race_id":16,"ship_type_id":null,"willpower":9},{"bloodline_id":25,"charisma":9,"corporation_id":1000293,"description":"The
+        Narodnya appear to be one of the three mysterious subdivisions of the Triglavian
+        race that individuals can fall into alongside their membership of the so-called
+        Clades.","intelligence":9,"memory":9,"name":"Narodnya","perception":9,"race_id":135,"ship_type_id":null,"willpower":9},{"bloodline_id":1,"charisma":6,"corporation_id":1000006,"description":"The
+        Deteis are regarded as the face of leadership in Caldari society. Commonly
+        possessed of sharp, ordered minds and articulate tongues, they are mostly
+        found in positions of authority within military and political spheres. Driven
+        by the cultural premise that the good of the whole must come before the needs
+        of the individual, they have made the responsibility of upholding the integrity
+        of the entire Caldari State their own.","intelligence":7,"memory":7,"name":"Deteis","perception":5,"race_id":1,"ship_type_id":601,"willpower":5},{"bloodline_id":6,"charisma":8,"corporation_id":1000072,"description":"With
+        the exception of the Khanid, the Ni-Kunni were assimilated into Amarr society
+        far more easily than the majority of Amarrian conquests. Conquered more than
+        1000 years ago by the Amarr Empire, they are not generally considered \u201censlaved\u201d
+        anymore. Most Ni-Kunni are tradesmen and artisans - occupations traditionally
+        eschewed by true Amarrians, but still considered a vital part of their society.","intelligence":5,"memory":6,"name":"Ni-Kunni","perception":7,"race_id":4,"ship_type_id":596,"willpower":4},{"bloodline_id":11,"charisma":3,"corporation_id":1000014,"description":"Achura
         has been part of the Caldari State for three centuries, and yet their culture
         has always remained something of a mystery. Originally from the Saisio System,
         they are reclusive and introverted, and show little interest in the ephemeral
         phenomena of the material world. Intensely spiritual, Achura pilots have only
         recently taken to the stars, driven in large part by a desire to unlock the
-        secrets of the universe.","intelligence":8,"memory":6,"name":"Achura","perception":7,"race_id":1,"ship_type_id":601,"willpower":6},{"bloodline_id":12,"charisma":7,"corporation_id":1000114,"description":"The
+        secrets of the universe.","intelligence":8,"memory":6,"name":"Achura","perception":7,"race_id":1,"ship_type_id":601,"willpower":6},{"bloodline_id":26,"charisma":9,"corporation_id":1000293,"description":"The
+        Koschoi appear to be one of the three mysterious subdivisions of the Triglavian
+        race that individuals can fall into alongside their membership of the so-called
+        Clades.","intelligence":9,"memory":9,"name":"Koschoi","perception":9,"race_id":135,"ship_type_id":null,"willpower":9},{"bloodline_id":2,"charisma":6,"corporation_id":1000009,"description":"Whether
+        engaged in trade or combat, the Civire are absolute masters of focused aggression.
+        Highly competitive individuals, they thrive under chaotic circumstances and
+        frenetic activity. They are often employed in highly stressful industrial
+        and military professions due to an innate ability to think quickly on their
+        feet and remain composed under pressure.","intelligence":5,"memory":4,"name":"Civire","perception":9,"race_id":1,"ship_type_id":601,"willpower":6},{"bloodline_id":7,"charisma":8,"corporation_id":1000107,"description":"The
+        Gallente value freedom and individual liberty above all else. Founders of
+        the only true democracy of New Eden, they have created an ethnically diverse,
+        culturally rich, progressive society that encourages enterprise and initiative
+        in its citizens. While slow to anger and occasionally indecisive, they are
+        also capable of harnessing enormous military and economic resolve when truly
+        tested.","intelligence":6,"memory":4,"name":"Gallente","perception":8,"race_id":8,"ship_type_id":606,"willpower":4},{"bloodline_id":12,"charisma":7,"corporation_id":1000114,"description":"The
         nation of Jin-Mei is the latest addition to the Federation. They took to the
         stars comparatively late, as it took generations for them to transform their
         rigorous caste system enough for qualified people not to be excluded through
         class-based discrimination. Despite being at odds with the libertarian culture
         of the Gallente, the caste system has not been completely eliminated, nor
         is it likely to be further discouraged by the Federal government due to its
-        cultural implications.","intelligence":5,"memory":5,"name":"Jin-Mei","perception":6,"race_id":8,"ship_type_id":606,"willpower":7},{"bloodline_id":13,"charisma":5,"corporation_id":1000080,"description":"Swept
+        cultural implications.","intelligence":5,"memory":5,"name":"Jin-Mei","perception":6,"race_id":8,"ship_type_id":606,"willpower":7},{"bloodline_id":27,"charisma":9,"corporation_id":1000293,"description":"The
+        Navka appear to be one of the three mysterious subdivisions of the Triglavian
+        race that individuals can fall into alongside their membership of the so-called
+        Clades.","intelligence":9,"memory":9,"name":"Navka","perception":9,"race_id":135,"ship_type_id":null,"willpower":9},{"bloodline_id":3,"charisma":6,"corporation_id":1000046,"description":"Widely
+        respected as some of the cluster''s most innovative thinkers, the Sebiestor
+        are an ingenious people with a natural fondness for engineering. For the last
+        millennium they have pioneered advances in applied sciences, despite laboring
+        under chronic material shortages. Masters of deriving solutions from impossible
+        circumstances, Sebiestor engineers believe they can build anything, with anything,
+        out of anything.","intelligence":7,"memory":6,"name":"Sebiestor","perception":5,"race_id":2,"ship_type_id":588,"willpower":6},{"bloodline_id":8,"charisma":6,"corporation_id":1000111,"description":"The
+        Intaki are one of the largest ethnicities of the Federation. Exceedingly gifted
+        communicators, they are prominent among the Federal bureaucracy. Though mostly
+        assimilated into Gallente culture, they still cling to their own identities
+        and beliefs, most notably their unusual theories regarding death and rebirth.
+        These theories give them a unique outlook on life and the living, and many
+        attribute the Intaki''s stoic nature to this philosophy.","intelligence":8,"memory":7,"name":"Intaki","perception":3,"race_id":8,"ship_type_id":606,"willpower":6},{"bloodline_id":13,"charisma":5,"corporation_id":1000080,"description":"Swept
         up by the Amarr''s message of faith during the original Reclaiming, the Khanid
         were for centuries exalted members of Amarr society, until a bitter feud between
         the Empire and a Khanid heir forced a secession which led to the creation
         of the independent Khanid Kingdom. The Khanid have since come back into the
         fold, bringing an infusion of cultural and technological knowledge into their
-        ancestral Empire.","intelligence":5,"memory":4,"name":"Khanid","perception":8,"race_id":4,"ship_type_id":596,"willpower":8},{"bloodline_id":14,"charisma":8,"corporation_id":1000060,"description":"Originally
+        ancestral Empire.","intelligence":5,"memory":4,"name":"Khanid","perception":8,"race_id":4,"ship_type_id":596,"willpower":8},{"bloodline_id":4,"charisma":6,"corporation_id":1000049,"description":"A
+        martial, strong-willed people, the Brutor hold their tribal heritage close
+        to their hearts, and are renowned for living regimented, disciplined lives.
+        Despite presenting a tough, no-nonsense exterior, they are deeply introspective,
+        aware of even the smallest detail at all times. Immersed in ancient martial
+        traditions that begin at childhood, they are physically robust individuals
+        and intimidating to face in the flesh.","intelligence":4,"memory":4,"name":"Brutor","perception":9,"race_id":2,"ship_type_id":588,"willpower":7},{"bloodline_id":9,"charisma":5,"corporation_id":1000177,"description":"The
+        different branches of Jovians that exist are not the result of variations
+        in geographical or climatic differences, but rather that of genetic engineering
+        through the centuries. The Statics are one of the two main branches. Statics
+        are generally introvert and prefer status quo, both socially and biologically.
+        The Statics regard themselves as observers that should interfere as little
+        as possible with the world. They believe that they are as genetically evolved
+        as can be and generally frown upon large-scale genetic engineering programs.","intelligence":10,"memory":10,"name":"Static","perception":7,"race_id":16,"ship_type_id":null,"willpower":8},{"bloodline_id":14,"charisma":8,"corporation_id":1000060,"description":"Originally
         nomads in Matar''s vast and inhospitable desert regions, the Vherokior are
         among the most diverse individuals of the Republic. They can be found in professions
         ranging from doctors to mystics, scholars to merchants. Their quiet work ethic
@@ -153,16 +167,6 @@ http_interactions:
         with an implacable single-mindedness and utter ruthlessness while pursuing
         their mysterious goals. Whatever their ends may be, the technology at their
         command unquestionably rivals and perhaps even surpasses that which other
-        Jove have been seen to use.","intelligence":0,"memory":0,"name":"Drifter","perception":0,"race_id":16,"ship_type_id":24690,"willpower":0},{"bloodline_id":25,"charisma":9,"corporation_id":1000293,"description":"The
-        Narodnya appear to be one of the three mysterious subdivisions of the Triglavian
-        race that individuals can fall into alongside their membership of the so-called
-        Clades.","intelligence":9,"memory":9,"name":"Narodnya","perception":9,"race_id":135,"ship_type_id":47269,"willpower":9},{"bloodline_id":26,"charisma":9,"corporation_id":1000293,"description":"The
-        Koschoi appear to be one of the three mysterious subdivisions of the Triglavian
-        race that individuals can fall into alongside their membership of the so-called
-        Clades.","intelligence":9,"memory":9,"name":"Koschoi","perception":9,"race_id":135,"ship_type_id":47269,"willpower":9},{"bloodline_id":27,"charisma":9,"corporation_id":1000293,"description":"The
-        Navka appear to be one of the three mysterious subdivisions of the Triglavian
-        race that individuals can fall into alongside their membership of the so-called
-        Clades.","intelligence":9,"memory":9,"name":"Navka","perception":9,"race_id":135,"ship_type_id":47269,"willpower":9}]'
-    http_version: 
-  recorded_at: Tue, 02 Jul 2019 13:54:16 GMT
-recorded_with: VCR 5.0.0
+        Jove have been seen to use.","intelligence":0,"memory":0,"name":"Drifter","perception":0,"race_id":16,"ship_type_id":null,"willpower":0}]'
+  recorded_at: Thu, 01 Jan 2026 19:33:11 GMT
+recorded_with: VCR 6.4.0

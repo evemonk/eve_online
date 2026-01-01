@@ -3,7 +3,7 @@
 require "spec_helper"
 
 describe "Get bloodlines" do
-  before { VCR.insert_cassette "esi/universe/bloodlines_new" }
+  before { VCR.insert_cassette "esi/universe/bloodlines" }
 
   after { VCR.eject_cassette }
 
