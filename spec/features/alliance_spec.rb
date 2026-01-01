@@ -3,7 +3,7 @@
 require "spec_helper"
 
 describe "Get alliance information" do
-  before { VCR.insert_cassette "esi/alliances/99008595_new" }
+  before { VCR.insert_cassette "esi/alliances/99008595" }
 
   after { VCR.eject_cassette }
 
