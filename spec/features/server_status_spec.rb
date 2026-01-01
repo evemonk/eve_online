@@ -24,6 +24,10 @@ describe "Retrieve the uptime and player counts" do
 
   specify { expect(subject.request_id).to eq("aaedbec2-945b-4141-8a39-245b84a8a841") }
 
+  specify { expect(subject.ratelimit_group).to eq("status") }
+
+  specify { expect(subject.ratelimit_limit).to eq("600/15m") }
+
   specify { expect(subject.ratelimit_remaining).to eq(598) }
 
   specify { expect(subject.ratelimit_used).to eq(2) }

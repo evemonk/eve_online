@@ -27,6 +27,10 @@ describe "Get alliance information" do
 
   specify { expect(subject.request_id).to eq("ab376bd9-2f4f-4a7f-809b-7de40de4ef26") }
 
+  specify { expect(subject.ratelimit_group).to eq(nil) }
+
+  specify { expect(subject.ratelimit_limit).to eq(nil) }
+
   specify { expect(subject.ratelimit_remaining).to eq(nil) }
 
   specify { expect(subject.ratelimit_used).to eq(nil) }
