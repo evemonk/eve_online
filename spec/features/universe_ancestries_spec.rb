@@ -3,7 +3,7 @@
 require "spec_helper"
 
 describe "Get ancestries" do
-  before { VCR.insert_cassette "esi/universe/ancestries_new" }
+  before { VCR.insert_cassette "esi/universe/ancestries" }
 
   after { VCR.eject_cassette }
 
