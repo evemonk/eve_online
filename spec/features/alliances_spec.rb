@@ -3,7 +3,7 @@
 require "spec_helper"
 
 describe "List all alliances" do
-  before { VCR.insert_cassette "esi/alliances/alliances_new" }
+  before { VCR.insert_cassette "esi/alliances/alliances" }
 
   after { VCR.eject_cassette }
 
