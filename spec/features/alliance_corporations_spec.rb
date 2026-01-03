@@ -3,7 +3,7 @@
 require "spec_helper"
 
 describe "List alliance's corporations" do
-  before { VCR.insert_cassette "esi/alliance_corporations/99008595_new" }
+  before { VCR.insert_cassette "esi/alliance_corporations/99008595" }
 
   after { VCR.eject_cassette }
 
