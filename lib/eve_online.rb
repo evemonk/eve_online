@@ -18,6 +18,7 @@ module EveOnline
 
       # Sort alphabetically
       autoload :AlliancesResource, "eve_online/esi/resources/alliances_resource"
+      autoload :AssetsResource, "eve_online/esi/resources/assets_resource"
       autoload :CharactersResource, "eve_online/esi/resources/characters_resource"
       autoload :UniverseResource, "eve_online/esi/resources/universe_resource"
       autoload :ServerStatusResource, "eve_online/esi/resources/server_status_resource"
@@ -32,6 +33,7 @@ module EveOnline
       autoload :Ancestry, "eve_online/esi/models/ancestry"
       autoload :Bloodline, "eve_online/esi/models/bloodline"
       autoload :Character, "eve_online/esi/models/character"
+      autoload :CharacterAsset, "eve_online/esi/models/character_asset"
       autoload :Faction, "eve_online/esi/models/faction"
       autoload :Race, "eve_online/esi/models/race"
       autoload :ServerStatus, "eve_online/esi/models/server_status"

@@ -26,14 +26,16 @@ describe "Get character assets" do
   specify { expect(subject.assets.size).to eq(1000) }
 
   specify do
-    expect(subject.assets.first.as_json).to eq(is_blueprint_copy: nil,
+    expect(subject.assets.first.as_json).to eq(
+      is_blueprint_copy: nil,
       is_singleton: true,
       item_id: 1_007_277_900_730,
       location_flag: "RigSlot1",
       location_id: 1_007_277_753_840,
       location_type: "item",
       quantity: 1,
-      type_id: 31800)
+      type_id: 31_800
+    )
   end
 
   specify { expect(subject.error_limit_remain).to eq(100) }

@@ -32,6 +32,7 @@ module EveOnline
 
       # Assets APIs
       def assets
+        Resources::AssetsResource.new(self)
       end
 
       # Calendar APIs
@@ -57,7 +58,7 @@ module EveOnline
         # pass
       end
 
-      def connection # rubocop:disable Metrics/MethodLength
+      def connection
         @connection ||= Faraday.new(BASE_URL) do |c|
           if cache
             c.use :http_cache,

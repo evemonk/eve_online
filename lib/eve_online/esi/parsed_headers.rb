@@ -38,6 +38,10 @@ module EveOnline
       def error_limit_reset
         headers["x-esi-error-limit-reset"]&.to_i
       end
+
+      def total_pages
+        headers["x-pages"]&.to_i
+      end
     end
   end
 end
