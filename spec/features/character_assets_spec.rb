@@ -58,18 +58,18 @@ RSpec.describe "Get character assets" do
 
     specify { expect(subject.size).to eq(189) }
 
-    # specify do
-    #   expect(subject.first.as_json).to eq(
-    #     is_blueprint_copy: nil,
-    #     is_singleton: true,
-    #     item_id: 1_007_277_900_730,
-    #     location_flag: "RigSlot1",
-    #     location_id: 1_007_277_753_840,
-    #     location_type: "item",
-    #     quantity: 1,
-    #     type_id: 31_800
-    #   )
-    # end
+    specify do
+      expect(subject.first.as_json).to eq(
+        is_blueprint_copy: nil,
+        is_singleton: true,
+        item_id: 1_007_666_093_131,
+        location_flag: "AutoFit",
+        location_id: 1_032_765_393_720,
+        location_type: "item",
+        quantity: 1,
+        type_id: 2_410
+      )
+    end
 
     specify { expect(subject.total_pages).to eq(2) }
   end
