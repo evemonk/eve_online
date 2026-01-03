@@ -25,11 +25,11 @@ module EveOnline
           h = {}
 
           # h = h.merge(Authorization: token) if defined?(token)
-          h.merge!("User-Agent" => user_agent)
-          h.merge!("Accept" => "application/json")
-          h.merge!("Accept-Language": client.language)
-          h.merge!("X-Tenant" => client.tenant)
-          h.merge!("X-Compatibility-Date" => compatibility_date) if compatibility_date
+          h["User-Agent"] = user_agent
+          h["Accept"] = "application/json"
+          h["Accept-Language"] = client.language
+          h["X-Tenant"] = client.tenant
+          h["X-Compatibility-Date"] = compatibility_date if compatibility_date
 
           h
         end
