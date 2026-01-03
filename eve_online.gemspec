@@ -27,10 +27,10 @@ Gem::Specification.new do |spec|
 
   spec.required_ruby_version = ">= 3.2"
 
-  spec.add_runtime_dependency "ostruct"
-  spec.add_runtime_dependency "faraday", ">= 2.0.0"
-  spec.add_runtime_dependency "faraday-http-cache"
-  spec.add_runtime_dependency "activesupport", ">= 7.2.0"
+  spec.add_dependency "ostruct"
+  spec.add_dependency "faraday", ">= 2.0.0"
+  spec.add_dependency "faraday-http-cache"
+  spec.add_dependency "activesupport", ">= 7.2.0"
 
   spec.add_development_dependency "rspec"
   spec.add_development_dependency "rspec-its"
