@@ -37,6 +37,9 @@ Naming/BlockForwarding:
   Enabled: true
   EnforcedStyle: explicit
 
+Naming/PredicatePrefix:
+  Enabled: false
+
 Layout/LineLength:
   Enabled: false
 
@@ -47,6 +50,9 @@ Layout/HashAlignment:
   Enabled: false
 
 Layout/SpaceInsideHashLiteralBraces:
+  Enabled: false
+
+Layout/ParameterAlignment:
   Enabled: false
 
 Metrics/AbcSize:
