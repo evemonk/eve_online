@@ -17,6 +17,20 @@ module EveOnline
           Models::Alliance.new(attributes: response.body, headers: response.headers)
         end
 
+        # @param id [Integer] The ID of the alliance
+        def corporations(id:)
+          response = get_request("alliances/#{id}/corporations")
+
+          # TODO
+        end
+
+        # @param id [Integer] The ID of the alliance
+        def icons(id:)
+          response = get_request("alliances/#{id}/icons")
+
+          Models::AllianceIcon.new(attributes: response.body, headers: response.headers)
+        end
+
         private
 
         def compatibility_date

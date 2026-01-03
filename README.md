@@ -120,17 +120,13 @@ alliance_corporations.corporation_ids.first # => 98091533
 #### Get alliance icon
 
 ```ruby
-options = { alliance_id: 99_005_443 }
+alliance_icon = client.alliances.icons(id: 99_005_338)
 
-alliance_icon = EveOnline::ESI::AllianceIcon.new(options)
+alliance_icon.as_json # => {icon_medium: "https://images.evetech.net/alliances/99005338/logo?tenant=tranquility&size=128",
+                      #     icon_small: "https://images.evetech.net/alliances/99005338/logo?tenant=tranquility&size=64"}
 
-alliance_icon.scope # => nil
-
-alliance_icon.as_json # => {:icon_medium=>"https://images.evetech.net/alliances/99005443/logo?tenant=tranquility&size=128",
-                      #     :icon_small=>"https://images.evetech.net/alliances/99005443/logo?tenant=tranquility&size=64"}
-
-alliance_icon.icon_medium # => "https://images.evetech.net/alliances/99005443/logo?tenant=tranquility&size=128"
-alliance_icon.icon_small # => "https://images.evetech.net/alliances/99005443/logo?tenant=tranquility&size=64"
+alliance_icon.icon_medium # => "https://images.evetech.net/alliances/99005338/logo?tenant=tranquility&size=128"
+alliance_icon.icon_small # => "https://images.evetech.net/alliances/99005338/logo?tenant=tranquility&size=64"
 ```
 
 ### Assets

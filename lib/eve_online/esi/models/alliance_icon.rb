@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     module Models
-      class AllianceIcon < Base
+      class AllianceIcon < Object
         def as_json
           {
             icon_medium: icon_medium,
@@ -12,11 +12,11 @@ module EveOnline
         end
 
         def icon_medium
-          options["px128x128"]
+          attributes["px128x128"]
         end
 
         def icon_small
-          options["px64x64"]
+          attributes["px64x64"]
         end
       end
     end
