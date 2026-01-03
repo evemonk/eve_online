@@ -22,9 +22,9 @@ module EveOnline
       # @param read_timeout [Integer | Float] The max number of seconds to wait for one block to be read. Default: `nil`.
       # @param write_timeout [Integer | Float] The max number of seconds to wait for one block to be written. Default: `nil`.
       def initialize(token: nil, language: "en", tenant: "tranquility",
-                     adapter: Faraday.default_adapter,
-                     cache: false, cache_store: nil,
-                     timeout: nil, open_timeout: nil, read_timeout: nil, write_timeout: nil)
+        adapter: Faraday.default_adapter,
+        cache: false, cache_store: nil,
+        timeout: nil, open_timeout: nil, read_timeout: nil, write_timeout: nil)
         @token = token
         @language = language
         @tenant = tenant

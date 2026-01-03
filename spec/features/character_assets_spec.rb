@@ -46,7 +46,6 @@ RSpec.describe "Get character assets" do
     specify { expect(subject.error_limit_reset).to eq(nil) }
 
     specify { expect(subject.total_pages).to eq(2) }
-
   end
 
   context "when page is present" do

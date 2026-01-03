@@ -12,7 +12,7 @@ module EveOnline
         body = response.body
 
         new(
-          data: body.map {|attributes| type.new(attributes: attributes)},
+          data: body.map { |attributes| type.new(attributes: attributes) },
           headers: response.headers
         )
       end
