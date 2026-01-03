@@ -5,7 +5,7 @@ require "spec_helper"
 describe "Get character's public information" do
   let(:options) { {character_id: 1_337_512_245} }
 
-  before { VCR.insert_cassette "esi/characters/1337512245_new" }
+  before { VCR.insert_cassette "esi/characters/1337512245" }
 
   after { VCR.eject_cassette }
 
