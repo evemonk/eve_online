@@ -2,7 +2,7 @@
 
 require "spec_helper"
 
-describe "Retrieve the uptime and player counts" do
+RSpec.describe "Retrieve the uptime and player counts" do
   before { VCR.insert_cassette "esi/server_status/info" }
 
   after { VCR.eject_cassette }

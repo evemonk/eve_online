@@ -2,7 +2,7 @@
 
 require "spec_helper"
 
-describe "Get character assets" do
+RSpec.describe "Get character assets" do
   let(:client) { EveOnline::ESI::Client.new(token: "token123") }
 
   # subject { client.assets.character(id: 1_337_512_245) }
