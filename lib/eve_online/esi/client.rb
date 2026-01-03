@@ -8,19 +8,22 @@ module EveOnline
     class Client
       BASE_URL = "https://esi.evetech.net/"
 
-      attr_reader :language, :tenant, :adapter, :cache, :cache_store
+      attr_reader :token, :language, :tenant, :adapter, :cache, :cache_store
 
+      # @param token [String] ESI token. Default: `nil`.
       # @param language [String] The language to use for the response. One of: "en", "de", "fr", "ja", "zh", "ko", "es". Default: "en".
       # @param tenant [String] The tenant ID for the request. Default: "tranquility".
       # @param adapter [Symbol] Default: `Faraday.default_adapter`
       # @param cache [Boolean] Use `faraday-http-cache` for cache? Default: `false`.
       # @param cache_store [ActiveSupport::Cache] Rails.cache store. Default: `nil`.
-      def initialize(language: "en", tenant: "tranquility", adapter: Faraday.default_adapter, cache: false, cache_store: nil)
+      def initialize(token: nil, language: "en", tenant: "tranquility", adapter: Faraday.default_adapter, cache: false, cache_store: nil)
+        @token = token
         @language = language
         @tenant = tenant
         @adapter = adapter
         @cache = cache
         @cache_store = cache_store
+        @middlewares = []
       end
 
       # Sorted as APIs in openapi docs
@@ -54,12 +57,16 @@ module EveOnline
         Resources::UniverseResource.new(self)
       end
 
-      def add_middleware(_middleware)
-        # pass
+      def add_middleware(middleware)
+        @middlewares << middleware
       end
 
       def connection
         @connection ||= Faraday.new(BASE_URL) do |c|
+          if token
+            c.request :authorization, "Bearer", token
+          end
+
           if cache
             c.use :http_cache,
               store: cache_store,
