@@ -2,7 +2,7 @@
 
 require "spec_helper"
 
-describe "Get ancestries" do
+RSpec.describe "Get ancestries" do
   before { VCR.insert_cassette "esi/universe/ancestries" }
 
   after { VCR.eject_cassette }

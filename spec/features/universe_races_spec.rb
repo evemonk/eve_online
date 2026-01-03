@@ -2,7 +2,7 @@
 
 require "spec_helper"
 
-describe "Get character races" do
+RSpec.describe "Get character races" do
   before { VCR.insert_cassette "esi/universe/races" }
 
   after { VCR.eject_cassette }

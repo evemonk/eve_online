@@ -2,7 +2,7 @@
 
 require "spec_helper"
 
-describe "Get alliance icon" do
+RSpec.describe "Get alliance icon" do
   before { VCR.insert_cassette "esi/alliance_icon/99008595" }
 
   after { VCR.eject_cassette }

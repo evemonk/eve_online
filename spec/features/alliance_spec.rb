@@ -2,7 +2,7 @@
 
 require "spec_helper"
 
-describe "Get alliance information" do
+RSpec.describe "Get alliance information" do
   before { VCR.insert_cassette "esi/alliances/99008595" }
 
   after { VCR.eject_cassette }
