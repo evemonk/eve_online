@@ -60,3 +60,6 @@ Metrics/BlockLength:
 
 Metrics/ParameterLists:
   Enabled: false
+
+Metrics/CyclomaticComplexity:
+  Enabled: false

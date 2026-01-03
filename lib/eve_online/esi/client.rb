@@ -8,7 +8,8 @@ module EveOnline
     class Client
       BASE_URL = "https://esi.evetech.net/"
 
-      attr_reader :token, :language, :tenant, :adapter, :cache, :cache_store
+      attr_reader :token, :language, :tenant, :adapter, :cache, :cache_store,
+        :timeout, :open_timeout, :read_timeout, :write_timeout
 
       # @param token [String] ESI token. Default: `nil`.
       # @param language [String] The language to use for the response. One of: "en", "de", "fr", "ja", "zh", "ko", "es". Default: "en".
@@ -16,7 +17,14 @@ module EveOnline
       # @param adapter [Symbol] Default: `Faraday.default_adapter`
       # @param cache [Boolean] Use `faraday-http-cache` for cache? Default: `false`.
       # @param cache_store [ActiveSupport::Cache] Rails.cache store. Default: `nil`.
-      def initialize(token: nil, language: "en", tenant: "tranquility", adapter: Faraday.default_adapter, cache: false, cache_store: nil)
+      # @param timeout [Integer | Float] The max number of seconds to wait for the request to complete. Default: `nil`.
+      # @param open_timeout [Integer | Float] The max number of seconds to wait for the connection to be established. Default: `nil`.
+      # @param read_timeout [Integer | Float] The max number of seconds to wait for one block to be read. Default: `nil`.
+      # @param write_timeout [Integer | Float] The max number of seconds to wait for one block to be written. Default: `nil`.
+      def initialize(token: nil, language: "en", tenant: "tranquility",
+                     adapter: Faraday.default_adapter,
+                     cache: false, cache_store: nil,
+                     timeout: nil, open_timeout: nil, read_timeout: nil, write_timeout: nil)
         @token = token
         @language = language
         @tenant = tenant
@@ -24,6 +32,10 @@ module EveOnline
         @cache = cache
         @cache_store = cache_store
         @middlewares = []
+        @timeout = timeout
+        @open_timeout = open_timeout
+        @read_timeout = read_timeout
+        @write_timeout = write_timeout
       end
 
       # Sorted as APIs in openapi docs
@@ -73,6 +85,11 @@ module EveOnline
               strategy: Faraday::HttpCache::Strategies::ByUrl,
               serializer: Marshal
           end
+
+          c.options.timeout = timeout if timeout
+          c.options.open_timeout = open_timeout if open_timeout
+          c.options.read_timeout = read_timeout if read_timeout
+          c.options.write_timeout = write_timeout if write_timeout
 
           c.request :json
 
