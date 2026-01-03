@@ -26,6 +26,7 @@ module EveOnline
       # Sort alphabetically
       autoload :Alliance, "eve_online/esi/models/alliance"
       autoload :AllianceIcon, "eve_online/esi/models/alliance_icon"
+      autoload :AllianceCorporations, "eve_online/esi/models/alliance_corporations"
       autoload :Alliances, "eve_online/esi/models/alliances"
       autoload :Ancestry, "eve_online/esi/models/ancestry"
       autoload :Bloodline, "eve_online/esi/models/bloodline"

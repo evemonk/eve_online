@@ -45,3 +45,6 @@ Layout/ArgumentAlignment:
 
 Layout/HashAlignment:
   Enabled: false
+
+Layout/SpaceInsideHashLiteralBraces:
+  Enabled: false

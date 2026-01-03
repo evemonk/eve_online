@@ -21,7 +21,7 @@ module EveOnline
         def corporations(id:)
           response = get_request("alliances/#{id}/corporations")
 
-          # TODO
+          Models::AllianceCorporations.new(body: response.body, headers: response.headers)
         end
 
         # @param id [Integer] The ID of the alliance

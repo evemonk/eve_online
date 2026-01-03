@@ -106,15 +106,11 @@ alliance.ticker # => "-KWG-"
 #### List alliance's corporations
 
 ```ruby
-options = { alliance_id: 99_005_443 }
+alliance_corporations = client.alliances.corporations(id: 99_005_443)
 
-alliance_corporations = EveOnline::ESI::AllianceCorporations.new(options)
+alliance_corporations.corporations_ids.size # => 19
 
-alliance_corporations.scope # => nil
-
-alliance_corporations.corporation_ids.size # => 70
-
-alliance_corporations.corporation_ids.first # => 98091533
+alliance_corporations.corporations_ids.first # => 98265089
 ```
 
 #### Get alliance icon
