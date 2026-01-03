@@ -14,7 +14,8 @@ describe "Get character's public information" do
   specify { expect(subject.scope).to eq(nil) }
 
   specify do
-    expect(subject.as_json).to eq(corporation_id: 98_565_696,
+    expect(subject.as_json).to eq(
+      corporation_id: 98_565_696,
       birthday: "2010-01-15T15:26:00Z",
       name: "Johnn Dillinger",
       gender: "male",
@@ -24,7 +25,8 @@ describe "Get character's public information" do
       alliance_id: 99_008_595,
       security_status: 3.83155339,
       faction_id: nil,
-      title: nil)
+      title: nil
+    )
   end
 
   specify { expect(subject.error_limit_remain).to eq(100) }
