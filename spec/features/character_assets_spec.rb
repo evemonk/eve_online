@@ -55,10 +55,10 @@ RSpec.describe "Get character assets" do
 
     subject { client.assets.character(id: 1_337_512_245) }
 
-    specify { expect(subject.assets.size).to eq(1000) }
+    specify { expect(subject.size).to eq(1000) }
 
     specify do
-      expect(subject.assets.first.as_json).to eq(
+      expect(subject.first.as_json).to eq(
         is_blueprint_copy: nil,
         is_singleton: true,
         item_id: 1_007_277_900_730,
@@ -99,10 +99,10 @@ RSpec.describe "Get character assets" do
 
     subject { client.assets.character(id: 1_337_512_245, page: 2) }
 
-    specify { expect(subject.assets.size).to eq(1000) }
+    specify { expect(subject.size).to eq(189) }
 
     specify do
-      expect(subject.assets.first.as_json).to eq(
+      expect(subject.first.as_json).to eq(
         is_blueprint_copy: nil,
         is_singleton: true,
         item_id: 1_007_277_900_730,
