@@ -6,7 +6,11 @@ module EveOnline
       include Enumerable
       include ParsedHeaders
 
+      extend Forwardable
+
       attr_reader :data, :headers
+
+      def_delegators :data, :size, :first, :last
 
       def self.from_response(response, type:)
         body = response.body
@@ -26,10 +30,6 @@ module EveOnline
         return enum_for(:each) unless block_given?
 
         data.each(&block)
-      end
-
-      def size
-        data.size
       end
     end
   end
