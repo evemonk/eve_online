@@ -108,9 +108,9 @@ alliance.ticker # => "-KWG-"
 ```ruby
 alliance_corporations = client.alliances.corporations(id: 99_005_443)
 
-alliance_corporations.corporations_ids.size # => 19
+alliance_corporations.corporation_ids.size # => 19
 
-alliance_corporations.corporations_ids.first # => 98265089
+alliance_corporations.corporation_ids.first # => 98265089
 ```
 
 #### Get alliance icon

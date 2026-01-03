@@ -4,7 +4,7 @@ module EveOnline
   module ESI
     module Models
       class AllianceCorporations < Object
-        def corporations_ids
+        def corporation_ids
           body
         end
       end
