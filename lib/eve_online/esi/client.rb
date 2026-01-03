@@ -30,6 +30,15 @@ module EveOnline
         Resources::AlliancesResource.new(self)
       end
 
+      # Assets APIs
+
+      # Calendar APIs
+
+      # Character APIs
+      def characters
+        Resources::CharactersResource.new(self)
+      end
+
       # Status API
       def server_status
         Resources::ServerStatusResource.new(self)

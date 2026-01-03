@@ -18,6 +18,7 @@ module EveOnline
 
       # Sort alphabetically
       autoload :AlliancesResource, "eve_online/esi/resources/alliances_resource"
+      autoload :CharactersResource, "eve_online/esi/resources/characters_resource"
       autoload :UniverseResource, "eve_online/esi/resources/universe_resource"
       autoload :ServerStatusResource, "eve_online/esi/resources/server_status_resource"
     end
