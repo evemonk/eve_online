@@ -14,8 +14,58 @@ Style/StringLiterals:
 Style/Documentation:
   Enabled: false
 
+Style/ArgumentsForwarding:
+  Enabled: true
+  UseAnonymousForwarding: false
+
+Style/OpenStructUse:
+  Enabled: false
+
+Style/EmptyMethod:
+  Enabled: false
+
+Style/IfUnlessModifier:
+  Enabled: false
+
 Gemspec/OrderedDependencies:
   Enabled: false
 
 Bundler/OrderedGems:
+  Enabled: false
+
+Naming/BlockForwarding:
+  Enabled: true
+  EnforcedStyle: explicit
+
+Naming/PredicatePrefix:
+  Enabled: false
+
+Layout/LineLength:
+  Enabled: false
+
+Layout/ArgumentAlignment:
+  Enabled: false
+
+Layout/HashAlignment:
+  Enabled: false
+
+Layout/SpaceInsideHashLiteralBraces:
+  Enabled: false
+
+Layout/ParameterAlignment:
+  Enabled: false
+
+Metrics/AbcSize:
+  Enabled: false
+
+Metrics/MethodLength:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+
+Metrics/ParameterLists:
+  Enabled: false
+
+Metrics/CyclomaticComplexity:
   Enabled: false

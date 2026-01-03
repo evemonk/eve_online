@@ -3,65 +3,25 @@
 module EveOnline
   module ESI
     module Models
-      class Bloodline < Base
+      class Bloodline < Object
         def as_json
           {
-            bloodline_id: bloodline_id,
-            charisma: charisma,
-            corporation_id: corporation_id,
-            description: description,
-            intelligence: intelligence,
-            memory: memory,
-            name: name,
-            perception: perception,
-            race_id: race_id,
-            ship_type_id: ship_type_id,
-            willpower: willpower
+            id: id,
+            charisma: attributes.charisma,
+            corporation_id: attributes.corporation_id,
+            description: attributes.description,
+            intelligence: attributes.intelligence,
+            memory: attributes.memory,
+            name: attributes.name,
+            perception: attributes.perception,
+            race_id: attributes.race_id,
+            ship_type_id: attributes.ship_type_id,
+            willpower: attributes.willpower
           }
         end
 
-        def bloodline_id
-          options["bloodline_id"]
-        end
-
-        def charisma
-          options["charisma"]
-        end
-
-        def corporation_id
-          options["corporation_id"]
-        end
-
-        def description
-          options["description"]
-        end
-
-        def intelligence
-          options["intelligence"]
-        end
-
-        def memory
-          options["memory"]
-        end
-
-        def name
-          options["name"]
-        end
-
-        def perception
-          options["perception"]
-        end
-
-        def race_id
-          options["race_id"]
-        end
-
-        def ship_type_id
-          options["ship_type_id"]
-        end
-
-        def willpower
-          options["willpower"]
+        def id
+          attributes.bloodline_id
         end
       end
     end

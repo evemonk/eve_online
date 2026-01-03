@@ -1,15 +1,28 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-require 'bundler/setup'
-require 'eve_online'
+require "bundler/setup"
+require "eve_online"
 
-require 'nokogiri'
-require 'ap'
+require "nokogiri"
+require "ap"
+require "httplog"
+
+HttpLog.configure do |config|
+  config.enabled = true
+
+  config.log_connect   = true
+  config.log_request   = true
+  config.log_headers   = true
+  config.log_data      = true
+  config.log_status    = true
+  config.log_response  = true
+  config.log_benchmark = true
+end
 
 # You can add fixtures and/or initialization code here to make experimenting
 # with your gem easier. You can also use a different console, if you like.
 
 # (If you use this, don't forget to add pry to your Gemfile!)
-require 'pry'
+require "pry"
 Pry.start

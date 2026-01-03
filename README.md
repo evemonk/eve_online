@@ -30,7 +30,7 @@ This gem was extracted from [EveMonk](https://evemonk.com). Source code of EveMo
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'eve_online'
+gem "eve_online"
 ```
 
 And then execute:
@@ -61,40 +61,42 @@ gem install eve_online
 
 ## Usage examples
 
+First, create `client`:
+
+```ruby
+client = EveOnline::ESI::Client.new
+```
+
+Second, use this client to make requests.
+
 ### Alliance
 
 #### List all alliances
 
 ```ruby
-alliances = EveOnline::ESI::Alliances.new
+alliances = client.alliances.list
 
-alliances.scope # => nil
+alliances.alliance_ids.size # => 3533
 
-alliances.alliance_ids.size # => 3028
-
-alliances.alliance_ids.first # => 1354830081
+alliances.alliance_ids.first # => 99000006
 ```
 
 #### Get alliance information
 
 ```ruby
-options = { alliance_id: 99_005_443 }
+alliance = client.alliances.retrieve(id: 99_005_443)
 
-alliance = EveOnline::ESI::Alliance.new(options)
-
-alliance.scope # => nil
-
-alliance.as_json # => {:creator_corporation_id=>98306624,
-                 #     :creator_id=>94195096,
-                 #     :date_founded=>Sun, 03 May 2015 19:45:17 UTC +00:00,
-                 #     :executor_corporation_id=>98306624,
-                 #     :faction_id=>nil,
-                 #     :name=>"Kids With Guns Alliance",
-                 #     :ticker=>"-KWG-"}
+alliance.as_json # => {creator_corporation_id: 98306624,
+                 #     creator_id: 94195096,
+                 #     date_founded: 2015-05-03 19:45:17.000000000 UTC +00:00,
+                 #     executor_corporation_id: 98306624,
+                 #     faction_id: nil,
+                 #     name: "Kids With Guns Alliance",
+                 #     ticker: "-KWG-"}
 
 alliance.creator_corporation_id # => 98306624
 alliance.creator_id # => 94195096
-alliance.date_founded # => Sun, 03 May 2015 19:45:17 UTC +00:00
+alliance.date_founded # => 2015-05-03 19:45:17.000000000 UTC +00:00
 alliance.executor_corporation_id # => 98306624
 alliance.faction_id # => nil
 alliance.name # => "Kids With Guns Alliance"
@@ -104,31 +106,23 @@ alliance.ticker # => "-KWG-"
 #### List alliance's corporations
 
 ```ruby
-options = { alliance_id: 99_005_443 }
+alliance_corporations = client.alliances.corporations(id: 99_005_443)
 
-alliance_corporations = EveOnline::ESI::AllianceCorporations.new(options)
+alliance_corporations.corporation_ids.size # => 19
 
-alliance_corporations.scope # => nil
-
-alliance_corporations.corporation_ids.size # => 70
-
-alliance_corporations.corporation_ids.first # => 98091533
+alliance_corporations.corporation_ids.first # => 98265089
 ```
 
 #### Get alliance icon
 
 ```ruby
-options = { alliance_id: 99_005_443 }
+alliance_icon = client.alliances.icons(id: 99_005_338)
 
-alliance_icon = EveOnline::ESI::AllianceIcon.new(options)
+alliance_icon.as_json # => {icon_medium: "https://images.evetech.net/alliances/99005338/logo?tenant=tranquility&size=128",
+                      #     icon_small: "https://images.evetech.net/alliances/99005338/logo?tenant=tranquility&size=64"}
 
-alliance_icon.scope # => nil
-
-alliance_icon.as_json # => {:icon_medium=>"https://images.evetech.net/alliances/99005443/logo?tenant=tranquility&size=128",
-                      #     :icon_small=>"https://images.evetech.net/alliances/99005443/logo?tenant=tranquility&size=64"}
-
-alliance_icon.icon_medium # => "https://images.evetech.net/alliances/99005443/logo?tenant=tranquility&size=128"
-alliance_icon.icon_small # => "https://images.evetech.net/alliances/99005443/logo?tenant=tranquility&size=64"
+alliance_icon.icon_medium # => "https://images.evetech.net/alliances/99005338/logo?tenant=tranquility&size=128"
+alliance_icon.icon_small # => "https://images.evetech.net/alliances/99005338/logo?tenant=tranquility&size=64"
 ```
 
 ### Assets
@@ -1973,18 +1967,16 @@ character_skills.unallocated_sp # => 656000
 #### Retrieve the uptime and player counts
 
 ```ruby
-server_status = EveOnline::ESI::ServerStatus.new
+server_status = client.server_status.info
 
-server_status.scope # => nil
+server_status.as_json # => {players: 33675,
+                      #     server_version: "3145366",
+                      #     start_time: 2026-01-01 11:01:47.000000000 UTC +00:00,
+                      #     vip: nil}
 
-server_status.as_json # => {:players=>34545,
-                      #     :server_version=>"1135520",
-                      #     :start_time=>Tue, 11 Apr 2017 11:05:35 UTC +00:00,
-                      #     :vip=>nil}
-
-server_status.players # => 34545
-server_status.server_version # => "1135520"
-server_status.start_time # => Tue, 11 Apr 2017 11:05:35 UTC +00:00
+server_status.players # => 33675
+server_status.server_version # => "3145366"
+server_status.start_time # => 2026-01-01 11:01:47.000000000 UTC +00:00
 server_status.vip # => nil
 ```
 
@@ -2329,25 +2321,21 @@ planet.position.z # => -73529712226.0
 #### Get character races
 
 ```ruby
-options = { language: 'en-us' }
+races = client.universe.races
 
-races = EveOnline::ESI::UniverseRaces.new(options)
+races.size # => 6
 
-races.scope # => nil
+race = races.first
 
-races.races.size # => 4
+race.as_json # => {faction_id: 500001,
+             #     description: "Founded on the tenets of patriotism...",
+             #     name: "Caldari",
+             #     id: 1}
 
-race = races.races.first
-
-race.as_json # => {:faction_id=>500002,
-             #     :description=>"Once a thriving tribal civilization, the Minmatar...",
-             #     :name=>"Minmatar",
-             #     :race_id=>2}
-
-race.faction_id # => 500002
-race.description # => "Once a thriving tribal civilization, the Minmatar..."
-race.name # => "Minmatar"
-race.race_id # => 2
+race.faction_id # => 500001
+race.description # => "Founded on the tenets of patriotism..."
+race.name # => "Caldari"
+race.id # => 1
 ```
 
 #### Get regions
@@ -3018,24 +3006,12 @@ races.write_timeout # => 120
 
 ## Languages support
 
-Default language is `en-us`. Supported languages: `de`, `en-us`, `fr`, `ja`, `ru`, `zh`, `ko`.
+Default language is `en`. Supported languages: `en`, `de`, `fr`, `ja`, `zh`, `ko` and `es`.
 
-If you want change it, for e.g., to `de`, add `language: 'de'` to default hash with options:
-
-```ruby
-options = { language: 'de' }
-
-races = EveOnline::ESI::UniverseRaces.new(options)
-```
-
-## Oj as JSON Parser
+If you want change it, for e.g., to `de`, add `language: 'de'` to default client options:
 
 ```ruby
-require 'oj'
-
-Oj.mimic_JSON()
-
-races = EveOnline::ESI::UniverseRaces.new
+client = EveOnline::ESI::Client.new(language: "de")
 ```
 
 ## Formulas

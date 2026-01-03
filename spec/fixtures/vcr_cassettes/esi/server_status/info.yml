@@ -1,0 +1,75 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://esi.evetech.net/status
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.46.0
+      Accept:
+      - application/json
+      Accept-Language:
+      - en
+      X-Tenant:
+      - tranquility
+      X-Compatibility-Date:
+      - '2025-12-16'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 30 Dec 2025 21:26:00 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '80'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Etag, Retry-After, X-Compatibility-Date, X-Esi-Error-Limit-Remain, X-Esi-Error-Limit-Reset,
+        X-Pages, X-Ratelimit-Group, X-Ratelimit-Limit, X-Ratelimit-Remaining, X-Ratelimit-Used
+      Cache-Control:
+      - public
+      Content-Language:
+      - en
+      Etag:
+      - '"e2e234441e20bc911efc3fa903ab4daf5aeca4e8d8caef23b7a3c898"'
+      Expires:
+      - Tue, 30 Dec 2025 21:26:22 GMT
+      Last-Modified:
+      - Tue, 30 Dec 2025 21:25:52 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept-Language
+      - X-Compatibility-Date
+      X-Compatibility-Date:
+      - '2020-01-01'
+      X-Esi-Cache-Status:
+      - HIT
+      X-Esi-Request-Id:
+      - aaedbec2-945b-4141-8a39-245b84a8a841
+      X-Ratelimit-Group:
+      - status
+      X-Ratelimit-Limit:
+      - 600/15m
+      X-Ratelimit-Remaining:
+      - '598'
+      X-Ratelimit-Used:
+      - '2'
+    body:
+      encoding: UTF-8
+      string: '{"players":32697,"server_version":"3145366","start_time":"2025-12-30T11:01:58Z"}'
+  recorded_at: Tue, 30 Dec 2025 21:26:00 GMT
+recorded_with: VCR 6.4.0
