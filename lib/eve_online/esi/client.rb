@@ -59,6 +59,17 @@ module EveOnline
         Resources::CharactersResource.new(self)
       end
 
+      # Clones APIs
+
+      # Contacts APIs
+
+      # Contracts APIs
+
+      # Corporation APIs
+      def corporations
+        Resources::CorporationsResource.new(self)
+      end
+
       # Status API
       def server_status
         Resources::ServerStatusResource.new(self)
