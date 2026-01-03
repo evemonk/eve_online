@@ -6,7 +6,7 @@ RSpec.describe "Get character assets" do
   let(:client) { EveOnline::ESI::Client.new(token: "token123") }
 
   context "when page is not present" do
-    before { VCR.insert_cassette "esi/character_assets/1337512245_page_1" }
+    before { VCR.insert_cassette "esi/character_assets/1337512245" }
 
     after { VCR.eject_cassette }
 
