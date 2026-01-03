@@ -31,4 +31,10 @@ Gem::Specification.new do |spec|
   spec.add_dependency "faraday", ">= 2.0.0"
   spec.add_dependency "faraday-http-cache"
   spec.add_dependency "activesupport", ">= 7.2.0"
+
+  spec.add_development_dependency "rspec"
+  spec.add_development_dependency "rspec-its"
+  spec.add_development_dependency "simplecov"
+  spec.add_development_dependency "webmock"
+  spec.add_development_dependency "vcr"
 end
