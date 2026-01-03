@@ -59,15 +59,15 @@ describe "Get character assets" do
 
     specify do
       expect(subject.assets.first.as_json).to eq(
-                                                is_blueprint_copy: nil,
-                                                is_singleton: true,
-                                                item_id: 1_007_277_900_730,
-                                                location_flag: "RigSlot1",
-                                                location_id: 1_007_277_753_840,
-                                                location_type: "item",
-                                                quantity: 1,
-                                                type_id: 31_800
-                                              )
+        is_blueprint_copy: nil,
+        is_singleton: true,
+        item_id: 1_007_277_900_730,
+        location_flag: "RigSlot1",
+        location_id: 1_007_277_753_840,
+        location_type: "item",
+        quantity: 1,
+        type_id: 31_800
+      )
     end
 
     specify { expect(subject.etag).to eq('"5eedb79d062aad2bed4e103e149ebf728be9f2d69b63ecf186f45c1d"') }
@@ -103,15 +103,15 @@ describe "Get character assets" do
 
     specify do
       expect(subject.assets.first.as_json).to eq(
-                                                is_blueprint_copy: nil,
-                                                is_singleton: true,
-                                                item_id: 1_007_277_900_730,
-                                                location_flag: "RigSlot1",
-                                                location_id: 1_007_277_753_840,
-                                                location_type: "item",
-                                                quantity: 1,
-                                                type_id: 31_800
-                                              )
+        is_blueprint_copy: nil,
+        is_singleton: true,
+        item_id: 1_007_277_900_730,
+        location_flag: "RigSlot1",
+        location_id: 1_007_277_753_840,
+        location_type: "item",
+        quantity: 1,
+        type_id: 31_800
+      )
     end
 
     specify { expect(subject.total_pages).to eq(2) }
