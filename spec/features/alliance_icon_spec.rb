@@ -12,8 +12,10 @@ describe "Get alliance icon" do
   subject { client.alliances.icons(id: 99_008_595) }
 
   specify do
-    expect(subject.as_json).to eq(icon_medium: "https://images.evetech.net/alliances/99008595/logo?tenant=tranquility&size=128",
-      icon_small: "https://images.evetech.net/alliances/99008595/logo?tenant=tranquility&size=64")
+    expect(subject.as_json).to eq(
+      icon_medium: "https://images.evetech.net/alliances/99008595/logo?tenant=tranquility&size=128",
+      icon_small: "https://images.evetech.net/alliances/99008595/logo?tenant=tranquility&size=64"
+    )
   end
 
   specify { expect(subject.etag).to eq('"d53e06315fe6f15f4dd47da86f16b3cb51977abc22701227d931f03b"') }
