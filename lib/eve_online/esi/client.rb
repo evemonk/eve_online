@@ -31,8 +31,12 @@ module EveOnline
       end
 
       # Assets APIs
+      def assets
+      end
 
       # Calendar APIs
+      def calendar
+      end
 
       # Character APIs
       def characters

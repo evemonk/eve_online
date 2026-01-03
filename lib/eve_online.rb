@@ -31,6 +31,7 @@ module EveOnline
       autoload :Alliances, "eve_online/esi/models/alliances"
       autoload :Ancestry, "eve_online/esi/models/ancestry"
       autoload :Bloodline, "eve_online/esi/models/bloodline"
+      autoload :Character, "eve_online/esi/models/character"
       autoload :Faction, "eve_online/esi/models/faction"
       autoload :Race, "eve_online/esi/models/race"
       autoload :ServerStatus, "eve_online/esi/models/server_status"
