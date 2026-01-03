@@ -2,7 +2,7 @@
 
 require "spec_helper"
 
-describe EveOnline::ESI::Base do
+RSpec.describe EveOnline::ESI::Base do
   specify { expect(described_class::API_HOST).to eq("esi.evetech.net") }
 
   describe "#initialize" do

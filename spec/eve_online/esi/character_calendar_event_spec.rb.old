@@ -2,7 +2,7 @@
 
 require "spec_helper"
 
-describe EveOnline::ESI::CharacterCalendarEvent do
+RSpec.describe EveOnline::ESI::CharacterCalendarEvent do
   let(:options) { {token: "token123", character_id: 91_473_836, event_id: 1_982_004} }
 
   subject { described_class.new(options) }

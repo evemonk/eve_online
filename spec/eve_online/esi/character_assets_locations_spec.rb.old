@@ -2,7 +2,7 @@
 
 require "spec_helper"
 
-describe EveOnline::ESI::CharacterAssetsLocations do
+RSpec.describe EveOnline::ESI::CharacterAssetsLocations do
   let(:options) { {token: "token123", character_id: 12_345_678, item_ids: [1_001_215_602_246]} }
 
   subject { described_class.new(options) }

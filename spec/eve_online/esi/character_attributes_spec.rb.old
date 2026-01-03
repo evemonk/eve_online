@@ -2,7 +2,7 @@
 
 require "spec_helper"
 
-describe EveOnline::ESI::CharacterAttributes do
+RSpec.describe EveOnline::ESI::CharacterAttributes do
   let(:options) { {token: "token123", character_id: 12_345_678} }
 
   subject { described_class.new(options) }
