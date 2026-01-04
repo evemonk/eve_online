@@ -2,66 +2,76 @@
 http_interactions:
 - request:
     method: get
-    uri: https://esi.evetech.net/v4/corporations/98468592/
+    uri: https://esi.evetech.net/corporations/98468592
     body:
       encoding: US-ASCII
       string: ''
     headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.47.0
       Accept:
       - application/json
-      User-Agent:
-      - EveOnline API (https://github.com/evemonk/eve_online) v0.22.0
       Accept-Language:
-      - en-us
+      - en
+      X-Tenant:
+      - tranquility
+      X-Compatibility-Date:
+      - '2025-12-16'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Tue, 15 Jan 2019 17:36:03 GMT
+      - Sun, 04 Jan 2026 00:37:19 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
-      - '282'
+      - '675'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
       - 'true'
-      Access-Control-Allow-Headers:
-      - Content-Type,Authorization,If-None-Match,X-User-Agent
-      Access-Control-Allow-Methods:
-      - GET,HEAD,OPTIONS
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Expose-Headers:
-      - Content-Type,Warning,ETag,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
-      Access-Control-Max-Age:
-      - '600'
-      Allow:
-      - GET,HEAD,OPTIONS
+      - Etag, Retry-After, X-Compatibility-Date, X-Esi-Error-Limit-Remain, X-Esi-Error-Limit-Reset,
+        X-Pages, X-Ratelimit-Group, X-Ratelimit-Limit, X-Ratelimit-Remaining, X-Ratelimit-Used
       Cache-Control:
       - public
+      Content-Language:
+      - en
       Etag:
-      - '"046430260be73e5d7ad3a9251954310bd547498eeb38f99e8d305796"'
+      - '"ffbbcb2cd0c4ae79252e8244cd51b12a1d1810cbcd954813ccfa2467"'
       Expires:
-      - Tue, 15 Jan 2019 18:23:20 GMT
+      - Sun, 04 Jan 2026 00:44:04 GMT
       Last-Modified:
-      - Tue, 15 Jan 2019 17:23:20 GMT
+      - Sat, 03 Jan 2026 23:44:04 GMT
       Strict-Transport-Security:
       - max-age=31536000
+      Vary:
+      - Accept-Language
+      - X-Compatibility-Date
+      X-Compatibility-Date:
+      - '2020-01-01'
+      X-Esi-Cache-Status:
+      - HIT
       X-Esi-Error-Limit-Remain:
       - '100'
       X-Esi-Error-Limit-Reset:
-      - '57'
+      - '41'
       X-Esi-Request-Id:
-      - 7b4efc74-36be-48cf-9774-035879e2d98c
+      - 2ed41162-8a52-4a9c-8d87-5d54f94f42d4
     body:
       encoding: UTF-8
-      string: '{"alliance_id":99007916,"ceo_id":1721864142,"creator_id":1721864142,"date_founded":"2016-07-11T14:22:17Z","description":"","home_station_id":60011893,"member_count":166,"name":"Bullshit
-        Bingo Club","shares":1000,"tax_rate":0.1,"ticker":"BUBIC","url":"http:\/\/","war_eligible":true}'
-    http_version: 
-  recorded_at: Tue, 15 Jan 2019 17:36:03 GMT
-recorded_with: VCR 4.0.0
+      string: '{"ceo_id":2114256809,"creator_id":1721864142,"date_founded":"2016-07-11T14:22:17Z","description":"u''<font
+        size=\"12\" color=\"#bfffffff\">BUBIC est malheureusement en hibernation !<br><br>En
+        attendant un eventuel r\\xe9veil, retrouvez les anciens membres Bubic chez
+        les chevres !   <\/font><font size=\"12\" color=\"#ffd98d00\"><a href=\"showinfo:2\/\/98730717\">Goat
+        to Go<\/a><\/font><font size=\"12\" color=\"#bfffffff\"> <br><br>Bon jeu et
+        \\xe0 tr\\xe8s vite ... o7<\/font>''","home_station_id":60011893,"member_count":12,"name":"Bullshit
+        Bingo Club","shares":1000,"tax_rate":0.10000000149011612,"ticker":"BUBIC","url":"https:\/\/zkillboard.com\/corporation\/98468592\/"}'
+  recorded_at: Sun, 04 Jan 2026 00:37:19 GMT
+recorded_with: VCR 6.4.0
