@@ -138,28 +138,24 @@ alliance_icon.icon_small # => "https://images.evetech.net/alliances/99005338/log
 #### Get character assets
 
 ```ruby
-options = { token: 'token123', character_id: 90_729_314, page: 1 }
+client = EveOnline::ESI::Client.new(token: "token123")
 
-character_assets = EveOnline::ESI::CharacterAssets.new(options)
-
-character_assets.scope # => "esi-assets.read_assets.v1"
-
-character_assets.page # => 1
+character_assets = client.assets.character(id: 1_337_512_245)
 
 character_assets.total_pages # => 1
 
-character_assets.assets.size # => 486
+character_assets.size # => 486
 
-asset = character_assets.assets.first
+asset = character_assets.first
 
-asset.as_json # => {:is_blueprint_copy=>true,
-              #     :is_singleton=>true,
-              #     :item_id=>716338097,
-              #     :location_flag=>"Hangar",
-              #     :location_id=>1027847409779,
-              #     :location_type=>"other",
-              #     :quantity=>1
-              #     :type_id=>1010}
+asset.as_json # => {is_blueprint_copy: true,
+              #     is_singleton: true,
+              #     item_id: 716338097,
+              #     location_flag: "Hangar",
+              #     location_id: 1027847409779,
+              #     location_type: "other",
+              #     quantity: 1
+              #     type_id: 1010}
 
 asset.is_blueprint_copy # => true
 asset.is_singleton # => true
