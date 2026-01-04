@@ -3,82 +3,28 @@
 module EveOnline
   module ESI
     module Models
-      class Corporation < Base
+      class Corporation < Object
         def as_json
           {
-            alliance_id: alliance_id,
-            ceo_id: ceo_id,
-            creator_id: creator_id,
-            date_founded: date_founded,
-            description: description,
-            faction_id: faction_id,
-            home_station_id: home_station_id,
-            member_count: member_count,
-            name: name,
-            shares: shares,
-            tax_rate: tax_rate,
-            ticker: ticker,
+            alliance_id: attributes.alliance_id,
+            ceo_id: attributes.ceo_id,
+            creator_id: attributes.creator_id,
+            date_founded: attributes.date_founded,
+            description: attributes.description,
+            faction_id: attributes.faction_id,
+            home_station_id: attributes.home_station_id,
+            member_count: attributes.member_count,
+            name: attributes.name,
+            shares: attributes.shares,
+            tax_rate: attributes.tax_rate,
+            ticker: attributes.ticker,
             corporation_url: corporation_url,
-            war_eligible: war_eligible
+            war_eligible: attributes.war_eligible
           }
         end
 
-        def alliance_id
-          options["alliance_id"]
-        end
-
-        def ceo_id
-          options["ceo_id"]
-        end
-
-        def creator_id
-          options["creator_id"]
-        end
-
-        def date_founded
-          date_founded = options["date_founded"]
-
-          parse_datetime_with_timezone(date_founded) if date_founded
-        end
-
-        def description
-          options["description"]
-        end
-
-        def faction_id
-          options["faction_id"]
-        end
-
-        def home_station_id
-          options["home_station_id"]
-        end
-
-        def member_count
-          options["member_count"]
-        end
-
-        def name
-          options["name"]
-        end
-
-        def shares
-          options["shares"]
-        end
-
-        def tax_rate
-          options["tax_rate"]
-        end
-
-        def ticker
-          options["ticker"]
-        end
-
         def corporation_url
-          options["url"]
-        end
-
-        def war_eligible
-          options["war_eligible"]
+          attributes.url
         end
       end
     end
