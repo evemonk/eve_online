@@ -74,6 +74,8 @@ Second, use this client to make requests.
 #### List all alliances
 
 ```ruby
+client = EveOnline::ESI::Client.new
+
 alliances = client.alliances.list
 
 alliances.alliance_ids.size # => 3533
@@ -84,6 +86,8 @@ alliances.alliance_ids.first # => 99000006
 #### Get alliance information
 
 ```ruby
+client = EveOnline::ESI::Client.new
+
 alliance = client.alliances.retrieve(id: 99_005_443)
 
 alliance.as_json # => {creator_corporation_id: 98306624,
@@ -106,6 +110,8 @@ alliance.ticker # => "-KWG-"
 #### List alliance's corporations
 
 ```ruby
+client = EveOnline::ESI::Client.new
+
 alliance_corporations = client.alliances.corporations(id: 99_005_443)
 
 alliance_corporations.corporation_ids.size # => 19
@@ -116,6 +122,8 @@ alliance_corporations.corporation_ids.first # => 98265089
 #### Get alliance icon
 
 ```ruby
+client = EveOnline::ESI::Client.new
+
 alliance_icon = client.alliances.icons(id: 99_005_338)
 
 alliance_icon.as_json # => {icon_medium: "https://images.evetech.net/alliances/99005338/logo?tenant=tranquility&size=128",
