@@ -3,9 +3,7 @@
 require "spec_helper"
 
 RSpec.describe "Get corporation information" do
-  let(:options) { {corporation_id: 98_468_592} }
-
-  before { VCR.insert_cassette "esi/corporations/98468592_new" }
+  before { VCR.insert_cassette "esi/corporations/98468592" }
 
   after { VCR.eject_cassette }
 
