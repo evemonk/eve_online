@@ -301,16 +301,6 @@ asset_name.item_id # => 1001215602246
 asset_name.name # => "HOLE"
 ```
 
-### Bookmarks
-
-#### List bookmarks
-
-#### List bookmark folders
-
-#### List corporation bookmarks
-
-#### List corporation bookmark folders
-
 ### Calendar
 
 #### List calendar event summaries
