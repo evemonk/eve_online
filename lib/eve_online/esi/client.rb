@@ -17,14 +17,14 @@ module EveOnline
       # @param adapter [Symbol] Default: `Faraday.default_adapter`
       # @param cache [Boolean] Use `faraday-http-cache` for cache? Default: `false`.
       # @param cache_store [ActiveSupport::Cache] Rails.cache store. Default: `nil`.
-      # @param timeout [Integer | Float] The max number of seconds to wait for the request to complete. Default: `nil`.
-      # @param open_timeout [Integer | Float] The max number of seconds to wait for the connection to be established. Default: `nil`.
-      # @param read_timeout [Integer | Float] The max number of seconds to wait for one block to be read. Default: `nil`.
-      # @param write_timeout [Integer | Float] The max number of seconds to wait for one block to be written. Default: `nil`.
+      # @param timeout [Integer | Float] The max number of seconds to wait for the request to complete. Default: `30`.
+      # @param open_timeout [Integer | Float] The max number of seconds to wait for the connection to be established. Default: `30`.
+      # @param read_timeout [Integer | Float] The max number of seconds to wait for one block to be read. Default: `30`.
+      # @param write_timeout [Integer | Float] The max number of seconds to wait for one block to be written. Default: `30`.
       def initialize(token: nil, language: "en", tenant: "tranquility",
         adapter: Faraday.default_adapter,
         cache: false, cache_store: nil,
-        timeout: nil, open_timeout: nil, read_timeout: nil, write_timeout: nil)
+        timeout: 30, open_timeout: 30, read_timeout: 30, write_timeout: 30)
         @token = token
         @language = language
         @tenant = tenant
