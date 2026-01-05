@@ -36,6 +36,7 @@ module EveOnline
       autoload :Bloodline, "eve_online/esi/models/bloodline"
       autoload :Character, "eve_online/esi/models/character"
       autoload :CharacterAsset, "eve_online/esi/models/character_asset"
+      autoload :CharacterWallet, "eve_online/esi/models/character_wallet"
       autoload :Corporation, "eve_online/esi/models/corporation"
       autoload :Faction, "eve_online/esi/models/faction"
       autoload :Race, "eve_online/esi/models/race"

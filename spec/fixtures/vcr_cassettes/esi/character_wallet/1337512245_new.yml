@@ -1,0 +1,77 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://esi.evetech.net/characters/1337512245/wallet
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.47.0
+      Accept:
+      - application/json
+      Accept-Language:
+      - en
+      X-Tenant:
+      - tranquility
+      X-Compatibility-Date:
+      - '2025-12-16'
+      Authorization:
+      - Bearer token123
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 05 Jan 2026 18:23:48 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '10'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Etag, Retry-After, X-Compatibility-Date, X-Esi-Error-Limit-Remain, X-Esi-Error-Limit-Reset,
+        X-Pages, X-Ratelimit-Group, X-Ratelimit-Limit, X-Ratelimit-Remaining, X-Ratelimit-Used
+      Cache-Control:
+      - private
+      Content-Language:
+      - en
+      Etag:
+      - '"d74e40a60c72a9a4b77e7c11c327e910e618de260e4b7621e9cbe4a9"'
+      Expires:
+      - Mon, 05 Jan 2026 18:25:48 GMT
+      Last-Modified:
+      - Mon, 05 Jan 2026 18:23:48 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept-Language
+      - X-Compatibility-Date
+      X-Compatibility-Date:
+      - '2020-01-01'
+      X-Esi-Cache-Status:
+      - MISS
+      X-Esi-Request-Id:
+      - 4c548b49-277d-4e10-99f7-bf81dad30828
+      X-Ratelimit-Group:
+      - char-wallet
+      X-Ratelimit-Limit:
+      - 150/15m
+      X-Ratelimit-Remaining:
+      - '148'
+      X-Ratelimit-Used:
+      - '2'
+    body:
+      encoding: UTF-8
+      string: '3378103.44'
+  recorded_at: Mon, 05 Jan 2026 18:23:47 GMT
+recorded_with: VCR 6.4.0
