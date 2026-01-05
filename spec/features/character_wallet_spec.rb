@@ -3,7 +3,7 @@
 require "spec_helper"
 
 describe "Get a character's wallet balance" do
-  before { VCR.insert_cassette "esi/character_wallet/1337512245_new" }
+  before { VCR.insert_cassette "esi/character_wallet/1337512245" }
 
   after { VCR.eject_cassette }
 
