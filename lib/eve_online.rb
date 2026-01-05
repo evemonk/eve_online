@@ -45,9 +45,11 @@ module EveOnline
 
     module FaradayMiddlewares
       autoload :RaiseErrors, "eve_online/esi/faraday_middlewares/raise_errors"
+      autoload :ParseEveDates, "eve_online/esi/faraday_middlewares/parse_eve_dates"
     end
 
-    Faraday::Response.register_middleware esi_middleware: Middleware
+    Faraday::Response.register_middleware esi_raise_errors: FaradayMiddlewares::RaiseErrors
+    Faraday::Response.register_middleware esi_parse_eve_dates: FaradayMiddlewares::ParseEveDates
   end
 
   module Formulas

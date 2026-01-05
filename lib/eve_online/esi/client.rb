@@ -109,7 +109,8 @@ module EveOnline
 
           c.request :json
 
-          c.response :esi_middleware
+          c.response :esi_raise_errors
+          c.response :esi_parse_eve_dates
           c.response :json, content_type: "application/json"
 
           c.adapter adapter
