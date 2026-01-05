@@ -80,6 +80,11 @@ module EveOnline
         Resources::UniverseResource.new(self)
       end
 
+      # Wallet APIs
+      def wallet
+        Resources::WalletResources.new(self)
+      end
+
       def add_middleware(middleware)
         @middlewares << middleware
       end
