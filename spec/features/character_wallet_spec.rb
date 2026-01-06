@@ -11,6 +11,8 @@ describe "Get a character's wallet balance" do
 
   subject { client.wallet.character(id: 1_337_512_245) }
 
+  specify { expect(subject.as_json).to eq(wallet: 3_378_103.44) }
+
   specify { expect(subject.wallet).to eq(3_378_103.44) }
 
   specify { expect(subject.etag).to eq('"d74e40a60c72a9a4b77e7c11c327e910e618de260e4b7621e9cbe4a9"') }
