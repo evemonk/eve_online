@@ -47,7 +47,6 @@ gem install eve_online
 
 ## Supported ruby versions
 
-* Ruby 3.2
 * Ruby 3.3
 * Ruby 3.4
 * Ruby 4.0
@@ -138,6 +137,7 @@ alliance_icon.icon_small # => "https://images.evetech.net/alliances/99005338/log
 #### Get character assets
 
 ```ruby
+# NOTE: add `page:` if you need another page
 client = EveOnline::ESI::Client.new(token: "token123")
 
 character_assets = client.assets.character(id: 1_337_512_245)
@@ -808,6 +808,8 @@ item.type_id # => 29040
 #### Get corporation information
 
 ```ruby
+
+
 options = { corporation_id: 98_468_592 }
 
 corporation = EveOnline::ESI::Corporation.new(options)
