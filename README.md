@@ -47,7 +47,6 @@ gem install eve_online
 
 ## Supported ruby versions
 
-* Ruby 3.2
 * Ruby 3.3
 * Ruby 3.4
 * Ruby 4.0
@@ -74,6 +73,8 @@ Second, use this client to make requests.
 #### List all alliances
 
 ```ruby
+client = EveOnline::ESI::Client.new
+
 alliances = client.alliances.list
 
 alliances.alliance_ids.size # => 3533
@@ -84,6 +85,8 @@ alliances.alliance_ids.first # => 99000006
 #### Get alliance information
 
 ```ruby
+client = EveOnline::ESI::Client.new
+
 alliance = client.alliances.retrieve(id: 99_005_443)
 
 alliance.as_json # => {creator_corporation_id: 98306624,
@@ -106,6 +109,8 @@ alliance.ticker # => "-KWG-"
 #### List alliance's corporations
 
 ```ruby
+client = EveOnline::ESI::Client.new
+
 alliance_corporations = client.alliances.corporations(id: 99_005_443)
 
 alliance_corporations.corporation_ids.size # => 19
@@ -116,6 +121,8 @@ alliance_corporations.corporation_ids.first # => 98265089
 #### Get alliance icon
 
 ```ruby
+client = EveOnline::ESI::Client.new
+
 alliance_icon = client.alliances.icons(id: 99_005_338)
 
 alliance_icon.as_json # => {icon_medium: "https://images.evetech.net/alliances/99005338/logo?tenant=tranquility&size=128",
@@ -130,28 +137,25 @@ alliance_icon.icon_small # => "https://images.evetech.net/alliances/99005338/log
 #### Get character assets
 
 ```ruby
-options = { token: 'token123', character_id: 90_729_314, page: 1 }
+# NOTE: add `page:` if you need another page
+client = EveOnline::ESI::Client.new(token: "token123")
 
-character_assets = EveOnline::ESI::CharacterAssets.new(options)
-
-character_assets.scope # => "esi-assets.read_assets.v1"
-
-character_assets.page # => 1
+character_assets = client.assets.character(id: 1_337_512_245)
 
 character_assets.total_pages # => 1
 
-character_assets.assets.size # => 486
+character_assets.size # => 486
 
-asset = character_assets.assets.first
+asset = character_assets.first
 
-asset.as_json # => {:is_blueprint_copy=>true,
-              #     :is_singleton=>true,
-              #     :item_id=>716338097,
-              #     :location_flag=>"Hangar",
-              #     :location_id=>1027847409779,
-              #     :location_type=>"other",
-              #     :quantity=>1
-              #     :type_id=>1010}
+asset.as_json # => {is_blueprint_copy: true,
+              #     is_singleton: true,
+              #     item_id: 716338097,
+              #     location_flag: "Hangar",
+              #     location_id: 1027847409779,
+              #     location_type: "other",
+              #     quantity: 1
+              #     type_id: 1010}
 
 asset.is_blueprint_copy # => true
 asset.is_singleton # => true
@@ -296,16 +300,6 @@ asset_name.as_json # => {:item_id=>1001215602246,
 asset_name.item_id # => 1001215602246
 asset_name.name # => "HOLE"
 ```
-
-### Bookmarks
-
-#### List bookmarks
-
-#### List bookmark folders
-
-#### List corporation bookmarks
-
-#### List corporation bookmark folders
 
 ### Calendar
 
@@ -814,6 +808,8 @@ item.type_id # => 29040
 #### Get corporation information
 
 ```ruby
+
+
 options = { corporation_id: 98_468_592 }
 
 corporation = EveOnline::ESI::Corporation.new(options)

@@ -12,7 +12,7 @@ module EveOnline
 
       attr_reader :data, :headers
 
-      def_delegators :data, :size, :first, :last
+      def_delegators :data, :size, :first, :last, :each
 
       def self.from_response(response, type:)
         body = response.body
@@ -26,12 +26,6 @@ module EveOnline
       def initialize(data:, headers:)
         @data = data
         @headers = headers
-      end
-
-      def each(&block)
-        return enum_for(:each) unless block_given?
-
-        data.each(&block)
       end
     end
   end

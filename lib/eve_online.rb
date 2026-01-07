@@ -23,6 +23,7 @@ module EveOnline
       autoload :CorporationsResource, "eve_online/esi/resources/corporations_resource"
       autoload :UniverseResource, "eve_online/esi/resources/universe_resource"
       autoload :ServerStatusResource, "eve_online/esi/resources/server_status_resource"
+      autoload :WalletResources, "eve_online/esi/resources/wallet_resources"
     end
 
     module Models
@@ -35,6 +36,7 @@ module EveOnline
       autoload :Bloodline, "eve_online/esi/models/bloodline"
       autoload :Character, "eve_online/esi/models/character"
       autoload :CharacterAsset, "eve_online/esi/models/character_asset"
+      autoload :CharacterWallet, "eve_online/esi/models/character_wallet"
       autoload :Corporation, "eve_online/esi/models/corporation"
       autoload :Faction, "eve_online/esi/models/faction"
       autoload :Race, "eve_online/esi/models/race"
@@ -43,9 +45,11 @@ module EveOnline
 
     module FaradayMiddlewares
       autoload :RaiseErrors, "eve_online/esi/faraday_middlewares/raise_errors"
+      autoload :ParseEveDates, "eve_online/esi/faraday_middlewares/parse_eve_dates"
     end
 
-    Faraday::Response.register_middleware esi_middleware: Middleware
+    Faraday::Response.register_middleware esi_raise_errors: FaradayMiddlewares::RaiseErrors
+    Faraday::Response.register_middleware esi_parse_eve_dates: FaradayMiddlewares::ParseEveDates
   end
 
   module Formulas
