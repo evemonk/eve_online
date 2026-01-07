@@ -15,6 +15,8 @@ RSpec.describe "List all alliances" do
 
   specify { expect(subject.alliance_ids.first).to eq(99_000_006) }
 
+  specify { expect(subject.alliance_ids.last).to eq(2_049_763_943) }
+
   specify { expect(subject.etag).to eq('"d75094454a392e951b98262986a2ae022230d15d6ba0625d112bf03c"') }
 
   specify { expect(subject.cache_status).to eq("HIT") }
