@@ -14,6 +14,8 @@ module EveOnline
 
         def on_complete(env)
           case env[:status]
+          when 200
+            # Pass
           when 204
             raise EveOnline::Exceptions::NoContent
           when 400
@@ -32,6 +34,8 @@ module EveOnline
             raise EveOnline::Exceptions::BadGateway
           when 503
             raise EveOnline::Exceptions::ServiceUnavailable
+          else
+            raise "Unknown status: #{env[:status]}"
           end
         end
       end
