@@ -15,9 +15,11 @@ module EveOnline
         def on_complete(env)
           case env[:status]
           when 200
-            # Pass
+            # HTTP OK
           when 204
             raise EveOnline::Exceptions::NoContent
+          when 304
+            # HTTP Not Modified
           when 400
             raise EveOnline::Exceptions::BadRequest
           when 401
