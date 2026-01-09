@@ -12,7 +12,8 @@ module EveOnline
     class InternalServerError < Base; end
     class NoContent < Base; end
     class ResourceNotFound < Base; end
-    class ServiceUnavailable < Base; end
+    class ServiceUnavailable < Base; end # 503
+    class GatewayTimeout < Base; end # 504
     class Timeout < Base; end
     class Unauthorized < Base; end
   end
