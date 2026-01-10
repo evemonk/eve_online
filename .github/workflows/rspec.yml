@@ -16,6 +16,7 @@ permissions:
 jobs:
   rspec:
     runs-on: ubuntu-24.04
+    continue-on-error: ${{ matrix.ruby_version == 'head' }}
     strategy:
       fail-fast: false
       matrix:
