@@ -2968,9 +2968,10 @@ List of exceptions:
 
 ```ruby
 Faraday.new do |f|
-  f.options.read_timeout = 60
-  f.options.open_timeout = 60
-  f.options.write_timeout = 60
+  f.options.timeout = 30
+  f.options.read_timeout = 30
+  f.options.open_timeout = 30
+  f.options.write_timeout = 30
 end
 ```
 
