@@ -36,6 +36,8 @@ module EveOnline
             raise EveOnline::Exceptions::BadGateway
           when 503
             raise EveOnline::Exceptions::ServiceUnavailable
+          when 504
+            raise EveOnline::Exceptions::GatewayTimeout
           else
             raise "Unknown status: #{env[:status]}"
           end
