@@ -48,7 +48,8 @@ GEM
     faraday-net_http (3.4.2)
       net-http (~> 0.5)
     hashdiff (1.2.1)
-    httplog (1.7.3)
+    httplog (1.8.0)
+      benchmark
       rack (>= 2.0)
       rainbow (>= 2.0.0)
     i18n (1.14.8)
@@ -217,7 +218,7 @@ CHECKSUMS
   faraday-http-cache (2.5.1) sha256=cbfc129a85e1ad8580130189832cf59e7e117d94fe277547d61fc531f7689483
   faraday-net_http (3.4.2) sha256=f147758260d3526939bf57ecf911682f94926a3666502e24c69992765875906c
   hashdiff (1.2.1) sha256=9c079dbc513dfc8833ab59c0c2d8f230fa28499cc5efb4b8dd276cf931457cd1
-  httplog (1.7.3) sha256=eb0da701d40ce45c18676f6266e01ef4693d66350c59607fc86ef90f5b2ca711
+  httplog (1.8.0) sha256=2b14bd6a26277765b08ff469d5574fde2a8eedec03962402ab05a606546607bf
   i18n (1.14.8) sha256=285778639134865c5e0f6269e0b818256017e8cde89993fdfcbfb64d088824a5
   io-console (0.8.2) sha256=d6e3ae7a7cc7574f4b8893b4fca2162e57a825b223a177b7afa236c5ef9814cc
   json (2.18.0) sha256=b10506aee4183f5cf49e0efc48073d7b75843ce3782c68dbeb763351c08fd505
