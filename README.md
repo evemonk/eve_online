@@ -371,34 +371,32 @@ calendar_event.title # => "Moon extraction for 66-PMM - GoldMine-5-"
 #### Get character's public information
 
 ```ruby
-options = { character_id: 90729314 }
+client = EveOnline::ESI::Client.new
 
-character = EveOnline::ESI::Character.new(options)
+character = client.characters.retrieve(id: 90_729_314)
 
-character.scope # => nil
+character.as_json # => {alliance_id: nil,
+                  #     birthday: 2011-05-10 10:23:00.000000000 UTC +00:00,
+                  #     bloodline_id: 7,
+                  #     corporation_id: 1000168,
+                  #     description: "",
+                  #     faction_id: nil,
+                  #     gender: "male",
+                  #     name: "Green Black",
+                  #     race_id: 8,
+                  #     security_status: 0,
+                  #     title: nil}
 
-character.as_json # => {:alliance_id=>12345678,
-                  #     :birthday=>Fri, 15 Jan 2010 15:26:00 UTC +00:00,
-                  #     :bloodline_id=>4,
-                  #     :corporation_id=>1000168,
-                  #     :description=>"",
-                  #     :faction_id=>500001,
-                  #     :gender=>"male",
-                  #     :name=>"Green Black",
-                  #     :race_id=>2,
-                  #     :security_status=>1.8694881661345457,
-                  #     :title=>nil}
-
-character.alliance_id # => 12345678
-character.birthday # => Fri, 15 Jan 2010 15:26:00 UTC +00:00
-character.bloodline_id # => 4
+character.alliance_id # => nil
+character.birthday # => 2011-05-10 10:23:00.000000000 UTC +00:00
+character.bloodline_id # => 7
 character.corporation_id # => 1000168
-character.description  # => ""
-character.faction_id # => 500001
+character.description # => ""
+character.faction_id # => nil
 character.gender # => "male"
 character.name # => "Green Black"
-character.race_id # => 2
-character.security_status # => 1.8694881661345457
+character.race_id # => 8
+character.security_status # => 0
 character.title # => nil
 ```
 
@@ -2976,7 +2974,9 @@ Faraday.new do |f|
 end
 ```
 
-You can configure default timeouts with adding `read_timeout:`, `open_timeout:` and `write_timeout:` to default hash with options:
+You can configure default timeouts by adding keyword arguments to `client`:
+
+`read_timeout:`, `open_timeout:` and `write_timeout:` to default hash with options:
 
 ```ruby
 options = { read_timeout: 120, open_timeout: 120, write_timeout: 120 } # 120 seconds
