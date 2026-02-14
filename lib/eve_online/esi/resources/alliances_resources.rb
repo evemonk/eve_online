@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     module Resources
-      class AlliancesResource < Resource
+      class AlliancesResources < Resource
         def list
           response = get_request("alliances")
 
