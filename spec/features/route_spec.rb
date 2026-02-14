@@ -117,4 +117,39 @@ describe "Get route between two systems" do
 
     specify { expect(subject.route).to eq(jita_to_amarr) }
   end
+
+  context "with avoid_systems" do
+    before { VCR.insert_cassette "esi/routes/avoid_systems" }
+
+    after { VCR.eject_cassette }
+
+    let(:jita_system_id) { 30_000_142 }
+
+    let(:amarr_system_id) { 30_002_187 }
+
+    let(:avoid_systems_ids) { [30_005_196] }
+
+    let(:jita_to_amarr) do
+      [
+        30_000_142, 30_000_144, 30_002_642, 30_002_643, 30_002_644,
+        30_002_691, 30_002_718, 30_002_719, 30_002_720, 30_002_050,
+        30_002_051, 30_002_060, 30_002_066, 30_002_099, 30_002_517,
+        30_002_537, 30_002_542, 30_003_068, 30_003_067, 30_003_065,
+        30_003_520, 30_003_521, 30_003_522, 30_002_187
+      ]
+    end
+
+    subject { client.routes.route(destination_system_id: amarr_system_id, origin_system_id: jita_system_id, avoid_systems_ids: avoid_systems_ids) }
+
+    specify { expect(subject.route).to eq(jita_to_amarr) }
+  end
+
+  context "with connections" do
+    before { VCR.insert_cassette "esi/routes/connections" }
+
+    after { VCR.eject_cassette }
+
+  end
+
+
 end
