@@ -149,7 +149,20 @@ describe "Get route between two systems" do
 
     after { VCR.eject_cassette }
 
+    let(:jita_system_id) { 30_000_142 }
+
+    let(:amarr_system_id) { 30_002_187 }
+
+    let(:connections) { [{from: 30000142, to: 30002187}] }
+
+    let(:jita_to_amarr) do
+      [
+        30_000_142, 30_002_187
+      ]
+    end
+
+    subject { client.routes.route(destination_system_id: amarr_system_id, origin_system_id: jita_system_id, connections: connections) }
+
+    specify { expect(subject.route).to eq(jita_to_amarr) }
   end
-
-
 end

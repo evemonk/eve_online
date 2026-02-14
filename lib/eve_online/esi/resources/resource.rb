@@ -16,8 +16,6 @@ module EveOnline
         # @param params [Hash]
         # @param headers [Hash]
         def get_request(url, params: {}, headers: {})
-          # client.connection.get(url, params, default_headers.merge(headers)).body
-
           client.connection.get(url, params, default_headers.merge(headers))
         end
 
