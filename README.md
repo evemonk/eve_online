@@ -371,34 +371,32 @@ calendar_event.title # => "Moon extraction for 66-PMM - GoldMine-5-"
 #### Get character's public information
 
 ```ruby
-options = { character_id: 90729314 }
+client = EveOnline::ESI::Client.new
 
-character = EveOnline::ESI::Character.new(options)
+character = client.characters.retrieve(id: 90_729_314)
 
-character.scope # => nil
+character.as_json # => {alliance_id: nil,
+                  #     birthday: 2011-05-10 10:23:00.000000000 UTC +00:00,
+                  #     bloodline_id: 7,
+                  #     corporation_id: 1000168,
+                  #     description: "",
+                  #     faction_id: nil,
+                  #     gender: "male",
+                  #     name: "Green Black",
+                  #     race_id: 8,
+                  #     security_status: 0,
+                  #     title: nil}
 
-character.as_json # => {:alliance_id=>12345678,
-                  #     :birthday=>Fri, 15 Jan 2010 15:26:00 UTC +00:00,
-                  #     :bloodline_id=>4,
-                  #     :corporation_id=>1000168,
-                  #     :description=>"",
-                  #     :faction_id=>500001,
-                  #     :gender=>"male",
-                  #     :name=>"Green Black",
-                  #     :race_id=>2,
-                  #     :security_status=>1.8694881661345457,
-                  #     :title=>nil}
-
-character.alliance_id # => 12345678
-character.birthday # => Fri, 15 Jan 2010 15:26:00 UTC +00:00
-character.bloodline_id # => 4
+character.alliance_id # => nil
+character.birthday # => 2011-05-10 10:23:00.000000000 UTC +00:00
+character.bloodline_id # => 7
 character.corporation_id # => 1000168
-character.description  # => ""
-character.faction_id # => 500001
+character.description # => ""
+character.faction_id # => nil
 character.gender # => "male"
 character.name # => "Green Black"
-character.race_id # => 2
-character.security_status # => 1.8694881661345457
+character.race_id # => 8
+character.security_status # => 0
 character.title # => nil
 ```
 
@@ -1780,6 +1778,76 @@ market_price.type_id # => 32772
 
 #### Get route
 
+```ruby
+client = EveOnline::ESI::Client.new
+
+# Jita to Amarr
+
+origin_system_id = 30_000_142 # Jita system ID
+destination_system_id = 30_002_187 # Amarr system ID
+
+# by default: preference is "Shorter", avoid_systems_ids is [], connections: [] and security_penalty is 50.
+route = client.routes.route(origin_system_id: origin_system_id, destination_system_id: destination_system_id)
+
+route.as_json # => {route: [30000142,
+              #             30000138,
+              #             30000132,
+              #             30000134,
+              #             30005196,
+              #             30005192,
+              #             30004083,
+              #             30004081,
+              #             30002197,
+              #             30002193,
+              #             30003491,
+              #             30002187]}
+
+route.route # => [30000142, 30000138, 30000132, 30000134, 30005196, 30005192, 30004083, 30004081, 30002197, 30002193, 30003491, 30002187]
+
+# Jita to Amarr with preference "Safer"
+
+preference = "Safer" # Preference if one of: "Shorter", "Safer", "LessSecure".
+
+route = client.routes.route(origin_system_id: origin_system_id,
+                            destination_system_id: destination_system_id,
+                            preference: preference)
+
+route.route.size # => 46
+
+# Jita to Amarr with security_penalty
+
+# security_penalty >= 0 and <= 100
+security_penalty = 0
+
+route = client.routes.route(origin_system_id: origin_system_id,
+                            destination_system_id: destination_system_id,
+                            security_penalty: security_penalty)
+
+route.route.size # => 12
+
+# Jita to Amarr with avoid_systems_ids
+
+# Systems to avoid (by system ID)
+avoid_systems_ids = [30_005_196]
+
+route = client.routes.route(origin_system_id: origin_system_id,
+                            destination_system_id: destination_system_id,
+                            avoid_systems_ids: avoid_systems_ids)
+
+route.route.size # => 24
+
+# Jita to Amarr with connections
+
+# Additional one-way connections (like Jump Bridges) between systems (by system ID)
+connections = [{from: 30_000_142, to: 30_002_187}]
+
+route = client.routes.route(origin_system_id: origin_system_id,
+                            destination_system_id: destination_system_id,
+                            connections: connections)
+
+route.route.size # => 2
+```
+
 ### Search
 
 #### Search on a string (search for something in character stuff)
@@ -2960,6 +3028,7 @@ List of exceptions:
 * `EveOnline::Exceptions::InternalServerError` when response returns status 500.
 * `EveOnline::Exceptions::BadGateway` when response returns status 502.
 * `EveOnline::Exceptions::ServiceUnavailable` when response returns status 503.
+* `EveOnline::Exceptions::GatewayTimeout` when response returns status 504.
 * `EveOnline::Exceptions::Timeout` when timeout.
 
 ## Timeouts
@@ -2968,13 +3037,16 @@ List of exceptions:
 
 ```ruby
 Faraday.new do |f|
-  f.options.read_timeout = 60
-  f.options.open_timeout = 60
-  f.options.write_timeout = 60
+  f.options.timeout = 30
+  f.options.read_timeout = 30
+  f.options.open_timeout = 30
+  f.options.write_timeout = 30
 end
 ```
 
-You can configure default timeouts with adding `read_timeout:`, `open_timeout:` and `write_timeout:` to default hash with options:
+You can configure default timeouts by adding keyword arguments to `client`:
+
+`read_timeout:`, `open_timeout:` and `write_timeout:` to default hash with options:
 
 ```ruby
 options = { read_timeout: 120, open_timeout: 120, write_timeout: 120 } # 120 seconds

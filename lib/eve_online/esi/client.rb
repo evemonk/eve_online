@@ -70,6 +70,11 @@ module EveOnline
         Resources::CorporationsResource.new(self)
       end
 
+      # Routes APIs
+      def routes
+        Resources::RoutesResources.new(self)
+      end
+
       # Status API
       def server_status
         Resources::ServerStatusResource.new(self)
