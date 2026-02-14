@@ -153,7 +153,7 @@ describe "Get route between two systems" do
 
     let(:amarr_system_id) { 30_002_187 }
 
-    let(:connections) { [{from: 30000142, to: 30002187}] }
+    let(:connections) { [{from: 30_000_142, to: 30_002_187}] }
 
     let(:jita_to_amarr) do
       [

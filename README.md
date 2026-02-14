@@ -1816,7 +1816,36 @@ route.route.size # => 46
 
 # Jita to Amarr with security_penalty
 
+# security_penalty >= 0 and <= 100
 security_penalty = 0
+
+route = client.routes.route(origin_system_id: origin_system_id,
+                            destination_system_id: destination_system_id,
+                            security_penalty: security_penalty)
+
+route.route.size # => 12
+
+# Jita to Amarr with avoid_systems_ids
+
+# Systems to avoid (by system ID)
+avoid_systems_ids = [30_005_196]
+
+route = client.routes.route(origin_system_id: origin_system_id,
+                            destination_system_id: destination_system_id,
+                            avoid_systems_ids: avoid_systems_ids)
+
+route.route.size # => 24
+
+# Jita to Amarr with connections
+
+# Additional one-way connections (like Jump Bridges) between systems (by system ID)
+connections = [{from: 30_000_142, to: 30_002_187}]
+
+route = client.routes.route(origin_system_id: origin_system_id,
+                            destination_system_id: destination_system_id,
+                            connections: connections)
+
+route.route.size # => 2
 ```
 
 ### Search
