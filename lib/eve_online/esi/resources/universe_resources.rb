@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     module Resources
-      class UniverseResource < Resource
+      class UniverseResources < Resource
         def ancestries
           response = get_request("universe/ancestries")
 

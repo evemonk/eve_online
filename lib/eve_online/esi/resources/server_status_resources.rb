@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     module Resources
-      class ServerStatusResource < Resource
+      class ServerStatusResources < Resource
         def info
           response = get_request("status")
 

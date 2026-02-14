@@ -50,6 +50,7 @@ gem install eve_online
 * Ruby 3.3
 * Ruby 3.4
 * Ruby 4.0
+* Ruby head
 
 ## Supported rails versions
 

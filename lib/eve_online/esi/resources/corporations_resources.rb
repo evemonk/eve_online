@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     module Resources
-      class CorporationsResource < Resource
+      class CorporationsResources < Resource
         # @param id [Integer] The ID of the corporation
         def retrieve(id:)
           response = get_request("corporations/#{id}")

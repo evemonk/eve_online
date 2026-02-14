@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     module Resources
-      class CharactersResource < Resource
+      class CharactersResources < Resource
         # @param id [Integer] The ID of the character
         def retrieve(id:)
           response = get_request("characters/#{id}")

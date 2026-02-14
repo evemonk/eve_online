@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     module Resources
-      class AssetsResource < Resource
+      class AssetsResources < Resource
         # @param id [Integer] The ID of the character.
         # @param page [Integer] Page ID. Default: `1`.
         def character(id:, page: 1)
