@@ -3,35 +3,54 @@
 require "spec_helper"
 
 describe "Get route between two systems" do
-  before { VCR.insert_cassette "esi/routes" }
-
-  after { VCR.eject_cassette }
-
   let(:client) { EveOnline::ESI::Client.new }
 
-  let(:jita_system_id) { 30_000_142 }
+  context "with defaults" do
+    before { VCR.insert_cassette "esi/routes/defaults" }
 
-  let(:amarr_system_id) { 30_002_187 }
+    after { VCR.eject_cassette }
 
-  subject { client.routes.route(destination_system_id: amarr_system_id, origin_system_id: jita_system_id) }
+    let(:jita_system_id) { 30_000_142 }
 
-  specify { expect(subject).to eq([]) }
+    let(:amarr_system_id) { 30_002_187 }
 
-  specify { expect(subject.etag).to eq("W/\"d53e06315fe6f15f4dd47da86f16b3cb51977abc22701227d931f03b\"") }
+    let(:jita_to_amarr) do
+      [
+        30_000_142,
+        30_000_138,
+        30_000_132,
+        30_000_134,
+        30_005_196,
+        30_005_192,
+        30_004_083,
+        30_004_081,
+        30_002_197,
+        30_002_193,
+        30_003_491,
+        30_002_187
+      ]
+    end
 
-  specify { expect(subject.cache_status).to eq("HIT") }
+    subject { client.routes.route(destination_system_id: amarr_system_id, origin_system_id: jita_system_id) }
 
-  specify { expect(subject.request_id).to eq("4cd7fc66-7920-414a-a2fe-a503582ad0d8") }
+    specify { expect(subject.route).to eq(jita_to_amarr) }
 
-  specify { expect(subject.ratelimit_group).to eq(nil) }
+    specify { expect(subject.etag).to eq(nil) }
 
-  specify { expect(subject.ratelimit_limit).to eq(nil) }
+    specify { expect(subject.cache_status).to eq("DYNAMIC") }
 
-  specify { expect(subject.ratelimit_remaining).to eq(nil) }
+    specify { expect(subject.request_id).to eq(nil) }
 
-  specify { expect(subject.ratelimit_used).to eq(nil) }
+    specify { expect(subject.ratelimit_group).to eq("routes") }
 
-  specify { expect(subject.error_limit_remain).to eq(100) }
+    specify { expect(subject.ratelimit_limit).to eq("3600/15m") }
 
-  specify { expect(subject.error_limit_reset).to eq(44) }
+    specify { expect(subject.ratelimit_remaining).to eq(3591) }
+
+    specify { expect(subject.ratelimit_used).to eq(2) }
+
+    specify { expect(subject.error_limit_remain).to eq(nil) }
+
+    specify { expect(subject.error_limit_reset).to eq(nil) }
+  end
 end
