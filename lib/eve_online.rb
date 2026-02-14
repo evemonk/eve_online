@@ -22,6 +22,7 @@ module EveOnline
       autoload :CharactersResource, "eve_online/esi/resources/characters_resource"
       autoload :CorporationsResource, "eve_online/esi/resources/corporations_resource"
       autoload :UniverseResource, "eve_online/esi/resources/universe_resource"
+      autoload :RoutesResources, "eve_online/esi/resources/routes_resources"
       autoload :ServerStatusResource, "eve_online/esi/resources/server_status_resource"
       autoload :WalletResources, "eve_online/esi/resources/wallet_resources"
     end
