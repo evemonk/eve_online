@@ -20,7 +20,7 @@ RSpec.describe "Get current ship" do
       )
   end
 
-  specify { expect(subject.ship_item_id).to eq(1032641106218) }
+  specify { expect(subject.ship_item_id).to eq(1_032_641_106_218) }
 
   specify { expect(subject.ship_name).to eq("Johnn Dillinger's Raven") }
 
@@ -36,7 +36,7 @@ RSpec.describe "Get current ship" do
 
   specify { expect(subject.ratelimit_limit).to eq("1200/15m") }
 
-  specify { expect(subject.ratelimit_remaining).to eq(1198) }
+  specify { expect(subject.ratelimit_remaining).to eq(1_198) }
 
   specify { expect(subject.ratelimit_used).to eq(2) }
 
