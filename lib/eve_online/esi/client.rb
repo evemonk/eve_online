@@ -72,7 +72,7 @@ module EveOnline
 
       # Routes APIs
       def routes
-        Resources::RoutesResource.new(self)
+        Resources::RoutesResources.new(self)
       end
 
       # Status API
