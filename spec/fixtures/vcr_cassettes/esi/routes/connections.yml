@@ -27,7 +27,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 14 Feb 2026 16:20:54 GMT
+      - Sat, 14 Feb 2026 18:25:04 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -57,7 +57,7 @@ http_interactions:
       X-Ratelimit-Limit:
       - 3600/15m
       X-Ratelimit-Remaining:
-      - '3592'
+      - '3584'
       X-Ratelimit-Used:
       - '2'
     body:
@@ -65,5 +65,5 @@ http_interactions:
       string: '{"route":[30000142,30002187]}
 
         '
-  recorded_at: Sat, 14 Feb 2026 16:20:54 GMT
+  recorded_at: Sat, 14 Feb 2026 18:25:04 GMT
 recorded_with: VCR 6.4.0

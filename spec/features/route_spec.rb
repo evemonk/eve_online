@@ -45,7 +45,7 @@ describe "Get route between two systems" do
 
     specify { expect(subject.ratelimit_limit).to eq("3600/15m") }
 
-    specify { expect(subject.ratelimit_remaining).to eq(3591) }
+    specify { expect(subject.ratelimit_remaining).to eq(3592) }
 
     specify { expect(subject.ratelimit_used).to eq(2) }
 

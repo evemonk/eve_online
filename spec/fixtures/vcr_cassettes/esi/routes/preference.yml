@@ -5,7 +5,7 @@ http_interactions:
     uri: https://esi.evetech.net/route/30000142/30002187
     body:
       encoding: UTF-8
-      string: '{"avoid_systems":[],"preference":"Safer","security_penalty":50}'
+      string: '{"avoid_systems":[],"connections":[],"preference":"Safer","security_penalty":50}'
     headers:
       User-Agent:
       - EveOnline API (https://github.com/evemonk/eve_online) v0.47.0
@@ -27,7 +27,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 14 Feb 2026 15:41:34 GMT
+      - Sat, 14 Feb 2026 18:25:04 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -57,7 +57,7 @@ http_interactions:
       X-Ratelimit-Limit:
       - 3600/15m
       X-Ratelimit-Remaining:
-      - '3596'
+      - '3588'
       X-Ratelimit-Used:
       - '2'
     body:
@@ -65,5 +65,5 @@ http_interactions:
       string: '{"route":[30000142,30000144,30000139,30002802,30002801,30002803,30002768,30002765,30002764,30002761,30005015,30005198,30003452,30003449,30003448,30003447,30003433,30003431,30003408,30003400,30003377,30003409,30003410,30002525,30002524,30002508,30002509,30000004,30000005,30000002,30002973,30002969,30002974,30002972,30002971,30002970,30002963,30002964,30002991,30002994,30003545,30003548,30003525,30003523,30003522,30002187]}
 
         '
-  recorded_at: Sat, 14 Feb 2026 15:41:34 GMT
+  recorded_at: Sat, 14 Feb 2026 18:25:04 GMT
 recorded_with: VCR 6.4.0
