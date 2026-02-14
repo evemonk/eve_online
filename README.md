@@ -1778,6 +1778,47 @@ market_price.type_id # => 32772
 
 #### Get route
 
+```ruby
+client = EveOnline::ESI::Client.new
+
+# Jita to Amarr
+
+origin_system_id = 30_000_142 # Jita system ID
+destination_system_id = 30_002_187 # Amarr system ID
+
+# by default: preference is "Shorter", avoid_systems_ids is [], connections: [] and security_penalty is 50.
+route = client.routes.route(origin_system_id: origin_system_id, destination_system_id: destination_system_id)
+
+route.as_json # => {route: [30000142,
+              #             30000138,
+              #             30000132,
+              #             30000134,
+              #             30005196,
+              #             30005192,
+              #             30004083,
+              #             30004081,
+              #             30002197,
+              #             30002193,
+              #             30003491,
+              #             30002187]}
+
+route.route # => [30000142, 30000138, 30000132, 30000134, 30005196, 30005192, 30004083, 30004081, 30002197, 30002193, 30003491, 30002187]
+
+# Jita to Amarr with preference "Safer"
+
+preference = "Safer" # Preference if one of: "Shorter", "Safer", "LessSecure".
+
+route = client.routes.route(origin_system_id: origin_system_id,
+                            destination_system_id: destination_system_id,
+                            preference: preference)
+
+route.route.size # => 46
+
+# Jita to Amarr with security_penalty
+
+security_penalty = 0
+```
+
 ### Search
 
 #### Search on a string (search for something in character stuff)
