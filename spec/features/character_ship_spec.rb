@@ -11,7 +11,14 @@ RSpec.describe "Get current ship" do
 
   subject { client.locations.ship(character_id: 1_337_512_245) }
 
-  specify { expect(subject.as_json).to eq({ship_item_id: 1032641106218, ship_name: "Johnn Dillinger's Raven", ship_type_id: 638}) }
+  specify do
+    expect(subject.as_json)
+      .to eq(
+        ship_item_id: 1032641106218,
+        ship_name: "Johnn Dillinger's Raven",
+        ship_type_id: 638
+      )
+  end
 
   specify { expect(subject.ship_item_id).to eq(1032641106218) }
 
