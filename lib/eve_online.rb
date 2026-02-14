@@ -41,6 +41,7 @@ module EveOnline
       autoload :Corporation, "eve_online/esi/models/corporation"
       autoload :Faction, "eve_online/esi/models/faction"
       autoload :Race, "eve_online/esi/models/race"
+      autoload :Route, "eve_online/esi/models/route"
       autoload :ServerStatus, "eve_online/esi/models/server_status"
     end
 
