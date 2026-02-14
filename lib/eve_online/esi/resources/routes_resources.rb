@@ -13,11 +13,11 @@ module EveOnline
         # @param security_penalty [Integer] Strictness of the path preference. Default: 50
         def route(origin_system_id:, destination_system_id:, preference: "Shorter", avoid_systems_ids: [], security_penalty: 50)
           response = post_request("route/#{origin_system_id}/#{destination_system_id}",
-                                  params: {
-                                    avoid_systems: avoid_systems_ids,
-                                    preference: preference,
-                                    security_penalty: security_penalty
-                                  })
+            params: {
+              avoid_systems: avoid_systems_ids,
+              preference: preference,
+              security_penalty: security_penalty
+            })
 
           Models::Route.new(attributes: response.body, headers: response.headers)
         end
