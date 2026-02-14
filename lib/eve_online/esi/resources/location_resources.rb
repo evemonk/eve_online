@@ -7,6 +7,8 @@ module EveOnline
         # @param character_id [Integer] A character ID
         def ship(character_id:)
           response = get_request("characters/#{character_id}/ship")
+
+          Models::CharacterShip.new(attributes: response.body, headers: response.headers)
         end
       end
     end
