@@ -1,0 +1,69 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://esi.evetech.net/route/30000142/30002187
+    body:
+      encoding: UTF-8
+      string: '{"avoid_systems":[],"preference":"Shorter","security_penalty":0}'
+    headers:
+      User-Agent:
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.47.0
+      Accept:
+      - application/json
+      Accept-Language:
+      - en
+      X-Tenant:
+      - tranquility
+      X-Compatibility-Date:
+      - '2025-12-16'
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 14 Feb 2026 15:34:54 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '120'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Etag, Retry-After, X-Compatibility-Date, X-Esi-Error-Limit-Remain, X-Esi-Error-Limit-Reset,
+        X-Pages, X-Ratelimit-Group, X-Ratelimit-Limit, X-Ratelimit-Remaining, X-Ratelimit-Used
+      Content-Language:
+      - en
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept-Language
+      - X-Compatibility-Date
+      X-Compatibility-Date:
+      - '2025-09-30'
+      X-Esi-Cache-Status:
+      - DYNAMIC
+      X-Ratelimit-Group:
+      - routes
+      X-Ratelimit-Limit:
+      - 3600/15m
+      X-Ratelimit-Remaining:
+      - '3598'
+      X-Ratelimit-Used:
+      - '2'
+    body:
+      encoding: UTF-8
+      string: '{"route":[30000142,30000138,30000132,30000134,30005196,30005192,30004083,30004081,30002197,30002193,30003491,30002187]}
+
+        '
+  recorded_at: Sat, 14 Feb 2026 15:34:54 GMT
+recorded_with: VCR 6.4.0
