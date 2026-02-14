@@ -70,6 +70,11 @@ module EveOnline
         Resources::CorporationsResources.new(self)
       end
 
+      # Location APIs
+      def locations
+        Resources::LocationResources.new(self)
+      end
+
       # Routes APIs
       def routes
         Resources::RoutesResources.new(self)
