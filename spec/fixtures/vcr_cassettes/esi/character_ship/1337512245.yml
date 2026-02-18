@@ -15,6 +15,8 @@ http_interactions:
       - en
       X-Tenant:
       - tranquility
+      X-Compatibility-Date:
+      - '2025-12-16'
       Authorization:
       - Bearer token123
       Accept-Encoding:
@@ -25,7 +27,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 18 Feb 2026 15:36:59 GMT
+      - Wed, 18 Feb 2026 20:31:40 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
@@ -46,9 +48,9 @@ http_interactions:
       Etag:
       - '"c27423eb18aaa464b3863e852a21a78bc7f857e95e67ea4221b0af78"'
       Expires:
-      - Wed, 18 Feb 2026 15:37:04 GMT
+      - Wed, 18 Feb 2026 20:31:45 GMT
       Last-Modified:
-      - Wed, 18 Feb 2026 15:36:59 GMT
+      - Wed, 18 Feb 2026 20:31:40 GMT
       Strict-Transport-Security:
       - max-age=31536000
       Vary:
@@ -59,17 +61,17 @@ http_interactions:
       X-Esi-Cache-Status:
       - MISS
       X-Esi-Request-Id:
-      - 02c667b3-07eb-4fd3-a30c-3739747dcb77
+      - ba5c3a4c-6ac4-4621-8655-26dcd7d934e5
       X-Ratelimit-Group:
       - char-location
       X-Ratelimit-Limit:
       - 1200/15m
       X-Ratelimit-Remaining:
-      - '1196'
+      - '1198'
       X-Ratelimit-Used:
       - '2'
     body:
       encoding: UTF-8
       string: '{"ship_item_id":1032641106218,"ship_name":"Johnn Dillinger''s Raven","ship_type_id":638}'
-  recorded_at: Wed, 18 Feb 2026 15:36:59 GMT
+  recorded_at: Wed, 18 Feb 2026 20:31:40 GMT
 recorded_with: VCR 6.4.0
