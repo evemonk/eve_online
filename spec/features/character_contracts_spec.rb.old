@@ -2,7 +2,7 @@
 
 require "spec_helper"
 
-describe "Get contracts" do
+RSpec.describe "Get contracts" do
   let(:options) do
     {
       character_id: 1_337_512_245,

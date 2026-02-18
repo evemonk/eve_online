@@ -14,7 +14,7 @@ RSpec.describe "Get current ship" do
   specify do
     expect(subject.as_json)
       .to eq(
-        ship_item_id: 1032641106218,
+        ship_item_id: 1_032_641_106_218,
         ship_name: "Johnn Dillinger's Raven",
         ship_type_id: 638
       )

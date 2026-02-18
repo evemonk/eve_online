@@ -2,7 +2,7 @@
 
 require "spec_helper"
 
-describe "Get corporation members" do
+RSpec.describe "Get corporation members" do
   let(:options) do
     {
       corporation_id: 98_565_696,

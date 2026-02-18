@@ -2,7 +2,7 @@
 
 require "spec_helper"
 
-describe "Get npc corporations" do
+RSpec.describe "Get npc corporations" do
   before { VCR.insert_cassette "esi/corporation_npc" }
 
   after { VCR.eject_cassette }

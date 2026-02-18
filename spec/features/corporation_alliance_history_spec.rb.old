@@ -2,7 +2,7 @@
 
 require "spec_helper"
 
-describe "Get alliance history" do
+RSpec.describe "Get alliance history" do
   let(:options) { {corporation_id: 98_134_807} }
 
   before { VCR.insert_cassette "esi/corporation_alliance_history/98134807" }

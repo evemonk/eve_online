@@ -2,7 +2,7 @@
 
 require "spec_helper"
 
-describe "List loyalty store offers" do
+RSpec.describe "List loyalty store offers" do
   let(:options) { {corporation_id: 1_000_035} }
 
   before { VCR.insert_cassette "esi/corporations_loyalty_store_offers/1000035" }

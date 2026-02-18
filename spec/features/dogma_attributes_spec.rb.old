@@ -2,7 +2,7 @@
 
 require "spec_helper"
 
-describe "Get attributes" do
+RSpec.describe "Get attributes" do
   before { VCR.insert_cassette "esi/dogma/attributes" }
 
   after { VCR.eject_cassette }

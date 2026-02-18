@@ -2,7 +2,7 @@
 
 require "spec_helper"
 
-describe "Return a mail" do
+RSpec.describe "Return a mail" do
   before { VCR.insert_cassette "esi/mail/376045681" }
 
   after { VCR.eject_cassette }

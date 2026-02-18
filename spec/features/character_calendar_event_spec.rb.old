@@ -2,7 +2,7 @@
 
 require "spec_helper"
 
-describe "Get character calendar event information" do
+RSpec.describe "Get character calendar event information" do
   let(:options) { {character_id: 91_473_836, event_id: 1_982_004} }
 
   before { VCR.insert_cassette "esi/character_calendar_events/91473836_1982004" }

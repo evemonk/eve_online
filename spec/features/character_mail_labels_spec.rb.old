@@ -2,7 +2,7 @@
 
 require "spec_helper"
 
-describe "Get mail labels and unread counts" do
+RSpec.describe "Get mail labels and unread counts" do
   before { VCR.insert_cassette "esi/mail/labels_and_unread_counts" }
 
   after { VCR.eject_cassette }
