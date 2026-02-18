@@ -60,13 +60,13 @@ RSpec.describe "Get character assets" do
     specify do
       expect(subject.first.as_json).to eq(
         is_blueprint_copy: nil,
-        is_singleton: true,
-        item_id: 1_007_666_093_131,
-        location_flag: "AutoFit",
-        location_id: 1_032_765_393_720,
-        location_type: "item",
-        quantity: 1,
-        type_id: 2_410
+        is_singleton: false,
+        item_id: 1_032_538_385_127,
+        location_flag: "Hangar",
+        location_id: 60_008_674,
+        location_type: "station",
+        quantity: 2,
+        type_id: 7_291
       )
     end
 
