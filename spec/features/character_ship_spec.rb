@@ -30,13 +30,13 @@ RSpec.describe "Get current ship" do
 
   specify { expect(subject.cache_status).to eq("MISS") }
 
-  specify { expect(subject.request_id).to eq("3aba14df-d15c-40da-92b9-afb761669134") }
+  specify { expect(subject.request_id).to eq("02c667b3-07eb-4fd3-a30c-3739747dcb77") }
 
   specify { expect(subject.ratelimit_group).to eq("char-location") }
 
   specify { expect(subject.ratelimit_limit).to eq("1200/15m") }
 
-  specify { expect(subject.ratelimit_remaining).to eq(1_198) }
+  specify { expect(subject.ratelimit_remaining).to eq(1_196) }
 
   specify { expect(subject.ratelimit_used).to eq(2) }
 
