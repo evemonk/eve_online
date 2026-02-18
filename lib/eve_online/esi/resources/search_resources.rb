@@ -8,13 +8,13 @@ module EveOnline
         # @param categories [Array<String>] Type of entities to search for.
         #   Any: "agent", "alliance", "character", "constellation",
         #        "corporation", "faction", "inventory_type", "region",
-        #        "solar_system", "station", "structure"
-        # @param search [String] The string to search on
+        #        "solar_system", "station", "structure". Default: []
+        # @param search [String] The string to search on. Default: nil
         # @param strict [Boolean] Whether the search should be a strict match. Default: false
-        def search(character_id:, categories:, search:, strict: false)
+        def search(character_id:, categories: [], search: nil, strict: false)
           response = get_request("/characters/#{character_id}/search",
             params: {
-              categories: categories,
+              categories: categories.join(","),
               search: search,
               strict: strict
             })
