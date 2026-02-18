@@ -27,11 +27,11 @@ RSpec.describe "Get character assets" do
       )
     end
 
-    specify { expect(subject.etag).to eq('"49404e9a764dc77aa92df975e81aaaf623177f27332238d814cd0747"') }
+    specify { expect(subject.etag).to eq('"7ed1934475fdb9fd3f175f14e74e4e7edf60087ba0cf174b32313f62"') }
 
-    specify { expect(subject.cache_status).to eq("HIT") }
+    specify { expect(subject.cache_status).to eq("MISS") }
 
-    specify { expect(subject.request_id).to eq("2d9cd5f6-13d6-45e8-ba24-e02e2f66f299") }
+    specify { expect(subject.request_id).to eq("cdecf4a6-1bb8-423c-be73-945548069112") }
 
     specify { expect(subject.ratelimit_group).to eq("char-asset") }
 
