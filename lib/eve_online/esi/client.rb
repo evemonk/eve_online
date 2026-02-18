@@ -111,6 +111,9 @@ module EveOnline
       end
 
       # Search APIs
+      def search
+        Resources::SearchResources.new(self)
+      end
 
       # Skills APIs
 
