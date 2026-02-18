@@ -3,12 +3,14 @@
 require "spec_helper"
 
 RSpec.describe "Search on a string" do
+  let(:token) { "token123" }
+
   context "with agent name" do
     before { VCR.insert_cassette "esi/search/agent" }
 
     after { VCR.eject_cassette }
 
-    let(:client) { EveOnline::ESI::Client.new(token: "token123") }
+    let(:client) { EveOnline::ESI::Client.new(token: token) }
 
     subject { client.search.search(character_id: 1_337_512_245, categories: ["agent"], search: "Anuko Hugandur") }
 
@@ -30,9 +32,9 @@ RSpec.describe "Search on a string" do
 
     specify { expect(subject.etag).to eq("\"e3414e30d339dd73252ab54c2a98a5a693c04ef92920401a5cc47d2f\"") }
 
-    specify { expect(subject.cache_status).to eq("HIT") }
+    specify { expect(subject.cache_status).to eq("MISS") }
 
-    specify { expect(subject.request_id).to eq("ee836ac1-8202-4e5b-9ab5-70f786bed547") }
+    specify { expect(subject.request_id).to eq("869562c7-2ea7-415a-a403-8db0a52e4aad") }
 
     specify { expect(subject.ratelimit_group).to eq(nil) }
 
@@ -44,7 +46,7 @@ RSpec.describe "Search on a string" do
 
     specify { expect(subject.error_limit_remain).to eq(100) }
 
-    specify { expect(subject.error_limit_reset).to eq(39) }
+    specify { expect(subject.error_limit_reset).to eq(44) }
   end
 
   context "with alliance name" do
@@ -52,7 +54,7 @@ RSpec.describe "Search on a string" do
 
     after { VCR.eject_cassette }
 
-    let(:client) { EveOnline::ESI::Client.new(token: "token123") }
+    let(:client) { EveOnline::ESI::Client.new(token: token) }
 
     subject { client.search.search(character_id: 1_337_512_245, categories: ["alliance"], search: "Pandemic Horde") }
 
@@ -78,7 +80,7 @@ RSpec.describe "Search on a string" do
 
     after { VCR.eject_cassette }
 
-    let(:client) { EveOnline::ESI::Client.new(token: "token123") }
+    let(:client) { EveOnline::ESI::Client.new(token: token) }
 
     subject { client.search.search(character_id: 1_337_512_245, categories: ["character"], search: "Johnn Dillinger") }
 
@@ -86,7 +88,7 @@ RSpec.describe "Search on a string" do
       expect(subject.as_json).to eq(
         agent_ids: [],
         alliance_ids: [],
-        character_ids: [92_735_926, 1_337_512_245, 2_118_559_910, 2_112_182_108, 1_756_844_186],
+        character_ids: [92_735_926, 1_337_512_245, 2_118_559_910, 1_756_844_186, 2_112_182_108],
         constellation_ids: [],
         corporation_ids: [],
         faction_ids: [],
@@ -104,7 +106,7 @@ RSpec.describe "Search on a string" do
 
     after { VCR.eject_cassette }
 
-    let(:client) { EveOnline::ESI::Client.new(token: "token123") }
+    let(:client) { EveOnline::ESI::Client.new(token: token) }
 
     subject { client.search.search(character_id: 1_337_512_245, categories: ["constellation"], search: "San Matar") }
 
@@ -130,7 +132,7 @@ RSpec.describe "Search on a string" do
 
     after { VCR.eject_cassette }
 
-    let(:client) { EveOnline::ESI::Client.new(token: "token123") }
+    let(:client) { EveOnline::ESI::Client.new(token: token) }
 
     subject { client.search.search(character_id: 1_337_512_245, categories: ["corporation"], search: "Freighting Solutions Inc.") }
 
@@ -156,7 +158,7 @@ RSpec.describe "Search on a string" do
 
     after { VCR.eject_cassette }
 
-    let(:client) { EveOnline::ESI::Client.new(token: "token123") }
+    let(:client) { EveOnline::ESI::Client.new(token: token) }
 
     subject { client.search.search(character_id: 1_337_512_245, categories: ["faction"], search: "Minmatar Republic") }
 
@@ -182,7 +184,7 @@ RSpec.describe "Search on a string" do
 
     after { VCR.eject_cassette }
 
-    let(:client) { EveOnline::ESI::Client.new(token: "token123") }
+    let(:client) { EveOnline::ESI::Client.new(token: token) }
 
     subject { client.search.search(character_id: 1_337_512_245, categories: ["inventory_type"], search: "150mm Light AutoCannon I Blueprint") }
 
@@ -208,7 +210,7 @@ RSpec.describe "Search on a string" do
 
     after { VCR.eject_cassette }
 
-    let(:client) { EveOnline::ESI::Client.new(token: "token123") }
+    let(:client) { EveOnline::ESI::Client.new(token: token) }
 
     subject { client.search.search(character_id: 1_337_512_245, categories: ["region"], search: "Derelik") }
 
@@ -234,7 +236,7 @@ RSpec.describe "Search on a string" do
 
     after { VCR.eject_cassette }
 
-    let(:client) { EveOnline::ESI::Client.new(token: "token123") }
+    let(:client) { EveOnline::ESI::Client.new(token: token) }
 
     subject { client.search.search(character_id: 1_337_512_245, categories: ["solar_system"], search: "Tanoo") }
 
@@ -256,10 +258,58 @@ RSpec.describe "Search on a string" do
   end
 
   context "with station name" do
-    # TODO: write example
+    before { VCR.insert_cassette "esi/search/station" }
+
+    after { VCR.eject_cassette }
+
+    let(:client) { EveOnline::ESI::Client.new(token: token) }
+
+    subject { client.search.search(character_id: 1_337_512_245, categories: ["station"], search: "Tanoo V - Moon 1 - Ammatar Consulate Bureau") }
+
+    specify do
+      expect(subject.as_json).to eq(
+        agent_ids: [],
+        alliance_ids: [],
+        character_ids: [],
+        constellation_ids: [],
+        corporation_ids: [],
+        faction_ids: [],
+        inventory_type_ids: [],
+        region_ids: [],
+        solar_system_ids: [],
+        station_ids: [60_012_526],
+        structure_ids: [],
+      )
+    end
   end
 
   context "with structure name" do
     # TODO: write example
+  end
+
+  context "with strict" do
+    before { VCR.insert_cassette "esi/search/strict" }
+
+    after { VCR.eject_cassette }
+
+    let(:client) { EveOnline::ESI::Client.new(token: token) }
+
+    subject { client.search.search(character_id: 1_337_512_245, categories: ["character"], search: "Johnn Dillinger", strict: true) }
+
+    specify do
+      expect(subject.as_json).to eq(
+        agent_ids: [],
+        alliance_ids: [],
+        character_ids: [1_337_512_245],
+        constellation_ids: [],
+        corporation_ids: [],
+        faction_ids: [],
+        inventory_type_ids: [],
+        region_ids: [],
+        solar_system_ids: [],
+        station_ids: [],
+        structure_ids: []
+      )
+    end
   end
 end
