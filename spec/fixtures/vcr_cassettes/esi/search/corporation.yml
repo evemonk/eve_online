@@ -1,0 +1,72 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://esi.evetech.net/characters/1337512245/search?categories=corporation&search=Freighting%20Solutions%20Inc.&strict=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.47.0
+      Accept:
+      - application/json
+      Accept-Language:
+      - en
+      X-Tenant:
+      - tranquility
+      Authorization:
+      - Bearer token123
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Feb 2026 18:09:23 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '26'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Etag, Retry-After, X-Compatibility-Date, X-Esi-Error-Limit-Remain, X-Esi-Error-Limit-Reset,
+        X-Pages, X-Ratelimit-Group, X-Ratelimit-Limit, X-Ratelimit-Remaining, X-Ratelimit-Used
+      Cache-Control:
+      - private
+      Content-Language:
+      - en
+      Etag:
+      - '"be822aced0bcd9a163b5db9f2bf47bbe7ca6b8e4ec5732845680f1ba"'
+      Expires:
+      - Wed, 18 Feb 2026 19:09:23 GMT
+      Last-Modified:
+      - Wed, 18 Feb 2026 18:09:23 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept-Language
+      - Accept-Language
+      - X-Compatibility-Date
+      X-Compatibility-Date:
+      - '2020-01-01'
+      X-Esi-Cache-Status:
+      - MISS
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '37'
+      X-Esi-Request-Id:
+      - a87a2f9f-2191-439b-a2f4-53eba4782e2a
+    body:
+      encoding: UTF-8
+      string: '{"corporation":[98565696]}'
+  recorded_at: Wed, 18 Feb 2026 18:09:23 GMT
+recorded_with: VCR 6.4.0
