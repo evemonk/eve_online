@@ -2,7 +2,7 @@
 
 require "spec_helper"
 
-describe "Get constellation information" do
+RSpec.describe "Get constellation information" do
   before { VCR.insert_cassette "esi/universe/constellations/20000001" }
 
   after { VCR.eject_cassette }

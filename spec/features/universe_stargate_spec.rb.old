@@ -2,7 +2,7 @@
 
 require "spec_helper"
 
-describe "Get stargate information" do
+RSpec.describe "Get stargate information" do
   before { VCR.insert_cassette "esi/universe/stargates/50000056" }
 
   after { VCR.eject_cassette }

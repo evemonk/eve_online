@@ -2,7 +2,7 @@
 
 require "spec_helper"
 
-describe "List all public structures" do
+RSpec.describe "List all public structures" do
   context "without filter" do
     before { VCR.insert_cassette "esi/universe/structures" }
 

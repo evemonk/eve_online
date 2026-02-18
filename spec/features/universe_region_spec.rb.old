@@ -2,7 +2,7 @@
 
 require "spec_helper"
 
-describe "Get region information" do
+RSpec.describe "Get region information" do
   before { VCR.insert_cassette "esi/universe/regions/10000001" }
 
   after { VCR.eject_cassette }

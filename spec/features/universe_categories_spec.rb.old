@@ -2,7 +2,7 @@
 
 require "spec_helper"
 
-describe "Get item categories" do
+RSpec.describe "Get item categories" do
   before { VCR.insert_cassette "esi/universe/categories" }
 
   after { VCR.eject_cassette }
