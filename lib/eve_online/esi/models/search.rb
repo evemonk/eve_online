@@ -7,7 +7,8 @@ module EveOnline
         def as_json
           {
             agent_ids: agent_ids,
-            alliance_ids: alliance_ids
+            alliance_ids: alliance_ids,
+            character_ids: character_ids
           }
         end
 
@@ -17,6 +18,10 @@ module EveOnline
 
         def alliance_ids
           attributes.alliance || []
+        end
+
+        def character_ids
+          attributes.character || []
         end
       end
     end
