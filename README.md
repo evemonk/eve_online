@@ -1895,45 +1895,36 @@ search.station_ids # => [60015169, 60000451, 60002959, 60003460, 60000463, 60003
 
 # strict search
 
-options = { search: "Jita", strict: true }
+search = client.search.search(
+  character_id: 1_337_512_245,
+  categories: [
+    "agent",
+    "alliance",
+    "character",
+    "constellation",
+    "corporation",
+    "faction",
+    "inventory_type",
+    "region",
+    "solar_system",
+    "station",
+    "structure"
+  ],
+  search: "Jita",
+  strict: true
+)
 
-search = EveOnline::ESI::Search.new(options)
-
-search.as_json # => {:agent_ids=>[],
-               #     :alliance_ids=>[99005382],
-               #     :character_ids=>[1392050776],
-               #     :constellation_ids=>[],
-               #     :corporation_ids=>[98004200, 98049474, 383768304, 98358437],
-               #     :faction_ids=>[],
-               #     :inventory_type_ids=>[],
-               #     :region_ids=>[],
-               #     :solar_system_ids=>[30000142],
-               #     :station_ids=>[]}
-
-# strict search with filter by categories
-
-# List of default categories (used when categories is empty):
-# ["agent", "alliance", "character", "constellation", "corporation", "faction",
-# "inventory_type", "region", "solar_system", "station"]
-
-# So, add `categories: ['solar_system']` and see:
-
-options = { search: "Jita", categories: ["solar_system"], strict: true }
-
-search = EveOnline::ESI::Search.new(options)
-
-search.as_json # => {:agent_ids=>[],
-               #    :alliance_ids=>[],
-               #    :character_ids=>[],
-               #    :constellation_ids=>[],
-               #    :corporation_ids=>[],
-               #    :faction_ids=>[],
-               #    :inventory_type_ids=>[],
-               #    :region_ids=>[],
-               #    :solar_system_ids=>[30000142],
-               #    :station_ids=>[]}
-
-search.solar_system_ids # => [30000142]
+search.as_json # => {agent_ids: [],
+               #     alliance_ids: [99005382],
+               #     character_ids: [1392050776],
+               #     constellation_ids: [],
+               #     corporation_ids: [98004200, 98780155, 98049474, 383768304],
+               #     faction_ids: [],
+               #     inventory_type_ids: [],
+               #     region_ids: [],
+               #     solar_system_ids: [30000142],
+               #     station_ids: [],
+               #     structure_ids: []}
 ```
 
 ### Skills
