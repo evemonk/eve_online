@@ -278,7 +278,7 @@ RSpec.describe "Search on a string" do
         region_ids: [],
         solar_system_ids: [],
         station_ids: [60_012_526],
-        structure_ids: [],
+        structure_ids: []
       )
     end
   end
