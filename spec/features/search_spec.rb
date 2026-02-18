@@ -16,7 +16,15 @@ RSpec.describe "Search on a string" do
       expect(subject.as_json).to eq(
         agent_ids: [3_018_679],
         alliance_ids: [],
-        character_ids: []
+        character_ids: [],
+        constellation_ids: [],
+        corporation_ids: [],
+        faction_ids: [],
+        inventory_type_ids: [],
+        region_ids: [],
+        solar_system_ids: [],
+        station_ids: [],
+        structure_ids: []
       )
     end
 
@@ -52,7 +60,15 @@ RSpec.describe "Search on a string" do
       expect(subject.as_json).to eq(
         agent_ids: [],
         alliance_ids: [99_005_338],
-        character_ids: []
+        character_ids: [],
+        constellation_ids: [],
+        corporation_ids: [],
+        faction_ids: [],
+        inventory_type_ids: [],
+        region_ids: [],
+        solar_system_ids: [],
+        station_ids: [],
+        structure_ids: []
       )
     end
   end
