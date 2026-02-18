@@ -70,6 +70,26 @@ module EveOnline
         Resources::CorporationsResources.new(self)
       end
 
+      # Corporation Projects APIs
+
+      # Dogma APIs
+
+      # Faction Warfare APIs
+
+      # Fittings APIs
+
+      # Fleets APIs
+
+      # Freelance Jobs APIs
+
+      # Incursions APIs
+
+      # Industry APIs
+
+      # Insurance APIs
+
+      # Killmails APIs
+
       # Location APIs
       def locations
         Resources::LocationResources.new(self)
