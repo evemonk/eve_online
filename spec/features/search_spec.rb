@@ -138,7 +138,15 @@ RSpec.describe "Search on a string" do
       expect(subject.as_json).to eq(
         agent_ids: [],
         alliance_ids: [],
-        character_ids: []
+        character_ids: [],
+        constellation_ids: [],
+        corporation_ids: [98_565_696],
+        faction_ids: [],
+        inventory_type_ids: [],
+        region_ids: [],
+        solar_system_ids: [],
+        station_ids: [],
+        structure_ids: []
       )
     end
   end
@@ -156,7 +164,15 @@ RSpec.describe "Search on a string" do
       expect(subject.as_json).to eq(
         agent_ids: [],
         alliance_ids: [],
-        character_ids: []
+        character_ids: [],
+        constellation_ids: [],
+        corporation_ids: [],
+        faction_ids: [500_002],
+        inventory_type_ids: [],
+        region_ids: [],
+        solar_system_ids: [],
+        station_ids: [],
+        structure_ids: []
       )
     end
   end
@@ -174,7 +190,15 @@ RSpec.describe "Search on a string" do
       expect(subject.as_json).to eq(
         agent_ids: [],
         alliance_ids: [],
-        character_ids: []
+        character_ids: [],
+        constellation_ids: [],
+        corporation_ids: [],
+        faction_ids: [],
+        inventory_type_ids: [16_032, 820],
+        region_ids: [],
+        solar_system_ids: [],
+        station_ids: [],
+        structure_ids: []
       )
     end
   end
@@ -192,7 +216,15 @@ RSpec.describe "Search on a string" do
       expect(subject.as_json).to eq(
         agent_ids: [],
         alliance_ids: [],
-        character_ids: []
+        character_ids: [],
+        constellation_ids: [],
+        corporation_ids: [],
+        faction_ids: [],
+        inventory_type_ids: [],
+        region_ids: [10_000_001],
+        solar_system_ids: [],
+        station_ids: [],
+        structure_ids: []
       )
     end
   end
@@ -210,7 +242,15 @@ RSpec.describe "Search on a string" do
       expect(subject.as_json).to eq(
         agent_ids: [],
         alliance_ids: [],
-        character_ids: []
+        character_ids: [],
+        constellation_ids: [],
+        corporation_ids: [],
+        faction_ids: [],
+        inventory_type_ids: [],
+        region_ids: [],
+        solar_system_ids: [30_000_001],
+        station_ids: [],
+        structure_ids: []
       )
     end
   end
