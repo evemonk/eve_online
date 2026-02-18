@@ -21,6 +21,12 @@ module EveOnline
 
           Models::Search.new(attributes: response.body, headers: response.headers)
         end
+
+        private
+
+        def compatibility_date
+          "2025-12-16"
+        end
       end
     end
   end

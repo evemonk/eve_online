@@ -15,6 +15,8 @@ http_interactions:
       - en
       X-Tenant:
       - tranquility
+      X-Compatibility-Date:
+      - '2025-12-16'
       Authorization:
       - Bearer token123
       Accept-Encoding:
@@ -25,7 +27,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 18 Feb 2026 18:09:23 GMT
+      - Wed, 18 Feb 2026 20:19:18 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
@@ -46,9 +48,9 @@ http_interactions:
       Etag:
       - '"1051a843ad4ef8fb44ee384560f46c1a1fe132fbede6a329fa028b3f"'
       Expires:
-      - Wed, 18 Feb 2026 19:09:23 GMT
+      - Wed, 18 Feb 2026 21:19:18 GMT
       Last-Modified:
-      - Wed, 18 Feb 2026 18:09:23 GMT
+      - Wed, 18 Feb 2026 20:19:18 GMT
       Strict-Transport-Security:
       - max-age=31536000
       Vary:
@@ -62,11 +64,11 @@ http_interactions:
       X-Esi-Error-Limit-Remain:
       - '100'
       X-Esi-Error-Limit-Reset:
-      - '37'
+      - '42'
       X-Esi-Request-Id:
-      - 33d51c75-2811-4433-a1d9-079e4bbdec6c
+      - 832c6d93-5eda-4406-a7d6-cb71688b7858
     body:
       encoding: UTF-8
       string: '{"inventory_type":[16032,820]}'
-  recorded_at: Wed, 18 Feb 2026 18:09:23 GMT
+  recorded_at: Wed, 18 Feb 2026 20:19:18 GMT
 recorded_with: VCR 6.4.0

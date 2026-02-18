@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://esi.evetech.net/characters/1337512245/search?categories=solar_system&search=Tanoo&strict=false
+    uri: https://esi.evetech.net/characters/1337512245/search?categories=character&search=Johnn%20Dillinger&strict=true
     body:
       encoding: US-ASCII
       string: ''
@@ -27,11 +27,11 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 18 Feb 2026 20:19:19 GMT
+      - Wed, 18 Feb 2026 20:19:20 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
-      - '27'
+      - '26'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -46,11 +46,11 @@ http_interactions:
       Content-Language:
       - en
       Etag:
-      - '"7fa21c8cb4352a66e15fa7ef0cd5e855be2bcd79c178ecada25553bd"'
+      - '"13042ed0cbc87ce8435a44a3c32c11d6710e54ca9f2b289d8722c92e"'
       Expires:
-      - Wed, 18 Feb 2026 21:19:19 GMT
+      - Wed, 18 Feb 2026 21:19:20 GMT
       Last-Modified:
-      - Wed, 18 Feb 2026 20:19:19 GMT
+      - Wed, 18 Feb 2026 20:19:20 GMT
       Strict-Transport-Security:
       - max-age=31536000
       Vary:
@@ -64,11 +64,11 @@ http_interactions:
       X-Esi-Error-Limit-Remain:
       - '100'
       X-Esi-Error-Limit-Reset:
-      - '41'
+      - '40'
       X-Esi-Request-Id:
-      - dfd2cd58-b9bc-424e-b281-ae926023530f
+      - 56c48401-49b0-47c9-a61a-0b083260bd4c
     body:
       encoding: UTF-8
-      string: '{"solar_system":[30000001]}'
+      string: '{"character":[1337512245]}'
   recorded_at: Wed, 18 Feb 2026 20:19:19 GMT
 recorded_with: VCR 6.4.0

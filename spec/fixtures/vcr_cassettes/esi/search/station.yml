@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://esi.evetech.net/characters/1337512245/search?categories=solar_system&search=Tanoo&strict=false
+    uri: https://esi.evetech.net/characters/1337512245/search?categories=station&search=Tanoo%20V%20-%20Moon%201%20-%20Ammatar%20Consulate%20Bureau&strict=false
     body:
       encoding: US-ASCII
       string: ''
@@ -31,7 +31,7 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
-      - '27'
+      - '22'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -46,7 +46,7 @@ http_interactions:
       Content-Language:
       - en
       Etag:
-      - '"7fa21c8cb4352a66e15fa7ef0cd5e855be2bcd79c178ecada25553bd"'
+      - '"ae0b5b3b05e2e59f305ae19e6edfb7a8ad4564a3281c3b7c7d1499c3"'
       Expires:
       - Wed, 18 Feb 2026 21:19:19 GMT
       Last-Modified:
@@ -66,9 +66,9 @@ http_interactions:
       X-Esi-Error-Limit-Reset:
       - '41'
       X-Esi-Request-Id:
-      - dfd2cd58-b9bc-424e-b281-ae926023530f
+      - 4573998b-1783-41c4-8b8d-bcae8aab3e9f
     body:
       encoding: UTF-8
-      string: '{"solar_system":[30000001]}'
+      string: '{"station":[60012526]}'
   recorded_at: Wed, 18 Feb 2026 20:19:19 GMT
 recorded_with: VCR 6.4.0
