@@ -9,7 +9,7 @@ This gem implement Ruby API for EveOnline MMORPG (ESI).
 
 Looking for [EveOnline SSO OAuth2 Strategy for OmniAuth](https://github.com/evemonk/omniauth-eve_online-sso)?
 
-This gem was extracted from [EveMonk](https://evemonk.com). Source code of EveMonk backend published [here](https://github.com/evemonk/evemonk).
+This gem was extracted from [EveMonk](https://evemonk.com). Source code of EveMonk published [here](https://github.com/evemonk/evemonk).
 
 [API Documentation for latest release at rubydoc](https://rubydoc.info/gems/eve_online/frames).
 
@@ -807,43 +807,37 @@ item.type_id # => 29040
 #### Get corporation information
 
 ```ruby
+client = EveOnline::ESI::Client.new
 
+corporation = client.corporations.retrieve(id: 98_468_592)
 
-options = { corporation_id: 98_468_592 }
+corporation.as_json # => {alliance_id: nil,
+                    #     ceo_id: 2114256809,
+                    #     creator_id: 1721864142,
+                    #     date_founded: 2016-07-11 14:22:17.000000000 UTC +00:00,
+                    #     description: "u'<font size=\"12\" color=\"#bfffffff\">BUBIC est malheureusement en hibernation !<br><br>En attendant un eventuel r\\xe9veil, retrouvez les anciens membres Bubic chez les chevres !   </font><font size=\"12\" color=\"#ffd98d00\"><a href=\"showinfo:2//98730717\">Goat to Go</a></font><font size=\"12\" color=\"#bfffffff\"> <br><br>Bon jeu et \\xe0 tr\\xe8s vite ... o7</font>'",
+                    #     faction_id: nil,                                                                                                                                                                                                                               home_station_id: 60011893,                                                                                                                                                                                                                     member_count: 12,
+                    #     name: "Bullshit Bingo Club",
+                    #     shares: 1000,
+                    #     tax_rate: 0.10000000149011612,
+                    #     ticker: "BUBIC",
+                    #     corporation_url: "https://zkillboard.com/corporation/98468592/",
+                    #     war_eligible: false}
 
-corporation = EveOnline::ESI::Corporation.new(options)
-
-corporation.scope # => nil
-
-corporation.as_json # => {:alliance_id=>99007916,
-                    #     :ceo_id=>1721864142,
-                    #     :creator_id=>1721864142,
-                    #     :date_founded=>Mon, 11 Jul 2016 14:22:17 UTC +00:00,
-                    #     :description=>"",
-                    #     :faction_id=>nil,
-                    #     :home_station_id=>60011893,
-                    #     :member_count=>60,
-                    #     :name=>"Bullshit Bingo Club",
-                    #     :shares=>1000,
-                    #     :tax_rate=>0.1,
-                    #     :ticker=>"BUBIC",
-                    #     :corporation_url=>"http://",
-                    #     :war_eligible=>true}
-
-corporation.alliance_id # => 99007916
-corporation.ceo_id # => 1721864142
+corporation.alliance_id # => nil
+corporation.ceo_id # => 2114256809
 corporation.creator_id # => 1721864142
-corporation.date_founded # => Mon, 11 Jul 2016 14:22:17 UTC +00:00
-corporation.description # => ""
+corporation.date_founded # => 2016-07-11 14:22:17.000000000 UTC +00:00
+corporation.description # => "u'<font size=\"12\" color=\"#bfffffff\">BUBIC est malheureusement en hibernation !<br><br>En attendant un eventuel r\\xe9veil, retrouvez les anciens membres Bubic chez les chevres !   </font><font size=\"12\" color=\"#ffd98d00\"><a href=\"showinfo:2//98730717\">Goat to Go</a></font><font size=\"12\" color=\"#bfffffff\"> <br><br>Bon jeu et \\xe0 tr\\xe8s vite ... o7</font>'"
 corporation.faction_id # => nil
 corporation.home_station_id # => 60011893
-corporation.member_count # => 60
+corporation.member_count # => 12
 corporation.name # => "Bullshit Bingo Club"
 corporation.shares # => 1000
-corporation.tax_rate # => 0.1
+corporation.tax_rate # => 0.10000000149011612
 corporation.ticker # => "BUBIC"
-corporation.corporation_url # => "http://"
-corporation.war_eligible # => true
+corporation.corporation_url # => "https://zkillboard.com/corporation/98468592/"
+corporation.war_eligible # => false
 ```
 
 #### Get alliance history
@@ -1849,81 +1843,88 @@ route.route.size # => 2
 
 ### Search
 
-#### Search on a string (search for something in character stuff)
-
 #### Search on a string
 
 ```ruby
+client = EveOnline::ESI::Client.new(token: "token123")
+
 # simple search
 
-options = { search: "Jita" }
+# remove from categories anything that not related to your search
+search = client.search.search(
+  character_id: 1_337_512_245,
+  categories: [
+    "agent",
+    "alliance",
+    "character",
+    "constellation",
+    "corporation",
+    "faction",
+    "inventory_type",
+    "region",
+    "solar_system",
+    "station",
+    "structure"
+  ],
+  search: "Jita"
+)
 
-search = EveOnline::ESI::Search.new(options)
+search.as_json # => {agent_ids: [3020034, 3018357],
+               #     alliance_ids: [99012888, 99005382, 99010663, 99010666],
+               #     character_ids: [96776995, ... 91447549],
+               #     constellation_ids: [],
+               #     corporation_ids: [],
+               #     faction_ids: [],
+               #     inventory_type_ids: [56844, 56846, 56847, 56853, 56849, 56852, 87393, 56850, 52275, 56848, 56845, 56851],
+               #     region_ids: [],
+               #     solar_system_ids: [30000142],
+               #     station_ids: [60015169, 60000451, 60002959, 60003460, 60000463, 60003463, 60004423, 60002953, 60003055, 60003757, 60000361, 60000364, 60003466, 60003469, 60003760],
+               #     structure_ids: [1049982731184]}
 
-search.as_json # => {:agent_ids=>[3018357],
-               #     :alliance_ids=>[99011026, 99005382, 99010662, 99010663, 99010665, 99010666],
-               #     :character_ids=>[2118081143, ... 2114943117],
-               #     :constellation_ids=>[],
-               #     :corporation_ids=>[],
-               #     :faction_ids=>[],
-               #     :inventory_type_ids=>[56844, 56847, 56846, 56853, 56849, 56852, 56850, 52275, 56848, 56851, 56845],
-               #     :region_ids=>[],
-               #     :solar_system_ids=>[30000142],
-               #     :station_ids=>[]}
-
-search.agent_ids # => [3018357]
-search.alliance_ids # => [99011026, 99005382, 99010662, 99010663, 99010665, 99010666]
-search.character_ids.size # => 467
-search.character_ids.first # => 2118081143
+search.agent_ids  # => [3020034, 3018357]
+search.alliance_ids # => [99012888, 99005382, 99010663, 99010666]
+search.character_ids.size # => 463
+search.character_ids.first # => 96776995
 search.constellation_ids # => []
 search.corporation_ids # => []
-search.faction_ids  # => []
-search.inventory_type_ids # => [56844, 56847, 56846, 56853, 56849, 56852, 56850, 52275, 56848, 56851, 56845]
+search.faction_ids # => []
+search.inventory_type_ids # => [56844, 56846, 56847, 56853, 56849, 56852, 87393, 56850, 52275, 56848, 56845, 56851]
 search.region_ids # => []
 search.solar_system_ids # => [30000142]
-search.station_ids # => []
+search.station_ids # => [60015169, 60000451, 60002959, 60003460, 60000463, 60003463, 60004423, 60002953, 60003055, 60003757, 60000361, 60000364, 60003466, 60003469, 60003760]
 
 # strict search
 
-options = { search: "Jita", strict: true }
+search = client.search.search(
+  character_id: 1_337_512_245,
+  categories: [
+    "agent",
+    "alliance",
+    "character",
+    "constellation",
+    "corporation",
+    "faction",
+    "inventory_type",
+    "region",
+    "solar_system",
+    "station",
+    "structure"
+  ],
+  search: "Jita",
+  strict: true
+)
 
-search = EveOnline::ESI::Search.new(options)
-
-search.as_json # => {:agent_ids=>[],
-               #     :alliance_ids=>[99005382],
-               #     :character_ids=>[1392050776],
-               #     :constellation_ids=>[],
-               #     :corporation_ids=>[98004200, 98049474, 383768304, 98358437],
-               #     :faction_ids=>[],
-               #     :inventory_type_ids=>[],
-               #     :region_ids=>[],
-               #     :solar_system_ids=>[30000142],
-               #     :station_ids=>[]}
-
-# strict search with filter by categories
-
-# List of default categories (used when categories is empty):
-# ["agent", "alliance", "character", "constellation", "corporation", "faction",
-# "inventory_type", "region", "solar_system", "station"]
-
-# So, add `categories: ['solar_system']` and see:
-
-options = { search: "Jita", categories: ["solar_system"], strict: true }
-
-search = EveOnline::ESI::Search.new(options)
-
-search.as_json # => {:agent_ids=>[],
-               #    :alliance_ids=>[],
-               #    :character_ids=>[],
-               #    :constellation_ids=>[],
-               #    :corporation_ids=>[],
-               #    :faction_ids=>[],
-               #    :inventory_type_ids=>[],
-               #    :region_ids=>[],
-               #    :solar_system_ids=>[30000142],
-               #    :station_ids=>[]}
-
-search.solar_system_ids # => [30000142]
+search.as_json # => {agent_ids: [],
+               #     alliance_ids: [99005382],
+               #     character_ids: [1392050776],
+               #     constellation_ids: [],
+               #     corporation_ids: [98004200, 98780155, 98049474, 383768304],
+               #     faction_ids: [],
+               #     inventory_type_ids: [],
+               #     region_ids: [],
+               #     solar_system_ids: [30000142],
+               #     station_ids: [],
+               #     structure_ids: []}
 ```
 
 ### Skills

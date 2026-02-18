@@ -70,15 +70,54 @@ module EveOnline
         Resources::CorporationsResources.new(self)
       end
 
+      # Corporation Projects APIs
+
+      # Dogma APIs
+
+      # Faction Warfare APIs
+
+      # Fittings APIs
+
+      # Fleets APIs
+
+      # Freelance Jobs APIs
+
+      # Incursions APIs
+
+      # Industry APIs
+
+      # Insurance APIs
+
+      # Killmails APIs
+
       # Location APIs
       def locations
         Resources::LocationResources.new(self)
       end
 
+      # Loyalty APIs
+
+      # Mail APIs
+
+      # Market APIs
+
+      # Meta APIs
+
+      # Planetary Interaction APIs
+
       # Routes APIs
       def routes
         Resources::RoutesResources.new(self)
       end
+
+      # Search APIs
+      def search
+        Resources::SearchResources.new(self)
+      end
+
+      # Skills APIs
+
+      # Sovereignty APIs
 
       # Status API
       def server_status
@@ -90,10 +129,14 @@ module EveOnline
         Resources::UniverseResources.new(self)
       end
 
+      # User Interface APIs
+
       # Wallet APIs
       def wallet
         Resources::WalletResources.new(self)
       end
+
+      # Wars APIs
 
       def add_middleware(middleware)
         @middlewares << middleware

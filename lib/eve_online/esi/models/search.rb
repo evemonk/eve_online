@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     module Models
-      class Search < Base
+      class Search < Object
         def as_json
           {
             agent_ids: agent_ids,
@@ -15,48 +15,53 @@ module EveOnline
             inventory_type_ids: inventory_type_ids,
             region_ids: region_ids,
             solar_system_ids: solar_system_ids,
-            station_ids: station_ids
+            station_ids: station_ids,
+            structure_ids: structure_ids
           }
         end
 
         def agent_ids
-          options.fetch("agent", [])
+          attributes.agent || []
         end
 
         def alliance_ids
-          options.fetch("alliance", [])
+          attributes.alliance || []
         end
 
         def character_ids
-          options.fetch("character", [])
+          attributes.character || []
         end
 
         def constellation_ids
-          options.fetch("constellation", [])
+          attributes.constellation || []
         end
 
         def corporation_ids
-          options.fetch("corporation", [])
+          attributes.corporation || []
         end
 
         def faction_ids
-          options.fetch("faction", [])
+          attributes.faction || []
         end
 
         def inventory_type_ids
-          options.fetch("inventory_type", [])
+          attributes.inventory_type || []
         end
 
         def region_ids
-          options.fetch("region", [])
+          attributes.region || []
         end
 
         def solar_system_ids
-          options.fetch("solar_system", [])
+          attributes.solar_system || []
         end
 
         def station_ids
-          options.fetch("stations", [])
+          attributes.station || []
+        end
+
+        def structure_ids
+          attributes.structure || []
         end
       end
     end

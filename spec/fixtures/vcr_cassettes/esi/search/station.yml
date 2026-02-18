@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://esi.evetech.net/characters/1337512245/ship
+    uri: https://esi.evetech.net/characters/1337512245/search?categories=station&search=Tanoo%20V%20-%20Moon%201%20-%20Ammatar%20Consulate%20Bureau&strict=false
     body:
       encoding: US-ASCII
       string: ''
@@ -27,11 +27,11 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 18 Feb 2026 20:31:40 GMT
+      - Wed, 18 Feb 2026 20:19:19 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
-      - '87'
+      - '22'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -46,32 +46,29 @@ http_interactions:
       Content-Language:
       - en
       Etag:
-      - '"c27423eb18aaa464b3863e852a21a78bc7f857e95e67ea4221b0af78"'
+      - '"ae0b5b3b05e2e59f305ae19e6edfb7a8ad4564a3281c3b7c7d1499c3"'
       Expires:
-      - Wed, 18 Feb 2026 20:31:45 GMT
+      - Wed, 18 Feb 2026 21:19:19 GMT
       Last-Modified:
-      - Wed, 18 Feb 2026 20:31:40 GMT
+      - Wed, 18 Feb 2026 20:19:19 GMT
       Strict-Transport-Security:
       - max-age=31536000
       Vary:
+      - Accept-Language
       - Accept-Language
       - X-Compatibility-Date
       X-Compatibility-Date:
       - '2020-01-01'
       X-Esi-Cache-Status:
       - MISS
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '41'
       X-Esi-Request-Id:
-      - ba5c3a4c-6ac4-4621-8655-26dcd7d934e5
-      X-Ratelimit-Group:
-      - char-location
-      X-Ratelimit-Limit:
-      - 1200/15m
-      X-Ratelimit-Remaining:
-      - '1198'
-      X-Ratelimit-Used:
-      - '2'
+      - 4573998b-1783-41c4-8b8d-bcae8aab3e9f
     body:
       encoding: UTF-8
-      string: '{"ship_item_id":1032641106218,"ship_name":"Johnn Dillinger''s Raven","ship_type_id":638}'
-  recorded_at: Wed, 18 Feb 2026 20:31:40 GMT
+      string: '{"station":[60012526]}'
+  recorded_at: Wed, 18 Feb 2026 20:19:19 GMT
 recorded_with: VCR 6.4.0

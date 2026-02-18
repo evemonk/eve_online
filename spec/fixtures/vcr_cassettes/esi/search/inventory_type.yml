@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://esi.evetech.net/characters/1337512245/ship
+    uri: https://esi.evetech.net/characters/1337512245/search?categories=inventory_type&search=150mm%20Light%20AutoCannon%20I%20Blueprint&strict=false
     body:
       encoding: US-ASCII
       string: ''
@@ -27,11 +27,11 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 18 Feb 2026 20:31:40 GMT
+      - Wed, 18 Feb 2026 20:19:18 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
-      - '87'
+      - '30'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -46,32 +46,29 @@ http_interactions:
       Content-Language:
       - en
       Etag:
-      - '"c27423eb18aaa464b3863e852a21a78bc7f857e95e67ea4221b0af78"'
+      - '"1051a843ad4ef8fb44ee384560f46c1a1fe132fbede6a329fa028b3f"'
       Expires:
-      - Wed, 18 Feb 2026 20:31:45 GMT
+      - Wed, 18 Feb 2026 21:19:18 GMT
       Last-Modified:
-      - Wed, 18 Feb 2026 20:31:40 GMT
+      - Wed, 18 Feb 2026 20:19:18 GMT
       Strict-Transport-Security:
       - max-age=31536000
       Vary:
+      - Accept-Language
       - Accept-Language
       - X-Compatibility-Date
       X-Compatibility-Date:
       - '2020-01-01'
       X-Esi-Cache-Status:
       - MISS
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '42'
       X-Esi-Request-Id:
-      - ba5c3a4c-6ac4-4621-8655-26dcd7d934e5
-      X-Ratelimit-Group:
-      - char-location
-      X-Ratelimit-Limit:
-      - 1200/15m
-      X-Ratelimit-Remaining:
-      - '1198'
-      X-Ratelimit-Used:
-      - '2'
+      - 832c6d93-5eda-4406-a7d6-cb71688b7858
     body:
       encoding: UTF-8
-      string: '{"ship_item_id":1032641106218,"ship_name":"Johnn Dillinger''s Raven","ship_type_id":638}'
-  recorded_at: Wed, 18 Feb 2026 20:31:40 GMT
+      string: '{"inventory_type":[16032,820]}'
+  recorded_at: Wed, 18 Feb 2026 20:19:18 GMT
 recorded_with: VCR 6.4.0

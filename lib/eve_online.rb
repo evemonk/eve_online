@@ -23,6 +23,7 @@ module EveOnline
       autoload :CorporationsResources, "eve_online/esi/resources/corporations_resources"
       autoload :LocationResources, "eve_online/esi/resources/location_resources"
       autoload :RoutesResources, "eve_online/esi/resources/routes_resources"
+      autoload :SearchResources, "eve_online/esi/resources/search_resources"
       autoload :ServerStatusResources, "eve_online/esi/resources/server_status_resources"
       autoload :UniverseResources, "eve_online/esi/resources/universe_resources"
       autoload :WalletResources, "eve_online/esi/resources/wallet_resources"
@@ -44,6 +45,7 @@ module EveOnline
       autoload :Faction, "eve_online/esi/models/faction"
       autoload :Race, "eve_online/esi/models/race"
       autoload :Route, "eve_online/esi/models/route"
+      autoload :Search, "eve_online/esi/models/search"
       autoload :ServerStatus, "eve_online/esi/models/server_status"
     end
 
@@ -52,8 +54,8 @@ module EveOnline
       autoload :ParseEveDates, "eve_online/esi/faraday_middlewares/parse_eve_dates"
     end
 
-    Faraday::Response.register_middleware esi_raise_errors: FaradayMiddlewares::RaiseErrors
-    Faraday::Response.register_middleware esi_parse_eve_dates: FaradayMiddlewares::ParseEveDates
+    Faraday::Response.register_middleware(esi_raise_errors: FaradayMiddlewares::RaiseErrors)
+    Faraday::Response.register_middleware(esi_parse_eve_dates: FaradayMiddlewares::ParseEveDates)
   end
 
   module Formulas
