@@ -15,7 +15,8 @@ RSpec.describe "Search on a string" do
     specify do
       expect(subject.as_json).to eq(
         agent_ids: [3_018_679],
-        alliance_ids: []
+        alliance_ids: [],
+        character_ids: []
       )
     end
 
@@ -50,7 +51,8 @@ RSpec.describe "Search on a string" do
     specify do
       expect(subject.as_json).to eq(
         agent_ids: [],
-        alliance_ids: [99_005_338]
+        alliance_ids: [99_005_338],
+        character_ids: []
       )
     end
   end
@@ -67,7 +69,8 @@ RSpec.describe "Search on a string" do
     specify do
       expect(subject.as_json).to eq(
         agent_ids: [],
-        alliance_ids: []
+        alliance_ids: [],
+        character_ids: [92_735_926, 1_337_512_245, 2_118_559_910, 2_112_182_108, 1_756_844_186]
       )
     end
   end
@@ -84,7 +87,8 @@ RSpec.describe "Search on a string" do
     specify do
       expect(subject.as_json).to eq(
         agent_ids: [],
-        alliance_ids: []
+        alliance_ids: [],
+        character_ids: []
       )
     end
   end
@@ -101,7 +105,8 @@ RSpec.describe "Search on a string" do
     specify do
       expect(subject.as_json).to eq(
         agent_ids: [],
-        alliance_ids: []
+        alliance_ids: [],
+        character_ids: []
       )
     end
   end
@@ -118,7 +123,8 @@ RSpec.describe "Search on a string" do
     specify do
       expect(subject.as_json).to eq(
         agent_ids: [],
-        alliance_ids: []
+        alliance_ids: [],
+        character_ids: []
       )
     end
   end
@@ -135,7 +141,8 @@ RSpec.describe "Search on a string" do
     specify do
       expect(subject.as_json).to eq(
         agent_ids: [],
-        alliance_ids: []
+        alliance_ids: [],
+        character_ids: []
       )
     end
   end
@@ -152,7 +159,8 @@ RSpec.describe "Search on a string" do
     specify do
       expect(subject.as_json).to eq(
         agent_ids: [],
-        alliance_ids: []
+        alliance_ids: [],
+        character_ids: []
       )
     end
   end
@@ -169,7 +177,8 @@ RSpec.describe "Search on a string" do
     specify do
       expect(subject.as_json).to eq(
         agent_ids: [],
-        alliance_ids: []
+        alliance_ids: [],
+        character_ids: []
       )
     end
   end
