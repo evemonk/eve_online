@@ -12,7 +12,7 @@ module EveOnline
         # @param search [String] The string to search on. Default: nil
         # @param strict [Boolean] Whether the search should be a strict match. Default: false
         def search(character_id:, categories: [], search: nil, strict: false)
-          response = get_request("/characters/#{character_id}/search",
+          response = get_request("characters/#{character_id}/search",
             params: {
               categories: categories.join(","),
               search: search,
