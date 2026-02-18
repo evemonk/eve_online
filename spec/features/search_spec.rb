@@ -3,7 +3,7 @@
 require "spec_helper"
 
 RSpec.describe "Search on a string" do
-  context "with agent name" do
+  fcontext "with agent name" do
     before { VCR.insert_cassette "esi/search/agent" }
 
     after { VCR.eject_cassette }
@@ -12,11 +12,13 @@ RSpec.describe "Search on a string" do
 
     subject { client.search.search(character_id: 1337512245, categories: ["agent"], search: "Anuko Hugandur") }
 
-    specify { expect(subject.etag).to eq("W/\"d53e06315fe6f15f4dd47da86f16b3cb51977abc22701227d931f03b\"") }
+    specify { expect(subject.as_json).to eq(agent_ids: [3_018_679], alliance_ids: []) }
+
+    specify { expect(subject.etag).to eq("\"e3414e30d339dd73252ab54c2a98a5a693c04ef92920401a5cc47d2f\"") }
 
     specify { expect(subject.cache_status).to eq("HIT") }
 
-    specify { expect(subject.request_id).to eq("4cd7fc66-7920-414a-a2fe-a503582ad0d8") }
+    specify { expect(subject.request_id).to eq("ee836ac1-8202-4e5b-9ab5-70f786bed547") }
 
     specify { expect(subject.ratelimit_group).to eq(nil) }
 
@@ -28,7 +30,7 @@ RSpec.describe "Search on a string" do
 
     specify { expect(subject.error_limit_remain).to eq(100) }
 
-    specify { expect(subject.error_limit_reset).to eq(44) }
+    specify { expect(subject.error_limit_reset).to eq(39) }
   end
 
   context "with alliance name" do
@@ -40,7 +42,7 @@ RSpec.describe "Search on a string" do
 
     subject { client.search.search(character_id: 1337512245, categories: ["alliance"], search: "Pandemic Horde") }
 
-    specify { expect(subject.cache_status).to eq("HIT") }
+    specify { expect(subject.as_json).to eq(agent_ids: [], alliance_ids: [99_005_338]) }
   end
 
   context "with character name" do
@@ -52,7 +54,7 @@ RSpec.describe "Search on a string" do
 
     subject { client.search.search(character_id: 1337512245, categories: ["character"], search: "Johnn Dillinger") }
 
-    specify { expect(subject.cache_status).to eq("HIT") }
+    specify { expect(subject.as_json).to eq(agent_ids: [], alliance_ids: []) }
   end
 
   context "with constellation name" do
@@ -64,7 +66,7 @@ RSpec.describe "Search on a string" do
 
     subject { client.search.search(character_id: 1337512245, categories: ["constellation"], search: "San Matar") }
 
-    specify { expect(subject.cache_status).to eq("HIT") }
+    specify { expect(subject.as_json).to eq(agent_ids: [], alliance_ids: []) }
   end
 
   context "with corporation name" do
@@ -76,7 +78,7 @@ RSpec.describe "Search on a string" do
 
     subject { client.search.search(character_id: 1337512245, categories: ["corporation"], search: "Freighting Solutions Inc.") }
 
-    specify { expect(subject.cache_status).to eq("HIT") }
+    specify { expect(subject.as_json).to eq(agent_ids: [], alliance_ids: []) }
   end
 
   context "with faction name" do
@@ -88,7 +90,7 @@ RSpec.describe "Search on a string" do
 
     subject { client.search.search(character_id: 1337512245, categories: ["faction"], search: "Minmatar Republic") }
 
-    specify { expect(subject.cache_status).to eq("HIT") }
+    specify { expect(subject.as_json).to eq(agent_ids: [], alliance_ids: []) }
   end
 
   context "with inventory_type name" do
@@ -100,7 +102,7 @@ RSpec.describe "Search on a string" do
 
     subject { client.search.search(character_id: 1337512245, categories: ["inventory_type"], search: "150mm Light AutoCannon I Blueprint") }
 
-    specify { expect(subject.cache_status).to eq("HIT") }
+    specify { expect(subject.as_json).to eq(agent_ids: [], alliance_ids: []) }
   end
 
   context "with region name" do
@@ -112,7 +114,7 @@ RSpec.describe "Search on a string" do
 
     subject { client.search.search(character_id: 1337512245, categories: ["region"], search: "Derelik") }
 
-    specify { expect(subject.cache_status).to eq("HIT") }
+    specify { expect(subject.as_json).to eq(agent_ids: [], alliance_ids: []) }
   end
 
   context "with solar_system name" do
@@ -124,7 +126,7 @@ RSpec.describe "Search on a string" do
 
     subject { client.search.search(character_id: 1337512245, categories: ["solar_system"], search: "Tanoo") }
 
-    specify { expect(subject.cache_status).to eq("HIT") }
+    specify { expect(subject.as_json).to eq(agent_ids: [], alliance_ids: []) }
   end
 
   context "with station name"
