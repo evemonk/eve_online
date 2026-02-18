@@ -95,10 +95,26 @@ module EveOnline
         Resources::LocationResources.new(self)
       end
 
+      # Loyalty APIs
+
+      # Mail APIs
+
+      # Market APIs
+
+      # Meta APIs
+
+      # Planetary Interaction APIs
+
       # Routes APIs
       def routes
         Resources::RoutesResources.new(self)
       end
+
+      # Search APIs
+
+      # Skills APIs
+
+      # Sovereignty APIs
 
       # Status API
       def server_status
@@ -110,10 +126,14 @@ module EveOnline
         Resources::UniverseResources.new(self)
       end
 
+      # User Interface APIs
+
       # Wallet APIs
       def wallet
         Resources::WalletResources.new(self)
       end
+
+      # Wars APIs
 
       def add_middleware(middleware)
         @middlewares << middleware
