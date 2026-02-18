@@ -2,7 +2,7 @@
 
 require "spec_helper"
 
-describe "Get public contract items" do
+RSpec.describe "Get public contract items" do
   before { VCR.insert_cassette "esi/public_contract/157872948" }
 
   after { VCR.eject_cassette }

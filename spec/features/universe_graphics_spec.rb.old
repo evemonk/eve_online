@@ -2,7 +2,7 @@
 
 require "spec_helper"
 
-describe "Get graphics" do
+RSpec.describe "Get graphics" do
   before { VCR.insert_cassette "esi/universe/graphics" }
 
   after { VCR.eject_cassette }

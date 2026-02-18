@@ -2,7 +2,7 @@
 
 require "spec_helper"
 
-describe "Get item groups" do
+RSpec.describe "Get item groups" do
   before { VCR.insert_cassette "esi/market/groups" }
 
   after { VCR.eject_cassette }

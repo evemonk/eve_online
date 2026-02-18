@@ -2,7 +2,7 @@
 
 require "spec_helper"
 
-describe "Get type information" do
+RSpec.describe "Get type information" do
   before { VCR.insert_cassette "esi/universe/types/192" }
 
   after { VCR.eject_cassette }

@@ -2,7 +2,7 @@
 
 require "spec_helper"
 
-describe "Get system jumps" do
+RSpec.describe "Get system jumps" do
   before { VCR.insert_cassette "esi/universe/system_jumps" }
 
   after { VCR.eject_cassette }

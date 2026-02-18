@@ -2,7 +2,7 @@
 
 require "spec_helper"
 
-describe "Get a single killmail" do
+RSpec.describe "Get a single killmail" do
   let(:options) do
     {
       killmail_id: 81_646_519,

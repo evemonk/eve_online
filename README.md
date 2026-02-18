@@ -50,6 +50,7 @@ gem install eve_online
 * Ruby 3.3
 * Ruby 3.4
 * Ruby 4.0
+* Ruby head
 
 ## Supported rails versions
 
@@ -1408,19 +1409,17 @@ character_online.online # => false
 #### Get current ship
 
 ```ruby
-options = { token: 'token123', character_id: 90729314 }
+client = EveOnline::ESI::Client.new(token: "token123")
 
-character_ship = EveOnline::ESI::CharacterShip.new(options)
+ship = client.locations.ship(character_id: 1_337_512_245)
 
-character_ship.scope # => "esi-location.read_ship_type.v1"
+ship.as_json # => {ship_item_id: 1032641106218,
+             #     ship_name: "Johnn Dillinger's Raven",
+             #     ship_type_id: 638}
 
-character_ship.as_json # => {:ship_item_id=>1002312158069,
-                       #     :ship_name=>"Green Black's Velator",
-                       #     :ship_type_id=>606}
-
-character_ship.ship_item_id # => 1002312158069
-character_ship.ship_name # => "Green Black's Velator"
-character_ship.ship_type_id # => 606
+ship.ship_item_id # => 1032641106218
+ship.ship_name # => "Johnn Dillinger's Raven"
+ship.ship_type_id # => 638
 ```
 
 ### Loyalty

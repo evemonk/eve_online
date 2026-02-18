@@ -1,0 +1,75 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://esi.evetech.net/characters/1337512245/ship
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.47.0
+      Accept:
+      - application/json
+      Accept-Language:
+      - en
+      X-Tenant:
+      - tranquility
+      Authorization:
+      - Bearer token123
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 18 Feb 2026 15:36:59 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '87'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Etag, Retry-After, X-Compatibility-Date, X-Esi-Error-Limit-Remain, X-Esi-Error-Limit-Reset,
+        X-Pages, X-Ratelimit-Group, X-Ratelimit-Limit, X-Ratelimit-Remaining, X-Ratelimit-Used
+      Cache-Control:
+      - private
+      Content-Language:
+      - en
+      Etag:
+      - '"c27423eb18aaa464b3863e852a21a78bc7f857e95e67ea4221b0af78"'
+      Expires:
+      - Wed, 18 Feb 2026 15:37:04 GMT
+      Last-Modified:
+      - Wed, 18 Feb 2026 15:36:59 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept-Language
+      - X-Compatibility-Date
+      X-Compatibility-Date:
+      - '2020-01-01'
+      X-Esi-Cache-Status:
+      - MISS
+      X-Esi-Request-Id:
+      - 02c667b3-07eb-4fd3-a30c-3739747dcb77
+      X-Ratelimit-Group:
+      - char-location
+      X-Ratelimit-Limit:
+      - 1200/15m
+      X-Ratelimit-Remaining:
+      - '1196'
+      X-Ratelimit-Used:
+      - '2'
+    body:
+      encoding: UTF-8
+      string: '{"ship_item_id":1032641106218,"ship_name":"Johnn Dillinger''s Raven","ship_type_id":638}'
+  recorded_at: Wed, 18 Feb 2026 15:36:59 GMT
+recorded_with: VCR 6.4.0

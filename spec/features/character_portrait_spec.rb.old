@@ -2,7 +2,7 @@
 
 require "spec_helper"
 
-describe "Get character portraits" do
+RSpec.describe "Get character portraits" do
   let(:options) do
     {
       character_id: 1_337_512_245

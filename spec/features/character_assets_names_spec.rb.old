@@ -2,7 +2,7 @@
 
 require "spec_helper"
 
-describe "Get character asset names" do
+RSpec.describe "Get character asset names" do
   let(:options) do
     {
       character_id: 1_337_512_245,

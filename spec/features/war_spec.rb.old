@@ -2,7 +2,7 @@
 
 require "spec_helper"
 
-describe "Get war information" do
+RSpec.describe "Get war information" do
   let(:options) { {id: 654_019} }
 
   before { VCR.insert_cassette "esi/wars/654019" }

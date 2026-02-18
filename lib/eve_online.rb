@@ -17,13 +17,14 @@ module EveOnline
       autoload :Resource, "eve_online/esi/resources/resource"
 
       # Sort alphabetically
-      autoload :AlliancesResource, "eve_online/esi/resources/alliances_resource"
-      autoload :AssetsResource, "eve_online/esi/resources/assets_resource"
-      autoload :CharactersResource, "eve_online/esi/resources/characters_resource"
-      autoload :CorporationsResource, "eve_online/esi/resources/corporations_resource"
-      autoload :UniverseResource, "eve_online/esi/resources/universe_resource"
+      autoload :AlliancesResources, "eve_online/esi/resources/alliances_resources"
+      autoload :AssetsResources, "eve_online/esi/resources/assets_resources"
+      autoload :CharactersResources, "eve_online/esi/resources/characters_resources"
+      autoload :CorporationsResources, "eve_online/esi/resources/corporations_resources"
+      autoload :LocationResources, "eve_online/esi/resources/location_resources"
       autoload :RoutesResources, "eve_online/esi/resources/routes_resources"
-      autoload :ServerStatusResource, "eve_online/esi/resources/server_status_resource"
+      autoload :ServerStatusResources, "eve_online/esi/resources/server_status_resources"
+      autoload :UniverseResources, "eve_online/esi/resources/universe_resources"
       autoload :WalletResources, "eve_online/esi/resources/wallet_resources"
     end
 
@@ -38,6 +39,7 @@ module EveOnline
       autoload :Character, "eve_online/esi/models/character"
       autoload :CharacterAsset, "eve_online/esi/models/character_asset"
       autoload :CharacterWallet, "eve_online/esi/models/character_wallet"
+      autoload :CharacterShip, "eve_online/esi/models/character_ship"
       autoload :Corporation, "eve_online/esi/models/corporation"
       autoload :Faction, "eve_online/esi/models/faction"
       autoload :Race, "eve_online/esi/models/race"

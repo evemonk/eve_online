@@ -42,12 +42,12 @@ module EveOnline
 
       # Alliance APIs
       def alliances
-        Resources::AlliancesResource.new(self)
+        Resources::AlliancesResources.new(self)
       end
 
       # Assets APIs
       def assets
-        Resources::AssetsResource.new(self)
+        Resources::AssetsResources.new(self)
       end
 
       # Calendar APIs
@@ -56,7 +56,7 @@ module EveOnline
 
       # Character APIs
       def characters
-        Resources::CharactersResource.new(self)
+        Resources::CharactersResources.new(self)
       end
 
       # Clones APIs
@@ -67,7 +67,12 @@ module EveOnline
 
       # Corporation APIs
       def corporations
-        Resources::CorporationsResource.new(self)
+        Resources::CorporationsResources.new(self)
+      end
+
+      # Location APIs
+      def locations
+        Resources::LocationResources.new(self)
       end
 
       # Routes APIs
@@ -77,12 +82,12 @@ module EveOnline
 
       # Status API
       def server_status
-        Resources::ServerStatusResource.new(self)
+        Resources::ServerStatusResources.new(self)
       end
 
       # Universe
       def universe
-        Resources::UniverseResource.new(self)
+        Resources::UniverseResources.new(self)
       end
 
       # Wallet APIs

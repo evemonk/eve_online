@@ -2,7 +2,7 @@
 
 require "spec_helper"
 
-describe "Get character online" do
+RSpec.describe "Get character online" do
   before { VCR.insert_cassette "esi/location/online" }
 
   after { VCR.eject_cassette }

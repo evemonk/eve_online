@@ -2,7 +2,7 @@
 
 require "spec_helper"
 
-describe "Get solar systems" do
+RSpec.describe "Get solar systems" do
   before { VCR.insert_cassette "esi/universe/systems" }
 
   after { VCR.eject_cassette }

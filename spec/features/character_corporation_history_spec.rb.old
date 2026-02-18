@@ -2,7 +2,7 @@
 
 require "spec_helper"
 
-describe "Get corporation history" do
+RSpec.describe "Get corporation history" do
   let(:options) { {character_id: 90_729_314} }
 
   before { VCR.insert_cassette "esi/character_corporation_history/90729314" }

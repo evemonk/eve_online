@@ -2,7 +2,7 @@
 
 require "spec_helper"
 
-describe "Get moon information" do
+RSpec.describe "Get moon information" do
   before { VCR.insert_cassette "esi/universe/moons/40000004" }
 
   after { VCR.eject_cassette }

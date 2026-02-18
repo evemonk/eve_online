@@ -2,7 +2,7 @@
 
 require "spec_helper"
 
-describe "Get route between two systems" do
+RSpec.describe "Get route between two systems" do
   let(:client) { EveOnline::ESI::Client.new }
 
   context "with defaults" do

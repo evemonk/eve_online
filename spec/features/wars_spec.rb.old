@@ -2,7 +2,7 @@
 
 require "spec_helper"
 
-describe "List wars" do
+RSpec.describe "List wars" do
   context "without max_war_id" do
     before { VCR.insert_cassette "esi/wars/wars" }
 

@@ -2,7 +2,7 @@
 
 require "spec_helper"
 
-describe "Get system kills" do
+RSpec.describe "Get system kills" do
   before { VCR.insert_cassette "esi/universe/system_kills" }
 
   after { VCR.eject_cassette }

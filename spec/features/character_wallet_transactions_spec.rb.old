@@ -2,7 +2,7 @@
 
 require "spec_helper"
 
-describe "Get wallet transactions" do
+RSpec.describe "Get wallet transactions" do
   context "when from_id not set" do
     let(:options) do
       {

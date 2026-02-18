@@ -2,7 +2,7 @@
 
 require "spec_helper"
 
-describe "Get a character's recent kills and losses" do
+RSpec.describe "Get a character's recent kills and losses" do
   let(:options) do
     {
       character_id: 1_337_512_245,

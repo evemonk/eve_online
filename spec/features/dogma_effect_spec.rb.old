@@ -2,7 +2,7 @@
 
 require "spec_helper"
 
-describe "Get effect information" do
+RSpec.describe "Get effect information" do
   before { VCR.insert_cassette "esi/dogma/effects/6717" }
 
   after { VCR.eject_cassette }
