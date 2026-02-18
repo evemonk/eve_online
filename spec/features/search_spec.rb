@@ -255,40 +255,11 @@ RSpec.describe "Search on a string" do
     end
   end
 
-  context "with station name"
+  context "with station name" do
+    # TODO: write example
+  end
 
-  context "with structure name"
-
-  # before { VCR.insert_cassette "esi/search/agent" }
-  #
-  # after { VCR.eject_cassette }
-  #
-  # let(:options) do
-  #   {
-  #     search: "Jita",
-  #     categories: ["solar_system"],
-  #     strict: true
-  #   }
-  # end
-  #
-  # subject { EveOnline::ESI::Search.new(options) }
-  #
-  # specify { expect(subject.scope).to eq(nil) }
-  #
-  # specify do
-  #   expect(subject.as_json).to eq(agent_ids: [],
-  #     alliance_ids: [],
-  #     character_ids: [],
-  #     constellation_ids: [],
-  #     corporation_ids: [],
-  #     faction_ids: [],
-  #     inventory_type_ids: [],
-  #     region_ids: [],
-  #     solar_system_ids: [30_000_142],
-  #     station_ids: [])
-  # end
-  #
-  # specify { expect(subject.error_limit_remain).to eq(100) }
-  #
-  # specify { expect(subject.error_limit_reset).to eq(52) }
+  context "with structure name" do
+    # TODO: write example
+  end
 end
