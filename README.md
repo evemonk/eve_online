@@ -1843,39 +1843,55 @@ route.route.size # => 2
 
 ### Search
 
-#### Search on a string (search for something in character stuff)
-
 #### Search on a string
 
 ```ruby
+client = EveOnline::ESI::Client.new(token: "token123")
+
 # simple search
 
-options = { search: "Jita" }
+# remove from categories anything that not related to your search
+search = client.search.search(
+  character_id: 1_337_512_245,
+  categories: [
+    "agent",
+    "alliance",
+    "character",
+    "constellation",
+    "corporation",
+    "faction",
+    "inventory_type",
+    "region",
+    "solar_system",
+    "station",
+    "structure"
+  ],
+  search: "Jita"
+)
 
-search = EveOnline::ESI::Search.new(options)
+search.as_json # => {agent_ids: [3020034, 3018357],
+               #     alliance_ids: [99012888, 99005382, 99010663, 99010666],
+               #     character_ids: [96776995, ... 91447549],
+               #     constellation_ids: [],
+               #     corporation_ids: [],
+               #     faction_ids: [],
+               #     inventory_type_ids: [56844, 56846, 56847, 56853, 56849, 56852, 87393, 56850, 52275, 56848, 56845, 56851],
+               #     region_ids: [],
+               #     solar_system_ids: [30000142],
+               #     station_ids: [60015169, 60000451, 60002959, 60003460, 60000463, 60003463, 60004423, 60002953, 60003055, 60003757, 60000361, 60000364, 60003466, 60003469, 60003760],
+               #     structure_ids: [1049982731184]}
 
-search.as_json # => {:agent_ids=>[3018357],
-               #     :alliance_ids=>[99011026, 99005382, 99010662, 99010663, 99010665, 99010666],
-               #     :character_ids=>[2118081143, ... 2114943117],
-               #     :constellation_ids=>[],
-               #     :corporation_ids=>[],
-               #     :faction_ids=>[],
-               #     :inventory_type_ids=>[56844, 56847, 56846, 56853, 56849, 56852, 56850, 52275, 56848, 56851, 56845],
-               #     :region_ids=>[],
-               #     :solar_system_ids=>[30000142],
-               #     :station_ids=>[]}
-
-search.agent_ids # => [3018357]
-search.alliance_ids # => [99011026, 99005382, 99010662, 99010663, 99010665, 99010666]
-search.character_ids.size # => 467
-search.character_ids.first # => 2118081143
+search.agent_ids  # => [3020034, 3018357]
+search.alliance_ids # => [99012888, 99005382, 99010663, 99010666]
+search.character_ids.size # => 463
+search.character_ids.first # => 96776995
 search.constellation_ids # => []
 search.corporation_ids # => []
-search.faction_ids  # => []
-search.inventory_type_ids # => [56844, 56847, 56846, 56853, 56849, 56852, 56850, 52275, 56848, 56851, 56845]
+search.faction_ids # => []
+search.inventory_type_ids # => [56844, 56846, 56847, 56853, 56849, 56852, 87393, 56850, 52275, 56848, 56845, 56851]
 search.region_ids # => []
 search.solar_system_ids # => [30000142]
-search.station_ids # => []
+search.station_ids # => [60015169, 60000451, 60002959, 60003460, 60000463, 60003463, 60004423, 60002953, 60003055, 60003757, 60000361, 60000364, 60003466, 60003469, 60003760]
 
 # strict search
 
