@@ -2,7 +2,7 @@
 
 require "spec_helper"
 
-describe "List historical market statistics in a region" do
+RSpec.describe "List historical market statistics in a region" do
   before { VCR.insert_cassette "esi/market/history" }
 
   after { VCR.eject_cassette }

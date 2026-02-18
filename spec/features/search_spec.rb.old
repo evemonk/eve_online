@@ -2,7 +2,7 @@
 
 require "spec_helper"
 
-describe "Search for a resource" do
+RSpec.describe "Search for a resource" do
   before { VCR.insert_cassette "esi/search" }
 
   after { VCR.eject_cassette }
