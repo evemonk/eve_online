@@ -11,16 +11,14 @@ RSpec.describe "Get war information" do
 
   subject { client.wars.war(war_id: 654_019) }
 
-  specify { expect(subject.scope).to eq(nil) }
-
   specify do
     expect(subject.as_json).to eq(declared: "2019-10-14 07:24:00.000000000 +0000",
       finished: "2019-10-23 11:42:00.000000000 +0000",
+      id: 654_019,
       mutual: false,
       open_for_allies: true,
       retracted: nil,
-      started: "2019-10-15 07:24:00.000000000 +0000",
-      war_id: 654_019)
+      started: "2019-10-15 07:24:00.000000000 +0000")
   end
 
   specify do
@@ -49,17 +47,17 @@ RSpec.describe "Get war information" do
       ships_killed: 0)
   end
 
-  specify { expect(subject.etag).to eq(nil) }
+  specify { expect(subject.etag).to eq("\"8fc0e5b5553fc8620417a0104f64b66cc47fc22d8a6c57dc0f10a841\"") }
 
-  specify { expect(subject.cache_status).to eq("DYNAMIC") }
+  specify { expect(subject.cache_status).to eq("HIT") }
 
-  specify { expect(subject.request_id).to eq(nil) }
+  specify { expect(subject.request_id).to eq("46f6be28-3d9a-4266-97e7-4db8f0ee330f") }
 
-  specify { expect(subject.ratelimit_group).to eq("routes") }
+  specify { expect(subject.ratelimit_group).to eq("killmail") }
 
   specify { expect(subject.ratelimit_limit).to eq("3600/15m") }
 
-  specify { expect(subject.ratelimit_remaining).to eq(3592) }
+  specify { expect(subject.ratelimit_remaining).to eq(3_594) }
 
   specify { expect(subject.ratelimit_used).to eq(2) }
 
