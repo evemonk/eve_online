@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://esi.evetech.net/wars/654019
+    uri: https://esi.evetech.net/wars/744979
     body:
       encoding: US-ASCII
       string: ''
@@ -25,11 +25,11 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 20 Feb 2026 18:43:56 GMT
+      - Fri, 20 Feb 2026 20:35:52 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
-      - '352'
+      - '356'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -44,11 +44,11 @@ http_interactions:
       Content-Language:
       - en
       Etag:
-      - '"8fc0e5b5553fc8620417a0104f64b66cc47fc22d8a6c57dc0f10a841"'
+      - '"56a0cb7e82dc9ae8ace4cffe18236c3083a92a1e650372f9cfd2ee8a"'
       Expires:
-      - Fri, 20 Feb 2026 19:39:48 GMT
+      - Fri, 20 Feb 2026 21:34:14 GMT
       Last-Modified:
-      - Fri, 20 Feb 2026 18:39:48 GMT
+      - Fri, 20 Feb 2026 20:34:14 GMT
       Strict-Transport-Security:
       - max-age=31536000
       Vary:
@@ -59,17 +59,17 @@ http_interactions:
       X-Esi-Cache-Status:
       - HIT
       X-Esi-Request-Id:
-      - 46f6be28-3d9a-4266-97e7-4db8f0ee330f
+      - bf760fc1-afb2-449b-9640-02cc8111e95d
       X-Ratelimit-Group:
       - killmail
       X-Ratelimit-Limit:
       - 3600/15m
       X-Ratelimit-Remaining:
-      - '3594'
+      - '3505'
       X-Ratelimit-Used:
       - '2'
     body:
       encoding: UTF-8
-      string: '{"aggressor":{"corporation_id":98616186,"isk_destroyed":0.0,"ships_killed":0},"allies":[],"declared":"2019-10-14T07:24:00Z","defender":{"corporation_id":98616479,"isk_destroyed":0.0,"ships_killed":0},"finished":"2019-10-23T11:42:00Z","id":654019,"mutual":false,"open_for_allies":true,"retracted":"2019-10-22T11:42:00Z","started":"2019-10-15T07:24:00Z"}'
-  recorded_at: Fri, 20 Feb 2026 18:43:56 GMT
+      string: '{"aggressor":{"alliance_id":99013481,"isk_destroyed":59326425.53,"ships_killed":3},"allies":[],"declared":"2024-10-03T11:28:00Z","defender":{"alliance_id":741557221,"isk_destroyed":0.0,"ships_killed":0},"finished":"2024-10-07T12:06:00Z","id":744979,"mutual":false,"open_for_allies":false,"retracted":"2024-10-06T12:06:00Z","started":"2024-10-04T11:28:00Z"}'
+  recorded_at: Fri, 20 Feb 2026 20:35:52 GMT
 recorded_with: VCR 6.4.0

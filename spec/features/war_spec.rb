@@ -3,61 +3,61 @@
 require "spec_helper"
 
 RSpec.describe "Get war information" do
-  before { VCR.insert_cassette "esi/wars/654019" }
+  before { VCR.insert_cassette "esi/wars/744979" }
 
   after { VCR.eject_cassette }
 
   let(:client) { EveOnline::ESI::Client.new }
 
-  subject { client.wars.war(war_id: 654_019) }
+  subject { client.wars.war(war_id: 744_979) }
 
   specify do
     expect(subject.as_json).to eq(declared: Time.utc(2019, 10, 14, 7, 24, 0),
       finished: Time.utc(2019, 10, 23, 11, 42, 0),
-      id: 654_019,
+      id: 744_979,
       mutual: false,
-      open_for_allies: true,
+      open_for_allies: false,
       retracted: Time.utc(2019, 10, 22, 11, 42, 0),
       started: Time.utc(2019, 10, 15, 7, 24, 0))
   end
 
   specify do
-    expect(subject.aggressor.as_json).to eq(alliance_id: nil,
-      corporation_id: 98_616_186,
+    expect(subject.aggressor.as_json).to eq(alliance_id: 99013481,
+      corporation_id: nil,
+      isk_destroyed: 59326425.53,
+      ships_killed: 3)
+  end
+
+  specify { expect(subject.allies.size).to eq(0) }
+
+  # specify do
+  #   expect(subject.allies.first.as_json).to eq(alliance_id: nil,
+  #     corporation_id: 98_551_342)
+  # end
+
+  # specify do
+  #   expect(subject.allies.last.as_json).to eq(alliance_id: 99_009_475,
+  #     corporation_id: nil)
+  # end
+
+  specify do
+    expect(subject.defender.as_json).to eq(alliance_id: 741_557_221,
+      corporation_id: nil,
       isk_destroyed: 0.0,
       ships_killed: 0)
   end
 
-  specify { expect(subject.allies.size).to eq(3) }
-
-  specify do
-    expect(subject.allies.first.as_json).to eq(alliance_id: nil,
-      corporation_id: 98_551_342)
-  end
-
-  specify do
-    expect(subject.allies.last.as_json).to eq(alliance_id: 99_009_475,
-      corporation_id: nil)
-  end
-
-  specify do
-    expect(subject.defender.as_json).to eq(alliance_id: nil,
-      corporation_id: 98_616_479,
-      isk_destroyed: 0.0,
-      ships_killed: 0)
-  end
-
-  specify { expect(subject.etag).to eq("\"8fc0e5b5553fc8620417a0104f64b66cc47fc22d8a6c57dc0f10a841\"") }
+  specify { expect(subject.etag).to eq("\"56a0cb7e82dc9ae8ace4cffe18236c3083a92a1e650372f9cfd2ee8a\"") }
 
   specify { expect(subject.cache_status).to eq("HIT") }
 
-  specify { expect(subject.request_id).to eq("46f6be28-3d9a-4266-97e7-4db8f0ee330f") }
+  specify { expect(subject.request_id).to eq("bf760fc1-afb2-449b-9640-02cc8111e95d") }
 
   specify { expect(subject.ratelimit_group).to eq("killmail") }
 
   specify { expect(subject.ratelimit_limit).to eq("3600/15m") }
 
-  specify { expect(subject.ratelimit_remaining).to eq(3_594) }
+  specify { expect(subject.ratelimit_remaining).to eq(3_505) }
 
   specify { expect(subject.ratelimit_used).to eq(2) }
 
