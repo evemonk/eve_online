@@ -22,9 +22,9 @@ RSpec.describe "Get war information" do
   end
 
   specify do
-    expect(subject.aggressor.as_json).to eq(alliance_id: 99013481,
+    expect(subject.aggressor.as_json).to eq(alliance_id: 99_013_481,
       corporation_id: nil,
-      isk_destroyed: 59326425.53,
+      isk_destroyed: 59_326_425.53,
       ships_killed: 3)
   end
 
