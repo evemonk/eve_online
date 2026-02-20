@@ -8,5 +8,6 @@ gem "pry"
 gem "standard", require: false
 gem "fasterer", require: false
 gem "activesupport", git: "https://github.com/rails/rails", require: "activesupport", branch: "main"
+gem "super_diff", require: false
 
 gemspec path: "../"
