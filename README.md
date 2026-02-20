@@ -964,18 +964,6 @@ corporation_members.character_ids.first # => 2114220544
 
 #### Get corporation titles
 
-#### Get npc corporations
-
-```ruby
-corporation_npcs = EveOnline::ESI::CorporationNPC.new
-
-corporation_npcs.scope # => nil
-
-corporation_npcs.corporation_npc_ids.size # => 262
-
-corporation_npcs.corporation_npc_ids.first # => 1000001
-```
-
 ### Dogma
 
 #### Get attributes
