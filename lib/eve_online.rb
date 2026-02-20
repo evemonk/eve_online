@@ -49,6 +49,7 @@ module EveOnline
       autoload :Route, "eve_online/esi/models/route"
       autoload :Search, "eve_online/esi/models/search"
       autoload :ServerStatus, "eve_online/esi/models/server_status"
+      autoload :War, "eve_online/esi/models/war"
       autoload :Wars, "eve_online/esi/models/wars"
     end
 
