@@ -37,6 +37,7 @@ module EveOnline
       autoload :AllianceIcon, "eve_online/esi/models/alliance_icon"
       autoload :AllianceCorporations, "eve_online/esi/models/alliance_corporations"
       autoload :Alliances, "eve_online/esi/models/alliances"
+      autoload :Ally, "eve_online/esi/models/ally"
       autoload :Ancestry, "eve_online/esi/models/ancestry"
       autoload :Bloodline, "eve_online/esi/models/bloodline"
       autoload :Character, "eve_online/esi/models/character"

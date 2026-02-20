@@ -23,6 +23,10 @@ module EveOnline
         def aggressor
           @aggressor ||= Aggressor.new(attributes: attributes.aggressor)
         end
+
+        def allies
+          @allies ||= Collection.from_response(attributes.allies, type: Ally)
+        end
       end
     end
   end
