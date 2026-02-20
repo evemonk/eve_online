@@ -19,6 +19,10 @@ module EveOnline
         def defender
           @defender ||= Defender.new(attributes: attributes.defender)
         end
+
+        def aggressor
+          @aggressor ||= Aggressor.new(attributes: attributes.aggressor)
+        end
       end
     end
   end

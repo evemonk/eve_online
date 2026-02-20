@@ -32,7 +32,7 @@ module EveOnline
 
     module Models
       # Sort alphabetically
-      autoload :Aggressor, "eve_online/models/aggressor"
+      autoload :Aggressor, "eve_online/esi/models/aggressor"
       autoload :Alliance, "eve_online/esi/models/alliance"
       autoload :AllianceIcon, "eve_online/esi/models/alliance_icon"
       autoload :AllianceCorporations, "eve_online/esi/models/alliance_corporations"
