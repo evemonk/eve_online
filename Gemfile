@@ -13,3 +13,4 @@ gem "ostruct"
 gem "rb-readline"
 gem "pry"
 gem "standard", require: false
+gem "super_diff", require: false
