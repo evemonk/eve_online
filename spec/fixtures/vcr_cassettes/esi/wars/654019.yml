@@ -1,0 +1,75 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://esi.evetech.net/wars/654019
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.47.0
+      Accept:
+      - application/json
+      Accept-Language:
+      - en
+      X-Tenant:
+      - tranquility
+      X-Compatibility-Date:
+      - '2025-12-16'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 20 Feb 2026 18:43:56 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '352'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Etag, Retry-After, X-Compatibility-Date, X-Esi-Error-Limit-Remain, X-Esi-Error-Limit-Reset,
+        X-Pages, X-Ratelimit-Group, X-Ratelimit-Limit, X-Ratelimit-Remaining, X-Ratelimit-Used
+      Cache-Control:
+      - public
+      Content-Language:
+      - en
+      Etag:
+      - '"8fc0e5b5553fc8620417a0104f64b66cc47fc22d8a6c57dc0f10a841"'
+      Expires:
+      - Fri, 20 Feb 2026 19:39:48 GMT
+      Last-Modified:
+      - Fri, 20 Feb 2026 18:39:48 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept-Language
+      - X-Compatibility-Date
+      X-Compatibility-Date:
+      - '2020-01-01'
+      X-Esi-Cache-Status:
+      - HIT
+      X-Esi-Request-Id:
+      - 46f6be28-3d9a-4266-97e7-4db8f0ee330f
+      X-Ratelimit-Group:
+      - killmail
+      X-Ratelimit-Limit:
+      - 3600/15m
+      X-Ratelimit-Remaining:
+      - '3594'
+      X-Ratelimit-Used:
+      - '2'
+    body:
+      encoding: UTF-8
+      string: '{"aggressor":{"corporation_id":98616186,"isk_destroyed":0.0,"ships_killed":0},"allies":[],"declared":"2019-10-14T07:24:00Z","defender":{"corporation_id":98616479,"isk_destroyed":0.0,"ships_killed":0},"finished":"2019-10-23T11:42:00Z","id":654019,"mutual":false,"open_for_allies":true,"retracted":"2019-10-22T11:42:00Z","started":"2019-10-15T07:24:00Z"}'
+  recorded_at: Fri, 20 Feb 2026 18:43:56 GMT
+recorded_with: VCR 6.4.0
