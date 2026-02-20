@@ -23,7 +23,13 @@ module EveOnline
         )
       end
 
-      def initialize(data:, headers:)
+      def self.from_array(array, type:)
+        new(
+          data: array.map { |attributes| type.new(attributes: attributes) }
+        )
+      end
+
+      def initialize(data:, headers: nil)
         @data = data
         @headers = headers
       end

@@ -13,6 +13,9 @@ require "eve_online"
 # rspec-its
 require "rspec/its"
 
+# super_diff
+require "super_diff/rspec"
+
 require "active_support"
 require "active_support/time"
 

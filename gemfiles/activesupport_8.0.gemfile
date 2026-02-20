@@ -8,5 +8,6 @@ gem "pry"
 gem "standard", require: false
 gem "fasterer", require: false
 gem "activesupport", "~> 8.0.0"
+gem "super_diff", require: false
 
 gemspec path: "../"

@@ -27,14 +27,17 @@ module EveOnline
       autoload :ServerStatusResources, "eve_online/esi/resources/server_status_resources"
       autoload :UniverseResources, "eve_online/esi/resources/universe_resources"
       autoload :WalletResources, "eve_online/esi/resources/wallet_resources"
+      autoload :WarsResources, "eve_online/esi/resources/wars_resources"
     end
 
     module Models
       # Sort alphabetically
+      autoload :Aggressor, "eve_online/esi/models/aggressor"
       autoload :Alliance, "eve_online/esi/models/alliance"
       autoload :AllianceIcon, "eve_online/esi/models/alliance_icon"
       autoload :AllianceCorporations, "eve_online/esi/models/alliance_corporations"
       autoload :Alliances, "eve_online/esi/models/alliances"
+      autoload :Ally, "eve_online/esi/models/ally"
       autoload :Ancestry, "eve_online/esi/models/ancestry"
       autoload :Bloodline, "eve_online/esi/models/bloodline"
       autoload :Character, "eve_online/esi/models/character"
@@ -42,12 +45,15 @@ module EveOnline
       autoload :CharacterWallet, "eve_online/esi/models/character_wallet"
       autoload :CharacterShip, "eve_online/esi/models/character_ship"
       autoload :Corporation, "eve_online/esi/models/corporation"
+      autoload :Defender, "eve_online/esi/models/defender"
       autoload :Faction, "eve_online/esi/models/faction"
       autoload :NpcCorporations, "eve_online/esi/models/npc_corporations"
       autoload :Race, "eve_online/esi/models/race"
       autoload :Route, "eve_online/esi/models/route"
       autoload :Search, "eve_online/esi/models/search"
       autoload :ServerStatus, "eve_online/esi/models/server_status"
+      autoload :War, "eve_online/esi/models/war"
+      autoload :Wars, "eve_online/esi/models/wars"
     end
 
     module FaradayMiddlewares
