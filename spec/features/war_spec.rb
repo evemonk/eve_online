@@ -12,13 +12,13 @@ RSpec.describe "Get war information" do
   subject { client.wars.war(war_id: 744_979) }
 
   specify do
-    expect(subject.as_json).to eq(declared: Time.utc(2019, 10, 14, 7, 24, 0),
-      finished: Time.utc(2019, 10, 23, 11, 42, 0),
+    expect(subject.as_json).to eq(declared: Time.utc(2024, 10, 3, 11, 28, 0),
+      finished: Time.utc(2024, 10, 7, 12, 6, 0),
       id: 744_979,
       mutual: false,
       open_for_allies: false,
-      retracted: Time.utc(2019, 10, 22, 11, 42, 0),
-      started: Time.utc(2019, 10, 15, 7, 24, 0))
+      retracted: Time.utc(2024, 10, 6, 12, 6, 0),
+      started: Time.utc(2024, 10, 4, 11, 28, 0))
   end
 
   specify do
