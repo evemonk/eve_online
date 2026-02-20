@@ -43,6 +43,7 @@ module EveOnline
       autoload :CharacterShip, "eve_online/esi/models/character_ship"
       autoload :Corporation, "eve_online/esi/models/corporation"
       autoload :Faction, "eve_online/esi/models/faction"
+      autoload :NpcCorporations, "eve_online/esi/models/npc_corporations"
       autoload :Race, "eve_online/esi/models/race"
       autoload :Route, "eve_online/esi/models/route"
       autoload :Search, "eve_online/esi/models/search"

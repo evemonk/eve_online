@@ -11,6 +11,12 @@ module EveOnline
           Models::Corporation.new(attributes: response.body, headers: response.headers)
         end
 
+        def npc
+          response = get_request("corporations/npccorps")
+
+          Models::NpcCorporations.new(body: response.body, headers: response.headers)
+        end
+
         private
 
         def compatibility_date

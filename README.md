@@ -804,7 +804,19 @@ item.type_id # => 29040
 
 ### Corporation
 
-#### Get corporation information
+#### Get npc corporations
+
+```ruby
+client = EveOnline::ESI::Client.new
+
+corporations = client.corporations.npc
+
+corporations.corporation_ids.size # => 283
+
+corporations.corporation_ids.first # => 1000106
+```
+
+#### Get corporation's public information
 
 ```ruby
 client = EveOnline::ESI::Client.new
