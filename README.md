@@ -804,7 +804,19 @@ item.type_id # => 29040
 
 ### Corporation
 
-#### Get corporation information
+#### Get npc corporations
+
+```ruby
+client = EveOnline::ESI::Client.new
+
+corporations = client.corporations.npc
+
+corporations.corporation_ids.size # => 283
+
+corporations.corporation_ids.first # => 1000106
+```
+
+#### Get corporation's public information
 
 ```ruby
 client = EveOnline::ESI::Client.new
@@ -951,18 +963,6 @@ corporation_members.character_ids.first # => 2114220544
 #### Get corporation structures
 
 #### Get corporation titles
-
-#### Get npc corporations
-
-```ruby
-corporation_npcs = EveOnline::ESI::CorporationNPC.new
-
-corporation_npcs.scope # => nil
-
-corporation_npcs.corporation_npc_ids.size # => 262
-
-corporation_npcs.corporation_npc_ids.first # => 1000001
-```
 
 ### Dogma
 
