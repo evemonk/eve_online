@@ -14,6 +14,13 @@ module EveOnline
           Models::Wars.new(body: response.body, headers: response.headers)
         end
 
+        # @param war_id [Integer]
+        def war(war_id:)
+          response = get_request("wars/#{war_id}")
+
+          Models::War.new(attributes: response.body, headers: response.headers)
+        end
+
         private
 
         def compatibility_date
