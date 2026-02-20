@@ -3,13 +3,13 @@
 require "spec_helper"
 
 RSpec.describe "Get war information" do
-  let(:options) { {id: 654_019} }
-
   before { VCR.insert_cassette "esi/wars/654019" }
 
   after { VCR.eject_cassette }
 
-  subject { EveOnline::ESI::War.new(options) }
+  let(:client) { EveOnline::ESI::Client.new }
+
+  subject { client.wars.war(war_id: 654_019) }
 
   specify { expect(subject.scope).to eq(nil) }
 
@@ -49,7 +49,21 @@ RSpec.describe "Get war information" do
       ships_killed: 0)
   end
 
-  specify { expect(subject.error_limit_remain).to eq(100) }
+  specify { expect(subject.etag).to eq(nil) }
 
-  specify { expect(subject.error_limit_reset).to eq(54) }
+  specify { expect(subject.cache_status).to eq("DYNAMIC") }
+
+  specify { expect(subject.request_id).to eq(nil) }
+
+  specify { expect(subject.ratelimit_group).to eq("routes") }
+
+  specify { expect(subject.ratelimit_limit).to eq("3600/15m") }
+
+  specify { expect(subject.ratelimit_remaining).to eq(3592) }
+
+  specify { expect(subject.ratelimit_used).to eq(2) }
+
+  specify { expect(subject.error_limit_remain).to eq(nil) }
+
+  specify { expect(subject.error_limit_reset).to eq(nil) }
 end
