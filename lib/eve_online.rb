@@ -27,6 +27,7 @@ module EveOnline
       autoload :ServerStatusResources, "eve_online/esi/resources/server_status_resources"
       autoload :UniverseResources, "eve_online/esi/resources/universe_resources"
       autoload :WalletResources, "eve_online/esi/resources/wallet_resources"
+      autoload :WarsResources, "eve_online/esi/resources/wars_resources"
     end
 
     module Models
@@ -48,6 +49,7 @@ module EveOnline
       autoload :Route, "eve_online/esi/models/route"
       autoload :Search, "eve_online/esi/models/search"
       autoload :ServerStatus, "eve_online/esi/models/server_status"
+      autoload :Wars, "eve_online/esi/models/wars"
     end
 
     module FaradayMiddlewares
