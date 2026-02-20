@@ -15,6 +15,10 @@ module EveOnline
             started: attributes.started
           }
         end
+
+        def defender
+          @defender ||= Defender.new(attributes: attributes.defender)
+        end
       end
     end
   end

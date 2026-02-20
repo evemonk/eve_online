@@ -43,6 +43,7 @@ module EveOnline
       autoload :CharacterWallet, "eve_online/esi/models/character_wallet"
       autoload :CharacterShip, "eve_online/esi/models/character_ship"
       autoload :Corporation, "eve_online/esi/models/corporation"
+      autoload :Defender, "eve_online/esi/models/defender"
       autoload :Faction, "eve_online/esi/models/faction"
       autoload :NpcCorporations, "eve_online/esi/models/npc_corporations"
       autoload :Race, "eve_online/esi/models/race"
