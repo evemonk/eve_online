@@ -25,7 +25,7 @@ module EveOnline
         end
 
         def allies
-          @allies ||= Collection.from_response(attributes.allies, type: Ally)
+          @allies ||= Collection.from_array(attributes.allies, type: Ally)
         end
       end
     end
