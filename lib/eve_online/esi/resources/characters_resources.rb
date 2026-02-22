@@ -11,6 +11,14 @@ module EveOnline
           Models::Character.new(attributes: response.body, headers: response.headers)
         end
 
+        # @param id [Integer] The ID of the character
+        # @param page [Integer] Which page of results to return. Default: 1
+        def blueprints(id:, page: 1)
+          response = get_request("characters/#{id}/blueprints")
+
+
+        end
+
         private
 
         def compatibility_date

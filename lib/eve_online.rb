@@ -40,6 +40,7 @@ module EveOnline
       autoload :Ally, "eve_online/esi/models/ally"
       autoload :Ancestry, "eve_online/esi/models/ancestry"
       autoload :Bloodline, "eve_online/esi/models/bloodline"
+      autoload :Blueprint, "eve_online/esi/models/blueprint"
       autoload :Character, "eve_online/esi/models/character"
       autoload :CharacterAsset, "eve_online/esi/models/character_asset"
       autoload :CharacterWallet, "eve_online/esi/models/character_wallet"

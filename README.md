@@ -369,6 +369,8 @@ calendar_event.title # => "Moon extraction for 66-PMM - GoldMine-5-"
 
 ### Character
 
+#### Character affiliation
+
 #### Get character's public information
 
 ```ruby
