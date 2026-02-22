@@ -7,9 +7,7 @@ RSpec.describe "Get character blueprints" do
 
   after { VCR.eject_cassette }
 
-  let(:token) { "token123" }
-
-  let(:client) { EveOnline::ESI::Client.new(token: token) }
+  let(:client) { EveOnline::ESI::Client.new(token: "token123") }
 
   subject { client.characters.blueprints(id: 1_337_512_245) }
 
