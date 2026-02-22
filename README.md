@@ -1930,29 +1930,27 @@ search.as_json # => {agent_ids: [],
 #### Get character attributes
 
 ```ruby
-options = { token: 'token123', character_id: 90729314 }
+client = EveOnline::ESI::Client.new(token: "token123")
 
-character_attributes = EveOnline::ESI::CharacterAttributes.new(options)
+attributes = client.skills.attributes(character_id: 1_337_512_245)
 
-character_attributes.scope # => "esi-skills.read_skills.v1"
+attributes.as_json # => {accrued_remap_cooldown_date: 2012-05-06 12:58:06.000000000 UTC +00:00,
+                   #     bonus_remaps: 2,
+                   #     charisma: 20,
+                   #     intelligence: 24,
+                   #     last_remap_date: 2011-05-07 12:58:06.000000000 UTC +00:00,
+                   #     memory: 24,
+                   #     perception: 23,
+                   #     willpower: 23}
 
-character_attributes.as_json # => {:accrued_remap_cooldown_date=>Sun, 06 May 2012 12:58:06 UTC +00:00,
-                             #     :bonus_remaps=>2,
-                             #     :charisma=>20,
-                             #     :intelligence=>24,
-                             #     :last_remap_date=>Sat, 07 May 2011 12:58:06 UTC +00:00,
-                             #     :memory=>24,
-                             #     :perception=>23,
-                             #     :willpower=>23}
-
-character_attributes.accrued_remap_cooldown_date # => Sun, 06 May 2012 12:58:06 UTC +00:00
-character_attributes.bonus_remaps # => 2
-character_attributes.charisma # => 20
-character_attributes.intelligence # => 24
-character_attributes.last_remap_date # => Sat, 07 May 2011 12:58:06 UTC +00:00
-character_attributes.memory # => 24
-character_attributes.perception # => 23
-character_attributes.willpower # => 23
+attributes.accrued_remap_cooldown_date # => 2012-05-06 12:58:06.000000000 UTC +00:00
+attributes.bonus_remaps # => 2
+attributes.charisma # => 20
+attributes.intelligence # => 24
+attributes.last_remap_date # => 2011-05-07 12:58:06.000000000 UTC +00:00
+attributes.memory # => 24
+attributes.perception # => 23
+attributes.willpower # => 23
 ```
 
 #### Get character's skill queue
