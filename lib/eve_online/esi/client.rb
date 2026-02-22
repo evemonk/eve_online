@@ -137,6 +137,9 @@ module EveOnline
       end
 
       # Wars APIs
+      def wars
+        Resources::WarsResources.new(self)
+      end
 
       def add_middleware(middleware)
         @middlewares << middleware

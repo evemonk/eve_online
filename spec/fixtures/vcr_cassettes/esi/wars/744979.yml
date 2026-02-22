@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://esi.evetech.net/wars?max_war_id=10
+    uri: https://esi.evetech.net/wars/744979
     body:
       encoding: US-ASCII
       string: ''
@@ -25,11 +25,11 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 20 Feb 2026 18:33:08 GMT
+      - Fri, 20 Feb 2026 20:35:52 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
-      - '19'
+      - '356'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -44,11 +44,11 @@ http_interactions:
       Content-Language:
       - en
       Etag:
-      - '"f1c28227847464613c1cb82dfc8a8c859b7b6857fad2c2a54c562812"'
+      - '"56a0cb7e82dc9ae8ace4cffe18236c3083a92a1e650372f9cfd2ee8a"'
       Expires:
-      - Fri, 20 Feb 2026 19:33:08 GMT
+      - Fri, 20 Feb 2026 21:34:14 GMT
       Last-Modified:
-      - Fri, 20 Feb 2026 18:33:08 GMT
+      - Fri, 20 Feb 2026 20:34:14 GMT
       Strict-Transport-Security:
       - max-age=31536000
       Vary:
@@ -57,19 +57,19 @@ http_interactions:
       X-Compatibility-Date:
       - '2020-01-01'
       X-Esi-Cache-Status:
-      - MISS
+      - HIT
       X-Esi-Request-Id:
-      - b0462128-7376-46ef-900f-3aa27383e6cc
+      - bf760fc1-afb2-449b-9640-02cc8111e95d
       X-Ratelimit-Group:
       - killmail
       X-Ratelimit-Limit:
       - 3600/15m
       X-Ratelimit-Remaining:
-      - '3595'
+      - '3505'
       X-Ratelimit-Used:
       - '2'
     body:
       encoding: UTF-8
-      string: "[9,8,7,6,5,4,3,2,1]"
-  recorded_at: Fri, 20 Feb 2026 18:33:08 GMT
+      string: '{"aggressor":{"alliance_id":99013481,"isk_destroyed":59326425.53,"ships_killed":3},"allies":[],"declared":"2024-10-03T11:28:00Z","defender":{"alliance_id":741557221,"isk_destroyed":0.0,"ships_killed":0},"finished":"2024-10-07T12:06:00Z","id":744979,"mutual":false,"open_for_allies":false,"retracted":"2024-10-06T12:06:00Z","started":"2024-10-04T11:28:00Z"}'
+  recorded_at: Fri, 20 Feb 2026 20:35:52 GMT
 recorded_with: VCR 6.4.0
