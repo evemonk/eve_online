@@ -1,0 +1,77 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://esi.evetech.net/characters/1337512245/attributes
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.47.0
+      Accept:
+      - application/json
+      Accept-Language:
+      - en
+      X-Tenant:
+      - tranquility
+      X-Compatibility-Date:
+      - '2025-12-16'
+      Authorization:
+      - Bearer token123
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 22 Feb 2026 16:49:28 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '187'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Etag, Retry-After, X-Compatibility-Date, X-Esi-Error-Limit-Remain, X-Esi-Error-Limit-Reset,
+        X-Pages, X-Ratelimit-Group, X-Ratelimit-Limit, X-Ratelimit-Remaining, X-Ratelimit-Used
+      Cache-Control:
+      - private
+      Content-Language:
+      - en
+      Etag:
+      - '"ce95d94263dca861a2b1503c111d2b1086d56affc06bbcc959303011"'
+      Expires:
+      - Sun, 22 Feb 2026 16:51:28 GMT
+      Last-Modified:
+      - Sun, 22 Feb 2026 16:49:28 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept-Language
+      - X-Compatibility-Date
+      X-Compatibility-Date:
+      - '2020-01-01'
+      X-Esi-Cache-Status:
+      - MISS
+      X-Esi-Request-Id:
+      - 3f149302-ea44-45c3-8ded-9f0820bf5ed1
+      X-Ratelimit-Group:
+      - char-detail
+      X-Ratelimit-Limit:
+      - 600/15m
+      X-Ratelimit-Remaining:
+      - '598'
+      X-Ratelimit-Used:
+      - '2'
+    body:
+      encoding: UTF-8
+      string: '{"accrued_remap_cooldown_date":"2012-05-06T12:58:06Z","bonus_remaps":2,"charisma":20,"intelligence":24,"last_remap_date":"2011-05-07T12:58:06Z","memory":24,"perception":23,"willpower":23}'
+  recorded_at: Sun, 22 Feb 2026 16:49:28 GMT
+recorded_with: VCR 6.4.0

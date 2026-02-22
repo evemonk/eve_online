@@ -369,6 +369,8 @@ calendar_event.title # => "Moon extraction for 66-PMM - GoldMine-5-"
 
 ### Character
 
+#### Character affiliation
+
 #### Get character's public information
 
 ```ruby
@@ -406,37 +408,33 @@ character.title # => nil
 #### Get blueprints
 
 ```ruby
-options = { token: 'token123', character_id: 90729314, page: 1 }
+client = EveOnline::ESI::Client.new(token: "token123")
 
-character_blueprints = EveOnline::ESI::CharacterBlueprints.new(options)
+blueprints = client.characters.blueprints(id: 1_337_512_245)
 
-character_blueprints.scope # => "esi-characters.read_blueprints.v1"
+blueprints.total_pages # => 1
 
-character_blueprints.page # => 1
+blueprints.size # => 57
 
-character_blueprints.total_pages # => 1
+blueprint = blueprints.first
 
-character_blueprints.blueprints.size # => 4
+blueprint.as_json # => {item_id: 1003026148920,
+                  #     location_flag: "AssetSafety",
+                  #     location_id: 60013867,
+                  #     material_efficiency: 10,
+                  #     quantity: -1,
+                  #     runs: -1,
+                  #     time_efficiency: 20,
+                  #     type_id: 1152}
 
-blueprint = character_blueprints.blueprints.first
-
-blueprint.as_json # => {:item_id=>716338097,
-                  #     :location_flag=>"Hangar",
-                  #     :location_id=>61000032,
-                  #     :material_efficiency=>10,
-                  #     :quantity=>-2,
-                  #     :runs=>300,
-                  #     :time_efficiency=>0,
-                  #     :type_id=>1010}
-
-blueprint.item_id # => 716338097
-blueprint.location_flag # => "Hangar"
-blueprint.location_id # => 61000032
+blueprint.item_id # => 1003026148920
+blueprint.location_flag # => "AssetSafety"
+blueprint.location_id # => 60013867
 blueprint.material_efficiency # => 10
-blueprint.quantity # => -2
-blueprint.runs # => 300
-blueprint.time_efficiency # => 0
-blueprint.type_id # => 1010
+blueprint.quantity # => -1
+blueprint.runs # => -1
+blueprint.time_efficiency # => 20
+blueprint.type_id # => 1152
 ```
 
 #### Get corporation history
@@ -1932,29 +1930,27 @@ search.as_json # => {agent_ids: [],
 #### Get character attributes
 
 ```ruby
-options = { token: 'token123', character_id: 90729314 }
+client = EveOnline::ESI::Client.new(token: "token123")
 
-character_attributes = EveOnline::ESI::CharacterAttributes.new(options)
+attributes = client.skills.attributes(character_id: 1_337_512_245)
 
-character_attributes.scope # => "esi-skills.read_skills.v1"
+attributes.as_json # => {accrued_remap_cooldown_date: 2012-05-06 12:58:06.000000000 UTC +00:00,
+                   #     bonus_remaps: 2,
+                   #     charisma: 20,
+                   #     intelligence: 24,
+                   #     last_remap_date: 2011-05-07 12:58:06.000000000 UTC +00:00,
+                   #     memory: 24,
+                   #     perception: 23,
+                   #     willpower: 23}
 
-character_attributes.as_json # => {:accrued_remap_cooldown_date=>Sun, 06 May 2012 12:58:06 UTC +00:00,
-                             #     :bonus_remaps=>2,
-                             #     :charisma=>20,
-                             #     :intelligence=>24,
-                             #     :last_remap_date=>Sat, 07 May 2011 12:58:06 UTC +00:00,
-                             #     :memory=>24,
-                             #     :perception=>23,
-                             #     :willpower=>23}
-
-character_attributes.accrued_remap_cooldown_date # => Sun, 06 May 2012 12:58:06 UTC +00:00
-character_attributes.bonus_remaps # => 2
-character_attributes.charisma # => 20
-character_attributes.intelligence # => 24
-character_attributes.last_remap_date # => Sat, 07 May 2011 12:58:06 UTC +00:00
-character_attributes.memory # => 24
-character_attributes.perception # => 23
-character_attributes.willpower # => 23
+attributes.accrued_remap_cooldown_date # => 2012-05-06 12:58:06.000000000 UTC +00:00
+attributes.bonus_remaps # => 2
+attributes.charisma # => 20
+attributes.intelligence # => 24
+attributes.last_remap_date # => 2011-05-07 12:58:06.000000000 UTC +00:00
+attributes.memory # => 24
+attributes.perception # => 23
+attributes.willpower # => 23
 ```
 
 #### Get character's skill queue
