@@ -3,27 +3,21 @@
 require "spec_helper"
 
 RSpec.describe "Get character blueprints" do
-  let(:options) do
-    {
-      character_id: 1_337_512_245,
-      token: "token123",
-      page: 1
-    }
-  end
-
   before { VCR.insert_cassette "esi/character_blueprints/1337512245" }
 
   after { VCR.eject_cassette }
 
-  subject { EveOnline::ESI::CharacterBlueprints.new(options) }
+  let(:token) { "token123" }
 
-  specify { expect(subject.scope).to eq("esi-characters.read_blueprints.v1") }
+  let(:client) { EveOnline::ESI::Client.new(token: token) }
+
+  subject { client.characters.blueprints(id: 1_337_512_245) }
 
   specify { expect(subject.page).to eq(1) }
 
   specify { expect(subject.total_pages).to eq(1) }
 
-  specify { expect(subject.blueprints.size).to eq(4) }
+  specify { expect(subject.size).to eq(57) }
 
   specify do
     expect(subject.blueprints.first.as_json).to eq(item_id: 716_338_097,
@@ -36,7 +30,21 @@ RSpec.describe "Get character blueprints" do
       type_id: 1010)
   end
 
-  specify { expect(subject.error_limit_remain).to eq(100) }
+  specify { expect(subject.etag).to eq("\"fb0a5dd0c47c3be5ce2be7b9b06a737cf653e89f8c9f863ac9d16361\"") }
 
-  specify { expect(subject.error_limit_reset).to eq(4) }
+  specify { expect(subject.cache_status).to eq("HIT") }
+
+  specify { expect(subject.request_id).to eq("481c55c3-24b2-456b-8d6f-298256bf6f51") }
+
+  specify { expect(subject.ratelimit_group).to eq("char-industry") }
+
+  specify { expect(subject.ratelimit_limit).to eq("600/15m") }
+
+  specify { expect(subject.ratelimit_remaining).to eq(597) }
+
+  specify { expect(subject.ratelimit_used).to eq(2) }
+
+  specify { expect(subject.error_limit_remain).to eq(nil) }
+
+  specify { expect(subject.error_limit_reset).to eq(nil) }
 end
