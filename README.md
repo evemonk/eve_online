@@ -408,37 +408,33 @@ character.title # => nil
 #### Get blueprints
 
 ```ruby
-options = { token: 'token123', character_id: 90729314, page: 1 }
+client = EveOnline::ESI::Client.new(token: "token123")
 
-character_blueprints = EveOnline::ESI::CharacterBlueprints.new(options)
+blueprints = client.characters.blueprints(id: 1_337_512_245)
 
-character_blueprints.scope # => "esi-characters.read_blueprints.v1"
+blueprints.total_pages # => 1
 
-character_blueprints.page # => 1
+blueprints.size # => 57
 
-character_blueprints.total_pages # => 1
+blueprint = blueprints.first 
 
-character_blueprints.blueprints.size # => 4
+blueprint.as_json # => {item_id: 1003026148920,
+                  #     location_flag: "AssetSafety",
+                  #     location_id: 60013867,
+                  #     material_efficiency: 10,
+                  #     quantity: -1,
+                  #     runs: -1,
+                  #     time_efficiency: 20,
+                  #     type_id: 1152}
 
-blueprint = character_blueprints.blueprints.first
-
-blueprint.as_json # => {:item_id=>716338097,
-                  #     :location_flag=>"Hangar",
-                  #     :location_id=>61000032,
-                  #     :material_efficiency=>10,
-                  #     :quantity=>-2,
-                  #     :runs=>300,
-                  #     :time_efficiency=>0,
-                  #     :type_id=>1010}
-
-blueprint.item_id # => 716338097
-blueprint.location_flag # => "Hangar"
-blueprint.location_id # => 61000032
+blueprint.item_id # => 1003026148920
+blueprint.location_flag # => "AssetSafety"
+blueprint.location_id # => 60013867
 blueprint.material_efficiency # => 10
-blueprint.quantity # => -2
-blueprint.runs # => 300
-blueprint.time_efficiency # => 0
-blueprint.type_id # => 1010
+blueprint.quantity # => -1
+blueprint.runs # => -1
+blueprint.time_efficiency # => 20
+blueprint.type_id # => 1152
 ```
 
 #### Get corporation history
