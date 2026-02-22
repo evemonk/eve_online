@@ -116,6 +116,9 @@ module EveOnline
       end
 
       # Skills APIs
+      def skills
+        Resources::SkillsResources.new(self)
+      end
 
       # Sovereignty APIs
 
