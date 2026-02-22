@@ -416,7 +416,7 @@ blueprints.total_pages # => 1
 
 blueprints.size # => 57
 
-blueprint = blueprints.first 
+blueprint = blueprints.first
 
 blueprint.as_json # => {item_id: 1003026148920,
                   #     location_flag: "AssetSafety",
