@@ -13,21 +13,19 @@ RSpec.describe "Get character blueprints" do
 
   subject { client.characters.blueprints(id: 1_337_512_245) }
 
-  specify { expect(subject.page).to eq(1) }
-
   specify { expect(subject.total_pages).to eq(1) }
 
   specify { expect(subject.size).to eq(57) }
 
   specify do
-    expect(subject.blueprints.first.as_json).to eq(item_id: 716_338_097,
-      location_flag: "Hangar",
-      location_id: 1_027_847_409_779,
+    expect(subject.first.as_json).to eq(item_id: 1_003_026_148_920,
+      location_flag: "AssetSafety",
+      location_id: 60_013_867,
       material_efficiency: 10,
-      quantity: -2,
-      runs: 300,
-      time_efficiency: 0,
-      type_id: 1010)
+      quantity: -1,
+      runs: -1,
+      time_efficiency: 20,
+      type_id: 1_152)
   end
 
   specify { expect(subject.etag).to eq("\"fb0a5dd0c47c3be5ce2be7b9b06a737cf653e89f8c9f863ac9d16361\"") }
