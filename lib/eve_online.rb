@@ -20,6 +20,7 @@ module EveOnline
       autoload :AlliancesResources, "eve_online/esi/resources/alliances_resources"
       autoload :AssetsResources, "eve_online/esi/resources/assets_resources"
       autoload :CharactersResources, "eve_online/esi/resources/characters_resources"
+      autoload :ClonesResources, "eve_online/esi/resources/clones_resources"
       autoload :CorporationsResources, "eve_online/esi/resources/corporations_resources"
       autoload :LocationResources, "eve_online/esi/resources/location_resources"
       autoload :RoutesResources, "eve_online/esi/resources/routes_resources"
