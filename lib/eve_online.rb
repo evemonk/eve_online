@@ -48,6 +48,7 @@ module EveOnline
       autoload :CharacterAsset, "eve_online/esi/models/character_asset"
       autoload :CharacterWallet, "eve_online/esi/models/character_wallet"
       autoload :CharacterShip, "eve_online/esi/models/character_ship"
+      autoload :Clones, "eve_online/esi/models/clones"
       autoload :Corporation, "eve_online/esi/models/corporation"
       autoload :Defender, "eve_online/esi/models/defender"
       autoload :Faction, "eve_online/esi/models/faction"
