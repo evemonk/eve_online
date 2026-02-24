@@ -1956,33 +1956,31 @@ attributes.willpower # => 23
 #### Get character's skill queue
 
 ```ruby
-options = { token: 'token123', character_id: 90729314 }
+client = EveOnline::ESI::Client.new(token: "token123")
 
-character_skill_queue = EveOnline::ESI::CharacterSkillQueue.new(options)
+skillqueue = client.skills.skillqueue(character_id: 1_337_512_245)
 
-character_skill_queue.scope # => "esi-skills.read_skillqueue.v1"
+skillqueue.size  # => 5
 
-character_skill_queue.skills.size # => 50
+skill_queue_entry = skillqueue.first
 
-skill_queue_entry = character_skill_queue.skills.first
+skill_queue_entry.as_json # => {finish_date: nil,
+                          #     finished_level: 5,
+                          #     level_end_sp: 768000,
+                          #     level_start_sp: 135765,
+                          #     queue_position: 2,
+                          #     skill_id: 26253,
+                          #     start_date: nil,
+                          #     training_start_sp: 439295}
 
-skill_queue_entry.as_json # => {:finish_date=>Mon, 16 Jan 2017 03:00:35 UTC +00:00,
-                          #     :finished_level=>3,
-                          #     :level_end_sp=>40000,
-                          #     :level_start_sp=>7072
-                          #     :queue_position=>0,
-                          #     :skill_id=>12487,
-                          #     :start_date=>Sun, 15 Jan 2017 11:38:25 UTC +00:00,
-                          #     :training_start_sp=>7263}
-
-skill_queue_entry.finish_date # => Mon, 16 Jan 2017 03:00:35 UTC +00:00
-skill_queue_entry.finished_level # => 3
-skill_queue_entry.level_end_sp # => 40000
-skill_queue_entry.level_start_sp # => 7072
-skill_queue_entry.queue_position # => 0
-skill_queue_entry.skill_id # => 12487
-skill_queue_entry.start_date # => Sun, 15 Jan 2017 11:38:25 UTC +00:00
-skill_queue_entry.training_start_sp # => 7263
+skill_queue_entry.finish_date # => nil
+skill_queue_entry.finished_level # => 5
+skill_queue_entry.level_end_sp # => 768000
+skill_queue_entry.level_start_sp # => 135765
+skill_queue_entry.queue_position # => 2
+skill_queue_entry.skill_id # => 26253
+skill_queue_entry.start_date # => nil
+skill_queue_entry.training_start_sp # => 439295
 ```
 
 #### Get character skills

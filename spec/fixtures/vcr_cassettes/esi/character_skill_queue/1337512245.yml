@@ -1,0 +1,77 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://esi.evetech.net/characters/1337512245/skillqueue
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.47.0
+      Accept:
+      - application/json
+      Accept-Language:
+      - en
+      X-Tenant:
+      - tranquility
+      X-Compatibility-Date:
+      - '2025-12-16'
+      Authorization:
+      - Bearer token123
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 22 Feb 2026 17:50:55 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '650'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Etag, Retry-After, X-Compatibility-Date, X-Esi-Error-Limit-Remain, X-Esi-Error-Limit-Reset,
+        X-Pages, X-Ratelimit-Group, X-Ratelimit-Limit, X-Ratelimit-Remaining, X-Ratelimit-Used
+      Cache-Control:
+      - private, max-age=60, must-revalidate, stale-if-error=900
+      Content-Language:
+      - en
+      Etag:
+      - W/"1d3a055674a2cda812061a85306501de9a6dc930accd48d00cb94e97cf253051"
+      Expires:
+      - Sun, 22 Feb 2026 17:51:55 GMT
+      Last-Modified:
+      - Sun, 22 Feb 2026 17:07:06 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept-Language
+      - X-Compatibility-Date
+      X-Compatibility-Date:
+      - '2020-01-01'
+      X-Esi-Cache-Status:
+      - HIT
+      X-Ratelimit-Group:
+      - char-detail
+      X-Ratelimit-Limit:
+      - 600/15m
+      X-Ratelimit-Remaining:
+      - '597'
+      X-Ratelimit-Used:
+      - '2'
+    body:
+      encoding: UTF-8
+      string: '[{"queue_position":2,"skill_id":26253,"level_start_sp":135765,"training_start_sp":439295,"level_end_sp":768000,"finished_level":5},{"queue_position":3,"skill_id":26259,"level_start_sp":135765,"training_start_sp":323045,"level_end_sp":768000,"finished_level":5},{"queue_position":4,"skill_id":26256,"level_start_sp":135765,"training_start_sp":135765,"level_end_sp":768000,"finished_level":5},{"queue_position":5,"skill_id":26257,"level_start_sp":135765,"training_start_sp":135765,"level_end_sp":768000,"finished_level":5},{"queue_position":6,"skill_id":43702,"level_start_sp":90510,"training_start_sp":90510,"level_end_sp":512000,"finished_level":5}]
+
+        '
+  recorded_at: Sun, 22 Feb 2026 17:50:55 GMT
+recorded_with: VCR 6.4.0

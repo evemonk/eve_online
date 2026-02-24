@@ -55,6 +55,7 @@ module EveOnline
       autoload :Route, "eve_online/esi/models/route"
       autoload :Search, "eve_online/esi/models/search"
       autoload :ServerStatus, "eve_online/esi/models/server_status"
+      autoload :SkillQueueEntry, "eve_online/esi/models/skill_queue_entry"
       autoload :War, "eve_online/esi/models/war"
       autoload :Wars, "eve_online/esi/models/wars"
     end
