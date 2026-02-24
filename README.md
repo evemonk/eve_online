@@ -2041,6 +2041,7 @@ server_status.vip # => nil
 #### Get ancestries
 
 ```ruby
+# NOTE: you can skip `language:`. It's "en" by default.
 client = EveOnline::ESI::Client.new(language: "en")
 
 ancestries = client.universe.ancestries
