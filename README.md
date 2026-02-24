@@ -2374,6 +2374,9 @@ planet.position.z # => -73529712226.0
 #### Get character races
 
 ```ruby
+# NOTE: you can skip `language:`. It's "en" by default.
+client = EveOnline::ESI::Client.new(language: "en")
+
 races = client.universe.races
 
 races.size # => 6
