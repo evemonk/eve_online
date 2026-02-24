@@ -13,6 +13,15 @@ RSpec.describe "Get character skills" do
 
   specify { expect(subject.skills.size).to eq(241) }
 
+  specify do
+    expect(subject.skills.first.as_json).to eq(
+      active_skill_level: 3,
+      skill_id: 2_403,
+      skillpoints_in_skill: 40_000,
+      trained_skill_level: 3
+    )
+  end
+
   specify { expect(subject.etag).to eq("W/\"e7b3fa8814e0332e4425a39a5c21975f332ddb0b87e7205a3dd525358084485a\"") }
 
   specify { expect(subject.cache_status).to eq("HIT") }
