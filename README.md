@@ -3079,7 +3079,7 @@ client = EveOnline::ESI::Client.new(language: "de")
 ### Blueprint copy time
 
 ```ruby
-# 240 seconds it time to copy e.g. "Acolyte I Blueprint"
+# 240 seconds is the time to copy e.g. "Acolyte I Blueprint"
 seconds = 240
 # character science level
 science_level = 5
