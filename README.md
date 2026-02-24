@@ -1986,30 +1986,28 @@ skill_queue_entry.training_start_sp # => 439295
 #### Get character skills
 
 ```ruby
-options = { token: 'token123', character_id: 90729314 }
+client = EveOnline::ESI::Client.new(token: "token123")
 
-character_skills = EveOnline::ESI::CharacterSkills.new(options)
+skills = client.skills.skills(character_id: 1_337_512_245)
 
-character_skills.scope # => "esi-skills.read_skills.v1"
+skills.as_json # => {total_sp: 90657889, unallocated_sp: 2640075}
 
-character_skills.as_json # => {:total_sp=>50362576, :unallocated_sp=>656000}
+skills.total_sp # => 90657889
+skills.unallocated_sp # => 2640075
 
-character_skills.skills.size # => 179
+skills.skills.size # => 241
 
-skill = character_skills.skills.first
+skill = skills.skills.first
 
-skill.as_json # => {:active_skill_level=>0,
-              #     :skill_id=>22536,
-              #     :skillpoints_in_skill=>500,
-              #     :trained_skill_level=>1}
+skill.as_json # => {active_skill_level: 3,
+              #     skill_id: 2403,
+              #     skillpoints_in_skill: 40000,
+              #     trained_skill_level: 3}
 
-skill.active_skill_level # => 0
-skill.skill_id # => 22536
-skill.skillpoints_in_skill # => 500
-skill.trained_skill_level # => 1
-
-character_skills.total_sp # => 50362576
-character_skills.unallocated_sp # => 656000
+skill.active_skill_level # => 3
+skill.skill_id # => 2403
+skill.skillpoints_in_skill # => 40000
+skill.trained_skill_level # => 3
 ```
 
 ### Sovereignty
