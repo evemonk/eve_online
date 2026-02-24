@@ -2041,29 +2041,27 @@ server_status.vip # => nil
 #### Get ancestries
 
 ```ruby
-options = { language: 'en-us' }
+client = EveOnline::ESI::Client.new(language: "en")
 
-ancestries = EveOnline::ESI::UniverseAncestries.new(options)
+ancestries = client.universe.ancestries
 
-ancestries.scope # => nil
+ancestries.size # => 43
 
-ancestries.ancestries.size # => 42
+ancestry = ancestries.first
 
-ancestry = ancestries.ancestries.first
+ancestry.as_json # => {bloodline_id: 7,
+                 #     description: "The Gallente prize political activism...",
+                 #     icon_id: 1653,
+                 #     id: 13,
+                 #     name: "Activists",
+                 #     short_description: "Making the universe a better place, one fight at a time."}
 
-ancestry.as_json # => {:bloodline_id=>4,
-                 #     :description=>"Millions of slaves within the Amarr Empire dream of escape...",
-                 #     :icon_id=>1664,
-                 #     :ancestry_id=>24,
-                 #     :name=>"Slave Child",
-                 #     :short_description=>"Torn from the cold and brought to the warmth of a new life."}
-
-ancestry.bloodline_id # => 4
-ancestry.description # => "Millions of slaves within the Amarr Empire dream of escape..."
-ancestry.icon_id # => 1664
-ancestry.ancestry_id # => 24
-ancestry.name # => "Slave Child"
-ancestry.short_description # => "Torn from the cold and brought to the warmth of a new life."
+ancestry.bloodline_id # => 7
+ancestry.description # => "The Gallente prize political activism..."
+ancestry.icon_id # => 1653
+ancestry.id # => 13
+ancestry.name # => "Activists"
+ancestry.short_description # => "Making the universe a better place, one fight at a time."
 ```
 
 #### Get asteroid belt information
