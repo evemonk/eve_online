@@ -54,6 +54,7 @@ module EveOnline
       autoload :Faction, "eve_online/esi/models/faction"
       autoload :HomeLocation, "eve_online/esi/models/home_location"
       autoload :Implants, "eve_online/esi/models/implants"
+      autoload :JumpClone, "eve_online/esi/models/jump_clone"
       autoload :NpcCorporations, "eve_online/esi/models/npc_corporations"
       autoload :Race, "eve_online/esi/models/race"
       autoload :Route, "eve_online/esi/models/route"
