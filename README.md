@@ -2041,29 +2041,28 @@ server_status.vip # => nil
 #### Get ancestries
 
 ```ruby
-options = { language: 'en-us' }
+# NOTE: you can skip `language:`. It's "en" by default.
+client = EveOnline::ESI::Client.new(language: "en")
 
-ancestries = EveOnline::ESI::UniverseAncestries.new(options)
+ancestries = client.universe.ancestries
 
-ancestries.scope # => nil
+ancestries.size # => 43
 
-ancestries.ancestries.size # => 42
+ancestry = ancestries.first
 
-ancestry = ancestries.ancestries.first
+ancestry.as_json # => {bloodline_id: 7,
+                 #     description: "The Gallente prize political activism...",
+                 #     icon_id: 1653,
+                 #     id: 13,
+                 #     name: "Activists",
+                 #     short_description: "Making the universe a better place, one fight at a time."}
 
-ancestry.as_json # => {:bloodline_id=>4,
-                 #     :description=>"Millions of slaves within the Amarr Empire dream of escape...",
-                 #     :icon_id=>1664,
-                 #     :ancestry_id=>24,
-                 #     :name=>"Slave Child",
-                 #     :short_description=>"Torn from the cold and brought to the warmth of a new life."}
-
-ancestry.bloodline_id # => 4
-ancestry.description # => "Millions of slaves within the Amarr Empire dream of escape..."
-ancestry.icon_id # => 1664
-ancestry.ancestry_id # => 24
-ancestry.name # => "Slave Child"
-ancestry.short_description # => "Torn from the cold and brought to the warmth of a new life."
+ancestry.bloodline_id # => 7
+ancestry.description # => "The Gallente prize political activism..."
+ancestry.icon_id # => 1653
+ancestry.id # => 13
+ancestry.name # => "Activists"
+ancestry.short_description # => "Making the universe a better place, one fight at a time."
 ```
 
 #### Get asteroid belt information
@@ -2093,39 +2092,38 @@ asteroid_belt.position.z # => -73505464320.0
 #### Get bloodlines
 
 ```ruby
-options = { language: 'en-us' }
+# NOTE: you can skip `language:`. It's "en" by default.
+client = EveOnline::ESI::Client.new(language: "en")
 
-bloodlines = EveOnline::ESI::UniverseBloodlines.new(options)
+bloodlines = client.universe.bloodlines
 
-bloodlines.scope # => nil
+bloodlines.size # => 18
 
-bloodlines.bloodlines.size # => 15
+bloodline = bloodlines.first
 
-bloodline = bloodlines.bloodlines.first
+bloodline.as_json # => {id: 5,
+                  #     charisma: 3,
+                  #     corporation_id: 1000066,
+                  #     description: "True Amarrians are proud and supercilious...",
+                  #     intelligence: 7,
+                  #     memory: 6,
+                  #     name: "Amarr",
+                  #     perception: 4,
+                  #     race_id: 4,
+                  #     ship_type_id: 596,
+                  #     willpower: 10}
 
-bloodline.as_json # => {:bloodline_id=>4,
-                  #     :charisma=>6,
-                  #     :corporation_id=>1000049,
-                  #     :description=>"A martial, strong-willed people, the Brutor...",
-                  #     :intelligence=>4,
-                  #     :memory=>4,
-                  #     :name=>"Brutor",
-                  #     :perception=>9,
-                  #     :race_id=>2,
-                  #     :ship_type_id=>588,
-                  #     :willpower=>7}
-
-bloodline.bloodline_id # => 4
-bloodline.charisma # => 6
-bloodline.corporation_id # => 1000049
-bloodline.description # => "A martial, strong-willed people, the Brutor..."
-bloodline.intelligence # => 4
-bloodline.memory # => 4
-bloodline.name # => "Brutor"
-bloodline.perception # => 9
-bloodline.race_id # => 2
-bloodline.ship_type_id # => 588
-bloodline.willpower # => 7
+bloodline.id # => 5
+bloodline.charisma # => 3
+bloodline.corporation_id # => 1000066
+bloodline.description # => "True Amarrians are proud and supercilious..."
+bloodline.intelligence # => 7
+bloodline.memory # => 6
+bloodline.name # => "Amarr"
+bloodline.perception # => 4
+bloodline.race_id # => 4
+bloodline.ship_type_id # => 596
+bloodline.willpower # => 10
 ```
 
 #### Get item categories
@@ -2204,37 +2202,36 @@ constellation.position.z # => -4.273873181840197e+16
 #### Get factions
 
 ```ruby
-options = { language: 'en-us' }
+# NOTE: you can skip `language:`. It's "en" by default.
+client = EveOnline::ESI::Client.new(language: "en")
 
-factions = EveOnline::ESI::UniverseFactions.new(options)
+factions = client.universe.factions
 
-factions.scope # => nil
+factions.size # => 27
 
-factions.factions.size # => 22
+faction = factions.first
 
-faction = factions.factions.first
+faction.as_json # => {corporation_id: 1000084,
+                #     description: "The largest of the five main empires...",
+                #     id: 500003,
+                #     is_unique: true,
+                #     militia_corporation_id: 1000179,
+                #     name: "Amarr Empire",
+                #     size_factor: 5.0,
+                #     solar_system_id: 30002187,
+                #     station_count: 1032,
+                #     station_system_count: 508}
 
-faction.as_json # => {:corporation_id=>1000051,
-                #     :description=>"The Minmatar Republic was formed over a century ago when the Minmatar threw...",
-                #     :faction_id=>500002,
-                #     :is_unique=>true,
-                #     :militia_corporation_id=>1000182,
-                #     :name=>"Minmatar Republic",
-                #     :size_factor=>5.0,
-                #     :solar_system_id=>30002544,
-                #     :station_count=>570,
-                #     :station_system_count=>291}
-
-faction.corporation_id # => 1000051
-faction.description # => "The Minmatar Republic was formed over a century ago when the Minmatar threw..."
-faction.faction_id # => 500002
+faction.corporation_id # => 1000084
+faction.description # => "The largest of the five main empires..."
+faction.id # => 500003
 faction.is_unique # => true
-faction.militia_corporation_id # => 1000182
-faction.name # => "Minmatar Republic"
+faction.militia_corporation_id # => 1000179
+faction.name # => "Amarr Empire"
 faction.size_factor # => 5.0
-faction.solar_system_id # => 30002544
-faction.station_count # => 570
-faction.station_system_count # => 291
+faction.solar_system_id # => 30002187
+faction.station_count # => 1032
+faction.station_system_count # => 508
 ```
 
 #### Get graphics
@@ -2377,6 +2374,9 @@ planet.position.z # => -73529712226.0
 #### Get character races
 
 ```ruby
+# NOTE: you can skip `language:`. It's "en" by default.
+client = EveOnline::ESI::Client.new(language: "en")
+
 races = client.universe.races
 
 races.size # => 6
