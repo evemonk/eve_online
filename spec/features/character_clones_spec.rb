@@ -18,6 +18,25 @@ RSpec.describe "Get clones" do
     )
   end
 
+  specify do
+    expect(subject.home_location.as_json).to eq(
+      location_id: 60_014_779,
+      location_type: "station"
+    )
+  end
+
+  specify { expect(subject.jump_clones.size).to eq(1) }
+
+  specify do
+    expect(subject.jump_clones.first.as_json).to eq(
+      implant_ids: [],
+      jump_clone_id: 56_228_175,
+      location_id: 60_014_101,
+      location_type: "station",
+      name: nil
+    )
+  end
+
   specify { expect(subject.etag).to eq("\"b98b4cafdb5263005015b0a91e1a92465ee0c3078179ff9bedfd944d\"") }
 
   specify { expect(subject.cache_status).to eq("HIT") }
