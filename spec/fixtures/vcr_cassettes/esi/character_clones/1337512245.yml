@@ -1,0 +1,77 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://esi.evetech.net/characters/1337512245/clones
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.47.0
+      Accept:
+      - application/json
+      Accept-Language:
+      - en
+      X-Tenant:
+      - tranquility
+      X-Compatibility-Date:
+      - '2025-12-16'
+      Authorization:
+      - Bearer token123
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 24 Feb 2026 17:18:34 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '270'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Etag, Retry-After, X-Compatibility-Date, X-Esi-Error-Limit-Remain, X-Esi-Error-Limit-Reset,
+        X-Pages, X-Ratelimit-Group, X-Ratelimit-Limit, X-Ratelimit-Remaining, X-Ratelimit-Used
+      Cache-Control:
+      - private
+      Content-Language:
+      - en
+      Etag:
+      - '"b98b4cafdb5263005015b0a91e1a92465ee0c3078179ff9bedfd944d"'
+      Expires:
+      - Tue, 24 Feb 2026 17:20:09 GMT
+      Last-Modified:
+      - Tue, 24 Feb 2026 17:18:09 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept-Language
+      - X-Compatibility-Date
+      X-Compatibility-Date:
+      - '2020-01-01'
+      X-Esi-Cache-Status:
+      - HIT
+      X-Esi-Request-Id:
+      - da8c3bab-8809-440f-8ea8-1c86a0fee3d7
+      X-Ratelimit-Group:
+      - char-location
+      X-Ratelimit-Limit:
+      - 1200/15m
+      X-Ratelimit-Remaining:
+      - '1197'
+      X-Ratelimit-Used:
+      - '2'
+    body:
+      encoding: UTF-8
+      string: '{"home_location":{"location_id":60014779,"location_type":"station"},"jump_clones":[{"implants":[],"jump_clone_id":56228175,"location_id":60014101,"location_type":"station"}],"last_clone_jump_date":"2012-07-27T14:50:11Z","last_station_change_date":"2015-06-30T21:51:13Z"}'
+  recorded_at: Tue, 24 Feb 2026 17:18:34 GMT
+recorded_with: VCR 6.4.0
