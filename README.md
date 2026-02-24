@@ -2202,37 +2202,36 @@ constellation.position.z # => -4.273873181840197e+16
 #### Get factions
 
 ```ruby
-options = { language: 'en-us' }
+# NOTE: you can skip `language:`. It's "en" by default.
+client = EveOnline::ESI::Client.new(language: "en")
 
-factions = EveOnline::ESI::UniverseFactions.new(options)
+factions = client.universe.factions
 
-factions.scope # => nil
+factions.size # => 27
 
-factions.factions.size # => 22
+faction = factions.first
 
-faction = factions.factions.first
+faction.as_json # => {corporation_id: 1000084,
+                #     description: "The largest of the five main empires...",
+                #     id: 500003,
+                #     is_unique: true,
+                #     militia_corporation_id: 1000179,
+                #     name: "Amarr Empire",
+                #     size_factor: 5.0,
+                #     solar_system_id: 30002187,
+                #     station_count: 1032,
+                #     station_system_count: 508}
 
-faction.as_json # => {:corporation_id=>1000051,
-                #     :description=>"The Minmatar Republic was formed over a century ago when the Minmatar threw...",
-                #     :faction_id=>500002,
-                #     :is_unique=>true,
-                #     :militia_corporation_id=>1000182,
-                #     :name=>"Minmatar Republic",
-                #     :size_factor=>5.0,
-                #     :solar_system_id=>30002544,
-                #     :station_count=>570,
-                #     :station_system_count=>291}
-
-faction.corporation_id # => 1000051
-faction.description # => "The Minmatar Republic was formed over a century ago when the Minmatar threw..."
-faction.faction_id # => 500002
+faction.corporation_id # => 1000084
+faction.description # => "The largest of the five main empires..."
+faction.id # => 500003
 faction.is_unique # => true
-faction.militia_corporation_id # => 1000182
-faction.name # => "Minmatar Republic"
+faction.militia_corporation_id # => 1000179
+faction.name # => "Amarr Empire"
 faction.size_factor # => 5.0
-faction.solar_system_id # => 30002544
-faction.station_count # => 570
-faction.station_system_count # => 291
+faction.solar_system_id # => 30002187
+faction.station_count # => 1032
+faction.station_system_count # => 508
 ```
 
 #### Get graphics
