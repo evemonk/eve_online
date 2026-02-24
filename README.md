@@ -3089,7 +3089,7 @@ advanced_industry_level = 1
 science_copy_speed_bonus_per_level = -5.00
 # type dogma attribute industry job time bonus for advanced industry
 advanced_industry_skill_industry_job_time_bonus_per_level = -3.00
-# number of copy, optional. default: 1
+# number of copies, optional. default: 1
 runs = 1
 
 formula = EveOnline::Formulas::BlueprintCopyTime.new(seconds, science_level,
