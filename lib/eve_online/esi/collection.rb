@@ -24,9 +24,7 @@ module EveOnline
       end
 
       def self.from_array(array, type:)
-        new(
-          data: array.map { |attributes| type.new(attributes: attributes) }
-        )
+        new(data: array.map { |attributes| type.new(attributes: attributes) })
       end
 
       def initialize(data:, headers: nil)
