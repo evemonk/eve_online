@@ -51,6 +51,7 @@ module EveOnline
       autoload :Corporation, "eve_online/esi/models/corporation"
       autoload :Defender, "eve_online/esi/models/defender"
       autoload :Faction, "eve_online/esi/models/faction"
+      autoload :Implants, "eve_online/esi/models/implants"
       autoload :NpcCorporations, "eve_online/esi/models/npc_corporations"
       autoload :Race, "eve_online/esi/models/race"
       autoload :Route, "eve_online/esi/models/route"
