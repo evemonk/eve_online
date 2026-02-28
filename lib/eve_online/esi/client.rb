@@ -60,6 +60,9 @@ module EveOnline
       end
 
       # Clones APIs
+      def clones
+        Resources::ClonesResources.new(self)
+      end
 
       # Contacts APIs
 

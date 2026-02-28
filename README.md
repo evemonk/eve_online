@@ -3079,12 +3079,18 @@ client = EveOnline::ESI::Client.new(language: "de")
 ### Blueprint copy time
 
 ```ruby
-seconds = 240 # 240 seconds it time to copy e.g. "Acolyte I Blueprint"
-science_level = 5 # character science level
-advanced_industry_level = 1 # character advanced industry level
-science_copy_speed_bonus_per_level = -5.00 # type dogma attribute copy speed bonus for science
-advanced_industry_skill_industry_job_time_bonus_per_level = -3.00 # type dogma attribute industry job time bonuse for advanced industry
-runs = 1 # number of copy, optional. default: 1
+# 240 seconds is the time to copy e.g. "Acolyte I Blueprint"
+seconds = 240
+# character science level
+science_level = 5
+# character advanced industry level
+advanced_industry_level = 1
+# type dogma attribute copy speed bonus for science
+science_copy_speed_bonus_per_level = -5.00
+# type dogma attribute industry job time bonus for advanced industry
+advanced_industry_skill_industry_job_time_bonus_per_level = -3.00
+# number of copies, optional. default: 1
+runs = 1
 
 formula = EveOnline::Formulas::BlueprintCopyTime.new(seconds, science_level,
   advanced_industry_level, science_copy_speed_bonus_per_level,
