@@ -572,34 +572,37 @@ standing.standing # => 0.3303719111639991
 #### Get clones
 
 ```ruby
-options = { token: 'token123', character_id: 90729314 }
+client = EveOnline::ESI::Client.new(token: "token123")
 
-character_clones = EveOnline::ESI::CharacterClones.new(options)
+clones = client.clones.clones(character_id: 1_337_512_245)
 
-character_clones.scope # => "esi-clones.read_clones.v1"
+clones.as_json # => {last_clone_jump_date: 2012-07-27 14:50:11.000000000 UTC +00:00,
+               #     last_station_change_date: 2015-06-30 21:51:13.000000000 UTC +00:00}
 
-character_clones.home_location.as_json # => {:location_id=>61000032,
-                                       #     :location_type=>"station"}
+clones.last_clone_jump_date # => 2012-07-27 14:50:11.000000000 UTC +00:00
+clones.last_station_change_date # => 2015-06-30 21:51:13.000000000 UTC +00:00
 
-character_clones.jump_clones.size # => 2
+clones.home_location.as_json # => {location_id: 60014779,
+                             #     location_type: "station"}
 
-jump_clone = character_clones.jump_clones.first
+clones.home_location.location_id # => 60014779
+clones.home_location.location_type # => "station"
 
-jump_clone.as_json # => {:jump_clone_id=>22357400,
-                   #     :location_id=>61000032,
-                   #     :location_type=>"station",
-                   #     :name=>nil}
+clones.jump_clones.size # => 1
 
-jump_clone.jump_clone_id # => 22357400
-jump_clone.location_id # => 61000032
+jump_clone = clones.jump_clones.first
+
+jump_clone.as_json # => {implant_ids: [],
+                   #     jump_clone_id: 56228175,
+                   #     location_id: 60014101,
+                   #     location_type: "station",
+                   #     name: nil}
+
+jump_clone.implant_ids # => []
+jump_clone.jump_clone_id # => 56228175
+jump_clone.location_id # => 60014101
 jump_clone.location_type # => "station"
 jump_clone.name # => nil
-
-jump_clone.implant_ids # => [22118]
-
-character_clones.last_clone_jump_date # => Fri, 27 Jul 2012 14:50:11 UTC +00:00
-
-character_clones.last_station_change_date # => Tue, 30 Jun 2015 21:51:13 UTC +00:00
 ```
 
 #### Get active implants
