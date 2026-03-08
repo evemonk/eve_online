@@ -65,8 +65,12 @@ module EveOnline
       end
 
       # Contacts APIs
+      def contacts
+      end
 
       # Contracts APIs
+      def contracts
+      end
 
       # Corporation APIs
       def corporations
