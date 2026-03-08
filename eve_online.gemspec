@@ -25,7 +25,7 @@ Gem::Specification.new do |spec|
   spec.files = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features|bin|swagger)/}) }
   spec.require_paths = ["lib"]
 
-  spec.required_ruby_version = ">= 3.2"
+  spec.required_ruby_version = ">= 3.3"
 
   spec.add_dependency "ostruct"
   spec.add_dependency "faraday", ">= 2.0.0"
