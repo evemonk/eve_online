@@ -572,48 +572,51 @@ standing.standing # => 0.3303719111639991
 #### Get clones
 
 ```ruby
-options = { token: 'token123', character_id: 90729314 }
+client = EveOnline::ESI::Client.new(token: "token123")
 
-character_clones = EveOnline::ESI::CharacterClones.new(options)
+clones = client.clones.clones(character_id: 1_337_512_245)
 
-character_clones.scope # => "esi-clones.read_clones.v1"
+clones.as_json # => {last_clone_jump_date: 2012-07-27 14:50:11.000000000 UTC +00:00,
+               #     last_station_change_date: 2015-06-30 21:51:13.000000000 UTC +00:00}
 
-character_clones.home_location.as_json # => {:location_id=>61000032,
-                                       #     :location_type=>"station"}
+clones.last_clone_jump_date # => 2012-07-27 14:50:11.000000000 UTC +00:00
+clones.last_station_change_date # => 2015-06-30 21:51:13.000000000 UTC +00:00
 
-character_clones.jump_clones.size # => 2
+clones.home_location.as_json # => {location_id: 60014779,
+                             #     location_type: "station"}
 
-jump_clone = character_clones.jump_clones.first
+clones.home_location.location_id # => 60014779
+clones.home_location.location_type # => "station"
 
-jump_clone.as_json # => {:jump_clone_id=>22357400,
-                   #     :location_id=>61000032,
-                   #     :location_type=>"station",
-                   #     :name=>nil}
+clones.jump_clones.size # => 1
 
-jump_clone.jump_clone_id # => 22357400
-jump_clone.location_id # => 61000032
+jump_clone = clones.jump_clones.first
+
+jump_clone.as_json # => {implant_ids: [],
+                   #     jump_clone_id: 56228175,
+                   #     location_id: 60014101,
+                   #     location_type: "station",
+                   #     name: nil}
+
+jump_clone.implant_ids # => []
+jump_clone.jump_clone_id # => 56228175
+jump_clone.location_id # => 60014101
 jump_clone.location_type # => "station"
 jump_clone.name # => nil
-
-jump_clone.implant_ids # => [22118]
-
-character_clones.last_clone_jump_date # => Fri, 27 Jul 2012 14:50:11 UTC +00:00
-
-character_clones.last_station_change_date # => Tue, 30 Jun 2015 21:51:13 UTC +00:00
 ```
 
 #### Get active implants
 
 ```ruby
-options = { token: 'token123', character_id: 90729314 }
+client = EveOnline::ESI::Client.new(token: "token123")
 
-character_implants = EveOnline::ESI::CharacterImplants.new(options)
+implants = client.clones.implants(character_id: 1_337_512_245)
 
-character_implants.scope # => "esi-clones.read_implants.v1"
+implants.implant_ids.size # => 5
 
-character_implants.implant_ids.size # => 5
+implants.implant_ids # => [9899, 9941, 9942, 9943, 9956]
 
-character_implants.implant_ids # => [9899, 9941, 9942, 9943, 9956]
+implants.implant_ids.first # => 9899
 ```
 
 ### Contacts
@@ -3079,12 +3082,18 @@ client = EveOnline::ESI::Client.new(language: "de")
 ### Blueprint copy time
 
 ```ruby
-seconds = 240 # 240 seconds it time to copy e.g. "Acolyte I Blueprint"
-science_level = 5 # character science level
-advanced_industry_level = 1 # character advanced industry level
-science_copy_speed_bonus_per_level = -5.00 # type dogma attribute copy speed bonus for science
-advanced_industry_skill_industry_job_time_bonus_per_level = -3.00 # type dogma attribute industry job time bonuse for advanced industry
-runs = 1 # number of copy, optional. default: 1
+# 240 seconds is the time to copy e.g. "Acolyte I Blueprint"
+seconds = 240
+# character science level
+science_level = 5
+# character advanced industry level
+advanced_industry_level = 1
+# type dogma attribute copy speed bonus for science
+science_copy_speed_bonus_per_level = -5.00
+# type dogma attribute industry job time bonus for advanced industry
+advanced_industry_skill_industry_job_time_bonus_per_level = -3.00
+# number of copies, optional. default: 1
+runs = 1
 
 formula = EveOnline::Formulas::BlueprintCopyTime.new(seconds, science_level,
   advanced_industry_level, science_copy_speed_bonus_per_level,
