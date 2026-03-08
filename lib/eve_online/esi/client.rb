@@ -74,24 +74,44 @@ module EveOnline
       end
 
       # Corporation Projects APIs
+      def corporation_projects
+      end
 
       # Dogma APIs
+      def dogma
+      end
 
       # Faction Warfare APIs
+      def faction_warfare
+      end
 
       # Fittings APIs
+      def fittings
+      end
 
       # Fleets APIs
+      def fleets
+      end
 
       # Freelance Jobs APIs
+      def freelance_jobs
+      end
 
       # Incursions APIs
+      def incursions
+      end
 
       # Industry APIs
+      def industry
+      end
 
       # Insurance APIs
+      def insurance
+      end
 
       # Killmails APIs
+      def killmails
+      end
 
       # Location APIs
       def locations
@@ -99,14 +119,24 @@ module EveOnline
       end
 
       # Loyalty APIs
+      def loyalty
+      end
 
       # Mail APIs
+      def mail
+      end
 
       # Market APIs
+      def market
+      end
 
       # Meta APIs
+      def meta
+      end
 
       # Planetary Interaction APIs
+      def planetary_interaction
+      end
 
       # Routes APIs
       def routes
@@ -124,6 +154,8 @@ module EveOnline
       end
 
       # Sovereignty APIs
+      def sovereignty
+      end
 
       # Status API
       def server_status
@@ -136,6 +168,8 @@ module EveOnline
       end
 
       # User Interface APIs
+      def user_interface
+      end
 
       # Wallet APIs
       def wallet
