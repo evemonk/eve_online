@@ -608,15 +608,15 @@ jump_clone.name # => nil
 #### Get active implants
 
 ```ruby
-options = { token: 'token123', character_id: 90729314 }
+client = EveOnline::ESI::Client.new(token: "token123")
 
-character_implants = EveOnline::ESI::CharacterImplants.new(options)
+implants = client.clones.implants(character_id: 1_337_512_245)
 
-character_implants.scope # => "esi-clones.read_implants.v1"
+implants.implant_ids.size # => 5
 
-character_implants.implant_ids.size # => 5
+implants.implant_ids # => [9899, 9941, 9942, 9943, 9956]
 
-character_implants.implant_ids # => [9899, 9941, 9942, 9943, 9956]
+implants.implant_ids.first # => 9899
 ```
 
 ### Contacts
