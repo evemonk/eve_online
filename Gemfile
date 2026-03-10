@@ -15,7 +15,7 @@ gem "pry"
 gem "standard", require: false
 gem "rubocop", require: false
 gem "super_diff", require: false
-gem "rspec"
+gem "rspec-core"
 gem "rspec-its"
 gem "simplecov"
 gem "webmock"
