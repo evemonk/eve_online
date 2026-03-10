@@ -28,6 +28,12 @@ module EveOnline
           Collection.from_response(response, type: Models::Race)
         end
 
+        def systems
+          response = get_request("universe/systems")
+
+          Models::Systems.new(body: response.body, headers: response.headers)
+        end
+
         private
 
         def compatibility_date
