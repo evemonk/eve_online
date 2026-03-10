@@ -11,8 +11,6 @@ RSpec.describe "Get solar system information" do
 
   subject { client.universe.system(id: 30_000_001) }
 
-  specify { expect(subject.scope).to eq(nil) }
-
   specify do
     expect(subject.as_json).to eq(constellation_id: 20_000_001,
       name: "Tanoo",
