@@ -40,7 +40,7 @@ RSpec.describe "Get solar system information" do
 
   specify { expect(subject.cache_status).to eq("HIT") }
 
-  specify { expect(subject.request_id).to eq("adbcc2b2-d57c-44d3-b263-4e1e63e20251") }
+  specify { expect(subject.request_id).to eq("3c766d13-1600-424b-be4d-0356229d039b") }
 
   specify { expect(subject.ratelimit_group).to eq(nil) }
 
