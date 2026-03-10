@@ -9,5 +9,10 @@ gem "standard", require: false
 gem "fasterer", require: false
 gem "activesupport", git: "https://github.com/rails/rails", require: "activesupport", branch: "main"
 gem "super_diff", require: false
+gem "rspec-core", require: false
+gem "rspec-its", require: false
+gem "simplecov", require: false
+gem "webmock", require: false
+gem "vcr", require: false
 
 gemspec path: "../"
