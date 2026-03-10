@@ -15,17 +15,19 @@ module EveOnline
           }
         end
 
-        def planets
-        end
-
         def position
           @position ||= Position.new(attributes: attributes.position)
         end
 
-        def stargates
+        def station_ids
+          attributes.stations
         end
 
-        def stations
+        def planets
+        end
+
+        def stargate_ids
+          attributes.stargates
         end
       end
     end
