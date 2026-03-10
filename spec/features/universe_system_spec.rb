@@ -7,9 +7,9 @@ RSpec.describe "Get solar system information" do
 
   after { VCR.eject_cassette }
 
-  let(:options) { {id: 30_000_001, language: "en-us"} }
+  let(:client) { EveOnline::ESI::Client.new }
 
-  subject { EveOnline::ESI::UniverseSystem.new(options) }
+  subject { client.universe.system(id: 30_000_001) }
 
   specify { expect(subject.scope).to eq(nil) }
 
@@ -36,7 +36,21 @@ RSpec.describe "Get solar system information" do
 
   specify { expect(subject.station_ids).to eq([60_012_526, 60_014_437]) }
 
+  specify { expect(subject.etag).to eq("W/\"f801dec473fd1f6bae55b0287b44fc2022da563f59ea428eba3b2a2f\"") }
+
+  specify { expect(subject.cache_status).to eq("HIT") }
+
+  specify { expect(subject.request_id).to eq("adbcc2b2-d57c-44d3-b263-4e1e63e20251") }
+
+  specify { expect(subject.ratelimit_group).to eq(nil) }
+
+  specify { expect(subject.ratelimit_limit).to eq(nil) }
+
+  specify { expect(subject.ratelimit_remaining).to eq(nil) }
+
+  specify { expect(subject.ratelimit_used).to eq(nil) }
+
   specify { expect(subject.error_limit_remain).to eq(100) }
 
-  specify { expect(subject.error_limit_reset).to eq(5) }
+  specify { expect(subject.error_limit_reset).to eq(6) }
 end
