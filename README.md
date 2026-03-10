@@ -2629,13 +2629,13 @@ system_kill.system_id # => 30005327
 #### Get solar systems
 
 ```ruby
-systems = EveOnline::ESI::UniverseSystems.new
+client = EveOnline::ESI::Client.new
 
-systems.scope # => nil
+systems = client.universe.systems
 
-systems.universe_system_ids.size # => 8285
+systems.system_ids.size # => 8490
 
-systems.universe_system_ids.first # => 30000001
+systems.system_ids.first # => 30000001
 ```
 
 #### Get solar system information
