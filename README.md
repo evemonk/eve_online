@@ -2163,11 +2163,11 @@ category.group_ids.first # => 25
 #### Get constellations
 
 ```ruby
-constellations = EveOnline::ESI::UniverseConstellations.new
+client = EveOnline::ESI::Client.new
 
-constellations.scope # => nil
+constellations = client.universe.constellations
 
-constellations.constellation_ids.size # => 1146
+constellations.constellation_ids.size # => 1184
 
 constellations.constellation_ids.first # => 20000001
 ```
