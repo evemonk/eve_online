@@ -2321,23 +2321,21 @@ group.type_ids # => [22, 17425, 17426, 26852, 28367, 28385, 28387, 28625, 46678,
 #### Get moon information
 
 ```ruby
-options = { id: 40000004 }
+client = EveOnline::ESI::Client.new
 
-moon = EveOnline::ESI::UniverseMoon.new(options)
+moon = client.universe.moon(id: 40_000_004)
 
-moon.scope # => nil
-
-moon.as_json # => {:moon_id=>40000004,
-             #     :name=>"Tanoo I - Moon 1",
-             #     :system_id=>30000001}
+moon.as_json # => {moon_id: 40000004,
+             #     name: "Tanoo I - Moon 1",
+             #     system_id: 30000001}
 
 moon.moon_id # => 40000004
 moon.name # => "Tanoo I - Moon 1"
 moon.system_id # => 30000001
 
-moon.position.as_json # => {:x=>162088094286.0,
-                      #     :y=>21314854783.0,
-                      #     :z=>-73598621491.0}
+moon.position.as_json # => {x: 162088094286.0,
+                      #     y: 21314854783.0,
+                      #     z: -73598621491.0}
 
 moon.position.x # => 162088094286.0
 moon.position.y # => 21314854783.0
