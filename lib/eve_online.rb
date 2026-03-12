@@ -56,6 +56,7 @@ module EveOnline
       autoload :Implants, "eve_online/esi/models/implants"
       autoload :JumpClone, "eve_online/esi/models/jump_clone"
       autoload :NpcCorporations, "eve_online/esi/models/npc_corporations"
+      autoload :PlanetShort, "eve_online/esi/models/planet_short"
       autoload :Position, "eve_online/esi/models/position"
       autoload :Race, "eve_online/esi/models/race"
       autoload :Route, "eve_online/esi/models/route"

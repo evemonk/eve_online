@@ -24,6 +24,7 @@ module EveOnline
         end
 
         def planets
+          @planets ||= Collection.from_array(attributes.planets, type: PlanetShort)
         end
 
         def stargate_ids
