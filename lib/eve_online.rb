@@ -19,6 +19,7 @@ module EveOnline
       # Sort alphabetically
       autoload :AlliancesResources, "eve_online/esi/resources/alliances_resources"
       autoload :AssetsResources, "eve_online/esi/resources/assets_resources"
+      autoload :CalendarsResources, "eve_online/esi/resources/calendars_resources"
       autoload :CharactersResources, "eve_online/esi/resources/characters_resources"
       autoload :ClonesResources, "eve_online/esi/resources/clones_resources"
       autoload :CorporationsResources, "eve_online/esi/resources/corporations_resources"

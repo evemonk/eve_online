@@ -52,7 +52,7 @@ module EveOnline
 
       # Calendar APIs
       def calendar
-        raise NotImplementedError, "Calendar API is not implemented yet"
+        Resources::CalendarsResources.new(self)
       end
 
       # Character APIs
