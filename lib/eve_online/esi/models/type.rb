@@ -24,7 +24,7 @@ module EveOnline
         end
 
         def dogma_attributes
-          @dogma_attributes ||= Collection.from_array(attributes.dogma_attributes || [], type: DogmaAttribute)
+          @dogma_attributes ||= Collection.from_array(attributes.dogma_attributes || [], type: DogmaAttributeShort)
         end
 
         def dogma_effects

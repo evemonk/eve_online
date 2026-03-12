@@ -10,6 +10,13 @@ module EveOnline
           Models::DogmaAttributes.new(body: response.body, headers: response.headers)
         end
 
+        # @param id [Integer] Attribute ID
+        def attribute(id:)
+          response = get_request("dogma/attributes/#{id}")
+
+          Models::DogmaAttribute.new(attributes: response.body, headers: response.headers)
+        end
+
         private
 
         def compatibility_date

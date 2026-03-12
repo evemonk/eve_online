@@ -60,6 +60,7 @@ module EveOnline
       autoload :Defender, "eve_online/esi/models/defender"
       autoload :Destination, "eve_online/esi/models/destination"
       autoload :DogmaAttribute, "eve_online/esi/models/dogma_attribute"
+      autoload :DogmaAttributeShort, "eve_online/esi/models/dogma_attribute_short"
       autoload :DogmaAttributes, "eve_online/esi/models/dogma_attributes"
       autoload :DogmaEffect, "eve_online/esi/models/dogma_effect"
       autoload :Faction, "eve_online/esi/models/faction"
