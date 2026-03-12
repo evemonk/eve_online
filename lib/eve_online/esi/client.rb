@@ -52,6 +52,7 @@ module EveOnline
 
       # Calendar APIs
       def calendar
+        raise NotImplementedError, "Calendar API is not implemented yet"
       end
 
       # Character APIs
@@ -65,8 +66,14 @@ module EveOnline
       end
 
       # Contacts APIs
+      def contacts
+        raise NotImplementedError, "Contacts API is not implemented yet"
+      end
 
       # Contracts APIs
+      def contracts
+        raise NotImplementedError, "Contracts API is not implemented yet"
+      end
 
       # Corporation APIs
       def corporations
@@ -74,24 +81,54 @@ module EveOnline
       end
 
       # Corporation Projects APIs
+      def corporation_projects
+        raise NotImplementedError, "Corporation Projects API is not implemented yet"
+      end
 
       # Dogma APIs
+      def dogma
+        raise NotImplementedError, "Dogma API is not implemented yet"
+      end
 
       # Faction Warfare APIs
+      def faction_warfare
+        raise NotImplementedError, "Faction Warfare API is not implemented yet"
+      end
 
       # Fittings APIs
+      def fittings
+        raise NotImplementedError, "Fittings API is not implemented yet"
+      end
 
       # Fleets APIs
+      def fleets
+        raise NotImplementedError, "Fleets API is not implemented yet"
+      end
 
       # Freelance Jobs APIs
+      def freelance_jobs
+        raise NotImplementedError, "Freelance Jobs API is not implemented yet"
+      end
 
       # Incursions APIs
+      def incursions
+        raise NotImplementedError, "Incursions API is not implemented yet"
+      end
 
       # Industry APIs
+      def industry
+        raise NotImplementedError, "Industry API is not implemented yet"
+      end
 
       # Insurance APIs
+      def insurance
+        raise NotImplementedError, "Insurance API is not implemented yet"
+      end
 
       # Killmails APIs
+      def killmails
+        raise NotImplementedError, "Killmails API is not implemented yet"
+      end
 
       # Location APIs
       def locations
@@ -99,14 +136,29 @@ module EveOnline
       end
 
       # Loyalty APIs
+      def loyalty
+        raise NotImplementedError, "Loyalty API is not implemented yet"
+      end
 
       # Mail APIs
+      def mail
+        raise NotImplementedError, "Mail API is not implemented yet"
+      end
 
       # Market APIs
+      def market
+        raise NotImplementedError, "Market API is not implemented yet"
+      end
 
       # Meta APIs
+      def meta
+        raise NotImplementedError, "Meta API is not implemented yet"
+      end
 
       # Planetary Interaction APIs
+      def planetary_interaction
+        raise NotImplementedError, "Planetary Interaction API is not implemented yet"
+      end
 
       # Routes APIs
       def routes
@@ -124,6 +176,9 @@ module EveOnline
       end
 
       # Sovereignty APIs
+      def sovereignty
+        raise NotImplementedError, "Sovereignty API is not implemented yet"
+      end
 
       # Status API
       def server_status
@@ -136,6 +191,9 @@ module EveOnline
       end
 
       # User Interface APIs
+      def user_interface
+        raise NotImplementedError, "User Interface API is not implemented yet"
+      end
 
       # Wallet APIs
       def wallet

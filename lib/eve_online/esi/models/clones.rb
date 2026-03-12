@@ -16,7 +16,7 @@ module EveOnline
         end
 
         def jump_clones
-          @jump_clones ||= Collection.from_array(attributes.jump_clones, type: JumpClone)
+          @jump_clones ||= Collection.from_array(attributes.jump_clones || [], type: JumpClone)
         end
       end
     end

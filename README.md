@@ -2629,30 +2629,28 @@ system_kill.system_id # => 30005327
 #### Get solar systems
 
 ```ruby
-systems = EveOnline::ESI::UniverseSystems.new
+client = EveOnline::ESI::Client.new
 
-systems.scope # => nil
+systems = client.universe.systems
 
-systems.universe_system_ids.size # => 8285
+systems.system_ids.size # => 8490
 
-systems.universe_system_ids.first # => 30000001
+systems.system_ids.first # => 30000001
 ```
 
 #### Get solar system information
 
 ```ruby
-options = { id: 30000001, language: 'en-us' }
+client = EveOnline::ESI::Client.new
 
-system = EveOnline::ESI::UniverseSystem.new(options)
+system = client.universe.system(id: 30_000_001)
 
-system.scope # => nil
-
-system.as_json # => {:constellation_id=>20000001,
-               #     :name=>"Tanoo",
-               #     :security_class=>"B",
-               #     :security_status=>0.8583240509033203,
-               #     :star_id=>40000001,
-               #     :system_id=>30000001}
+system.as_json # => {constellation_id: 20000001,
+               #     name: "Tanoo",
+               #     security_class: "B",
+               #     security_status: 0.8583240509033203,
+               #     star_id: 40000001,
+               #     system_id: 30000001}
 
 system.constellation_id # => 20000001
 system.name # => "Tanoo"
@@ -2661,9 +2659,9 @@ system.security_status # => 0.8583240509033203
 system.star_id # => 40000001
 system.system_id # => 30000001
 
-system.position.as_json # => {:x=>-8.851079259998058e+16,
-                        #     :y=>4.236944396687888e+16,
-                        #     :z=>-4.451352534647966e+16}
+system.position.as_json # => {x: -8.851079259998058e+16,
+                        #     y: 4.236944396687888e+16,
+                        #     z: -4.451352534647966e+16}
 
 system.position.x # => -8.851079259998058e+16
 system.position.y # => 4.236944396687888e+16

@@ -12,7 +12,7 @@ module EveOnline
         end
 
         def skills
-          @skills ||= Collection.from_array(attributes.skills, type: Skill)
+          @skills ||= Collection.from_array(attributes.skills || [], type: Skill)
         end
       end
     end

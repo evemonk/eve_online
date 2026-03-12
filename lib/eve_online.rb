@@ -56,6 +56,8 @@ module EveOnline
       autoload :Implants, "eve_online/esi/models/implants"
       autoload :JumpClone, "eve_online/esi/models/jump_clone"
       autoload :NpcCorporations, "eve_online/esi/models/npc_corporations"
+      autoload :PlanetShort, "eve_online/esi/models/planet_short"
+      autoload :Position, "eve_online/esi/models/position"
       autoload :Race, "eve_online/esi/models/race"
       autoload :Route, "eve_online/esi/models/route"
       autoload :Search, "eve_online/esi/models/search"
@@ -63,6 +65,8 @@ module EveOnline
       autoload :Skill, "eve_online/esi/models/skill"
       autoload :Skills, "eve_online/esi/models/skills"
       autoload :SkillQueueEntry, "eve_online/esi/models/skill_queue_entry"
+      autoload :System, "eve_online/esi/models/system"
+      autoload :Systems, "eve_online/esi/models/systems"
       autoload :War, "eve_online/esi/models/war"
       autoload :Wars, "eve_online/esi/models/wars"
     end
