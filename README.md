@@ -2659,12 +2659,9 @@ system.security_status # => 0.8583240509033203
 system.star_id # => 40000001
 system.system_id # => 30000001
 
-
-
-
-system.position.as_json # => {:x=>-8.851079259998058e+16,
-                        #     :y=>4.236944396687888e+16,
-                        #     :z=>-4.451352534647966e+16}
+system.position.as_json # => {x: -8.851079259998058e+16,
+                        #     y: 4.236944396687888e+16,
+                        #     z: -4.451352534647966e+16}
 
 system.position.x # => -8.851079259998058e+16
 system.position.y # => 4.236944396687888e+16
