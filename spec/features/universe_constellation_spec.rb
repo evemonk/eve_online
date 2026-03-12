@@ -7,11 +7,9 @@ RSpec.describe "Get constellation information" do
 
   after { VCR.eject_cassette }
 
-  let(:options) { {id: 20_000_001} }
+  let(:client) { EveOnline::ESI::Client.new }
 
-  subject { EveOnline::ESI::UniverseConstellation.new(options) }
-
-  specify { expect(subject.scope).to eq(nil) }
+  subject { client.universe.constellation(id: 20_000_001) }
 
   specify do
     expect(subject.as_json).to eq(constellation_id: 20_000_001,
@@ -36,7 +34,21 @@ RSpec.describe "Get constellation information" do
       30_000_008])
   end
 
+  specify { expect(subject.etag).to eq("W/\"eb02b32cba3ed2b28639d4d552243949671a18d2b8aca54f4271cfbb\"") }
+
+  specify { expect(subject.cache_status).to eq("HIT") }
+
+  specify { expect(subject.request_id).to eq("d01d69c1-f42e-49b5-be22-0f9ff0b9a641") }
+
+  specify { expect(subject.ratelimit_group).to eq(nil) }
+
+  specify { expect(subject.ratelimit_limit).to eq(nil) }
+
+  specify { expect(subject.ratelimit_remaining).to eq(nil) }
+
+  specify { expect(subject.ratelimit_used).to eq(nil) }
+
   specify { expect(subject.error_limit_remain).to eq(100) }
 
-  specify { expect(subject.error_limit_reset).to eq(32) }
+  specify { expect(subject.error_limit_reset).to eq(38) }
 end

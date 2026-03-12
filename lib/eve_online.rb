@@ -50,6 +50,7 @@ module EveOnline
       autoload :CharacterWallet, "eve_online/esi/models/character_wallet"
       autoload :CharacterShip, "eve_online/esi/models/character_ship"
       autoload :Clones, "eve_online/esi/models/clones"
+      autoload :Constellation, "eve_online/esi/models/constellation"
       autoload :Constellations, "eve_online/esi/models/constellations"
       autoload :Corporation, "eve_online/esi/models/corporation"
       autoload :Defender, "eve_online/esi/models/defender"

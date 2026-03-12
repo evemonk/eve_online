@@ -102,6 +102,13 @@ module EveOnline
           Models::Constellations.new(body: response.body, headers: response.headers)
         end
 
+        # @param id [Integer] Constellation ID
+        def constellation(id:)
+          response = get_request("universe/constellations/#{id}")
+
+          Models::Constellation.new(attributes: response.body, headers: response.headers)
+        end
+
         private
 
         def compatibility_date
