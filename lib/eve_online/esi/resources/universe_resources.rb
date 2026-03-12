@@ -64,21 +64,29 @@ module EveOnline
 
         def regions
           response = get_request("universe/regions")
+
+          Models::Regions.new(body: response.body, headers: response.headers)
         end
 
         # @param id [Integer] Region ID
         def region(id:)
           response = get_request("universe/regions/#{id}")
+
+          Models::Region.new(attributes: response.body, headers: response.headers)
         end
 
         # @param id [Integer] Star ID
         def star(id:)
           response = get_request("universe/stars/#{id}")
+
+          Models::Star.new(attributes: response.body, headers: response.headers)
         end
 
         # @param id [Integer] Stargate ID
         def stargate(id:)
           response = get_request("universe/stargates/#{id}")
+
+          Models::Stargate.new(attributes: response.body, headers: response.headers)
         end
 
         private
