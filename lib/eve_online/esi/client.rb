@@ -87,7 +87,7 @@ module EveOnline
 
       # Dogma APIs
       def dogma
-        raise NotImplementedError, "Dogma API is not implemented yet"
+        Resources::DogmaResources.new(self)
       end
 
       # Faction Warfare APIs
