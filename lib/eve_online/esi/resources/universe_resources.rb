@@ -145,6 +145,27 @@ module EveOnline
           Models::Graphics.new(body: response.body, headers: response.headers)
         end
 
+        # @param id [Integer] Graphic ID
+        def graphic(id:)
+
+
+        end
+
+        # @param page [Integer] Page number (default: 1)
+        def types(page: 1)
+          response = get_request("universe/types",
+            params: {
+              page: page
+            })
+
+          Models::Types.new(body: response.body, headers: response.headers)
+        end
+
+        # @param id [Integer] Type ID
+        def type(id:)
+
+        end
+
         private
 
         def compatibility_date
