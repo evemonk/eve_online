@@ -48,6 +48,13 @@ module EveOnline
           Models::Station.new(attributes: response.body, headers: response.headers)
         end
 
+        # @param id [Integer] Moon ID
+        def moon(id:)
+          response = get_request("universe/moons/#{id}")
+
+          Models::Moon.new(attributes: response.body, headers: response.headers)
+        end
+
         private
 
         def compatibility_date
