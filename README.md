@@ -2130,11 +2130,11 @@ bloodline.willpower # => 10
 #### Get item categories
 
 ```ruby
-categories = EveOnline::ESI::UniverseCategories.new
+client = EveOnline::ESI::Client.new
 
-categories.scope # => nil
+categories = client.universe.categories
 
-categories.category_ids.size # => 43
+categories.category_ids.size # => 48
 
 categories.category_ids.first # => 0
 ```
