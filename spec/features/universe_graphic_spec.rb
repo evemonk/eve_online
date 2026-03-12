@@ -22,11 +22,11 @@ RSpec.describe "Get graphic information" do
       sof_race_name: "amarr")
   end
 
-  specify { expect(subject.etag).to eq("W/\"eb02b32cba3ed2b28639d4d552243949671a18d2b8aca54f4271cfbb\"") }
+  specify { expect(subject.etag).to eq("\"eb02b32cba3ed2b28639d4d552243949671a18d2b8aca54f4271cfbb\"") }
 
-  specify { expect(subject.cache_status).to eq("HIT") }
+  specify { expect(subject.cache_status).to eq("MISS") }
 
-  specify { expect(subject.request_id).to eq("f5830882-1403-48e4-9a49-66c26dcd1ac9") }
+  specify { expect(subject.request_id).to eq("6d3e0994-a657-4b43-8d1b-1ba796e99570") }
 
   specify { expect(subject.ratelimit_group).to eq(nil) }
 
@@ -38,5 +38,5 @@ RSpec.describe "Get graphic information" do
 
   specify { expect(subject.error_limit_remain).to eq(100) }
 
-  specify { expect(subject.error_limit_reset).to eq(6) }
+  specify { expect(subject.error_limit_reset).to eq(41) }
 end
