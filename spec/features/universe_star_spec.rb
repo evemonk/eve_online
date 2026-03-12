@@ -20,7 +20,8 @@ RSpec.describe "Get star information" do
       solar_system_id: 30_000_001,
       spectral_class: "K2 V",
       temperature: 4567,
-      type_id: 45_041)
+      type_id: 45_041
+    )
   end
 
   specify { expect(subject.etag).to eq("W/\"eb02b32cba3ed2b28639d4d552243949671a18d2b8aca54f4271cfbb\"") }

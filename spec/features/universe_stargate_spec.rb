@@ -22,13 +22,15 @@ RSpec.describe "Get stargate information" do
     expect(subject.position.as_json).to eq(
       x: 331_516_354_560.0,
       y: 43_597_455_360.0,
-      z: -586_353_991_680.0)
+      z: -586_353_991_680.0
+    )
   end
 
   specify do
     expect(subject.destination.as_json).to eq(
       stargate_id: 50_000_342,
-      system_id: 30_000_003)
+      system_id: 30_000_003
+    )
   end
 
   specify { expect(subject.etag).to eq("W/\"eb02b32cba3ed2b28639d4d552243949671a18d2b8aca54f4271cfbb\"") }
