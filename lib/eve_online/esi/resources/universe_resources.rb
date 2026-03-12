@@ -41,6 +41,13 @@ module EveOnline
           Models::System.new(attributes: response.body, headers: response.headers)
         end
 
+        # @param id [Integer] Station ID
+        def station(id:)
+          response = get_request("universe/stations/#{id}")
+
+          Models::Station.new(attributes: response.body, headers: response.headers)
+        end
+
         private
 
         def compatibility_date
