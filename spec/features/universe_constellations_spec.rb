@@ -7,15 +7,29 @@ RSpec.describe "Get constellations" do
 
   after { VCR.eject_cassette }
 
-  subject { EveOnline::ESI::UniverseConstellations.new }
+  let(:client) { EveOnline::ESI::Client.new }
 
-  specify { expect(subject.scope).to eq(nil) }
+  subject { client.universe.constellations }
 
-  specify { expect(subject.constellation_ids.size).to eq(1146) }
+  specify { expect(subject.constellation_ids.size).to eq(1_184) }
 
   specify { expect(subject.constellation_ids.first).to eq(20_000_001) }
 
+  specify { expect(subject.etag).to eq("W/\"eb02b32cba3ed2b28639d4d552243949671a18d2b8aca54f4271cfbb\"") }
+
+  specify { expect(subject.cache_status).to eq("HIT") }
+
+  specify { expect(subject.request_id).to eq("bc09871c-d037-48df-8775-154949309929") }
+
+  specify { expect(subject.ratelimit_group).to eq(nil) }
+
+  specify { expect(subject.ratelimit_limit).to eq(nil) }
+
+  specify { expect(subject.ratelimit_remaining).to eq(nil) }
+
+  specify { expect(subject.ratelimit_used).to eq(nil) }
+
   specify { expect(subject.error_limit_remain).to eq(100) }
 
-  specify { expect(subject.error_limit_reset).to eq(34) }
+  specify { expect(subject.error_limit_reset).to eq(54) }
 end

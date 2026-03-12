@@ -96,6 +96,12 @@ module EveOnline
           Models::AsteroidBelt.new(attributes: response.body, headers: response.headers)
         end
 
+        def constellations
+          response = get_request("universe/constellations")
+
+          Models::Constellations.new(body: response.body, headers: response.headers)
+        end
+
         private
 
         def compatibility_date
