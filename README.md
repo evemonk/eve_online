@@ -2175,15 +2175,13 @@ constellations.constellation_ids.first # => 20000001
 #### Get constellation information
 
 ```ruby
-options = { id: 20_000_001, language: 'en-us' }
+client = EveOnline::ESI::Client.new
 
-constellation = EveOnline::ESI::UniverseConstellation.new(options)
+constellation = client.universe.constellation(id: 20_000_001)
 
-constellation.scope # => nil
-
-constellation.as_json # => {:constellation_id=>20000001,
-                      #     :name=>"San Matar",
-                      #     :region_id=>10000001}
+constellation.as_json # => {constellation_id: 20000001,
+                      #     name: "San Matar",
+                      #     region_id: 10000001}
 
 constellation.constellation_id # => 20000001
 constellation.name # => "San Matar"
@@ -2191,9 +2189,9 @@ constellation.region_id # => 10000001
 
 constellation.system_ids # => [30000001, 30000002, 30000003, 30000004, 30000005, 30000006, 30000007, 30000008]
 
-constellation.position.as_json # => {:x=>-9.404655970099134e+16,
-                               #     :y=>4.952015315379885e+16,
-                               #     :z=>-4.273873181840197e+16}
+constellation.position.as_json # => {x: -9.404655970099134e+16,
+                               #     y: 4.952015315379885e+16,
+                               #     z: -4.273873181840197e+16}
 
 constellation.position.x # => -9.404655970099134e+16
 constellation.position.y # => 4.952015315379885e+16
