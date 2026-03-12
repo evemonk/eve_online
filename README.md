@@ -2429,29 +2429,29 @@ region.constellation_ids.first # => 20000001
 #### Get stargate information
 
 ```ruby
-options = { id: 50_000_056 }
+client = EveOnline::ESI::Client.new
 
-stargate = EveOnline::ESI::UniverseStargate.new(options)
+stargate = client.universe.stargate(id: 50_000_056)
 
-stargate.scope # => nil
-
-stargate.as_json # => {:name=>"Stargate (Akpivem)",
-                 #     :stargate_id=>50000056,
-                 #     :system_id=>30000001,
-                 #     :type_id=>29624,
-                 #     :destination_stargate_id=>50000342,
-                 #     :destination_system_id=>30000003}
+stargate.as_json # => {name: "Stargate (Akpivem)",
+                 #     stargate_id: 50000056,
+                 #     system_id: 30000001,
+                 #     type_id: 29624}
 
 stargate.name # => "Stargate (Akpivem)"
 stargate.stargate_id # => 50000056
 stargate.system_id # => 30000001
 stargate.type_id # => 29624
-stargate.destination_stargate_id # => 50000342
-stargate.destination_system_id # => 30000003
 
-stargate.position.as_json # => {:x=>331516354560.0,
-                          #     :y=>43597455360.0,
-                          #     :z=>-586353991680.0}
+stargate.destination.as_json # => {stargate_id: 50000342,
+                             #     system_id: 30000003}
+
+stargate.destination.stargate_id # => 50000342
+stargate.destination.system_id # => 30000003
+
+stargate.position.as_json # => {x: 331516354560.0,
+                          #     y: 43597455360.0,
+                          #     z: -586353991680.0}
 
 stargate.position.x # => 331516354560.0
 stargate.position.y # => 43597455360.0
