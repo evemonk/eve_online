@@ -2685,28 +2685,20 @@ client = EveOnline::ESI::Client.new
 
 type = client.universe.type(id: 192)
 
-
-
-options = { id: 192, language: 'en-us' }
-
-type = EveOnline::ESI::UniverseType.new(options)
-
-type.scope # => nil
-
-type.as_json # => {:capacity=>0.0,
-             #     :description=>"Medium Projectile Ammo...",
-             #     :graphic_id=>1297,
-             #     :group_id=>83,
-             #     :icon_id=>1297,
-             #     :market_group_id=>112,
-             #     :mass=>1.0,
-             #     :name=>"Phased Plasma M",
-             #     :packaged_volume=>0.0125,
-             #     :portion_size=>100,
-             #     :published=>true,
-             #     :radius=>1.0,
-             #     :type_id=>192,
-             #     :volume=>0.0125}
+type.as_json # => {capacity: 0.0,
+             #     description: "Medium Projectile Ammo...",
+             #     graphic_id: 1297,
+             #     group_id: 83,
+             #     icon_id: 1297,
+             #     market_group_id: 112,
+             #     mass: 1.0,
+             #     name: "Phased Plasma M",
+             #     packaged_volume: 0.0125,
+             #     portion_size: 100,
+             #     published: true,
+             #     radius: 1.0,
+             #     type_id: 192,
+             #     volume: 0.0125}
 
 type.capacity # => 0.0
 type.description # => "Medium Projectile Ammo..."
@@ -2723,12 +2715,12 @@ type.radius # => 1.0
 type.type_id # => 192
 type.volume # => 0.0125
 
-type.dogma_attributes.size # => 17
+type.dogma_attributes.size # => 15
 
 type_dogma_attribute = type.dogma_attributes.first
 
-type_dogma_attribute.as_json # => {:attribute_id=>128,
-                             #     :value=>2.0}
+type_dogma_attribute.as_json # => {attribute_id: 128,
+                             #     value: 2.0}
 
 type_dogma_attribute.attribute_id # => 128
 type_dogma_attribute.value # => 2.0
@@ -2737,8 +2729,8 @@ type.dogma_effects.size # => 3
 
 type_dogma_effect = type.dogma_effects.first
 
-type_dogma_effect.as_json # => {:effect_id=>596,
-                          #     :is_default=>false}
+type_dogma_effect.as_json # => {effect_id: 596,
+                          #     is_default: false}
 
 type_dogma_effect.effect_id # => 596
 type_dogma_effect.is_default # => false
