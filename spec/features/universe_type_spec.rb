@@ -7,11 +7,9 @@ RSpec.describe "Get type information" do
 
   after { VCR.eject_cassette }
 
-  let(:options) { {id: 192, language: "en-us"} }
+  let(:client) { EveOnline::ESI::Client.new }
 
-  subject { EveOnline::ESI::UniverseType.new(options) }
-
-  specify { expect(subject.scope).to eq(nil) }
+  subject { client.universe.type(id: 192) }
 
   specify do
     expect(subject.as_json).to eq(capacity: 0.0,
@@ -38,7 +36,21 @@ RSpec.describe "Get type information" do
 
   specify { expect(subject.dogma_effects.first.as_json).to eq(effect_id: 596, is_default: false) }
 
+  specify { expect(subject.etag).to eq("W/\"eb02b32cba3ed2b28639d4d552243949671a18d2b8aca54f4271cfbb\"") }
+
+  specify { expect(subject.cache_status).to eq("HIT") }
+
+  specify { expect(subject.request_id).to eq("01e8d918-c5d0-40e6-a27a-0d96581da47c") }
+
+  specify { expect(subject.ratelimit_group).to eq(nil) }
+
+  specify { expect(subject.ratelimit_limit).to eq(nil) }
+
+  specify { expect(subject.ratelimit_remaining).to eq(nil) }
+
+  specify { expect(subject.ratelimit_used).to eq(nil) }
+
   specify { expect(subject.error_limit_remain).to eq(100) }
 
-  specify { expect(subject.error_limit_reset).to eq(30) }
+  specify { expect(subject.error_limit_reset).to eq(20) }
 end
