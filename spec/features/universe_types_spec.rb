@@ -13,9 +13,9 @@ RSpec.describe "Get types" do
 
   specify { expect(subject.total_pages).to eq(52) }
 
-  specify { expect(subject.universe_type_ids.size).to eq(1000) }
+  specify { expect(subject.type_ids.size).to eq(1000) }
 
-  specify { expect(subject.universe_type_ids.first).to eq(0) }
+  specify { expect(subject.type_ids.first).to eq(0) }
 
   specify { expect(subject.etag).to eq("W/\"eb02b32cba3ed2b28639d4d552243949671a18d2b8aca54f4271cfbb\"") }
 
