@@ -55,6 +55,13 @@ module EveOnline
           Models::Moon.new(attributes: response.body, headers: response.headers)
         end
 
+        # @param id [Integer] Planet ID
+        def planet(id:)
+          response = get_request("universe/planets/#{id}")
+
+          Models::Planet.new(attributes: response.body, headers: response.headers)
+        end
+
         private
 
         def compatibility_date
