@@ -201,7 +201,7 @@ DEPENDENCIES
   rspec-mocks
   rubocop
   simplecov
-  standard
+  standard (= 1.54.0)
   super_diff
   vcr
   webmock

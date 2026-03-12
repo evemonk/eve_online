@@ -12,7 +12,7 @@ gem "httplog"
 gem "ostruct"
 gem "rb-readline"
 gem "pry"
-gem "standard", require: false
+gem "standard", "1.54.0", require: false
 gem "rubocop", require: false
 gem "super_diff", require: false
 gem "rspec-core", require: false
