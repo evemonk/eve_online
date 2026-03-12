@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     module Models
-      class DogmaEffect < Object
+      class DogmaEffectShort < Object
         def as_json
           {
             effect_id: attributes.effect_id,

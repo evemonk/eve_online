@@ -23,6 +23,13 @@ module EveOnline
           Models::DogmaEffects.new(body: response.body, headers: response.headers)
         end
 
+        # @param id [Integer] Effect ID
+        def effect(id:)
+          response = get_request("dogma/effects/#{id}")
+
+          Models::DogmaEffect.new(attributes: response.body, headers: response.headers)
+        end
+
         private
 
         def compatibility_date
