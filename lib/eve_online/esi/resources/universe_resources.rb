@@ -126,6 +126,12 @@ module EveOnline
           Models::Group.new(attributes: response.body, headers: response.headers)
         end
 
+        def categories
+          response = get_request("universe/categories")
+
+          Models::Categories.new(body: response.body, headers: response.headers)
+        end
+
         private
 
         def compatibility_date
