@@ -17,6 +17,12 @@ module EveOnline
           Models::DogmaAttribute.new(attributes: response.body, headers: response.headers)
         end
 
+        def effects
+          response = get_request("dogma/effects")
+
+          Models::DogmaEffects.new(body: response.body, headers: response.headers)
+        end
+
         private
 
         def compatibility_date

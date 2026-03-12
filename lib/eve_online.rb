@@ -63,6 +63,7 @@ module EveOnline
       autoload :DogmaAttributeShort, "eve_online/esi/models/dogma_attribute_short"
       autoload :DogmaAttributes, "eve_online/esi/models/dogma_attributes"
       autoload :DogmaEffect, "eve_online/esi/models/dogma_effect"
+      autoload :DogmaEffects, "eve_online/esi/models/dogma_effects"
       autoload :Faction, "eve_online/esi/models/faction"
       autoload :Graphic, "eve_online/esi/models/graphic"
       autoload :Graphics, "eve_online/esi/models/graphics"
