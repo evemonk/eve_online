@@ -2396,13 +2396,13 @@ race.id # => 1
 #### Get regions
 
 ```ruby
-regions = EveOnline::ESI::UniverseRegions.new
+client = EveOnline::ESI::Client.new
 
-regions.scope # => nil
+regions = client.universe.regions
 
-regions.universe_region_ids.size # => 106
+regions.region_ids.size # => 114
 
-regions.universe_region_ids.first # => 10000001
+regions.region_ids.first # => 10000001
 ```
 
 #### Get region information
