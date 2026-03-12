@@ -1,5 +1,9 @@
 # Changelog
 
+## main
+
+* Re-implement universe endpoints. Follow example in README.md.
+
 ## v0.47.0
 
 * Re-write API. Follow example in README.md.

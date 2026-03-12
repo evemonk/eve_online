@@ -57,6 +57,7 @@ module EveOnline
       autoload :JumpClone, "eve_online/esi/models/jump_clone"
       autoload :Moon, "eve_online/esi/models/moon"
       autoload :NpcCorporations, "eve_online/esi/models/npc_corporations"
+      autoload :Planet, "eve_online/esi/models/planet"
       autoload :PlanetShort, "eve_online/esi/models/planet_short"
       autoload :Position, "eve_online/esi/models/position"
       autoload :Race, "eve_online/esi/models/race"
