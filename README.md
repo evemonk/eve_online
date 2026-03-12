@@ -2396,62 +2396,61 @@ race.id # => 1
 #### Get regions
 
 ```ruby
-regions = EveOnline::ESI::UniverseRegions.new
+client = EveOnline::ESI::Client.new
 
-regions.scope # => nil
+regions = client.universe.regions
 
-regions.universe_region_ids.size # => 106
+regions.region_ids.size # => 114
 
-regions.universe_region_ids.first # => 10000001
+regions.region_ids.first # => 10000001
 ```
 
 #### Get region information
 
 ```ruby
-options = { id: 10_000_001, language: 'en-us' }
+client = EveOnline::ESI::Client.new
 
-region = EveOnline::ESI::UniverseRegion.new(options)
+region = client.universe.region(id: 10_000_001)
 
-region.scope # => nil
-
-region.as_json # => {:description=>"The Derelik region...",
-               #     :name=>"Derelik",
-               #     :region_id=>10000001}
+region.as_json # => {description: "The Derelik region...",
+               #     name: "Derelik",
+               #     region_id: 10000001}
 
 region.description # => "The Derelik region..."
 region.name # => "Derelik"
 region.region_id # => 10000001
 
 region.constellation_ids.size # => 16
+
 region.constellation_ids.first # => 20000001
 ```
 
 #### Get stargate information
 
 ```ruby
-options = { id: 50_000_056 }
+client = EveOnline::ESI::Client.new
 
-stargate = EveOnline::ESI::UniverseStargate.new(options)
+stargate = client.universe.stargate(id: 50_000_056)
 
-stargate.scope # => nil
-
-stargate.as_json # => {:name=>"Stargate (Akpivem)",
-                 #     :stargate_id=>50000056,
-                 #     :system_id=>30000001,
-                 #     :type_id=>29624,
-                 #     :destination_stargate_id=>50000342,
-                 #     :destination_system_id=>30000003}
+stargate.as_json # => {name: "Stargate (Akpivem)",
+                 #     stargate_id: 50000056,
+                 #     system_id: 30000001,
+                 #     type_id: 29624}
 
 stargate.name # => "Stargate (Akpivem)"
 stargate.stargate_id # => 50000056
 stargate.system_id # => 30000001
 stargate.type_id # => 29624
-stargate.destination_stargate_id # => 50000342
-stargate.destination_system_id # => 30000003
 
-stargate.position.as_json # => {:x=>331516354560.0,
-                          #     :y=>43597455360.0,
-                          #     :z=>-586353991680.0}
+stargate.destination.as_json # => {stargate_id: 50000342,
+                             #     system_id: 30000003}
+
+stargate.destination.stargate_id # => 50000342
+stargate.destination.system_id # => 30000003
+
+stargate.position.as_json # => {x: 331516354560.0,
+                          #     y: 43597455360.0,
+                          #     z: -586353991680.0}
 
 stargate.position.x # => 331516354560.0
 stargate.position.y # => 43597455360.0
@@ -2461,25 +2460,23 @@ stargate.position.z # => -586353991680.0
 #### Get star information
 
 ```ruby
-options = { id: 40000001 }
+client = EveOnline::ESI::Client.new
 
-star = EveOnline::ESI::UniverseStar.new(options)
+star = client.universe.star(id: 40_000_001)
 
-star.scope # => nil
-
-star.as_json # => {:age=>14262808228,
-             #     :luminosity=>0.01575000025331974,
-             #     :name=>"Tanoo - Star",
-             #     :radius=>126700000,
-             #     :solar_system_id=>30000001,
-             #     :spectral_class=>"K2 V",
-             #     :temperature=>4567,
-             #     :type_id=>45041}
+star.as_json # => {age: 14262808228,
+             #     luminosity: 0.01575000025331974,
+             #     name: "Tanoo - Star",
+             #     radius: 63350000,
+             #     solar_system_id: 30000001,
+             #     spectral_class: "K2 V",
+             #     temperature: 4567,
+             #     type_id: 45041}
 
 star.age # => 14262808228
 star.luminosity # => 0.01575000025331974
 star.name # => "Tanoo - Star"
-star.radius # => 126700000
+star.radius # => 63350000
 star.solar_system_id # => 30000001
 star.spectral_class # => "K2 V"
 star.temperature # => 4567

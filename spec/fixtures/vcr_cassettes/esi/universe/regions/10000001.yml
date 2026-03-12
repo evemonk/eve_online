@@ -2,24 +2,30 @@
 http_interactions:
 - request:
     method: get
-    uri: https://esi.evetech.net/v1/universe/regions/10000001/?language=en-us
+    uri: https://esi.evetech.net/universe/regions/10000001
     body:
       encoding: US-ASCII
       string: ''
     headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.47.0
       Accept:
       - application/json
-      User-Agent:
-      - EveOnline API (https://github.com/evemonk/eve_online) v0.27.0
+      Accept-Language:
+      - en
+      X-Tenant:
+      - tranquility
+      X-Compatibility-Date:
+      - '2025-12-16'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Tue, 02 Jul 2019 17:46:20 GMT
+      - Thu, 12 Mar 2026 14:07:57 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
@@ -28,38 +34,37 @@ http_interactions:
       - keep-alive
       Access-Control-Allow-Credentials:
       - 'true'
-      Access-Control-Allow-Headers:
-      - Content-Type,Authorization,If-None-Match,X-User-Agent
-      Access-Control-Allow-Methods:
-      - GET,HEAD,OPTIONS
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Expose-Headers:
-      - Content-Type,Warning,ETag,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
-      Access-Control-Max-Age:
-      - '600'
-      Allow:
-      - GET,HEAD,OPTIONS
+      - Etag, Retry-After, X-Compatibility-Date, X-Esi-Error-Limit-Remain, X-Esi-Error-Limit-Reset,
+        X-Pages, X-Ratelimit-Group, X-Ratelimit-Limit, X-Ratelimit-Remaining, X-Ratelimit-Used
       Cache-Control:
       - public
       Content-Language:
-      - en-us
+      - en
       Etag:
-      - W/"37a39e7a5f5ecc07b19a3128c319f1198d035aee10052d0a21ccdd94"
+      - W/"eb02b32cba3ed2b28639d4d552243949671a18d2b8aca54f4271cfbb"
       Expires:
-      - Wed, 03 Jul 2019 11:05:00 GMT
+      - Fri, 13 Mar 2026 11:05:00 GMT
       Last-Modified:
-      - Mon, 01 Jul 2019 11:09:31 GMT
+      - Wed, 11 Mar 2026 11:03:14 GMT
       Strict-Transport-Security:
       - max-age=31536000
       Vary:
-      - Accept-Encoding,Accept-Language
+      - Accept-Language
+      - Accept-Language
+      - X-Compatibility-Date
+      X-Compatibility-Date:
+      - '2020-01-01'
+      X-Esi-Cache-Status:
+      - HIT
       X-Esi-Error-Limit-Remain:
       - '100'
       X-Esi-Error-Limit-Reset:
-      - '40'
+      - '3'
       X-Esi-Request-Id:
-      - '092596f4-53ff-4e84-8fea-5162d749d606'
+      - 0b4509a7-b87e-4f3a-b8d0-2e2186aedb31
     body:
       encoding: UTF-8
       string: '{"constellations":[20000001,20000002,20000003,20000004,20000005,20000006,20000007,20000008,20000009,20000010,20000011,20000012,20000013,20000014,20000015,20000016],"description":"The
@@ -78,6 +83,5 @@ http_interactions:
         an increase in economic prosperity. This harsh trail is a point of pride for
         all who call themselves Ammatar, and it has bolstered their faith in the Amarrian
         way to no end.","name":"Derelik","region_id":10000001}'
-    http_version: 
-  recorded_at: Tue, 02 Jul 2019 17:46:20 GMT
-recorded_with: VCR 5.0.0
+  recorded_at: Thu, 12 Mar 2026 14:07:57 GMT
+recorded_with: VCR 6.4.0
