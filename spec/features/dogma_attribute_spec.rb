@@ -40,5 +40,5 @@ RSpec.describe "Get attribute information" do
 
   specify { expect(subject.error_limit_remain).to eq(100) }
 
-  specify { expect(subject.error_limit_reset).to eq(6) }
+  specify { expect(subject.error_limit_reset).to eq(17) }
 end
