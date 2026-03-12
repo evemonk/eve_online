@@ -11,6 +11,10 @@ module EveOnline
             region_id: attributes.region_id
           }
         end
+
+        def constellation_ids
+          attributes.constellations || []
+        end
       end
     end
   end
