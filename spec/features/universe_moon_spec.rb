@@ -7,11 +7,9 @@ RSpec.describe "Get moon information" do
 
   after { VCR.eject_cassette }
 
-  let(:options) { {id: 40_000_004} }
+  let(:client) { EveOnline::ESI::Client.new }
 
-  subject { EveOnline::ESI::UniverseMoon.new(options) }
-
-  specify { expect(subject.scope).to eq(nil) }
+  subject { client.universe.moon(id: 40_000_004) }
 
   specify do
     expect(subject.as_json).to eq(moon_id: 40_000_004,
@@ -25,7 +23,21 @@ RSpec.describe "Get moon information" do
       z: -73_598_621_491.0)
   end
 
+  specify { expect(subject.etag).to eq("W/\"eb02b32cba3ed2b28639d4d552243949671a18d2b8aca54f4271cfbb\"") }
+
+  specify { expect(subject.cache_status).to eq("HIT") }
+
+  specify { expect(subject.request_id).to eq("7f2522c0-3309-4d54-91c5-9a5923c9a1b9") }
+
+  specify { expect(subject.ratelimit_group).to eq(nil) }
+
+  specify { expect(subject.ratelimit_limit).to eq(nil) }
+
+  specify { expect(subject.ratelimit_remaining).to eq(nil) }
+
+  specify { expect(subject.ratelimit_used).to eq(nil) }
+
   specify { expect(subject.error_limit_remain).to eq(100) }
 
-  specify { expect(subject.error_limit_reset).to eq(59) }
+  specify { expect(subject.error_limit_reset).to eq(38) }
 end
