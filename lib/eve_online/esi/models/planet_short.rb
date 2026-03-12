@@ -11,11 +11,11 @@ module EveOnline
         end
 
         def asteroid_belt_ids
-          attributes.asteroid_belts
+          attributes.asteroid_belts || []
         end
 
         def moon_ids
-          attributes.moons
+          attributes.moons || []
         end
       end
     end
