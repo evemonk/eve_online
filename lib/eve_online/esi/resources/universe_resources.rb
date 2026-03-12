@@ -132,6 +132,13 @@ module EveOnline
           Models::Categories.new(body: response.body, headers: response.headers)
         end
 
+        # @param id [Integer] Category ID
+        def category(id:)
+          response = get_request("universe/categories/#{id}")
+
+          Models::Category.new(attributes: response.body, headers: response.headers)
+        end
+
         private
 
         def compatibility_date

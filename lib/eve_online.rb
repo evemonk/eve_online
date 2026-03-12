@@ -46,6 +46,7 @@ module EveOnline
       autoload :Bloodline, "eve_online/esi/models/bloodline"
       autoload :Blueprint, "eve_online/esi/models/blueprint"
       autoload :Categories, "eve_online/esi/models/categories"
+      autoload :Category, "eve_online/esi/models/category"
       autoload :Character, "eve_online/esi/models/character"
       autoload :CharacterAsset, "eve_online/esi/models/character_asset"
       autoload :CharacterWallet, "eve_online/esi/models/character_wallet"
