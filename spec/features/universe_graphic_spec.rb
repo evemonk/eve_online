@@ -7,11 +7,9 @@ RSpec.describe "Get graphic information" do
 
   after { VCR.eject_cassette }
 
-  let(:options) { {id: 20_481} }
+  let(:client) { EveOnline::ESI::Client.new }
 
-  subject { EveOnline::ESI::UniverseGraphic.new(options) }
-
-  specify { expect(subject.scope).to eq(nil) }
+  subject { client.universe.graphic(id: 20_481) }
 
   specify do
     expect(subject.as_json).to eq(collision_file: nil,
@@ -24,7 +22,21 @@ RSpec.describe "Get graphic information" do
       sof_race_name: "amarr")
   end
 
+  specify { expect(subject.etag).to eq("W/\"eb02b32cba3ed2b28639d4d552243949671a18d2b8aca54f4271cfbb\"") }
+
+  specify { expect(subject.cache_status).to eq("HIT") }
+
+  specify { expect(subject.request_id).to eq("f5830882-1403-48e4-9a49-66c26dcd1ac9") }
+
+  specify { expect(subject.ratelimit_group).to eq(nil) }
+
+  specify { expect(subject.ratelimit_limit).to eq(nil) }
+
+  specify { expect(subject.ratelimit_remaining).to eq(nil) }
+
+  specify { expect(subject.ratelimit_used).to eq(nil) }
+
   specify { expect(subject.error_limit_remain).to eq(100) }
 
-  specify { expect(subject.error_limit_reset).to eq(22) }
+  specify { expect(subject.error_limit_reset).to eq(6) }
 end
