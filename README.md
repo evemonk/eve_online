@@ -2071,21 +2071,19 @@ ancestry.short_description # => "Making the universe a better place, one fight a
 #### Get asteroid belt information
 
 ```ruby
-options = { id: 40_000_003 }
+client = EveOnline::ESI::Client.new
 
-asteroid_belt = EveOnline::ESI::UniverseAsteroidBelt.new(options)
+asteroid_belt = client.universe.asteroid_belt(id: 40_000_003)
 
-asteroid_belt.scope # => nil
-
-asteroid_belt.as_json # => {:name=>"Tanoo I - Asteroid Belt 1",
-                      #     :system_id=>30000001}
+asteroid_belt.as_json # => {name: "Tanoo I - Asteroid Belt 1",
+                      #     system_id: 30000001}
 
 asteroid_belt.name # => "Tanoo I - Asteroid Belt 1"
 asteroid_belt.system_id # => 30000001
 
-asteroid_belt.position.as_json # => {:x=>161967513600.0,
-                               #     :y=>21288837120.0,
-                               #     :z=>-73505464320.0}
+asteroid_belt.position.as_json # => {x: 161967513600.0,
+                               #     y: 21288837120.0,
+                               #     z: -73505464320.0}
 
 asteroid_belt.position.x # => 161967513600.0
 asteroid_belt.position.y # => 21288837120.0
@@ -2132,11 +2130,11 @@ bloodline.willpower # => 10
 #### Get item categories
 
 ```ruby
-categories = EveOnline::ESI::UniverseCategories.new
+client = EveOnline::ESI::Client.new
 
-categories.scope # => nil
+categories = client.universe.categories
 
-categories.category_ids.size # => 43
+categories.category_ids.size # => 48
 
 categories.category_ids.first # => 0
 ```
@@ -2144,32 +2142,31 @@ categories.category_ids.first # => 0
 #### Get item category information
 
 ```ruby
-options = { id: 6, language: 'en-us' }
+client = EveOnline::ESI::Client.new
 
-category = EveOnline::ESI::UniverseCategory.new(options)
+category = client.universe.category(id: 6)
 
-category.scope # => nil
-
-category.as_json # => {:category_id=>6,
-                 #     :name=>"Ship",
-                 #     :published=>true}
+category.as_json # => {category_id: 6,
+                 #     name: "Ship",
+                 #     published: true}
 
 category.category_id # => 6
 category.name # => "Ship"
 category.published # => true
 
-category.group_ids.size # => 46
+category.group_ids.size # => 48
+
 category.group_ids.first # => 25
 ```
 
 #### Get constellations
 
 ```ruby
-constellations = EveOnline::ESI::UniverseConstellations.new
+client = EveOnline::ESI::Client.new
 
-constellations.scope # => nil
+constellations = client.universe.constellations
 
-constellations.constellation_ids.size # => 1146
+constellations.constellation_ids.size # => 1184
 
 constellations.constellation_ids.first # => 20000001
 ```
@@ -2177,15 +2174,13 @@ constellations.constellation_ids.first # => 20000001
 #### Get constellation information
 
 ```ruby
-options = { id: 20_000_001, language: 'en-us' }
+client = EveOnline::ESI::Client.new
 
-constellation = EveOnline::ESI::UniverseConstellation.new(options)
+constellation = client.universe.constellation(id: 20_000_001)
 
-constellation.scope # => nil
-
-constellation.as_json # => {:constellation_id=>20000001,
-                      #     :name=>"San Matar",
-                      #     :region_id=>10000001}
+constellation.as_json # => {constellation_id: 20000001,
+                      #     name: "San Matar",
+                      #     region_id: 10000001}
 
 constellation.constellation_id # => 20000001
 constellation.name # => "San Matar"
@@ -2193,9 +2188,9 @@ constellation.region_id # => 10000001
 
 constellation.system_ids # => [30000001, 30000002, 30000003, 30000004, 30000005, 30000006, 30000007, 30000008]
 
-constellation.position.as_json # => {:x=>-9.404655970099134e+16,
-                               #     :y=>4.952015315379885e+16,
-                               #     :z=>-4.273873181840197e+16}
+constellation.position.as_json # => {x: -9.404655970099134e+16,
+                               #     y: 4.952015315379885e+16,
+                               #     z: -4.273873181840197e+16}
 
 constellation.position.x # => -9.404655970099134e+16
 constellation.position.y # => 4.952015315379885e+16
@@ -2240,32 +2235,30 @@ faction.station_system_count # => 508
 #### Get graphics
 
 ```ruby
-graphics = EveOnline::ESI::UniverseGraphics.new
+client = EveOnline::ESI::Client.new
 
-graphics.scope # => nil
+graphics = client.universe.graphics
 
-graphics.graphic_ids.size # => 3702
+graphics.graphic_ids.size # => 5994
 
-graphics.graphic_ids.first # => 20480
+graphics.graphic_ids.first # => 10
 ```
 
 #### Get graphic information
 
 ```ruby
-options = { id: 20481 }
+client = EveOnline::ESI::Client.new
 
-graphic = EveOnline::ESI::UniverseGraphic.new(options)
+graphic = client.universe.graphic(id: 20_481)
 
-graphic.scope # => nil
-
-graphic.as_json # => {:collision_file=>nil,
-                #     :graphic_file=>nil,
-                #     :graphic_id=>20481,
-                #     :icon_folder=>nil,
-                #     :sof_dna=>"ai1_t1:tash-murkon:amarr",
-                #     :sof_fation_name=>"tash-murkon",
-                #     :sof_hull_name=>"ai1_t1",
-                #     :sof_race_name=>"amarr"}
+graphic.as_json # => {collision_file: nil,
+                #     graphic_file: nil,
+                #     graphic_id: 20481,
+                #     icon_folder: nil,
+                #     sof_dna: "ai1_t1:tash-murkon:amarr",
+                #     sof_fation_name: "tash-murkon",
+                #     sof_hull_name: "ai1_t1",
+                #     sof_race_name: "amarr"}
 
 graphic.collision_file # => nil
 graphic.graphic_file # => nil
@@ -2280,13 +2273,9 @@ graphic.sof_race_name # => "amarr"
 #### Get item groups
 
 ```ruby
-options = { page: 1 }
+client = EveOnline::ESI::Client.new
 
-groups = EveOnline::ESI::UniverseGroups.new(options)
-
-groups.scope # => nil
-
-groups.page  # => 1
+groups = client.universe.groups(page: 1)
 
 groups.total_pages # => 2
 
@@ -2298,22 +2287,21 @@ groups.group_ids.first # => 0
 #### Get item group information
 
 ```ruby
-options = { id: 450, language: 'en-us' }
+client = EveOnline::ESI::Client.new
 
-group = EveOnline::ESI::UniverseGroup.new(options)
+group = client.universe.group(id: 450)
 
-group.scope # => nil
-
-group.as_json # => {:category_id=>25,
-              #     :group_id=>450,
-              #     :name=>"Arkonor",
-              #     :published=>true}
+group.as_json # => {category_id: 25,
+              #     group_id: 450,
+              #     name: "Arkonor",
+              #     published: true}
 
 group.category_id # => 25
 group.group_id # => 450
 group.name # => "Arkonor"
 group.published # => true
-group.type_ids # => [22, 17425, 17426, 26852, 28367, 28385, 28387, 28625, 46678, 46691]
+
+group.type_ids # => [22, 17425, 17426, 26852, 28367, 28385, 28387, 28625, 46678, 46691, 62568, 62569, 62570, 62571]
 ```
 
 #### Bulk names to IDs
@@ -2679,44 +2667,38 @@ system.station_ids # => [60012526, 60014437]
 #### Get types
 
 ```ruby
-options = { page: 1 }
+client = EveOnline::ESI::Client.new
 
-types = EveOnline::ESI::UniverseTypes.new(options)
+types = client.universe.types(page: 1)
 
-types.scope # => nil
+types.total_pages # => 52
 
-types.page # => 1
+types.type_ids.size # => 1000
 
-types.total_pages # => 36
-
-types.universe_type_ids.size # => 1000
-
-types.universe_type_ids.first # => 0
+types.type_ids.first # => 0
 ```
 
 #### Get type information
 
 ```ruby
-options = { id: 192, language: 'en-us' }
+client = EveOnline::ESI::Client.new
 
-type = EveOnline::ESI::UniverseType.new(options)
+type = client.universe.type(id: 192)
 
-type.scope # => nil
-
-type.as_json # => {:capacity=>0.0,
-             #     :description=>"Medium Projectile Ammo...",
-             #     :graphic_id=>1297,
-             #     :group_id=>83,
-             #     :icon_id=>1297,
-             #     :market_group_id=>112,
-             #     :mass=>1.0,
-             #     :name=>"Phased Plasma M",
-             #     :packaged_volume=>0.0125,
-             #     :portion_size=>100,
-             #     :published=>true,
-             #     :radius=>1.0,
-             #     :type_id=>192,
-             #     :volume=>0.0125}
+type.as_json # => {capacity: 0.0,
+             #     description: "Medium Projectile Ammo...",
+             #     graphic_id: 1297,
+             #     group_id: 83,
+             #     icon_id: 1297,
+             #     market_group_id: 112,
+             #     mass: 1.0,
+             #     name: "Phased Plasma M",
+             #     packaged_volume: 0.0125,
+             #     portion_size: 100,
+             #     published: true,
+             #     radius: 1.0,
+             #     type_id: 192,
+             #     volume: 0.0125}
 
 type.capacity # => 0.0
 type.description # => "Medium Projectile Ammo..."
@@ -2733,12 +2715,12 @@ type.radius # => 1.0
 type.type_id # => 192
 type.volume # => 0.0125
 
-type.dogma_attributes.size # => 17
+type.dogma_attributes.size # => 15
 
 type_dogma_attribute = type.dogma_attributes.first
 
-type_dogma_attribute.as_json # => {:attribute_id=>128,
-                             #     :value=>2.0}
+type_dogma_attribute.as_json # => {attribute_id: 128,
+                             #     value: 2.0}
 
 type_dogma_attribute.attribute_id # => 128
 type_dogma_attribute.value # => 2.0
@@ -2747,8 +2729,8 @@ type.dogma_effects.size # => 3
 
 type_dogma_effect = type.dogma_effects.first
 
-type_dogma_effect.as_json # => {:effect_id=>596,
-                          #     :is_default=>false}
+type_dogma_effect.as_json # => {effect_id: 596,
+                          #     is_default: false}
 
 type_dogma_effect.effect_id # => 596
 type_dogma_effect.is_default # => false

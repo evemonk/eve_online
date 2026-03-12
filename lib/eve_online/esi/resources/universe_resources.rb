@@ -89,6 +89,86 @@ module EveOnline
           Models::Stargate.new(attributes: response.body, headers: response.headers)
         end
 
+        # @param id [Integer] Asteroid belt ID
+        def asteroid_belt(id:)
+          response = get_request("universe/asteroid_belts/#{id}")
+
+          Models::AsteroidBelt.new(attributes: response.body, headers: response.headers)
+        end
+
+        def constellations
+          response = get_request("universe/constellations")
+
+          Models::Constellations.new(body: response.body, headers: response.headers)
+        end
+
+        # @param id [Integer] Constellation ID
+        def constellation(id:)
+          response = get_request("universe/constellations/#{id}")
+
+          Models::Constellation.new(attributes: response.body, headers: response.headers)
+        end
+
+        # @param page [Integer] Page number (default: 1)
+        def groups(page: 1)
+          response = get_request("universe/groups",
+            params: {
+              page: page
+            })
+
+          Models::Groups.new(body: response.body, headers: response.headers)
+        end
+
+        # @param id [Integer] Group ID
+        def group(id:)
+          response = get_request("universe/groups/#{id}")
+
+          Models::Group.new(attributes: response.body, headers: response.headers)
+        end
+
+        def categories
+          response = get_request("universe/categories")
+
+          Models::Categories.new(body: response.body, headers: response.headers)
+        end
+
+        # @param id [Integer] Category ID
+        def category(id:)
+          response = get_request("universe/categories/#{id}")
+
+          Models::Category.new(attributes: response.body, headers: response.headers)
+        end
+
+        def graphics
+          response = get_request("universe/graphics")
+
+          Models::Graphics.new(body: response.body, headers: response.headers)
+        end
+
+        # @param id [Integer] Graphic ID
+        def graphic(id:)
+          response = get_request("universe/graphics/#{id}")
+
+          Models::Graphic.new(attributes: response.body, headers: response.headers)
+        end
+
+        # @param page [Integer] Page number (default: 1)
+        def types(page: 1)
+          response = get_request("universe/types",
+            params: {
+              page: page
+            })
+
+          Models::Types.new(body: response.body, headers: response.headers)
+        end
+
+        # @param id [Integer] Type ID
+        def type(id:)
+          response = get_request("universe/types/#{id}")
+
+          Models::Type.new(attributes: response.body, headers: response.headers)
+        end
+
         private
 
         def compatibility_date
