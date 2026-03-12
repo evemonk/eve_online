@@ -109,8 +109,12 @@ module EveOnline
           Models::Constellation.new(attributes: response.body, headers: response.headers)
         end
 
-        def groups
-          response = get_request("universe/groups")
+        # @param page [Integer] Page number (default: 1)
+        def groups(page: 1)
+          response = get_request("universe/groups",
+            params: {
+              page: page
+            })
 
           Models::Groups.new(body: response.body, headers: response.headers)
         end

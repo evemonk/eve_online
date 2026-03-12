@@ -7,13 +7,9 @@ RSpec.describe "Get item groups" do
 
   after { VCR.eject_cassette }
 
-  let(:options) { {page: 1} }
+  let(:client) { EveOnline::ESI::Client.new }
 
-  subject { EveOnline::ESI::UniverseGroups.new(options) }
-
-  specify { expect(subject.scope).to eq(nil) }
-
-  specify { expect(subject.page).to eq(1) }
+  subject { client.universe.groups(page: 1) }
 
   specify { expect(subject.total_pages).to eq(2) }
 
@@ -21,7 +17,21 @@ RSpec.describe "Get item groups" do
 
   specify { expect(subject.group_ids.first).to eq(0) }
 
+  specify { expect(subject.etag).to eq("W/\"eb02b32cba3ed2b28639d4d552243949671a18d2b8aca54f4271cfbb\"") }
+
+  specify { expect(subject.cache_status).to eq("HIT") }
+
+  specify { expect(subject.request_id).to eq("30dea164-0ab7-47fe-8a5a-e9de92326683") }
+
+  specify { expect(subject.ratelimit_group).to eq(nil) }
+
+  specify { expect(subject.ratelimit_limit).to eq(nil) }
+
+  specify { expect(subject.ratelimit_remaining).to eq(nil) }
+
+  specify { expect(subject.ratelimit_used).to eq(nil) }
+
   specify { expect(subject.error_limit_remain).to eq(100) }
 
-  specify { expect(subject.error_limit_reset).to eq(1) }
+  specify { expect(subject.error_limit_reset).to eq(43) }
 end
