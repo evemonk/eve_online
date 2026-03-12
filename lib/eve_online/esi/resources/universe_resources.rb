@@ -109,6 +109,12 @@ module EveOnline
           Models::Constellation.new(attributes: response.body, headers: response.headers)
         end
 
+        def groups
+          response = get_request("universe/groups")
+
+          Models::Groups.new(body: response.body, headers: response.headers)
+        end
+
         private
 
         def compatibility_date
