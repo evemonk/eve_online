@@ -139,6 +139,12 @@ module EveOnline
           Models::Category.new(attributes: response.body, headers: response.headers)
         end
 
+        def graphics
+          response = get_request("universe/graphics")
+
+          Models::Graphics.new(body: response.body, headers: response.headers)
+        end
+
         private
 
         def compatibility_date

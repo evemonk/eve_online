@@ -59,6 +59,7 @@ module EveOnline
       autoload :Defender, "eve_online/esi/models/defender"
       autoload :Destination, "eve_online/esi/models/destination"
       autoload :Faction, "eve_online/esi/models/faction"
+      autoload :Graphics, "eve_online/esi/models/graphics"
       autoload :Group, "eve_online/esi/models/group"
       autoload :Groups, "eve_online/esi/models/groups"
       autoload :HomeLocation, "eve_online/esi/models/home_location"

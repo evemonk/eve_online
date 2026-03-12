@@ -7,15 +7,29 @@ RSpec.describe "Get graphics" do
 
   after { VCR.eject_cassette }
 
-  subject { EveOnline::ESI::UniverseGraphics.new }
+  let(:client) { EveOnline::ESI::Client.new }
 
-  specify { expect(subject.scope).to eq(nil) }
+  subject { client.universe.graphics }
 
-  specify { expect(subject.graphic_ids.size).to eq(3_702) }
+  specify { expect(subject.graphic_ids.size).to eq(5_994) }
 
-  specify { expect(subject.graphic_ids.first).to eq(20_480) }
+  specify { expect(subject.graphic_ids.first).to eq(10) }
+
+  specify { expect(subject.etag).to eq("W/\"eb02b32cba3ed2b28639d4d552243949671a18d2b8aca54f4271cfbb\"") }
+
+  specify { expect(subject.cache_status).to eq("HIT") }
+
+  specify { expect(subject.request_id).to eq("887ea8ec-a760-403b-b590-527a29e5a0db") }
+
+  specify { expect(subject.ratelimit_group).to eq(nil) }
+
+  specify { expect(subject.ratelimit_limit).to eq(nil) }
+
+  specify { expect(subject.ratelimit_remaining).to eq(nil) }
+
+  specify { expect(subject.ratelimit_used).to eq(nil) }
 
   specify { expect(subject.error_limit_remain).to eq(100) }
 
-  specify { expect(subject.error_limit_reset).to eq(15) }
+  specify { expect(subject.error_limit_reset).to eq(2) }
 end
