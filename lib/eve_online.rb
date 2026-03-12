@@ -58,6 +58,8 @@ module EveOnline
       autoload :Corporation, "eve_online/esi/models/corporation"
       autoload :Defender, "eve_online/esi/models/defender"
       autoload :Destination, "eve_online/esi/models/destination"
+      autoload :DogmaAttribute, "eve_online/esi/models/dogma_attribute"
+      autoload :DogmaEffect, "eve_online/esi/models/dogma_effect"
       autoload :Faction, "eve_online/esi/models/faction"
       autoload :Graphic, "eve_online/esi/models/graphic"
       autoload :Graphics, "eve_online/esi/models/graphics"
