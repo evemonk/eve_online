@@ -20,15 +20,15 @@ module EveOnline
         end
 
         def station_ids
-          attributes.stations
+          attributes.stations || []
         end
 
         def planets
-          @planets ||= Collection.from_array(attributes.planets, type: PlanetShort)
+          @planets ||= Collection.from_array(attributes.planets || [], type: PlanetShort)
         end
 
         def stargate_ids
-          attributes.stargates
+          attributes.stargates || []
         end
       end
     end
