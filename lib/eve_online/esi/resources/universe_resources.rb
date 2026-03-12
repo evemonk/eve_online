@@ -119,6 +119,13 @@ module EveOnline
           Models::Groups.new(body: response.body, headers: response.headers)
         end
 
+        # @param id [Integer] Group ID
+        def group(id:)
+          response = get_request("universe/groups/#{id}")
+
+          Models::Group.new(attributes: response.body, headers: response.headers)
+        end
+
         private
 
         def compatibility_date

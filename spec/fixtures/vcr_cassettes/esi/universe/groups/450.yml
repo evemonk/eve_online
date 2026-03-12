@@ -1,0 +1,72 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://esi.evetech.net/universe/groups/450
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.47.0
+      Accept:
+      - application/json
+      Accept-Language:
+      - en
+      X-Tenant:
+      - tranquility
+      X-Compatibility-Date:
+      - '2025-12-16'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 12 Mar 2026 16:28:39 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '158'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Etag, Retry-After, X-Compatibility-Date, X-Esi-Error-Limit-Remain, X-Esi-Error-Limit-Reset,
+        X-Pages, X-Ratelimit-Group, X-Ratelimit-Limit, X-Ratelimit-Remaining, X-Ratelimit-Used
+      Cache-Control:
+      - public
+      Content-Language:
+      - en
+      Etag:
+      - W/"eb02b32cba3ed2b28639d4d552243949671a18d2b8aca54f4271cfbb"
+      Expires:
+      - Fri, 13 Mar 2026 11:05:00 GMT
+      Last-Modified:
+      - Wed, 11 Mar 2026 11:03:14 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept-Language
+      - Accept-Language
+      - X-Compatibility-Date
+      X-Compatibility-Date:
+      - '2020-01-01'
+      X-Esi-Cache-Status:
+      - HIT
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '21'
+      X-Esi-Request-Id:
+      - d6a53435-7ac4-4c08-b845-178f29ead84d
+    body:
+      encoding: UTF-8
+      string: '{"category_id":25,"group_id":450,"name":"Arkonor","published":true,"types":[22,17425,17426,26852,28367,28385,28387,28625,46678,46691,62568,62569,62570,62571]}'
+  recorded_at: Thu, 12 Mar 2026 16:28:39 GMT
+recorded_with: VCR 6.4.0
