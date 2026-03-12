@@ -59,6 +59,7 @@ module EveOnline
       autoload :Defender, "eve_online/esi/models/defender"
       autoload :Destination, "eve_online/esi/models/destination"
       autoload :Faction, "eve_online/esi/models/faction"
+      autoload :Graphic, "eve_online/esi/models/graphic"
       autoload :Graphics, "eve_online/esi/models/graphics"
       autoload :Group, "eve_online/esi/models/group"
       autoload :Groups, "eve_online/esi/models/groups"
@@ -84,6 +85,8 @@ module EveOnline
       autoload :System, "eve_online/esi/models/system"
       autoload :Station, "eve_online/esi/models/station"
       autoload :Systems, "eve_online/esi/models/systems"
+      autoload :Type, "eve_online/esi/models/type"
+      autoload :Types, "eve_online/esi/models/types"
       autoload :War, "eve_online/esi/models/war"
       autoload :Wars, "eve_online/esi/models/wars"
     end
