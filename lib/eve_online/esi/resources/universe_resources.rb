@@ -89,6 +89,13 @@ module EveOnline
           Models::Stargate.new(attributes: response.body, headers: response.headers)
         end
 
+        # @param id [Integer] Asteroid belt ID
+        def asteroid_belt(id:)
+          response = get_request("universe/asteroid_belts/#{id}")
+
+          Models::AsteroidBelt.new(attributes: response.body, headers: response.headers)
+        end
+
         private
 
         def compatibility_date
