@@ -7,11 +7,9 @@ RSpec.describe "Get stargate information" do
 
   after { VCR.eject_cassette }
 
-  let(:options) { {id: 50_000_056} }
+  let(:client) { EveOnline::ESI::Client.new }
 
-  subject { EveOnline::ESI::UniverseStargate.new(options) }
-
-  specify { expect(subject.scope).to eq(nil) }
+  subject { client.universe.stargate(id: 50_000_056) }
 
   specify do
     expect(subject.as_json).to eq(name: "Stargate (Akpivem)",
@@ -27,6 +25,20 @@ RSpec.describe "Get stargate information" do
       y: 43_597_455_360.0,
       z: -586_353_991_680.0)
   end
+
+  specify { expect(subject.etag).to eq("W/\"eb02b32cba3ed2b28639d4d552243949671a18d2b8aca54f4271cfbb\"") }
+
+  specify { expect(subject.cache_status).to eq("HIT") }
+
+  specify { expect(subject.request_id).to eq("e78de276-27a0-4592-9e62-be231990f233") }
+
+  specify { expect(subject.ratelimit_group).to eq(nil) }
+
+  specify { expect(subject.ratelimit_limit).to eq(nil) }
+
+  specify { expect(subject.ratelimit_remaining).to eq(nil) }
+
+  specify { expect(subject.ratelimit_used).to eq(nil) }
 
   specify { expect(subject.error_limit_remain).to eq(100) }
 

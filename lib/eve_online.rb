@@ -51,6 +51,7 @@ module EveOnline
       autoload :Clones, "eve_online/esi/models/clones"
       autoload :Corporation, "eve_online/esi/models/corporation"
       autoload :Defender, "eve_online/esi/models/defender"
+      autoload :Destination, "eve_online/esi/models/destination"
       autoload :Faction, "eve_online/esi/models/faction"
       autoload :HomeLocation, "eve_online/esi/models/home_location"
       autoload :Implants, "eve_online/esi/models/implants"
