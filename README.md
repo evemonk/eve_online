@@ -2669,19 +2669,15 @@ system.station_ids # => [60012526, 60014437]
 #### Get types
 
 ```ruby
-options = { page: 1 }
+client = EveOnline::ESI::Client.new
 
-types = EveOnline::ESI::UniverseTypes.new(options)
+types = client.universe.types(page: 1)
 
-types.scope # => nil
+types.total_pages # => 52
 
-types.page # => 1
+types.type_ids.size # => 1000
 
-types.total_pages # => 36
-
-types.universe_type_ids.size # => 1000
-
-types.universe_type_ids.first # => 0
+types.type_ids.first # => 0
 ```
 
 #### Get type information
