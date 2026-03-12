@@ -14,7 +14,7 @@ RSpec.describe "Get station information" do
   specify do
     expect(subject.as_json).to eq(max_dockable_ship_volume: 50_000_000.0,
       name: "Tanoo V - Moon 1 - Ammatar Consulate Bureau",
-      office_rental_cost: 1870537.0,
+      office_rental_cost: 1_870_537.0,
       owner: 1_000_126,
       race_id: 2,
       reprocessing_efficiency: 0.5,
@@ -37,7 +37,7 @@ RSpec.describe "Get station information" do
         "security-offices"],
       station_id: 60_012_526,
       system_id: 30_000_001,
-      type_id: 2502)
+      type_id: 2_502)
   end
 
   specify do
