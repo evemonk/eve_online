@@ -15,7 +15,7 @@ module EveOnline
         end
 
         def implant_ids
-          attributes.implants
+          attributes.implants || []
         end
       end
     end
