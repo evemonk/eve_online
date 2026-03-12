@@ -970,6 +970,8 @@ corporation_members.character_ids.first # => 2114220544
 #### Get attributes
 
 ```ruby
+
+
 dogma_attributes = EveOnline::ESI::DogmaAttributes.new
 
 dogma_attributes.scope # => nil
@@ -1016,13 +1018,13 @@ dogma_attribute.unit_id # => nil
 #### Get effects
 
 ```ruby
-dogma_effects = EveOnline::ESI::DogmaEffects.new
+client = EveOnline::ESI::Client.new
 
-dogma_effects.scope # => nil
+dogma_effects = client.dogma.effects
 
-dogma_effects.effect_ids.size # => 4166
+dogma_effects.effect_ids.size # => 3356
 
-dogma_effects.effect_ids.first # => 4
+dogma_effects.effect_ids.first # => 3356
 ```
 
 #### Get effect information
