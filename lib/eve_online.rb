@@ -55,6 +55,7 @@ module EveOnline
       autoload :HomeLocation, "eve_online/esi/models/home_location"
       autoload :Implants, "eve_online/esi/models/implants"
       autoload :JumpClone, "eve_online/esi/models/jump_clone"
+      autoload :Moon, "eve_online/esi/models/moon"
       autoload :NpcCorporations, "eve_online/esi/models/npc_corporations"
       autoload :PlanetShort, "eve_online/esi/models/planet_short"
       autoload :Position, "eve_online/esi/models/position"
