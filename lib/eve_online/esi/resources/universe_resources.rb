@@ -147,8 +147,9 @@ module EveOnline
 
         # @param id [Integer] Graphic ID
         def graphic(id:)
+          response = get_request("universe/graphics/#{id}")
 
-
+          Models::Graphic.new(attributes: response.body, headers: response.headers)
         end
 
         # @param page [Integer] Page number (default: 1)
@@ -163,7 +164,9 @@ module EveOnline
 
         # @param id [Integer] Type ID
         def type(id:)
+          response = get_request("universe/types/#{id}")
 
+          Models::Type.new(attributes: response.body, headers: response.headers)
         end
 
         private
