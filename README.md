@@ -2460,25 +2460,23 @@ stargate.position.z # => -586353991680.0
 #### Get star information
 
 ```ruby
-options = { id: 40000001 }
+client = EveOnline::ESI::Client.new
 
-star = EveOnline::ESI::UniverseStar.new(options)
+star = client.universe.star(id: 40_000_001)
 
-star.scope # => nil
-
-star.as_json # => {:age=>14262808228,
-             #     :luminosity=>0.01575000025331974,
-             #     :name=>"Tanoo - Star",
-             #     :radius=>126700000,
-             #     :solar_system_id=>30000001,
-             #     :spectral_class=>"K2 V",
-             #     :temperature=>4567,
-             #     :type_id=>45041}
+star.as_json # => {age: 14262808228,
+             #     luminosity: 0.01575000025331974,
+             #     name: "Tanoo - Star",
+             #     radius: 63350000,
+             #     solar_system_id: 30000001,
+             #     spectral_class: "K2 V",
+             #     temperature: 4567,
+             #     type_id: 45041}
 
 star.age # => 14262808228
 star.luminosity # => 0.01575000025331974
 star.name # => "Tanoo - Star"
-star.radius # => 126700000
+star.radius # => 63350000
 star.solar_system_id # => 30000001
 star.spectral_class # => "K2 V"
 star.temperature # => 4567
