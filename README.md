@@ -2276,13 +2276,9 @@ graphic.sof_race_name # => "amarr"
 #### Get item groups
 
 ```ruby
-options = { page: 1 }
+client = EveOnline::ESI::Client.new
 
-groups = EveOnline::ESI::UniverseGroups.new(options)
-
-groups.scope # => nil
-
-groups.page  # => 1
+groups = client.universe.groups(page: 1)
 
 groups.total_pages # => 2
 
