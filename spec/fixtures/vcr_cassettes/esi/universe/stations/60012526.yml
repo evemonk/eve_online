@@ -2,66 +2,71 @@
 http_interactions:
 - request:
     method: get
-    uri: https://esi.evetech.net/v2/universe/stations/60012526/
+    uri: https://esi.evetech.net/universe/stations/60012526
     body:
       encoding: US-ASCII
       string: ''
     headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.47.0
       Accept:
       - application/json
-      User-Agent:
-      - EveOnline API (https://github.com/evemonk/eve_online) v0.22.0
       Accept-Language:
-      - en-us
+      - en
+      X-Tenant:
+      - tranquility
+      X-Compatibility-Date:
+      - '2025-12-16'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Tue, 01 Jan 2019 21:57:24 GMT
+      - Thu, 12 Mar 2026 12:40:02 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
-      - '594'
+      - '595'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
       - 'true'
-      Access-Control-Allow-Headers:
-      - Content-Type,Authorization,If-None-Match,X-User-Agent
-      Access-Control-Allow-Methods:
-      - GET,HEAD,OPTIONS
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Expose-Headers:
-      - Content-Type,Warning,ETag,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
-      Access-Control-Max-Age:
-      - '600'
-      Allow:
-      - GET,HEAD,OPTIONS
+      - Etag, Retry-After, X-Compatibility-Date, X-Esi-Error-Limit-Remain, X-Esi-Error-Limit-Reset,
+        X-Pages, X-Ratelimit-Group, X-Ratelimit-Limit, X-Ratelimit-Remaining, X-Ratelimit-Used
       Cache-Control:
       - public
+      Content-Language:
+      - en
       Etag:
-      - W/"e3f6a76b4a1287f54966c6253f8f5d6ac6460bc43d47570331b43e0b"
+      - W/"eb02b32cba3ed2b28639d4d552243949671a18d2b8aca54f4271cfbb"
       Expires:
-      - Wed, 02 Jan 2019 11:05:00 GMT
+      - Fri, 13 Mar 2026 11:05:00 GMT
       Last-Modified:
-      - Tue, 01 Jan 2019 11:04:24 GMT
+      - Wed, 11 Mar 2026 11:03:14 GMT
       Strict-Transport-Security:
       - max-age=31536000
+      Vary:
+      - Accept-Language
+      - X-Compatibility-Date
+      X-Compatibility-Date:
+      - '2020-01-01'
+      X-Esi-Cache-Status:
+      - HIT
       X-Esi-Error-Limit-Remain:
       - '100'
       X-Esi-Error-Limit-Reset:
-      - '36'
+      - '58'
       X-Esi-Request-Id:
-      - be2c3feb-2370-406b-9569-4524173d3fb1
+      - 7d9dae8a-5436-40d6-b35b-d5e95a3532c8
     body:
       encoding: UTF-8
       string: '{"max_dockable_ship_volume":50000000.0,"name":"Tanoo V - Moon 1 - Ammatar
-        Consulate Bureau","office_rental_cost":329553.0,"owner":1000126,"position":{"x":-1106145239040.0,"y":-145460060160.0,"z":182618726400.0},"race_id":2,"reprocessing_efficiency":0.5,"reprocessing_stations_take":0.05,"services":["bounty-missions","courier-missions","interbus","reprocessing-plant","market","stock-exchange","cloning","repair-facilities","fitting","news","insurance","docking","office-rental","loyalty-point-store","navy-offices","security-offices"],"station_id":60012526,"system_id":30000001,"type_id":2502}'
-    http_version: 
-  recorded_at: Tue, 01 Jan 2019 21:57:24 GMT
-recorded_with: VCR 4.0.0
+        Consulate Bureau","office_rental_cost":1870537.0,"owner":1000126,"position":{"x":-1106145239040.0,"y":-145460060160.0,"z":182618726400.0},"race_id":2,"reprocessing_efficiency":0.5,"reprocessing_stations_take":0.05,"services":["bounty-missions","courier-missions","interbus","reprocessing-plant","market","stock-exchange","cloning","repair-facilities","fitting","news","insurance","docking","office-rental","loyalty-point-store","navy-offices","security-offices"],"station_id":60012526,"system_id":30000001,"type_id":2502}'
+  recorded_at: Thu, 12 Mar 2026 12:40:02 GMT
+recorded_with: VCR 6.4.0

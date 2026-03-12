@@ -66,6 +66,7 @@ module EveOnline
       autoload :Skills, "eve_online/esi/models/skills"
       autoload :SkillQueueEntry, "eve_online/esi/models/skill_queue_entry"
       autoload :System, "eve_online/esi/models/system"
+      autoload :Station, "eve_online/esi/models/station"
       autoload :Systems, "eve_online/esi/models/systems"
       autoload :War, "eve_online/esi/models/war"
       autoload :Wars, "eve_online/esi/models/wars"
