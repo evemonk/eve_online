@@ -2290,22 +2290,21 @@ groups.group_ids.first # => 0
 #### Get item group information
 
 ```ruby
-options = { id: 450, language: 'en-us' }
+client = EveOnline::ESI::Client.new
 
-group = EveOnline::ESI::UniverseGroup.new(options)
+group = client.universe.group(id: 450)
 
-group.scope # => nil
-
-group.as_json # => {:category_id=>25,
-              #     :group_id=>450,
-              #     :name=>"Arkonor",
-              #     :published=>true}
+group.as_json # => {category_id: 25,
+              #     group_id: 450,
+              #     name: "Arkonor",
+              #     published: true}
 
 group.category_id # => 25
 group.group_id # => 450
 group.name # => "Arkonor"
 group.published # => true
-group.type_ids # => [22, 17425, 17426, 26852, 28367, 28385, 28387, 28625, 46678, 46691]
+
+group.type_ids # => [22, 17425, 17426, 26852, 28367, 28385, 28387, 28625, 46678, 46691, 62568, 62569, 62570, 62571]
 ```
 
 #### Bulk names to IDs
