@@ -62,6 +62,25 @@ module EveOnline
           Models::Planet.new(attributes: response.body, headers: response.headers)
         end
 
+        def regions
+          response = get_request("universe/regions")
+        end
+
+        # @param id [Integer] Region ID
+        def region(id:)
+          response = get_request("universe/regions/#{id}")
+        end
+
+        # @param id [Integer] Star ID
+        def star(id:)
+          response = get_request("universe/stars/#{id}")
+        end
+
+        # @param id [Integer] Stargate ID
+        def stargate(id:)
+          response = get_request("universe/stargates/#{id}")
+        end
+
         private
 
         def compatibility_date
