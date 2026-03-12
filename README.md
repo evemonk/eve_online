@@ -2071,21 +2071,19 @@ ancestry.short_description # => "Making the universe a better place, one fight a
 #### Get asteroid belt information
 
 ```ruby
-options = { id: 40_000_003 }
+client = EveOnline::ESI::Client.new
 
-asteroid_belt = EveOnline::ESI::UniverseAsteroidBelt.new(options)
+asteroid_belt = client.universe.asteroid_belt(id: 40_000_003)
 
-asteroid_belt.scope # => nil
-
-asteroid_belt.as_json # => {:name=>"Tanoo I - Asteroid Belt 1",
-                      #     :system_id=>30000001}
+asteroid_belt.as_json # => {name: "Tanoo I - Asteroid Belt 1",
+                      #     system_id: 30000001}
 
 asteroid_belt.name # => "Tanoo I - Asteroid Belt 1"
 asteroid_belt.system_id # => 30000001
 
-asteroid_belt.position.as_json # => {:x=>161967513600.0,
-                               #     :y=>21288837120.0,
-                               #     :z=>-73505464320.0}
+asteroid_belt.position.as_json # => {x: 161967513600.0,
+                               #     y: 21288837120.0,
+                               #     z: -73505464320.0}
 
 asteroid_belt.position.x # => 161967513600.0
 asteroid_belt.position.y # => 21288837120.0
