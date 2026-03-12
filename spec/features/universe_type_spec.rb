@@ -28,7 +28,7 @@ RSpec.describe "Get type information" do
       volume: 0.0125)
   end
 
-  specify { expect(subject.dogma_attributes.size).to eq(17) }
+  specify { expect(subject.dogma_attributes.size).to eq(15) }
 
   specify { expect(subject.dogma_attributes.first.as_json).to eq(attribute_id: 128, value: 2.0) }
 

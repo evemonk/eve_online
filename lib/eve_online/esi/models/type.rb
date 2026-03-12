@@ -24,11 +24,11 @@ module EveOnline
         end
 
         def dogma_attributes
-          []
+          @dogma_attributes ||= Collection.from_array(attributes.dogma_attributes || [], type: DogmaAttribute)
         end
 
         def dogma_effects
-          []
+          @dogma_effects ||= Collection.from_array(attributes.dogma_effects || [], type: DogmaEffect)
         end
       end
     end
