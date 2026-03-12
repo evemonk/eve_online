@@ -5,7 +5,7 @@ source "https://rubygems.org"
 gem "nokogiri"
 gem "awesome_print", require: "ap"
 gem "pry"
-gem "standard", require: false
+gem "standard", "1.54.0", require: false
 gem "fasterer", require: false
 gem "activesupport", git: "https://github.com/rails/rails", require: "activesupport", branch: "main"
 gem "super_diff", require: false
