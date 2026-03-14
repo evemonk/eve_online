@@ -25,6 +25,7 @@ module EveOnline
       autoload :CorporationsResources, "eve_online/esi/resources/corporations_resources"
       autoload :DogmaResources, "eve_online/esi/resources/dogma_resources"
       autoload :LocationResources, "eve_online/esi/resources/location_resources"
+      autoload :LoyaltyPointsResources, "eve_online/esi/resources/loyalty_points_resources"
       autoload :RoutesResources, "eve_online/esi/resources/routes_resources"
       autoload :SearchResources, "eve_online/esi/resources/search_resources"
       autoload :ServerStatusResources, "eve_online/esi/resources/server_status_resources"

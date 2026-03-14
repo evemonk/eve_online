@@ -137,7 +137,7 @@ module EveOnline
 
       # Loyalty APIs
       def loyalty
-        raise NotImplementedError, "Loyalty API is not implemented yet"
+        Resources::LoyaltyPointsResources.new(self)
       end
 
       # Mail APIs
