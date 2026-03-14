@@ -28,6 +28,10 @@ module EveOnline
             tracking_speed_attribute_id: tracking_speed_attribute_id
           }
         end
+
+        def modifiers
+          @modifiers ||= Collection.from_array(attributes.modifiers || [], type: DogmaEffectModifier)
+        end
       end
     end
   end
