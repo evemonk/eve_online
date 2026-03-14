@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://esi.evetech.net/universe/structures?filter=market
+    uri: https://esi.evetech.net/characters/1337512245/corporationhistory
     body:
       encoding: US-ASCII
       string: ''
@@ -25,11 +25,11 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 14 Mar 2026 14:50:54 GMT
+      - Sat, 14 Mar 2026 14:05:19 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
-      - '743'
+      - '932'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -44,11 +44,11 @@ http_interactions:
       Content-Language:
       - en
       Etag:
-      - '"a067987475a3f4b541f31745c2c5a4411d6dc5368da14577d025fd24"'
+      - '"2101d3bfd27c5a53d0b90b07761e5716010bb393493110c3266cd730"'
       Expires:
-      - Sat, 14 Mar 2026 15:20:52 GMT
+      - Sun, 15 Mar 2026 13:54:11 GMT
       Last-Modified:
-      - Sat, 14 Mar 2026 14:20:52 GMT
+      - Sat, 14 Mar 2026 13:54:11 GMT
       Strict-Transport-Security:
       - max-age=31536000
       Vary:
@@ -61,11 +61,11 @@ http_interactions:
       X-Esi-Error-Limit-Remain:
       - '100'
       X-Esi-Error-Limit-Reset:
-      - '6'
+      - '41'
       X-Esi-Request-Id:
-      - cf61480e-3092-4a1f-a5aa-6f05a43f775f
+      - 3aff0c93-867f-4671-9cd5-bfec95b4bf43
     body:
       encoding: UTF-8
-      string: "[1044961079041,1048810492290,1031240619395,1051191837960,1044164309897,1045712793227,1050958629515,1042223782798,1051453179153,1044960858258,1052121022995,1046043963414,1050351018262,1044880797208,1045193582746,1049535002140,1051111127839,1052450748835,1048446040103,1049441788712,1050444740652,1049035426094,1049313588911,1053062097712,1027375934642,1021681819954,1052685221691,1052014475197,1046404465214,1044970203585,1049358554947,1044752365771,1022167642188,1041388175181,1050719964747,1051070543569,1051060046930,1047292528467,1050657322964,1047028869086,1050827709022,1044579290081,1050182657126,1044857068649,1051885479017,1052795897194,1048427761902,1042833494769,1046802738801,1052337009652,1033626295285,1048444699516,1048595097213]"
-  recorded_at: Sat, 14 Mar 2026 14:50:54 GMT
+      string: '[{"corporation_id":1000171,"record_id":64489559,"start_date":"2025-04-24T19:02:00Z"},{"corporation_id":98565696,"record_id":52535738,"start_date":"2020-04-24T17:23:00Z"},{"corporation_id":1000049,"record_id":52481119,"start_date":"2020-04-19T20:22:00Z"},{"corporation_id":98134807,"record_id":38567616,"start_date":"2015-06-30T21:15:00Z"},{"corporation_id":98003346,"record_id":27415268,"start_date":"2013-08-05T21:05:00Z"},{"corporation_id":1000049,"record_id":26736030,"start_date":"2013-07-08T09:57:00Z"},{"corporation_id":98003346,"record_id":20109148,"start_date":"2012-06-27T21:59:00Z"},{"corporation_id":1000049,"record_id":17822677,"start_date":"2011-09-08T20:47:00Z"},{"corporation_id":98003346,"record_id":16566992,"start_date":"2011-04-12T18:35:00Z"},{"corporation_id":696940850,"record_id":12867184,"start_date":"2010-02-04T17:55:00Z"},{"corporation_id":1000171,"record_id":12668668,"start_date":"2010-01-15T15:26:00Z"}]'
+  recorded_at: Sat, 14 Mar 2026 14:05:18 GMT
 recorded_with: VCR 6.4.0

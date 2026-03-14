@@ -440,25 +440,23 @@ blueprint.type_id # => 1152
 #### Get corporation history
 
 ```ruby
-options = { character_id: 90_729_314 }
+client = EveOnline::ESI::Client.new
 
-character_corporation_history = EveOnline::ESI::CharacterCorporationHistory.new(options)
+character_corporation_history = client.characters.corporation_history(id: 1_337_512_245)
 
-character_corporation_history.scope # => nil
+character_corporation_history.size # => 11
 
-character_corporation_history.entries.size # => 1
+entry = character_corporation_history.first
 
-entry = character_corporation_history.entries.first
+entry.as_json # => {corporation_id: 1000171,
+              #     is_deleted: nil,
+              #     record_id: 64489559,
+              #     start_date: 2025-04-24 19:02:00.000000000 UTC +00:00}
 
-entry.as_json # => {:corporation_id=>1000168,
-              #     :is_deleted=>nil,
-              #     :record_id=>16785803,
-              #     :start_date=>Tue, 10 May 2011 10:23:00 UTC +00:00}
-
-entry.corporation_id # => 1000168
+entry.corporation_id # => 1000171
 entry.is_deleted # => nil
-entry.record_id # => 16785803
-entry.start_date # => Tue, 10 May 2011 10:23:00 UTC +00:00
+entry.record_id # => 64489559
+entry.start_date # => 2025-04-24 19:02:00.000000000 UTC +00:00
 ```
 
 #### Calculate a CSPA charge cost
@@ -2543,23 +2541,23 @@ station.position.z # => 182618726400.0
 #### List all public structures
 
 ```ruby
-structures = EveOnline::ESI::UniverseStructures.new
+client = EveOnline::ESI::Client.new
 
-structures.scope # => nil
+structures = client.universe.structures
 
-structures.structure_ids.size # => 3654
+structures.structure_ids.size # => 1003
 
-structures.structure_ids.first # => 1027528548355
+structures.structure_ids.first # => 1035768592387
 
 # with filter (`filter` is enum with values: nil, `market` and `manufacturing_basic`)
 
-options = { filter: 'market' }
+client = EveOnline::ESI::Client.new
 
-structures = EveOnline::ESI::UniverseStructures.new(options)
+structures = client.universe.structures(filter: "market")
 
-structures.structure_ids.size # => 108
+structures.structure_ids.size # => 53
 
-structures.structure_ids.first # => 1030490622468
+structures.structure_ids.first # => 1044961079041
 ```
 
 #### Get structure information
