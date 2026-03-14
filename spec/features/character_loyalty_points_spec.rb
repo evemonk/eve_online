@@ -19,13 +19,13 @@ RSpec.describe "Get loyalty points" do
 
   specify { expect(subject.cache_status).to eq("HIT") }
 
-  specify { expect(subject.request_id).to eq("0595f020-3d23-4e4a-98a0-7ecab8beb738") }
+  specify { expect(subject.request_id).to eq("f972a2ae-97bf-485e-ac3d-45ba3b5c8765") }
 
   specify { expect(subject.ratelimit_group).to eq("char-wallet") }
 
   specify { expect(subject.ratelimit_limit).to eq("150/15m") }
 
-  specify { expect(subject.ratelimit_remaining).to eq(141) }
+  specify { expect(subject.ratelimit_remaining).to eq(147) }
 
   specify { expect(subject.ratelimit_used).to eq(2) }
 

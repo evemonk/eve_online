@@ -15,6 +15,8 @@ http_interactions:
       - en
       X-Tenant:
       - tranquility
+      X-Compatibility-Date:
+      - '2025-12-16'
       Authorization:
       - Bearer token123
       Accept-Encoding:
@@ -25,7 +27,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 14 Mar 2026 15:14:25 GMT
+      - Sat, 14 Mar 2026 15:35:25 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
@@ -59,17 +61,17 @@ http_interactions:
       X-Esi-Cache-Status:
       - HIT
       X-Esi-Request-Id:
-      - '0595f020-3d23-4e4a-98a0-7ecab8beb738'
+      - f972a2ae-97bf-485e-ac3d-45ba3b5c8765
       X-Ratelimit-Group:
       - char-wallet
       X-Ratelimit-Limit:
       - 150/15m
       X-Ratelimit-Remaining:
-      - '141'
+      - '147'
       X-Ratelimit-Used:
       - '2'
     body:
       encoding: UTF-8
       string: '[{"corporation_id":1000035,"loyalty_points":14163},{"corporation_id":1000078,"loyalty_points":213},{"corporation_id":1000084,"loyalty_points":4142},{"corporation_id":1000086,"loyalty_points":17},{"corporation_id":1000088,"loyalty_points":215033},{"corporation_id":1000120,"loyalty_points":1066},{"corporation_id":1000160,"loyalty_points":1432}]'
-  recorded_at: Sat, 14 Mar 2026 15:14:25 GMT
+  recorded_at: Sat, 14 Mar 2026 15:35:25 GMT
 recorded_with: VCR 6.4.0

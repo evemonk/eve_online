@@ -10,6 +10,12 @@ module EveOnline
 
           Collection.from_response(response, type: Models::LoyaltyPoint)
         end
+
+        private
+
+        def compatibility_date
+          "2025-12-16"
+        end
       end
     end
   end
