@@ -7,6 +7,8 @@ module EveOnline
         # @param id [Integer] A character ID
         def loyalty_points(id:)
           response = get_request("characters/#{id}/loyalty/points")
+
+          Collection.from_response(response, type: Models::LoyaltyPoint)
         end
       end
     end
