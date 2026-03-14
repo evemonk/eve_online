@@ -982,22 +982,20 @@ dogma_attributes.attribute_ids.first # => 1413
 #### Get attribute information
 
 ```ruby
-options = { id: 2 }
+client = EveOnline::ESI::Client.new
 
-dogma_attribute = EveOnline::ESI::DogmaAttribute.new(options)
+dogma_attribute = client.dogma.attribute(id: 2)
 
-dogma_attribute.scope # => nil
-
-dogma_attribute.as_json # => {:attribute_id=>2,
-                        #     :default_value=>0.0,
-                        #     :description=>"Boolean to store status of online effect",
-                        #     :display_name=>"",
-                        #     :high_is_good=>true,
-                        #     :icon_id=>nil,
-                        #     :name=>"isOnline",
-                        #     :published=>nil,
-                        #     :stackable=>true,
-                        #     :unit_id=>nil}
+dogma_attribute.as_json # => {attribute_id: 2,
+                        #     default_value: 0.0,
+                        #     description: "Boolean to store status of online effect",
+                        #     display_name: "",
+                        #     high_is_good: true,
+                        #     icon_id: nil,
+                        #     name: "isOnline",
+                        #     published: nil,
+                        #     stackable: true,
+                        #     unit_id: nil}
 
 dogma_attribute.attribute_id # => 2
 dogma_attribute.default_value # => 0.0
