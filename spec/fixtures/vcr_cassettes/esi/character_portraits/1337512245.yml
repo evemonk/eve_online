@@ -1,0 +1,75 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://esi.evetech.net/characters/1337512245/portrait
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.48.0
+      Accept:
+      - application/json
+      Accept-Language:
+      - en
+      X-Tenant:
+      - tranquility
+      X-Compatibility-Date:
+      - '2025-12-16'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 14 Mar 2026 19:57:49 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '418'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Etag, Retry-After, X-Compatibility-Date, X-Esi-Error-Limit-Remain, X-Esi-Error-Limit-Reset,
+        X-Pages, X-Ratelimit-Group, X-Ratelimit-Limit, X-Ratelimit-Remaining, X-Ratelimit-Used
+      Cache-Control:
+      - public
+      Content-Language:
+      - en
+      Etag:
+      - W/"c40912e5115e3a15d7a426241dbc29967f047ffae6bbac677c3e0c50"
+      Expires:
+      - Sun, 15 Mar 2026 11:05:00 GMT
+      Last-Modified:
+      - Sat, 14 Mar 2026 11:01:59 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept-Language
+      - X-Compatibility-Date
+      X-Compatibility-Date:
+      - '2020-01-01'
+      X-Esi-Cache-Status:
+      - HIT
+      X-Esi-Request-Id:
+      - ede0e3cf-d9c6-4c2e-adde-23adaaae581c
+      X-Ratelimit-Group:
+      - char-detail
+      X-Ratelimit-Limit:
+      - 600/15m
+      X-Ratelimit-Remaining:
+      - '598'
+      X-Ratelimit-Used:
+      - '2'
+    body:
+      encoding: UTF-8
+      string: '{"px128x128":"https:\/\/images.evetech.net\/characters\/1337512245\/portrait?tenant=tranquility&size=128","px256x256":"https:\/\/images.evetech.net\/characters\/1337512245\/portrait?tenant=tranquility&size=256","px512x512":"https:\/\/images.evetech.net\/characters\/1337512245\/portrait?tenant=tranquility&size=512","px64x64":"https:\/\/images.evetech.net\/characters\/1337512245\/portrait?tenant=tranquility&size=64"}'
+  recorded_at: Sat, 14 Mar 2026 19:57:48 GMT
+recorded_with: VCR 6.4.0
