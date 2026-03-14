@@ -20,7 +20,7 @@ RSpec.describe "List all public structures" do
 
     specify { expect(subject.cache_status).to eq("HIT") }
 
-    specify { expect(subject.request_id).to eq("3240e30e-9044-442d-a7eb-f18d222f107f") }
+    specify { expect(subject.request_id).to eq("e1e48375-5abf-4f89-a1b1-620f3ef554ad") }
 
     specify { expect(subject.ratelimit_group).to eq(nil) }
 
@@ -32,7 +32,7 @@ RSpec.describe "List all public structures" do
 
     specify { expect(subject.error_limit_remain).to eq(100) }
 
-    specify { expect(subject.error_limit_reset).to eq(46) }
+    specify { expect(subject.error_limit_reset).to eq(21) }
   end
 
   # context "with filter" do
