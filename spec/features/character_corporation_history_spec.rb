@@ -11,10 +11,10 @@ RSpec.describe "Get corporation history" do
 
   subject { client.characters.corporation_history(id: 1_337_512_245) }
 
-  specify { expect(subject.entries.size).to eq(11) }
+  specify { expect(subject.size).to eq(11) }
 
   specify do
-    expect(subject.entries.first.as_json).to eq(corporation_id: 1_000_171,
+    expect(subject.first.as_json).to eq(corporation_id: 1_000_171,
       is_deleted: nil,
       record_id: 64_489_559,
       start_date: Time.utc(2025, 4, 24, 19, 2, 0))
