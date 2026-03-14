@@ -15,8 +15,8 @@ module EveOnline
           }
         end
 
-        def required_items
-
+        def offer_required_items
+          @offer_required_items ||= Collection.from_array(attributes.required_items || [], type: OfferRequiredItem)
         end
       end
     end
