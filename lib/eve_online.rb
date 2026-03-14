@@ -93,6 +93,7 @@ module EveOnline
       autoload :SkillQueueEntry, "eve_online/esi/models/skill_queue_entry"
       autoload :System, "eve_online/esi/models/system"
       autoload :Station, "eve_online/esi/models/station"
+      autoload :Structures, "eve_online/esi/models/structures"
       autoload :Systems, "eve_online/esi/models/systems"
       autoload :Type, "eve_online/esi/models/type"
       autoload :Types, "eve_online/esi/models/types"

@@ -169,6 +169,13 @@ module EveOnline
           Models::Type.new(attributes: response.body, headers: response.headers)
         end
 
+        # @param filter [String] Filter by service (optional). Default: [] (all services). Valid values: "market" and "manufacturing_basic".
+        def structures(filter: [])
+          response = get_request("universe/structures")
+
+          Models::Structures.new(body: response.body, headers: response.headers)
+        end
+
         private
 
         def compatibility_date
