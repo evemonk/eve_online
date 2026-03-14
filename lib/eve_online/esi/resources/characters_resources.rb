@@ -36,6 +36,7 @@ module EveOnline
           Collection.from_response(response, type: Models::Notification)
         end
 
+        # @param id [Integer] The ID of the character
         def portraits(id:)
           response = get_request("characters/#{id}/portrait")
 
