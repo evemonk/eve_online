@@ -29,6 +29,13 @@ module EveOnline
           Collection.from_response(response, type: Models::CharacterCorporationHistory)
         end
 
+        # @param id [Integer] The ID of the character
+        def notifications(id:)
+          response = get_request("characters/#{id}/notifications")
+
+          Collection.from_response(response, type: Models::Notification)
+        end
+
         private
 
         def compatibility_date
