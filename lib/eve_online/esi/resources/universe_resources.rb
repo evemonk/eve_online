@@ -169,7 +169,7 @@ module EveOnline
           Models::Type.new(attributes: response.body, headers: response.headers)
         end
 
-        # @param filter [Array<String>] Filter by service (optional). Default: nil (all services). Valid values: "market" and "manufacturing_basic".
+        # @param filter [String] Filter by service (optional). Default: nil (all services). Valid values: "market" and "manufacturing_basic".
         def structures(filter: nil)
           response = get_request("universe/structures",
             params: {

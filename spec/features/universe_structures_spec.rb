@@ -20,7 +20,7 @@ RSpec.describe "List all public structures" do
 
     specify { expect(subject.cache_status).to eq("HIT") }
 
-    specify { expect(subject.request_id).to eq("e1e48375-5abf-4f89-a1b1-620f3ef554ad") }
+    specify { expect(subject.request_id).to eq("2a261e07-ab28-4b06-81e5-b325b3ccb912") }
 
     specify { expect(subject.ratelimit_group).to eq(nil) }
 
@@ -32,22 +32,20 @@ RSpec.describe "List all public structures" do
 
     specify { expect(subject.error_limit_remain).to eq(100) }
 
-    specify { expect(subject.error_limit_reset).to eq(21) }
+    specify { expect(subject.error_limit_reset).to eq(6) }
   end
 
-  # context "with filter" do
-  #   before { VCR.insert_cassette "esi/universe/structures_with_filter" }
-  #
-  #   after { VCR.eject_cassette }
-  #
-  #   subject { EveOnline::ESI::UniverseStructures.new(filter: "market") }
-  #
-  #   specify { expect(subject.structure_ids.size).to eq(108) }
-  #
-  #   specify { expect(subject.structure_ids.first).to eq(1_030_490_622_468) }
-  #
-  #   specify { expect(subject.error_limit_remain).to eq(100) }
-  #
-  #   specify { expect(subject.error_limit_reset).to eq(55) }
-  # end
+  context "with filter" do
+    before { VCR.insert_cassette "esi/universe/structures_with_filter" }
+
+    after { VCR.eject_cassette }
+
+    let(:client) { EveOnline::ESI::Client.new }
+
+    subject { client.universe.structures(filter: "market") }
+
+    specify { expect(subject.structure_ids.size).to eq(53) }
+
+    specify { expect(subject.structure_ids.first).to eq(1_044_961_079_041) }
+  end
 end
