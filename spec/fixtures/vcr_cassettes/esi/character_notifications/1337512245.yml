@@ -1,0 +1,588 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://esi.evetech.net/characters/1337512245/notifications
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.48.0
+      Accept:
+      - application/json
+      Accept-Language:
+      - en
+      X-Tenant:
+      - tranquility
+      X-Compatibility-Date:
+      - '2025-12-16'
+      Authorization:
+      - Bearer token123
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 14 Mar 2026 17:26:38 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '69012'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Etag, Retry-After, X-Compatibility-Date, X-Esi-Error-Limit-Remain, X-Esi-Error-Limit-Reset,
+        X-Pages, X-Ratelimit-Group, X-Ratelimit-Limit, X-Ratelimit-Remaining, X-Ratelimit-Used
+      Cache-Control:
+      - private
+      Content-Language:
+      - en
+      Etag:
+      - '"2c292b46a5600f3d99893a75a5387a150666c182a27f886abd96658c"'
+      Expires:
+      - Sat, 14 Mar 2026 17:31:05 GMT
+      Last-Modified:
+      - Sat, 14 Mar 2026 17:21:05 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept-Language
+      - X-Compatibility-Date
+      X-Compatibility-Date:
+      - '2020-01-01'
+      X-Esi-Cache-Status:
+      - HIT
+      X-Esi-Request-Id:
+      - b95088fb-89a5-4879-8b0b-e9aec6d06181
+      X-Ratelimit-Group:
+      - char-notification
+      X-Ratelimit-Limit:
+      - 15/15m
+      X-Ratelimit-Remaining:
+      - '11'
+      X-Ratelimit-Used:
+      - '2'
+    body:
+      encoding: UTF-8
+      string: '[{"notification_id":2156021212,"sender_id":319898237,"sender_type":"character","text":"corpID:
+        98565696\n","timestamp":"2025-04-24T19:02:00Z","type":"CorpKicked"},{"notification_id":2153028381,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 283242298288240676072281760154986297950\ngoal_name:
+        ''Ore: Compressed Viscous Pyroxeres''\n","timestamp":"2025-04-19T17:50:00Z","type":"CorporationGoalCompleted"},{"notification_id":2149551562,"sender_id":98565696,"sender_type":"corporation","text":"closer_id:
+        319898237\ncorporation_id: 98565696\ncreator_id: 319898237\ngoal_id: 247008504694449657280171266231272012800\ngoal_name:
+        ''Ore: Rich Plagioclase''\n","timestamp":"2025-04-13T19:31:00Z","type":"CorporationGoalClosed"},{"notification_id":2149280861,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 44069421884482756861548104657633439435\ngoal_name:
+        ''Ore: Compressed Rich Plagioclase''\n","timestamp":"2025-04-13T12:20:00Z","type":"CorporationGoalCompleted"},{"notification_id":2144422096,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 307283148814057525283554533154816405577\ngoal_name:
+        Salvage - Armor Plates\n","timestamp":"2025-04-04T17:15:00Z","type":"CorporationGoalCreated"},{"notification_id":2144422034,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 44069421884482756861548104657633439435\ngoal_name:
+        ''Ore: Compressed Rich Plagioclase''\n","timestamp":"2025-04-04T17:14:00Z","type":"CorporationGoalCreated"},{"notification_id":2144421987,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 283242298288240676072281760154986297950\ngoal_name:
+        ''Ore: Compressed Viscous Pyroxeres''\n","timestamp":"2025-04-04T17:14:00Z","type":"CorporationGoalCreated"},{"notification_id":2143529335,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 64127093186197887905644911441321041067\ngoal_name:
+        Salvage - Charred Micro Circuit\n","timestamp":"2025-04-02T20:49:00Z","type":"CorporationGoalCompleted"},{"notification_id":2143529267,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 289065962713244514690543466999188390953\ngoal_name:
+        Salvage - Armor Plates\n","timestamp":"2025-04-02T20:49:00Z","type":"CorporationGoalCompleted"},{"notification_id":2143509132,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 111350889350152144024578732574821505208\ngoal_name:
+        Salvage - Conductive Polymer\n","timestamp":"2025-04-02T19:59:00Z","type":"CorporationGoalCompleted"},{"notification_id":2143509098,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 288322085049820039558511457407328333469\ngoal_name:
+        Salvage - Capacitor Console\n","timestamp":"2025-04-02T19:59:00Z","type":"CorporationGoalCompleted"},{"notification_id":2143509041,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 69912969038915837710822165085273498566\ngoal_name:
+        Salvage - Burned Logic Circuit\n","timestamp":"2025-04-02T19:59:00Z","type":"CorporationGoalCompleted"},{"notification_id":2143508984,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 174493081970641951595182410374311765752\ngoal_name:
+        Salvage - Broken Drone Transceiver\n","timestamp":"2025-04-02T19:59:00Z","type":"CorporationGoalCompleted"},{"notification_id":2143508944,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 80692425234613888056813619983979649371\ngoal_name:
+        Salvage - Artifical Neural Network\n","timestamp":"2025-04-02T19:59:00Z","type":"CorporationGoalCompleted"},{"notification_id":2143508726,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 935131985223695979582740436528448550\ngoal_name:
+        ''Ore: Compressed Viscous Pyroxeres''\n","timestamp":"2025-04-02T19:58:00Z","type":"CorporationGoalCompleted"},{"notification_id":2141692004,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 176358403407842654446923279248452324544\ngoal_name:
+        Salvage - Alloyed Tritanium Bar\n","timestamp":"2025-03-30T07:34:00Z","type":"CorporationGoalCompleted"},{"notification_id":2141691896,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 263306700817619489755008183404160562659\ngoal_name:
+        ''Ore: Compressed Rich Plagioclase''\n","timestamp":"2025-03-30T07:34:00Z","type":"CorporationGoalCompleted"},{"notification_id":2141691895,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 211593390487242585438936387061341187104\ngoal_name:
+        ''Ore: Compressed Rich Plagioclase''\n","timestamp":"2025-03-30T07:34:00Z","type":"CorporationGoalCompleted"},{"notification_id":2118507263,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 142265567265849423386294746337106495251\ngoal_name:
+        ''Ore: Massive Scordite''\n","timestamp":"2025-02-16T08:37:00Z","type":"CorporationGoalCompleted"},{"notification_id":2118479287,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 334342028694906012846459541842510948309\ngoal_name:
+        ''Ore: Dense Veldspar''\n","timestamp":"2025-02-16T07:33:00Z","type":"CorporationGoalCompleted"},{"notification_id":2117069288,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 192743622659847484039745359106031752346\ngoal_name:
+        ''Ore: Compressed Viscous Pyroxeres''\n","timestamp":"2025-02-13T18:45:00Z","type":"CorporationGoalCompleted"},{"notification_id":2116613271,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 144995331431854021679432508841924295451\ngoal_name:
+        ''Ore: Compressed Dense Veldspar''\n","timestamp":"2025-02-12T21:12:00Z","type":"CorporationGoalCompleted"},{"notification_id":2116326147,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 203201367172583443460794559436342420658\ngoal_name:
+        ''Ore: Compressed Dense Veldspar''\n","timestamp":"2025-02-12T09:53:00Z","type":"CorporationGoalCompleted"},{"notification_id":2116109640,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 245772941325285836909258886908832845018\ngoal_name:
+        ''Ore: Compressed Rich Plagioclase''\n","timestamp":"2025-02-11T21:58:00Z","type":"CorporationGoalCompleted"},{"notification_id":2116109598,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 255965374870085052458348102894904773406\ngoal_name:
+        ''Ore: Compressed Massive Scordite''\n","timestamp":"2025-02-11T21:58:00Z","type":"CorporationGoalCompleted"},{"notification_id":2115922297,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 144995331431854021679432508841924295451\ngoal_name:
+        ''Ore: Compressed Dense Veldspar''\n","timestamp":"2025-02-11T14:35:00Z","type":"CorporationGoalCreated"},{"notification_id":2115688177,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 203201367172583443460794559436342420658\ngoal_name:
+        ''Ore: Compressed Dense Veldspar''\n","timestamp":"2025-02-11T02:41:00Z","type":"CorporationGoalCreated"},{"notification_id":2115687297,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 279474638263475249892703828556793489537\ngoal_name:
+        ''Ore: Compressed Massive Scordite''\n","timestamp":"2025-02-11T02:38:00Z","type":"CorporationGoalCompleted"},{"notification_id":2115686816,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 935131985223695979582740436528448550\ngoal_name:
+        ''Ore: Compressed Viscous Pyroxeres''\n","timestamp":"2025-02-11T02:36:00Z","type":"CorporationGoalCreated"},{"notification_id":2115686695,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 263306700817619489755008183404160562659\ngoal_name:
+        ''Ore: Compressed Rich Plagioclase''\n","timestamp":"2025-02-11T02:36:00Z","type":"CorporationGoalCreated"},{"notification_id":2115686666,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 255965374870085052458348102894904773406\ngoal_name:
+        ''Ore: Compressed Massive Scordite''\n","timestamp":"2025-02-11T02:36:00Z","type":"CorporationGoalCreated"},{"notification_id":2115595747,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 265821525706285052183022954330483090247\ngoal_name:
+        ''Ore: Compressed Viscous Pyroxeres''\n","timestamp":"2025-02-10T21:34:00Z","type":"CorporationGoalCompleted"},{"notification_id":2115505296,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 32717874866119787641314371711471431591\ngoal_name:
+        ''Ore: Compressed Dense Veldspar''\n","timestamp":"2025-02-10T17:55:00Z","type":"CorporationGoalCompleted"},{"notification_id":2114309766,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 192743622659847484039745359106031752346\ngoal_name:
+        ''Ore: Compressed Viscous Pyroxeres''\n","timestamp":"2025-02-08T15:08:00Z","type":"CorporationGoalCreated"},{"notification_id":2114306465,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 211593390487242585438936387061341187104\ngoal_name:
+        ''Ore: Compressed Rich Plagioclase''\n","timestamp":"2025-02-08T15:01:00Z","type":"CorporationGoalCreated"},{"notification_id":2113573067,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 265821525706285052183022954330483090247\ngoal_name:
+        ''Ore: Compressed Viscous Pyroxeres''\n","timestamp":"2025-02-07T06:05:00Z","type":"CorporationGoalCreated"},{"notification_id":2113572098,"sender_id":98565696,"sender_type":"corporation","text":"closer_id:
+        319898237\ncorporation_id: 98565696\ncreator_id: 319898237\ngoal_id: 141717634835044316498435838655239931522\ngoal_name:
+        ''Ore: Compressed Dense Veldspar''\n","timestamp":"2025-02-07T06:01:00Z","type":"CorporationGoalClosed"},{"notification_id":2113571987,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 32717874866119787641314371711471431591\ngoal_name:
+        ''Ore: Compressed Dense Veldspar''\n","timestamp":"2025-02-07T06:01:00Z","type":"CorporationGoalCreated"},{"notification_id":2113571352,"sender_id":98565696,"sender_type":"corporation","text":"closer_id:
+        319898237\ncorporation_id: 98565696\ncreator_id: 319898237\ngoal_id: 20633299673244180322984068440386852588\ngoal_name:
+        ''Ore: Compressed Massive Scordite''\n","timestamp":"2025-02-07T06:00:00Z","type":"CorporationGoalClosed"},{"notification_id":2113571137,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 279474638263475249892703828556793489537\ngoal_name:
+        ''Ore: Compressed Massive Scordite''\n","timestamp":"2025-02-07T05:59:00Z","type":"CorporationGoalCreated"},{"notification_id":2113570820,"sender_id":98565696,"sender_type":"corporation","text":"closer_id:
+        319898237\ncorporation_id: 98565696\ncreator_id: 319898237\ngoal_id: 128827833877093949081180144256823962986\ngoal_name:
+        ''Ore: Compressed Rich Plagioclase''\n","timestamp":"2025-02-07T05:58:00Z","type":"CorporationGoalClosed"},{"notification_id":2113570673,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 245772941325285836909258886908832845018\ngoal_name:
+        ''Ore: Compressed Rich Plagioclase''\n","timestamp":"2025-02-07T05:57:00Z","type":"CorporationGoalCreated"},{"notification_id":2113567316,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 141717634835044316498435838655239931522\ngoal_name:
+        ''Ore: Compressed Dense Veldspar''\n","timestamp":"2025-02-07T05:44:00Z","type":"CorporationGoalCreated"},{"notification_id":2113567204,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 334342028694906012846459541842510948309\ngoal_name:
+        ''Ore: Dense Veldspar''\n","timestamp":"2025-02-07T05:44:00Z","type":"CorporationGoalCreated"},{"notification_id":2113567034,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 128827833877093949081180144256823962986\ngoal_name:
+        ''Ore: Compressed Rich Plagioclase''\n","timestamp":"2025-02-07T05:43:00Z","type":"CorporationGoalCreated"},{"notification_id":2113566931,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 20633299673244180322984068440386852588\ngoal_name:
+        ''Ore: Compressed Massive Scordite''\n","timestamp":"2025-02-07T05:43:00Z","type":"CorporationGoalCreated"},{"notification_id":2113097284,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 72288757281844480441984643762860565606\ngoal_name:
+        ''Ore: Dense Veldspar''\n","timestamp":"2025-02-06T06:40:00Z","type":"CorporationGoalCompleted"},{"notification_id":2112267608,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 142265567265849423386294746337106495251\ngoal_name:
+        ''Ore: Massive Scordite''\n","timestamp":"2025-02-04T15:33:00Z","type":"CorporationGoalCreated"},{"notification_id":2112267440,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 72288757281844480441984643762860565606\ngoal_name:
+        ''Ore: Dense Veldspar''\n","timestamp":"2025-02-04T15:33:00Z","type":"CorporationGoalCreated"},{"notification_id":2111809828,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 196705426193740055800379823854621255888\ngoal_name:
+        ''Ore: Dense Veldspar''\n","timestamp":"2025-02-03T17:54:00Z","type":"CorporationGoalCompleted"},{"notification_id":2111620737,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 283472129976407577694739316252418371061\ngoal_name:
+        For corporate ship building\n","timestamp":"2025-02-03T09:48:00Z","type":"CorporationGoalCompleted"},{"notification_id":2102377945,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 64896480861567545930969591178386442827\ngoal_name:
+        ''Ore: Massive Scordite''\n","timestamp":"2025-01-16T22:50:00Z","type":"CorporationGoalCompleted"},{"notification_id":2095573961,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 174375728145268288557488201631916164137\ngoal_name:
+        Viscous Pyroxeres\n","timestamp":"2025-01-04T18:12:00Z","type":"CorporationGoalCompleted"},{"notification_id":2089231767,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 64896480861567545930969591178386442827\ngoal_name:
+        ''Ore: Massive Scordite''\n","timestamp":"2024-12-25T01:11:00Z","type":"CorporationGoalCreated"},{"notification_id":2089199180,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 338271480175800854556856983395253805661\ngoal_name:
+        Massive Scordite\n","timestamp":"2024-12-24T23:24:00Z","type":"CorporationGoalCompleted"},{"notification_id":2084548724,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 174375728145268288557488201631916164137\ngoal_name:
+        Viscous Pyroxeres\n","timestamp":"2024-12-17T13:22:00Z","type":"CorporationGoalCreated"},{"notification_id":2084548628,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 338271480175800854556856983395253805661\ngoal_name:
+        Massive Scordite\n","timestamp":"2024-12-17T13:22:00Z","type":"CorporationGoalCreated"},{"notification_id":2081553408,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 53087134180972074990998482375846623807\ngoal_name:
+        Viscous Pyroxeres\n","timestamp":"2024-12-13T00:32:00Z","type":"CorporationGoalCompleted"},{"notification_id":2069391463,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 332440668526287216365450269338154338079\ngoal_name:
+        Massive Scordite\n","timestamp":"2024-11-23T10:19:00Z","type":"CorporationGoalCompleted"},{"notification_id":2068322513,"sender_id":98565696,"sender_type":"corporation","text":"closer_id:
+        319898237\ncorporation_id: 98565696\ncreator_id: 319898237\ngoal_id: 179485749568999444703982870315867839250\ngoal_name:
+        for Corporate ship building\n","timestamp":"2024-11-21T14:38:00Z","type":"CorporationGoalClosed"},{"notification_id":2068321958,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 289065962713244514690543466999188390953\ngoal_name:
+        Salvage - Armor Plates\n","timestamp":"2024-11-21T14:38:00Z","type":"CorporationGoalCreated"},{"notification_id":2068319496,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 247008504694449657280171266231272012800\ngoal_name:
+        ''Ore: Rich Plagioclase''\n","timestamp":"2024-11-21T14:33:00Z","type":"CorporationGoalCreated"},{"notification_id":2068317583,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 196705426193740055800379823854621255888\ngoal_name:
+        ''Ore: Dense Veldspar''\n","timestamp":"2024-11-21T14:29:00Z","type":"CorporationGoalCreated"},{"notification_id":2068315644,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 332440668526287216365450269338154338079\ngoal_name:
+        Massive Scordite\n","timestamp":"2024-11-21T14:26:00Z","type":"CorporationGoalCreated"},{"notification_id":2060826906,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 53087134180972074990998482375846623807\ngoal_name:
+        Viscous Pyroxeres\n","timestamp":"2024-11-09T00:18:00Z","type":"CorporationGoalCreated"},{"notification_id":2060286004,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 103309513313219715358252493138452942113\ngoal_name:
+        Salvage - Armor Plates\n","timestamp":"2024-11-08T01:03:00Z","type":"CorporationGoalCompleted"},{"notification_id":1983095467,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 106278756306813887849375895612549693844\ngoal_name:
+        Massive Scordite\n","timestamp":"2024-06-17T13:00:00Z","type":"CorporationGoalCreated"},{"notification_id":1983094192,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 283472129976407577694739316252418371061\ngoal_name:
+        For corporate ship building\n","timestamp":"2024-06-17T12:58:00Z","type":"CorporationGoalCreated"},{"notification_id":1983091743,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 179485749568999444703982870315867839250\ngoal_name:
+        for Corporate ship building\n","timestamp":"2024-06-17T12:54:00Z","type":"CorporationGoalCreated"},{"notification_id":1979509940,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 74917438174311192832781750680866234616\ngoal_name:
+        Corp ship building\n","timestamp":"2024-06-11T23:51:00Z","type":"CorporationGoalCompleted"},{"notification_id":1979224865,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 189383496882104105256634595736306913157\ngoal_name:
+        Corp Ship Building\n","timestamp":"2024-06-11T15:18:00Z","type":"CorporationGoalCompleted"},{"notification_id":1976818950,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 134451290755615502061901688905707355802\ngoal_name:
+        Corp ship building\n","timestamp":"2024-06-07T13:11:00Z","type":"CorporationGoalCompleted"},{"notification_id":1976657100,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 111350889350152144024578732574821505208\ngoal_name:
+        Salvage - Conductive Polymer\n","timestamp":"2024-06-07T05:20:00Z","type":"CorporationGoalCreated"},{"notification_id":1976656366,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 64127093186197887905644911441321041067\ngoal_name:
+        Salvage - Charred Micro Circuit\n","timestamp":"2024-06-07T05:17:00Z","type":"CorporationGoalCreated"},{"notification_id":1976655832,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 288322085049820039558511457407328333469\ngoal_name:
+        Salvage - Capacitor Console\n","timestamp":"2024-06-07T05:16:00Z","type":"CorporationGoalCreated"},{"notification_id":1976654993,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 69912969038915837710822165085273498566\ngoal_name:
+        Salvage - Burned Logic Circuit\n","timestamp":"2024-06-07T05:13:00Z","type":"CorporationGoalCreated"},{"notification_id":1976654490,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 174493081970641951595182410374311765752\ngoal_name:
+        Salvage - Broken Drone Transceiver\n","timestamp":"2024-06-07T05:11:00Z","type":"CorporationGoalCreated"},{"notification_id":1976653380,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 80692425234613888056813619983979649371\ngoal_name:
+        Salvage - Artifical Neural Network\n","timestamp":"2024-06-07T05:08:00Z","type":"CorporationGoalCreated"},{"notification_id":1976652183,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 230499351727780562249572030545597599777\ngoal_name:
+        Salvage - Armor Plates\n","timestamp":"2024-06-07T05:04:00Z","type":"CorporationGoalCreated"},{"notification_id":1976651519,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 103309513313219715358252493138452942113\ngoal_name:
+        Salvage - Armor Plates\n","timestamp":"2024-06-07T05:02:00Z","type":"CorporationGoalCreated"},{"notification_id":1976651172,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 176358403407842654446923279248452324544\ngoal_name:
+        Salvage - Alloyed Tritanium Bar\n","timestamp":"2024-06-07T05:00:00Z","type":"CorporationGoalCreated"},{"notification_id":1976639680,"sender_id":98565696,"sender_type":"corporation","text":"closer_id:
+        319898237\ncorporation_id: 98565696\ncreator_id: 319898237\ngoal_id: 89570324289306964252126587044355764342\ngoal_name:
+        Salvate - Broken Drone Transceiver\n","timestamp":"2024-06-07T04:26:00Z","type":"CorporationGoalClosed"},{"notification_id":1976639632,"sender_id":98565696,"sender_type":"corporation","text":"closer_id:
+        319898237\ncorporation_id: 98565696\ncreator_id: 319898237\ngoal_id: 49692102160142444594862252177682278342\ngoal_name:
+        Salvage - Burned Logic Circuit\n","timestamp":"2024-06-07T04:26:00Z","type":"CorporationGoalClosed"},{"notification_id":1976639239,"sender_id":98565696,"sender_type":"corporation","text":"closer_id:
+        319898237\ncorporation_id: 98565696\ncreator_id: 319898237\ngoal_id: 231764926201633279343978168242595671061\ngoal_name:
+        Salvage - Armor Plates\n","timestamp":"2024-06-07T04:25:00Z","type":"CorporationGoalClosed"},{"notification_id":1975931649,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 228602342062336512174316059270904677585\ngoal_name:
+        For corp ship building\n","timestamp":"2024-06-05T18:33:00Z","type":"CorporationGoalCompleted"},{"notification_id":1975563496,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 49692102160142444594862252177682278342\ngoal_name:
+        Salvage - Burned Logic Circuit\n","timestamp":"2024-06-05T02:18:00Z","type":"CorporationGoalCreated"},{"notification_id":1975562769,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 89570324289306964252126587044355764342\ngoal_name:
+        Salvate - Broken Drone Transceiver\n","timestamp":"2024-06-05T02:16:00Z","type":"CorporationGoalCreated"},{"notification_id":1975562232,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 333814861859040315687042094065161233190\ngoal_name:
+        Salvage - Artificial Neural Network\n","timestamp":"2024-06-05T02:14:00Z","type":"CorporationGoalCreated"},{"notification_id":1975561482,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 231764926201633279343978168242595671061\ngoal_name:
+        Salvage - Armor Plates\n","timestamp":"2024-06-05T02:12:00Z","type":"CorporationGoalCreated"},{"notification_id":1975560768,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 313494110411972948726146478447611523992\ngoal_name:
+        Salvage - Alloyed Tritanium Bar\n","timestamp":"2024-06-05T02:10:00Z","type":"CorporationGoalCreated"},{"notification_id":1975094713,"sender_id":319898237,"sender_type":"character","text":"corpID:
+        98565696\ncurrencyNameLabel: UI\/LPStore\/LoyaltyPoints\nnewTaxRate: 1.5\noldTaxRate:
+        1.0\n","timestamp":"2024-06-04T05:25:00Z","type":"CorpTaxChangeMsg"},{"notification_id":1974448777,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 135430891470359124093808834422564612901\ngoal_name:
+        To help member\n","timestamp":"2024-06-02T23:46:00Z","type":"CorporationGoalCompleted"},{"notification_id":1974448776,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 200009882037150857521516611111487982672\ngoal_name:
+        To help member\n","timestamp":"2024-06-02T23:46:00Z","type":"CorporationGoalCompleted"},{"notification_id":1974376727,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 228602342062336512174316059270904677585\ngoal_name:
+        For corp ship building\n","timestamp":"2024-06-02T20:23:00Z","type":"CorporationGoalCreated"},{"notification_id":1974256652,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 200009882037150857521516611111487982672\ngoal_name:
+        To help member\n","timestamp":"2024-06-02T16:21:00Z","type":"CorporationGoalCreated"},{"notification_id":1974256140,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 135430891470359124093808834422564612901\ngoal_name:
+        To help member\n","timestamp":"2024-06-02T16:21:00Z","type":"CorporationGoalCreated"},{"notification_id":1973281462,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 308575459427191620874839698861402635705\ngoal_name:
+        accumulate ore to process into minerals for ship production\n","timestamp":"2024-06-01T01:52:00Z","type":"CorporationGoalCompleted"},{"notification_id":1972551366,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 189383496882104105256634595736306913157\ngoal_name:
+        Corp Ship Building\n","timestamp":"2024-05-30T16:42:00Z","type":"CorporationGoalCreated"},{"notification_id":1972550179,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 74917438174311192832781750680866234616\ngoal_name:
+        Corp ship building\n","timestamp":"2024-05-30T16:39:00Z","type":"CorporationGoalCreated"},{"notification_id":1971996547,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 134451290755615502061901688905707355802\ngoal_name:
+        Corp ship building\n","timestamp":"2024-05-29T16:20:00Z","type":"CorporationGoalCreated"},{"notification_id":1970917060,"sender_id":98565696,"sender_type":"corporation","text":"corporation_id:
+        98565696\ncreator_id: 319898237\ngoal_id: 308575459427191620874839698861402635705\ngoal_name:
+        accumulate ore to process into minerals for ship production\n","timestamp":"2024-05-27T16:34:00Z","type":"CorporationGoalCreated"},{"notification_id":1216409691,"sender_id":92170699,"sender_type":"character","text":"applicationText:
+        Aloha!<br><br>May I join?<br><br>I have 55m expricience. Armor\/Shield\n  active\/passive
+        tank. With trading and manufactoring skills.<br><br>Can produce e.g.\n  cruise
+        missiles t2. :)<br><br>And its boring.\ncharID: 1337512245\ncorpID: 98565696\n","timestamp":"2020-04-23T16:15:00Z","type":"CorpAppAcceptMsg"},{"is_read":true,"notification_id":1208218313,"sender_id":1000137,"sender_type":"corporation","text":"{}\n","timestamp":"2020-04-11T08:01:00Z","type":"CorpNoLongerWarEligible"},{"notification_id":1175220184,"sender_id":1000125,"sender_type":"corporation","text":"killMailHash:
+        8f1450fca8ce97be9b10e106a1257088407ef387\nkillMailID: 81646519\nvictimShipTypeID:
+        24698\n","timestamp":"2020-02-14T23:25:00Z","type":"KillReportVictim"},{"notification_id":1175201115,"sender_id":1000125,"sender_type":"corporation","text":"killMailHash:
+        2a40d89bdefa125f449ba30a1e155a91441088ab\nkillMailID: 81645857\nvictimShipTypeID:
+        33153\n","timestamp":"2020-02-14T22:39:00Z","type":"KillReportVictim"},{"notification_id":1165740333,"sender_id":1000125,"sender_type":"corporation","text":"killMailHash:
+        c09907a63587a0c210a11216eac66f56f462b72b\nkillMailID: 81298698\nvictimShipTypeID:
+        587\n","timestamp":"2020-01-27T18:51:00Z","type":"KillReportVictim"},{"notification_id":1165341345,"sender_id":1000125,"sender_type":"corporation","text":"killMailHash:
+        041006139ab6a8b1b350f5dc3a577f39781bae89\nkillMailID: 81283327\nvictimShipTypeID:
+        3766\n","timestamp":"2020-01-26T22:19:00Z","type":"KillReportVictim"},{"notification_id":1107184044,"sender_id":1000125,"sender_type":"corporation","text":"againstID:
+        98134807\ndeclaredByID: 99001134\nendDate: 132138996000000000\n","timestamp":"2019-09-24T15:40:00Z","type":"WarRetractedByConcord"},{"notification_id":1103891644,"sender_id":1000125,"sender_type":"corporation","text":"againstID:
+        99005874\nallianceID: 99005874\ndeclaredByID: 99001134\nopponentID: 99001134\nquitterID:
+        98134807\n","timestamp":"2019-09-17T15:10:00Z","type":"WarInherited"},{"notification_id":1103461153,"sender_id":1000125,"sender_type":"corporation","text":"againstID:
+        99005874\nallianceID: 99005874\ndeclaredByID: 99001134\nopponentID: 99001134\nquitterID:
+        98602801\n","timestamp":"2019-09-16T14:36:00Z","type":"WarInherited"},{"notification_id":1102256333,"sender_id":1000125,"sender_type":"corporation","text":"againstID:
+        99005874\nallianceID: 99001134\ndeclaredByID: 99001134\nopponentID: 99005874\nquitterID:
+        98468321\n","timestamp":"2019-09-13T23:14:00Z","type":"WarInherited"},{"notification_id":1100901193,"sender_id":1000125,"sender_type":"corporation","text":"againstID:
+        99005874\ndeclaredByID: 99001134\nendDate: 132126820800000000\n","timestamp":"2019-09-10T13:28:00Z","type":"WarRetractedByConcord"},{"notification_id":1100264279,"sender_id":1000125,"sender_type":"corporation","text":"againstID:
+        99005874\nallianceID: 99005874\ndeclaredByID: 99001134\nopponentID: 99001134\nquitterID:
+        98604294\n","timestamp":"2019-09-09T03:02:00Z","type":"WarInherited"},{"notification_id":1100264233,"sender_id":1000125,"sender_type":"corporation","text":"againstID:
+        99005874\nallianceID: 99005874\ndeclaredByID: 99001134\nopponentID: 99001134\nquitterID:
+        98578356\n","timestamp":"2019-09-09T03:02:00Z","type":"WarInherited"},{"notification_id":1099920240,"sender_id":1000125,"sender_type":"corporation","text":"againstID:
+        99005874\nallianceID: 99005874\ndeclaredByID: 99001134\nopponentID: 99001134\nquitterID:
+        98603661\n","timestamp":"2019-09-08T11:56:00Z","type":"WarInherited"},{"notification_id":1099558702,"sender_id":1000125,"sender_type":"corporation","text":"againstID:
+        99005874\nallianceID: 99005874\ndeclaredByID: 99001134\nopponentID: 99001134\nquitterID:
+        98196620\n","timestamp":"2019-09-07T18:36:00Z","type":"WarInherited"},{"notification_id":1095057793,"sender_id":1000125,"sender_type":"corporation","text":"againstID:
+        99005874\nallianceID: 99001134\ndeclaredByID: 99001134\nopponentID: 99005874\nquitterID:
+        98612173\n","timestamp":"2019-08-29T10:53:00Z","type":"WarInherited"},{"notification_id":1092821171,"sender_id":1000125,"sender_type":"corporation","text":"charID:
+        2112502975\nentityID: 99005874\niskValue: 0.0\nofferedID: 99001134\n","timestamp":"2019-08-25T03:47:00Z","type":"OfferedSurrender"},{"notification_id":1092636944,"sender_id":1000125,"sender_type":"corporation","text":"againstID:
+        99005874\nallianceID: 99001134\ndeclaredByID: 99001134\nopponentID: 99005874\nquitterID:
+        98608854\n","timestamp":"2019-08-24T19:53:00Z","type":"WarInherited"},{"notification_id":1090820833,"sender_id":1000125,"sender_type":"corporation","text":"charID:
+        1208274826\nnewOwnerCorpID: 98598591\noldOwnerCorpID: 98134807\nsolarSystemID:
+        30004926\nstructureID: 1023665283071\nstructureName: Customs Office (7L9-ZC
+        VII)\nstructureTypeID: 2233\n","timestamp":"2019-08-21T11:57:00Z","type":"OwnershipTransferred"},{"notification_id":1090820420,"sender_id":1000125,"sender_type":"corporation","text":"charID:
+        1208274826\nnewOwnerCorpID: 98598591\noldOwnerCorpID: 98134807\nsolarSystemID:
+        30004925\nstructureID: 1020765361647\nstructureName: Customs Office (7-8EOE
+        II)\nstructureTypeID: 2233\n","timestamp":"2019-08-21T11:56:00Z","type":"OwnershipTransferred"},{"notification_id":1090820345,"sender_id":1000125,"sender_type":"corporation","text":"charID:
+        1208274826\nnewOwnerCorpID: 98598591\noldOwnerCorpID: 98134807\nsolarSystemID:
+        30004925\nstructureID: 1020765380089\nstructureName: Customs Office (7-8EOE
+        VII)\nstructureTypeID: 2233\n","timestamp":"2019-08-21T11:56:00Z","type":"OwnershipTransferred"},{"notification_id":1090819645,"sender_id":1000125,"sender_type":"corporation","text":"charID:
+        1208274826\nnewOwnerCorpID: 98598591\noldOwnerCorpID: 98134807\nsolarSystemID:
+        30004923\nstructureID: 1019304349125\nstructureName: Customs Office (66-PMM
+        VIII)\nstructureTypeID: 2233\n","timestamp":"2019-08-21T11:53:00Z","type":"OwnershipTransferred"},{"notification_id":1090819385,"sender_id":1000125,"sender_type":"corporation","text":"charID:
+        1208274826\nnewOwnerCorpID: 98598591\noldOwnerCorpID: 98134807\nsolarSystemID:
+        30004923\nstructureID: 1019296636191\nstructureName: Customs Office (66-PMM
+        VII)\nstructureTypeID: 2233\n","timestamp":"2019-08-21T11:52:00Z","type":"OwnershipTransferred"},{"notification_id":1090819159,"sender_id":1000125,"sender_type":"corporation","text":"charID:
+        1208274826\nnewOwnerCorpID: 98598591\noldOwnerCorpID: 98134807\nsolarSystemID:
+        30004923\nstructureID: 1019292774596\nstructureName: Customs Office (66-PMM
+        VI)\nstructureTypeID: 2233\n","timestamp":"2019-08-21T11:51:00Z","type":"OwnershipTransferred"},{"notification_id":1090818957,"sender_id":1000125,"sender_type":"corporation","text":"charID:
+        1208274826\nnewOwnerCorpID: 98598591\noldOwnerCorpID: 98134807\nsolarSystemID:
+        30004923\nstructureID: 1019282598603\nstructureName: Customs Office (66-PMM
+        V)\nstructureTypeID: 2233\n","timestamp":"2019-08-21T11:51:00Z","type":"OwnershipTransferred"},{"notification_id":1090818196,"sender_id":1000125,"sender_type":"corporation","text":"charID:
+        1208274826\nnewOwnerCorpID: 98598591\noldOwnerCorpID: 98134807\nsolarSystemID:
+        30004923\nstructureID: 1019292746257\nstructureName: Customs Office (66-PMM
+        IV)\nstructureTypeID: 2233\n","timestamp":"2019-08-21T11:48:00Z","type":"OwnershipTransferred"},{"notification_id":1090817995,"sender_id":1000125,"sender_type":"corporation","text":"charID:
+        1208274826\nnewOwnerCorpID: 98598591\noldOwnerCorpID: 98134807\nsolarSystemID:
+        30004923\nstructureID: 1019292724458\nstructureName: Customs Office (66-PMM
+        III)\nstructureTypeID: 2233\n","timestamp":"2019-08-21T11:47:00Z","type":"OwnershipTransferred"},{"notification_id":1090817714,"sender_id":1000125,"sender_type":"corporation","text":"charID:
+        1208274826\nnewOwnerCorpID: 98598591\noldOwnerCorpID: 98134807\nsolarSystemID:
+        30004923\nstructureID: 1019282570113\nstructureName: Customs Office (66-PMM
+        II)\nstructureTypeID: 2233\n","timestamp":"2019-08-21T11:46:00Z","type":"OwnershipTransferred"},{"notification_id":1090817409,"sender_id":1000125,"sender_type":"corporation","text":"charID:
+        1208274826\nnewOwnerCorpID: 98598591\noldOwnerCorpID: 98134807\nsolarSystemID:
+        30004923\nstructureID: 1019282551044\nstructureName: Customs Office (66-PMM
+        I)\nstructureTypeID: 2233\n","timestamp":"2019-08-21T11:45:00Z","type":"OwnershipTransferred"},{"notification_id":1090293816,"sender_id":1000125,"sender_type":"corporation","text":"againstID:
+        99005874\nallianceID: 99005874\ndeclaredByID: 99001134\nopponentID: 99001134\nquitterID:
+        98558351\n","timestamp":"2019-08-20T13:17:00Z","type":"WarInherited"},{"notification_id":1090293419,"sender_id":1000125,"sender_type":"corporation","text":"againstID:
+        99005874\nallianceID: 99005874\ndeclaredByID: 99001134\nopponentID: 99001134\nquitterID:
+        98102833\n","timestamp":"2019-08-20T13:16:00Z","type":"WarInherited"},{"notification_id":1090272640,"sender_id":1000125,"sender_type":"corporation","text":"againstID:
+        99005874\ncost: 100000000\ndeclaredByID: 99001134\ndelayHours: 24\nhostileState:
+        false\ntimeStarted: 132108643200000000\nwarHQ: <b>Aokannitoh - MAK<\/b>\nwarHQ_IdType:\n-
+        1030788789082\n- 35832\n","timestamp":"2019-08-20T12:33:00Z","type":"WarDeclared"},{"notification_id":1088861313,"sender_id":1000125,"sender_type":"corporation","text":"againstID:
+        99005874\ndeclaredByID: 99001134\nendDate: null\n","timestamp":"2019-08-18T05:22:00Z","type":"WarConcordInvalidates"},{"notification_id":1084341112,"sender_id":1000125,"sender_type":"corporation","text":"againstID:
+        99005874\nallianceID: 99005874\ndeclaredByID: 99001134\nopponentID: 99001134\nquitterID:
+        98534737\n","timestamp":"2019-08-10T19:05:00Z","type":"WarInherited"},{"notification_id":1083825077,"sender_id":1000125,"sender_type":"corporation","text":"againstID:
+        99005874\nallianceID: 99005874\ndeclaredByID: 99001134\nopponentID: 99001134\nquitterID:
+        98435713\n","timestamp":"2019-08-09T23:37:00Z","type":"WarInherited"},{"notification_id":1081711057,"sender_id":1000125,"sender_type":"corporation","text":"againstID:
+        99005874\ndeclaredByID: 99009348\nendDate: 132096582600000000\n","timestamp":"2019-08-06T13:31:00Z","type":"WarRetractedByConcord"},{"notification_id":1077410969,"sender_id":1000125,"sender_type":"corporation","text":"againstID:
+        99005874\nallianceID: 99005874\ndeclaredByID: 99009348\nopponentID: 99009348\nquitterID:
+        98602204\n","timestamp":"2019-07-30T14:26:00Z","type":"WarInherited"},{"notification_id":1077410960,"sender_id":1000125,"sender_type":"corporation","text":"againstID:
+        99005874\nallianceID: 99005874\ndeclaredByID: 99001134\nopponentID: 99001134\nquitterID:
+        98602204\n","timestamp":"2019-07-30T14:26:00Z","type":"WarInherited"},{"notification_id":1077355836,"sender_id":1000125,"sender_type":"corporation","text":"againstID:
+        99005874\ncost: 100000000\ndeclaredByID: 99009348\ndelayHours: 24\nhostileState:
+        false\ntimeStarted: 132090504600000000\nwarHQ: <b>Perimeter - quan fu wu cha
+        bie xuan zhan<\/b>\nwarHQ_IdType:\n- 1031068245078\n- 35833\n","timestamp":"2019-07-30T12:42:00Z","type":"WarDeclared"},{"notification_id":1066929436,"sender_id":1000125,"sender_type":"corporation","text":"againstID:
+        99005874\nallianceID: 99005874\ndeclaredByID: 99001134\nopponentID: 99001134\nquitterID:
+        98558915\n","timestamp":"2019-07-10T17:53:00Z","type":"WarInherited"},{"notification_id":1066615959,"sender_id":1000125,"sender_type":"corporation","text":"againstID:
+        99005874\nallianceID: 99005874\ndeclaredByID: 99001134\nopponentID: 99001134\nquitterID:
+        98450306\n","timestamp":"2019-07-10T04:17:00Z","type":"WarInherited"},{"notification_id":1066413385,"sender_id":1000125,"sender_type":"corporation","text":"againstID:
+        99005874\nallianceID: 99005874\ndeclaredByID: 99001134\nopponentID: 99001134\nquitterID:
+        98601574\n","timestamp":"2019-07-09T18:48:00Z","type":"WarInherited"},{"notification_id":1062937861,"sender_id":1000125,"sender_type":"corporation","text":"charID:
+        94673034\nnewOwnerCorpID: 98134807\noldOwnerCorpID: 1018389948\nsolarSystemID:
+        30004418\nstructureID: 1030870599134\nstructureName: DUU1-K - VI - Moon 13\nstructureTypeID:
+        35835\n","timestamp":"2019-07-03T12:04:00Z","type":"OwnershipTransferred"},{"notification_id":1062937809,"sender_id":1000125,"sender_type":"corporation","text":"charID:
+        94673034\nnewOwnerCorpID: 98134807\noldOwnerCorpID: 1018389948\nsolarSystemID:
+        30004418\nstructureID: 1030870592703\nstructureName: DUU1-K - VI - Moon 1\nstructureTypeID:
+        35835\n","timestamp":"2019-07-03T12:03:00Z","type":"OwnershipTransferred"},{"notification_id":1062937560,"sender_id":1000125,"sender_type":"corporation","text":"charID:
+        94673034\nnewOwnerCorpID: 98134807\noldOwnerCorpID: 1018389948\nsolarSystemID:
+        30004418\nstructureID: 1030870583385\nstructureName: DUU1-K - V - Moon 19\nstructureTypeID:
+        35835\n","timestamp":"2019-07-03T12:03:00Z","type":"OwnershipTransferred"},{"notification_id":1062937416,"sender_id":1000125,"sender_type":"corporation","text":"charID:
+        94673034\nnewOwnerCorpID: 98134807\noldOwnerCorpID: 1018389948\nsolarSystemID:
+        30004418\nstructureID: 1030870575273\nstructureName: DUU1-K - V - Moon 10\nstructureTypeID:
+        35835\n","timestamp":"2019-07-03T12:02:00Z","type":"OwnershipTransferred"},{"notification_id":1062937071,"sender_id":1000125,"sender_type":"corporation","text":"charID:
+        94673034\nnewOwnerCorpID: 98134807\noldOwnerCorpID: 1018389948\nsolarSystemID:
+        30004418\nstructureID: 1030870564493\nstructureName: DUU1-K - IV - Moon 12\nstructureTypeID:
+        35835\n","timestamp":"2019-07-03T12:01:00Z","type":"OwnershipTransferred"},{"notification_id":1062586525,"sender_id":1000125,"sender_type":"corporation","text":"againstID:
+        99005874\ndeclaredByID: 99008270\nendDate: 132066532800000000\n","timestamp":"2019-07-02T18:48:00Z","type":"WarRetractedByConcord"},{"notification_id":1060397543,"sender_id":1000125,"sender_type":"corporation","text":"againstID:
+        99005874\ndeclaredByID: 98605263\nendDate: 132063240600000000\n","timestamp":"2019-06-28T23:21:00Z","type":"WarRetractedByConcord"},{"notification_id":1056174011,"sender_id":1000125,"sender_type":"corporation","text":"againstID:
+        99005874\ncost: 100000000\ndeclaredByID: 98605263\ndelayHours: 24\nhostileState:
+        false\ntimeStarted: 132057169200000000\nwarHQ: <b>Sirppala - pvp<\/b>\nwarHQ_IdType:\n-
+        1030829628888\n- 35825\n","timestamp":"2019-06-21T22:43:00Z","type":"WarDeclared"},{"notification_id":1055533899,"sender_id":1000125,"sender_type":"corporation","text":"againstID:
+        99005874\nallianceID: 99001134\ndeclaredByID: 99001134\nopponentID: 99005874\nquitterID:
+        98495482\n","timestamp":"2019-06-20T20:11:00Z","type":"WarInherited"},{"notification_id":1055533896,"sender_id":1000125,"sender_type":"corporation","text":"againstID:
+        99005874\nallianceID: 99001134\ndeclaredByID: 99001134\nopponentID: 99005874\nquitterID:
+        98495482\n","timestamp":"2019-06-20T20:11:00Z","type":"WarInherited"},{"notification_id":1055533887,"sender_id":1000125,"sender_type":"corporation","text":"againstID:
+        99005874\nallianceID: 99001134\ndeclaredByID: 99001134\nopponentID: 99005874\nquitterID:
+        98495482\n","timestamp":"2019-06-20T20:11:00Z","type":"WarInherited"},{"notification_id":1055533441,"sender_id":1000125,"sender_type":"corporation","text":"againstID:
+        99005874\nallianceID: 99001134\ndeclaredByID: 99001134\nopponentID: 99005874\nquitterID:
+        98495482\n","timestamp":"2019-06-20T20:11:00Z","type":"WarInherited"},{"notification_id":1055076431,"sender_id":1000125,"sender_type":"corporation","text":"againstID:
+        98102833\nallianceID: 99005874\ndeclaredByID: 99001134\n","timestamp":"2019-06-20T01:02:00Z","type":"WarAdopted
+        "},{"notification_id":1055076422,"sender_id":1000125,"sender_type":"corporation","text":"againstID:
+        98102833\nallianceID: 99005874\ndeclaredByID: 99001134\n","timestamp":"2019-06-20T01:02:00Z","type":"WarAdopted
+        "},{"notification_id":1055076419,"sender_id":1000125,"sender_type":"corporation","text":"againstID:
+        98102833\nallianceID: 99005874\ndeclaredByID: 99008270\n","timestamp":"2019-06-20T01:02:00Z","type":"WarAdopted
+        "},{"notification_id":1055076414,"sender_id":1000125,"sender_type":"corporation","text":"againstID:
+        98102833\nallianceID: 99005874\ndeclaredByID: 98604198\n","timestamp":"2019-06-20T01:02:00Z","type":"WarAdopted
+        "},{"notification_id":1055076407,"sender_id":1000125,"sender_type":"corporation","text":"againstID:
+        98102833\nallianceID: 99005874\ndeclaredByID: 99001134\n","timestamp":"2019-06-20T01:02:00Z","type":"WarAdopted
+        "},{"notification_id":1053719561,"sender_id":1000125,"sender_type":"corporation","text":"againstID:
+        99005874\nallianceID: 99005874\ndeclaredByID: 99001134\nopponentID: 99001134\nquitterID:
+        98590694\n","timestamp":"2019-06-17T14:25:00Z","type":"WarInherited"},{"notification_id":1045283635,"sender_id":1000125,"sender_type":"corporation","text":"againstID:
+        98134807\nallianceID: 99005874\ndeclaredByID: 98602283\n","timestamp":"2019-06-03T00:17:00Z","type":"WarAdopted
+        "},{"notification_id":1045283634,"sender_id":1000125,"sender_type":"corporation","text":"againstID:
+        98134807\nallianceID: 99005874\ndeclaredByID: 98602283\n","timestamp":"2019-06-03T00:17:00Z","type":"WarAdopted
+        "},{"notification_id":1045283631,"sender_id":1000125,"sender_type":"corporation","text":"againstID:
+        98134807\nallianceID: 99005874\ndeclaredByID: 99001134\n","timestamp":"2019-06-03T00:17:00Z","type":"WarAdopted
+        "},{"notification_id":1045283629,"sender_id":1000125,"sender_type":"corporation","text":"againstID:
+        98134807\nallianceID: 99005874\ndeclaredByID: 99001134\n","timestamp":"2019-06-03T00:17:00Z","type":"WarAdopted
+        "},{"notification_id":1044587993,"sender_id":1000125,"sender_type":"corporation","text":"againstID:
+        99005443\nallianceID: 99005443\ndeclaredByID: 98601178\nopponentID: 98601178\nquitterID:
+        98134807\n","timestamp":"2019-06-01T23:45:00Z","type":"WarInherited"},{"notification_id":1044587990,"sender_id":1000125,"sender_type":"corporation","text":"againstID:
+        99005443\nallianceID: 99005443\ndeclaredByID: 98602283\nopponentID: 98602283\nquitterID:
+        98134807\n","timestamp":"2019-06-01T23:45:00Z","type":"WarInherited"},{"notification_id":1044587986,"sender_id":1000125,"sender_type":"corporation","text":"againstID:
+        99005443\nallianceID: 99005443\ndeclaredByID: 99001134\nopponentID: 99001134\nquitterID:
+        98134807\n","timestamp":"2019-06-01T23:45:00Z","type":"WarInherited"},{"notification_id":1044545919,"sender_id":1000125,"sender_type":"corporation","text":"againstID:
+        99005443\nallianceID: 99005443\ndeclaredByID: 98601178\nopponentID: 98601178\nquitterID:
+        98580755\n","timestamp":"2019-06-01T22:00:00Z","type":"WarInherited"},{"notification_id":1044545916,"sender_id":1000125,"sender_type":"corporation","text":"againstID:
+        99005443\nallianceID: 99005443\ndeclaredByID: 98602283\nopponentID: 98602283\nquitterID:
+        98580755\n","timestamp":"2019-06-01T22:00:00Z","type":"WarInherited"},{"notification_id":1044545912,"sender_id":1000125,"sender_type":"corporation","text":"againstID:
+        99005443\nallianceID: 99005443\ndeclaredByID: 99001134\nopponentID: 99001134\nquitterID:
+        98580755\n","timestamp":"2019-06-01T22:00:00Z","type":"WarInherited"},{"notification_id":1044062471,"sender_id":1000125,"sender_type":"corporation","text":"againstID:
+        99005443\ndeclaredByID: 98601178\nendDate: 132039229200000000\n","timestamp":"2019-06-01T04:22:00Z","type":"WarRetractedByConcord"},{"notification_id":1043178272,"sender_id":1000125,"sender_type":"corporation","text":"againstID:
+        99005443\nallianceID: 99001134\ndeclaredByID: 99001134\nopponentID: 99005443\nquitterID:
+        98495482\n","timestamp":"2019-05-30T15:52:00Z","type":"WarInherited"},{"notification_id":1042601102,"sender_id":1000125,"sender_type":"corporation","text":"againstID:
+        99005443\ncost: 100000000\ndeclaredByID: 98602283\ndelayHours: 24\nhostileState:
+        false\ntimeStarted: 132037045200000000\nwarHQ: <b>Perimeter - XXX<\/b>\nwarHQ_IdType:\n-
+        1030671656428\n- 35832\n","timestamp":"2019-05-29T15:43:00Z","type":"WarDeclared"},{"notification_id":1039056136,"sender_id":1000137,"sender_type":"corporation","text":"assetSafetyDurationFull:
+        17280000000000\nassetSafetyDurationMinimum: 4320000000000\nassetSafetyFullTimestamp:
+        132048315730652386\nassetSafetyMinimumTimestamp: 132035355730652386\nisCorpOwned:
+        false\nnewStationID: 60013867\nsolarsystemID: 30004923\nstructureID: &id001
+        1027847409779\nstructureLink: <a href=\"showinfo:47516\/\/1027847409779\">66-PMM
+        V - Drakonchik Empire<\/a>\nstructureShowInfoData:\n- showinfo\n- 47516\n-
+        *id001\nstructureTypeID: 47516\n","timestamp":"2019-05-23T16:46:00Z","type":"StructureItemsMovedToSafety"},{"notification_id":1039055822,"sender_id":98555584,"sender_type":"corporation","text":"corpID:
+        98555584\nnewStationID: 60014779\nstationID: 1027847409779\n","timestamp":"2019-05-23T16:46:00Z","type":"CloneRevokedMsg2"},{"notification_id":1039055635,"sender_id":1000125,"sender_type":"corporation","text":"locationID:
+        1027847409779\nlocationOwnerID: 98555584\nownerID: 1337512245\ntypeIDs: []\n","timestamp":"2019-05-23T16:46:00Z","type":"JumpCloneDeletedMsg1"},{"notification_id":1035362308,"sender_id":1000125,"sender_type":"corporation","text":"charID:
+        1208274826\nnewOwnerCorpID: 98364494\noldOwnerCorpID: 98134807\nsolarSystemID:
+        30004904\nstructureID: 1027355521703\nstructureName: AXDX-F - Delta\nstructureTypeID:
+        35835\n","timestamp":"2019-05-16T23:15:00Z","type":"OwnershipTransferred"},{"notification_id":1035357737,"sender_id":1000125,"sender_type":"corporation","text":"charID:
+        1583264490\nnewOwnerCorpID: 98364494\noldOwnerCorpID: 98134807\nsolarSystemID:
+        30004923\nstructureID: 1025916992321\nstructureName: 66-PMM - Delta\nstructureTypeID:
+        35835\n","timestamp":"2019-05-16T23:09:00Z","type":"OwnershipTransferred"},{"notification_id":1035356962,"sender_id":1000125,"sender_type":"corporation","text":"charID:
+        1208274826\nnewOwnerCorpID: 98364494\noldOwnerCorpID: 98134807\nsolarSystemID:
+        30004904\nstructureID: 1027355595159\nstructureName: AXDX-F - Gamma\nstructureTypeID:
+        35835\n","timestamp":"2019-05-16T23:06:00Z","type":"OwnershipTransferred"},{"notification_id":1035355787,"sender_id":1000125,"sender_type":"corporation","text":"charID:
+        1208274826\nnewOwnerCorpID: 98364494\noldOwnerCorpID: 98134807\nsolarSystemID:
+        30004904\nstructureID: 1027355568761\nstructureName: AXDX-F - Beta\nstructureTypeID:
+        35835\n","timestamp":"2019-05-16T23:01:00Z","type":"OwnershipTransferred"},{"notification_id":1035355704,"sender_id":1000125,"sender_type":"corporation","text":"charID:
+        1583264490\nnewOwnerCorpID: 98364494\noldOwnerCorpID: 98134807\nsolarSystemID:
+        30004923\nstructureID: 1025955398643\nstructureName: 66-PMM - Gamma\nstructureTypeID:
+        35835\n","timestamp":"2019-05-16T23:01:00Z","type":"OwnershipTransferred"},{"notification_id":1035354078,"sender_id":1000125,"sender_type":"corporation","text":"charID:
+        1208274826\nnewOwnerCorpID: 98364494\noldOwnerCorpID: 98134807\nsolarSystemID:
+        30004904\nstructureID: 1027355546508\nstructureName: AXDX-F - Alpha\nstructureTypeID:
+        35835\n","timestamp":"2019-05-16T22:55:00Z","type":"OwnershipTransferred"},{"notification_id":1035353689,"sender_id":1000125,"sender_type":"corporation","text":"charID:
+        1583264490\nnewOwnerCorpID: 98364494\noldOwnerCorpID: 98134807\nsolarSystemID:
+        30004923\nstructureID: 1027148467384\nstructureName: 66-PMM - Beta\nstructureTypeID:
+        35835\n","timestamp":"2019-05-16T22:53:00Z","type":"OwnershipTransferred"},{"notification_id":1035352461,"sender_id":1000125,"sender_type":"corporation","text":"charID:
+        1583264490\nnewOwnerCorpID: 98364494\noldOwnerCorpID: 98134807\nsolarSystemID:
+        30004923\nstructureID: 1027148437375\nstructureName: 66-PMM - Alpha\nstructureTypeID:
+        35835\n","timestamp":"2019-05-16T22:48:00Z","type":"OwnershipTransferred"},{"notification_id":919400982,"sender_id":1208274826,"sender_type":"character","text":"corpID:
+        98134807\nnewTaxRate: 5.0\noldTaxRate: 9.0\n","timestamp":"2018-10-26T17:56:00Z","type":"CorpTaxChangeMsg"},{"notification_id":918841152,"sender_id":1000125,"sender_type":"corporation","text":"allyID:
+        98578406\ndefenderID: 98577659\nstartTime: 131850025690000000\n","timestamp":"2018-10-26T00:43:00Z","type":"AllyJoinedWarAggressorMsg"},{"notification_id":918743582,"sender_id":1000125,"sender_type":"corporation","text":"allyID:
+        99007160\ndefenderID: 98577882\nstartTime: 131849914300000000\n","timestamp":"2018-10-25T21:37:00Z","type":"AllyJoinedWarAggressorMsg"},{"notification_id":918050583,"sender_id":1000125,"sender_type":"corporation","text":"allyID:
+        1680888152\ndefenderID: 98496988\nstartTime: 131849256890000000\n","timestamp":"2018-10-25T03:21:00Z","type":"AllyJoinedWarAggressorMsg"},{"notification_id":840653447,"sender_id":1000137,"sender_type":"corporation","text":"assetSafetyDurationFull:
+        17280000000000\nassetSafetyDurationMinimum: 4320000000000\nassetSafetyFullTimestamp:
+        131752079848530765\nassetSafetyMinimumTimestamp: 131739119848530765\nisCorpOwned:
+        false\nnewStationID: 60000085\nsolarsystemID: 30000812\nstructureID: &id001
+        1027847410989\nstructureLink: <a href=\"showinfo:47516\/\/1027847410989\">TTP-2B
+        V - Freibier und Nutten\n  Bar<\/a>\nstructureShowInfoData:\n- showinfo\n-
+        47516\n- *id001\nstructureTypeID: 47516\n","timestamp":"2018-06-14T20:00:00Z","type":"StructureItemsMovedToSafety"},{"notification_id":840650792,"sender_id":1000125,"sender_type":"corporation","text":"locationID:
+        1027847410989\nlocationOwnerID: 98435559\nownerID: 1337512245\ntypeIDs: []\n","timestamp":"2018-06-14T19:59:00Z","type":"JumpCloneDeletedMsg1"},{"notification_id":799114824,"sender_id":1000125,"sender_type":"corporation","text":"againstID:
+        99005443\ncost: null\ndeclaredByID: 99001134\ndelayHours: null\nhostileState:
+        null\n","timestamp":"2018-04-11T20:40:00Z","type":"AllWarSurrenderMsg"},{"notification_id":715431270,"sender_id":1000125,"sender_type":"corporation","text":"againstID:
+        99005443\ncost: null\ndeclaredByID: 99004507\ndelayHours: null\nhostileState:
+        null\n","timestamp":"2017-12-03T20:55:00Z","type":"AllWarRetractedMsg"},{"notification_id":642217250,"sender_id":1000125,"sender_type":"corporation","text":"characterLinkData:\n-
+        showinfo\n- 1377\n- 1208274826\ncharacterName: FairyDrakonchik\nfromCorporationLinkData:\n-
+        showinfo\n- 2\n- 98134807\nfromCorporationName: MyLittleDragon\nsolarSystemLinkData:\n-
+        showinfo\n- 5\n- 30000471\nsolarSystemName: M-XUZZ\nstructureLinkData:\n-
+        showinfo\n- 2233\n- 1013707957476\nstructureName: Customs Office (M-XUZZ IX)\ntoCorporationLinkData:\n-
+        showinfo\n- 2\n- 98311759\ntoCorporationName: Pestilent Holding\n","timestamp":"2017-07-04T18:31:00Z","type":"OwnershipTransferred"},{"notification_id":642217150,"sender_id":1000125,"sender_type":"corporation","text":"characterLinkData:\n-
+        showinfo\n- 1377\n- 1208274826\ncharacterName: FairyDrakonchik\nfromCorporationLinkData:\n-
+        showinfo\n- 2\n- 98134807\nfromCorporationName: MyLittleDragon\nsolarSystemLinkData:\n-
+        showinfo\n- 5\n- 30000471\nsolarSystemName: M-XUZZ\nstructureLinkData:\n-
+        showinfo\n- 2233\n- 1013707971793\nstructureName: Customs Office (M-XUZZ VIII)\ntoCorporationLinkData:\n-
+        showinfo\n- 2\n- 98311759\ntoCorporationName: Pestilent Holding\n","timestamp":"2017-07-04T18:31:00Z","type":"OwnershipTransferred"},{"notification_id":642216995,"sender_id":1000125,"sender_type":"corporation","text":"characterLinkData:\n-
+        showinfo\n- 1377\n- 1208274826\ncharacterName: FairyDrakonchik\nfromCorporationLinkData:\n-
+        showinfo\n- 2\n- 98134807\nfromCorporationName: MyLittleDragon\nsolarSystemLinkData:\n-
+        showinfo\n- 5\n- 30000471\nsolarSystemName: M-XUZZ\nstructureLinkData:\n-
+        showinfo\n- 2233\n- 1013707981824\nstructureName: Customs Office (M-XUZZ VII)\ntoCorporationLinkData:\n-
+        showinfo\n- 2\n- 98311759\ntoCorporationName: Pestilent Holding\n","timestamp":"2017-07-04T18:30:00Z","type":"OwnershipTransferred"},{"notification_id":642216871,"sender_id":1000125,"sender_type":"corporation","text":"characterLinkData:\n-
+        showinfo\n- 1377\n- 1208274826\ncharacterName: FairyDrakonchik\nfromCorporationLinkData:\n-
+        showinfo\n- 2\n- 98134807\nfromCorporationName: MyLittleDragon\nsolarSystemLinkData:\n-
+        showinfo\n- 5\n- 30000471\nsolarSystemName: M-XUZZ\nstructureLinkData:\n-
+        showinfo\n- 2233\n- 1013708005922\nstructureName: Customs Office (M-XUZZ VI)\ntoCorporationLinkData:\n-
+        showinfo\n- 2\n- 98311759\ntoCorporationName: Pestilent Holding\n","timestamp":"2017-07-04T18:29:00Z","type":"OwnershipTransferred"},{"notification_id":642216728,"sender_id":1000125,"sender_type":"corporation","text":"characterLinkData:\n-
+        showinfo\n- 1377\n- 1208274826\ncharacterName: FairyDrakonchik\nfromCorporationLinkData:\n-
+        showinfo\n- 2\n- 98134807\nfromCorporationName: MyLittleDragon\nsolarSystemLinkData:\n-
+        showinfo\n- 5\n- 30000471\nsolarSystemName: M-XUZZ\nstructureLinkData:\n-
+        showinfo\n- 2233\n- 1013708018037\nstructureName: Customs Office (M-XUZZ V)\ntoCorporationLinkData:\n-
+        showinfo\n- 2\n- 98311759\ntoCorporationName: Pestilent Holding\n","timestamp":"2017-07-04T18:29:00Z","type":"OwnershipTransferred"},{"notification_id":642216426,"sender_id":1000125,"sender_type":"corporation","text":"characterLinkData:\n-
+        showinfo\n- 1377\n- 1208274826\ncharacterName: FairyDrakonchik\nfromCorporationLinkData:\n-
+        showinfo\n- 2\n- 98134807\nfromCorporationName: MyLittleDragon\nsolarSystemLinkData:\n-
+        showinfo\n- 5\n- 30000471\nsolarSystemName: M-XUZZ\nstructureLinkData:\n-
+        showinfo\n- 2233\n- 1013708028928\nstructureName: Customs Office (M-XUZZ III)\ntoCorporationLinkData:\n-
+        showinfo\n- 2\n- 98311759\ntoCorporationName: Pestilent Holding\n","timestamp":"2017-07-04T18:27:00Z","type":"OwnershipTransferred"},{"notification_id":642216129,"sender_id":1000125,"sender_type":"corporation","text":"characterLinkData:\n-
+        showinfo\n- 1377\n- 1208274826\ncharacterName: FairyDrakonchik\nfromCorporationLinkData:\n-
+        showinfo\n- 2\n- 98134807\nfromCorporationName: MyLittleDragon\nsolarSystemLinkData:\n-
+        showinfo\n- 5\n- 30000471\nsolarSystemName: M-XUZZ\nstructureLinkData:\n-
+        showinfo\n- 2233\n- 1013708055846\nstructureName: Customs Office (M-XUZZ II)\ntoCorporationLinkData:\n-
+        showinfo\n- 2\n- 98311759\ntoCorporationName: Pestilent Holding\n","timestamp":"2017-07-04T18:25:00Z","type":"OwnershipTransferred"},{"notification_id":642216016,"sender_id":1000125,"sender_type":"corporation","text":"characterLinkData:\n-
+        showinfo\n- 1377\n- 1208274826\ncharacterName: FairyDrakonchik\nfromCorporationLinkData:\n-
+        showinfo\n- 2\n- 98134807\nfromCorporationName: MyLittleDragon\nsolarSystemLinkData:\n-
+        showinfo\n- 5\n- 30000471\nsolarSystemName: M-XUZZ\nstructureLinkData:\n-
+        showinfo\n- 2233\n- 1013707748885\nstructureName: Customs Office (M-XUZZ I)\ntoCorporationLinkData:\n-
+        showinfo\n- 2\n- 98311759\ntoCorporationName: Pestilent Holding\n","timestamp":"2017-07-04T18:25:00Z","type":"OwnershipTransferred"},{"notification_id":567602037,"sender_id":1000125,"sender_type":"corporation","text":"againstID:
+        99005443\ncost: null\ndeclaredByID: 98463923\ndelayHours: null\nhostileState:
+        null\n","timestamp":"2016-06-14T00:25:00Z","type":"AllWarRetractedMsg"},{"is_read":true,"notification_id":555588659,"sender_id":1583264490,"sender_type":"character","text":"corpID:
+        98134807\nnewCeoID: 1208274826\noldCeoID: 1583264490\n","timestamp":"2016-03-27T19:05:00Z","type":"CorpNewCEOMsg"},{"is_read":true,"notification_id":555583751,"sender_id":1208274826,"sender_type":"character","text":"corpID:
+        98134807\nnewCeoID: 1583264490\noldCeoID: 1208274826\n","timestamp":"2016-03-27T18:46:00Z","type":"CorpNewCEOMsg"},{"notification_id":554296327,"sender_id":1000125,"sender_type":"corporation","text":"characterLinkData:\n-
+        showinfo\n- 1377\n- 1208274826\ncharacterName: FairyDrakonchik\nfromCorporationLinkData:\n-
+        showinfo\n- 2\n- 98134807\nfromCorporationName: MyLittleDragon\nsolarSystemLinkData:\n-
+        showinfo\n- 5\n- 30000470\nsolarSystemName: XA5-TY\nstructureLinkData:\n-
+        showinfo\n- 2233\n- 1014599324461\nstructureName: Customs Office (XA5-TY VI)\ntoCorporationLinkData:\n-
+        showinfo\n- 2\n- 233382138\ntoCorporationName: Phantom Squad\n","timestamp":"2016-03-18T17:54:00Z","type":"OwnershipTransferred"},{"notification_id":554296257,"sender_id":1000125,"sender_type":"corporation","text":"characterLinkData:\n-
+        showinfo\n- 1377\n- 1208274826\ncharacterName: FairyDrakonchik\nfromCorporationLinkData:\n-
+        showinfo\n- 2\n- 98134807\nfromCorporationName: MyLittleDragon\nsolarSystemLinkData:\n-
+        showinfo\n- 5\n- 30000470\nsolarSystemName: XA5-TY\nstructureLinkData:\n-
+        showinfo\n- 2233\n- 1014504663367\nstructureName: Customs Office (XA5-TY IV)\ntoCorporationLinkData:\n-
+        showinfo\n- 2\n- 233382138\ntoCorporationName: Phantom Squad\n","timestamp":"2016-03-18T17:53:00Z","type":"OwnershipTransferred"},{"notification_id":554296146,"sender_id":1000125,"sender_type":"corporation","text":"characterLinkData:\n-
+        showinfo\n- 1377\n- 1208274826\ncharacterName: FairyDrakonchik\nfromCorporationLinkData:\n-
+        showinfo\n- 2\n- 98134807\nfromCorporationName: MyLittleDragon\nsolarSystemLinkData:\n-
+        showinfo\n- 5\n- 30000470\nsolarSystemName: XA5-TY\nstructureLinkData:\n-
+        showinfo\n- 2233\n- 1014599337905\nstructureName: Customs Office (XA5-TY II)\ntoCorporationLinkData:\n-
+        showinfo\n- 2\n- 233382138\ntoCorporationName: Phantom Squad\n","timestamp":"2016-03-18T17:52:00Z","type":"OwnershipTransferred"},{"notification_id":552651633,"sender_id":1000125,"sender_type":"corporation","text":"characterLinkData:\n-
+        showinfo\n- 1380\n- 91537074\ncharacterName: Silver Armer\nfromCorporationLinkData:\n-
+        showinfo\n- 2\n- 98374757\nfromCorporationName: United Conflict Space Command\nsolarSystemLinkData:\n-
+        showinfo\n- 5\n- 30004923\nsolarSystemName: 66-PMM\nstructureLinkData:\n-
+        showinfo\n- 2233\n- 1019304349125\nstructureName: Customs Office (66-PMM VIII)\ntoCorporationLinkData:\n-
+        showinfo\n- 2\n- 98134807\ntoCorporationName: MyLittleDragon\n","timestamp":"2016-03-05T21:36:00Z","type":"OwnershipTransferred"},{"notification_id":552651622,"sender_id":1000125,"sender_type":"corporation","text":"characterLinkData:\n-
+        showinfo\n- 1380\n- 91537074\ncharacterName: Silver Armer\nfromCorporationLinkData:\n-
+        showinfo\n- 2\n- 98374757\nfromCorporationName: United Conflict Space Command\nsolarSystemLinkData:\n-
+        showinfo\n- 5\n- 30004923\nsolarSystemName: 66-PMM\nstructureLinkData:\n-
+        showinfo\n- 2233\n- 1019296636191\nstructureName: Customs Office (66-PMM VII)\ntoCorporationLinkData:\n-
+        showinfo\n- 2\n- 98134807\ntoCorporationName: MyLittleDragon\n","timestamp":"2016-03-05T21:36:00Z","type":"OwnershipTransferred"},{"notification_id":552651596,"sender_id":1000125,"sender_type":"corporation","text":"characterLinkData:\n-
+        showinfo\n- 1380\n- 91537074\ncharacterName: Silver Armer\nfromCorporationLinkData:\n-
+        showinfo\n- 2\n- 98374757\nfromCorporationName: United Conflict Space Command\nsolarSystemLinkData:\n-
+        showinfo\n- 5\n- 30004923\nsolarSystemName: 66-PMM\nstructureLinkData:\n-
+        showinfo\n- 2233\n- 1019292774596\nstructureName: Customs Office (66-PMM VI)\ntoCorporationLinkData:\n-
+        showinfo\n- 2\n- 98134807\ntoCorporationName: MyLittleDragon\n","timestamp":"2016-03-05T21:36:00Z","type":"OwnershipTransferred"},{"notification_id":552651488,"sender_id":1000125,"sender_type":"corporation","text":"characterLinkData:\n-
+        showinfo\n- 1380\n- 91537074\ncharacterName: Silver Armer\nfromCorporationLinkData:\n-
+        showinfo\n- 2\n- 98374757\nfromCorporationName: United Conflict Space Command\nsolarSystemLinkData:\n-
+        showinfo\n- 5\n- 30004923\nsolarSystemName: 66-PMM\nstructureLinkData:\n-
+        showinfo\n- 2233\n- 1019282598603\nstructureName: Customs Office (66-PMM V)\ntoCorporationLinkData:\n-
+        showinfo\n- 2\n- 98134807\ntoCorporationName: MyLittleDragon\n","timestamp":"2016-03-05T21:35:00Z","type":"OwnershipTransferred"},{"notification_id":552651472,"sender_id":1000125,"sender_type":"corporation","text":"characterLinkData:\n-
+        showinfo\n- 1380\n- 91537074\ncharacterName: Silver Armer\nfromCorporationLinkData:\n-
+        showinfo\n- 2\n- 98374757\nfromCorporationName: United Conflict Space Command\nsolarSystemLinkData:\n-
+        showinfo\n- 5\n- 30004923\nsolarSystemName: 66-PMM\nstructureLinkData:\n-
+        showinfo\n- 2233\n- 1019292746257\nstructureName: Customs Office (66-PMM IV)\ntoCorporationLinkData:\n-
+        showinfo\n- 2\n- 98134807\ntoCorporationName: MyLittleDragon\n","timestamp":"2016-03-05T21:35:00Z","type":"OwnershipTransferred"},{"notification_id":552651454,"sender_id":1000125,"sender_type":"corporation","text":"characterLinkData:\n-
+        showinfo\n- 1380\n- 91537074\ncharacterName: Silver Armer\nfromCorporationLinkData:\n-
+        showinfo\n- 2\n- 98374757\nfromCorporationName: United Conflict Space Command\nsolarSystemLinkData:\n-
+        showinfo\n- 5\n- 30004923\nsolarSystemName: 66-PMM\nstructureLinkData:\n-
+        showinfo\n- 2233\n- 1019292724458\nstructureName: Customs Office (66-PMM III)\ntoCorporationLinkData:\n-
+        showinfo\n- 2\n- 98134807\ntoCorporationName: MyLittleDragon\n","timestamp":"2016-03-05T21:35:00Z","type":"OwnershipTransferred"},{"notification_id":552651273,"sender_id":1000125,"sender_type":"corporation","text":"characterLinkData:\n-
+        showinfo\n- 1380\n- 91537074\ncharacterName: Silver Armer\nfromCorporationLinkData:\n-
+        showinfo\n- 2\n- 98374757\nfromCorporationName: United Conflict Space Command\nsolarSystemLinkData:\n-
+        showinfo\n- 5\n- 30004923\nsolarSystemName: 66-PMM\nstructureLinkData:\n-
+        showinfo\n- 2233\n- 1019282570113\nstructureName: Customs Office (66-PMM II)\ntoCorporationLinkData:\n-
+        showinfo\n- 2\n- 98134807\ntoCorporationName: MyLittleDragon\n","timestamp":"2016-03-05T21:33:00Z","type":"OwnershipTransferred"},{"notification_id":552651233,"sender_id":1000125,"sender_type":"corporation","text":"characterLinkData:\n-
+        showinfo\n- 1380\n- 91537074\ncharacterName: Silver Armer\nfromCorporationLinkData:\n-
+        showinfo\n- 2\n- 98374757\nfromCorporationName: United Conflict Space Command\nsolarSystemLinkData:\n-
+        showinfo\n- 5\n- 30004923\nsolarSystemName: 66-PMM\nstructureLinkData:\n-
+        showinfo\n- 2233\n- 1019282551044\nstructureName: Customs Office (66-PMM I)\ntoCorporationLinkData:\n-
+        showinfo\n- 2\n- 98134807\ntoCorporationName: MyLittleDragon\n","timestamp":"2016-03-05T21:33:00Z","type":"OwnershipTransferred"},{"notification_id":544687946,"sender_id":1000125,"sender_type":"corporation","text":"againstID:
+        99005443\ncost: null\ndeclaredByID: 98374523\ndelayHours: null\nhostileState:
+        null\n","timestamp":"2016-01-09T18:27:00Z","type":"AllWarRetractedMsg"},{"notification_id":541056301,"sender_id":1000125,"sender_type":"corporation","text":"againstID:
+        99005443\ncost: null\ndeclaredByID: 99001134\ndelayHours: null\nhostileState:
+        null\n","timestamp":"2015-12-14T21:40:00Z","type":"AllWarSurrenderMsg"},{"notification_id":519891437,"sender_id":1000125,"sender_type":"corporation","text":"killMailHash:
+        8bde1f29db48624a22e4e155412fd98640424fa0\nkillMailID: 47689735\nvictimShipTypeID:
+        2998\n","timestamp":"2015-07-05T21:08:00Z","type":"KillReportVictim"},{"is_read":true,"notification_id":519233011,"sender_id":1208274826,"sender_type":"character","text":"applicationText:
+        ''''\ncharID: 1337512245\ncorpID: 98134807\ninvokingCharID: 1208274826\n","timestamp":"2015-06-30T21:13:00Z","type":"CorpAppInvitedMsg"}]'
+  recorded_at: Sat, 14 Mar 2026 17:26:38 GMT
+recorded_with: VCR 6.4.0

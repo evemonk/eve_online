@@ -486,31 +486,29 @@ character_fatigue.last_update_date # => nil
 #### Get character notifications
 
 ```ruby
-options = { token: 'token123', character_id: 90729314 }
+client = EveOnline::ESI::Client.new(token: "token123")
 
-character_notifications = EveOnline::ESI::CharacterNotifications.new(options)
+notifications = client.characters.notifications(id: 1_337_512_245)
 
-character_notifications.scope # => "esi-characters.read_notifications.v1"
+notifications.size # => 219
 
-character_notifications.notifications.size # => 500
+notification = notifications.first
 
-notification = character_notifications.notifications.first
-
-notification.as_json # => {:is_read=>nil,
-                     #     :notification_id=>774328832,
-                     #     :sender_id=>1000125,
-                     #     :sender_type=>"corporation",
-                     #     :text=>"againstID: 99005443\ncost: 0\ndeclaredByID: 98442842\ndelayHours: 24\nhostileState: 0\n"
-                     #     :timestamp=>Thu, 01 Mar 2018 13:48:00 UTC +00:00,
-                     #     :type=>"AllWarDeclaredMsg"}
+notification.as_json # => {is_read: nil,
+                     #     notification_id: 2156021212,
+                     #     sender_id: 319898237,
+                     #     sender_type: "character",
+                     #     text: "corpID: 98565696\n",
+                     #     timestamp: 2025-04-24 19:02:00.000000000 UTC +00:00,
+                     #     type: "CorpKicked"}
 
 notification.is_read # => nil
-notification.notification_id # => 774328832
-notification.sender_id # => 1000125
-notification.sender_type # => "corporation"
-notification.text # => "againstID: 99005443\ncost: 0\ndeclaredByID: 98442842\ndelayHours: 24\nhostileState: 0\n"
-notification.timestamp # => Thu, 01 Mar 2018 13:48:00 UTC +00:00
-notification.type # => "AllWarDeclaredMsg"
+notification.notification_id # => 2156021212
+notification.sender_id # => 319898237
+notification.sender_type # => "character"
+notification.text # => "corpID: 98565696\n"
+notification.timestamp # => 2025-04-24 19:02:00.000000000 UTC +00:00
+notification.type # => "CorpKicked"
 ```
 
 #### Get new contact notifications
@@ -1417,17 +1415,16 @@ ship.ship_type_id # => 638
 #### Get loyalty points
 
 ```ruby
-options = { token: 'token123', character_id: 90729314 }
+client = EveOnline::ESI::Client.new(token: "token123")
 
-character_loyalty_points = EveOnline::ESI::CharacterLoyaltyPoints.new(options)
+loyalty_points = client.loyalty.loyalty_points(id: 1_337_512_245)
 
-character_loyalty_points.scope # => "esi-characters.read_loyalty.v1"
+loyalty_points.size # => 7
 
-character_loyalty_points.loyalty_points.size # => 5
+loyalty_point = loyalty_points.first
 
-loyalty_point = character_loyalty_points.loyalty_points.first
-
-loyalty_point.as_json # => {:corporation_id=>1000035, :loyalty_points=>14163}
+loyalty_point.as_json # => {corporation_id: 1000035,
+                      #     loyalty_points: 14163}
 
 loyalty_point.corporation_id # => 1000035
 loyalty_point.loyalty_points # => 14163
@@ -1436,26 +1433,22 @@ loyalty_point.loyalty_points # => 14163
 #### List loyalty store offers
 
 ```ruby
-options = { corporation_id: 1_000_035 }
+client = EveOnline::ESI::Client.new
 
-corporation_loyalty_store_offers = EveOnline::ESI::CorporationLoyaltyStoreOffers.new(options)
+corporation_loyalty_store_offers = client.loyalty.offers(id: 1_000_035)
 
-corporation_loyalty_store_offers.scope # => nil
+corporation_loyalty_store_offers.size # => 334
 
-corporation_loyalty_store_offers.roles # => []
+offer = corporation_loyalty_store_offers.first
 
-corporation_loyalty_store_offers.offers.size # => 332
+offer.as_json # => {ak_cost: 0,
+              #     isk_cost: 2400000,
+              #     lp_cost: 2400,
+              #     offer_id: 3584,
+              #     quantity: 5000,
+              #     type_id: 23047}
 
-offer = corporation_loyalty_store_offers.offers.first
-
-offer.as_json # => {:ak_cost=>nil,
-              #     :isk_cost=>2400000,
-              #     :lp_cost=>2400,
-              #     :offer_id=>3584,
-              #     :quantity=>5000,
-              #     :type_id=>23047}
-
-offer.ak_cost # => nil
+offer.ak_cost # => 0
 offer.isk_cost # => 2400000
 offer.lp_cost # => 2400
 offer.offer_id # => 3584
