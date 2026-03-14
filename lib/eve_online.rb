@@ -54,6 +54,7 @@ module EveOnline
       autoload :CharacterAsset, "eve_online/esi/models/character_asset"
       autoload :CharacterCorporationHistory, "eve_online/esi/models/character_corporation_history"
       autoload :CharacterWallet, "eve_online/esi/models/character_wallet"
+      autoload :CharacterPortrait, "eve_online/esi/models/character_portrait"
       autoload :CharacterShip, "eve_online/esi/models/character_ship"
       autoload :Clones, "eve_online/esi/models/clones"
       autoload :Constellation, "eve_online/esi/models/constellation"
