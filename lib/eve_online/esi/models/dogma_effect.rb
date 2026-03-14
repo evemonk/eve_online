@@ -25,7 +25,7 @@ module EveOnline
             published: attributes.published,
             range_attribute_id: attributes.range_attribute_id,
             range_chance: attributes.range_chance,
-            tracking_speed_attribute_id: tracking_speed_attribute_id
+            tracking_speed_attribute_id: attributes.tracking_speed_attribute_id
           }
         end
 
