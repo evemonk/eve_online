@@ -516,21 +516,19 @@ notification.type # => "CorpKicked"
 #### Get character portraits
 
 ```ruby
-options = { character_id: 90_729_314 }
+client = EveOnline::ESI::Client.new
 
-character_portrait = EveOnline::ESI::CharacterPortrait.new(options)
+character_portrait = client.characters.portraits(id: 1_337_512_245)
 
-character_portrait.scope # => nil
+character_portrait.as_json # => {medium: "https://images.evetech.net/characters/1337512245/portrait?tenant=tranquility&size=128",
+                           #     large: "https://images.evetech.net/characters/1337512245/portrait?tenant=tranquility&size=256",
+                           #     huge: "https://images.evetech.net/characters/1337512245/portrait?tenant=tranquility&size=512",
+                           #     small: "https://images.evetech.net/characters/1337512245/portrait?tenant=tranquility&size=64"}
 
-character_portrait.as_json # => {:medium=>"https://images.evetech.net/Character/1337512245_128.jpg",
-                           #     :large=>"https://images.evetech.net/Character/1337512245_256.jpg",
-                           #     :huge=>"https://images.evetech.net/Character/1337512245_512.jpg",
-                           #     :small=>"https://images.evetech.net/Character/1337512245_64.jpg"}
-
-character_portrait.medium # => "https://images.evetech.net/Character/1337512245_128.jpg"
-character_portrait.large # => "https://images.evetech.net/Character/1337512245_256.jpg"
-character_portrait.huge # => "https://images.evetech.net/Character/1337512245_512.jpg"
-character_portrait.small # => "https://images.evetech.net/Character/1337512245_64.jpg"
+character_portrait.medium # => "https://images.evetech.net/characters/1337512245/portrait?tenant=tranquility&size=128"
+character_portrait.large # => "https://images.evetech.net/characters/1337512245/portrait?tenant=tranquility&size=256"
+character_portrait.huge # => "https://images.evetech.net/characters/1337512245/portrait?tenant=tranquility&size=512"
+character_portrait.small # => "https://images.evetech.net/characters/1337512245/portrait?tenant=tranquility&size=64"
 ```
 
 #### Get character corporation roles
