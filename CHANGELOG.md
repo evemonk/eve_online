@@ -1,5 +1,9 @@
 # Changelog
 
+## main
+
+* Re-implement more endpoints. Follow examples in README.md.
+
 ## v0.48.0
 
 * Re-implement universe endpoints. Follow examples in README.md.
