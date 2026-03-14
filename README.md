@@ -486,31 +486,29 @@ character_fatigue.last_update_date # => nil
 #### Get character notifications
 
 ```ruby
-options = { token: 'token123', character_id: 90729314 }
+client = EveOnline::ESI::Client.new(token: "token123")
 
-character_notifications = EveOnline::ESI::CharacterNotifications.new(options)
+notifications = client.characters.notifications(id: 1_337_512_245)
 
-character_notifications.scope # => "esi-characters.read_notifications.v1"
+notifications.size # => 219
 
-character_notifications.notifications.size # => 500
+notification = notifications.first
 
-notification = character_notifications.notifications.first
-
-notification.as_json # => {:is_read=>nil,
-                     #     :notification_id=>774328832,
-                     #     :sender_id=>1000125,
-                     #     :sender_type=>"corporation",
-                     #     :text=>"againstID: 99005443\ncost: 0\ndeclaredByID: 98442842\ndelayHours: 24\nhostileState: 0\n"
-                     #     :timestamp=>Thu, 01 Mar 2018 13:48:00 UTC +00:00,
-                     #     :type=>"AllWarDeclaredMsg"}
+notification.as_json # => {is_read: nil,
+                     #     notification_id: 2156021212,
+                     #     sender_id: 319898237,
+                     #     sender_type: "character",
+                     #     text: "corpID: 98565696\n",
+                     #     timestamp: 2025-04-24 19:02:00.000000000 UTC +00:00,
+                     #     type: "CorpKicked"}
 
 notification.is_read # => nil
-notification.notification_id # => 774328832
-notification.sender_id # => 1000125
-notification.sender_type # => "corporation"
-notification.text # => "againstID: 99005443\ncost: 0\ndeclaredByID: 98442842\ndelayHours: 24\nhostileState: 0\n"
-notification.timestamp # => Thu, 01 Mar 2018 13:48:00 UTC +00:00
-notification.type # => "AllWarDeclaredMsg"
+notification.notification_id # => 2156021212
+notification.sender_id # => 319898237
+notification.sender_type # => "character"
+notification.text # => "corpID: 98565696\n"
+notification.timestamp # => 2025-04-24 19:02:00.000000000 UTC +00:00
+notification.type # => "CorpKicked"
 ```
 
 #### Get new contact notifications
