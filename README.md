@@ -970,15 +970,13 @@ corporation_members.character_ids.first # => 2114220544
 #### Get attributes
 
 ```ruby
+client = EveOnline::ESI::Client.new
 
+dogma_attributes = client.dogma.attributes
 
-dogma_attributes = EveOnline::ESI::DogmaAttributes.new
+dogma_attributes.attribute_ids.size # => 2825
 
-dogma_attributes.scope # => nil
-
-dogma_attributes.attribute_ids.size # => 2469
-
-dogma_attributes.attribute_ids.first # => 2
+dogma_attributes.attribute_ids.first # => 1413
 ```
 
 #### Get attribute information
