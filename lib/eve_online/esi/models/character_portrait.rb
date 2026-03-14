@@ -3,7 +3,7 @@
 module EveOnline
   module ESI
     module Models
-      class CharacterPortrait < Base
+      class CharacterPortrait < Object
         def as_json
           {
             medium: medium,
@@ -14,19 +14,19 @@ module EveOnline
         end
 
         def medium
-          options["px128x128"]
+          attributes.px128x128
         end
 
         def large
-          options["px256x256"]
+          attributes.px256x256
         end
 
         def huge
-          options["px512x512"]
+          attributes.px512x512
         end
 
         def small
-          options["px64x64"]
+          attributes.px64x64
         end
       end
     end
