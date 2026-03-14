@@ -1435,26 +1435,22 @@ loyalty_point.loyalty_points # => 14163
 #### List loyalty store offers
 
 ```ruby
-options = { corporation_id: 1_000_035 }
+client = EveOnline::ESI::Client.new
 
-corporation_loyalty_store_offers = EveOnline::ESI::CorporationLoyaltyStoreOffers.new(options)
+corporation_loyalty_store_offers = client.loyalty.offers(id: 1_000_035)
 
-corporation_loyalty_store_offers.scope # => nil
+corporation_loyalty_store_offers.size # => 334
 
-corporation_loyalty_store_offers.roles # => []
+offer = corporation_loyalty_store_offers.first
 
-corporation_loyalty_store_offers.offers.size # => 332
+offer.as_json # => {ak_cost: 0,
+              #     isk_cost: 2400000,
+              #     lp_cost: 2400,
+              #     offer_id: 3584,
+              #     quantity: 5000,
+              #     type_id: 23047}
 
-offer = corporation_loyalty_store_offers.offers.first
-
-offer.as_json # => {:ak_cost=>nil,
-              #     :isk_cost=>2400000,
-              #     :lp_cost=>2400,
-              #     :offer_id=>3584,
-              #     :quantity=>5000,
-              #     :type_id=>23047}
-
-offer.ak_cost # => nil
+offer.ak_cost # => 0
 offer.isk_cost # => 2400000
 offer.lp_cost # => 2400
 offer.offer_id # => 3584
