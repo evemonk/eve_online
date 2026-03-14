@@ -2,12 +2,12 @@
 
 ## v0.48.0
 
-* Re-implement universe endpoints. Follow example in README.md.
-* Re-implement dogma endpoints. Follow example in README.md.
+* Re-implement universe endpoints. Follow examples in README.md.
+* Re-implement dogma endpoints. Follow examples in README.md.
 
 ## v0.47.0
 
-* Re-write API. Follow example in README.md.
+* Re-write API. Follow examples in README.md.
 * Ruby 3.4
 * Ruby 4.0
 * Rails 8.1
