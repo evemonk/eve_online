@@ -77,6 +77,7 @@ module EveOnline
       autoload :Implants, "eve_online/esi/models/implants"
       autoload :JumpClone, "eve_online/esi/models/jump_clone"
       autoload :LoyaltyPoint, "eve_online/esi/models/loyalty_point"
+      autoload :LoyaltyStoreOffer, "eve_online/esi/models/loyalty_store_offer"
       autoload :Moon, "eve_online/esi/models/moon"
       autoload :NpcCorporations, "eve_online/esi/models/npc_corporations"
       autoload :Planet, "eve_online/esi/models/planet"

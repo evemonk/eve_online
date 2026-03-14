@@ -11,6 +11,13 @@ module EveOnline
           Collection.from_response(response, type: Models::LoyaltyPoint)
         end
 
+        # @param id [Integer] A corporation ID
+        def offers(id:)
+          response = get_request("loyalty/stores/#{id}/offers")
+
+          Collection.from_response(response, type: Models::LoyaltyStoreOffer)
+        end
+
         private
 
         def compatibility_date
