@@ -1,6 +1,6 @@
 # Changelog
 
-## main
+## v0.48.0
 
 * Re-implement universe endpoints. Follow example in README.md.
 
