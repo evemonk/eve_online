@@ -3,6 +3,7 @@
 ## v0.48.0
 
 * Re-implement universe endpoints. Follow example in README.md.
+* Re-implement dogma endpoints. Follow example in README.md.
 
 ## v0.47.0
 
