@@ -970,34 +970,32 @@ corporation_members.character_ids.first # => 2114220544
 #### Get attributes
 
 ```ruby
-dogma_attributes = EveOnline::ESI::DogmaAttributes.new
+client = EveOnline::ESI::Client.new
 
-dogma_attributes.scope # => nil
+dogma_attributes = client.dogma.attributes
 
-dogma_attributes.attribute_ids.size # => 2469
+dogma_attributes.attribute_ids.size # => 2825
 
-dogma_attributes.attribute_ids.first # => 2
+dogma_attributes.attribute_ids.first # => 1413
 ```
 
 #### Get attribute information
 
 ```ruby
-options = { id: 2 }
+client = EveOnline::ESI::Client.new
 
-dogma_attribute = EveOnline::ESI::DogmaAttribute.new(options)
+dogma_attribute = client.dogma.attribute(id: 2)
 
-dogma_attribute.scope # => nil
-
-dogma_attribute.as_json # => {:attribute_id=>2,
-                        #     :default_value=>0.0,
-                        #     :description=>"Boolean to store status of online effect",
-                        #     :display_name=>"",
-                        #     :high_is_good=>true,
-                        #     :icon_id=>nil,
-                        #     :name=>"isOnline",
-                        #     :published=>nil,
-                        #     :stackable=>true,
-                        #     :unit_id=>nil}
+dogma_attribute.as_json # => {attribute_id: 2,
+                        #     default_value: 0.0,
+                        #     description: "Boolean to store status of online effect",
+                        #     display_name: "",
+                        #     high_is_good: true,
+                        #     icon_id: nil,
+                        #     name: "isOnline",
+                        #     published: nil,
+                        #     stackable: true,
+                        #     unit_id: nil}
 
 dogma_attribute.attribute_id # => 2
 dogma_attribute.default_value # => 0.0
@@ -1016,44 +1014,43 @@ dogma_attribute.unit_id # => nil
 #### Get effects
 
 ```ruby
-dogma_effects = EveOnline::ESI::DogmaEffects.new
+client = EveOnline::ESI::Client.new
 
-dogma_effects.scope # => nil
+dogma_effects = client.dogma.effects
 
-dogma_effects.effect_ids.size # => 4166
+dogma_effects.effect_ids.size # => 3356
 
-dogma_effects.effect_ids.first # => 4
+dogma_effects.effect_ids.first # => 3356
 ```
 
 #### Get effect information
 
 ```ruby
-options = { id: 6717 }
+client = EveOnline::ESI::Client.new
 
-dogma_effect = EveOnline::ESI::DogmaEffect.new(options)
+dogma_effect = client.dogma.effect(id: 6_717)
 
-dogma_effect.scope # => nil
+dogma_effect.as_json # => {description: "Automatically generated effect",
+                     #     disallow_auto_repeat: nil,
+                     #     discharge_attribute_id: nil,
+                     #     display_name: "",
+                     #     duration_attribute_id: nil,
+                     #     effect_category: 0,
+                     #     effect_id: 6717,
+                     #     electronic_chance: nil,
+                     #     falloff_attribute_id: nil,
+                     #     icon_id: nil,
+                     #     is_assistance: nil,
+                     #     is_offensive: nil,
+                     #     is_warp_safe: nil,
+                     #     name: "roleBonusIceOreMiningDurationCap",
+                     #     post_expression: nil,
+                     #     pre_expression: nil,
+                     #     published: nil,
+                     #     range_attribute_id: nil,
+                     #     range_chance: nil,
+                     #     tracking_speed_attribute_id: nil}
 
-dogma_effect.as_json # => {:description=>"Automatically generated effect",
-                     #     :disallow_auto_repeat=>nil,
-                     #     :discharge_attribute_id=>nil,
-                     #     :display_name=>"",
-                     #     :duration_attribute_id=>nil,
-                     #     :effect_category=>0,
-                     #     :effect_id=>6717,
-                     #     :electronic_chance=>nil,
-                     #     :falloff_attribute_id=>nil,
-                     #     :icon_id=>nil,
-                     #     :is_assistance=>nil,
-                     #     :is_offensive=>nil,
-                     #     :is_warp_safe=>nil,
-                     #     :name=>"roleBonusIceOreMiningDurationCap",
-                     #     :post_expression=>19291,
-                     #     :pre_expression=>19290,
-                     #     :published=>nil,
-                     #     :range_attribute_id=>nil,
-                     #     :range_chance=>nil,
-                     #     :tracking_speed_attribute_id=>nil}
 
 dogma_effect.description # => "Automatically generated effect"
 dogma_effect.disallow_auto_repeat # => nil
@@ -1069,8 +1066,8 @@ dogma_effect.is_assistance # => nil
 dogma_effect.is_offensive # => nil
 dogma_effect.is_warp_safe # => nil
 dogma_effect.name # => "roleBonusIceOreMiningDurationCap"
-dogma_effect.post_expression # => 19291
-dogma_effect.pre_expression # => 19290
+dogma_effect.post_expression # => nil
+dogma_effect.pre_expression # => nil
 dogma_effect.published # => nil
 dogma_effect.range_attribute_id # => nil
 dogma_effect.range_chance # => nil
@@ -1080,12 +1077,12 @@ dogma_effect.modifiers.size # => 4
 
 modifier = dogma_effect.modifiers.first
 
-modifier.as_json # => {:domain=>"shipID",
-                 #     :effect_id=>nil,
-                 #     :func=>"LocationRequiredSkillModifier",
-                 #     :modified_attribute_id=>73,
-                 #     :modifying_attribute_id=>2458,
-                 #     :operator=>6}
+modifier.as_json # => {domain: "shipID",
+                 #     effect_id: nil,
+                 #     func: "LocationRequiredSkillModifier",
+                 #     modified_attribute_id: 73,
+                 #     modifying_attribute_id: 2458,
+                 #     operator: 6}
 
 modifier.domain # => "shipID"
 modifier.effect_id # => nil
