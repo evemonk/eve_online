@@ -2541,23 +2541,23 @@ station.position.z # => 182618726400.0
 #### List all public structures
 
 ```ruby
-structures = EveOnline::ESI::UniverseStructures.new
+client = EveOnline::ESI::Client.new
 
-structures.scope # => nil
+structures = client.universe.structures
 
-structures.structure_ids.size # => 3654
+structures.structure_ids.size # => 1003
 
-structures.structure_ids.first # => 1027528548355
+structures.structure_ids.first # => 1035768592387
 
 # with filter (`filter` is enum with values: nil, `market` and `manufacturing_basic`)
 
-options = { filter: 'market' }
+client = EveOnline::ESI::Client.new
 
-structures = EveOnline::ESI::UniverseStructures.new(options)
+structures = client.universe.structures(filter: "market")
 
-structures.structure_ids.size # => 108
+structures.structure_ids.size # => 53
 
-structures.structure_ids.first # => 1030490622468
+structures.structure_ids.first # => 1044961079041
 ```
 
 #### Get structure information
