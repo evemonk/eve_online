@@ -1417,17 +1417,16 @@ ship.ship_type_id # => 638
 #### Get loyalty points
 
 ```ruby
-options = { token: 'token123', character_id: 90729314 }
+client = EveOnline::ESI::Client.new(token: "token123")
 
-character_loyalty_points = EveOnline::ESI::CharacterLoyaltyPoints.new(options)
+loyalty_points = client.loyalty.loyalty_points(id: 1_337_512_245)
 
-character_loyalty_points.scope # => "esi-characters.read_loyalty.v1"
+loyalty_points.size # => 7
 
-character_loyalty_points.loyalty_points.size # => 5
+loyalty_point = loyalty_points.first
 
-loyalty_point = character_loyalty_points.loyalty_points.first
-
-loyalty_point.as_json # => {:corporation_id=>1000035, :loyalty_points=>14163}
+loyalty_point.as_json # => {corporation_id: 1000035,
+                      #     loyalty_points: 14163}
 
 loyalty_point.corporation_id # => 1000035
 loyalty_point.loyalty_points # => 14163
