@@ -62,6 +62,7 @@ module EveOnline
       autoload :Ally, "eve_online/esi/models/ally"
       autoload :Ancestry, "eve_online/esi/models/ancestry"
       autoload :AsteroidBelt, "eve_online/esi/models/asteroid_belt"
+      autoload :Attacker, "eve_online/esi/models/attacker"
       autoload :Attributes, "eve_online/esi/models/attributes"
       autoload :Bloodline, "eve_online/esi/models/bloodline"
       autoload :Blueprint, "eve_online/esi/models/blueprint"

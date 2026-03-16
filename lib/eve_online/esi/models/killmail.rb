@@ -15,6 +15,7 @@ module EveOnline
         end
 
         def attackers
+          @attackers ||= Collection.from_array(attributes.attackers || [], type: Attacker)
         end
 
         def victim
