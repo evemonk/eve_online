@@ -19,6 +19,29 @@ RSpec.describe "Get a single killmail" do
       war_id: nil)
   end
 
+  xspecify { expect(subject.attackers.size).to eq(100) }
+
+  xspecify do
+    expect(subject.attackers.first.as_json).to eq(character_id: 9_999_999,
+      corporation_id: 9_999_999,
+      alliance_id: 9_999_999,
+      faction_id: 9_999_999,
+      security_status: -10.0,
+      damage_done: 1,
+      final_blow: true,
+      weapon_type_id: 9_999_999,
+      ship_type_id: 9_999_999)
+  end
+
+  specify do
+    expect(subject.victim.as_json).to eq(alliance_id: nil,
+      character_id: 1_337_512_245,
+      corporation_id: 98_134_807,
+      damage_taken: 15_918,
+      faction_id: nil,
+      ship_type_id: 24_698)
+  end
+
   specify { expect(subject.etag).to eq("\"4e09692ec8bf793011f2dc457a0b0224ec7b86f0f448b2fbcaca0160\"") }
 
   specify { expect(subject.cache_status).to eq("HIT") }

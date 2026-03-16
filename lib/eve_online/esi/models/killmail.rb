@@ -18,6 +18,7 @@ module EveOnline
         end
 
         def victim
+          @victim ||= Victim.new(attributes: attributes.victim)
         end
       end
     end
