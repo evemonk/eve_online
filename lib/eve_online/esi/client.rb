@@ -107,7 +107,7 @@ module EveOnline
 
       # Freelance Jobs APIs
       def freelance_jobs
-        raise NotImplementedError, "Freelance Jobs API is not implemented yet"
+        Resources::FreelanceJobsResources.new(self)
       end
 
       # Incursions APIs

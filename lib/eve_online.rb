@@ -30,6 +30,7 @@ module EveOnline
       autoload :FactionWarfareResources, "eve_online/esi/resources/faction_warfare_resources"
       autoload :FittingsResources, "eve_online/esi/resources/fittings_resources"
       autoload :FleetsResources, "eve_online/esi/resources/fleets_resources"
+      autoload :FreelanceJobsResources, "eve_online/esi/resources/freelance_jobs_resources"
       autoload :IncursionsResources, "eve_online/esi/resources/incursions_resources"
       autoload :IndustryResources, "eve_online/esi/resources/industry_resources"
       autoload :InsuranceResources, "eve_online/esi/resources/insurance_resources"
