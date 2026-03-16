@@ -42,6 +42,7 @@ module EveOnline
       autoload :SkillsResources, "eve_online/esi/resources/skills_resources"
       autoload :SovereigntyResources, "eve_online/esi/resources/sovereignty_resources"
       autoload :UniverseResources, "eve_online/esi/resources/universe_resources"
+      autoload :UserInterfaceResources, "eve_online/esi/resources/user_interface_resources"
       autoload :WalletResources, "eve_online/esi/resources/wallet_resources"
       autoload :WarsResources, "eve_online/esi/resources/wars_resources"
     end
