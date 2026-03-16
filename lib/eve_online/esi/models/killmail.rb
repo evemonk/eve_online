@@ -15,11 +15,9 @@ module EveOnline
         end
 
         def attackers
-
         end
 
         def victim
-
         end
       end
     end
