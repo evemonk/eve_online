@@ -1919,7 +1919,7 @@ search.as_json # => {agent_ids: [],
 ```ruby
 client = EveOnline::ESI::Client.new(token: "token123")
 
-attributes = client.skills.attributes(character_id: 1_337_512_245)
+attributes = client.skills.attributes(id: 1_337_512_245)
 
 attributes.as_json # => {accrued_remap_cooldown_date: 2012-05-06 12:58:06.000000000 UTC +00:00,
                    #     bonus_remaps: 2,
@@ -1945,7 +1945,7 @@ attributes.willpower # => 23
 ```ruby
 client = EveOnline::ESI::Client.new(token: "token123")
 
-skillqueue = client.skills.skillqueue(character_id: 1_337_512_245)
+skillqueue = client.skills.skillqueue(id: 1_337_512_245)
 
 skillqueue.size  # => 5
 
@@ -1975,7 +1975,7 @@ skill_queue_entry.training_start_sp # => 439295
 ```ruby
 client = EveOnline::ESI::Client.new(token: "token123")
 
-skills = client.skills.skills(character_id: 1_337_512_245)
+skills = client.skills.skills(id: 1_337_512_245)
 
 skills.as_json # => {total_sp: 90657889, unallocated_sp: 2640075}
 

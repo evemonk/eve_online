@@ -4,23 +4,23 @@ module EveOnline
   module ESI
     module Resources
       class SkillsResources < Resource
-        # @param character_id [Integer] The ID of the character
-        def attributes(character_id:)
-          response = get_request("characters/#{character_id}/attributes")
+        # @param id [Integer] The ID of the character
+        def attributes(id:)
+          response = get_request("characters/#{id}/attributes")
 
           Models::Attributes.new(attributes: response.body, headers: response.headers)
         end
 
-        # @param character_id [Integer] The ID of the character
-        def skillqueue(character_id:)
-          response = get_request("characters/#{character_id}/skillqueue")
+        # @param id [Integer] The ID of the character
+        def skillqueue(id:)
+          response = get_request("characters/#{id}/skillqueue")
 
           Collection.from_response(response, type: Models::SkillQueueEntry)
         end
 
-        # @param character_id [Integer] The ID of the character
-        def skills(character_id:)
-          response = get_request("characters/#{character_id}/skills")
+        # @param id [Integer] The ID of the character
+        def skills(id:)
+          response = get_request("characters/#{id}/skills")
 
           Models::Skills.new(attributes: response.body, headers: response.headers)
         end
