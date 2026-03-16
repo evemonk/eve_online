@@ -568,7 +568,7 @@ standing.standing # => 0.3303719111639991
 ```ruby
 client = EveOnline::ESI::Client.new(token: "token123")
 
-clones = client.clones.clones(character_id: 1_337_512_245)
+clones = client.clones.clones(id: 1_337_512_245)
 
 clones.as_json # => {last_clone_jump_date: 2012-07-27 14:50:11.000000000 UTC +00:00,
                #     last_station_change_date: 2015-06-30 21:51:13.000000000 UTC +00:00}
@@ -604,7 +604,7 @@ jump_clone.name # => nil
 ```ruby
 client = EveOnline::ESI::Client.new(token: "token123")
 
-implants = client.clones.implants(character_id: 1_337_512_245)
+implants = client.clones.implants(id: 1_337_512_245)
 
 implants.implant_ids.size # => 5
 
@@ -1837,7 +1837,7 @@ client = EveOnline::ESI::Client.new(token: "token123")
 
 # remove from categories anything that not related to your search
 search = client.search.search(
-  character_id: 1_337_512_245,
+  id: 1_337_512_245,
   categories: [
     "agent",
     "alliance",
@@ -1881,7 +1881,7 @@ search.station_ids # => [60015169, 60000451, 60002959, 60003460, 60000463, 60003
 # strict search
 
 search = client.search.search(
-  character_id: 1_337_512_245,
+  id: 1_337_512_245,
   categories: [
     "agent",
     "alliance",
@@ -1919,7 +1919,7 @@ search.as_json # => {agent_ids: [],
 ```ruby
 client = EveOnline::ESI::Client.new(token: "token123")
 
-attributes = client.skills.attributes(character_id: 1_337_512_245)
+attributes = client.skills.attributes(id: 1_337_512_245)
 
 attributes.as_json # => {accrued_remap_cooldown_date: 2012-05-06 12:58:06.000000000 UTC +00:00,
                    #     bonus_remaps: 2,
@@ -1945,7 +1945,7 @@ attributes.willpower # => 23
 ```ruby
 client = EveOnline::ESI::Client.new(token: "token123")
 
-skillqueue = client.skills.skillqueue(character_id: 1_337_512_245)
+skillqueue = client.skills.skillqueue(id: 1_337_512_245)
 
 skillqueue.size  # => 5
 
@@ -1975,7 +1975,7 @@ skill_queue_entry.training_start_sp # => 439295
 ```ruby
 client = EveOnline::ESI::Client.new(token: "token123")
 
-skills = client.skills.skills(character_id: 1_337_512_245)
+skills = client.skills.skills(id: 1_337_512_245)
 
 skills.as_json # => {total_sp: 90657889, unallocated_sp: 2640075}
 

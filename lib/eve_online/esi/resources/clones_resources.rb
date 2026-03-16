@@ -4,16 +4,16 @@ module EveOnline
   module ESI
     module Resources
       class ClonesResources < Resource
-        # @param character_id [Integer] The ID of the character
-        def clones(character_id:)
-          response = get_request("characters/#{character_id}/clones")
+        # @param id [Integer] The ID of the character
+        def clones(id:)
+          response = get_request("characters/#{id}/clones")
 
           Models::Clones.new(attributes: response.body, headers: response.headers)
         end
 
-        # @param character_id [Integer] The ID of the character
-        def implants(character_id:)
-          response = get_request("characters/#{character_id}/implants")
+        # @param id [Integer] The ID of the character
+        def implants(id:)
+          response = get_request("characters/#{id}/implants")
 
           Models::Implants.new(body: response.body, headers: response.headers)
         end

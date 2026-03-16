@@ -9,7 +9,7 @@ RSpec.describe "Get character skills" do
 
   let(:client) { EveOnline::ESI::Client.new(token: "token123") }
 
-  subject { client.skills.skills(character_id: 1_337_512_245) }
+  subject { client.skills.skills(id: 1_337_512_245) }
 
   specify { expect(subject.skills.size).to eq(241) }
 

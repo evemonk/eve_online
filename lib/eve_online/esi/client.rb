@@ -67,12 +67,12 @@ module EveOnline
 
       # Contacts APIs
       def contacts
-        raise NotImplementedError, "Contacts API is not implemented yet"
+        Resources::ContactsResources.new(self)
       end
 
       # Contracts APIs
       def contracts
-        raise NotImplementedError, "Contracts API is not implemented yet"
+        Resources::ContractsResources.new(self)
       end
 
       # Corporation APIs
@@ -82,7 +82,7 @@ module EveOnline
 
       # Corporation Projects APIs
       def corporation_projects
-        raise NotImplementedError, "Corporation Projects API is not implemented yet"
+        Resources::CorporationProjectsResources.new(self)
       end
 
       # Dogma APIs
@@ -92,42 +92,42 @@ module EveOnline
 
       # Faction Warfare APIs
       def faction_warfare
-        raise NotImplementedError, "Faction Warfare API is not implemented yet"
+        Resources::FactionWarfareResources.new(self)
       end
 
       # Fittings APIs
       def fittings
-        raise NotImplementedError, "Fittings API is not implemented yet"
+        Resources::FittingsResources.new(self)
       end
 
       # Fleets APIs
       def fleets
-        raise NotImplementedError, "Fleets API is not implemented yet"
+        Resources::FleetsResources.new(self)
       end
 
       # Freelance Jobs APIs
       def freelance_jobs
-        raise NotImplementedError, "Freelance Jobs API is not implemented yet"
+        Resources::FreelanceJobsResources.new(self)
       end
 
       # Incursions APIs
       def incursions
-        raise NotImplementedError, "Incursions API is not implemented yet"
+        Resources::IncursionsResources.new(self)
       end
 
       # Industry APIs
       def industry
-        raise NotImplementedError, "Industry API is not implemented yet"
+        Resources::IndustryResources.new(self)
       end
 
       # Insurance APIs
       def insurance
-        raise NotImplementedError, "Insurance API is not implemented yet"
+        Resources::InsuranceResources.new(self)
       end
 
       # Killmails APIs
       def killmails
-        raise NotImplementedError, "Killmails API is not implemented yet"
+        Resources::KillmailsResources.new(self)
       end
 
       # Location APIs
@@ -142,22 +142,22 @@ module EveOnline
 
       # Mail APIs
       def mail
-        raise NotImplementedError, "Mail API is not implemented yet"
+        Resources::MailResources.new(self)
       end
 
       # Market APIs
       def market
-        raise NotImplementedError, "Market API is not implemented yet"
+        Resources::MarketResources.new(self)
       end
 
       # Meta APIs
       def meta
-        raise NotImplementedError, "Meta API is not implemented yet"
+        Resources::MetaResources.new(self)
       end
 
       # Planetary Interaction APIs
       def planetary_interaction
-        raise NotImplementedError, "Planetary Interaction API is not implemented yet"
+        Resources::PlanetaryInteractionResources.new(self)
       end
 
       # Routes APIs
@@ -177,7 +177,7 @@ module EveOnline
 
       # Sovereignty APIs
       def sovereignty
-        raise NotImplementedError, "Sovereignty API is not implemented yet"
+        Resources::SovereigntyResources.new(self)
       end
 
       # Status API
@@ -192,7 +192,7 @@ module EveOnline
 
       # User Interface APIs
       def user_interface
-        raise NotImplementedError, "User Interface API is not implemented yet"
+        Resources::UserInterfaceResources.new(self)
       end
 
       # Wallet APIs
