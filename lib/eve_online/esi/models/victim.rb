@@ -20,7 +20,7 @@ module EveOnline
         end
 
         def position
-
+          @position ||= Position.new(attributes: attributes.position)
         end
       end
     end

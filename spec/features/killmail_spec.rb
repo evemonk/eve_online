@@ -42,6 +42,24 @@ RSpec.describe "Get a single killmail" do
       ship_type_id: 24_698)
   end
 
+  specify do
+    expect(subject.victim.position.as_json).to eq(x: -1100269478625.7827,
+      y: -629102351286.0769,
+      z: 229500515736.35583)
+  end
+
+  specify do
+    expect(subject.victim.items.size).to eq(100)
+  end
+
+  specify do
+    expect(subject.victim.items.first.as_json).to eq(flag: 9,
+      item_type_id: 9_999_999,
+      quantity_destroyed: 1,
+      quantity_dropped: 0,
+      singleton: 0)
+  end
+
   specify { expect(subject.etag).to eq("\"4e09692ec8bf793011f2dc457a0b0224ec7b86f0f448b2fbcaca0160\"") }
 
   specify { expect(subject.cache_status).to eq("HIT") }
