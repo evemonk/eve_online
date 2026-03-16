@@ -40,6 +40,7 @@ module EveOnline
       autoload :SearchResources, "eve_online/esi/resources/search_resources"
       autoload :ServerStatusResources, "eve_online/esi/resources/server_status_resources"
       autoload :SkillsResources, "eve_online/esi/resources/skills_resources"
+      autoload :SovereigntyResources, "eve_online/esi/resources/sovereignty_resources"
       autoload :UniverseResources, "eve_online/esi/resources/universe_resources"
       autoload :WalletResources, "eve_online/esi/resources/wallet_resources"
       autoload :WarsResources, "eve_online/esi/resources/wars_resources"
