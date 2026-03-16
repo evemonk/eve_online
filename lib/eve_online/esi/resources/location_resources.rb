@@ -11,6 +11,13 @@ module EveOnline
           Models::CharacterShip.new(attributes: response.body, headers: response.headers)
         end
 
+        # @param id [Integer] A character ID
+        def online(id:)
+          response = get_request("characters/#{id}/online")
+
+          Models::Online.new(attributes: response.body, headers: response.headers)
+        end
+
         private
 
         def compatibility_date

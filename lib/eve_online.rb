@@ -83,6 +83,7 @@ module EveOnline
       autoload :Notification, "eve_online/esi/models/notification"
       autoload :NpcCorporations, "eve_online/esi/models/npc_corporations"
       autoload :OfferRequiredItem, "eve_online/esi/models/offer_required_item"
+      autoload :Online, "eve_online/esi/models/online"
       autoload :Planet, "eve_online/esi/models/planet"
       autoload :PlanetShort, "eve_online/esi/models/planet_short"
       autoload :Position, "eve_online/esi/models/position"
