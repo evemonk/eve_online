@@ -16,7 +16,7 @@ module EveOnline
         end
 
         def items
-
+          @items ||= Collection.from_array(attributes.items || [], type: VictimItem)
         end
 
         def position

@@ -48,17 +48,19 @@ RSpec.describe "Get a single killmail" do
       z: 229500515736.35583)
   end
 
-  xspecify do
-    expect(subject.victim.items.size).to eq(100)
+  specify do
+    expect(subject.victim.items.size).to eq(1)
   end
 
-  xspecify do
-    expect(subject.victim.items.first.as_json).to eq(flag: 9,
-      item_type_id: 9_999_999,
+  specify do
+    expect(subject.victim.items.first.as_json).to eq(flag: 19,
+      item_type_id: 12_058,
       quantity_destroyed: 1,
-      quantity_dropped: 0,
+      quantity_dropped: nil,
       singleton: 0)
   end
+
+  specify { expect(subject.victim.items.first.items.size).to eq(0) }
 
   specify { expect(subject.etag).to eq("\"4e09692ec8bf793011f2dc457a0b0224ec7b86f0f448b2fbcaca0160\"") }
 

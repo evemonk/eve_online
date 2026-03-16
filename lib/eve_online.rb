@@ -124,6 +124,7 @@ module EveOnline
       autoload :Type, "eve_online/esi/models/type"
       autoload :Types, "eve_online/esi/models/types"
       autoload :Victim, "eve_online/esi/models/victim"
+      autoload :VictimItem, "eve_online/esi/models/victim_item"
       autoload :War, "eve_online/esi/models/war"
       autoload :Wars, "eve_online/esi/models/wars"
     end
