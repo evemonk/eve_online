@@ -112,7 +112,7 @@ module EveOnline
 
       # Incursions APIs
       def incursions
-        raise NotImplementedError, "Incursions API is not implemented yet"
+        Resources::IncursionsResources.new(self)
       end
 
       # Industry APIs
