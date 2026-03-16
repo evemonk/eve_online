@@ -152,7 +152,7 @@ module EveOnline
 
       # Meta APIs
       def meta
-        raise NotImplementedError, "Meta API is not implemented yet"
+        Resources::MetaResources.new(self)
       end
 
       # Planetary Interaction APIs
