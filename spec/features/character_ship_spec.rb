@@ -9,7 +9,7 @@ RSpec.describe "Get current ship" do
 
   let(:client) { EveOnline::ESI::Client.new(token: "token123") }
 
-  subject { client.locations.ship(character_id: 1_337_512_245) }
+  subject { client.locations.ship(id: 1_337_512_245) }
 
   specify do
     expect(subject.as_json)

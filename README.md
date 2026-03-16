@@ -1395,7 +1395,7 @@ online.online # => false
 ```ruby
 client = EveOnline::ESI::Client.new(token: "token123")
 
-ship = client.locations.ship(character_id: 1_337_512_245)
+ship = client.locations.ship(id: 1_337_512_245)
 
 ship.as_json # => {ship_item_id: 1032641106218,
              #     ship_name: "Johnn Dillinger's Raven",
