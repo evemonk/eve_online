@@ -9,7 +9,7 @@ RSpec.describe "Get clones" do
 
   let(:client) { EveOnline::ESI::Client.new(token: "token123") }
 
-  subject { client.clones.clones(character_id: 1_337_512_245) }
+  subject { client.clones.clones(id: 1_337_512_245) }
 
   specify do
     expect(subject.as_json).to eq(

@@ -9,7 +9,7 @@ RSpec.describe "Get active implants" do
 
   let(:client) { EveOnline::ESI::Client.new(token: "token123") }
 
-  subject { client.clones.implants(character_id: 1_337_512_245) }
+  subject { client.clones.implants(id: 1_337_512_245) }
 
   specify { expect(subject.implant_ids.size).to eq(5) }
 
