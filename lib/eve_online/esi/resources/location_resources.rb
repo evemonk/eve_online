@@ -4,11 +4,18 @@ module EveOnline
   module ESI
     module Resources
       class LocationResources < Resource
-        # @param character_id [Integer] A character ID
-        def ship(character_id:)
-          response = get_request("characters/#{character_id}/ship")
+        # @param id [Integer] A character ID
+        def ship(id:)
+          response = get_request("characters/#{id}/ship")
 
           Models::CharacterShip.new(attributes: response.body, headers: response.headers)
+        end
+
+        # @param id [Integer] A character ID
+        def online(id:)
+          response = get_request("characters/#{id}/online")
+
+          Models::Online.new(attributes: response.body, headers: response.headers)
         end
 
         private
