@@ -94,6 +94,7 @@ module EveOnline
       autoload :HomeLocation, "eve_online/esi/models/home_location"
       autoload :Implants, "eve_online/esi/models/implants"
       autoload :JumpClone, "eve_online/esi/models/jump_clone"
+      autoload :Killmail, "eve_online/esi/models/killmail"
       autoload :LoyaltyPoint, "eve_online/esi/models/loyalty_point"
       autoload :LoyaltyStoreOffer, "eve_online/esi/models/loyalty_store_offer"
       autoload :Moon, "eve_online/esi/models/moon"
