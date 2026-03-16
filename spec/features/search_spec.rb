@@ -12,7 +12,7 @@ RSpec.describe "Search on a string" do
 
     let(:client) { EveOnline::ESI::Client.new(token: token) }
 
-    subject { client.search.search(character_id: 1_337_512_245, categories: ["agent"], search: "Anuko Hugandur") }
+    subject { client.search.search(id: 1_337_512_245, categories: ["agent"], search: "Anuko Hugandur") }
 
     specify do
       expect(subject.as_json).to eq(
@@ -56,7 +56,7 @@ RSpec.describe "Search on a string" do
 
     let(:client) { EveOnline::ESI::Client.new(token: token) }
 
-    subject { client.search.search(character_id: 1_337_512_245, categories: ["alliance"], search: "Pandemic Horde") }
+    subject { client.search.search(id: 1_337_512_245, categories: ["alliance"], search: "Pandemic Horde") }
 
     specify do
       expect(subject.as_json).to eq(
@@ -82,7 +82,7 @@ RSpec.describe "Search on a string" do
 
     let(:client) { EveOnline::ESI::Client.new(token: token) }
 
-    subject { client.search.search(character_id: 1_337_512_245, categories: ["character"], search: "Johnn Dillinger") }
+    subject { client.search.search(id: 1_337_512_245, categories: ["character"], search: "Johnn Dillinger") }
 
     specify do
       expect(subject.as_json).to eq(
@@ -108,7 +108,7 @@ RSpec.describe "Search on a string" do
 
     let(:client) { EveOnline::ESI::Client.new(token: token) }
 
-    subject { client.search.search(character_id: 1_337_512_245, categories: ["constellation"], search: "San Matar") }
+    subject { client.search.search(id: 1_337_512_245, categories: ["constellation"], search: "San Matar") }
 
     specify do
       expect(subject.as_json).to eq(
@@ -134,7 +134,7 @@ RSpec.describe "Search on a string" do
 
     let(:client) { EveOnline::ESI::Client.new(token: token) }
 
-    subject { client.search.search(character_id: 1_337_512_245, categories: ["corporation"], search: "Freighting Solutions Inc.") }
+    subject { client.search.search(id: 1_337_512_245, categories: ["corporation"], search: "Freighting Solutions Inc.") }
 
     specify do
       expect(subject.as_json).to eq(
@@ -160,7 +160,7 @@ RSpec.describe "Search on a string" do
 
     let(:client) { EveOnline::ESI::Client.new(token: token) }
 
-    subject { client.search.search(character_id: 1_337_512_245, categories: ["faction"], search: "Minmatar Republic") }
+    subject { client.search.search(id: 1_337_512_245, categories: ["faction"], search: "Minmatar Republic") }
 
     specify do
       expect(subject.as_json).to eq(
@@ -186,7 +186,7 @@ RSpec.describe "Search on a string" do
 
     let(:client) { EveOnline::ESI::Client.new(token: token) }
 
-    subject { client.search.search(character_id: 1_337_512_245, categories: ["inventory_type"], search: "150mm Light AutoCannon I Blueprint") }
+    subject { client.search.search(id: 1_337_512_245, categories: ["inventory_type"], search: "150mm Light AutoCannon I Blueprint") }
 
     specify do
       expect(subject.as_json).to eq(
@@ -212,7 +212,7 @@ RSpec.describe "Search on a string" do
 
     let(:client) { EveOnline::ESI::Client.new(token: token) }
 
-    subject { client.search.search(character_id: 1_337_512_245, categories: ["region"], search: "Derelik") }
+    subject { client.search.search(id: 1_337_512_245, categories: ["region"], search: "Derelik") }
 
     specify do
       expect(subject.as_json).to eq(
@@ -238,7 +238,7 @@ RSpec.describe "Search on a string" do
 
     let(:client) { EveOnline::ESI::Client.new(token: token) }
 
-    subject { client.search.search(character_id: 1_337_512_245, categories: ["solar_system"], search: "Tanoo") }
+    subject { client.search.search(id: 1_337_512_245, categories: ["solar_system"], search: "Tanoo") }
 
     specify do
       expect(subject.as_json).to eq(
@@ -264,7 +264,7 @@ RSpec.describe "Search on a string" do
 
     let(:client) { EveOnline::ESI::Client.new(token: token) }
 
-    subject { client.search.search(character_id: 1_337_512_245, categories: ["station"], search: "Tanoo V - Moon 1 - Ammatar Consulate Bureau") }
+    subject { client.search.search(id: 1_337_512_245, categories: ["station"], search: "Tanoo V - Moon 1 - Ammatar Consulate Bureau") }
 
     specify do
       expect(subject.as_json).to eq(
@@ -294,7 +294,7 @@ RSpec.describe "Search on a string" do
 
     let(:client) { EveOnline::ESI::Client.new(token: token) }
 
-    subject { client.search.search(character_id: 1_337_512_245, categories: ["character"], search: "Johnn Dillinger", strict: true) }
+    subject { client.search.search(id: 1_337_512_245, categories: ["character"], search: "Johnn Dillinger", strict: true) }
 
     specify do
       expect(subject.as_json).to eq(

@@ -1837,7 +1837,7 @@ client = EveOnline::ESI::Client.new(token: "token123")
 
 # remove from categories anything that not related to your search
 search = client.search.search(
-  character_id: 1_337_512_245,
+  id: 1_337_512_245,
   categories: [
     "agent",
     "alliance",
@@ -1881,7 +1881,7 @@ search.station_ids # => [60015169, 60000451, 60002959, 60003460, 60000463, 60003
 # strict search
 
 search = client.search.search(
-  character_id: 1_337_512_245,
+  id: 1_337_512_245,
   categories: [
     "agent",
     "alliance",
