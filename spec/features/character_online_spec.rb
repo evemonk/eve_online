@@ -7,25 +7,32 @@ RSpec.describe "Get character online" do
 
   after { VCR.eject_cassette }
 
-  let(:options) do
-    {
-      character_id: 90_729_314,
-      token: "token123"
-    }
-  end
+  let(:client) { EveOnline::ESI::Client.new(token: "token123") }
 
-  subject { EveOnline::ESI::CharacterOnline.new(options) }
-
-  specify { expect(subject.scope).to eq("esi-location.read_online.v1") }
+  subject { client.locations.online(id: 1_337_512_245) }
 
   specify do
-    expect(subject.as_json).to eq(last_login: "2017-01-15 11:39:24",
-      last_logout: "2017-01-15 11:31:22",
-      logins: 370,
+    expect(subject.as_json).to eq(last_login: Time.utc(2022, 12, 17, 1, 36, 16),
+      last_logout: Time.utc(2022, 12, 17, 1, 37, 11),
+      logins: 536,
       online: false)
   end
 
-  specify { expect(subject.error_limit_remain).to eq(100) }
+  specify { expect(subject.etag).to eq("\"436c2ab6639a5b647761178846e3446a4dc7ea92ec5dad648a7503a7\"") }
 
-  specify { expect(subject.error_limit_reset).to eq(49) }
+  specify { expect(subject.cache_status).to eq("MISS") }
+
+  specify { expect(subject.request_id).to eq("a5f7587c-2e98-4956-b429-c0981725eb01") }
+
+  specify { expect(subject.ratelimit_group).to eq("char-location") }
+
+  specify { expect(subject.ratelimit_limit).to eq("1200/15m") }
+
+  specify { expect(subject.ratelimit_remaining).to eq(1197) }
+
+  specify { expect(subject.ratelimit_used).to eq(2) }
+
+  specify { expect(subject.error_limit_remain).to eq(nil) }
+
+  specify { expect(subject.error_limit_reset).to eq(nil) }
 end
