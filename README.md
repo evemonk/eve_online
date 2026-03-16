@@ -1375,21 +1375,19 @@ character_location.structure_id # => nil
 #### Get character online
 
 ```ruby
-options = { token: 'token123', character_id: 90729314 }
+client = EveOnline::ESI::Client.new(token: "token123")
 
-character_online = EveOnline::ESI::CharacterOnline.new(options)
+online = client.locations.online(id: 1_337_512_245)
 
-character_online.scope # => "esi-location.read_online.v1"
+online.as_json # => {last_login: 2022-12-17 01:36:16.000000000 UTC +00:00,
+               #     last_logout: 2022-12-17 01:37:11.000000000 UTC +00:00,
+               #     logins: 536,
+               #     online: false}
 
-character_online.as_json # => {:last_login=>Sun, 15 Jan 2017 11:39:24 UTC +00:00,
-                         #     :last_logout=>Sun, 15 Jan 2017 11:31:22 UTC +00:00,
-                         #     :logins=>370,
-                         #     :online=>false}
-
-character_online.last_login # => Sun, 15 Jan 2017 11:39:24 UTC +00:00
-character_online.last_logout # => Sun, 15 Jan 2017 11:31:22 UTC +00:00
-character_online.logins # => 370
-character_online.online # => false
+online.last_login # => 2022-12-17 01:36:16.000000000 UTC +00:00
+online.last_logout # => 2022-12-17 01:37:11.000000000 UTC +00:00
+online.logins # => 536
+online.online # => false
 ```
 
 #### Get current ship
