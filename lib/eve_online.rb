@@ -30,6 +30,7 @@ module EveOnline
       autoload :FactionWarfareResources, "eve_online/esi/resources/faction_warfare_resources"
       autoload :FittingsResources, "eve_online/esi/resources/fittings_resources"
       autoload :FleetsResources, "eve_online/esi/resources/fleets_resources"
+      autoload :KillmailsResources, "eve_online/esi/resources/killmails_resources"
       autoload :LocationResources, "eve_online/esi/resources/location_resources"
       autoload :LoyaltyPointsResources, "eve_online/esi/resources/loyalty_points_resources"
       autoload :RoutesResources, "eve_online/esi/resources/routes_resources"
