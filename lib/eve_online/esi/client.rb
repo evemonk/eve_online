@@ -122,7 +122,7 @@ module EveOnline
 
       # Insurance APIs
       def insurance
-        raise NotImplementedError, "Insurance API is not implemented yet"
+        Resources::InsuranceResources.new(self)
       end
 
       # Killmails APIs
