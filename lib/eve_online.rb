@@ -22,6 +22,7 @@ module EveOnline
       autoload :CalendarsResources, "eve_online/esi/resources/calendars_resources"
       autoload :CharactersResources, "eve_online/esi/resources/characters_resources"
       autoload :ClonesResources, "eve_online/esi/resources/clones_resources"
+      autoload :ContactsResources, "eve_online/esi/resources/contacts_resources"
       autoload :CorporationsResources, "eve_online/esi/resources/corporations_resources"
       autoload :DogmaResources, "eve_online/esi/resources/dogma_resources"
       autoload :LocationResources, "eve_online/esi/resources/location_resources"
