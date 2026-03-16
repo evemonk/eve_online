@@ -117,7 +117,7 @@ module EveOnline
 
       # Industry APIs
       def industry
-        raise NotImplementedError, "Industry API is not implemented yet"
+        Resources::IndustryResources.new(self)
       end
 
       # Insurance APIs
