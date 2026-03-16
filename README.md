@@ -568,7 +568,7 @@ standing.standing # => 0.3303719111639991
 ```ruby
 client = EveOnline::ESI::Client.new(token: "token123")
 
-clones = client.clones.clones(character_id: 1_337_512_245)
+clones = client.clones.clones(id: 1_337_512_245)
 
 clones.as_json # => {last_clone_jump_date: 2012-07-27 14:50:11.000000000 UTC +00:00,
                #     last_station_change_date: 2015-06-30 21:51:13.000000000 UTC +00:00}
@@ -604,7 +604,7 @@ jump_clone.name # => nil
 ```ruby
 client = EveOnline::ESI::Client.new(token: "token123")
 
-implants = client.clones.implants(character_id: 1_337_512_245)
+implants = client.clones.implants(id: 1_337_512_245)
 
 implants.implant_ids.size # => 5
 
