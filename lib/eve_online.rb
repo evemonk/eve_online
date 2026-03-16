@@ -34,6 +34,7 @@ module EveOnline
       autoload :LocationResources, "eve_online/esi/resources/location_resources"
       autoload :LoyaltyPointsResources, "eve_online/esi/resources/loyalty_points_resources"
       autoload :MailResources, "eve_online/esi/resources/mail_resources"
+      autoload :MarketResources, "eve_online/esi/resources/market_resources"
       autoload :RoutesResources, "eve_online/esi/resources/routes_resources"
       autoload :SearchResources, "eve_online/esi/resources/search_resources"
       autoload :ServerStatusResources, "eve_online/esi/resources/server_status_resources"
