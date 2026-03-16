@@ -24,6 +24,7 @@ module EveOnline
       autoload :ClonesResources, "eve_online/esi/resources/clones_resources"
       autoload :ContactsResources, "eve_online/esi/resources/contacts_resources"
       autoload :ContractsResources, "eve_online/esi/resources/contracts_resources"
+      autoload :CorporationProjectsResources, "eve_online/esi/resources/corporation_projects_resources"
       autoload :CorporationsResources, "eve_online/esi/resources/corporations_resources"
       autoload :DogmaResources, "eve_online/esi/resources/dogma_resources"
       autoload :LocationResources, "eve_online/esi/resources/location_resources"
