@@ -1,6 +1,6 @@
 # Changelog
 
-## main
+## v0.49.0
 
 * Re-implement more endpoints. Follow examples in README.md.
 
