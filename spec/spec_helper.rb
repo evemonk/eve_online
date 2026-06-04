@@ -17,6 +17,8 @@ require "rspec/its"
 require "super_diff/rspec"
 
 require "active_support"
+require "active_support/deprecator"
+require "active_support/deprecation"
 require "active_support/time"
 
 # vcr
