@@ -53,7 +53,7 @@ GEM
       benchmark
       rack (>= 2.0)
       rainbow (>= 2.0.0)
-    i18n (1.15.1)
+    i18n (1.15.2)
       concurrent-ruby (~> 1.0)
     io-console (0.8.2)
     json (2.19.9)
@@ -229,7 +229,7 @@ CHECKSUMS
   faraday-net_http (3.4.4) sha256=0e78af151747ed1b00f33e25973b4bc220d7f16c00c39676817c8b12331eb588
   hashdiff (1.2.1) sha256=9c079dbc513dfc8833ab59c0c2d8f230fa28499cc5efb4b8dd276cf931457cd1
   httplog (1.8.0) sha256=2b14bd6a26277765b08ff469d5574fde2a8eedec03962402ab05a606546607bf
-  i18n (1.15.1) sha256=505ec5de1f4e6c8a2cb028ef9700ca495f117911643455721dee5abdca797255
+  i18n (1.15.2) sha256=00f9eb62412fe593b2a65a97daa75300d37abb8f7202ec748e94b6d46a9dd1b5
   io-console (0.8.2) sha256=d6e3ae7a7cc7574f4b8893b4fca2162e57a825b223a177b7afa236c5ef9814cc
   json (2.19.9) sha256=9b9025b7cdddafa38d316eca0b2358488e42d417045c1b90d216a9fefe46b79a
   language_server-protocol (3.17.0.5) sha256=fd1e39a51a28bf3eec959379985a72e296e9f9acfce46f6a79d31ca8760803cc
