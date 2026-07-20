@@ -4,7 +4,9 @@ require "simplecov"
 
 SimpleCov.start do
   enable_coverage :branch
-  enable_coverage_for_eval
+  enable_coverage :method
+  enable_coverage :eval
+  primary_coverage :branch
 end
 
 $LOAD_PATH.unshift File.expand_path("../../lib", __FILE__)
