@@ -2,6 +2,10 @@
 
 require "active_support/deprecator"
 require "active_support/deprecation"
+begin
+  require "active_support/ractors"
+rescue LoadError
+end
 require "active_support/time"
 
 module EveOnline
