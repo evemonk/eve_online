@@ -1,5 +1,9 @@
 # Changelog
 
+## main
+
+* Drop Rails 7.2 support
+
 ## v0.49.0
 
 * Re-implement more endpoints. Follow examples in README.md.
