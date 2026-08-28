@@ -2,7 +2,7 @@
 
 ## main
 
-* Drop Rails 7.2 support
+* Drop support for Rails 7.2
 
 ## v0.49.0
 
