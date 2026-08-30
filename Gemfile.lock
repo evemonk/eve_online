@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     eve_online (0.49.0)
-      activesupport (>= 7.2.0)
+      activesupport (>= 8.0.0)
       faraday (>= 2.0.0)
       faraday-http-cache
       ostruct
@@ -102,6 +102,7 @@ GEM
     racc (1.8.1)
     rack (3.2.7)
     rainbow (3.1.1)
+    rake (13.4.2)
     rb-readline (0.5.5)
     regexp_parser (2.12.0)
     reline (0.7.0)
@@ -189,6 +190,7 @@ DEPENDENCIES
   nokogiri
   ostruct
   pry
+  rake
   rb-readline
   rspec-core
   rspec-its
@@ -252,6 +254,7 @@ CHECKSUMS
   racc (1.8.1) sha256=4a7f6929691dbec8b5209a0b373bc2614882b55fc5d2e447a21aaa691303d62f
   rack (3.2.7) sha256=93e13e1c24f93556671d85d2d79fa228c3485815c50d7e2f265b5330c6528fb7
   rainbow (3.1.1) sha256=039491aa3a89f42efa1d6dec2fc4e62ede96eb6acd95e52f1ad581182b79bc6a
+  rake (13.4.2) sha256=cb825b2bd5f1f8e91ca37bddb4b9aaf345551b4731da62949be002fa89283701
   rb-readline (0.5.5) sha256=9e9bd7e198bdef0822c46902f6c592b882c1f9777894a4c3dcf5b320824a8793
   regexp_parser (2.12.0) sha256=35a916a1d63190ab5c9009457136ae5f3c0c7512d60291d0d1378ba18ce08ebb
   reline (0.7.0) sha256=5b012d8e55dbf9d450f12bde2cf7d15ff546ae80b3f8f3b30e570d431815583d
