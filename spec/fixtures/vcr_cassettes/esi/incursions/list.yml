@@ -1,0 +1,74 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://esi.evetech.net/incursions
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.49.0
+      Accept:
+      - application/json
+      Accept-Language:
+      - en
+      X-Tenant:
+      - tranquility
+      X-Compatibility-Date:
+      - '2026-08-18'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 27 Sep 2026 22:13:34 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '1251'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Etag, Retry-After, X-Compatibility-Date, X-Esi-Error-Limit-Remain, X-Esi-Error-Limit-Reset,
+        X-Pages, X-Ratelimit-Group, X-Ratelimit-Limit, X-Ratelimit-Remaining, X-Ratelimit-Used
+      Cache-Control:
+      - public
+      Content-Language:
+      - en
+      Etag:
+      - '"4230f84e40a0259d3852144326bec422484244b496c674bcf18fd4d1"'
+      Expires:
+      - Sun, 27 Sep 2026 22:14:31 GMT
+      Last-Modified:
+      - Sun, 27 Sep 2026 22:09:31 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept-Language
+      - X-Compatibility-Date
+      - X-Tenant
+      X-Compatibility-Date:
+      - '2020-01-01'
+      X-Esi-Cache-Status:
+      - HIT
+      X-Esi-Request-Id:
+      - 6cd994e3-7f52-4c05-8ee9-9c540ffcef5f
+      X-Ratelimit-Group:
+      - incursion
+      X-Ratelimit-Limit:
+      - 150/15m
+      X-Ratelimit-Remaining:
+      - '146'
+      X-Ratelimit-Used:
+      - '2'
+    body:
+      encoding: UTF-8
+      string: '[{"constellation_id":20000422,"faction_id":500019,"has_boss":false,"infested_solar_systems":[30002880,30002874,30002875,30002876,30002877,30002878,30002879],"influence":0.0,"staging_solar_system_id":30002879,"state":"established","type":"Incursion"},{"constellation_id":20000149,"faction_id":500019,"has_boss":false,"infested_solar_systems":[30001016,30001017,30001018,30001019,30001020,30001021],"influence":0.0,"staging_solar_system_id":30001017,"state":"established","type":"Incursion"},{"constellation_id":20000645,"faction_id":500019,"has_boss":true,"infested_solar_systems":[30004416,30004417,30004410,30004411,30004412,30004413,30004414,30004415],"influence":0.9373333333333334,"staging_solar_system_id":30004417,"state":"established","type":"Incursion"},{"constellation_id":20000562,"faction_id":500019,"has_boss":false,"infested_solar_systems":[30003843,30003844,30003845,30003846,30003847,30003848,30003849],"influence":0.0,"staging_solar_system_id":30003848,"state":"established","type":"Incursion"},{"constellation_id":20000011,"faction_id":500019,"has_boss":false,"infested_solar_systems":[30000076,30000077,30000078,30000079,30000080,30000081],"influence":1.0,"staging_solar_system_id":30000081,"state":"established","type":"Incursion"}]'
+  recorded_at: Sun, 27 Sep 2026 22:13:34 GMT
+recorded_with: VCR 6.4.0

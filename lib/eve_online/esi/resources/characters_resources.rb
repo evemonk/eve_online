@@ -43,6 +43,13 @@ module EveOnline
           Models::CharacterPortrait.new(attributes: response.body, headers: response.headers)
         end
 
+        # @param ids [Array<Integer>] Character IDs to resolve, up to 1000.
+        def affiliation(ids:)
+          response = post_request("characters/affiliation", params: ids)
+
+          Collection.from_response(response, type: Models::CharacterAffiliation)
+        end
+
         private
 
         def compatibility_date

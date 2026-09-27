@@ -1,0 +1,76 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://esi.evetech.net/wars/744979/killmails?page=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.49.0
+      Accept:
+      - application/json
+      Accept-Language:
+      - en
+      X-Tenant:
+      - tranquility
+      X-Compatibility-Date:
+      - '2026-08-18'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 27 Sep 2026 22:11:04 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '256'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Etag, Retry-After, X-Compatibility-Date, X-Esi-Error-Limit-Remain, X-Esi-Error-Limit-Reset,
+        X-Pages, X-Ratelimit-Group, X-Ratelimit-Limit, X-Ratelimit-Remaining, X-Ratelimit-Used
+      Cache-Control:
+      - public
+      Content-Language:
+      - en
+      Etag:
+      - '"b0be26525b74bbb088b5b0369b596beae3fd48525c24e4093708ccb1"'
+      Expires:
+      - Sun, 27 Sep 2026 22:13:11 GMT
+      Last-Modified:
+      - Sun, 27 Sep 2026 22:08:11 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept-Language
+      - X-Compatibility-Date
+      - X-Tenant
+      X-Compatibility-Date:
+      - '2020-01-01'
+      X-Esi-Cache-Status:
+      - HIT
+      X-Esi-Request-Id:
+      - 1c9fba32-66b0-4633-a849-1dd7f9e699db
+      X-Pages:
+      - '1'
+      X-Ratelimit-Group:
+      - killmail
+      X-Ratelimit-Limit:
+      - 3600/15m
+      X-Ratelimit-Remaining:
+      - '3596'
+      X-Ratelimit-Used:
+      - '2'
+    body:
+      encoding: UTF-8
+      string: '[{"killmail_hash":"aa7ef390212e3fd470924b0db8532c15710749e2","killmail_id":121385936},{"killmail_hash":"c2ccff8b2c9a2bab6a0e737d5c87ab5fb92976c2","killmail_id":121385949},{"killmail_hash":"8731945d538044ee567b2dc2b2689784a74967dc","killmail_id":121425134}]'
+  recorded_at: Sun, 27 Sep 2026 22:11:04 GMT
+recorded_with: VCR 6.4.0

@@ -1,0 +1,74 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://esi.evetech.net/killmails/121385936/aa7ef390212e3fd470924b0db8532c15710749e2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.49.0
+      Accept:
+      - application/json
+      Accept-Language:
+      - en
+      X-Tenant:
+      - tranquility
+      X-Compatibility-Date:
+      - '2026-08-18'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 27 Sep 2026 22:15:21 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '3638'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Etag, Retry-After, X-Compatibility-Date, X-Esi-Error-Limit-Remain, X-Esi-Error-Limit-Reset,
+        X-Pages, X-Ratelimit-Group, X-Ratelimit-Limit, X-Ratelimit-Remaining, X-Ratelimit-Used
+      Cache-Control:
+      - public
+      Content-Language:
+      - en
+      Etag:
+      - '"6aaf4c4103a1c1e1f9fafc348259271818e331c23ad93c089ada68ca"'
+      Expires:
+      - Tue, 27 Oct 2026 22:14:28 GMT
+      Last-Modified:
+      - Sun, 27 Sep 2026 22:14:28 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept-Language
+      - X-Compatibility-Date
+      - X-Tenant
+      X-Compatibility-Date:
+      - '2020-01-01'
+      X-Esi-Cache-Status:
+      - HIT
+      X-Esi-Request-Id:
+      - 590bb581-9e31-4629-a8c2-ba894c0a525f
+      X-Ratelimit-Group:
+      - killmail
+      X-Ratelimit-Limit:
+      - 3600/15m
+      X-Ratelimit-Remaining:
+      - '3593'
+      X-Ratelimit-Used:
+      - '2'
+    body:
+      encoding: UTF-8
+      string: '{"attackers":[{"alliance_id":99013481,"character_id":91764176,"corporation_id":98585301,"damage_done":4886,"final_blow":false,"security_status":-1.2,"ship_type_id":29986,"weapon_type_id":29986},{"alliance_id":99013481,"character_id":90573671,"corporation_id":98585301,"damage_done":4865,"final_blow":false,"security_status":-1.6,"ship_type_id":17720,"weapon_type_id":17720},{"alliance_id":99013481,"character_id":2112815055,"corporation_id":98585301,"damage_done":3495,"final_blow":true,"security_status":-1.2,"ship_type_id":17736,"weapon_type_id":3057},{"alliance_id":99013481,"character_id":2116207662,"corporation_id":98585301,"damage_done":1015,"final_blow":false,"security_status":-0.6,"ship_type_id":17722,"weapon_type_id":17722},{"alliance_id":99013481,"character_id":2115866073,"corporation_id":98585301,"damage_done":744,"final_blow":false,"security_status":-1.7,"ship_type_id":29988,"weapon_type_id":29988},{"alliance_id":99013481,"character_id":94009303,"corporation_id":98585301,"damage_done":625,"final_blow":false,"security_status":-0.2,"ship_type_id":17922,"weapon_type_id":3025},{"alliance_id":99013481,"character_id":2114065955,"corporation_id":98585301,"damage_done":0,"final_blow":false,"security_status":-0.6,"ship_type_id":11198,"weapon_type_id":15893}],"killmail_id":121385936,"killmail_time":"2024-10-05T05:27:08Z","solar_system_id":30001363,"victim":{"alliance_id":741557221,"character_id":460867562,"corporation_id":1551757800,"damage_taken":15630,"items":[{"flag":30,"item_type_id":208,"quantity_dropped":35,"singleton":0},{"flag":5,"item_type_id":208,"quantity_dropped":1438,"singleton":0},{"flag":32,"item_type_id":17938,"quantity_dropped":1,"singleton":0},{"flag":27,"item_type_id":8105,"quantity_dropped":1,"singleton":0},{"flag":5,"item_type_id":207,"quantity_dropped":1456,"singleton":0},{"flag":87,"item_type_id":2456,"quantity_destroyed":7,"singleton":0},{"flag":87,"item_type_id":2456,"quantity_dropped":3,"singleton":0},{"flag":29,"item_type_id":207,"quantity_dropped":35,"singleton":0},{"flag":28,"item_type_id":8105,"quantity_dropped":1,"singleton":0},{"flag":13,"item_type_id":4573,"quantity_dropped":1,"singleton":0},{"flag":31,"item_type_id":208,"quantity_dropped":35,"singleton":0},{"flag":27,"item_type_id":207,"quantity_dropped":21,"singleton":0},{"flag":31,"item_type_id":8105,"quantity_destroyed":1,"singleton":0},{"flag":14,"item_type_id":4533,"quantity_dropped":1,"singleton":0},{"flag":22,"item_type_id":4435,"quantity_dropped":1,"singleton":0},{"flag":93,"item_type_id":31408,"quantity_destroyed":1,"singleton":0},{"flag":19,"item_type_id":35659,"quantity_dropped":1,"singleton":0},{"flag":16,"item_type_id":2048,"quantity_dropped":1,"singleton":0},{"flag":21,"item_type_id":6073,"quantity_dropped":1,"singleton":0},{"flag":30,"item_type_id":8105,"quantity_dropped":1,"singleton":0},{"flag":32,"item_type_id":30013,"quantity_dropped":8,"singleton":0},{"flag":23,"item_type_id":24395,"quantity_dropped":1,"singleton":0},{"flag":24,"item_type_id":24395,"quantity_dropped":1,"singleton":0},{"flag":94,"item_type_id":31408,"quantity_destroyed":1,"singleton":0},{"flag":11,"item_type_id":41034,"quantity_dropped":1,"singleton":0},{"flag":28,"item_type_id":207,"quantity_dropped":35,"singleton":0},{"flag":12,"item_type_id":41034,"quantity_dropped":1,"singleton":0},{"flag":92,"item_type_id":31372,"quantity_destroyed":1,"singleton":0},{"flag":20,"item_type_id":6073,"quantity_dropped":1,"singleton":0},{"flag":29,"item_type_id":8105,"quantity_destroyed":1,"singleton":0}],"position":{"x":1826991257104.0034,"y":-2393946336105.3154,"z":-1338694657565.3975},"ship_type_id":3756},"war_id":744979}'
+  recorded_at: Sun, 27 Sep 2026 22:15:21 GMT
+recorded_with: VCR 6.4.0

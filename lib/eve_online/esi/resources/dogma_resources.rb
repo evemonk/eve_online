@@ -30,6 +30,14 @@ module EveOnline
           Models::DogmaEffect.new(attributes: response.body, headers: response.headers)
         end
 
+        # @param type_id [Integer] The type ID of the dynamic item
+        # @param item_id [Integer] The item ID of the dynamic item
+        def dynamic_item(type_id:, item_id:)
+          response = get_request("dogma/dynamic/items/#{type_id}/#{item_id}")
+
+          Models::DogmaDynamicItem.new(attributes: response.body, headers: response.headers)
+        end
+
         private
 
         def compatibility_date

@@ -370,6 +370,17 @@ calendar_event.title # => "Moon extraction for 66-PMM - GoldMine-5-"
 
 #### Character affiliation
 
+```ruby
+client = EveOnline::ESI::Client.new
+
+affiliations = client.characters.affiliation(ids: [1_337_512_245])
+
+affiliations.first.as_json # => {alliance_id: nil,
+                           #     character_id: 1337512245,
+                           #     corporation_id: 1000171,
+                           #     faction_id: nil}
+```
+
 #### Get character's public information
 
 ```ruby
@@ -849,27 +860,18 @@ corporation.war_eligible # => false
 #### Get alliance history
 
 ```ruby
-options = { corporation_id: 98_134_807 }
+client = EveOnline::ESI::Client.new
 
-corporation_alliance_history = EveOnline::ESI::CorporationAllianceHistory.new(options)
+alliance_history = client.corporations.alliance_history(id: 98_468_592)
 
-corporation_alliance_history.scope # => nil
+alliance_history.size # => 7
 
-corporation_alliance_history.roles # => []
+entry = alliance_history.first
 
-corporation_alliance_history.entries.size # => 12
-
-entry = corporation_alliance_history.entries.first
-
-entry.as_json # => {:alliance_id=>99005874,
-              #     :is_deleted=>nil,
-              #     :record_id=>1254640,
-              #     :start_date=>Mon, 03 Jun 2019 00:17:00 UTC +00:00}
-
-entry.alliance_id # => 99005874
-entry.is_deleted # => nil
-entry.record_id # => 1254640
-entry.start_date # => Mon, 03 Jun 2019 00:17:00 UTC +00:00
+entry.as_json # => {alliance_id: nil,
+              #     is_deleted: nil,
+              #     record_id: 1543401,
+              #     start_date: 2025-01-20 08:27:00.000000000 UTC +00:00}
 ```
 
 #### Get corporation blueprints
@@ -917,6 +919,16 @@ corporation_blueprints.roles # => ["Director"]
 #### Get corporation facilities
 
 #### Get corporation icon
+
+```ruby
+client = EveOnline::ESI::Client.new
+
+icon = client.corporations.icons(id: 98_468_592)
+
+icon.as_json # => {icon_large: "https://images.evetech.net/corporations/98468592/logo?tenant=tranquility&size=256",
+            #     icon_medium: "https://images.evetech.net/corporations/98468592/logo?tenant=tranquility&size=128",
+            #     icon_small: "https://images.evetech.net/corporations/98468592/logo?tenant=tranquility&size=64"}
+```
 
 #### Get corporation medals
 
@@ -1003,6 +1015,19 @@ dogma_attribute.unit_id # => nil
 ```
 
 #### Get dynamic item information
+
+```ruby
+client = EveOnline::ESI::Client.new
+
+dynamic_item = client.dogma.dynamic_item(type_id: 49_734, item_id: 1_055_447_532_024)
+
+dynamic_item.as_json # => {created_by: 2124014413,
+                     #     mutator_type_id: 49737,
+                     #     source_type_id: 47911}
+
+dynamic_item.dogma_attributes.size # => 13
+dynamic_item.dogma_effects.size # => 4
+```
 
 #### Get effects
 
@@ -1145,6 +1170,23 @@ modifier.operator # => 6
 
 #### List incursions
 
+```ruby
+client = EveOnline::ESI::Client.new
+
+incursions = client.incursions.list
+
+incursions.size # => 5
+
+incursions.first.as_json # => {constellation_id: 20000422,
+                        #     faction_id: 500019,
+                        #     has_boss: false,
+                        #     infested_solar_systems: [30002880, 30002874, 30002875, 30002876, 30002877, 30002878, 30002879],
+                        #     influence: 0.0,
+                        #     staging_solar_system_id: 30002879,
+                        #     state: "established",
+                        #     type: "Incursion"}
+```
+
 ### Industry
 
 #### List character industry jobs
@@ -1283,11 +1325,54 @@ corporation_jobs.roles # => ["Factory_Manager"]
 
 #### List industry facilities
 
+```ruby
+client = EveOnline::ESI::Client.new
+
+facilities = client.industry.facilities
+
+facilities.size # => 2321
+
+facilities.first.as_json # => {facility_id: 60006400,
+                        #     owner_id: 1000065,
+                        #     region_id: 10000043,
+                        #     solar_system_id: 30003488,
+                        #     tax: nil,
+                        #     type_id: 1928}
+```
+
 #### List solar system cost indices
+
+```ruby
+client = EveOnline::ESI::Client.new
+
+systems = client.industry.systems
+
+systems.size # => 5485
+
+system = systems.first
+
+system.as_json # => {solar_system_id: 30020141}
+
+system.cost_indices.first.as_json # => {activity: "manufacturing", cost_index: 0.0014}
+```
 
 ### Insurance
 
 #### List insurance levels
+
+```ruby
+client = EveOnline::ESI::Client.new
+
+prices = client.insurance.prices
+
+prices.size # => 569
+
+price = prices.first
+
+price.as_json # => {type_id: 34475}
+
+price.levels.first.as_json # => {cost: 0.0, name: "Basic", payout: 0.0}
+```
 
 ### Killmails
 
@@ -1344,11 +1429,25 @@ corporation_killmails.roles # => ["Director"]
 #### Get a single killmail
 
 ```ruby
-options = { killmail_id: 81_646_519, killmail_hash: "8f1450fca8ce97be9b10e106a1257088407ef387" }
+client = EveOnline::ESI::Client.new
 
-killmail = EveOnline::ESI::Killmail.new(options)
+killmail = client.killmails.retrieve(id: 121_385_936, hash: "aa7ef390212e3fd470924b0db8532c15710749e2")
 
-# TODO: finish this
+killmail.as_json # => {killmail_id: 121385936,
+                # killmail_time: 2024-10-05 05:27:08.000000000 UTC +00:00,
+                # moon_id: nil,
+                # solar_system_id: 30001363,
+                # war_id: 744979}
+
+killmail.attackers.size # => 7
+killmail.victim.as_json # => {alliance_id: 741557221,
+                        #     character_id: 460867562,
+                        #     corporation_id: 1551757800,
+                        #     damage_taken: 15630,
+                        #     faction_id: nil,
+                        #     ship_type_id: 3756}
+killmail.victim.items.size # => 30
+killmail.victim.position.as_json # => {x: 1826991257104.0034, y: -2393946336105.3154, z: -1338694657565.3975}
 ```
 
 ### Location
@@ -2039,7 +2138,35 @@ skill.trained_skill_level # => 3
 
 #### List sovereignty campaigns
 
+```ruby
+client = EveOnline::ESI::Client.new
+
+campaigns = client.sovereignty.campaigns
+
+campaigns.size # => 6
+
+campaigns.first.as_json # => {attackers_score: 0.4,
+                        #     campaign_id: 112209,
+                        #     constellation_id: 20000618,
+                        #     defender_id: 99009287,
+                        #     defender_score: 0.6,
+                        #     event_type: "ihub_defense",
+                        #     solar_system_id: 30004228,
+                        #     start_time: 2026-09-28 09:46:24.000000000 UTC +00:00,
+                        #     structure_id: 1055170539463}
+```
+
 #### List sovereignty of systems
+
+```ruby
+client = EveOnline::ESI::Client.new
+
+systems = client.sovereignty.systems
+
+systems.solar_systems.size # => 5485
+
+systems.solar_systems.first.as_json # => {claim: {"faction" => {"faction_id" => 500007}}, solar_system_id: 30000001}
+```
 
 #### List sovereignty structures
 
@@ -2328,6 +2455,16 @@ group.type_ids # => [22, 17425, 17426, 26852, 28367, 28385, 28387, 28625, 46678,
 
 #### Bulk names to IDs
 
+```ruby
+client = EveOnline::ESI::Client.new
+
+ids = client.universe.ids(names: ["Jita", "Tritanium", "The Forge"])
+
+ids.systems.first.as_json # => {id: 30000142, name: "Jita"}
+ids.inventory_types.first.as_json # => {id: 34, name: "Tritanium"}
+ids.regions.first.as_json # => {id: 10000002, name: "The Forge"}
+```
+
 #### Get moon information
 
 ```ruby
@@ -2353,6 +2490,16 @@ moon.position.z # => -73598621491.0
 ```
 
 #### Get names and categories for a set of ID's
+
+```ruby
+client = EveOnline::ESI::Client.new
+
+names = client.universe.names(ids: [30_000_142, 34, 10_000_002])
+
+names.size # => 3
+
+names.first.as_json # => {category: "solar_system", id: 30000142, name: "Jita"}
+```
 
 #### Get planet information
 
@@ -2592,40 +2739,25 @@ structures.structure_ids.first # => 1044961079041
 #### Get system jumps
 
 ```ruby
-system_jumps = EveOnline::ESI::UniverseSystemJumps.new
+client = EveOnline::ESI::Client.new
 
-system_jumps.scope # => nil
+system_jumps = client.universe.system_jumps
 
-system_jumps.system_jumps.size # => 4979
+system_jumps.size # => 4930
 
-jump = system_jumps.system_jumps.first
-
-jump.as_json # => {:ship_jumps=>65, :system_id=>30002671}
-
-jump.ship_jumps # => 65
-jump.system_id # => 30002671
+system_jumps.first.as_json # => {ship_jumps: 90, system_id: 30003374}
 ```
 
 #### Get system kills
 
 ```ruby
-system_kills = EveOnline::ESI::UniverseSystemKills.new
+client = EveOnline::ESI::Client.new
 
-system_kills.scope # => nil
+system_kills = client.universe.system_kills
 
-system_kills.system_kills.size # => 3194
+system_kills.size # => 2852
 
-system_kill = system_kills.system_kills.first
-
-system_kill.as_json # => {:npc_kills=>89,
-                    #     :pod_kills=>0,
-                    #     :ship_kills=>5,
-                    #     :system_id=>30005327}
-
-system_kill.npc_kills # => 89
-system_kill.pod_kills # => 0
-system_kill.ship_kills # => 5
-system_kill.system_id # => 30005327
+system_kills.first.as_json # => {npc_kills: 55, pod_kills: 0, ship_kills: 0, system_id: 30001342}
 ```
 
 #### Get solar systems
@@ -2970,25 +3102,14 @@ defender.ships_killed # => 0
 #### List kills for a war
 
 ```ruby
-options = { war_id: 615578, page: 1 }
+client = EveOnline::ESI::Client.new
 
-war_killmails = EveOnline::ESI::WarKillmails.new(options)
+killmails = client.wars.killmails(war_id: 744_979)
 
-war_killmails.scope # => nil
+killmails.size # => 3
 
-war_killmails.page # => 1
-
-war_killmails.total_pages # => 1
-
-war_killmails.killmails.size # => 9
-
-killmail = war_killmails.killmails.first
-
-killmail.as_json # => {:killmail_hash=>"07f7ef1d7f6090e78d8e85b4a98e680f67b5e9d5",
-                 #     :killmail_id=>72410059}
-
-killmail.killmail_hash # => "07f7ef1d7f6090e78d8e85b4a98e680f67b5e9d5"
-killmail.killmail_id # => 72410059
+killmails.first.as_json # => {killmail_hash: "aa7ef390212e3fd470924b0db8532c15710749e2",
+                        #     killmail_id: 121385936}
 ```
 
 ## Exceptions

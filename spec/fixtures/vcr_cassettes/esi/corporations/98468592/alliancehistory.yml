@@ -1,0 +1,70 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://esi.evetech.net/corporations/98468592/alliancehistory
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.49.0
+      Accept:
+      - application/json
+      Accept-Language:
+      - en
+      X-Tenant:
+      - tranquility
+      X-Compatibility-Date:
+      - '2026-08-18'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 27 Sep 2026 22:11:05 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '496'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Etag, Retry-After, X-Compatibility-Date, X-Esi-Error-Limit-Remain, X-Esi-Error-Limit-Reset,
+        X-Pages, X-Ratelimit-Group, X-Ratelimit-Limit, X-Ratelimit-Remaining, X-Ratelimit-Used
+      Cache-Control:
+      - public
+      Content-Language:
+      - en
+      Etag:
+      - '"ad91220f38b3a2dac2b4f83c4eb3b03dd02e11fc846652ca1abffe43"'
+      Expires:
+      - Sun, 27 Sep 2026 23:08:11 GMT
+      Last-Modified:
+      - Sun, 27 Sep 2026 22:08:11 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept-Language
+      - X-Compatibility-Date
+      - X-Tenant
+      X-Compatibility-Date:
+      - '2020-01-01'
+      X-Esi-Cache-Status:
+      - HIT
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '55'
+      X-Esi-Request-Id:
+      - 9df1d0bd-1be8-47d6-aefa-5fb1d393702e
+    body:
+      encoding: UTF-8
+      string: '[{"record_id":1543401,"start_date":"2025-01-20T08:27:00Z"},{"alliance_id":1900696668,"record_id":1369655,"start_date":"2021-05-02T17:55:00Z"},{"record_id":1369471,"start_date":"2021-05-01T17:08:00Z"},{"alliance_id":99007916,"is_deleted":true,"record_id":1192636,"start_date":"2018-06-01T14:55:00Z"},{"record_id":1192420,"start_date":"2018-05-31T14:22:00Z"},{"alliance_id":99001258,"record_id":1101256,"start_date":"2017-01-31T00:51:00Z"},{"record_id":1057331,"start_date":"2016-07-11T14:22:00Z"}]'
+  recorded_at: Sun, 27 Sep 2026 22:11:05 GMT
+recorded_with: VCR 6.4.0

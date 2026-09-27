@@ -21,6 +21,17 @@ module EveOnline
           Models::War.new(attributes: response.body, headers: response.headers)
         end
 
+        # @param war_id [Integer]
+        # @param page [Integer] Which page of results to return. Default: 1
+        def killmails(war_id:, page: 1)
+          response = get_request("wars/#{war_id}/killmails",
+            params: {
+              page: page
+            })
+
+          Collection.from_response(response, type: Models::KillmailReference)
+        end
+
         private
 
         def compatibility_date

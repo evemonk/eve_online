@@ -17,6 +17,20 @@ module EveOnline
           Models::NpcCorporations.new(body: response.body, headers: response.headers)
         end
 
+        # @param id [Integer] The ID of the corporation
+        def alliance_history(id:)
+          response = get_request("corporations/#{id}/alliancehistory")
+
+          Collection.from_response(response, type: Models::CorporationAllianceHistory)
+        end
+
+        # @param id [Integer] The ID of the corporation
+        def icons(id:)
+          response = get_request("corporations/#{id}/icons")
+
+          Models::CorporationIcon.new(attributes: response.body, headers: response.headers)
+        end
+
         private
 
         def compatibility_date
