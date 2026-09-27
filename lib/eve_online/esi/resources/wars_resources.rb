@@ -24,7 +24,7 @@ module EveOnline
         private
 
         def compatibility_date
-          "2025-12-16"
+          "2026-08-18"
         end
       end
     end
