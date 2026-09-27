@@ -1,0 +1,74 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://esi.evetech.net/fw/leaderboards
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.49.0
+      Accept:
+      - application/json
+      Accept-Language:
+      - en
+      X-Tenant:
+      - tranquility
+      X-Compatibility-Date:
+      - '2026-08-18'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 27 Sep 2026 22:28:33 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '1032'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Etag, Retry-After, X-Compatibility-Date, X-Esi-Error-Limit-Remain, X-Esi-Error-Limit-Reset,
+        X-Pages, X-Ratelimit-Group, X-Ratelimit-Limit, X-Ratelimit-Remaining, X-Ratelimit-Used
+      Cache-Control:
+      - public
+      Content-Language:
+      - en
+      Etag:
+      - W/"913b3f4e2ed35371bed5a2ddb54a29f6451d6062f85c3490634a33b0"
+      Expires:
+      - Mon, 28 Sep 2026 11:05:00 GMT
+      Last-Modified:
+      - Sun, 27 Sep 2026 11:03:00 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept-Language
+      - X-Compatibility-Date
+      - X-Tenant
+      X-Compatibility-Date:
+      - '2020-01-01'
+      X-Esi-Cache-Status:
+      - HIT
+      X-Esi-Request-Id:
+      - 29143d8c-818a-40de-a9b5-0db5ab1d188a
+      X-Ratelimit-Group:
+      - factional-warfare
+      X-Ratelimit-Limit:
+      - 150/15m
+      X-Ratelimit-Remaining:
+      - '136'
+      X-Ratelimit-Used:
+      - '2'
+    body:
+      encoding: UTF-8
+      string: '{"kills":{"active_total":[{"amount":1587711,"faction_id":500004},{"amount":1331131,"faction_id":500001},{"amount":1195657,"faction_id":500002},{"amount":1193984,"faction_id":500003}],"last_week":[{"amount":2795,"faction_id":500003},{"amount":2547,"faction_id":500002},{"amount":2497,"faction_id":500001},{"amount":2357,"faction_id":500004}],"yesterday":[{"amount":423,"faction_id":500002},{"amount":383,"faction_id":500001},{"amount":352,"faction_id":500010},{"amount":348,"faction_id":500004}]},"victory_points":{"active_total":[{"amount":215603178,"faction_id":500001},{"amount":211361385,"faction_id":500004},{"amount":187722123,"faction_id":500003},{"amount":186731712,"faction_id":500002}],"last_week":[{"amount":1148860,"faction_id":500003},{"amount":1129489,"faction_id":500001},{"amount":1099062,"faction_id":500004},{"amount":1056824,"faction_id":500002}],"yesterday":[{"amount":199713,"faction_id":500003},{"amount":180877,"faction_id":500004},{"amount":156606,"faction_id":500001},{"amount":138950,"faction_id":500002}]}}'
+  recorded_at: Sun, 27 Sep 2026 22:28:33 GMT
+recorded_with: VCR 6.4.0

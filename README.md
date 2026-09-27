@@ -1085,15 +1085,78 @@ modifier.operator # => 6
 
 #### List of the top factions in faction warfare
 
+```ruby
+client = EveOnline::ESI::Client.new
+
+leaderboards = client.faction_warfare.leaderboards
+
+leaderboards.kills.active_total.first.as_json # => {amount: 1587711, faction_id: 500004}
+leaderboards.victory_points.yesterday.first.as_json # => {amount: 199713, faction_id: 500003}
+```
+
 #### List of the top pilots in faction warfare
+
+```ruby
+client = EveOnline::ESI::Client.new
+
+leaderboards = client.faction_warfare.leaderboard_characters
+
+leaderboards.kills.active_total.first.as_json # => {amount: ..., character_id: ...}
+```
 
 #### List of the top corporations in faction warfare
 
+```ruby
+client = EveOnline::ESI::Client.new
+
+leaderboards = client.faction_warfare.leaderboard_corporations
+
+leaderboards.kills.active_total.first.as_json # => {amount: ..., corporation_id: ...}
+```
+
 #### An overview of statistics about factions involved in faction warfare
+
+```ruby
+client = EveOnline::ESI::Client.new
+
+stats = client.faction_warfare.stats
+
+stat = stats.first
+
+stat.as_json # => {faction_id: 500001, pilots: 57300, systems_controlled: 59}
+
+stat.kills.as_json # => {last_week: 2497, total: 1331131, yesterday: 383}
+stat.victory_points.as_json # => {last_week: 1129489, total: 215603178, yesterday: 156606}
+```
 
 #### Ownership of faction warfare systems
 
+```ruby
+client = EveOnline::ESI::Client.new
+
+systems = client.faction_warfare.systems
+
+systems.size # => 160
+
+systems.first.as_json # => {contested: "uncontested",
+                     #     occupier_faction_id: 500003,
+                     #     owner_faction_id: 500003,
+                     #     solar_system_id: 30002957,
+                     #     victory_points: 0,
+                     #     victory_points_threshold: 75000}
+```
+
 #### Data about which NPC factions are at war
+
+```ruby
+client = EveOnline::ESI::Client.new
+
+wars = client.faction_warfare.wars
+
+wars.size # => 12
+
+wars.first.as_json # => {against_id: 500004, faction_id: 500001}
+```
 
 ### Fittings
 

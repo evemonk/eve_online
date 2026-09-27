@@ -1,0 +1,74 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://esi.evetech.net/fw/wars
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.49.0
+      Accept:
+      - application/json
+      Accept-Language:
+      - en
+      X-Tenant:
+      - tranquility
+      X-Compatibility-Date:
+      - '2026-08-18'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 27 Sep 2026 22:28:37 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '505'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Etag, Retry-After, X-Compatibility-Date, X-Esi-Error-Limit-Remain, X-Esi-Error-Limit-Reset,
+        X-Pages, X-Ratelimit-Group, X-Ratelimit-Limit, X-Ratelimit-Remaining, X-Ratelimit-Used
+      Cache-Control:
+      - public
+      Content-Language:
+      - en
+      Etag:
+      - W/"913b3f4e2ed35371bed5a2ddb54a29f6451d6062f85c3490634a33b0"
+      Expires:
+      - Mon, 28 Sep 2026 11:05:00 GMT
+      Last-Modified:
+      - Sun, 27 Sep 2026 11:03:00 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept-Language
+      - X-Compatibility-Date
+      - X-Tenant
+      X-Compatibility-Date:
+      - '2020-01-01'
+      X-Esi-Cache-Status:
+      - HIT
+      X-Esi-Request-Id:
+      - d9965df7-0fe0-4d97-8e93-492377ff6fec
+      X-Ratelimit-Group:
+      - factional-warfare
+      X-Ratelimit-Limit:
+      - 150/15m
+      X-Ratelimit-Remaining:
+      - '126'
+      X-Ratelimit-Used:
+      - '2'
+    body:
+      encoding: UTF-8
+      string: '[{"against_id":500004,"faction_id":500001},{"against_id":500010,"faction_id":500001},{"against_id":500003,"faction_id":500002},{"against_id":500011,"faction_id":500002},{"against_id":500002,"faction_id":500003},{"against_id":500011,"faction_id":500003},{"against_id":500001,"faction_id":500004},{"against_id":500010,"faction_id":500004},{"against_id":500001,"faction_id":500010},{"against_id":500004,"faction_id":500010},{"against_id":500003,"faction_id":500011},{"against_id":500002,"faction_id":500011}]'
+  recorded_at: Sun, 27 Sep 2026 22:28:37 GMT
+recorded_with: VCR 6.4.0
