@@ -1,0 +1,70 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://esi.evetech.net/military-campaigns/7519d7db-1e95-4d0e-bbbe-c47cd47de3c0/objectives/36fe563a-bc80-4c86-94a4-114358a8912b
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.49.0
+      Accept:
+      - application/json
+      Accept-Language:
+      - en
+      X-Tenant:
+      - tranquility
+      X-Compatibility-Date:
+      - '2026-08-18'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 27 Sep 2026 22:35:40 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '223'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Etag, Retry-After, X-Compatibility-Date, X-Esi-Error-Limit-Remain, X-Esi-Error-Limit-Reset,
+        X-Pages, X-Ratelimit-Group, X-Ratelimit-Limit, X-Ratelimit-Remaining, X-Ratelimit-Used
+      Cache-Control:
+      - public, max-age=60
+      Content-Language:
+      - en
+      Expires:
+      - Sun, 27 Sep 2026 22:36:40 GMT
+      Last-Modified:
+      - Sun, 27 Sep 2026 19:20:14 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept-Language
+      - X-Compatibility-Date
+      - X-Tenant
+      X-Compatibility-Date:
+      - '2026-08-04'
+      X-Ratelimit-Group:
+      - military-campaign
+      X-Ratelimit-Limit:
+      - 300/15m
+      X-Ratelimit-Remaining:
+      - '282'
+      X-Ratelimit-Used:
+      - '2'
+    body:
+      encoding: UTF-8
+      string: '{"id":"36fe563a-bc80-4c86-94a4-114358a8912b","state":"Active","progress":6634,"participants":{"total":1181,"committed":1078,"contributors":854},"last_modified":"2026-09-27T19:20:14.4Z","started":"2026-08-20T16:00:03.061Z"}
+
+        '
+  recorded_at: Sun, 27 Sep 2026 22:35:40 GMT
+recorded_with: VCR 6.4.0

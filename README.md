@@ -68,6 +68,23 @@ client = EveOnline::ESI::Client.new
 
 Second, use this client to make requests.
 
+### Activities
+
+#### Get raidable skyhooks
+
+```ruby
+client = EveOnline::ESI::Client.new
+
+raidable = client.activities.raidable_skyhooks
+
+skyhook = raidable.skyhooks.first
+
+skyhook.as_json # => {planet_id: 40281991, solar_system_id: 30004455}
+
+skyhook.theft_vulnerability.as_json # => {end: 2026-09-27 22:35:29.000000000 UTC +00:00,
+                                    #     start: 2026-09-27 20:35:29.000000000 UTC +00:00}
+```
+
 ### Alliance
 
 #### List all alliances
@@ -936,6 +953,26 @@ corporation_members.character_ids.first # => 2114220544
 #### Get corporation structures
 
 #### Get corporation titles
+
+### Cosmetics
+
+#### Get SKINR information
+
+```ruby
+client = EveOnline::ESI::Client.new
+
+skinr = client.cosmetics.skinr(id: "668aef3eef646471b6eed18ddcf191d78b51c2434d53c4bce9725c00ff7cfb60")
+
+skinr.as_json # => {creator_id: 91095887,
+             #     id: "668aef3eef646471b6eed18ddcf191d78b51c2434d53c4bce9725c00ff7cfb60",
+             #     line: "\"Work hard, dream big.\"",
+             #     name: "Pay Dirt",
+             #     ship_type_id: 17478}
+
+skinr.tier.as_json # => {level: 9}
+skinr.layout.as_json # => {pattern_blend_mode: "normal"}
+skinr.layout.slots.size # => 8
+```
 
 ### Dogma
 
@@ -1931,6 +1968,86 @@ name.as_json # => {current: "EVE SKINR Ingenuity (ESI)",
 status = client.meta.status
 
 status.as_json[:routes].first # => {"method" => "GET", "path" => "/alliances", "status" => "OK"}
+```
+
+### Military Campaigns
+
+#### List military campaigns
+
+```ruby
+client = EveOnline::ESI::Client.new
+
+campaigns = client.military_campaigns.list
+
+campaigns.campaigns.first.as_json # => {finished: 2026-09-16 10:24:53.154000000 UTC +00:00,
+                                  #     id: "7519d7db-1e95-4d0e-bbbe-c47cd47de3c0",
+                                  #     progress: 30,
+                                  #     started: 2026-06-09 11:00:09.069000000 UTC +00:00,
+                                  #     state: "Completed"}
+```
+
+#### Get military campaign details
+
+```ruby
+client = EveOnline::ESI::Client.new
+
+campaign = client.military_campaigns.retrieve(id: "7519d7db-1e95-4d0e-bbbe-c47cd47de3c0")
+
+campaign.as_json # => {finished: 2026-09-16 10:24:53.154000000 UTC +00:00,
+                #     id: "7519d7db-1e95-4d0e-bbbe-c47cd47de3c0",
+                #     progress: 30,
+                #     started: 2026-06-09 11:00:09.069000000 UTC +00:00,
+                #     state: "Completed"}
+```
+
+#### List military campaign objectives
+
+```ruby
+client = EveOnline::ESI::Client.new
+
+objectives = client.military_campaigns.objectives(id: "7519d7db-1e95-4d0e-bbbe-c47cd47de3c0", limit: 10)
+
+objective = objectives.objectives.first
+
+objective.as_json # => {finished: nil,
+                  #     id: "36fe563a-bc80-4c86-94a4-114358a8912b",
+                  #     last_modified: 2026-09-27 19:20:14.400000000 UTC +00:00,
+                  #     progress: 6634,
+                  #     started: 2026-08-20 16:00:03.061000000 UTC +00:00,
+                  #     state: "Active"}
+
+objective.participants.as_json # => {committed: 1078, contributors: 854, total: 1181}
+```
+
+#### Get a military campaign objective
+
+```ruby
+client = EveOnline::ESI::Client.new
+
+objective = client.military_campaigns.objective(id: "7519d7db-1e95-4d0e-bbbe-c47cd47de3c0",
+  objective_id: "36fe563a-bc80-4c86-94a4-114358a8912b")
+
+objective.participants.as_json # => {committed: 1078, contributors: 854, total: 1181}
+```
+
+### Paragon Hub
+
+#### List Paragon Hub SKINR listings
+
+```ruby
+client = EveOnline::ESI::Client.new
+
+listings = client.paragon_hub.skinr(limit: 10)
+
+listings.listings.first.as_json # => {created: 2026-09-27 22:01:45.000000000 UTC +00:00,
+                                #     expires: 2026-12-26 22:01:45.000000000 UTC +00:00,
+                                #     id: "60d49f04-bf07-40c5-8027-02edf5b4ee5c",
+                                #     last_modified: 2026-09-27 22:01:45.000000000 UTC +00:00,
+                                #     price: {"plex" => 250},
+                                #     quantity: 4,
+                                #     seller_id: 2123588459,
+                                #     skinr_id: "668aef3eef646471b6eed18ddcf191d78b51c2434d53c4bce9725c00ff7cfb60",
+                                #     state: "listed"}
 ```
 
 ### Opportunities

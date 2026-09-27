@@ -40,6 +40,11 @@ module EveOnline
 
       # Sorted as APIs in openapi docs
 
+      # Activities APIs
+      def activities
+        Resources::ActivitiesResources.new(self)
+      end
+
       # Alliance APIs
       def alliances
         Resources::AlliancesResources.new(self)
@@ -83,6 +88,11 @@ module EveOnline
       # Corporation Projects APIs
       def corporation_projects
         Resources::CorporationProjectsResources.new(self)
+      end
+
+      # Cosmetics APIs
+      def cosmetics
+        Resources::CosmeticsResources.new(self)
       end
 
       # Dogma APIs
@@ -153,6 +163,16 @@ module EveOnline
       # Meta APIs
       def meta
         Resources::MetaResources.new(self)
+      end
+
+      # Military Campaigns APIs
+      def military_campaigns
+        Resources::MilitaryCampaignsResources.new(self)
+      end
+
+      # Paragon Hub APIs
+      def paragon_hub
+        Resources::ParagonHubResources.new(self)
       end
 
       # Planetary Interaction APIs

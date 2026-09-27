@@ -1,0 +1,75 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://esi.evetech.net/cosmetics/skinr/668aef3eef646471b6eed18ddcf191d78b51c2434d53c4bce9725c00ff7cfb60
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.49.0
+      Accept:
+      - application/json
+      Accept-Language:
+      - en
+      X-Tenant:
+      - tranquility
+      X-Compatibility-Date:
+      - '2026-08-18'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 27 Sep 2026 22:35:37 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '1435'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Etag, Retry-After, X-Compatibility-Date, X-Esi-Error-Limit-Remain, X-Esi-Error-Limit-Reset,
+        X-Pages, X-Ratelimit-Group, X-Ratelimit-Limit, X-Ratelimit-Remaining, X-Ratelimit-Used
+      Cache-Control:
+      - public, max-age=31536000, immutable, must-revalidate, stale-if-error=900
+      Content-Language:
+      - en
+      Etag:
+      - W/"bbe4307655352f60e4ce7b99f480831d13d2d901499e67b9684d15e634b6736c"
+      Expires:
+      - Mon, 27 Sep 2027 22:35:37 GMT
+      Last-Modified:
+      - Sun, 27 Sep 2026 22:07:50 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept-Language
+      - X-Compatibility-Date
+      - X-Tenant
+      X-Compatibility-Date:
+      - '2026-08-18'
+      X-Esi-Cache-Status:
+      - HIT
+      X-Ratelimit-Group:
+      - skinr
+      X-Ratelimit-Limit:
+      - 12000/15m
+      X-Ratelimit-Remaining:
+      - '11996'
+      X-Ratelimit-Used:
+      - '2'
+    body:
+      encoding: UTF-8
+      string: '{"id":"668aef3eef646471b6eed18ddcf191d78b51c2434d53c4bce9725c00ff7cfb60","name":"Pay
+        Dirt","line":"\"Work hard, dream big.\"","creator_id":91095887,"ship_type_id":17478,"tier":{"level":9},"layout":{"slots":[{"id":1,"configuration":{"nanocoating":{"id":1876}}},{"id":2,"configuration":{"nanocoating":{"id":230}}},{"id":3,"configuration":{"nanocoating":{"id":1876}}},{"id":4,"configuration":{"nanocoating":{"id":1270}}},{"id":5,"configuration":{"pattern":{"id":1920,"configuration":{"projection":{"slot1":true,"slot2":true,"slot3":true,"slot4":true},"transform":{"position":{"x":0.0023736245930194855,"y":357.2579345703125,"z":14.514442443847656},"rotation":{"x":-0.0020501206163316965,"y":-0.002740075346082449,"z":0.7070969939231873,"w":-0.707094669342041},"scaling":{"x":65.43811798095703,"y":65.43811798095703,"z":65.43811798095703}},"mirrored":false}}}},{"id":6,"configuration":{"nanocoating":{"id":1758}}},{"id":7,"configuration":{"pattern":{"id":1925,"configuration":{"projection":{"slot1":true,"slot2":true,"slot3":true,"slot4":true},"transform":{"position":{"x":0.0023736245930194855,"y":357.2579345703125,"z":14.514442443847656},"rotation":{"x":-0.0020501206163316965,"y":-0.002740075346082449,"z":0.7070969939231873,"w":-0.707094669342041},"scaling":{"x":65.43811798095703,"y":65.43811798095703,"z":65.43811798095703}},"mirrored":false}}}},{"id":8,"configuration":{"nanocoating":{"id":1917}}}],"pattern_blend_mode":"normal"}}
+
+        '
+  recorded_at: Sun, 27 Sep 2026 22:35:37 GMT
+recorded_with: VCR 6.4.0

@@ -1,0 +1,70 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://esi.evetech.net/paragon-hub/skinr?limit=10
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.49.0
+      Accept:
+      - application/json
+      Accept-Language:
+      - en
+      X-Tenant:
+      - tranquility
+      X-Compatibility-Date:
+      - '2026-08-18'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 27 Sep 2026 22:35:41 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Etag, Retry-After, X-Compatibility-Date, X-Esi-Error-Limit-Remain, X-Esi-Error-Limit-Reset,
+        X-Pages, X-Ratelimit-Group, X-Ratelimit-Limit, X-Ratelimit-Remaining, X-Ratelimit-Used
+      Cache-Control:
+      - public, max-age=0, immutable, must-revalidate
+      Content-Language:
+      - en
+      Expires:
+      - Sun, 27 Sep 2026 22:35:41 GMT
+      Last-Modified:
+      - Sun, 27 Sep 2026 22:32:12 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept-Language
+      - X-Compatibility-Date
+      - X-Tenant
+      X-Compatibility-Date:
+      - '2026-08-18'
+      X-Ratelimit-Group:
+      - paragon-hub
+      X-Ratelimit-Limit:
+      - 150/15m
+      X-Ratelimit-Remaining:
+      - '144'
+      X-Ratelimit-Used:
+      - '2'
+    body:
+      encoding: UTF-8
+      string: '{"cursor":{"before":"1.MTc5MDU0NjUwNTU3MC0w","after":"1.MTc5MDU0ODMzMjQwMC0w"},"listings":[{"id":"60d49f04-bf07-40c5-8027-02edf5b4ee5c","state":"listed","last_modified":"2026-09-27T22:01:45Z","seller_id":2123588459,"skinr_id":"668aef3eef646471b6eed18ddcf191d78b51c2434d53c4bce9725c00ff7cfb60","created":"2026-09-27T22:01:45Z","expires":"2026-12-26T22:01:45Z","quantity":4,"price":{"plex":250}},{"id":"d313c510-5b97-44ce-a52c-ded28ccbef9c","state":"listed","last_modified":"2026-09-27T22:01:49Z","seller_id":267516892,"skinr_id":"80d38dda13fd408bc92eb0f1a0b4367d475bc2984c69a474f3cf610ef96a4ec2","created":"2026-09-27T22:01:49Z","expires":"2026-12-26T22:01:49Z","quantity":1,"price":{"isk":450000000.00}},{"id":"1126915f-8ac6-484a-bbe0-a5f911876eb0","state":"listed","last_modified":"2026-09-27T22:03:18Z","seller_id":527071472,"skinr_id":"5ce61bbbb5b2a87f50b8eb85a2ed9ba1e6a4df4c1ff31f82832b7f25f3dfc9b7","created":"2026-09-27T22:03:17Z","expires":"2026-09-28T22:03:17Z","quantity":1,"price":{"plex":100}},{"id":"2e6d2104-77f1-49b8-b445-22b4b69f6fed","state":"listed","last_modified":"2026-09-27T22:03:18Z","seller_id":267516892,"skinr_id":"2e9e4c2abc24e5e7bc75b5e58ec13a0641dcf0b99ad80b8ebc63532a8f2dbb4e","created":"2026-09-27T22:03:18Z","expires":"2026-12-26T22:03:18Z","quantity":1,"price":{"isk":450000000.00}},{"id":"e7bdf8f0-457b-411f-b43f-17ed852f610a","state":"removed","last_modified":"2026-09-27T22:04:03Z","seller_id":267516892,"skinr_id":"52e246df4007ef6c51f8401ff04d48a01c5cec9f9fac6a5641e7582d0ca2f73d","created":"2026-08-18T17:46:51Z","expires":"2026-11-16T17:46:51Z","quantity":1,"price":{"isk":750000000.00}},{"id":"df0e69c1-e014-4a71-be22-c90b6f3b0680","state":"listed","last_modified":"2026-09-27T22:04:39Z","seller_id":267516892,"skinr_id":"dd14f8dfdf96ab95c65ac28ba0db429a9a67840b3b6f0b5d5dc6170aafbed7b3","created":"2026-09-27T22:04:39Z","expires":"2026-12-26T22:04:39Z","quantity":1,"price":{"isk":450000000.00}},{"id":"2e0a6889-87bd-44ab-8a77-6058358507f5","state":"listed","last_modified":"2026-09-27T22:06:10Z","seller_id":94827517,"skinr_id":"4ba5e5444455c9ae860a7c6cb108133cdc2b5392250c4f81ce299586a3fedb77","created":"2026-09-27T00:08:41Z","expires":"2026-12-26T00:08:41Z","quantity":9,"price":{"isk":118000000.00}},{"id":"c8f4307b-5513-4b6b-854d-1500ac231550","state":"sold_out","last_modified":"2026-09-27T22:13:00Z","seller_id":94447432,"skinr_id":"1f89ac7d72d91445209406f7c31fa67a0042d8fbcfc411666e8e087c18bcaffb","created":"2026-09-07T13:29:01Z","expires":"2026-12-06T13:29:01Z","quantity":0,"price":{"plex":30}},{"id":"177d13da-8829-482b-8923-09aeb5d2b1a7","state":"sold_out","last_modified":"2026-09-27T22:20:17Z","seller_id":2117216924,"skinr_id":"f1079f78c833c5bc8e38feee85464f2eb8e2e45c06ac9818fa85c28f1cb9ec8a","created":"2026-09-07T08:40:40Z","expires":"2026-12-06T08:40:40Z","quantity":0,"price":{"plex":190}},{"id":"c66668d1-7866-4e48-a387-8fab2b20162f","state":"sold_out","last_modified":"2026-09-27T22:32:12Z","seller_id":2113453825,"skinr_id":"0ec6e75489fc1f044e7a8de5554bc8b9e541372fb32019e8465ef40fdeedcab8","created":"2026-07-07T09:22:08Z","expires":"2026-10-05T09:22:08Z","quantity":0,"price":{"plex":190}}]}
+
+        '
+  recorded_at: Sun, 27 Sep 2026 22:35:41 GMT
+recorded_with: VCR 6.4.0
