@@ -1705,92 +1705,91 @@ corporation_orders.roles # => ["Accountant", "Trader"]
 #### List historical market statistics in a region
 
 ```ruby
-options = { region_id: 10000002, type_id: 28606 }
+client = EveOnline::ESI::Client.new
 
-market_history = EveOnline::ESI::MarketHistory.new(options)
+history = client.market.history(region_id: 10_000_002, type_id: 34)
 
-market_history.scope # => nil
+history.size # => 422
 
-statistics = market_history.history
-
-statistics.size # => 412
-
-stats_today = statistics.last
-
-stats_today.as_json # => {:average=>602326589.84,
-                    #     :date=>Wed, 16 Jan 2019 00:00:00 UTC +00:00,
-                    #     :highest=>620169950.0,
-                    #     :lowest=>579060022.71,
-                    #     :order_count=>44,
-                    #     :volume=>44}
-
-stats_today.average # => 602326589.84
-stats_today.date # => Wed, 16 Jan 2019 00:00:00 UTC +00:00
-stats_today.highest # => 620169950.0
-stats_today.lowest # => 579060022.71
-stats_today.order_count # => 44
-stats_today.volume # => 44
+history.last.as_json # => {average: 3.78,
+                    #     date: "2026-09-26",
+                    #     highest: 3.79,
+                    #     lowest: 3.77,
+                    #     order_count: 1600,
+                    #     volume: 5159488498}
 ```
 
 #### List orders in a region
 
+```ruby
+client = EveOnline::ESI::Client.new
+
+orders = client.market.orders(region_id: 10_000_002, order_type: "sell", type_id: 34)
+
+orders.size # => 99
+
+orders.first.as_json # => {duration: 90,
+                    #     is_buy_order: false,
+                    #     issued: 2026-09-16 08:41:39.000000000 UTC +00:00,
+                    #     location_id: 60005458,
+                    #     min_volume: 1,
+                    #     order_id: 7423712969,
+                    #     price: 4.0,
+                    #     range: "region",
+                    #     system_id: 30000128,
+                    #     type_id: 34,
+                    #     volume_remain: 8860466,
+                    #     volume_total: 8860537}
+```
+
 #### List type IDs relevant to a market
+
+```ruby
+client = EveOnline::ESI::Client.new
+
+types = client.market.types(region_id: 10_000_002)
+
+types.type_ids.size # => 1000
+types.type_ids.first # => 49152
+```
 
 #### Get item groups
 
 ```ruby
-market_groups = EveOnline::ESI::MarketGroups.new
+client = EveOnline::ESI::Client.new
 
-market_groups.scope # => nil
+market_groups = client.market.groups
 
-market_groups.market_group_ids.size # => 1872
-
-market_groups.market_group_ids.first # => 2
+market_groups.market_group_ids.size # => 2114
+market_groups.market_group_ids.first(3) # => [2, 4, 5]
 ```
 
 #### Get item group information
 
 ```ruby
-options = { id: 618, language: 'en-us' }
+client = EveOnline::ESI::Client.new
 
-market_group = EveOnline::ESI::MarketGroup.new(options)
+market_group = client.market.group(id: 5)
 
-market_group.scope # => nil
-
-market_group.as_json # => {:description=>"Implants intended for Subcervical Processing Slot 1.",
-                     #     :market_group_id=>618,
-                     #     :name=>"Implant Slot 01",
-                     #     :parent_group_id=>532}
-
-market_group.description # => "Implants intended for Subcervical Processing Slot 1."
-market_group.market_group_id # => 618
-market_group.name # => "Implant Slot 01"
-market_group.parent_group_id # => 532
-
-market_group.type_ids.size # => 48
-
-market_group.type_ids.first # => 28802
+market_group.as_json # => {description: "Small, fast vessels suited to a variety of purposes.",
+                     #     market_group_id: 5,
+                     #     name: "Standard Frigates",
+                     #     parent_group_id: 1361,
+                     #     types: []}
 ```
 
 #### List market prices
 
 ```ruby
-market_prices = EveOnline::ESI::MarketPrices.new
+client = EveOnline::ESI::Client.new
 
-market_prices.scope # => nil
+market_prices = client.market.prices
 
-market_prices.market_prices.size # => 12565
+market_prices.size # => 15787
 
-market_price = market_prices.market_prices.first
-
-
-market_price.as_json # => {:adjusted_price=>923296.88,
-                     #     :average_price=>1273871.6,
-                     #     :type_id=>32772}
-
-market_price.adjusted_price # => 923296.88
-market_price.average_price # => 1273871.6
-market_price.type_id # => 32772
+market_prices.first.as_json # => {adjusted_price: 30.049220623663558,
+                            #     average_price: 27.81,
+                            #     type_id: 18}
 ```
 
 #### List orders in a structure
