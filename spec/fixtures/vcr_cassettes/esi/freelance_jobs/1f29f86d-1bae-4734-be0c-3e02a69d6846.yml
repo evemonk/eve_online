@@ -1,0 +1,74 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://esi.evetech.net/freelance-jobs/1f29f86d-1bae-4734-be0c-3e02a69d6846
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.49.0
+      Accept:
+      - application/json
+      Accept-Language:
+      - en
+      X-Tenant:
+      - tranquility
+      X-Compatibility-Date:
+      - '2026-08-18'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 27 Sep 2026 22:31:15 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '1514'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Etag, Retry-After, X-Compatibility-Date, X-Esi-Error-Limit-Remain, X-Esi-Error-Limit-Reset,
+        X-Pages, X-Ratelimit-Group, X-Ratelimit-Limit, X-Ratelimit-Remaining, X-Ratelimit-Used
+      Cache-Control:
+      - public, max-age=60
+      Content-Language:
+      - en
+      Expires:
+      - Sun, 27 Sep 2026 22:32:15 GMT
+      Last-Modified:
+      - Sun, 27 Sep 2026 22:26:47 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept-Language
+      - X-Compatibility-Date
+      - X-Tenant
+      X-Compatibility-Date:
+      - '2025-12-16'
+      X-Ratelimit-Group:
+      - freelance-job
+      X-Ratelimit-Limit:
+      - 12000/15m
+      X-Ratelimit-Remaining:
+      - '11988'
+      X-Ratelimit-Used:
+      - '2'
+    body:
+      encoding: UTF-8
+      string: '{"id":"1f29f86d-1bae-4734-be0c-3e02a69d6846","name":"ore mining job:
+        mine/deliver any pyroxeres","state":"Active","last_modified":"2026-09-27T22:26:47.587Z","progress":{"current":64437858,"desired":110000000},"reward":{"initial":1320000000,"remaining":546745704},"details":{"description":"ore
+        mining job: mine/deliver any pyroxeres QUICK &amp; EASY ISK","career":"Industrialist","created":"2026-07-27T21:09:29.97Z","expires":"2026-10-27T21:15:00Z","creator":{"character":{"id":2123319233,"name":"orioo"},"corporation":{"id":98808262,"name":"INVISION
+        HORIZON"}}},"configuration":{"version":1,"parameters":{"corporation_item_delivery":{"corporation_item_delivery":{"item_type":{"values":[{"value_type":"item_group","values":["459"]}]},"corporation_office_location":{"values":[{"value_type":"structure","values":["1032715081490","1050568691747","1032717532381","1033196707294","1033050967689","1025824394754","1031058135975","1031084757448","1048236639941","1041862154381"]}]}}}},"method":"DeliverItem"},"contribution":{"max_committed_participants":10000,"reward_per_contribution":12,"submission_multiplier":1},"access_and_visibility":{"acl_protected":false,"broadcast_locations":[{"id":30002661,"name":"Botane"},{"id":30002385,"name":"Teonusude"},{"id":30001671,"name":"Tash-Murkon
+        Prime"},{"id":30003018,"name":"Azer"},{"id":30005201,"name":"Manarq"},{"id":30001363,"name":"Sobaseki"},{"id":30003830,"name":"Orvolle"},{"id":30000152,"name":"Hampinen"},{"id":30002526,"name":"Frarn"},{"id":30002053,"name":"Hek"}]}}
+
+        '
+  recorded_at: Sun, 27 Sep 2026 22:31:15 GMT
+recorded_with: VCR 6.4.0

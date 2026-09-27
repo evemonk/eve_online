@@ -1196,6 +1196,43 @@ wars.first.as_json # => {against_id: 500004, faction_id: 500001}
 
 #### Create fleet squad
 
+### Freelance Jobs
+
+#### List freelance jobs
+
+```ruby
+client = EveOnline::ESI::Client.new
+
+listing = client.freelance_jobs.list(limit: 10)
+
+job = listing.freelance_jobs.first
+
+job.as_json # => {id: "c20b6835-6070-4fda-b377-aba7c25a39e6",
+           #     last_modified: 2026-09-27 22:27:00.892000000 UTC +00:00,
+           #     name: "43 PLAG' BUYBACK",
+           #     state: "Active"}
+
+job.progress.as_json # => {current: 2152070, desired: 4000000}
+job.reward.as_json # => {initial: 108000000, remaining: 49894110}
+```
+
+#### Get freelance job details
+
+```ruby
+client = EveOnline::ESI::Client.new
+
+job = client.freelance_jobs.retrieve(id: "1f29f86d-1bae-4734-be0c-3e02a69d6846")
+
+job.as_json # => {id: "1f29f86d-1bae-4734-be0c-3e02a69d6846",
+           #     last_modified: 2026-09-27 22:26:47.587000000 UTC +00:00,
+           #     name: "ore mining job: mine/deliver any pyroxeres",
+           #     state: "Active"}
+
+job.details.creator.character.as_json # => {id: 2123319233, name: "orioo"}
+job.details.creator.corporation.as_json # => {id: 98808262, name: "INVISION HORIZON"}
+job.access_and_visibility.broadcast_locations.size # => 10
+```
+
 ### Incursions
 
 #### List incursions
