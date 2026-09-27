@@ -1,0 +1,68 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://esi.evetech.net/meta/compatibility-dates
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.49.0
+      Accept:
+      - application/json
+      Accept-Language:
+      - en
+      X-Tenant:
+      - tranquility
+      X-Compatibility-Date:
+      - '2026-08-18'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 27 Sep 2026 21:53:52 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '208'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Etag, Retry-After, X-Compatibility-Date, X-Esi-Error-Limit-Remain, X-Esi-Error-Limit-Reset,
+        X-Pages, X-Ratelimit-Group, X-Ratelimit-Limit, X-Ratelimit-Remaining, X-Ratelimit-Used
+      Cache-Control:
+      - public, max-age=600
+      Content-Language:
+      - en
+      Expires:
+      - Sun, 27 Sep 2026 22:03:52 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept-Language
+      - X-Compatibility-Date
+      - X-Tenant
+      X-Compatibility-Date:
+      - '2020-01-01'
+      X-Ratelimit-Group:
+      - meta
+      X-Ratelimit-Limit:
+      - 150/15m
+      X-Ratelimit-Remaining:
+      - '132'
+      X-Ratelimit-Used:
+      - '2'
+    body:
+      encoding: UTF-8
+      string: '{"compatibility_dates":["2026-08-18","2026-08-04","2026-07-21","2026-07-17","2026-06-09","2026-05-19","2025-12-16","2025-11-06","2025-09-30","2025-09-26","2025-08-26","2025-04-02","2025-04-01","2020-01-01"]}
+
+        '
+  recorded_at: Sun, 27 Sep 2026 21:53:52 GMT
+recorded_with: VCR 6.4.0

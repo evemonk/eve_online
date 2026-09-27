@@ -1729,6 +1729,45 @@ market_price.type_id # => 32772
 
 #### List orders in a structure
 
+### Meta
+
+#### Get changelog
+
+```ruby
+changelog = client.meta.changelog
+
+changelog.as_json[:changelog]["2020-01-01"] # => [{"method" => "GET",
+                                             #     "path" => "/meta/changelog",
+                                             #     "compatibility_date" => "2020-01-01",
+                                             #     "type" => "new",
+                                             #     "description" => "Initial release of changelog."}, ...]
+```
+
+#### Get compatibility dates
+
+```ruby
+compatibility_dates = client.meta.compatibility_dates
+
+compatibility_dates.as_json[:compatibility_dates] # => ["2026-08-18", "2026-08-04", ..., "2020-01-01"]
+```
+
+#### Get ESI name
+
+```ruby
+name = client.meta.name
+
+name.as_json # => {current: "EVE SKINR Ingenuity (ESI)",
+             #     history: [{"date" => "2026-08-18", "name" => "EVE SKINR Ingenuity (ESI)"}, ...]}
+```
+
+#### Get ESI status
+
+```ruby
+status = client.meta.status
+
+status.as_json[:routes].first # => {"method" => "GET", "path" => "/alliances", "status" => "OK"}
+```
+
 ### Opportunities
 
 #### Get a character's completed task
