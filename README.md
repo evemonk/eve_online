@@ -712,94 +712,61 @@ contract.volume # => 15000.0
 #### Get public contracts
 
 ```ruby
-options = { region_id: 10_000_043, page: 1 }
+client = EveOnline::ESI::Client.new
 
-contracts = EveOnline::ESI::PublicContracts.new(options)
+contracts = client.contracts.public(region_id: 10_000_002)
 
-contracts.scope # => nil
+contracts.size # => 1000
 
-contracts.page # => 1
-
-contracts.total_pages # => 4
-
-contracts.contracts.size # => 1000
-
-contract = contracts.contracts.first
-
-contract.as_json # => {:buyout=>nil,
-                 #     :collateral=>0.0,
-                 #     :contract_id=>157834735,
-                 #     :date_expired=>Wed, 17 Jun 2020 21:36:41 UTC +00:00,
-                 #     :date_issued=>Wed, 20 May 2020 21:36:41 UTC +00:00,
-                 #     :days_to_complete=>0,
-                 #     :end_location_id=>60008494,
-                 #     :for_corporation=>true,
-                 #     :issuer_corporation_id=>897372069,
-                 #     :issuer_id=>1314102096,
-                 #     :price=>1250000000.0,
-                 #     :reward=>0.0,
-                 #     :start_location_id=>60008494,
-                 #     :title=>"Apostle Me10/Te16 Complete Bpc 10 Pack",
-                 #     :kind=>"item_exchange",
-                 #     :volume=>100.0}
-
-contract.buyout # => nil
-contract.collateral # => 0.0
-contract.contract_id # => 157834735
-contract.date_expired # => Wed, 17 Jun 2020 21:36:41 UTC +00:00
-contract.date_issued # => Wed, 20 May 2020 21:36:41 UTC +00:00
-contract.days_to_complete # => 0
-contract.end_location_id # => 60008494
-contract.for_corporation # => true
-contract.issuer_corporation_id # => 897372069
-contract.issuer_id # => 1314102096
-contract.price # => 1250000000.0
-contract.reward # => 0.0
-contract.start_location_id # => 60008494
-contract.title # => "Apostle Me10/Te16 Complete Bpc 10 Pack"
-contract.kind # => "item_exchange"
-contract.volume # => 100.0
+contracts.first.as_json # => {buyout: nil,
+                        #     collateral: 0.0,
+                        #     contract_id: 235554523,
+                        #     date_expired: 2026-09-27 22:07:39.000000000 UTC +00:00,
+                        #     date_issued: 2026-08-30 22:07:39.000000000 UTC +00:00,
+                        #     days_to_complete: 0,
+                        #     end_location_id: 60003760,
+                        #     for_corporation: nil,
+                        #     issuer_corporation_id: 1000167,
+                        #     issuer_id: 96249938,
+                        #     price: 100000000.0,
+                        #     reward: 0.0,
+                        #     start_location_id: 60003760,
+                        #     title: "",
+                        #     type: "item_exchange",
+                        #     volume: 0.01}
 ```
 
 #### Get public contract bids
 
 ```ruby
-options = { contract_id: 157_872_948, page: 1 }
+client = EveOnline::ESI::Client.new
 
-contract = EveOnline::ESI::PublicContract.new(options)
+bids = client.contracts.public_bids(contract_id: 236_027_965)
 
-contract.scope # => nil
+bids.size # => 1
 
-contract.page # => 1
-
-contract.total_pages # => 1
-
-contract.items.size # => 1
-
-item = contract.items.first
-
-item.as_json # => {:is_blueprint_copy=>true,
-             #     :is_included=>true,
-             #     :item_id=>1029552558074,
-             #     :material_efficiency=>10,
-             #     :quantity=>1,
-             #     :record_id=>3210378611,
-             #     :runs=>400,
-             #     :time_efficiency=>20,
-             #     :type_id=>29040}
-
-item.is_blueprint_copy # => true
-item.is_included # => true
-item.item_id # => 1029552558074
-item.material_efficiency # => 10
-item.quantity # => 1
-item.record_id # => 3210378611
-item.runs # => 400
-item.time_efficiency # => 20
-item.type_id # => 29040
+bids.first.as_json # => {amount: 15000000.0, bid_id: 6672150, date_bid: 2026-09-23 08:11:31.000000000 UTC +00:00}
 ```
 
 #### Get public contract items
+
+```ruby
+client = EveOnline::ESI::Client.new
+
+items = client.contracts.public_items(contract_id: 235_554_525)
+
+items.size # => 1
+
+items.first.as_json # => {is_blueprint_copy: true,
+                    #     is_included: true,
+                    #     item_id: 1047092007473,
+                    #     material_efficiency: 5,
+                    #     quantity: 1,
+                    #     record_id: 5302078925,
+                    #     runs: 1,
+                    #     time_efficiency: 10,
+                    #     type_id: 77416}
+```
 
 #### Get corporation contracts
 
@@ -1888,6 +1855,14 @@ status.as_json[:routes].first # => {"method" => "GET", "path" => "/alliances", "
 #### List corporation customs offices
 
 #### Get schematic information
+
+```ruby
+client = EveOnline::ESI::Client.new
+
+schematic = client.planetary_interaction.schematic(id: 65)
+
+schematic.as_json # => {cycle_time: 3600, schematic_name: "Superconductors"}
+```
 
 ### Routes
 
