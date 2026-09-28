@@ -11,16 +11,12 @@ RSpec.describe "Get raidable skyhooks" do
 
   subject { client.activities.raidable_skyhooks }
 
-  specify { expect(subject.skyhooks).to be_a(EveOnline::ESI::Collection) }
+  specify { expect(subject.skyhooks.size).to eq(166) }
+
+  specify { expect(subject.skyhooks.first.as_json).to eq(planet_id: 40_281_991, solar_system_id: 30_004_455) }
 
   specify do
-    expect(subject.skyhooks.first.as_json).to eq(planet_id: 40_281_991, solar_system_id: 30_004_455)
-  end
-
-  specify do
-    vulnerability = subject.skyhooks.first.theft_vulnerability
-
-    expect(vulnerability.as_json).to eq(end: Time.utc(2026, 9, 27, 22, 35, 29),
+    expect(subject.skyhooks.first.theft_vulnerability.as_json).to eq(end: Time.utc(2026, 9, 27, 22, 35, 29),
       start: Time.utc(2026, 9, 27, 20, 35, 29))
   end
 
