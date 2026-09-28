@@ -25,7 +25,7 @@ module EveOnline
         # @param body [String]] String body for post. Default: nil
         def post_request(url, params: {}, headers: {}, body: nil)
           client.connection.post(url, params, default_headers.merge(headers)) do |request|
-            request.body = body if body.present?
+            request.body = body if body
           end
         end
 
