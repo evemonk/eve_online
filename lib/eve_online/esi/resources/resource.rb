@@ -20,10 +20,13 @@ module EveOnline
         end
 
         # @param url [String] URL to post
-        # @param params [Hash]
-        # @param headers [Hash]
-        def post_request(url, params: {}, headers: {})
-          client.connection.post(url, params, default_headers.merge(headers))
+        # @param params [Hash] Query params. Default: {}
+        # @param headers [Hash] Headers hash. Default: {}
+        # @param body [String]] String body for post. Default: nil
+        def post_request(url, params: {}, headers: {}, body: nil)
+          client.connection.post(url, params, default_headers.merge(headers)) do |request|
+            request.body = body if body.present?
+          end
         end
 
         def default_headers

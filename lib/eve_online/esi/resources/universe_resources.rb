@@ -181,14 +181,14 @@ module EveOnline
 
         # @param names [Array<String>] Names to resolve, up to 500.
         def ids(names:)
-          response = post_request("universe/ids", params: names)
+          response = post_request("universe/ids", body: names.to_json)
 
           Models::UniverseIds.new(attributes: response.body, headers: response.headers)
         end
 
         # @param ids [Array<Integer>] IDs to resolve, up to 1000.
         def names(ids:)
-          response = post_request("universe/names", params: ids)
+          response = post_request("universe/names", body: ids.to_json)
 
           Collection.from_response(response, type: Models::UniverseName)
         end
