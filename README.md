@@ -409,29 +409,33 @@ client = EveOnline::ESI::Client.new
 
 character = client.characters.retrieve(id: 90_729_314)
 
-character.as_json # => {alliance_id: nil,
+character.as_json # => {achievement_score: 0,
+                  #     alliance_id: nil,
                   #     birthday: 2011-05-10 10:23:00.000000000 UTC +00:00,
                   #     bloodline_id: 7,
+                  #     character_title_id: nil,
                   #     corporation_id: 1000168,
+                  #     corporation_title: nil,
                   #     description: "",
                   #     faction_id: nil,
                   #     gender: "male",
                   #     name: "Green Black",
                   #     race_id: 8,
-                  #     security_status: 0,
-                  #     title: nil}
+                  #     security_status: 0.0}
 
+character.achievement_score # => 0
 character.alliance_id # => nil
 character.birthday # => 2011-05-10 10:23:00.000000000 UTC +00:00
 character.bloodline_id # => 7
+character.character_title_id # => nil
 character.corporation_id # => 1000168
+character.corporation_title # => nil
 character.description # => ""
 character.faction_id # => nil
 character.gender # => "male"
 character.name # => "Green Black"
 character.race_id # => 8
 character.security_status # => 0
-character.title # => nil
 ```
 
 #### Get agents research
