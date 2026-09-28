@@ -23,11 +23,11 @@ RSpec.describe "Get alliance information" do
     )
   end
 
-  specify { expect(subject.etag).to eq('"5eedb79d062aad2bed4e103e149ebf728be9f2d69b63ecf186f45c1d"') }
+  specify { expect(subject.etag).to eq('W/"59a0ed33022941d1509d78106e28e5624a950ee91cde4dea41008025e30a550e"') }
 
   specify { expect(subject.cache_status).to eq("HIT") }
 
-  specify { expect(subject.request_id).to eq("ab376bd9-2f4f-4a7f-809b-7de40de4ef26") }
+  specify { expect(subject.request_id).to eq(nil) }
 
   specify { expect(subject.ratelimit_group).to eq(nil) }
 
@@ -39,5 +39,5 @@ RSpec.describe "Get alliance information" do
 
   specify { expect(subject.error_limit_remain).to eq(100) }
 
-  specify { expect(subject.error_limit_reset).to eq(20) }
+  specify { expect(subject.error_limit_reset).to eq(55) }
 end

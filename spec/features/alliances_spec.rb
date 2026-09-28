@@ -21,7 +21,7 @@ RSpec.describe "List all alliances" do
 
   specify { expect(subject.cache_status).to eq("HIT") }
 
-  specify { expect(subject.request_id).to eq("d706d7eb-037c-46a2-b53a-2ae0bba419c2") }
+  specify { expect(subject.request_id).to eq("0a7e4b9e-738a-46c3-8668-98d46379a029") }
 
   specify { expect(subject.ratelimit_group).to eq(nil) }
 
@@ -33,5 +33,5 @@ RSpec.describe "List all alliances" do
 
   specify { expect(subject.error_limit_remain).to eq(100) }
 
-  specify { expect(subject.error_limit_reset).to eq(47) }
+  specify { expect(subject.error_limit_reset).to eq(55) }
 end
