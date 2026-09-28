@@ -77,6 +77,8 @@ client = EveOnline::ESI::Client.new
 
 raidable = client.activities.raidable_skyhooks
 
+raidable.skyhooks.size # => 166
+
 skyhook = raidable.skyhooks.first
 
 skyhook.as_json # => {planet_id: 40281991, solar_system_id: 30004455}
