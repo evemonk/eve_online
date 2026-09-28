@@ -392,6 +392,8 @@ client = EveOnline::ESI::Client.new
 
 affiliations = client.characters.affiliation(ids: [1_337_512_245])
 
+affiliations.size # => 1
+
 affiliations.first.as_json # => {alliance_id: nil,
                            #     character_id: 1337512245,
                            #     corporation_id: 1000171,
