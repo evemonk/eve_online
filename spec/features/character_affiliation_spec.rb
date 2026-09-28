@@ -19,4 +19,22 @@ RSpec.describe "Character affiliation" do
       corporation_id: 1_000_171,
       faction_id: nil)
   end
+
+  specify { expect(subject.etag).to eq(nil) }
+
+  specify { expect(subject.cache_status).to eq("MISS") }
+
+  specify { expect(subject.request_id).to eq("adea71ff-d1c9-4b3c-92ae-adc0348b9f58") }
+
+  specify { expect(subject.ratelimit_group).to eq(nil) }
+
+  specify { expect(subject.ratelimit_limit).to eq(nil) }
+
+  specify { expect(subject.ratelimit_remaining).to eq(nil) }
+
+  specify { expect(subject.ratelimit_used).to eq(nil) }
+
+  specify { expect(subject.error_limit_remain).to eq(100) }
+
+  specify { expect(subject.error_limit_reset).to eq(38) }
 end

@@ -47,5 +47,23 @@ RSpec.describe "List all public structures" do
     specify { expect(subject.structure_ids.size).to eq(49) }
 
     specify { expect(subject.structure_ids.first).to eq(1_044_961_079_041) }
+
+    specify { expect(subject.etag).to eq("\"e97aedd062b977ea6b97d580099b328c27182aaf5720396617a985e6\"") }
+
+    specify { expect(subject.cache_status).to eq("HIT") }
+
+    specify { expect(subject.request_id).to eq("ca2990e6-44d7-475a-a4cb-749310c42ffc") }
+
+    specify { expect(subject.ratelimit_group).to eq(nil) }
+
+    specify { expect(subject.ratelimit_limit).to eq(nil) }
+
+    specify { expect(subject.ratelimit_remaining).to eq(nil) }
+
+    specify { expect(subject.ratelimit_used).to eq(nil) }
+
+    specify { expect(subject.error_limit_remain).to eq(100) }
+
+    specify { expect(subject.error_limit_reset).to eq(35) }
   end
 end

@@ -23,4 +23,22 @@ RSpec.describe "Get incursions" do
       state: "established",
       type: "Incursion")
   end
+
+  specify { expect(subject.etag).to eq("\"4230f84e40a0259d3852144326bec422484244b496c674bcf18fd4d1\"") }
+
+  specify { expect(subject.cache_status).to eq("HIT") }
+
+  specify { expect(subject.request_id).to eq("6cd994e3-7f52-4c05-8ee9-9c540ffcef5f") }
+
+  specify { expect(subject.ratelimit_group).to eq("incursion") }
+
+  specify { expect(subject.ratelimit_limit).to eq("150/15m") }
+
+  specify { expect(subject.ratelimit_remaining).to eq(146) }
+
+  specify { expect(subject.ratelimit_used).to eq(2) }
+
+  specify { expect(subject.error_limit_remain).to eq(nil) }
+
+  specify { expect(subject.error_limit_reset).to eq(nil) }
 end

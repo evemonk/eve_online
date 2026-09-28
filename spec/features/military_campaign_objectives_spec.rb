@@ -29,4 +29,22 @@ RSpec.describe "List military campaign objectives" do
   end
 
   specify { expect(subject.cursor).to be_a(EveOnline::ESI::Models::MilitaryCampaignObjectivesCursor) }
+
+  specify { expect(subject.etag).to eq(nil) }
+
+  specify { expect(subject.cache_status).to eq(nil) }
+
+  specify { expect(subject.request_id).to eq(nil) }
+
+  specify { expect(subject.ratelimit_group).to eq("military-campaign") }
+
+  specify { expect(subject.ratelimit_limit).to eq("300/15m") }
+
+  specify { expect(subject.ratelimit_remaining).to eq(284) }
+
+  specify { expect(subject.ratelimit_used).to eq(2) }
+
+  specify { expect(subject.error_limit_remain).to eq(nil) }
+
+  specify { expect(subject.error_limit_reset).to eq(nil) }
 end

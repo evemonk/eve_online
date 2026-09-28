@@ -47,5 +47,23 @@ RSpec.describe "List wars" do
     specify { expect(subject.war_ids.size).to eq(9) }
 
     specify { expect(subject.war_ids.first).to eq(9) }
+
+    specify { expect(subject.etag).to eq("\"f1c28227847464613c1cb82dfc8a8c859b7b6857fad2c2a54c562812\"") }
+
+    specify { expect(subject.cache_status).to eq("MISS") }
+
+    specify { expect(subject.request_id).to eq("91e80d2c-e411-4bc6-99e3-333897fba83f") }
+
+    specify { expect(subject.ratelimit_group).to eq("killmail") }
+
+    specify { expect(subject.ratelimit_limit).to eq("3600/15m") }
+
+    specify { expect(subject.ratelimit_remaining).to eq(3594) }
+
+    specify { expect(subject.ratelimit_used).to eq(2) }
+
+    specify { expect(subject.error_limit_remain).to eq(nil) }
+
+    specify { expect(subject.error_limit_reset).to eq(nil) }
   end
 end

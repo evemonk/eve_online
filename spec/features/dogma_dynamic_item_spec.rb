@@ -24,4 +24,22 @@ RSpec.describe "Get dynamic item information" do
   specify { expect(subject.dogma_effects.size).to eq(4) }
 
   specify { expect(subject.dogma_effects.first.as_json).to eq(effect_id: 11, is_default: false) }
+
+  specify { expect(subject.etag).to eq("W/\"913b3f4e2ed35371bed5a2ddb54a29f6451d6062f85c3490634a33b0\"") }
+
+  specify { expect(subject.cache_status).to eq("HIT") }
+
+  specify { expect(subject.request_id).to eq("d21d06cb-ad3e-4547-bc8c-b4ceb631f210") }
+
+  specify { expect(subject.ratelimit_group).to eq(nil) }
+
+  specify { expect(subject.ratelimit_limit).to eq(nil) }
+
+  specify { expect(subject.ratelimit_remaining).to eq(nil) }
+
+  specify { expect(subject.ratelimit_used).to eq(nil) }
+
+  specify { expect(subject.error_limit_remain).to eq(100) }
+
+  specify { expect(subject.error_limit_reset).to eq(53) }
 end

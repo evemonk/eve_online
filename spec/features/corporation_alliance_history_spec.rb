@@ -26,4 +26,22 @@ RSpec.describe "Get alliance history" do
       record_id: 1_192_636,
       start_date: Time.utc(2018, 6, 1, 14, 55, 0))
   end
+
+  specify { expect(subject.etag).to eq("\"ad91220f38b3a2dac2b4f83c4eb3b03dd02e11fc846652ca1abffe43\"") }
+
+  specify { expect(subject.cache_status).to eq("HIT") }
+
+  specify { expect(subject.request_id).to eq("9df1d0bd-1be8-47d6-aefa-5fb1d393702e") }
+
+  specify { expect(subject.ratelimit_group).to eq(nil) }
+
+  specify { expect(subject.ratelimit_limit).to eq(nil) }
+
+  specify { expect(subject.ratelimit_remaining).to eq(nil) }
+
+  specify { expect(subject.ratelimit_used).to eq(nil) }
+
+  specify { expect(subject.error_limit_remain).to eq(100) }
+
+  specify { expect(subject.error_limit_reset).to eq(55) }
 end

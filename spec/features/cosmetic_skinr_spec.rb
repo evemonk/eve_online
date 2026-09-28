@@ -30,4 +30,22 @@ RSpec.describe "Get SKINR information" do
   specify { expect(subject.layout.slots.first.as_json).to eq(id: 1) }
 
   specify { expect(subject.layout.slots.first.configuration).to eq("nanocoating" => {"id" => 1876}) }
+
+  specify { expect(subject.etag).to eq("W/\"bbe4307655352f60e4ce7b99f480831d13d2d901499e67b9684d15e634b6736c\"") }
+
+  specify { expect(subject.cache_status).to eq("HIT") }
+
+  specify { expect(subject.request_id).to eq(nil) }
+
+  specify { expect(subject.ratelimit_group).to eq("skinr") }
+
+  specify { expect(subject.ratelimit_limit).to eq("12000/15m") }
+
+  specify { expect(subject.ratelimit_remaining).to eq(11996) }
+
+  specify { expect(subject.ratelimit_used).to eq(2) }
+
+  specify { expect(subject.error_limit_remain).to eq(nil) }
+
+  specify { expect(subject.error_limit_reset).to eq(nil) }
 end

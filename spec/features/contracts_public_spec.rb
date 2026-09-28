@@ -31,4 +31,22 @@ RSpec.describe "List public contracts in a region" do
       type: "item_exchange",
       volume: 0.01)
   end
+
+  specify { expect(subject.etag).to eq("\"275fac071d91e158f25d2b637d37dcc301e2033ff27efade868e2e1b\"") }
+
+  specify { expect(subject.cache_status).to eq("HIT") }
+
+  specify { expect(subject.request_id).to eq("db2f0fda-199f-413b-b843-1b2ea3272945") }
+
+  specify { expect(subject.ratelimit_group).to eq(nil) }
+
+  specify { expect(subject.ratelimit_limit).to eq(nil) }
+
+  specify { expect(subject.ratelimit_remaining).to eq(nil) }
+
+  specify { expect(subject.ratelimit_used).to eq(nil) }
+
+  specify { expect(subject.error_limit_remain).to eq(100) }
+
+  specify { expect(subject.error_limit_reset).to eq(39) }
 end

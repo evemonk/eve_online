@@ -21,4 +21,22 @@ RSpec.describe "Get industry facilities" do
       tax: nil,
       type_id: 1928)
   end
+
+  specify { expect(subject.etag).to eq("\"76c284b2b1096523c3509a8707ba06487b6711a39e665775882217be\"") }
+
+  specify { expect(subject.cache_status).to eq("HIT") }
+
+  specify { expect(subject.request_id).to eq("34c731ee-dd8c-4460-9dcf-ee8d5f7ab610") }
+
+  specify { expect(subject.ratelimit_group).to eq("industry") }
+
+  specify { expect(subject.ratelimit_limit).to eq("150/15m") }
+
+  specify { expect(subject.ratelimit_remaining).to eq(144) }
+
+  specify { expect(subject.ratelimit_used).to eq(2) }
+
+  specify { expect(subject.error_limit_remain).to eq(nil) }
+
+  specify { expect(subject.error_limit_reset).to eq(nil) }
 end

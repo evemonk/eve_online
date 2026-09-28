@@ -19,5 +19,21 @@ RSpec.describe "Bulk names to IDs" do
 
   specify { expect(subject.agents.size).to eq(0) }
 
+  specify { expect(subject.etag).to eq(nil) }
+
+  specify { expect(subject.cache_status).to eq("MISS") }
+
+  specify { expect(subject.request_id).to eq("97471e1b-9929-4ed9-b754-1be69e4bc941") }
+
   specify { expect(subject.ratelimit_group).to eq(nil) }
+
+  specify { expect(subject.ratelimit_limit).to eq(nil) }
+
+  specify { expect(subject.ratelimit_remaining).to eq(nil) }
+
+  specify { expect(subject.ratelimit_used).to eq(nil) }
+
+  specify { expect(subject.error_limit_remain).to eq(100) }
+
+  specify { expect(subject.error_limit_reset).to eq(31) }
 end

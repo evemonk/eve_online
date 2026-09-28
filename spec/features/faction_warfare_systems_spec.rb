@@ -21,4 +21,22 @@ RSpec.describe "Get faction warfare systems" do
       victory_points: 0,
       victory_points_threshold: 75_000)
   end
+
+  specify { expect(subject.etag).to eq("\"191ebaa877db008cd22499a4960964fc8a5317cfeb9ddb614aebae53\"") }
+
+  specify { expect(subject.cache_status).to eq("HIT") }
+
+  specify { expect(subject.request_id).to eq("0096d035-e013-401a-b727-dfa6f19c665e") }
+
+  specify { expect(subject.ratelimit_group).to eq("factional-warfare") }
+
+  specify { expect(subject.ratelimit_limit).to eq("150/15m") }
+
+  specify { expect(subject.ratelimit_remaining).to eq(128) }
+
+  specify { expect(subject.ratelimit_used).to eq(2) }
+
+  specify { expect(subject.error_limit_remain).to eq(nil) }
+
+  specify { expect(subject.error_limit_reset).to eq(nil) }
 end

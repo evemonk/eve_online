@@ -18,7 +18,23 @@ RSpec.describe "List kills for a war" do
       killmail_id: 121_385_936)
   end
 
+  specify { expect(subject.etag).to eq("\"b0be26525b74bbb088b5b0369b596beae3fd48525c24e4093708ccb1\"") }
+
+  specify { expect(subject.cache_status).to eq("HIT") }
+
+  specify { expect(subject.request_id).to eq("1c9fba32-66b0-4633-a849-1dd7f9e699db") }
+
   specify { expect(subject.ratelimit_group).to eq("killmail") }
 
   specify { expect(subject.total_pages).to eq(1) }
+
+  specify { expect(subject.ratelimit_limit).to eq("3600/15m") }
+
+  specify { expect(subject.ratelimit_remaining).to eq(3596) }
+
+  specify { expect(subject.ratelimit_used).to eq(2) }
+
+  specify { expect(subject.error_limit_remain).to eq(nil) }
+
+  specify { expect(subject.error_limit_reset).to eq(nil) }
 end

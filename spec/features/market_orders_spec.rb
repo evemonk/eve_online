@@ -27,4 +27,22 @@ RSpec.describe "List orders in a region" do
       volume_remain: 8_860_466,
       volume_total: 8_860_537)
   end
+
+  specify { expect(subject.etag).to eq("\"dfb21a26ae74e7f7ce56ddd9679c14404303efdf936b6278719e5c4c\"") }
+
+  specify { expect(subject.cache_status).to eq("HIT") }
+
+  specify { expect(subject.request_id).to eq("3747e76b-faa5-4766-8ba1-0da69879d8f3") }
+
+  specify { expect(subject.ratelimit_group).to eq("market-order") }
+
+  specify { expect(subject.ratelimit_limit).to eq("12000/15m") }
+
+  specify { expect(subject.ratelimit_remaining).to eq(11996) }
+
+  specify { expect(subject.ratelimit_used).to eq(2) }
+
+  specify { expect(subject.error_limit_remain).to eq(nil) }
+
+  specify { expect(subject.error_limit_reset).to eq(nil) }
 end

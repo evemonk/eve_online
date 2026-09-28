@@ -49,4 +49,22 @@ RSpec.describe "Get freelance job details" do
   specify { expect(subject.access_and_visibility.broadcast_locations.first.as_json).to eq(id: 30_002_661, name: "Botane") }
 
   specify { expect(subject.configuration["method"]).to eq("DeliverItem") }
+
+  specify { expect(subject.etag).to eq(nil) }
+
+  specify { expect(subject.cache_status).to eq(nil) }
+
+  specify { expect(subject.request_id).to eq(nil) }
+
+  specify { expect(subject.ratelimit_group).to eq("freelance-job") }
+
+  specify { expect(subject.ratelimit_limit).to eq("12000/15m") }
+
+  specify { expect(subject.ratelimit_remaining).to eq(11988) }
+
+  specify { expect(subject.ratelimit_used).to eq(2) }
+
+  specify { expect(subject.error_limit_remain).to eq(nil) }
+
+  specify { expect(subject.error_limit_reset).to eq(nil) }
 end

@@ -21,4 +21,22 @@ RSpec.describe "List historical market statistics in a region" do
       order_count: 1600,
       volume: 5_159_488_498)
   end
+
+  specify { expect(subject.etag).to eq("W/\"5fe60e03aa031801814c44ac4c96f82f9f573a98df36fe55683669ef\"") }
+
+  specify { expect(subject.cache_status).to eq("HIT") }
+
+  specify { expect(subject.request_id).to eq("84f7d83d-936e-4344-9b35-ee3b955c57f7") }
+
+  specify { expect(subject.ratelimit_group).to eq(nil) }
+
+  specify { expect(subject.ratelimit_limit).to eq(nil) }
+
+  specify { expect(subject.ratelimit_remaining).to eq(nil) }
+
+  specify { expect(subject.ratelimit_used).to eq(nil) }
+
+  specify { expect(subject.error_limit_remain).to eq(100) }
+
+  specify { expect(subject.error_limit_reset).to eq(14) }
 end

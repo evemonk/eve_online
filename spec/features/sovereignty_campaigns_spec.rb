@@ -26,4 +26,22 @@ RSpec.describe "Get sovereignty campaigns" do
   end
 
   specify { expect(subject.first.participants.size).to eq(0) }
+
+  specify { expect(subject.etag).to eq("\"6b26b65881048d00336b8df23ad39108857d04e964301f9edb815222\"") }
+
+  specify { expect(subject.cache_status).to eq("HIT") }
+
+  specify { expect(subject.request_id).to eq("255af0d7-bc41-4ff3-a053-b1d7cd980601") }
+
+  specify { expect(subject.ratelimit_group).to eq("sovereignty") }
+
+  specify { expect(subject.ratelimit_limit).to eq("600/15m") }
+
+  specify { expect(subject.ratelimit_remaining).to eq(594) }
+
+  specify { expect(subject.ratelimit_used).to eq(2) }
+
+  specify { expect(subject.error_limit_remain).to eq(nil) }
+
+  specify { expect(subject.error_limit_reset).to eq(nil) }
 end

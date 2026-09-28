@@ -51,4 +51,22 @@ RSpec.describe "Get a single killmail" do
       y: -2_393_946_336_105.3154,
       z: -1_338_694_657_565.3975)
   end
+
+  specify { expect(subject.etag).to eq("\"6aaf4c4103a1c1e1f9fafc348259271818e331c23ad93c089ada68ca\"") }
+
+  specify { expect(subject.cache_status).to eq("HIT") }
+
+  specify { expect(subject.request_id).to eq("590bb581-9e31-4629-a8c2-ba894c0a525f") }
+
+  specify { expect(subject.ratelimit_group).to eq("killmail") }
+
+  specify { expect(subject.ratelimit_limit).to eq("3600/15m") }
+
+  specify { expect(subject.ratelimit_remaining).to eq(3593) }
+
+  specify { expect(subject.ratelimit_used).to eq(2) }
+
+  specify { expect(subject.error_limit_remain).to eq(nil) }
+
+  specify { expect(subject.error_limit_reset).to eq(nil) }
 end

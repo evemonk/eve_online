@@ -24,4 +24,22 @@ RSpec.describe "Get public contract items" do
       time_efficiency: 10,
       type_id: 77_416)
   end
+
+  specify { expect(subject.etag).to eq("\"b50dae137a0fe3d67d1385ad4626a661509ccbb419894d732f544f28\"") }
+
+  specify { expect(subject.cache_status).to eq("HIT") }
+
+  specify { expect(subject.request_id).to eq("14441b54-23b5-4466-a9d1-2668fc91a5db") }
+
+  specify { expect(subject.ratelimit_group).to eq(nil) }
+
+  specify { expect(subject.ratelimit_limit).to eq(nil) }
+
+  specify { expect(subject.ratelimit_remaining).to eq(nil) }
+
+  specify { expect(subject.ratelimit_used).to eq(nil) }
+
+  specify { expect(subject.error_limit_remain).to eq(100) }
+
+  specify { expect(subject.error_limit_reset).to eq(40) }
 end

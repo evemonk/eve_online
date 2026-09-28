@@ -18,4 +18,22 @@ RSpec.describe "Get military campaign details" do
       started: Time.utc(2026, 6, 9, 11, 0, 9, 69_000),
       state: "Completed")
   end
+
+  specify { expect(subject.etag).to eq(nil) }
+
+  specify { expect(subject.cache_status).to eq(nil) }
+
+  specify { expect(subject.request_id).to eq(nil) }
+
+  specify { expect(subject.ratelimit_group).to eq("military-campaign") }
+
+  specify { expect(subject.ratelimit_limit).to eq("300/15m") }
+
+  specify { expect(subject.ratelimit_remaining).to eq(286) }
+
+  specify { expect(subject.ratelimit_used).to eq(2) }
+
+  specify { expect(subject.error_limit_remain).to eq(nil) }
+
+  specify { expect(subject.error_limit_reset).to eq(nil) }
 end

@@ -85,6 +85,24 @@ RSpec.describe "Get route between two systems" do
     subject { client.routes.route(destination_system_id: amarr_system_id, origin_system_id: jita_system_id, security_penalty: security_penalty) }
 
     specify { expect(subject.route).to eq(jita_to_amarr) }
+
+    specify { expect(subject.etag).to eq(nil) }
+
+    specify { expect(subject.cache_status).to eq(nil) }
+
+    specify { expect(subject.request_id).to eq(nil) }
+
+    specify { expect(subject.ratelimit_group).to eq("routes") }
+
+    specify { expect(subject.ratelimit_limit).to eq("3600/15m") }
+
+    specify { expect(subject.ratelimit_remaining).to eq(3596) }
+
+    specify { expect(subject.ratelimit_used).to eq(2) }
+
+    specify { expect(subject.error_limit_remain).to eq(nil) }
+
+    specify { expect(subject.error_limit_reset).to eq(nil) }
   end
 
   context "with preference" do
@@ -116,6 +134,24 @@ RSpec.describe "Get route between two systems" do
     subject { client.routes.route(destination_system_id: amarr_system_id, origin_system_id: jita_system_id, preference: preference) }
 
     specify { expect(subject.route).to eq(jita_to_amarr) }
+
+    specify { expect(subject.etag).to eq(nil) }
+
+    specify { expect(subject.cache_status).to eq(nil) }
+
+    specify { expect(subject.request_id).to eq(nil) }
+
+    specify { expect(subject.ratelimit_group).to eq("routes") }
+
+    specify { expect(subject.ratelimit_limit).to eq("3600/15m") }
+
+    specify { expect(subject.ratelimit_remaining).to eq(3594) }
+
+    specify { expect(subject.ratelimit_used).to eq(2) }
+
+    specify { expect(subject.error_limit_remain).to eq(nil) }
+
+    specify { expect(subject.error_limit_reset).to eq(nil) }
   end
 
   context "with avoid_systems" do
@@ -142,6 +178,24 @@ RSpec.describe "Get route between two systems" do
     subject { client.routes.route(destination_system_id: amarr_system_id, origin_system_id: jita_system_id, avoid_systems_ids: avoid_systems_ids) }
 
     specify { expect(subject.route).to eq(jita_to_amarr) }
+
+    specify { expect(subject.etag).to eq(nil) }
+
+    specify { expect(subject.cache_status).to eq(nil) }
+
+    specify { expect(subject.request_id).to eq(nil) }
+
+    specify { expect(subject.ratelimit_group).to eq("routes") }
+
+    specify { expect(subject.ratelimit_limit).to eq("3600/15m") }
+
+    specify { expect(subject.ratelimit_remaining).to eq(3592) }
+
+    specify { expect(subject.ratelimit_used).to eq(2) }
+
+    specify { expect(subject.error_limit_remain).to eq(nil) }
+
+    specify { expect(subject.error_limit_reset).to eq(nil) }
   end
 
   context "with connections" do
@@ -164,5 +218,23 @@ RSpec.describe "Get route between two systems" do
     subject { client.routes.route(destination_system_id: amarr_system_id, origin_system_id: jita_system_id, connections: connections) }
 
     specify { expect(subject.route).to eq(jita_to_amarr) }
+
+    specify { expect(subject.etag).to eq(nil) }
+
+    specify { expect(subject.cache_status).to eq(nil) }
+
+    specify { expect(subject.request_id).to eq(nil) }
+
+    specify { expect(subject.ratelimit_group).to eq("routes") }
+
+    specify { expect(subject.ratelimit_limit).to eq("3600/15m") }
+
+    specify { expect(subject.ratelimit_remaining).to eq(3590) }
+
+    specify { expect(subject.ratelimit_used).to eq(2) }
+
+    specify { expect(subject.error_limit_remain).to eq(nil) }
+
+    specify { expect(subject.error_limit_reset).to eq(nil) }
   end
 end

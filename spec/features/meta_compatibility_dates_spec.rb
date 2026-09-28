@@ -15,7 +15,21 @@ RSpec.describe "Get compatibility dates" do
 
   specify { expect(subject.as_json[:compatibility_dates].first).to eq("2026-08-18") }
 
+  specify { expect(subject.etag).to eq(nil) }
+
+  specify { expect(subject.cache_status).to eq(nil) }
+
+  specify { expect(subject.request_id).to eq(nil) }
+
   specify { expect(subject.ratelimit_group).to eq("meta") }
 
   specify { expect(subject.ratelimit_limit).to eq("150/15m") }
+
+  specify { expect(subject.ratelimit_remaining).to eq(132) }
+
+  specify { expect(subject.ratelimit_used).to eq(2) }
+
+  specify { expect(subject.error_limit_remain).to eq(nil) }
+
+  specify { expect(subject.error_limit_reset).to eq(nil) }
 end
