@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - EveOnline API (https://github.com/evemonk/eve_online) v0.47.0
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.49.0
       Accept:
       - application/json
       Accept-Language:
@@ -16,7 +16,7 @@ http_interactions:
       X-Tenant:
       - tranquility
       X-Compatibility-Date:
-      - '2025-12-16'
+      - '2026-08-18'
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -25,53 +25,51 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 04 Jan 2026 00:37:19 GMT
+      - Mon, 28 Sep 2026 15:10:16 GMT
       Content-Type:
-      - application/json; charset=UTF-8
+      - application/json
       Content-Length:
-      - '675'
+      - '799'
       Connection:
       - keep-alive
-      Access-Control-Allow-Credentials:
-      - 'true'
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Expose-Headers:
       - Etag, Retry-After, X-Compatibility-Date, X-Esi-Error-Limit-Remain, X-Esi-Error-Limit-Reset,
         X-Pages, X-Ratelimit-Group, X-Ratelimit-Limit, X-Ratelimit-Remaining, X-Ratelimit-Used
       Cache-Control:
-      - public
+      - public, max-age=3600, must-revalidate, stale-if-error=900
       Content-Language:
       - en
       Etag:
-      - '"ffbbcb2cd0c4ae79252e8244cd51b12a1d1810cbcd954813ccfa2467"'
+      - W/"c545bd504007b59757a4584f735f47fcb8aadf18dc3ad96264191088f0ab1339"
       Expires:
-      - Sun, 04 Jan 2026 00:44:04 GMT
+      - Mon, 28 Sep 2026 16:10:16 GMT
       Last-Modified:
-      - Sat, 03 Jan 2026 23:44:04 GMT
+      - Mon, 28 Sep 2026 15:10:16 GMT
       Strict-Transport-Security:
       - max-age=31536000
       Vary:
       - Accept-Language
       - X-Compatibility-Date
+      - X-Tenant
       X-Compatibility-Date:
-      - '2020-01-01'
+      - '2026-07-21'
       X-Esi-Cache-Status:
-      - HIT
+      - MISS
       X-Esi-Error-Limit-Remain:
       - '100'
       X-Esi-Error-Limit-Reset:
-      - '41'
-      X-Esi-Request-Id:
-      - 2ed41162-8a52-4a9c-8d87-5d54f94f42d4
+      - '44'
     body:
       encoding: UTF-8
-      string: '{"ceo_id":2114256809,"creator_id":1721864142,"date_founded":"2016-07-11T14:22:17Z","description":"u''<font
+      string: '{"state":"active","type":"player_owned","name":"Bullshit Bingo Club","ticker":"BUBIC","description":"u''<font
         size=\"12\" color=\"#bfffffff\">BUBIC est malheureusement en hibernation !<br><br>En
         attendant un eventuel r\\xe9veil, retrouvez les anciens membres Bubic chez
-        les chevres !   <\/font><font size=\"12\" color=\"#ffd98d00\"><a href=\"showinfo:2\/\/98730717\">Goat
-        to Go<\/a><\/font><font size=\"12\" color=\"#bfffffff\"> <br><br>Bon jeu et
-        \\xe0 tr\\xe8s vite ... o7<\/font>''","home_station_id":60011893,"member_count":12,"name":"Bullshit
-        Bingo Club","shares":1000,"tax_rate":0.10000000149011612,"ticker":"BUBIC","url":"https:\/\/zkillboard.com\/corporation\/98468592\/"}'
-  recorded_at: Sun, 04 Jan 2026 00:37:19 GMT
+        les chevres !   </font><font size=\"12\" color=\"#ffd98d00\"><a href=\"showinfo:2//98730717\">Goat
+        to Go</a></font><font size=\"12\" color=\"#bfffffff\"> <br><br>Bon jeu et
+        \\xe0 tr\\xe8s vite ... o7</font>''","url":"https://zkillboard.com/corporation/98468592/","palette":{"main_color":"#000000"},"date_founded":"2016-07-11T14:22:17Z","ceo_id":2114256809,"creator_id":1721864142,"home_station_id":60011893,"member_count":12,"tax_rates":{"isk":10.0,"loyalty_point":10.0},"shares":1000,"war_eligible":false,"friendly_fire":"legal"}
+
+        '
+  recorded_at: Mon, 28 Sep 2026 15:10:16 GMT
 recorded_with: VCR 6.4.0

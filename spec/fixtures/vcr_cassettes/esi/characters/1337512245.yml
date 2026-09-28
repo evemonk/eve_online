@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - EveOnline API (https://github.com/evemonk/eve_online) v0.47.0
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.49.0
       Accept:
       - application/json
       Accept-Language:
@@ -16,7 +16,7 @@ http_interactions:
       X-Tenant:
       - tranquility
       X-Compatibility-Date:
-      - '2025-12-16'
+      - '2026-08-18'
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -25,48 +25,47 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 03 Jan 2026 14:16:07 GMT
+      - Mon, 28 Sep 2026 15:10:14 GMT
       Content-Type:
-      - application/json; charset=UTF-8
+      - application/json
       Content-Length:
-      - '176'
+      - '192'
       Connection:
       - keep-alive
-      Access-Control-Allow-Credentials:
-      - 'true'
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Expose-Headers:
       - Etag, Retry-After, X-Compatibility-Date, X-Esi-Error-Limit-Remain, X-Esi-Error-Limit-Reset,
         X-Pages, X-Ratelimit-Group, X-Ratelimit-Limit, X-Ratelimit-Remaining, X-Ratelimit-Used
       Cache-Control:
-      - public
+      - public, max-age=86400, must-revalidate, stale-if-error=900
       Content-Language:
       - en
       Etag:
-      - '"e931aea926d95a88c929c938741bc7bd8c35920121e7837ad6852020"'
+      - W/"e2061437d3098a97a89c63c24714ac4e3c9ac90209e5e74e14d20469869b1e66"
       Expires:
-      - Sat, 10 Jan 2026 14:10:17 GMT
+      - Tue, 29 Sep 2026 15:10:14 GMT
       Last-Modified:
-      - Sat, 03 Jan 2026 14:10:17 GMT
+      - Mon, 28 Sep 2026 15:10:14 GMT
       Strict-Transport-Security:
       - max-age=31536000
       Vary:
       - Accept-Language
       - X-Compatibility-Date
+      - X-Tenant
       X-Compatibility-Date:
-      - '2020-01-01'
+      - '2026-06-09'
       X-Esi-Cache-Status:
-      - HIT
+      - MISS
       X-Esi-Error-Limit-Remain:
       - '100'
       X-Esi-Error-Limit-Reset:
-      - '53'
-      X-Esi-Request-Id:
-      - 17930397-e721-446e-8be2-f4ee6b462479
+      - '46'
     body:
       encoding: UTF-8
-      string: '{"birthday":"2010-01-15T15:26:00Z","bloodline_id":4,"corporation_id":1000171,"description":"","gender":"male","name":"Johnn
-        Dillinger","race_id":2,"security_status":3.83155339}'
-  recorded_at: Sat, 03 Jan 2026 14:16:07 GMT
+      string: '{"birthday":"2010-01-15T15:26:00Z","bloodline_id":4,"corporation_id":1000171,"gender":"male","name":"Johnn
+        Dillinger","race_id":2,"achievement_score":0,"description":"","security_status":3.9}
+
+        '
+  recorded_at: Mon, 28 Sep 2026 15:10:15 GMT
 recorded_with: VCR 6.4.0

@@ -1,0 +1,68 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://esi.evetech.net/military-campaigns/7519d7db-1e95-4d0e-bbbe-c47cd47de3c0/objectives?limit=10
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.49.0
+      Accept:
+      - application/json
+      Accept-Language:
+      - en
+      X-Tenant:
+      - tranquility
+      X-Compatibility-Date:
+      - '2026-08-18'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 27 Sep 2026 22:35:39 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Etag, Retry-After, X-Compatibility-Date, X-Esi-Error-Limit-Remain, X-Esi-Error-Limit-Reset,
+        X-Pages, X-Ratelimit-Group, X-Ratelimit-Limit, X-Ratelimit-Remaining, X-Ratelimit-Used
+      Cache-Control:
+      - public, max-age=0, must-revalidate
+      Content-Language:
+      - en
+      Expires:
+      - Sun, 27 Sep 2026 22:35:39 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept-Language
+      - X-Compatibility-Date
+      - X-Tenant
+      X-Compatibility-Date:
+      - '2026-08-04'
+      X-Ratelimit-Group:
+      - military-campaign
+      X-Ratelimit-Limit:
+      - 300/15m
+      X-Ratelimit-Remaining:
+      - '284'
+      X-Ratelimit-Used:
+      - '2'
+    body:
+      encoding: UTF-8
+      string: '{"cursor":{"before":"1.GNlDvvuTfAB_","after":"1.GNlOBQA-Iii3AQ=="},"objectives":[{"id":"36fe563a-bc80-4c86-94a4-114358a8912b","state":"Active","progress":6634,"participants":{"total":1181,"committed":1078,"contributors":854},"last_modified":"2026-09-27T19:20:14.4Z","started":"2026-08-20T16:00:03.061Z"},{"id":"5365f833-0e18-4df7-8e46-74e21cfeea85","state":"Active","progress":23167,"participants":{"total":2926,"committed":1913,"contributors":771},"last_modified":"2026-09-27T19:41:00.943Z","started":"2026-06-17T11:00:43.068Z"},{"id":"62f1574f-17df-4f96-ab37-7483cb3afcd0","state":"Active","progress":22216,"participants":{"total":4513,"committed":4216,"contributors":3734},"last_modified":"2026-09-27T20:29:56.256Z","started":"2026-06-16T23:00:23.069Z"},{"id":"5c46eb43-4fef-4ca8-9399-533accef99e4","state":"Active","progress":15,"participants":{"total":50,"committed":46,"contributors":15},"last_modified":"2026-09-27T21:00:14.44Z","started":"2026-09-24T16:00:47.143Z"},{"id":"54f7fd2a-f662-48dd-8035-d1463a4ac751","state":"Active","progress":1856,"participants":{"total":475,"committed":442,"contributors":303},"last_modified":"2026-09-27T21:37:44.629Z","started":"2026-09-14T11:00:02.063Z"},{"id":"fc7576eb-ed15-41fc-9ec9-518cf9038b75","state":"Active","progress":5701092,"participants":{"total":1289,"committed":925,"contributors":688},"last_modified":"2026-09-27T21:58:53.47Z","started":"2026-08-13T16:00:46.088Z"},{"id":"f32a8476-35c2-452b-add3-c2f3f9ff3792","state":"Active","progress":558731,"participants":{"total":120,"committed":88,"contributors":46},"last_modified":"2026-09-27T21:59:04.667Z","started":"2026-09-22T23:00:17.044Z"},{"id":"43c786c9-7f00-4ff1-bf01-97350124a3d7","state":"Active","progress":12699,"participants":{"total":670,"committed":572,"contributors":349},"last_modified":"2026-09-27T22:13:39.381Z","started":"2026-09-23T11:00:30.102Z"},{"id":"69ef2876-13a4-46c1-bcef-300854cb5d4d","state":"Active","progress":266,"participants":{"total":285,"committed":240,"contributors":81},"last_modified":"2026-09-27T22:14:08.242Z","started":"2026-09-15T16:00:22.036Z"},{"id":"fbb00418-82f4-4128-bd89-4102d97d6fd7","state":"Active","progress":107,"participants":{"total":756,"committed":547,"contributors":107},"last_modified":"2026-09-27T22:28:30.242Z","started":"2026-09-25T23:00:37.039Z"}]}
+
+        '
+  recorded_at: Sun, 27 Sep 2026 22:35:39 GMT
+recorded_with: VCR 6.4.0

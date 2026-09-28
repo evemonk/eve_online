@@ -1,0 +1,70 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://esi.evetech.net/military-campaigns/7519d7db-1e95-4d0e-bbbe-c47cd47de3c0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.49.0
+      Accept:
+      - application/json
+      Accept-Language:
+      - en
+      X-Tenant:
+      - tranquility
+      X-Compatibility-Date:
+      - '2026-08-18'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 27 Sep 2026 22:35:38 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '155'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Etag, Retry-After, X-Compatibility-Date, X-Esi-Error-Limit-Remain, X-Esi-Error-Limit-Reset,
+        X-Pages, X-Ratelimit-Group, X-Ratelimit-Limit, X-Ratelimit-Remaining, X-Ratelimit-Used
+      Cache-Control:
+      - public, max-age=60
+      Content-Language:
+      - en
+      Expires:
+      - Sun, 27 Sep 2026 22:36:38 GMT
+      Last-Modified:
+      - Wed, 16 Sep 2026 10:24:53 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept-Language
+      - X-Compatibility-Date
+      - X-Tenant
+      X-Compatibility-Date:
+      - '2026-08-04'
+      X-Ratelimit-Group:
+      - military-campaign
+      X-Ratelimit-Limit:
+      - 300/15m
+      X-Ratelimit-Remaining:
+      - '286'
+      X-Ratelimit-Used:
+      - '2'
+    body:
+      encoding: UTF-8
+      string: '{"id":"7519d7db-1e95-4d0e-bbbe-c47cd47de3c0","state":"Completed","progress":30,"started":"2026-06-09T11:00:09.069Z","finished":"2026-09-16T10:24:53.154Z"}
+
+        '
+  recorded_at: Sun, 27 Sep 2026 22:35:38 GMT
+recorded_with: VCR 6.4.0

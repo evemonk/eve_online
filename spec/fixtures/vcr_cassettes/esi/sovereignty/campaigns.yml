@@ -1,0 +1,74 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://esi.evetech.net/sovereignty/campaigns
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.49.0
+      Accept:
+      - application/json
+      Accept-Language:
+      - en
+      X-Tenant:
+      - tranquility
+      X-Compatibility-Date:
+      - '2026-08-18'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 27 Sep 2026 22:13:40 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '1423'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Etag, Retry-After, X-Compatibility-Date, X-Esi-Error-Limit-Remain, X-Esi-Error-Limit-Reset,
+        X-Pages, X-Ratelimit-Group, X-Ratelimit-Limit, X-Ratelimit-Remaining, X-Ratelimit-Used
+      Cache-Control:
+      - public
+      Content-Language:
+      - en
+      Etag:
+      - '"6b26b65881048d00336b8df23ad39108857d04e964301f9edb815222"'
+      Expires:
+      - Sun, 27 Sep 2026 22:13:44 GMT
+      Last-Modified:
+      - Sun, 27 Sep 2026 22:13:39 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept-Language
+      - X-Compatibility-Date
+      - X-Tenant
+      X-Compatibility-Date:
+      - '2020-01-01'
+      X-Esi-Cache-Status:
+      - HIT
+      X-Esi-Request-Id:
+      - 255af0d7-bc41-4ff3-a053-b1d7cd980601
+      X-Ratelimit-Group:
+      - sovereignty
+      X-Ratelimit-Limit:
+      - 600/15m
+      X-Ratelimit-Remaining:
+      - '594'
+      X-Ratelimit-Used:
+      - '2'
+    body:
+      encoding: UTF-8
+      string: '[{"attackers_score":0.4,"campaign_id":112209,"constellation_id":20000618,"defender_id":99009287,"defender_score":0.6,"event_type":"ihub_defense","solar_system_id":30004228,"start_time":"2026-09-28T09:46:24Z","structure_id":1055170539463},{"attackers_score":0.4,"campaign_id":112210,"constellation_id":20000618,"defender_id":99009287,"defender_score":0.6,"event_type":"ihub_defense","solar_system_id":30004227,"start_time":"2026-09-28T13:13:10Z","structure_id":1054946041709},{"attackers_score":0.4,"campaign_id":112211,"constellation_id":20000618,"defender_id":99009287,"defender_score":0.6,"event_type":"ihub_defense","solar_system_id":30004225,"start_time":"2026-09-28T13:41:14Z","structure_id":1051366105004},{"attackers_score":0.4,"campaign_id":112212,"constellation_id":20000420,"defender_id":99008788,"defender_score":0.6,"event_type":"ihub_defense","solar_system_id":30002861,"start_time":"2026-09-29T05:39:32Z","structure_id":1055504744761},{"attackers_score":0.4,"campaign_id":112213,"constellation_id":20000417,"defender_id":99008788,"defender_score":0.6,"event_type":"ihub_defense","solar_system_id":30002841,"start_time":"2026-09-29T06:06:09Z","structure_id":1054807704455},{"attackers_score":0.4,"campaign_id":112214,"constellation_id":20000758,"defender_id":99012328,"defender_score":0.6,"event_type":"ihub_defense","solar_system_id":30005181,"start_time":"2026-09-29T17:51:19Z","structure_id":1053374031610}]'
+  recorded_at: Sun, 27 Sep 2026 22:13:40 GMT
+recorded_with: VCR 6.4.0

@@ -21,11 +21,11 @@ RSpec.describe "Get region information" do
 
   specify { expect(subject.constellation_ids.first).to eq(20_000_001) }
 
-  specify { expect(subject.etag).to eq("W/\"eb02b32cba3ed2b28639d4d552243949671a18d2b8aca54f4271cfbb\"") }
+  specify { expect(subject.etag).to eq("W/\"913b3f4e2ed35371bed5a2ddb54a29f6451d6062f85c3490634a33b0\"") }
 
   specify { expect(subject.cache_status).to eq("HIT") }
 
-  specify { expect(subject.request_id).to eq("0b4509a7-b87e-4f3a-b8d0-2e2186aedb31") }
+  specify { expect(subject.request_id).to eq("b484e5d2-e72e-43a1-965b-f61ace5f5056") }
 
   specify { expect(subject.ratelimit_group).to eq(nil) }
 
@@ -37,5 +37,5 @@ RSpec.describe "Get region information" do
 
   specify { expect(subject.error_limit_remain).to eq(100) }
 
-  specify { expect(subject.error_limit_reset).to eq(3) }
+  specify { expect(subject.error_limit_reset).to eq(36) }
 end

@@ -24,17 +24,17 @@ RSpec.describe "Get corporation information" do
       member_count: 12,
       name: "Bullshit Bingo Club",
       shares: 1000,
-      tax_rate: 0.10000000149011612,
+      tax_rate: nil,
       ticker: "BUBIC",
-      war_eligible: nil
+      war_eligible: false
     )
   end
 
-  specify { expect(subject.etag).to eq('"ffbbcb2cd0c4ae79252e8244cd51b12a1d1810cbcd954813ccfa2467"') }
+  specify { expect(subject.etag).to eq('W/"c545bd504007b59757a4584f735f47fcb8aadf18dc3ad96264191088f0ab1339"') }
 
-  specify { expect(subject.cache_status).to eq("HIT") }
+  specify { expect(subject.cache_status).to eq("MISS") }
 
-  specify { expect(subject.request_id).to eq("2ed41162-8a52-4a9c-8d87-5d54f94f42d4") }
+  specify { expect(subject.request_id).to eq(nil) }
 
   specify { expect(subject.ratelimit_group).to eq(nil) }
 
@@ -46,5 +46,5 @@ RSpec.describe "Get corporation information" do
 
   specify { expect(subject.error_limit_remain).to eq(100) }
 
-  specify { expect(subject.error_limit_reset).to eq(41) }
+  specify { expect(subject.error_limit_reset).to eq(44) }
 end

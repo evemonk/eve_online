@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - EveOnline API (https://github.com/evemonk/eve_online) v0.47.0
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.49.0
       Accept:
       - application/json
       Accept-Language:
@@ -16,7 +16,7 @@ http_interactions:
       X-Tenant:
       - tranquility
       X-Compatibility-Date:
-      - '2025-12-16'
+      - '2026-08-18'
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -25,15 +25,13 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 12 Mar 2026 14:07:57 GMT
+      - Mon, 28 Sep 2026 15:10:24 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
       - '1317'
       Connection:
       - keep-alive
-      Access-Control-Allow-Credentials:
-      - 'true'
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Expose-Headers:
@@ -44,17 +42,18 @@ http_interactions:
       Content-Language:
       - en
       Etag:
-      - W/"eb02b32cba3ed2b28639d4d552243949671a18d2b8aca54f4271cfbb"
+      - W/"913b3f4e2ed35371bed5a2ddb54a29f6451d6062f85c3490634a33b0"
       Expires:
-      - Fri, 13 Mar 2026 11:05:00 GMT
+      - Tue, 29 Sep 2026 11:05:00 GMT
       Last-Modified:
-      - Wed, 11 Mar 2026 11:03:14 GMT
+      - Sun, 27 Sep 2026 11:03:00 GMT
       Strict-Transport-Security:
       - max-age=31536000
       Vary:
       - Accept-Language
       - Accept-Language
       - X-Compatibility-Date
+      - X-Tenant
       X-Compatibility-Date:
       - '2020-01-01'
       X-Esi-Cache-Status:
@@ -62,9 +61,9 @@ http_interactions:
       X-Esi-Error-Limit-Remain:
       - '100'
       X-Esi-Error-Limit-Reset:
-      - '3'
+      - '36'
       X-Esi-Request-Id:
-      - 0b4509a7-b87e-4f3a-b8d0-2e2186aedb31
+      - b484e5d2-e72e-43a1-965b-f61ace5f5056
     body:
       encoding: UTF-8
       string: '{"constellations":[20000001,20000002,20000003,20000004,20000005,20000006,20000007,20000008,20000009,20000010,20000011,20000012,20000013,20000014,20000015,20000016],"description":"The
@@ -83,5 +82,5 @@ http_interactions:
         an increase in economic prosperity. This harsh trail is a point of pride for
         all who call themselves Ammatar, and it has bolstered their faith in the Amarrian
         way to no end.","name":"Derelik","region_id":10000001}'
-  recorded_at: Thu, 12 Mar 2026 14:07:57 GMT
+  recorded_at: Mon, 28 Sep 2026 15:10:24 GMT
 recorded_with: VCR 6.4.0

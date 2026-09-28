@@ -18,11 +18,11 @@ RSpec.describe "Get character portraits" do
       small: "https://images.evetech.net/characters/1337512245/portrait?tenant=tranquility&size=64")
   end
 
-  specify { expect(subject.etag).to eq("W/\"c40912e5115e3a15d7a426241dbc29967f047ffae6bbac677c3e0c50\"") }
+  specify { expect(subject.etag).to eq("\"913b3f4e2ed35371bed5a2ddb54a29f6451d6062f85c3490634a33b0\"") }
 
-  specify { expect(subject.cache_status).to eq("HIT") }
+  specify { expect(subject.cache_status).to eq("MISS") }
 
-  specify { expect(subject.request_id).to eq("ede0e3cf-d9c6-4c2e-adde-23adaaae581c") }
+  specify { expect(subject.request_id).to eq("446fb29c-ae44-4636-bce2-bf2beec9a9d9") }
 
   specify { expect(subject.ratelimit_group).to eq("char-detail") }
 

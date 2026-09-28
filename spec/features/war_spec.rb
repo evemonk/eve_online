@@ -49,15 +49,15 @@ RSpec.describe "Get war information" do
 
   specify { expect(subject.etag).to eq("\"56a0cb7e82dc9ae8ace4cffe18236c3083a92a1e650372f9cfd2ee8a\"") }
 
-  specify { expect(subject.cache_status).to eq("HIT") }
+  specify { expect(subject.cache_status).to eq("MISS") }
 
-  specify { expect(subject.request_id).to eq("bf760fc1-afb2-449b-9640-02cc8111e95d") }
+  specify { expect(subject.request_id).to eq("8b40fd67-49d6-4362-864e-271eedac5215") }
 
   specify { expect(subject.ratelimit_group).to eq("killmail") }
 
   specify { expect(subject.ratelimit_limit).to eq("3600/15m") }
 
-  specify { expect(subject.ratelimit_remaining).to eq(3_505) }
+  specify { expect(subject.ratelimit_remaining).to eq(3_598) }
 
   specify { expect(subject.ratelimit_used).to eq(2) }
 

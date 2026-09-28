@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://esi.evetech.net/freelance-jobs?limit=10
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.49.0
+      Accept:
+      - application/json
+      Accept-Language:
+      - en
+      X-Tenant:
+      - tranquility
+      X-Compatibility-Date:
+      - '2026-08-18'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 27 Sep 2026 22:31:14 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Etag, Retry-After, X-Compatibility-Date, X-Esi-Error-Limit-Remain, X-Esi-Error-Limit-Reset,
+        X-Pages, X-Ratelimit-Group, X-Ratelimit-Limit, X-Ratelimit-Remaining, X-Ratelimit-Used
+      Cache-Control:
+      - public, max-age=0, must-revalidate
+      Content-Language:
+      - en
+      Expires:
+      - Sun, 27 Sep 2026 22:31:14 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept-Language
+      - X-Compatibility-Date
+      - X-Tenant
+      X-Compatibility-Date:
+      - '2025-12-16'
+      X-Ratelimit-Group:
+      - freelance-job
+      X-Ratelimit-Limit:
+      - 12000/15m
+      X-Ratelimit-Remaining:
+      - '11990'
+      X-Ratelimit-Used:
+      - '2'
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJjdXJzb3IiOnsiYmVmb3JlIjoiMS5HTmxOOERLWDMwUT0iLCJhZnRlciI6IjEuR05sT0tlcjgtbWc9In0sImZyZWVsYW5jZV9qb2JzIjpbeyJpZCI6ImMyMGI2ODM1LTYwNzAtNGZkYS1iMzc3LWFiYTdjMjVhMzllNiIsIm5hbWUiOiI0MyBQTEFHJyBCVVlCQUNLIiwic3RhdGUiOiJBY3RpdmUiLCJsYXN0X21vZGlmaWVkIjoiMjAyNi0wOS0yN1QyMjoyNzowMC44OTJaIiwicHJvZ3Jlc3MiOnsiY3VycmVudCI6MjE1MjA3MCwiZGVzaXJlZCI6NDAwMDAwMH0sInJld2FyZCI6eyJpbml0aWFsIjoxMDgwMDAwMDAsInJlbWFpbmluZyI6NDk4OTQxMTB9fSx7ImlkIjoiNzg3NGU3NDctMjljNy00Y2NjLTk0ZmMtMWM3ZTMxMmI4ZjczIiwibmFtZSI6IkNPTVBSRVNTRUQgUFlST1hFUkVTIiwic3RhdGUiOiJBY3RpdmUiLCJsYXN0X21vZGlmaWVkIjoiMjAyNi0wOS0yN1QyMjoyODoyNi4zNzFaIiwicHJvZ3Jlc3MiOnsiY3VycmVudCI6NzQ0Njc2LCJkZXNpcmVkIjo1MDAwMDAwfSwicmV3YXJkIjp7ImluaXRpYWwiOjExMDAwMDAwMCwicmVtYWluaW5nIjo5MzYxNzEyOH19LHsiaWQiOiJiNWQzY2VlNC02Nzk4LTQxYmItOWFlOS02Yjg1YTMxYzUwMmMiLCJuYW1lIjoiQUxMIFRZUEVTIE9GIFBMQUdJT0NMQVNFIiwic3RhdGUiOiJBY3RpdmUiLCJsYXN0X21vZGlmaWVkIjoiMjAyNi0wOS0yN1QyMjoyODo0Ni41NjhaIiwicHJvZ3Jlc3MiOnsiY3VycmVudCI6Mzc2NDgsImRlc2lyZWQiOjM1MDAwMDB9LCJyZXdhcmQiOnsiaW5pdGlhbCI6OTgwMDAwMDAsInJlbWFpbmluZyI6OTY5NDU4NTZ9fSx7ImlkIjoiMzA3NDBmN2QtMTY5ZC00ZGRkLWE1MTYtNzYyNWMyYWU4OTEyIiwibmFtZSI6IlNBVCAtIENvbWJhdCBBaXIgUGF0cm9sIiwic3RhdGUiOiJBY3RpdmUiLCJsYXN0X21vZGlmaWVkIjoiMjAyNi0wOS0yN1QyMjozMDoyMC4zMzFaIiwicHJvZ3Jlc3MiOnsiY3VycmVudCI6MTQ0NDMsImRlc2lyZWQiOjUwMDAwfSwicmV3YXJkIjp7ImluaXRpYWwiOjUwMDAwMDAwLCJyZW1haW5pbmciOjM1NTU3MDAwfX0seyJpZCI6IjExNWFiMDkzLTUzNDctNDhlYS1hODUwLTc1N2VkNTc0ZDhlYSIsIm5hbWUiOiJOZXcgUGxheWVyIFN1cHBvcnQgUHJvZ3JhbSBieSBcIlRlbmVicmlzIEFjYWRlbXlcIiIsInN0YXRlIjoiQWN0aXZlIiwibGFzdF9tb2RpZmllZCI6IjIwMjYtMDktMjdUMjI6MzA6NTIuOTgzWiIsInByb2dyZXNzIjp7ImN1cnJlbnQiOjU0NzAxLCJkZXNpcmVkIjoxOTAwMDB9LCJyZXdhcmQiOnsiaW5pdGlhbCI6NzYwMDAwMDAwLCJyZW1haW5pbmciOjU0MTE5NjAwMH19LHsiaWQiOiI0YTUyNDU2OC00OTc2LTQwOWYtYjQ5OC1mYzYzZDMzN2NlMDYiLCJuYW1lIjoiQm9udXMgTlBDIEJvdW50eSBQYXltZW50cyAoUmVhZCBEZXNjcmlwdGlvbikiLCJzdGF0ZSI6IkFjdGl2ZSIsImxhc3RfbW9kaWZpZWQiOiIyMDI2LTA5LTI3VDIyOjMwOjUzLjAwNloiLCJwcm9ncmVzcyI6eyJjdXJyZW50Ijo1NjAsImRlc2lyZWQiOjQwMDAwMH0sInJld2FyZCI6eyJpbml0aWFsIjoxNjAwMDAwMDAwLCJyZW1haW5pbmciOjE1OTc3NjAwMDB9fSx7ImlkIjoiMWFmMTQ2ZWEtOWI0OC00NDE4LTgyZDYtZDA2NDFiYzU5YjViIiwibmFtZSI6Ii4uOjpNaW5pbmctUmFjZTo6Li4g4p2kIEZSRUUgUkVXQVJEUyDinaQiLCJzdGF0ZSI6IkFjdGl2ZSIsImxhc3RfbW9kaWZpZWQiOiIyMDI2LTA5LTI3VDIyOjMwOjU3Ljg2OVoiLCJwcm9ncmVzcyI6eyJjdXJyZW50IjoxMDQ3NDc5NywiZGVzaXJlZCI6OTk5OTk5OTk5OTk5OTk5OTk5fX0seyJpZCI6IjZkMmExOGE5LTQyMjYtNDcxMS04OGUzLTE3YWJlODhjYTEyNyIsIm5hbWUiOiJEb21haW4gTlBDIENsZWFuLXVwIiwic3RhdGUiOiJBY3RpdmUiLCJsYXN0X21vZGlmaWVkIjoiMjAyNi0wOS0yN1QyMjozMTowMi43MjNaIiwicHJvZ3Jlc3MiOnsiY3VycmVudCI6MzEyLCJkZXNpcmVkIjoxMDAwfSwicmV3YXJkIjp7ImluaXRpYWwiOjI1MDAwMDAwMCwicmVtYWluaW5nIjoxNzE3NTAwMDB9fSx7ImlkIjoiNzA3NGU1NTgtZjcyOS00YTc3LTg0MzAtNDUxMGU1MjE3ZDBiIiwibmFtZSI6ItCa0J7Qn9CQ0JXQnCEiLCJzdGF0ZSI6IkFjdGl2ZSIsImxhc3RfbW9kaWZpZWQiOiIyMDI2LTA5LTI3VDIyOjMxOjAzLjU3NFoiLCJwcm9ncmVzcyI6eyJjdXJyZW50IjoyMTQ1Mjc3OSwiZGVzaXJlZCI6MTAwMDAwMDAwMH0sInJld2FyZCI6eyJpbml0aWFsIjoxMDAwMDAwMCwicmVtYWluaW5nIjo5Nzg1NDcyLjIxfX0seyJpZCI6ImQ5NDliOTU3LWJkMjUtNDk3Yy05NDQxLTRjNTM2ZTEzZjI0NCIsIm5hbWUiOiJOZXcgUGxheWVyIFN1cHBvcnQgUHJvZ3JhbSBieSBcIlRlbmVicmlzIEFjYWRlbXlcIiIsInN0YXRlIjoiQWN0aXZlIiwibGFzdF9tb2RpZmllZCI6IjIwMjYtMDktMjdUMjI6MzE6MDguNzk5WiIsInByb2dyZXNzIjp7ImN1cnJlbnQiOjEzNTUzOSwiZGVzaXJlZCI6MTc1MDAwfSwicmV3YXJkIjp7ImluaXRpYWwiOjcwMDAwMDAwMCwicmVtYWluaW5nIjoxNTc4NDQwMDB9fV19Cg==
+  recorded_at: Sun, 27 Sep 2026 22:31:15 GMT
+recorded_with: VCR 6.4.0

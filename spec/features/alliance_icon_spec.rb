@@ -18,11 +18,11 @@ RSpec.describe "Get alliance icon" do
     )
   end
 
-  specify { expect(subject.etag).to eq('"d53e06315fe6f15f4dd47da86f16b3cb51977abc22701227d931f03b"') }
+  specify { expect(subject.etag).to eq("\"913b3f4e2ed35371bed5a2ddb54a29f6451d6062f85c3490634a33b0\"") }
 
   specify { expect(subject.cache_status).to eq("MISS") }
 
-  specify { expect(subject.request_id).to eq("bf2c1384-ddd0-4d07-b53e-ccdfd2cfce4f") }
+  specify { expect(subject.request_id).to eq("eb0f3e3b-728b-407e-8eea-030bf9d0ce9c") }
 
   specify { expect(subject.ratelimit_group).to eq(nil) }
 
@@ -34,5 +34,5 @@ RSpec.describe "Get alliance icon" do
 
   specify { expect(subject.error_limit_remain).to eq(100) }
 
-  specify { expect(subject.error_limit_reset).to eq(12) }
+  specify { expect(subject.error_limit_reset).to eq(48) }
 end

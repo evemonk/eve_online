@@ -11,15 +11,15 @@ RSpec.describe "Get attributes" do
 
   subject { client.dogma.attributes }
 
-  specify { expect(subject.attribute_ids.size).to eq(2_825) }
+  specify { expect(subject.attribute_ids.size).to eq(2_871) }
 
-  specify { expect(subject.attribute_ids.first).to eq(1_413) }
+  specify { expect(subject.attribute_ids.first).to eq(1_436) }
 
-  specify { expect(subject.etag).to eq("W/\"eb02b32cba3ed2b28639d4d552243949671a18d2b8aca54f4271cfbb\"") }
+  specify { expect(subject.etag).to eq("W/\"913b3f4e2ed35371bed5a2ddb54a29f6451d6062f85c3490634a33b0\"") }
 
   specify { expect(subject.cache_status).to eq("HIT") }
 
-  specify { expect(subject.request_id).to eq("9744cc2e-f955-47d3-b9a5-4b3aef360988") }
+  specify { expect(subject.request_id).to eq("db89bbc5-faf4-4bbe-abb0-5c147c2a8634") }
 
   specify { expect(subject.ratelimit_group).to eq(nil) }
 
@@ -31,5 +31,5 @@ RSpec.describe "Get attributes" do
 
   specify { expect(subject.error_limit_remain).to eq(100) }
 
-  specify { expect(subject.error_limit_reset).to eq(19) }
+  specify { expect(subject.error_limit_reset).to eq(44) }
 end

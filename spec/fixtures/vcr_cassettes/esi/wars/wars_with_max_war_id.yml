@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - EveOnline API (https://github.com/evemonk/eve_online) v0.47.0
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.49.0
       Accept:
       - application/json
       Accept-Language:
@@ -16,7 +16,7 @@ http_interactions:
       X-Tenant:
       - tranquility
       X-Compatibility-Date:
-      - '2025-12-16'
+      - '2026-08-18'
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -25,15 +25,13 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 20 Feb 2026 18:33:08 GMT
+      - Mon, 28 Sep 2026 15:10:27 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
       - '19'
       Connection:
       - keep-alive
-      Access-Control-Allow-Credentials:
-      - 'true'
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Expose-Headers:
@@ -46,30 +44,31 @@ http_interactions:
       Etag:
       - '"f1c28227847464613c1cb82dfc8a8c859b7b6857fad2c2a54c562812"'
       Expires:
-      - Fri, 20 Feb 2026 19:33:08 GMT
+      - Mon, 28 Sep 2026 16:10:27 GMT
       Last-Modified:
-      - Fri, 20 Feb 2026 18:33:08 GMT
+      - Mon, 28 Sep 2026 15:10:27 GMT
       Strict-Transport-Security:
       - max-age=31536000
       Vary:
       - Accept-Language
       - X-Compatibility-Date
+      - X-Tenant
       X-Compatibility-Date:
       - '2020-01-01'
       X-Esi-Cache-Status:
       - MISS
       X-Esi-Request-Id:
-      - b0462128-7376-46ef-900f-3aa27383e6cc
+      - 91e80d2c-e411-4bc6-99e3-333897fba83f
       X-Ratelimit-Group:
       - killmail
       X-Ratelimit-Limit:
       - 3600/15m
       X-Ratelimit-Remaining:
-      - '3595'
+      - '3594'
       X-Ratelimit-Used:
       - '2'
     body:
       encoding: UTF-8
       string: "[9,8,7,6,5,4,3,2,1]"
-  recorded_at: Fri, 20 Feb 2026 18:33:08 GMT
+  recorded_at: Mon, 28 Sep 2026 15:10:27 GMT
 recorded_with: VCR 6.4.0

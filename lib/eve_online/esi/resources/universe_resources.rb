@@ -179,10 +179,36 @@ module EveOnline
           Models::Structures.new(body: response.body, headers: response.headers)
         end
 
+        # @param names [Array<String>] Names to resolve, up to 500.
+        def ids(names:)
+          response = post_request("universe/ids", body: names.to_json)
+
+          Models::UniverseIds.new(attributes: response.body, headers: response.headers)
+        end
+
+        # @param ids [Array<Integer>] IDs to resolve, up to 1000.
+        def names(ids:)
+          response = post_request("universe/names", body: ids.to_json)
+
+          Collection.from_response(response, type: Models::UniverseName)
+        end
+
+        def system_jumps
+          response = get_request("universe/system_jumps")
+
+          Collection.from_response(response, type: Models::SystemJump)
+        end
+
+        def system_kills
+          response = get_request("universe/system_kills")
+
+          Collection.from_response(response, type: Models::SystemKill)
+        end
+
         private
 
         def compatibility_date
-          "2025-12-16"
+          "2026-08-18"
         end
       end
     end

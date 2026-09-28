@@ -1,0 +1,72 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://esi.evetech.net/contracts/public/items/235554525?page=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.49.0
+      Accept:
+      - application/json
+      Accept-Language:
+      - en
+      X-Tenant:
+      - tranquility
+      X-Compatibility-Date:
+      - '2026-08-18'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 27 Sep 2026 22:22:20 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '177'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Etag, Retry-After, X-Compatibility-Date, X-Esi-Error-Limit-Remain, X-Esi-Error-Limit-Reset,
+        X-Pages, X-Ratelimit-Group, X-Ratelimit-Limit, X-Ratelimit-Remaining, X-Ratelimit-Used
+      Cache-Control:
+      - public
+      Content-Language:
+      - en
+      Etag:
+      - '"b50dae137a0fe3d67d1385ad4626a661509ccbb419894d732f544f28"'
+      Expires:
+      - Sun, 27 Sep 2026 22:39:18 GMT
+      Last-Modified:
+      - Sun, 27 Sep 2026 21:39:18 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept-Language
+      - X-Compatibility-Date
+      - X-Tenant
+      X-Compatibility-Date:
+      - '2020-01-01'
+      X-Esi-Cache-Status:
+      - HIT
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '40'
+      X-Esi-Request-Id:
+      - 14441b54-23b5-4466-a9d1-2668fc91a5db
+      X-Pages:
+      - '1'
+    body:
+      encoding: UTF-8
+      string: '[{"is_blueprint_copy":true,"is_included":true,"item_id":1047092007473,"material_efficiency":5,"quantity":1,"record_id":5302078925,"runs":1,"time_efficiency":10,"type_id":77416}]'
+  recorded_at: Sun, 27 Sep 2026 22:22:20 GMT
+recorded_with: VCR 6.4.0

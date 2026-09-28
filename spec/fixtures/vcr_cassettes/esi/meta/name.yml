@@ -1,0 +1,83 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://esi.evetech.net/meta/name
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.49.0
+      Accept:
+      - application/json
+      Accept-Language:
+      - en
+      X-Tenant:
+      - tranquility
+      X-Compatibility-Date:
+      - '2026-08-18'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 27 Sep 2026 21:53:53 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '1326'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Etag, Retry-After, X-Compatibility-Date, X-Esi-Error-Limit-Remain, X-Esi-Error-Limit-Reset,
+        X-Pages, X-Ratelimit-Group, X-Ratelimit-Limit, X-Ratelimit-Remaining, X-Ratelimit-Used
+      Cache-Control:
+      - public, max-age=600
+      Content-Language:
+      - en
+      Expires:
+      - Sun, 27 Sep 2026 22:03:53 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept-Language
+      - X-Compatibility-Date
+      - X-Tenant
+      X-Compatibility-Date:
+      - '2026-07-17'
+      X-Ratelimit-Group:
+      - meta
+      X-Ratelimit-Limit:
+      - 150/15m
+      X-Ratelimit-Remaining:
+      - '130'
+      X-Ratelimit-Used:
+      - '2'
+    body:
+      encoding: UTF-8
+      string: '{"current":"EVE SKINR Ingenuity (ESI)","history":[{"date":"2026-08-18","name":"EVE
+        SKINR Ingenuity (ESI)"},{"date":"2026-08-04","name":"EVE Soldier Inspiration
+        (ESI)"},{"date":"2026-07-21","name":"EVE Swatch Illustrators (ESI)"},{"date":"2026-07-14","name":"EVE
+        Swagger Incineration (ESI)"},{"date":"2026-06-09","name":"EVE Showcase Insignia
+        (ESI)"},{"date":"2026-05-19","name":"EVE Sovereignty Interlink (ESI)"},{"date":"2026-04-02","name":"EVE
+        Spring Inebriation (ESI)"},{"date":"2026-04-01","name":"EVE Shipposting Intelligence
+        (ESI)"},{"date":"2026-02-24","name":"EVE Sunset Initiative (ESI)"},{"date":"2026-02-19","name":"EVE
+        Speed Inhibitor (ESI)"},{"date":"2026-01-27","name":"EVE Smart Invalidation
+        (ESI)"},{"date":"2025-12-19","name":"EVE Santa''s Interns (ESI)"},{"date":"2025-12-16","name":"EVE
+        Subcontracting Interface (ESI)"},{"date":"2025-11-06","name":"EVE Status Indicator
+        (ESI)"},{"date":"2025-10-07","name":"EVE Strict Interaction (ESI)"},{"date":"2025-09-30","name":"EVE
+        (Solar)System Interconnect (ESI)"},{"date":"2025-09-22","name":"EVE Static
+        Information (ESI)"},{"date":"2025-08-07","name":"EVE Stable Infrastructure
+        (ESI)"},{"date":"2025-07-25","name":"EVE Sandbox Ingress (ESI)"},{"date":"2025-07-22","name":"EVE
+        Stellar Information (ESI)"},{"date":"2025-06-25","name":"EVE Service Interface
+        (ESI)"}]}
+
+        '
+  recorded_at: Sun, 27 Sep 2026 21:53:53 GMT
+recorded_with: VCR 6.4.0

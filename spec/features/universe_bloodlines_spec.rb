@@ -29,11 +29,11 @@ RSpec.describe "Get bloodlines" do
     )
   end
 
-  specify { expect(subject.etag).to eq("W/\"d53e06315fe6f15f4dd47da86f16b3cb51977abc22701227d931f03b\"") }
+  specify { expect(subject.etag).to eq("W/\"913b3f4e2ed35371bed5a2ddb54a29f6451d6062f85c3490634a33b0\"") }
 
   specify { expect(subject.cache_status).to eq("HIT") }
 
-  specify { expect(subject.request_id).to eq("939e18dd-42b6-4537-b94a-3b18fb5e51fe") }
+  specify { expect(subject.request_id).to eq("6e381b55-5ad5-454c-bfba-3c637b13d179") }
 
   specify { expect(subject.ratelimit_group).to eq(nil) }
 
@@ -45,5 +45,5 @@ RSpec.describe "Get bloodlines" do
 
   specify { expect(subject.error_limit_remain).to eq(100) }
 
-  specify { expect(subject.error_limit_reset).to eq(49) }
+  specify { expect(subject.error_limit_reset).to eq(40) }
 end

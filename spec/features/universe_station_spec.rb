@@ -14,7 +14,7 @@ RSpec.describe "Get station information" do
   specify do
     expect(subject.as_json).to eq(max_dockable_ship_volume: 50_000_000.0,
       name: "Tanoo V - Moon 1 - Ammatar Consulate Bureau",
-      office_rental_cost: 1_870_537.0,
+      office_rental_cost: 471_035.0,
       owner: 1_000_126,
       race_id: 2,
       reprocessing_efficiency: 0.5,
@@ -46,11 +46,11 @@ RSpec.describe "Get station information" do
       z: 182_618_726_400.0)
   end
 
-  specify { expect(subject.etag).to eq("W/\"eb02b32cba3ed2b28639d4d552243949671a18d2b8aca54f4271cfbb\"") }
+  specify { expect(subject.etag).to eq("W/\"913b3f4e2ed35371bed5a2ddb54a29f6451d6062f85c3490634a33b0\"") }
 
   specify { expect(subject.cache_status).to eq("HIT") }
 
-  specify { expect(subject.request_id).to eq("7d9dae8a-5436-40d6-b35b-d5e95a3532c8") }
+  specify { expect(subject.request_id).to eq("eee6aaf5-729f-4c04-ba73-7d7c42dbd776") }
 
   specify { expect(subject.ratelimit_group).to eq(nil) }
 
@@ -62,5 +62,5 @@ RSpec.describe "Get station information" do
 
   specify { expect(subject.error_limit_remain).to eq(100) }
 
-  specify { expect(subject.error_limit_reset).to eq(58) }
+  specify { expect(subject.error_limit_reset).to eq(36) }
 end

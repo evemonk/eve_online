@@ -17,15 +17,15 @@ RSpec.describe "Get item category information" do
       published: true)
   end
 
-  specify { expect(subject.group_ids.size).to eq(48) }
+  specify { expect(subject.group_ids.size).to eq(50) }
 
   specify { expect(subject.group_ids.first).to eq(25) }
 
-  specify { expect(subject.etag).to eq("W/\"eb02b32cba3ed2b28639d4d552243949671a18d2b8aca54f4271cfbb\"") }
+  specify { expect(subject.etag).to eq("W/\"913b3f4e2ed35371bed5a2ddb54a29f6451d6062f85c3490634a33b0\"") }
 
   specify { expect(subject.cache_status).to eq("HIT") }
 
-  specify { expect(subject.request_id).to eq("20665add-7e7d-4e58-854b-03ca0c2a64b7") }
+  specify { expect(subject.request_id).to eq("9eb5081a-f397-448c-9be0-5d3499d05463") }
 
   specify { expect(subject.ratelimit_group).to eq(nil) }
 
@@ -37,5 +37,5 @@ RSpec.describe "Get item category information" do
 
   specify { expect(subject.error_limit_remain).to eq(100) }
 
-  specify { expect(subject.error_limit_reset).to eq(33) }
+  specify { expect(subject.error_limit_reset).to eq(40) }
 end

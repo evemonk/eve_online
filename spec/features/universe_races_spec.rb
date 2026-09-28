@@ -20,11 +20,11 @@ RSpec.describe "Get character races" do
       id: 1)
   end
 
-  specify { expect(subject.etag).to eq("W/\"d53e06315fe6f15f4dd47da86f16b3cb51977abc22701227d931f03b\"") }
+  specify { expect(subject.etag).to eq("W/\"913b3f4e2ed35371bed5a2ddb54a29f6451d6062f85c3490634a33b0\"") }
 
   specify { expect(subject.cache_status).to eq("HIT") }
 
-  specify { expect(subject.request_id).to eq("4cd7fc66-7920-414a-a2fe-a503582ad0d8") }
+  specify { expect(subject.request_id).to eq("48e9c16c-080c-450f-81a6-39d0c7b01e05") }
 
   specify { expect(subject.ratelimit_group).to eq(nil) }
 
@@ -36,5 +36,5 @@ RSpec.describe "Get character races" do
 
   specify { expect(subject.error_limit_remain).to eq(100) }
 
-  specify { expect(subject.error_limit_reset).to eq(44) }
+  specify { expect(subject.error_limit_reset).to eq(37) }
 end

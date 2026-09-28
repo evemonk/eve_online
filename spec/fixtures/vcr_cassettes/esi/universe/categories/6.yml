@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - EveOnline API (https://github.com/evemonk/eve_online) v0.47.0
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.49.0
       Accept:
       - application/json
       Accept-Language:
@@ -16,7 +16,7 @@ http_interactions:
       X-Tenant:
       - tranquility
       X-Compatibility-Date:
-      - '2025-12-16'
+      - '2026-08-18'
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -25,15 +25,13 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 12 Mar 2026 17:35:27 GMT
+      - Mon, 28 Sep 2026 15:10:20 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
-      - '256'
+      - '266'
       Connection:
       - keep-alive
-      Access-Control-Allow-Credentials:
-      - 'true'
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Expose-Headers:
@@ -44,17 +42,18 @@ http_interactions:
       Content-Language:
       - en
       Etag:
-      - W/"eb02b32cba3ed2b28639d4d552243949671a18d2b8aca54f4271cfbb"
+      - W/"913b3f4e2ed35371bed5a2ddb54a29f6451d6062f85c3490634a33b0"
       Expires:
-      - Fri, 13 Mar 2026 11:05:00 GMT
+      - Tue, 29 Sep 2026 11:05:00 GMT
       Last-Modified:
-      - Wed, 11 Mar 2026 11:03:14 GMT
+      - Sun, 27 Sep 2026 11:03:00 GMT
       Strict-Transport-Security:
       - max-age=31536000
       Vary:
       - Accept-Language
       - Accept-Language
       - X-Compatibility-Date
+      - X-Tenant
       X-Compatibility-Date:
       - '2020-01-01'
       X-Esi-Cache-Status:
@@ -62,11 +61,11 @@ http_interactions:
       X-Esi-Error-Limit-Remain:
       - '100'
       X-Esi-Error-Limit-Reset:
-      - '33'
+      - '40'
       X-Esi-Request-Id:
-      - 20665add-7e7d-4e58-854b-03ca0c2a64b7
+      - 9eb5081a-f397-448c-9be0-5d3499d05463
     body:
       encoding: UTF-8
-      string: '{"category_id":6,"groups":[25,26,27,28,29,30,31,237,324,358,380,381,419,420,463,485,513,540,541,543,547,659,830,831,832,833,834,883,893,894,898,900,902,906,941,963,1022,1201,1202,1283,1305,1527,1534,1538,1972,2001,4594,4902],"name":"Ship","published":true}'
-  recorded_at: Thu, 12 Mar 2026 17:35:27 GMT
+      string: '{"category_id":6,"groups":[25,26,27,28,29,30,31,237,324,358,380,381,419,420,463,485,513,540,541,543,547,659,830,831,832,833,834,883,893,894,898,900,902,906,941,963,1022,1201,1202,1283,1305,1527,1534,1538,1972,2001,4594,4902,5087,5120],"name":"Ship","published":true}'
+  recorded_at: Mon, 28 Sep 2026 15:10:20 GMT
 recorded_with: VCR 6.4.0

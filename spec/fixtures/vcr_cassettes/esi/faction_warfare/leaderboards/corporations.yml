@@ -1,0 +1,74 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://esi.evetech.net/fw/leaderboards/corporations
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.49.0
+      Accept:
+      - application/json
+      Accept-Language:
+      - en
+      X-Tenant:
+      - tranquility
+      X-Compatibility-Date:
+      - '2026-08-18'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 27 Sep 2026 22:28:35 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '2695'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Etag, Retry-After, X-Compatibility-Date, X-Esi-Error-Limit-Remain, X-Esi-Error-Limit-Reset,
+        X-Pages, X-Ratelimit-Group, X-Ratelimit-Limit, X-Ratelimit-Remaining, X-Ratelimit-Used
+      Cache-Control:
+      - public
+      Content-Language:
+      - en
+      Etag:
+      - W/"913b3f4e2ed35371bed5a2ddb54a29f6451d6062f85c3490634a33b0"
+      Expires:
+      - Mon, 28 Sep 2026 11:05:00 GMT
+      Last-Modified:
+      - Sun, 27 Sep 2026 11:03:00 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept-Language
+      - X-Compatibility-Date
+      - X-Tenant
+      X-Compatibility-Date:
+      - '2020-01-01'
+      X-Esi-Cache-Status:
+      - HIT
+      X-Esi-Request-Id:
+      - ac58b97d-9a5e-4324-ab95-0ee84c55c561
+      X-Ratelimit-Group:
+      - factional-warfare
+      X-Ratelimit-Limit:
+      - 150/15m
+      X-Ratelimit-Remaining:
+      - '132'
+      X-Ratelimit-Used:
+      - '2'
+    body:
+      encoding: UTF-8
+      string: '{"kills":{"active_total":[{"amount":166340,"corporation_id":1000180},{"amount":145205,"corporation_id":1000181},{"amount":115789,"corporation_id":1000179},{"amount":103757,"corporation_id":1000182},{"amount":71666,"corporation_id":705444291},{"amount":61907,"corporation_id":98224639},{"amount":56362,"corporation_id":98726134},{"amount":51887,"corporation_id":98326241},{"amount":51758,"corporation_id":98407038},{"amount":48511,"corporation_id":98232099}],"last_week":[{"amount":1008,"corporation_id":98844282},{"amount":409,"corporation_id":1836808734},{"amount":362,"corporation_id":306830202},{"amount":313,"corporation_id":98598862},{"amount":279,"corporation_id":98802730},{"amount":266,"corporation_id":846656839},{"amount":259,"corporation_id":98541136},{"amount":250,"corporation_id":98785346},{"amount":242,"corporation_id":98726134},{"amount":217,"corporation_id":98407286}],"yesterday":[{"amount":78,"corporation_id":846656839},{"amount":76,"corporation_id":306830202},{"amount":73,"corporation_id":1836808734},{"amount":64,"corporation_id":98726134},{"amount":55,"corporation_id":98598862},{"amount":51,"corporation_id":1850626854},{"amount":50,"corporation_id":98541136},{"amount":42,"corporation_id":98647659},{"amount":39,"corporation_id":705444291},{"amount":38,"corporation_id":98407286}]},"victory_points":{"active_total":[{"amount":85332510,"corporation_id":1000180},{"amount":79003997,"corporation_id":1000181},{"amount":60861931,"corporation_id":1000182},{"amount":49665513,"corporation_id":1000179},{"amount":23353266,"corporation_id":98726134},{"amount":17579497,"corporation_id":705444291},{"amount":16333584,"corporation_id":98639548},{"amount":14861290,"corporation_id":98714140},{"amount":11772244,"corporation_id":98700281},{"amount":9174865,"corporation_id":917701062}],"last_week":[{"amount":423875,"corporation_id":1000180},{"amount":339856,"corporation_id":1000182},{"amount":250739,"corporation_id":917701062},{"amount":230735,"corporation_id":1000181},{"amount":183293,"corporation_id":1000179},{"amount":159276,"corporation_id":98777557},{"amount":146838,"corporation_id":98785346},{"amount":134131,"corporation_id":98819679},{"amount":130959,"corporation_id":98739896},{"amount":130743,"corporation_id":98598862}],"yesterday":[{"amount":52893,"corporation_id":1000180},{"amount":48926,"corporation_id":1000182},{"amount":33192,"corporation_id":1000181},{"amount":29344,"corporation_id":98598862},{"amount":27316,"corporation_id":917701062},{"amount":25491,"corporation_id":98778569},{"amount":25324,"corporation_id":98843968},{"amount":22362,"corporation_id":98487467},{"amount":21728,"corporation_id":98842699},{"amount":21324,"corporation_id":98762691}]}}'
+  recorded_at: Sun, 27 Sep 2026 22:28:35 GMT
+recorded_with: VCR 6.4.0

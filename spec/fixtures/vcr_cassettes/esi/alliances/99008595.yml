@@ -8,13 +8,15 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - EveOnline API (https://github.com/evemonk/eve_online) v0.46.0
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.49.0
       Accept:
       - application/json
       Accept-Language:
       - en
       X-Tenant:
       - tranquility
+      X-Compatibility-Date:
+      - '2026-08-18'
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -23,35 +25,34 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 28 Dec 2025 19:22:40 GMT
+      - Mon, 28 Sep 2026 15:57:05 GMT
       Content-Type:
-      - application/json; charset=UTF-8
+      - application/json
       Content-Length:
-      - '171'
+      - '172'
       Connection:
       - keep-alive
-      Access-Control-Allow-Credentials:
-      - 'true'
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Expose-Headers:
       - Etag, Retry-After, X-Compatibility-Date, X-Esi-Error-Limit-Remain, X-Esi-Error-Limit-Reset,
         X-Pages, X-Ratelimit-Group, X-Ratelimit-Limit, X-Ratelimit-Remaining, X-Ratelimit-Used
       Cache-Control:
-      - public
+      - public, max-age=3600, must-revalidate, stale-if-error=900
       Content-Language:
       - en
       Etag:
-      - '"5eedb79d062aad2bed4e103e149ebf728be9f2d69b63ecf186f45c1d"'
+      - W/"59a0ed33022941d1509d78106e28e5624a950ee91cde4dea41008025e30a550e"
       Expires:
-      - Sun, 28 Dec 2025 19:58:23 GMT
+      - Mon, 28 Sep 2026 16:57:05 GMT
       Last-Modified:
-      - Sun, 28 Dec 2025 18:58:23 GMT
+      - Mon, 28 Sep 2026 15:54:25 GMT
       Strict-Transport-Security:
       - max-age=31536000
       Vary:
       - Accept-Language
       - X-Compatibility-Date
+      - X-Tenant
       X-Compatibility-Date:
       - '2020-01-01'
       X-Esi-Cache-Status:
@@ -59,12 +60,12 @@ http_interactions:
       X-Esi-Error-Limit-Remain:
       - '100'
       X-Esi-Error-Limit-Reset:
-      - '20'
-      X-Esi-Request-Id:
-      - ab376bd9-2f4f-4a7f-809b-7de40de4ef26
+      - '55'
     body:
       encoding: UTF-8
       string: '{"creator_corporation_id":98573850,"creator_id":95078959,"date_founded":"2018-09-11T19:55:16Z","executor_corporation_id":98565696,"name":"The
-        Dead Parrots","ticker":"TDP"}'
-  recorded_at: Sun, 28 Dec 2025 19:22:40 GMT
+        Dead Parrots","ticker":"TDP"}
+
+        '
+  recorded_at: Mon, 28 Sep 2026 15:57:05 GMT
 recorded_with: VCR 6.4.0

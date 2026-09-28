@@ -71,5 +71,23 @@ RSpec.describe "Get character assets" do
     end
 
     specify { expect(subject.total_pages).to eq(2) }
+
+    specify { expect(subject.etag).to eq("\"797f5cde1a30e9fde17c0cabcb42c4eba3f0f948cb8fdd7fe6a266e7\"") }
+
+    specify { expect(subject.cache_status).to eq("MISS") }
+
+    specify { expect(subject.request_id).to eq("931eb0c5-9906-4eb1-bfb0-33f8c0808262") }
+
+    specify { expect(subject.ratelimit_group).to eq("char-asset") }
+
+    specify { expect(subject.ratelimit_limit).to eq("1800/15m") }
+
+    specify { expect(subject.ratelimit_remaining).to eq(1797) }
+
+    specify { expect(subject.ratelimit_used).to eq(2) }
+
+    specify { expect(subject.error_limit_remain).to eq(nil) }
+
+    specify { expect(subject.error_limit_reset).to eq(nil) }
   end
 end

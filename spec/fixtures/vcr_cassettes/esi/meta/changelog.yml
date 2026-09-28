@@ -1,0 +1,148 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://esi.evetech.net/meta/changelog
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - EveOnline API (https://github.com/evemonk/eve_online) v0.49.0
+      Accept:
+      - application/json
+      Accept-Language:
+      - en
+      X-Tenant:
+      - tranquility
+      X-Compatibility-Date:
+      - '2026-08-18'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 27 Sep 2026 21:53:43 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Etag, Retry-After, X-Compatibility-Date, X-Esi-Error-Limit-Remain, X-Esi-Error-Limit-Reset,
+        X-Pages, X-Ratelimit-Group, X-Ratelimit-Limit, X-Ratelimit-Remaining, X-Ratelimit-Used
+      Cache-Control:
+      - public, max-age=600
+      Content-Language:
+      - en
+      Expires:
+      - Sun, 27 Sep 2026 22:03:43 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept-Language
+      - X-Compatibility-Date
+      - X-Tenant
+      X-Compatibility-Date:
+      - '2025-09-26'
+      X-Ratelimit-Group:
+      - meta
+      X-Ratelimit-Limit:
+      - 150/15m
+      X-Ratelimit-Remaining:
+      - '133'
+      X-Ratelimit-Used:
+      - '2'
+    body:
+      encoding: UTF-8
+      string: '{"changelog":{"2020-01-01":[{"method":"GET","path":"/meta/changelog","compatibility_date":"2020-01-01","type":"new","description":"Initial
+        release of changelog."},{"method":"GET","path":"/meta/compatibility-dates","compatibility_date":"2020-01-01","type":"new","description":"Initial
+        release of compatibility dates."}],"2020-08-11":[{"method":"GET","path":"/status","compatibility_date":"2020-01-01","type":"changed","description":"Field
+        ''vip'' is now always present"}],"2024-07-11":[{"method":"GET","path":"/characters/{character_id}/assets","compatibility_date":"2020-01-01","type":"changed","description":"Add
+        new location flags InfrastructureHangar & MoonMaterialBay."},{"method":"GET","path":"/characters/{character_id}/notifications","compatibility_date":"2020-01-01","type":"changed","description":"Add
+        several new notification types"},{"method":"GET","path":"/characters/{character_id}/wallet/journal","compatibility_date":"2020-01-01","type":"changed","description":"Add
+        several new wallet journal ref types."},{"method":"GET","path":"/corporations/{corporation_id}/assets","compatibility_date":"2020-01-01","type":"changed","description":"Add
+        new location flags InfrastructureHangar & MoonMaterialBay."},{"method":"GET","path":"/corporations/{corporation_id}/wallets/{division}/journal","compatibility_date":"2020-01-01","type":"changed","description":"Add
+        several new wallet journal ref types."},{"method":"GET","path":"/markets/{region_id}/types","compatibility_date":"2020-01-01","type":"changed","description":"Update
+        the Swagger spec to indicate a possible 404 response when requests are made
+        to regions that do not exist."},{"method":"GET","path":"/universe/races","compatibility_date":"2020-01-01","type":"changed","description":"Add
+        the Jove and Triglavian races to the list of returned races."}],"2024-07-16":[{"method":"GET","path":"/characters/{character_id}/notifications","compatibility_date":"2020-01-01","type":"changed","description":"Add
+        new notification types: `StructureLowReagentsAlert` and `StructureNoReagentsAlert`"},{"method":"GET","path":"/universe/races","compatibility_date":"2020-01-01","type":"changed","description":"Fixed
+        the maxItems limit that would cause this endpoint to fail unnecessarily."}],"2025-02-18":[{"method":"GET","path":"/characters/{character_id}/skillqueue","compatibility_date":"2020-01-01","type":"changed","description":"Skill
+        queues with 151 entries can now be requested safely."},{"method":"POST","path":"/fleets/{fleet_id}/members","compatibility_date":"2020-01-01","type":"changed","description":"Always
+        return 204 when inviting members to your fleet, even if they are offline or
+        have a CSPA charge set."}],"2025-04-01":[{"method":"GET","path":"/fleets/{fleet_id}/recommended-fit","compatibility_date":"2025-04-01","type":"new","description":"Introduction
+        of recommended fits."}],"2025-04-02":[{"method":"GET","path":"/fleets/{fleet_id}/recommended-fit","compatibility_date":"2025-04-02","type":"removed","description":""}],"2025-04-08":[{"method":"GET","path":"/characters/{character_id}/notifications/contacts","compatibility_date":"2020-01-01","type":"changed","description":"Update
+        spec to indicate that notification IDs are int64s. More detail in this [blog
+        post](https://developers.eveonline.com/blog/notificationid-is-reaching-int32-limits)."}],"2025-07-21":[{"method":"GET","path":"/characters/{character_id}/wallet/journal","compatibility_date":"2020-01-01","type":"changed","description":"Updated
+        enum with recently added types. See [eve-glue](https://github.com/esi/eve-glue/pull/44)
+        for details."},{"method":"GET","path":"/corporations/{corporation_id}/assets","compatibility_date":"2020-01-01","type":"changed","description":"Newly
+        added Freelance Jobs delivery hangar is now visible by name. See [eve-glue](https://github.com/esi/eve-glue/pull/45)
+        for details."},{"method":"GET","path":"/corporations/{corporation_id}/containers/logs","compatibility_date":"2020-01-01","type":"changed","description":"character_id
+        is no longer always zero."}],"2025-08-26":[{"method":"GET","path":"/corporations/{corporation_id}/projects","compatibility_date":"2025-08-26","type":"new","description":"Initial
+        release of Corporation Projects."},{"method":"GET","path":"/corporations/{corporation_id}/projects/{project_id}","compatibility_date":"2025-08-26","type":"new","description":"Initial
+        release of Corporation Projects."},{"method":"GET","path":"/corporations/{corporation_id}/projects/{project_id}/contribution/{character_id}","compatibility_date":"2025-08-26","type":"new","description":"Initial
+        release of Corporation Projects."},{"method":"GET","path":"/corporations/{corporation_id}/projects/{project_id}/contributors","compatibility_date":"2025-08-26","type":"new","description":"Initial
+        release of Corporation Projects."}],"2025-09-26":[{"method":"GET","path":"/meta/changelog","compatibility_date":"2025-09-26","type":"breaking","description":"Replaced
+        ''is_breaking'' with a more detailed ''type''."}],"2025-09-30":[{"method":"POST","path":"/route/{origin_system_id}/{destination_system_id}","compatibility_date":"2025-09-30","type":"new","description":"Replacement
+        of GET /route/{origin}/{destination}."},{"method":"GET","path":"/route/{origin}/{destination}","compatibility_date":"2025-09-30","type":"removed","description":""}],"2025-11-06":[{"method":"GET","path":"/meta/status","compatibility_date":"2025-11-06","type":"new","description":"Replacement
+        of GET /status.json."}],"2025-12-16":[{"method":"GET","path":"/characters/{character_id}/freelance-jobs","compatibility_date":"2025-12-16","type":"new","description":"Initial
+        release of Freelance Jobs."},{"method":"GET","path":"/characters/{character_id}/freelance-jobs/{job_id}/participation","compatibility_date":"2025-12-16","type":"new","description":"Initial
+        release of Freelance Jobs."},{"method":"GET","path":"/corporations/{corporation_id}/freelance-jobs","compatibility_date":"2025-12-16","type":"new","description":"Initial
+        release of Freelance Jobs."},{"method":"GET","path":"/corporations/{corporation_id}/freelance-jobs/{job_id}/participants","compatibility_date":"2025-12-16","type":"new","description":"Initial
+        release of Corporation Freelance Jobs."},{"method":"GET","path":"/freelance-jobs","compatibility_date":"2025-12-16","type":"new","description":"Initial
+        release of Freelance Jobs."},{"method":"GET","path":"/freelance-jobs/{job_id}","compatibility_date":"2025-12-16","type":"new","description":"Initial
+        release of Freelance Jobs."}],"2026-01-27":[{"method":"GET","path":"/characters/{character_id}/skillqueue","compatibility_date":"2020-01-01","type":"changed","description":"Enabled
+        event-based cache invalidation."},{"method":"GET","path":"/characters/{character_id}/skills","compatibility_date":"2020-01-01","type":"changed","description":"Enabled
+        event-based cache invalidation."},{"method":"GET","path":"/characters/{character_id}/skills","compatibility_date":"2020-01-01","type":"changed","description":"Field
+        ''active_skill_level'' now reflects Expert Systems levels correctly."}],"2026-05-19":[{"method":"GET","path":"/characters/{character_id}/access-lists","compatibility_date":"2026-05-19","type":"new","description":"Initial
+        release of Access Lists."},{"method":"GET","path":"/characters/{character_id}/access-lists/{access_list_id}","compatibility_date":"2026-05-19","type":"new","description":"Initial
+        release of Access Lists."},{"method":"GET","path":"/characters/{character_id}/mercenary-tactical-operations","compatibility_date":"2026-05-19","type":"new","description":"Initial
+        release of Mercenary Dens."},{"method":"GET","path":"/characters/{character_id}/mercenary-tactical-operations/{operation_id}","compatibility_date":"2026-05-19","type":"new","description":"Initial
+        release of Mercenary Dens."},{"method":"GET","path":"/characters/{character_id}/structures/mercenary-dens","compatibility_date":"2026-05-19","type":"new","description":"Initial
+        release of Mercenary Dens."},{"method":"GET","path":"/characters/{character_id}/structures/mercenary-dens/{mercenary_den_id}","compatibility_date":"2026-05-19","type":"new","description":"Initial
+        release of Mercenary Dens."},{"method":"GET","path":"/corporations/{corporation_id}/structures/skyhooks","compatibility_date":"2026-05-19","type":"new","description":"Initial
+        release of Skyhooks."},{"method":"GET","path":"/corporations/{corporation_id}/structures/skyhooks/{skyhook_id}","compatibility_date":"2026-05-19","type":"new","description":"Initial
+        release of Skyhooks."},{"method":"GET","path":"/corporations/{corporation_id}/structures/sovereignty-hubs","compatibility_date":"2026-05-19","type":"new","description":"Initial
+        release of Sovereignty Hubs."},{"method":"GET","path":"/corporations/{corporation_id}/structures/sovereignty-hubs/{sovereignty_hub_id}","compatibility_date":"2026-05-19","type":"new","description":"Initial
+        release of Sovereignty Hubs."},{"method":"GET","path":"/skyhooks/raidable","compatibility_date":"2026-05-19","type":"new","description":"Initial
+        release of Skyhooks."},{"method":"GET","path":"/sovereignty/map","compatibility_date":"2026-05-19","type":"removed","description":""},{"method":"GET","path":"/sovereignty/map","compatibility_date":"2020-01-01","type":"changed","description":"Entries
+        are now sorted by solar_system_id."},{"method":"GET","path":"/sovereignty/structures","compatibility_date":"2026-05-19","type":"removed","description":""},{"method":"GET","path":"/sovereignty/structures","compatibility_date":"2020-01-01","type":"changed","description":"Removed
+        duplicated entries and they are now sorted by solar_system_id."},{"method":"GET","path":"/sovereignty/systems","compatibility_date":"2026-05-19","type":"new","description":"Rework
+        of Sovereignty systems. This unifies /sovereignty/map and /sovereignty/structures."}],"2026-06-09":[{"method":"GET","path":"/characters/{character_id}","compatibility_date":"2026-06-09","type":"changed","description":"Added
+        ''character_title_id'' and ''achievement_score''"},{"method":"GET","path":"/characters/{character_id}","compatibility_date":"2026-06-09","type":"breaking","description":"Renamed
+        ''title'' to ''corporation_title''"}],"2026-07-01":[{"method":"GET","path":"/characters/{character_id}","compatibility_date":"2026-06-09","type":"changed","description":"Changed
+        ''security_status'' to have a precision of 1"},{"method":"GET","path":"/characters/{character_id}","compatibility_date":"2020-01-01","type":"changed","description":"Changed
+        ''security_status'' to have a precision of 1"}],"2026-07-17":[{"method":"GET","path":"/meta/name","compatibility_date":"2026-07-17","type":"new","description":"Initial
+        release. Nobody agrees on what ESI stands for."}],"2026-07-21":[{"method":"GET","path":"/corporations/{corporation_id}","compatibility_date":"2026-07-21","type":"changed","description":"Added
+        ''friendly_fire'', ''palette'', ''status'', ''tax_rates.loyalty_point'', and
+        ''type'' fields"},{"method":"GET","path":"/corporations/{corporation_id}","compatibility_date":"2026-07-21","type":"breaking","description":"Fields
+        ''ceo_id'' and ''creator_id'' are now optional"},{"method":"GET","path":"/corporations/{corporation_id}","compatibility_date":"2026-07-21","type":"breaking","description":"Moved
+        ''tax_rate'' to ''tax_rates.isk''"},{"method":"GET","path":"/corporations/{corporation_id}","compatibility_date":"2026-07-21","type":"breaking","description":"Rename
+        ''faction_id'' to ''enlisted_faction_id''"},{"method":"GET","path":"/corporations/{corporation_id}","compatibility_date":"2020-01-01","type":"changed","description":"Changed
+        ''tax_rate'' to have a precision of 3"}],"2026-08-04":[{"method":"GET","path":"/characters/{character_id}/military-campaigns/objectives","compatibility_date":"2026-08-04","type":"new","description":"Initial
+        release of Military Campaigns."},{"method":"GET","path":"/characters/{character_id}/military-campaigns/objectives/{objective_id}","compatibility_date":"2026-08-04","type":"new","description":"Initial
+        release of Military Campaigns."},{"method":"GET","path":"/military-campaigns","compatibility_date":"2026-08-04","type":"new","description":"Initial
+        release of Military Campaigns."},{"method":"GET","path":"/military-campaigns/{campaign_id}","compatibility_date":"2026-08-04","type":"new","description":"Initial
+        release of Military Campaigns."},{"method":"GET","path":"/military-campaigns/{campaign_id}/objectives","compatibility_date":"2026-08-04","type":"new","description":"Initial
+        release of Military Campaigns."},{"method":"GET","path":"/military-campaigns/{campaign_id}/objectives/{objective_id}","compatibility_date":"2026-08-04","type":"new","description":"Initial
+        release of Military Campaigns."}],"2026-08-18":[{"method":"GET","path":"/characters/{character_id}/cosmetics/skinr","compatibility_date":"2026-08-18","type":"new","description":"Initial
+        release of SKINR."},{"method":"GET","path":"/characters/{character_id}/cosmetics/skinr/components","compatibility_date":"2026-08-18","type":"new","description":"Initial
+        release of SKINR."},{"method":"GET","path":"/characters/{character_id}/paragon-hub/skinr","compatibility_date":"2026-08-18","type":"new","description":"Initial
+        release of SKINR."},{"method":"GET","path":"/cosmetics/skinr/{skinr_id}","compatibility_date":"2026-08-18","type":"new","description":"Initial
+        release of SKINR."},{"method":"GET","path":"/paragon-hub/skinr","compatibility_date":"2026-08-18","type":"new","description":"Initial
+        release of SKINR."},{"method":"GET","path":"/paragon-hub/skinr/alliances/{alliance_id}","compatibility_date":"2026-08-18","type":"new","description":"Initial
+        release of SKINR."},{"method":"GET","path":"/paragon-hub/skinr/characters/{character_id}","compatibility_date":"2026-08-18","type":"new","description":"Initial
+        release of SKINR."},{"method":"GET","path":"/paragon-hub/skinr/corporations/{corporation_id}","compatibility_date":"2026-08-18","type":"new","description":"Initial
+        release of SKINR."}],"2026-09-03":[{"method":"POST","path":"/route/{origin_system_id}/{destination_system_id}","compatibility_date":"2025-09-30","type":"changed","description":"Field
+        ''security_penalty'' can now be set to zero (defaulted to 50 before)."}]}}
+
+        '
+  recorded_at: Sun, 27 Sep 2026 21:53:43 GMT
+recorded_with: VCR 6.4.0

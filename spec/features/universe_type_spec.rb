@@ -36,11 +36,11 @@ RSpec.describe "Get type information" do
 
   specify { expect(subject.dogma_effects.first.as_json).to eq(effect_id: 596, is_default: false) }
 
-  specify { expect(subject.etag).to eq("W/\"eb02b32cba3ed2b28639d4d552243949671a18d2b8aca54f4271cfbb\"") }
+  specify { expect(subject.etag).to eq("W/\"913b3f4e2ed35371bed5a2ddb54a29f6451d6062f85c3490634a33b0\"") }
 
   specify { expect(subject.cache_status).to eq("HIT") }
 
-  specify { expect(subject.request_id).to eq("01e8d918-c5d0-40e6-a27a-0d96581da47c") }
+  specify { expect(subject.request_id).to eq("4737c8dc-d1ab-41d6-aa8e-973d7e9a7b44") }
 
   specify { expect(subject.ratelimit_group).to eq(nil) }
 
@@ -52,5 +52,5 @@ RSpec.describe "Get type information" do
 
   specify { expect(subject.error_limit_remain).to eq(100) }
 
-  specify { expect(subject.error_limit_reset).to eq(20) }
+  specify { expect(subject.error_limit_reset).to eq(34) }
 end
