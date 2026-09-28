@@ -18,6 +18,10 @@ RSpec.describe "Get alliance icon" do
     )
   end
 
+  specify { expect(subject.icon_medium).to eq("https://images.evetech.net/alliances/99008595/logo?tenant=tranquility&size=128") }
+
+  specify { expect(subject.icon_small).to eq("https://images.evetech.net/alliances/99008595/logo?tenant=tranquility&size=64") }
+
   specify { expect(subject.etag).to eq('"d53e06315fe6f15f4dd47da86f16b3cb51977abc22701227d931f03b"') }
 
   specify { expect(subject.cache_status).to eq("MISS") }
