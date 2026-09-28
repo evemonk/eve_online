@@ -3,23 +3,23 @@
 require "spec_helper"
 
 RSpec.describe "List alliance's corporations" do
-  before { VCR.insert_cassette "esi/alliance_corporations/99008595" }
+  before { VCR.insert_cassette "esi/alliance_corporations/1354830081" }
 
   after { VCR.eject_cassette }
 
   let(:client) { EveOnline::ESI::Client.new }
 
-  subject { client.alliances.corporations(id: 99_008_595) }
+  subject { client.alliances.corporations(id: 1_354_830_081) }
 
-  specify { expect(subject.corporation_ids.size).to eq(0) }
+  specify { expect(subject.corporation_ids.size).to eq(805) }
 
-  specify { expect(subject.corporation_ids.first).to eq(nil) }
+  specify { expect(subject.corporation_ids.first).to eq(98_004_995) }
 
-  specify { expect(subject.etag).to eq('"ed2e5773d709f4a0654d954884b08db4e152aeb8a70cb70b54e01bc4"') }
+  specify { expect(subject.etag).to eq('"219ff041bb74f09759e6d8d05eb19fc530b44eb383271948eeb9e255"') }
 
-  specify { expect(subject.cache_status).to eq("MISS") }
+  specify { expect(subject.cache_status).to eq("HIT") }
 
-  specify { expect(subject.request_id).to eq("b3b97b25-d750-4de9-86c1-409ff57f0d4c") }
+  specify { expect(subject.request_id).to eq("331a1fa4-78cb-46dd-999e-11852955a933") }
 
   specify { expect(subject.ratelimit_group).to eq(nil) }
 
@@ -31,5 +31,5 @@ RSpec.describe "List alliance's corporations" do
 
   specify { expect(subject.error_limit_remain).to eq(100) }
 
-  specify { expect(subject.error_limit_reset).to eq(48) }
+  specify { expect(subject.error_limit_reset).to eq(43) }
 end
