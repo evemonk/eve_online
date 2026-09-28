@@ -45,7 +45,7 @@ module EveOnline
 
         # @param ids [Array<Integer>] Character IDs to resolve, up to 1000.
         def affiliation(ids:)
-          response = post_request("characters/affiliation", params: ids)
+          response = post_request("characters/affiliation", body: ids.to_json)
 
           Collection.from_response(response, type: Models::CharacterAffiliation)
         end
