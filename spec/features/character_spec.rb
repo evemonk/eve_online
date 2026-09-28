@@ -15,17 +15,19 @@ RSpec.describe "Get character's public information" do
 
   specify do
     expect(subject.as_json).to eq(
-      corporation_id: 1_000_171,
-      birthday: Time.utc(2010, 1, 15, 15, 26, 0),
-      name: "Johnn Dillinger",
-      gender: "male",
-      race_id: 2,
-      bloodline_id: 4,
-      description: "",
+      achievement_score: 0,
       alliance_id: nil,
-      security_status: 3.9,
+      birthday: Time.utc(2010, 1, 15, 15, 26, 0),
+      bloodline_id: 4,
+      character_title_id: nil,
+      corporation_id: 1_000_171,
+      corporation_title: nil,
+      description: "",
       faction_id: nil,
-      title: nil
+      gender: "male",
+      name: "Johnn Dillinger",
+      race_id: 2,
+      security_status: 3.9
     )
   end
 
