@@ -914,6 +914,10 @@ icon = client.corporations.icons(id: 98_468_592)
 icon.as_json # => {icon_large: "https://images.evetech.net/corporations/98468592/logo?tenant=tranquility&size=256",
             #     icon_medium: "https://images.evetech.net/corporations/98468592/logo?tenant=tranquility&size=128",
             #     icon_small: "https://images.evetech.net/corporations/98468592/logo?tenant=tranquility&size=64"}
+
+icon.icon_large # => "https://images.evetech.net/corporations/98468592/logo?tenant=tranquility&size=256"
+icon.icon_medium # => "https://images.evetech.net/corporations/98468592/logo?tenant=tranquility&size=128"
+icon.icon_small # => "https://images.evetech.net/corporations/98468592/logo?tenant=tranquility&size=64"
 ```
 
 #### Get corporation medals
