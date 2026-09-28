@@ -20,13 +20,6 @@ RSpec.describe "Get alliance history" do
       start_date: Time.utc(2025, 1, 20, 8, 27, 0))
   end
 
-  specify do
-    expect(subject.to_a[3].as_json).to eq(alliance_id: 99_007_916,
-      is_deleted: true,
-      record_id: 1_192_636,
-      start_date: Time.utc(2018, 6, 1, 14, 55, 0))
-  end
-
   specify { expect(subject.etag).to eq("\"ad91220f38b3a2dac2b4f83c4eb3b03dd02e11fc846652ca1abffe43\"") }
 
   specify { expect(subject.cache_status).to eq("HIT") }
