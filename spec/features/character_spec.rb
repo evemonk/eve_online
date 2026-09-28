@@ -23,17 +23,17 @@ RSpec.describe "Get character's public information" do
       bloodline_id: 4,
       description: "",
       alliance_id: nil,
-      security_status: 3.83155339,
+      security_status: 3.9,
       faction_id: nil,
       title: nil
     )
   end
 
-  specify { expect(subject.etag).to eq('"e931aea926d95a88c929c938741bc7bd8c35920121e7837ad6852020"') }
+  specify { expect(subject.etag).to eq('W/"e2061437d3098a97a89c63c24714ac4e3c9ac90209e5e74e14d20469869b1e66"') }
 
-  specify { expect(subject.cache_status).to eq("HIT") }
+  specify { expect(subject.cache_status).to eq("MISS") }
 
-  specify { expect(subject.request_id).to eq("17930397-e721-446e-8be2-f4ee6b462479") }
+  specify { expect(subject.request_id).to eq(nil) }
 
   specify { expect(subject.ratelimit_group).to eq(nil) }
 
@@ -45,5 +45,5 @@ RSpec.describe "Get character's public information" do
 
   specify { expect(subject.error_limit_remain).to eq(100) }
 
-  specify { expect(subject.error_limit_reset).to eq(53) }
+  specify { expect(subject.error_limit_reset).to eq(46) }
 end

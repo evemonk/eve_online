@@ -11,15 +11,15 @@ RSpec.describe "Get graphics" do
 
   subject { client.universe.graphics }
 
-  specify { expect(subject.graphic_ids.size).to eq(5_994) }
+  specify { expect(subject.graphic_ids.size).to eq(6_156) }
 
-  specify { expect(subject.graphic_ids.first).to eq(10) }
+  specify { expect(subject.graphic_ids.first).to eq(24624) }
 
-  specify { expect(subject.etag).to eq("W/\"eb02b32cba3ed2b28639d4d552243949671a18d2b8aca54f4271cfbb\"") }
+  specify { expect(subject.etag).to eq("W/\"913b3f4e2ed35371bed5a2ddb54a29f6451d6062f85c3490634a33b0\"") }
 
   specify { expect(subject.cache_status).to eq("HIT") }
 
-  specify { expect(subject.request_id).to eq("887ea8ec-a760-403b-b590-527a29e5a0db") }
+  specify { expect(subject.request_id).to eq("6fcd7cba-125c-4f24-918c-45d269a979d4") }
 
   specify { expect(subject.ratelimit_group).to eq(nil) }
 
@@ -31,5 +31,5 @@ RSpec.describe "Get graphics" do
 
   specify { expect(subject.error_limit_remain).to eq(100) }
 
-  specify { expect(subject.error_limit_reset).to eq(2) }
+  specify { expect(subject.error_limit_reset).to eq(39) }
 end

@@ -15,11 +15,11 @@ RSpec.describe "Get item categories" do
 
   specify { expect(subject.category_ids.first).to eq(0) }
 
-  specify { expect(subject.etag).to eq("W/\"eb02b32cba3ed2b28639d4d552243949671a18d2b8aca54f4271cfbb\"") }
+  specify { expect(subject.etag).to eq("W/\"913b3f4e2ed35371bed5a2ddb54a29f6451d6062f85c3490634a33b0\"") }
 
   specify { expect(subject.cache_status).to eq("HIT") }
 
-  specify { expect(subject.request_id).to eq("3b2de332-7214-424c-8cf4-9dbf6d154fa3") }
+  specify { expect(subject.request_id).to eq("fd2957d2-75c0-4366-9003-d053139634b3") }
 
   specify { expect(subject.ratelimit_group).to eq(nil) }
 
@@ -31,5 +31,5 @@ RSpec.describe "Get item categories" do
 
   specify { expect(subject.error_limit_remain).to eq(100) }
 
-  specify { expect(subject.error_limit_reset).to eq(17) }
+  specify { expect(subject.error_limit_reset).to eq(40) }
 end

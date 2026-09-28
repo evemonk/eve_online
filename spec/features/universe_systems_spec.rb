@@ -15,11 +15,11 @@ RSpec.describe "Get solar systems" do
 
   specify { expect(subject.system_ids.first).to eq(30_000_001) }
 
-  specify { expect(subject.etag).to eq("W/\"f801dec473fd1f6bae55b0287b44fc2022da563f59ea428eba3b2a2f\"") }
+  specify { expect(subject.etag).to eq("W/\"913b3f4e2ed35371bed5a2ddb54a29f6451d6062f85c3490634a33b0\"") }
 
   specify { expect(subject.cache_status).to eq("HIT") }
 
-  specify { expect(subject.request_id).to eq("adbcc2b2-d57c-44d3-b263-4e1e63e20251") }
+  specify { expect(subject.request_id).to eq("84227952-29d4-4f3c-8fc8-842583db658b") }
 
   specify { expect(subject.ratelimit_group).to eq(nil) }
 
@@ -31,5 +31,5 @@ RSpec.describe "Get solar systems" do
 
   specify { expect(subject.error_limit_remain).to eq(100) }
 
-  specify { expect(subject.error_limit_reset).to eq(24) }
+  specify { expect(subject.error_limit_reset).to eq(35) }
 end

@@ -11,15 +11,15 @@ RSpec.describe "List alliance's corporations" do
 
   subject { client.alliances.corporations(id: 99_008_595) }
 
-  specify { expect(subject.corporation_ids.size).to eq(5) }
+  specify { expect(subject.corporation_ids.size).to eq(0) }
 
-  specify { expect(subject.corporation_ids.first).to eq(98_565_696) }
+  specify { expect(subject.corporation_ids.first).to eq(nil) }
 
-  specify { expect(subject.etag).to eq('"c4e774537fe210864f69ec66cd3c2726d19f2668a1219090965eebed"') }
+  specify { expect(subject.etag).to eq('"ed2e5773d709f4a0654d954884b08db4e152aeb8a70cb70b54e01bc4"') }
 
-  specify { expect(subject.cache_status).to eq("HIT") }
+  specify { expect(subject.cache_status).to eq("MISS") }
 
-  specify { expect(subject.request_id).to eq("d5b50365-6306-4420-a137-29a31a982277") }
+  specify { expect(subject.request_id).to eq("b3b97b25-d750-4de9-86c1-409ff57f0d4c") }
 
   specify { expect(subject.ratelimit_group).to eq(nil) }
 
@@ -31,5 +31,5 @@ RSpec.describe "List alliance's corporations" do
 
   specify { expect(subject.error_limit_remain).to eq(100) }
 
-  specify { expect(subject.error_limit_reset).to eq(51) }
+  specify { expect(subject.error_limit_reset).to eq(48) }
 end

@@ -24,11 +24,11 @@ RSpec.describe "Get attribute information" do
       unit_id: nil)
   end
 
-  specify { expect(subject.etag).to eq("W/\"eb02b32cba3ed2b28639d4d552243949671a18d2b8aca54f4271cfbb\"") }
+  specify { expect(subject.etag).to eq("W/\"913b3f4e2ed35371bed5a2ddb54a29f6451d6062f85c3490634a33b0\"") }
 
   specify { expect(subject.cache_status).to eq("HIT") }
 
-  specify { expect(subject.request_id).to eq("25d978dd-d838-4852-9863-66db9e02e602") }
+  specify { expect(subject.request_id).to eq("0acd5dad-3818-42f9-84c2-c7a439b132f6") }
 
   specify { expect(subject.ratelimit_group).to eq(nil) }
 
@@ -40,5 +40,5 @@ RSpec.describe "Get attribute information" do
 
   specify { expect(subject.error_limit_remain).to eq(100) }
 
-  specify { expect(subject.error_limit_reset).to eq(17) }
+  specify { expect(subject.error_limit_reset).to eq(44) }
 end

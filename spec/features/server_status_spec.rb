@@ -12,17 +12,17 @@ RSpec.describe "Retrieve the uptime and player counts" do
   subject { client.server_status.info }
 
   specify do
-    expect(subject.as_json).to eq(players: 32_697,
-      server_version: "3145366",
-      start_time: Time.utc(2025, 12, 30, 11, 1, 58),
-      vip: nil)
+    expect(subject.as_json).to eq(players: 26_717,
+      server_version: "3552227",
+      start_time: Time.utc(2026, 9, 28, 11, 5, 11),
+      vip: false)
   end
 
-  specify { expect(subject.etag).to eq('"e2e234441e20bc911efc3fa903ab4daf5aeca4e8d8caef23b7a3c898"') }
+  specify { expect(subject.etag).to eq('W/"d4e59a5f6c4a6914c9deb42063550a55588087ef7ab04a4dfecc01eddb5f2c73"') }
 
   specify { expect(subject.cache_status).to eq("HIT") }
 
-  specify { expect(subject.request_id).to eq("aaedbec2-945b-4141-8a39-245b84a8a841") }
+  specify { expect(subject.request_id).to eq(nil) }
 
   specify { expect(subject.ratelimit_group).to eq("status") }
 

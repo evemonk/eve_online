@@ -22,9 +22,9 @@ RSpec.describe "Get corporation history" do
 
   specify { expect(subject.etag).to eq("\"2101d3bfd27c5a53d0b90b07761e5716010bb393493110c3266cd730\"") }
 
-  specify { expect(subject.cache_status).to eq("HIT") }
+  specify { expect(subject.cache_status).to eq("MISS") }
 
-  specify { expect(subject.request_id).to eq("3aff0c93-867f-4671-9cd5-bfec95b4bf43") }
+  specify { expect(subject.request_id).to eq("81e2a950-4793-44a5-bb78-5aaad73d9086") }
 
   specify { expect(subject.ratelimit_group).to eq(nil) }
 
@@ -36,5 +36,5 @@ RSpec.describe "Get corporation history" do
 
   specify { expect(subject.error_limit_remain).to eq(100) }
 
-  specify { expect(subject.error_limit_reset).to eq(41) }
+  specify { expect(subject.error_limit_reset).to eq(47) }
 end

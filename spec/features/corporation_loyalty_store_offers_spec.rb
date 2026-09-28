@@ -11,29 +11,29 @@ RSpec.describe "List loyalty store offers" do
 
   subject { client.loyalty.offers(id: 1_000_035) }
 
-  specify { expect(subject.size).to eq(334) }
+  specify { expect(subject.size).to eq(310) }
 
   specify do
     expect(subject.first.as_json).to eq(ak_cost: 0,
-      isk_cost: 2_400_000,
-      lp_cost: 2_400,
-      offer_id: 3_584,
+      isk_cost: 5_500_000,
+      lp_cost: 5_500,
+      offer_id: 3_587,
       quantity: 5_000,
-      type_id: 23_047)
+      type_id: 27_339)
   end
 
   specify { expect(subject.first.offer_required_items.size).to eq(1) }
 
   specify do
     expect(subject.first.offer_required_items.first.as_json).to eq(quantity: 5_000,
-      type_id: 234)
+      type_id: 2_506)
   end
 
-  specify { expect(subject.etag).to eq("W/\"c40912e5115e3a15d7a426241dbc29967f047ffae6bbac677c3e0c50\"") }
+  specify { expect(subject.etag).to eq("W/\"913b3f4e2ed35371bed5a2ddb54a29f6451d6062f85c3490634a33b0\"") }
 
   specify { expect(subject.cache_status).to eq("HIT") }
 
-  specify { expect(subject.request_id).to eq("8819bb91-5c04-449c-8b68-6359c28b0494") }
+  specify { expect(subject.request_id).to eq("078b249e-213e-49ce-8e66-31395e184f6d") }
 
   specify { expect(subject.ratelimit_group).to eq(nil) }
 
@@ -45,5 +45,5 @@ RSpec.describe "List loyalty store offers" do
 
   specify { expect(subject.error_limit_remain).to eq(100) }
 
-  specify { expect(subject.error_limit_reset).to eq(10) }
+  specify { expect(subject.error_limit_reset).to eq(44) }
 end

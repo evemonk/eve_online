@@ -38,11 +38,11 @@ RSpec.describe "Get solar system information" do
 
   specify { expect(subject.station_ids).to eq([60_012_526, 60_014_437]) }
 
-  specify { expect(subject.etag).to eq("W/\"f801dec473fd1f6bae55b0287b44fc2022da563f59ea428eba3b2a2f\"") }
+  specify { expect(subject.etag).to eq("W/\"913b3f4e2ed35371bed5a2ddb54a29f6451d6062f85c3490634a33b0\"") }
 
   specify { expect(subject.cache_status).to eq("HIT") }
 
-  specify { expect(subject.request_id).to eq("3c766d13-1600-424b-be4d-0356229d039b") }
+  specify { expect(subject.request_id).to eq("b8bffbd9-39a5-46b8-915e-0e75b8a68ab5") }
 
   specify { expect(subject.ratelimit_group).to eq(nil) }
 
@@ -54,5 +54,5 @@ RSpec.describe "Get solar system information" do
 
   specify { expect(subject.error_limit_remain).to eq(100) }
 
-  specify { expect(subject.error_limit_reset).to eq(6) }
+  specify { expect(subject.error_limit_reset).to eq(34) }
 end

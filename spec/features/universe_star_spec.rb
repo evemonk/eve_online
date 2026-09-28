@@ -24,11 +24,11 @@ RSpec.describe "Get star information" do
     )
   end
 
-  specify { expect(subject.etag).to eq("W/\"eb02b32cba3ed2b28639d4d552243949671a18d2b8aca54f4271cfbb\"") }
+  specify { expect(subject.etag).to eq("\"913b3f4e2ed35371bed5a2ddb54a29f6451d6062f85c3490634a33b0\"") }
 
-  specify { expect(subject.cache_status).to eq("HIT") }
+  specify { expect(subject.cache_status).to eq("MISS") }
 
-  specify { expect(subject.request_id).to eq("560257e5-5235-499c-9731-802f192b336d") }
+  specify { expect(subject.request_id).to eq("faa3924a-251f-4ab8-87d1-e6382e668443") }
 
   specify { expect(subject.ratelimit_group).to eq(nil) }
 
@@ -40,5 +40,5 @@ RSpec.describe "Get star information" do
 
   specify { expect(subject.error_limit_remain).to eq(100) }
 
-  specify { expect(subject.error_limit_reset).to eq(2) }
+  specify { expect(subject.error_limit_reset).to eq(36) }
 end

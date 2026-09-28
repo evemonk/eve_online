@@ -33,11 +33,11 @@ RSpec.describe "Get stargate information" do
     )
   end
 
-  specify { expect(subject.etag).to eq("W/\"eb02b32cba3ed2b28639d4d552243949671a18d2b8aca54f4271cfbb\"") }
+  specify { expect(subject.etag).to eq("W/\"913b3f4e2ed35371bed5a2ddb54a29f6451d6062f85c3490634a33b0\"") }
 
   specify { expect(subject.cache_status).to eq("HIT") }
 
-  specify { expect(subject.request_id).to eq("7b74e2bd-1406-4c7f-9cb3-25bd8377f269") }
+  specify { expect(subject.request_id).to eq("3fa7fb44-2e05-4341-aece-20a13b4576d6") }
 
   specify { expect(subject.ratelimit_group).to eq(nil) }
 
@@ -49,5 +49,5 @@ RSpec.describe "Get stargate information" do
 
   specify { expect(subject.error_limit_remain).to eq(100) }
 
-  specify { expect(subject.error_limit_reset).to eq(2) }
+  specify { expect(subject.error_limit_reset).to eq(36) }
 end

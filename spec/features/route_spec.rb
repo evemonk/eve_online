@@ -37,7 +37,7 @@ RSpec.describe "Get route between two systems" do
 
     specify { expect(subject.etag).to eq(nil) }
 
-    specify { expect(subject.cache_status).to eq("DYNAMIC") }
+    specify { expect(subject.cache_status).to eq(nil) }
 
     specify { expect(subject.request_id).to eq(nil) }
 
@@ -45,7 +45,7 @@ RSpec.describe "Get route between two systems" do
 
     specify { expect(subject.ratelimit_limit).to eq("3600/15m") }
 
-    specify { expect(subject.ratelimit_remaining).to eq(3592) }
+    specify { expect(subject.ratelimit_remaining).to eq(3598) }
 
     specify { expect(subject.ratelimit_used).to eq(2) }
 
@@ -102,10 +102,10 @@ RSpec.describe "Get route between two systems" do
       [
         30_000_142, 30_000_144, 30_000_139, 30_002_802, 30_002_801,
         30_002_803, 30_002_768, 30_002_765, 30_002_764, 30_002_761,
-        30_005_015, 30_005_198, 30_003_452, 30_003_449, 30_003_448,
-        30_003_447, 30_003_433, 30_003_431, 30_003_408, 30_003_400,
-        30_003_377, 30_003_409, 30_003_410, 30_002_525, 30_002_524,
-        30_002_508, 30_002_509, 30_000_004, 30_000_005, 30_000_002,
+        30_004_972, 30_004_970, 30_002_633, 30_002_634, 30_002_641,
+        30_002_681, 30_002_682, 30_002_048, 30_002_049, 30_002_053,
+        30_002_543, 30_002_545, 30_002_568, 30_002_529, 30_002_530,
+        30_002_507, 30_002_509, 30_000_004, 30_000_005, 30_000_002,
         30_002_973, 30_002_969, 30_002_974, 30_002_972, 30_002_971,
         30_002_970, 30_002_963, 30_002_964, 30_002_991, 30_002_994,
         30_003_545, 30_003_548, 30_003_525, 30_003_523, 30_003_522,

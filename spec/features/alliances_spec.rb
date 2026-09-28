@@ -11,17 +11,17 @@ RSpec.describe "List all alliances" do
 
   subject { client.alliances.list }
 
-  specify { expect(subject.alliance_ids.size).to eq(3533) }
+  specify { expect(subject.alliance_ids.size).to eq(3647) }
 
   specify { expect(subject.alliance_ids.first).to eq(99_000_006) }
 
   specify { expect(subject.alliance_ids.last).to eq(2_049_763_943) }
 
-  specify { expect(subject.etag).to eq('"d75094454a392e951b98262986a2ae022230d15d6ba0625d112bf03c"') }
+  specify { expect(subject.etag).to eq('"bc5569713879ddef6831619d80fa352343b5d34c090a997535cb45a1"') }
 
   specify { expect(subject.cache_status).to eq("HIT") }
 
-  specify { expect(subject.request_id).to eq("5bf9cfa4-0708-4359-82d3-206eccb5f661") }
+  specify { expect(subject.request_id).to eq("d706d7eb-037c-46a2-b53a-2ae0bba419c2") }
 
   specify { expect(subject.ratelimit_group).to eq(nil) }
 
@@ -33,5 +33,5 @@ RSpec.describe "List all alliances" do
 
   specify { expect(subject.error_limit_remain).to eq(100) }
 
-  specify { expect(subject.error_limit_reset).to eq(53) }
+  specify { expect(subject.error_limit_reset).to eq(47) }
 end

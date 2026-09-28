@@ -17,11 +17,11 @@ RSpec.describe "Get item groups" do
 
   specify { expect(subject.group_ids.first).to eq(0) }
 
-  specify { expect(subject.etag).to eq("W/\"eb02b32cba3ed2b28639d4d552243949671a18d2b8aca54f4271cfbb\"") }
+  specify { expect(subject.etag).to eq("W/\"913b3f4e2ed35371bed5a2ddb54a29f6451d6062f85c3490634a33b0\"") }
 
   specify { expect(subject.cache_status).to eq("HIT") }
 
-  specify { expect(subject.request_id).to eq("30dea164-0ab7-47fe-8a5a-e9de92326683") }
+  specify { expect(subject.request_id).to eq("b73be8ba-760d-4824-a8c2-98aab3e5f493") }
 
   specify { expect(subject.ratelimit_group).to eq(nil) }
 
@@ -33,5 +33,5 @@ RSpec.describe "Get item groups" do
 
   specify { expect(subject.error_limit_remain).to eq(100) }
 
-  specify { expect(subject.error_limit_reset).to eq(43) }
+  specify { expect(subject.error_limit_reset).to eq(38) }
 end

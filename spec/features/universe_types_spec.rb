@@ -11,17 +11,17 @@ RSpec.describe "Get types" do
 
   subject { client.universe.types }
 
-  specify { expect(subject.total_pages).to eq(52) }
+  specify { expect(subject.total_pages).to eq(54) }
 
   specify { expect(subject.type_ids.size).to eq(1000) }
 
   specify { expect(subject.type_ids.first).to eq(0) }
 
-  specify { expect(subject.etag).to eq("W/\"eb02b32cba3ed2b28639d4d552243949671a18d2b8aca54f4271cfbb\"") }
+  specify { expect(subject.etag).to eq("W/\"913b3f4e2ed35371bed5a2ddb54a29f6451d6062f85c3490634a33b0\"") }
 
   specify { expect(subject.cache_status).to eq("HIT") }
 
-  specify { expect(subject.request_id).to eq("f5830882-1403-48e4-9a49-66c26dcd1ac9") }
+  specify { expect(subject.request_id).to eq("df44e5e3-0ecb-477f-a2bb-ed31286e5446") }
 
   specify { expect(subject.ratelimit_group).to eq(nil) }
 
@@ -33,5 +33,5 @@ RSpec.describe "Get types" do
 
   specify { expect(subject.error_limit_remain).to eq(100) }
 
-  specify { expect(subject.error_limit_reset).to eq(6) }
+  specify { expect(subject.error_limit_reset).to eq(34) }
 end

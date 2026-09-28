@@ -22,11 +22,11 @@ RSpec.describe "Get asteroid belt information" do
       z: -73_505_464_320.0)
   end
 
-  specify { expect(subject.etag).to eq("W/\"eb02b32cba3ed2b28639d4d552243949671a18d2b8aca54f4271cfbb\"") }
+  specify { expect(subject.etag).to eq("\"913b3f4e2ed35371bed5a2ddb54a29f6451d6062f85c3490634a33b0\"") }
 
-  specify { expect(subject.cache_status).to eq("HIT") }
+  specify { expect(subject.cache_status).to eq("MISS") }
 
-  specify { expect(subject.request_id).to eq("a965340c-76a4-4c35-b3aa-50ba1870871d") }
+  specify { expect(subject.request_id).to eq("4a880bd6-50ce-4ebb-9413-227a695d1c85") }
 
   specify { expect(subject.ratelimit_group).to eq(nil) }
 
@@ -38,5 +38,5 @@ RSpec.describe "Get asteroid belt information" do
 
   specify { expect(subject.error_limit_remain).to eq(100) }
 
-  specify { expect(subject.error_limit_reset).to eq(58) }
+  specify { expect(subject.error_limit_reset).to eq(41) }
 end

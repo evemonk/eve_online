@@ -34,11 +34,11 @@ RSpec.describe "Get constellation information" do
       30_000_008])
   end
 
-  specify { expect(subject.etag).to eq("W/\"eb02b32cba3ed2b28639d4d552243949671a18d2b8aca54f4271cfbb\"") }
+  specify { expect(subject.etag).to eq("W/\"913b3f4e2ed35371bed5a2ddb54a29f6451d6062f85c3490634a33b0\"") }
 
   specify { expect(subject.cache_status).to eq("HIT") }
 
-  specify { expect(subject.request_id).to eq("d01d69c1-f42e-49b5-be22-0f9ff0b9a641") }
+  specify { expect(subject.request_id).to eq("469219a1-5982-4394-8f33-b119b0cfe6c8") }
 
   specify { expect(subject.ratelimit_group).to eq(nil) }
 
@@ -50,5 +50,5 @@ RSpec.describe "Get constellation information" do
 
   specify { expect(subject.error_limit_remain).to eq(100) }
 
-  specify { expect(subject.error_limit_reset).to eq(38) }
+  specify { expect(subject.error_limit_reset).to eq(39) }
 end

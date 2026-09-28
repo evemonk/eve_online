@@ -12,15 +12,15 @@ RSpec.describe "List all public structures" do
 
     subject { client.universe.structures }
 
-    specify { expect(subject.structure_ids.size).to eq(1_003) }
+    specify { expect(subject.structure_ids.size).to eq(803) }
 
     specify { expect(subject.structure_ids.first).to eq(1_035_768_592_387) }
 
-    specify { expect(subject.etag).to eq("\"6f6b3e227e2d32a3cfa9bcb927e65406023b0557c8b825fab44aa410\"") }
+    specify { expect(subject.etag).to eq("\"a6e11e96e9fc9e68b40c3484a5d410df96746fa9c46142a3073290bd\"") }
 
     specify { expect(subject.cache_status).to eq("HIT") }
 
-    specify { expect(subject.request_id).to eq("2a261e07-ab28-4b06-81e5-b325b3ccb912") }
+    specify { expect(subject.request_id).to eq("0d51045c-3df9-4bb8-9670-53ec5c5b1377") }
 
     specify { expect(subject.ratelimit_group).to eq(nil) }
 
@@ -32,7 +32,7 @@ RSpec.describe "List all public structures" do
 
     specify { expect(subject.error_limit_remain).to eq(100) }
 
-    specify { expect(subject.error_limit_reset).to eq(6) }
+    specify { expect(subject.error_limit_reset).to eq(35) }
   end
 
   context "with filter" do
@@ -44,7 +44,7 @@ RSpec.describe "List all public structures" do
 
     subject { client.universe.structures(filter: "market") }
 
-    specify { expect(subject.structure_ids.size).to eq(53) }
+    specify { expect(subject.structure_ids.size).to eq(49) }
 
     specify { expect(subject.structure_ids.first).to eq(1_044_961_079_041) }
   end

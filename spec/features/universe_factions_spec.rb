@@ -22,15 +22,15 @@ RSpec.describe "Get factions" do
       name: "Amarr Empire",
       size_factor: 5.0,
       solar_system_id: 30_002_187,
-      station_count: 1_032,
-      station_system_count: 508)
+      station_count: 1_041,
+      station_system_count: 515)
   end
 
-  specify { expect(subject.etag).to eq("W/\"d53e06315fe6f15f4dd47da86f16b3cb51977abc22701227d931f03b\"") }
+  specify { expect(subject.etag).to eq("W/\"913b3f4e2ed35371bed5a2ddb54a29f6451d6062f85c3490634a33b0\"") }
 
   specify { expect(subject.cache_status).to eq("HIT") }
 
-  specify { expect(subject.request_id).to eq("a3501e17-04f2-4a8b-a5a6-6805c31c09ca") }
+  specify { expect(subject.request_id).to eq("ec53f3cf-f301-4c4e-a717-88145a9751a4") }
 
   specify { expect(subject.ratelimit_group).to eq(nil) }
 
@@ -42,5 +42,5 @@ RSpec.describe "Get factions" do
 
   specify { expect(subject.error_limit_remain).to eq(100) }
 
-  specify { expect(subject.error_limit_reset).to eq(31) }
+  specify { expect(subject.error_limit_reset).to eq(39) }
 end
