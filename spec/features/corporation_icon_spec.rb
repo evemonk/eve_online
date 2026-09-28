@@ -16,4 +16,10 @@ RSpec.describe "Get corporation icon" do
       icon_medium: "https://images.evetech.net/corporations/98468592/logo?tenant=tranquility&size=128",
       icon_small: "https://images.evetech.net/corporations/98468592/logo?tenant=tranquility&size=64")
   end
+
+  specify { expect(subject.icon_large).to eq("https://images.evetech.net/corporations/98468592/logo?tenant=tranquility&size=256") }
+
+  specify { expect(subject.icon_medium).to eq("https://images.evetech.net/corporations/98468592/logo?tenant=tranquility&size=128") }
+
+  specify { expect(subject.icon_small).to eq("https://images.evetech.net/corporations/98468592/logo?tenant=tranquility&size=64") }
 end
